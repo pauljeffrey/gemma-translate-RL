@@ -1,0 +1,68 @@
+{
+  "_why": "Starting recipe, to be tuned against bins/manifest.json (123 datasets, 7.71B training tokens, 78M validation). Shares are of budget_tokens; budget a group cannot absorb (tokens x max_epochs) is passed on to the others. Inside a group the budget is split across languages by UniMax with optional `language_weights` (English is 2-4x because it is also the general-capability language). `match` is a regex on the converter name; the first group that matches wins.",
+  "budget_tokens": 3000000000,
+  "seed": 0,
+  "validation_rows_per_dataset": 2000,
+  "groups": [
+    {
+      "name": "tool_use_and_rag",
+      "share": 0.12,
+      "max_epochs": 3,
+      "match": "^(datagen_sft|glaive_function_calling|wiki_yo|wikipedia_rag|wikipedia_summary_rag|cohere_wiki_rag|rag_synthetic|ctga_tasks|rerank_light_rag|dear_cot_rerank)$",
+      "language_weights": {
+        "eng": 4.0
+      }
+    },
+    {
+      "name": "chat_and_instructions",
+      "share": 0.26,
+      "max_epochs": 2,
+      "match": "^(old_african_sft|old_eng_sft|alpaca_native|alpaca_taco|muri_it|english_instruct|fongbe_chat|openhermes_general|ultrachat_filtered|gpt_teacher_yo|nvidia_steer_yo|roleplay_hausa|apollo_moe|low_resource_multilingual|mala_reasoning|cot_submix|xp3mt_african|xp3all_african|xp3x_african)$",
+      "language_weights": {
+        "eng": 4.0
+      }
+    },
+    {
+      "name": "math_and_reasoning",
+      "share": 0.08,
+      "max_epochs": 2,
+      "match": "^(big_math_african|gsm8k|gsm8k_translate|naija2@MathScale.*|naija2@grade.*)$",
+      "language_weights": {
+        "eng": 4.0
+      }
+    },
+    {
+      "name": "classification_and_structured",
+      "share": 0.1,
+      "max_epochs": 4,
+      "match": "^(sib200_ibom|sib200_lexcgen|south_african_lid|tswana_emotions|ethioemo|news_topic_amh|open_ner|masakhaner_x|afriadr_diacritics|aletheia_diacritics|aletheia_noisy|old_hate|old_intent|old_topic|old_pos|old_tasks|igbo_sentiment|hausa_voa_topics|global_mmlu_dev)$"
+    },
+    {
+      "name": "summarization",
+      "share": 0.06,
+      "max_epochs": 2,
+      "match": "^(old_summarization|sumnews|naija@.*(summar|headline).*|naija2@.*(summar|headline).*)$",
+      "language_weights": {
+        "eng": 4.0
+      }
+    },
+    {
+      "name": "translation_curated",
+      "share": 0.3,
+      "max_epochs": 3,
+      "match": "^(kweku_eng_twi|navigation_corpus|fon_pairs|wolof_pairs|vukuzenzele|ssa_mte|comet_score|pontoon|afrolingu_mt|mt560_qe|bible_pairs|african_languages_translation|english_to_igbo|webscraped_igbo|efik_bible|sft_new_existing|naija@.*|naija2@.*)$"
+    },
+    {
+      "name": "translation_synthetic_tagged",
+      "share": 0.04,
+      "max_epochs": 1,
+      "match": "^(tds|tds_long|processed_data_tagged|clean_data_tagged|clean_data2_tagged|translation_tagged|clean_translate_tagged)$"
+    },
+    {
+      "name": "everything_else",
+      "share": 0.02,
+      "max_epochs": 2,
+      "match": ".*"
+    }
+  ]
+}

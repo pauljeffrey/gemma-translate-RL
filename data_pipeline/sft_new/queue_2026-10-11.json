@@ -1,0 +1,461 @@
+{
+ "created": "2026-10-11",
+ "rules": [
+  "skip non-commercial licences and log with size",
+  "no coding data; function tools fine",
+  "QE: only where asked, else ~200 samples",
+  "new language -> propose a reclaimable-tag swap before pushing",
+  "michsethowusu last, after listing datasets + MT provenance for the owner"
+ ],
+ "repos": [
+  {
+   "repo": "coderGit/Eng_PidginEdu",
+   "columns_or_notes": "en,pcm columns",
+   "task": "translation",
+   "status": "queued"
+  },
+  {
+   "repo": "Nihilitybot666/naijascam",
+   "columns_or_notes": "text,label,scam_type,language,red_flags",
+   "task": "scam classification + explanation from scam_type/red_flags",
+   "status": "queued"
+  },
+  {
+   "repo": "Kppwdfgu1/kalenjin-speech-full",
+   "columns_or_notes": "domain,transcription,language column",
+   "task": "topic classification",
+   "status": "queued"
+  },
+  {
+   "repo": "Kppwdfgu1/anv-data-ke-somali-full",
+   "columns_or_notes": "domain,transcription,language",
+   "task": "topic classification",
+   "status": "queued"
+  },
+  {
+   "repo": "Kppwdfgu1/anv_data_ke_kikuyu_scripted",
+   "columns_or_notes": "domain,transcription,language",
+   "task": "topic classification",
+   "status": "queued"
+  },
+  {
+   "repo": "Kppwdfgu1/vocare-hasa",
+   "columns_or_notes": "transcription_raw,intent_label,dialect(language)",
+   "task": "intent classification",
+   "status": "queued"
+  },
+  {
+   "repo": "Kppwdfgu1/ss400",
+   "columns_or_notes": "transcription,category,subcategory",
+   "task": "classification",
+   "status": "queued"
+  },
+  {
+   "repo": "Kppwdfgu1/kin-s-5",
+   "columns_or_notes": "transcription,category",
+   "task": "topic classification",
+   "status": "queued"
+  },
+  {
+   "repo": "prince4332/unfiltered-pidgin-english-lexicon",
+   "columns_or_notes": "pidgin term -> full English meaning",
+   "task": "dictionary / meaning",
+   "status": "queued"
+  },
+  {
+   "repo": "Ephraimmm/pidgin_clean",
+   "columns_or_notes": "conversations list of role,content",
+   "task": "chat (own structure)",
+   "status": "queued"
+  },
+  {
+   "repo": "coderGit/Eng-PidginBioData",
+   "columns_or_notes": "en,pcm",
+   "task": "translation",
+   "status": "queued"
+  },
+  {
+   "repo": "hypaai/Hypa_Fleurs",
+   "columns_or_notes": "english_text,naija_text",
+   "task": "translation",
+   "status": "queued"
+  },
+  {
+   "repo": "Kencorpus/KenSwQuAD",
+   "columns_or_notes": "context,question,answer",
+   "task": "reading-comprehension QA / RAG",
+   "status": "queued"
+  },
+  {
+   "repo": "janavivekariya/aya_collection",
+   "columns_or_notes": "inputs,targets,task_type,language",
+   "task": "instruction following (NOT the NLLB translated_* subsets)",
+   "status": "queued"
+  },
+  {
+   "repo": "saillab/alpaca_xhosa_taco",
+   "columns_or_notes": "instruction,input,output",
+   "task": "instruction following (TaCo pivot)",
+   "status": "queued"
+  },
+  {
+   "repo": "michaeldinzinger/webfaq-test",
+   "columns_or_notes": "question,answer",
+   "task": "QA / RAG (test split: evaluation?)",
+   "status": "queued"
+  },
+  {
+   "repo": "PaDaS-Lab/webfaq-v2",
+   "columns_or_notes": "question,answer",
+   "task": "QA / RAG",
+   "status": "queued"
+  },
+  {
+   "repo": "shmuhammad/AfriSenti-twitter-sentiment",
+   "columns_or_notes": "tweet,label",
+   "task": "sentiment (train split only)",
+   "status": "queued"
+  },
+  {
+   "repo": "michsethowusu/swati-sentiments-corpus",
+   "columns_or_notes": "swati,sentiment",
+   "task": "sentiment (Swati tag <ssw> exists)",
+   "status": "queued"
+  },
+  {
+   "repo": "MaLA-LM/MassiveSumm_short",
+   "columns_or_notes": "title,text,summary",
+   "task": "summarization",
+   "status": "queued"
+  },
+  {
+   "repo": "dsfsi/afriscience_mt",
+   "columns_or_notes": "source,target,source_lang,target_lang",
+   "task": "translation",
+   "status": "queued"
+  },
+  {
+   "repo": "sentence-transformers/parallel-sentences-ccmatrix",
+   "columns_or_notes": "English,non_english",
+   "task": "translation",
+   "status": "queued"
+  },
+  {
+   "repo": "lelapa/Inkuba-instruct",
+   "columns_or_notes": "instruction,inputs,targets,task",
+   "task": "instruction following",
+   "status": "queued"
+  },
+  {
+   "repo": "dsfsi/setswana-sentiment",
+   "columns_or_notes": "Text,ann1_label,ann2_label",
+   "task": "sentiment with instruction templates",
+   "status": "queued"
+  },
+  {
+   "repo": "dsfsi/vukuzenzele-sentence-aligned",
+   "columns_or_notes": "all pairs",
+   "task": "interlanguage translation",
+   "status": "queued"
+  },
+  {
+   "repo": "dsfsi/govza-sa-cabinet-statements-sentence-aligned",
+   "columns_or_notes": "all pairs",
+   "task": "interlanguage translation",
+   "status": "queued"
+  },
+  {
+   "repo": "bltlab/lr-sum",
+   "columns_or_notes": "title,summary,text",
+   "task": "summarization",
+   "status": "queued"
+  },
+  {
+   "repo": "rubricreward/mR3-Dataset-100K-EasyToHard",
+   "columns_or_notes": "gpt-oss-20b columns (analyse)",
+   "task": "judging / reasoning, no technical knowledge",
+   "status": "queued"
+  },
+  {
+   "repo": "almanach/topxgen-llama-4-scout-CoT",
+   "columns_or_notes": "source,source_language,target_language,translation,target(<think>..)",
+   "task": "CoT machine translation",
+   "status": "queued"
+  },
+  {
+   "repo": "almanach/wmt19-gemma-3-27b-it-CoT",
+   "columns_or_notes": "same",
+   "task": "CoT machine translation",
+   "status": "queued"
+  },
+  {
+   "repo": "almanach/halvest-contrastive",
+   "columns_or_notes": "analyse",
+   "task": "find a use",
+   "status": "queued"
+  },
+  {
+   "repo": "almanach/topxgen-gemma-3-4b-it-SBYS",
+   "columns_or_notes": "drafting/self-refinement/proof-reading",
+   "task": "translation refinement",
+   "status": "queued"
+  },
+  {
+   "repo": "almanach/wmt19-gemma-3-27b-it-TEaR",
+   "columns_or_notes": "same",
+   "task": "translation refinement",
+   "status": "queued"
+  },
+  {
+   "repo": "almanach/topxgen-gemma-3-27b-it-BoA",
+   "columns_or_notes": "same",
+   "task": "translation refinement",
+   "status": "queued"
+  },
+  {
+   "repo": "almanach/topxgen-gemma-3-27b-it-CompTra",
+   "columns_or_notes": "same",
+   "task": "translation refinement",
+   "status": "queued"
+  },
+  {
+   "repo": "Emulated-Inc/multilingual-knowledge-training-pool",
+   "columns_or_notes": "question,subject,choices,answer",
+   "task": "MCQ (general knowledge, maths, education up to 18)",
+   "status": "queued"
+  },
+  {
+   "repo": "AMAImedia/NOESIS-1M-reasoning-router-code-math-psych-opus47-deepseek4-qwen36-gemini31-r1-gpt54",
+   "columns_or_notes": "Text with User:/Assistant:, domain",
+   "task": "chat: general, math, reasoning with complete think tags; no code",
+   "status": "queued"
+  },
+  {
+   "repo": "Mehgoss/sa-languages-translation",
+   "columns_or_notes": "text,en_text",
+   "task": "translation",
+   "status": "queued"
+  },
+  {
+   "repo": "sello-ralethe/SA-QA-Eval",
+   "columns_or_notes": "question,translated_question,question_concept,choices",
+   "task": "translation + MCQ",
+   "status": "queued"
+  },
+  {
+   "repo": "sello-ralethe/SA-Parallel-Corpora",
+   "columns_or_notes": "source_en,target",
+   "task": "translation",
+   "status": "queued"
+  },
+  {
+   "repo": "sello-ralethe/Multi-Hall-SA",
+   "columns_or_notes": "english_factual_statement,target_factual_statement; hallucinated pair",
+   "task": "translation",
+   "status": "queued"
+  },
+  {
+   "repo": "sello-ralethe/SA-Knowledge",
+   "columns_or_notes": "question,translated_question,question_concept,choices,answer?",
+   "task": "translation + QA",
+   "status": "queued"
+  },
+  {
+   "repo": "CLEAR-Global/Synthetic-Text",
+   "columns_or_notes": "Sentence (Translation in Target Language),Sentence (English); language in subset name",
+   "task": "translation, iso tags",
+   "status": "queued"
+  },
+  {
+   "repo": "simpra/smoltalk",
+   "columns_or_notes": "messages role/content",
+   "task": "chat, add scaffolding",
+   "status": "queued"
+  },
+  {
+   "repo": "simpra/squad_xh",
+   "columns_or_notes": "question,answer,context,answer_en",
+   "task": "QA, English-answer instruction",
+   "status": "queued"
+  },
+  {
+   "repo": "AfriSpeech/afrinews",
+   "columns_or_notes": "title,content",
+   "task": "headline from body",
+   "status": "queued"
+  },
+  {
+   "repo": "ghananlpcommunity/english-ewe-sentence-pairs-4m",
+   "columns_or_notes": "English,Ewe,similarity",
+   "task": "translation (work out similarity)",
+   "status": "queued"
+  },
+  {
+   "repo": "ghananlpcommunity/pristine-twi-english-parallel-sentences",
+   "columns_or_notes": "twi,english",
+   "task": "translation",
+   "status": "queued"
+  },
+  {
+   "repo": "ghananlpcommunity/ghana-assistant-data",
+   "columns_or_notes": "input,target,task",
+   "task": "task-tagged",
+   "status": "queued"
+  },
+  {
+   "repo": "michsethowusu/english-urhobo_sentence-pairs_mt560",
+   "columns_or_notes": "eng,urh",
+   "task": "translation",
+   "status": "queued"
+  },
+  {
+   "repo": "howard-nlp/ibom-mt",
+   "columns_or_notes": "anw,efi,ibb,orx",
+   "task": "translation",
+   "status": "queued"
+  },
+  {
+   "repo": "vnahata/AfriMCQA-qa-retrieval",
+   "columns_or_notes": "analyse",
+   "task": "RAG / tool-call search",
+   "status": "queued"
+  },
+  {
+   "repo": "simpra/aya",
+   "columns_or_notes": "text with <",
+   "task": "translated",
+   "status": "queued"
+  },
+  {
+   "repo": "gimmy256/adaption-african-culture-qa",
+   "columns_or_notes": "SFT columns only",
+   "task": "QA, work out language",
+   "status": "queued"
+  },
+  {
+   "repo": "gimmy256/adaption-african-smallholder-agri-qa",
+   "columns_or_notes": "SFT columns only",
+   "task": "QA",
+   "status": "queued"
+  },
+  {
+   "repo": "gimmy256/uganda-edu-gemma",
+   "columns_or_notes": "SFT columns only",
+   "task": "education",
+   "status": "queued"
+  },
+  {
+   "repo": "gimmy256/adaption-africatravel-qa-bench",
+   "columns_or_notes": "SFT columns only",
+   "task": "QA",
+   "status": "queued"
+  },
+  {
+   "repo": "gimmy256/ugandan_languages",
+   "columns_or_notes": "SFT columns only",
+   "task": "languages",
+   "status": "queued"
+  },
+  {
+   "repo": "gimmy256/adaption-african-culinary-traditions",
+   "columns_or_notes": "SFT columns only",
+   "task": "QA",
+   "status": "queued"
+  },
+  {
+   "repo": "zouhar/wmt-human-all",
+   "columns_or_notes": "src,mt,dataset",
+   "task": "translation (languages from dataset column)",
+   "status": "queued"
+  },
+  {
+   "repo": "almanach/topxgen-llama-4-scout-and-llama-4-scout",
+   "columns_or_notes": "source,target",
+   "task": "translation",
+   "status": "queued"
+  },
+  {
+   "repo": "almanach/Xhosa",
+   "columns_or_notes": "source,target,source_language,target_language",
+   "task": "translation",
+   "status": "queued"
+  },
+  {
+   "repo": "dsfsi/za-mafoko-dsac",
+   "columns_or_notes": "interlanguage",
+   "task": "translation",
+   "status": "queued"
+  },
+  {
+   "repo": "Kencorpus/KenTrans",
+   "columns_or_notes": "source,target,src_lang,tgt_lang (swa, lch, llg, lbk)",
+   "task": "translation",
+   "status": "queued"
+  },
+  {
+   "repo": "Felladrin/ChatML-databricks-dolly-15k",
+   "columns_or_notes": "text with <",
+   "task": "im_start",
+   "status": "queued"
+  },
+  {
+   "repo": "Felladrin/ChatML-WebGLM-QA",
+   "columns_or_notes": "text",
+   "task": "QA with references",
+   "status": "queued"
+  },
+  {
+   "repo": "Okwu/african-language-parallel-corpus",
+   "columns_or_notes": "source,eng_translation",
+   "task": "translation",
+   "status": "queued"
+  },
+  {
+   "repo": "KoseiUemura/AfriInstruct-Data-amh",
+   "columns_or_notes": "instruction,output,lang",
+   "task": "topic classification as instruction",
+   "status": "queued"
+  },
+  {
+   "repo": "MaLA-LM/PolyWrite",
+   "columns_or_notes": "prompt_en,prompt_translated,lang_script,bleu,chrf",
+   "task": "writing prompts, multilingual",
+   "status": "queued"
+  },
+  {
+   "repo": "MaLA-LM/reasoning-instruct-final",
+   "columns_or_notes": "content [INST]..[/INST]",
+   "task": "done (re-check format)",
+   "status": "queued"
+  },
+  {
+   "repo": "Rafi757/Frontier",
+   "columns_or_notes": "content messages,teacher_response,category",
+   "task": "chat, general knowledge only",
+   "status": "queued"
+  },
+  {
+   "repo": "michsethowusu/english-nigerian-pidgin_sentence-pairs_mt560",
+   "columns_or_notes": "eng,pcm",
+   "task": "translation",
+   "status": "queued"
+  },
+  {
+   "repo": "hypaai/Hypa-Text-10k",
+   "columns_or_notes": "messages with thinking/tool_calls/tool_responses, tools_json",
+   "task": "translation, dictionary, language id, JSON, CoT",
+   "status": "queued"
+  }
+ ],
+ "accounts": [
+  "Kppwdfgu1",
+  "Svngoku",
+  "McGill-NLP",
+  "michaeldinzinger",
+  "ghananlpcommunity",
+  "saillab",
+  "ghanaopenai",
+  "michsethowusu",
+  "FrancophonIA"
+ ]
+}
