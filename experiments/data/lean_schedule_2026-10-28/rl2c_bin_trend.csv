@@ -1,0 +1,6 @@
+bin,steps,reward_first50,reward_last50,delta_last_minus_first,slope_per_100_steps,slope_se_block25,slope_over_se,finished_first50,finished_last50,note
+b256,391,-0.0102,0.0805,0.0908,0.0218,0.0079,2.77,0.9999,0.9999,
+b512,446,0.0258,0.0282,0.0025,-0.0008,0.0037,0.23,1.0,1.0,steps 748-837 (last 90 of the stage) ran at lr 1e-6 after the spurious KL-guard cut at step 747
+b1024,149,-0.2477,-0.2332,0.0146,0.0145,0.0251,0.58,0.9976,0.9995,steps 838-900 (first 63) ran at lr 1e-6 (spurious KL guard cut after step 747); restart at 901 reset to 2e-6
+b2048,298,-0.8445,-0.7529,0.0916,0.0364,0.0108,3.35,0.9912,0.9996,"reward definition changed at step 1250 (word-ratio config applied, mixed_at_1250.sh) and b2048 restart at step 900 (k3c, median guard); trend is confounded"
+mixed,149,-0.1944,-0.1651,0.0293,0.0553,0.0134,4.13,0.9999,0.9999,

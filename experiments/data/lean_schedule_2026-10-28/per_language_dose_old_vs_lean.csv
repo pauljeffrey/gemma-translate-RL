@@ -1,0 +1,27 @@
+pipeline,phase_or_stage,group_size,weight_class,n_languages_in_class,mean_prompts_per_language,mean_completions_per_language,source,label
+old,"phase 1 (alpha 0.5, approximate)",8,1.0,46,204.2,1634.0,research_archive_2026-10-23/local/gemma_mt/reports/adaptive_language_weights_2026-10-22/lang_draws_by_phase.json (replay of the stateless PromptSchedule),REPORTED (D-65/R13 replay)
+old,"phase 1 (alpha 0.5, approximate)",8,2.5,18,170.4,1363.0,research_archive_2026-10-23/local/gemma_mt/reports/adaptive_language_weights_2026-10-22/lang_draws_by_phase.json (replay of the stateless PromptSchedule),REPORTED (D-65/R13 replay)
+old,phase 2 (full 497 steps replayed),8,1.0,46,467.6,3741.0,research_archive_2026-10-23/local/gemma_mt/reports/adaptive_language_weights_2026-10-22/lang_draws_by_phase.json (replay of the stateless PromptSchedule),REPORTED (D-65/R13 replay)
+old,phase 2 (full 497 steps replayed),8,2.5,18,1178,9424,research_archive_2026-10-23/local/gemma_mt/reports/adaptive_language_weights_2026-10-22/lang_draws_by_phase.json (replay of the stateless PromptSchedule),REPORTED (D-65/R13 replay)
+old,phase 2b b64 stage (488 steps),16,1.0,46,305.4,4886.0,research_archive_2026-10-23/local/gemma_mt/reports/adaptive_language_weights_2026-10-22/lang_draws_by_phase.json (replay of the stateless PromptSchedule),REPORTED (D-65/R13 replay)
+old,phase 2b b64 stage (488 steps),16,2.5,18,774.2,12388.0,research_archive_2026-10-23/local/gemma_mt/reports/adaptive_language_weights_2026-10-22/lang_draws_by_phase.json (replay of the stateless PromptSchedule),REPORTED (D-65/R13 replay)
+old,"phase 2c (1,433 steps)",16,1.0,46,548.8,8781.0,research_archive_2026-10-23/local/gemma_mt/reports/adaptive_language_weights_2026-10-22/lang_draws_by_phase.json (replay of the stateless PromptSchedule),REPORTED (D-65/R13 replay)
+old,"phase 2c (1,433 steps)",16,2.5,18,1340.2,21444.0,research_archive_2026-10-23/local/gemma_mt/reports/adaptive_language_weights_2026-10-22/lang_draws_by_phase.json (replay of the stateless PromptSchedule),REPORTED (D-65/R13 replay)
+old,cumulative to end of 2b b64 stage (phases 1+2+2b-b64),8/16,1.0,46,977.2,10261.0,derived,REPORTED
+old,cumulative whole lineage (phases 1+2+2b-b64+2c),8/16,1.0,46,1526.0,19042.0,derived,REPORTED
+old,cumulative to end of 2b b64 stage (phases 1+2+2b-b64),8/16,2.5,18,2122.6,23175.0,derived,REPORTED
+old,cumulative whole lineage (phases 1+2+2b-b64+2c),8/16,2.5,18,3462.9,44619.0,derived,REPORTED
+lean (central),2a b64,16,1.0,25 weak at 2.5; 52 at 1.0,357.7,5724.0,steps x prompts/step x weight / (77+1.5*25)=114.5; language floor ignored,ESTIMATED (arithmetic)
+lean (central),2a b64,16,2.5,25 weak at 2.5; 52 at 1.0,894.3,14309.0,steps x prompts/step x weight / (77+1.5*25)=114.5; language floor ignored,ESTIMATED (arithmetic)
+lean (central),2b b256,16,1.0,25 weak at 2.5; 52 at 1.0,62.9,1006.0,steps x prompts/step x weight / (77+1.5*25)=114.5; language floor ignored,ESTIMATED (arithmetic)
+lean (central),2b b256,16,2.5,25 weak at 2.5; 52 at 1.0,157.2,2515.0,steps x prompts/step x weight / (77+1.5*25)=114.5; language floor ignored,ESTIMATED (arithmetic)
+lean (central),2c b512,16,1.0,25 weak at 2.5; 52 at 1.0,44.0,704.0,steps x prompts/step x weight / (77+1.5*25)=114.5; language floor ignored,ESTIMATED (arithmetic)
+lean (central),2c b512,16,2.5,25 weak at 2.5; 52 at 1.0,110.0,1761.0,steps x prompts/step x weight / (77+1.5*25)=114.5; language floor ignored,ESTIMATED (arithmetic)
+lean (central),2d b1024,16,1.0,25 weak at 2.5; 52 at 1.0,22.0,352.0,steps x prompts/step x weight / (77+1.5*25)=114.5; language floor ignored,ESTIMATED (arithmetic)
+lean (central),2d b1024,16,2.5,25 weak at 2.5; 52 at 1.0,55.0,880.0,steps x prompts/step x weight / (77+1.5*25)=114.5; language floor ignored,ESTIMATED (arithmetic)
+lean (central),2e mixed,16,1.0,25 weak at 2.5; 52 at 1.0,22.0,352.0,steps x prompts/step x weight / (77+1.5*25)=114.5; language floor ignored,ESTIMATED (arithmetic)
+lean (central),2e mixed,16,2.5,25 weak at 2.5; 52 at 1.0,55.0,880.0,steps x prompts/step x weight / (77+1.5*25)=114.5; language floor ignored,ESTIMATED (arithmetic)
+lean (central),"4 final run (all bins, 70% science; counted as prompts)",16,1.0,25 weak at 2.5; 52 at 1.0,55.0,880.0,steps x prompts/step x weight / (77+1.5*25)=114.5; language floor ignored,ESTIMATED (arithmetic)
+lean (central),"4 final run (all bins, 70% science; counted as prompts)",16,2.5,25 weak at 2.5; 52 at 1.0,137.6,2201.0,steps x prompts/step x weight / (77+1.5*25)=114.5; language floor ignored,ESTIMATED (arithmetic)
+lean (central),general RL total (2a..2e),16,1.0,,508.6,8138.0,sum,ESTIMATED (arithmetic)
+lean (central),general RL total (2a..2e),16,2.5,,1271.6,20346.0,sum,ESTIMATED (arithmetic)

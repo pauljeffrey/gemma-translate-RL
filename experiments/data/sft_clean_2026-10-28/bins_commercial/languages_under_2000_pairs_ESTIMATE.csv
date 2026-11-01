@@ -1,0 +1,8 @@
+iso,pairs_before,nc_pairs_removed,pairs_after_NC,keep_rate_cal_est,pairs_after_NC_and_CAL_est,pairs_after_NC_and_OLD_est,status
+bbj,0,0,0,0.85,0,0,no data at all
+dag,0,0,0,0.85,0,0,no data at all
+fat,0,0,0,0.85,0,0,no data at all
+gaa,0,0,0,0.85,0,0,no data at all
+nbl,188,0,188,0.9484,178,158,"below 2,000"
+ibb,998,0,998,0.949,947,845,"below 2,000"
+men,1621,0,1621,0.9484,1537,1370,"below 2,000"

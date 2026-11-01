@@ -1,0 +1,8 @@
+iso,source,first_rule_and_side,rows
+knc,extra-kanurimt:IsahMBukar/kanurimt,R1est,2789
+ful,extra-nllb_mined:michsethowusu/english-fulah_sentence-pairs,R1est,1320
+nde,extra-bible:ebible-nde+engwebp,R1est,23
+ful,extra-opus:wikimedia-v20260327-en-ff,R1est,3
+knc,extra-twb:CLEAR-Global/Gamayun-kits/kau-eng,R1est,3
+tzm,extra-nllb_seed:Tamazight-NLP/NLLB-Seed_Standard-Moroccan-Tamazight,R1est,2
+ful,extra-opus:XLEnt-v1.2-en-ff,R1est,1

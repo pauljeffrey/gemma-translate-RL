@@ -1,0 +1,1013 @@
+id,exact,n_pair_langs,pair_langs,domain,topic,url,n_words
+0,1,2,hau;orm,wikinews,"disease, research, canada",https://en.wikinews.org/wiki/Toronto_team-led_research_on_Type_1_Diabetes_%27groundbreaking%27,15
+1,1,2,hau;ibo,wikinews,"disease, research, canada",https://en.wikinews.org/wiki/Toronto_team-led_research_on_Type_1_Diabetes_%27groundbreaking%27,36
+2,1,2,hau;yor,wikinews,"disease, research, canada",https://en.wikinews.org/wiki/Toronto_team-led_research_on_Type_1_Diabetes_%27groundbreaking%27,28
+3,1,1,ibo,wikinews,music,https://en.wikinews.org/wiki/Nobel_Prize_in_Literature_Committee_abandons_efforts_to_contact_Bob_Dylan,50
+4,1,2,hau;ibo,wikinews,music,https://en.wikinews.org/wiki/Nobel_Prize_in_Literature_Committee_abandons_efforts_to_contact_Bob_Dylan,29
+5,1,1,hau,wikinews,business,https://en.wikinews.org/wiki/Amazon_to_buy_smart_doorbell_startup_Ring,20
+6,1,1,hau,wikinews,business,https://en.wikinews.org/wiki/Amazon_to_buy_smart_doorbell_startup_Ring,8
+7,1,1,ibo,wikinews,business,https://en.wikinews.org/wiki/Amazon_to_buy_smart_doorbell_startup_Ring,21
+8,1,3,hau;ibo;orm,wikinews,business,https://en.wikinews.org/wiki/Amazon_to_buy_smart_doorbell_startup_Ring,10
+9,1,1,ibo,wikinews,business,https://en.wikinews.org/wiki/Amazon_to_buy_smart_doorbell_startup_Ring,12
+10,1,3,hau;orm;yor,wikinews,health,https://en.wikinews.org/wiki/Scientists_report_two_life-saving_treatments_for_Ebola,24
+11,1,1,hau,wikinews,health,https://en.wikinews.org/wiki/Scientists_report_two_life-saving_treatments_for_Ebola,23
+12,1,1,ibo,wikinews,health,https://en.wikinews.org/wiki/Scientists_report_two_life-saving_treatments_for_Ebola,24
+13,1,1,hau,wikinews,sports,https://en.wikinews.org/wiki/USA_Gymnastics_board_resigning_after_sex_abuse,28
+14,1,0,,wikinews,sports,https://en.wikinews.org/wiki/USA_Gymnastics_board_resigning_after_sex_abuse,33
+15,1,1,ibo,wikinews,sports,https://en.wikinews.org/wiki/USA_Gymnastics_board_resigning_after_sex_abuse,39
+16,1,1,yor,wikinews,sports,https://en.wikinews.org/wiki/USA_Gymnastics_board_resigning_after_sex_abuse,34
+17,1,2,hau;ibo,wikinews,politics,https://en.wikinews.org/wiki/Former_U.S._National_Security_Advisor_Zbigniew_Brzezinski_dies_aged_89,18
+18,1,4,hau;ibo;orm;yor,wikinews,politics,https://en.wikinews.org/wiki/Former_U.S._National_Security_Advisor_Zbigniew_Brzezinski_dies_aged_89,24
+19,1,3,hau;ibo;yor,wikinews,politics,https://en.wikinews.org/wiki/Former_U.S._National_Security_Advisor_Zbigniew_Brzezinski_dies_aged_89,42
+20,1,3,hau;orm;yor,wikinews,entertainment,https://en.wikinews.org/wiki/La_La_Land_receives_record-equalling_fourteen_Oscar_nominations;_Hacksaw_Ridge_gets_six,14
+21,1,1,hau,wikinews,entertainment,https://en.wikinews.org/wiki/La_La_Land_receives_record-equalling_fourteen_Oscar_nominations;_Hacksaw_Ridge_gets_six,11
+22,1,1,hau,wikinews,entertainment,https://en.wikinews.org/wiki/La_La_Land_receives_record-equalling_fourteen_Oscar_nominations;_Hacksaw_Ridge_gets_six,22
+23,1,2,hau;ibo,wikinews,entertainment,https://en.wikinews.org/wiki/La_La_Land_receives_record-equalling_fourteen_Oscar_nominations;_Hacksaw_Ridge_gets_six,31
+24,1,3,hau;ibo;yor,wikinews,politics,https://en.wikinews.org/wiki/US_President_Trump_announces_troop_withdrawal_from_Syria,24
+25,1,3,hau;ibo;orm,wikinews,politics,https://en.wikinews.org/wiki/US_President_Trump_announces_troop_withdrawal_from_Syria,16
+26,1,3,hau;ibo;tsn,wikinews,politics,https://en.wikinews.org/wiki/US_President_Trump_announces_troop_withdrawal_from_Syria,19
+27,0,0,,wikinews,sciece,https://en.wikinews.org/wiki/Scientists_find_dinosaur_feathers_preserved_in_amber,27
+28,1,1,orm,wikinews,sciece,https://en.wikinews.org/wiki/Scientists_find_dinosaur_feathers_preserved_in_amber,16
+29,1,2,hau;yor,wikinews,sciece,https://en.wikinews.org/wiki/Scientists_find_dinosaur_feathers_preserved_in_amber,12
+30,1,2,hau;orm,wikinews,sciece,https://en.wikinews.org/wiki/Scientists_find_dinosaur_feathers_preserved_in_amber,40
+31,1,2,hau;ibo,wikinews,sciece,https://en.wikinews.org/wiki/Scientists_find_dinosaur_feathers_preserved_in_amber,42
+32,1,2,hau;ibo,wikinews,sciece,https://en.wikinews.org/wiki/Scientists_find_dinosaur_feathers_preserved_in_amber,24
+33,1,2,hau;ibo,wikinews,politics,"https://en.wikinews.org/wiki/Militants_bomb_Gaziantep,_Turkey_police_headquarters",23
+34,1,3,hau;ibo;yor,wikinews,politics,"https://en.wikinews.org/wiki/Militants_bomb_Gaziantep,_Turkey_police_headquarters",11
+35,1,3,tsn;yor;zul,wikinews,politics,"https://en.wikinews.org/wiki/Militants_bomb_Gaziantep,_Turkey_police_headquarters",14
+36,1,2,hau;ibo,wikinews,sciece,"https://en.wikinews.org/wiki/Sun%27s_mood_swings_not_so_strange_after_all,_say_scientists",34
+37,1,1,hau,wikinews,sciece,"https://en.wikinews.org/wiki/Sun%27s_mood_swings_not_so_strange_after_all,_say_scientists",19
+38,0,0,,wikinews,sciece,"https://en.wikinews.org/wiki/Sun%27s_mood_swings_not_so_strange_after_all,_say_scientists",15
+39,1,3,hau;ibo;yor,wikinews,travel,https://en.wikinews.org/wiki/Japanese_tourist_travels_through_37_countries_on_just_$2,10
+40,1,2,hau;orm,wikinews,travel,https://en.wikinews.org/wiki/Japanese_tourist_travels_through_37_countries_on_just_$2,21
+41,1,1,hau,wikinews,sciece,https://en.wikinews.org/wiki/IEEE_approves_802.11n_standard_after_six_years,11
+42,1,3,hau;ibo;yor,wikinews,sciece,https://en.wikinews.org/wiki/IEEE_approves_802.11n_standard_after_six_years,21
+43,1,2,hau;yor,wikinews,sciece,https://en.wikinews.org/wiki/IEEE_approves_802.11n_standard_after_six_years,19
+44,1,1,hau,wikinews,Politics and conflicts,https://en.wikinews.org/wiki/California_lawmaker_denies_affairs_after_sexual_discussion_becomes_public,22
+45,1,4,hau;ibo;orm;yor,wikinews,Politics and conflicts,https://en.wikinews.org/wiki/California_lawmaker_denies_affairs_after_sexual_discussion_becomes_public,25
+46,1,3,hau;ibo;yor,wikinews,environment,https://en.wikinews.org/wiki/China_promises_cut_in_carbon_dioxide_emissions,24
+47,1,3,hau;ibo;yor,wikinews,environment,https://en.wikinews.org/wiki/China_promises_cut_in_carbon_dioxide_emissions,19
+48,1,3,hau;ibo;orm,wikinews,environment,https://en.wikinews.org/wiki/China_promises_cut_in_carbon_dioxide_emissions,16
+49,1,3,hau;ibo;yor,wikinews,environment,https://en.wikinews.org/wiki/China_promises_cut_in_carbon_dioxide_emissions,22
+50,1,3,hau;ibo;orm,wikinews,Politics,https://en.wikinews.org/wiki/Iraq_Study_Group_Report:_Iraq_could_be_on_a_slide_towards_chaos,11
+51,1,2,hau;ibo,wikinews,Politics,https://en.wikinews.org/wiki/Iraq_Study_Group_Report:_Iraq_could_be_on_a_slide_towards_chaos,27
+52,1,2,hau;yor,wikinews,Politics,https://en.wikinews.org/wiki/Iraq_Study_Group_Report:_Iraq_could_be_on_a_slide_towards_chaos,25
+53,1,3,hau;ibo;yor,wikinews,Politics,https://en.wikinews.org/wiki/Iraq_Study_Group_Report:_Iraq_could_be_on_a_slide_towards_chaos,26
+54,1,3,hau;ibo;tsn,wikinews,Politics,https://en.wikinews.org/wiki/Iraq_Study_Group_Report:_Iraq_could_be_on_a_slide_towards_chaos,35
+55,1,3,hau;ibo;yor,wikinews,Politics,https://en.wikinews.org/wiki/Argentina%27s_first_lady_launches_presidential_bid,29
+56,1,2,hau;ibo,wikinews,Politics,https://en.wikinews.org/wiki/Argentina%27s_first_lady_launches_presidential_bid,34
+57,1,2,hau;ibo,wikinews,Politics,https://en.wikinews.org/wiki/DeLay_declares_%27victory%27_in_war_on_U.S._budget_fat,28
+58,1,2,hau;orm,wikinews,Politics,https://en.wikinews.org/wiki/DeLay_declares_%27victory%27_in_war_on_U.S._budget_fat,18
+59,1,1,hau,wikinews,Religion,https://en.wikinews.org/wiki/Funeral_of_Pope_John_Paul_II_takes_place,11
+60,1,3,hau;ibo;orm,wikinews,Religion,https://en.wikinews.org/wiki/Funeral_of_Pope_John_Paul_II_takes_place,25
+61,1,1,hau,wikinews,Religion,https://en.wikinews.org/wiki/Funeral_of_Pope_John_Paul_II_takes_place,18
+62,1,3,hau;ibo;yor,wikinews,Religion,https://en.wikinews.org/wiki/Funeral_of_Pope_John_Paul_II_takes_place,29
+63,1,3,hau;ibo;yor,wikinews,Crime and Law,https://en.wikinews.org/wiki/FBI_recruits_for_%22War_on_Porn%22,29
+64,1,2,hau;yor,wikinews,Crime and Law,https://en.wikinews.org/wiki/FBI_recruits_for_%22War_on_Porn%22,21
+65,0,0,,wikinews,Sports,https://en.wikinews.org/wiki/West_Indies_wins_the_third_match_of_the_cricket_series_against_India,20
+66,1,3,hau;ibo;yor,wikinews,Sports,https://en.wikinews.org/wiki/West_Indies_wins_the_third_match_of_the_cricket_series_against_India,15
+67,0,0,,wikinews,Sports,https://en.wikinews.org/wiki/West_Indies_wins_the_third_match_of_the_cricket_series_against_India,18
+68,1,4,hau;ibo;orm;yor,wikinews,Politics,https://en.wikinews.org/wiki/U.S._President_arrives_in_Singapore,19
+69,1,2,hau;ibo,wikinews,Politics,https://en.wikinews.org/wiki/U.S._President_arrives_in_Singapore,25
+70,1,4,hau;ibo;orm;yor,wikinews,Politics,https://en.wikinews.org/wiki/U.S._President_arrives_in_Singapore,20
+71,1,1,hau,wikinews,Politics,https://en.wikinews.org/wiki/Canadian_Prime_Minister_Harper_agrees_to_send_%27Clean_Air_Act%27_to_committee,36
+72,0,0,,wikinews,Politics,https://en.wikinews.org/wiki/Canadian_Prime_Minister_Harper_agrees_to_send_%27Clean_Air_Act%27_to_committee,29
+73,1,3,hau;ibo;yor,wikinews,Politics,https://en.wikinews.org/wiki/Canadian_Prime_Minister_Harper_agrees_to_send_%27Clean_Air_Act%27_to_committee,44
+74,1,2,hau;ibo,wikinews,Politics,https://en.wikinews.org/wiki/Canadian_Prime_Minister_Harper_agrees_to_send_%27Clean_Air_Act%27_to_committee,31
+75,1,4,hau;ibo;orm;yor,wikinews,Disasters and accidents,https://en.wikinews.org/wiki/8.0_magnitude_earthquake_occurs_near_Tonga,25
+76,1,3,hau;ibo;yor,wikinews,Disasters and accidents,https://en.wikinews.org/wiki/8.0_magnitude_earthquake_occurs_near_Tonga,29
+77,1,3,hau;ibo;yor,wikinews,Disasters and accidents,https://en.wikinews.org/wiki/8.0_magnitude_earthquake_occurs_near_Tonga,19
+78,1,4,hau;ibo;orm;yor,wikinews,Politics,https://en.wikinews.org/wiki/North_Korea_agrees_to_disable_its_main_nuclear_reactor,8
+79,1,1,hau,wikinews,Politics,https://en.wikinews.org/wiki/North_Korea_agrees_to_disable_its_main_nuclear_reactor,23
+80,1,3,hau;orm;yor,wikinews,Weather,https://en.wikinews.org/wiki/Subtropical_storm_forms_over_the_Atlantic,18
+81,1,2,hau;yor,wikinews,Weather,https://en.wikinews.org/wiki/Subtropical_storm_forms_over_the_Atlantic,16
+82,1,2,hau;ibo,wikinews,Weather,https://en.wikinews.org/wiki/Parts_of_New_Orleans_flood_again,17
+83,1,2,hau;ibo,wikinews,Weather,https://en.wikinews.org/wiki/Parts_of_New_Orleans_flood_again,25
+84,1,1,hau,wikinews,Weather,https://en.wikinews.org/wiki/Parts_of_New_Orleans_flood_again,12
+85,1,4,hau;ibo;orm;yor,wikinews,Media,https://en.wikinews.org/wiki/Wikimedia_Foundation_addresses_controversial_content_conflict,17
+86,1,2,hau;yor,wikinews,Media,https://en.wikinews.org/wiki/Wikimedia_Foundation_addresses_controversial_content_conflict,33
+87,1,3,hau;ibo;yor,wikinews,Media,https://en.wikinews.org/wiki/Wikimedia_Foundation_addresses_controversial_content_conflict,23
+88,1,3,hau;ibo;orm,wikinews,Research,https://en.wikinews.org/wiki/Dark_matter_lacks_extra_gravitational_force,19
+89,1,0,,wikinews,Research,https://en.wikinews.org/wiki/Dark_matter_lacks_extra_gravitational_force,24
+90,1,4,hau;ibo;tsn;yor,wikinews,Research,https://en.wikinews.org/wiki/Dark_matter_lacks_extra_gravitational_force,24
+91,1,1,ibo,wikinews,Research,https://en.wikinews.org/wiki/Dark_matter_lacks_extra_gravitational_force,21
+92,1,2,hau;yor,wikinews,Research,https://en.wikinews.org/wiki/Dark_matter_lacks_extra_gravitational_force,28
+93,1,1,hau,wikinews,Disaster,https://en.wikinews.org/wiki/Explosion_at_earthquake-damaged_Fukushima_nuclear_power_plant,9
+94,1,2,hau;ibo,wikinews,Disaster,https://en.wikinews.org/wiki/Explosion_at_earthquake-damaged_Fukushima_nuclear_power_plant,23
+95,1,4,hau;ibo;orm;yor,wikinews,Disaster,https://en.wikinews.org/wiki/Explosion_at_earthquake-damaged_Fukushima_nuclear_power_plant,15
+96,1,3,hau;ibo;tsn,wikinews,Disaster,https://en.wikinews.org/wiki/Explosion_at_earthquake-damaged_Fukushima_nuclear_power_plant,19
+97,1,4,hau;ibo;orm;yor,wikinews,Health,https://en.wikinews.org/wiki/Extremely_drug-resistant_tuberculosis_strain_emerges_in_South_Africa,16
+98,1,3,hau;ibo;orm,wikinews,Health,https://en.wikinews.org/wiki/Extremely_drug-resistant_tuberculosis_strain_emerges_in_South_Africa,21
+99,1,2,hau;ibo,wikinews,Health,https://en.wikinews.org/wiki/Extremely_drug-resistant_tuberculosis_strain_emerges_in_South_Africa,21
+100,1,2,hau;ibo,wikinews,Health,https://en.wikinews.org/wiki/Extremely_drug-resistant_tuberculosis_strain_emerges_in_South_Africa,14
+101,1,2,hau;ibo,wikinews,Health,https://en.wikinews.org/wiki/Extremely_drug-resistant_tuberculosis_strain_emerges_in_South_Africa,32
+102,1,2,hau;ibo,wikinews,,https://en.wikinews.org/wiki/Burning_debris_from_satellites_spotted_over_several_US_cities,25
+103,1,2,hau;ibo,wikinews,Science,https://en.wikinews.org/wiki/Burning_debris_from_satellites_spotted_over_several_US_cities,10
+104,1,2,hau;ibo,wikinews,Science,https://en.wikinews.org/wiki/Burning_debris_from_satellites_spotted_over_several_US_cities,19
+105,1,2,hau;ibo,wikinews,Science,https://en.wikinews.org/wiki/Burning_debris_from_satellites_spotted_over_several_US_cities,16
+106,1,2,ibo;yor,wikinews,Science,https://en.wikinews.org/wiki/Burning_debris_from_satellites_spotted_over_several_US_cities,12
+107,1,2,hau;yor,wikinews,Crime and Law,https://en.wikinews.org/wiki/Doctor_to_be_charged_after_mother%27s_death_in_Ohio,33
+108,0,0,,wikinews,Crime and Law,https://en.wikinews.org/wiki/Doctor_to_be_charged_after_mother%27s_death_in_Ohio,36
+109,1,2,hau;ibo,wikinews,Crime and Law,https://en.wikinews.org/wiki/Doctor_to_be_charged_after_mother%27s_death_in_Ohio,13
+110,1,2,hau;ibo,wikinews,Crime and Law,https://en.wikinews.org/wiki/Doctor_to_be_charged_after_mother%27s_death_in_Ohio,13
+111,1,3,hau;ibo;yor,wikinews,Crime and Law,https://en.wikinews.org/wiki/Doctor_to_be_charged_after_mother%27s_death_in_Ohio,14
+112,1,2,hau;yor,wikinews,Health,https://en.wikinews.org/wiki/India_struggles_with_encephalitis_outbreak,13
+113,1,1,hau,wikinews,Health,https://en.wikinews.org/wiki/India_struggles_with_encephalitis_outbreak,13
+114,1,1,hau,wikinews,Health,https://en.wikinews.org/wiki/India_struggles_with_encephalitis_outbreak,28
+115,1,2,hau;ibo,wikinews,Health,https://en.wikinews.org/wiki/India_struggles_with_encephalitis_outbreak,22
+116,1,3,hau;ibo;yor,wikinews,Health,https://en.wikinews.org/wiki/India_struggles_with_encephalitis_outbreak,28
+117,1,2,hau;yor,wikinews,Culture,https://en.wikinews.org/wiki/Noted_stamp_engraver_Czeslaw_Slania_dies_at_83,23
+118,1,1,hau,wikinews,Culture,https://en.wikinews.org/wiki/Noted_stamp_engraver_Czeslaw_Slania_dies_at_83,11
+119,1,1,ibo,wikinews,Culture,https://en.wikinews.org/wiki/Noted_stamp_engraver_Czeslaw_Slania_dies_at_83,28
+120,1,2,hau;ibo,wikinews,Culture,https://en.wikinews.org/wiki/Noted_stamp_engraver_Czeslaw_Slania_dies_at_83,27
+121,1,1,hau,wikinews,Culture,https://en.wikinews.org/wiki/Noted_stamp_engraver_Czeslaw_Slania_dies_at_83,31
+122,1,3,hau;ibo;yor,wikinews,Accident,"https://en.wikinews.org/wiki/Crossing_guard_killed_by_truck_in_Glasgow,_Scotland",14
+123,1,2,hau;ibo,wikinews,Accident,"https://en.wikinews.org/wiki/Crossing_guard_killed_by_truck_in_Glasgow,_Scotland",13
+124,1,1,ibo,wikinews,Accident,"https://en.wikinews.org/wiki/Crossing_guard_killed_by_truck_in_Glasgow,_Scotland",20
+125,1,2,hau;yor,wikinews,Accident,"https://en.wikinews.org/wiki/Crossing_guard_killed_by_truck_in_Glasgow,_Scotland",27
+126,1,1,hau,wikinews,Accident,"https://en.wikinews.org/wiki/Crossing_guard_killed_by_truck_in_Glasgow,_Scotland",10
+127,1,2,hau;yor,wikinews,climate,https://en.wikinews.org/wiki/Bali_climate_change_conference_begins,24
+128,1,3,hau;ibo;yor,wikinews,climate,https://en.wikinews.org/wiki/Bali_climate_change_conference_begins,20
+129,1,2,hau;tsn,wikinews,climate,https://en.wikinews.org/wiki/Bali_climate_change_conference_begins,13
+130,1,2,hau;yor,wikinews,health,https://en.wikinews.org/wiki/Sandra_Fluke_insists_she_will_not_be_silenced,19
+131,1,2,hau;ibo,wikinews,health,https://en.wikinews.org/wiki/Sandra_Fluke_insists_she_will_not_be_silenced,32
+132,1,1,hau,wikinews,Crime and Law,https://en.wikinews.org/wiki/Edmonton_prison_conflict_wounds_eight,30
+133,1,2,hau;ibo,wikinews,crime and Law,https://en.wikinews.org/wiki/Edmonton_prison_conflict_wounds_eight,13
+134,1,2,hau;ibo,wikinews,crime and Law,https://en.wikinews.org/wiki/Edmonton_prison_conflict_wounds_eight,14
+135,1,2,hau;ibo,wikinews,crime and Law,https://en.wikinews.org/wiki/Edmonton_prison_conflict_wounds_eight,16
+136,1,2,hau;ibo,wikinews,crime and Law,https://en.wikinews.org/wiki/Edmonton_prison_conflict_wounds_eight,10
+137,1,2,hau;yor,wikinews,nature,https://en.wikinews.org/wiki/US_officials_flood_Grand_Canyon_to_restore_ecosystem,19
+138,1,2,hau;ibo,wikinews,nature,https://en.wikinews.org/wiki/US_officials_flood_Grand_Canyon_to_restore_ecosystem,14
+139,1,2,hau;ibo,wikinews,nature,https://en.wikinews.org/wiki/US_officials_flood_Grand_Canyon_to_restore_ecosystem,19
+140,1,1,ibo,wikinews,nature,https://en.wikinews.org/wiki/US_officials_flood_Grand_Canyon_to_restore_ecosystem,25
+141,1,3,hau;ibo;yor,wikinews,nature,"https://en.wikinews.org/wiki/Strong_6.3_earthquake_reported_in_Sumatra,_Indonesia",29
+142,1,3,hau;ibo;yor,wikinews,nature,"https://en.wikinews.org/wiki/Strong_6.3_earthquake_reported_in_Sumatra,_Indonesia",18
+143,1,3,hau;ibo;yor,wikinews,entertainment,https://en.wikinews.org/wiki/The_end_of_an_era_for_Winfrey,18
+144,1,1,hau,wikinews,entertainment,https://en.wikinews.org/wiki/The_end_of_an_era_for_Winfrey,21
+145,1,3,hau;ibo;yor,wikinews,Politics and conflicts,https://en.wikinews.org/wiki/Official_results_say_Namibian_president_reelected_after_polls,23
+146,1,1,ibo,wikinews,Politics and conflicts,https://en.wikinews.org/wiki/Official_results_say_Namibian_president_reelected_after_polls,17
+147,1,3,hau;ibo;yor,wikinews,Politics and conflicts,https://en.wikinews.org/wiki/US_helicopter_with_17_on_board_believed_to_have_been_shot_down_in_Afghanistan,21
+148,1,2,hau;ibo,wikinews,Politics and conflicts,https://en.wikinews.org/wiki/US_helicopter_with_17_on_board_believed_to_have_been_shot_down_in_Afghanistan,19
+149,1,2,hau;yor,wikinews,Politics and conflicts,https://en.wikinews.org/wiki/US_helicopter_with_17_on_board_believed_to_have_been_shot_down_in_Afghanistan,16
+150,1,3,hau;ibo;yor,wikinews,Health,https://en.wikinews.org/wiki/Cholera_outbreak_hits_Angola,22
+151,1,3,hau;ibo;yor,wikinews,Health,https://en.wikinews.org/wiki/Cholera_outbreak_hits_Angola,26
+152,1,3,hau;ibo;yor,wikinews,sport,https://en.wikinews.org/wiki/Car_women%27s_rugby_7%27s_tournament,27
+153,1,2,hau;ibo,wikinews,sport,https://en.wikinews.org/wiki/Car_women%27s_rugby_7%27s_tournament,23
+154,1,1,hau,wikinews,sport,https://en.wikinews.org/wiki/Car_women%27s_rugby_7%27s_tournament,19
+155,0,0,,wikinews,sport,https://en.wikinews.org/wiki/Car_women%27s_rugby_7%27s_tournament,25
+156,1,3,hau;ibo;yor,wikinews,law,https://en.wikinews.org/wiki/Anne_Frank_tree_saved_from_being_chopped_down,38
+157,1,2,hau;ibo,wikinews,law,https://en.wikinews.org/wiki/Anne_Frank_tree_saved_from_being_chopped_down,18
+158,1,2,hau;ibo,wikinews,science,https://en.wikinews.org/wiki/Seven_caves_found_on_Mars:_NASA,24
+159,1,2,hau;ibo,wikinews,science,https://en.wikinews.org/wiki/Seven_caves_found_on_Mars:_NASA,17
+160,1,1,hau,wikinews,science,https://en.wikinews.org/wiki/Seven_caves_found_on_Mars:_NASA,14
+161,1,2,hau;ibo,wikinews,science,https://en.wikinews.org/wiki/Seven_caves_found_on_Mars:_NASA,52
+162,1,1,hau,wikinews,politics,https://en.wikinews.org/wiki/Electronic_voting_disputed_in_France,29
+163,1,1,hau,wikinews,politics,https://en.wikinews.org/wiki/Electronic_voting_disputed_in_France,20
+164,1,1,hau,wikinews,politics,https://en.wikinews.org/wiki/Electronic_voting_disputed_in_France,8
+165,1,1,hau,wikinews,politics,https://en.wikinews.org/wiki/Electronic_voting_disputed_in_France,40
+166,1,0,,wikinews,politics,https://en.wikinews.org/wiki/Electronic_voting_disputed_in_France,25
+167,1,2,ibo;yor,wikinews,science,https://en.wikinews.org/wiki/Taiwanese_consumer_laptop_market_faces_change_following_ASUStek_winning_sustainability_award,20
+168,1,2,hau;ibo,wikinews,science,https://en.wikinews.org/wiki/Taiwanese_consumer_laptop_market_faces_change_following_ASUStek_winning_sustainability_award,31
+169,1,1,ibo,wikinews,entertainment,"https://en.wikinews.org/wiki/Modern_radio_drama_Paranoria,_TX_releases_100th_episode",19
+170,1,2,hau;ibo,wikinews,entertainment,"https://en.wikinews.org/wiki/Modern_radio_drama_Paranoria,_TX_releases_100th_episode",23
+171,1,1,hau,wikinews,entertainment,"https://en.wikinews.org/wiki/Modern_radio_drama_Paranoria,_TX_releases_100th_episode",11
+172,1,1,hau,wikinews,entertainment,"https://en.wikinews.org/wiki/Modern_radio_drama_Paranoria,_TX_releases_100th_episode",11
+173,1,3,hau;ibo;yor,wikinews,crime,https://en.wikinews.org/wiki/Akayev_flees_Kyrgyzstan_as_protesters_seize_control_of_Bishkek,15
+174,1,2,hau;yor,wikinews,crime,https://en.wikinews.org/wiki/Akayev_flees_Kyrgyzstan_as_protesters_seize_control_of_Bishkek,26
+175,1,2,hau;yor,wikinews,crime,https://en.wikinews.org/wiki/Akayev_flees_Kyrgyzstan_as_protesters_seize_control_of_Bishkek,11
+176,1,3,hau;ibo;yor,wikinews,sport,https://en.wikinews.org/wiki/South_Africa_end_All_Blacks%27_15-game_winning_streak,25
+177,1,1,hau,wikinews,sport,https://en.wikinews.org/wiki/South_Africa_end_All_Blacks%27_15-game_winning_streak,18
+178,0,0,,wikinews,sport,https://en.wikinews.org/wiki/South_Africa_end_All_Blacks%27_15-game_winning_streak,9
+179,1,3,hau;ibo;yor,wikinews,sport,https://en.wikinews.org/wiki/South_Africa_end_All_Blacks%27_15-game_winning_streak,18
+180,1,1,hau,wikinews,sport,https://en.wikinews.org/wiki/South_Africa_end_All_Blacks%27_15-game_winning_streak,21
+181,1,1,hau,wikinews,environment,https://en.wikinews.org/wiki/A_5.6_Richter_quake_hits_Western_Montana,11
+182,1,2,hau;yor,wikinews,environment,https://en.wikinews.org/wiki/A_5.6_Richter_quake_hits_Western_Montana,21
+183,1,3,hau;ibo;yor,wikinews,environment,https://en.wikinews.org/wiki/A_5.6_Richter_quake_hits_Western_Montana,21
+184,1,2,hau;ibo,wikinews,health,https://en.wikinews.org/wiki/H5N1_confirmed_in_France,31
+185,1,3,hau;ibo;yor,wikinews,health,https://en.wikinews.org/wiki/H5N1_confirmed_in_France,21
+186,1,3,hau;lug;yor,wikinews,health,https://en.wikinews.org/wiki/H5N1_confirmed_in_France,10
+187,1,2,hau;ibo,wikinews,law,https://en.wikinews.org/wiki/Court_papers_filed_on_behalf_of_God_respond_to_lawsuit_by_Nebraska_Senator,18
+188,1,3,hau;ibo;yor,wikinews,law,https://en.wikinews.org/wiki/Court_papers_filed_on_behalf_of_God_respond_to_lawsuit_by_Nebraska_Senator,14
+189,1,2,hau;ibo,wikinews,entertainment,https://en.wikinews.org/wiki/Controversial_Berlin_opera_features_interactive_drug_usage,25
+190,1,1,hau,wikinews,entertainment,https://en.wikinews.org/wiki/Controversial_Berlin_opera_features_interactive_drug_usage,21
+191,1,2,hau;ibo,wikinews,Politics,https://en.wikinews.org/wiki/Mitt_Romney_wins_Iowa_Caucus_by_eight_votes_over_surging_Rick_Santorum,21
+192,1,2,hau;ibo,wikinews,Politics,https://en.wikinews.org/wiki/Mitt_Romney_wins_Iowa_Caucus_by_eight_votes_over_surging_Rick_Santorum,26
+193,1,1,hau,wikinews,Politics,https://en.wikinews.org/wiki/Mitt_Romney_wins_Iowa_Caucus_by_eight_votes_over_surging_Rick_Santorum,46
+194,1,3,hau;ibo;yor,wikinews,Politics,https://en.wikinews.org/wiki/Mitt_Romney_wins_Iowa_Caucus_by_eight_votes_over_surging_Rick_Santorum,14
+195,1,2,ibo;yor,wikinews,Entertainment,https://en.wikinews.org/wiki/Photojournalist_photographing_Justin_Bieber%27s_car_run_over_by_another_vehicle,14
+196,1,2,hau;ibo,wikinews,Entertainment,https://en.wikinews.org/wiki/Photojournalist_photographing_Justin_Bieber%27s_car_run_over_by_another_vehicle,35
+197,1,2,ibo;zul,wikinews,Entertainment,https://en.wikinews.org/wiki/Photojournalist_photographing_Justin_Bieber%27s_car_run_over_by_another_vehicle,49
+198,1,3,hau;ibo;tsn,wikinews,Entertainment,https://en.wikinews.org/wiki/Photojournalist_photographing_Justin_Bieber%27s_car_run_over_by_another_vehicle,18
+199,1,1,hau,wikinews,Sports,https://en.wikinews.org/wiki/Austria_leads_medal_count_after_second_day_of_2013_IPC_Alpine_World_Championships,18
+200,1,3,hau;ibo;yor,wikinews,Sports,https://en.wikinews.org/wiki/Austria_leads_medal_count_after_second_day_of_2013_IPC_Alpine_World_Championships,29
+201,1,3,hau;ibo;yor,wikinews,Sports,https://en.wikinews.org/wiki/Austria_leads_medal_count_after_second_day_of_2013_IPC_Alpine_World_Championships,21
+202,1,2,hau;yor,wikinews,Sports,https://en.wikinews.org/wiki/Austria_leads_medal_count_after_second_day_of_2013_IPC_Alpine_World_Championships,22
+203,1,3,hau;ibo;yor,wikinews,Sports,https://en.wikinews.org/wiki/Austria_leads_medal_count_after_second_day_of_2013_IPC_Alpine_World_Championships,28
+204,1,2,ibo;yor,wikinews,International,https://en.wikinews.org/wiki/Haitian_cholera_victims_threaten_United_Nations_with_lawsuit,25
+205,1,1,hau,wikinews,International,https://en.wikinews.org/wiki/Haitian_cholera_victims_threaten_United_Nations_with_lawsuit,27
+206,1,3,hau;ibo;yor,wikinews,International,https://en.wikinews.org/wiki/Haitian_cholera_victims_threaten_United_Nations_with_lawsuit,18
+207,1,2,hau;ibo,wikinews,International,https://en.wikinews.org/wiki/Haitian_cholera_victims_threaten_United_Nations_with_lawsuit,24
+208,1,3,hau;ibo;yor,wikinews,International,https://en.wikinews.org/wiki/Haitian_cholera_victims_threaten_United_Nations_with_lawsuit,17
+209,1,1,ibo,wikinews,Health,https://en.wikinews.org/wiki/Patient_under_evaluation_with_Ebola-like_symptoms_in_Washington_D.C.,11
+210,1,3,hau;ibo;yor,wikinews,Health,https://en.wikinews.org/wiki/Patient_under_evaluation_with_Ebola-like_symptoms_in_Washington_D.C.,15
+211,1,2,hau;ibo,wikinews,Health,https://en.wikinews.org/wiki/Patient_under_evaluation_with_Ebola-like_symptoms_in_Washington_D.C.,20
+212,1,2,hau;ibo,wikinews,Entertainment,"https://en.wikinews.org/wiki/Sam_Simon,_%27The_Simpsons%27_co-creator,_dies_aged_59",12
+213,1,3,hau;ibo;yor,wikinews,Entertainment,"https://en.wikinews.org/wiki/Sam_Simon,_%27The_Simpsons%27_co-creator,_dies_aged_59",16
+214,1,3,hau;ibo;zul,wikinews,Entertainment,"https://en.wikinews.org/wiki/Sam_Simon,_%27The_Simpsons%27_co-creator,_dies_aged_59",21
+215,1,3,hau;ibo;yor,wikinews,Entertainment,"https://en.wikinews.org/wiki/Sam_Simon,_%27The_Simpsons%27_co-creator,_dies_aged_59",26
+216,1,3,hau;ibo;yor,wikinews,Crime and law,"https://en.wikinews.org/wiki/No_bomb_threat,_hijacking_of_plane_in_China%27s_Xinjiang_region_according_to_Afghan_officials",12
+217,1,2,hau;ibo,wikinews,Crime and law,"https://en.wikinews.org/wiki/No_bomb_threat,_hijacking_of_plane_in_China%27s_Xinjiang_region_according_to_Afghan_officials",19
+218,1,2,hau;ibo,wikinews,Crime and law,"https://en.wikinews.org/wiki/No_bomb_threat,_hijacking_of_plane_in_China%27s_Xinjiang_region_according_to_Afghan_officials",19
+219,1,2,hau;yor,wikinews,Disasters and accidents,https://en.wikinews.org/wiki/Iranian_passenger_jet%27s_wheel_catches_fire,21
+220,1,1,hau,wikinews,Disasters and accidents,https://en.wikinews.org/wiki/Iranian_passenger_jet%27s_wheel_catches_fire,10
+221,1,1,hau,wikinews,Disasters and accidents,https://en.wikinews.org/wiki/Iranian_passenger_jet%27s_wheel_catches_fire,14
+222,1,2,hau;ibo,wikinews,Disasters and accidents,https://en.wikinews.org/wiki/Iranian_passenger_jet%27s_wheel_catches_fire,22
+223,1,2,hau;ibo,wikinews,Disasters and accidents,https://en.wikinews.org/wiki/Iranian_passenger_jet%27s_wheel_catches_fire,17
+224,0,0,,wikinews,Culture and entertainment,https://en.wikinews.org/wiki/Aerosmith_cancel_remaining_tour_dates_after_on_stage_accident,9
+225,1,2,hau;ibo,wikinews,Culture and entertainment,https://en.wikinews.org/wiki/Aerosmith_cancel_remaining_tour_dates_after_on_stage_accident,15
+226,1,2,hau;yor,wikinews,Culture and entertainment,https://en.wikinews.org/wiki/Aerosmith_cancel_remaining_tour_dates_after_on_stage_accident,22
+227,0,0,,wikinews,Sports,https://en.wikinews.org/wiki/Tennis:_Andy_Murray_wins_Montreal_Masters_2009,20
+228,1,1,ibo,wikinews,Sports,https://en.wikinews.org/wiki/Tennis:_Andy_Murray_wins_Montreal_Masters_2009,20
+229,1,2,hau;yor,wikinews,Sports,https://en.wikinews.org/wiki/Tennis:_Andy_Murray_wins_Montreal_Masters_2009,16
+230,1,1,hau,wikinews,Culture and entertainment,https://en.wikinews.org/wiki/2009_Shri_Shyam_Bhajan_Hindu_religious_festival_held_in_Hyderabad,10
+231,1,2,hau;ibo,wikinews,Culture and entertainment,https://en.wikinews.org/wiki/2009_Shri_Shyam_Bhajan_Hindu_religious_festival_held_in_Hyderabad,14
+232,1,3,hau;ibo;yor,wikinews,Culture and entertainment,https://en.wikinews.org/wiki/2009_Shri_Shyam_Bhajan_Hindu_religious_festival_held_in_Hyderabad,24
+233,1,3,hau;ibo;yor,wikinews,Culture and entertainment,https://en.wikinews.org/wiki/2009_Shri_Shyam_Bhajan_Hindu_religious_festival_held_in_Hyderabad,10
+234,1,1,ibo,wikinews,Culture and entertainment,https://en.wikinews.org/wiki/2009_Shri_Shyam_Bhajan_Hindu_religious_festival_held_in_Hyderabad,27
+235,1,3,hau;ibo;yor,wikinews,Culture and entertainment,https://en.wikinews.org/wiki/2009_Shri_Shyam_Bhajan_Hindu_religious_festival_held_in_Hyderabad,15
+236,1,3,hau;ibo;yor,wikinews,entertainment,https://en.wikinews.org/wiki/Nintendo_unveils_controller_for_Revolution_console,24
+237,1,0,,wikinews,entertainment,https://en.wikinews.org/wiki/Nintendo_unveils_controller_for_Revolution_console,21
+238,1,1,hau,wikinews,entertainment,https://en.wikinews.org/wiki/Nintendo_unveils_controller_for_Revolution_console,19
+239,1,2,hau;ibo,wikinews,sports,https://en.wikinews.org/wiki/Jenson_Button_wins_2006_Hungarian_Grand_Prix,16
+240,1,3,hau;ibo;zul,wikinews,sports,https://en.wikinews.org/wiki/Jenson_Button_wins_2006_Hungarian_Grand_Prix,28
+241,1,0,,wikinews,sports,https://en.wikinews.org/wiki/Jenson_Button_wins_2006_Hungarian_Grand_Prix,21
+242,1,3,hau;ibo;yor,wikinews,entertainment,https://en.wikinews.org/wiki/Officials_admit_that_China_faked_part_of_Olympics_opening_ceremony,18
+243,1,2,ibo;yor,wikinews,entertainment,https://en.wikinews.org/wiki/Officials_admit_that_China_faked_part_of_Olympics_opening_ceremony,17
+244,1,2,hau;ibo,wikinews,science and technology,https://en.wikinews.org/wiki/Space_Shuttle_Discovery_launches_for_mission_STS-121,21
+245,1,2,hau;ibo,wikinews,science and technology,https://en.wikinews.org/wiki/Space_Shuttle_Discovery_launches_for_mission_STS-121,13
+246,1,3,hau;ibo;yor,wikinews,science and technology,https://en.wikinews.org/wiki/Space_Shuttle_Discovery_launches_for_mission_STS-121,20
+247,1,0,,wikinews,environment,https://en.wikinews.org/wiki/Hungary%27s_St_Stephen%27s_Day_hit_by_storm:_3_left_dead,52
+248,1,1,hau,wikinews,environment,https://en.wikinews.org/wiki/Hungary%27s_St_Stephen%27s_Day_hit_by_storm:_3_left_dead,28
+249,1,3,hau;ibo;yor,wikinews,environment,"https://en.wikinews.org/wiki/Large_earthquake_off_Japan,_tsunami_warning_issued",16
+250,1,3,hau;ibo;yor,wikinews,environment,"https://en.wikinews.org/wiki/Large_earthquake_off_Japan,_tsunami_warning_issued",27
+251,1,3,hau;ibo;yor,wikinews,environment,"https://en.wikinews.org/wiki/Large_earthquake_off_Japan,_tsunami_warning_issued",18
+252,1,3,hau;ibo;yor,wikinews,environment,"https://en.wikinews.org/wiki/Large_earthquake_off_Japan,_tsunami_warning_issued",21
+253,1,2,hau;yor,wikinews,crime and law,https://en.wikinews.org/wiki/Bomb_blasts_kill_several_in_Iran,8
+254,1,1,hau,wikinews,crime and law,https://en.wikinews.org/wiki/Bomb_blasts_kill_several_in_Iran,13
+255,1,3,hau;ibo;zul,wikinews,crime and law,https://en.wikinews.org/wiki/Bomb_blasts_kill_several_in_Iran,26
+256,1,3,hau;ibo;zul,wikinews,crime and law,https://en.wikinews.org/wiki/Canadian_inspectors_to_test_food_ingredients_from_China,19
+257,1,2,hau;ibo,wikinews,crime and law,https://en.wikinews.org/wiki/Canadian_inspectors_to_test_food_ingredients_from_China,20
+258,1,1,ibo,wikinews,crime and law,https://en.wikinews.org/wiki/Canadian_inspectors_to_test_food_ingredients_from_China,16
+259,1,2,ibo;yor,wikinews,crime and law,https://en.wikinews.org/wiki/Canadian_inspectors_to_test_food_ingredients_from_China,20
+260,1,2,hau;yor,wikinews,politics,https://en.wikinews.org/wiki/Economy_-_Bush_toughens_up_on_Central_America,22
+261,1,1,hau,wikinews,politics,https://en.wikinews.org/wiki/Economy_-_Bush_toughens_up_on_Central_America,17
+262,1,3,hau;ibo;yor,wikinews,politics,https://en.wikinews.org/wiki/Economy_-_Bush_toughens_up_on_Central_America,12
+263,1,2,hau;ibo,wikinews,politics,https://en.wikinews.org/wiki/Economy_-_Bush_toughens_up_on_Central_America,14
+264,1,3,hau;ibo;yor,wikinews,politics,https://en.wikinews.org/wiki/California_bans_sale_of_violent_video_games_to_minors,21
+265,1,2,hau;ibo,wikinews,politics,https://en.wikinews.org/wiki/California_bans_sale_of_violent_video_games_to_minors,35
+266,1,2,hau;yor,wikinews,Politics,https://en.wikinews.org/wiki/Chris_Huhne_resigns_from_UK_Cabinet_to_face_charges,21
+267,1,3,hau;ibo;yor,wikinews,Politics,https://en.wikinews.org/wiki/Chris_Huhne_resigns_from_UK_Cabinet_to_face_charges,29
+268,1,3,hau;ibo;yor,wikinews,Politics,https://en.wikinews.org/wiki/Chris_Huhne_resigns_from_UK_Cabinet_to_face_charges,15
+269,1,2,hau;ibo,wikinews,Crime,https://en.wikinews.org/wiki/German_judge_orders_life_sentence_for_nation%27s_%27first_Islamic-motivated_terror_attack%27,15
+270,1,2,hau;ibo,wikinews,Crime,https://en.wikinews.org/wiki/German_judge_orders_life_sentence_for_nation%27s_%27first_Islamic-motivated_terror_attack%27,18
+271,1,1,yor,wikinews,Crime,https://en.wikinews.org/wiki/German_judge_orders_life_sentence_for_nation%27s_%27first_Islamic-motivated_terror_attack%27,29
+272,1,2,hau;yor,wikinews,Crime,https://en.wikinews.org/wiki/German_judge_orders_life_sentence_for_nation%27s_%27first_Islamic-motivated_terror_attack%27,11
+273,1,1,hau,wikinews,Sports,https://en.wikinews.org/wiki/Nathalie_Carpanedo_finishes_wild_card_run_at_2013_IPC_Alpine_World_Championships,12
+274,1,2,hau;ibo,wikinews,Sports,https://en.wikinews.org/wiki/Nathalie_Carpanedo_finishes_wild_card_run_at_2013_IPC_Alpine_World_Championships,28
+275,1,2,ibo;yor,wikinews,Sports,https://en.wikinews.org/wiki/Nathalie_Carpanedo_finishes_wild_card_run_at_2013_IPC_Alpine_World_Championships,46
+276,1,2,hau;ibo,wikinews,Sports,https://en.wikinews.org/wiki/Nathalie_Carpanedo_finishes_wild_card_run_at_2013_IPC_Alpine_World_Championships,29
+277,1,3,hau;ibo;yor,wikinews,Crime,"https://en.wikinews.org/wiki/Swiss_woman_gang-raped_in_Madhya_Pradesh,_India",11
+278,1,3,hau;ibo;yor,wikinews,Crime,"https://en.wikinews.org/wiki/Swiss_woman_gang-raped_in_Madhya_Pradesh,_India",23
+279,1,3,hau;ibo;yor,wikinews,Crime,"https://en.wikinews.org/wiki/Swiss_woman_gang-raped_in_Madhya_Pradesh,_India",16
+280,1,2,hau;ibo,wikinews,Crime,"https://en.wikinews.org/wiki/Swiss_woman_gang-raped_in_Madhya_Pradesh,_India",14
+281,1,1,hau,wikinews,accident,"https://en.wikinews.org/wiki/Car_crashes_into_house_in_Suffolk,_UK,_seriously_injuring_man",17
+282,1,1,hau,wikinews,accident,"https://en.wikinews.org/wiki/Car_crashes_into_house_in_Suffolk,_UK,_seriously_injuring_man",9
+283,1,2,ibo;zul,wikinews,accident,"https://en.wikinews.org/wiki/Car_crashes_into_house_in_Suffolk,_UK,_seriously_injuring_man",20
+284,1,2,hau;yor,wikinews,accident,"https://en.wikinews.org/wiki/Car_crashes_into_house_in_Suffolk,_UK,_seriously_injuring_man",12
+285,1,4,hau;ibo;tsn;yor,wikinews,accident,"https://en.wikinews.org/wiki/Car_crashes_into_house_in_Suffolk,_UK,_seriously_injuring_man",9
+286,1,1,hau,wikinews,Crime and law,https://en.wikinews.org/wiki/Scottish_Justice_Secretary_%27acutely_aware_of_unusual_publicity%27_in_Kular_case,13
+287,1,1,ibo,wikinews,Crime and law,https://en.wikinews.org/wiki/Scottish_Justice_Secretary_%27acutely_aware_of_unusual_publicity%27_in_Kular_case,22
+288,1,2,hau;ibo,wikinews,Crime and law,https://en.wikinews.org/wiki/Scottish_Justice_Secretary_%27acutely_aware_of_unusual_publicity%27_in_Kular_case,23
+289,1,2,ibo;yor,wikinews,Crime and law,https://en.wikinews.org/wiki/Scottish_Justice_Secretary_%27acutely_aware_of_unusual_publicity%27_in_Kular_case,24
+290,1,2,hau;yor,wikinews,Crime and law,https://en.wikinews.org/wiki/Scottish_Justice_Secretary_%27acutely_aware_of_unusual_publicity%27_in_Kular_case,24
+291,1,2,hau;ibo,wikinews,Politics,https://en.wikinews.org/wiki/Leak_suggests_John_Kerry_will_recognise_Israel_as_Jewish_state,24
+292,1,3,hau;ibo;tsn,wikinews,Politics,https://en.wikinews.org/wiki/Leak_suggests_John_Kerry_will_recognise_Israel_as_Jewish_state,21
+293,1,2,hau;ibo,wikinews,Politics,https://en.wikinews.org/wiki/Leak_suggests_John_Kerry_will_recognise_Israel_as_Jewish_state,29
+294,1,2,hau;ibo,wikinews,Policy,https://en.wikinews.org/wiki/New_South_Wales_government_starts_trial_of_hunting_in_national_parks,23
+295,1,3,hau;ibo;yor,wikinews,Policy,https://en.wikinews.org/wiki/New_South_Wales_government_starts_trial_of_hunting_in_national_parks,25
+296,1,2,hau;ibo,wikinews,Policy,https://en.wikinews.org/wiki/New_South_Wales_government_starts_trial_of_hunting_in_national_parks,29
+297,1,1,hau,wikinews,Internatoinal,https://en.wikinews.org/wiki/UN_Security_Council_heads_to_Haiti_amid_political_instability,13
+298,1,1,hau,wikinews,Internatoinal,https://en.wikinews.org/wiki/UN_Security_Council_heads_to_Haiti_amid_political_instability,8
+299,1,2,hau;ibo,wikinews,Internatoinal,https://en.wikinews.org/wiki/UN_Security_Council_heads_to_Haiti_amid_political_instability,24
+300,1,2,hau;ibo,wikinews,Internatoinal,https://en.wikinews.org/wiki/UN_Security_Council_heads_to_Haiti_amid_political_instability,13
+301,1,1,hau,wikinews,Internatoinal,https://en.wikinews.org/wiki/UN_Security_Council_heads_to_Haiti_amid_political_instability,14
+302,1,3,hau;ibo;zul,wikinews,Science and technology,https://en.wikinews.org/wiki/Apple_Japan_to_replace_overheating_iPod_Nanos,23
+303,1,2,hau;ibo,wikinews,Science and technology,https://en.wikinews.org/wiki/Apple_Japan_to_replace_overheating_iPod_Nanos,21
+304,1,2,hau;ibo,wikinews,Science and technology,https://en.wikinews.org/wiki/Apple_Japan_to_replace_overheating_iPod_Nanos,19
+305,1,1,ibo,wikinews,Science and technology,https://en.wikinews.org/wiki/Apple_Japan_to_replace_overheating_iPod_Nanos,12
+306,1,2,hau;ibo,wikinews,Disasters and accidents,https://en.wikinews.org/wiki/7.2_magnitude_earthquake_strikes_Mariana_Islands,13
+307,1,3,hau;ibo;yor,wikinews,Disasters and accidents,https://en.wikinews.org/wiki/7.2_magnitude_earthquake_strikes_Mariana_Islands,16
+308,1,3,hau;ibo;yor,wikinews,Disasters and accidents,https://en.wikinews.org/wiki/7.2_magnitude_earthquake_strikes_Mariana_Islands,13
+309,1,2,hau;ibo,wikinews,Crime and law,"https://en.wikinews.org/wiki/Hong_Kong_tourists_held_hostage_in_the_Philippines,_nine_killed",21
+310,1,2,hau;ibo,wikinews,Crime and law,"https://en.wikinews.org/wiki/Hong_Kong_tourists_held_hostage_in_the_Philippines,_nine_killed",9
+311,1,2,hau;ibo,wikinews,Crime and law,"https://en.wikinews.org/wiki/Hong_Kong_tourists_held_hostage_in_the_Philippines,_nine_killed",14
+312,1,2,hau;ibo,wikinews,Crime and law,"https://en.wikinews.org/wiki/Hong_Kong_tourists_held_hostage_in_the_Philippines,_nine_killed",15
+313,1,1,ibo,wikinews,Crime and law,"https://en.wikinews.org/wiki/Hong_Kong_tourists_held_hostage_in_the_Philippines,_nine_killed",19
+314,1,3,hau;ibo;yor,wikinews,Science,https://en.wikinews.org/wiki/New_Zealand_scientist_Graham_Liggins_dies_aged_84,12
+315,1,3,hau;ibo;yor,wikinews,Science,https://en.wikinews.org/wiki/New_Zealand_scientist_Graham_Liggins_dies_aged_84,17
+316,1,2,ibo;yor,wikinews,Science,https://en.wikinews.org/wiki/New_Zealand_scientist_Graham_Liggins_dies_aged_84,17
+317,1,1,hau,wikinews,Science,https://en.wikinews.org/wiki/New_Zealand_scientist_Graham_Liggins_dies_aged_84,18
+318,1,3,hau;ibo;yor,wikinews,Disasters and accidents,https://en.wikinews.org/wiki/Canadian_professional_wrestler_Luna_Vachon_dies_aged_48,13
+319,1,2,hau;ibo,wikinews,Sports,https://en.wikinews.org/wiki/Canadian_professional_wrestler_Luna_Vachon_dies_aged_48,7
+320,1,1,ibo,wikinews,Sports,https://en.wikinews.org/wiki/Canadian_professional_wrestler_Luna_Vachon_dies_aged_48,29
+321,1,2,ibo;yor,wikinews,Sports,https://en.wikinews.org/wiki/Canadian_professional_wrestler_Luna_Vachon_dies_aged_48,23
+322,1,2,hau;ibo,wikinews,Politics and conflicts,https://en.wikinews.org/wiki/Support_for_an_Australian_republic_slips,25
+323,1,3,hau;ibo;yor,wikinews,Politics and conflicts,https://en.wikinews.org/wiki/Support_for_an_Australian_republic_slips,30
+324,1,2,hau;tsn,wikinews,Politics and conflicts,https://en.wikinews.org/wiki/Support_for_an_Australian_republic_slips,20
+325,1,1,hau,wikinews,Politics and conflicts,https://en.wikinews.org/wiki/Support_for_an_Australian_republic_slips,33
+326,0,0,,wikinews,sports,https://en.wikinews.org/wiki/Ian_Thorpe_starts_to_recover_from_chest_pains,33
+327,1,2,hau;ibo,wikinews,sports,https://en.wikinews.org/wiki/Ian_Thorpe_starts_to_recover_from_chest_pains,20
+328,1,2,hau;ibo,wikinews,science,https://en.wikinews.org/wiki/Record_size_17.4_million-digit_prime_found,26
+329,1,1,hau,wikinews,science,https://en.wikinews.org/wiki/Record_size_17.4_million-digit_prime_found,21
+330,1,2,hau;ibo,wikinews,science,https://en.wikinews.org/wiki/Philae_space_probe_lands_on_comet,24
+331,1,3,hau;ibo;yor,wikinews,science,https://en.wikinews.org/wiki/Philae_space_probe_lands_on_comet,20
+332,1,2,hau;ibo,wikinews,politics,"https://en.wikinews.org/wiki/Despite_speculation,_aides_say_Biden_will_remain_on_Obama_ticket",17
+333,1,1,hau,wikinews,politics,"https://en.wikinews.org/wiki/Despite_speculation,_aides_say_Biden_will_remain_on_Obama_ticket",10
+334,1,2,hau;ibo,wikinews,politics,"https://en.wikinews.org/wiki/Despite_speculation,_aides_say_Biden_will_remain_on_Obama_ticket",11
+335,1,2,hau;ibo,wikinews,technology,https://en.wikinews.org/wiki/FAA:_Metroplex_NextGen_project_in_place_in_north_Texas,27
+336,1,1,hau,wikinews,technology,https://en.wikinews.org/wiki/FAA:_Metroplex_NextGen_project_in_place_in_north_Texas,27
+337,1,2,hau;ibo,wikinews,sports,https://en.wikinews.org/wiki/World_Cup_qualifier_may_be_affected_by_London_Underground_strike,26
+338,1,3,hau;ibo;zul,wikinews,sports,https://en.wikinews.org/wiki/World_Cup_qualifier_may_be_affected_by_London_Underground_strike,23
+339,1,2,hau;yor,wikinews,science,https://en.wikinews.org/wiki/Researchers_report_rapid_formation_of_new_bird_species_in_Gal%C3%A1pagos_islands,22
+340,1,2,hau;ibo,wikinews,science,https://en.wikinews.org/wiki/Researchers_report_rapid_formation_of_new_bird_species_in_Gal%C3%A1pagos_islands,49
+341,1,2,hau;ibo,wikibooks,"elements, gold",https://en.wikibooks.org/wiki/Wikijunior:The_Elements/Gold,16
+342,1,1,hau,wikibooks,"elements, gold",https://en.wikibooks.org/wiki/Wikijunior:The_Elements/Gold,21
+343,1,1,hau,wikibooks,"elements, gold",https://en.wikibooks.org/wiki/Wikijunior:The_Elements/Gold,32
+344,1,2,ibo;yor,wikibooks,"science experiments, red cabbage",https://en.wikibooks.org/wiki/Wikijunior:Big_Book_of_Fun_Science_Experiments/Red_cabbage_indicator,15
+345,1,1,hau,wikibooks,"science experiments, red cabbage",https://en.wikibooks.org/wiki/Wikijunior:Big_Book_of_Fun_Science_Experiments/Red_cabbage_indicator,15
+346,1,3,hau;ibo;yor,wikibooks,"science experiments, red cabbage",https://en.wikibooks.org/wiki/Wikijunior:Big_Book_of_Fun_Science_Experiments/Red_cabbage_indicator,19
+347,1,3,hau;ibo;yor,wikibooks,"science experiments, red cabbage",https://en.wikibooks.org/wiki/Wikijunior:Big_Book_of_Fun_Science_Experiments/Red_cabbage_indicator,21
+348,1,0,,wikibooks,"science experiments, bath fizzler","https://en.wikibooks.org/wiki/Wikijunior:Big_Book_of_Fun_Science_Experiments/How_A_Bath_Fizzer_Works,_and_How_To_Make_One",17
+349,0,0,,wikibooks,"science experiments, bath fizzler","https://en.wikibooks.org/wiki/Wikijunior:Big_Book_of_Fun_Science_Experiments/How_A_Bath_Fizzer_Works,_and_How_To_Make_One",21
+350,1,3,hau;ibo;zul,wikibooks,"how things work, flush toilets",https://en.wikibooks.org/wiki/Wikijunior:How_Things_Work/Flush_Toilet,20
+351,1,3,hau;ibo;yor,wikibooks,"how things work, flush toilets",https://en.wikibooks.org/wiki/Wikijunior:How_Things_Work/Flush_Toilet,20
+352,1,1,hau,wikibooks,"how things work, flush toilets",https://en.wikibooks.org/wiki/Wikijunior:How_Things_Work/Flush_Toilet,30
+353,1,1,hau,wikibooks,"how things work, rocket",https://en.wikibooks.org/wiki/Wikijunior:How_Things_Work/Rocket,15
+354,1,1,hau,wikibooks,"how things work, rocket",https://en.wikibooks.org/wiki/Wikijunior:How_Things_Work/Rocket,15
+355,1,3,hau;ibo;yor,wikibooks,"how things work, rocket",https://en.wikibooks.org/wiki/Wikijunior:How_Things_Work/Rocket,25
+356,1,1,hau,wikibooks,"how things work, rocket",https://en.wikibooks.org/wiki/Wikijunior:How_Things_Work/Rocket,18
+357,1,1,hau,wikibooks,"how things work, wheel",https://en.wikibooks.org/wiki/Wikijunior:How_Things_Work/Wheel,27
+358,1,1,hau,wikibooks,"how things work, wheel",https://en.wikibooks.org/wiki/Wikijunior:How_Things_Work/Wheel,13
+359,1,1,hau,wikibooks,big cats,https://en.wikibooks.org/wiki/Wikijunior:Big_Cats/Meet_The_Cats,19
+360,1,2,hau;ibo,wikibooks,big cats,https://en.wikibooks.org/wiki/Wikijunior:Big_Cats/Meet_The_Cats,24
+361,1,1,hau,wikibooks,big cats,https://en.wikibooks.org/wiki/Wikijunior:Big_Cats/Meet_The_Cats,24
+362,1,1,hau,wikibooks,"big cats, lion",https://en.wikibooks.org/wiki/Wikijunior:Big_Cats/Lion,12
+363,0,0,,wikibooks,"big cats, lion",https://en.wikibooks.org/wiki/Wikijunior:Big_Cats/Lion,20
+364,1,1,ibo,wikibooks,"big cats, lion",https://en.wikibooks.org/wiki/Wikijunior:Big_Cats/Lion,17
+365,1,1,zul,wikibooks,"big cats, lion",https://en.wikibooks.org/wiki/Wikijunior:Big_Cats/Lion,29
+366,1,1,zul,wikibooks,"big cats, tiger",https://en.wikibooks.org/wiki/Wikijunior:Big_Cats/Tiger,26
+367,1,3,hau;ibo;yor,wikibooks,"big cats, tiger",https://en.wikibooks.org/wiki/Wikijunior:Big_Cats/Tiger,24
+368,1,1,hau,wikibooks,"big cats, tiger",https://en.wikibooks.org/wiki/Wikijunior:Big_Cats/Tiger,21
+369,1,0,,wikibooks,"big cats, ocelot",https://en.wikibooks.org/wiki/Wikijunior:Big_Cats/Ocelot,32
+370,0,0,,wikibooks,"big cats, ocelot",https://en.wikibooks.org/wiki/Wikijunior:Big_Cats/Ocelot,21
+371,0,0,,wikibooks,"big cats, ocelot",https://en.wikibooks.org/wiki/Wikijunior:Big_Cats/Ocelot,31
+372,1,2,hau;ibo,wikibooks,"biology, origin of life",https://en.wikibooks.org/wiki/Wikijunior:Biology/Origin_of_Life,60
+373,1,2,hau;ibo,wikibooks,"biology, origin of life",https://en.wikibooks.org/wiki/Wikijunior:Biology/Origin_of_Life,30
+374,1,3,hau;ibo;yor,wikibooks,"biology, origin of life",https://en.wikibooks.org/wiki/Wikijunior:Biology/Origin_of_Life,15
+375,1,2,hau;yor,wikibooks,"biology, origin of life",https://en.wikibooks.org/wiki/Wikijunior:Biology/Origin_of_Life,24
+376,1,1,hau,wikibooks,"biology, origin of life",https://en.wikibooks.org/wiki/Wikijunior:Biology/Origin_of_Life,23
+377,1,4,hau;ibo;tsn;yor,wikibooks,"biology, origin of life",https://en.wikibooks.org/wiki/Wikijunior:Biology/Origin_of_Life,25
+378,1,1,hau,wikibooks,"biology, plants",https://en.wikibooks.org/wiki/Wikijunior:Biology/Kingdoms/Plants,18
+379,0,0,,wikibooks,"biology, plants",https://en.wikibooks.org/wiki/Wikijunior:Biology/Kingdoms/Plants,13
+380,1,4,hau;ibo;yor;zul,wikibooks,"biology, plants",https://en.wikibooks.org/wiki/Wikijunior:Biology/Kingdoms/Plants,24
+381,1,2,hau;ibo,wikibooks,"dinosaurs, mosasaurus",https://en.wikibooks.org/wiki/Wikijunior:Dinosaurs/Mosasaurus,15
+382,0,0,,wikibooks,"dinosaurs, mosasaurus",https://en.wikibooks.org/wiki/Wikijunior:Dinosaurs/Mosasaurus,34
+383,1,1,zul,wikibooks,"dinosaurs, mosasaurus",https://en.wikibooks.org/wiki/Wikijunior:Dinosaurs/Mosasaurus,29
+384,1,2,hau;ibo,wikibooks,"dinosaurs, mosasaurus",https://en.wikibooks.org/wiki/Wikijunior:Dinosaurs/Mosasaurus,22
+385,1,1,hau,wikibooks,Ancient Civilizations/Romans,https://en.wikibooks.org/wiki/Wikijunior:Ancient_Civilizations/Romans,34
+386,1,2,hau;ibo,wikibooks,Ancient Civilizations/Romans,https://en.wikibooks.org/wiki/Wikijunior:Ancient_Civilizations/Romans,38
+387,1,2,hau;yor,wikibooks,Ancient Civilizations/Romans,https://en.wikibooks.org/wiki/Wikijunior:Ancient_Civilizations/Romans,19
+388,1,2,hau;zul,wikibooks,Ancient Civilizations/Romans,https://en.wikibooks.org/wiki/Wikijunior:Ancient_Civilizations/Romans,20
+389,1,2,hau;ibo,wikibooks,Ancient_Civilizations/Babylonians,https://en.wikibooks.org/wiki/Wikijunior:Ancient_Civilizations/Babylonians,18
+390,1,2,hau;yor,wikibooks,Ancient_Civilizations/Babylonians,https://en.wikibooks.org/wiki/Wikijunior:Ancient_Civilizations/Babylonians,24
+391,1,2,hau;yor,wikibooks,Ancient_Civilizations/Babylonians,https://en.wikibooks.org/wiki/Wikijunior:Ancient_Civilizations/Babylonians,18
+392,1,1,hau,wikibooks,Ancient_Civilizations/Babylonians,https://en.wikibooks.org/wiki/Wikijunior:Ancient_Civilizations/Babylonians,16
+393,1,2,hau;ibo,wikibooks,Ancient_Civilizations/Babylonians,https://en.wikibooks.org/wiki/Wikijunior:Ancient_Civilizations/Babylonians,11
+394,1,2,hau;yor,wikibooks,Ancient_Civilizations/Hebrews,https://en.wikibooks.org/wiki/Wikijunior:Ancient_Civilizations/Hebrews,14
+395,1,1,hau,wikibooks,Ancient_Civilizations/Hebrews,https://en.wikibooks.org/wiki/Wikijunior:Ancient_Civilizations/Hebrews,13
+396,1,1,hau,wikibooks,Ancient_Civilizations/Hebrews,https://en.wikibooks.org/wiki/Wikijunior:Ancient_Civilizations/Hebrews,22
+397,1,2,hau;yor,wikibooks,Ancient_Civilizations/Hebrews,https://en.wikibooks.org/wiki/Wikijunior:Ancient_Civilizations/Hebrews,15
+398,0,0,,wikibooks,Ancient_Civilizations/Norse,https://en.wikibooks.org/wiki/Wikijunior:Ancient_Civilizations/Norse,31
+399,1,3,hau;yor;zul,wikibooks,Ancient_Civilizations/Norse,https://en.wikibooks.org/wiki/Wikijunior:Ancient_Civilizations/Norse,14
+400,1,2,hau;yor,wikibooks,Ancient_Civilizations/Norse,https://en.wikibooks.org/wiki/Wikijunior:Ancient_Civilizations/Norse,22
+401,1,1,hau,wikibooks,United_States_Charters_of_Freedom/Declaration_of_Independence,https://en.wikibooks.org/wiki/Wikijunior:United_States_Charters_of_Freedom/Declaration_of_Independence,24
+402,1,2,hau;zul,wikibooks,United_States_Charters_of_Freedom/Declaration_of_Independence,https://en.wikibooks.org/wiki/Wikijunior:United_States_Charters_of_Freedom/Declaration_of_Independence,22
+403,1,1,yor,wikibooks,United_States_Charters_of_Freedom/Declaration_of_Independence,https://en.wikibooks.org/wiki/Wikijunior:United_States_Charters_of_Freedom/Declaration_of_Independence,31
+404,0,0,,wikibooks,United_States_Charters_of_Freedom/Declaration_of_Independence,https://en.wikibooks.org/wiki/Wikijunior:United_States_Charters_of_Freedom/Declaration_of_Independence,33
+405,1,1,hau,wikibooks,United_States_Charters_of_Freedom/Declaration_of_Independence,https://en.wikibooks.org/wiki/Wikijunior:United_States_Charters_of_Freedom/Declaration_of_Independence,13
+406,1,2,ibo;yor,wikibooks,World_War_II/Liberation_of_Western_Europe,https://en.wikibooks.org/wiki/Wikijunior:World_War_II/Liberation_of_Western_Europe,19
+407,1,3,hau;ibo;yor,wikibooks,World_War_II/Liberation_of_Western_Europe,https://en.wikibooks.org/wiki/Wikijunior:World_War_II/Liberation_of_Western_Europe,29
+408,1,3,hau;ibo;yor,wikibooks,World_War_II/Liberation_of_Western_Europe,https://en.wikibooks.org/wiki/Wikijunior:World_War_II/Liberation_of_Western_Europe,15
+409,1,2,ibo;yor,wikibooks,World_War_II/Liberation_of_Western_Europe,https://en.wikibooks.org/wiki/Wikijunior:World_War_II/Liberation_of_Western_Europe,19
+410,1,2,ibo;yor,wikibooks,Ancient_Civilizations/What_is_a_Civilization%3F,https://en.wikibooks.org/wiki/Wikijunior:Ancient_Civilizations/What_is_a_Civilization%3F,21
+411,1,2,hau;ibo,wikibooks,Ancient_Civilizations/What_is_a_Civilization%3F,https://en.wikibooks.org/wiki/Wikijunior:Ancient_Civilizations/What_is_a_Civilization%3F,33
+412,1,1,hau,wikibooks,Ancient_Civilizations/What_is_a_Civilization%3F,https://en.wikibooks.org/wiki/Wikijunior:Ancient_Civilizations/What_is_a_Civilization%3F,25
+413,1,1,hau,wikibooks,Ancient_Civilizations/What_is_a_Civilization%3F,https://en.wikibooks.org/wiki/Wikijunior:Ancient_Civilizations/What_is_a_Civilization%3F,17
+414,1,1,hau,wikibooks,United_States_Charters_of_Freedom/Constitution,https://en.wikibooks.org/wiki/Wikijunior:United_States_Charters_of_Freedom/Constitution,23
+415,1,2,hau;ibo,wikibooks,United_States_Charters_of_Freedom/Constitution,https://en.wikibooks.org/wiki/Wikijunior:United_States_Charters_of_Freedom/Constitution,30
+416,1,3,hau;ibo;zul,wikibooks,United_States_Charters_of_Freedom/Constitution,https://en.wikibooks.org/wiki/Wikijunior:United_States_Charters_of_Freedom/Constitution,13
+417,1,1,ibo,wikibooks,United_States_Charters_of_Freedom/Constitution,https://en.wikibooks.org/wiki/Wikijunior:United_States_Charters_of_Freedom/Constitution,28
+418,1,2,hau;ibo,wikibooks,"Geography, Italy",https://en.wikibooks.org/wiki/Wikijunior:Europe/Italy,27
+419,1,2,hau;yor,wikibooks,"Geography, Italy",https://en.wikibooks.org/wiki/Wikijunior:Europe/Italy,18
+420,1,1,hau,wikibooks,"Geography, Italy",https://en.wikibooks.org/wiki/Wikijunior:Europe/Italy,18
+421,1,2,hau;yor,wikibooks,"Geography, Japan",https://en.wikibooks.org/wiki/Wikijunior:Asia/Japan,18
+422,1,2,hau;ibo,wikibooks,"Geography, Japan",https://en.wikibooks.org/wiki/Wikijunior:Asia/Japan,20
+423,1,2,hau;yor,wikibooks,"Geography, Taiwan",https://en.wikibooks.org/wiki/Wikijunior:Asia/Taiwan,23
+424,1,1,hau,wikibooks,"Geography, Taiwan",https://en.wikibooks.org/wiki/Wikijunior:Asia/Taiwan,31
+425,1,3,hau;tsn;yor,wikibooks,"Geography, Taiwan",https://en.wikibooks.org/wiki/Wikijunior:Asia/Taiwan,27
+426,1,3,hau;ibo;yor,wikibooks,"Geography, Taiwan",https://en.wikibooks.org/wiki/Wikijunior:Asia/Taiwan,33
+427,1,3,hau;ibo;yor,wikibooks,"World Heritage, Machu Picchu",https://en.wikibooks.org/wiki/Wikijunior:World_Heritage_Sites/Machu_Picchu,21
+428,1,3,hau;ibo;yor,wikibooks,"World Heritage, Machu Picchu",https://en.wikibooks.org/wiki/Wikijunior:World_Heritage_Sites/Machu_Picchu,26
+429,1,3,hau;ibo;yor,wikibooks,"World Heritage, Machu Picchu",https://en.wikibooks.org/wiki/Wikijunior:World_Heritage_Sites/Machu_Picchu,15
+430,1,3,hau;ibo;yor,wikibooks,modern photography/format,https://en.wikibooks.org/wiki/Modern_Photography/Format,28
+431,1,1,hau,wikibooks,modern photography/format,https://en.wikibooks.org/wiki/Modern_Photography/Format,20
+432,1,2,hau;ibo,wikibooks,modern photography/format,https://en.wikibooks.org/wiki/Modern_Photography/Format,14
+433,0,0,,wikibooks,modern photography/format,https://en.wikibooks.org/wiki/Modern_Photography/Format,21
+434,1,3,hau;ibo;yor,wikibooks,modern photography/format,https://en.wikibooks.org/wiki/Modern_Photography/Format,18
+435,1,0,,wikibooks,modern photography/composition,https://en.wikibooks.org/wiki/Modern_Photography/Composition,22
+436,0,0,,wikibooks,modern photography/composition,https://en.wikibooks.org/wiki/Modern_Photography/Composition,27
+437,1,0,,wikibooks,european history/challenges to spiritual authority,https://en.wikibooks.org/wiki/European_History/Challenges_to_Spiritual_Authority,18
+438,1,1,hau,wikibooks,european history/challenges to spiritual authority,https://en.wikibooks.org/wiki/European_History/Challenges_to_Spiritual_Authority,20
+439,1,1,ibo,wikibooks,european history/challenges to spiritual authority,https://en.wikibooks.org/wiki/European_History/Challenges_to_Spiritual_Authority,9
+440,1,1,hau,wikibooks,european history/challenges to spiritual authority,https://en.wikibooks.org/wiki/European_History/Challenges_to_Spiritual_Authority,31
+441,1,2,hau;zul,wikibooks,european history/challenges to spiritual authority,https://en.wikibooks.org/wiki/European_History/Challenges_to_Spiritual_Authority,32
+442,1,2,hau;yor,wikibooks,european history/world war,https://en.wikibooks.org/wiki/European_History/World_War_I,13
+443,1,2,hau;ibo,wikibooks,european history/world war,https://en.wikibooks.org/wiki/European_History/World_War_I,29
+444,1,1,hau,wikibooks,european history/world war,https://en.wikibooks.org/wiki/European_History/World_War_I,20
+445,1,0,,wikibooks,european history/world war,https://en.wikibooks.org/wiki/European_History/World_War_I,18
+446,1,2,ibo;yor,wikibooks,european history/europe from 1918 to 1945,https://en.wikibooks.org/wiki/European_History/Europe:_1918_to_1945,17
+447,1,2,hau;yor,wikibooks,european history/europe from 1918 to 1945,https://en.wikibooks.org/wiki/European_History/Europe:_1918_to_1945,23
+448,1,3,hau;ibo;yor,wikibooks,Nikola Tesla/middle years,https://en.wikibooks.org/wiki/Nikola_Tesla/Middle_years,22
+449,1,4,hau;ibo;tsn;yor,wikibooks,Nikola Tesla/middle years,https://en.wikibooks.org/wiki/Nikola_Tesla/Middle_years,32
+450,1,3,hau;ibo;yor,wikibooks,ancient china/government,https://en.wikibooks.org/wiki/Ancient_China/Government,26
+451,1,2,hau;ibo,wikibooks,ancient china/government,https://en.wikibooks.org/wiki/Ancient_China/Government,33
+452,1,3,hau;ibo;yor,wikibooks,ancient china/government,https://en.wikibooks.org/wiki/Ancient_China/Government,14
+453,1,2,hau;ibo,wikibooks,ancient china/government,https://en.wikibooks.org/wiki/Ancient_China/Government,30
+454,1,1,hau,wikibooks,french revolution/effects,https://en.wikibooks.org/wiki/French_Revolution/Effects,37
+455,1,1,hau,wikibooks,french revolution/effects,https://en.wikibooks.org/wiki/French_Revolution/Effects,19
+456,1,1,hau,wikibooks,french revolution/effects,https://en.wikibooks.org/wiki/French_Revolution/Effects,20
+457,1,0,,wikibooks,french revolution/effects,https://en.wikibooks.org/wiki/French_Revolution/Effects,19
+458,1,4,hau;ibo;yor;zul,wikibooks,history of islam/early islam,https://en.wikibooks.org/wiki/History_of_Islam/Early_Islam,29
+459,1,1,ibo,wikibooks,history of islam/early islam,https://en.wikibooks.org/wiki/History_of_Islam/Early_Islam,16
+460,1,2,hau;yor,wikibooks,history of islam/early islam,https://en.wikibooks.org/wiki/History_of_Islam/Early_Islam,23
+461,1,1,hau,wikibooks,history of islam/early islam,https://en.wikibooks.org/wiki/History_of_Islam/Early_Islam,25
+462,1,2,hau;ibo,wikibooks,history of islam/early islam,https://en.wikibooks.org/wiki/History_of_Islam/Early_Islam,30
+463,1,3,hau;ibo;yor,wikibooks,seven wonders of the world/pyramid at giza,https://en.wikibooks.org/wiki/The_Seven_Wonders_of_the_World/The_Great_Pyramid,18
+464,1,2,hau;yor,wikibooks,seven wonders of the world/pyramid at giza,https://en.wikibooks.org/wiki/The_Seven_Wonders_of_the_World/The_Great_Pyramid,24
+465,1,3,hau;ibo;yor,wikibooks,seven wonders of the world/pyramid at giza,https://en.wikibooks.org/wiki/The_Seven_Wonders_of_the_World/The_Great_Pyramid,33
+466,1,3,hau;ibo;yor,wikibooks,seven wonders of the world/pyramid at giza,https://en.wikibooks.org/wiki/The_Seven_Wonders_of_the_World/The_Great_Pyramid,28
+467,1,1,yor,wikibooks,how to play the violin/bowing,https://en.wikibooks.org/wiki/How_to_Play_Violin/Bowing,23
+468,0,0,,wikibooks,how to play the violin/bowing,https://en.wikibooks.org/wiki/How_to_Play_Violin/Bowing,34
+469,1,0,,wikibooks,how to play the violin/bowing,https://en.wikibooks.org/wiki/How_to_Play_Violin/Bowing,15
+470,1,1,hau,wikibooks,how to play the violin/bowing,https://en.wikibooks.org/wiki/How_to_Play_Violin/Bowing,26
+471,1,1,hau,wikibooks,european history/revolution in france,https://en.wikibooks.org/wiki/European_History/Revolution_in_France,46
+472,1,1,ibo,wikibooks,european history/revolution in france,https://en.wikibooks.org/wiki/European_History/Revolution_in_France,23
+473,1,1,ibo,wikibooks,european history/revolution in france,https://en.wikibooks.org/wiki/European_History/Revolution_in_France,16
+474,0,0,,wikibooks,european history/revolution in france,https://en.wikibooks.org/wiki/European_History/Revolution_in_France,24
+475,1,2,hau;ibo,wikibooks,philippine history/phillipine american war,https://en.wikibooks.org/wiki/Philippine_History/The_Philippine-American_War,20
+476,1,1,hau,wikibooks,philippine history/phillipine american war,https://en.wikibooks.org/wiki/Philippine_History/The_Philippine-American_War,38
+477,1,2,hau;ibo,wikibooks,philippine history/phillipine american war,https://en.wikibooks.org/wiki/Philippine_History/The_Philippine-American_War,21
+478,1,2,hau;ibo,wikibooks,remembering the templars,https://en.wikibooks.org/wiki/Remembering_the_Templars,16
+479,1,1,hau,wikibooks,remembering the templars,https://en.wikibooks.org/wiki/Remembering_the_Templars,29
+480,1,1,ibo,wikibooks,remembering the templars,https://en.wikibooks.org/wiki/Remembering_the_Templars,24
+481,1,1,hau,wikibooks,history of technology/technological determism,https://en.wikibooks.org/wiki/History_of_Technology/Technological_Determinism,42
+482,1,1,hau,wikibooks,history of technology/technological determism,https://en.wikibooks.org/wiki/History_of_Technology/Technological_Determinism,40
+483,1,1,hau,wikibooks,history of technology/technological determism,https://en.wikibooks.org/wiki/History_of_Technology/Technological_Determinism,16
+484,1,1,hau,wikibooks,history of technology/technological determism,https://en.wikibooks.org/wiki/History_of_Technology/Technological_Determinism,29
+485,1,2,hau;ibo,wikibooks,history of technology/technological determism,https://en.wikibooks.org/wiki/History_of_Technology/Technological_Determinism,28
+486,1,2,hau;ibo,wikibooks,history of technology/cultural determinism,https://en.wikibooks.org/wiki/History_of_Technology/Cultural_Determinism,17
+487,1,2,hau;ibo,wikibooks,history of technology/cultural determinism,https://en.wikibooks.org/wiki/History_of_Technology/Cultural_Determinism,37
+488,1,3,hau;ibo;yor,wikibooks,costume history/byzantine,https://en.wikibooks.org/wiki/Costume_History/Byzantine,25
+489,1,3,hau;ibo;yor,wikibooks,costume history/byzantine,https://en.wikibooks.org/wiki/Costume_History/Byzantine,20
+490,1,1,hau,wikibooks,costume history/byzantine,https://en.wikibooks.org/wiki/Costume_History/Byzantine,32
+491,1,3,hau;ibo;tsn,wikibooks,costume history/byzantine,https://en.wikibooks.org/wiki/Costume_History/Byzantine,20
+492,1,2,hau;yor,wikibooks,costume history/gothic,https://en.wikibooks.org/wiki/Costume_History/Gothic,16
+493,1,1,ibo,wikibooks,costume history/gothic,https://en.wikibooks.org/wiki/Costume_History/Gothic,14
+494,0,0,,wikibooks,costume history/gothic,https://en.wikibooks.org/wiki/Costume_History/Gothic,19
+495,1,2,ibo;yor,wikibooks,costume history/gothic,https://en.wikibooks.org/wiki/Costume_History/Gothic,37
+496,1,2,hau;yor,wikibooks,sociology/agriculture,https://en.wikibooks.org/wiki/Introduction_to_Sociology/Society,23
+497,1,3,hau;ibo;yor,wikibooks,sociology/agriculture,https://en.wikibooks.org/wiki/Introduction_to_Sociology/Society,27
+498,1,3,hau;yor;zul,wikibooks,sociology/agriculture,https://en.wikibooks.org/wiki/Introduction_to_Sociology/Society,18
+499,1,1,hau,wikibooks,sociology/culture,https://en.wikibooks.org/wiki/Introduction_to_Sociology/Culture,20
+500,1,2,hau;yor,wikibooks,sociology/culture,https://en.wikibooks.org/wiki/Introduction_to_Sociology/Culture,16
+501,1,1,hau,wikibooks,sociology/culture,https://en.wikibooks.org/wiki/Introduction_to_Sociology/Culture,21
+502,1,2,hau;ibo,wikibooks,sociology/culture,https://en.wikibooks.org/wiki/Introduction_to_Sociology/Culture,22
+503,1,1,hau,wikibooks,sociology/socialization,https://en.wikibooks.org/wiki/Introduction_to_Sociology/Socialization,40
+504,1,1,hau,wikibooks,sociology/socialization,https://en.wikibooks.org/wiki/Introduction_to_Sociology/Socialization,39
+505,1,1,hau,wikibooks,sociology/socialization,https://en.wikibooks.org/wiki/Introduction_to_Sociology/Socialization,16
+506,1,1,hau,wikibooks,sociology/socialization,https://en.wikibooks.org/wiki/Introduction_to_Sociology/Socialization,22
+507,1,1,ibo,wikibooks,sociology/socialization,https://en.wikibooks.org/wiki/Introduction_to_Sociology/Socialization,32
+508,1,1,hau,wikibooks,American education/technology (role),https://en.wikibooks.org/wiki/Social_and_Cultural_Foundations_of_American_Education/Technology/Role,16
+509,1,1,hau,wikibooks,American education/technology (role),https://en.wikibooks.org/wiki/Social_and_Cultural_Foundations_of_American_Education/Technology/Role,35
+510,1,0,,wikibooks,American education/technology (role),https://en.wikibooks.org/wiki/Social_and_Cultural_Foundations_of_American_Education/Technology/Role,27
+511,1,1,hau,wikibooks,American education/technology (role),https://en.wikibooks.org/wiki/Social_and_Cultural_Foundations_of_American_Education/Technology/Role,28
+512,1,1,hau,wikibooks,American education/forgotten half/Foster care,https://en.wikibooks.org/wiki/Social_and_Cultural_Foundations_of_American_Education/Forgotten_Half/Perceptions,22
+513,1,2,hau;ibo,wikibooks,American education/forgotten half/Foster care,https://en.wikibooks.org/wiki/Social_and_Cultural_Foundations_of_American_Education/Forgotten_Half/Perceptions,21
+514,1,3,hau;ibo;yor,wikibooks,American education/forgotten half/Foster care,https://en.wikibooks.org/wiki/Social_and_Cultural_Foundations_of_American_Education/Forgotten_Half/Perceptions,14
+515,1,3,hau;ibo;yor,wikibooks,American education/forgotten half/Foster care,https://en.wikibooks.org/wiki/Social_and_Cultural_Foundations_of_American_Education/Forgotten_Half/Perceptions,18
+516,1,2,hau;ibo,wikibooks,American education/forgotten half/Foster care,https://en.wikibooks.org/wiki/Social_and_Cultural_Foundations_of_American_Education/Forgotten_Half/Perceptions,20
+517,1,3,hau;ibo;yor,wikibooks,Communication theory/uses and gratifications,https://en.wikibooks.org/wiki/Communication_Theory/Uses_and_Gratifications,10
+518,1,1,hau,wikibooks,Communication theory/uses and gratifications,https://en.wikibooks.org/wiki/Communication_Theory/Uses_and_Gratifications,18
+519,1,3,hau;ibo;yor,wikibooks,Communication theory/uses and gratifications,https://en.wikibooks.org/wiki/Communication_Theory/Uses_and_Gratifications,17
+520,1,2,ibo;yor,wikibooks,Communication theory/uses and gratifications,https://en.wikibooks.org/wiki/Communication_Theory/Uses_and_Gratifications,24
+521,1,1,hau,wikibooks,Communication theory/nonverbal comms,https://en.wikibooks.org/wiki/Communication_Theory/Nonverbal_Communication,22
+522,1,1,hau,wikibooks,Communication theory/nonverbal comms,https://en.wikibooks.org/wiki/Communication_Theory/Nonverbal_Communication,18
+523,1,3,hau;ibo;tsn,wikibooks,Communication theory/nonverbal comms,https://en.wikibooks.org/wiki/Communication_Theory/Nonverbal_Communication,28
+524,1,3,hau;ibo;yor,wikibooks,Communication theory/nonverbal comms,https://en.wikibooks.org/wiki/Communication_Theory/Nonverbal_Communication,19
+525,1,1,hau,wikibooks,Paleoanthropology/Genetics,https://en.wikibooks.org/wiki/Introduction_to_Paleoanthropology/Genetics/Introduction,16
+526,0,0,,wikibooks,Paleoanthropology/Genetics,https://en.wikibooks.org/wiki/Introduction_to_Paleoanthropology/Genetics/Introduction,15
+527,0,0,,wikibooks,Paleoanthropology/Genetics,https://en.wikibooks.org/wiki/Introduction_to_Paleoanthropology/Genetics/Introduction,15
+528,1,2,hau;ibo,wikibooks,Paleoanthropology/Oldowan Period,https://en.wikibooks.org/wiki/Introduction_to_Paleoanthropology/Oldowan,27
+529,1,2,hau;ibo,wikibooks,Paleoanthropology/Oldowan Period,https://en.wikibooks.org/wiki/Introduction_to_Paleoanthropology/Oldowan,14
+530,1,1,hau,wikibooks,Paleoanthropology/Oldowan Period,https://en.wikibooks.org/wiki/Introduction_to_Paleoanthropology/Oldowan,30
+531,1,3,hau;ibo;yor,wikibooks,Paleoanthropology/Oldowan Period,https://en.wikibooks.org/wiki/Introduction_to_Paleoanthropology/Oldowan,24
+532,1,2,hau;ibo,wikibooks,Paleoanthropology/Oldowan Period,https://en.wikibooks.org/wiki/Introduction_to_Paleoanthropology/Oldowan,28
+533,1,3,hau;ibo;yor,wikibooks,Lucid Dreaming/Induction,https://en.wikibooks.org/wiki/Lucid_Dreaming/Induction_Techniques,22
+534,1,0,,wikibooks,Lucid Dreaming/Induction,https://en.wikibooks.org/wiki/Lucid_Dreaming/Induction_Techniques,21
+535,1,1,hau,wikibooks,Lucid Dreaming/Induction,https://en.wikibooks.org/wiki/Lucid_Dreaming/Induction_Techniques,32
+536,1,2,hau;ibo,wikibooks,Lucid Dreaming/Induction,https://en.wikibooks.org/wiki/Lucid_Dreaming/Induction_Techniques,25
+537,1,2,hau;ibo,wikibooks,Yoga/What_is_Yoga,https://en.wikibooks.org/wiki/Yoga/What_is_Yoga,20
+538,1,0,,wikibooks,Yoga/What_is_Yoga,https://en.wikibooks.org/wiki/Yoga/What_is_Yoga,22
+539,1,2,hau;ibo,wikibooks,Yoga/What_is_Yoga,https://en.wikibooks.org/wiki/Yoga/What_is_Yoga,20
+540,1,1,ibo,wikibooks,Yoga/Yoga_Tales,https://en.wikibooks.org/wiki/Yoga/Yoga_Tales,28
+541,1,3,hau;ibo;yor,wikibooks,Yoga/Yoga_Tales,https://en.wikibooks.org/wiki/Yoga/Yoga_Tales,20
+542,1,3,hau;ibo;yor,wikibooks,Yoga/Yoga_Tales,https://en.wikibooks.org/wiki/Yoga/Yoga_Tales,18
+543,1,2,hau;ibo,wikibooks,Yoga/Yoga_Tales,https://en.wikibooks.org/wiki/Yoga/Yoga_Tales,30
+544,1,1,hau,wikibooks,The_Cold_War/Introduction,https://en.wikibooks.org/wiki/The_Cold_War/Introduction,36
+545,1,2,hau;ibo,wikibooks,The_Cold_War/Introduction,https://en.wikibooks.org/wiki/The_Cold_War/Introduction,20
+546,1,1,hau,wikibooks,The_Cold_War/Introduction,https://en.wikibooks.org/wiki/The_Cold_War/Introduction,31
+547,1,1,hau,wikibooks,World_War_II/Battle_of_Poland,https://en.wikibooks.org/wiki/World_War_II/Battle_of_Poland,23
+548,0,0,,wikibooks,World_War_II/Battle_of_Poland,https://en.wikibooks.org/wiki/World_War_II/Battle_of_Poland,52
+549,1,3,hau;ibo;yor,wikibooks,Warfare,https://en.wikibooks.org/wiki/Warfare,22
+550,1,2,hau;ibo,wikibooks,Warfare,https://en.wikibooks.org/wiki/Warfare,37
+551,1,2,hau;yor,wikibooks,Warfare,https://en.wikibooks.org/wiki/Warfare,32
+552,1,2,hau;yor,wikibooks,Warfare,https://en.wikibooks.org/wiki/Warfare,16
+553,1,2,hau;yor,wikibooks,Warfare,https://en.wikibooks.org/wiki/Warfare,20
+554,1,2,hau;ibo,wikibooks,Goats/Introduction,https://en.wikibooks.org/wiki/Goats/Introduction,17
+555,1,1,hau,wikibooks,Goats/Introduction,https://en.wikibooks.org/wiki/Goats/Introduction,17
+556,1,1,hau,wikibooks,Goats/Introduction,https://en.wikibooks.org/wiki/Goats/Introduction,40
+557,1,1,hau,wikibooks,History_of_Rail_Transport/Early_Rail_Transportation,https://en.wikibooks.org/wiki/History_of_Rail_Transport/Early_Rail_Transportation,11
+558,1,1,hau,wikibooks,History_of_Rail_Transport/Early_Rail_Transportation,https://en.wikibooks.org/wiki/History_of_Rail_Transport/Early_Rail_Transportation,32
+559,0,0,,wikibooks,History_of_Rail_Transport/Early_Rail_Transportation,https://en.wikibooks.org/wiki/History_of_Rail_Transport/Early_Rail_Transportation,32
+560,1,2,hau;ibo,wikibooks,History_of_Rail_Transport/Early_Rail_Transportation,https://en.wikibooks.org/wiki/History_of_Rail_Transport/Early_Rail_Transportation,17
+561,1,2,hau;ibo,wikibooks,History_of_Rail_Transport/Early_Rail_Transportation,https://en.wikibooks.org/wiki/History_of_Rail_Transport/Early_Rail_Transportation,16
+562,1,3,hau;ibo;yor,wikibooks,Transport/History,https://en.wikibooks.org/wiki/Transport/History,23
+563,1,1,hau,wikibooks,Transport/History,https://en.wikibooks.org/wiki/Transport/History,10
+564,1,1,hau,wikibooks,Transport/History,https://en.wikibooks.org/wiki/Transport/History,27
+565,1,2,hau;ibo,wikibooks,Environmental_theory_and_collection_of_ideas/Environmentalism_and_survival,https://en.wikibooks.org/wiki/Environmental_theory_and_collection_of_ideas/Environmentalism_and_survival,32
+566,1,1,hau,wikibooks,Environmental_theory_and_collection_of_ideas/Environmentalism_and_survival,https://en.wikibooks.org/wiki/Environmental_theory_and_collection_of_ideas/Environmentalism_and_survival,33
+567,1,4,hau;ibo;tsn;yor,wikibooks,Environmental_theory_and_collection_of_ideas/Environmentalism_and_survival,https://en.wikibooks.org/wiki/Environmental_theory_and_collection_of_ideas/Environmentalism_and_survival,29
+568,1,2,hau;ibo,wikibooks,American_Revolution/The_Declaration_of_Independence,https://en.wikibooks.org/wiki/American_Revolution/The_Declaration_of_Independence,38
+569,1,1,hau,wikibooks,American_Revolution/The_Declaration_of_Independence,https://en.wikibooks.org/wiki/American_Revolution/The_Declaration_of_Independence,15
+570,1,3,hau;ibo;yor,wikibooks,American_Revolution/The_Declaration_of_Independence,https://en.wikibooks.org/wiki/American_Revolution/The_Declaration_of_Independence,20
+571,1,2,hau;ibo,wikibooks,American_Revolution/The_Declaration_of_Independence,https://en.wikibooks.org/wiki/American_Revolution/The_Declaration_of_Independence,29
+572,1,2,hau;ibo,wikibooks,American_Revolution/The_Declaration_of_Independence,https://en.wikibooks.org/wiki/American_Revolution/The_Declaration_of_Independence,23
+573,1,2,hau;ibo,wikibooks,Wikijunior:Dinosaurs/Extinction,https://en.wikibooks.org/wiki/Wikijunior:Dinosaurs/Extinction,18
+574,1,2,hau;ibo,wikibooks,Wikijunior:Dinosaurs/Extinction,https://en.wikibooks.org/wiki/Wikijunior:Dinosaurs/Extinction,15
+575,1,2,hau;ibo,wikibooks,Wikijunior:Dinosaurs/Extinction,https://en.wikibooks.org/wiki/Wikijunior:Dinosaurs/Extinction,15
+576,1,1,hau,wikibooks,Wikijunior:Dinosaurs/Extinction,https://en.wikibooks.org/wiki/Wikijunior:Dinosaurs/Extinction,21
+577,1,1,hau,wikibooks,Science/Radiography,https://en.wikibooks.org/wiki/Basic_Physics_of_Digital_Radiography/The_Computer,22
+578,1,3,hau;ibo;yor,wikibooks,Science/Radiography,https://en.wikibooks.org/wiki/Basic_Physics_of_Digital_Radiography/The_Computer,30
+579,1,1,hau,wikibooks,Science/First Aid,https://en.wikibooks.org/wiki/First_Aid/Poisoning,21
+580,1,1,hau,wikibooks,Science/First Aid,https://en.wikibooks.org/wiki/First_Aid/Poisoning,20
+581,1,1,hau,wikibooks,Science/First Aid,https://en.wikibooks.org/wiki/First_Aid/Poisoning,12
+582,1,2,hau;zul,wikibooks,Science/Parasitic Insects,"https://en.wikibooks.org/wiki/Parasitic_Insects,_Mites_and_Ticks:_Genera_of_Medical_and_Veterinary_Importance/Bloodsucking_bugs",16
+583,1,0,,wikibooks,Science/Parasitic Insects,"https://en.wikibooks.org/wiki/Parasitic_Insects,_Mites_and_Ticks:_Genera_of_Medical_and_Veterinary_Importance/Bloodsucking_bugs",16
+584,0,0,,wikibooks,Science/Parasitic Insects,"https://en.wikibooks.org/wiki/Parasitic_Insects,_Mites_and_Ticks:_Genera_of_Medical_and_Veterinary_Importance/Bloodsucking_bugs",16
+585,1,2,hau;ibo,wikibooks,Science/Disease,https://en.wikibooks.org/wiki/Exercise_as_it_relates_to_Disease/Can_Exercise_Really_Help_Multiple_Sclerosis%3F,29
+586,1,3,hau;ibo;yor,wikibooks,Science/Disease,https://en.wikibooks.org/wiki/Exercise_as_it_relates_to_Disease/Can_Exercise_Really_Help_Multiple_Sclerosis%3F,24
+587,1,2,hau;yor,wikibooks,Science/Disease,https://en.wikibooks.org/wiki/Exercise_as_it_relates_to_Disease/Can_Exercise_Really_Help_Multiple_Sclerosis%3F,15
+588,1,3,hau;ibo;yor,wikibooks,Science/Sexual Health,https://en.wikibooks.org/wiki/Sexual_Health/Pregnancy,22
+589,1,2,hau;yor,wikibooks,Science/Sexual Health,https://en.wikibooks.org/wiki/Sexual_Health/Pregnancy,12
+590,1,2,hau;ibo,wikibooks,Science/Sexual Health,https://en.wikibooks.org/wiki/Sexual_Health/Pregnancy,18
+591,1,2,hau;yor,wikibooks,Science/Nature of Science,https://en.wikibooks.org/wiki/High_School_Biology/Nature_of_Science,24
+592,1,1,hau,wikibooks,Science/Nature of Science,https://en.wikibooks.org/wiki/High_School_Biology/Nature_of_Science,32
+593,1,2,hau;ibo,wikibooks,Science/Animal Behavior,https://en.wikibooks.org/wiki/Animal_Behavior/History,15
+594,1,2,hau;ibo,wikibooks,Science/Animal Behavior,https://en.wikibooks.org/wiki/Animal_Behavior/History,11
+595,1,1,hau,wikibooks,Science/Animal Behavior,https://en.wikibooks.org/wiki/Animal_Behavior/History,18
+596,1,2,hau;ibo,wikibooks,Science/Animal Behavior,https://en.wikibooks.org/wiki/Animal_Behavior/Biological_Rhythms,22
+597,1,1,yor,wikibooks,Science/Animal Behavior,https://en.wikibooks.org/wiki/Animal_Behavior/Biological_Rhythms,24
+598,0,0,,wikibooks,Science/Animal Behavior,https://en.wikibooks.org/wiki/Animal_Behavior/Biological_Rhythms,21
+599,1,1,ibo,wikibooks,Science/General Biology,"https://en.wikibooks.org/wiki/General_Biology/Genetics/DNA,_The_Genetic_Material",17
+600,1,3,hau;ibo;yor,wikibooks,Science/General Biology,"https://en.wikibooks.org/wiki/General_Biology/Genetics/DNA,_The_Genetic_Material",15
+601,1,2,hau;yor,wikibooks,Science/General Biology,"https://en.wikibooks.org/wiki/General_Biology/Genetics/DNA,_The_Genetic_Material",24
+602,1,1,yor,wikibooks,Science/General Biology,https://en.wikibooks.org/wiki/General_Biology/Genetics/Mutation,31
+603,1,2,hau;ibo,wikibooks,Science/General Biology,https://en.wikibooks.org/wiki/General_Biology/Genetics/Mutation,19
+604,1,2,hau;yor,wikibooks,Science/Applied Ecology,https://en.wikibooks.org/wiki/Applied_Ecology/Nature_Tourism,21
+605,1,2,hau;ibo,wikibooks,Science/Applied Ecology,https://en.wikibooks.org/wiki/Applied_Ecology/Nature_Tourism,19
+606,1,2,hau;yor,wikibooks,Science/Applied Ecology,https://en.wikibooks.org/wiki/Applied_Ecology/Nature_Tourism,11
+607,1,0,,wikibooks,Science/Applied Ecology,https://en.wikibooks.org/wiki/Applied_Ecology/New_Societies_and_Cultures,28
+608,1,2,hau;ibo,wikibooks,Science/Applied Ecology,https://en.wikibooks.org/wiki/Applied_Ecology/New_Societies_and_Cultures,19
+609,1,3,hau;ibo;tsn,wikibooks,Science/Applied Ecology,https://en.wikibooks.org/wiki/Applied_Ecology/New_Societies_and_Cultures,29
+610,1,1,hau,wikibooks,Fundamentals_of_Transportation/Introduction,https://en.wikibooks.org/wiki/Fundamentals_of_Transportation/Introduction,14
+611,1,3,hau;ibo;yor,wikibooks,Fundamentals_of_Transportation/Introduction,https://en.wikibooks.org/wiki/Fundamentals_of_Transportation/Introduction,17
+612,1,1,hau,wikibooks,Fundamentals_of_Transportation/Introduction,https://en.wikibooks.org/wiki/Fundamentals_of_Transportation/Introduction,27
+613,1,2,hau;ibo,wikibooks,Fundamentals_of_Transportation/Traffic_Flow,https://en.wikibooks.org/wiki/Fundamentals_of_Transportation/Traffic_Flow,24
+614,1,2,hau;yor,wikibooks,Fundamentals_of_Transportation/Traffic_Flow,https://en.wikibooks.org/wiki/Fundamentals_of_Transportation/Traffic_Flow,16
+615,1,2,hau;ibo,wikibooks,Fundamentals_of_Transportation/Traffic_Flow,https://en.wikibooks.org/wiki/Fundamentals_of_Transportation/Traffic_Flow,25
+616,1,2,hau;ibo,wikibooks,Fundamentals_of_Transportation/Traffic_Flow,https://en.wikibooks.org/wiki/Fundamentals_of_Transportation/Traffic_Flow,21
+617,1,2,hau;ibo,wikibooks,Fundamentals_of_Transportation/Traffic_Flow,https://en.wikibooks.org/wiki/Fundamentals_of_Transportation/Traffic_Flow,11
+618,1,1,hau,wikibooks,Bugs/Insects_Intro,https://en.wikibooks.org/wiki/Wikijunior:Bugs/Insects_Intro,27
+619,1,2,hau;ibo,wikibooks,Bugs/Insects_Intro,https://en.wikibooks.org/wiki/Wikijunior:Bugs/Insects_Intro,16
+620,1,1,hau,wikibooks,Bugs/Insects_Intro,https://en.wikibooks.org/wiki/Wikijunior:Bugs/Insects_Intro,13
+621,0,0,,wikibooks,Bugs/Insects_Intro,https://en.wikibooks.org/wiki/Wikijunior:Bugs/Insects_Intro,15
+622,1,2,hau;ibo,wikibooks,Solar_System/Solar_System,https://en.wikibooks.org/wiki/Wikijunior:Solar_System/Solar_System,17
+623,1,2,hau;yor,wikibooks,Solar_System/Solar_System,https://en.wikibooks.org/wiki/Wikijunior:Solar_System/Solar_System,28
+624,1,1,hau,wikibooks,Solar_System/Solar_System,https://en.wikibooks.org/wiki/Wikijunior:Solar_System/Solar_System,14
+625,1,2,hau;yor,wikibooks,South_America/The_Amazon,https://en.wikibooks.org/wiki/Wikijunior:South_America/The_Amazon,27
+626,1,2,hau;ibo,wikibooks,South_America/The_Amazon,https://en.wikibooks.org/wiki/Wikijunior:South_America/The_Amazon,14
+627,1,4,hau;ibo;tsn;yor,wikibooks,South_America/The_Amazon,https://en.wikibooks.org/wiki/Wikijunior:South_America/The_Amazon,21
+628,1,1,hau,wikibooks,South_America/The_Amazon,https://en.wikibooks.org/wiki/Wikijunior:South_America/The_Amazon,17
+629,1,1,hau,wikibooks,World_Heritage_Sites/Pyramids_of_Giza,https://en.wikibooks.org/wiki/Wikijunior:World_Heritage_Sites/Pyramids_of_Giza,29
+630,1,2,hau;ibo,wikibooks,World_Heritage_Sites/Pyramids_of_Giza,https://en.wikibooks.org/wiki/Wikijunior:World_Heritage_Sites/Pyramids_of_Giza,18
+631,1,1,hau,wikibooks,Europe/Vatican_City,https://en.wikibooks.org/wiki/Wikijunior:Europe/Vatican_City,22
+632,1,3,hau;ibo;yor,wikibooks,Europe/Vatican_City,https://en.wikibooks.org/wiki/Wikijunior:Europe/Vatican_City,10
+633,1,3,hau;ibo;yor,wikibooks,Europe/Vatican_City,https://en.wikibooks.org/wiki/Wikijunior:Europe/Vatican_City,24
+634,1,2,hau;ibo,wikibooks,Europe/Vatican_City,https://en.wikibooks.org/wiki/Wikijunior:Europe/Vatican_City,8
+635,1,3,hau;ibo;yor,wikibooks,The_Elements/Periodic_Table,https://en.wikibooks.org/wiki/Wikijunior:The_Elements/Periodic_Table,35
+636,1,3,hau;ibo;yor,wikibooks,The_Elements/Periodic_Table,https://en.wikibooks.org/wiki/Wikijunior:The_Elements/Periodic_Table,26
+637,1,1,hau,wikibooks,The_Elements/Periodic_Table,https://en.wikibooks.org/wiki/Wikijunior:The_Elements/Periodic_Table,33
+638,1,1,hau,wikibooks,The_Elements/Mixtures,https://en.wikibooks.org/wiki/Wikijunior:The_Elements/Mixtures,21
+639,1,2,hau;yor,wikibooks,The_Elements/Mixtures,https://en.wikibooks.org/wiki/Wikijunior:The_Elements/Mixtures,18
+640,1,3,hau;ibo;yor,wikibooks,The_Elements/Mixtures,https://en.wikibooks.org/wiki/Wikijunior:The_Elements/Mixtures,14
+641,1,1,hau,wikibooks,The_Elements/Overview,https://en.wikibooks.org/wiki/Wikijunior:The_Elements/Overview,17
+642,1,2,hau;ibo,wikibooks,The_Elements/Overview,https://en.wikibooks.org/wiki/Wikijunior:The_Elements/Overview,20
+643,1,1,hau,wikibooks,How_Things_Work/Pencil,https://en.wikibooks.org/wiki/Wikijunior:How_Things_Work/Pencil,14
+644,1,1,yor,wikibooks,How_Things_Work/Pencil,https://en.wikibooks.org/wiki/Wikijunior:How_Things_Work/Pencil,18
+645,1,1,hau,wikibooks,How_Things_Work/Pencil,https://en.wikibooks.org/wiki/Wikijunior:How_Things_Work/Pencil,15
+646,1,1,hau,wikibooks,How_Things_Work/Pencil,https://en.wikibooks.org/wiki/Wikijunior:How_Things_Work/Pencil,14
+647,1,2,hau;yor,wikibooks,How_Things_Work/Nuclear_Bomb,https://en.wikibooks.org/wiki/Wikijunior:How_Things_Work/Nuclear_Bomb,21
+648,1,0,,wikibooks,How_Things_Work/Nuclear_Bomb,https://en.wikibooks.org/wiki/Wikijunior:How_Things_Work/Nuclear_Bomb,21
+649,1,2,ibo;zul,wikibooks,How_Things_Work/Nuclear_Bomb,https://en.wikibooks.org/wiki/Wikijunior:How_Things_Work/Nuclear_Bomb,18
+650,1,1,hau,wikibooks,Solar_System/Moon,https://en.wikibooks.org/wiki/Wikijunior:Solar_System/Moon,21
+651,1,2,hau;ibo,wikibooks,Solar_System/Moon,https://en.wikibooks.org/wiki/Wikijunior:Solar_System/Moon,19
+652,1,1,hau,wikibooks,Solar_System/Moon,https://en.wikibooks.org/wiki/Wikijunior:Solar_System/Moon,11
+653,0,0,,wikibooks,Solar_System/Moon,https://en.wikibooks.org/wiki/Wikijunior:Solar_System/Moon,25
+654,1,1,ibo,wikibooks,Managing Groups & Teams/Motivation,https://en.wikibooks.org/wiki/Managing_Groups_and_Teams/Motivation,14
+655,1,1,hau,wikibooks,Managing Groups & Teams/Motivation,https://en.wikibooks.org/wiki/Managing_Groups_and_Teams/Motivation,19
+656,1,1,hau,wikibooks,Managing Groups & Teams/Motivation,https://en.wikibooks.org/wiki/Managing_Groups_and_Teams/Motivation,34
+657,1,3,hau;ibo;yor,wikibooks,Managing Groups & Teams/Motivation,https://en.wikibooks.org/wiki/Managing_Groups_and_Teams/Motivation,15
+658,0,0,,wikibooks,Managing Groups & Teams/Leader Credibility,https://en.wikibooks.org/wiki/Managing_Groups_and_Teams/Leader_Credibility,29
+659,1,1,hau,wikibooks,Managing Groups & Teams/Leader Credibility,https://en.wikibooks.org/wiki/Managing_Groups_and_Teams/Leader_Credibility,20
+660,0,0,,wikibooks,Managing Groups & Teams/Leader Credibility,https://en.wikibooks.org/wiki/Managing_Groups_and_Teams/Leader_Credibility,31
+661,1,4,hau;ibo;tsn;yor,wikibooks,Managing Groups & Teams/Leader Credibility,https://en.wikibooks.org/wiki/Managing_Groups_and_Teams/Leader_Credibility,15
+662,1,3,hau;ibo;yor,wikibooks,Managing Groups & Teams/Leader Credibility,https://en.wikibooks.org/wiki/Managing_Groups_and_Teams/Leader_Credibility,15
+663,1,3,hau;ibo;yor,wikibooks,Managing Groups & Teams/Virtual Teams,https://en.wikibooks.org/wiki/Managing_Groups_and_Teams/How_Do_You_Build_High-performing_Virtual_Teams%3F,18
+664,1,2,hau;ibo,wikibooks,Managing Groups & Teams/Virtual Teams,https://en.wikibooks.org/wiki/Managing_Groups_and_Teams/How_Do_You_Build_High-performing_Virtual_Teams%3F,15
+665,1,0,,wikibooks,Managing Groups & Teams/Virtual Teams,https://en.wikibooks.org/wiki/Managing_Groups_and_Teams/How_Do_You_Build_High-performing_Virtual_Teams%3F,28
+666,1,2,hau;ibo,wikibooks,Managing Groups & Teams/Virtual Teams,https://en.wikibooks.org/wiki/Managing_Groups_and_Teams/How_Do_You_Build_High-performing_Virtual_Teams%3F,21
+667,1,2,hau;ibo,wikibooks,Managing Groups & Teams/Virtual Teams,https://en.wikibooks.org/wiki/Managing_Groups_and_Teams/How_Do_You_Build_High-performing_Virtual_Teams%3F,23
+668,1,3,hau;ibo;yor,wikibooks,Learning Theories/Organizational Learning,https://en.wikibooks.org/wiki/Learning_Theories/Organizational_Learning:_Practice,28
+669,1,2,hau;yor,wikibooks,Learning Theories/Organizational Learning,https://en.wikibooks.org/wiki/Learning_Theories/Organizational_Learning:_Practice,19
+670,1,2,hau;ibo,wikibooks,Learning Theories/Organizational Learning,https://en.wikibooks.org/wiki/Learning_Theories/Organizational_Learning:_Practice,26
+671,1,1,hau,wikibooks,Learning Theories/Organizational Learning,https://en.wikibooks.org/wiki/Learning_Theories/Organizational_Learning:_Practice,21
+672,1,1,ibo,wikibooks,Learning Theories/Organizational Learning,https://en.wikibooks.org/wiki/Learning_Theories/Organizational_Learning:_Practice,20
+673,1,3,hau;tsn;yor,wikibooks,Cognitive Psycology and Neuroscience/Cognitive Neuropsychology,https://en.wikibooks.org/wiki/Cognitive_Psychology_and_Cognitive_Neuroscience/Cognitive_Psychology_and_the_Brain,26
+674,1,4,hau;ibo;yor;zul,wikibooks,Cognitive Psycology and Neuroscience/Cognitive Neuropsychology,https://en.wikibooks.org/wiki/Cognitive_Psychology_and_Cognitive_Neuroscience/Cognitive_Psychology_and_the_Brain,12
+675,1,2,hau;yor,wikibooks,Cognitive Psycology and Neuroscience/Cognitive Neuropsychology,https://en.wikibooks.org/wiki/Cognitive_Psychology_and_Cognitive_Neuroscience/Cognitive_Psychology_and_the_Brain,27
+676,1,3,hau;ibo;yor,wikibooks,Cognitive Psycology and Neuroscience/Cognitive Neuropsychology,https://en.wikibooks.org/wiki/Cognitive_Psychology_and_Cognitive_Neuroscience/Cognitive_Psychology_and_the_Brain,18
+677,1,2,hau;yor,wikibooks,Cognitive Psycology and Neuroscience/Cognitive Neuropsychology,https://en.wikibooks.org/wiki/Cognitive_Psychology_and_Cognitive_Neuroscience/Cognitive_Psychology_and_the_Brain,23
+678,1,3,hau;ibo;tsn,wikibooks,Cognitive Psycology and Neuroscience/Artificial Intelligence,https://en.wikibooks.org/wiki/Cognitive_Psychology_and_Cognitive_Neuroscience/Knowledge_Representation_and_Hemispheric_Specialisation,28
+679,1,4,hau;ibo;tsn;yor,wikibooks,Cognitive Psycology and Neuroscience/Artificial Intelligence,https://en.wikibooks.org/wiki/Cognitive_Psychology_and_Cognitive_Neuroscience/Knowledge_Representation_and_Hemispheric_Specialisation,13
+680,1,3,hau;ibo;yor,wikibooks,Cognitive Psycology and Neuroscience/Artificial Intelligence,https://en.wikibooks.org/wiki/Cognitive_Psychology_and_Cognitive_Neuroscience/Knowledge_Representation_and_Hemispheric_Specialisation,22
+681,1,2,hau;zul,wikibooks,Cognitive Psycology and Neuroscience/Artificial Intelligence,https://en.wikibooks.org/wiki/Cognitive_Psychology_and_Cognitive_Neuroscience/Knowledge_Representation_and_Hemispheric_Specialisation,15
+682,1,2,hau;ibo,wikibooks,Cognitive Psycology and Neuroscience/Artificial Intelligence,https://en.wikibooks.org/wiki/Cognitive_Psychology_and_Cognitive_Neuroscience/Knowledge_Representation_and_Hemispheric_Specialisation,30
+683,1,1,hau,wikibooks,Blended Learning/Field trips,https://en.wikibooks.org/wiki/Blended_Learning_in_K-12/Blended_Learning_in_Grades_3-6,29
+684,1,2,hau;zul,wikibooks,Blended Learning/Field trips,https://en.wikibooks.org/wiki/Blended_Learning_in_K-12/Blended_Learning_in_Grades_3-6,26
+685,1,2,hau;ibo,wikibooks,Blended Learning/Field trips,https://en.wikibooks.org/wiki/Blended_Learning_in_K-12/Blended_Learning_in_Grades_3-6,22
+686,1,1,hau,wikibooks,Blended Learning/Field trips,https://en.wikibooks.org/wiki/Blended_Learning_in_K-12/Blended_Learning_in_Grades_3-6,38
+687,1,2,hau;ibo,wikibooks,Blended Learning/Blogging,https://en.wikibooks.org/wiki/Blended_Learning_in_K-12/Blended_Learning_in_Grades_9-12,27
+688,1,1,hau,wikibooks,Blended Learning/Blogging,https://en.wikibooks.org/wiki/Blended_Learning_in_K-12/Blended_Learning_in_Grades_9-12,20
+689,1,2,hau;ibo,wikibooks,Blended Learning/Blogging,https://en.wikibooks.org/wiki/Blended_Learning_in_K-12/Blended_Learning_in_Grades_9-12,31
+690,1,2,hau;yor,wikibooks,Blended Learning/Blogging,https://en.wikibooks.org/wiki/Blended_Learning_in_K-12/Blended_Learning_in_Grades_9-12,19
+691,1,3,hau;ibo;yor,wikibooks,Blended Learning/Blogging,https://en.wikibooks.org/wiki/Blended_Learning_in_K-12/Blended_Learning_in_Grades_9-12,42
+692,1,3,hau;ibo;yor,wikivoyage,"travel, tourism",https://en.wikivoyage.org/wiki/Canada,21
+693,1,3,hau;ibo;yor,wikivoyage,"travel, tourism",https://en.wikivoyage.org/wiki/Canada,20
+694,1,1,hau,wikivoyage,"travel, tourism",https://en.wikivoyage.org/wiki/Canada,15
+695,1,1,hau,wikivoyage,"travel, tourism",https://en.wikivoyage.org/wiki/Canada,14
+696,1,1,hau,wikivoyage,"travel, tourism",https://en.wikivoyage.org/wiki/Canada,22
+697,1,1,hau,wikivoyage,travel,https://en.wikivoyage.org/wiki/East_African_Islands,15
+698,1,2,hau;tsn,wikivoyage,travel,https://en.wikivoyage.org/wiki/East_African_Islands,17
+699,1,2,hau;ibo,wikivoyage,travel,https://en.wikivoyage.org/wiki/East_African_Islands,18
+700,1,1,hau,wikivoyage,"travel, history",https://en.wikivoyage.org/wiki/East_African_Islands,20
+701,1,3,hau;ibo;yor,wikivoyage,"travel, history",https://en.wikivoyage.org/wiki/East_African_Islands,23
+702,1,3,hau;ibo;yor,wikivoyage,"travel, geography",https://en.wikivoyage.org/wiki/West_Africa,20
+703,1,1,ibo,wikivoyage,"travel, culture",https://en.wikivoyage.org/wiki/West_Africa,18
+704,0,0,,wikivoyage,"travel, culture",https://en.wikivoyage.org/wiki/West_Africa,15
+705,1,2,hau;ibo,wikivoyage,"travel, culture",https://en.wikivoyage.org/wiki/West_Africa,27
+706,1,2,hau;ibo,wikivoyage,"travel, culture",https://en.wikivoyage.org/wiki/West_Africa,23
+707,1,3,hau;ibo;yor,wikivoyage,"travel, history",https://en.wikivoyage.org/wiki/Casablanca,31
+708,1,3,hau;ibo;yor,wikivoyage,"travel, history",https://en.wikivoyage.org/wiki/Casablanca,21
+709,1,2,ibo;yor,wikivoyage,"travel, history",https://en.wikivoyage.org/wiki/Casablanca,24
+710,1,3,hau;ibo;yor,wikivoyage,"travel, tourism",https://en.wikivoyage.org/wiki/Casablanca,14
+711,1,2,hau;ibo,wikivoyage,"travel, tourism",https://en.wikivoyage.org/wiki/Casablanca,32
+712,1,3,hau;ibo;yor,wikivoyage,"travel, tourism",https://en.wikivoyage.org/wiki/Goma,17
+713,1,3,hau;ibo;yor,wikivoyage,"travel, tourism",https://en.wikivoyage.org/wiki/Goma,22
+714,1,2,ibo;yor,wikivoyage,"travel, tourism",https://en.wikivoyage.org/wiki/Goma,27
+715,1,2,ibo;yor,wikivoyage,"travel, tourism",https://en.wikivoyage.org/wiki/Goma,22
+716,1,3,hau;ibo;yor,wikivoyage,"travel, tourism",https://en.wikivoyage.org/wiki/Goma,22
+717,1,1,hau,wikivoyage,travel,https://en.wikivoyage.org/wiki/Timbuktu,18
+718,1,3,hau;ibo;yor,wikivoyage,travel,https://en.wikivoyage.org/wiki/Timbuktu,19
+719,1,2,hau;ibo,wikivoyage,travel,https://en.wikivoyage.org/wiki/Timbuktu,21
+720,1,2,hau;yor,wikivoyage,travel,https://en.wikivoyage.org/wiki/Timbuktu,18
+721,1,2,hau;yor,wikivoyage,travel,https://en.wikivoyage.org/wiki/Timbuktu,25
+722,1,3,hau;ibo;yor,wikivoyage,"travel, tourism",https://en.wikivoyage.org/wiki/Kruger_National_Park,34
+723,1,2,hau;ibo,wikivoyage,"travel, tourism",https://en.wikivoyage.org/wiki/Kruger_National_Park,16
+724,1,3,hau;tsn;yor,wikivoyage,"travel, tourism",https://en.wikivoyage.org/wiki/Kruger_National_Park,22
+725,1,2,hau;ibo,wikivoyage,"travel, tourism",https://en.wikivoyage.org/wiki/Kruger_National_Park,17
+726,1,3,hau;ibo;yor,wikivoyage,"travel, tourism",https://en.wikivoyage.org/wiki/Kruger_National_Park,31
+727,1,1,hau,wikivoyage,"Travel, History",https://en.wikivoyage.org/wiki/Hong_Kong,23
+728,0,0,,wikivoyage,"Travel, History",https://en.wikivoyage.org/wiki/Hong_Kong,31
+729,1,3,hau;ibo;yor,wikivoyage,"Travel, History",https://en.wikivoyage.org/wiki/Hong_Kong,18
+730,1,2,ibo;yor,wikivoyage,"Travel, History",https://en.wikivoyage.org/wiki/Hong_Kong,19
+731,1,2,hau;ibo,wikivoyage,"Travel, History",https://en.wikivoyage.org/wiki/Hong_Kong,31
+732,1,3,hau;ibo;yor,wikivoyage,"Travel, Geography",https://en.wikivoyage.org/wiki/Sundarbans_National_Park,25
+733,1,3,hau;ibo;yor,wikivoyage,"Travel, Geography",https://en.wikivoyage.org/wiki/Sundarbans_National_Park,23
+734,1,2,hau;ibo,wikivoyage,"Travel, Geography",https://en.wikivoyage.org/wiki/Sundarbans_National_Park,26
+735,1,2,hau;yor,wikivoyage,"Travel, Geography",https://en.wikivoyage.org/wiki/Sundarbans_National_Park,17
+736,1,2,hau;ibo,wikivoyage,"Travel, Geography",https://en.wikivoyage.org/wiki/Sundarbans_National_Park,29
+737,1,3,hau;ibo;yor,wikivoyage,Travel,https://en.wikivoyage.org/wiki/Thimphu,27
+738,1,2,hau;ibo,wikivoyage,Travel,https://en.wikivoyage.org/wiki/Thimphu,19
+739,1,1,hau,wikivoyage,Travel,https://en.wikivoyage.org/wiki/Thimphu,14
+740,1,2,ibo;yor,wikivoyage,Travel,https://en.wikivoyage.org/wiki/Thimphu,22
+741,1,2,ibo;yor,wikivoyage,"Travel, Economy",https://en.wikivoyage.org/wiki/French_Guiana,28
+742,1,2,hau;ibo,wikivoyage,"Travel, Economy",https://en.wikivoyage.org/wiki/French_Guiana,23
+743,1,3,hau;ibo;yor,wikivoyage,"Travel, Economy",https://en.wikivoyage.org/wiki/French_Guiana,23
+744,1,1,hau,wikivoyage,"Travel, Economy",https://en.wikivoyage.org/wiki/French_Guiana,21
+745,1,3,hau;ibo;yor,wikivoyage,"Travel, History",https://en.wikivoyage.org/wiki/Paraguay,23
+746,1,3,hau;ibo;yor,wikivoyage,"Travel, History",https://en.wikivoyage.org/wiki/Paraguay,24
+747,1,1,yor,wikivoyage,"Travel, History",https://en.wikivoyage.org/wiki/Paraguay,29
+748,1,2,hau;ibo,wikivoyage,"Travel, History",https://en.wikivoyage.org/wiki/Paraguay,11
+749,1,2,hau;ibo,wikivoyage,"Travel, History",https://en.wikivoyage.org/wiki/Paraguay,20
+750,1,2,hau;yor,wikivoyage,"Travel, Sports",https://en.wikivoyage.org/wiki/Buenos_Aires,17
+751,1,3,hau;ibo;yor,wikivoyage,"Travel, Sports",https://en.wikivoyage.org/wiki/Buenos_Aires,17
+752,1,1,hau,wikivoyage,"Travel, Sports",https://en.wikivoyage.org/wiki/Buenos_Aires,15
+753,1,3,hau;ibo;yor,wikivoyage,"Travel, Sports",https://en.wikivoyage.org/wiki/Buenos_Aires,17
+754,1,2,hau;yor,wikivoyage,"Travel, Economy",https://en.wikivoyage.org/wiki/Falkland_Islands,21
+755,1,2,hau;yor,wikivoyage,"Travel, Economy",https://en.wikivoyage.org/wiki/Falkland_Islands,22
+756,1,2,hau;ibo,wikivoyage,"Travel, Economy",https://en.wikivoyage.org/wiki/Falkland_Islands,23
+757,0,0,,wikivoyage,"Travel, Economy",https://en.wikivoyage.org/wiki/Falkland_Islands,34
+758,1,2,hau;ibo,wikivoyage,"Travel, Economy",https://en.wikivoyage.org/wiki/Falkland_Islands,20
+759,1,2,hau;ibo,wikivoyage,"Travel, Climate",https://en.wikivoyage.org/wiki/Montevideo,21
+760,1,2,hau;ibo,wikivoyage,"Travel, Climate",https://en.wikivoyage.org/wiki/Montevideo,14
+761,0,0,,wikivoyage,"Travel, Climate",https://en.wikivoyage.org/wiki/Montevideo,27
+762,1,3,hau;ibo;yor,wikivoyage,"Travel, Climate",https://en.wikivoyage.org/wiki/Montevideo,19
+763,1,3,hau;ibo;yor,wikivoyage,Travel,https://en.wikivoyage.org/wiki/Yellowstone_National_Park,25
+764,1,2,hau;ibo,wikivoyage,Travel,https://en.wikivoyage.org/wiki/Yellowstone_National_Park,22
+765,1,2,hau;ibo,wikivoyage,Travel,https://en.wikivoyage.org/wiki/Yellowstone_National_Park,18
+766,1,2,hau;ibo,wikivoyage,Travel,https://en.wikivoyage.org/wiki/Yellowstone_National_Park,27
+767,1,2,hau;yor,wikivoyage,Travel,https://en.wikivoyage.org/wiki/Yellowstone_National_Park,23
+768,1,4,hau;ibo;tsn;yor,wikivoyage,Travel,https://en.wikivoyage.org/wiki/Apia,22
+769,1,3,hau;ibo;yor,wikivoyage,Travel,https://en.wikivoyage.org/wiki/Apia,16
+770,1,2,hau;yor,wikivoyage,Travel,https://en.wikivoyage.org/wiki/Apia,26
+771,1,2,hau;yor,wikivoyage,Travel,https://en.wikivoyage.org/wiki/Apia,18
+772,1,2,ibo;yor,wikivoyage,Travel,https://en.wikivoyage.org/wiki/Apia,28
+773,1,3,hau;ibo;yor,wikivoyage,Travel,https://en.wikivoyage.org/wiki/Auckland,19
+774,1,4,hau;ibo;yor;zul,wikivoyage,Travel,https://en.wikivoyage.org/wiki/Auckland,25
+775,1,0,,wikivoyage,Travel,https://en.wikivoyage.org/wiki/Auckland,17
+776,1,2,hau;ibo,wikivoyage,Travel,https://en.wikivoyage.org/wiki/Auckland,21
+777,1,2,hau;ibo,wikivoyage,Travel,https://en.wikivoyage.org/wiki/Auckland,17
+778,1,2,hau;ibo,wikivoyage,Travel,https://en.wikivoyage.org/wiki/Noum%C3%A9a,24
+779,1,2,hau;yor,wikivoyage,Travel,https://en.wikivoyage.org/wiki/Noum%C3%A9a,18
+780,1,1,hau,wikivoyage,Travel,https://en.wikivoyage.org/wiki/Noum%C3%A9a,20
+781,0,0,,wikivoyage,Travel,https://en.wikivoyage.org/wiki/Noum%C3%A9a,29
+782,1,2,hau;ibo,wikivoyage,Travel,https://en.wikivoyage.org/wiki/Noum%C3%A9a,14
+783,1,1,hau,wikivoyage,Travel,https://en.wikivoyage.org/wiki/Great_Barrier_Reef,23
+784,1,1,hau,wikivoyage,Travel,https://en.wikivoyage.org/wiki/Great_Barrier_Reef,15
+785,1,2,hau;ibo,wikivoyage,Travel,https://en.wikivoyage.org/wiki/Great_Barrier_Reef,24
+786,1,0,,wikivoyage,Travel,https://en.wikivoyage.org/wiki/Great_Barrier_Reef,18
+787,1,2,ibo;zul,wikivoyage,Travel,https://en.wikivoyage.org/wiki/Great_Barrier_Reef,19
+788,0,0,,wikivoyage,"travel, accomodation",https://en.wikivoyage.org/wiki/Sleep,22
+789,1,3,hau;ibo;yor,wikivoyage,"travel, accomodation",https://en.wikivoyage.org/wiki/Sleep,27
+790,1,3,hau;ibo;yor,wikivoyage,"travel, accomodation",https://en.wikivoyage.org/wiki/Sleep,20
+791,1,3,hau;ibo;yor,wikivoyage,"travel, accomodation",https://en.wikivoyage.org/wiki/Sleep,26
+792,1,1,hau,wikivoyage,"travel, accomodation",https://en.wikivoyage.org/wiki/Sleep,19
+793,1,2,hau;ibo,wikivoyage,"travel, music",https://en.wikivoyage.org/wiki/Music_festival_circuit,28
+794,1,1,hau,wikivoyage,"travel, music",https://en.wikivoyage.org/wiki/Music_festival_circuit,26
+795,1,2,hau;zul,wikivoyage,"travel, music",https://en.wikivoyage.org/wiki/Music_festival_circuit,29
+796,1,2,hau;ibo,wikivoyage,"travel, music",https://en.wikivoyage.org/wiki/Music_festival_circuit,11
+797,1,3,hau;ibo;yor,wikivoyage,travel,https://en.wikivoyage.org/wiki/Baltic_Sea_ferries,23
+798,1,1,hau,wikivoyage,travel,https://en.wikivoyage.org/wiki/Baltic_Sea_ferries,17
+799,1,1,hau,wikivoyage,travel,https://en.wikivoyage.org/wiki/Gambling,26
+800,1,1,hau,wikivoyage,travel,https://en.wikivoyage.org/wiki/Gambling,22
+801,1,1,hau,wikivoyage,travel,https://en.wikivoyage.org/wiki/Gambling,22
+802,1,2,hau;ibo,wikivoyage,"travel, driving",https://en.wikivoyage.org/wiki/Winter_driving,22
+803,1,1,ibo,wikivoyage,"travel, driving",https://en.wikivoyage.org/wiki/Winter_driving,19
+804,1,0,,wikivoyage,"travel, driving",https://en.wikivoyage.org/wiki/Winter_driving,14
+805,1,1,ibo,wikivoyage,"travel, driving",https://en.wikivoyage.org/wiki/Winter_driving,18
+806,1,3,hau;ibo;yor,wikivoyage,"travel, driving",https://en.wikivoyage.org/wiki/Winter_driving,22
+807,1,1,hau,wikivoyage,"travel, wildlife",https://en.wikivoyage.org/wiki/Safaris,15
+808,1,2,hau;yor,wikivoyage,"travel, wildlife",https://en.wikivoyage.org/wiki/Safaris,19
+809,1,2,hau;ibo,wikivoyage,"travel, wildlife",https://en.wikivoyage.org/wiki/Safaris,20
+810,1,1,hau,wikivoyage,"travel, wildlife",https://en.wikivoyage.org/wiki/Safaris,15
+811,1,3,hau;ibo;yor,wikivoyage,"travel, wildlife",https://en.wikivoyage.org/wiki/Safaris,24
+812,1,3,hau;ibo;yor,wikivoyage,"travel, sports events",https://en.wikivoyage.org/wiki/Tokyo_2020,22
+813,1,3,hau;ibo;tsn,wikivoyage,"travel, sports events",https://en.wikivoyage.org/wiki/Tokyo_2020,19
+814,1,3,hau;ibo;yor,wikivoyage,"travel, sports events",https://en.wikivoyage.org/wiki/Tokyo_2020,20
+815,1,1,hau,wikivoyage,"travel, sports events",https://en.wikivoyage.org/wiki/Tokyo_2020,23
+816,1,3,hau;ibo;yor,wikivoyage,"travel, sports events",https://en.wikivoyage.org/wiki/Tokyo_2020,18
+817,0,0,,wikivoyage,"Travel, Laundry",https://en.wikivoyage.org/wiki/Laundry,27
+818,1,1,hau,wikivoyage,"Travel, Laundry",https://en.wikivoyage.org/wiki/Laundry,22
+819,1,2,hau;yor,wikivoyage,"Travel, Laundry",https://en.wikivoyage.org/wiki/Laundry,19
+820,1,3,hau;ibo;yor,wikivoyage,"Travel, Water",https://en.wikivoyage.org/wiki/Water,13
+821,1,3,hau;ibo;yor,wikivoyage,"Travel, Water",https://en.wikivoyage.org/wiki/Water,16
+822,1,2,hau;ibo,wikivoyage,"Travel, Water",https://en.wikivoyage.org/wiki/Water,25
+823,1,2,hau;ibo,wikivoyage,"Travel, Insects",https://en.wikivoyage.org/wiki/Pests,15
+824,1,3,hau;ibo;yor,wikivoyage,"Travel, Insects",https://en.wikivoyage.org/wiki/Pests,19
+825,1,1,ibo,wikivoyage,"Travel, Insects",https://en.wikivoyage.org/wiki/Pests,20
+826,1,3,hau;ibo;yor,wikivoyage,Shopping,https://en.wikivoyage.org/wiki/Duty_free_shopping,17
+827,1,1,hau,wikivoyage,Shopping,https://en.wikivoyage.org/wiki/Duty_free_shopping,24
+828,1,1,ibo,wikivoyage,Travel,https://en.wikivoyage.org/wiki/Buffalo-Pittsburgh_Highway,23
+829,0,0,,wikivoyage,Travel,https://en.wikivoyage.org/wiki/Buffalo-Pittsburgh_Highway,22
+830,1,2,hau;ibo,wikivoyage,Travel,https://en.wikivoyage.org/wiki/Buffalo-Pittsburgh_Highway,30
+831,1,3,hau;ibo;yor,wikivoyage,Travel,https://en.wikivoyage.org/wiki/Buffalo-Pittsburgh_Highway,21
+832,1,1,hau,wikivoyage,Food,https://en.wikivoyage.org/wiki/Bread_and_confectionery,21
+833,1,1,ibo,wikivoyage,Food,https://en.wikivoyage.org/wiki/Bread_and_confectionery,21
+834,1,1,ibo,wikivoyage,Food,https://en.wikivoyage.org/wiki/Bread_and_confectionery,24
+835,0,0,,wikivoyage,Food,https://en.wikivoyage.org/wiki/Bread_and_confectionery,19
+836,1,2,hau;ibo,wikivoyage,Food,https://en.wikivoyage.org/wiki/South_Asian_cuisine,16
+837,1,2,hau;ibo,wikivoyage,Food,https://en.wikivoyage.org/wiki/South_Asian_cuisine,14
+838,1,2,hau;ibo,wikivoyage,Food,https://en.wikivoyage.org/wiki/South_Asian_cuisine,30
+839,1,1,hau,wikivoyage,Food,https://en.wikivoyage.org/wiki/Indonesian_cuisine,23
+840,1,2,hau;ibo,wikivoyage,Food,https://en.wikivoyage.org/wiki/Indonesian_cuisine,25
+841,1,1,hau,wikivoyage,Food,https://en.wikivoyage.org/wiki/Indonesian_cuisine,33
+842,0,0,,wikivoyage,"sports, horse riding",https://en.wikivoyage.org/wiki/Horse_riding,16
+843,1,1,hau,wikivoyage,"sports, horse riding",https://en.wikivoyage.org/wiki/Horse_riding,25
+844,1,1,hau,wikivoyage,"sports, horse riding",https://en.wikivoyage.org/wiki/Horse_riding,37
+845,1,1,hau,wikivoyage,"sports, horse riding",https://en.wikivoyage.org/wiki/Horse_riding,15
+846,1,1,ibo,wikivoyage,"sports, horse riding",https://en.wikivoyage.org/wiki/Horse_riding,26
+847,1,3,hau;ibo;yor,wikivoyage,sports,https://en.wikivoyage.org/wiki/Rock_climbing,23
+848,1,0,,wikivoyage,sports,https://en.wikivoyage.org/wiki/Rock_climbing,24
+849,1,1,hau,wikivoyage,sports,https://en.wikivoyage.org/wiki/Downhill_snowsports,24
+850,1,2,hau;yor,wikivoyage,sports,https://en.wikivoyage.org/wiki/Downhill_snowsports,23
+851,1,2,hau;yor,wikivoyage,sports,https://en.wikivoyage.org/wiki/Downhill_snowsports,19
+852,1,2,hau;yor,wikivoyage,sports,https://en.wikivoyage.org/wiki/Downhill_snowsports,27
+853,1,1,hau,wikivoyage,sports,https://en.wikivoyage.org/wiki/Cross_country_skiing,15
+854,1,3,hau;ibo;yor,wikivoyage,sports,https://en.wikivoyage.org/wiki/Cross_country_skiing,28
+855,1,1,hau,wikivoyage,sports,https://en.wikivoyage.org/wiki/Cross_country_skiing,11
+856,1,1,hau,wikivoyage,sports,https://en.wikivoyage.org/wiki/Cross_country_skiing,35
+857,1,2,hau;yor,wikivoyage,travel,https://en.wikivoyage.org/wiki/Travelling_around_the_Schengen_Area,33
+858,1,2,hau;ibo,wikivoyage,travel,https://en.wikivoyage.org/wiki/Travelling_around_the_Schengen_Area,12
+859,1,3,hau;ibo;yor,wikivoyage,travel,https://en.wikivoyage.org/wiki/Travelling_around_the_Schengen_Area,20
+860,1,3,hau;ibo;yor,wikivoyage,travel,https://en.wikivoyage.org/wiki/Travelling_around_the_Schengen_Area,28
+861,1,1,hau,wikivoyage,"travel, art",https://en.wikivoyage.org/wiki/Art_and_antiques_shopping,22
+862,1,2,hau;yor,wikivoyage,"travel, art",https://en.wikivoyage.org/wiki/Art_and_antiques_shopping,21
+863,1,1,hau,wikivoyage,"travel, art",https://en.wikivoyage.org/wiki/Art_and_antiques_shopping,15
+864,1,1,ibo,wikivoyage,"travel, culture",https://en.wikivoyage.org/wiki/Sami_culture,23
+865,1,1,hau,wikivoyage,"travel, culture",https://en.wikivoyage.org/wiki/Sami_culture,27
+866,1,1,hau,wikivoyage,"travel, culture",https://en.wikivoyage.org/wiki/Sami_culture,17
+867,1,3,hau;ibo;zul,wikivoyage,"travel, culture",https://en.wikivoyage.org/wiki/Roma_culture_in_Europe,28
+868,1,2,hau;ibo,wikivoyage,"travel, safety",https://en.wikivoyage.org/wiki/Travel_advisories,25
+869,1,2,hau;ibo,wikivoyage,"travel, safety",https://en.wikivoyage.org/wiki/Travel_advisories,22
+870,1,1,hau,wikivoyage,"travel, safety",https://en.wikivoyage.org/wiki/Travel_advisories,17
+871,1,1,hau,wikivoyage,"travel, safety",https://en.wikivoyage.org/wiki/Travel_advisories,13
+872,1,1,hau,wikivoyage,"travel, safety",https://en.wikivoyage.org/wiki/Travel_advisories,17
+873,1,2,hau;ibo,wikivoyage,"travel, safety",https://en.wikivoyage.org/wiki/Severe_weather,25
+874,1,3,hau;ibo;yor,wikivoyage,"travel, safety",https://en.wikivoyage.org/wiki/Severe_weather,24
+875,1,2,hau;zul,wikivoyage,"travel, safety",https://en.wikivoyage.org/wiki/Severe_weather,21
+876,1,2,hau;ibo,wikivoyage,"travel, safety",https://en.wikivoyage.org/wiki/Severe_weather,14
+877,1,2,hau;yor,wikivoyage,"travel, safety",https://en.wikivoyage.org/wiki/Severe_weather,23
+878,1,3,hau;ibo;yor,wikivoyage,"travel, safety",https://en.wikivoyage.org/wiki/War_zone_safety,18
+879,1,1,hau,wikivoyage,"travel, safety",https://en.wikivoyage.org/wiki/War_zone_safety,18
+880,1,2,hau;ibo,wikivoyage,"travel, safety",https://en.wikivoyage.org/wiki/War_zone_safety,18
+881,1,2,hau;yor,wikivoyage,"travel, safety",https://en.wikivoyage.org/wiki/War_zone_safety,22
+882,1,3,hau;ibo;yor,wikivoyage,"travel, safety",https://en.wikivoyage.org/wiki/War_zone_safety,17
+883,1,2,hau;ibo,wikivoyage,"travel, safety",https://en.wikivoyage.org/wiki/LGBT_travel,16
+884,1,0,,wikivoyage,"travel, safety",https://en.wikivoyage.org/wiki/LGBT_travel,23
+885,1,1,hau,wikivoyage,"travel, safety",https://en.wikivoyage.org/wiki/LGBT_travel,13
+886,1,1,yor,wikivoyage,"travel, safety",https://en.wikivoyage.org/wiki/LGBT_travel,16
+887,1,1,hau,wikivoyage,"travel, safety",https://en.wikivoyage.org/wiki/LGBT_travel,17
+888,1,1,hau,wikivoyage,"travel, safety",https://en.wikivoyage.org/wiki/Water_safety,18
+889,1,1,hau,wikivoyage,"travel, safety",https://en.wikivoyage.org/wiki/Water_safety,25
+890,1,0,,wikivoyage,"travel, safety",https://en.wikivoyage.org/wiki/Water_safety,18
+891,1,1,hau,wikivoyage,"travel, safety",https://en.wikivoyage.org/wiki/Water_safety,17
+892,1,1,ibo,wikivoyage,"travel, safety",https://en.wikivoyage.org/wiki/Water_safety,28
+893,0,0,,wikivoyage,"travel, culture",https://en.wikivoyage.org/wiki/Culture_shock,21
+894,1,3,hau;ibo;yor,wikivoyage,"travel, culture",https://en.wikivoyage.org/wiki/Culture_shock,22
+895,1,1,hau,wikivoyage,"travel, culture",https://en.wikivoyage.org/wiki/Culture_shock,22
+896,1,2,hau;yor,wikivoyage,"travel, culture",https://en.wikivoyage.org/wiki/Culture_shock,22
+897,1,1,hau,wikivoyage,"travel, culture",https://en.wikivoyage.org/wiki/Culture_shock,15
+898,1,1,hau,wikivoyage,"travel, children",https://en.wikivoyage.org/wiki/Giza_with_children,18
+899,1,2,hau;ibo,wikivoyage,"travel, children",https://en.wikivoyage.org/wiki/Giza_with_children,19
+900,1,2,hau;ibo,wikivoyage,"travel, children",https://en.wikivoyage.org/wiki/Giza_with_children,23
+901,1,1,hau,wikivoyage,"travel, children",https://en.wikivoyage.org/wiki/Giza_with_children,14
+902,1,1,hau,wikivoyage,"travel, children",https://en.wikivoyage.org/wiki/Giza_with_children,14
+903,1,1,hau,wikivoyage,"Antartica, Travel",https://en.wikivoyage.org/wiki/Antarctic_Islands,21
+904,1,3,hau;ibo;yor,wikivoyage,"Antartica, Travel",https://en.wikivoyage.org/wiki/Antarctic_Islands,22
+905,1,1,ibo,wikivoyage,"Antartica, Travel",https://en.wikivoyage.org/wiki/Antarctic_Islands,19
+906,1,2,hau;ibo,wikivoyage,"Antartica, Travel",https://en.wikivoyage.org/wiki/West_Antarctica,14
+907,1,2,hau;ibo,wikivoyage,"Antartica, Travel",https://en.wikivoyage.org/wiki/West_Antarctica,27
+908,1,2,hau;ibo,wikivoyage,"Antartica, Travel",https://en.wikivoyage.org/wiki/West_Antarctica,19
+909,1,3,hau;ibo;yor,wikivoyage,Communication,https://en.wikivoyage.org/wiki/Mobile_phones,15
+910,1,1,hau,wikivoyage,Communication,https://en.wikivoyage.org/wiki/Mobile_phones,31
+911,1,1,hau,wikivoyage,Communication,https://en.wikivoyage.org/wiki/Mobile_phones,21
+912,1,3,hau;ibo;zul,wikivoyage,Communication,https://en.wikivoyage.org/wiki/Mobile_phones,17
+913,1,1,hau,wikivoyage,"Work, Travel",https://en.wikivoyage.org/wiki/Gap_year_travel,15
+914,1,2,hau;ibo,wikivoyage,"Work, Travel",https://en.wikivoyage.org/wiki/Gap_year_travel,20
+915,1,2,hau;ibo,wikivoyage,"Work, Travel",https://en.wikivoyage.org/wiki/Gap_year_travel,24
+916,1,3,hau;ibo;yor,wikivoyage,"Work, Travel",https://en.wikivoyage.org/wiki/Gap_year_travel,13
+917,1,1,hau,wikivoyage,sailing,https://en.wikivoyage.org/wiki/Boating_in_Finland,25
+918,1,3,hau;ibo;yor,wikivoyage,sailing,https://en.wikivoyage.org/wiki/Boating_in_Finland,12
+919,1,1,hau,wikivoyage,sailing,https://en.wikivoyage.org/wiki/Boating_in_Finland,25
+920,1,2,ibo;yor,wikivoyage,sailing,https://en.wikivoyage.org/wiki/Boating_in_Finland,16
+921,1,3,hau;ibo;yor,wikivoyage,sailing,https://en.wikivoyage.org/wiki/Boating_in_Finland,23
+922,1,2,hau;ibo,wikivoyage,sailing,https://en.wikivoyage.org/wiki/Cruising_the_Baltic_Sea,14
+923,1,1,hau,wikivoyage,sailing,https://en.wikivoyage.org/wiki/Cruising_the_Baltic_Sea,23
+924,1,2,hau;ibo,wikivoyage,sailing,https://en.wikivoyage.org/wiki/Cruising_the_Baltic_Sea,18
+925,1,1,hau,wikivoyage,sailing,https://en.wikivoyage.org/wiki/Cruising_the_Baltic_Sea,38
+926,1,2,hau;zul,wikivoyage,travel,https://en.wikivoyage.org/wiki/Advice_for_nervous_flyers,27
+927,1,3,hau;ibo;yor,wikivoyage,travel,https://en.wikivoyage.org/wiki/Advice_for_nervous_flyers,26
+928,1,2,hau;yor,wikivoyage,travel,https://en.wikivoyage.org/wiki/Advice_for_nervous_flyers,32
+929,1,1,hau,wikivoyage,travel,https://en.wikivoyage.org/wiki/Air_courier,25
+930,1,1,hau,wikivoyage,travel,https://en.wikivoyage.org/wiki/Air_courier,21
+931,1,2,hau;ibo,wikivoyage,travel,https://en.wikivoyage.org/wiki/Air_courier,21
+932,1,0,,wikivoyage,travel,https://en.wikivoyage.org/wiki/Air_courier,33
+933,1,0,,wikivoyage,travel,https://en.wikivoyage.org/wiki/First_and_business_class_flights,33
+934,1,0,,wikivoyage,travel,https://en.wikivoyage.org/wiki/First_and_business_class_flights,32
+935,0,0,,wikivoyage,travel,https://en.wikivoyage.org/wiki/First_and_business_class_flights,23
+936,1,1,ibo,wikivoyage,travel,https://en.wikivoyage.org/wiki/First_and_business_class_flights,32
+937,1,4,hau;ibo;tsn;yor,wikivoyage,"travel, history",https://en.wikivoyage.org/wiki/Moldova,16
+938,1,3,hau;ibo;yor,wikivoyage,"travel, history",https://en.wikivoyage.org/wiki/Moldova,11
+939,1,2,hau;ibo,wikivoyage,"travel, history",https://en.wikivoyage.org/wiki/Moldova,32
+940,1,2,hau;ibo,wikivoyage,"travel, history",https://en.wikivoyage.org/wiki/Moldova,17
+941,1,4,hau;ibo;tsn;yor,wikivoyage,"travel, history",https://en.wikivoyage.org/wiki/Moldova,8
+942,1,1,hau,wikivoyage,travel,https://en.wikivoyage.org/wiki/Izmir,27
+943,1,3,hau;ibo;yor,wikivoyage,travel,https://en.wikivoyage.org/wiki/Izmir,25
+944,1,2,hau;zul,wikivoyage,travel,https://en.wikivoyage.org/wiki/Izmir,37
+945,1,2,hau;yor,wikivoyage,travel,https://en.wikivoyage.org/wiki/Streymoy,17
+946,1,1,hau,wikivoyage,travel,https://en.wikivoyage.org/wiki/Streymoy,13
+947,1,1,ibo,wikivoyage,travel,https://en.wikivoyage.org/wiki/Streymoy,11
+948,1,2,hau;yor,wikivoyage,travel,https://en.wikivoyage.org/wiki/Cascais,33
+949,1,3,hau;ibo;yor,wikivoyage,travel,https://en.wikivoyage.org/wiki/Cascais,12
+950,1,3,hau;ibo;yor,wikivoyage,travel,https://en.wikivoyage.org/wiki/Cascais,21
+951,1,1,hau,wikivoyage,travel,https://en.wikivoyage.org/wiki/Auschwitz-Birkenau,30
+952,1,1,hau,wikivoyage,travel,https://en.wikivoyage.org/wiki/Auschwitz-Birkenau,32
+953,1,1,hau,wikivoyage,travel,https://en.wikivoyage.org/wiki/Auschwitz-Birkenau,23
+954,1,1,hau,wikivoyage,travel,https://en.wikivoyage.org/wiki/Auschwitz-Birkenau,12
+955,1,3,hau;ibo;yor,wikivoyage,travel,https://en.wikivoyage.org/wiki/Barcelona,24
+956,1,2,hau;ibo,wikivoyage,travel,https://en.wikivoyage.org/wiki/Barcelona,19
+957,1,3,hau;ibo;yor,wikivoyage,travel,https://en.wikivoyage.org/wiki/Barcelona,12
+958,1,3,hau;ibo;yor,wikivoyage,travel,https://en.wikivoyage.org/wiki/Barcelona,32
+959,1,1,hau,wikivoyage,travel,https://en.wikivoyage.org/wiki/Paris,10
+960,1,1,hau,wikivoyage,travel,https://en.wikivoyage.org/wiki/Paris,41
+961,1,2,hau;ibo,wikivoyage,travel,https://en.wikivoyage.org/wiki/Paris,12
+962,1,2,ibo;zul,wikivoyage,travel,https://en.wikivoyage.org/wiki/Plitvice_Lakes_National_Park,24
+963,1,2,hau;ibo,wikivoyage,travel,https://en.wikivoyage.org/wiki/Plitvice_Lakes_National_Park,22
+964,1,3,hau;ibo;yor,wikivoyage,travel,https://en.wikivoyage.org/wiki/Plitvice_Lakes_National_Park,15
+965,1,2,hau;zul,wikivoyage,travel,https://en.wikivoyage.org/wiki/Plitvice_Lakes_National_Park,26
+966,1,3,hau;ibo;yor,wikivoyage,travel,https://en.wikivoyage.org/wiki/Meteora,19
+967,1,2,hau;ibo,wikivoyage,travel,https://en.wikivoyage.org/wiki/Meteora,35
+968,1,2,hau;ibo,wikivoyage,travel,https://en.wikivoyage.org/wiki/Meteora,13
+969,1,1,hau,wikivoyage,travel,https://en.wikivoyage.org/wiki/Meteora,34
+970,1,3,hau;ibo;yor,wikivoyage,"travel, cuisine",https://en.wikivoyage.org/wiki/Mallorca,24
+971,1,1,hau,wikivoyage,"travel, cuisine",https://en.wikivoyage.org/wiki/Mallorca,27
+972,1,2,hau;ibo,wikivoyage,Language/German,https://en.wikivoyage.org/wiki/German_phrasebook,21
+973,1,2,hau;ibo,wikivoyage,Language/German,https://en.wikivoyage.org/wiki/German_phrasebook,12
+974,1,2,hau;ibo,wikivoyage,Language/German,https://en.wikivoyage.org/wiki/German_phrasebook,28
+975,1,3,hau;ibo;tsn,wikivoyage,Language/Italian,https://en.wikivoyage.org/wiki/Italian_phrasebook,16
+976,1,2,hau;ibo,wikivoyage,Language/Italian,https://en.wikivoyage.org/wiki/Italian_phrasebook,20
+977,1,2,hau;ibo,wikivoyage,Language/Italian,https://en.wikivoyage.org/wiki/Italian_phrasebook,16
+978,1,2,hau;ibo,wikivoyage,Language/Persian,https://en.wikivoyage.org/wiki/Persian_phrasebook,9
+979,1,2,hau;yor,wikivoyage,Language/Persian,https://en.wikivoyage.org/wiki/Persian_phrasebook,17
+980,1,3,hau;ibo;yor,wikivoyage,Language/Portuguese,https://en.wikivoyage.org/wiki/Portuguese_phrasebook,18
+981,1,1,hau,wikivoyage,Language/Portuguese,https://en.wikivoyage.org/wiki/Portuguese_phrasebook,22
+982,1,2,hau;ibo,wikivoyage,Natural wonders/Astronomy,https://en.wikivoyage.org/wiki/Astronomy,14
+983,1,1,hau,wikivoyage,Natural wonders/Astronomy,https://en.wikivoyage.org/wiki/Astronomy,33
+984,1,1,hau,wikivoyage,Natural wonders/Astronomy,https://en.wikivoyage.org/wiki/Astronomy,14
+985,1,1,hau,wikivoyage,Natural wonders/Cherry Blossom,https://en.wikivoyage.org/wiki/Japan%27s_Top_100_Cherry_Blossom_Spots,17
+986,1,3,hau;ibo;yor,wikivoyage,Natural wonders/Cherry Blossom,https://en.wikivoyage.org/wiki/Japan%27s_Top_100_Cherry_Blossom_Spots,13
+987,1,1,ibo,wikivoyage,Natural wonders/Cherry Blossom,https://en.wikivoyage.org/wiki/Japan%27s_Top_100_Cherry_Blossom_Spots,25
+988,0,0,,wikivoyage,Natural wonders/Botanical tourism,https://en.wikivoyage.org/wiki/Botanical_tourism,19
+989,1,1,ibo,wikivoyage,Natural wonders/Botanical tourism,https://en.wikivoyage.org/wiki/Botanical_tourism,17
+990,1,3,hau;ibo;yor,wikivoyage,Natural wonders/Botanical tourism in Singapore,https://en.wikivoyage.org/wiki/Botanical_tourism_in_Singapore,22
+991,0,0,,wikivoyage,Natural wonders/Botanical tourism in Singapore,https://en.wikivoyage.org/wiki/Botanical_tourism_in_Singapore,33
+992,1,3,hau;lug;yor,wikivoyage,Natural wonders/Beer Sheva,https://en.wikivoyage.org/wiki/Beer_Sheva,24
+993,1,2,hau;ibo,wikivoyage,Natural wonders/Beer Sheva,https://en.wikivoyage.org/wiki/Beer_Sheva,23
+994,1,2,hau;ibo,wikivoyage,Natural wonders/Waterways,https://en.wikivoyage.org/wiki/Waterways,12
+995,1,3,hau;ibo;yor,wikivoyage,Natural wonders/Waterways,https://en.wikivoyage.org/wiki/Waterways,27
+996,1,2,hau;yor,wikivoyage,Natural wonders/Waterways,https://en.wikivoyage.org/wiki/Waterways,10
+997,1,2,hau;yor,wikivoyage,Reason to travel/Christmas and New Year,https://en.wikivoyage.org/wiki/Christmas_and_New_Year_travel,18
+998,1,1,hau,wikivoyage,Reason to travel/Christmas and New Year,https://en.wikivoyage.org/wiki/Christmas_and_New_Year_travel,21
+999,1,2,hau;tsn,wikivoyage,Reason to travel/Easter travel,https://en.wikivoyage.org/wiki/Easter_travel,17
+1000,1,1,hau,wikivoyage,Reason to travel/Easter travel,https://en.wikivoyage.org/wiki/Easter_travel,21
+1001,1,1,hau,wikivoyage,Reason to travel/Easter travel,https://en.wikivoyage.org/wiki/Easter_travel,31
+1002,1,2,hau;ibo,wikivoyage,Natural wonders/Galapagos wildlife,https://en.wikivoyage.org/wiki/Galapagos_wildlife,16
+1003,1,1,hau,wikivoyage,Natural wonders/Galapagos wildlife,https://en.wikivoyage.org/wiki/Galapagos_wildlife,26
+1004,1,3,hau;ibo;yor,wikivoyage,Natural wonders/Galapagos wildlife,https://en.wikivoyage.org/wiki/Galapagos_wildlife,21
+1005,1,2,hau;yor,wikivoyage,Natural wonders/Midnight sun,https://en.wikivoyage.org/wiki/Midnight_sun,27
+1006,1,3,hau;ibo;yor,wikivoyage,Natural wonders/Midnight sun,https://en.wikivoyage.org/wiki/Midnight_sun,22
+1007,1,1,hau,wikivoyage,Natural wonders/Midnight sun,https://en.wikivoyage.org/wiki/Midnight_sun,23
+1008,1,1,hau,wikivoyage,Reason to travel/Working in Japan,https://en.wikivoyage.org/wiki/Working_and_studying_in_Japan,15
+1009,1,0,,wikivoyage,Reason to travel/Working in Japan,https://en.wikivoyage.org/wiki/Working_and_studying_in_Japan,18
+1010,1,0,,wikivoyage,Reason to travel/Working in Japan,https://en.wikivoyage.org/wiki/Working_and_studying_in_Japan,12
+1011,1,2,hau;yor,wikivoyage,Reason to travel/Working in Japan,https://en.wikivoyage.org/wiki/Working_and_studying_in_Japan,22

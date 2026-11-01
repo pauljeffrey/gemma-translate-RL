@@ -1,0 +1,115 @@
+source_repo,old_build_rows,reachable_on_hub_with_owner_token,private_flag,old_build_step,licence_declared,used_in_rebuild,why_not
+<HF_ORG_LEGACY>/naija2,23267072,False,,naija2@Business_Knowledge_Dataset_Llama_3.1_Short_Token_Pairs_english_prompt-response|naija2@IGBONLP_Igbo_To_Eng_english_translation|naija2@Igbo_To_Eng_Amazon_Translator_english_translation|naija2@JW300_Igbo_To_Eng_english_translation|naija2@Kaggle_CNN_Text_Summarization_english_summarization|naija2@MathScaleQA-2M_multilingual_reasoning|naija2@Pidgin_English_AmazonMTurk_english_translation|naija2@Pontoon-Translations_english_translation|naija2@WebScraped_Igbo_To_Eng_english_translation|naija2@afrisenti_twi_sentiment_classification|naija2@alpaca-twi-cleaned_twi_prompt-response|naija2@alpaca_twi_taco_twi_prompt-response|naija2@amharic-news-category-classification_multilingual_topic_classification|naija2@english-yoruba_sentence-pairs_mt560_english_translation|naija2@grade-school-math-instructions_multilingual_reasoning|naija2@igbo-to-english_english_translation|naija2@lr-sum_eng_summarization|naija2@masakhanews_yor_headline|naija2@muri-it_multilingual_prompt-response|naija2@pidgin-to-english_english_translation|naija2@sib200_fon_Latn_topic_classification|naija2@sib200_twi_Latn_topic_classification|naija2@tatoeba_mt_train_english_translation|naija2@wikipedia_20230901.fat_headline|naija2@xP3all_tw_prompt-response|naija2@xlsum_english_headline|naija2@xlsum_english_summarization,,no,"404 for both owner tokens (private repo of an older account, deleted or renamed)"
+<HF_ORG>/tds,10796903,False,,tds,,no,"404 for both owner tokens (private repo of an older account, deleted or renamed)"
+<HF_ORG_LEGACY>/naija_sft,8485343,False,,old_eng_sft,,no,"404 for both owner tokens (private repo of an older account, deleted or renamed)"
+<HF_ORG>/aya_interlanguage_translate,5874377,False,,aya_interlanguage,,no,"404 for both owner tokens (private repo of an older account, deleted or renamed)"
+<HF_ORG_LEGACY>/sft-new,5627582,True,False,sft_new_existing,other,<HF_ORG>/sft-new translation-* groups (same rows),
+<HF_ORG_LEGACY>/naija,4570400,False,,"naija@AfroLingu-MT_ibo_prompt-response|naija@Ehn-bible-bbc-gpt3.5_english_translation|naija@Ehn-bible_english_translation|naija@IGBONLP_Igbo_To_Eng_ibo_translation|naija@InjongoIntent_ibo_prompt-response|naija@InjongoIntent_twi_prompt-response|naija@Pontoon-Translations_english_translation|naija@Tested-143k-Python-Alpaca_train_prompt-response|naija@african-translated-alpaca_afrikaans_prompt-response|naija@afrisenti_ibo_sentiment_classification|naija@afrisenti_pcm_sentiment_classification|naija@afrisenti_twi_sentiment_classification|naija@amazon_massive_intent_['yor', 'yo', 'hau', 'ha', 'ibo', 'igbo', 'ig', 'pcm', 'urh', 'efi', 'ful', 'ff', 'fuv', 'knc', 'oke', 'tiv', 'ibb', 'nup']_intent|naija@english-efik_sentence-pairs_mt560_english_translation|naija@english-igbo_sentence-pairs_mt560_english_translation|naija@english-nigerian-pidgin_sentence-pairs_mt560_english_translation|naija@english-urhobo_sentence-pairs_mt560_english_translation|naija@igbo-emotions-corpus_ibo_sentiment_classification|naija@multi-wiki-qa_multilingual_prompt-response|naija@muri-it-language-split_fon_prompt-response|naija@muri-it-language-split_ful_prompt-response|naija@muri-it-language-split_ibo_prompt-response|naija@wikipedia_20230901.ff_headline|naija@xP3all_tw_prompt-response|naija@xlsum_multilingual_headline|naija@xlsum_multilingual_summarization",,no,"404 for both owner tokens (private repo of an older account, deleted or renamed)"
+<HF_ORG_LEGACY>/eng_sft,2685871,False,,old_eng_sft,,no,"404 for both owner tokens (private repo of an older account, deleted or renamed)"
+<HF_ORG_LEGACY>/african_sft,2685871,False,,old_african_sft,,no,"404 for both owner tokens (private repo of an older account, deleted or renamed)"
+michsethowusu/english-setswana_sentence-pairs_mt560,1374166,True,False,mt560_qe,cc-by-4.0,mt560 family,
+<HF_ORG>/processed_data,1372380,False,,processed_data_tagged,,no,"404 for both owner tokens (private repo of an older account, deleted or renamed)"
+<HF_ORG>/clean_data,1211431,False,,clean_data_tagged,,no,"404 for both owner tokens (private repo of an older account, deleted or renamed)"
+<HF_ORG>/african_languages_translation,1027940,False,,african_languages_translation,,no,"404 for both owner tokens (private repo of an older account, deleted or renamed)"
+KwekuAinoo/eng_twi,1010674,True,False,kweku_eng_twi,,yes,
+CohereLabs/aya_collection_language_split,909795,True,False,aya_language_split,apache-2.0,no,not translation (task data)
+<HF_ORG>/english_to_igbo,812058,False,,english_to_igbo,,no,"404 for both owner tokens (private repo of an older account, deleted or renamed)"
+<HF_ORG>/clean_data2,767801,False,,clean_data2_tagged,,no,"404 for both owner tokens (private repo of an older account, deleted or renamed)"
+<HF_ORG>/translation,756361,False,,translation_tagged,,no,"404 for both owner tokens (private repo of an older account, deleted or renamed)"
+<HF_ORG_LEGACY>/Clean_translate,703648,False,,clean_translate_tagged,,no,"404 for both owner tokens (private repo of an older account, deleted or renamed)"
+michsethowusu/tswana-emotions-corpus,689340,True,False,tswana_emotions,mit,no,not translation (task data)
+bigscience/xP3all,425634,True,False,xp3all_african,apache-2.0,no,"reachable but not rebuilt in this pass (needs converter work, see report)"
+bigscience/xP3mt,420515,True,False,xp3mt_african,apache-2.0,no,"reachable but not rebuilt in this pass (needs converter work, see report)"
+<HF_ORG>/aya_collection_language_split,404336,False,,aya_collection,,no,"404 for both owner tokens (private repo of an older account, deleted or renamed)"
+<HF_ORG>/aya-translate,380165,False,,aya_translate,,no,"404 for both owner tokens (private repo of an older account, deleted or renamed)"
+UBC-NLP/AfroLingu-MT,328428,True,False,afrolingu_mt,,"yes (train, gated)",
+MaLA-LM/reasoning-instruct-final,299463,True,False,mala_reasoning,,no,not translation (task data)
+taresco/xP3x_african_subset,286023,True,False,xp3x_african,,no,"reachable but not rebuilt in this pass (needs converter work, see report)"
+<HF_ORG>/ApolloMoEDataset,277347,False,,apollo_moe,,no,"404 for both owner tokens (private repo of an older account, deleted or renamed)"
+michsethowusu/english-oromo_sentence-pairs_mt560,261542,True,False,mt560_qe,cc-by-4.0,mt560 family,
+<HF_ORG_LEGACY>/tasks,245460,False,,old_tasks,,no,"404 for both owner tokens (private repo of an older account, deleted or renamed)"
+mathewhe/OpenHermes-2.5-Formatted,228830,True,False,openhermes_general,,no,not translation (task data)
+<HF_ORG>/WebScraped_Igbo_To_Eng,208010,False,,webscraped_igbo,,no,"404 for both owner tokens (private repo of an older account, deleted or renamed)"
+BatsResearch/ctga-v1,193572,True,False,ctga_tasks,,no,not translation (task data)
+wikimedia/wikipedia,167493,True,False,wikipedia_rag,"cc-by-sa-3.0,gfdl",no,not translation (task data)
+galsenai/centralized_wolof_french_translation_data,157184,True,False,wolof_pairs,,no,"reachable but not rebuilt in this pass (needs converter work, see report)"
+<HF_ORG_LEGACY>/ultrachat-filtered,150000,False,,ultrachat_filtered,,no,"404 for both owner tokens (private repo of an older account, deleted or renamed)"
+sudoping01/english-wolof-translation,128218,True,False,wolof_pairs,apache-2.0,yes,
+abdoelsayed/reranking-datasets-light,122580,True,False,rerank_light_rag,apache-2.0,no,not translation (task data)
+Tadesse/COMET_score,112634,True,False,comet_score,mit,no,not translation (task data)
+<HF_ORG_LEGACY>/rag_synthetic_data,107175,True,False,rag_synthetic,,no,not translation (task data)
+54rt1n/wikipedia-summary-dataset,99997,True,False,wikipedia_summary_rag,mit,no,not translation (task data)
+bltlab/open-ner-standardized,97637,True,False,open_ner,cc-by-4.0,no,not translation (task data)
+taresco/cot_submix_filtered,94585,True,False,cot_submix,,no,not translation (task data)
+dsfsi/vukuzenzele-sentence-aligned,85070,True,False,vukuzenzele,cc-by-4.0,yes,
+jaygala24/xsimplusplus,79587,True,False,xsim_nli,"cc0-1.0,other",no,not translation (task data)
+ayymen/Pontoon-Translations,76604,True,False,pontoon,mpl-2.0,yes,
+CapitainVigs/mece-fongbe-corpus,72749,True,False,fongbe_chat,other,no,not translation (task data)
+<HF_ORG>/finance-alpaca,65859,False,,english_instruct,,no,"404 for both owner tokens (private repo of an older account, deleted or renamed)"
+<HF_ORG_LEGACY>/intent,56434,False,,old_intent,,no,"404 for both owner tokens (private repo of an older account, deleted or renamed)"
+<HF_ORG>/personal_finance_v0.2,56113,False,,english_instruct,,no,"404 for both owner tokens (private repo of an older account, deleted or renamed)"
+CohereLabs/wikipedia-2023-11-embed-multilingual-v3,55416,True,False,cohere_wiki_rag,,no,not translation (task data)
+michsethowusu/english-fon_sentence-pairs_mt560,53500,True,False,mt560_qe,cc-by-4.0,mt560 family,
+<HF_ORG>/noisy_dataset,52760,False,,aletheia_noisy,,no,"404 for both owner tokens (private repo of an older account, deleted or renamed)"
+<HF_ORG>/biblenlp-corpus-mmteb-swahili,52304,False,,bible_pairs,,no,"404 for both owner tokens (private repo of an older account, deleted or renamed)"
+<HF_ORG_LEGACY>/summarization,51801,False,,old_summarization,,no,"404 for both owner tokens (private repo of an older account, deleted or renamed)"
+<HF_ORG_LEGACY>/hate,45821,False,,old_hate,,no,"404 for both owner tokens (private repo of an older account, deleted or renamed)"
+<HF_ORG>/diacritics,44424,False,,aletheia_diacritics,,no,"404 for both owner tokens (private repo of an older account, deleted or renamed)"
+BatsResearch/sib200-LexC-Gen,42830,True,False,sib200_lexcgen,,no,not translation (task data)
+saillab/alpaca-ewe-cleaned,40668,True,False,alpaca_native,,no,not translation (task data)
+saillab/alpaca_ewe_taco,40496,True,False,alpaca_taco,,no,not translation (task data)
+<HF_ORG>/alpaca-igbo-cleaned,40257,False,,alpaca_native,,no,"404 for both owner tokens (private repo of an older account, deleted or renamed)"
+<HF_ORG>/alpaca_igbo_taco,40066,False,,alpaca_taco,,no,"404 for both owner tokens (private repo of an older account, deleted or renamed)"
+<HF_ORG>/alpaca-yoruba-cleaned,39794,False,,alpaca_native,,no,"404 for both owner tokens (private repo of an older account, deleted or renamed)"
+<HF_ORG>/alpaca-hausa-cleaned,39653,False,,alpaca_native,,no,"404 for both owner tokens (private repo of an older account, deleted or renamed)"
+<HF_ORG>/alpaca_yoruba_taco,39540,False,,alpaca_taco,,no,"404 for both owner tokens (private repo of an older account, deleted or renamed)"
+<HF_ORG>/alpaca_hausa_taco,39490,False,,alpaca_taco,,no,"404 for both owner tokens (private repo of an older account, deleted or renamed)"
+<HF_ORG_LEGACY>/glaive-function-calling-v2,34598,True,False,glaive_function_calling,,no,not translation (task data)
+taresco/big_math_translated_african_languages,34058,True,False,big_math_african,apache-2.0,no,not translation (task data)
+Tadesse/news-topic,30611,True,False,news_topic_amh,,no,not translation (task data)
+beethogedeon/Helsinki-en-fon-opus-20k,29792,True,False,fon_pairs,cc-by-4.0,yes,
+<HF_ORG>/low_resource_multilingual_sft_short,28764,False,,low_resource_multilingual,,no,"404 for both owner tokens (private repo of an older account, deleted or renamed)"
+danish-foundation-models/multilingual-gsm-symbolic,27383,True,False,gsm_symbolic_african,mit,no,not translation (task data)
+<HF_ORG_LEGACY>/pos,27212,False,,old_pos,,no,"404 for both owner tokens (private repo of an older account, deleted or renamed)"
+FrancophonIA/Fon_French_Daily_Dialogues_Parallel_Data,24426,True,False,fon_pairs,,no,"reachable but not rebuilt in this pass (needs converter work, see report)"
+masakhane/AfriADR,24102,True,False,afriadr_diacritics,apache-2.0,no,not translation (task data)
+cibfaye/wolof-english-bible,23980,True,False,wolof_pairs,,yes,
+akoksal/LongForm,22703,True,False,english_instruct,mit,no,not translation (task data)
+abdoelsayed/DeAR-COT,20253,True,False,dear_cot_rerank,apache-2.0,no,not translation (task data)
+<HF_ORG_LEGACY>/topic,18768,False,,old_topic,,no,"404 for both owner tokens (private repo of an older account, deleted or renamed)"
+m-a-d-i/wori-wolof-instructions,18570,True,False,wori_wolof,cc-by-4.0,no,"reachable but not rebuilt in this pass (needs converter work, see report)"
+McGill-NLP/SSA-MTE,17214,True,False,ssa_mte,cc-by-sa-4.0,"yes (train, owner decision)",
+mteb/SouthAfricanLangClassification,16919,True,False,south_african_lid,mit,no,not translation (task data)
+<HF_ORG>/gpt-teacher-yo,16760,True,False,gpt_teacher_yo,,no,not translation (task data)
+<HF_ORG>/English_efik_bible_translation,14720,True,True,efik_bible,,no,"reachable but not rebuilt in this pass (needs converter work, see report)"
+<HF_ORG>/MMMLU_yoruba,13938,False,,mmmlu_yoruba,,no,"404 for both owner tokens (private repo of an older account, deleted or renamed)"
+Tadesse/EthioEmo-intensities,13914,True,False,ethioemo,mit,no,not translation (task data)
+<HF_ORG>/gsm8k3,11016,False,,gsm8k|gsm8k_translate,,no,"404 for both owner tokens (private repo of an older account, deleted or renamed)"
+dofbi/jolof,10868,True,False,wolof_pairs,mit,no,"reachable but not rebuilt in this pass (needs converter work, see report)"
+fiifinketia/navigation-corpus-twi,9284,True,False,navigation_corpus,cc-by-4.0,no,not translation (task data)
+fiifinketia/navigation-corpus-ewe,9284,True,False,navigation_corpus,cc-by-4.0,no,not translation (task data)
+fiifinketia/navigation-corpus-dagbani,9284,True,False,navigation_corpus,,no,not translation (task data)
+<HF_ORG>/TinyStories_igbo,8617,False,,tinystories,,no,"404 for both owner tokens (private repo of an older account, deleted or renamed)"
+galsenai/english-wolof-smol-translation,7808,True,False,wolof_pairs,,no,"reachable but not rebuilt in this pass (needs converter work, see report)"
+<HF_ORG>/Roleplay-Hausa,7692,False,,roleplay_hausa,,no,"404 for both owner tokens (private repo of an older account, deleted or renamed)"
+<HF_ORG>/muri-it-language-split,7441,False,,muri_it,,no,"404 for both owner tokens (private repo of an older account, deleted or renamed)"
+<HF_ORG>/wiki-yo,6894,True,False,wiki_yo,,no,not translation (task data)
+<HF_ORG>/gsm8k2,5606,False,,gsm8k|gsm8k_translate,,no,"404 for both owner tokens (private repo of an older account, deleted or renamed)"
+<HF_ORG>/low_resource_multilingual,4610,False,,low_resource_multilingual,,no,"404 for both owner tokens (private repo of an older account, deleted or renamed)"
+<HF_ORG>/TinyStories_yoruba,4439,True,False,tinystories,,no,not translation (task data)
+<HF_ORG>/nvidia_steer_yo,4387,False,,nvidia_steer_yo,,no,"404 for both owner tokens (private repo of an older account, deleted or renamed)"
+anrilombard/masakhaner-x-parquet,4286,True,False,masakhaner_x,,no,not translation (task data)
+<HF_ORG>/gsm8k,4212,False,,gsm8k|gsm8k_translate,,no,"404 for both owner tokens (private repo of an older account, deleted or renamed)"
+<HF_ORG_LEGACY>/data-gen,4051,True,True,datagen_sft,cc-by-4.0,no,not translation (task data)
+beethogedeon/fr_fon,3702,True,False,fon_pairs,apache-2.0,no,"reachable but not rebuilt in this pass (needs converter work, see report)"
+<HF_ORG>/biblenlp-corpus-mmteb,3222,False,,bible_pairs,,no,"404 for both owner tokens (private repo of an older account, deleted or renamed)"
+howard-nlp/sib200-ibom,3009,True,False,sib200_ibom,cc-by-sa-4.0,no,not translation (task data)
+<HF_ORG>/hausa_voa_topics,2335,False,,hausa_voa_topics,,no,"404 for both owner tokens (private repo of an older account, deleted or renamed)"
+<HF_ORG>/coqa-stories,2005,False,,coqa_stories,,no,"404 for both owner tokens (private repo of an older account, deleted or renamed)"
+CohereLabs/Global-MMLU,1988,False,,global_mmlu_dev,,no,"404 for both owner tokens (private repo of an older account, deleted or renamed)"
+<HF_ORG>/AI_Storyteller_Dataset2,1054,False,,storyteller,,no,"404 for both owner tokens (private repo of an older account, deleted or renamed)"
+<HF_ORG>/bitext_nollysenti_miners,750,False,,bible_pairs,,no,"404 for both owner tokens (private repo of an older account, deleted or renamed)"
+<HF_ORG>/low_resource_multilingual_sft_short2,376,False,,low_resource_multilingual,,no,"404 for both owner tokens (private repo of an older account, deleted or renamed)"
+li-lab/MMLU-ProX,350,False,,mmlu_prox_validation,,no,"404 for both owner tokens (private repo of an older account, deleted or renamed)"
+<HF_ORG>/reasoning-gsm-qna-oa2,288,False,,gsm8k,,no,"404 for both owner tokens (private repo of an older account, deleted or renamed)"
+<HF_ORG>/IgboSenti-BBC,239,False,,igbo_sentiment,,no,"404 for both owner tokens (private repo of an older account, deleted or renamed)"

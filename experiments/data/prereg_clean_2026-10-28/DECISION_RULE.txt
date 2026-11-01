@@ -1,0 +1,74 @@
+PRE-REGISTRATION - clean rerun of the 270M English->African translator, and the Ge'ez / weak-language specialist
+Lead agent, written 2026-10-28 BEFORE any training of the rerun. Frozen: arms, fixed factors, metrics, thresholds and claim wording below are not changed after the first
+training step. Anything not listed here is reported as exploratory. Owner approved the three arms and the 2 chrF++ threshold on 2026-10-28 ("whatever we find, we will report").
+
+1. QUESTIONS
+   Q1 (specialisation) Does a 270M model trained only on the Ge'ez-script languages and the weak Latin-script languages beat the 77-language 270M model on those
+      languages, at the same number of passes over each language's data?
+   Q2 (tokenizer) Does adding 3,000 Ge'ez tokens to the specialist improve Ge'ez translation, with everything else fixed?
+   Neither question identifies the MECHANISM of a Q1 gain (see 8).
+
+2. LANGUAGES
+   G  (Ge'ez script)   = amh, tir
+   W  (weak Latin)     = fon dyu kbp nus mos kam bam umb kea kmb vmw kab seh wol ewe luo tum
+   Specialist set     = G + W (19 languages). Control set C = hau yor swh kin ibo (strong languages, not in the specialist set) - tokenisation of C must be identical in S1 and S2.
+   Languages of the specialist set without data after the filter are reported and excluded from the macro averages; the list is written to the run manifest before training.
+
+3. ARMS (all start from google/gemma-3-270m-it, full fine-tuning, English -> X, loss on the answer only)
+   A0  multilingual SFT, all 77 target languages, original tokenizer (the clean rebuild of the previous SFT-final).
+   S1  specialist SFT, languages of the specialist set only, original tokenizer. For every specialist language S1 sees exactly the packs that A0 saw for that language, in the same order
+       (same number of passes: A0's per-language epoch count, retired after 4 passes). Optimizer, learning-rate peak and shape (warm-up fraction and cosine to the same final fraction),
+       batch size in tokens, sequence length 4096 packing, precision (bf16 autocast, fp32 master), seed, gradient clipping, weight decay: identical to A0. The number of optimizer steps differs
+       (S1 has fewer tokens) and is reported.
+   S2  = S1 plus 3,000 Ge'ez tokens added into the unused ids of the Gemma-3 vocabulary (the T1 build, reports/token_swap_build_2026-10-25.md), new embedding rows initialised as the mean of the old
+       sub-token embeddings of their string; same examples and order as S1 (token counts differ; both reported); a short embeddings-only warm-up (counted in S2's steps and reported) is the only
+       other difference. Latin text is tokenised identically in S1 and S2 (verified by script before training; if not, S2 is invalid).
+   Not run (budget): Ge'ez-only arm, dose-response over language count, longer-epoch arm, 1B arms. If run later they are exploratory.
+   Optional exploratory arm X1: the S1 recipe on gemma-3-1B-it (specialist data only, SFT only). Reported as a scaling data point, never as proof of capacity dilution (different pretraining).
+
+4. DATA AND HOLD-OUTS (roles as in reports/benchmark_contamination_audit_2026-10-26.md section 5.1)
+   T1 training text: the rebuilt corpus of agent D2 (repo <HF_ORG_LEGACY>/sabiyarn-clean-sft-2026-10-28), index protected-2026-10-28.2 (both sides, any language; strict 8-gram rule),
+      plus the specialist data of D2 step C. All arms draw from the SAME pool; A0 uses it for all 77 languages. Licence classes are stored per row; IbomMT train is non_commercial and in the pool (owner decision).
+   FLORES+ dev is split ONCE for all languages by sha256(id) parity; the 100 ids of reports/data/weak_selection_2026-10-26/sample_ids.json are forced into the held-out half H. The train half may be
+      used for the specialist-set languages only (all arms). H is split again by sha256 parity into H_cal (reward calibration, T2) and H_sel (selection, S). FLORES+ devtest, NTREX, MAFAND dev/test,
+      SmolSent, SmolDoc, SALT dev/test, GlotStoryBook, AfriScience dev/test, AfriLongDoc, SSA-MTE dev/test, WMT24++, IbomMT dev/test, AfriMTE-WMT2024, TICO-19, SIB-200 are never in T1 or T2.
+      S additionally: SSA-MTE dev, IbomMT dev (efi, ibb), SALT dev (ach, nyn). T2 additionally: SSA-MTE train references, IbomMT train (Efik/Ibibio thresholds).
+   E (reported, read once per final model after all decisions are logged): FLORES+ devtest, NTREX-128, MAFAND-MT test, SmolSent, SALT test, GlotStoryBook, AfriScience-MT test, SSA-MTE test, WMT24++ (swh, zul).
+   Gemma-3 pretraining data cannot be audited; this is a stated limitation, not a claim of zero exposure.
+
+5. METRICS AND STATISTICS
+   Primary: chrF++ (sacrebleu CHRF(word_order=2), NFC, tag removed), FLORES+ devtest, English -> X, greedy decoding, 768 new tokens, one run per arm and seed.
+   Group score = unweighted mean over the languages of the group. Differences are paired by sentence id (FLORES+ is multi-way, so the same resampled ids are used for all languages), 10,000 bootstrap
+   resamples, 95% percentile interval. Secondary (never used for the decision): spBLEU (flores200), AfriCOMET, SSA-COMET (amh only for the Ge'ez group), tokens per sentence, sentences/s, finished rate,
+   wrong-language rate (GlotLID), loop rate, and the Gemini-3.8-Flash Batch judge on the validated amh sample.
+   Seeds: one seed per arm (budget). The bootstrap covers test-sentence variation only, not training-seed variation; this is stated wherever the result is reported. If budget allows, two extra seeds of S1
+   are run and reported together with the first (no change of the rule).
+
+6. DECISION RULES (thresholds fixed here)
+   R1 specialisation on Ge'ez: Delta1_G = chrF++(S1, G) - chrF++(A0, G). "Supported" if Delta1_G >= 2.0 and the 95% interval excludes 0. "Not supported" if the interval includes 0 and Delta1_G < 2.0.
+       "Reversed" if the upper bound is below 0. Anything else (Delta >= 2.0 with an interval including 0, or 0 < Delta < 2.0 with an interval excluding 0) is reported as "inconclusive / small".
+   R2 specialisation on the weak Latin languages: the same rule with group W.
+   R3 tokenizer on Ge'ez: Delta2_G = chrF++(S2, G) - chrF++(S1, G), same thresholds. Guard: Delta2_C (control set) must lie within +-1.0 chrF++; if not, the swap is reported as having side effects.
+   R4 speed: tokens per reference sentence and decoding sentences/s of S2 vs S1 on the same sentences, reported with no threshold.
+   R5 the production choice between S1 and S2 is S2 if R3 is "supported" or if R3 is "inconclusive" and S2 is not worse than S1 on G by more than 1.0 chrF++ and is faster; otherwise S1. Same rule for A0 vs the better
+       specialist on the specialist set at the macro level over G+W.
+
+7. RL AND SCIENCE STAGES (production track, not part of R1-R5)
+   Same pipeline as the previous run: multi-phase length bins b64, b256, b512, b1024 (the b2048 bin is dropped; maximum 1,024 target-side tokens), then the AfriScience stage with the previous mixture ratio and
+   interpolation procedure. The reward keeps every previous component (AfriCOMET-QE + SSA-COMET-MTL ensemble, group consensus, length window, Gale-Church omission cost, diacritic penalty, lexical penalty, GlotLID
+   guard, constraint anchors v1-v3, long-document limits, science penalties, NLLB-200 3.3B signal in the final run only, advantage weights = reliability, language draw weights). Every calibrated object is refitted on
+   T2 only (H_cal, SSA-MTE train, IbomMT train) and every calibration script refuses a file whose split label is not in {calibration, dev}. The NLLB-signal language rule ("teacher - student >= +2 chrF++ with
+   the interval above 0") is evaluated on H_sel, not devtest. The weak list for draw weights is the dev-defined list of reports/weak_language_selection_2026-10-26.md (hash 4472d711...6ab7) plus G+W. Checkpoint
+   selection and the interpolation weight use S only. NLLB-signal and every NC/unknown-licence source used are disclosed in the paper.
+   The same arms' RL variants are exploratory; the headline model for production is the RL result of the arm chosen by R5.
+
+8. WHAT EACH OUTCOME MAY BE CALLED
+   R1/R2 supported: "At matched passes over each language's data, specialising the 270M model on these languages improves them by Delta chrF++. This is consistent with interference or limited capacity when 77
+   languages share the parameters; the experiment does not separate the two, nor from the effect of having fewer total training tokens and steps." Not supported: "No evidence that sharing parameters across 77
+   languages limits these languages at this data scale." Capacity itself is only addressed by the optional X1 scaling point and is described as such.
+   R3 supported: "Adding Ge'ez tokens improved amh/tir by Delta chrF++ (and shortened sequences by x%)." Not supported: "No quality gain from the tokenizer; the swap changes sequence length and speed only."
+   All results are reported whatever they show; arms are not dropped, thresholds are not changed, and exploratory analyses are labelled.
+
+9. WHAT IS PINNED AT LAUNCH (written to the run manifest with sha256 before the first step)
+   exact SFT config file and its hash; the D2 data commit/revision of the Hub repo; protected index version and manifest sha256; list of languages with data after filtering; the H / H_cal / H_sel id lists; the
+   per-language pass counts of A0; git commit of the training code; GPU type; this file's sha256 (also recorded in reports/preregistration_<S3_PREFIX>.md).

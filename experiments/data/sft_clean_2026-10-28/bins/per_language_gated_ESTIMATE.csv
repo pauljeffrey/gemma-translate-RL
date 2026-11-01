@@ -1,0 +1,78 @@
+iso,windows,target_tokens_gemma,packs,assumed_keep_rate,keep_rate_source
+yor,714762,71113303,28082,0.85,"QE sample n=100 (CPU, AfriCOMET-QE-STL-1.1), rule OLD: min(0.85, share >= 0.20)"
+afr,630607,70065514,32326,0.85,ESTIMATE flat 15% drop
+zul,435154,62537750,25663,0.85,ESTIMATE flat 15% drop
+xho,501171,62408304,26216,0.85,ESTIMATE flat 15% drop
+nya,376116,50062499,20856,0.85,ESTIMATE flat 15% drop
+ibo,537407,48455844,20230,0.85,ESTIMATE flat 15% drop
+hau,315556,47985656,20381,0.85,ESTIMATE flat 15% drop
+swh,283991,45457594,19637,0.85,ESTIMATE flat 15% drop
+amh,257575,45402622,18428,0.85,"QE sample n=100 (CPU, AfriCOMET-QE-STL-1.1), rule OLD: min(0.85, share >= 0.20)"
+sna,359083,44480988,19023,0.85,ESTIMATE flat 15% drop
+som,206811,43418023,17373,0.85,ESTIMATE flat 15% drop
+tir,178521,37256449,14144,0.85,"QE sample n=100 (CPU, AfriCOMET-QE-STL-1.1), rule OLD: min(0.85, share >= 0.20)"
+mlg,285067,32802220,13839,0.85,ESTIMATE flat 15% drop
+tsn,282769,28730644,12009,0.85,ESTIMATE flat 15% drop
+sot,116833,27864735,11056,0.85,ESTIMATE flat 15% drop
+luo,292358,27802571,13027,0.85,"QE sample n=100 (CPU, AfriCOMET-QE-STL-1.1), rule OLD: min(0.85, share >= 0.20)"
+tso,259972,27636184,11485,0.85,ESTIMATE flat 15% drop
+kin,88590,21136438,8735,0.85,ESTIMATE flat 15% drop
+twi,212881,20058072,8574,0.85,ESTIMATE flat 15% drop
+nso,187095,19478582,8121,0.85,ESTIMATE flat 15% drop
+lin,165094,16692169,7195,0.85,ESTIMATE flat 15% drop
+orm,99348,14351927,5799,0.85,ESTIMATE flat 15% drop
+loz,122851,13056045,5571,0.85,ESTIMATE flat 15% drop
+efi,130266,11989128,4995,0.85,ESTIMATE flat 15% drop
+run,112571,11783894,4975,0.85,ESTIMATE flat 15% drop
+bem,108135,11560404,4991,0.85,ESTIMATE flat 15% drop
+kon,105696,11166491,4788,0.85,ESTIMATE flat 15% drop
+lua,86727,9083512,3959,0.85,ESTIMATE flat 15% drop
+kab,38022,8290220,3344,0.85,"QE sample n=100 (CPU, AfriCOMET-QE-STL-1.1), rule OLD: min(0.85, share >= 0.20)"
+ven,77108,7901039,3165,0.85,ESTIMATE flat 15% drop
+sag,78862,7889746,3390,0.85,ESTIMATE flat 15% drop
+iso,77764,7670527,3166,0.85,ESTIMATE flat 15% drop
+swc,59300,7336958,3225,0.85,ESTIMATE flat 15% drop
+lug,68456,7312110,3099,0.85,ESTIMATE flat 15% drop
+tum,67933,7307547,3137,0.85,"QE sample n=100 (CPU, AfriCOMET-QE-STL-1.1), rule OLD: min(0.85, share >= 0.20)"
+mos,71291,7244175,2919,0.85,"QE sample n=100 (CPU, AfriCOMET-QE-STL-1.1), rule OLD: min(0.85, share >= 0.20)"
+kqn,61077,6541858,2833,0.85,ESTIMATE flat 15% drop
+umb,59630,6343635,2738,0.85,"QE sample n=100 (CPU, AfriCOMET-QE-STL-1.1), rule OLD: min(0.85, share >= 0.20)"
+tiv,59779,6156904,2576,0.85,ESTIMATE flat 15% drop
+wol,44442,4578172,2052,0.85,"QE sample n=100 (CPU, AfriCOMET-QE-STL-1.1), rule OLD: min(0.85, share >= 0.20)"
+wal,42003,4420093,1879,0.85,ESTIMATE flat 15% drop
+fon,47333,4329949,1703,0.85,"QE sample n=100 (CPU, AfriCOMET-QE-STL-1.1), rule OLD: min(0.85, share >= 0.20)"
+lun,37063,3999707,1711,0.85,ESTIMATE flat 15% drop
+kik,37076,3709785,1497,0.85,ESTIMATE flat 15% drop
+ssw,32322,3669705,1582,0.85,ESTIMATE flat 15% drop
+kam,23912,3447210,1343,0.85,"QE sample n=100 (CPU, AfriCOMET-QE-STL-1.1), rule OLD: min(0.85, share >= 0.20)"
+kua,29639,3234421,1360,0.85,ESTIMATE flat 15% drop
+kmb,26816,2801846,1194,0.85,"QE sample n=100 (CPU, AfriCOMET-QE-STL-1.1), rule OLD: min(0.85, share >= 0.20)"
+tsc,25316,2721845,1132,0.85,ESTIMATE flat 15% drop
+vmw,21856,2321504,986,0.85,"QE sample n=100 (CPU, AfriCOMET-QE-STL-1.1), rule OLD: min(0.85, share >= 0.20)"
+ach,22256,2112645,941,0.85,ESTIMATE flat 15% drop
+nyn,16494,1737577,742,0.85,ESTIMATE flat 15% drop
+bam,9882,1663243,668,0.85,"QE sample n=100 (CPU, AfriCOMET-QE-STL-1.1), rule OLD: min(0.85, share >= 0.20)"
+seh,14712,1616965,677,0.85,"QE sample n=100 (CPU, AfriCOMET-QE-STL-1.1), rule OLD: min(0.85, share >= 0.20)"
+ewe,14118,1465023,612,0.85,"QE sample n=100 (CPU, AfriCOMET-QE-STL-1.1), rule OLD: min(0.85, share >= 0.20)"
+sid,13465,1454226,611,0.85,ESTIMATE flat 15% drop
+kri,14358,1441961,595,0.85,ESTIMATE flat 15% drop
+kea,5389,1431762,621,0.85,"QE sample n=100 (CPU, AfriCOMET-QE-STL-1.1), rule OLD: min(0.85, share >= 0.20)"
+yao,12928,1417651,583,0.85,ESTIMATE flat 15% drop
+shi,10443,1087696,412,0.85,ESTIMATE flat 15% drop
+bas,10351,1067953,453,0.85,ESTIMATE flat 15% drop
+pcm,10727,999292,496,0.85,ESTIMATE flat 15% drop
+urh,10260,994916,419,0.85,ESTIMATE flat 15% drop
+ndc,8041,874105,373,0.85,ESTIMATE flat 15% drop
+oke,8351,769781,320,0.85,ESTIMATE flat 15% drop
+wes,6262,627653,297,0.85,ESTIMATE flat 15% drop
+nus,5411,624032,236,0.85,"QE sample n=100 (CPU, AfriCOMET-QE-STL-1.1), rule OLD: min(0.85, share >= 0.20)"
+dua,5881,602904,238,0.85,ESTIMATE flat 15% drop
+dyu,4693,494822,205,0.85,"QE sample n=100 (CPU, AfriCOMET-QE-STL-1.1), rule OLD: min(0.85, share >= 0.20)"
+kbp,4992,486307,192,0.85,"QE sample n=100 (CPU, AfriCOMET-QE-STL-1.1), rule OLD: min(0.85, share >= 0.20)"
+bin,4281,408803,167,0.85,ESTIMATE flat 15% drop
+her,2381,252867,106,0.85,ESTIMATE flat 15% drop
+ish,1898,178462,74,0.85,ESTIMATE flat 15% drop
+luy,2518,166010,84,0.85,ESTIMATE flat 15% drop
+men,530,56394,23,0.85,ESTIMATE flat 15% drop
+ibb,488,52493,23,0.85,ESTIMATE flat 15% drop
+nbl,99,13222,6,0.85,ESTIMATE flat 15% drop

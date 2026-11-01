@@ -1,0 +1,91 @@
+{
+ "output_rows_total": 23406354,
+ "sample_pairs": 1001020,
+ "sample_texts": 2002040,
+ "A_hash_index": {
+  "texts_with_hit": 0,
+  "by_rule_set": {},
+  "sets_checked": 35
+ },
+ "groups": [
+  {
+   "sets": [
+    "smol:all"
+   ],
+   "protected_sentences": 3813338
+  },
+  {
+   "sets": [
+    "afrilongdoc:all"
+   ],
+   "protected_sentences": 2050435
+  },
+  {
+   "sets": [
+    "ntrex128:all",
+    "flores_plus:dev"
+   ],
+   "protected_sentences": 865420
+  },
+  {
+   "sets": [
+    "flores_plus:devtest",
+    "tico19:test"
+   ],
+   "protected_sentences": 811924
+  },
+  {
+   "sets": [
+    "glot_story_book:all",
+    "afridocmt:test",
+    "tico19:dev",
+    "ssa_mte:test"
+   ],
+   "protected_sentences": 937790
+  },
+  {
+   "sets": [
+    "ntrex_african:all",
+    "afridocmt:dev",
+    "mafand:test",
+    "mafand:dev",
+    "sib200:test",
+    "ssa_mte:dev",
+    "sib200:dev",
+    "afriscience_mt:test",
+    "wmt24pp:all",
+    "afriscience_mt:dev",
+    "ibom_mt:test",
+    "ibom_mt:dev",
+    "afrimte_wmt2024:all",
+    "flores_moz:dev",
+    "flores_moz:devtest",
+    "salt:test",
+    "salt:dev",
+    "ibom_mt_efi_davlan:test",
+    "naijas2st_news_mt:test",
+    "ibom_mt_efi_davlan:dev",
+    "naijas2st_news_mt:validation",
+    "sib200_ibom:test",
+    "sib200_ibom:dev"
+   ],
+   "protected_sentences": 704623
+  }
+ ],
+ "B_audit_logic": {
+  "protected_sentences_exact_in_sample": 0,
+  "near_ge50": 0,
+  "by_set": {},
+  "note": "contamination.py BenchIndex/scan_windows/flags_for_rows semantics; protected sentences < 3 tokens are not in the dump"
+ },
+ "C_strict_8gram": {
+  "texts_with_shared_8gram": 0,
+  "by_group": {}
+ },
+ "D_positive_control": {
+  "planted_protected_sentences": 6000,
+  "found_by_B": 5667,
+  "found_by_C_or_shorter_than_8_tokens": 6000
+ },
+ "seconds": 1259
+}

@@ -1,0 +1,7 @@
+{
+ "ours_nde_verses_kept": 30871,
+ "theirs_verses": 30537,
+ "ours_found_in_theirs": 25,
+ "share": 0.0008,
+ "note": "same Biblica text expected; differences = revisions / punctuation"
+}

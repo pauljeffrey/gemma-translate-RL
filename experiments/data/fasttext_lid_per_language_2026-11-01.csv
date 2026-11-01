@@ -1,0 +1,105 @@
+iso,n_test,recall,precision,top_confusions
+ach,800,0.971,0.935,luo:16 mfe:2 alz:1
+ada,800,0.931,0.988,fon:43 nus:4 ewe:2
+afr,800,0.99,0.979,pcm:4 kab:1 wol:1
+alz,145,0.662,0.923,ach:23 luo:22 run:1
+amh,800,0.998,0.996,nyk:1 afr:1
+arz,800,0.999,0.999,tir:1
+bam,800,0.85,0.495,fon:25 kea:12 wol:11
+bas,365,0.959,0.967,ada:3 bum:3 mfe:1
+bem,800,0.787,0.696,mgr:37 lam:28 lub:24
+bum,800,0.986,0.965,mos:3 bas:2 lin:2
+cce,588,0.75,0.95,tsc:74 tso:45 zne:4
+chw,563,0.917,0.954,vmw:16 ndo:7 swc:4
+cjk,800,0.979,0.879,swc:4 nba:3 lue:2
+cop,425,1.0,1.0,
+crs,800,0.065,0.929,mfe:746 efi:1 pcm:1
+dik,670,0.991,0.987,twi:3 luo:2 efi:1
+dje,800,0.943,0.996,zne:25 twi:11 bas:3
+dop,800,0.999,0.985,mos:1
+dyu,800,0.041,0.846,bam:682 nus:16 fon:12
+efi,800,0.994,0.96,ewe:3 xho:1 afr:1
+ewe,800,0.975,0.896,fon:9 twi:3 ful:2
+fon,800,0.989,0.866,nus:2 bum:1 yor:1
+ful,800,0.882,0.966,wol:40 orm:9 pcm:7
+guw,800,0.998,0.985,cjk:1 ach:1
+hau,800,0.976,0.987,tiv:3 nup:3 kea:2
+ibo,800,0.973,0.986,efi:7 pcm:4 twi:2
+iso,800,0.961,0.988,urh:24 efi:4 ven:1
+kab,800,0.975,0.716,wol:3 mos:3 pcm:3
+kam,800,0.93,0.989,kik:17 swh:7 ewe:3
+kbp,800,0.955,0.956,fon:11 nus:8 dop:7
+kea,800,0.979,0.948,mos:3 bum:2 fon:2
+kik,800,0.981,0.968,kam:6 kmb:2 luo:2
+kin,800,0.943,0.892,run:37 swh:3 lug:2
+kmb,800,0.966,0.956,wol:4 nba:3 kon:2
+kon,800,0.943,0.947,kmb:11 lua:10 kea:5
+koo,800,0.986,0.919,xho:4 run:2 nso:1
+kqn,800,0.434,0.818,lub:416 sop:20 cjk:7
+kri,800,0.98,0.994,twi:5 guw:2 dik:2
+kua,800,0.958,0.578,umb:9 ndo:9 xho:5
+kwn,800,0.984,0.927,koo:3 swc:2 swh:1
+lam,649,0.521,0.921,bem:259 mgr:29 xho:7
+lin,800,0.98,0.96,kon:6 sag:4 ewe:2
+loz,800,0.896,0.989,nba:20 swc:10 sop:5
+lua,800,0.871,0.937,lub:29 kon:12 kqn:8
+lub,800,0.951,0.608,kqn:35 kon:1 bem:1
+lue,800,0.897,0.993,cjk:75 mgr:2 tum:1
+lug,800,0.924,0.894,xho:14 koo:6 kin:5
+lun,800,0.984,0.975,cjk:4 mgr:4 umb:1
+luo,800,0.95,0.916,ach:27 ewe:3 tll:1
+mfe,800,0.991,0.51,crs:3 afr:1 wol:1
+mgr,800,0.98,0.842,yao:10 chw:1 koo:1
+mlg,800,1.0,0.993,
+mos,800,0.993,0.936,twi:3 bam:1 sag:1
+nba,800,0.979,0.955,nyk:6 cjk:2 umb:2
+nbl,800,0.004,0.273,xho:796 zul:1
+ndc,131,0.176,0.958,sna:83 kwn:15 nya:4
+nde,746,0.0,0.0,xho:744 sot:1 ibo:1
+ndo,800,0.318,0.894,kua:529 xho:5 koo:3
+nso,800,0.943,0.884,tsn:19 ewe:11 sot:4
+nup,489,0.965,0.967,hau:3 twi:3 yor:3
+nus,800,0.97,0.95,kbp:8 dop:3 ful:2
+nya,800,0.87,0.796,tum:81 nyu:6 xho:3
+nyk,800,0.98,0.901,umb:5 kua:3 xho:2
+nyn,800,0.708,0.959,ttj:152 lug:39 koo:18
+nyu,800,0.849,0.867,nya:88 seh:15 tum:5
+oke,50,0.02,1.0,urh:42 efi:5 guw:1
+orm,800,0.924,0.955,wal:23 ful:10 wol:10
+pcm,800,0.986,0.959,kab:5 twi:2 sag:1
+rnd,800,0.991,0.994,lun:3 lua:1 kqn:1
+run,800,0.889,0.922,kin:74 ven:2 xho:2
+sag,800,0.971,0.941,mos:6 ewe:4 umb:3
+seh,800,0.756,0.962,nyu:92 nya:58 sna:12
+shi,342,0.167,0.891,kab:280 pcm:2 amh:1
+sid,800,0.926,0.988,wal:47 orm:3 zne:3
+sna,800,0.978,0.88,nya:5 kwn:3 tum:2
+som,800,0.97,0.987,orm:17 wol:4 wal:2
+sop,800,0.96,0.928,lub:11 kqn:8 lua:3
+sot,800,0.941,0.974,ewe:19 tsn:17 ven:2
+ssw,800,0.411,0.948,xho:368 swc:75 nbl:4
+swc,800,0.986,0.842,swh:5 ssw:3 cjk:2
+swh,800,0.961,0.946,swc:16 ssw:10 tso:1
+taq,336,0.961,0.991,shi:6 kab:4 hau:2
+tir,800,1.0,0.999,
+tiv,800,0.995,0.988,mos:1 nup:1 ibo:1
+tll,800,0.998,0.989,lua:1 fon:1
+toi,156,0.859,0.957,zne:17 cce:1 tso:1
+tsc,800,0.651,0.856,tso:235 cce:18 swc:7
+tsn,800,0.845,0.948,nso:94 sot:12 ewe:6
+tso,800,0.945,0.711,ven:14 tsc:8 umb:3
+ttj,649,0.8,0.768,lug:38 koo:30 nyn:23
+tum,800,0.934,0.861,nya:19 nyk:4 nyu:4
+twi,800,0.946,0.928,ewe:15 fon:9 luo:3
+tzm,800,0.999,1.0,kab:1
+umb,800,0.869,0.94,nyk:55 kua:24 nba:7
+urh,581,0.972,0.895,iso:6 efi:4 yor:1
+ven,800,0.981,0.964,tso:11 toi:1 nyk:1
+vmw,800,0.989,0.971,chw:5 ven:1 ewe:1
+wal,800,0.991,0.916,wol:2 orm:2 twi:1
+wol,800,0.965,0.88,ful:4 yor:3 kbp:2
+xho,800,0.991,0.223,efi:2 run:1 nbl:1
+yao,800,0.892,0.964,mgr:62 tum:16 cjk:2
+yor,800,0.968,0.977,sag:7 fon:6 kab:3
+zne,800,0.989,0.919,swc:2 chw:2 nup:2
+zul,800,0.0,0.0,xho:794 nbl:3 seh:1

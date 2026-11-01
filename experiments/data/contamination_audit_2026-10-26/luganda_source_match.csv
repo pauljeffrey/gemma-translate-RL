@@ -1,0 +1,8 @@
+candidate,files,cells,range_windows,range_windows_found,all_lug_windows,all_lug_windows_found,flores_hit_windows,flores_hit_windows_found
+pkyoyetera/luganda_english_dataset,1,100481,1080,100,2142,107,16,0
+kambale/luganda-english-parallel-corpus,2,49900,1080,94,2142,94,16,0
+gimmy256/ugandan_languages,1,30325,1080,2,2142,2,16,0
+yigagilbert/synthetic-parallel-salt,13,26731,1080,56,2142,78,16,0
+Sunbird/salt,4,251428,1080,93,2142,93,16,0
+michsethowusu/english-ganda_sentence-pairs_mt560,1,441981,1080,696,2142,950,16,0
+taresco/afri-dict,4,29010,1080,0,2142,0,16,0

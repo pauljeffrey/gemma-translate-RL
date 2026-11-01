@@ -1,0 +1,118 @@
+iso,source,pairs,est_gemma_target_tokens,share_of_language_pairs_pct,language_pairs_total,language_pairs_if_source_dropped,below_2000_if_dropped,falls_below_2000_only_because_of_this_source
+afr,African-Languages-Lab/multi-open,897113,34763052,42.17,2127231,1230118,0,0
+swh,African-Languages-Lab/multi-open,809255,47914546,89.59,903245,93990,0,0
+yor,African-Languages-Lab/multi-open,507869,43735413,52.28,971517,463648,0,0
+xho,African-Languages-Lab/multi-open,238426,12551600,17.1,1394691,1156265,0,0
+hau,African-Languages-Lab/multi-open,213574,17725450,31.4,680211,466637,0,0
+ibo,African-Languages-Lab/multi-open,177518,15234090,26.72,664283,486765,0,0
+som,African-Languages-Lab/multi-open,105687,14520241,28.43,371791,266104,0,0
+twi,African-Languages-Lab/multi-open,99211,3528306,14.95,663535,564324,0,0
+sna,African-Languages-Lab/multi-open,93808,5453450,10.42,900169,806361,0,0
+zul,African-Languages-Lab/multi-open,92496,5958848,8.1,1142047,1049551,0,0
+kin,African-Languages-Lab/multi-open,92420,13505913,54.31,170159,77739,0,0
+sot,African-Languages-Lab/multi-open,86350,16435465,50.14,172233,85883,0,0
+nya,African-Languages-Lab/multi-open,82682,5312630,9.02,916632,833950,0,0
+fon,African-Languages-Lab/multi-open,78510,3161190,62.06,126514,48004,0,0
+tsn,African-Languages-Lab/multi-open,56212,2285039,6.76,831499,775287,0,0
+wol,African-Languages-Lab/multi-open,52919,1615795,30.0,176400,123481,0,0
+orm,African-Languages-Lab/multi-open,37669,2876830,17.04,221086,183417,0,0
+ewe,African-Languages-Lab/multi-open,27245,1469471,85.26,31956,4711,0,0
+twi,KwekuAinoo/eng_twi,551358,19608309,83.09,663535,112177,0,0
+twi,UBC-NLP/AfroLingu-MT,12195,433698,1.84,663535,651340,0,0
+wal,UBC-NLP/AfroLingu-MT,9939,406495,7.82,127145,117206,0,0
+tir,UBC-NLP/AfroLingu-MT,9895,1090331,2.49,397777,387882,0,0
+nyn,UBC-NLP/AfroLingu-MT,9572,333575,16.32,58659,49087,0,0
+ach,UBC-NLP/AfroLingu-MT,9541,294476,11.85,80529,70988,0,0
+tsn,UBC-NLP/AfroLingu-MT,9419,382886,1.13,831499,822080,0,0
+orm,UBC-NLP/AfroLingu-MT,9283,708954,4.2,221086,211803,0,0
+lug,UBC-NLP/AfroLingu-MT,9203,346390,4.03,228553,219350,0,0
+ibo,UBC-NLP/AfroLingu-MT,9146,784883,1.38,664283,655137,0,0
+swh,UBC-NLP/AfroLingu-MT,9132,540689,1.01,903245,894113,0,0
+kbp,UBC-NLP/AfroLingu-MT,8969,514686,89.96,9970,1001,1,1
+amh,UBC-NLP/AfroLingu-MT,8770,585919,1.1,799510,790740,0,0
+mlg,UBC-NLP/AfroLingu-MT,8490,372013,0.96,880712,872222,0,0
+bam,UBC-NLP/AfroLingu-MT,8101,830019,42.42,19098,10997,0,0
+sot,UBC-NLP/AfroLingu-MT,7853,1494704,4.56,172233,164380,0,0
+yor,UBC-NLP/AfroLingu-MT,7806,672217,0.8,971517,963711,0,0
+afr,UBC-NLP/AfroLingu-MT,7263,281440,0.34,2127231,2119968,0,0
+tso,UBC-NLP/AfroLingu-MT,7082,304756,0.94,755549,748467,0,0
+som,UBC-NLP/AfroLingu-MT,6759,928612,1.82,371791,365032,0,0
+hau,UBC-NLP/AfroLingu-MT,6413,532243,0.94,680211,673798,0,0
+zul,UBC-NLP/AfroLingu-MT,6358,409599,0.56,1142047,1135689,0,0
+kin,UBC-NLP/AfroLingu-MT,6338,926211,3.72,170159,163821,0,0
+bas,UBC-NLP/AfroLingu-MT,5156,202225,16.1,32034,26878,0,0
+bem,UBC-NLP/AfroLingu-MT,4964,178250,1.31,378752,373788,0,0
+xho,UBC-NLP/AfroLingu-MT,3712,195412,0.27,1394691,1390979,0,0
+wol,UBC-NLP/AfroLingu-MT,2659,81188,1.51,176400,173741,0,0
+kon,UBC-NLP/AfroLingu-MT,1365,48696,0.37,368240,366875,0,0
+nya,UBC-NLP/AfroLingu-MT,967,62133,0.11,916632,915665,0,0
+pcm,UBC-NLP/AfroLingu-MT,629,16429,2.8,22504,21875,0,0
+ssw,UBC-NLP/AfroLingu-MT,503,18664,0.43,116351,115848,0,0
+lin,UBC-NLP/AfroLingu-MT,224,8361,0.04,526093,525869,0,0
+ewe,UBC-NLP/AfroLingu-MT,90,4854,0.28,31956,31866,0,0
+afr,michsethowusu *_mt560 (OPUS mixture),1145371,44383028,53.84,2127231,981860,0,0
+xho,michsethowusu *_mt560 (OPUS mixture),961926,50639235,68.97,1394691,432765,0,0
+zul,michsethowusu *_mt560 (OPUS mixture),950696,61246466,83.24,1142047,191351,0,0
+mlg,michsethowusu *_mt560 (OPUS mixture),872222,38218836,99.04,880712,8490,0,0
+nya,michsethowusu *_mt560 (OPUS mixture),766008,49218901,83.57,916632,150624,0,0
+tsn,michsethowusu *_mt560 (OPUS mixture),762461,30994340,91.7,831499,69038,0,0
+sna,michsethowusu *_mt560 (OPUS mixture),752265,43732301,83.57,900169,147904,0,0
+tso,michsethowusu *_mt560 (OPUS mixture),745908,32098283,98.72,755549,9641,0,0
+amh,michsethowusu *_mt560 (OPUS mixture),643508,42992439,80.49,799510,156002,0,0
+nso,michsethowusu *_mt560 (OPUS mixture),544264,22809449,99.54,546806,2542,0,0
+lin,michsethowusu *_mt560 (OPUS mixture),525869,19629487,99.96,526093,224,1,1
+loz,michsethowusu *_mt560 (OPUS mixture),404054,15360056,100.0,404054,0,1,1
+ibo,michsethowusu *_mt560 (OPUS mixture),403361,34615294,60.72,664283,260922,0,0
+yor,michsethowusu *_mt560 (OPUS mixture),400753,34511061,41.25,971517,570764,0,0
+bem,michsethowusu *_mt560 (OPUS mixture),373788,13422228,98.69,378752,4964,0,0
+kon,michsethowusu *_mt560 (OPUS mixture),366875,13088357,99.63,368240,1365,1,1
+run,michsethowusu *_mt560 (OPUS mixture),356667,13863409,100.0,356667,0,1,1
+efi,michsethowusu *_mt560 (OPUS mixture),323965,14061715,99.69,324959,994,1,1
+tir,michsethowusu *_mt560 (OPUS mixture),306847,33811525,77.14,397777,90930,0,0
+hau,michsethowusu *_mt560 (OPUS mixture),287951,23898326,42.33,680211,392260,0,0
+lua,michsethowusu *_mt560 (OPUS mixture),285627,10686489,100.0,285627,0,1,1
+swc,michsethowusu *_mt560 (OPUS mixture),267715,8631720,100.0,267715,0,1,1
+sag,michsethowusu *_mt560 (OPUS mixture),243782,9282058,100.0,243782,0,1,1
+tum,michsethowusu *_mt560 (OPUS mixture),227076,8479820,98.64,230217,3141,0,0
+lug,michsethowusu *_mt560 (OPUS mixture),219350,8256094,95.97,228553,9203,0,0
+kqn,michsethowusu *_mt560 (OPUS mixture),214340,7696309,100.0,214340,0,1,1
+iso,michsethowusu *_mt560 (OPUS mixture),209624,9024153,100.0,209624,0,1,1
+umb,michsethowusu *_mt560 (OPUS mixture),206584,7446737,99.78,207038,454,1,1
+ven,michsethowusu *_mt560 (OPUS mixture),198817,9283481,99.87,199071,254,1,1
+mos,michsethowusu *_mt560 (OPUS mixture),180721,8292179,97.3,185742,5021,0,0
+tiv,michsethowusu *_mt560 (OPUS mixture),179529,7243420,100.0,179529,0,1,1
+som,michsethowusu *_mt560 (OPUS mixture),160874,22102334,43.27,371791,210917,0,0
+orm,michsethowusu *_mt560 (OPUS mixture),150573,11499454,68.11,221086,70513,0,0
+luo,michsethowusu *_mt560 (OPUS mixture),132844,2860044,8.74,1519271,1386427,0,0
+lun,michsethowusu *_mt560 (OPUS mixture),130982,4705540,100.0,130982,0,1,1
+wal,michsethowusu *_mt560 (OPUS mixture),117206,4793617,92.18,127145,9939,0,0
+ssw,michsethowusu *_mt560 (OPUS mixture),113234,4201643,97.32,116351,3117,0,0
+kua,michsethowusu *_mt560 (OPUS mixture),97197,3805204,100.0,97197,0,1,1
+kik,michsethowusu *_mt560 (OPUS mixture),91654,4327158,99.15,92444,790,1,1
+kmb,michsethowusu *_mt560 (OPUS mixture),88055,3279755,99.5,88499,444,1,1
+tsc,michsethowusu *_mt560 (OPUS mixture),82170,3202175,100.0,82170,0,1,1
+ach,michsethowusu *_mt560 (OPUS mixture),70988,2190992,88.15,80529,9541,0,0
+vmw,michsethowusu *_mt560 (OPUS mixture),70928,2695461,98.69,71868,940,1,1
+seh,michsethowusu *_mt560 (OPUS mixture),51044,1886092,99.15,51483,439,1,1
+kam,michsethowusu *_mt560 (OPUS mixture),49590,3670575,90.51,54791,5201,0,0
+nyn,michsethowusu *_mt560 (OPUS mixture),49087,1710636,83.68,58659,9572,0,0
+sid,michsethowusu *_mt560 (OPUS mixture),45220,1710858,100.0,45220,0,1,1
+yao,michsethowusu *_mt560 (OPUS mixture),42443,1667829,100.0,42443,0,1,1
+kri,michsethowusu *_mt560 (OPUS mixture),41162,1696428,100.0,41162,0,1,1
+kab,michsethowusu *_mt560 (OPUS mixture),37704,3112914,31.92,118132,80428,0,0
+fon,michsethowusu *_mt560 (OPUS mixture),30212,1216480,23.88,126514,96302,0,0
+ndc,michsethowusu *_mt560 (OPUS mixture),29544,1028363,100.0,29544,0,1,1
+urh,michsethowusu *_mt560 (OPUS mixture),28456,1170492,100.0,28456,0,1,1
+wes,michsethowusu *_mt560 (OPUS mixture),27573,738418,100.0,27573,0,1,1
+bas,michsethowusu *_mt560 (OPUS mixture),26878,1054193,83.9,32034,5156,0,0
+oke,michsethowusu *_mt560 (OPUS mixture),21869,905628,100.0,21869,0,1,1
+pcm,michsethowusu *_mt560 (OPUS mixture),21652,565566,96.21,22504,852,1,1
+shi,michsethowusu *_mt560 (OPUS mixture),15224,1279648,100.0,15224,0,1,1
+wol,michsethowusu *_mt560 (OPUS mixture),15172,463252,8.6,176400,161228,0,0
+dua,michsethowusu *_mt560 (OPUS mixture),14907,709301,100.0,14907,0,1,1
+dyu,michsethowusu *_mt560 (OPUS mixture),14278,564897,97.04,14714,436,1,1
+bin,michsethowusu *_mt560 (OPUS mixture),11230,480949,100.0,11230,0,1,1
+her,michsethowusu *_mt560 (OPUS mixture),7941,297494,100.0,7941,0,1,1
+ish,michsethowusu *_mt560 (OPUS mixture),5085,209960,100.0,5085,0,1,1
+kea,michsethowusu *_mt560 (OPUS mixture),5068,559196,33.2,15266,10198,0,0
+men,michsethowusu *_mt560 (OPUS mixture),1621,66350,100.0,1621,0,1,0

@@ -1,0 +1,1868 @@
+{
+ "54rt1n/wikipedia-summary-dataset": {
+  "ok": true,
+  "private": false,
+  "gated": false,
+  "bytes": 1783109875,
+  "files": 4
+ },
+ "ARPRIM/pulaar_fulfulde": {
+  "ok": true,
+  "private": false,
+  "gated": false,
+  "bytes": 18521324,
+  "files": 45
+ },
+ "Abdeljalil-Ounaceur/English-Tamazight-Dictionnary-2007": {
+  "ok": true,
+  "private": false,
+  "gated": false,
+  "bytes": 252870,
+  "files": 7
+ },
+ "AfriNLP/AfriNLLB-train": {
+  "ok": true,
+  "private": false,
+  "gated": false,
+  "bytes": 733078344,
+  "files": 5
+ },
+ "AfriNLP/AfricanFineTranslations-sentences": {
+  "ok": true,
+  "private": false,
+  "gated": false,
+  "bytes": 1201388729,
+  "files": 15
+ },
+ "AfriSpeech/africa-corpus": {
+  "ok": true,
+  "private": false,
+  "gated": false,
+  "bytes": 2733862104,
+  "files": 971
+ },
+ "AfriSpeech/african-corpus-jw": {
+  "ok": true,
+  "private": false,
+  "gated": false,
+  "bytes": 3849199061,
+  "files": 142
+ },
+ "AfriSpeech/african-speech-ipa": {
+  "ok": true,
+  "private": false,
+  "gated": false,
+  "bytes": 33781062087,
+  "files": 403
+ },
+ "African-Languages-Lab/multi-open": {
+  "ok": true,
+  "private": false,
+  "gated": true,
+  "bytes": 2850309731,
+  "files": 34
+ },
+ "<HF_ORG>/AI_Storyteller_Dataset2": {
+  "ok": false,
+  "err": "RepositoryNotFoundError 404 Client Error. (Request ID: Root=1-6ae195eb-3a1872907467f"
+ },
+ "<HF_ORG>/ApolloMoEDataset": {
+  "ok": false,
+  "err": "RepositoryNotFoundError 404 Client Error. (Request ID: Root=1-6ae195eb-6c72540c31c94"
+ },
+ "<HF_ORG>/ChatML-aya_dataset": {
+  "ok": false,
+  "err": "RepositoryNotFoundError 404 Client Error. (Request ID: Root=1-6ae195eb-7922b32205cbc"
+ },
+ "<HF_ORG>/English_efik_bible_translation": {
+  "ok": true,
+  "private": true,
+  "gated": false,
+  "bytes": 1093015,
+  "files": 3
+ },
+ "<HF_ORG>/Glot500": {
+  "ok": false,
+  "err": "RepositoryNotFoundError 404 Client Error. (Request ID: Root=1-6ae195ec-37c5b5a82153f"
+ },
+ "<HF_ORG>/Glot500-swahili": {
+  "ok": false,
+  "err": "RepositoryNotFoundError 404 Client Error. (Request ID: Root=1-6ae195ec-7013a43e29601"
+ },
+ "<HF_ORG>/GlotCC-V1": {
+  "ok": false,
+  "err": "RepositoryNotFoundError 404 Client Error. (Request ID: Root=1-6ae195ec-1af0c80a11c57"
+ },
+ "<HF_ORG>/GlotCC-V1-swahili": {
+  "ok": false,
+  "err": "RepositoryNotFoundError 404 Client Error. (Request ID: Root=1-6ae195ec-2538cb9c10e51"
+ },
+ "<HF_ORG>/IgboSenti-BBC": {
+  "ok": false,
+  "err": "RepositoryNotFoundError 404 Client Error. (Request ID: Root=1-6ae195ec-4e17ba84503e7"
+ },
+ "<HF_ORG>/MMMLU_yoruba": {
+  "ok": false,
+  "err": "RepositoryNotFoundError 404 Client Error. (Request ID: Root=1-6ae195ec-378bf42729af3"
+ },
+ "<HF_ORG>/Multilingal-sakalt-data": {
+  "ok": false,
+  "err": "RepositoryNotFoundError 404 Client Error. (Request ID: Root=1-6ae195ec-7cd11d0022ba2"
+ },
+ "<HF_ORG>/NLP-base-data": {
+  "ok": true,
+  "private": true,
+  "gated": false,
+  "bytes": 22231424983,
+  "files": 264
+ },
+ "<HF_ORG>/NaijaRC": {
+  "ok": false,
+  "err": "RepositoryNotFoundError 404 Client Error. (Request ID: Root=1-6ae195ed-64dcd3e81538e"
+ },
+ "<HF_ORG>/PangeaInstruct": {
+  "ok": false,
+  "err": "RepositoryNotFoundError 404 Client Error. (Request ID: Root=1-6ae195ed-7145ea1e3c728"
+ },
+ "<HF_ORG>/ParaNames": {
+  "ok": false,
+  "err": "RepositoryNotFoundError 404 Client Error. (Request ID: Root=1-6ae195ed-629163c52f5fc"
+ },
+ "<HF_ORG>/RAG": {
+  "ok": false,
+  "err": "RepositoryNotFoundError 404 Client Error. (Request ID: Root=1-6ae195ed-0c237fac1d2f8"
+ },
+ "<HF_ORG>/Roleplay-Hausa": {
+  "ok": false,
+  "err": "RepositoryNotFoundError 404 Client Error. (Request ID: Root=1-6ae195ed-0516ad5817c98"
+ },
+ "<HF_ORG>/SemRel2024": {
+  "ok": false,
+  "err": "RepositoryNotFoundError 404 Client Error. (Request ID: Root=1-6ae195ed-32044dc9078ee"
+ },
+ "<HF_ORG>/TinyStories_igbo": {
+  "ok": false,
+  "err": "RepositoryNotFoundError 404 Client Error. (Request ID: Root=1-6ae195ee-366efefb383ca"
+ },
+ "<HF_ORG>/TinyStories_yoruba": {
+  "ok": true,
+  "private": false,
+  "gated": false,
+  "bytes": 1927932,
+  "files": 3
+ },
+ "<HF_ORG>/W2C": {
+  "ok": false,
+  "err": "RepositoryNotFoundError 404 Client Error. (Request ID: Root=1-6ae195ee-6511e21b4488c"
+ },
+ "<HF_ORG>/WebScraped_Igbo_To_Eng": {
+  "ok": false,
+  "err": "RepositoryNotFoundError 404 Client Error. (Request ID: Root=1-6ae195ee-0b21afad21aef"
+ },
+ "<HF_ORG>/african_languages_translation": {
+  "ok": false,
+  "err": "RepositoryNotFoundError 404 Client Error. (Request ID: Root=1-6ae195ee-6bef86742b1d9"
+ },
+ "<HF_ORG>/afrimgsm": {
+  "ok": false,
+  "err": "RepositoryNotFoundError 404 Client Error. (Request ID: Root=1-6ae195ee-144802c26bca3"
+ },
+ "<HF_ORG>/afrimmlu": {
+  "ok": false,
+  "err": "RepositoryNotFoundError 404 Client Error. (Request ID: Root=1-6ae195ee-448cd0b62b9ab"
+ },
+ "<HF_ORG>/afrisenti": {
+  "ok": false,
+  "err": "RepositoryNotFoundError 404 Client Error. (Request ID: Root=1-6ae195ef-350f15fe3122d"
+ },
+ "<HF_ORG>/afrixnli": {
+  "ok": false,
+  "err": "RepositoryNotFoundError 404 Client Error. (Request ID: Root=1-6ae195ef-749a2315205c4"
+ },
+ "<HF_ORG>/alpaca-hausa-cleaned": {
+  "ok": false,
+  "err": "RepositoryNotFoundError 404 Client Error. (Request ID: Root=1-6ae195ef-6b5ff0041200a"
+ },
+ "<HF_ORG>/alpaca-igbo-cleaned": {
+  "ok": false,
+  "err": "RepositoryNotFoundError 404 Client Error. (Request ID: Root=1-6ae195ef-4402c6294fa80"
+ },
+ "<HF_ORG>/alpaca-yoruba-cleaned": {
+  "ok": false,
+  "err": "RepositoryNotFoundError 404 Client Error. (Request ID: Root=1-6ae195ef-6076c9ad544a6"
+ },
+ "<HF_ORG>/alpaca_hausa_taco": {
+  "ok": false,
+  "err": "RepositoryNotFoundError 404 Client Error. (Request ID: Root=1-6ae195ef-2428f54528a5a"
+ },
+ "<HF_ORG>/alpaca_igbo_taco": {
+  "ok": false,
+  "err": "RepositoryNotFoundError 404 Client Error. (Request ID: Root=1-6ae195ef-2c99923f37a12"
+ },
+ "<HF_ORG>/alpaca_yoruba_taco": {
+  "ok": false,
+  "err": "RepositoryNotFoundError 404 Client Error. (Request ID: Root=1-6ae195f0-0808af4a4c019"
+ },
+ "<HF_ORG>/amharic-pretraining-corpus": {
+  "ok": false,
+  "err": "RepositoryNotFoundError 404 Client Error. (Request ID: Root=1-6ae195f0-099cf5072927a"
+ },
+ "<HF_ORG>/animacy-pcm-silver-standard-final": {
+  "ok": false,
+  "err": "RepositoryNotFoundError 404 Client Error. (Request ID: Root=1-6ae195f0-3109b624786af"
+ },
+ "<HF_ORG>/aya-translate": {
+  "ok": false,
+  "err": "RepositoryNotFoundError 404 Client Error. (Request ID: Root=1-6ae195f0-051b5d3a40098"
+ },
+ "<HF_ORG>/aya_collection_language_split": {
+  "ok": false,
+  "err": "RepositoryNotFoundError 404 Client Error. (Request ID: Root=1-6ae195f0-690c62e12c602"
+ },
+ "<HF_ORG>/aya_interlanguage_translate": {
+  "ok": false,
+  "err": "RepositoryNotFoundError 404 Client Error. (Request ID: Root=1-6ae195f0-173db6fb34deb"
+ },
+ "<HF_ORG>/biblenlp-corpus-mmteb": {
+  "ok": false,
+  "err": "RepositoryNotFoundError 404 Client Error. (Request ID: Root=1-6ae195f0-0a71d63621195"
+ },
+ "<HF_ORG>/biblenlp-corpus-mmteb-swahili": {
+  "ok": false,
+  "err": "RepositoryNotFoundError 404 Client Error. (Request ID: Root=1-6ae195f1-7c31380d6d6f1"
+ },
+ "<HF_ORG>/bitext_nollysenti_miners": {
+  "ok": false,
+  "err": "RepositoryNotFoundError 404 Client Error. (Request ID: Root=1-6ae195f1-050b59dd1ad30"
+ },
+ "<HF_ORG>/bloomberg-news-articles-pretraining-dataset": {
+  "ok": false,
+  "err": "RepositoryNotFoundError 404 Client Error. (Request ID: Root=1-6ae195f1-53667f286c3d0"
+ },
+ "<HF_ORG>/cc100-samples": {
+  "ok": false,
+  "err": "RepositoryNotFoundError 404 Client Error. (Request ID: Root=1-6ae195f1-2b3014e60520d"
+ },
+ "<HF_ORG>/clean_data": {
+  "ok": false,
+  "err": "RepositoryNotFoundError 404 Client Error. (Request ID: Root=1-6ae195f1-39a1507e20d91"
+ },
+ "<HF_ORG>/clean_data2": {
+  "ok": false,
+  "err": "RepositoryNotFoundError 404 Client Error. (Request ID: Root=1-6ae195f1-13bf253224e1e"
+ },
+ "<HF_ORG>/coqa-stories": {
+  "ok": false,
+  "err": "RepositoryNotFoundError 404 Client Error. (Request ID: Root=1-6ae195f1-38ea37227876a"
+ },
+ "<HF_ORG>/culturax-mini-nonshuffled": {
+  "ok": false,
+  "err": "RepositoryNotFoundError 404 Client Error. (Request ID: Root=1-6ae195f2-0a8b6e3d144a2"
+ },
+ "<HF_ORG>/diacritics": {
+  "ok": false,
+  "err": "RepositoryNotFoundError 404 Client Error. (Request ID: Root=1-6ae195f2-1883f60d1353a"
+ },
+ "<HF_ORG>/english_to_igbo": {
+  "ok": false,
+  "err": "RepositoryNotFoundError 404 Client Error. (Request ID: Root=1-6ae195f2-4df514ec33fc4"
+ },
+ "<HF_ORG>/finance-alpaca": {
+  "ok": false,
+  "err": "RepositoryNotFoundError 404 Client Error. (Request ID: Root=1-6ae195f2-6c4be875315cf"
+ },
+ "<HF_ORG>/gpt-teacher-yo": {
+  "ok": true,
+  "private": false,
+  "gated": false,
+  "bytes": 6439367,
+  "files": 3
+ },
+ "<HF_ORG>/gsm8k": {
+  "ok": false,
+  "err": "RepositoryNotFoundError 404 Client Error. (Request ID: Root=1-6ae195f2-668784c4357ea"
+ },
+ "<HF_ORG>/gsm8k2": {
+  "ok": false,
+  "err": "RepositoryNotFoundError 404 Client Error. (Request ID: Root=1-6ae195f2-552b476b7435f"
+ },
+ "<HF_ORG>/gsm8k3": {
+  "ok": false,
+  "err": "RepositoryNotFoundError 404 Client Error. (Request ID: Root=1-6ae195f3-070ed38d5b8f1"
+ },
+ "<HF_ORG>/hausa_voa_topics": {
+  "ok": false,
+  "err": "RepositoryNotFoundError 404 Client Error. (Request ID: Root=1-6ae195f3-57a170ba6d4f7"
+ },
+ "<HF_ORG>/igbo_sa": {
+  "ok": false,
+  "err": "RepositoryNotFoundError 404 Client Error. (Request ID: Root=1-6ae195f3-378e4fc935843"
+ },
+ "<HF_ORG>/kreyol-mt": {
+  "ok": true,
+  "private": false,
+  "gated": false,
+  "bytes": 1042534,
+  "files": 4
+ },
+ "<HF_ORG>/low_resource_languages_pretrain": {
+  "ok": false,
+  "err": "RepositoryNotFoundError 404 Client Error. (Request ID: Root=1-6ae195f3-4c509365448d3"
+ },
+ "<HF_ORG>/low_resource_languages_pretrain_data": {
+  "ok": false,
+  "err": "RepositoryNotFoundError 404 Client Error. (Request ID: Root=1-6ae195f4-29ed8e290a9b6"
+ },
+ "<HF_ORG>/low_resource_languages_pretrain_data2": {
+  "ok": false,
+  "err": "RepositoryNotFoundError 404 Client Error. (Request ID: Root=1-6ae195f4-231e91b24add2"
+ },
+ "<HF_ORG>/low_resource_languages_pretrain_data3": {
+  "ok": false,
+  "err": "RepositoryNotFoundError 404 Client Error. (Request ID: Root=1-6ae195f4-16fe760c6d1bd"
+ },
+ "<HF_ORG>/low_resource_languages_pretrain_data4": {
+  "ok": false,
+  "err": "RepositoryNotFoundError 404 Client Error. (Request ID: Root=1-6ae195f4-0907c9d80805c"
+ },
+ "<HF_ORG>/low_resource_languages_pretrain_data5": {
+  "ok": false,
+  "err": "RepositoryNotFoundError 404 Client Error. (Request ID: Root=1-6ae195f4-0740950466129"
+ },
+ "<HF_ORG>/low_resource_multilingual": {
+  "ok": false,
+  "err": "RepositoryNotFoundError 404 Client Error. (Request ID: Root=1-6ae195f4-23b47b4a5ad36"
+ },
+ "<HF_ORG>/low_resource_multilingual_sft": {
+  "ok": false,
+  "err": "RepositoryNotFoundError 404 Client Error. (Request ID: Root=1-6ae195f4-14186e6a4ff4e"
+ },
+ "<HF_ORG>/low_resource_multilingual_sft_short": {
+  "ok": false,
+  "err": "RepositoryNotFoundError 404 Client Error. (Request ID: Root=1-6ae195f5-718692d47e1b4"
+ },
+ "<HF_ORG>/low_resource_multilingual_sft_short2": {
+  "ok": false,
+  "err": "RepositoryNotFoundError 404 Client Error. (Request ID: Root=1-6ae195f5-2f7a71683890e"
+ },
+ "<HF_ORG>/mafand_eval": {
+  "ok": false,
+  "err": "RepositoryNotFoundError 404 Client Error. (Request ID: Root=1-6ae195f5-72f996712d4e5"
+ },
+ "<HF_ORG>/masakhaner_eval": {
+  "ok": false,
+  "err": "RepositoryNotFoundError 404 Client Error. (Request ID: Root=1-6ae195f5-0bbf75682b0d7"
+ },
+ "<HF_ORG>/muri-it-language-split": {
+  "ok": false,
+  "err": "RepositoryNotFoundError 404 Client Error. (Request ID: Root=1-6ae195f5-19f9f9be30885"
+ },
+ "<HF_ORG>/naijaweb": {
+  "ok": false,
+  "err": "RepositoryNotFoundError 404 Client Error. (Request ID: Root=1-6ae195f5-271e9a557d27d"
+ },
+ "<HF_ORG>/naijaweb-edu": {
+  "ok": false,
+  "err": "RepositoryNotFoundError 404 Client Error. (Request ID: Root=1-6ae195f5-5ff815847a407"
+ },
+ "<HF_ORG>/naijaweb-edu2": {
+  "ok": false,
+  "err": "RepositoryNotFoundError 404 Client Error. (Request ID: Root=1-6ae195f6-7581578b022eb"
+ },
+ "<HF_ORG>/nigerian-pidgin-corpus-synth": {
+  "ok": false,
+  "err": "RepositoryNotFoundError 404 Client Error. (Request ID: Root=1-6ae195f6-58cd4aec0ae18"
+ },
+ "<HF_ORG>/nigerianLanguageTranslator": {
+  "ok": false,
+  "err": "RepositoryNotFoundError 404 Client Error. (Request ID: Root=1-6ae195f6-3491f7e148408"
+ },
+ "<HF_ORG>/noisy_dataset": {
+  "ok": false,
+  "err": "RepositoryNotFoundError 404 Client Error. (Request ID: Root=1-6ae195f6-71d7b7cc14d54"
+ },
+ "<HF_ORG>/nvidia_steer_yo": {
+  "ok": false,
+  "err": "RepositoryNotFoundError 404 Client Error. (Request ID: Root=1-6ae195f6-1075b0ce71e18"
+ },
+ "<HF_ORG>/panlex": {
+  "ok": false,
+  "err": "RepositoryNotFoundError 404 Client Error. (Request ID: Root=1-6ae195f6-041017b57f2a3"
+ },
+ "<HF_ORG>/panlex-meanings": {
+  "ok": false,
+  "err": "RepositoryNotFoundError 404 Client Error. (Request ID: Root=1-6ae195f6-7c746e2e57ddc"
+ },
+ "<HF_ORG>/panlex-meanings-swahili": {
+  "ok": false,
+  "err": "RepositoryNotFoundError 404 Client Error. (Request ID: Root=1-6ae195f7-41e6e8ef32ae2"
+ },
+ "<HF_ORG>/parallel-sentences-ccmatrix": {
+  "ok": false,
+  "err": "RepositoryNotFoundError 404 Client Error. (Request ID: Root=1-6ae195f7-46d631dc708ec"
+ },
+ "<HF_ORG>/parallel-sentences-opus-100": {
+  "ok": false,
+  "err": "RepositoryNotFoundError 404 Client Error. (Request ID: Root=1-6ae195f7-2b4e6cdd6c38d"
+ },
+ "<HF_ORG>/personal_finance_v0.2": {
+  "ok": false,
+  "err": "RepositoryNotFoundError 404 Client Error. (Request ID: Root=1-6ae195f7-1a40402048317"
+ },
+ "<HF_ORG>/pidgin-corpus-synth": {
+  "ok": true,
+  "private": false,
+  "gated": false,
+  "bytes": 100500981,
+  "files": 13
+ },
+ "<HF_ORG>/polynews": {
+  "ok": false,
+  "err": "RepositoryNotFoundError 404 Client Error. (Request ID: Root=1-6ae195f7-5bac8c8a60997"
+ },
+ "<HF_ORG>/polynews-parallel-swahili": {
+  "ok": false,
+  "err": "RepositoryNotFoundError 404 Client Error. (Request ID: Root=1-6ae195f7-11a8c9c6046dd"
+ },
+ "<HF_ORG>/polynews-swahili": {
+  "ok": false,
+  "err": "RepositoryNotFoundError 404 Client Error. (Request ID: Root=1-6ae195f8-602f01d058d4d"
+ },
+ "<HF_ORG>/pretrain_data": {
+  "ok": false,
+  "err": "RepositoryNotFoundError 404 Client Error. (Request ID: Root=1-6ae195f8-026f0fcd76be6"
+ },
+ "<HF_ORG>/pretrain_data10": {
+  "ok": false,
+  "err": "RepositoryNotFoundError 404 Client Error. (Request ID: Root=1-6ae195f8-0cdb19af28f22"
+ },
+ "<HF_ORG>/pretrain_data11": {
+  "ok": false,
+  "err": "RepositoryNotFoundError 404 Client Error. (Request ID: Root=1-6ae195f8-489f1b0f4da08"
+ },
+ "<HF_ORG>/pretrain_data2": {
+  "ok": false,
+  "err": "RepositoryNotFoundError 404 Client Error. (Request ID: Root=1-6ae195f8-02f9ca2a0cc02"
+ },
+ "<HF_ORG>/pretrain_data3": {
+  "ok": false,
+  "err": "RepositoryNotFoundError 404 Client Error. (Request ID: Root=1-6ae195f8-59eaf5cb06cbb"
+ },
+ "<HF_ORG>/pretrain_data4": {
+  "ok": false,
+  "err": "RepositoryNotFoundError 404 Client Error. (Request ID: Root=1-6ae195f8-00761421367fd"
+ },
+ "<HF_ORG>/pretrain_data5": {
+  "ok": false,
+  "err": "RepositoryNotFoundError 404 Client Error. (Request ID: Root=1-6ae195f9-618a6bbe43e3b"
+ },
+ "<HF_ORG>/pretrain_data6": {
+  "ok": false,
+  "err": "RepositoryNotFoundError 404 Client Error. (Request ID: Root=1-6ae195f9-2e4af25019c12"
+ },
+ "<HF_ORG>/pretrain_data7": {
+  "ok": false,
+  "err": "RepositoryNotFoundError 404 Client Error. (Request ID: Root=1-6ae195f9-5f7522b0459b0"
+ },
+ "<HF_ORG>/pretrain_data8": {
+  "ok": false,
+  "err": "RepositoryNotFoundError 404 Client Error. (Request ID: Root=1-6ae195f9-0de4980664076"
+ },
+ "<HF_ORG>/pretrain_data9": {
+  "ok": false,
+  "err": "RepositoryNotFoundError 404 Client Error. (Request ID: Root=1-6ae195f9-4430c8784bd7c"
+ },
+ "<HF_ORG>/pretrain_test": {
+  "ok": false,
+  "err": "RepositoryNotFoundError 404 Client Error. (Request ID: Root=1-6ae195f9-05d45bc450e6a"
+ },
+ "<HF_ORG>/processed_data": {
+  "ok": false,
+  "err": "RepositoryNotFoundError 404 Client Error. (Request ID: Root=1-6ae195f9-25022b2272e5d"
+ },
+ "<HF_ORG>/quran": {
+  "ok": false,
+  "err": "RepositoryNotFoundError 404 Client Error. (Request ID: Root=1-6ae195fa-2107e01370268"
+ },
+ "<HF_ORG>/reasoning-gsm-qna-oa2": {
+  "ok": false,
+  "err": "RepositoryNotFoundError 404 Client Error. (Request ID: Root=1-6ae195fa-0f779b4d203aa"
+ },
+ "<HF_ORG>/reddit_finance_43_250k": {
+  "ok": false,
+  "err": "RepositoryNotFoundError 404 Client Error. (Request ID: Root=1-6ae195fa-7fc2d97153469"
+ },
+ "<HF_ORG>/sib200": {
+  "ok": false,
+  "err": "RepositoryNotFoundError 404 Client Error. (Request ID: Root=1-6ae195fa-2e93760877552"
+ },
+ "<HF_ORG>/sib200-swahili": {
+  "ok": false,
+  "err": "RepositoryNotFoundError 404 Client Error. (Request ID: Root=1-6ae195fa-7da65ead45de5"
+ },
+ "<HF_ORG>/storygen-6k2": {
+  "ok": false,
+  "err": "RepositoryNotFoundError 404 Client Error. (Request ID: Root=1-6ae195fa-3433500e568cb"
+ },
+ "<HF_ORG>/sumnews": {
+  "ok": false,
+  "err": "RepositoryNotFoundError 404 Client Error. (Request ID: Root=1-6ae195fa-15176a380b0e6"
+ },
+ "<HF_ORG>/synthetic": {
+  "ok": false,
+  "err": "RepositoryNotFoundError 404 Client Error. (Request ID: Root=1-6ae195fa-6656cfab1f08f"
+ },
+ "<HF_ORG>/tds": {
+  "ok": false,
+  "err": "RepositoryNotFoundError 404 Client Error. (Request ID: Root=1-6ae195fb-1147f59b77387"
+ },
+ "<HF_ORG>/tds-sft": {
+  "ok": false,
+  "err": "RepositoryNotFoundError 404 Client Error. (Request ID: Root=1-6ae195fb-2d8351ae54add"
+ },
+ "<HF_ORG>/tds2": {
+  "ok": false,
+  "err": "RepositoryNotFoundError 404 Client Error. (Request ID: Root=1-6ae195fb-59a40def1d9c1"
+ },
+ "<HF_ORG>/tds_long": {
+  "ok": false,
+  "err": "RepositoryNotFoundError 404 Client Error. (Request ID: Root=1-6ae195fb-2836615a53033"
+ },
+ "<HF_ORG>/testalpaca_sanskrit_taco": {
+  "ok": false,
+  "err": "RepositoryNotFoundError 404 Client Error. (Request ID: Root=1-6ae195fb-6d0b679a69dec"
+ },
+ "<HF_ORG>/text_ratings": {
+  "ok": false,
+  "err": "RepositoryNotFoundError 404 Client Error. (Request ID: Root=1-6ae195fb-593307062a265"
+ },
+ "<HF_ORG>/translation": {
+  "ok": false,
+  "err": "RepositoryNotFoundError 404 Client Error. (Request ID: Root=1-6ae195fb-1d9e37ae4bf15"
+ },
+ "<HF_ORG>/uhura": {
+  "ok": false,
+  "err": "RepositoryNotFoundError 404 Client Error. (Request ID: Root=1-6ae195fc-28d6f8c41e078"
+ },
+ "<HF_ORG>/uhura-arc-easy": {
+  "ok": false,
+  "err": "RepositoryNotFoundError 404 Client Error. (Request ID: Root=1-6ae195fc-39a3560a7612a"
+ },
+ "<HF_ORG>/uhura-arc-easy-clean": {
+  "ok": false,
+  "err": "RepositoryNotFoundError 404 Client Error. (Request ID: Root=1-6ae195fc-751b361211890"
+ },
+ "<HF_ORG>/uhura-eval": {
+  "ok": false,
+  "err": "RepositoryNotFoundError 404 Client Error. (Request ID: Root=1-6ae195fc-54850f5c7a854"
+ },
+ "<HF_ORG>/uhura-eval-harness": {
+  "ok": false,
+  "err": "RepositoryNotFoundError 404 Client Error. (Request ID: Root=1-6ae195fc-5d4b76a96abd4"
+ },
+ "<HF_ORG>/uhura-truthfulqa": {
+  "ok": false,
+  "err": "RepositoryNotFoundError 404 Client Error. (Request ID: Root=1-6ae195fc-2e8ebe786de1f"
+ },
+ "<HF_ORG>/uhura-truthfulqa-clean": {
+  "ok": false,
+  "err": "RepositoryNotFoundError 404 Client Error. (Request ID: Root=1-6ae195fc-523330e9274a6"
+ },
+ "<HF_ORG>/wiki-yo": {
+  "ok": true,
+  "private": false,
+  "gated": false,
+  "bytes": 8554852,
+  "files": 3
+ },
+ "<HF_ORG>/wili_2018": {
+  "ok": false,
+  "err": "RepositoryNotFoundError 404 Client Error. (Request ID: Root=1-6ae195fd-2dd0305f05135"
+ },
+ "<HF_ORG>/xP3x-Kongo": {
+  "ok": false,
+  "err": "RepositoryNotFoundError 404 Client Error. (Request ID: Root=1-6ae195fd-526e4a501fb60"
+ },
+ "<HF_ORG>/xtreme-up-semantic-parsing": {
+  "ok": false,
+  "err": "RepositoryNotFoundError 404 Client Error. (Request ID: Root=1-6ae195fd-2eb194ef41734"
+ },
+ "<HF_ORG>/yo_wiki_processed": {
+  "ok": false,
+  "err": "RepositoryNotFoundError 404 Client Error. (Request ID: Root=1-6ae195fd-1530a1e609fe7"
+ },
+ "<HF_ORG>/yoruba-corpus-synth": {
+  "ok": true,
+  "private": false,
+  "gated": false,
+  "bytes": 37727851,
+  "files": 2
+ },
+ "AmazonScience/massive": {
+  "ok": true,
+  "private": false,
+  "gated": false,
+  "bytes": 86756,
+  "files": 6
+ },
+ "BatsResearch/ctga-v1": {
+  "ok": true,
+  "private": false,
+  "gated": false,
+  "bytes": 4015573638,
+  "files": 13
+ },
+ "BatsResearch/sib200-LexC-Gen": {
+  "ok": true,
+  "private": false,
+  "gated": false,
+  "bytes": 25757939,
+  "files": 62
+ },
+ "<HF_ORG_LEGACY>/Clean_translate": {
+  "ok": false,
+  "err": "RepositoryNotFoundError 404 Client Error. (Request ID: Root=1-6ae195fe-39a2f07a4544c"
+ },
+ "<HF_ORG_LEGACY>/Kinyarwanda_Engligh_Multilingual_ASR": {
+  "ok": false,
+  "err": "RepositoryNotFoundError 404 Client Error. (Request ID: Root=1-6ae195fe-5d5f27ca35147"
+ },
+ "<HF_ORG_LEGACY>/NLP2": {
+  "ok": true,
+  "private": false,
+  "gated": false,
+  "bytes": 25541840491,
+  "files": 330
+ },
+ "<HF_ORG_LEGACY>/NLP4": {
+  "ok": false,
+  "err": "RepositoryNotFoundError 404 Client Error. (Request ID: Root=1-6ae195ff-2b0e6b923ef01"
+ },
+ "<HF_ORG_LEGACY>/SEC": {
+  "ok": false,
+  "err": "RepositoryNotFoundError 404 Client Error. (Request ID: Root=1-6ae195ff-6e1f44cb77333"
+ },
+ "<HF_ORG_LEGACY>/african_SFT": {
+  "ok": false,
+  "err": "RepositoryNotFoundError 404 Client Error. (Request ID: Root=1-6ae195ff-5e1cbbaa6a40c"
+ },
+ "<HF_ORG_LEGACY>/african_languages_translation": {
+  "ok": false,
+  "err": "RepositoryNotFoundError 404 Client Error. (Request ID: Root=1-6ae195ff-0984a0a258a19"
+ },
+ "<HF_ORG_LEGACY>/african_sft": {
+  "ok": false,
+  "err": "RepositoryNotFoundError 404 Client Error. (Request ID: Root=1-6ae195ff-477dfedb52378"
+ },
+ "<HF_ORG_LEGACY>/africomet-translation": {
+  "ok": true,
+  "private": true,
+  "gated": false,
+  "bytes": 4528431519,
+  "files": 60
+ },
+ "<HF_ORG_LEGACY>/afrisenti_eval": {
+  "ok": false,
+  "err": "RepositoryNotFoundError 404 Client Error. (Request ID: Root=1-6ae19600-3d892264490b5"
+ },
+ "<HF_ORG_LEGACY>/baize-metadata": {
+  "ok": false,
+  "err": "RepositoryNotFoundError 404 Client Error. (Request ID: Root=1-6ae19600-2bce670c6297f"
+ },
+ "<HF_ORG_LEGACY>/chat": {
+  "ok": false,
+  "err": "RepositoryNotFoundError 404 Client Error. (Request ID: Root=1-6ae19600-3587b6bc7da92"
+ },
+ "<HF_ORG_LEGACY>/cosmopedia": {
+  "ok": true,
+  "private": false,
+  "gated": false,
+  "bytes": 232370916,
+  "files": 3
+ },
+ "<HF_ORG_LEGACY>/cosmopedia-100k": {
+  "ok": false,
+  "err": "RepositoryNotFoundError 404 Client Error. (Request ID: Root=1-6ae19600-31382cd039c12"
+ },
+ "<HF_ORG_LEGACY>/data-gen": {
+  "ok": true,
+  "private": true,
+  "gated": false,
+  "bytes": 73656937,
+  "files": 80
+ },
+ "<HF_ORG_LEGACY>/dataset-metadata": {
+  "ok": false,
+  "err": "RepositoryNotFoundError 404 Client Error. (Request ID: Root=1-6ae19601-3447af5530137"
+ },
+ "<HF_ORG_LEGACY>/document-qa": {
+  "ok": false,
+  "err": "RepositoryNotFoundError 404 Client Error. (Request ID: Root=1-6ae19601-1ffaedd86f75e"
+ },
+ "<HF_ORG_LEGACY>/eng-sft": {
+  "ok": false,
+  "err": "RepositoryNotFoundError 404 Client Error. (Request ID: Root=1-6ae19601-244c46da7d7f8"
+ },
+ "<HF_ORG_LEGACY>/eng_pretrain": {
+  "ok": false,
+  "err": "RepositoryNotFoundError 404 Client Error. (Request ID: Root=1-6ae19601-43700ec93ee14"
+ },
+ "<HF_ORG_LEGACY>/eng_sft": {
+  "ok": false,
+  "err": "RepositoryNotFoundError 404 Client Error. (Request ID: Root=1-6ae19601-055a9a6e0f010"
+ },
+ "<HF_ORG_LEGACY>/english_SFT": {
+  "ok": false,
+  "err": "RepositoryNotFoundError 404 Client Error. (Request ID: Root=1-6ae19602-54ea49d07e2dc"
+ },
+ "<HF_ORG_LEGACY>/french-pretraining-corpus": {
+  "ok": false,
+  "err": "RepositoryNotFoundError 404 Client Error. (Request ID: Root=1-6ae19602-67a789f73e910"
+ },
+ "<HF_ORG_LEGACY>/glaive-function-calling-v2": {
+  "ok": true,
+  "private": false,
+  "gated": false,
+  "bytes": 182589267,
+  "files": 3
+ },
+ "<HF_ORG_LEGACY>/gpt4all-metadata": {
+  "ok": false,
+  "err": "RepositoryNotFoundError 404 Client Error. (Request ID: Root=1-6ae19602-7ef8dff87d8b6"
+ },
+ "<HF_ORG_LEGACY>/hate": {
+  "ok": false,
+  "err": "RepositoryNotFoundError 404 Client Error. (Request ID: Root=1-6ae19602-1cdd621f25aa2"
+ },
+ "<HF_ORG_LEGACY>/intent": {
+  "ok": false,
+  "err": "RepositoryNotFoundError 404 Client Error. (Request ID: Root=1-6ae19602-3c79a0381342a"
+ },
+ "<HF_ORG_LEGACY>/low-resource-naija-pretrain": {
+  "ok": false,
+  "err": "RepositoryNotFoundError 404 Client Error. (Request ID: Root=1-6ae19602-29e518b06e7b2"
+ },
+ "<HF_ORG_LEGACY>/low_resource_languages_pretrain_data8": {
+  "ok": false,
+  "err": "RepositoryNotFoundError 404 Client Error. (Request ID: Root=1-6ae19603-2281f12b07ff3"
+ },
+ "<HF_ORG_LEGACY>/lrln": {
+  "ok": false,
+  "err": "RepositoryNotFoundError 404 Client Error. (Request ID: Root=1-6ae19603-3332597b52b6b"
+ },
+ "<HF_ORG_LEGACY>/masakhanews_eval": {
+  "ok": false,
+  "err": "RepositoryNotFoundError 404 Client Error. (Request ID: Root=1-6ae19603-7180157f35616"
+ },
+ "<HF_ORG_LEGACY>/metadata": {
+  "ok": false,
+  "err": "RepositoryNotFoundError 404 Client Error. (Request ID: Root=1-6ae19603-442b452a5131a"
+ },
+ "<HF_ORG_LEGACY>/monolingual": {
+  "ok": true,
+  "private": false,
+  "gated": false,
+  "bytes": 113020403,
+  "files": 3
+ },
+ "<HF_ORG_LEGACY>/naija": {
+  "ok": false,
+  "err": "RepositoryNotFoundError 404 Client Error. (Request ID: Root=1-6ae19603-6f1335537943d"
+ },
+ "<HF_ORG_LEGACY>/naija-sft": {
+  "ok": false,
+  "err": "RepositoryNotFoundError 404 Client Error. (Request ID: Root=1-6ae19603-276689996bd97"
+ },
+ "<HF_ORG_LEGACY>/naija2": {
+  "ok": false,
+  "err": "RepositoryNotFoundError 404 Client Error. (Request ID: Root=1-6ae19604-00b753a40d15e"
+ },
+ "<HF_ORG_LEGACY>/naija3": {
+  "ok": false,
+  "err": "RepositoryNotFoundError 404 Client Error. (Request ID: Root=1-6ae19604-61afee8e0cafc"
+ },
+ "<HF_ORG_LEGACY>/naija_sft": {
+  "ok": false,
+  "err": "RepositoryNotFoundError 404 Client Error. (Request ID: Root=1-6ae19604-4d541f3116a2d"
+ },
+ "<HF_ORG_LEGACY>/pos": {
+  "ok": false,
+  "err": "RepositoryNotFoundError 404 Client Error. (Request ID: Root=1-6ae19604-0a5c0ca323378"
+ },
+ "<HF_ORG_LEGACY>/pretrain-new": {
+  "ok": false,
+  "err": "RepositoryNotFoundError 404 Client Error. (Request ID: Root=1-6ae19604-616256792746a"
+ },
+ "<HF_ORG_LEGACY>/pretrain_data10": {
+  "ok": false,
+  "err": "RepositoryNotFoundError 404 Client Error. (Request ID: Root=1-6ae19604-5ef8c9194427b"
+ },
+ "<HF_ORG_LEGACY>/pretrain_data5": {
+  "ok": false,
+  "err": "RepositoryNotFoundError 404 Client Error. (Request ID: Root=1-6ae19604-589111101577f"
+ },
+ "<HF_ORG_LEGACY>/queries": {
+  "ok": false,
+  "err": "RepositoryNotFoundError 404 Client Error. (Request ID: Root=1-6ae19605-6119e0436a5e3"
+ },
+ "<HF_ORG_LEGACY>/rag-synthetic-data": {
+  "ok": false,
+  "err": "RepositoryNotFoundError 404 Client Error. (Request ID: Root=1-6ae19605-4322eeaa4957a"
+ },
+ "<HF_ORG_LEGACY>/rag_synthetic_data": {
+  "ok": true,
+  "private": false,
+  "gated": false,
+  "bytes": 336589785,
+  "files": 8
+ },
+ "<HF_ORG_LEGACY>/rl_chat": {
+  "ok": false,
+  "err": "RepositoryNotFoundError 404 Client Error. (Request ID: Root=1-6ae19605-2a94d43a04e71"
+ },
+ "<HF_ORG_LEGACY>/sft-all": {
+  "ok": true,
+  "private": false,
+  "gated": false,
+  "bytes": 1805340505,
+  "files": 28
+ },
+ "<HF_ORG_LEGACY>/sft-new": {
+  "ok": true,
+  "private": false,
+  "gated": false,
+  "bytes": 4527092694,
+  "files": 89
+ },
+ "<HF_ORG_LEGACY>/soda": {
+  "ok": true,
+  "private": false,
+  "gated": false,
+  "bytes": 7339798324,
+  "files": 379
+ },
+ "<HF_ORG_LEGACY>/structured_output": {
+  "ok": false,
+  "err": "RepositoryNotFoundError 404 Client Error. (Request ID: Root=1-6ae19606-3ac4164644c84"
+ },
+ "<HF_ORG_LEGACY>/summarization": {
+  "ok": false,
+  "err": "RepositoryNotFoundError 404 Client Error. (Request ID: Root=1-6ae19606-3ca06ac20ed60"
+ },
+ "<HF_ORG_LEGACY>/tasks": {
+  "ok": false,
+  "err": "RepositoryNotFoundError 404 Client Error. (Request ID: Root=1-6ae19606-376965cb66c57"
+ },
+ "<HF_ORG_LEGACY>/topic": {
+  "ok": false,
+  "err": "RepositoryNotFoundError 404 Client Error. (Request ID: Root=1-6ae19606-7a8ee6e119925"
+ },
+ "<HF_ORG_LEGACY>/trs": {
+  "ok": false,
+  "err": "RepositoryNotFoundError 404 Client Error. (Request ID: Root=1-6ae19606-5622ccc1054e9"
+ },
+ "<HF_ORG_LEGACY>/ultrachat-cleaned": {
+  "ok": false,
+  "err": "RepositoryNotFoundError 404 Client Error. (Request ID: Root=1-6ae19607-00b24e616a0ba"
+ },
+ "<HF_ORG_LEGACY>/ultrachat-filtered": {
+  "ok": false,
+  "err": "RepositoryNotFoundError 404 Client Error. (Request ID: Root=1-6ae19607-76783fd042bb1"
+ },
+ "<HF_ORG_LEGACY>/ultrachat-metadata": {
+  "ok": false,
+  "err": "RepositoryNotFoundError 404 Client Error. (Request ID: Root=1-6ae19607-1b45a2c63b01e"
+ },
+ "<HF_ORG_LEGACY>/ultrachat-pairs": {
+  "ok": false,
+  "err": "RepositoryNotFoundError 404 Client Error. (Request ID: Root=1-6ae19607-3154cd8440a07"
+ },
+ "<HF_ORG_LEGACY>/wikipedia-en": {
+  "ok": false,
+  "err": "RepositoryNotFoundError 404 Client Error. (Request ID: Root=1-6ae19607-6423656744dec"
+ },
+ "<HF_ORG_LEGACY>/wikipedia-eng": {
+  "ok": false,
+  "err": "RepositoryNotFoundError 404 Client Error. (Request ID: Root=1-6ae19607-350ca63f274e2"
+ },
+ "BlakHasan/sheng-augmented-collection": {
+  "ok": true,
+  "private": false,
+  "gated": false,
+  "bytes": 23094183,
+  "files": 9
+ },
+ "BrianMwangi/english-to-luo-opus": {
+  "ok": true,
+  "private": false,
+  "gated": false,
+  "bytes": 166507710,
+  "files": 4
+ },
+ "CapitainVigs/mece-fongbe-corpus": {
+  "ok": true,
+  "private": false,
+  "gated": false,
+  "bytes": 67192152,
+  "files": 4
+ },
+ "CohereLabs/aya_collection_language_split": {
+  "ok": true,
+  "private": false,
+  "gated": false,
+  "bytes": 155209940658,
+  "files": 496
+ },
+ "CohereLabs/aya_dataset": {
+  "ok": true,
+  "private": false,
+  "gated": false,
+  "bytes": 140160376,
+  "files": 6
+ },
+ "CohereLabs/wikipedia-2023-11-embed-multilingual-v3": {
+  "ok": true,
+  "private": false,
+  "gated": false,
+  "bytes": 536270738315,
+  "files": 2709
+ },
+ "FrancophonIA/Fon_French_Daily_Dialogues_Parallel_Data": {
+  "ok": true,
+  "private": false,
+  "gated": false,
+  "bytes": 1401324,
+  "files": 3
+ },
+ "HPLT/OpenLID-v3": {
+  "ok": true,
+  "private": false,
+  "gated": false,
+  "bytes": 6364975054,
+  "files": 201
+ },
+ "HuggingFaceFW/finetranslations": {
+  "ok": true,
+  "private": false,
+  "gated": false,
+  "bytes": 13948470856182,
+  "files": 7152
+ },
+ "KKamauWaithakaA/english-to-luo-opus": {
+  "ok": true,
+  "private": false,
+  "gated": false,
+  "bytes": 166507710,
+  "files": 4
+ },
+ "KwekuAinoo/eng_twi": {
+  "ok": true,
+  "private": false,
+  "gated": false,
+  "bytes": 105227999,
+  "files": 3
+ },
+ "MaLA-LM/MassiveSumm_long": {
+  "ok": true,
+  "private": false,
+  "gated": true,
+  "bytes": 1332150660,
+  "files": 57
+ },
+ "MaLA-LM/MassiveSumm_short": {
+  "ok": true,
+  "private": false,
+  "gated": true,
+  "bytes": 1026443964,
+  "files": 90
+ },
+ "MaLA-LM/reasoning-instruct-final": {
+  "ok": true,
+  "private": false,
+  "gated": false,
+  "bytes": 1106998600,
+  "files": 7
+ },
+ "Makan09/bam-asr-conversational": {
+  "ok": true,
+  "private": false,
+  "gated": false,
+  "bytes": 5870664013,
+  "files": 35
+ },
+ "McGill-NLP/SSA-MTE": {
+  "ok": true,
+  "private": false,
+  "gated": false,
+  "bytes": 123593269,
+  "files": 50
+ },
+ "McGill-NLP/mgsm-pro": {
+  "ok": true,
+  "private": false,
+  "gated": false,
+  "bytes": 8292789,
+  "files": 20
+ },
+ "RobotsMali/bam-asr-early": {
+  "ok": true,
+  "private": false,
+  "gated": false,
+  "bytes": 5870664013,
+  "files": 35
+ },
+ "RobotsMali/jeli-asr": {
+  "ok": true,
+  "private": false,
+  "gated": false,
+  "bytes": 4593832084,
+  "files": 25
+ },
+ "ServiceNow-AI/M2Lingual": {
+  "ok": true,
+  "private": false,
+  "gated": false,
+  "bytes": 784594486,
+  "files": 6
+ },
+ "Tadesse/COMET_score": {
+  "ok": true,
+  "private": false,
+  "gated": false,
+  "bytes": 74195599,
+  "files": 19
+ },
+ "Tadesse/EthioEmo-intensities": {
+  "ok": true,
+  "private": false,
+  "gated": false,
+  "bytes": 5505472,
+  "files": 14
+ },
+ "Tadesse/news-topic": {
+  "ok": true,
+  "private": false,
+  "gated": false,
+  "bytes": 234226953,
+  "files": 4
+ },
+ "UBC-NLP/AfroLingu-MT": {
+  "ok": true,
+  "private": false,
+  "gated": true,
+  "bytes": 243806460,
+  "files": 5
+ },
+ "abdelhaqueidali/English-Tamazight-Dictionnary-2007": {
+  "ok": true,
+  "private": false,
+  "gated": false,
+  "bytes": 442742,
+  "files": 7
+ },
+ "abdoelsayed/DeAR-COT": {
+  "ok": true,
+  "private": false,
+  "gated": false,
+  "bytes": 195752218,
+  "files": 3
+ },
+ "abdoelsayed/reranking-datasets": {
+  "ok": true,
+  "private": false,
+  "gated": false,
+  "bytes": 1432625027354,
+  "files": 143
+ },
+ "abdoelsayed/reranking-datasets-light": {
+  "ok": true,
+  "private": false,
+  "gated": false,
+  "bytes": 479975710598,
+  "files": 209
+ },
+ "afrihate/afrihate": {
+  "ok": true,
+  "private": false,
+  "gated": true,
+  "bytes": 24483489,
+  "files": 61
+ },
+ "ahmadmwali/hausa-writing-anomalies": {
+  "ok": true,
+  "private": false,
+  "gated": false,
+  "bytes": 89119065,
+  "files": 5
+ },
+ "akoksal/LongForm": {
+  "ok": true,
+  "private": false,
+  "gated": false,
+  "bytes": 45533027,
+  "files": 5
+ },
+ "alaminerca/sango-french-bible-parallel": {
+  "ok": true,
+  "private": false,
+  "gated": false,
+  "bytes": 21713243,
+  "files": 5
+ },
+ "alexandrainst/multi-wiki-qa": {
+  "ok": true,
+  "private": false,
+  "gated": false,
+  "bytes": 557978130,
+  "files": 308
+ },
+ "allenai/gooaq": {
+  "ok": true,
+  "private": false,
+  "gated": false,
+  "bytes": 16629,
+  "files": 3
+ },
+ "andreniyongabo/kinnews_kirnews": {
+  "ok": true,
+  "private": false,
+  "gated": false,
+  "bytes": 14486,
+  "files": 3
+ },
+ "anrilombard/masakhaner-x-parquet": {
+  "ok": true,
+  "private": false,
+  "gated": false,
+  "bytes": 1148420,
+  "files": 10
+ },
+ "ayymen/Pontoon-Translations": {
+  "ok": true,
+  "private": false,
+  "gated": false,
+  "bytes": 442289172,
+  "files": 248
+ },
+ "beethogedeon/Helsinki-en-fon-opus-20k": {
+  "ok": true,
+  "private": false,
+  "gated": false,
+  "bytes": 2578928,
+  "files": 4
+ },
+ "beethogedeon/fr_fon": {
+  "ok": true,
+  "private": false,
+  "gated": false,
+  "bytes": 745911,
+  "files": 4
+ },
+ "bigscience/xP3all": {
+  "ok": true,
+  "private": false,
+  "gated": false,
+  "bytes": 207497948435,
+  "files": 17076
+ },
+ "bigscience/xP3mt": {
+  "ok": true,
+  "private": false,
+  "gated": false,
+  "bytes": 203554157796,
+  "files": 16971
+ },
+ "bltlab/lr-sum": {
+  "ok": true,
+  "private": false,
+  "gated": false,
+  "bytes": 722898018,
+  "files": 110
+ },
+ "bltlab/open-ner-standardized": {
+  "ok": true,
+  "private": false,
+  "gated": false,
+  "bytes": 69144354,
+  "files": 197
+ },
+ "bonadossou/math_paraphrased": {
+  "ok": true,
+  "private": false,
+  "gated": false,
+  "bytes": 5453995,
+  "files": 4
+ },
+ "cibfaye/wolof-english-bible": {
+  "ok": true,
+  "private": false,
+  "gated": false,
+  "bytes": 2345660,
+  "files": 4
+ },
+ "cis-lmu/GlotCC-V1": {
+  "ok": true,
+  "private": false,
+  "gated": false,
+  "bytes": 2225099864897,
+  "files": 2593
+ },
+ "community-datasets/swahili_news": {
+  "ok": true,
+  "private": false,
+  "gated": false,
+  "bytes": 38116700,
+  "files": 4
+ },
+ "danish-foundation-models/multilingual-gsm-symbolic": {
+  "ok": true,
+  "private": false,
+  "gated": false,
+  "bytes": 13180159277,
+  "files": 2567
+ },
+ "dofbi/jolof": {
+  "ok": true,
+  "private": false,
+  "gated": false,
+  "bytes": 1697381,
+  "files": 4
+ },
+ "dsfsi/daily-news-dikgang": {
+  "ok": true,
+  "private": false,
+  "gated": false,
+  "bytes": 11883758,
+  "files": 6
+ },
+ "dsfsi/vukuzenzele-sentence-aligned": {
+  "ok": true,
+  "private": false,
+  "gated": false,
+  "bytes": 36797166,
+  "files": 168
+ },
+ "fiifinketia/navigation-corpus-dagbani": {
+  "ok": true,
+  "private": false,
+  "gated": false,
+  "bytes": 2430180,
+  "files": 3
+ },
+ "fiifinketia/navigation-corpus-ewe": {
+  "ok": true,
+  "private": false,
+  "gated": false,
+  "bytes": 2469816,
+  "files": 3
+ },
+ "fiifinketia/navigation-corpus-twi": {
+  "ok": true,
+  "private": false,
+  "gated": false,
+  "bytes": 2454641,
+  "files": 3
+ },
+ "fiifinketia/pristine-twi-english": {
+  "ok": true,
+  "private": false,
+  "gated": false,
+  "bytes": 1575945375,
+  "files": 9
+ },
+ "fotiecodes/Turaco-NLLB-mt-en-wes-cleaned-dataset": {
+  "ok": true,
+  "private": false,
+  "gated": false,
+  "bytes": 8807475,
+  "files": 5
+ },
+ "galsenai/centralized_wolof_french_translation_data": {
+  "ok": true,
+  "private": false,
+  "gated": false,
+  "bytes": 7815596,
+  "files": 3
+ },
+ "galsenai/english-wolof-smol-translation": {
+  "ok": true,
+  "private": false,
+  "gated": false,
+  "bytes": 497368,
+  "files": 3
+ },
+ "ghananlpcommunity/pristine-twi-english": {
+  "ok": true,
+  "private": false,
+  "gated": false,
+  "bytes": 1575945633,
+  "files": 9
+ },
+ "ghananlpcommunity/pristine-twi-english-bidirectional-multilen": {
+  "ok": true,
+  "private": false,
+  "gated": false,
+  "bytes": 3400435766,
+  "files": 15
+ },
+ "ghananlpcommunity/twi-english-generation-prompts": {
+  "ok": true,
+  "private": false,
+  "gated": false,
+  "bytes": 730499748,
+  "files": 6
+ },
+ "ghanaopenai/ghana-assistant-data": {
+  "ok": true,
+  "private": false,
+  "gated": false,
+  "bytes": 3571255713,
+  "files": 23
+ },
+ "ghanaopenai/ghok-chat": {
+  "ok": true,
+  "private": false,
+  "gated": false,
+  "bytes": 6430417428,
+  "files": 5
+ },
+ "ghanaopenai/ghok-parallel-en-twi": {
+  "ok": true,
+  "private": false,
+  "gated": false,
+  "bytes": 6767817491,
+  "files": 5
+ },
+ "ghanaopenai/gooaq-twi-2m": {
+  "ok": true,
+  "private": false,
+  "gated": false,
+  "bytes": 589430782,
+  "files": 5
+ },
+ "hadamard-2/fleurs-ethiopian-v2": {
+  "ok": true,
+  "private": false,
+  "gated": false,
+  "bytes": 4624479206,
+  "files": 16
+ },
+ "hasankursun/multilingual-safety-classification-dataset": {
+  "ok": true,
+  "private": false,
+  "gated": false,
+  "bytes": 72312853,
+  "files": 62
+ },
+ "hbenayed/tunisian-msa-parallel-corpus-evaluated": {
+  "ok": true,
+  "private": false,
+  "gated": false,
+  "bytes": 670946,
+  "files": 3
+ },
+ "howard-nlp/sib200-ibom": {
+  "ok": true,
+  "private": false,
+  "gated": true,
+  "bytes": 802293,
+  "files": 22
+ },
+ "janavivekariya/aya_collection": {
+  "ok": true,
+  "private": false,
+  "gated": false,
+  "bytes": 155397150051,
+  "files": 297
+ },
+ "jaygala24/xsimplusplus": {
+  "ok": true,
+  "private": false,
+  "gated": false,
+  "bytes": 1181951975,
+  "files": 410
+ },
+ "karim155/WolBanking77": {
+  "ok": true,
+  "private": false,
+  "gated": false,
+  "bytes": 494189980,
+  "files": 10
+ },
+ "m-a-d-i/wori-wolof-instructions": {
+  "ok": true,
+  "private": false,
+  "gated": false,
+  "bytes": 3137432,
+  "files": 3
+ },
+ "maanka2/fleurs-somali": {
+  "ok": true,
+  "private": false,
+  "gated": false,
+  "bytes": 2165377249,
+  "files": 7
+ },
+ "mamakobe/luhya-multilingual-dataset": {
+  "ok": true,
+  "private": false,
+  "gated": false,
+  "bytes": 7021154,
+  "files": 8
+ },
+ "masakhane/AfriADR": {
+  "ok": true,
+  "private": false,
+  "gated": false,
+  "bytes": 11567198,
+  "files": 22
+ },
+ "masakhane/InjongoIntent": {
+  "ok": true,
+  "private": false,
+  "gated": false,
+  "bytes": 13538282,
+  "files": 52
+ },
+ "masakhane/african-translated-alpaca": {
+  "ok": true,
+  "private": false,
+  "gated": false,
+  "bytes": 694353446,
+  "files": 25
+ },
+ "mathewhe/OpenHermes-2.5-Formatted": {
+  "ok": true,
+  "private": false,
+  "gated": false,
+  "bytes": 7052026575,
+  "files": 7
+ },
+ "mbaye930/wolof-arabic-parallel-corpus": {
+  "ok": true,
+  "private": false,
+  "gated": false,
+  "bytes": 612601,
+  "files": 4
+ },
+ "metabloit/offensive-swahili-text": {
+  "ok": true,
+  "private": false,
+  "gated": false,
+  "bytes": 559335,
+  "files": 5
+ },
+ "michsethowusu/english-acholi_sentence-pairs_mt560": {
+  "ok": true,
+  "private": false,
+  "gated": false,
+  "bytes": 8636520,
+  "files": 3
+ },
+ "michsethowusu/english-basaa_sentence-pairs_mt560": {
+  "ok": true,
+  "private": false,
+  "gated": false,
+  "bytes": 3375854,
+  "files": 3
+ },
+ "michsethowusu/english-cameroon-pidgin_sentence-pairs_mt560": {
+  "ok": true,
+  "private": false,
+  "gated": false,
+  "bytes": 3373607,
+  "files": 3
+ },
+ "michsethowusu/english-congo-swahili_sentence-pairs_mt560": {
+  "ok": true,
+  "private": false,
+  "gated": false,
+  "bytes": 35968581,
+  "files": 3
+ },
+ "michsethowusu/english-duala_sentence-pairs_mt560": {
+  "ok": true,
+  "private": false,
+  "gated": false,
+  "bytes": 1861381,
+  "files": 3
+ },
+ "michsethowusu/english-egyptian-arabic_sentence-pairs_mt560": {
+  "ok": true,
+  "private": false,
+  "gated": false,
+  "bytes": 9222562,
+  "files": 3
+ },
+ "michsethowusu/english-esan_sentence-pairs_mt560": {
+  "ok": true,
+  "private": false,
+  "gated": false,
+  "bytes": 622956,
+  "files": 3
+ },
+ "michsethowusu/english-fon_sentence-pairs_mt560": {
+  "ok": true,
+  "private": false,
+  "gated": false,
+  "bytes": 4061039,
+  "files": 3
+ },
+ "michsethowusu/english-ganda_sentence-pairs_mt560": {
+  "ok": true,
+  "private": false,
+  "gated": false,
+  "bytes": 28827104,
+  "files": 3
+ },
+ "michsethowusu/english-herero_sentence-pairs_mt560": {
+  "ok": true,
+  "private": false,
+  "gated": false,
+  "bytes": 999217,
+  "files": 3
+ },
+ "michsethowusu/english-isoko_sentence-pairs_mt560": {
+  "ok": true,
+  "private": false,
+  "gated": false,
+  "bytes": 27171885,
+  "files": 3
+ },
+ "michsethowusu/english-kaonde_sentence-pairs_mt560": {
+  "ok": true,
+  "private": false,
+  "gated": false,
+  "bytes": 27351199,
+  "files": 3
+ },
+ "michsethowusu/english-krio_sentence-pairs_mt560": {
+  "ok": true,
+  "private": false,
+  "gated": false,
+  "bytes": 4866176,
+  "files": 3
+ },
+ "michsethowusu/english-lozi_sentence-pairs_mt560": {
+  "ok": true,
+  "private": false,
+  "gated": false,
+  "bytes": 54352322,
+  "files": 3
+ },
+ "michsethowusu/english-luba-kasai_sentence-pairs_mt560": {
+  "ok": true,
+  "private": false,
+  "gated": false,
+  "bytes": 37678660,
+  "files": 3
+ },
+ "michsethowusu/english-lunda_sentence-pairs_mt560": {
+  "ok": true,
+  "private": false,
+  "gated": false,
+  "bytes": 16511987,
+  "files": 3
+ },
+ "michsethowusu/english-makhuwa_sentence-pairs_mt560": {
+  "ok": true,
+  "private": false,
+  "gated": false,
+  "bytes": 9060703,
+  "files": 3
+ },
+ "michsethowusu/english-mende_sentence-pairs_mt560": {
+  "ok": true,
+  "private": false,
+  "gated": false,
+  "bytes": 185132,
+  "files": 3
+ },
+ "michsethowusu/english-ndau_sentence-pairs_mt560": {
+  "ok": true,
+  "private": false,
+  "gated": false,
+  "bytes": 3608871,
+  "files": 3
+ },
+ "michsethowusu/english-nyankore_sentence-pairs_mt560": {
+  "ok": true,
+  "private": false,
+  "gated": false,
+  "bytes": 6134764,
+  "files": 3
+ },
+ "michsethowusu/english-oromo_sentence-pairs_mt560": {
+  "ok": true,
+  "private": false,
+  "gated": false,
+  "bytes": 20438637,
+  "files": 3
+ },
+ "michsethowusu/english-oshiwambo_sentence-pairs_mt560": {
+  "ok": true,
+  "private": false,
+  "gated": false,
+  "bytes": 12887887,
+  "files": 3
+ },
+ "michsethowusu/english-sena_sentence-pairs_mt560": {
+  "ok": true,
+  "private": false,
+  "gated": false,
+  "bytes": 6252696,
+  "files": 3
+ },
+ "michsethowusu/english-setswana_sentence-pairs_mt560": {
+  "ok": true,
+  "private": false,
+  "gated": false,
+  "bytes": 108332142,
+  "files": 3
+ },
+ "michsethowusu/english-sidaama_sentence-pairs_mt560": {
+  "ok": true,
+  "private": false,
+  "gated": false,
+  "bytes": 5865183,
+  "files": 3
+ },
+ "michsethowusu/english-tswa_sentence-pairs_mt560": {
+  "ok": true,
+  "private": false,
+  "gated": false,
+  "bytes": 10796545,
+  "files": 3
+ },
+ "michsethowusu/english-wolaytta_sentence-pairs_mt560": {
+  "ok": true,
+  "private": false,
+  "gated": false,
+  "bytes": 15443050,
+  "files": 3
+ },
+ "michsethowusu/english-wolof_sentence-pairs_mt560": {
+  "ok": true,
+  "private": false,
+  "gated": false,
+  "bytes": 2253463,
+  "files": 3
+ },
+ "michsethowusu/english-yao_sentence-pairs_mt560": {
+  "ok": true,
+  "private": false,
+  "gated": false,
+  "bytes": 5450179,
+  "files": 3
+ },
+ "michsethowusu/tswana-emotions-corpus": {
+  "ok": true,
+  "private": false,
+  "gated": false,
+  "bytes": 31566818,
+  "files": 3
+ },
+ "michsethowusu/twi-english-parallel-synthetic-50m": {
+  "ok": true,
+  "private": false,
+  "gated": false,
+  "bytes": 2894430351,
+  "files": 14
+ },
+ "mopatik/setswana-offensive-977": {
+  "ok": true,
+  "private": false,
+  "gated": false,
+  "bytes": 137987,
+  "files": 7
+ },
+ "mteb/AfriXNLI": {
+  "ok": true,
+  "private": false,
+  "gated": false,
+  "bytes": 1099674,
+  "files": 38
+ },
+ "mteb/InjongoIntent": {
+  "ok": true,
+  "private": false,
+  "gated": false,
+  "bytes": 1873227,
+  "files": 52
+ },
+ "mteb/IsiZuluNewsClassification": {
+  "ok": true,
+  "private": false,
+  "gated": false,
+  "bytes": 35723,
+  "files": 3
+ },
+ "mteb/SouthAfricanLangClassification": {
+  "ok": true,
+  "private": false,
+  "gated": false,
+  "bytes": 6264719,
+  "files": 4
+ },
+ "mteb/TswanaNewsClassification": {
+  "ok": true,
+  "private": false,
+  "gated": false,
+  "bytes": 6268782,
+  "files": 5
+ },
+ "mteb/sib200.v2": {
+  "ok": true,
+  "private": false,
+  "gated": false,
+  "bytes": 21211838,
+  "files": 386
+ },
+ "nthakur/swim-ir-cross-lingual": {
+  "ok": true,
+  "private": false,
+  "gated": false,
+  "bytes": 7203808264,
+  "files": 37
+ },
+ "nwu-ctext/nchlt": {
+  "ok": true,
+  "private": false,
+  "gated": false,
+  "bytes": 18053,
+  "files": 3
+ },
+ "qvac/TranslatePsy-AfriSLM-Synthetic-Mix": {
+  "ok": true,
+  "private": false,
+  "gated": false,
+  "bytes": 181985102027,
+  "files": 369
+ },
+ "saillab/alpaca-ewe-cleaned": {
+  "ok": true,
+  "private": false,
+  "gated": false,
+  "bytes": 25043830,
+  "files": 4
+ },
+ "saillab/alpaca_ewe_taco": {
+  "ok": true,
+  "private": false,
+  "gated": false,
+  "bytes": 114485852,
+  "files": 4
+ },
+ "sbmaruf/forai_ml_masakhane_mafand": {
+  "ok": true,
+  "private": false,
+  "gated": false,
+  "bytes": 13978,
+  "files": 3
+ },
+ "sentence-transformers/parallel-sentences-opus-100": {
+  "ok": true,
+  "private": false,
+  "gated": false,
+  "bytes": 4765096414,
+  "files": 289
+ },
+ "sudoping01/english-wolof-translation": {
+  "ok": true,
+  "private": false,
+  "gated": false,
+  "bytes": 8321586,
+  "files": 3
+ },
+ "tabularisai/swahili-sentiment-dataset": {
+  "ok": true,
+  "private": false,
+  "gated": false,
+  "bytes": 39094182,
+  "files": 3
+ },
+ "taresco/big_math_translated_african_languages": {
+  "ok": true,
+  "private": false,
+  "gated": false,
+  "bytes": 47744651,
+  "files": 3
+ },
+ "taresco/cot_submix_filtered": {
+  "ok": true,
+  "private": false,
+  "gated": false,
+  "bytes": 64057581,
+  "files": 3
+ },
+ "taresco/xP3x_african_subset": {
+  "ok": true,
+  "private": false,
+  "gated": false,
+  "bytes": 9963434728,
+  "files": 12647
+ },
+ "tunis-ai/tunisian-msa-parallel-corpus": {
+  "ok": true,
+  "private": false,
+  "gated": false,
+  "bytes": 532889,
+  "files": 3
+ },
+ "tunis-ai/tunisian-msa-parallel-corpus-evaluated": {
+  "ok": true,
+  "private": false,
+  "gated": false,
+  "bytes": 670946,
+  "files": 3
+ },
+ "universal-dependencies/universal_dependencies": {
+  "ok": true,
+  "private": false,
+  "gated": false,
+  "bytes": 731910120,
+  "files": 731
+ },
+ "wikimedia/wikipedia": {
+  "ok": true,
+  "private": false,
+  "gated": false,
+  "bytes": 71792022791,
+  "files": 557
+ },
+ "yigagilbert/synthetic-parallel-external": {
+  "ok": true,
+  "private": false,
+  "gated": false,
+  "bytes": 58588727220,
+  "files": 151
+ },
+ "yigagilbert/synthetic-parallel-salt": {
+  "ok": true,
+  "private": false,
+  "gated": false,
+  "bytes": 7299788150,
+  "files": 15
+ },
+ "yigagilbert/synthetic-parallel-sunbird": {
+  "ok": true,
+  "private": false,
+  "gated": false,
+  "bytes": 44159518196,
+  "files": 39
+ },
+ "ymoslem/UN-EN-AR-QE": {
+  "ok": true,
+  "private": false,
+  "gated": false,
+  "bytes": 2260783908,
+  "files": 12
+ },
+ "ymoslem/news-commentary-eng-arz": {
+  "ok": true,
+  "private": false,
+  "gated": false,
+  "bytes": 67979874,
+  "files": 4
+ }
+}

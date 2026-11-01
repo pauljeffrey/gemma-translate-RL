@@ -1,0 +1,18 @@
+run,step,event,kl,grad_norm,lr_before,lr_after,what_it_shows,source,label
+2b,489,"b256 stage begins (curriculum switch), lr 3e-6, no std division, greedy member in group",0.052,0.40,,,KL 0.045 at step 488,paper/data/rl2b_steps.csv,VERIFIED
+2b,530,first single step with KL > 0.15 (0.1825),0.1825,0.76,,,41 steps after the switch,paper/data/rl2b_steps.csv,VERIFIED
+2b,536,a 5-step median KL > 0.15 first true (guard threshold; the 2c guard did not exist yet),>0.15,,,,"guard would have first cut lr here (retrospective computation, never run); the run was stopped 303 steps later",paper/data/rl2b_steps.csv computed,VERIFIED (computed) / counterfactual untested
+2b,541,KL 0.2685,0.2685,0.90,,,paper says 0.27,paper/data/rl2b_steps.csv,VERIFIED
+2b,661,"KL 1.81, finished rate 0.97",1.8107,1.14,,,,paper/data/rl2b_steps.csv,VERIFIED
+2b,781,KL 2.56,2.5648,1.28,,,,paper/data/rl2b_steps.csv,VERIFIED
+2b,839,run stopped (model of step 488 kept); dev chrF++ fell to 41.4 only at step 750,2.2483,2.33,,,dev chrF++ noticed the divergence last,paper/data/rl2b_evals.csv,VERIFIED
+2c,607,single-step k3 spike,0.512,220.1,2e-6,2e-6,one sampled token with log-ratio about 16; grad clip 1.0 discards the step,paper/data/rl2c_metrics.jsonl,VERIFIED
+2c,747,single-step k3 spike; guard (MEAN of last 5) fired; lr scale 1.0 -> 0.5,1650.975,285380.9,2e-6,1e-6,nothing diverged: dev 41.64 -> 41.88 at step 800; lr stayed 1e-6 for steps 748-900 (153 steps),"paper/data/rl2c_metrics.jsonl (kl_guard_lr_scale, lr columns)",VERIFIED
+2c,900,restart at step-900 checkpoint with b2048 yaml: kl_estimator k3c (log-ratio clamp 5) and guard on MEDIAN; guard state not in checkpoint so scale reset 0.5 -> 1.0 at step 901,0.022,,1e-6,2e-6,"after the restart (steps 901-1433, 533 steps) maximum KL 0.030 and maximum gradient norm 1.87",paper/data/rl2c_metrics.jsonl,VERIFIED (computed)
+final2,121,"guard fires, scale 1.0 -> 0.5 (median KL of window > 0.15; kl_coef 0.1, reference = start model, median KL of steps 101-150 = 0.143)",,,1e-6,5e-7,,paper/data/final2_metrics.jsonl,VERIFIED
+final2,135,"guard fires, scale 0.5 -> 0.25",,,5e-7,2.5e-7,,paper/data/final2_metrics.jsonl,VERIFIED
+final2,145,"guard fires, scale 0.25 -> 0.125 (floor)",,,2.5e-7,1.25e-7,,paper/data/final2_metrics.jsonl,VERIFIED
+final2,151,"planned restart after step-150 checkpoint: guard state lost, scale 0.125 -> 1.0",,,1.25e-7,1e-6,state not persisted,paper/data/final2_metrics.jsonl,VERIFIED
+final2,155,"guard fires again 1.0 -> 0.5; operator LR_SCALE file 0.5 written 2026-10-22 19:38 UTC, so effective lr 2.5e-7 for steps 151-250",,,1e-6,5e-7 x 0.5 file,"mean lr of steps 151-200 = 2.75e-7, 201-250 = 2.5e-7",paper/data/final2_metrics.jsonl lr column; launch_FINAL2.log,VERIFIED
+final2,251,OOM resume from step-250 checkpoint; guard reset to 1.0; LR_SCALE file 0.75,,,,7.5e-7,,launch_FINAL2.log; metrics,VERIFIED
+final2,341,guard fires 1.0 -> 0.5,,,,,,paper/data/final2_metrics.jsonl,VERIFIED

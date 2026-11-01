@@ -1,0 +1,54 @@
+split,paper_id,domain,sentences_per_language
+dev,9,health,36
+dev,14,computer science,33
+dev,46,sociology,28
+dev,53,biochemistry,29
+dev,55,health,36
+dev,57,sociology,34
+dev,73,health,33
+dev,84,biochemistry,37
+dev,98,sociology,29
+dev,99,health,36
+dev,103,agriculture,34
+dev,119,indigenous knowledge,42
+dev,132,geography,29
+dev,133,biology,35
+dev,164,agriculture,44
+dev,170,health,51
+dev,171,biochemistry,30
+dev,172,statistics,38
+dev,174,biology,39
+dev,180,health,29
+dev,200,health,33
+dev,202,health,31
+dev,214,health,28
+dev,219,chemistry,29
+dev,222,engineering,20
+test,4,health,24
+test,10,health,36
+test,13,health,32
+test,15,biology,27
+test,38,computer science,27
+test,52,biochemistry,33
+test,67,health,27
+test,76,statistics,23
+test,102,geography,39
+test,106,health,32
+test,124,geography,46
+test,125,health,50
+test,128,sociology,27
+test,142,agriculture,35
+test,148,health,30
+test,158,biology,32
+test,173,biochemistry,47
+test,178,agriculture,32
+test,188,sociology,34
+test,203,biology,42
+test,204,biochemistry,32
+test,205,indigenous knowledge,49
+test,212,engineering,37
+test,216,sociology,42
+test,217,health,38
+test,220,chemistry,42
+test,225,health,23
+test,227,health,32

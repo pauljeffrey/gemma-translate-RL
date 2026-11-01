@@ -1,0 +1,7 @@
+file,mafand_lang,mafand_test_pairs_found,mafand_test_pairs_total
+AfroLinfu-MT-dev.jsonl,amh,4,1033
+AfroLinfu-MT-test.jsonl,amh,8,1033
+AfroLinfu-MT-test.jsonl,yor,32,1525
+AfroLinfu-MT-train.jsonl,amh,54,1033
+AfroLinfu-MT-train.jsonl,hau,1,1488
+AfroLinfu-MT-train.jsonl,swa,2,1823

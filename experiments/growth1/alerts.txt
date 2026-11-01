@@ -1,0 +1,11 @@
+2026-11-01T04:17:14Z [G1A_STARTED] g1a: 15 new layers + 125 tag rows, data packed_g0, 1500 steps
+2026-11-01T04:54:45Z [SHARD_PULL_FAILED] checksum 1
+2026-11-01T06:16:46Z [G1A_DONE] g1a finished: 1500 steps; runs/g1a/last/trainer_state.pt kept (3.0G)
+2026-11-01T06:16:46Z [G1_WAITING_PHASE2] stage A is done; waiting for run/.arrived_bundle_delta (packed_delta_tag, sched_g/B, packed_g_arrays.sha256); polling every 60 s
+2026-11-01T06:17:14Z [G1B_SHARD_STARTED] shard 1/6 from runs/g1a, 4826 steps
+2026-11-01T06:19:10Z [SHARD_ARRIVED] 2
+2026-11-01T09:40:17Z [REPLAY_ADDED] shard 2: run/shards/s2: 154424 shard packs + 15328 replay draws (9.0% of draws) -> 5305 steps
+2026-11-01T13:11:07Z [G1B_SHARD_DONE] shard 1/6 finished; 13 GB free
+2026-11-01T13:11:14Z [G1B_SHARD_STARTED] shard 2/6 from runs/g1b_s1, 5305 steps
+2026-11-01T13:13:27Z [SHARD_ARRIVED] 3
+2026-11-01T13:13:57Z [REPLAY_ADDED] shard 3: run/shards/s3: 154429 shard packs + 15328 replay draws (9.0% of draws) -> 5305 steps

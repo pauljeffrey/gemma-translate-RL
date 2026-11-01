@@ -1,0 +1,17 @@
+pool,source_dataset,domain,field_group,before,after,removed,removed_pct
+sci_v2,HuggingFaceFW/finetranslations(en),general,finetranslations,8761,8590,171,1.952
+sci_v2,HuggingFaceFW/fineweb-edu:sample-10BT,general,general,26133,25622,511,1.955
+sci_v2,HuggingFaceFW/fineweb-edu:sample-10BT,general,general_v3_unused,13381,13066,315,2.354
+sci_v2,Sunbird/salt:text-all,general,salt,1115,1104,11,0.987
+sci_v2,common-pile/arxiv_papers,science,arxiv,5205,5195,10,0.192
+sci_v2,common-pile/libretexts,science,libretexts,10381,10257,124,1.194
+sci_v2,common-pile/pubmed,science,pmc,13942,13870,72,0.516
+sci_v2,dsfsi/afriscience_mt:train(en),science,afriscience,9807,9709,98,0.999
+sci_v2,gfissore/arxiv-abstracts-2021,science,arxiv,4626,4625,1,0.022
+sci_v2,openlanguagedata/oldi_seed,general,oldi_seed,830,829,1,0.12
+sci_v2,opus:wikimedia,general,wikimedia,38,38,0,0.0
+sci_v2,tatoeba,general,tatoeba,506,471,35,6.917
+sci_v2,wikimedia/wikipedia:20231101.en,general,general,10734,10693,41,0.382
+sci_v2,wikimedia/wikipedia:20231101.en,general,general_v3_unused,5619,5582,37,0.658
+v3,HuggingFaceFW/fineweb-edu:sample-10BT,general,,4216089,4116968,99121,2.351
+v3,wikimedia/wikipedia:20231101.en,general,,1723911,1714185,9726,0.564

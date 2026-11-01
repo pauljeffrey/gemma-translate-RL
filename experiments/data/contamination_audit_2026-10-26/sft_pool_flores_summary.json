@@ -1,0 +1,43 @@
+{
+ "windows_scanned": 87498,
+ "windows_with_flores_english": 23,
+ "devtest_sentence_hits": 9,
+ "dev_sentence_hits": 14,
+ "sentence_hits_by_iso": {
+  "lug": 16,
+  "yor": 3,
+  "ibo": 2,
+  "hau": 1,
+  "zul": 1
+ },
+ "windows_by_iso": {
+  "lug": 16,
+  "yor": 3,
+  "ibo": 2,
+  "hau": 1,
+  "zul": 1
+ },
+ "scale_to_full_sft_windows": 130.8,
+ "pair_windows": 3,
+ "distinct_devtest_ids": 9,
+ "distinct_dev_ids": 14,
+ "single_sentence_windows": 21,
+ "lug_chrf_vs_flores_ref": [
+  54.4,
+  40.3,
+  38.6,
+  27.6,
+  42.8,
+  60.1,
+  42.0,
+  44.7,
+  26.3,
+  41.9,
+  32.8,
+  20.8,
+  30.2,
+  48.0,
+  37.0,
+  60.0
+ ]
+}

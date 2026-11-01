@@ -1,0 +1,21 @@
+iso,keep_rate,source,n,median_qe,q15,share_below_0.20
+amh,0.85,"QE sample n=100 (CPU, AfriCOMET-QE-STL-1.1), rule OLD: min(0.85, share >= 0.20)",100,0.712,0.516,0.01
+bam,0.85,"QE sample n=100 (CPU, AfriCOMET-QE-STL-1.1), rule OLD: min(0.85, share >= 0.20)",100,0.423,0.298,0.02
+dyu,0.85,"QE sample n=100 (CPU, AfriCOMET-QE-STL-1.1), rule OLD: min(0.85, share >= 0.20)",100,0.659,0.536,0.0
+ewe,0.85,"QE sample n=100 (CPU, AfriCOMET-QE-STL-1.1), rule OLD: min(0.85, share >= 0.20)",100,0.584,0.467,0.0
+fon,0.85,"QE sample n=100 (CPU, AfriCOMET-QE-STL-1.1), rule OLD: min(0.85, share >= 0.20)",100,0.589,0.507,0.0
+kab,0.85,"QE sample n=100 (CPU, AfriCOMET-QE-STL-1.1), rule OLD: min(0.85, share >= 0.20)",100,0.491,0.383,0.01
+kam,0.85,"QE sample n=100 (CPU, AfriCOMET-QE-STL-1.1), rule OLD: min(0.85, share >= 0.20)",100,0.688,0.574,0.0
+kbp,0.85,"QE sample n=100 (CPU, AfriCOMET-QE-STL-1.1), rule OLD: min(0.85, share >= 0.20)",100,0.622,0.513,0.0
+kea,0.85,"QE sample n=100 (CPU, AfriCOMET-QE-STL-1.1), rule OLD: min(0.85, share >= 0.20)",100,0.416,0.312,0.01
+kmb,0.85,"QE sample n=100 (CPU, AfriCOMET-QE-STL-1.1), rule OLD: min(0.85, share >= 0.20)",100,0.682,0.563,0.0
+luo,0.85,"QE sample n=100 (CPU, AfriCOMET-QE-STL-1.1), rule OLD: min(0.85, share >= 0.20)",100,0.469,0.284,0.02
+mos,0.85,"QE sample n=100 (CPU, AfriCOMET-QE-STL-1.1), rule OLD: min(0.85, share >= 0.20)",100,0.707,0.631,0.0
+nus,0.85,"QE sample n=100 (CPU, AfriCOMET-QE-STL-1.1), rule OLD: min(0.85, share >= 0.20)",100,0.453,0.356,0.0
+seh,0.85,"QE sample n=100 (CPU, AfriCOMET-QE-STL-1.1), rule OLD: min(0.85, share >= 0.20)",100,0.679,0.534,0.0
+tir,0.85,"QE sample n=100 (CPU, AfriCOMET-QE-STL-1.1), rule OLD: min(0.85, share >= 0.20)",100,0.737,0.634,0.0
+tum,0.85,"QE sample n=100 (CPU, AfriCOMET-QE-STL-1.1), rule OLD: min(0.85, share >= 0.20)",100,0.702,0.589,0.0
+umb,0.85,"QE sample n=100 (CPU, AfriCOMET-QE-STL-1.1), rule OLD: min(0.85, share >= 0.20)",100,0.682,0.586,0.0
+vmw,0.85,"QE sample n=100 (CPU, AfriCOMET-QE-STL-1.1), rule OLD: min(0.85, share >= 0.20)",100,0.435,0.35,0.01
+wol,0.85,"QE sample n=100 (CPU, AfriCOMET-QE-STL-1.1), rule OLD: min(0.85, share >= 0.20)",100,0.547,0.442,0.0
+yor,0.85,"QE sample n=100 (CPU, AfriCOMET-QE-STL-1.1), rule OLD: min(0.85, share >= 0.20)",100,0.669,0.546,0.0

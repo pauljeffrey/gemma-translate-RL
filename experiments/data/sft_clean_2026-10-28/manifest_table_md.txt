@@ -1,0 +1,24 @@
+| set | source | commit | files | sentences added (before dedupe) by split |
+|---|---|---|---:|---|
+| flores_plus | openlanguagedata/flores_plus | 1147e2dc59 | 461/461 | {'dev': 232298, 'devtest': 230736} |
+| ibom_mt | howard-nlp/ibom-mt | 90d73874e2 | 8/8 | {'dev': 7973, 'test': 8096} |
+| ibom_mt_efi_davlan | Davlan/ibom-mt-en-efi | 13ddfb293a | 2/2 | {'dev': 3998, 'test': 3990} |
+| flores_moz | MOZNLP/FLORES_MOZ | 751dd12a6b | 10/10 | {'dev': 4985, 'devtest': 5060} |
+| ntrex128 | davidstap/NTREX | fd20d54141 | 128/128 | {'all': 255397} |
+| ntrex_african | masakhane/ntrex_african | 6a0e89ef2c | 32/32 | {'all': 127803} |
+| smol | google/smol | fdaff3a1a0 | 867/867 | {'all': 3745884} |
+| salt | Sunbird/salt | a0ffb52b49 | 2/2 | {'dev': 5456, 'test': 5500} |
+| glot_story_book | cis-lmu/GlotStoryBook | ad913a24f4 | 2/2 | {'all': 469205} |
+| afriscience_mt | dsfsi/afriscience_mt | 5e7b8238d5 | 2/2 | {'dev': 13105, 'test': 14971} |
+| afrilongdoc | <HF_ORG>/AfriLongDoc | d8219803f3 | 99/99 | {'all': 1893039} |
+| tico19 | gmnlp/tico19 | 55d70dc0b1 | 76/76 | {'dev': 158956, 'test': 342391} |
+| ssa_mte | McGill-NLP/SSA-MTE | 504e077bf3 | 32/32 | {'dev': 41693, 'test': 161182} |
+| afrimte_wmt2024 | masakhane/AfriMTE-WMT2024 | 27b3da428a | 26/26 | {'all': 5630} |
+| wmt24pp | google/wmt24pp | fd7405c064 | 3/3 | {'all': 15315} |
+| sib200 | Davlan/sib200 | 38977a667f | 410/410 | {'dev': 32185, 'test': 66215} |
+| sib200_ibom | howard-nlp/sib200-ibom | b7a94ad9f7 | 10/10 | {'dev': 785, 'test': 1615} |
+| xsimplusplus | jaygala24/xsimplusplus | 67d7396578 | 408/408 | {'dev': 18506079, 'devtest': 18904578} |
+| afridocmt | masakhane/AfriDocMT | 8ae06a3f73 | 24/24 | {'dev': 64828, 'test': 128885} |
+| ssa_mt | McGill-NLP/SSA-MT | 7db72bed29 | 0/0 | {} |
+| naijas2st_news_mt | McGill-NLP/NaijaS2ST-news-MT | 4f2eca153e | 8/8 | {'test': 6000, 'validation': 6000} |
+| mafand | github.com/masakhane-io/lafand-mt (Hub masakhane/mafand is a loading script that points there) | c1a4235007 | 42/42 | {'dev': 51222, 'test': 58212} |

@@ -1,0 +1,150 @@
+phase,step,dev_chrf_macro,eval_reward,eval_finished_rate,note,source,label
+phase 1,25,,-0.416,0.7,start-of-phase dev ,paper/data/rl1_evals.csv,VERIFIED (read from file)
+phase 1,50,41.0,-0.292,0.75,start-of-phase dev 39.65,paper/data/rl1_evals.csv,VERIFIED (read from file)
+phase 1,75,,-0.313,0.74,start-of-phase dev ,paper/data/rl1_evals.csv,VERIFIED (read from file)
+phase 1,100,41.01,-0.254,0.74,start-of-phase dev 39.65,paper/data/rl1_evals.csv,VERIFIED (read from file)
+phase 1,125,,-0.24,0.76,start-of-phase dev ,paper/data/rl1_evals.csv,VERIFIED (read from file)
+phase 1,150,41.05,-0.245,0.74,start-of-phase dev 39.65,paper/data/rl1_evals.csv,VERIFIED (read from file)
+phase 1,175,,-0.297,0.73,start-of-phase dev ,paper/data/rl1_evals.csv,VERIFIED (read from file)
+phase 1,200,41.04,-0.265,0.75,start-of-phase dev 39.65,paper/data/rl1_evals.csv,VERIFIED (read from file)
+phase 1,225,,-0.233,0.77,start-of-phase dev ,paper/data/rl1_evals.csv,VERIFIED (read from file)
+phase 1,250,40.79,-0.352,0.7,start-of-phase dev 39.65,paper/data/rl1_evals.csv,VERIFIED (read from file)
+phase 1,275,,-0.273,0.74,start-of-phase dev ,paper/data/rl1_evals.csv,VERIFIED (read from file)
+phase 1,300,40.96,-0.375,0.69,start-of-phase dev 39.65,paper/data/rl1_evals.csv,VERIFIED (read from file)
+phase 2,75,,-0.132,0.8,start-of-phase dev ,paper/data/rl2_evals.csv,VERIFIED (read from file)
+phase 2,100,41.77,0.027,0.82,start-of-phase dev 40.96,paper/data/rl2_evals.csv,VERIFIED (read from file)
+phase 2,125,,-0.009,0.83,start-of-phase dev ,paper/data/rl2_evals.csv,VERIFIED (read from file)
+phase 2,150,41.26,-0.049,0.79,start-of-phase dev 40.96,paper/data/rl2_evals.csv,VERIFIED (read from file)
+phase 2,175,,-0.025,0.82,start-of-phase dev ,paper/data/rl2_evals.csv,VERIFIED (read from file)
+phase 2,200,41.61,0.057,0.84,start-of-phase dev 40.96,paper/data/rl2_evals.csv,VERIFIED (read from file)
+phase 2,225,,-0.018,0.84,start-of-phase dev ,paper/data/rl2_evals.csv,VERIFIED (read from file)
+phase 2,250,41.58,-0.057,0.8,start-of-phase dev 40.96,paper/data/rl2_evals.csv,VERIFIED (read from file)
+phase 2,275,,-0.084,0.8,start-of-phase dev ,paper/data/rl2_evals.csv,VERIFIED (read from file)
+phase 2,300,41.34,-0.096,0.78,start-of-phase dev 40.96,paper/data/rl2_evals.csv,VERIFIED (read from file)
+phase 2,325,,0.025,0.85,start-of-phase dev ,paper/data/rl2_evals.csv,VERIFIED (read from file)
+phase 2,350,41.49,-0.04,0.8,start-of-phase dev 40.96,paper/data/rl2_evals.csv,VERIFIED (read from file)
+phase 2,375,,-0.032,0.84,start-of-phase dev ,paper/data/rl2_evals.csv,VERIFIED (read from file)
+phase 2b,25,,0.178,0.91,start-of-phase dev ,paper/data/rl2b_evals.csv,VERIFIED (read from file)
+phase 2b,50,41.77,0.161,0.94,start-of-phase dev 41.41,paper/data/rl2b_evals.csv,VERIFIED (read from file)
+phase 2b,75,,0.218,0.95,start-of-phase dev ,paper/data/rl2b_evals.csv,VERIFIED (read from file)
+phase 2b,100,42.01,0.278,0.95,start-of-phase dev 41.41,paper/data/rl2b_evals.csv,VERIFIED (read from file)
+phase 2b,125,,0.247,0.96,start-of-phase dev ,paper/data/rl2b_evals.csv,VERIFIED (read from file)
+phase 2b,150,42.02,0.207,0.95,start-of-phase dev 41.41,paper/data/rl2b_evals.csv,VERIFIED (read from file)
+phase 2b,175,,0.205,0.94,start-of-phase dev ,paper/data/rl2b_evals.csv,VERIFIED (read from file)
+phase 2b,200,41.95,0.22,0.95,start-of-phase dev 41.41,paper/data/rl2b_evals.csv,VERIFIED (read from file)
+phase 2b,225,,0.197,0.95,start-of-phase dev ,paper/data/rl2b_evals.csv,VERIFIED (read from file)
+phase 2b,250,41.95,0.236,0.92,start-of-phase dev 41.41,paper/data/rl2b_evals.csv,VERIFIED (read from file)
+phase 2b,275,,0.218,0.94,start-of-phase dev ,paper/data/rl2b_evals.csv,VERIFIED (read from file)
+phase 2b,300,41.83,0.267,0.98,start-of-phase dev 41.41,paper/data/rl2b_evals.csv,VERIFIED (read from file)
+phase 2b,325,,0.229,0.95,start-of-phase dev ,paper/data/rl2b_evals.csv,VERIFIED (read from file)
+phase 2b,350,41.91,0.236,0.97,start-of-phase dev 41.41,paper/data/rl2b_evals.csv,VERIFIED (read from file)
+phase 2b,375,,0.222,0.95,start-of-phase dev ,paper/data/rl2b_evals.csv,VERIFIED (read from file)
+phase 2b,400,41.84,0.238,0.95,start-of-phase dev 41.41,paper/data/rl2b_evals.csv,VERIFIED (read from file)
+phase 2b,425,,0.24,0.96,start-of-phase dev ,paper/data/rl2b_evals.csv,VERIFIED (read from file)
+phase 2b,450,41.9,0.268,0.97,start-of-phase dev 41.41,paper/data/rl2b_evals.csv,VERIFIED (read from file)
+phase 2b,475,,0.216,0.95,start-of-phase dev ,paper/data/rl2b_evals.csv,VERIFIED (read from file)
+phase 2b,500,41.94,0.244,0.98,start-of-phase dev 41.41,paper/data/rl2b_evals.csv,VERIFIED (read from file)
+phase 2b,525,,0.226,0.93,start-of-phase dev ,paper/data/rl2b_evals.csv,VERIFIED (read from file)
+phase 2b,550,42.01,0.195,0.91,start-of-phase dev 41.41,paper/data/rl2b_evals.csv,VERIFIED (read from file)
+phase 2b,575,,0.035,0.8,start-of-phase dev ,paper/data/rl2b_evals.csv,VERIFIED (read from file)
+phase 2b,600,41.97,-0.004,0.79,start-of-phase dev 41.41,paper/data/rl2b_evals.csv,VERIFIED (read from file)
+phase 2b,625,,-0.111,0.74,start-of-phase dev ,paper/data/rl2b_evals.csv,VERIFIED (read from file)
+phase 2b,650,41.98,-0.123,0.73,start-of-phase dev 41.41,paper/data/rl2b_evals.csv,VERIFIED (read from file)
+phase 2b,675,,-0.29,0.66,start-of-phase dev ,paper/data/rl2b_evals.csv,VERIFIED (read from file)
+phase 2b,700,41.86,-0.298,0.66,start-of-phase dev 41.41,paper/data/rl2b_evals.csv,VERIFIED (read from file)
+phase 2b,725,,-0.276,0.66,start-of-phase dev ,paper/data/rl2b_evals.csv,VERIFIED (read from file)
+phase 2b,750,41.4,-0.547,0.56,start-of-phase dev 41.41,paper/data/rl2b_evals.csv,VERIFIED (read from file)
+phase 2b,775,,-0.502,0.58,start-of-phase dev ,paper/data/rl2b_evals.csv,VERIFIED (read from file)
+phase 2b,800,41.5,-0.44,0.63,start-of-phase dev 41.41,paper/data/rl2b_evals.csv,VERIFIED (read from file)
+phase 2b,825,,-0.31,0.66,start-of-phase dev ,paper/data/rl2b_evals.csv,VERIFIED (read from file)
+phase 2c,0,41.88799739263991,,,,paper/data/rl2c_metrics.jsonl,VERIFIED
+phase 2c,25,,0.3211328312161302,0.9609375,,paper/data/rl2c_metrics.jsonl,VERIFIED
+phase 2c,50,41.75492234517332,0.28051585541286617,0.953125,,paper/data/rl2c_metrics.jsonl,VERIFIED
+phase 2c,75,,0.2732394838664664,0.9453125,,paper/data/rl2c_metrics.jsonl,VERIFIED
+phase 2c,100,41.904424935461066,0.32778009614989506,0.9609375,,paper/data/rl2c_metrics.jsonl,VERIFIED
+phase 2c,125,,0.2894273357216852,0.9609375,,paper/data/rl2c_metrics.jsonl,VERIFIED
+phase 2c,150,41.83640155272801,0.34236075522783105,0.9609375,,paper/data/rl2c_metrics.jsonl,VERIFIED
+phase 2c,175,,0.3279517940251911,0.984375,,paper/data/rl2c_metrics.jsonl,VERIFIED
+phase 2c,200,41.780605283594255,0.35962594542644455,0.96875,,paper/data/rl2c_metrics.jsonl,VERIFIED
+phase 2c,225,,0.3370646480256777,0.9765625,,paper/data/rl2c_metrics.jsonl,VERIFIED
+phase 2c,250,41.870605932060286,0.316054269472069,0.953125,,paper/data/rl2c_metrics.jsonl,VERIFIED
+phase 2c,275,,0.33275203851079715,0.984375,,paper/data/rl2c_metrics.jsonl,VERIFIED
+phase 2c,300,41.7745142969999,0.32820053193360654,0.96875,,paper/data/rl2c_metrics.jsonl,VERIFIED
+phase 2c,325,,0.30482234589375884,0.9765625,,paper/data/rl2c_metrics.jsonl,VERIFIED
+phase 2c,350,41.804633536080374,0.3019211934616848,0.984375,,paper/data/rl2c_metrics.jsonl,VERIFIED
+phase 2c,375,,0.3314345610165948,0.96875,,paper/data/rl2c_metrics.jsonl,VERIFIED
+phase 2c,400,41.56698462477855,0.2735209190085911,0.9609375,,paper/data/rl2c_metrics.jsonl,VERIFIED
+phase 2c,425,,0.3050250065025412,0.96875,,paper/data/rl2c_metrics.jsonl,VERIFIED
+phase 2c,450,41.796702375394545,0.2687684902668498,0.9453125,,paper/data/rl2c_metrics.jsonl,VERIFIED
+phase 2c,475,,0.2829920291159232,0.9609375,,paper/data/rl2c_metrics.jsonl,VERIFIED
+phase 2c,500,41.630767162666345,0.2657631615339497,0.953125,,paper/data/rl2c_metrics.jsonl,VERIFIED
+phase 2c,525,,0.30529311023757294,0.953125,,paper/data/rl2c_metrics.jsonl,VERIFIED
+phase 2c,550,41.78349951280512,0.2738411158611239,0.96875,,paper/data/rl2c_metrics.jsonl,VERIFIED
+phase 2c,575,,0.2651348887288495,0.96875,,paper/data/rl2c_metrics.jsonl,VERIFIED
+phase 2c,600,41.669098496951946,0.2712262688486495,0.984375,,paper/data/rl2c_metrics.jsonl,VERIFIED
+phase 2c,625,,0.2948288232046355,0.9609375,,paper/data/rl2c_metrics.jsonl,VERIFIED
+phase 2c,650,41.63773910052068,0.31387141019477727,0.9765625,,paper/data/rl2c_metrics.jsonl,VERIFIED
+phase 2c,675,,0.30104379137334764,0.96875,,paper/data/rl2c_metrics.jsonl,VERIFIED
+phase 2c,700,41.74881070127933,0.331221478424745,0.9609375,,paper/data/rl2c_metrics.jsonl,VERIFIED
+phase 2c,725,,0.2985513126490881,0.953125,,paper/data/rl2c_metrics.jsonl,VERIFIED
+phase 2c,750,41.83552133292701,0.28653160128224126,0.96875,,paper/data/rl2c_metrics.jsonl,VERIFIED
+phase 2c,775,,0.3306063616969654,0.9609375,,paper/data/rl2c_metrics.jsonl,VERIFIED
+phase 2c,800,41.88022413151586,0.3043947623378882,0.9453125,,paper/data/rl2c_metrics.jsonl,VERIFIED
+phase 2c,825,,0.32277488784938346,0.96875,,paper/data/rl2c_metrics.jsonl,VERIFIED
+phase 2c,850,41.85283564349616,0.3012688670597009,0.9453125,,paper/data/rl2c_metrics.jsonl,VERIFIED
+phase 2c,875,,0.2921043585472871,0.9375,,paper/data/rl2c_metrics.jsonl,VERIFIED
+phase 2c,900,41.876783705097736,0.303162334762299,0.9453125,,paper/data/rl2c_metrics.jsonl,VERIFIED
+phase 2c,925,,0.027267526745157814,0.875,,paper/data/rl2c_metrics.jsonl,VERIFIED
+phase 2c,950,41.84994471831617,0.0587524894957406,0.9097222222222222,,paper/data/rl2c_metrics.jsonl,VERIFIED
+phase 2c,975,,0.09161893143280002,0.8819444444444444,,paper/data/rl2c_metrics.jsonl,VERIFIED
+phase 2c,975,,0.2532891673470499,0.9375,,paper/data/rl2c_metrics.jsonl,VERIFIED
+phase 2c,986,41.976644755689506,0.32969394423542814,0.953125,,paper/data/rl2c_metrics.jsonl,VERIFIED
+phase 2c,1000,41.846052344468205,0.044268518717700246,0.875,,paper/data/rl2c_metrics.jsonl,VERIFIED
+phase 2c,1025,,0.021936989684342607,0.8819444444444444,,paper/data/rl2c_metrics.jsonl,VERIFIED
+phase 2c,1050,41.8980748085386,0.07284307801049747,0.8819444444444444,,paper/data/rl2c_metrics.jsonl,VERIFIED
+phase 2c,1075,,0.03542266215282845,0.875,,paper/data/rl2c_metrics.jsonl,VERIFIED
+phase 2c,1100,41.84312937756239,0.019913224720544395,0.8819444444444444,,paper/data/rl2c_metrics.jsonl,VERIFIED
+phase 2c,1125,,0.011904696928766785,0.9027777777777778,,paper/data/rl2c_metrics.jsonl,VERIFIED
+phase 2c,1150,41.7954519038356,0.008613170922628149,0.875,,paper/data/rl2c_metrics.jsonl,VERIFIED
+phase 2c,1175,,-0.002241150612373441,0.8611111111111112,,paper/data/rl2c_metrics.jsonl,VERIFIED
+phase 2c,1200,41.90534724849565,0.0728169645567176,0.9097222222222222,,paper/data/rl2c_metrics.jsonl,VERIFIED
+phase 2c,1225,,0.014285741842347297,0.9027777777777778,,paper/data/rl2c_metrics.jsonl,VERIFIED
+phase 2c,1250,41.88405162858493,0.03977461322282123,0.8958333333333334,,paper/data/rl2c_metrics.jsonl,VERIFIED
+phase 2c,1275,,0.04193776660979941,0.9166666666666666,,paper/data/rl2c_metrics.jsonl,VERIFIED
+phase 2c,1300,41.88848806794048,0.08988460121897654,0.9375,,paper/data/rl2c_metrics.jsonl,VERIFIED
+phase 2c,1325,,0.1179914866612845,0.9375,,paper/data/rl2c_metrics.jsonl,VERIFIED
+phase 2c,1350,41.93661916392237,0.07185237242313591,0.9166666666666666,,paper/data/rl2c_metrics.jsonl,VERIFIED
+phase 2c,1375,,0.07437065267065303,0.9027777777777778,,paper/data/rl2c_metrics.jsonl,VERIFIED
+phase 2c,1400,41.924715479382684,0.029260960088778005,0.9236111111111112,,paper/data/rl2c_metrics.jsonl,VERIFIED
+phase 2c,1425,,0.0826820077792289,0.9236111111111112,,paper/data/rl2c_metrics.jsonl,VERIFIED
+phase 2c,1433,41.88253796802002,0.058983223171218215,0.8819444444444444,,paper/data/rl2c_metrics.jsonl,VERIFIED
+final2,0,48.79190317781709,,,"dev = AfriScience dev sentences; weak_dev , general_dev , afrisci_doc ",paper/data/final2_metrics.jsonl,VERIFIED
+final2,25,,-0.7833551118072722,0.984375,"dev = AfriScience dev sentences; weak_dev , general_dev , afrisci_doc ",paper/data/final2_metrics.jsonl,VERIFIED
+final2,50,48.62757362692785,-0.6446750986331291,0.9947916666666666,"dev = AfriScience dev sentences; weak_dev 25.16243332234921, general_dev 42.081137045491225, afrisci_doc 46.92749737949648",paper/data/final2_metrics.jsonl,VERIFIED
+final2,75,,-0.6152617084614264,0.9895833333333334,"dev = AfriScience dev sentences; weak_dev , general_dev , afrisci_doc ",paper/data/final2_metrics.jsonl,VERIFIED
+final2,100,48.71631397372835,-0.6000220129067666,0.9635416666666666,"dev = AfriScience dev sentences; weak_dev 25.55395969795488, general_dev 42.24126035628172, afrisci_doc 45.4740979105197",paper/data/final2_metrics.jsonl,VERIFIED
+final2,125,,-0.5793521917252943,0.9375,"dev = AfriScience dev sentences; weak_dev , general_dev , afrisci_doc ",paper/data/final2_metrics.jsonl,VERIFIED
+final2,150,48.92966794603118,-0.5791893523506881,0.9583333333333334,"dev = AfriScience dev sentences; weak_dev 25.536664108664247, general_dev 42.19020740593001, afrisci_doc 45.2670920030294",paper/data/final2_metrics.jsonl,VERIFIED
+final2,175,,-0.4431818072564648,0.96875,"dev = AfriScience dev sentences; weak_dev , general_dev , afrisci_doc ",paper/data/final2_metrics.jsonl,VERIFIED
+final2,200,48.85137997497903,-0.5159477034023987,0.9583333333333334,"dev = AfriScience dev sentences; weak_dev 25.47361151822341, general_dev 42.01929853486143, afrisci_doc 46.48859487801756",paper/data/final2_metrics.jsonl,VERIFIED
+final2,225,,-0.5215367305065622,0.9583333333333334,"dev = AfriScience dev sentences; weak_dev , general_dev , afrisci_doc ",paper/data/final2_metrics.jsonl,VERIFIED
+final2,250,48.84464333371599,-0.5249876193986073,0.953125,"dev = AfriScience dev sentences; weak_dev 25.406635912645342, general_dev 41.98278602075643, afrisci_doc 45.24369524903987",paper/data/final2_metrics.jsonl,VERIFIED
+final2,275,,-0.5091179597062722,0.96875,"dev = AfriScience dev sentences; weak_dev , general_dev , afrisci_doc ",paper/data/final2_metrics.jsonl,VERIFIED
+final2,300,48.821506713330166,-0.5855915799663721,0.9583333333333334,"dev = AfriScience dev sentences; weak_dev 25.320606299459993, general_dev 42.11606556936008, afrisci_doc 46.10785052249173",paper/data/final2_metrics.jsonl,VERIFIED
+final2,325,,-0.5621417128583913,0.9739583333333334,"dev = AfriScience dev sentences; weak_dev , general_dev , afrisci_doc ",paper/data/final2_metrics.jsonl,VERIFIED
+final2,350,48.8552537750733,-0.5657356253834718,0.953125,"dev = AfriScience dev sentences; weak_dev 25.262617407963674, general_dev 41.94826842293909, afrisci_doc 44.609207256810684",paper/data/final2_metrics.jsonl,VERIFIED
+final2,375,,-0.5481682826010269,0.9739583333333334,"dev = AfriScience dev sentences; weak_dev , general_dev , afrisci_doc ",paper/data/final2_metrics.jsonl,VERIFIED
+final2,400,48.90832835238644,-0.5576983503854519,0.953125,"dev = AfriScience dev sentences; weak_dev 25.223824843685822, general_dev 42.02757603975018, afrisci_doc 45.00145377003452",paper/data/final2_metrics.jsonl,VERIFIED
+final2,401,48.915982267182805,-0.5595023743423747,0.9375,"dev = AfriScience dev sentences; weak_dev 25.28152465670037, general_dev 42.035063549583995, afrisci_doc 44.36819029754607",paper/data/final2_metrics.jsonl,VERIFIED
+"AB2 arm F (SFT-final start, 4 languages)",0,30.717,,,"dev macro of yor kin orm lin; 64 prompts x G16 per step, lr 2e-6",research_archive_2026-10-23/box/jobs/ab2/runs/ab2_full/metrics.jsonl,VERIFIED
+"AB2 arm F (SFT-final start, 4 languages)",10,34.236,,,"dev macro of yor kin orm lin; 64 prompts x G16 per step, lr 2e-6",research_archive_2026-10-23/box/jobs/ab2/runs/ab2_full/metrics.jsonl,VERIFIED
+"AB2 arm F (SFT-final start, 4 languages)",20,35.79,,,"dev macro of yor kin orm lin; 64 prompts x G16 per step, lr 2e-6",research_archive_2026-10-23/box/jobs/ab2/runs/ab2_full/metrics.jsonl,VERIFIED
+"AB2 arm F (SFT-final start, 4 languages)",30,35.776,,,"dev macro of yor kin orm lin; 64 prompts x G16 per step, lr 2e-6",research_archive_2026-10-23/box/jobs/ab2/runs/ab2_full/metrics.jsonl,VERIFIED
+"AB2 arm F (SFT-final start, 4 languages)",40,35.237,,,"dev macro of yor kin orm lin; 64 prompts x G16 per step, lr 2e-6",research_archive_2026-10-23/box/jobs/ab2/runs/ab2_full/metrics.jsonl,VERIFIED
+"AB2 arm F (SFT-final start, 4 languages)",49,34.519,,,"dev macro of yor kin orm lin; 64 prompts x G16 per step, lr 2e-6",research_archive_2026-10-23/box/jobs/ab2/runs/ab2_full/metrics.jsonl,VERIFIED
+"AB2 arm W (weak SFT start, 4 languages)",0,19.756,,,"dev macro of yor kin orm lin; 64 prompts x G16 per step, lr 2e-6",research_archive_2026-10-23/box/jobs/ab2/runs/ab2_weak/metrics.jsonl,VERIFIED
+"AB2 arm W (weak SFT start, 4 languages)",10,24.607,,,"dev macro of yor kin orm lin; 64 prompts x G16 per step, lr 2e-6",research_archive_2026-10-23/box/jobs/ab2/runs/ab2_weak/metrics.jsonl,VERIFIED
+"AB2 arm W (weak SFT start, 4 languages)",20,25.316,,,"dev macro of yor kin orm lin; 64 prompts x G16 per step, lr 2e-6",research_archive_2026-10-23/box/jobs/ab2/runs/ab2_weak/metrics.jsonl,VERIFIED
+"AB2 arm W (weak SFT start, 4 languages)",30,25.291,,,"dev macro of yor kin orm lin; 64 prompts x G16 per step, lr 2e-6",research_archive_2026-10-23/box/jobs/ab2/runs/ab2_weak/metrics.jsonl,VERIFIED
+"AB2 arm W (weak SFT start, 4 languages)",40,24.751,,,"dev macro of yor kin orm lin; 64 prompts x G16 per step, lr 2e-6",research_archive_2026-10-23/box/jobs/ab2/runs/ab2_weak/metrics.jsonl,VERIFIED
+"AB2 arm W (weak SFT start, 4 languages)",49,24.548,,,"dev macro of yor kin orm lin; 64 prompts x G16 per step, lr 2e-6",research_archive_2026-10-23/box/jobs/ab2/runs/ab2_weak/metrics.jsonl,VERIFIED

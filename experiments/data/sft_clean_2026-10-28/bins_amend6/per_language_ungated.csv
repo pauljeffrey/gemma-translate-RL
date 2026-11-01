@@ -1,0 +1,5 @@
+iso,windows,pairs,target_tokens_gemma,sample_tokens_gemma,packs,template_overhead_tokens
+ful,258489,626423,14881435,29109212,7112,20.6
+nde,12291,30871,1453698,2641354,646,20.6
+tzm,2916,7183,782195,1018679,249,20.6
+knc,1149,5073,117748,203629,50,20.6

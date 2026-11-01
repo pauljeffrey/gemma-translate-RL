@@ -1,0 +1,8 @@
+AMENDMENT 1 to DECISION_RULE.txt (sha256 7b86fc11de28cf952bbc8f7a5f634b5fceda6adbeb76996548360c8ed923c0f5, kept unchanged)
+Written 2026-10-28, still BEFORE any training of the rerun; no arm has produced any result. Requested by the owner.
+Change: Yoruba (yor) is added to the specialist set.
+  Section 2 now reads: G = amh, tir. W = fon dyu kbp nus mos kam bam umb kea kmb vmw kab seh wol ewe luo tum yor (18 languages). Specialist set = G + W (20 languages).
+  Control set C = hau swh kin ibo (yor removed). Tokenisation of C must still be identical in S1 and S2.
+  yor joins the FLORES+ dev train-half exemption (same rule, same id lists) and the specialist data (D2 step C), as for the other W languages.
+Everything else in DECISION_RULE.txt is unchanged (arms, fixed factors, metrics, thresholds R1-R5, wording of claims, pinning list).
+Reason recorded: yor was among the lowest-scoring languages on the dev-defined weak list (reports/weak_language_selection_2026-10-26.md, rank 16 of 45) and is a production language for the owner; its data in the main output is below the old token count (56%).

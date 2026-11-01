@@ -1,0 +1,157 @@
+{
+ "created": "2026-10-28 21:58:13",
+ "files": 154,
+ "ref_counts": {
+  "flores_plus_dev": 997,
+  "flores_plus_devtest": 1012,
+  "ntrex128_eng": 1997,
+  "afriscience_dev": 868,
+  "afriscience_test": 998,
+  "afrilongdoc_core": 450,
+  "afrilongdoc_hard": 135
+ },
+ "ref_sentences": 29971,
+ "ref_8grams": 539745,
+ "py_mod": 8,
+ "ix_mod": 10,
+ "per_dir": {
+  "clean_sci_v2": {
+   "py_checked": 11675,
+   "py_hits": 2
+  },
+  "clean_v3": {
+   "py_checked": 165956,
+   "py_hits": 92
+  }
+ },
+ "py_checked": 177631,
+ "py_hits": 94,
+ "py_hit_examples": [
+  {
+   "file": "nso.parquet",
+   "xxh64": "0371d271111bc440",
+   "kind": "exact_part",
+   "set": "ntrex128_eng"
+  },
+  {
+   "file": "run.parquet",
+   "xxh64": "4df6b97e6c510b18",
+   "kind": "exact_part",
+   "set": "flores_plus_devtest"
+  },
+  {
+   "file": "ach.parquet",
+   "xxh64": "2721c1ac6a4296d8",
+   "kind": "exact_part",
+   "set": "ntrex128_eng"
+  },
+  {
+   "file": "ach.parquet",
+   "xxh64": "1bcdeb0bde4b54b0",
+   "kind": "exact_part",
+   "set": "flores_plus_devtest"
+  },
+  {
+   "file": "ach.parquet",
+   "xxh64": "ccef6a6df84f2d40",
+   "kind": "exact_part",
+   "set": "ntrex128_eng"
+  },
+  {
+   "file": "ach.parquet",
+   "xxh64": "520ed6dd96f27208",
+   "kind": "exact_part",
+   "set": "ntrex128_eng"
+  },
+  {
+   "file": "afr.parquet",
+   "xxh64": "3fe06de737ad9078",
+   "kind": "exact_part",
+   "set": "flores_plus_dev"
+  },
+  {
+   "file": "afr.parquet",
+   "xxh64": "9e80b9c7b829d320",
+   "kind": "exact_part",
+   "set": "ntrex128_eng"
+  },
+  {
+   "file": "afr.parquet",
+   "xxh64": "baefadfc2ac61ab8",
+   "kind": "exact_part",
+   "set": "ntrex128_eng"
+  },
+  {
+   "file": "afr.parquet",
+   "xxh64": "0549c9a1ec290f28",
+   "kind": "exact_part",
+   "set": "flores_plus_devtest"
+  },
+  {
+   "file": "afr.parquet",
+   "xxh64": "141608d9fc487c78",
+   "kind": "exact_part",
+   "set": "flores_plus_dev"
+  },
+  {
+   "file": "afr.parquet",
+   "xxh64": "0c2b5b1e72fd8eb8",
+   "kind": "exact_part",
+   "set": "ntrex128_eng"
+  },
+  {
+   "file": "afr.parquet",
+   "xxh64": "89d5b84d1d4e1350",
+   "kind": "exact_part",
+   "set": "ntrex128_eng"
+  },
+  {
+   "file": "afr.parquet",
+   "xxh64": "2f838dd089ab8758",
+   "kind": "exact_part",
+   "set": "ntrex128_eng"
+  },
+  {
+   "file": "afr.parquet",
+   "xxh64": "546526c5d6f50018",
+   "kind": "exact_part",
+   "set": "flores_plus_devtest"
+  },
+  {
+   "file": "afr.parquet",
+   "xxh64": "c6c0476097b61b50",
+   "kind": "exact_part",
+   "set": "ntrex128_eng"
+  },
+  {
+   "file": "afr.parquet",
+   "xxh64": "69512593fa37e0b0",
+   "kind": "exact_part",
+   "set": "ntrex128_eng"
+  },
+  {
+   "file": "afr.parquet",
+   "xxh64": "08ea94a4f4d217b8",
+   "kind": "exact_part",
+   "set": "flores_plus_devtest"
+  },
+  {
+   "file": "bam.parquet",
+   "xxh64": "45d4f24aa65faad0",
+   "kind": "exact_part",
+   "set": "ntrex128_eng"
+  },
+  {
+   "file": "bam.parquet",
+   "xxh64": "a8f6c1a6e8ab9ec0",
+   "kind": "exact_part",
+   "set": "ntrex128_eng"
+  }
+ ],
+ "index_version": "protected-2026-10-28.2",
+ "index_checked": 142484,
+ "index_hits": 0,
+ "control_planted": 300,
+ "control_caught_by_index": 300,
+ "control_caught_by_python": 300
+}

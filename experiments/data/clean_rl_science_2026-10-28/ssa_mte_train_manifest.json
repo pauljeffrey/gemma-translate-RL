@@ -1,0 +1,35 @@
+{
+ "created": "2026-10-28 21:22:46",
+ "repo": "McGill-NLP/SSA-MTE",
+ "commit": "504e077bf34ae4835bee6740f80f14f88cc2b680",
+ "licence": "cc-by-sa-4.0 (Hub card)",
+ "files": [
+  "train/Amharic.json",
+  "train/Emakhuwa.json",
+  "train/Ewe.json",
+  "train/Hausa.json",
+  "train/Igbo.json",
+  "train/Kikuyu.json",
+  "train/Kinyarwanda.json",
+  "train/Lingala.json",
+  "train/Luo.json",
+  "train/Nyanja.json",
+  "train/Sesotho.json",
+  "train/Swahili.json",
+  "train/Twi.json",
+  "train/Wolof.json",
+  "train/Yoruba.json",
+  "train/Zulu.json"
+ ],
+ "strings_added": 603907,
+ "digest": {
+  "sentence_hashes_sha256": "aee69db9beeef1940db667b96202e4fe6af4193895d41a8292a00c860cf9ee83",
+  "sentence_set_bits_sha256": "5646f325e4fc8891d59bf09afca795aa535858a0e25ea8060fdd153d29158f4c",
+  "gram_hashes_sha256": "d70a37751ba60ea5e40422c9990be5c42a389963be3580c58f72755414b1d824",
+  "n_sentence_hashes": 286485,
+  "n_gram_hashes": 2720799,
+  "n_first_gram_rows": 687621
+ },
+ "role": "flag-only auxiliary index: T2 calibration + reward-model training data; not protected, overlaps are reported, not removed",
+ "seconds": 86
+}

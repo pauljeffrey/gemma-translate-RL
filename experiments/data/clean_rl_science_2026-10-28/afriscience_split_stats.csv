@@ -1,0 +1,19 @@
+split,iso,pairs,papers,en_gemma_tokens,target_gemma_tokens,en_chars,target_chars,en_words,target_words,role
+train,amh,5792,177,153933,322737,780276,544335,120824,101903,TRAIN (training resource)
+train,hau,5792,177,153933,297597,780276,857085,120824,150727,TRAIN (training resource)
+train,lug,5792,177,153933,342932,780276,905997,120824,114420,TRAIN (training resource)
+train,nso,5792,177,153933,364665,780276,988566,120824,180515,TRAIN (training resource)
+train,yor,5792,177,153933,573261,780276,978222,120824,157928,TRAIN (training resource)
+train,zul,5792,177,153933,317176,780276,872831,120824,91414,TRAIN (training resource)
+dev,amh,843,25,21937,46332,109745,77292,17091,14467,"PROTECTED (never used; dev = selection, test = reported)"
+dev,hau,843,25,21937,41518,109745,119932,17091,21236,"PROTECTED (never used; dev = selection, test = reported)"
+dev,lug,843,25,21937,49084,109745,129662,17091,16444,"PROTECTED (never used; dev = selection, test = reported)"
+dev,nso,843,25,21937,51325,109745,138583,17091,25203,"PROTECTED (never used; dev = selection, test = reported)"
+dev,yor,843,25,21937,79752,109745,136218,17091,22081,"PROTECTED (never used; dev = selection, test = reported)"
+dev,zul,843,25,21937,45117,109745,123396,17091,12871,"PROTECTED (never used; dev = selection, test = reported)"
+test,amh,970,28,26239,54440,133652,92810,20798,17527,"PROTECTED (never used; dev = selection, test = reported)"
+test,hau,970,28,26239,50410,133652,145610,20798,25570,"PROTECTED (never used; dev = selection, test = reported)"
+test,lug,970,28,26239,57749,133652,152867,20798,19323,"PROTECTED (never used; dev = selection, test = reported)"
+test,nso,970,28,26239,62243,133652,168524,20798,30792,"PROTECTED (never used; dev = selection, test = reported)"
+test,yor,970,28,26239,101472,133652,173542,20798,27434,"PROTECTED (never used; dev = selection, test = reported)"
+test,zul,970,28,26239,53112,133652,146281,20798,15372,"PROTECTED (never used; dev = selection, test = reported)"

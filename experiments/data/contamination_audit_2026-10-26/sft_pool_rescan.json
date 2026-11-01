@@ -1,0 +1,25 @@
+{
+ "windows": 87498,
+ "windows_with_flores_english": 24,
+ "by_iso": {
+  "lug": 16,
+  "yor": 4,
+  "ibo": 2,
+  "hau": 1,
+  "zul": 1
+ },
+ "sentences_per_flores_window": {
+  "1": 24
+ },
+ "distinct_devtest_sentences_in_sample": 9,
+ "distinct_dev_sentences_in_sample": 15,
+ "pair_windows": 4,
+ "pair_by_language_devtest": {
+  "hau": 1
+ },
+ "pair_by_language_dev": {
+  "ibo": 1,
+  "yor": 1,
+  "zul": 1
+ }
+}

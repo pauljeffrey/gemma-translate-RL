@@ -1,0 +1,11 @@
+iso,source,raw_rows,dropped_by_clean_rules,dropped_duplicate,after_dedupe,removed_by_protected_filter_R1_ONLY_ESTIMATE,kept
+ful,extra-bible:stephanedonna/english_fulfulde,30802,256,135,30411,0,30411
+ful,extra-nllb_mined:michsethowusu/english-fulah_sentence-pairs,605990,31438,2982,571570,1320,570250
+ful,extra-opus:XLEnt-v1.2-en-ff,7132,3491,19,3622,1,3621
+ful,extra-opus:wikimedia-v20260327-en-ff,23533,1095,294,22144,3,22141
+knc,extra-kanurimt:IsahMBukar/kanurimt,7513,12,4633,2868,2789,79
+knc,extra-twb:CLEAR-Global/Gamayun-kits/kau-eng,5000,3,0,4997,3,4994
+nde,extra-bible:ebible-nde+engwebp,31095,4,197,30894,23,30871
+tzm,extra-nllb_seed:Tamazight-NLP/NLLB-Seed_Standard-Moroccan-Tamazight,6193,1,1,6191,2,6189
+tzm,extra-opus:translatewiki-v2026-07-01-en-tzm,977,54,129,794,0,794
+tzm,extra-pontoon:Tamazight-NLP/Pontoon-Translations,226,2,24,200,0,200

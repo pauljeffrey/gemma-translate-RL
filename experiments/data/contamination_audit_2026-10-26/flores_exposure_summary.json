@@ -1,0 +1,75 @@
+{
+ "devtest": {
+  "n": 1012,
+  "exact": 964,
+  "exact_pct": 95.3,
+  "clean": 48,
+  "by_domain": {
+   "wikinews": {
+    "n": 341,
+    "exact": 330,
+    "exact_pct": 96.8
+   },
+   "wikibooks": {
+    "n": 351,
+    "exact": 328,
+    "exact_pct": 93.4
+   },
+   "wikivoyage": {
+    "n": 320,
+    "exact": 306,
+    "exact_pct": 95.6
+   }
+  },
+  "clean_articles": 44,
+  "articles_total": 281,
+  "clean_mean_words": 24.1,
+  "all_mean_words": 21.6,
+  "ids_with_pair_in_any_language": 933,
+  "pair_langs_counts": {
+   "hau": 842,
+   "ibo": 559,
+   "yor": 355,
+   "zul": 36,
+   "tsn": 30,
+   "orm": 24,
+   "lug": 2
+  }
+ },
+ "dev": {
+  "n": 997,
+  "exact": 984,
+  "exact_pct": 98.7,
+  "clean": 13,
+  "by_domain": {
+   "wikinews": {
+    "n": 348,
+    "exact": 341,
+    "exact_pct": 98.0
+   },
+   "wikibooks": {
+    "n": 301,
+    "exact": 300,
+    "exact_pct": 99.7
+   },
+   "wikivoyage": {
+    "n": 348,
+    "exact": 343,
+    "exact_pct": 98.6
+   }
+  },
+  "clean_articles": 13,
+  "articles_total": 281,
+  "clean_mean_words": 19.5,
+  "all_mean_words": 21.0,
+  "ids_with_pair_in_any_language": 899,
+  "pair_langs_counts": {
+   "ibo": 799,
+   "yor": 345,
+   "hau": 336,
+   "zul": 37,
+   "tsn": 28,
+   "xho": 1
+  }
+ }
+}

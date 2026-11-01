@@ -1,0 +1,12 @@
+{
+ "ibb": {
+  "pairs_kept": 998,
+  "tokens_kept": 59846,
+  "source": "howard-nlp/ibom-mt"
+ },
+ "efi": {
+  "pairs_kept": 994,
+  "tokens_kept": 55863,
+  "source": "howard-nlp/ibom-mt"
+ }
+}

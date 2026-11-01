@@ -1,0 +1,31 @@
+AMENDMENT 4 to the pre-registration of the clean rerun (2026-10-29), written before any training of the rerun.
+Source: owner messages of 2026-10-29. Items marked [interpretation] are the lead's reading of an ambiguous instruction and are open to correction before the run they affect starts.
+
+1. DATA LICENCE RULE (owner: "whatever we use has to be usable commercially; keep any with unverified licence").
+   - Rows with licence class non_commercial are removed from every training and calibration role (T1, T2): in the main set howard-nlp/ibom-mt (1,992 pairs; ibb loses all its data, efi about 1,000 pairs) and in the specialist set 31,209 Amharic pairs (masakhane/AfriDocMT 14,885, an OPUS slice 12,063, AfriNLP/AfricanFineTranslations 4,259, polynews 2) [interpretation: IbomMT is included in "non-commercial pairs"].
+   - Kept: classes cc-by, cc0, odc-by, apache, mpl, share_alike (attribution/share-alike is accepted), and unverified classes (unspecified, other/multi-open, mt560 with the uploader's cc-by label). mt560 stays in both the main and the specialist set (owner).
+   - The Efik/Ibibio consensus entries that were derived from IbomMT train are re-derived without it (pooled prior).
+   - The NLLB signal remains a final-run-only reward component, disclosed, and switchable (owner: use NLLB generations as pseudo-references where they help low-resource languages). The NLLB-200 weights are CC-BY-NC; this is a disclosed exception, not a data licence.
+   - The final model repository is private.
+
+2. ARMS (all start from google/gemma-3-270m-it, original tokenizer unless stated). Extra S1 seeds are dropped (owner). Primary comparisons keep the 2.0 chrF++ threshold with a 95% paired bootstrap.
+   - A0: 77-language SFT, Muon optimizer, schedule file.
+   - S1: specialist SFT, 20 languages (amh tir + 18 weak Latin incl. yor), A0's draws on those languages, same order and passes. S2: S1 + 3,000 Ge'ez tokens.
+   - G0 (new, SFT only): Ge'ez-only (amh, tir) at A0's per-language exposure. Together A0 (77 languages), S1 (20), G0 (2) give a dilution curve at fixed per-language exposure; it is evidence of interference/limited capacity, not proof (less total data and fewer steps differ).
+   - A2-base / A2-up (new, SFT only): the same 20% stratified-by-language subset of A0's draws, same hyper-parameters; A2-up inserts 6 decoder layers (about 301.5M parameters) initialised as an exact identity (zeroed output projections), then trains all weights. Primary metric: macro chrF++ on FLORES+ H_sel (article-level selection half, Amendment 3), plus validation loss; devtest is reported once at the end (role E). A2-up beating A2-base at fixed data is a capacity test that is complementary to S1/G0.
+   - X1 (last, optional): Gemma-3-1B-it SFT on the specialist data.
+   - A0-R: the RL pipeline on A0 (b64, b256, b512, b1024, mixed), then the AfriScience stage and final run. A0-C (control for RL versus SFT) [interpretation]: A0 plus continued SFT for the same GPU time as RL stage A, on the stage-B (UniMax) schedule of the same clean data.
+   - P1 (exploratory production path, not confirmatory) [interpretation]: A0-R, then continued SFT on the specialist set at low lr, then a short RL (b64 and b256 at most, early stopped).
+   - Specialist-arm RL (S1 or S2 winner by R5) is optional and exploratory.
+
+3. OPTIMIZER: Muon (2-D decoder matrices; AdamW for embeddings and norms; lr 5e-5 matched to AdamW RMS) for SFT arms and RL stages, after a 300-step sanity run of AdamW versus Muon on the first steps of A0's schedule (decision by validation loss, recorded). RL stages start with a fresh optimizer; the final run carries no Adam moments.
+
+4. RL EARLY STOPPING on every bin and the final run: patience-based stop (no improvement of the smoothed training reward, finished rate and greedy loop rate for N steps after a minimum number of steps), combined with the slope test and its upper bound (0.06 per 100 steps). Stage A cap 400 steps (owner). A stage is extended by a small block only when it was still improving at its cap (hard maximum +50%). The KL guard, greedy-member scoring, and caps of the stage plan otherwise stand.
+
+5. GENERATION: all evaluation generation uses vLLM.
+
+6. PUBLISHING: models are pushed to the <HF_ORG> organisation, private (the final model must be private; intermediate models private as well unless the owner says otherwise).
+
+7. CONTAMINATION: no training, calibration or selection data may contain text of the protected benchmark splits (index protected-2026-10-28.3, Amendment 3 split). The ablation arms A2 and G0 use subsets of the same clean data.
+
+Authorised by the owner on 2026-10-29. Supersedes earlier text where it conflicts (the IbomMT licence remark in the pre-registration, "one seed per arm, two extra S1 seeds if budget allows", "RL only on the winner").

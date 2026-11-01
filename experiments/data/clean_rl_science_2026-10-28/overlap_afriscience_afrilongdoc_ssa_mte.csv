@@ -1,0 +1,15 @@
+pool,protected_set,prompts_removed_for_overlap,prompts_overlapping_after_filter
+sci_v2,afriscience_mt:dev,1,"0 of 1419232 unique windows tested by the independent python check, 0 of 142484 by the index re-run"
+sci_v2,afriscience_mt:test,0,"0 of 1419232 unique windows tested by the independent python check, 0 of 142484 by the index re-run"
+sci_v2,afrilongdoc:all,812,"0 of 1419232 unique windows tested by the independent python check, 0 of 142484 by the index re-run"
+sci_v2,ssa_mte:dev,0,0 by the full pipeline pass over every kept window; 0 of 142484 by the index re-run (this set is not in the independent python check)
+sci_v2,ssa_mte:test,37,0 by the full pipeline pass over every kept window; 0 of 142484 by the index re-run (this set is not in the independent python check)
+sci_v2,afrimte_wmt2024:all,0,0 by the full pipeline pass over every kept window; 0 of 142484 by the index re-run (this set is not in the independent python check)
+sci_v2,"ssa_mte:train (FLAG ONLY, not removed)",(removed by other sets: 6),7
+v3,afriscience_mt:dev,127,"0 of 1419232 unique windows tested by the independent python check, 0 of 142484 by the index re-run"
+v3,afriscience_mt:test,198,"0 of 1419232 unique windows tested by the independent python check, 0 of 142484 by the index re-run"
+v3,afrilongdoc:all,74594,"0 of 1419232 unique windows tested by the independent python check, 0 of 142484 by the index re-run"
+v3,ssa_mte:dev,12,0 by the full pipeline pass over every kept window; 0 of 142484 by the index re-run (this set is not in the independent python check)
+v3,ssa_mte:test,190,0 by the full pipeline pass over every kept window; 0 of 142484 by the index re-run (this set is not in the independent python check)
+v3,afrimte_wmt2024:all,88,0 by the full pipeline pass over every kept window; 0 of 142484 by the index re-run (this set is not in the independent python check)
+v3,"ssa_mte:train (FLAG ONLY, not removed)",(removed by other sets: 95),166

@@ -1,0 +1,12 @@
+AMENDMENT 3 to the pre-registration of the clean rerun (2026-10-28), written before any training and before any calibration value was fitted.
+
+Change: the split of the held-out FLORES+ dev half H into H_cal (reward calibration, role T2) and H_sel (selection and monitoring, role S) is made at ARTICLE level (FLORES+ `url`) instead of by the next sha256 bit of the sentence id.
+
+Rule (deterministic, no hash, no tuning knob): H_sel = every held-out id whose article contains one of the 100 forced weak-selection ids, OR contains no id of the dev train half; H_cal = the remaining held-out ids.
+
+Result: H_cal 261 ids in 142 articles, H_sel 296 ids in 115 articles; no article on both sides; all 100 forced ids in H_sel. (The old rule had 111 of 257 articles on both sides and 58 of the 100 forced ids in H_cal, which broke role separation S/T2.)
+Numbers 282/275 (about 278 per language) in earlier documents are superseded by 261 and 296.
+Files: reports/data/sft_clean_2026-10-28/heldout_split_cal_sel_v2.json, sha256 18fe1ddad1c8e64ad93a82254342f4a713f509a55fc2cb7e0a782a514abebddd; h_cal_sha256 e7c0605ddc36ee3e886a6e447c678e9291e86b3825fba6969f71057f9c6b0e93; h_sel_sha256 036295b9d2c5d21a04eb2da93be320137f8d2244b8de7f2b1d8b9835894df37d.
+Unchanged: roles T1/T2/S/E, the first split (dev train half vs H), devtest fully protected, all rules R1-R5 and the 2.0 chrF++ threshold.
+Limitation to state in the paper: 406 of the 557 held-out ids share an article with a train-half id (symmetric across arms).
+Report: reports/clean_calibration_2026-10-28.md. Authorised by the owner on 2026-10-28 ("split may be good. if you have a better option, take it").

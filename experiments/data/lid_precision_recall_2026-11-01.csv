@@ -1,0 +1,105 @@
+iso,name,n,accepted,label_exists,recall,precision,undetermined,recall_p30,recall_p50,recall_p70,top_wrong,is_new
+ach,Acholi,800,ach_Latn,True,0.989,0.889,0.001,0.988,0.988,0.984,luo_Latn:1 fij_Latn:1 laj_Latn:1,False
+ada,Adangme,800,ada_Latn,True,0.994,0.986,0.0,0.994,0.993,0.989,ind_Latn:2 fon_Latn:2 gaa_Latn:1,True
+afr,Afrikaans,800,afr_Latn,True,0.995,0.996,0.0,0.995,0.994,0.989,nld_Latn:3 slv_Latn:1,False
+alz,Alur,145,alz_Latn,True,1.0,0.993,0.0,1.0,1.0,0.993,,True
+amh,Amharic,800,amh_Ethi,True,0.996,1.0,0.0,0.996,0.996,0.996,frp_Latn:1 deu_Latn:1 tir_Ethi:1,False
+arz,Egyptian Arabic,800,arz_Arab,True,0.785,1.0,0.0,0.781,0.775,0.723,arb_Arab:161 aeb_Arab:4 eng_Latn:2,True
+bam,Bambara,800,bam_Latn dyu_Latn,True,0.72,0.444,0.0,0.715,0.705,0.655,nzi_Latn:32 dyi_Latn:19 fra_Latn:17,False
+bas,Basaa,365,bas_Latn,True,0.989,0.989,0.0,0.989,0.989,0.986,jav_Latn:1 fra_Latn:1 tso_Latn:1,False
+bem,Bemba,800,bem_Latn,True,0.821,0.941,0.0,0.821,0.821,0.819,lub_Latn:52 mgr_Latn:22 lam_Latn:16,False
+bum,Bulu,800,bum_Latn,True,0.988,0.997,0.0,0.988,0.986,0.985,fra_Latn:3 ewe_Latn:3 lin_Latn:1,True
+cce,Chopi,588,cce_Latn,True,0.985,1.0,0.0,0.985,0.985,0.98,tso_Latn:9,True
+chw,Chuabo,563,chw_Latn,True,0.954,1.0,0.0,0.952,0.952,0.936,tke_Latn:5 kin_Latn:3 por_Latn:3,True
+cjk,Chokwe,800,cjk_Latn,True,0.999,0.991,0.0,0.999,0.999,0.999,por_Latn:1,True
+cop,Coptic,425,cop_Copt,True,1.0,1.0,0.0,1.0,1.0,1.0,,True
+crs,Seychellois Creole,800,crs_Latn,True,0.989,0.997,0.0,0.989,0.989,0.986,hat_Latn:5 tur_Latn:3 swe_Latn:1,True
+dik,Dinka,670,dik_Latn,True,0.004,0.5,0.0,0.004,0.004,0.001,dip_Latn:662 dks_Latn:5,True
+dje,Zarma,800,dje_Latn,True,0.99,0.997,0.0,0.99,0.989,0.979,ses_Latn:4 hau_Latn:2 bre_Latn:1,True
+dop,Lelemi,800,dop_Latn,True,1.0,0.988,0.0,1.0,1.0,1.0,,True
+dyu,Dyula,800,bam_Latn dyu_Latn,True,0.885,0.546,0.0,0.885,0.885,0.843,msc_Latn:14 bba_Latn:9 dyi_Latn:8,False
+efi,Efik,800,efi_Latn,True,0.993,0.991,0.0,0.993,0.993,0.991,ibo_Latn:1 tur_Latn:1 ind_Latn:1,False
+ewe,Ewe,800,ewe_Latn,True,0.968,0.992,0.0,0.968,0.965,0.96,eng_Latn:7 gaa_Latn:2 jam_Latn:2,False
+fon,Fon,800,fon_Latn,True,0.806,0.967,0.079,0.806,0.805,0.802,zxx_Latn:63 mie_Latn:17 gaa_Latn:9,False
+ful,Fulah,800,ful_Latn,False,0.0,nan,0.001,0.0,0.0,0.0,fuv_Latn:330 fub_Latn:123 fuf_Latn:65,False
+guw,Gun,800,guw_Latn,True,0.99,0.994,0.0,0.99,0.99,0.986,fon_Latn:6 slv_Latn:1 yor_Latn:1,True
+hau,Hausa,800,hau_Latn,True,0.999,0.881,0.0,0.999,0.996,0.995,pan_Latn:1,False
+ibo,Igbo,800,ibo_Latn,True,0.99,0.99,0.0,0.99,0.99,0.988,eng_Latn:5 efi_Latn:1 fin_Latn:1,False
+iso,Isoko,800,iso_Latn,True,0.998,0.999,0.0,0.998,0.998,0.998,fon_Latn:1 yor_Latn:1,False
+kab,Kabyle,800,kab_Latn,True,0.946,0.992,0.001,0.945,0.941,0.936,shi_Latn:8 fra_Latn:6 eng_Latn:4,False
+kam,Kamba,800,kam_Latn,True,0.965,0.999,0.0,0.965,0.964,0.964,kik_Latn:3 nim_Latn:2 urd_Latn:2,False
+kbp,Kabiye,800,kbp_Latn,True,0.921,0.996,0.0,0.921,0.919,0.917,gaa_Latn:24 dop_Latn:9 dyi_Latn:4,False
+kea,Kabuverdianu,800,kea_Latn,True,0.841,0.997,0.0,0.841,0.831,0.816,ckm_Latn:29 pov_Latn:14 rcf_Latn:7,False
+kik,Kikuyu,800,kik_Latn,True,0.975,0.992,0.0,0.975,0.974,0.971,mer_Latn:6 rop_Latn:4 ltz_Latn:1,False
+kin,Kinyarwanda,800,kin_Latn run_Latn,True,0.998,0.487,0.0,0.998,0.998,0.955,eng_Latn:1 zsm_Latn:1,False
+kmb,Kimbundu,800,kmb_Latn,True,0.931,0.996,0.0,0.93,0.927,0.926,haw_Latn:7 kwy_Latn:5 loz_Latn:5,False
+kon,Kongo,800,kng_Latn ktu_Latn kwy_Latn,True,0.974,0.982,0.0,0.973,0.971,0.949,fra_Latn:5 yom_Latn:4 lub_Latn:3,False
+koo,Konzo,800,koo_Latn,True,0.868,0.993,0.0,0.866,0.865,0.838,nnb_Latn:100 kin_Latn:4 tur_Latn:1,True
+kqn,Kaonde,800,kqn_Latn,True,0.996,0.985,0.0,0.996,0.995,0.993,luo_Latn:1 bem_Latn:1 ind_Latn:1,False
+kri,Krio,800,kri_Latn,True,0.971,1.0,0.0,0.971,0.968,0.958,twi_Latn:4 krc_Cyrl:3 pcm_Latn:2,False
+kua,Kuanyama,800,kua_Latn,True,0.993,0.904,0.0,0.993,0.993,0.985,lua_Latn:1 ndo_Latn:1 tur_Latn:1,False
+kwn,Kwangali,800,kwn_Latn,True,0.986,1.0,0.0,0.986,0.985,0.981,run_Latn:2 tso_Latn:2 swh_Latn:1,True
+lam,Lamba,649,lam_Latn,True,0.94,0.974,0.0,0.94,0.94,0.929,bem_Latn:32 tur_Latn:2 ind_Latn:1,True
+lin,Lingala,800,lin_Latn,True,0.993,0.979,0.0,0.993,0.993,0.993,fra_Latn:2 swh_Latn:1 nca_Latn:1,False
+loz,Lozi,800,loz_Latn,True,0.999,0.979,0.0,0.999,0.999,0.998,tur_Latn:1,False
+lua,Luba-Kasai,800,lua_Latn,True,0.856,0.988,0.0,0.856,0.855,0.853,lub_Latn:50 sop_Latn:11 yom_Latn:10,False
+lub,Luba-Katanga,800,lub_Latn,True,0.998,0.883,0.0,0.998,0.998,0.995,kqn_Latn:1 bem_Latn:1,True
+lue,Luvale,800,lue_Latn,True,0.991,0.999,0.0,0.991,0.991,0.985,cjk_Latn:5 lin_Latn:1 swh_Latn:1,True
+lug,Luganda,800,lug_Latn,True,0.905,0.974,0.0,0.902,0.901,0.892,eng_Latn:19 ndo_Latn:7 kin_Latn:5,False
+lun,Lunda,800,lun_Latn,True,0.994,1.0,0.0,0.994,0.994,0.994,xho_Latn:1 run_Latn:1 bbc_Latn:1,False
+luo,Luo,800,luo_Latn,True,0.846,0.993,0.0,0.846,0.844,0.834,ach_Latn:95 eng_Latn:4 jae_Latn:2,False
+mfe,Mauritian Creole,800,mfe_Latn,True,0.976,0.996,0.0,0.976,0.974,0.969,fra_Latn:8 hat_Latn:3 crs_Latn:2,True
+mgr,Mambwe,800,mgr_Latn,True,0.991,0.972,0.0,0.991,0.991,0.986,bem_Latn:3 tur_Latn:2 ktu_Latn:1,True
+mlg,Malagasy,800,plt_Latn,True,0.998,1.0,0.0,0.996,0.996,0.994,skg_Latn:2,False
+mos,Mossi,800,mos_Latn,True,0.975,0.995,0.0,0.975,0.971,0.966,fra_Latn:2 apn_Latn:2 jam_Latn:2,False
+nba,Nyemba,800,nba_Latn,True,0.988,0.988,0.0,0.988,0.986,0.98,umb_Latn:2 mck_Latn:2 lin_Latn:1,True
+nbl,South Ndebele,800,nbl_Latn nde_Latn xho_Latn zul_Latn,True,0.999,0.253,0.0,0.999,0.959,0.854,ssw_Latn:1,False
+ndc,Ndau,131,ndc_Latn,True,1.0,0.963,0.0,1.0,1.0,1.0,,False
+nde,North Ndebele,746,nde_Latn,True,0.968,0.958,0.0,0.968,0.961,0.932,zul_Latn:19 nbl_Latn:3 xho_Latn:1,False
+ndo,Ndonga,800,ndo_Latn,True,0.984,0.974,0.0,0.984,0.984,0.96,kua_Latn:11 zul_Latn:1 tso_Latn:1,True
+nso,Sepedi,800,nso_Latn,True,0.986,0.969,0.0,0.986,0.985,0.981,eng_Latn:6 sot_Latn:3 tsn_Latn:1,False
+nup,Nupe,489,nup_Latn,False,0.0,nan,0.0,0.0,0.0,0.0,hau_Latn:98 jbu_Latn:97 gbr_Latn:94,True
+nus,Nuer,800,nus_Latn,True,0.94,1.0,0.001,0.94,0.94,0.94,gaa_Latn:10 bci_Latn:4 ada_Latn:2,False
+nya,Chichewa,800,nya_Latn,True,0.995,0.871,0.0,0.995,0.995,0.995,loz_Latn:1 nse_Latn:1 nyu_Latn:1,False
+nyk,Nyaneka,800,nyk_Latn,True,0.968,0.995,0.0,0.966,0.961,0.949,dhm_Latn:3 umb_Latn:3 por_Latn:3,True
+nyn,Nyankore,800,nyn_Latn,True,0.979,0.987,0.0,0.979,0.976,0.959,hay_Latn:4 lug_Latn:3 nyo_Latn:3,False
+nyu,Nyungwe,800,nyu_Latn,True,0.963,0.991,0.0,0.963,0.963,0.945,nya_Latn:16 ndc_Latn:3 jav_Latn:3,True
+oke,Okpe,50,oke_Latn,True,1.0,1.0,0.0,1.0,1.0,1.0,,False
+orm,Oromo,800,gaz_Latn,True,0.949,0.996,0.0,0.948,0.941,0.94,eng_Latn:8 som_Latn:5 hae_Latn:3,False
+pcm,Pidgin,800,pcm_Latn wes_Latn,True,0.873,0.964,0.0,0.871,0.845,0.674,eng_Latn:99 ibo_Latn:1 hwc_Latn:1,False
+rnd,Ruund,800,rnd_Latn,True,0.988,0.995,0.0,0.988,0.986,0.984,ind_Latn:3 deu_Latn:2 bem_Latn:1,True
+run,Kirundi,800,run_Latn,True,0.91,0.952,0.0,0.91,0.91,0.877,kin_Latn:67 nya_Latn:1 eng_Latn:1,False
+sag,Sango,800,sag_Latn,True,0.956,0.997,0.0,0.956,0.951,0.948,wes_Latn:5 kin_Latn:5 eng_Latn:4,False
+seh,Sena,800,seh_Latn,True,0.95,0.996,0.0,0.95,0.946,0.932,swk_Latn:20 nya_Latn:8 por_Latn:4,False
+shi,Tachelhit,342,shi_Latn,True,0.98,0.977,0.0,0.98,0.98,0.974,kab_Latn:5 liv_Latn:1 cfm_Latn:1,False
+sid,Sidamo,800,sid_Latn,True,0.975,0.997,0.0,0.971,0.969,0.965,cjo_Latn:6 dwr_Latn:2 kbr_Latn:2,False
+sna,Shona,800,sna_Latn,True,0.994,0.997,0.0,0.994,0.993,0.99,twx_Latn:2 eng_Latn:1 ndc_Latn:1,False
+som,Somali,800,som_Latn,True,0.998,0.988,0.0,0.998,0.998,0.996,wal_Latn:1 msm_Latn:1,False
+sop,Songe,800,sop_Latn,True,0.985,0.975,0.0,0.985,0.985,0.984,lua_Latn:4 kin_Latn:1 lug_Latn:1,True
+sot,Sesotho,800,sot_Latn,True,0.954,0.99,0.0,0.953,0.951,0.936,nso_Latn:15 tsn_Latn:11 eng_Latn:3,False
+ssw,Swati,800,ssw_Latn,True,0.87,0.989,0.0,0.87,0.868,0.861,swh_Latn:77 zul_Latn:8 eng_Latn:7,False
+swc,Congo Swahili,800,swc_Latn swh_Latn,True,0.986,0.47,0.0,0.986,0.968,0.843,hay_Latn:10 kik_Latn:1,False
+swh,Swahili,800,swc_Latn swh_Latn,True,0.99,0.472,0.0,0.99,0.979,0.886,ssw_Latn:3 hay_Latn:2 wmw_Latn:1,False
+taq,Tamasheq,336,taq_Latn taq_Tfng,True,0.36,0.519,0.0,0.36,0.36,0.333,ttq_Latn:215,True
+tir,Tigrinya,800,tir_Ethi,True,0.978,0.999,0.0,0.978,0.978,0.968,tig_Ethi:18,False
+tiv,Tiv,800,tiv_Latn,True,0.996,0.993,0.0,0.996,0.996,0.993,tso_Latn:1 njo_Latn:1 run_Latn:1,False
+tll,Tetela,800,tll_Latn,True,1.0,0.998,0.0,1.0,0.999,0.998,,True
+toi,Tonga,156,toi_Latn,True,0.0,0.0,0.0,0.0,0.0,0.0,toh_Latn:156,True
+tsc,Tswa,800,tsc_Latn,True,0.959,0.997,0.0,0.959,0.955,0.949,tso_Latn:30 nso_Latn:2 fra_Latn:1,False
+tsn,Setswana,800,tsn_Latn,True,0.98,0.978,0.0,0.98,0.98,0.973,sot_Latn:5 nso_Latn:5 jam_Latn:2,False
+tso,Tsonga,800,tso_Latn,True,0.968,0.919,0.0,0.968,0.966,0.961,ven_Latn:18 nya_Latn:2 tsc_Latn:1,False
+ttj,Tooro,649,ttj_Latn,True,0.769,0.996,0.0,0.767,0.76,0.704,nyo_Latn:110 lug_Latn:13 kin_Latn:8,True
+tum,Tumbuka,800,tum_Latn,True,0.881,0.999,0.0,0.881,0.879,0.877,nya_Latn:79 nyu_Latn:5 rnd_Latn:1,False
+twi,Twi,800,twi_Latn,True,0.976,0.987,0.001,0.975,0.974,0.971,gaa_Latn:4 eng_Latn:3 fat_Latn:2,False
+tzm,Tamazight,800,tzm_Latn,False,0.0,nan,0.006,0.0,0.0,0.0,tzm_Tfng:488 zgh_Tfng:188 taq_Tfng:112,False
+umb,Umbundu,800,umb_Latn,True,0.85,0.991,0.0,0.85,0.848,0.843,kua_Latn:66 ndo_Latn:11 nba_Latn:8,False
+urh,Urhobo,581,urh_Latn,True,0.991,1.0,0.0,0.991,0.99,0.988,yor_Latn:2 spa_Latn:1 iso_Latn:1,False
+ven,Venda,800,ven_Latn,True,0.991,0.972,0.0,0.991,0.991,0.989,tso_Latn:6 eng_Latn:1,False
+vmw,Makhuwa,800,vmw_Latn,True,0.986,0.999,0.0,0.986,0.986,0.981,tso_Latn:4 tsn_Latn:2 ekk_Latn:1,False
+wal,Wolaytta,800,wal_Latn,True,0.998,0.995,0.0,0.998,0.996,0.995,bar_Latn:1 ekk_Latn:1,False
+wol,Wolof,800,wol_Latn,True,0.902,0.954,0.001,0.901,0.895,0.886,fra_Latn:20 eng_Latn:3 xon_Latn:2,False
+xho,Xhosa,800,xho_Latn,True,0.995,0.954,0.0,0.995,0.995,0.991,zul_Latn:3 mlt_Latn:1,False
+yao,Yao,800,yao_Latn,True,0.996,0.999,0.0,0.996,0.996,0.996,nya_Latn:2 tur_Latn:1,False
+yor,Yoruba,800,yor_Latn,True,0.99,0.971,0.003,0.99,0.988,0.986,zxx_Latn:2 tok_Latn:1 lin_Latn:1,False
+zne,Zande,800,zne_Latn,True,0.988,0.996,0.0,0.988,0.986,0.981,run_Latn:2 swh_Latn:1 akb_Latn:1,True
+zul,Zulu,800,zul_Latn,True,0.989,0.923,0.0,0.989,0.988,0.974,nde_Latn:4 xho_Latn:4 ssw_Latn:1,False

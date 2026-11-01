@@ -1,0 +1,46 @@
+{
+ "version": "protected-2026-10-28.2",
+ "sample_pairs": 999077,
+ "output_rows_total": 23406354,
+ "devhalf_pairs": 8308,
+ "protected_sentences_B": 352187,
+ "A_main_sample": {
+  "texts_with_hit": 0,
+  "by_set": {}
+ },
+ "A_devhalf_rows": {
+  "texts_with_hit": 0,
+  "by_set": {}
+ },
+ "B_audit_logic": {
+  "exact": 0,
+  "near_ge50": 0,
+  "shared_8gram_hashes": 0
+ },
+ "C_strict_8gram_texts": 0,
+ "D_controls": {
+  "planted_protected_found_by_A": 1000,
+  "planted_protected": 1000,
+  "planted_protected_found_by_B": 1000,
+  "train_half_listed_language_targets_flagged_by_A": {
+   "amh": 0,
+   "tir": 0,
+   "fon": 0,
+   "dyu": 0,
+   "kbp": 0,
+   "nus": 0
+  },
+  "train_half_english_flagged_by_A": 0,
+  "train_half_NON_listed_language_flagged_by_A": {
+   "yor_Latn": [
+    300,
+    300
+   ],
+   "hau_Latn": [
+    300,
+    300
+   ]
+  }
+ },
+ "seconds": 611
+}

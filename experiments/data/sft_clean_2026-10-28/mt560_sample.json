@@ -1,0 +1,127 @@
+{
+ "yor": {
+  "rows": 402820,
+  "sample200": {
+   "other": 135,
+   "jw": 51,
+   "bible": 14
+  },
+  "heuristic5000_share": {
+   "other": 0.703,
+   "jw": 0.207,
+   "bible": 0.089,
+   "legal_tech": 0.0,
+   "ui": 0.0
+  },
+  "examples": [
+   "Those loyal men and women exposed false doctrines and spread spiritual truths , publishing and distributing Bi",
+   "He that is walking with wise persons will become wise , but he that is having dealings with the stupid ones wi",
+   "Yet , this remarkable translation was a best - seller in its day .",
+   "Once , dingoes ( wild dogs ) circled me at a distance , their eerie howls filling the darkness .",
+   "For example , I became personally acquainted with Witnesses in Swaziland who did not compromise their faith wh",
+   "You may see road signs directing you along the way , but once you are at the shore , standing at the water 's ",
+   "\" They never obligated me to be a pioneer , \" says David , \" but we enjoyed pioneering so much as a family tha",
+   "However , you have likely noted warning examples also - men and women whose deeds or attitudes you do well to "
+  ]
+ },
+ "tso": {
+  "rows": 746716,
+  "sample200": {
+   "other": 151,
+   "jw": 29,
+   "bible": 20
+  },
+  "heuristic5000_share": {
+   "other": 0.736,
+   "jw": 0.177,
+   "bible": 0.085,
+   "legal_tech": 0.001,
+   "ui": 0.001
+  },
+  "examples": [
+   "PAGE 14",
+   "low - fat dairy , cheese ( 3 - 7 servings daily ; one",
+   "Knowing that we are living in the time of the end should have what effect on us ?",
+   "Unlike those men , are we qualified to teach the people ?",
+   "The book Questions Young People Ask - Answers That Work , Volume 2 , published by Jehovah 's Witnesses , is an",
+   "The remains of this pillar have not been found .",
+   "Of the surviving 209 leaves , 145 are of portions of all books of the Christian Greek Scriptures except 2 Thes",
+   "How can we show that Kingdom interests have the first place in our lives ?"
+  ]
+ },
+ "kam": {
+  "rows": 49620,
+  "sample200": {
+   "other": 127,
+   "jw": 49,
+   "bible": 23,
+   "legal_tech": 1
+  },
+  "heuristic5000_share": {
+   "bible": 0.101,
+   "other": 0.664,
+   "jw": 0.234,
+   "legal_tech": 0.0,
+   "ui": 0.001
+  },
+  "examples": [
+   "Why must we train others to take up theocratic assignments ?",
+   "Employees who are unwilling to make such sacrifices for their company risk losing their jobs .",
+   "He also accepted his spiritual responsibilities as family head , much to the delight of his wife and children ",
+   "At that point , even a servant of Jehovah may be ready to act on his desire when an opportunity arises .",
+   "After all , what was serving Pharaoh compared with serving Almighty God ?",
+   "Although on our own we are unable to satisfy that desire , the ransom makes it possible for us to do so .",
+   "And such appreciation will draw us closer to Jehovah .",
+   "In the beginning , he resented her absence ."
+  ]
+ },
+ "kik": {
+  "rows": 91742,
+  "sample200": {
+   "jw": 58,
+   "other": 125,
+   "bible": 17
+  },
+  "heuristic5000_share": {
+   "jw": 0.237,
+   "other": 0.653,
+   "bible": 0.109,
+   "legal_tech": 0.001,
+   "ui": 0.0
+  },
+  "examples": [
+   "1 , 2 . ( a ) How do Jehovah 's Witnesses feel about the Bible ?",
+   "Furthermore , in the days leading up to the Memorial , most of us will read the Bible accounts of what Jesus d",
+   "At the end of their preaching in sackcloth , these anointed ones were symbolically killed when they were throw",
+   "However , the costs always outweigh any seeming benefits that Satan may offer . - Job 21 : 7 - 17 ; Gal .",
+   "What influence did this Bible translation activity have on the Georgian people ?",
+   "Whether in the company of our brothers , our family , or strangers , we should always let our words \" be graci",
+   "If a child says that the other parent or stepparent bad - mouthed you , focus on the child 's feelings .",
+   "Our convention and assembly programs reveal our Father 's loving insight into our problems and needs ."
+  ]
+ },
+ "wol": {
+  "rows": 15187,
+  "sample200": {
+   "other": 118,
+   "bible": 54,
+   "jw": 28
+  },
+  "heuristic5000_share": {
+   "jw": 0.129,
+   "bible": 0.277,
+   "other": 0.594,
+   "ui": 0.0
+  },
+  "examples": [
+   "When the hour had come , he sat down with the twelve apostles .",
+   "And withal they learn to be idle , wandering about from house to house ; and not only idle , but tattlers also",
+   "These are the two olive trees and the two lampstands , standing before the Lord of the earth .",
+   "And no man in heaven , nor in earth , neither under the earth , was able to open the book , neither to look th",
+   "If I must needs glory , I will glory of the things which concern mine infirmities .",
+   "No servant can serve two masters : for either he will hate the one , and love the other ; or else he will hold",
+   "And we desire that every one of you do shew the same diligence to the full assurance of hope unto the end :",
+   "I am come in my Father 's name , and ye receive me not : if another shall come in his own name , him ye will r"
+  ]
+ }
+}

@@ -1,0 +1,502 @@
+{
+  "meta": {
+    "model": "/workspace/work/run/runs/a2_base/hub_stage",
+    "revision": null,
+    "tokenizer": null,
+    "decoding": "greedy",
+    "max_new_tokens": 256,
+    "n_rows": 13616,
+    "seconds_generation": 292.0,
+    "comet": false,
+    "sampler": "vllm",
+    "prompt_template": "Translate the text to {african_language}:  {english_text}",
+    "direction": "en2x",
+    "contamination_files": {},
+    "name": "a2_base",
+    "spbleu_tokenizer": "flores200"
+  },
+  "benchmarks": {
+    "custom": {
+      "languages": {
+        "afr": {
+          "language": "Afrikaans",
+          "n": 296,
+          "chrf": 47.88987896702364,
+          "spbleu": 22.667696746085202,
+          "bleu": 21.291704686417525,
+          "prefix_ok_rate": 1.0,
+          "finished_rate": 0.9932432432432432,
+          "empty_rate": 0.0
+        },
+        "amh": {
+          "language": "Amharic",
+          "n": 296,
+          "chrf": 7.4500015903827865,
+          "spbleu": 0.784408980101112,
+          "bleu": 0.34483806810216455,
+          "prefix_ok_rate": 1.0,
+          "finished_rate": 0.6317567567567568,
+          "empty_rate": 0.0
+        },
+        "bam": {
+          "language": "Bambara",
+          "n": 296,
+          "chrf": 8.014753243335658,
+          "spbleu": 0.6061409241801152,
+          "bleu": 0.41897268686297245,
+          "prefix_ok_rate": 1.0,
+          "finished_rate": 0.2702702702702703,
+          "empty_rate": 0.0
+        },
+        "bem": {
+          "language": "Bemba",
+          "n": 296,
+          "chrf": 14.12142921065753,
+          "spbleu": 1.4312939709485362,
+          "bleu": 1.1408146063954772,
+          "prefix_ok_rate": 1.0,
+          "finished_rate": 0.38175675675675674,
+          "empty_rate": 0.0
+        },
+        "dyu": {
+          "language": "Dyula",
+          "n": 296,
+          "chrf": 8.180084619291199,
+          "spbleu": 0.6070786178850723,
+          "bleu": 0.37100435111867436,
+          "prefix_ok_rate": 1.0,
+          "finished_rate": 0.6486486486486487,
+          "empty_rate": 0.0
+        },
+        "ewe": {
+          "language": "Ewe",
+          "n": 296,
+          "chrf": 13.38781940811781,
+          "spbleu": 1.4862805621511135,
+          "bleu": 0.8444830676705101,
+          "prefix_ok_rate": 1.0,
+          "finished_rate": 0.6452702702702703,
+          "empty_rate": 0.0
+        },
+        "fon": {
+          "language": "Fon",
+          "n": 296,
+          "chrf": 8.568976972527196,
+          "spbleu": 0.6293526993968631,
+          "bleu": 0.33184264250218887,
+          "prefix_ok_rate": 1.0,
+          "finished_rate": 0.32094594594594594,
+          "empty_rate": 0.0
+        },
+        "hau": {
+          "language": "Hausa",
+          "n": 296,
+          "chrf": 18.871598194161983,
+          "spbleu": 2.492923800556967,
+          "bleu": 1.770303208783899,
+          "prefix_ok_rate": 1.0,
+          "finished_rate": 0.6452702702702703,
+          "empty_rate": 0.0
+        },
+        "ibo": {
+          "language": "Igbo",
+          "n": 296,
+          "chrf": 15.319898122027087,
+          "spbleu": 2.2689817971411177,
+          "bleu": 1.9137391313563896,
+          "prefix_ok_rate": 1.0,
+          "finished_rate": 0.6114864864864865,
+          "empty_rate": 0.0
+        },
+        "kab": {
+          "language": "Kabyle",
+          "n": 296,
+          "chrf": 8.948101648785933,
+          "spbleu": 0.2881253851984683,
+          "bleu": 0.453276999587908,
+          "prefix_ok_rate": 1.0,
+          "finished_rate": 0.35135135135135137,
+          "empty_rate": 0.0
+        },
+        "kam": {
+          "language": "Kamba",
+          "n": 296,
+          "chrf": 11.594805319270787,
+          "spbleu": 1.1908930952707608,
+          "bleu": 0.6873715639478859,
+          "prefix_ok_rate": 1.0,
+          "finished_rate": 0.40540540540540543,
+          "empty_rate": 0.0
+        },
+        "kbp": {
+          "language": "Kabiye",
+          "n": 296,
+          "chrf": 7.0722997396136895,
+          "spbleu": 0.517472331401715,
+          "bleu": 0.2841708321640922,
+          "prefix_ok_rate": 1.0,
+          "finished_rate": 0.060810810810810814,
+          "empty_rate": 0.0
+        },
+        "kea": {
+          "language": "Kabuverdianu",
+          "n": 296,
+          "chrf": 23.860729970791386,
+          "spbleu": 4.422467813302739,
+          "bleu": 3.496113748547719,
+          "prefix_ok_rate": 1.0,
+          "finished_rate": 0.8277027027027027,
+          "empty_rate": 0.0
+        },
+        "kik": {
+          "language": "Kikuyu",
+          "n": 296,
+          "chrf": 14.239107825174269,
+          "spbleu": 1.56495405556473,
+          "bleu": 1.0671754957863286,
+          "prefix_ok_rate": 1.0,
+          "finished_rate": 0.32432432432432434,
+          "empty_rate": 0.0
+        },
+        "kin": {
+          "language": "Kinyarwanda",
+          "n": 296,
+          "chrf": 15.381738616744892,
+          "spbleu": 1.666721324428344,
+          "bleu": 1.3633899610862088,
+          "prefix_ok_rate": 1.0,
+          "finished_rate": 0.5912162162162162,
+          "empty_rate": 0.0
+        },
+        "kmb": {
+          "language": "Kimbundu",
+          "n": 296,
+          "chrf": 10.984297990697206,
+          "spbleu": 0.5276850968251222,
+          "bleu": 0.2735499501450933,
+          "prefix_ok_rate": 1.0,
+          "finished_rate": 0.2972972972972973,
+          "empty_rate": 0.0
+        },
+        "knc": {
+          "language": "Kanuri",
+          "n": 296,
+          "chrf": 3.9489690364418517,
+          "spbleu": 0.22674031526126873,
+          "bleu": 0.1325838805350551,
+          "prefix_ok_rate": 1.0,
+          "finished_rate": 0.006756756756756757,
+          "empty_rate": 0.0
+        },
+        "lin": {
+          "language": "Lingala",
+          "n": 296,
+          "chrf": 20.807380984618785,
+          "spbleu": 2.171598986864422,
+          "bleu": 1.7499750290028575,
+          "prefix_ok_rate": 1.0,
+          "finished_rate": 0.5540540540540541,
+          "empty_rate": 0.0
+        },
+        "lua": {
+          "language": "Luba-Kasai",
+          "n": 296,
+          "chrf": 13.747692986706724,
+          "spbleu": 0.9087745149484895,
+          "bleu": 0.7201954607057522,
+          "prefix_ok_rate": 1.0,
+          "finished_rate": 0.36824324324324326,
+          "empty_rate": 0.0
+        },
+        "lug": {
+          "language": "Luganda",
+          "n": 296,
+          "chrf": 11.242461296599775,
+          "spbleu": 0.7025954278661365,
+          "bleu": 0.5912911781727586,
+          "prefix_ok_rate": 1.0,
+          "finished_rate": 0.33783783783783783,
+          "empty_rate": 0.0
+        },
+        "luo": {
+          "language": "Luo",
+          "n": 296,
+          "chrf": 8.222535946460638,
+          "spbleu": 0.5586576550356915,
+          "bleu": 0.3585801697673143,
+          "prefix_ok_rate": 1.0,
+          "finished_rate": 0.1891891891891892,
+          "empty_rate": 0.0
+        },
+        "mlg": {
+          "language": "Malagasy",
+          "n": 296,
+          "chrf": 14.418725920645587,
+          "spbleu": 1.0068524985082004,
+          "bleu": 0.8010556576326394,
+          "prefix_ok_rate": 1.0,
+          "finished_rate": 0.4189189189189189,
+          "empty_rate": 0.0
+        },
+        "mos": {
+          "language": "Mossi",
+          "n": 296,
+          "chrf": 9.707378182605618,
+          "spbleu": 0.7614309291815784,
+          "bleu": 0.5074684900909079,
+          "prefix_ok_rate": 1.0,
+          "finished_rate": 0.5067567567567568,
+          "empty_rate": 0.0
+        },
+        "nso": {
+          "language": "Sepedi",
+          "n": 296,
+          "chrf": 23.329858003088145,
+          "spbleu": 4.013523667707588,
+          "bleu": 3.8591823420129203,
+          "prefix_ok_rate": 1.0,
+          "finished_rate": 0.6081081081081081,
+          "empty_rate": 0.0
+        },
+        "nus": {
+          "language": "Nuer",
+          "n": 296,
+          "chrf": 7.47421627580591,
+          "spbleu": 0.7220326383637895,
+          "bleu": 0.379379541595173,
+          "prefix_ok_rate": 1.0,
+          "finished_rate": 0.057432432432432436,
+          "empty_rate": 0.0
+        },
+        "nya": {
+          "language": "Chichewa",
+          "n": 296,
+          "chrf": 17.110564083650264,
+          "spbleu": 2.0556378781095495,
+          "bleu": 1.629853419598119,
+          "prefix_ok_rate": 1.0,
+          "finished_rate": 0.6114864864864865,
+          "empty_rate": 0.0
+        },
+        "orm": {
+          "language": "Oromo",
+          "n": 296,
+          "chrf": 9.011591296202475,
+          "spbleu": 0.3435075977047944,
+          "bleu": 0.30443363752578634,
+          "prefix_ok_rate": 1.0,
+          "finished_rate": 0.13175675675675674,
+          "empty_rate": 0.0
+        },
+        "run": {
+          "language": "Kirundi",
+          "n": 296,
+          "chrf": 14.135497990196106,
+          "spbleu": 1.062698830165873,
+          "bleu": 0.8872325427151178,
+          "prefix_ok_rate": 1.0,
+          "finished_rate": 0.5202702702702703,
+          "empty_rate": 0.0
+        },
+        "sag": {
+          "language": "Sango",
+          "n": 296,
+          "chrf": 15.064079079427357,
+          "spbleu": 0.957108452427458,
+          "bleu": 0.8480521307581605,
+          "prefix_ok_rate": 1.0,
+          "finished_rate": 0.3141891891891892,
+          "empty_rate": 0.0033783783783783786
+        },
+        "seh": {
+          "language": "Sena",
+          "n": 296,
+          "chrf": 16.51760425337439,
+          "spbleu": 1.2483872173421862,
+          "bleu": 0.9570670690305403,
+          "prefix_ok_rate": 1.0,
+          "finished_rate": 0.6858108108108109,
+          "empty_rate": 0.0
+        },
+        "sna": {
+          "language": "Shona",
+          "n": 296,
+          "chrf": 15.306581051550422,
+          "spbleu": 1.7330775786149877,
+          "bleu": 1.3088610741930842,
+          "prefix_ok_rate": 1.0,
+          "finished_rate": 0.543918918918919,
+          "empty_rate": 0.0
+        },
+        "som": {
+          "language": "Somali",
+          "n": 296,
+          "chrf": 17.822688330813293,
+          "spbleu": 1.9111960416728575,
+          "bleu": 1.5871902735069554,
+          "prefix_ok_rate": 1.0,
+          "finished_rate": 0.668918918918919,
+          "empty_rate": 0.0
+        },
+        "sot": {
+          "language": "Sesotho",
+          "n": 296,
+          "chrf": 23.710581149823778,
+          "spbleu": 4.542429108993025,
+          "bleu": 3.792333225460324,
+          "prefix_ok_rate": 1.0,
+          "finished_rate": 0.7533783783783784,
+          "empty_rate": 0.0
+        },
+        "ssw": {
+          "language": "Swati",
+          "n": 296,
+          "chrf": 15.58375945176183,
+          "spbleu": 1.2913635571367026,
+          "bleu": 1.0072397880587245,
+          "prefix_ok_rate": 1.0,
+          "finished_rate": 0.5675675675675675,
+          "empty_rate": 0.0
+        },
+        "swh": {
+          "language": "Swahili",
+          "n": 296,
+          "chrf": 24.659001154649943,
+          "spbleu": 4.19243800264846,
+          "bleu": 3.984657507684434,
+          "prefix_ok_rate": 1.0,
+          "finished_rate": 0.7736486486486487,
+          "empty_rate": 0.0
+        },
+        "tir": {
+          "language": "Tigrinya",
+          "n": 296,
+          "chrf": 4.98181773401239,
+          "spbleu": 0.5327553116014879,
+          "bleu": 0.20418338140970496,
+          "prefix_ok_rate": 1.0,
+          "finished_rate": 0.32432432432432434,
+          "empty_rate": 0.0
+        },
+        "tsn": {
+          "language": "Setswana",
+          "n": 296,
+          "chrf": 22.705962693624755,
+          "spbleu": 3.4522851338812433,
+          "bleu": 3.0113050112836754,
+          "prefix_ok_rate": 1.0,
+          "finished_rate": 0.6317567567567568,
+          "empty_rate": 0.0
+        },
+        "tso": {
+          "language": "Tsonga",
+          "n": 296,
+          "chrf": 19.673776325931183,
+          "spbleu": 2.471309653019905,
+          "bleu": 2.1061881688540467,
+          "prefix_ok_rate": 1.0,
+          "finished_rate": 0.5945945945945946,
+          "empty_rate": 0.0
+        },
+        "tum": {
+          "language": "Tumbuka",
+          "n": 296,
+          "chrf": 16.626680002434142,
+          "spbleu": 2.057555314906344,
+          "bleu": 1.9654113003221894,
+          "prefix_ok_rate": 1.0,
+          "finished_rate": 0.6621621621621622,
+          "empty_rate": 0.0
+        },
+        "twi": {
+          "language": "Twi",
+          "n": 296,
+          "chrf": 13.850858694925453,
+          "spbleu": 1.7622578346468407,
+          "bleu": 1.1127216733064786,
+          "prefix_ok_rate": 1.0,
+          "finished_rate": 0.5304054054054054,
+          "empty_rate": 0.0
+        },
+        "umb": {
+          "language": "Umbundu",
+          "n": 296,
+          "chrf": 9.961520372973537,
+          "spbleu": 0.33668239416085327,
+          "bleu": 0.20048605628058644,
+          "prefix_ok_rate": 1.0,
+          "finished_rate": 0.36486486486486486,
+          "empty_rate": 0.0
+        },
+        "vmw": {
+          "language": "Makhuwa",
+          "n": 296,
+          "chrf": 7.926584162108523,
+          "spbleu": 0.4137864292591151,
+          "bleu": 0.2703246960665121,
+          "prefix_ok_rate": 1.0,
+          "finished_rate": 0.08108108108108109,
+          "empty_rate": 0.0
+        },
+        "wol": {
+          "language": "Wolof",
+          "n": 296,
+          "chrf": 11.691922299446949,
+          "spbleu": 1.7415472736069841,
+          "bleu": 1.4313789220016502,
+          "prefix_ok_rate": 1.0,
+          "finished_rate": 0.6891891891891891,
+          "empty_rate": 0.0
+        },
+        "xho": {
+          "language": "Xhosa",
+          "n": 296,
+          "chrf": 17.98647873654912,
+          "spbleu": 2.594532434411105,
+          "bleu": 1.0173506825872967,
+          "prefix_ok_rate": 1.0,
+          "finished_rate": 0.6452702702702703,
+          "empty_rate": 0.0
+        },
+        "yor": {
+          "language": "Yoruba",
+          "n": 296,
+          "chrf": 10.00658082524411,
+          "spbleu": 1.1461955377798685,
+          "bleu": 0.6043349797068385,
+          "prefix_ok_rate": 1.0,
+          "finished_rate": 0.40540540540540543,
+          "empty_rate": 0.0
+        },
+        "zul": {
+          "language": "Zulu",
+          "n": 296,
+          "chrf": 20.656804093495428,
+          "spbleu": 3.5352205813639244,
+          "bleu": 1.9160536538442874,
+          "prefix_ok_rate": 1.0,
+          "finished_rate": 0.7567567567567568,
+          "empty_rate": 0.0
+        }
+      },
+      "macro": {
+        "chrf": 14.60381899682112,
+        "chrf_n_languages": 46,
+        "spbleu": 2.0349273042962763,
+        "spbleu_n_languages": 46,
+        "bleu": 1.6369374335692377,
+        "bleu_n_languages": 46,
+        "n_languages": 46
+      }
+    }
+  },
+  "macro_all": {
+    "chrf": 14.60381899682112,
+    "chrf_n_languages": 46,
+    "spbleu": 2.0349273042962763,
+    "spbleu_n_languages": 46,
+    "bleu": 1.6369374335692377,
+    "bleu_n_languages": 46
+  },
+  "min_subset_rows": 30
+}

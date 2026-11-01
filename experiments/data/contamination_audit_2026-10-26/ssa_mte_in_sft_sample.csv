@@ -1,0 +1,10 @@
+window_iso,ssa_mte_split,windows
+amh,test,1
+amh,train,5
+kin,train,3
+sot,test,1
+sot,train,2
+swh,train,2
+twi,train,1
+yor,train,1
+zul,train,5

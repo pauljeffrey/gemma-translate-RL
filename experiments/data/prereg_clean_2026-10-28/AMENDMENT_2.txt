@@ -1,0 +1,5 @@
+AMENDMENT 2 to DECISION_RULE.txt (original sha256 7b86fc11de28cf952bbc8f7a5f634b5fceda6adbeb76996548360c8ed923c0f5; Amendment 1 sha256 a5885cf2b6218411af3807b763b5b8aeb7003e8c9c759cf3425ae05cf533c4c2)
+Written 2026-10-28, still BEFORE any training of the rerun; no arm has produced any result. Owner clarification.
+Change: Section 7 said "maximum 1,024 target-side tokens". Correct wording: the length cap of the RL bins is on the SOURCE (English) side, as in the previous run, where the bins b64, b256, b512, b1024 are
+defined by the English length in AfriCOMET tokens. The bin b2048 is dropped. The decoding limit of evaluation (768 new tokens, section 5) is unchanged.
+Everything else is unchanged.

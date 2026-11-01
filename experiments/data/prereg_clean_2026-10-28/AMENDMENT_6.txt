@@ -1,0 +1,13 @@
+AMENDMENT 6 to the pre-registration of the clean rerun (2026-10-30), written before any training. Source: owner message of 2026-10-30. Supersedes earlier text where it conflicts. Items marked [interpretation] are the lead's reading of an ambiguous instruction.
+
+1. NEW LANGUAGES: nde (North Ndebele), ful (Fulah/Fulfulde/Pulaar), knc (Kanuri), tzm (Central Atlas Tamazight) are added to the SFT data (A0 and the specialist set; they are SFT-only: no RL prompt pools, no reward calibration in this rerun; they use the pooled prior if they enter RL later). Sources per reports/language_data_hunt_2026-10-29.md:
+   - nde: eBible `nde` (CC BY-SA 4.0, Biblica) aligned by verse to a public-domain English Bible; other Ndebele Bible copies only as cross-checks.
+   - ful: OPUS wikimedia en-ff and XLEnt en-ff; the NLLB-mined set `michsethowusu/english-fulah_sentence-pairs` (1.5M pairs, owner-approved, tagged nllb_mined and passed through the strict decontamination filter and the QE gate); Adamawa Fulfulde Bible sets with disclosure.
+   - knc: `CLEAR-Global/Gamayun-kits` kau-eng (TWB terms) and `IsahMBukar/kanurimt`, the latter only after the strict filter has removed every pair that overlaps a protected set (it merges TICO-19).
+   - tzm: Tamazight-NLP NLLB-Seed `eng-tzm_Tfng`, translatewiki and Pontoon pairs [interpretation: the NLLB-mined tzm set is not included unless the owner says so].
+   Language codes and the registry (gemma_mt/languages.py, ALL_ISOS, format template) are extended for these four; no tokenizer change is made for them (the language code is plain text in the target).
+   Pre-registered evaluation groups G, W and C are unchanged. S1 and S2 train on the 20 specialist languages plus the 4 new ones; the 4 new languages are outside G, W and C and outside every decision rule.
+2. FANTE (fat) AND GA (gaa): skipped [interpretation of 'skip fat and gaa']; their GhanaNLP sets are non-commercial and are not used.
+3. AFROLINGU-MT is kept everywhere as an unverified-licence source (its card says non-commercial; owner decision), tagged `owner_exception=afrolingu-mt` for disclosure. The hidden-NC filter drops only rows whose origin is identifiable per row (own NC licence marker, or a match to MAFAND-MT or pristine-twi-english).
+4. Benchmark protection is unchanged: no protected-set text in any role, and every added source passes the same strict filter (both sides, index protected-2026-10-28.3).
+5. Disclosure list (paper and model card): IbomMT (CC-BY-NC), AfroLingu-MT (NC card), NLLB-mined Fulah, mt560 (JW/Bible, unverified), Bible-derived sets (nde, bbj/dag if used), TWB Gamayun terms, NLLB-200 as RL-only reward.

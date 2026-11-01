@@ -1,0 +1,2 @@
+iso,pairs_removed,target_tokens_removed,pairs_before,share_of_pairs_removed_pct,sources
+amh,31209,2850469,799510,3.9,"masakhane/AfriDocMT (14,885); opus (12,063); AfriNLP/AfricanFineTranslations-sentences (4,259); aiana94/polynews-parallel (2)"

@@ -1,0 +1,7 @@
+source,reason,rows
+r10:EXCLUDED_unknown_licence:opus:CCAligned:v1,unknown / unspecified licence class of the R10 audit,70805
+r10:EXCLUDED_unknown_licence:opus:bible-uedin:v1,unknown / unspecified licence class of the R10 audit,48307
+<HF_ORG_LEGACY>/sabiyarn-weak-language-parallel-2026-10-26:flores_plus_dev,replaced by data_devhalf (held-out half stays protected),17043
+<HF_ORG_LEGACY>/sabiyarn-weak-language-parallel-2026-10-26:quarantine/tir,weak repo quarantine (licence doubt / NLLB-derived kea),3790
+<HF_ORG_LEGACY>/sabiyarn-weak-language-parallel-2026-10-26:quarantine/kea,weak repo quarantine (licence doubt / NLLB-derived kea),1901
+<HF_ORG_LEGACY>/sabiyarn-weak-language-parallel-2026-10-26:flores_plus_dev,replaced by data_devhalf (held-out half stays protected),897

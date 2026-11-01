@@ -1,0 +1,27 @@
+{
+ "units": 181,
+ "meta_rows": 24446477,
+ "unique_ok_pairs_main": 23674374,
+ "unique_kept_pairs_main": 23406354,
+ "removed_main": 268020,
+ "removed_pct": 1.13,
+ "unique_quarantine_pairs": 524746,
+ "quarantine_removed_by_filter": 12954,
+ "duplicates_dropped_main": 205816,
+ "stats_totals": {
+  "rows_in": 25320178,
+  "fail_ok_filter": 833447,
+  "pairs_ok": 23880190,
+  "kept": 23610486,
+  "quarantine_kept": 551082,
+  "quarantine_pairs_ok": 566287,
+  "quarantine_removed_by_filter": 15205
+ },
+ "chars_per_token_default": 3.4,
+ "languages": 76,
+ "languages_below_min_rows": [
+  "ibb",
+  "men",
+  "nbl"
+ ]
+}

@@ -1,0 +1,5 @@
+shuffle: mean AUC 0.868, min 0.636, languages with AUC >= 0.8: 78/103
+strip: mean AUC 0.721, min 0.301, languages with AUC >= 0.8: 34/92
+garble: mean AUC 0.992, min 0.923, languages with AUC >= 0.8: 103/103
+foreign: mean AUC 0.996, min 0.966, languages with AUC >= 0.8: 103/103
+weak (garble or foreign AUC < 0.8): []
