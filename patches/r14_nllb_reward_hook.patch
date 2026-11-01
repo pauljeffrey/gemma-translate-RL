@@ -1,0 +1,62 @@
+--- a/gemma_mt/rl/reward.py	2026-10-21 23:43:29
++++ b/gemma_mt/rl/reward.py	2026-10-22 21:52:13
+@@ -202,6 +202,26 @@
+     longdoc_coverage_kappa: float = 0.5                # (d) 0 = off
+     longdoc_pool_severity: float = 0.5                 # a sample with a repetition severity at or above this stays out of the consensus pool (near-loops would agree with each other)
+     keep_chunk_rewards: bool = False                   # diagnostics: RewardOutput.chunk_rewards = per sample [(reward, weight)] of its plan items
++    # R14 (2026-10-22): NLLB as a REWARD-ONLY signal (rl/nllb_signal.py; NLLB output is CC-BY-NC, never training data). OFF by default = the reward is bit-identical.
++    nllb_signal: bool = False                          # master switch of the pseudo-reference signal (precomputed NLLB translations of the RL prompts)
++    nllb_pseudoref_dir: str = ""                       # directory with <iso>.parquet (scripts/precompute_nllb_pseudorefs.py)
++    nllb_calibration_path: str = ""                    # JSON with a `nllb` block per language (human-validated weights; scripts/r14/s3_analyze.py writes it)
++    nllb_modes: List[str] = field(default_factory=lambda: ["consensus", "blend"])    # content modes the signal applies to
++    nllb_languages: List[str] = field(default_factory=list)                          # extra languages (e.g. qe ones as a check)
++    nllb_weight_default: float = 0.35                  # weight = nllb_weight_default * calibrated reliability (capped by nllb_weight_max)
++    nllb_weight_max: float = 0.5
++    nllb_weights: Dict[str, float] = field(default_factory=dict)                     # per-language override (0 disables)
++    nllb_double_pull_languages: List[str] = field(default_factory=list)              # languages whose SFT mixture also holds NLLB teacher data (nc_teacher): weight x nllb_double_pull_factor
++    nllb_double_pull_factor: float = 0.5
++    nllb_min_teacher_delta: float = 2.0                # teacher chrF++ minus student chrF++ on human references must be >= this, else weight 0
++    nllb_min_auc: float = 0.80
++    nllb_forced: bool = False                          # forced-decoding score, combined with the pseudo-reference as min(); needs nllb_ct2_dir / nllb_hf_dir (one NLLB forward pass per reward call)
++    nllb_forced_combine: str = "min"                   # min | mean
++    nllb_forced_min_auc: float = 0.80
++    nllb_ct2_dir: str = ""
++    nllb_hf_dir: str = ""
++    nllb_ct2_compute_type: str = "int8_float16"
++    nllb_forced_batch_tokens: int = 4096
+ 
+ 
+ @dataclass
+@@ -335,6 +355,13 @@
+             if not (hasattr(scorer, "score_secondary") or hasattr(scorer, "secondary")):
+                 raise ValueError("reward.qe_ensemble needs a two-model scorer: set scorer.ensemble_model_id (rl/qe_ensemble.py build_pair_scorer)")
+             self.qe_ens = QEEnsemble.from_config(cfg, self.shaper)
++        self.nllb = None                                # R14 hook (flag-gated, reward-only NLLB signal): None = the reward is unchanged
++        if cfg.nllb_signal:
++            from gemma_mt.rl.nllb_signal import ForcedDecodingScorer, NllbSignal, NllbSignalConfig
++
++            ncfg = NllbSignalConfig.from_reward_cfg(cfg)
++            self.nllb = NllbSignal(ncfg, forced=ForcedDecodingScorer(cfg.nllb_ct2_dir, cfg.nllb_hf_dir, compute_type=cfg.nllb_ct2_compute_type,
++                                                                     batch_tokens=cfg.nllb_forced_batch_tokens) if cfg.nllb_forced else None)
+         if cfg.lid_enabled and self.lid is None:       # D-37: built and self-tested here, so a missing fastText / model file stops the run before step 1
+             from gemma_mt.rl.lid import make_lid
+ 
+@@ -527,6 +554,9 @@
+                 seg_src.append(a); seg_mt.append(b); seg_owner.append(i)
+             chunk_plan[i] = [(None if k is None else base + k, w) for k, w in cp.items]
+ 
++        if self.nllb is not None:                       # R14 hook: batch the forced-decoding passes of this call (no-op unless nllb_forced)
++            self.nllb.prepare([(langs[seg_owner[j]], seg_src[j], seg_mt[j], applied[seg_owner[j]][0]) for j in range(len(seg_src))])
++
+         seg_qe: List[Optional[float]] = [None] * len(seg_src)
+         seg_qe2: List[Optional[float]] = [None] * len(seg_src)       # D-55: raw SSA-COMET-MTL scores (ensemble only)
+         need_qe = [j for j in range(len(seg_src)) if applied[seg_owner[j]][0] != "consensus"]       # consensus-mode samples are never sent to the scorer
+@@ -575,6 +605,8 @@
+                             r = self._shape_qe(seg_qe[seg], seg_qe2[seg], lang)
+                             if beta_i > 0:
+                                 r = (1.0 - beta_i) * r + beta_i * float(content_c)
++                        if self.nllb is not None:                 # R14 hook: blend with the NLLB pseudo-reference value (identity unless the language has a calibrated weight)
++                            r = self.nllb.blend_chunk(lang, seg_src[seg], seg_mt[seg], r, mode_i)
+                         if long_i[i] and cfg.longdoc_repetition and longdoc.has_stutter(seg_mt[seg]):       # D-60: a looping sentence is a failed chunk
+                             r = self.penalty
+                         if cfg.length_penalty > 0:

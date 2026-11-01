@@ -1,0 +1,53 @@
+--- /tmp/scratch	2026-10-22 15:00:07
++++ gemma_mt/rl/anchors_v2.py	2026-10-22 14:40:09
+@@ -80,6 +80,23 @@
+     return obs, float(np.mean(sh))
+ 
+ 
++def pad_ttr(words: Sequence[str], mode: str = "plain") -> float:
++    """Type / token ratio of an output. mode 'plain': distinct / n (v2). mode 'seg100' (anchors_v3.json, D-62): the type / token ratio of a text falls with its length (human documents of 100 / 200 /
++    400 / 800 words: 0.66 / 0.51 / 0.43 / 0.32 in the same language), so a threshold fitted on windows of <= 250 words flagged long documents. 'seg100' = the mean over `n // 100` equal segments
++    (each 100-199 words) for texts of >= 100 words, the plain ratio below; length independent."""
++    n = len(words)
++    if n == 0:
++        return 1.0
++    if mode != "seg100" or n < 100:
++        return len(set(words)) / n
++    k = n // 100
++    vals = []
++    for j in range(k):
++        seg = words[j * n // k: (j + 1) * n // k]
++        vals.append(len(set(seg)) / len(seg))
++    return float(sum(vals) / len(vals))
++
++
+ def _ramp(x: float, lo: float, hi: float, clip: bool = True) -> float:
+     """0 at lo, 1 at hi (linear, either direction)."""
+     if hi == lo:
+@@ -191,9 +208,15 @@
+         return mode in self.v2_modes and lang not in self.v2_off and lang not in self.off
+ 
+     def _blk2(self, lang: str, name: str) -> Optional[Dict[str, Any]]:
+-        """Like `_blk`, for the v2 blocks (the same proxy / pooled-prior rule); a block with `enabled: false` is None."""
+-        return self._blk(lang, name)
++        """Like `_blk`, for the v2 blocks (the same proxy / pooled-prior rule); a block with `enabled: false` or (anchors_v3.json) `usable: false` is None."""
++        b = self._blk(lang, name)
++        return None if b is not None and b.get("usable") is False else b
+ 
++    def gate_ok(self, lang: str, det: str) -> bool:
++        """May a saturated `det` deficit of this language fail the sample (anchors_stuff_gate)? Blocks of anchors_v3.json carry `gate_ok: false` for languages calibrated on a single domain."""
++        b = self._blk2(lang, det)
++        return bool(b) and b.get("gate_ok", True) is not False
++
+     def enabled2(self, lang: str, det: str) -> bool:
+         if det not in self.v2_detectors:
+             return False
+@@ -282,7 +305,7 @@
+         b = self._blk2(lang, "pad")
+         if not b or len(out_words) < FUNC_MIN_WORDS:
+             return None
+-        f = {"n": len(out_words), "ttr": len(set(out_words)) / len(out_words)}
++        f = {"n": len(out_words), "ttr": pad_ttr(out_words, b.get("ttr_mode", "plain"))}
+         tab = self._bigram_table(lang) if b.get("has_bigrams") else None
+         if tab is not None and tab.size and len(out_words) > 1:
+             obs, shuf = bigram_gain(tab, out_words)

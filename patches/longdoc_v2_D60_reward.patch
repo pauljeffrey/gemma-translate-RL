@@ -1,0 +1,216 @@
+--- a/gemma_mt/rl/reward.py
++++ b/gemma_mt/rl/reward.py
+@@ -55,6 +55,7 @@
+ from gemma_mt.languages import LANGUAGES, canonical_iso
+ from gemma_mt.rl import consensus as cons
+ from gemma_mt.rl import guards
++from gemma_mt.rl import longdoc
+ from gemma_mt.rl.chunk_plan import aggregate, plan_chunks
+ from gemma_mt.rl.reward_shaping import DEFAULT_ANCHORS, FAIL_FLOOR, ContentShaper
+ from gemma_mt.rl.text import decode_completion, nfc, translation_from
+@@ -173,6 +174,25 @@
+     anchors_buffer_min_other: int = 3                  # an output 5-gram is boilerplate when it occurs in the outputs of >= this many OTHER prompts
+     anchors_related_min: int = 1                       # prompts whose English sources share this many word 6-grams with the current one do not count as "other"
+ 
++    # D-60: REWARD V2 FOR LONG DOCUMENTS (rl/longdoc.py; reports/longdoc_reward_v2_2026-10-22.md). OFF by default (every run is scored exactly as before). On, for samples whose English
++    # source has >= `longdoc_min_src_words` words ("long"): (a) the repetition checks are replaced by a CONTINUOUS multi-level penalty with limits taken from human documents of the same
++    # length bucket (word 4-gram / repeated 8-gram / duplicate sentence / repeated block / word cycle), (b) sentences are aligned with numbers / names (/ lexicon words) as anchors after the
++    # redundant copies were removed, (c) the chunk rewards are aggregated as mean minus the worst-quartile deficit beyond what human documents show, (d) the share of the source with no usable output scales an extra drop
++    # towards the failure penalty. Reward of a long sample = r - s * (r - penalty), s in [0, 1] the combined severity: never below the failure penalty.
++    longdoc_v2: bool = False
++    longdoc_calibration_path: Optional[str] = None     # calibration/longdoc_v2.json (repetition limits per length bucket); None = the built-in defaults
++    longdoc_min_src_words: int = 150                   # "long" source: at least this many English words (b256 median 110, b512 405, b1024 786, b2048 1579, b4096 3141)
++    longdoc_repetition: bool = True                    # (a)
++    longdoc_align: str = "anchored"                    # (b) anchored | gale_church (the v1 aligner)
++    longdoc_lexicon: bool = False                      # (b) lexicon words of validated lexicons are anchors too
++    longdoc_agg: str = "cvar_excess"                   # (c) mean | cvar | cvar_excess | p25 | min   (cvar_excess: mean - alpha x the tail deficit beyond the human gap of the length bucket)
++    longdoc_agg_alpha: float = 1.0
++    longdoc_agg_q: float = 0.25
++    longdoc_coverage_kappa: float = 0.5                # (d) 0 = off
++    longdoc_pool_severity: float = 0.5                 # a sample with a repetition severity at or above this stays out of the consensus pool (near-loops would agree with each other)
++    keep_chunk_rewards: bool = False                   # diagnostics: RewardOutput.chunk_rewards = per sample [(reward, weight)] of its plan items
++
++
+ 
+ @dataclass
+ class Sample:
+@@ -201,6 +221,8 @@
+     science_deficit: List[Optional[float]] = field(default_factory=list)    # per sample: mean science-anchor deficit of its scored chunks (D-52; None = not judged / anchor off)
+     qe2: List[Optional[float]] = field(default_factory=list)                # per sample: mean RAW SSA-COMET-MTL score of its scored chunks (D-55; None = not used / ensemble off)
+     anchors_penalty: List[float] = field(default_factory=list)              # per sample: reward subtracted by the constraint penalties (D-56; 0.0 = none / anchors off)
++    chunk_rewards: List[Optional[List[Tuple[float, float]]]] = field(default_factory=list)   # D-60 (keep_chunk_rewards): per sample [(chunk reward, weight)] of its plan items (failed chunk = the penalty); None = no plan
++    longdoc: List[Optional[Dict[str, float]]] = field(default_factory=list)  # D-60: per sample, for "long" samples: {rep_severity, rep_level, cover_failed, agg_mean, agg_tail, severity, ...}; None = v1 path
+ 
+ 
+ class TranslationReward:
+@@ -261,6 +283,18 @@
+                                              buffer_per_prompt=cfg.anchors_buffer_per_prompt, related_min=cfg.anchors_related_min,
+                                              lexicon_guard=cfg.anchors_lexicon_guard, lexicon_per_language=cfg.anchors_lexicon_per_language,
+                                              lexicon_weight_cap=cfg.anchors_lexicon_weight_cap)
++        self.longdoc_cal = None
++        self._src_prof_cache: Dict[str, Any] = {}
++        if cfg.longdoc_v2:                              # D-60: built here, so a bad flag / unreadable calibration stops the run before step 1
++            from gemma_mt.rl import longdoc as LD
++
++            if cfg.longdoc_agg not in ("mean", "cvar", "cvar_excess", "p25", "min"):
++                raise ValueError(f"reward.longdoc_agg must be mean | cvar | cvar_excess | p25 | min, got {cfg.longdoc_agg!r}")
++            if cfg.longdoc_align not in ("anchored", "gale_church"):
++                raise ValueError(f"reward.longdoc_align must be anchored | gale_church, got {cfg.longdoc_align!r}")
++            if not (0.0 <= cfg.longdoc_agg_alpha <= 1.0 and 0.0 < cfg.longdoc_agg_q <= 1.0 and 0.0 <= cfg.longdoc_coverage_kappa <= 1.0):
++                raise ValueError("reward.longdoc_agg_alpha in [0, 1], longdoc_agg_q in (0, 1], longdoc_coverage_kappa in [0, 1]")
++            self.longdoc_cal = LD.LongdocCalibration.from_file(cfg.longdoc_calibration_path)
+         self.qe_ens = None
+         if cfg.qe_ensemble:                             # D-55: needs a QEPairScorer (train_rl.build_scorer with scorer.ensemble_model_id) or any scorer with `score_secondary`
+             from gemma_mt.rl.qe_ensemble import QEEnsemble
+@@ -318,6 +352,10 @@
+                 raise KeyError(f"unknown language tag {s.iso!r}")
+         modes = [self.content_spec(l) for l in langs]
+         srcs = [nfc(s.source) if cfg.nfc else s.source for s in samples]       # D-29: the source is NFC too (every length / lexical rule counts characters)
++        long_i = [self.longdoc_cal is not None and len(x.split()) >= cfg.longdoc_min_src_words for x in srcs]      # D-60
++        rep_sev = [0.0] * n                              # D-60: repetition severity of each long sample (0 = none)
++        rep_lvl = [""] * n
++        rep_prof: List[Optional[Dict[str, float]]] = [None] * n
+         for i, s in enumerate(samples):
+             iso = langs[i]
+             dec = decode_completion(self.tok, s.token_ids, self.stop_ids, pad_ids=self.pad_ids, normalise=cfg.nfc)
+@@ -347,11 +385,25 @@
+             if guards.is_copy_of_source(srcs[i], text, cfg.copy_jaccard):
+                 status[i] = "copy_source"
+                 continue
+-            if cfg.repetition_guard and guards.is_repetitive(text):
+-                status[i] = "degenerate"
+-                continue
+-            if cfg.selfrep_guard != "off" and (cfg.selfrep_guard == "all" or modes[i][0] != "qe") and guards.is_self_repetitive(text):
+-                status[i] = "degenerate"                       # D-38: near-loops would agree with each other in the consensus pool
++            if long_i[i] and cfg.longdoc_repetition:           # D-60: continuous, length-calibrated repetition severity instead of the whole-text v1 rules (those fire on every natural long text)
++                prof = longdoc.repetition_profile(text)
++                rep_sev[i], rep_lvl[i] = self.longdoc_cal.severity(prof, len(srcs[i].split()), self._src_profile(srcs[i]))
++                rep_prof[i] = prof.levels
++                if rep_sev[i] >= 1.0:
++                    status[i] = "degenerate"                   # severity 1 IS the failure penalty; a stuttering sentence is a failed CHUNK (below), not a failed document
++                    continue
++            else:
++                if cfg.repetition_guard and guards.is_repetitive(text):
++                    status[i] = "degenerate"
++                    continue
++                if cfg.selfrep_guard != "off" and (cfg.selfrep_guard == "all" or modes[i][0] != "qe") and guards.is_self_repetitive(text):
++                    status[i] = "degenerate"                   # D-38: near-loops would agree with each other in the consensus pool
++                    continue
++            lo_ratio = cfg.min_len_ratio
++            if modes[i][0] != "qe" and iso not in self.shaper.len_window:
++                lo_ratio = max(lo_ratio, cfg.min_len_ratio_uncalibrated)       # D-38: no human length window for this language -> the pooled-prior hard bound
++            if guards.length_ratio_bad(srcs[i], text, lo_ratio, cfg.max_len_ratio):
++                status[i] = "length_ratio"
+                 continue
+             lo_ratio = cfg.min_len_ratio
+             if modes[i][0] != "qe" and iso not in self.shaper.len_window:
+@@ -392,7 +444,7 @@
+         groups_seen = groups_skipped = 0
+         if cfg.consensus:
+             t0 = time.time()
+-            okset = set(gated)
++            okset = {i for i in gated if rep_sev[i] < cfg.longdoc_pool_severity}       # D-60: near-loops stay out of the pool (rep_sev is 0 unless longdoc_v2)
+             for grp in cons.split_groups([(langs[i], samples[i].source) for i in range(n)], group_size):
+                 mode = modes[grp[0]][0]
+                 if mode == "qe":
+@@ -428,6 +480,8 @@
+                 lm = self.shaper.length_model(lang_i, cfg.omission_cost, cfg.omission_cost)       # None = the language's calibrated omission cost, extra cost 4
+                 if lm is not None:
+                     om = {"length_model": lm, "short_frac": cfg.omission_short_frac, "short_min": cfg.omission_short_min}
++            if long_i[i] and cfg.chunking == "sentences" and cfg.longdoc_align == "anchored":
++                om = dict(om, beads_fn=longdoc.beads_fn(om.get("length_model"), lang_i if cfg.longdoc_lexicon else None))     # D-60
+             cp = plan_chunks(srcs[i], texts[i], chunking=cfg.chunking, chunk_align=cfg.chunk_align,
+                              chunk_agg=cfg.chunk_agg, extra_output_penalty=cfg.extra_output_penalty,
+                              extra_ratio_limit=cfg.extra_ratio_limit, length_slack=cfg.length_slack,
+@@ -466,6 +520,8 @@
+         dia_by_lang: Dict[str, List[float]] = {}
+         sci_def: List[Optional[float]] = [None] * n       # D-52: per sample, source-weighted mean science-anchor deficit of its scored chunks (None = not judged)
+         rewards, weights = [], []
++        ld_info: List[Optional[Dict[str, float]]] = [None] * n
++        chunk_rw: List[Optional[List[Tuple[float, float]]]] = [None] * n
+         n_chunks = [len(chunk_plan[i]) if i in chunk_plan else 0 for i in range(n)]
+         failed_chunks = [sum(1 for seg, _ in chunk_plan[i] if seg is None) if i in chunk_plan else 0 for i in range(n)]
+         anc = self._anchors_prepass(samples, langs, modes, srcs, texts, chunk_plan, lid_label, group_size) if self.anchors is not None else None   # D-56
+@@ -489,6 +545,8 @@
+                             r = self._shape_qe(seg_qe[seg], seg_qe2[seg], lang)
+                             if beta_i > 0:
+                                 r = (1.0 - beta_i) * r + beta_i * float(content_c)
++                        if long_i[i] and cfg.longdoc_repetition and longdoc.has_stutter(seg_mt[seg]):       # D-60: a looping sentence is a failed chunk
++                            r = self.penalty
+                         if cfg.length_penalty > 0:
+                             ex = self.shaper.length_excess(lang, len(seg_src[seg]), len(seg_mt[seg]), cfg.length_slack)
+                             if ex > 0:
+@@ -514,7 +572,16 @@
+                             if cfg.diacritic_penalty > 0 and dd > 0:
+                                 r = max(self.penalty, r - cfg.diacritic_penalty * dd)
+                         seg_reward[seg] = r
+-                rewards.append(aggregate(chunk_plan[i], seg_reward, self.penalty))
++                if long_i[i]:                                                           # D-60: tail-sensitive aggregation, repetition and coverage severity
++                    r_i, info = self._longdoc_reward(chunk_plan[i], seg_reward, rep_sev[i], rep_lvl[i], len(srcs[i].split()))
++                    rewards.append(r_i)
++                    ld_info[i] = dict(info, **(rep_prof[i] or {}))
++                else:
++                    rewards.append(aggregate(chunk_plan[i], seg_reward, self.penalty))
++                if cfg.keep_chunk_rewards:
++                    chunk_rw[i] = [(self.penalty if seg is None else float(seg_reward[seg]), float(w)) for seg, w in chunk_plan[i]]
++                if anc is not None and anc["on"][i]:                                   # D-56: sample-level constraint penalties (repetition, boilerplate, LID probability)
++                    rewards[-1] = self._anchors_sample(anc, i, rewards[-1])
+                 if anc is not None and anc["on"][i]:                                   # D-56: sample-level constraint penalties (repetition, boilerplate, LID probability)
+                     rewards[-1] = self._anchors_sample(anc, i, rewards[-1])
+                 qe[i] = sum(raw) / len(raw) if raw else None
+@@ -529,6 +596,14 @@
+                            lid_label=lid_label, consensus_chrf=chrf_mean, content_mode=[m for m, _ in applied],
+                            n_chunks=n_chunks, failed_chunks=failed_chunks)
+         out.science_deficit = sci_def
++        if cfg.keep_chunk_rewards:
++            out.chunk_rewards = chunk_rw
++        if self.longdoc_cal is not None:
++            for i in range(n):                         # a long sample that failed before planning still carries its repetition severity
++                if ld_info[i] is None and long_i[i]:
++                    ld_info[i] = {"rep_severity": rep_sev[i], "severity": 1.0 if status[i] != "ok" else 0.0}
++            out.longdoc = ld_info
++            out.stats.update(self._longdoc_stats(ld_info, long_i, rep_lvl, n))
+         if anc is not None:                           # D-56
+             out.anchors_penalty = list(anc["pen"])
+             out.stats.update(self._anchors_finish(anc, langs, n))
+@@ -560,6 +635,40 @@
+                 lens = self.scorer.token_lengths(seg_mt)
+                 out.stats["chunk/mt_truncated_rate"] = sum(1 for l in lens if l - 2 > cfg.max_comet_tokens) / len(lens)
+         return out
++
++    # ------------------------------------------------------------------------------------------ long documents (D-60; rl/longdoc.py)
++    def _longdoc_reward(self, items, seg_reward, rep_sev: float, rep_lvl: str, src_words: int):
++        """(reward, info) of one long sample: tail-sensitive aggregation of its chunk rewards, then the combined severity (repetition + coverage) pulls it towards the failure penalty."""
++        cfg = self.cfg
++        mean_r = aggregate(items, seg_reward, self.penalty)
++        r = longdoc.aggregate_tail(items, seg_reward, self.penalty, mode=cfg.longdoc_agg, alpha=cfg.longdoc_agg_alpha, q=cfg.longdoc_agg_q,
++                                  gap0=self.longdoc_cal.gap0(src_words))
++        cov = longdoc.coverage_severity(items, cfg.longdoc_coverage_kappa) if cfg.longdoc_coverage_kappa > 0 else 0.0
++        sev = longdoc.combine_severity(rep_sev, cov)
++        out = longdoc.apply_severity(r, sev, self.penalty)
++        return out, {"agg_mean": mean_r, "agg_tail": r, "rep_severity": rep_sev, "cover_failed": longdoc.coverage_severity(items, 1.0), "severity": sev, "n_items": float(len(items))}
++
++    def _src_profile(self, src: str):
++        """Repetition profile of an English source (cached: the 16 samples of a GRPO group share it)."""
++        c = self._src_prof_cache
++        p = c.get(src)
++        if p is None:
++            if len(c) > 512:
++                c.clear()
++            p = c[src] = longdoc.repetition_profile(src)
++        return p
++
++    def _longdoc_stats(self, info, long_i, rep_lvl, n) -> Dict[str, float]:
++        got = [x for x in info if x is not None]
++        st: Dict[str, float] = {"longdoc/long_rate": sum(1 for x in long_i if x) / max(n, 1)}
++        if got:
++            for k in ("agg_mean", "agg_tail", "rep_severity", "cover_failed", "severity"):
++                v = [x[k] for x in got if k in x]
++                if v:
++                    st[f"longdoc/{k}"] = sum(v) / len(v)
++            st["longdoc/rep_penalised_rate"] = sum(1 for x in got if x.get("rep_severity", 0.0) > 0) / len(got)
++            st["longdoc/rep_full_rate"] = sum(1 for x in got if x.get("rep_severity", 0.0) >= 1.0) / len(got)
++        return st
+ 
+     # ------------------------------------------------------------------------------------------ constraint penalties (D-56; rl/anchors.py)
+     def _anchors_prepass(self, samples, langs, modes, srcs, texts, chunk_plan, lid_label, group_size) -> Dict[str, Any]:

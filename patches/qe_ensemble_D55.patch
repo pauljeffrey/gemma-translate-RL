@@ -1,0 +1,413 @@
+--- a/gemma_mt/rl/reward.py
++++ b/gemma_mt/rl/reward.py
+@@ -140,6 +140,14 @@
+     consensus_scale: Optional[Tuple[float, float]] = None   # (lo, hi) of the chrF -> reward map; None = the reward range of the shaping preset ([-2, +2.25])
+     selfrep_guard: str = "consensus"           # near-loop guard (guards.is_self_repetitive): off | consensus (languages in blend / consensus mode) | all
+     min_len_ratio_uncalibrated: float = 0.4    # hard lower length bound for blend / consensus languages WITHOUT a human length window (pooled prior: no calibrated language has a p01 below 0.44)
++    # D-55: QE ENSEMBLE (rl/qe_ensemble.py). OFF by default. On: the QE part of a chunk's reward is mean(r1, r2) of the per-language shaped AfriCOMET-QE (r1) and SSA-COMET-MTL
++    # reference-free (r2) when |r1 - r2| <= delta, else min(r1, r2). Needs a calibration file with `qe2` blocks (shaping_flores_dev_v8.json) and a `scorer` block with `ensemble_model_id`.
++    qe_ensemble: bool = False
++    qe_ensemble_delta: Optional[float] = None          # reward units; None = `_meta_v8.delta` of the calibration file
++    qe_ensemble_model_id: str = "McGill-NLP/ssa-comet-mtl"   # must be the model the `qe2` anchors were measured for (checked); the scorer itself is built from the `scorer` block
++    qe_ensemble_calibration_path: Optional[str] = None  # None = calibration_path (v8 is a superset of v7)
++    qe_ensemble_prior_langs: bool = True               # languages with a pooled-prior `qe2` (no dev reference): True = ensemble too, False = AfriCOMET alone as before
++    qe_ensemble_reliability: str = "ensemble"          # advantage weights: ensemble = the baked `ens.reliability*` of the calibration (max of v7 and the ensemble's own measurement) | keep = the v7 weights
+ 
+     # D-56: CONSTRAINT PENALTIES for the languages whose content signal is consensus (no AfriCOMET) or a blend (weak AfriCOMET): rl/anchors.py, thresholds fitted on HUMAN references
+     # (calibration/anchors_v1.json, scripts/build_anchors_calibration.py). PENALTIES only (never a bonus), each subtracted from the chunk / sample reward (floor: the failure penalty), each
+@@ -187,6 +195,7 @@
+     n_chunks: List[int] = field(default_factory=list)                        # per sample: chunks of its plan (scored + failed; 0 for a hard failure that never got a plan) (D-41, archive)
+     failed_chunks: List[int] = field(default_factory=list)                  # per sample: chunks of the plan that are FAILED chunks (omitted / extra / copied text; D-30)
+     science_deficit: List[Optional[float]] = field(default_factory=list)    # per sample: mean science-anchor deficit of its scored chunks (D-52; None = not judged / anchor off)
++    qe2: List[Optional[float]] = field(default_factory=list)                # per sample: mean RAW SSA-COMET-MTL score of its scored chunks (D-55; None = not used / ensemble off)
+     anchors_penalty: List[float] = field(default_factory=list)              # per sample: reward subtracted by the constraint penalties (D-56; 0.0 = none / anchors off)
+ 
+ 
+@@ -240,6 +249,13 @@
+                                              lexicon_dir=cfg.anchors_lexicon_dir, buffer_capacity=cfg.anchors_buffer_capacity, buffer_min_outputs=cfg.anchors_buffer_min_outputs,
+                                              buffer_min_prompts=cfg.anchors_buffer_min_prompts, buffer_min_other=cfg.anchors_buffer_min_other,
+                                              buffer_per_prompt=cfg.anchors_buffer_per_prompt, related_min=cfg.anchors_related_min)
++        self.qe_ens = None
++        if cfg.qe_ensemble:                             # D-55: needs a QEPairScorer (train_rl.build_scorer with scorer.ensemble_model_id) or any scorer with `score_secondary`
++            from gemma_mt.rl.qe_ensemble import QEEnsemble
++
++            if not (hasattr(scorer, "score_secondary") or hasattr(scorer, "secondary")):
++                raise ValueError("reward.qe_ensemble needs a two-model scorer: set scorer.ensemble_model_id (rl/qe_ensemble.py build_pair_scorer)")
++            self.qe_ens = QEEnsemble.from_config(cfg, self.shaper)
+         if cfg.lid_enabled and self.lid is None:       # D-37: built and self-tested here, so a missing fastText / model file stops the run before step 1
+             from gemma_mt.rl.lid import make_lid
+ 
+@@ -416,6 +432,7 @@
+             chunk_plan[i] = [(None if k is None else base + k, w) for k, w in cp.items]
+ 
+         seg_qe: List[Optional[float]] = [None] * len(seg_src)
++        seg_qe2: List[Optional[float]] = [None] * len(seg_src)       # D-55: raw SSA-COMET-MTL scores (ensemble only)
+         need_qe = [j for j in range(len(seg_src)) if applied[seg_owner[j]][0] != "consensus"]       # consensus-mode samples are never sent to the scorer
+         if need_qe:
+             vals = [float(c) for c in self.scorer([seg_src[j] for j in need_qe], [seg_mt[j] for j in need_qe])]
+@@ -425,6 +442,10 @@
+             for j, c in zip(need_qe, vals):
+                 seg_qe[j] = c
+                 by_lang.setdefault(langs[seg_owner[j]], []).append(c)
++            if self.qe_ens is not None:             # D-55: the second judge scores the same segments (those whose language uses it)
++                for j, c2 in zip(need_qe, self.qe_ens.score_second(self.scorer, [seg_src[j] for j in need_qe], [seg_mt[j] for j in need_qe],
++                                                                  [langs[seg_owner[j]] for j in need_qe])):
++                    seg_qe2[j] = c2
+             for lang, v in by_lang.items():
+                 self.shaper.observe(lang, v)          # adaptive mode only
+ 
+@@ -453,7 +474,7 @@
+                             r = float(content_c)
+                         else:
+                             raw.append(seg_qe[seg])
+-                            r = float(self.shaper(seg_qe[seg], lang))
++                            r = self._shape_qe(seg_qe[seg], seg_qe2[seg], lang)
+                             if beta_i > 0:
+                                 r = (1.0 - beta_i) * r + beta_i * float(content_c)
+                         if cfg.length_penalty > 0:
+@@ -490,7 +511,7 @@
+                     dia_by_lang.setdefault(lang, []).append(dia_def[i])
+                 if sci_w[0] > 0:
+                     sci_def[i] = sci_w[1] / sci_w[0]
+-            weights.append(1.0 if cfg.train_unusable else self.shaper.reliability(lang))
++            weights.append(1.0 if cfg.train_unusable else self._weight(lang))
+         out = RewardOutput(rewards, weights, qe, status, texts, decoded,
+                            self._stats(status, qe, rewards, stripped_special, n, gated, texts), diacritic_deficit=dia_def,
+                            lid_label=lid_label, consensus_chrf=chrf_mean, content_mode=[m for m, _ in applied],
+@@ -499,6 +520,9 @@
+         if anc is not None:                           # D-56
+             out.anchors_penalty = list(anc["pen"])
+             out.stats.update(self._anchors_finish(anc, langs, n))
++        if self.qe_ens is not None:                   # D-55
++            out.qe2 = [self._mean_raw(chunk_plan.get(i), seg_qe2) for i in range(n)]
++            out.stats.update(self.qe_ens.pop_stats(self.scorer))
+         sci_m = [d for d in sci_def if d is not None]
+         if self.sci_anchor is not None:
+             out.stats["sci_anchor/judged_rate"] = len(sci_m) / max(n, 1)
+@@ -634,6 +658,22 @@
+             st[f"anchors/penalty/{l}"] = sum(v) / len(v)
+         return st
+ 
++    # ------------------------------------------------------------------------------------------ QE ensemble hooks (D-55; rl/qe_ensemble.py)
++    def _shape_qe(self, c1: float, c2: Optional[float], lang: str) -> float:
++        """The shaped QE value of one chunk: the language curve of AfriCOMET alone (default), or the ensemble rule."""
++        if self.qe_ens is None:
++            return float(self.shaper(c1, lang))
++        return self.qe_ens.shape(c1, c2, lang)
++
++    def _weight(self, lang: str) -> float:
++        base = self.shaper.reliability(lang)
++        return base if self.qe_ens is None else self.qe_ens.weight(lang, base)
++
++    @staticmethod
++    def _mean_raw(plan, seg_vals) -> Optional[float]:
++        v = [seg_vals[seg] for seg, _ in (plan or []) if seg is not None and seg_vals[seg] is not None]
++        return sum(v) / len(v) if v else None
++
+     def _profile(self, text: str) -> "cons.Profile":
+         return self._profiles.get(text)
+ 
+--- a/gemma_mt/rl/train_rl.py
++++ b/gemma_mt/rl/train_rl.py
+@@ -254,6 +254,10 @@
+ 
+ def build_scorer(spec: Dict[str, Any], device: Optional[str] = None):
+     t = spec.get("type", "comet")
++    if spec.get("ensemble_model_id"):          # D-55: QE ensemble (reward.qe_ensemble): two checkpoints, one worker process (rl/qe_ensemble.py)
++        from gemma_mt.rl.qe_ensemble import build_pair_scorer
++
++        return build_pair_scorer(spec, device)
+     if t == "fake":
+         from gemma_mt.rl.comet import FakeScorer
+ 
+@@ -958,7 +962,7 @@
+ 
+         cfg.sampler, cfg.vllm_check_every = "vllm", 1
+         vs = VLLMSampler(HFBackedEngine(cfg.model_name), seed=cfg.seed)
+-    summary = train_rl(cfg, tokenizer=tok, scorer=FakeScorer(), vllm_sampler=vs)
++    summary = train_rl(cfg, tokenizer=tok, scorer=build_scorer(cfg.scorer) if cfg.scorer.get("ensemble_model_id") else FakeScorer(), vllm_sampler=vs)
+     if vs is not None:
+         summary["engine_pushes"], summary["engine_generate_calls"] = vs.engine.pushes, vs.engine.generate_calls
+     summary["workdir"] = work
+--- a/gemma_mt/rl/comet.py
++++ b/gemma_mt/rl/comet.py
+@@ -9,6 +9,10 @@
+                     must live in another virtualenv (it pins transformers < 5).
+   FakeScorer        deterministic, model-free, for tests and --smoke.
+ 
++  UnifiedMetric     (D-55) CometScorer also loads UnifiedMetric checkpoints (McGill-NLP/ssa-comet-mtl, run reference-free: src + mt only). Those encode ONE joint
++                    sequence <s> mt </s></s> src </s> of <= 512 positions; a pair over the joint budget is cut into pieces that fit (rl/joint_budget.py) and the
++                    pieces are averaged, so a long translation never silently truncates the source.
++
+ Segment limit: AfriCOMET's encoder (Davlan/afro-xlmr-large-76L, max 512 positions) tokenizes the source and the
+ translation SEPARATELY and truncates each at 510 tokens (comet/encoders/base.py: max_length = max_positions - 2).
+ `CometScorer.token_lengths` reports the lengths in those tokens so the reward can flag truncated segments.
+@@ -23,19 +27,31 @@
+ import sys
+ from typing import Callable, List, Optional, Sequence
+ 
++from gemma_mt.rl.joint_budget import JOINT_CONTENT_BUDGET
++
+ COMET_MAX_SEGMENT_TOKENS = 510   # encoder positions (512) minus <s> and </s>
++SSA_MTL_MODEL_ID = "McGill-NLP/ssa-comet-mtl"
+ QE_MODEL_ID = "masakhane/africomet-qe-stl-1.1"
+ REF_MODEL_ID = "masakhane/africomet-stl-1.1"
+ ENCODER_ID = "Davlan/afro-xlmr-large-76L"
+ 
+ 
+-def batched_in_length_order(items: Sequence, key: Callable, run_batch: Callable, batch_size: int) -> list:
++def batched_in_length_order(items: Sequence, key: Callable, run_batch: Callable, batch_size: int, max_cost: Optional[float] = None) -> list:
+     """Apply `run_batch(list_of_items) -> list_of_scores` over items sorted by `key` and return scores in the
+-    ORIGINAL order. Factored out so the un-sorting can be unit-tested without a model."""
++    ORIGINAL order. Factored out so the un-sorting can be unit-tested without a model.
++    `max_cost` (D-55, the two-model worker): a batch also ends when len(batch) * key(longest item of the batch) would exceed it, so a batch of LONG chunks never has the
++    memory of batch_size of them (None = fixed-size batches, the behaviour of the single-model path)."""
+     order = sorted(range(len(items)), key=lambda i: key(items[i]))
+     out = [None] * len(items)
+-    for s in range(0, len(order), batch_size):
+-        idx = order[s: s + batch_size]
++    pos = 0
++    while pos < len(order):
++        end = min(pos + batch_size, len(order))
++        if max_cost is not None:
++            end = pos + 1
++            while end < min(pos + batch_size, len(order)) and (end + 1 - pos) * key(items[order[end]]) <= max_cost:   # sorted ascending: the newest item is the longest
++                end += 1
++        idx = order[pos:end]
++        pos = end
+         scores = run_batch([items[i] for i in idx])
+         if len(scores) != len(idx):
+             raise RuntimeError(f"scorer returned {len(scores)} scores for {len(idx)} inputs")
+@@ -46,7 +62,7 @@
+ 
+ class CometScorer:
+     def __init__(self, model_id: str = QE_MODEL_ID, batch_size: int = 32, device: Optional[str] = None,
+-                 half: bool = True, reference_based: bool = False):
++                 half: bool = True, reference_based: bool = False, max_batch_chars: Optional[int] = None):
+         import torch
+         from comet import download_model, load_from_checkpoint
+ 
+@@ -60,6 +76,10 @@
+         self.batch_size = batch_size
+         self.reference_based = reference_based
+         self.model_id = model_id
++        self.unified = type(self.model).__name__ == "UnifiedMetric"      # D-55: SSA-COMET-MTL; prepare_sample returns a TUPLE of inputs, the score comes from predict_step
++        self.joint_budget = JOINT_CONTENT_BUDGET
++        self.max_batch_chars = max_batch_chars                           # D-55: cap on len(batch) x (chars of the longest src + mt in it); None = fixed-size batches
++        self.last_stats: dict = {}                                       # statistics of the last call (unified: pairs cut to fit the joint budget)
+ 
+     def _tokenizer(self):
+         return self.model.encoder.tokenizer
+@@ -69,6 +89,42 @@
+         tok = self._tokenizer()
+         return [len(x) for x in tok(list(texts), add_special_tokens=True, truncation=False)["input_ids"]]
+ 
++    def content_lengths(self, texts: Sequence[str]) -> List[int]:
++        """Content tokens WITHOUT <s> / </s> (what the joint budget counts)."""
++        if not len(texts):
++            return []
++        tok = self._tokenizer()
++        return [len(x) for x in tok(list(texts), add_special_tokens=False, truncation=False)["input_ids"]]
++
++    def _call_unified(self, srcs, mts, refs) -> List[float]:
++        """UnifiedMetric: src + mt only (one forward over the joint [mt, src] sequence), or with a reference the mean of the three views (the model card's predict).
++        Reference-free pairs over the joint budget are cut into pieces (joint_budget.split_pair) and the piece scores averaged by source characters."""
++        import torch
++        from gemma_mt.rl.joint_budget import combine, piece_weights, plan_pieces
++
++        def run_rows(rows):
++            def run(batch):
++                with torch.no_grad():
++                    inputs = self.model.prepare_sample(batch, stage="predict")
++                    inputs = tuple({k: v.to(self.device) for k, v in d.items()} for d in inputs)
++                    return [float(x) for x in self.model.predict_step(inputs).scores.flatten().float().tolist()]
++
++            return batched_in_length_order(rows, lambda r: len(r["src"]) + len(r["mt"]), run, self.batch_size, self.max_batch_chars)
++
++        if self.reference_based:
++            self.last_stats = {"joint_split": 0, "joint_pieces": len(srcs), "n": len(srcs)}
++            return run_rows([{"src": s, "mt": m, "ref": r} for s, m, r in zip(srcs, mts, refs)])
++        plans, n_split = plan_pieces(srcs, mts, self.content_lengths, self.joint_budget)
++        flat = [{"src": s, "mt": m} for pieces in plans for s, m in pieces]
++        flat_scores = run_rows(flat)
++        out, k = [], 0
++        for pieces in plans:
++            sc = flat_scores[k: k + len(pieces)]
++            k += len(pieces)
++            out.append(sc[0] if len(pieces) == 1 else combine(sc, piece_weights(pieces)))
++        self.last_stats = {"joint_split": n_split, "joint_pieces": len(flat), "n": len(srcs)}
++        return out
++
+     def __call__(self, srcs: Sequence[str], mts: Sequence[str], refs: Optional[Sequence[str]] = None) -> List[float]:
+         import torch
+ 
+@@ -76,6 +132,8 @@
+             raise ValueError("srcs and mts must be the same length")
+         if self.reference_based and refs is None:
+             raise ValueError("this scorer needs references")
++        if self.unified:
++            return self._call_unified(srcs, mts, refs)
+         rows = [{"src": s, "mt": m, **({"ref": r} if self.reference_based else {})}
+                 for s, m, r in zip(srcs, mts, refs if refs is not None else [None] * len(srcs))]
+ 
+@@ -85,7 +143,7 @@
+                 inputs = {k: v.to(self.device) for k, v in inputs.items()}
+                 return [float(x) for x in self.model(**inputs).score.flatten().float().tolist()]
+ 
+-        return batched_in_length_order(rows, lambda r: len(r["src"]) + len(r["mt"]), run, self.batch_size)
++        return batched_in_length_order(rows, lambda r: len(r["src"]) + len(r["mt"]), run, self.batch_size, self.max_batch_chars)
+ 
+ 
+ class WorkerScorer:
+@@ -94,25 +152,31 @@
+     `pythonpath` is prepended to the CHILD's PYTHONPATH only (D-33: a transformers 4.x directory next to the comet libraries).
+     `reference_based=True` starts the worker with `--reference-based` (AfriCOMET-STL with references; the call then needs `refs`).
+     `startup_timeout` / `request_timeout` (seconds, None = wait forever): a worker that does not answer in time is killed and the call
+-    raises RuntimeError (the evaluation pipeline must never hang)."""
++    raises RuntimeError (the evaluation pipeline must never hang).
++    `extra_model_ids` (D-55): further checkpoints loaded into the SAME worker process (the QE ensemble: AfriCOMET-QE + SSA-COMET-MTL); `view(k)` is a scorer for model k
++    (0 = `model_id`) that shares the process; the models run one after the other (one process, one CUDA context)."""
+ 
+     def __init__(self, python: str = sys.executable, model_id: str = QE_MODEL_ID, batch_size: int = 32,
+                  fake: bool = False, gpu: bool = True, cwd: Optional[str] = None, pythonpath: Optional[str] = None,
+-                 reference_based: bool = False, startup_timeout: Optional[float] = None, request_timeout: Optional[float] = None):
++                 reference_based: bool = False, startup_timeout: Optional[float] = None, request_timeout: Optional[float] = None,
++                 extra_model_ids: Sequence[str] = (), max_batch_chars: Optional[int] = None):
+         import queue
+         import threading
+ 
+         env = {k: v for k, v in os.environ.items()}
+         if not gpu:
+             env["CUDA_VISIBLE_DEVICES"] = ""
+-        cmd = [python, "-m", "gemma_mt.rl.comet_worker", "--model", model_id] + (["--fake"] if fake else []) + \
+-              (["--reference-based"] if reference_based else [])
++        self.model_ids = [model_id, *extra_model_ids]
++        cmd = [python, "-m", "gemma_mt.rl.comet_worker"] + [a for m in self.model_ids for a in ("--model", m)] + (["--fake"] if fake else []) + \
++              (["--reference-based"] if reference_based else []) + \
++              (["--max-batch-chars", str(int(max_batch_chars))] if max_batch_chars else [])
+         root = cwd or os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+         env["PYTHONPATH"] = root + os.pathsep + env.get("PYTHONPATH", "")
+         if pythonpath:    # extra entries for the CHILD only (unbabel-comet 2.2.7 needs transformers < 5: put a transformers 4.x directory here, D-33)
+             env["PYTHONPATH"] = pythonpath + os.pathsep + env["PYTHONPATH"]
+         self.batch_size = batch_size
+         self.request_timeout = request_timeout
++        self.last_stats: dict = {}
+         self.proc = subprocess.Popen(cmd, stdin=subprocess.PIPE, stdout=subprocess.PIPE, text=True, env=env, cwd=root)
+         self._lines: "queue.Queue" = queue.Queue()
+ 
+@@ -141,9 +205,16 @@
+             self._lines.put(None)
+         return line
+ 
+-    def __call__(self, srcs, mts, refs=None):
++    def view(self, model: int, batch_size: Optional[int] = None) -> "WorkerView":
++        """A scorer for model `model` of this worker (0 = the main model); shares the process, so it must be used from one thread at a time."""
++        return WorkerView(self, model, batch_size or self.batch_size)
++
++    def __call__(self, srcs, mts, refs=None, model: int = 0, batch_size: Optional[int] = None):
+         rows = [{"src": s, "mt": m, "ref": (refs[i] if refs is not None else "")} for i, (s, m) in enumerate(zip(srcs, mts))]
+-        self.proc.stdin.write(json.dumps({"data": rows, "batch_size": self.batch_size}) + "\n")
++        req = {"data": rows, "batch_size": batch_size or self.batch_size}
++        if model:
++            req["model"] = int(model)                      # absent = model 0: the protocol of the single-model worker is unchanged
++        self.proc.stdin.write(json.dumps(req) + "\n")
+         self.proc.stdin.flush()
+         line = self._readline(self.request_timeout, "scoring")
+         if not line:
+@@ -151,6 +222,7 @@
+         reply = json.loads(line)
+         if "error" in reply:
+             raise RuntimeError(f"COMET worker error: {reply['error']}")
++        self.last_stats = reply.get("stats") or {}
+         return [float(x) for x in reply["scores"]]
+ 
+     def close(self, kill: bool = False) -> None:
+@@ -168,6 +240,19 @@
+                     pass
+ 
+ 
++class WorkerView:
++    """Scorer for one model of a multi-model WorkerScorer (same call signature as every scorer)."""
++
++    def __init__(self, worker: WorkerScorer, model: int, batch_size: int):
++        self.worker, self.model, self.batch_size = worker, model, batch_size
++        self.last_stats: dict = {}
++
++    def __call__(self, srcs, mts, refs=None):
++        out = self.worker(srcs, mts, refs, model=self.model, batch_size=self.batch_size)
++        self.last_stats = self.worker.last_stats
++        return out
++
++
+ class FakeScorer:
+     """Model-free QE stand-in: higher when the translation has a length similar to the source and uses a rich
+     character set. Deterministic, in [0, 1]. Records every call for tests."""
+--- a/gemma_mt/rl/comet_worker.py
++++ b/gemma_mt/rl/comet_worker.py
+@@ -2,11 +2,14 @@
+ # SPDX-License-Identifier: AGPL-3.0-or-later
+ """AfriCOMET scoring worker (ported from the repo's rl/comet_worker.py).
+ 
+-    python -m gemma_mt.rl.comet_worker --model masakhane/africomet-qe-stl-1.1 [--fake]
++    python -m gemma_mt.rl.comet_worker --model masakhane/africomet-qe-stl-1.1 [--model McGill-NLP/ssa-comet-mtl ...] [--fake]
+ 
++`--model` may be repeated (D-55, the QE ensemble): every checkpoint is loaded into this process, a request picks one with "model": k (default 0). AfriCOMET-STL
++checkpoints and UnifiedMetric checkpoints (SSA-COMET-MTL, run reference-free) are both handled by CometScorer.
++
+ Protocol, one JSON object per line:
+-    in : {"data": [{"src": ..., "mt": ..., "ref": ...}, ...], "batch_size": 32}
+-    out: {"scores": [..]}  or  {"error": "..."}      (first line out: {"ready": true})
++    in : {"data": [{"src": ..., "mt": ..., "ref": ...}, ...], "batch_size": 32, "model": 0}
++    out: {"scores": [..], "stats": {..}}  or  {"error": "..."}      (first line out: {"ready": true})
+ Library chatter goes to stderr; only protocol lines reach the real stdout. The reference column is used only
+ when the loaded model is reference-based.
+ """
+@@ -21,21 +24,25 @@
+ 
+ def main() -> int:
+     ap = argparse.ArgumentParser()
+-    ap.add_argument("--model", default="masakhane/africomet-qe-stl-1.1")
++    ap.add_argument("--model", action="append", default=None)
+     ap.add_argument("--fake", action="store_true")
+     ap.add_argument("--reference-based", action="store_true")
++    ap.add_argument("--max-batch-chars", type=int, default=None, help="batches of long chunks are cut so that batch size x longest (src + mt) chars <= this (default: fixed-size batches)")
+     args = ap.parse_args()
+     proto = os.fdopen(os.dup(1), "w", buffering=1)
+     os.dup2(2, 1)
+-    scorer = None
++    models = args.model or ["masakhane/africomet-qe-stl-1.1"]
++    multi = len(models) > 1
++    if multi:       # D-55: two checkpoints share this process and the GPU next to the policy: expandable segments (less fragmentation) and the cache is returned after every request
++        os.environ.setdefault("PYTORCH_CUDA_ALLOC_CONF", "expandable_segments:True")
+     if args.fake:
+         from gemma_mt.rl.comet import FakeScorer
+ 
+-        scorer = FakeScorer()
++        scorers = [FakeScorer() for _ in models]
+     else:
+         from gemma_mt.rl.comet import CometScorer
+ 
+-        scorer = CometScorer(args.model, reference_based=args.reference_based)
++        scorers = [CometScorer(m, reference_based=args.reference_based, max_batch_chars=args.max_batch_chars) for m in models]
+     proto.write(json.dumps({"ready": True}) + "\n")
+     for line in sys.stdin:
+         if not line.strip():
+@@ -43,11 +50,17 @@
+         try:
+             req = json.loads(line)
+             data = req["data"]
++            scorer = scorers[int(req.get("model", 0))]
+             if "batch_size" in req and hasattr(scorer, "batch_size"):
+                 scorer.batch_size = int(req["batch_size"])
+             scores = scorer([d["src"] for d in data], [d["mt"] for d in data],
+                             [d.get("ref", "") for d in data] if args.reference_based else None)
+-            proto.write(json.dumps({"scores": [float(s) for s in scores]}) + "\n")
++            proto.write(json.dumps({"scores": [float(s) for s in scores], "stats": getattr(scorer, "last_stats", {}) or {}}) + "\n")
++            if multi and not args.fake:
++                import torch
++
++                if torch.cuda.is_available():
++                    torch.cuda.empty_cache()
+         except Exception as exc:
+             proto.write(json.dumps({"error": f"{type(exc).__name__}: {exc}"}) + "\n")
+     return 0

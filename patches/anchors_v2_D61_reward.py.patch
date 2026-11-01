@@ -1,0 +1,202 @@
+--- reward_r7.py	2026-10-22 14:25:03
++++ reward.py	2026-10-22 14:25:06
+@@ -60,7 +60,7 @@
+ from gemma_mt.rl.text import decode_completion, nfc, translation_from
+ 
+ FAILURES = ("no_end_of_turn", "bad_prefix", "empty", "copy_source", "degenerate", "length_ratio", "wrong_language",
+-            "special_tokens", "post_eos_rubbish", "dangling_marker")
++            "special_tokens", "post_eos_rubbish", "dangling_marker", "stuffed_output")
+ EOS_FAILURES = ("no_end_of_turn", "post_eos_rubbish", "dangling_marker")      # D-26: the end-of-turn discipline classes
+ CONTENT_MODES = ("qe", "blend", "consensus")                                       # D-38
+ 
+@@ -172,6 +172,17 @@
+     anchors_buffer_min_prompts: int = 30               # ... from this many distinct prompts
+     anchors_buffer_min_other: int = 3                  # an output 5-gram is boilerplate when it occurs in the outputs of >= this many OTHER prompts
+     anchors_related_min: int = 1                       # prompts whose English sources share this many word 6-grams with the current one do not count as "other"
++    # D-61 (owner 2026-10-21/22): ANCHORS V2 (rl/anchors_v2.py, calibration/anchors_v2.json). OFF by default; every key below is inert unless anchors_enabled AND anchors_v2_enabled.
++    anchors_v2_enabled: bool = False                   # master flag of the v2 detectors (anchors_calibration_path must be calibration/anchors_v2.json, the v1 blocks are inside it)
++    anchors_v2_modes: List[str] = field(default_factory=lambda: ["qe", "blend", "consensus"])    # content modes of the copy / func / pad detectors (they are language independent attack guards)
++    anchors_v2_off_languages: List[str] = field(default_factory=list)    # CONTROL list of the v2 detectors only (anchors_off_languages is honoured too)
++    anchors_entity_mode: str = "strict"                # strict = v1 (penalty below the human 3 % quantile, 4 languages) | soft = v2 (deficit 1 - recall x anchors_entity_weight x per-language w = (1 - human drop rate), channel off above 60 % drop)
++    anchors_copy_scale: float = 0.0                    # copy detection (substring): chunk reward := min(reward, -scale x copied fraction) above the language's human threshold (0 = off; the owner's value is 2.0)
++    anchors_copy_mode: str = "cap"                     # cap (owner: reward set to -scale x fraction) | subtract (reward - scale x fraction)
++    anchors_func_weight: float = 0.0                   # stop-word profile: reward per unit of deficit (0..1) of a sample (0 = off)
++    anchors_pad_weight: float = 0.0                    # padded / stuffed output (bigram-order gain, type / token ratio): reward per unit of deficit (0 = off)
++    anchors_stuff_gate: float = 0.0                    # 0 = off. In (0, 1]: a sample whose stop-word-profile or padding deficit is >= this level is a HARD failure (status stuffed_output, reward = the failure penalty, no QE, out of the consensus pool). Needs anchors_func_weight or anchors_pad_weight > 0 (they decide which detectors are on)
++    anchors_bigram_path: Optional[str] = None          # npz of the training-text bigram tables (calibration/anchors_v2_bigrams.npz); without it `pad` judges the type / token ratio only
+ 
+ 
+ @dataclass
+@@ -239,7 +250,21 @@
+ 
+             if not cfg.anchors_calibration_path:
+                 raise ValueError("reward.anchors_enabled needs reward.anchors_calibration_path (calibration/anchors_v1.json)")
+-            det = [d for d, w in (("entity", cfg.anchors_entity_weight), ("repeat", cfg.anchors_repeat_weight), ("boiler", cfg.anchors_boiler_weight),
++            if cfg.anchors_entity_mode not in ("strict", "soft"):
++                raise ValueError("anchors_entity_mode must be strict | soft")
++            if cfg.anchors_copy_mode not in ("cap", "subtract"):
++                raise ValueError("anchors_copy_mode must be cap | subtract")
++            if not 0.0 <= cfg.anchors_stuff_gate <= 1.0 or (cfg.anchors_stuff_gate > 0 and not (cfg.anchors_v2_enabled and (cfg.anchors_func_weight > 0 or cfg.anchors_pad_weight > 0))):
++                raise ValueError("anchors_stuff_gate must be in [0, 1] and needs anchors_v2_enabled with anchors_func_weight or anchors_pad_weight > 0")
++            for name in ("copy_scale", "func_weight", "pad_weight"):
++                if getattr(cfg, f"anchors_{name}") < 0:
++                    raise ValueError(f"anchors_{name} must be >= 0 (penalties only)")
++            if not cfg.anchors_v2_enabled and (cfg.anchors_entity_mode == "soft" or cfg.anchors_copy_scale > 0 or cfg.anchors_func_weight > 0 or cfg.anchors_pad_weight > 0):
++                raise ValueError("anchors_entity_mode soft / anchors_copy_scale / anchors_func_weight / anchors_pad_weight need anchors_v2_enabled")
++            bad_v2 = [m for m in cfg.anchors_v2_modes if m not in CONTENT_MODES]
++            if bad_v2:
++                raise ValueError(f"anchors_v2_modes {bad_v2} are not content modes {CONTENT_MODES}")
++            det = [d for d, w in (("entity", cfg.anchors_entity_weight if cfg.anchors_entity_mode == "strict" else 0.0), ("repeat", cfg.anchors_repeat_weight), ("boiler", cfg.anchors_boiler_weight),
+                                   ("lexicon", cfg.anchors_lexicon_weight), ("lid_prob", cfg.anchors_lid_prob_weight)) if w > 0]
+             for name in ("entity", "repeat", "boiler", "lexicon", "lid_prob"):
+                 if getattr(cfg, f"anchors_{name}_weight") < 0:
+@@ -255,7 +280,16 @@
+             bad = [m for m in cfg.anchors_modes if m not in CONTENT_MODES]
+             if bad:
+                 raise ValueError(f"anchors_modes {bad} are not content modes {CONTENT_MODES}")
+-            self.anchors = Anchors.from_file(cfg.anchors_calibration_path, modes=cfg.anchors_modes, off_languages=cfg.anchors_off_languages, detectors=det,
++            ctor, v2kw = Anchors.from_file, {}
++            if cfg.anchors_v2_enabled:                  # D-61
++                from gemma_mt.rl.anchors_v2 import Anchors2
++
++                ctor = Anchors2.from_file
++                v2kw = dict(v2_detectors=[d for d, on in (("entity2", cfg.anchors_entity_mode == "soft" and cfg.anchors_entity_weight > 0), ("copy", cfg.anchors_copy_scale > 0),
++                                                         ("func", cfg.anchors_func_weight > 0), ("pad", cfg.anchors_pad_weight > 0)) if on],
++                            v2_modes=cfg.anchors_v2_modes, v2_off_languages=cfg.anchors_v2_off_languages, copy_scale=cfg.anchors_copy_scale, copy_mode=cfg.anchors_copy_mode,
++                            bigram_path=cfg.anchors_bigram_path)
++            self.anchors = ctor(cfg.anchors_calibration_path, modes=cfg.anchors_modes, off_languages=cfg.anchors_off_languages, detectors=det, **v2kw,
+                                              lexicon_dir=cfg.anchors_lexicon_dir, buffer_capacity=cfg.anchors_buffer_capacity, buffer_min_outputs=cfg.anchors_buffer_min_outputs,
+                                              buffer_min_prompts=cfg.anchors_buffer_min_prompts, buffer_min_other=cfg.anchors_buffer_min_other,
+                                              buffer_per_prompt=cfg.anchors_buffer_per_prompt, related_min=cfg.anchors_related_min,
+@@ -358,6 +392,9 @@
+                 lo_ratio = max(lo_ratio, cfg.min_len_ratio_uncalibrated)       # D-38: no human length window for this language -> the pooled-prior hard bound
+             if guards.length_ratio_bad(srcs[i], text, lo_ratio, cfg.max_len_ratio):
+                 status[i] = "length_ratio"
++                continue
++            if self.anchors is not None and cfg.anchors_stuff_gate > 0 and self._stuff_gate(iso, modes[i][0], srcs[i], text):
++                status[i] = "stuffed_output"                    # D-61: a saturated stop-word / padding deficit is a failure class (reward = the penalty, out of the consensus pool)
+                 continue
+             texts[i] = text
+             gated.append(i)
+@@ -562,6 +599,24 @@
+         return out
+ 
+     # ------------------------------------------------------------------------------------------ constraint penalties (D-56; rl/anchors.py)
++    def _stuff_gate(self, lang: str, mode: str, src: str, text: str) -> bool:
++        """D-61: True when the sample's stop-word-profile or padding deficit reaches `anchors_stuff_gate` (languages / modes of the v2 detectors only; pure, no state)."""
++        A, cfg = self.anchors, self.cfg
++        if not cfg.anchors_v2_enabled or not A.applies2(lang, mode):
++            return False
++        from gemma_mt.rl import anchors as AN
++
++        ow = AN.words(text)
++        if cfg.anchors_func_weight > 0 and A.enabled2(lang, "func") and A.gate_ok(lang, "func"):
++            d = A.func_deficit(lang, AN.words(src), ow)
++            if d is not None and d >= cfg.anchors_stuff_gate:
++                return True
++        if cfg.anchors_pad_weight > 0 and A.enabled2(lang, "pad") and A.gate_ok(lang, "pad"):
++            d = A.pad_deficit(lang, ow)
++            if d is not None and d >= cfg.anchors_stuff_gate:
++                return True
++        return False
++
+     def _anchors_prepass(self, samples, langs, modes, srcs, texts, chunk_plan, lid_label, group_size) -> Dict[str, Any]:
+         """Sample-level work that needs all samples of the call: which samples the penalties apply to, repetition / boilerplate / LID-probability deficits. The boilerplate buffer is
+         READ here (every sample is scored against the outputs of EARLIER calls) and filled afterwards (`_anchors_observe`), so the order of the groups in a call never matters.
+@@ -570,13 +625,24 @@
+ 
+         A, cfg, n = self.anchors, self.cfg, len(samples)
+         train_call = group_size is not None and int(group_size) > 1
+-        on = [i in chunk_plan and A.applies(langs[i], modes[i][0]) for i in range(n)]
+-        d: Dict[str, Any] = {"on": on, "pen": [0.0] * n, "train": train_call, "rep": [None] * n, "boi": [None] * n, "lidp": [None] * n, "prep": {},
++        on1 = [i in chunk_plan and A.applies(langs[i], modes[i][0]) for i in range(n)]
++        v2 = cfg.anchors_v2_enabled
++        on2 = [v2 and i in chunk_plan and A.applies2(langs[i], modes[i][0]) for i in range(n)]       # D-61: copy / func / pad (own mode list); entity2 follows on1
++        on = [a or b for a, b in zip(on1, on2)]
++        d: Dict[str, Any] = {"on": on, "on1": on1, "on2": on2, "func": [None] * n, "pad": [None] * n, "cp": [[0.0, 0.0, 0.0] for _ in range(n)], "e2": [[0.0, 0.0] for _ in range(n)],
++                             "pen": [0.0] * n, "train": train_call, "rep": [None] * n, "boi": [None] * n, "lidp": [None] * n, "prep": {},
+                              "ent": [[0.0, 0.0] for _ in range(n)], "lex": [[0.0, 0.0] for _ in range(n)], "chunk_dec": [0.0] * n, "sample_dec": [0.0] * n,
+                              "boiler_ready": [None] * n,
+                              "wtot": [sum(w for _, w in chunk_plan[i]) or 1.0 if i in chunk_plan else 1.0 for i in range(n)]}
+         for i in range(n):
+-            if not on[i]:
++            if on2[i] and (cfg.anchors_func_weight > 0 or cfg.anchors_pad_weight > 0):            # D-61: stop-word profile / padding, sample level, no state
++                lang = langs[i]
++                sw, ow = AN.words(srcs[i]), AN.words(texts[i])
++                if cfg.anchors_func_weight > 0 and A.enabled2(lang, "func"):
++                    d["func"][i] = A.func_deficit(lang, sw, ow)
++                if cfg.anchors_pad_weight > 0 and A.enabled2(lang, "pad"):
++                    d["pad"][i] = A.pad_deficit(lang, ow)
++            if not on1[i]:
+                 continue
+             lang = langs[i]
+             want_rep = cfg.anchors_repeat_weight > 0 and A.enabled(lang, "repeat")
+@@ -603,7 +669,16 @@
+ 
+     def _anchors_chunk(self, anc: Dict[str, Any], i: int, lang: str, src: str, mt: str, r: float, w: float) -> float:
+         cfg, A = self.cfg, self.anchors
+-        if cfg.anchors_entity_weight > 0 and A.enabled(lang, "entity"):
++        on1, on2 = anc["on1"][i], anc["on2"][i]
++        if on1 and cfg.anchors_entity_mode == "soft" and cfg.anchors_entity_weight > 0 and A.enabled2(lang, "entity2"):        # D-61: graded, weight shrinks with the human drop rate
++            pu, nj = A.entity2_penalty(lang, src, mt)
++            if nj:
++                anc["e2"][i][0] += w; anc["e2"][i][1] += w * pu
++                if pu > 0:
++                    r2 = max(self.penalty, r - cfg.anchors_entity_weight * pu)
++                    anc["chunk_dec"][i] += w / anc["wtot"][i] * (r - r2)
++                    r = r2
++        if on1 and cfg.anchors_entity_mode == "strict" and cfg.anchors_entity_weight > 0 and A.enabled(lang, "entity"):
+             de, nj = A.entity_deficit(lang, src, mt)
+             if nj:
+                 anc["ent"][i][0] += w; anc["ent"][i][1] += w * de
+@@ -611,7 +686,7 @@
+                     r2 = max(self.penalty, r - cfg.anchors_entity_weight * de)
+                     anc["chunk_dec"][i] += w / anc["wtot"][i] * (r - r2)
+                     r = r2
+-        if cfg.anchors_lexicon_weight > 0 and A.enabled(lang, "lexicon"):
++        if on1 and cfg.anchors_lexicon_weight > 0 and A.enabled(lang, "lexicon"):
+             dl = A.lexicon_deficit(lang, src, mt)
+             if dl is not None:
+                 anc["lex"][i][0] += w; anc["lex"][i][1] += w * dl
+@@ -619,12 +694,21 @@
+                     r2 = max(self.penalty, r - cfg.anchors_lexicon_weight * A.lexicon_weight_factor(lang) * dl)
+                     anc["chunk_dec"][i] += w / anc["wtot"][i] * (r - r2)
+                     r = r2
++        if on2 and cfg.anchors_copy_scale > 0 and A.enabled2(lang, "copy"):                  # D-61: substring copy detection (Jaccard-copied chunks never get here: they are failed chunks)
++            fr = A.copy_fraction(lang, src, mt)
++            if fr is not None:
++                anc["cp"][i][0] += w; anc["cp"][i][1] += w * fr; anc["cp"][i][2] += w * (fr > 0)
++                if fr > 0:
++                    r2 = A.copy_apply(r, fr, self.penalty)
++                    anc["chunk_dec"][i] += w / anc["wtot"][i] * (r - r2)
++                    r = r2
+         return r
+ 
+     def _anchors_sample(self, anc: Dict[str, Any], i: int, r: float) -> float:
+         cfg = self.cfg
+         dec = 0.0
+-        for key, wt in (("rep", cfg.anchors_repeat_weight), ("boi", cfg.anchors_boiler_weight), ("lidp", cfg.anchors_lid_prob_weight)):
++        for key, wt in (("rep", cfg.anchors_repeat_weight), ("boi", cfg.anchors_boiler_weight), ("lidp", cfg.anchors_lid_prob_weight), ("func", cfg.anchors_func_weight),
++                        ("pad", cfg.anchors_pad_weight)):
+             v = anc[key][i]
+             if v is not None and v > 0:
+                 dec += wt * v
+@@ -666,6 +750,18 @@
+             sizes = [self.anchors.buffer.size(l) for l in sorted({langs[i] for i in on})]
+             st["anchors/boiler/buffer_outputs_mean"] = sum(s[0] for s in sizes) / max(len(sizes), 1)
+             st["anchors/boiler/buffer_prompts_mean"] = sum(s[1] for s in sizes) / max(len(sizes), 1)
++        if cfg.anchors_v2_enabled:                          # D-61
++            for name, vals, wt in (("func", [anc["func"][i] for i in on], cfg.anchors_func_weight), ("pad", [anc["pad"][i] for i in on], cfg.anchors_pad_weight),
++                                   ("entity2", [(anc["e2"][i][1] / anc["e2"][i][0]) if anc["e2"][i][0] > 0 else None for i in on], cfg.anchors_entity_weight if cfg.anchors_entity_mode == "soft" else 0.0)):
++                if wt > 0:
++                    det(name, vals, wt)
++            if cfg.anchors_copy_scale > 0:
++                cp = [anc["cp"][i] for i in on]
++                j = [c for c in cp if c[0] > 0]
++                st["anchors/copy/judged_rate"] = len(j) / len(on) if on else 0.0
++                if j:
++                    st["anchors/copy/penalised_rate"] = sum(1 for c in j if c[2] > 0) / len(j)
++                    st["anchors/copy/fraction_mean"] = sum(c[1] / c[0] for c in j) / len(j)
+         by: Dict[str, List[float]] = {}
+         for i in on:
+             by.setdefault(langs[i], []).append(anc["pen"][i])

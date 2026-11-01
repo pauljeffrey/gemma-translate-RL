@@ -1,0 +1,40 @@
+--- train_rl_r7.py	2026-10-21 21:40:06
++++ train_rl.py	2026-10-21 22:49:07
+@@ -57,6 +57,7 @@
+     prompts_per_step: int = 16
+     group_size: int = 8
+     greedy_in_group: bool = False                   # 2026-10-19: the LAST member of each group is the greedy (temperature 0) completion, the other group_size-1 are sampled
++    hard_fail_mask: str = "off"                     # D-61: off (default: a failed sample, reward -2, keeps a strong NEGATIVE advantage) | zero | exclude: advantage of the hard-failed samples (status != ok) set to 0 (exclude: also taken out of the group baseline / std). See grpo.group_advantages_masked
+     greedy_adv_scale: float = 1.0                   # D-59: multiplier of the GREEDY member's advantage when greedy_in_group (1 = as before). The greedy completion of a long looping document dominates the clipped gradient
+     micro_batch_seqs: int = 16
+     num_updates_per_batch: int = 1
+@@ -203,6 +204,10 @@
+         raise ValueError("group_size must be >= 2 (the baseline is the group mean)")
+     if cfg.greedy_in_group and cfg.group_size < 3:
+         raise ValueError("greedy_in_group needs group_size >= 3 (at least two sampled members next to the greedy one)")
++    if cfg.hard_fail_mask is False:                 # YAML reads an unquoted `off` as the boolean False
++        cfg.hard_fail_mask = "off"
++    if cfg.hard_fail_mask not in ("off", "zero", "exclude"):
++        raise ValueError("hard_fail_mask must be off | zero | exclude")
+     if not (0.0 <= cfg.greedy_adv_scale <= 1.0) or (cfg.greedy_adv_scale != 1.0 and not cfg.greedy_in_group):
+         raise ValueError("greedy_adv_scale must be in [0, 1] and can differ from 1 only with greedy_in_group")
+     if (cfg.top_p < 1.0 or cfg.top_k > 0) and not cfg.allow_truncated_sampling:
+@@ -716,6 +721,9 @@
+                          [prompts.length_bin[i] for i in idx] if prompts.length_bin else None, G)
+             t_archive = time.time() - t_a
+         adv, flat_frac = grpo.group_advantages(rewards, G, cfg.advantage_norm, cfg.std_eps)
++        hard_failed = torch.tensor([st != "ok" for st in out.status], dtype=torch.bool)
++        if cfg.hard_fail_mask != "off":             # D-61 (default off): the hard-failed samples leave the policy gradient
++            adv, flat_frac = grpo.group_advantages_masked(rewards, G, hard_failed, cfg.hard_fail_mask, cfg.advantage_norm, cfg.std_eps)
+         adv = adv * torch.tensor(out.weights, dtype=torch.float32)
+         if cfg.greedy_in_group and cfg.greedy_adv_scale != 1.0:
+             adv = grpo.scale_last_member(adv, G, cfg.greedy_adv_scale)
+@@ -799,7 +807,7 @@
+ 
+         tok = max(metrics_acc["tok"], 1.0)
+         r_t = rewards
+-        rec = {"reward": float(r_t.mean()), "reward_std": float(r_t.std(unbiased=False)), "flat_group_frac": flat_frac,
++        rec = {"reward": float(r_t.mean()), "reward_std": float(r_t.std(unbiased=False)), "flat_group_frac": flat_frac, "hard_fail_frac": float(hard_failed.float().mean()),
+                "adv_abs_mean": float(adv.abs().mean()), "kl": metrics_acc["kl"] / tok,
+                "pg_loss": metrics_acc["pg"] / tok, "clip_frac": metrics_acc["clip"] / tok,
+                "ratio_mean": metrics_acc["ratio"] / tok, "grad_norm": gnorm, "lr": lr,

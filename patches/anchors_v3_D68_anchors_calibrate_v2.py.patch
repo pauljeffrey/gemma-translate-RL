@@ -1,0 +1,57 @@
+--- /tmp/scratch	2026-10-22 15:00:10
++++ gemma_mt/rl/anchors_calibrate_v2.py	2026-10-22 14:51:21
+@@ -243,10 +243,11 @@
+             continue
+         if low_tail:
+             t0, t5 = _q(v, q, "lower"), _q(v, 0.05, "lower")
+-            ts.append(t0 - lam * max(t5 - t0, 0.0))
++            t = t0 - lam * max(t5 - t0, 0.0)
++            ts.append(max(t, 0.5 * t0) if t0 > 0 else t)             # the margin never moves a positive threshold below half of the quantile (D-62: a threshold <= 0 silences the detector)
+         else:
+             t0, t5 = _q(v, 1.0 - q, "higher"), _q(v, 0.95, "higher")
+-            ts.append(t0 + lam * max(t0 - t5, 0.0))
++            ts.append(min(t0 + lam * max(t0 - t5, 0.0), 2.0 * t0 + 0.05))
+     known = [t for t in ts if t is not None]
+     if not known:
+         return [None] * nb
+@@ -308,7 +309,7 @@
+     return blk
+ 
+ 
+-def pad_rows(units: Sequence[Dict[str, str]], bigrams: Optional[np.ndarray], key: str = "ref") -> np.ndarray:
++def pad_rows(units: Sequence[Dict[str, str]], bigrams: Optional[np.ndarray], key: str = "ref", ttr_mode: str = "plain") -> np.ndarray:
+     """[n, 4]: n words, bigram-order gain (NaN without a table), ttr, bucket."""
+     rows = []
+     for u in units:
+@@ -319,7 +320,7 @@
+         if bigrams is not None and bigrams.size:
+             obs, shuf = V.bigram_gain(bigrams, ow)
+             gn = obs - shuf
+-        rows.append((len(ow), gn, len(set(ow)) / len(ow), V.v2_bucket(len(ow))))
++        rows.append((len(ow), gn, V.pad_ttr(ow, ttr_mode), V.v2_bucket(len(ow))))
+     return np.array(rows, dtype=float).reshape(-1, 4)
+ 
+ 
+@@ -327,13 +328,13 @@
+     return np.array([V.pad_deficit_from(blk, int(r[0]), None if np.isnan(r[1]) else r[1], r[2], clip) for r in rows], dtype=float)
+ 
+ 
+-def fit_pad(rows: np.ndarray, lam: Optional[float] = None, alpha: float = FUNC_ALPHA, seed: int = 0, fp_max: float = FUNC_FP_MAX) -> Optional[Dict[str, Any]]:
++def fit_pad(rows: np.ndarray, lam: Optional[float] = None, alpha: float = FUNC_ALPHA, seed: int = 0, fp_max: float = FUNC_FP_MAX, ttr_mode: str = "plain") -> Optional[Dict[str, Any]]:
+     if len(rows) < 2 * MIN_BUCKET:
+         return None
+     if lam is None:
+         best = None
+         for l in LAMBDAS:
+-            best = fit_pad(rows, l, alpha, seed, fp_max)
++            best = fit_pad(rows, l, alpha, seed, fp_max, ttr_mode)
+             if best["fp_cv"] <= fp_max:
+                 break
+         return best
+@@ -351,5 +352,5 @@
+     for a, b in ((idx[:h], idx[h:]), (idx[h:], idx[:h])):
+         fps.append(float((_pad_deficits(rows[b], thr(rows[a])) > 0).mean()))
+     d = _pad_deficits(rows, blk)
+-    blk.update({"n": int(len(rows)), "alpha": alpha, "lam": lam, "has_bigrams": has_bg, "fp": float((d > 0).mean()), "fp_cv": float(np.mean(fps)), "mean_pen": float(d.mean())})
++    blk.update({"n": int(len(rows)), "alpha": alpha, "lam": lam, "ttr_mode": ttr_mode, "has_bigrams": has_bg, "fp": float((d > 0).mean()), "fp_cv": float(np.mean(fps)), "mean_pen": float(d.mean())})
+     return blk

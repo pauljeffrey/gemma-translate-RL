@@ -1,0 +1,29 @@
+--- a/gemma_mt/rl/chunk_plan.py
++++ b/gemma_mt/rl/chunk_plan.py
+@@ -46,7 +46,7 @@
+                 extra_on_single: bool = True,
+                 is_copy: Callable[[str, str, float], bool] = is_copy_of_source,
+                 length_model: Optional[LengthModel] = None, short_frac: Optional[float] = None,
+-                short_min: float = 0.15) -> ChunkPlan:
++                short_min: float = 0.15, beads_fn: Optional[Callable] = None) -> ChunkPlan:
+     """The scoring plan of one (English source, translation) pair.
+ 
+     chunking "off": one segment = the whole pair (no sentence splitting, no extra-text rules).
+@@ -75,8 +75,15 @@
+         return ChunkPlan([(source, text)], [(0, float(len(source)) if chunk_agg == "source_length" else 1.0)], "off", 0)
+     n_src: List[int] = []                                     # sentences of the source side of each pair (omission detector only)
+     bead_src: List[Tuple[int, ...]] = []
+-    pairs, n_failed, how = align_chunks(source, text, chunk_align)
+-    if length_model is not None and how in ("gale_church", "whole"):
++    if beads_fn is not None:                                  # D-60 (rl/longdoc.py): the alignment is supplied (anchored, redundant copies removed); same bead format as align_beads
++        beads, how = beads_fn(source, text)
++        pairs = [(a, b) for a, b, si, oi in beads if si]
++        n_src = [len(si) for a, b, si, oi in beads if si]
++        bead_src = [si for a, b, si, oi in beads if si]
++        n_failed = sum(len(si) for a, b, si, oi in beads if si and not oi)
++    else:
++        pairs, n_failed, how = align_chunks(source, text, chunk_align)
++    if beads_fn is None and length_model is not None and how in ("gale_church", "whole"):
+         beads, how = align_beads(source, text, chunk_align, length_model)
+         pairs = [(a, b) for a, b, si, oi in beads if si]      # extra-output beads (no source) are accounted for below, as before
+         n_src = [len(si) for a, b, si, oi in beads if si]

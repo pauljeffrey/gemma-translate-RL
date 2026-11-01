@@ -1,0 +1,2133 @@
+--- a/gemma_mt/rl/data.py
++++ b/gemma_mt/rl/data.py
+@@ -192,12 +192,37 @@
+                 if missing:
+                     raise ValueError(f"domain_weights lists {missing} but no prompt carries that domain label")
+ 
++    def _p(self, langs, by_lang):
++        w = np.asarray([len(ix) ** self.alpha * self.language_weights.get(l, 1.0) for l, ix in zip(langs, by_lang)], dtype=np.float64)
++        if not np.all(np.isfinite(w)) or w.sum() <= 0:
++            raise ValueError("a prompt pool has no language with a positive draw weight")
++        return w / w.sum()
++
+     def _build(self, arr, rows):
+         langs = sorted(set(arr[rows].tolist()))
+         by_lang = [rows[arr[rows] == l] for l in langs]
+-        w = np.asarray([len(ix) ** self.alpha * self.language_weights.get(l, 1.0) for l, ix in zip(langs, by_lang)], dtype=np.float64)
+-        return langs, by_lang, w / w.sum()
++        return langs, by_lang, self._p(langs, by_lang)
+ 
++    def set_language_weights(self, language_weights: Dict[str, float]) -> None:
++        """D-65: replace the draw weights from now on (run control LANG_WEIGHTS.json / adaptive updater, rl/lang_weights.py). The draw stays a pure function of (seed, step, weights in force):
++        only the probability vectors of the pools are recomputed, the pools themselves are untouched. Raises ValueError (and changes nothing) when a pool would be left without a positive weight."""
++        new = {canonical_iso(k): float(v) for k, v in language_weights.items()}
++        if None in new or any(v < 0 or not np.isfinite(v) for v in new.values()):
++            raise ValueError("language_weights: unknown language or a negative / non-finite weight")
++        old = self.language_weights
++        self.language_weights = new
++        try:
++            if self.p is not None:
++                p = self._p(self.langs, self.by_lang)
++            bins = {b: (l, bl, self._p(l, bl)) for b, (l, bl, _) in self.bins_data.items()}
++            doms = {k: (l, bl, self._p(l, bl)) for k, (l, bl, _) in self.dom_data.items()}
++        except ValueError:
++            self.language_weights = old
++            raise
++        if self.p is not None:
++            self.p = p
++        self.bins_data, self.dom_data = bins, doms
++
+     def bin_of_step(self, step: int) -> Optional[str]:
+         """Bin trained at `step`; MIXED after the staged part of a curriculum; None when bins are not in use."""
+         if not self.cycle:
+--- a/gemma_mt/rl/train_rl.py
++++ b/gemma_mt/rl/train_rl.py
+@@ -36,6 +36,7 @@
+ from gemma_mt.rl.data import LENGTH_BINS, MIXED, PromptSchedule, RLPrompts, load_rl_prompts
+ from gemma_mt.rl.reward import RewardConfig, Sample, TranslationReward
+ from gemma_mt.rl.run_controls import RunControls
++from gemma_mt.rl.lang_weights import build_controller as build_lang_weight_controller
+ from gemma_mt.rl.sampling import Rollout, assemble_batch, generate_completions, merge_greedy_into_groups
+ from gemma_mt.utils import (MetricsLogger, dataclass_from_dict, get_rng_state, load_yaml, parse_overrides,
+                             set_rng_state, set_seed)
+@@ -165,6 +166,19 @@
+     # D-56: run controls read from files in out_dir at every step (rl/run_controls.py): WINDDOWN ("50": the learning rate decays linearly to 0 over the next N steps, then the run ends normally:
+     # last/ saved, latest + best pushed, summary.json) and LR_SCALE (a float multiplier on the learning rate). Nothing happens without those files. aux entries may carry `every: N` (steps).
+     run_controls: bool = True
++    # D-65 (rl/lang_weights.py): language DRAW WEIGHTS as a run control. `lang_weights_file`: <out_dir>/LANG_WEIGHTS.json is read at every step (needs run_controls) and overrides / merges `language_weights`.
++    # `adaptive_lang_weights` (default OFF): every `adaptive_lang_weights_every` steps from `adaptive_lang_weights_first_step` the weights of `adaptive_lang_weights_languages` (empty = all)
++    # are recomputed from the per-language training statistics of the window and the dev trends (AdaptiveParams overrides in `adaptive_lang_weights_params`); `..._dry_run`: only log what it would do.
++    # `lang_stats_log`: log the per-language step statistics lang/{n,reward,fail}/<iso> (always on with the adaptive updater). All off = the run is bit-for-bit the one without this feature.
++    lang_weights_file: bool = False
++    lang_stats_log: bool = False
++    lang_weights_log_every: int = 50
++    adaptive_lang_weights: bool = False
++    adaptive_lang_weights_dry_run: bool = False
++    adaptive_lang_weights_every: int = 50
++    adaptive_lang_weights_first_step: int = 100
++    adaptive_lang_weights_languages: List[str] = field(default_factory=list)
++    adaptive_lang_weights_params: Dict[str, Any] = field(default_factory=dict)
+     # Hub: push the BEST checkpoint (by held-out eval reward) as soon as it is found; nothing else is uploaded
+     hub_repo_id: Optional[str] = None               # None = never push
+     hub_branch: Optional[str] = None                # e.g. "rl" to keep the SFT model on main; None = main of hub_repo_id
+@@ -216,6 +230,17 @@
+     for k, v in cfg.language_weights.items():
+         if canonical_iso(k) is None or float(v) <= 0:
+             raise ValueError(f"language_weights: unknown language {k!r} or non-positive weight {v!r}")
++    if cfg.adaptive_lang_weights or cfg.lang_weights_file:
++        from gemma_mt.rl.lang_weights import AdaptiveParams
++
++        AdaptiveParams.from_dict(cfg.adaptive_lang_weights_params)                        # unknown key -> ValueError at start-up, not at step 100
++        if cfg.adaptive_lang_weights_every < 1 or cfg.adaptive_lang_weights_first_step < 0:
++            raise ValueError("adaptive_lang_weights_every must be >= 1 and adaptive_lang_weights_first_step >= 0")
++        bad_l = [x for x in cfg.adaptive_lang_weights_languages if canonical_iso(x) is None]
++        if bad_l:
++            raise ValueError(f"adaptive_lang_weights_languages: unknown language(s) {bad_l}")
++    if cfg.lang_weights_file and not cfg.run_controls:
++        raise ValueError("lang_weights_file needs run_controls: true")
+     for name in ("prompts_per_step_by_bin", "max_new_tokens_by_bin", "curriculum_steps"):
+         bad = set(getattr(cfg, name)) - set(LENGTH_BINS) - {MIXED}
+         if bad:
+@@ -676,6 +701,14 @@
+     kl_hist: List[float] = []
+     lr_scale, last_cut = 1.0, -10 ** 9
+     controls = RunControls(cfg.out_dir, cfg.steps) if cfg.run_controls else None      # D-56: WINDDOWN / LR_SCALE files in out_dir
++    lwc = build_lang_weight_controller(cfg, schedule, prompts.languages(), {l: v[0] for l, v in mode_of.items()}, start_step=step, canon=canonical_iso)   # D-65: LANG_WEIGHTS.json + adaptive updater (None = all off)
++    if lwc is not None:
++        dev_sizes: Dict[Any, int] = {}
++        for name_, rows_ in [("bench", bench_rows)] + [(a_["name"], a_["rows"]) for a_ in aux_sets]:
++            for row_ in rows_:
++                k_ = (name_, canonical_iso(row_.get("iso") or row_.get("language") or ""))
++                dev_sizes[k_] = dev_sizes.get(k_, 0) + 1
++        lwc.set_dev_sizes(dev_sizes)
+     end_step = cfg.steps
+     ctl = None
+     while step < end_step:
+@@ -688,6 +721,7 @@
+         lr = cfg.learning_rate * lr_scale * min(1.0, (step + 1) / max(cfg.warmup_steps, 1)) * (ctl.lr_mult if ctl is not None else 1.0)
+         for g in optimizer.param_groups:
+             g["lr"] = lr
++        lw_rec = lwc.update(step) if lwc is not None else {}          # D-65: LANG_WEIGHTS.json / adaptive weights -> schedule.set_language_weights (before this step's draw)
+         step_bin = schedule.bin_of_step(step) if cfg.length_bins else None
+         n_step = cfg.prompts_per_step_by_bin.get(step_bin, cfg.prompts_per_step) if step_bin else cfg.prompts_per_step
+         mnt = cfg.max_new_tokens_by_bin.get(step_bin, cfg.max_new_tokens) if step_bin else cfg.max_new_tokens
+@@ -727,6 +761,13 @@
+             adv = grpo.scale_last_member(adv, G, cfg.greedy_adv_scale)
+         assert adv.shape == (N,) and torch.isfinite(adv).all(), "bad advantages"
+         t_sample = time.time() - t0
++        if lwc is not None:                         # D-65: per-language statistics of this step (the updater's window; metrics only with lang_stats_log / adaptive)
++            lw_iso = [prompts.iso[i] for i in idx]
++            lw_keys = [f"{prompts.length_bin[i] if prompts.length_bin else ''}|{prompts.domain_of(i)}" for i in idx]
++            lwc.observe(step, lw_iso, lw_keys, out.rewards, out.status, G, qe=out.qe, adv_w=out.weights, cons=getattr(out, "consensus_chrf", None) or None,
++                        pen=getattr(out, "anchors_penalty", None) or None)
++            if lwc.log_stats:
++                lw_rec = dict(lw_rec, **lwc.step_record(lw_iso, lw_keys, out.rewards, out.status, G))
+ 
+         # ---------------- 2. log-probs + update
+         total_tokens = float(sum(len(c) for c in roll.completions))
+@@ -816,6 +857,7 @@
+             rec.update({"sampler_logp_gap_mean": sampler_gap_mean, "t_sync": t_sync, "t_gen": t_gen,
+                         "gen_tokens_per_s": vsampler.last_generate_tokens / max(t_gen, 1e-9)})
+         rec.update({f"reward/{k}": v for k, v in out.stats.items()})
++        rec.update(lw_rec)
+         if ctl is not None and (ctl.file_scale != 1.0 or ctl.winddown):
+             rec["lr_file_scale"] = ctl.file_scale
+             rec["winddown_factor"] = ctl.winddown_factor
+@@ -861,6 +903,8 @@
+             if vsampler is not None:
+                 vsampler.sleep()
+             logger.log(step, ev)
++            if lwc is not None:
++                lwc.observe_eval(step, ev)
+             print(f"[gemma_mt] eval @ {step}: reward {ev['eval/reward']:.3f} finished {ev['eval/finished_rate']:.2f}"
+                   + (f" | dev chrF++ macro {bench['bench/chrf_macro']:.2f} (SFT start {base_chrf:.2f}) BLEU {bench['bench/bleu_macro']:.2f}"
+                      if bench else ""), flush=True)
+@@ -903,6 +947,8 @@
+                 stage_pushers.append(sp)
+         if (cfg.save_every and step % cfg.save_every == 0) or step == end_step:
+             save_last()
++            if lwc is not None:
++                lwc.save_state(step)
+ 
+     pusher.wait()
+     if latest_pusher is not None:
+@@ -913,6 +959,8 @@
+         save_model(policy, tokenizer, os.path.join(cfg.out_dir, "final"), stop_ids=stop.ids)
+     summary.update({"steps": step, "best_eval_reward": best_eval, "seconds": round(time.time() - t_start, 1),
+                     "reward_range": [lo, hi]})
++    if lwc is not None:
++        summary["lang_weights"] = lwc.summary()
+     if controls is not None:
+         wd = controls.finish(step)
+         if wd is not None:
+--- /dev/null
++++ b/gemma_mt/rl/lang_weights.py
+@@ -0,0 +1,723 @@
++# SPDX-License-Identifier: AGPL-3.0-or-later
++"""Language DRAW WEIGHTS as a run control, and an optional automatic updater (D-65, agent R13, 2026-10-22). Pure python, no torch.
++
++The language of every RL prompt is drawn with probability ~ n_l ** language_alpha x language_weights[l] (PromptSchedule). Until now the weights were a fixed yaml dict. Two layers on top:
++
++(1) RUN CONTROL  <out_dir>/LANG_WEIGHTS.json  (like WINDDOWN / LR_SCALE of rl/run_controls.py): read again at every step (a stat() call; parsed only when the file changed), validated,
++    nothing to restart. Format (all keys optional):
++
++        {"weights":     {"yor": 3.0, "zul": 1.0},     # ABSOLUTE draw weights, they override the yaml / the adaptive weight of those languages
++         "multipliers": {"hau": 0.8},                  # relative to the weight that would apply without this file (yaml or adaptive)
++         "mode":        "merge",                       # merge (default): languages not listed keep their weight | replace: languages not listed get 1.0 (the yaml dict is ignored)
++         "adaptive":    "on",                          # on (default) | freeze (the updater keeps its last weights and stops updating) | off (updater ignored, yaml weights)
++         "note":        "free text, logged"}
++
++    A file that cannot be parsed or fails validation (unknown language, weight not finite / < 0 / > 20, a pool left without any positive weight) is IGNORED as a whole and the last valid
++    weights stay in force (logged once). Deleting the file removes the override. Precedence: yaml `language_weights` -> adaptive weights -> LANG_WEIGHTS.json.
++
++(2) AUTOMATIC UPDATER  (`adaptive_lang_weights: true`, default OFF; `adaptive_lang_weights_dry_run: true` only logs what it would do). Every `every` steps (default 50 = the dev-benchmark cadence)
++    it turns the per-language training statistics of the window into a bounded multiplier f_i of the language's base weight:
++
++        f_i = clip( u_i * d_i * m_i , 1/ratio, ratio ) with the terms
++          u_i  boost for UNDER-PERFORMANCE: max(need_qe, need_fail) * reliability * learnability, only for languages whose signals are not flagged
++                  learnability = min(1, share of the language's groups that carry a gradient / flat_ref): a group whose samples all got the same reward teaches nothing, so drawing more of
++                  them is not "headroom"
++                  need_qe   = clip((parity - R_i) / (parity - R_floor), 0, 1), R_i = shrunk, bin- and domain-adjusted mean reward of the language; parity = 1.0 = the reward of the MEDIAN
++                              HUMAN reference (calibrated t_mid), qe-mode languages only (a blend / consensus reward has no human parity: its level is a sampling-agreement statistic)
++                  need_fail = clip((fail_i - max(median fail, fail_ref)) / fail_span, 0, 1), failures = status != ok (wrong language, loops, no end, ...): the one signal every mode shares
++          d_i  SATURATION shrink: qe-mode, reward >= sat_reward, no failures, not flagged. Shrinks to down_min_ref only when a human-reference dev trend CONFIRMS the plateau (flat or falling),
++                  to the milder down_min_noref when there is no reference (QE alone saturates before chrF++ does: Yoruba's greedy reward was 1.85 of 2.0 while its dev chrF++ was 33), never when
++                  the dev trend is still rising
++          m_i  MARGINAL-GAIN term from the dev chrF++ trend of the language (general dev 19, weak dev 13, AfriScience dev 6 languages): t >= up_t -> x1.15 (productive), t <= -up_t -> x0.85 AND
++                  the language is flagged (reward rising while the reference falls = divergence; no boost until it recovers)
++        FLAGS (a flagged language is never boosted: f_i <= 1): QE vs consensus disagree inside groups (blend languages, correlation < flag_rho), constraint-penalty mean above flag_anchor,
++                  loops (degenerate / no end / post-eos / dangling) above flag_loop, advantage weight (reliability) below flag_reliability, dev trend falling, mean KL above flag_kl x the median
++                  (only when the trainer supplies a per-sample KL: it does not today, see LangWindow.add(kl=...)).
++        target_i = clip(base_i * f_i, [min_ratio, max_ratio] * base_i, [w_min, w_max]); new_i = prev_i + eta * (target_i - prev_i) (at most +-max_step of prev_i per update);
++        the weights of the treated languages are rescaled so that their SUM stays equal to the sum of their base weights (a bounded total draw budget); the D-59 language floor of the schedule is
++        untouched (every language still gets >= floor prompts per block, whatever its weight).
++    Languages without a usable signal (fewer than `min_groups` groups in the window, no dev data) keep f = 1: no signal, no move.
++
++State and resume: <out_dir>/LANG_WEIGHTS.state.json (history of the weights in force, the window accumulators and the EMAs at every checkpoint `save_state(step)`); on resume the history is cut to
++the resumed step and, when the sidecar was written at exactly that step, the window continues; otherwise the next update is skipped for lack of a complete window. PromptSchedule stays stateless in
++(seed, step, weights in force): `weights_at(step)` of the history reproduces any past draw.
++
++Tests: tests/test_lang_weights.py. Offline replay of a metrics.jsonl: scripts/replay_lang_weights.py.
++"""
++from __future__ import annotations
++
++import json
++import math
++import os
++import time
++from collections import defaultdict
++from dataclasses import dataclass, field, fields
++from typing import Any, Callable, Dict, Iterable, List, Optional, Sequence, Tuple
++
++W_MAX_FILE = 20.0
++LOOP_STATUSES = ("degenerate", "no_end_of_turn", "post_eos_rubbish", "dangling_marker")
++FILE_NAME = "LANG_WEIGHTS.json"
++STATE_NAME = "LANG_WEIGHTS.state.json"
++R_FLOOR = -2.0
++
++
++# ------------------------------------------------------------------------------------------------------------------------------ the control file
++@dataclass
++class FileSpec:
++    weights: Dict[str, float] = field(default_factory=dict)
++    multipliers: Dict[str, float] = field(default_factory=dict)
++    mode: str = "merge"
++    adaptive: str = "on"
++    note: str = ""
++
++    def empty(self) -> bool:
++        return not self.weights and not self.multipliers and self.mode == "merge" and self.adaptive == "on"
++
++
++def parse_weights_text(text: str, known: Iterable[str], canon: Callable[[str], Optional[str]] = lambda s: s) -> Tuple[Optional[FileSpec], List[str]]:
++    """-> (spec, warnings). spec None = the whole file is invalid (errors in warnings). Unknown language tags are errors (a typo must not silently do nothing)."""
++    known = set(known)
++    errs: List[str] = []
++    try:
++        raw = json.loads(text)
++    except ValueError as e:
++        return None, [f"not valid JSON: {e}"]
++    if not isinstance(raw, dict):
++        return None, ["top level must be a JSON object"]
++    bad_keys = set(raw) - {"weights", "multipliers", "mode", "adaptive", "note"}
++    if bad_keys:
++        errs.append(f"unknown key(s) {sorted(bad_keys)}")
++    spec = FileSpec(note=str(raw.get("note", ""))[:200])
++    mode = raw.get("mode", "merge")
++    if mode not in ("merge", "replace"):
++        errs.append(f"mode must be merge|replace, got {mode!r}")
++    spec.mode = mode if mode in ("merge", "replace") else "merge"
++    ad = raw.get("adaptive", "on")
++    if ad not in ("on", "freeze", "off"):
++        errs.append(f"adaptive must be on|freeze|off, got {ad!r}")
++    spec.adaptive = ad if ad in ("on", "freeze", "off") else "on"
++    for key, lo, hi in (("weights", 0.0, W_MAX_FILE), ("multipliers", 0.0, 10.0)):
++        d = raw.get(key, {})
++        if not isinstance(d, dict):
++            errs.append(f"{key} must be an object {{iso: number}}")
++            continue
++        out = {}
++        for k, v in d.items():
++            iso = canon(k)
++            if iso is None or iso not in known:
++                errs.append(f"{key}: unknown language {k!r}")
++                continue
++            if isinstance(v, bool) or not isinstance(v, (int, float)) or not math.isfinite(float(v)) or not (lo <= float(v) <= hi):
++                errs.append(f"{key}[{k}]: {v!r} is not a number in [{lo:g}, {hi:g}]")
++                continue
++            out[iso] = float(v)
++        setattr(spec, key, out)
++    return (None, errs) if errs else (spec, [])
++
++
++def compose_weights(languages: Sequence[str], base: Dict[str, float], auto: Optional[Dict[str, float]], spec: Optional[FileSpec]) -> Dict[str, float]:
++    """The weights in force: yaml base -> adaptive -> file. Every language of `languages` gets an entry (1.0 default)."""
++    spec = spec or FileSpec()
++    if spec.mode == "replace":                              # the yaml dict and the adaptive weights are both ignored
++        w = {l: 1.0 for l in languages}
++    else:
++        w = {l: float(base.get(l, 1.0)) for l in languages}
++        if auto and spec.adaptive != "off":                 # "freeze" keeps the adaptive weights in force, "off" drops them
++            for l, v in auto.items():
++                if l in w:
++                    w[l] = float(v)
++    for l, v in spec.weights.items():
++        if l in w:
++            w[l] = v
++    for l, m in spec.multipliers.items():
++        if l in w:
++            w[l] = w[l] * m
++    return w
++
++
++# ------------------------------------------------------------------------------------------------------------------------------ per-language window statistics
++class _Acc:
++    __slots__ = ("n", "groups", "sum_r", "sum_gstd", "flat", "fail", "loop", "qn", "qsum", "cn", "csum", "pen", "advw", "sdq", "sdc", "sqq", "scc", "ncorr", "rn", "gn", "kl", "kn")
++
++    def __init__(self):
++        for s in self.__slots__:
++            setattr(self, s, 0.0)
++
++
++class LangWindow:
++    """Accumulates the per-sample outcomes of the steps since the last update."""
++
++    def __init__(self):
++        self.acc: Dict[str, _Acc] = defaultdict(_Acc)
++        self.keyed: Dict[str, Dict[str, List[float]]] = defaultdict(dict)      # iso -> bin|domain key -> [n, sum reward]
++        self.key_tot: Dict[str, List[float]] = {}                              # key -> [n, sum reward] over all languages
++        self.steps = 0
++
++    def add(self, isos: Sequence[str], keys: Sequence[str], rewards: Sequence[float], status: Sequence[str], G: int, qe=None, adv_w=None, cons=None, pen=None, kl=None) -> None:
++        """One step. isos / keys are per PROMPT (group), the rest per sample (group g = rows [g*G, (g+1)*G)). `kl` (optional, per sample): the sequence's mean KL to the reference; the trainer
++        does not compute it per sequence today (it would need a few lines in the update loop), the field is the hook for it."""
++        self.steps += 1
++        for g, (iso, key) in enumerate(zip(isos, keys)):
++            lo, hi = g * G, (g + 1) * G
++            r = rewards[lo:hi]
++            a = self.acc[iso]
++            mean = sum(r) / len(r)
++            std = math.sqrt(sum((x - mean) ** 2 for x in r) / len(r))
++            a.n += len(r)
++            a.rn += len(r)
++            a.groups += 1
++            a.gn += 1
++            a.sum_r += sum(r)
++            a.sum_gstd += std
++            a.flat += 1.0 if std < 1e-6 else 0.0
++            for j in range(lo, hi):
++                st = status[j]
++                a.fail += 0.0 if st == "ok" else 1.0
++                a.loop += 1.0 if st in LOOP_STATUSES else 0.0
++                if adv_w is not None:
++                    a.advw += float(adv_w[j])
++                if pen is not None:
++                    a.pen += float(pen[j] or 0.0)
++                if kl is not None and kl[j] is not None:
++                    a.kl += float(kl[j])
++                    a.kn += 1
++            if qe is not None:
++                for j in range(lo, hi):
++                    if qe[j] is not None:
++                        a.qn += 1
++                        a.qsum += float(qe[j])
++            if cons is not None:
++                for j in range(lo, hi):
++                    if cons[j] is not None:
++                        a.cn += 1
++                        a.csum += float(cons[j])
++            if qe is not None and cons is not None:                                  # within-group agreement of the two content signals (blend languages)
++                pq = [(float(qe[j]), float(cons[j])) for j in range(lo, hi) if qe[j] is not None and cons[j] is not None]
++                if len(pq) >= 3:
++                    mq = sum(x for x, _ in pq) / len(pq)
++                    mc = sum(y for _, y in pq) / len(pq)
++                    for x, y in pq:
++                        a.sdq += (x - mq) * (y - mc)
++                        a.sqq += (x - mq) ** 2
++                        a.scc += (y - mc) ** 2
++                    a.ncorr += len(pq)
++            k = self.keyed[iso].setdefault(key, [0.0, 0.0])
++            k[0] += len(r)
++            k[1] += sum(r)
++            t = self.key_tot.setdefault(key, [0.0, 0.0])
++            t[0] += len(r)
++            t[1] += sum(r)
++
++    def add_aggregate(self, iso: str, key: str, n: float, groups: float, reward: Optional[float] = None, fail: float = 0.0, loop: float = 0.0, pen: float = 0.0, std: Optional[float] = None) -> None:
++        """A step's worth of ONE language given as aggregates (offline replay of metrics files that only carry rates; `lang/*` keys). `reward` None = no reward information (the
++        language then contributes only failure / loop / penalty rates)."""
++        a = self.acc[iso]
++        a.n += n
++        a.groups += groups
++        a.fail += fail * n
++        a.loop += loop * n
++        a.pen += pen * n
++        if reward is not None:
++            a.rn += n
++            a.sum_r += reward * n
++            k = self.keyed[iso].setdefault(key, [0.0, 0.0])
++            k[0] += n
++            k[1] += reward * n
++            t = self.key_tot.setdefault(key, [0.0, 0.0])
++            t[0] += n
++            t[1] += reward * n
++        if std is not None:
++            a.gn += groups
++            a.sum_gstd += std * groups
++
++    def summary(self) -> Dict[str, Dict[str, float]]:
++        """Per language: n, groups, reward (raw), reward_adj (bin/domain-adjusted, re-centred on the window mean), std (mean within-group reward std), flat, fail, loop, qe, cons, pen, advw, qc_corr."""
++        tot_n = sum(v[0] for v in self.key_tot.values())
++        gmean = sum(v[1] for v in self.key_tot.values()) / tot_n if tot_n else 0.0
++        out = {}
++        for iso, a in self.acc.items():
++            if a.n <= 0:
++                continue
++            adj = 0.0
++            for key, (n, s) in self.keyed[iso].items():
++                tn, ts = self.key_tot[key]
++                adj += s - n * (ts / tn if tn else 0.0)
++            out[iso] = {"n": a.n, "rn": a.rn, "groups": a.groups, "reward": (a.sum_r / a.rn) if a.rn else None, "reward_adj": (gmean + adj / a.rn) if a.rn else None,
++                        "std": (a.sum_gstd / a.gn) if a.gn else None, "flat": (a.flat / a.gn) if a.gn else None,
++                        "fail": a.fail / a.n, "loop": a.loop / a.n, "qe": (a.qsum / a.qn) if a.qn else None, "cons": (a.csum / a.cn) if a.cn else None,
++                        "pen": a.pen / a.n, "advw": a.advw / a.n if a.advw else None, "kl": (a.kl / a.kn) if a.kn else None,
++                        "qc_corr": (a.sdq / math.sqrt(a.sqq * a.scc)) if a.ncorr >= 24 and a.sqq > 0 and a.scc > 0 else None}
++        return out
++
++    def to_json(self) -> dict:
++        return {"steps": self.steps, "acc": {k: [getattr(v, s) for s in _Acc.__slots__] for k, v in self.acc.items()}, "keyed": self.keyed, "key_tot": self.key_tot}
++
++    @classmethod
++    def from_json(cls, d: dict) -> "LangWindow":
++        w = cls()
++        w.steps = int(d.get("steps", 0))
++        for k, vals in d.get("acc", {}).items():
++            a = w.acc[k]
++            for s, v in zip(_Acc.__slots__, vals):
++                setattr(a, s, v)
++        for k, m in d.get("keyed", {}).items():
++            w.keyed[k] = {kk: list(vv) for kk, vv in m.items()}
++        w.key_tot = {k: list(v) for k, v in d.get("key_tot", {}).items()}
++        return w
++
++
++# ------------------------------------------------------------------------------------------------------------------------------ dev (human-reference) trend
++def dev_trend(points: Sequence[Tuple[int, float, int]], min_evals: int, sd_per_sentence: float = 14.7, last: int = 8) -> Optional[Dict[str, float]]:
++    """points = [(step, chrF++, n_sentences)] of ONE dev set of ONE language. Least-squares slope (chrF++ per 100 steps) over the last `last` evaluations and its t statistic. The noise
++    of a corpus chrF++ DIFFERENCE on n sentences is ~ sd_per_sentence / sqrt(n) (median over the 136 language x benchmark cells of reports/final_model_per_language_wide.csv)."""
++    pts = list(points)[-last:]
++    if len(pts) < min_evals:
++        return None
++    xs = [p[0] for p in pts]
++    ys = [p[1] for p in pts]
++    mx, my = sum(xs) / len(xs), sum(ys) / len(ys)
++    sxx = sum((x - mx) ** 2 for x in xs)
++    if sxx <= 0:
++        return None
++    slope = sum((x - mx) * (y - my) for x, y in zip(xs, ys)) / sxx
++    n = max(min(p[2] for p in pts), 1)
++    se = (sd_per_sentence / math.sqrt(n)) / math.sqrt(sxx)
++    return {"slope100": slope * 100.0, "se100": se * 100.0, "t": slope / se if se > 0 else 0.0, "n_evals": len(pts), "last": ys[-1]}
++
++
++# ------------------------------------------------------------------------------------------------------------------------------ the rule
++@dataclass
++class AdaptiveParams:
++    first_step: int = 100            # no update before this step (two complete windows of data)
++    min_groups: int = 6              # a language needs this many groups in the window, else no signal
++    ema: float = 0.5                 # weight of the newest window in the EMAs of reward / fail / std
++    shrink_k: float = 48.0           # samples of prior (the mean of the language's content-mode group) in the shrunk reward
++    parity: float = 1.0              # reward of the median human reference (t_mid)
++    sat_reward: float = 1.4          # reward above which a qe-mode language is "QE-saturated"
++    fail_ref: float = 0.05           # failure rate that counts as normal
++    fail_span: float = 0.30
++    up_max: float = 1.5              # largest boost factor u
++    down_min_ref: float = 0.6        # saturation shrink when a human-reference dev trend confirms the plateau
++    down_min_noref: float = 0.85     # ... without a reference
++    dev_min_evals: int = 4
++    dev_up_t: float = 1.5            # t of the dev slope for "rising" / "falling"
++    dev_flat_se: float = 0.5         # chrF++ per 100 steps: standard error below which "no trend" counts as a confirmed plateau
++    dev_flat_slope: float = 0.3      # ... and the slope itself is within +-0.3 per 100 steps
++    dev_productive: float = 1.15
++    dev_decline: float = 0.85
++    min_ratio: float = 0.5           # target within [min_ratio, max_ratio] x base weight
++    max_ratio: float = 1.6
++    w_min: float = 0.25
++    w_max: float = 4.5
++    eta: float = 0.5                 # move this share of the way to the target at each update
++    max_step: float = 0.25           # ... but at most +-25 % of the previous weight
++    flag_rho: float = 0.05           # blend languages: within-group correlation of QE and consensus below this = the two signals disagree
++    flag_anchor: float = 0.25        # mean constraint penalty per sample above this
++    flag_loop: float = 0.25
++    flag_reliability: float = 0.3    # advantage weight (calibrated reliability) below this
++    flat_ref: float = 0.5            # share of the language's groups that must carry a gradient (non-flat) for the full boost; fewer = proportionally smaller boost (extra draws teach nothing)
++    flag_kl: float = 3.0             # mean KL above this multiple of the median over languages = flagged (only when the trainer supplies per-sample KL)
++
++    @classmethod
++    def from_dict(cls, d: Optional[Dict[str, Any]]) -> "AdaptiveParams":
++        d = dict(d or {})
++        names = {f.name for f in fields(cls)}
++        bad = set(d) - names
++        if bad:
++            raise ValueError(f"adaptive_lang_weights_params: unknown key(s) {sorted(bad)}; known: {sorted(names)}")
++        return cls(**{k: type(getattr(cls(), k))(v) for k, v in d.items()})
++
++
++def _median(xs: Sequence[float]) -> float:
++    s = sorted(xs)
++    n = len(s)
++    return 0.0 if n == 0 else (s[n // 2] if n % 2 else 0.5 * (s[n // 2 - 1] + s[n // 2]))
++
++
++def factors(sig: Dict[str, Dict[str, Any]], modes: Dict[str, str], dev: Dict[str, Dict[str, float]], p: AdaptiveParams) -> Dict[str, Dict[str, Any]]:
++    """sig[iso] = EMA statistics {n, groups, reward_adj, std, flat, fail, loop, pen, advw, qc_corr}; dev[iso] = dev_trend dict (best-informed set). -> per language {f, u, d, m, flags, why}."""
++    usable = {l: s for l, s in sig.items() if s.get("groups", 0) >= p.min_groups}
++    by_mode: Dict[str, List[float]] = defaultdict(list)
++    for l, s in usable.items():
++        if s.get("reward_adj") is not None:
++            by_mode[modes.get(l, "qe")].append(s["reward_adj"])
++    mode_mean = {m: sum(v) / len(v) for m, v in by_mode.items() if v}
++    med_fail = _median([s["fail"] for s in usable.values()]) if usable else 0.0
++    med_kl = _median([s["kl"] for s in usable.values() if s.get("kl") is not None])
++    out: Dict[str, Dict[str, Any]] = {}
++    for l, s in sig.items():
++        if l not in usable:
++            out[l] = {"f": 1.0, "u": 1.0, "d": 1.0, "m": 1.0, "flags": [], "why": "no_signal"}
++            continue
++        mode = modes.get(l, "qe")
++        n = s.get("rn", s["n"])                                                      # samples that carry a reward (a replayed file may have failure rates for more)
++        radj = s.get("reward_adj")
++        r_shr = None if radj is None else (n * radj + p.shrink_k * mode_mean.get(mode, radj)) / (n + p.shrink_k)       # shrunk toward the mean of the language's content-mode group
++        flags: List[str] = []
++        if s.get("qc_corr") is not None and mode == "blend" and s["qc_corr"] < p.flag_rho:
++            flags.append("qe_consensus_disagree")
++        if s.get("pen", 0.0) > p.flag_anchor:
++            flags.append("anchor_penalty")
++        if s.get("loop", 0.0) > p.flag_loop:
++            flags.append("loops")
++        if s.get("advw") is not None and s["advw"] < p.flag_reliability:
++            flags.append("low_reliability")
++        if s.get("kl") is not None and med_kl > 0 and s["kl"] > p.flag_kl * med_kl:
++            flags.append("kl_high")
++        dv = dev.get(l)
++        dstate = "unknown"
++        if dv is not None:
++            if dv["t"] >= p.dev_up_t:
++                dstate = "rising"
++            elif dv["t"] <= -p.dev_up_t:
++                dstate = "falling"
++            elif dv.get("se100", 0.0) <= p.dev_flat_se and abs(dv.get("slope100", 0.0)) <= p.dev_flat_slope:
++                dstate = "flat"                                                       # a plateau is CONFIRMED only when the trend is both small and precisely measured
++            else:
++                dstate = "unknown"                                                    # an imprecise "no trend" says nothing (40-60 sentence cells cannot see +-1 chrF++ per 100 steps)
++        if dstate == "falling":
++            flags.append("dev_falling")
++        rel = 1.0 if s.get("advw") is None else max(0.0, min(1.0, s["advw"]))
++        need_qe = max(0.0, min(1.0, (p.parity - r_shr) / (p.parity - R_FLOOR))) if (mode == "qe" and r_shr is not None) else 0.0
++        need_fail = max(0.0, min(1.0, (s["fail"] - max(med_fail, p.fail_ref)) / p.fail_span))
++        learn = 1.0 if s.get("flat") is None else min(1.0, (1.0 - s["flat"]) / max(p.flat_ref, 1e-6))        # groups without a gradient (all samples equal) teach nothing: no point drawing more of them
++        u = 1.0 + (p.up_max - 1.0) * max(need_qe, need_fail) * rel * learn
++        d = 1.0
++        if mode == "qe" and r_shr is not None and r_shr >= p.sat_reward and s["fail"] <= p.fail_ref and not flags:
++            sat = min(1.0, (r_shr - p.sat_reward) / max(2.0 - p.sat_reward, 1e-6))
++            floor_ = p.down_min_ref if dstate in ("flat", "falling") else (p.down_min_noref if dstate == "unknown" else 1.0)
++            d = 1.0 - (1.0 - floor_) * (0.5 + 0.5 * sat)
++        m = p.dev_productive if dstate == "rising" else (p.dev_decline if dstate == "falling" else 1.0)
++        f = u * d * m
++        if flags:
++            f = min(f, 1.0)
++        f = min(max(f, p.min_ratio), p.max_ratio)
++        out[l] = {"f": f, "u": u, "d": d, "m": m, "flags": flags, "dev": dstate, "R": r_shr, "fail": s["fail"], "need_qe": need_qe, "need_fail": need_fail, "learn": learn, "why": "ok"}
++    return out
++
++
++def targets_from_factors(base: Dict[str, float], prev: Dict[str, float], fac: Dict[str, Dict[str, Any]], treated: Sequence[str], p: AdaptiveParams) -> Dict[str, float]:
++    """Bounded, smoothed, budget-preserving new weights of the treated languages."""
++    new: Dict[str, float] = {}
++    for l in treated:
++        b = float(base.get(l, 1.0))
++        f = fac.get(l, {}).get("f", 1.0)
++        tgt = min(max(b * f, p.min_ratio * b), p.max_ratio * b)
++        tgt = min(max(tgt, p.w_min), max(p.w_max, b))
++        cur = float(prev.get(l, b))
++        nxt = cur + p.eta * (tgt - cur)
++        nxt = min(max(nxt, cur * (1 - p.max_step)), cur * (1 + p.max_step))
++        new[l] = nxt
++    budget = sum(float(base.get(l, 1.0)) for l in treated)
++    for _ in range(4):                                      # rescale to the base budget, re-clip, repeat (the clips are the only non-linearity)
++        s = sum(new.values())
++        if s <= 0:
++            break
++        k = budget / s
++        for l in treated:
++            b = float(base.get(l, 1.0))
++            new[l] = min(max(new[l] * k, p.min_ratio * b, p.w_min), max(p.w_max, p.max_ratio * b))
++    return new
++
++
++# ------------------------------------------------------------------------------------------------------------------------------ the controller
++def _guarded(default):
++    """A bug or a bad value inside the controller must never stop a multi-day run: the exception is logged (with its traceback, once per kind) and `default` is returned; after 5 errors
++    the adaptive updater switches itself off (the weights in force stay, the file control keeps working)."""
++    def deco(fn):
++        def wrapper(self, *a, **kw):
++            try:
++                return fn(self, *a, **kw)
++            except Exception as e:                                           # noqa: BLE001
++                import traceback
++
++                self.errors += 1
++                key = f"{fn.__name__}:{type(e).__name__}"
++                if key not in self._err_seen:
++                    self._err_seen.add(key)
++                    self.log(f"[gemma_mt] lang weights: ERROR in {fn.__name__} ({e!r}); the run goes on with the weights in force\n" + traceback.format_exc())
++                if self.errors >= 5 and self.adaptive:
++                    self.adaptive = False
++                    self.log("[gemma_mt] lang weights: 5 errors, the adaptive updater is switched OFF (file control stays)")
++                return default() if callable(default) else default
++        wrapper.__name__ = fn.__name__
++        wrapper.__doc__ = fn.__doc__
++        return wrapper
++    return deco
++
++
++class LangWeightController:
++    """Owns the weights in force. Trainer hooks: update(step) at the top of every step, observe(...) after the rewards, observe_eval(step, ev), save_state(step), summary()."""
++
++    def __init__(self, out_dir: str, schedule, base: Dict[str, float], languages: Sequence[str], modes: Dict[str, str], *, file_control: bool = True, adaptive: bool = False,
++                 dry_run: bool = False, every: int = 50, params: Optional[AdaptiveParams] = None, treated: Optional[Sequence[str]] = None, canon: Callable[[str], Optional[str]] = lambda s: s,
++                 start_step: int = 0, log: Callable[[str], None] = print, log_stats: bool = False, log_weights_every: int = 0):
++        self.dir, self.schedule, self.log = out_dir, schedule, log
++        self.base = {canon(k): float(v) for k, v in base.items() if canon(k)}
++        self.languages = list(languages)
++        self.modes = dict(modes)
++        self.file_control, self.adaptive, self.dry_run = bool(file_control), bool(adaptive), bool(dry_run)
++        self.every = int(every)
++        self.p = params or AdaptiveParams()
++        self.treated = [l for l in (treated or self.languages) if l in set(self.languages)]
++        self.canon = canon
++        self.log_stats, self.log_weights_every = bool(log_stats), int(log_weights_every)
++        self.p_file, self.p_state = os.path.join(out_dir, FILE_NAME), os.path.join(out_dir, STATE_NAME)
++        self.spec: Optional[FileSpec] = None
++        self._file_sig: Optional[Tuple[int, int]] = None
++        self._bad_sig: Optional[Tuple[int, int]] = None
++        self.window = LangWindow()
++        self.ema: Dict[str, Dict[str, float]] = {}
++        self.auto: Dict[str, float] = {}
++        self.dry: Dict[str, float] = {}
++        self.dev: Dict[str, Dict[str, List[Tuple[int, float, int]]]] = defaultdict(lambda: defaultdict(list))     # iso -> dev set -> [(step, chrF, n)]
++        self.history: List[Dict[str, Any]] = []
++        self.in_force: Dict[str, float] = {}
++        self.last_update = -1
++        self.partial = False
++        self.n_updates = 0
++        self.dev_n: Dict[Tuple[str, Optional[str]], int] = {}
++        self.errors = 0
++        self._err_seen: set = set()
++        self._last_diag: Dict[str, Dict[str, Any]] = {}
++        self._resume(start_step)
++
++    # -------------------------------------------------------------------------- persistence
++    def _resume(self, start_step: int) -> None:
++        try:
++            st = json.load(open(self.p_state)) if os.path.exists(self.p_state) else None
++        except (OSError, ValueError):
++            st = None
++        if not st or not start_step:
++            return
++        hist = [h for h in st.get("history", []) if h.get("step", 0) <= start_step]
++        self.history = hist
++        upd = [h for h in hist if h.get("kind") == "update"]
++        if upd:
++            last = upd[-1]
++            self.auto = {k: float(v) for k, v in last.get("auto", {}).items()}
++            self.ema = {k: dict(v) for k, v in last.get("ema", {}).items()}
++            self.last_update = int(last["step"])
++            self.n_updates = len(upd)
++        if int(st.get("saved_step", -1)) == start_step:
++            self.window = LangWindow.from_json(st.get("window", {}))
++            self.dev = defaultdict(lambda: defaultdict(list), {k: defaultdict(list, {kk: [tuple(x) for x in vv] for kk, vv in v.items()}) for k, v in st.get("dev", {}).items()})
++            self.last_update = max(self.last_update, int(st.get("last_update", -1)))
++            if st.get("dry"):
++                self.dry = {k: float(v) for k, v in st["dry"].items()}
++            self.log(f"[gemma_mt] lang weights: resumed at step {start_step} with the sidecar written at that step ({len(upd)} adaptive updates so far)")
++        else:
++            self.partial = True
++            self.log(f"[gemma_mt] lang weights: resumed at step {start_step}, sidecar step {st.get('saved_step')}: the statistics window is incomplete, the next adaptive update is skipped (weights restored from the history)")
++
++    @_guarded(None)
++    def save_state(self, step: int) -> None:
++        d = {"version": 1, "saved_step": int(step), "last_update": self.last_update, "history": self.history, "window": self.window.to_json(),
++             "dev": {k: {kk: [list(x) for x in vv] for kk, vv in v.items()} for k, v in self.dev.items()}, "dry": self.dry}
++        tmp = self.p_state + ".tmp"
++        try:
++            with open(tmp, "w") as f:
++                json.dump(d, f)
++            os.replace(tmp, self.p_state)
++        except OSError as e:
++            self.log(f"[gemma_mt] lang weights: could not write {self.p_state}: {e}")
++
++    def weights_at(self, step: int) -> Dict[str, float]:
++        """The weights that were in force when schedule step `step` was drawn (history; base before the first entry)."""
++        w = {l: float(self.base.get(l, 1.0)) for l in self.languages}
++        for h in self.history:
++            if h["step"] <= step and "weights" in h:
++                w = dict(h["weights"])
++        return w
++
++    # -------------------------------------------------------------------------- the file
++    def _read_file(self, step: int) -> None:
++        if not self.file_control:
++            return
++        try:
++            stt = os.stat(self.p_file)
++            sig = (int(stt.st_mtime_ns), int(stt.st_size))
++        except OSError:
++            if self.spec is not None:
++                self.log(f"[gemma_mt] LANG_WEIGHTS.json removed: override cleared (step {step})")
++            self.spec, self._file_sig, self._bad_sig = None, None, None
++            return
++        if sig == self._file_sig or sig == self._bad_sig:
++            return
++        try:
++            text = open(self.p_file).read()
++        except OSError:
++            return
++        spec, errs = parse_weights_text(text, self.languages, self.canon)
++        if spec is None:
++            self._bad_sig = sig
++            self.log(f"[gemma_mt] LANG_WEIGHTS.json ignored (step {step}): " + "; ".join(errs[:4]) + (" ..." if len(errs) > 4 else ""))
++            return
++        self._file_sig, self._bad_sig = sig, None
++        self.spec = spec
++        self.log(f"[gemma_mt] LANG_WEIGHTS.json read (step {step}): mode={spec.mode} adaptive={spec.adaptive} {len(spec.weights)} absolute, {len(spec.multipliers)} multiplier(s)"
++                 + (f" note={spec.note!r}" if spec.note else ""))
++
++    # -------------------------------------------------------------------------- observations
++    @_guarded(None)
++    def observe(self, step: int, isos: Sequence[str], keys: Sequence[str], rewards, status, G: int, qe=None, adv_w=None, cons=None, pen=None, kl=None) -> None:
++        self.window.add(isos, keys, rewards, status, G, qe, adv_w, cons, pen, kl)
++
++    @_guarded(dict)
++    def step_record(self, isos, keys, rewards, status, G: int) -> Dict[str, float]:
++        """Per-language statistics of THIS step for the metrics file (only the languages drawn): lang/n (samples), lang/reward (mean), lang/radj (mean minus the step mean of the same
++        length-bin x domain key: the bin-adjusted deviation the updater works with), lang/fail (share of samples whose status is not ok)."""
++        rec: Dict[str, float] = {}
++        kt: Dict[str, List[float]] = {}
++        per: Dict[str, List[int]] = defaultdict(list)
++        for g, (iso, key) in enumerate(zip(isos, keys)):
++            per[iso].append(g)
++            t = kt.setdefault(key, [0.0, 0.0])
++            for j in range(g * G, (g + 1) * G):
++                t[0] += 1
++                t[1] += rewards[j]
++        for iso, gs in per.items():
++            rr = [rewards[j] for g in gs for j in range(g * G, (g + 1) * G)]
++            ss = [status[j] for g in gs for j in range(g * G, (g + 1) * G)]
++            dev = [rewards[j] - kt[keys[g]][1] / kt[keys[g]][0] for g in gs for j in range(g * G, (g + 1) * G)]
++            rec[f"lang/n/{iso}"] = float(len(rr))
++            rec[f"lang/reward/{iso}"] = sum(rr) / len(rr)
++            rec[f"lang/radj/{iso}"] = sum(dev) / len(dev)
++            rec[f"lang/fail/{iso}"] = sum(1.0 for s in ss if s != "ok") / len(ss)
++        return rec
++
++    @_guarded(None)
++    def observe_eval(self, step: int, ev: Dict[str, float]) -> None:
++        """Dev chrF++ per language from an evaluation record (`bench/chrf/<L>`, `bench_aux/<name>/chrf/<L>`); n_sentences unknown here -> `dev_n` per set via set_dev_sizes."""
++        for k, v in ev.items():
++            parts = k.split("/")
++            if parts[0] == "bench" and len(parts) == 3 and parts[1] == "chrf":
++                name, iso = "bench", parts[2]
++            elif parts[0] == "bench_aux" and len(parts) == 4 and parts[2] == "chrf":
++                name, iso = parts[1], parts[3]
++            else:
++                continue
++            if iso in self.modes or iso in self.languages:
++                n = self.dev_n.get((name, iso), self.dev_n.get((name, None), 40))
++                self.dev[iso][name].append((int(step), float(v), int(n)))
++
++    def set_dev_sizes(self, sizes: Dict[Tuple[str, Optional[str]], int]) -> None:
++        self.dev_n = dict(sizes)
++
++    # -------------------------------------------------------------------------- the update
++    def _best_dev(self) -> Dict[str, Dict[str, float]]:
++        out = {}
++        for iso, sets in self.dev.items():
++            best = None
++            for name, pts in sets.items():
++                t = dev_trend(pts, self.p.dev_min_evals)
++                if t is not None and (best is None or abs(t["t"]) > abs(best["t"])):
++                    best = dict(t, set=name)
++            if best is not None:
++                out[iso] = best
++        return out
++
++    def _adaptive_update(self, step: int) -> Optional[str]:
++        if self.partial:
++            self.partial = False
++            self.window = LangWindow()
++            return "window incomplete after a resume: update skipped"
++        summ = self.window.summary()
++        self.window = LangWindow()
++        for l, s in summ.items():
++            e = self.ema.setdefault(l, {})
++            for k in ("reward_adj", "std", "flat", "fail", "loop", "pen", "kl"):
++                new, old = s[k], e.get(k)
++                if new is None:
++                    continue                                                        # no information in this window: the EMA keeps its value
++                e[k] = new if old is None else self.p.ema * new + (1 - self.p.ema) * old
++            e.update({"n": s["n"], "rn": s["rn"], "groups": s["groups"], "advw": s["advw"], "qc_corr": s["qc_corr"]})
++        sig = {l: dict(v) for l, v in self.ema.items() if l in summ}
++        fac = factors(sig, self.modes, self._best_dev(), self.p)
++        cur_map = self.dry if self.dry_run else self.auto
++        prev = {l: cur_map.get(l, float(self.base.get(l, 1.0))) for l in self.treated}
++        new = targets_from_factors(self.base, prev, fac, self.treated, self.p)
++        self._last_diag = fac
++        if self.dry_run:
++            self.dry = new
++            self.history.append({"step": int(step), "kind": "dry", "auto": new, "factors": {l: round(v["f"], 4) for l, v in fac.items()}})
++            self.log(f"[gemma_mt] lang weights (dry run) step {step}: would move " + self._moves(prev, new))
++        else:
++            self.auto = new
++            self.n_updates += 1
++            self.history.append({"step": int(step), "kind": "update", "auto": {l: round(v, 6) for l, v in new.items()}, "ema": {l: {k: v for k, v in e.items() if v is not None} for l, e in self.ema.items()},
++                                 "factors": {l: round(v["f"], 4) for l, v in fac.items()}, "flags": {l: v["flags"] for l, v in fac.items() if v["flags"]}})
++            self.log(f"[gemma_mt] lang weights adaptive update @ {step}: " + self._moves(prev, new))
++        self.last_update = step
++        return None
++
++    @staticmethod
++    def _moves(prev: Dict[str, float], new: Dict[str, float]) -> str:
++        mv = sorted(((new[l] / prev[l] - 1.0, l) for l in new if prev.get(l)), key=lambda t: -abs(t[0]))[:8]
++        return ", ".join(f"{l} {prev[l]:.2f}->{new[l]:.2f}" for _, l in mv) or "nothing"
++
++    @_guarded(dict)
++    def update(self, step: int) -> Dict[str, float]:
++        """Top of the step `step` (= completed steps). Applies the weights in force to the schedule; returns the metrics to log ({} when nothing changed)."""
++        rec: Dict[str, float] = {}
++        self._read_file(step)
++        if self.adaptive and step >= self.p.first_step and step % self.every == 0 and step != self.last_update and step > 0:
++            frozen = self.spec is not None and self.spec.adaptive in ("freeze", "off")
++            if not frozen:
++                why = self._adaptive_update(step)
++                if why:
++                    self.log(f"[gemma_mt] lang weights @ {step}: {why}")
++                else:
++                    self.save_state(step)                  # the sidecar then holds the update AND the emptied window: a resume from this step's checkpoint does not repeat it
++            else:
++                self.window = LangWindow()
++        use_auto = self.adaptive and not self.dry_run and not (self.spec is not None and self.spec.adaptive == "off")
++        w = compose_weights(self.languages, self.base, self.auto if use_auto else None, self.spec)
++        changed = w != self.in_force
++        if changed:
++            try:
++                self.schedule.set_language_weights(w)
++            except ValueError as e:
++                self.log(f"[gemma_mt] lang weights: the weights in force were REJECTED by the schedule ({e}); keeping the previous ones")
++                w, changed = self.in_force or w, False
++                if self.spec is not None:
++                    self.spec, self._file_sig = None, None
++            else:
++                self.in_force = dict(w)
++                if not self.history or self.history[-1].get("weights") != w:
++                    self.history.append({"step": int(step), "kind": "weights", "weights": {l: round(v, 6) for l, v in w.items()}})
++        if changed or (self.log_weights_every and step % self.log_weights_every == 0) or step == 0:
++            for l in self.languages:
++                rec[f"reward/lang_weights/{l}"] = float(self.in_force.get(l, 1.0))
++            rec["reward/lang_weights/adaptive_updates"] = float(self.n_updates)
++            rec["reward/lang_weights/file_active"] = 1.0 if self.spec is not None else 0.0
++        if self.dry_run and self.dry and (changed or step == self.last_update):
++            for l, v in self.dry.items():
++                rec[f"reward/lang_weights_dry/{l}"] = float(v)
++        return rec
++
++    def summary(self) -> Dict[str, Any]:
++        return {"adaptive": self.adaptive, "dry_run": self.dry_run, "updates": self.n_updates, "last_update": self.last_update, "weights_in_force": {l: round(v, 4) for l, v in self.in_force.items()},
++                "file_active": self.spec is not None}
++
++
++def build_controller(cfg, schedule, prompts_languages: Sequence[str], mode_of: Dict[str, str], *, start_step: int, canon, log=print) -> Optional[LangWeightController]:
++    """Called by train_rl after the schedule exists. None when nothing is switched on."""
++    file_control = bool(getattr(cfg, "lang_weights_file", False)) and bool(getattr(cfg, "run_controls", True))
++    adaptive = bool(getattr(cfg, "adaptive_lang_weights", False))
++    stats = bool(getattr(cfg, "lang_stats_log", False))
++    if not (file_control or adaptive or stats):
++        return None
++    params = AdaptiveParams.from_dict(getattr(cfg, "adaptive_lang_weights_params", None))
++    params.first_step = int(getattr(cfg, "adaptive_lang_weights_first_step", params.first_step))
++    treated = [canon(x) for x in (getattr(cfg, "adaptive_lang_weights_languages", None) or [])]
++    ctl = LangWeightController(cfg.out_dir, schedule, dict(cfg.language_weights), prompts_languages, mode_of, file_control=file_control, adaptive=adaptive,
++                               dry_run=bool(getattr(cfg, "adaptive_lang_weights_dry_run", False)), every=int(getattr(cfg, "adaptive_lang_weights_every", 50)), params=params,
++                               treated=[t for t in treated if t] or None, canon=canon, start_step=start_step, log=log, log_stats=stats or adaptive,
++                               log_weights_every=int(getattr(cfg, "lang_weights_log_every", 50)))
++    se_ = int(getattr(cfg, "save_every", 0) or 0)
++    if adaptive and se_ and ctl.every % se_ != 0:
++        log(f"[gemma_mt] lang weights: WARNING adaptive_lang_weights_every={ctl.every} is not a multiple of save_every={se_}: a resume from a checkpoint will find an incomplete statistics window and skip one update")
++    log(f"[gemma_mt] lang weights: file control {'on' if file_control else 'off'}, adaptive {'DRY RUN' if (adaptive and ctl.dry_run) else ('on' if adaptive else 'off')}"
++        f"{' (every %d steps from step %d, %d treated languages)' % (ctl.every, params.first_step, len(ctl.treated)) if adaptive else ''}, per-language stats {'logged' if ctl.log_stats else 'not logged'}")
++    return ctl
+--- /dev/null
++++ b/tests/test_lang_weights.py
+@@ -0,0 +1,472 @@
++# SPDX-License-Identifier: AGPL-3.0-or-later
++"""D-65: language draw weights as a run control (LANG_WEIGHTS.json) and the optional adaptive updater (rl/lang_weights.py). CPU, no torch except the smoke test."""
++import json
++import math
++import os
++import time
++
++import numpy as np
++import pytest
++
++from gemma_mt.languages import canonical_iso
++from gemma_mt.rl import lang_weights as lw
++from gemma_mt.rl.data import MIXED, PromptSchedule
++
++LANGS = ["afr", "yor", "hau", "zul", "kbp", "fon", "bam", "swh"]
++
++
++def _schedule(weights=None, seed=1, alpha=0.0, floor=(0, 1)):
++    iso, lbin, dom = [], [], []
++    for l in LANGS:
++        for b in ("b64", "b256"):
++            for k in range(30):
++                iso.append(l)
++                lbin.append(b)
++                dom.append("science" if k % 3 else "general")
++    return PromptSchedule(iso, alpha, seed, length_bin=lbin, curriculum={"b64": 0}, language_weights=weights, domain=dom, domain_weights={"science": 0.7, "general": 0.3},
++                          floor_steps=floor[0], floor_prompts=floor[1])
++
++
++def _counts(sch, steps=300, n=16):
++    c = {l: 0 for l in LANGS}
++    iso = np.asarray([None])
++    for s in range(steps):
++        for i in sch.indices(s, n):
++            c[_lang_of(sch, i)] += 1
++    return c
++
++
++def _lang_of(sch, i):
++    for (d, b), (langs, by_lang, p) in sch.dom_data.items():
++        for l, ix in zip(langs, by_lang):
++            if i in set(ix.tolist()):
++                return l
++    raise KeyError(i)
++
++
++# ------------------------------------------------------------------------------------------------------------------------------ the file
++def test_parse_valid_and_invalid():
++    ok, errs = lw.parse_weights_text('{"weights": {"yor": 3, "zul": 0.5}, "multipliers": {"hau": 0.8}, "mode": "merge", "adaptive": "freeze", "note": "x"}', LANGS, canonical_iso)
++    assert errs == [] and ok.weights == {"yor": 3.0, "zul": 0.5} and ok.multipliers == {"hau": 0.8} and ok.adaptive == "freeze"
++    for bad, frag in (('{"weights": {"xxx": 1}}', "unknown language"), ('{"weights": {"yor": -1}}', "not a number"), ('{"weights": {"yor": 21}}', "not a number"),
++                      ('{"weights": {"yor": "2"}}', "not a number"), ('{"weights": {"yor": NaN}}', "not a number"), ('{"mode": "x"}', "mode"), ('{"adaptive": "maybe"}', "adaptive"),
++                      ('{"wights": {}}', "unknown key"), ("[1]", "object"), ("{not json", "JSON"), ('{"weights": {"nde": 1}}', "unknown language")):
++        spec, errs = lw.parse_weights_text(bad, LANGS, canonical_iso)
++        assert spec is None and any(frag in e for e in errs), (bad, errs)
++    spec, errs = lw.parse_weights_text('{"weights": {"YOR": 2}}', LANGS, canonical_iso)          # canonical spelling accepted
++    assert spec.weights == {"yor": 2.0}
++
++
++def test_compose_precedence():
++    base = {"yor": 2.5, "kbp": 2.5}
++    auto = {"yor": 3.0, "zul": 0.8}
++    spec = lw.FileSpec(weights={"kbp": 1.0}, multipliers={"yor": 0.5})
++    w = lw.compose_weights(LANGS, base, auto, spec)
++    assert w["kbp"] == 1.0 and w["yor"] == 1.5 and w["zul"] == 0.8 and w["afr"] == 1.0                  # file > adaptive > yaml; multiplier on top of the adaptive weight
++    assert lw.compose_weights(LANGS, base, auto, lw.FileSpec(adaptive="off"))["yor"] == 2.5             # adaptive ignored
++    assert lw.compose_weights(LANGS, base, auto, lw.FileSpec(adaptive="freeze"))["yor"] == 3.0          # frozen adaptive weights stay in force
++    w = lw.compose_weights(LANGS, base, auto, lw.FileSpec(mode="replace", weights={"hau": 4.0}))
++    assert w["hau"] == 4.0 and w["yor"] == 1.0 and w["kbp"] == 1.0                                         # replace: yaml and adaptive dropped
++
++
++# ------------------------------------------------------------------------------------------------------------------------------ the schedule
++def test_set_language_weights_equals_a_fresh_schedule_and_changes_the_mixture():
++    a = _schedule({"yor": 2.0})
++    b = _schedule({"yor": 1.0, "kbp": 5.0, "zul": 0.0})
++    a.set_language_weights({"yor": 1.0, "kbp": 5.0, "zul": 0.0})
++    for s in (0, 1, 7, 60):
++        assert a.indices(s, 16) == b.indices(s, 16)                                                       # stateless draw: (seed, step, weights in force) only
++    c = _counts(b, steps=120)
++    assert c["zul"] == 0 and c["kbp"] > 2 * c["afr"]
++
++
++def test_set_language_weights_rejects_a_dead_pool_and_changes_nothing():
++    a = _schedule({"yor": 2.0})
++    before = a.indices(3, 16)
++    with pytest.raises(ValueError):
++        a.set_language_weights({l: 0.0 for l in LANGS})
++    with pytest.raises(ValueError):
++        a.set_language_weights({"yor": -1.0})
++    assert a.indices(3, 16) == before and a.language_weights == {"yor": 2.0}
++
++
++def test_floor_survives_zero_weight():
++    a = _schedule(None, floor=(20, 2))
++    a.set_language_weights({"zul": 0.0})
++    seen = [0] * 20
++    for s in range(20):
++        for i in a.indices(s, 16):
++            seen[s] += _lang_of(a, i) == "zul"
++    assert sum(seen) >= 2                                                                                  # the D-59 floor still forces >= 2 prompts per 20 steps
++
++
++# ------------------------------------------------------------------------------------------------------------------------------ the controller: file
++def _ctl(tmp_path, sched=None, **kw):
++    msgs = []
++    sched = sched or _schedule({"yor": 2.5})
++    c = lw.LangWeightController(str(tmp_path), sched, {"yor": 2.5}, LANGS, {l: "qe" for l in LANGS}, canon=canonical_iso, log=msgs.append, **kw)
++    return c, sched, msgs
++
++
++def test_file_control_applies_clears_and_ignores_garbage(tmp_path):
++    c, sch, msgs = _ctl(tmp_path, file_control=True)
++    r = c.update(0)
++    assert r["reward/lang_weights/yor"] == 2.5 and r["reward/lang_weights/afr"] == 1.0 and "reward/lang_weights/hau" in r          # step 0: everything logged
++    assert c.update(1) == {}                                                                              # nothing changed: nothing logged
++    (tmp_path / "LANG_WEIGHTS.json").write_text('{"weights": {"yor": 1.0, "kbp": 4.0}}')
++    r = c.update(2)
++    assert r["reward/lang_weights/kbp"] == 4.0 and r["reward/lang_weights/yor"] == 1.0 and sch.language_weights["kbp"] == 4.0 and r["reward/lang_weights/file_active"] == 1.0
++    time.sleep(0.01)
++    (tmp_path / "LANG_WEIGHTS.json").write_text("garbage")
++    assert c.update(3) == {} and c.in_force["kbp"] == 4.0                                                 # invalid file: the last valid weights stay
++    assert sum("ignored" in m for m in msgs) == 1
++    c.update(4)
++    assert sum("ignored" in m for m in msgs) == 1                                                         # logged once per file version
++    (tmp_path / "LANG_WEIGHTS.json").write_text('{"weights": {"nde": 2}}')
++    c.update(5)
++    assert c.in_force["kbp"] == 4.0
++    os.remove(tmp_path / "LANG_WEIGHTS.json")
++    r = c.update(6)
++    assert r["reward/lang_weights/kbp"] == 1.0 and r["reward/lang_weights/yor"] == 2.5 and any("removed" in m for m in msgs)
++    assert c.weights_at(0)["yor"] == 2.5 and c.weights_at(2)["kbp"] == 4.0 and c.weights_at(6)["kbp"] == 1.0
++
++
++def test_file_that_kills_a_pool_is_rejected_by_the_schedule(tmp_path):
++    c, sch, msgs = _ctl(tmp_path, file_control=True)
++    c.update(0)
++    (tmp_path / "LANG_WEIGHTS.json").write_text(json.dumps({"mode": "replace", "weights": {l: 0.0 for l in LANGS}}))
++    c.update(1)
++    assert any("REJECTED" in m for m in msgs) and c.in_force["yor"] == 2.5 and sch.language_weights["yor"] == 2.5
++
++
++# ------------------------------------------------------------------------------------------------------------------------------ statistics
++def _feed(win, lang, rewards_by_group, status=None, key="b64|science", qe=None, cons=None, adv_w=None, pen=None, G=4):
++    isos = [lang] * len(rewards_by_group)
++    rs = [x for g in rewards_by_group for x in g]
++    st = status or ["ok"] * len(rs)
++    win.add(isos, [key] * len(isos), rs, st, G, qe=qe, adv_w=adv_w, cons=cons, pen=pen)
++
++
++def test_window_bin_adjustment_and_group_std():
++    w = lw.LangWindow()
++    # language A only saw the easy bin (reward 1.5), language B only the hard bin (0.5): raw means differ by 1, adjusted means are equal (each bin has one language)
++    _feed(w, "afr", [[1.4, 1.6, 1.5, 1.5]] * 3, key="b64|science")
++    _feed(w, "yor", [[0.4, 0.6, 0.5, 0.5]] * 3, key="b2048|science")
++    _feed(w, "yor", [[1.4, 1.6, 1.5, 1.5]] * 3, key="b64|science")
++    s = w.summary()
++    assert s["afr"]["reward"] == pytest.approx(1.5) and s["yor"]["reward"] == pytest.approx(1.0)
++    assert s["yor"]["reward_adj"] == pytest.approx(s["afr"]["reward_adj"])                                    # the bin effect is removed: both sit at the window mean
++    assert s["afr"]["std"] == pytest.approx(math.sqrt(0.5 * 0.01), rel=1e-6) and s["afr"]["flat"] == 0.0
++    w2 = lw.LangWindow()
++    _feed(w2, "hau", [[1.0] * 4] * 5, status=["ok"] * 16 + ["degenerate"] * 4)
++    s2 = w2.summary()["hau"]
++    assert s2["flat"] == 1.0 and s2["fail"] == pytest.approx(0.2) and s2["loop"] == pytest.approx(0.2)
++
++
++def test_window_roundtrip_and_qe_consensus_correlation():
++    w = lw.LangWindow()
++    rng = np.random.default_rng(0)
++    qe = [float(x) for x in rng.random(48)]
++    cons = [float(q * 40 + rng.normal(0, 1)) for q in qe]                       # strongly agreeing signals
++    _feed(w, "fon", [[0.0] * 4] * 12, qe=qe, cons=cons)
++    r = w.summary()["fon"]["qc_corr"]
++    assert r is not None and r > 0.5
++    w3 = lw.LangWindow.from_json(json.loads(json.dumps(w.to_json())))
++    assert w3.summary()["fon"] == w.summary()["fon"]
++
++
++def test_dev_trend_detects_a_slope_and_stays_quiet_on_noise():
++    pts = [(50 * k, 30.0 + 0.02 * 50 * k, 200) for k in range(1, 9)]            # +1 chrF per 50 steps = 2 per 100
++    t = lw.dev_trend(pts, 4)
++    assert t["slope100"] == pytest.approx(2.0) and t["t"] > 5
++    flat = [(50 * k, 30.0 + (0.3 if k % 2 else -0.3), 60) for k in range(1, 9)]
++    assert abs(lw.dev_trend(flat, 4)["t"]) < 1.5
++    assert lw.dev_trend(pts[:3], 4) is None
++
++
++# ------------------------------------------------------------------------------------------------------------------------------ the rule
++def _sig(reward, fail=0.0, groups=20, **kw):
++    d = {"n": groups * 16, "rn": groups * 16, "groups": groups, "reward_adj": reward, "std": 0.4, "flat": 0.0, "fail": fail, "loop": 0.0, "pen": 0.0, "advw": 1.0, "qc_corr": None}
++    d.update(kw)
++    return d
++
++
++P = lw.AdaptiveParams()
++
++
++def test_underperforming_qe_language_is_boosted_and_flags_cap_it_at_one():
++    sig = {"yor": _sig(-0.5), "hau": _sig(0.9), "afr": _sig(1.0), "zul": _sig(0.9)}
++    modes = {l: "qe" for l in sig}
++    f = lw.factors(sig, modes, {}, P)
++    assert f["yor"]["f"] > 1.2 and f["afr"]["f"] == pytest.approx(1.0, abs=0.03)
++    for kw, flag in ((dict(loop=0.4), "loops"), (dict(pen=0.5), "anchor_penalty"), (dict(advw=0.1), "low_reliability")):
++        g = lw.factors({**sig, "yor": _sig(-0.5, **kw)}, modes, {}, P)
++        assert g["yor"]["f"] <= 1.0 and flag in g["yor"]["flags"], (kw, g["yor"])
++    # a blend language whose QE and consensus disagree inside groups is never boosted by its low QE
++    g = lw.factors({**sig, "kbp": _sig(-0.5, qc_corr=-0.1)}, {**modes, "kbp": "blend"}, {}, P)
++    assert g["kbp"]["f"] <= 1.0 and "qe_consensus_disagree" in g["kbp"]["flags"]
++    # consensus / blend languages have no human parity: low reward level alone does nothing
++    g = lw.factors({**sig, "kbp": _sig(-1.0)}, {**modes, "kbp": "consensus"}, {}, P)
++    assert g["kbp"]["f"] == pytest.approx(1.0)
++
++
++def test_groups_without_a_gradient_and_high_kl_limit_the_boost():
++    sig = {"yor": _sig(-0.5, flat=0.95), "hau": _sig(0.9), "afr": _sig(1.0), "zul": _sig(0.9)}
++    modes = {l: "qe" for l in sig}
++    f = lw.factors(sig, modes, {}, P)
++    assert f["yor"]["f"] < lw.factors({**sig, "yor": _sig(-0.5, flat=0.0)}, modes, {}, P)["yor"]["f"] and f["yor"]["learn"] < 0.2               # almost no group carries a gradient
++    sig2 = {"yor": _sig(-0.5, kl=0.2), "hau": _sig(0.9, kl=0.02), "afr": _sig(1.0, kl=0.02), "zul": _sig(0.9, kl=0.02)}
++    g = lw.factors(sig2, modes, {}, P)
++    assert "kl_high" in g["yor"]["flags"] and g["yor"]["f"] <= 1.0
++
++
++def test_failures_drive_a_boost_in_every_mode():
++    sig = {"a": _sig(0.0, fail=0.05), "b": _sig(0.0, fail=0.05), "c": _sig(0.0, fail=0.05), "kbp": _sig(0.0, fail=0.6)}
++    f = lw.factors(sig, {"a": "qe", "b": "qe", "c": "qe", "kbp": "consensus"}, {}, P)
++    assert f["kbp"]["f"] > 1.3 and f["a"]["f"] == pytest.approx(1.0, abs=0.35)
++
++
++def test_qe_saturation_shrinks_only_mildly_without_a_reference_and_not_while_the_reference_rises():
++    sig = {"yor": _sig(1.85), "afr": _sig(1.0), "zul": _sig(0.9)}
++    modes = {l: "qe" for l in sig}
++    no_ref = lw.factors(sig, modes, {}, P)["yor"]
++    assert 0.85 - 1e-9 <= no_ref["d"] < 1.0 and no_ref["f"] >= 0.85 - 1e-9                                 # Yoruba's QE is saturated while its chrF++ is low: never shrunk below 0.85 on QE alone
++    flat = lw.factors(sig, modes, {"yor": {"t": 0.2, "slope100": 0.0, "se100": 0.3}}, P)["yor"]
++    assert flat["d"] < no_ref["d"] and flat["f"] >= P.min_ratio
++    imprecise = lw.factors(sig, modes, {"yor": {"t": 0.2, "slope100": 0.0, "se100": 2.0}}, P)["yor"]           # "no trend" measured with a 2 chrF++ error bar confirms nothing
++    assert imprecise["d"] == no_ref["d"]
++    rising = lw.factors(sig, modes, {"yor": {"t": 3.0, "slope100": 1.0, "se100": 0.3}}, P)["yor"]
++    assert rising["d"] == 1.0 and rising["f"] > 1.0
++    falling = lw.factors(sig, modes, {"yor": {"t": -3.0, "slope100": -1.0, "se100": 0.3}}, P)["yor"]
++    assert "dev_falling" in falling["flags"] and falling["f"] < 1.0
++
++
++def test_no_signal_means_no_move():
++    f = lw.factors({"yor": _sig(-1.5, groups=2)}, {"yor": "qe"}, {}, P)
++    assert f["yor"]["f"] == 1.0 and f["yor"]["why"] == "no_signal"
++
++
++def test_targets_budget_bounds_smoothing_and_floor():
++    base = {l: 1.0 for l in LANGS}
++    base.update({"yor": 3.0, "kbp": 2.5})
++    fac = {l: {"f": 1.0} for l in LANGS}
++    fac["afr"]["f"], fac["yor"]["f"] = 0.5, 1.6
++    new = lw.targets_from_factors(base, dict(base), fac, LANGS, P)
++    assert sum(new.values()) == pytest.approx(sum(base.values()), rel=1e-6)                                # bounded total draw budget
++    assert new["afr"] >= max(P.min_ratio * 1.0, P.w_min) - 1e-9 and new["yor"] <= P.max_ratio * 3.0 + 1e-9
++    for l in LANGS:                                                                                         # smoothing: one update moves at most +-25 % (before the budget rescale)
++        assert 0.6 * base[l] <= new[l] <= 1.5 * base[l]
++    iso_fac = {l: {"f": 0.0} for l in LANGS}                                                                # even f -> 0 never goes below the ratio floor
++    nw = lw.targets_from_factors(base, dict(base), iso_fac, LANGS, P)
++    assert min(nw[l] / base[l] for l in LANGS) >= 0.74
++
++
++# ------------------------------------------------------------------------------------------------------------------------------ the adaptive controller
++def _run_window(c, bad="yor", good="afr", steps=50, step0=0):
++    G = 4
++    rng = np.random.default_rng(3)
++    for s in range(step0, step0 + steps):
++        isos, keys, rewards, status = [], [], [], []
++        for l in LANGS:
++            isos.append(l)
++            keys.append("b64|science")
++            base = {bad: -0.8, good: 1.0}.get(l, 0.9)
++            r = list(base + 0.3 * rng.standard_normal(G))
++            rewards += r
++            status += ["ok"] * G
++        c.observe(s, isos, keys, rewards, status, G)
++
++
++def test_adaptive_boosts_the_laggard_keeps_the_budget_and_logs(tmp_path):
++    sch = _schedule({"yor": 2.5})
++    c, _, msgs = _ctl(tmp_path, sched=sch, file_control=True, adaptive=True, every=50, params=lw.AdaptiveParams(first_step=50, min_groups=4))
++    c.update(0)
++    _run_window(c)
++    r = c.update(50)
++    assert c.n_updates == 1 and r["reward/lang_weights/adaptive_updates"] == 1.0
++    assert 2.5 < c.in_force["yor"] <= 2.5 * 1.25 + 1e-9 and r["reward/lang_weights/yor"] == c.in_force["yor"]          # boosted, within +25 % per update
++    assert all(c.in_force[l] < 1.0 for l in LANGS if l != "yor")                                            # the others give the budget back
++    assert sum(c.in_force.values()) == pytest.approx(sum(c.weights_at(0).values()), rel=1e-6)
++    assert sch.language_weights == {k: pytest.approx(v) for k, v in c.in_force.items()}
++    assert any("adaptive update @ 50" in m for m in msgs)
++    assert c.update(51) == {}                                                                              # no second update on the same step
++
++
++def test_dry_run_changes_nothing_but_logs_the_proposal(tmp_path):
++    sch = _schedule({"yor": 2.5})
++    c, _, msgs = _ctl(tmp_path, sched=sch, file_control=True, adaptive=True, dry_run=True, every=50, params=lw.AdaptiveParams(first_step=50, min_groups=4))
++    c.update(0)
++    _run_window(c)
++    r = c.update(50)
++    assert c.in_force["yor"] == 2.5 and sch.language_weights["yor"] == 2.5 and all(c.in_force[l] == 1.0 for l in LANGS if l != "yor")
++    assert r["reward/lang_weights_dry/yor"] > 2.5 and c.n_updates == 0 and any("dry run" in m for m in msgs)
++    assert "reward/lang_weights/yor" not in r or r["reward/lang_weights/yor"] == 2.5                       # the weights in force are untouched
++
++
++def test_treated_subset_and_freeze_and_off(tmp_path):
++    c, _, _ = _ctl(tmp_path, file_control=True, adaptive=True, every=50, params=lw.AdaptiveParams(first_step=50, min_groups=4), treated=["yor", "afr", "hau"])
++    c.update(0)
++    _run_window(c)
++    c.update(50)
++    for l in ("zul", "kbp", "fon", "bam", "swh"):
++        assert c.in_force[l] == (2.5 if l == "yor" else 1.0)                                                # untreated languages keep their base weight (the control group)
++    assert sum(c.in_force[l] for l in ("yor", "afr", "hau")) == pytest.approx(2.5 + 1.0 + 1.0, rel=1e-6)
++    frozen = dict(c.in_force)
++    (tmp_path / "LANG_WEIGHTS.json").write_text('{"adaptive": "freeze"}')
++    _run_window(c, step0=50)
++    c.update(100)
++    assert c.in_force == frozen and c.n_updates == 1                                                       # frozen: no new update, last adaptive weights stay
++    (tmp_path / "LANG_WEIGHTS.json").write_text('{"adaptive": "off"}')
++    c.update(101)
++    assert c.in_force["yor"] == 2.5 and c.in_force["afr"] == 1.0                                           # off: back to the yaml weights
++
++
++def test_resume_is_exact_and_a_missing_window_skips_the_update(tmp_path):
++    kw = dict(file_control=True, adaptive=True, every=50, params=lw.AdaptiveParams(first_step=50, min_groups=4))
++    sch = _schedule({"yor": 2.5})
++    c, _, _ = _ctl(tmp_path, sched=sch, **kw)
++    c.update(0)
++    _run_window(c)
++    c.save_state(50)                                                                                         # the trainer's checkpoint hook (before the update of the next loop top)
++    c.update(50)                                                                                             # writes the sidecar again, after the update
++    w50 = dict(c.in_force)
++    # case 1: crash after the update, resume from the checkpoint of step 50 -> same weights, update not repeated
++    sch2 = _schedule({"yor": 2.5})
++    c2 = lw.LangWeightController(str(tmp_path), sch2, {"yor": 2.5}, LANGS, {l: "qe" for l in LANGS}, canon=canonical_iso, log=lambda m: None, start_step=50, **kw)
++    c2.update(50)
++    assert c2.in_force == pytest.approx(w50) and c2.n_updates == 1 and sch2.language_weights == pytest.approx(w50)
++    # case 2: the sidecar is older than the checkpoint -> weights from the history, next update skipped (window incomplete)
++    c.save_state(100)
++    (tmp_path / "LANG_WEIGHTS.state.json").write_text(json.dumps({**json.load(open(tmp_path / "LANG_WEIGHTS.state.json")), "saved_step": 50}))
++    msgs = []
++    c3 = lw.LangWeightController(str(tmp_path), _schedule({"yor": 2.5}), {"yor": 2.5}, LANGS, {l: "qe" for l in LANGS}, canon=canonical_iso, log=msgs.append, start_step=100, **kw)
++    assert c3.partial
++    _run_window(c3, step0=100)
++    c3.update(100)
++    assert any("skipped" in m for m in msgs) and c3.in_force == pytest.approx(w50)
++    # case 3: a fresh run with the same directory (start_step 0) ignores the old sidecar
++    c4 = lw.LangWeightController(str(tmp_path), _schedule({"yor": 2.5}), {"yor": 2.5}, LANGS, {l: "qe" for l in LANGS}, canon=canonical_iso, log=lambda m: None, start_step=0, **kw)
++    assert c4.n_updates == 0 and c4.history == []
++
++
++def test_params_validation():
++    with pytest.raises(ValueError):
++        lw.AdaptiveParams.from_dict({"nonsense": 1})
++    p = lw.AdaptiveParams.from_dict({"eta": 0.3, "first_step": 200, "min_groups": 3})
++    assert p.eta == 0.3 and p.first_step == 200 and p.min_groups == 3
++
++
++def test_a_controller_with_nothing_active_draws_exactly_like_no_controller(tmp_path):
++    base = {"yor": 2.5, "kbp": 3.0}
++    ref = _schedule(base)
++    sch = _schedule(base)
++    c = lw.LangWeightController(str(tmp_path), sch, base, LANGS, {l: "qe" for l in LANGS}, file_control=False, adaptive=False, canon=canonical_iso, log=lambda m: None, log_stats=True)
++    c.update(0)
++    for s in (0, 1, 2, 17, 99):
++        assert sch.indices(s, 16) == ref.indices(s, 16)
++
++
++def test_a_failing_controller_never_raises_and_the_updater_switches_itself_off(tmp_path):
++    msgs = []
++    c, _, _ = _ctl(tmp_path, file_control=True, adaptive=True, every=50, params=lw.AdaptiveParams(first_step=50, min_groups=1))
++    c.log = msgs.append
++    c.window = None                                                           # corrupt the state on purpose
++    for step in (50, 100, 150, 200, 250):
++        c.update(step)                                                         # must not raise
++    c.observe(1, ["yor"], ["k"], [0.0] * 4, ["ok"] * 4, 4)
++    assert c.errors >= 5 and not c.adaptive and any("ERROR" in m for m in msgs) and any("switched OFF" in m for m in msgs)
++    assert sum("ERROR in update" in m for m in msgs) == 1                      # the traceback is printed once per kind
++
++
++def test_everything_off_is_no_controller():
++    class Cfg:
++        lang_weights_file = False
++        adaptive_lang_weights = False
++        lang_stats_log = False
++        run_controls = True
++        language_weights = {}
++        out_dir = "/nonexistent"
++
++    assert lw.build_controller(Cfg(), _schedule(), LANGS, {}, start_step=0, canon=canonical_iso) is None
++
++
++# ------------------------------------------------------------------------------------------------------------------------------ end to end (CPU smoke)
++def test_cpu_smoke_with_file_control_adaptive_and_resume(tmp_path):
++    pytest.importorskip("torch")
++    pytest.importorskip("transformers")
++    from gemma_mt.rl.train_rl import run_smoke
++
++    work = tmp_path / "w"
++    (work / "rl").mkdir(parents=True)
++    (work / "rl" / "LANG_WEIGHTS.json").write_text('{"weights": {"ibo": 4.0}, "note": "smoke"}')
++    summ = run_smoke(workdir=str(work), sft_steps=20, overrides=dict(
++        steps=6, eval_every=0, save_every=2, warmup_steps=1, learning_rate=1e-4, lang_weights_file=True, adaptive_lang_weights=True, adaptive_lang_weights_every=2,
++        adaptive_lang_weights_first_step=2, lang_weights_log_every=2, language_weights={"yor": 2.0}, adaptive_lang_weights_params={"min_groups": 1, "shrink_k": 4.0}))
++    assert summ["steps"] == 6 and summ["lang_weights"]["adaptive"] and summ["lang_weights"]["updates"] >= 1
++    rows = [json.loads(l) for l in open(work / "rl" / "metrics.jsonl") if l.strip()]
++    steps = [r for r in rows if "lr" in r]
++    assert steps[0]["reward/lang_weights/ibo"] == 4.0 and steps[0]["reward/lang_weights/yor"] == 2.0           # the file wins over nothing, the yaml dict is the base
++    assert all(any(k.startswith("lang/reward/") for k in r) for r in steps)
++    assert any(r.get("reward/lang_weights/adaptive_updates", 0) >= 1 for r in steps)
++    assert (work / "rl" / "LANG_WEIGHTS.state.json").exists()
++    st = json.load(open(work / "rl" / "LANG_WEIGHTS.state.json"))
++    assert any(h["kind"] == "update" for h in st["history"])
++
++
++# ------------------------------------------------------------------------------------------------------------------------------ the offline replay tool
++def _load_replay():
++    import importlib.util
++
++    spec = importlib.util.spec_from_file_location("replay_lang_weights", os.path.join(os.path.dirname(__file__), "..", "scripts", "replay_lang_weights.py"))
++    m = importlib.util.module_from_spec(spec)
++    spec.loader.exec_module(m)
++    return m
++
++
++def _calib(tmp_path, langs=("yor", "afr", "hau", "kbp")):
++    cal = {l: {"content": {"mode": "blend" if l == "kbp" else "qe"}} for l in langs}
++    cal["_meta"] = {}
++    p = tmp_path / "cal.json"
++    p.write_text(json.dumps(cal))
++    return str(p)
++
++
++def test_replay_of_lang_stats_file_boosts_the_laggard(tmp_path):
++    m = _load_replay()
++    langs = ["yor", "afr", "hau", "kbp"]
++    rows = []
++    rng = np.random.default_rng(0)
++    for s in range(1, 151):
++        row = {"step": s, "reward": 0.5}
++        for l in langs:
++            row[f"lang/n/{l}"] = 16.0
++            row[f"lang/reward/{l}"] = {"yor": -0.8, "afr": 1.0, "hau": 0.9, "kbp": 0.9}[l] + 0.05 * rng.standard_normal()
++            row[f"lang/radj/{l}"] = row[f"lang/reward/{l}"] - 0.5
++            row[f"lang/fail/{l}"] = 0.0
++        rows.append(row)
++    mp = tmp_path / "m.jsonl"
++    mp.write_text("\n".join(json.dumps(r) for r in rows))
++    out = tmp_path / "traj.csv"
++    assert m.main(["--metrics", str(mp), "--calib", _calib(tmp_path), "--base-json", '{"yor": 2.0}', "--every", "50", "--first-step", "50", "--params", '{"min_groups": 3}',
++                   "--out-csv", str(out), "--quiet"]) == 0
++    import csv
++
++    rows_csv = list(csv.DictReader(open(out)))
++    last = max(int(r["step"]) for r in rows_csv)
++    final = {r["iso"]: float(r["weight"]) for r in rows_csv if int(r["step"]) == last}
++    assert last == 150 and final["yor"] > 2.0 * 1.1 and final["afr"] < 1.0                                  # updates at 50, 100 and 150; the laggard gained, the budget came from the others
++    assert sum(final.values()) == pytest.approx(5.0, rel=1e-6)
++
++
++def test_replay_of_an_old_file_uses_failure_rates_and_dev_gates_only(tmp_path):
++    m = _load_replay()
++    rows = []
++    for s in range(1, 121):
++        row = {"step": s, "reward": 0.0, "reward/lid/fail_rate/yor": 0.0, "reward/lid/fail_rate/afr": 0.0, "reward/lid/fail_rate/hau": 0.0, "reward/lid/fail_rate/kbp": 0.0,
++               "reward/fail/degenerate/hau": 0.7, "reward/fail/no_end_of_turn/hau": 0.0}
++        rows.append(row)
++        if s % 50 == 0:
++            rows.append({"step": s, "eval/reward": 0.1, "bench/chrf/yor": 30.0 + 0.01 * s, "bench/chrf_macro": 30.0})
++    mp = tmp_path / "m.jsonl"
++    mp.write_text("\n".join(json.dumps(r) for r in rows))
++    assert m.main(["--metrics", str(mp), "--calib", _calib(tmp_path), "--every", "50", "--first-step", "100", "--params", '{"min_groups": 3}', "--quiet"]) == 0
+--- /dev/null
++++ b/scripts/replay_lang_weights.py
+@@ -0,0 +1,187 @@
++# SPDX-License-Identifier: AGPL-3.0-or-later
++"""Offline replay of the adaptive language-weight updater (D-65, rl/lang_weights.py) over a finished (or running: read-only) metrics.jsonl.
++
++Prints the weight trajectory the updater WOULD have produced, update by update, with the factor components and flags of the languages that moved, and can write it as CSV.
++
++Two kinds of metrics files:
++  * runs with `lang_stats_log: true` / `adaptive_lang_weights: true`  -> the exact per-language step statistics `lang/n|reward|radj|fail/<iso>` (+ `reward/anchors/penalty/<iso>`)
++  * older files (the 2c run, the running final run before it is restarted with the patched trainer): PROXIES from keys that always existed: which languages were drawn (the replayed schedule
++    `--draws`, else the union of the per-language keys of that step), failure rates `reward/fail/<class>/<iso>`, `reward/anchors/penalty/<iso>`, and (optionally) the greedy hold-out reward
++    `eval/reward/<iso>` as a 2-sample observation. NO per-language training reward exists in those files, so the reward terms (boost for under-performance, saturation shrink) are silent there;
++    only failure-driven moves and the dev chrF++ gates (bench/chrf/<iso>, bench_aux/<set>/chrf/<iso>) can act. Said plainly in the output.
++
++    python scripts/replay_lang_weights.py --metrics runs/rl2c/metrics.jsonl --calib calibration/shaping_flores_dev_v8.json --config runs/rl2c/config.json \
++        --draws reports/data/lang_draws_by_phase.json --out-csv /tmp/traj.csv
++    python scripts/replay_lang_weights.py --metrics runs/final/metrics.jsonl --calib ... --base-json '{"yor": 2.5, ...}' --every 2 --first-step 2 --params '{"min_groups": 1}'
++"""
++from __future__ import annotations
++
++import argparse
++import csv
++import json
++import os
++import re
++import sys
++import tempfile
++from collections import Counter, defaultdict
++from typing import Dict, List, Optional
++
++FAIL_CLASSES = ("bad_prefix", "copy_source", "dangling_marker", "degenerate", "empty", "length_ratio", "no_end_of_turn", "post_eos_rubbish", "special_tokens", "wrong_language")
++LOOP_CLASSES = ("degenerate", "no_end_of_turn", "post_eos_rubbish", "dangling_marker")
++DEV_N = {"bench": 40, "general_dev": 40, "weak_dev": 60, "afrisci_dev_doc": 25}
++
++
++class DummySchedule:
++    def __init__(self):
++        self.language_weights = {}
++
++    def set_language_weights(self, w):
++        self.language_weights = dict(w)
++
++
++def load_base(config_path: Optional[str], base_json: Optional[str]) -> Dict[str, float]:
++    if base_json:
++        return {k: float(v) for k, v in json.loads(base_json).items()}
++    if not config_path:
++        return {}
++    if config_path.endswith(".json"):
++        d = json.load(open(config_path))
++        return {k: float(v) for k, v in (d.get("config", d).get("language_weights") or {}).items()}
++    import yaml                                                                           # a yaml config: needs PyYAML (the box venv has it)
++
++    return {k: float(v) for k, v in (yaml.safe_load(open(config_path)).get("language_weights") or {}).items()}
++
++
++def per_lang(row: dict, prefix: str) -> Dict[str, float]:
++    out = {}
++    for k, v in row.items():
++        if k.startswith(prefix):
++            tail = k[len(prefix):]
++            if re.fullmatch(r"[a-z]{3}", tail):
++                out[tail] = v
++    return out
++
++
++def main(argv=None) -> int:
++    ap = argparse.ArgumentParser()
++    ap.add_argument("--metrics", required=True)
++    ap.add_argument("--calib", required=True, help="calibration json (content mode per language)")
++    ap.add_argument("--config", default=None, help="run config.json (or yaml): language_weights = the base weights")
++    ap.add_argument("--base-json", default=None, help="base weights as a JSON dict (overrides --config)")
++    ap.add_argument("--draws", default=None, help="lang_draws_by_phase.json (scripts/replay_schedule_draws.py): exact prompts per language per step of the 2c run")
++    ap.add_argument("--group-size", type=int, default=16)
++    ap.add_argument("--every", type=int, default=50)
++    ap.add_argument("--first-step", type=int, default=100)
++    ap.add_argument("--params", default=None, help="AdaptiveParams overrides as JSON")
++    ap.add_argument("--treated", default=None, help="comma separated languages the updater may move (default all)")
++    ap.add_argument("--no-eval-reward", action="store_true", help="do not use eval/reward/<iso> as a (2-sample) reward observation")
++    ap.add_argument("--out-csv", default=None)
++    ap.add_argument("--quiet", action="store_true")
++    a = ap.parse_args(argv)
++
++    from gemma_mt.languages import canonical_iso
++    from gemma_mt.rl import lang_weights as lw
++
++    calib = json.load(open(a.calib))
++    languages = sorted(k for k in calib if len(k) == 3 and isinstance(calib[k], dict))
++    modes = {l: (calib[l].get("content") or {}).get("mode", "qe") for l in languages}
++    base = load_base(a.config, a.base_json)
++    params = lw.AdaptiveParams.from_dict(json.loads(a.params) if a.params else None)
++    params.first_step = a.first_step
++    draws: Optional[List[List[str]]] = json.load(open(a.draws))["steps_2c"] if a.draws else None
++    sched = DummySchedule()
++    tmp = tempfile.mkdtemp(prefix="replay_lw_")
++    ctl = lw.LangWeightController(tmp, sched, base, languages, modes, file_control=False, adaptive=True, every=a.every, params=params,
++                                  treated=a.treated.split(",") if a.treated else None, canon=canonical_iso, log=(lambda m: None))
++    ctl.set_dev_sizes({(k, None): v for k, v in DEV_N.items()})
++    rows = [json.loads(l) for l in open(a.metrics) if l.strip()]
++    mode_kind = "lang/*" if any(k.startswith("lang/reward/") for r in rows for k in r) else "proxy"
++    last = 0
++    traj = []                                       # (step, {iso: weight}, diagnostics of the update)
++    ctl.update(0)
++    traj.append((0, dict(ctl.in_force), {}))
++    n_train = 0
++    for row in rows:
++        if "reward" in row and "step" in row and not row.get("baseline"):
++            s = int(row["step"])
++            if s <= last:
++                continue                            # a resumed run repeats steps: the first occurrence stands
++            last = s
++            n_train += 1
++            before = ctl.n_updates
++            ctl.update(s - 1)
++            if ctl.n_updates > before:
++                traj.append((s - 1, dict(ctl.in_force), {l: d for l, d in ctl._last_diag.items() if d.get("why") == "ok"}))
++            G = a.group_size
++            if mode_kind == "lang/*":
++                ns, rs, fs, ra = per_lang(row, "lang/n/"), per_lang(row, "lang/reward/"), per_lang(row, "lang/fail/"), per_lang(row, "lang/radj/")
++                pen = per_lang(row, "reward/anchors/penalty/")
++                for l, n in ns.items():
++                    rew = (row["reward"] + ra[l]) if l in ra else rs.get(l)
++                    ctl.window.add_aggregate(l, "all", n, n / G, rew, fail=fs.get(l, 0.0), pen=pen.get(l, 0.0))
++            else:
++                if draws is not None and s - 1 < len(draws):
++                    cnt = Counter(draws[s - 1])
++                else:
++                    drawn = set()
++                    for pre in ("reward/lid/fail_rate/", "reward/consensus/chrf/", "reward/anchors/penalty/", "reward/qe_ens/min_share/", "reward/diacritic/deficit/"):
++                        drawn |= set(per_lang(row, pre))
++                    for c in FAIL_CLASSES:
++                        drawn |= set(per_lang(row, f"reward/fail/{c}/"))
++                    cnt = Counter({l: 1 for l in drawn})
++                fail = defaultdict(float)
++                loop = defaultdict(float)
++                for c in FAIL_CLASSES:
++                    for l, v in per_lang(row, f"reward/fail/{c}/").items():
++                        fail[l] += v
++                        if c in LOOP_CLASSES:
++                            loop[l] += v
++                pen = per_lang(row, "reward/anchors/penalty/")
++                for l, g in cnt.items():
++                    ctl.window.add_aggregate(l, "all", g * G, g, None, fail=min(fail.get(l, 0.0), 1.0), loop=min(loop.get(l, 0.0), 1.0), pen=pen.get(l, 0.0))
++        elif "eval/reward" in row or any(k.startswith("bench") for k in row):
++            s = int(row["step"])
++            ctl.observe_eval(s, row)
++            if mode_kind == "proxy" and not a.no_eval_reward:
++                for l, v in per_lang(row, "eval/reward/").items():
++                    ctl.window.add_aggregate(l, "eval", 2, 1, float(v))
++    before = ctl.n_updates
++    ctl.update(last)
++    if ctl.n_updates > before:
++        traj.append((last, dict(ctl.in_force), {l: d for l, d in ctl._last_diag.items() if d.get("why") == "ok"}))
++
++    # ---------------------------------------------------------------------------------------------------------------- report
++    print(f"metrics: {a.metrics} ({n_train} distinct training steps, last step {last}); signal source: {mode_kind}")
++    if mode_kind == "proxy":
++        print("NOTE: this file has no per-language training reward; the reward-driven terms are silent, only failure / penalty / dev-chrF terms can move a weight.")
++    print(f"updater: every {a.every} steps from step {a.first_step}, {len(ctl.treated)} treated languages, {ctl.n_updates} updates")
++    b = {l: float(base.get(l, 1.0)) for l in languages}
++    prev = b
++    for s, w, fl in traj[1:]:
++        moved = sorted(((w[l] / prev[l] - 1.0, l) for l in languages if abs(w[l] / prev[l] - 1.0) > 0.02), key=lambda t: -abs(t[0]))
++        flagged = sorted(l for l, d in fl.items() if d["flags"])
++        if not a.quiet:
++            print(f"  update @ {s:5d}: {len(moved):2d} languages moved >2% " + ", ".join(f"{l} {prev[l]:.2f}->{w[l]:.2f}" for _, l in moved[:8]) + (f" | flagged: {','.join(flagged[:10])}" if flagged else ""))
++        prev = w
++    if ctl.n_updates:
++        final = traj[-1][1]
++        flags_last = traj[-1][2]
++        ch = sorted(((final[l] / b[l] - 1.0, l) for l in languages), key=lambda t: t[0])
++        print(f"final vs base: sum {sum(final.values()):.2f} / {sum(b.values()):.2f}; largest decreases " + ", ".join(f"{l} {b[l]:.2f}->{final[l]:.2f}" for _, l in ch[:6]) +
++              "; largest increases " + ", ".join(f"{l} {b[l]:.2f}->{final[l]:.2f}" for _, l in ch[-6:][::-1]))
++        print("flags at the last update:", dict(Counter(f for x in flags_last.values() for f in x["flags"])))
++        print("factor summary at the last update (languages with a signal):", len(flags_last), "| boosted >1.05:", sum(1 for x in flags_last.values() if x["f"] > 1.05),
++              "| shrunk <0.95:", sum(1 for x in flags_last.values() if x["f"] < 0.95))
++    if a.out_csv:
++        with open(a.out_csv, "w", newline="") as f:
++            wr = csv.writer(f)
++            wr.writerow(["step", "iso", "mode", "base", "weight", "ratio"])
++            for s, w, _ in traj:
++                for l in languages:
++                    wr.writerow([s, l, modes[l], b[l], round(w[l], 5), round(w[l] / b[l], 5)])
++        print("wrote", a.out_csv)
++    return 0
++
++
++if __name__ == "__main__":
++    sys.exit(main())
+--- /dev/null
++++ b/scripts/lang_weight_evidence.py
+@@ -0,0 +1,316 @@
++# SPDX-License-Identifier: AGPL-3.0-or-later
++"""D-65 evidence: does the number of RL samples a language saw explain its SFT -> RL chrF++ gain? (observational; read-only on finished-run files)
++
++Inputs
++  --draws   lang_draws_by_phase.json  (scripts/replay_schedule_draws.py: prompts per language per RL phase, re-derived from the stateless PromptSchedule)
++  --wide    reports/data/final_model_per_language_wide.csv  (SFT-final vs RL-final chrF++ per language x benchmark x subset, paired-bootstrap CI of the delta)
++  --calib   calibration/shaping_flores_dev_v8.json (content mode qe / blend / consensus, anchors t_fail / t_mid / t_great)
++  --metrics runs/rl2c/metrics.jsonl (per-language dev chrF++ trajectory `bench/chrf/<L>`, greedy hold-out reward `eval/reward/<L>`, `reward/consensus/chrf/<L>`)
++Outputs (in --out): per_language.csv, regression.json, saturation.csv, noise.json  + a short text summary on stdout.
++
++Pure numpy (no scipy / pandas) so that it runs on the laptop and on the box.
++    PYTHONPATH=gemma_mt python gemma_mt/scripts/lang_weight_evidence.py --draws ... --wide ... --calib ... --metrics ... --out reports/data/adaptive_language_weights_2026-10-22
++"""
++from __future__ import annotations
++
++import argparse
++import csv
++import json
++import math
++import os
++import re
++import sys
++from collections import defaultdict
++from typing import Dict, List, Sequence, Tuple
++
++import numpy as np
++
++STRONG = ["afr", "swh", "zul", "xho", "sot", "som", "ibo"]          # the owner's "strong languages with small gains"
++W_FINAL = {"tir": 2.5, "amh": 2.5, "kbp": 2.5, "nus": 2.5, "kam": 2.5, "bam": 2.5, "mos": 2.5, "umb": 2.5, "kmb": 2.5, "dyu": 2.5, "kea": 2.5, "luo": 2.5, "kik": 2.5, "orm": 2.5,
++           "fon": 2.5, "yor": 2.5, "vmw": 2.5, "efi": 2.5}
++RNG = np.random.default_rng(20261022)
++
++
++# ------------------------------------------------------------------------------------------------------------------------------ data
++def load_draws(path: str) -> Dict[str, Dict[str, Dict[str, float]]]:
++    d = json.load(open(path))["summary"]
++    out: Dict[str, Dict[str, Dict[str, float]]] = {}
++    for ph, s in d.items():
++        for iso, n in s["prompts"].items():
++            out.setdefault(iso, {})[ph] = {"prompts": n, "completions": n * s["group"]}
++    return out
++
++
++def load_gain_rows(path: str, languages: Sequence[str]):
++    rows = []
++    for r in csv.DictReader(open(path)):
++        if r["subset"] != "no_pair" or r["iso"] not in languages:
++            continue
++        lo, hi = float(r["d_chrf_lo"]), float(r["d_chrf_hi"])
++        rows.append({"iso": r["iso"], "bench": r["benchmark"], "n": int(r["n"]), "sft": float(r["sft_chrf"]), "rl": float(r["rl_chrf"]),
++                     "d": float(r["d_chrf"]), "se": max((hi - lo) / 3.92, 0.05)})
++    return rows
++
++
++def script_of(iso: str) -> str:
++    from gemma_mt.languages import LANGUAGES
++
++    L = LANGUAGES[iso]
++    code = L.flores or (L.glotlid[0] if L.glotlid else "")
++    m = re.search(r"_([A-Z][a-z]{3})", code or "")
++    return m.group(1) if m else "Latn"
++
++
++def language_table(draws, rows, calib) -> List[dict]:
++    by = defaultdict(list)
++    for r in rows:
++        by[r["iso"]].append(r)
++    table = []
++    for iso, rs in sorted(by.items()):
++        w = np.array([1.0 / r["se"] ** 2 for r in rs])
++        gain = float(np.sum(w * [r["d"] for r in rs]) / w.sum())
++        se = float(1.0 / math.sqrt(w.sum()))
++        base = float(np.sum(w * [r["sft"] for r in rs]) / w.sum())
++        ph = draws.get(iso, {})
++        c2c = ph.get("2c", {}).get("completions", 0)
++        cum = c2c + ph.get("2", {}).get("completions", 0) + ph.get("2b_b64", {}).get("completions", 0)
++        cal = calib.get(iso, {})
++        mode = (cal.get("content") or {}).get("mode", "qe")
++        a = cal.get("anchors") or [None, None, None]
++        table.append({"iso": iso, "mode": mode, "script": script_of(iso), "w2c": W_FINAL.get(iso, 1.0), "n_bench": len(rs), "sft": base, "gain": gain, "se": se,
++                      "c_2c": c2c, "c_cum": cum, "p_2c": ph.get("2c", {}).get("prompts", 0), "t_fail": a[0], "t_mid": a[1], "t_great": a[2],
++                      "benches": ",".join(sorted(r["bench"] for r in rs))})
++    return table
++
++
++# ------------------------------------------------------------------------------------------------------------------------------ regression
++def design(table: List[dict], spec: str):
++    X, names = [], []
++    cols = {"const": lambda t: 1.0, "sft10": lambda t: t["sft"] / 10.0, "sft10sq": lambda t: (t["sft"] / 10.0) ** 2, "blend": lambda t: float(t["mode"] == "blend"),
++            "cons": lambda t: float(t["mode"] == "consensus"), "nonlatin": lambda t: float(t["script"] != "Latn"),
++            "log2_c2c": lambda t: math.log2(max(t["c_2c"], 1)), "log2_cum": lambda t: math.log2(max(t["c_cum"], 1)), "w25": lambda t: float(t["w2c"] > 1.0)}
++    for c in spec.split("+"):
++        names.append(c)
++    for t in table:
++        X.append([cols[c](t) for c in names])
++    return np.array(X), names
++
++
++def ols(X, y, w=None):
++    if w is None:
++        w = np.ones(len(y))
++    sw = np.sqrt(w)
++    beta, *_ = np.linalg.lstsq(X * sw[:, None], y * sw, rcond=None)
++    return beta
++
++
++def boot(table: List[dict], spec: str, weighted: bool, B: int = 4000):
++    X, names = design(table, spec)
++    y = np.array([t["gain"] for t in table])
++    w = np.array([1.0 / (t["se"] ** 2 + 1.0) for t in table]) if weighted else None      # +1.0 = between-language noise floor (tau^2 ~ 1 chrF^2)
++    b0 = ols(X, y, w)
++    n = len(y)
++    bs = np.empty((B, len(names)))
++    for i in range(B):
++        ix = RNG.integers(0, n, n)
++        try:
++            bs[i] = ols(X[ix], y[ix], None if w is None else w[ix])
++        except np.linalg.LinAlgError:
++            bs[i] = np.nan
++    lo, hi = np.nanpercentile(bs, [2.5, 97.5], axis=0)
++    res = X @ b0
++    r2 = 1 - float(np.sum((y - res) ** 2) / np.sum((y - y.mean()) ** 2))
++    return {"spec": spec, "weighted": weighted, "n": n, "r2": r2, "coef": {nm: {"est": float(b0[i]), "lo": float(lo[i]), "hi": float(hi[i])} for i, nm in enumerate(names)}}
++
++
++def vif_note(table: List[dict]):
++    lc = np.array([math.log2(max(t["c_2c"], 1)) for t in table])
++    w = np.array([float(t["w2c"] > 1.0) for t in table])
++    r = float(np.corrcoef(lc, w)[0, 1])
++    within = {k: float(np.std(lc[w == k])) for k in (0.0, 1.0) if np.sum(w == k) > 2}
++    return {"corr_log2_samples_vs_weight_class": r, "sd_log2_samples_within_class": within, "sd_log2_samples_total": float(np.std(lc)),
++            "mean_log2_gap_between_classes": float(lc[w == 1].mean() - lc[w == 0].mean()) if (w == 1).any() and (w == 0).any() else None}
++
++
++def row_level(rows, table, B: int = 3000):
++    """Row-level model: d(language, benchmark) ~ benchmark FE + sft level + mode + nonlatin + log2 samples, language-cluster bootstrap, each language weighted 1/its rows."""
++    info = {t["iso"]: t for t in table}
++    benches = sorted({r["bench"] for r in rows})
++    isos = sorted({r["iso"] for r in rows})
++
++    def build(sel_isos):
++        X, y, w = [], [], []
++        for iso in sel_isos:
++            rs = [r for r in rows if r["iso"] == iso]
++            for r in rs:
++                t = info[iso]
++                X.append([1.0 if r["bench"] == b else 0.0 for b in benches] + [r["sft"] / 10.0, float(t["mode"] == "blend"), float(t["mode"] == "cons"), float(t["script"] != "Latn"),
++                                                                              math.log2(max(t["c_2c"], 1))])
++                y.append(r["d"])
++                w.append(1.0 / len(rs))
++        return np.array(X), np.array(y), np.array(w)
++
++    names = benches + ["sft10", "blend", "cons", "nonlatin", "log2_c2c"]
++    for i, nm in enumerate(names):
++        if nm == "cons":
++            names[i] = "consensus"
++    X, y, w = build(isos)
++    keep = [j for j in range(X.shape[1]) if np.any(X[:, j] != 0)]
++    b0 = ols(X[:, keep], y, w)
++    bs = []
++    for _ in range(B):
++        sel = [isos[i] for i in RNG.integers(0, len(isos), len(isos))]
++        Xb, yb, wb = build(sel)
++        try:
++            bs.append(ols(Xb[:, keep], yb, wb))
++        except np.linalg.LinAlgError:
++            pass
++    bs = np.array(bs)
++    lo, hi = np.percentile(bs, [2.5, 97.5], axis=0)
++    return {"rows": len(y), "languages": len(isos), "coef": {names[j]: {"est": float(b0[i]), "lo": float(lo[i]), "hi": float(hi[i])} for i, j in enumerate(keep)}}
++
++
++def stratum_compare(table: List[dict], thr: float = 22.0, B: int = 5000):
++    """Model-free look at the confounded comparison: among languages with a LOW SFT baseline (< thr chrF++), the 2.5x-weight ones (2.4x the samples) vs the 1.0-weight ones. Difference of mean gains,
++    bootstrap CI over languages; same for the mean-matched sub-stratum (nearest baseline)."""
++    lo = [t for t in table if t["sft"] < thr]
++    a = np.array([t["gain"] for t in lo if t["w2c"] > 1.0])
++    b = np.array([t["gain"] for t in lo if t["w2c"] <= 1.0])
++    if len(a) < 3 or len(b) < 3:
++        return None
++    d = float(a.mean() - b.mean())
++    bs = [float(RNG.choice(a, len(a)).mean() - RNG.choice(b, len(b)).mean()) for _ in range(B)]
++    return {"threshold": thr, "n_weight_2.5": int(len(a)), "n_weight_1.0": int(len(b)), "mean_gain_2.5": float(a.mean()), "mean_gain_1.0": float(b.mean()), "diff": d,
++            "ci": [float(np.percentile(bs, 2.5)), float(np.percentile(bs, 97.5))], "mean_sft_2.5": float(np.mean([t["sft"] for t in lo if t["w2c"] > 1.0])),
++            "mean_sft_1.0": float(np.mean([t["sft"] for t in lo if t["w2c"] <= 1.0])), "samples_ratio": float(np.mean([t["c_2c"] for t in lo if t["w2c"] > 1.0]) / np.mean([t["c_2c"] for t in lo if t["w2c"] <= 1.0]))}
++
++
++# ------------------------------------------------------------------------------------------------------------------------------ trajectories (saturation)
++def trajectories(path: str):
++    bench: Dict[str, Dict[int, float]] = defaultdict(dict)
++    ev: Dict[str, Dict[int, float]] = defaultdict(dict)
++    cons: Dict[str, List[Tuple[int, float]]] = defaultdict(list)
++    base = {}
++    for line in open(path):
++        r = json.loads(line)
++        s = r["step"]
++        for k, v in r.items():
++            m = re.match(r"bench/chrf/([a-z]{3})$", k)
++            if m:
++                bench[m.group(1)][s] = v
++            m = re.match(r"eval/reward/([a-z]{3})$", k)
++            if m:
++                ev[m.group(1)][s] = v
++            m = re.match(r"reward/consensus/chrf/([a-z]{3})$", k)
++            if m and "reward" in r:
++                cons[m.group(1)].append((s, v))
++    return bench, ev, cons, base
++
++
++def plateau_stats(series: Dict[int, float]):
++    """Smooth with a 3-point mean; first third vs last third of the evaluations; step by which 80 % of the total (last-3 - first-3) change was reached."""
++    st = sorted(series)
++    v = np.array([series[s] for s in st])
++    if len(v) < 9:
++        return None
++    sm = np.convolve(v, np.ones(3) / 3, mode="valid")
++    tot = sm[-1] - sm[0]
++    t80 = None
++    if abs(tot) > 1e-9:
++        frac = (sm - sm[0]) / tot
++        for i, f in enumerate(frac):
++            if f >= 0.8:
++                t80 = st[i + 1]
++                break
++    third = max(len(v) // 3, 1)
++    return {"first": float(v[:3].mean()), "last": float(v[-3:].mean()), "change": float(v[-3:].mean() - v[:3].mean()), "slope_first_third": float((v[third - 1] - v[0]) / max(st[third - 1] - st[0], 1) * 500),
++            "slope_last_third": float((v[-1] - v[-third]) / max(st[-1] - st[-third], 1) * 500), "t80": t80}
++
++
++# ------------------------------------------------------------------------------------------------------------------------------ main
++def main(argv=None) -> int:
++    ap = argparse.ArgumentParser()
++    ap.add_argument("--draws", required=True)
++    ap.add_argument("--wide", required=True)
++    ap.add_argument("--calib", required=True)
++    ap.add_argument("--metrics", required=True)
++    ap.add_argument("--out", required=True)
++    a = ap.parse_args(argv)
++    os.makedirs(a.out, exist_ok=True)
++    calib = json.load(open(a.calib))
++    draws = load_draws(a.draws)
++    rl_langs = [k for k in calib if len(k) == 3]
++    rows = load_gain_rows(a.wide, rl_langs)
++    table = language_table(draws, rows, calib)
++    with open(os.path.join(a.out, "per_language.csv"), "w", newline="") as f:
++        w = csv.DictWriter(f, fieldnames=list(table[0].keys()))
++        w.writeheader()
++        w.writerows(table)
++    print(f"{len(table)} RL languages with human-reference rows; {len(rows)} (language, benchmark) rows")
++    out: Dict[str, object] = {"n_languages": len(table), "collinearity": vif_note(table)}
++    specs = {"A_baseline": "const+sft10", "B_baseline_mode": "const+sft10+blend+cons", "C_full_2c": "const+sft10+blend+cons+nonlatin+log2_c2c",
++             "D_full_cum": "const+sft10+blend+cons+nonlatin+log2_cum", "E_weightclass": "const+sft10+blend+cons+nonlatin+w25",
++             "F_quadratic_2c": "const+sft10+sft10sq+blend+cons+nonlatin+log2_c2c"}
++    out["language_level"] = {k: {"ols": boot(table, s, False), "wls": boot(table, s, True)} for k, s in specs.items()}
++    out["row_level"] = row_level(rows, table)
++    # dose-response WITHIN a weight class (no weight confound): languages drawn at weight 1.0 only, and the 2.5x class only
++    within = {}
++    for cls, name in ((1.0, "weight_1.0"), (2.5, "weight_2.5")):
++        sub = [t for t in table if t["w2c"] == cls]
++        if len(sub) > 8:
++            within[name] = {"n": len(sub), "log2_c2c": boot(sub, "const+sft10+blend+cons+log2_c2c", False, B=2000)["coef"]["log2_c2c"],
++                            "sd_log2_samples": float(np.std([math.log2(max(t["c_2c"], 1)) for t in sub]))}
++    out["within_class_dose"] = within
++    out["low_baseline_stratum"] = {str(thr): stratum_compare(table, thr) for thr in (22.0, 26.0)}
++    # strong languages: residual of the baseline-only model
++    X, names = design(table, "const+sft10")
++    y = np.array([t["gain"] for t in table])
++    b = ols(X, y)
++    resid = {t["iso"]: float(y[i] - X[i] @ b) for i, t in enumerate(table)}
++    out["strong_residuals_baseline_model"] = {k: resid.get(k) for k in STRONG}
++    # trajectories
++    bench, ev, cons, base = trajectories(a.metrics)
++    sat = []
++    for iso in sorted(set(bench) | set(ev) | set(cons)):
++        t = next((x for x in table if x["iso"] == iso), None)
++        row = {"iso": iso, "strong": iso in STRONG, "mode": t["mode"] if t else "", "gain_rl_vs_sft": t["gain"] if t else None, "sft_chrf": t["sft"] if t else None,
++               "t_great_reward": 2.0}
++        p = plateau_stats(bench[iso]) if iso in bench else None
++        if p:
++            row.update({f"dev_{k}": v for k, v in p.items()})
++        if iso in ev:
++            vals = np.array([ev[iso][s] for s in sorted(ev[iso])])
++            row.update({"eval_n_points": len(vals), "eval_reward_mean": float(vals.mean()), "eval_reward_first10": float(vals[:10].mean()), "eval_reward_last10": float(vals[-10:].mean()),
++                        "eval_reward_frac_at_floor": float(np.mean(vals <= -1.99))})
++        if iso in cons and len(cons[iso]) > 40:
++            cv = np.array([v for _, v in sorted(cons[iso])])
++            q = len(cv) // 4
++            row.update({"consensus_chrf_first_q": float(cv[:q].mean()), "consensus_chrf_last_q": float(cv[-q:].mean()), "consensus_n_steps": len(cv)})
++        sat.append(row)
++    keys = sorted({k for r in sat for k in r})
++    with open(os.path.join(a.out, "saturation.csv"), "w", newline="") as f:
++        w = csv.DictWriter(f, fieldnames=keys)
++        w.writeheader()
++        w.writerows(sat)
++    # noise of a corpus chrF++ DELTA (paired) per sentence count: se * sqrt(n) from the paired bootstrap CIs of the wide csv
++    sds = [r["se"] * math.sqrt(r["n"]) for r in rows if r["n"] >= 300]
++    out["paired_delta_sd_per_sentence"] = {"median": float(np.median(sds)), "p10": float(np.percentile(sds, 10)), "p90": float(np.percentile(sds, 90)), "n_cells": len(sds)}
++    sd = float(np.median(sds))
++    out["mde_chrf_paired_80pct_power"] = {str(n): round(2.8 * sd / math.sqrt(n), 2) for n in (40, 60, 100, 200, 300, 843, 1012, 1997)}
++    json.dump(out, open(os.path.join(a.out, "regression.json"), "w"), indent=1)
++    # stdout summary
++    print(json.dumps(out["collinearity"], indent=1))
++    for k, v in out["language_level"].items():
++        cf = v["ols"]["coef"]
++        ks = [c for c in cf if c.startswith("log2") or c == "w25"]
++        print(k, "R2 %.2f" % v["ols"]["r2"], {c: "%.2f [%.2f, %.2f]" % (cf[c]["est"], cf[c]["lo"], cf[c]["hi"]) for c in ks + ["sft10"] if c in cf})
++    print("row-level", {c: "%.2f [%.2f, %.2f]" % (v["est"], v["lo"], v["hi"]) for c, v in out["row_level"]["coef"].items() if c in ("log2_c2c", "sft10", "blend", "consensus", "nonlatin")})
++    print("within class", json.dumps(within, indent=0)[:600])
++    print("low-baseline stratum", json.dumps(out["low_baseline_stratum"]))
++    print("strong residuals", {k: (None if v is None else round(v, 2)) for k, v in out["strong_residuals_baseline_model"].items()})
++    print("noise", out["paired_delta_sd_per_sentence"], out["mde_chrf_paired_80pct_power"])
++    return 0
++
++
++if __name__ == "__main__":
++    sys.exit(main())
+--- /dev/null
++++ b/scripts/replay_schedule_draws.py
+@@ -0,0 +1,106 @@
++# SPDX-License-Identifier: AGPL-3.0-or-later
++"""Replay the (stateless, deterministic) RL prompt schedules of the finished RL phases -> prompts and sampled completions per language (D-65 evidence).
++
++`PromptSchedule` depends only on (seed, step, pool structure, language weights), so the language of every prompt of every step of a finished run can be re-derived
++without the run's logs. Used by `scripts/lang_weight_evidence.py` ("how many RL samples did language X see?").
++
++Phases (configs/rl_rtxpro*.yaml of the general RL; all seed 1234, language_alpha 0 except phase 1):
++    1    rl_rtxpro.yaml          300 steps, group 8, alpha 0.5 (draw ~ sqrt(pool)), weights {efi: 1e-4}         (APPROXIMATE: the language set of that time is unknown, the v2 pools are used)
++    2    rl_rtxpro_phase2.yaml   497 steps, group 8, alpha 0, 17 languages x2.5, efi 1e-4
++    2b   stage b64 of phase 2b   488 steps (b64 only; the diverged b256 stage after it was discarded), group 16, same weights
++    2c   the run whose metrics.jsonl we have: steps 1-350 efi 1e-4, 351-450 efi absent (weight 1), 451-1433 efi 2.5 (recovered from the logged per-language keys of the run:
++         `--check` compares the replay with the logged `reward/lid/fail_rate/<L>` key sets and finds the regime boundaries), group 16, curriculum b256 391 / b512 446 / b1024 149 / b2048 298 / mixed
++
++    python scripts/replay_schedule_draws.py --prompts /workspace/sft_build/gemma/rl_prompts_v3 --out reports/data/lang_draws_by_phase.json
++    python scripts/replay_schedule_draws.py --prompts ... --check /workspace/sft_build/runs/rl2c/metrics.jsonl     # regime check against a metrics file
++"""
++from __future__ import annotations
++
++import argparse
++import glob
++import json
++import re
++import sys
++from collections import Counter
++from typing import Dict, List
++
++import numpy as np
++
++W17 = {"tir": 2.5, "amh": 2.5, "kbp": 2.5, "nus": 2.5, "kam": 2.5, "bam": 2.5, "mos": 2.5, "umb": 2.5, "kmb": 2.5, "dyu": 2.5, "kea": 2.5, "luo": 2.5, "kik": 2.5, "orm": 2.5,
++       "fon": 2.5, "yor": 2.5, "vmw": 2.5}
++BINS_2C = {"b64": 64, "b256": 48, "b512": 42, "b1024": 42, "b2048": 21, "mixed": 42}
++BINS_P2 = {"b64": 128, "b256": 96, "b512": 84, "b1024": 84, "mixed": 84}
++BINS_P2B = {"b64": 64, "b256": 48, "b512": 42, "b1024": 42, "mixed": 42}
++BINS_P1 = {"b64": 64, "b256": 48, "b512": 42, "b1024": 42, "mixed": 42}
++
++
++def load_pool(path: str, max_tokens: int):
++    import pyarrow.parquet as pq
++
++    iso, lb = [], []
++    for f in sorted(glob.glob(path.rstrip("/") + "/**/*.parquet", recursive=True)):
++        t = pq.read_table(f, columns=["iso", "length_bin", "src_afr_tokens"]).to_pandas()
++        t = t[t.src_afr_tokens <= max_tokens]
++        iso += t.iso.tolist()
++        lb += t.length_bin.tolist()
++    return np.asarray(iso), np.asarray(lb)
++
++
++def replay(iso, lb, *, seed, alpha, weights, curriculum, per_bin, per_step_default, steps, step_from=0):
++    from gemma_mt.rl.data import PromptSchedule
++
++    sch = PromptSchedule(iso, alpha, seed, length_bin=lb, curriculum=curriculum, language_weights=weights)
++    out = []
++    for s in range(step_from, steps):
++        b = sch.bin_of_step(s)
++        n = per_bin.get(b, per_step_default)
++        out.append([str(iso[i]) for i in sch.indices(s, n)])
++    return out
++
++
++def regimes_2c():
++    base = dict(W17)
++    return [(0, 350, {**base, "efi": 0.0001}), (350, 450, dict(base)), (450, 1433, {**base, "efi": 2.5})]
++
++
++def main(argv=None) -> int:
++    ap = argparse.ArgumentParser()
++    ap.add_argument("--prompts", required=True, help="rl_prompts_v3 directory (parquet incl. zz_b2048/)")
++    ap.add_argument("--out", default=None)
++    ap.add_argument("--check", default=None, help="metrics.jsonl of the 2c run: compare the replayed language sets with the logged ones")
++    a = ap.parse_args(argv)
++    iso, lb = load_pool(a.prompts, 2048)
++    cur2c = {"b256": 391, "b512": 446, "b1024": 149, "b2048": 298}
++    res: Dict[str, dict] = {}
++    steps2c: List[List[str]] = []
++    for (lo, hi, w) in regimes_2c():
++        steps2c += replay(iso, lb, seed=1234, alpha=0.0, weights=w, curriculum=cur2c, per_bin=BINS_2C, per_step_default=42, steps=hi, step_from=lo)
++    res["2c"] = {"group": 16, "steps": len(steps2c), "draws": steps2c}
++    p2 = replay(iso, lb, seed=1234, alpha=0.0, weights={**W17, "efi": 0.0001}, curriculum={"b64": 98, "b256": 130, "b512": 75, "b1024": 45}, per_bin=BINS_P2, per_step_default=84, steps=497)
++    res["2"] = {"group": 8, "steps": 497, "draws": p2}
++    p2b = replay(iso, lb, seed=1234, alpha=0.0, weights={**W17, "efi": 0.0001}, curriculum={"b64": 488}, per_bin=BINS_P2B, per_step_default=64, steps=488)
++    res["2b_b64"] = {"group": 16, "steps": 488, "draws": p2b}
++    p1 = replay(iso, lb, seed=1234, alpha=0.5, weights={"efi": 0.0001}, curriculum={"b64": 40, "b256": 60, "b512": 60, "b1024": 60}, per_bin=BINS_P1, per_step_default=42, steps=300)
++    res["1"] = {"group": 8, "steps": 300, "draws": p1}
++    if a.check:
++        seen = {}
++        for line in open(a.check):
++            r = json.loads(line)
++            if "reward" in r:
++                seen[r["step"]] = {m.group(1) for k in r for m in [re.match(r"reward/lid/fail_rate/(.+)$", k)] if m}
++        ok = sum(1 for s, d in enumerate(steps2c, 1) if s in seen and (set(d) - {"pcm", "kon"}) == seen[s])
++        print(f"2c replay: {ok}/{len(seen)} steps reproduce the logged language set exactly (pcm / kon have the GlotLID guard off and never appear in the key set)")
++    summary = {}
++    for ph, d in res.items():
++        c = Counter(l for step in d["draws"] for l in step)
++        summary[ph] = {"group": d["group"], "steps": d["steps"], "prompts": dict(sorted(c.items()))}
++    if a.out:
++        json.dump({"summary": summary, "steps_2c": steps2c}, open(a.out, "w"))
++        print("wrote", a.out)
++    for ph, s in summary.items():
++        print(ph, "prompts", sum(s["prompts"].values()), "completions", sum(s["prompts"].values()) * s["group"])
++    return 0
++
++
++if __name__ == "__main__":
++    sys.exit(main())
+--- /dev/null
++++ b/scripts/lang_weight_experiment_power.py
+@@ -0,0 +1,80 @@
++# SPDX-License-Identifier: AGPL-3.0-or-later
++"""D-65 experiment plan arithmetic: what difference in chrF++ between a static-weight and an adaptive-weight language can a run actually detect?
++
++Inputs: per_language.csv + regression.json of scripts/lang_weight_evidence.py. Everything is empirical: the spread of SFT->RL gains between SIMILAR languages (matched on content mode and SFT level) is the
++noise floor of any between-language comparison; the paired-bootstrap spread of a chrF++ delta on n sentences is the noise floor of any within-language comparison.
++
++    python scripts/lang_weight_experiment_power.py --evidence reports/data/adaptive_language_weights_2026-10-22 [--out .../power.json]
++"""
++from __future__ import annotations
++
++import argparse
++import csv
++import json
++import math
++import os
++import sys
++
++import numpy as np
++
++Z = 2.8          # (1.96 + 0.84): two-sided alpha 0.05, power 0.80
++
++
++def matched_pairs(rows, tol=4.0):
++    """Greedy pairs: same content mode and script, SFT chrF++ within `tol`, closest first."""
++    used, pairs = set(), []
++    cand = sorted(rows, key=lambda r: r["sft"])
++    for i, a in enumerate(cand):
++        if a["iso"] in used:
++            continue
++        best = None
++        for b in cand[i + 1:]:
++            if b["iso"] in used or b["mode"] != a["mode"] or b["script"] != a["script"]:
++                continue
++            d = abs(b["sft"] - a["sft"])
++            if d <= tol and (best is None or d < best[0]):
++                best = (d, b)
++        if best:
++            used.update([a["iso"], best[1]["iso"]])
++            pairs.append((a, best[1]))
++    return pairs
++
++
++def main(argv=None) -> int:
++    ap = argparse.ArgumentParser()
++    ap.add_argument("--evidence", required=True)
++    ap.add_argument("--out", default=None)
++    a = ap.parse_args(argv)
++    rows = list(csv.DictReader(open(os.path.join(a.evidence, "per_language.csv"))))
++    for r in rows:
++        for k in ("sft", "gain", "se"):
++            r[k] = float(r[k])
++    reg = json.load(open(os.path.join(a.evidence, "regression.json")))
++    sd_sent = reg["paired_delta_sd_per_sentence"]["median"]
++    out = {"paired_delta_sd_per_sentence": sd_sent}
++    # (1) within-language: smallest detectable change of one language's chrF++ between two checkpoints / two arms on n dev sentences
++    out["mde_one_language_two_models"] = {str(n): round(Z * sd_sent / math.sqrt(n), 2) for n in (40, 60, 100, 200, 400, 843, 1012, 1997)}
++    out["sentences_needed_for_delta"] = {str(d): int(math.ceil((Z * sd_sent / d) ** 2)) for d in (0.5, 1.0, 2.0, 3.0, 5.0)}
++    # (2) between matched languages in ONE run (treated = adaptive, control = static)
++    pairs = matched_pairs(rows)
++    diffs = np.array([p[0]["gain"] - p[1]["gain"] for p in pairs])
++    sd_d = float(np.std(diffs, ddof=1)) if len(diffs) > 2 else float("nan")
++    out["matched_pairs"] = {"n_pairs": len(pairs), "sd_of_gain_difference_within_pair": sd_d, "mean_abs_sft_gap": float(np.mean([abs(p[0]["sft"] - p[1]["sft"]) for p in pairs])),
++                            "pairs": [[p[0]["iso"], p[1]["iso"], round(p[0]["sft"], 1), round(p[1]["sft"], 1), p[0]["mode"]] for p in pairs]}
++    out["mde_matched_pairs"] = {str(P): round(Z * sd_d / math.sqrt(P), 2) for P in (6, 8, 10, 12, 16, 20, 30)}
++    # (3) what effect is plausible? the pooled (confounded) estimate says ~1.4 chrF++ per doubling of RL samples (CI includes 0): a +-25 % weight change is 0.32 doublings
++    est = reg["language_level"]["C_full_2c"]["ols"]["coef"]["log2_c2c"]
++    out["plausible_effects"] = {"pooled_coef_per_doubling": est, "per_weight_change": {str(f): {"doublings": round(math.log2(f), 3), "chrf_at_estimate": round(est["est"] * math.log2(f), 2),
++                                                                                                    "chrf_at_upper_ci": round(est["hi"] * math.log2(f), 2)} for f in (0.75, 1.25, 1.5, 2.0, 4.0)}}
++    # (4) pairs needed to detect an effect (80 % power)
++    out["pairs_needed"] = {str(d): int(math.ceil((Z * sd_d / d) ** 2)) for d in (0.5, 1.0, 1.5, 2.0, 3.0)}
++    # (5) cost: one 800-step run at the measured 209 s/step
++    out["cost"] = {"hours_per_800_steps": round(800 * 209 / 3600.0, 1), "hours_per_200_steps": round(200 * 209 / 3600.0, 1)}
++    if a.out:
++        json.dump(out, open(a.out, "w"), indent=1)
++    print(json.dumps(out, indent=1)[:4000])
++    return 0
++
++
++if __name__ == "__main__":
++    sys.exit(main())
+--- /dev/null
++++ b/scripts/lang_weight_experiment_pairs.py
+@@ -0,0 +1,66 @@
++# SPDX-License-Identifier: AGPL-3.0-or-later
++"""D-65 experiment plan: matched language pairs for a within-run treated / control comparison, with a pre-registered balanced randomisation.
++
++Candidates: RL languages that keep draw weight 1.0 in the final run and have FLORES+ devtest rows (the primary outcome set). Pairs: identical content mode and script, SFT chrF++ within 4 points
++(greedy nearest). Assignment: all 2^P treated / control assignments are enumerated; the ones whose mean difference in PAST SFT->RL gain is <= 0.25 and in SFT level <= 0.5 chrF++ are kept (the
++randomisation is restricted to balanced allocations: with 9 pairs an unrestricted coin flip gave a 1.5 chrF++ head start to the treated side in a trial draw), and ONE of them is chosen by the
++smallest sha1('lw-exp-v1|' + the assignment string). Nothing here depends on future data.
++
++    python scripts/lang_weight_experiment_pairs.py --evidence reports/adaptive_language_weights_2026-10-22 --out reports/adaptive_language_weights_2026-10-22/experiment_pairs.json
++"""
++from __future__ import annotations
++
++import argparse
++import csv
++import hashlib
++import itertools
++import json
++import math
++import os
++import sys
++
++import numpy as np
++
++FINAL_BOOST = {"ish", "bin", "bbj", "tsc", "kon", "nus", "dag", "oke", "tir", "amh", "kbp", "kam", "bam", "mos", "umb", "kmb", "dyu", "kea", "luo", "kik", "orm", "fon", "yor", "vmw", "efi",
++               "hau", "lug", "nso", "zul"}
++
++
++def main(argv=None) -> int:
++    ap = argparse.ArgumentParser()
++    ap.add_argument("--evidence", required=True)
++    ap.add_argument("--out", required=True)
++    a = ap.parse_args(argv)
++    sys.path.insert(0, os.path.dirname(__file__))
++    from lang_weight_experiment_power import matched_pairs
++
++    rows = list(csv.DictReader(open(os.path.join(a.evidence, "per_language.csv"))))
++    for r in rows:
++        for k in ("sft", "gain", "se"):
++            r[k] = float(r[k])
++    cand = [r for r in rows if r["iso"] not in FINAL_BOOST and "flores_plus" in r["benches"].split(",")]
++    pairs = [tuple(sorted(p, key=lambda r: r["iso"])) for p in matched_pairs(cand, tol=4.0)]
++    P = len(pairs)
++    good = []
++    for bits in itertools.product((0, 1), repeat=P):
++        t = [p[b] for p, b in zip(pairs, bits)]
++        c = [p[1 - b] for p, b in zip(pairs, bits)]
++        dg = np.mean([x["gain"] for x in t]) - np.mean([x["gain"] for x in c])
++        ds = np.mean([x["sft"] for x in t]) - np.mean([x["sft"] for x in c])
++        if abs(dg) <= 0.25 and abs(ds) <= 0.5:
++            good.append((hashlib.sha1(("lw-exp-v1|" + "".join(map(str, bits))).encode()).hexdigest(), bits, dg, ds))
++    good.sort()
++    h, bits, dg, ds = good[0]
++    out = []
++    for p, b in zip(pairs, bits):
++        t, c = p[b], p[1 - b]
++        out.append({"treated": t["iso"], "control": c["iso"], "mode": t["mode"], "sft": [round(t["sft"], 1), round(c["sft"], 1)], "gain_sft_to_rl_2c": [round(t["gain"], 1), round(c["gain"], 1)]})
++    rms = math.sqrt(np.mean([(p[0]["gain"] - p[1]["gain"]) ** 2 for p in pairs]))
++    res = {"rule": __doc__.split("\n\n")[1].strip(), "n_candidates": len(cand), "n_pairs": P, "balanced_assignments": len(good), "past_gain_diff_treated_minus_control": round(float(dg), 3),
++           "sft_diff": round(float(ds), 3), "rms_pair_gain_difference": round(rms, 3), "pairs": out}
++    json.dump(res, open(a.out, "w"), indent=1)
++    print(json.dumps({k: v for k, v in res.items() if k != "rule"}, indent=1))
++    return 0
++
++
++if __name__ == "__main__":
++    sys.exit(main())

@@ -1,0 +1,16 @@
+--- reward_pre_v3.py	2026-10-22 14:25:06
++++ reward.py	2026-10-22 14:25:06
+@@ -607,11 +607,11 @@
+         from gemma_mt.rl import anchors as AN
+ 
+         ow = AN.words(text)
+-        if cfg.anchors_func_weight > 0 and A.enabled2(lang, "func"):
++        if cfg.anchors_func_weight > 0 and A.enabled2(lang, "func") and A.gate_ok(lang, "func"):
+             d = A.func_deficit(lang, AN.words(src), ow)
+             if d is not None and d >= cfg.anchors_stuff_gate:
+                 return True
+-        if cfg.anchors_pad_weight > 0 and A.enabled2(lang, "pad"):
++        if cfg.anchors_pad_weight > 0 and A.enabled2(lang, "pad") and A.gate_ok(lang, "pad"):
+             d = A.pad_deficit(lang, ow)
+             if d is not None and d >= cfg.anchors_stuff_gate:
+                 return True

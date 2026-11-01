@@ -1,0 +1,21 @@
+--- dry_r7.py	2026-10-21 22:49:46
++++ dry.py	2026-10-21 22:50:10
+@@ -182,8 +182,17 @@
+         check(len(cov) == sum(1 for l in SUPPORTED_RL if modes[l][0] in rc.anchors_modes and l not in rc.anchors_off_languages), "anchors apply exactly to the languages whose content mode is in anchors_modes (minus the control list)")
+         check(all(an.enabled(l, "boiler") for l in cov) or rc.anchors_boiler_weight == 0, "the boilerplate detector is enabled for every covered language")
+         check(len(out.anchors_penalty) == len(scripted) and all(p >= 0 for p in out.anchors_penalty) and
+-              all(out.anchors_penalty[i] == 0.0 for i, smp in enumerate(scripted) if not an.applies(smp.iso, modes[smp.iso][0])),
++              all(out.anchors_penalty[i] == 0.0 for i, smp in enumerate(scripted) if not (an.applies(smp.iso, modes[smp.iso][0]) or (rc.anchors_v2_enabled and an.applies2(smp.iso, modes[smp.iso][0])))),
+               f"anchors: penalty per sample ({sum(1 for p in out.anchors_penalty if p > 0)} of {len(scripted)} penalised on the scripted batch; languages outside the modes untouched); stats {sorted(k for k in out.stats if k.startswith('anchors/') and k.count('/') == 1)}")
++        if rc.anchors_v2_enabled:                                                                                   # D-61
++            cov2 = [l for l in SUPPORTED_RL if an.applies2(l, modes[l][0])]
++            print(f"     anchors v2 apply to {len(cov2)} languages (modes {rc.anchors_v2_modes}, v2 control list {rc.anchors_v2_off_languages}); detectors enabled per language:")
++            for dname in ("entity2", "copy", "func", "pad"):
++                on = [l for l in cov2 if an.enabled2(l, dname)] if dname in an.v2_detectors else []
++                print(f"       {dname:9s} {len(on):2d}/{len(cov2)}" + ("" if dname in an.v2_detectors else "  (weight 0: off)"))
++            check(len(cov2) == sum(1 for l in SUPPORTED_RL if modes[l][0] in rc.anchors_v2_modes and l not in rc.anchors_v2_off_languages and l not in rc.anchors_off_languages),
++                  "anchors v2 apply exactly to the languages whose content mode is in anchors_v2_modes (minus both control lists)")
++            check(rc.anchors_copy_scale == 0 or sum(1 for l in cov2 if an.enabled2(l, "copy")) >= 0.8 * len(cov2), "the copy detector is enabled for >= 80 % of the covered languages")
+         if rc.anchors_lexicon_weight > 0:         # D-59: R3's lexicon overlap through the hook, per-language weights capped
+             lx = [l for l in cov if an.enabled(l, "lexicon")]
+             wts = {l: round(an.lexicon_weight_factor(l) * rc.anchors_lexicon_weight, 3) for l in lx}

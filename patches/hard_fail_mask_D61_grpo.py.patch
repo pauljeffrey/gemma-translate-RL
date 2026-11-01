@@ -1,0 +1,37 @@
+--- grpo_r7.py	2026-10-21 21:40:03
++++ grpo.py	2026-10-21 21:44:27
+@@ -48,6 +48,34 @@
+     return adv.reshape(-1), float(flat.float().mean().item())
+ 
+ 
++def group_advantages_masked(rewards: torch.Tensor, group_size: int, failed: torch.Tensor, mode: str = "zero", norm: str = "mean_std", std_eps: float = 1e-4,
++                            flat_threshold: float = 1e-6) -> Tuple[torch.Tensor, float]:
++    """D-61 (OFF by default, train_rl `hard_fail_mask`): advantages with the hard-failed members (status != ok: truncated, copy_source, wrong_language ...) taken out of the policy gradient.
++      zero     the group baseline and std still include the failed members (so the survivors' advantages are exactly those of `group_advantages`), the failed members get advantage 0.
++      exclude  baseline and std are computed over the NON-failed members only (the failures do not move the survivors' advantages either); failed members get advantage 0; a group with < 2
++               survivors is flat (all 0).
++    NOTE: both remove the NEGATIVE signal against the failure (with the standard rule a -2 sample in a group of ~0.5 rewards has advantage ~ -1.5); `exclude` also removes the positive pressure that
++    'succeed rather than fail' puts on the survivors. Returns (advantages [N], fraction of flat groups)."""
++    if mode not in ("zero", "exclude"):
++        raise ValueError("mode must be 'zero' or 'exclude'")
++    if mode == "zero":
++        adv, flat = group_advantages(rewards, group_size, norm, std_eps, flat_threshold)
++        return torch.where(failed.view(-1), torch.zeros_like(adv), adv), flat
++    r = rewards.detach().to(torch.float32).view(-1, group_size)
++    ok = (~failed.view(-1, group_size)).to(torch.float32)
++    n_ok = ok.sum(dim=1, keepdim=True)
++    mean = (r * ok).sum(dim=1, keepdim=True) / n_ok.clamp(min=1.0)
++    var = (((r - mean) ** 2) * ok).sum(dim=1, keepdim=True) / n_ok.clamp(min=1.0)
++    std = var.sqrt()
++    flat = (std.squeeze(1) < flat_threshold) | (n_ok.squeeze(1) < 2)
++    adv = (r - mean)
++    if norm == "mean_std":
++        adv = adv / (std + std_eps)
++    adv = adv * ok
++    adv = torch.where(flat.unsqueeze(1), torch.zeros_like(adv), adv)
++    return adv.reshape(-1), float(flat.float().mean().item())
++
++
+ def scale_last_member(adv: torch.Tensor, group_size: int, scale: float) -> torch.Tensor:
+     """D-59: multiply the advantage of the LAST member of every group (the greedy completion of `greedy_in_group`) by `scale`; the group baseline and std (computed over all members)
+     are untouched. scale 1 = identity. Reason: a greedy completion of a long document that loops is ONE sequence of up to 7,168 tokens that all push the same way (measured: grad norm
