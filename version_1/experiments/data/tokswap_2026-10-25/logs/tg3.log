@@ -1,0 +1,2 @@
+both_g3000_f1000 [both] sets=464 sentences: plain=358319 (diff 0), special=22652 (diff 19015), freed_script=117084 (diff 2257); vocab-string test: 251474 strings, plain diffs 0
+wrote out/tests/fertility.csv: 256 rows

@@ -1,0 +1,92 @@
+{
+ "science": {
+  "samples": 250,
+  "target_tokens": 36727,
+  "mean_nll_per_token": 1.4856403307764516,
+  "median_sample_nll": 1.3448948493370643,
+  "p10_p90_sample_nll": [
+   0.5315622850145613,
+   2.3907509598077508
+  ]
+ },
+ "replay": {
+  "samples": 250,
+  "target_tokens": 26539,
+  "mean_nll_per_token": 1.3987456704637802,
+  "median_sample_nll": 1.364449413852867,
+  "p10_p90_sample_nll": [
+   0.4890908339268582,
+   2.5563942735644734
+  ]
+ },
+ "archive": {
+  "samples": 250,
+  "target_tokens": 74433,
+  "mean_nll_per_token": 0.5734275960761124,
+  "median_sample_nll": 0.5087940350652033,
+  "p10_p90_sample_nll": [
+   0.26517956351322247,
+   0.8928876814675945
+  ]
+ },
+ "longdoc": {
+  "samples": 250,
+  "target_tokens": 272860,
+  "mean_nll_per_token": 1.2202592293051415,
+  "median_sample_nll": 0.7899511184123968,
+  "p10_p90_sample_nll": [
+   0.3562528731278948,
+   1.9473646039725063
+  ]
+ },
+ "anchor": {
+  "samples": 250,
+  "target_tokens": 53895,
+  "mean_nll_per_token": 0.7010344904510217,
+  "median_sample_nll": 0.5900900332132974,
+  "p10_p90_sample_nll": [
+   0.3034893021058037,
+   1.0175203736747926
+  ]
+ },
+ "r10_commercial": {
+  "samples": 250,
+  "target_tokens": 182890,
+  "mean_nll_per_token": 3.306149441042582,
+  "median_sample_nll": 3.2212359459164555,
+  "p10_p90_sample_nll": [
+   2.3682992269918204,
+   4.807900437064792
+  ]
+ },
+ "r10_share_alike": {
+  "samples": 250,
+  "target_tokens": 97490,
+  "mean_nll_per_token": 3.8417697533202397,
+  "median_sample_nll": 3.8184840231210107,
+  "p10_p90_sample_nll": [
+   2.7356506374332454,
+   5.513495412063639
+  ]
+ },
+ "r10_code_switch": {
+  "samples": 250,
+  "target_tokens": 167415,
+  "mean_nll_per_token": 2.2860102278090753,
+  "median_sample_nll": 1.7154249436784499,
+  "p10_p90_sample_nll": [
+   1.0981016384863052,
+   2.7603642950592504
+  ]
+ },
+ "r10_nc": {
+  "samples": 250,
+  "target_tokens": 168119,
+  "mean_nll_per_token": 2.6843326073833804,
+  "median_sample_nll": 2.5683783250696517,
+  "p10_p90_sample_nll": [
+   1.9465343275100027,
+   3.471939790934925
+  ]
+ }
+}

@@ -1,0 +1,2 @@
+simcheck geez: 2459 lines simulated (146 further lines skipped because they contain one of the 61 new single-letter tokens), 0 mismatches between simulation and the real swapped tokenizer
+simcheck geez: 2212 lines simulated (107 further lines skipped because they contain one of the 61 new single-letter tokens), 0 mismatches between simulation and the real swapped tokenizer

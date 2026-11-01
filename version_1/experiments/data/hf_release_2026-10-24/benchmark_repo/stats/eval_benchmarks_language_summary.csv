@@ -1,0 +1,174 @@
+file,benchmark,split,level,language,afri_status,n_rows,n_rows_pair_not_seen,chrf_mean,chrf_mean_pair_not_seen,afri_qe_mean,afri_qe_mean_pair_not_seen,ssa_qe_mean,ssa_qe_mean_pair_not_seen,afri_ref_mean,afri_ref_mean_pair_not_seen,ssa_ref_mean,ssa_ref_mean_pair_not_seen,afri_qe_n,ssa_qe_n,afri_ref_n,ssa_ref_n,chrf_n,finished_rate,lid_ok_rate
+afriscience_mt_dev,AfriScience-MT dev,dev,document,amh,validated,25,25,24.3869,24.3869,,,,,,,,,0,0,0,0,25,1.0000,1.0000
+afriscience_mt_dev,AfriScience-MT dev,dev,sentence,amh,validated,843,843,25.6030,25.6030,0.5704,0.5704,0.3507,0.3507,0.5378,0.5378,0.3341,0.3341,843,843,843,843,843,1.0000,0.9964
+afriscience_mt_dev,AfriScience-MT dev,dev,document,hau,validated,25,25,63.1356,63.1356,,,,,,,,,0,0,0,0,25,1.0000,1.0000
+afriscience_mt_dev,AfriScience-MT dev,dev,sentence,hau,validated,843,843,62.1613,62.1613,0.6922,0.6922,0.5197,0.5197,0.7623,0.7623,0.5436,0.5436,843,843,843,843,843,1.0000,0.9953
+afriscience_mt_dev,AfriScience-MT dev,dev,document,lug,validated,25,25,45.1474,45.1474,,,,,,,,,0,0,0,0,25,0.9200,1.0000
+afriscience_mt_dev,AfriScience-MT dev,dev,sentence,lug,validated,843,843,45.0880,45.0880,0.6864,0.6864,0.6120,0.6120,0.7025,0.7025,0.6104,0.6104,843,843,843,843,843,1.0000,0.9893
+afriscience_mt_dev,AfriScience-MT dev,dev,document,nso,validated,25,25,56.2914,56.2914,,,,,,,,,0,0,0,0,25,1.0000,1.0000
+afriscience_mt_dev,AfriScience-MT dev,dev,sentence,nso,validated,843,843,59.9804,59.9804,0.7095,0.7095,,,0.7552,0.7552,,,843,0,843,0,843,1.0000,0.9953
+afriscience_mt_dev,AfriScience-MT dev,dev,document,yor,validated,25,25,33.5338,33.5338,,,,,,,,,0,0,0,0,25,1.0000,1.0000
+afriscience_mt_dev,AfriScience-MT dev,dev,sentence,yor,validated,843,843,39.6253,39.6253,0.6573,0.6573,0.6021,0.6021,0.7825,0.7825,0.6041,0.6041,843,843,843,843,843,1.0000,1.0000
+afriscience_mt_dev,AfriScience-MT dev,dev,document,zul,validated,25,25,54.1643,54.1643,,,,,,,,,0,0,0,0,25,0.9600,1.0000
+afriscience_mt_dev,AfriScience-MT dev,dev,sentence,zul,validated,843,843,56.9540,56.9540,0.7023,0.7023,0.5509,0.5509,0.7506,0.7506,0.5620,0.5620,843,843,843,843,843,1.0000,0.9454
+afriscience_mt_test,AfriScience-MT test,test,document,amh,validated,28,28,22.8133,22.8133,,,,,,,,,0,0,0,0,28,0.9643,1.0000
+afriscience_mt_test,AfriScience-MT test,test,sentence,amh,validated,970,970,24.8995,24.8995,0.5576,0.5576,0.3408,0.3408,0.5237,0.5237,0.3256,0.3256,970,970,970,970,970,1.0000,0.9979
+afriscience_mt_test,AfriScience-MT test,test,document,hau,validated,28,28,57.6688,57.6688,,,,,,,,,0,0,0,0,28,1.0000,1.0000
+afriscience_mt_test,AfriScience-MT test,test,sentence,hau,validated,970,970,59.6663,59.6663,0.6717,0.6717,0.4991,0.4991,0.7374,0.7374,0.5195,0.5195,970,970,970,970,970,1.0000,1.0000
+afriscience_mt_test,AfriScience-MT test,test,document,lug,validated,28,28,40.6487,40.6487,,,,,,,,,0,0,0,0,28,0.9643,1.0000
+afriscience_mt_test,AfriScience-MT test,test,sentence,lug,validated,970,970,45.0849,45.0849,0.6680,0.6680,0.5951,0.5951,0.6933,0.6933,0.5946,0.5946,970,970,970,970,970,1.0000,0.9918
+afriscience_mt_test,AfriScience-MT test,test,document,nso,validated,28,28,52.6362,52.6362,,,,,,,,,0,0,0,0,28,1.0000,1.0000
+afriscience_mt_test,AfriScience-MT test,test,sentence,nso,validated,970,970,56.9101,56.9101,0.6887,0.6887,,,0.7283,0.7283,,,970,0,970,0,970,1.0000,0.9969
+afriscience_mt_test,AfriScience-MT test,test,document,yor,validated,28,28,31.8954,31.8954,,,,,,,,,0,0,0,0,28,0.9643,1.0000
+afriscience_mt_test,AfriScience-MT test,test,sentence,yor,validated,970,970,38.5699,38.5699,0.6418,0.6418,0.5918,0.5918,0.7733,0.7733,0.5917,0.5917,970,970,970,970,970,1.0000,1.0000
+afriscience_mt_test,AfriScience-MT test,test,document,zul,validated,28,28,52.2000,52.2000,,,,,,,,,0,0,0,0,28,1.0000,1.0000
+afriscience_mt_test,AfriScience-MT test,test,sentence,zul,validated,970,970,59.1186,59.1186,0.6846,0.6846,0.5392,0.5392,0.7470,0.7470,0.5564,0.5564,970,970,970,970,970,1.0000,0.9701
+flores_plus,FLORES+ devtest,devtest,sentence,afr,validated,1012,1012,63.7504,63.7504,0.7014,0.7014,0.6198,0.6198,0.7467,0.7467,0.6173,0.6173,1012,1012,1012,1012,1012,1.0000,1.0000
+flores_plus,FLORES+ devtest,devtest,sentence,amh,validated,1012,1012,19.8248,19.8248,0.5070,0.5070,0.2971,0.2971,0.4801,0.4801,0.2805,0.2805,1012,1012,1012,1012,1012,1.0000,1.0000
+flores_plus,FLORES+ devtest,devtest,sentence,bam,validated,1012,1012,24.2556,24.2556,0.4311,0.4311,,,0.4694,0.4694,,,1012,0,1012,0,1012,1.0000,0.9536
+flores_plus,FLORES+ devtest,devtest,sentence,bem,validated,1012,1012,34.0097,34.0097,0.5645,0.5645,,,0.5859,0.5859,,,1012,0,1012,0,1012,1.0000,0.9970
+flores_plus,FLORES+ devtest,devtest,sentence,dyu,listed,1012,1012,17.7872,17.7872,0.4360,0.4360,,,0.3688,0.3688,,,1012,0,1012,0,1012,1.0000,0.9229
+flores_plus,FLORES+ devtest,devtest,sentence,ewe,validated,1012,1012,31.3369,31.3369,0.5865,0.5865,0.4982,0.4982,0.6166,0.6166,0.4797,0.4797,1012,1012,1012,1012,1012,1.0000,0.9990
+flores_plus,FLORES+ devtest,devtest,sentence,fon,validated,1012,1012,21.2808,21.2808,0.5606,0.5606,,,0.6070,0.6070,,,1012,0,1012,0,1012,1.0000,0.9990
+flores_plus,FLORES+ devtest,devtest,sentence,hau,validated,1012,170,50.0383,45.2744,0.6470,0.5417,0.4877,0.3990,0.6947,0.6056,0.4908,0.4042,1012,1012,1012,1012,1012,1.0000,1.0000
+flores_plus,FLORES+ devtest,devtest,sentence,ibo,validated,1012,453,41.0968,38.2146,0.6387,0.6130,0.5390,0.5231,0.6874,0.6558,0.5366,0.5183,1012,1012,1012,1012,1012,1.0000,1.0000
+flores_plus,FLORES+ devtest,devtest,sentence,kab,validated,1012,1012,26.4178,26.4178,0.5020,0.5020,,,0.6697,0.6697,,,1012,0,1012,0,1012,1.0000,1.0000
+flores_plus,FLORES+ devtest,devtest,sentence,kam,validated,1012,1012,24.5456,24.5456,0.5455,0.5455,,,0.4902,0.4902,,,1012,0,1012,0,1012,1.0000,0.9970
+flores_plus,FLORES+ devtest,devtest,sentence,kbp,validated,1012,1012,21.9915,21.9915,0.4362,0.4362,,,0.5966,0.5966,,,1012,0,1012,0,1012,1.0000,1.0000
+flores_plus,FLORES+ devtest,devtest,sentence,kea,not_covered,1012,1012,26.2754,26.2754,,,,,,,,,0,0,0,0,1012,1.0000,0.9773
+flores_plus,FLORES+ devtest,devtest,sentence,kik,validated,1012,1012,32.0122,32.0122,0.5870,0.5870,,,0.6694,0.6694,,,1012,0,1012,0,1012,1.0000,0.9980
+flores_plus,FLORES+ devtest,devtest,sentence,kin,validated,1012,1012,41.6651,41.6651,0.6491,0.6491,0.5843,0.5843,0.6891,0.6891,0.5718,0.5718,1012,1012,1012,1012,1012,1.0000,0.9289
+flores_plus,FLORES+ devtest,devtest,sentence,kmb,validated,1012,1012,25.5073,25.5073,0.5656,0.5656,,,0.4932,0.4932,,,1012,0,1012,0,1012,1.0000,0.9990
+flores_plus,FLORES+ devtest,devtest,sentence,knc,not_covered,1012,1012,14.9120,14.9120,,,,,,,,,0,0,0,0,1012,1.0000,0.0000
+flores_plus,FLORES+ devtest,devtest,sentence,lin,validated,1012,1012,42.1845,42.1845,0.5797,0.5797,0.5159,0.5159,0.6196,0.6196,0.5007,0.5007,1012,1012,1012,1012,1012,1.0000,0.9990
+flores_plus,FLORES+ devtest,devtest,sentence,lua,validated,1012,1012,33.1058,33.1058,0.5954,0.5954,,,0.5792,0.5792,,,1012,0,1012,0,1012,1.0000,0.9990
+flores_plus,FLORES+ devtest,devtest,sentence,lug,validated,1012,1010,35.3885,35.3806,0.6214,0.6213,0.5620,0.5619,0.6197,0.6195,0.5458,0.5457,1012,1012,1012,1012,1012,1.0000,0.9970
+flores_plus,FLORES+ devtest,devtest,sentence,luo,validated,1012,1012,32.0404,32.0404,0.6507,0.6507,,,0.6718,0.6718,,,1012,0,1012,0,1012,1.0000,0.9970
+flores_plus,FLORES+ devtest,devtest,sentence,mlg,validated,1012,1012,43.2330,43.2330,0.6060,0.6060,0.4952,0.4952,0.6139,0.6139,0.4727,0.4727,1012,1012,1012,1012,1012,1.0000,1.0000
+flores_plus,FLORES+ devtest,devtest,sentence,mos,validated,1012,1012,22.3376,22.3376,0.5966,0.5966,,,0.5637,0.5637,,,1012,0,1012,0,1012,1.0000,1.0000
+flores_plus,FLORES+ devtest,devtest,sentence,nso,validated,1012,1012,49.6283,49.6283,0.6592,0.6592,,,0.6942,0.6942,,,1012,0,1012,0,1012,1.0000,1.0000
+flores_plus,FLORES+ devtest,devtest,sentence,nus,validated,1012,1012,20.6027,20.6027,0.3512,0.3512,,,0.5271,0.5271,,,1012,0,1012,0,1012,1.0000,0.9990
+flores_plus,FLORES+ devtest,devtest,sentence,nya,validated,1012,1012,43.0053,43.0053,0.6485,0.6485,0.6102,0.6102,0.6768,0.6768,0.5964,0.5964,1012,1012,1012,1012,1012,1.0000,0.9980
+flores_plus,FLORES+ devtest,devtest,sentence,orm,validated,1012,988,31.5714,31.5054,0.6241,0.6229,0.5386,0.5378,0.6400,0.6393,0.5063,0.5053,1012,1012,1012,1012,1012,1.0000,1.0000
+flores_plus,FLORES+ devtest,devtest,sentence,run,validated,1012,1012,34.2325,34.2325,0.6348,0.6348,,,0.6520,0.6520,,,1012,0,1012,0,1012,1.0000,0.9209
+flores_plus,FLORES+ devtest,devtest,sentence,sag,listed,1012,1012,34.7091,34.7091,0.5880,0.5880,,,0.5698,0.5698,,,1012,0,1012,0,1012,1.0000,0.9990
+flores_plus,FLORES+ devtest,devtest,sentence,sna,validated,1012,1012,39.4849,39.4849,0.6153,0.6153,0.5708,0.5708,0.6440,0.6440,0.5521,0.5521,1012,1012,1012,1012,1012,1.0000,0.9980
+flores_plus,FLORES+ devtest,devtest,sentence,som,validated,1012,1012,40.6246,40.6246,0.6177,0.6177,0.4892,0.4892,0.6408,0.6408,0.4865,0.4865,1012,1012,1012,1012,1012,1.0000,1.0000
+flores_plus,FLORES+ devtest,devtest,sentence,sot,validated,1012,1012,45.4987,45.4987,0.6378,0.6378,0.5961,0.5961,0.6745,0.6745,0.6012,0.6012,1012,1012,1012,1012,1012,1.0000,0.9901
+flores_plus,FLORES+ devtest,devtest,sentence,ssw,validated,1012,1012,37.8865,37.8865,0.6043,0.6043,,,0.6181,0.6181,,,1012,0,1012,0,1012,1.0000,0.9842
+flores_plus,FLORES+ devtest,devtest,sentence,swh,validated,1012,1012,58.3184,58.3184,0.6726,0.6726,0.5990,0.5990,0.7182,0.7182,0.6100,0.6100,1012,1012,1012,1012,1012,1.0000,0.9506
+flores_plus,FLORES+ devtest,devtest,sentence,tir,validated,1012,1012,13.8907,13.8907,0.5608,0.5608,0.3791,0.3791,0.5869,0.5869,0.3390,0.3390,1012,1012,1012,1012,1012,1.0000,0.9881
+flores_plus,FLORES+ devtest,devtest,sentence,tsn,validated,1012,982,46.2117,46.1440,0.6747,0.6728,0.6148,0.6133,0.6961,0.6944,0.6019,0.6004,1012,1012,1012,1012,1012,1.0000,0.9970
+flores_plus,FLORES+ devtest,devtest,sentence,tso,validated,1012,1012,45.7404,45.7404,0.6247,0.6247,,,0.6618,0.6618,,,1012,0,1012,0,1012,1.0000,0.9990
+flores_plus,FLORES+ devtest,devtest,sentence,tum,validated,1012,1012,33.8480,33.8480,0.6202,0.6202,,,0.6080,0.6080,,,1012,0,1012,0,1012,1.0000,0.9990
+flores_plus,FLORES+ devtest,devtest,sentence,twi,validated,1012,1012,37.3868,37.3868,0.6215,0.6215,0.5758,0.5758,0.6688,0.6688,0.5656,0.5656,1012,1012,1012,1012,1012,1.0000,1.0000
+flores_plus,FLORES+ devtest,devtest,sentence,umb,validated,1012,1012,24.9811,24.9811,0.6065,0.6065,,,0.5642,0.5642,,,1012,0,1012,0,1012,1.0000,1.0000
+flores_plus,FLORES+ devtest,devtest,sentence,vmw,not_covered,1012,1012,26.7216,26.7216,,,,,,,,,0,0,0,0,1012,1.0000,0.9941
+flores_plus,FLORES+ devtest,devtest,sentence,wol,validated,1012,1012,29.4603,29.4603,0.5904,0.5904,0.5562,0.5562,0.6603,0.6603,0.5562,0.5562,1012,1012,1012,1012,1012,1.0000,1.0000
+flores_plus,FLORES+ devtest,devtest,sentence,xho,validated,1012,1012,44.4847,44.4847,0.6216,0.6216,0.4940,0.4940,0.6533,0.6533,0.4938,0.4938,1012,1012,1012,1012,1012,1.0000,0.9881
+flores_plus,FLORES+ devtest,devtest,sentence,yor,validated,1012,657,29.7600,27.2675,0.6114,0.5885,0.5933,0.5796,0.7205,0.6994,0.5871,0.5714,1012,1012,1012,1012,1012,1.0000,1.0000
+flores_plus,FLORES+ devtest,devtest,sentence,zul,validated,1012,976,49.1369,49.0326,0.6512,0.6511,0.5157,0.5159,0.6916,0.6911,0.5181,0.5180,1012,1012,1012,1012,1012,1.0000,0.9615
+glot_story,GlotStoryBook,test,sentence,dag,not_covered,108,108,24.4675,24.4675,,,,,,,,,0,0,0,0,108,1.0000,0.6944
+glot_story,GlotStoryBook,test,sentence,her,not_covered,392,392,24.0574,24.0574,,,,,,,,,0,0,0,0,392,0.9974,0.9949
+glot_story,GlotStoryBook,test,sentence,kqn,listed,339,339,32.4581,32.4581,0.5696,0.5696,,,0.5736,0.5736,,,339,0,339,0,339,1.0000,0.9735
+glot_story,GlotStoryBook,test,sentence,kua,listed,363,363,29.3686,29.3686,0.5312,0.5312,,,0.6054,0.6054,,,363,0,363,0,363,1.0000,1.0000
+glot_story,GlotStoryBook,test,sentence,loz,listed,722,722,34.1247,34.1247,0.5771,0.5771,,,0.5628,0.5628,,,722,0,722,0,722,1.0000,0.9709
+glot_story,GlotStoryBook,test,sentence,lun,listed,339,339,27.4957,27.4957,0.5333,0.5333,,,0.5396,0.5396,,,339,0,339,0,339,1.0000,0.9853
+glot_story,GlotStoryBook,test,sentence,nbl,not_covered,304,304,22.3952,22.3952,,,,,,,,,0,0,0,0,304,1.0000,0.5461
+glot_story,GlotStoryBook,test,sentence,tsc,not_covered,101,101,21.9659,21.9659,,,,,,,,,0,0,0,0,101,0.9901,0.9901
+noncommercial/glot_story,GlotStoryBook,test,sentence,dag,not_covered,27,27,14.2537,14.2537,,,,,,,,,0,0,0,0,27,1.0000,0.7778
+noncommercial/glot_story,GlotStoryBook,test,sentence,her,not_covered,157,157,24.8624,24.8624,,,,,,,,,0,0,0,0,157,1.0000,0.9936
+noncommercial/glot_story,GlotStoryBook,test,sentence,kqn,listed,81,81,21.3899,21.3899,0.5448,0.5448,,,0.5011,0.5011,,,81,0,81,0,81,1.0000,0.8272
+noncommercial/glot_story,GlotStoryBook,test,sentence,kua,listed,157,157,32.0168,32.0168,0.5485,0.5485,,,0.6301,0.6301,,,157,0,157,0,157,1.0000,0.9873
+noncommercial/glot_story,GlotStoryBook,test,sentence,loz,listed,238,238,35.6532,35.6532,0.5583,0.5583,,,0.5709,0.5709,,,238,0,238,0,238,1.0000,0.8613
+noncommercial/glot_story,GlotStoryBook,test,sentence,lun,listed,81,81,21.4635,21.4635,0.5672,0.5672,,,0.5256,0.5256,,,81,0,81,0,81,1.0000,0.9753
+noncommercial/glot_story,GlotStoryBook,test,sentence,nbl,not_covered,17,17,26.3391,26.3391,,,,,,,,,0,0,0,0,17,1.0000,0.1765
+noncommercial/mafand,MAFAND-MT test,test,sentence,amh,validated,1037,884,14.1069,13.7727,0.5210,0.5173,0.3147,0.3124,0.4238,0.4154,0.2633,0.2574,1037,1037,1037,1037,1037,1.0000,0.9740
+noncommercial/mafand,MAFAND-MT test,test,sentence,hau,validated,1500,1263,34.5494,34.1017,0.7300,0.7286,0.5937,0.5921,0.6799,0.6758,0.5402,0.5356,1500,1500,1500,1500,1500,1.0000,0.9967
+noncommercial/mafand,MAFAND-MT test,test,sentence,ibo,validated,1500,148,46.9550,45.6694,0.6912,0.5899,0.5901,0.5634,0.7285,0.6291,0.5719,0.5339,1500,1500,1500,1500,1500,1.0000,0.9600
+noncommercial/mafand,MAFAND-MT test,test,sentence,kin,validated,1006,1006,48.1759,48.1759,0.6658,0.6658,0.6004,0.6004,0.7157,0.7157,0.5975,0.5975,1006,1006,1006,1006,1006,1.0000,0.8797
+noncommercial/mafand,MAFAND-MT test,test,sentence,lug,validated,1500,1500,45.8521,45.8521,0.6586,0.6586,0.6065,0.6065,0.6763,0.6763,0.5927,0.5927,1500,1500,1500,1500,1500,1.0000,0.9907
+noncommercial/mafand,MAFAND-MT test,test,sentence,luo,validated,1500,1396,32.4314,32.2868,0.6520,0.6510,,,0.6698,0.6683,,,1500,0,1500,0,1500,1.0000,0.9973
+noncommercial/mafand,MAFAND-MT test,test,sentence,nya,validated,1004,1004,41.2050,41.2050,0.6472,0.6472,0.6216,0.6216,0.6665,0.6665,0.5992,0.5992,1004,1004,1004,1004,1004,1.0000,0.9960
+noncommercial/mafand,MAFAND-MT test,test,sentence,pcm,validated,1564,1374,58.1728,58.1161,0.4200,0.4038,,,0.6808,0.6757,,,1564,0,1564,0,1564,1.0000,0.7506
+noncommercial/mafand,MAFAND-MT test,test,sentence,sna,validated,1005,1005,34.7358,34.7358,0.6321,0.6321,0.5859,0.5859,0.6216,0.6216,0.5476,0.5476,1005,1005,1005,1005,1005,1.0000,0.9940
+noncommercial/mafand,MAFAND-MT test,test,sentence,swh,validated,1835,1714,52.9952,52.6438,0.6937,0.6912,0.6253,0.6239,0.7082,0.7047,0.6244,0.6226,1835,1835,1835,1835,1835,1.0000,0.9019
+noncommercial/mafand,MAFAND-MT test,test,sentence,tsn,validated,1500,1500,54.0674,54.0674,0.6778,0.6778,0.6365,0.6365,0.7285,0.7285,0.6382,0.6382,1500,1500,1500,1500,1500,1.0000,0.9940
+noncommercial/mafand,MAFAND-MT test,test,sentence,twi,validated,1500,1500,36.1646,36.1646,0.6276,0.6276,0.6125,0.6125,0.6632,0.6632,0.5872,0.5872,1500,1500,1500,1500,1500,1.0000,0.9993
+noncommercial/mafand,MAFAND-MT test,test,sentence,xho,validated,1002,1002,51.8678,51.8678,0.6498,0.6498,0.5182,0.5182,0.7027,0.7027,0.5293,0.5293,1002,1002,1002,1002,1002,1.0000,0.9840
+noncommercial/mafand,MAFAND-MT test,test,sentence,yor,validated,1558,810,33.3755,31.9056,0.6273,0.6174,0.5917,0.5838,0.7459,0.7335,0.5735,0.5593,1558,1558,1558,1558,1558,1.0000,0.9987
+noncommercial/mafand,MAFAND-MT test,test,sentence,zul,validated,998,807,47.3099,47.0043,0.5944,0.5849,0.4883,0.4828,0.6447,0.6366,0.4887,0.4830,998,998,998,998,998,1.0000,0.9228
+ntrex,NTREX-128,test,sentence,afr,validated,1997,1995,62.7792,62.7737,0.6311,0.6309,0.5706,0.5705,0.6908,0.6905,0.5714,0.5712,1997,1997,1997,1997,1997,1.0000,0.9890
+ntrex,NTREX-128,test,sentence,amh,validated,1997,1997,13.8904,13.8904,0.4463,0.4463,0.2507,0.2507,0.4194,0.4194,0.2305,0.2305,1997,1997,1997,1997,1997,0.9995,0.9945
+ntrex,NTREX-128,test,sentence,bem,validated,1997,1997,33.6902,33.6902,0.5294,0.5294,,,0.5608,0.5608,,,1997,0,1997,0,1997,1.0000,0.9945
+ntrex,NTREX-128,test,sentence,ewe,validated,1997,1997,30.8824,30.8824,0.5374,0.5374,0.4796,0.4796,0.5900,0.5900,0.4682,0.4682,1997,1997,1997,1997,1997,1.0000,0.9965
+ntrex,NTREX-128,test,sentence,hau,validated,1997,1582,50.0311,48.4304,0.6106,0.5908,0.4893,0.4691,0.6737,0.6572,0.4918,0.4716,1997,1997,1997,1997,1997,1.0000,0.9965
+ntrex,NTREX-128,test,sentence,ibo,validated,1997,1994,44.6875,44.6850,0.5963,0.5962,0.5171,0.5173,0.6944,0.6944,0.5230,0.5231,1997,1997,1997,1997,1997,1.0000,0.9975
+ntrex,NTREX-128,test,sentence,kin,validated,1997,1997,38.3315,38.3315,0.6097,0.6097,0.5655,0.5655,0.6450,0.6450,0.5484,0.5484,1997,1997,1997,1997,1997,1.0000,0.8988
+ntrex,NTREX-128,test,sentence,mlg,validated,1997,1997,39.4201,39.4201,0.5604,0.5604,0.4807,0.4807,0.5646,0.5646,0.4501,0.4501,1997,1997,1997,1997,1997,1.0000,0.9900
+ntrex,NTREX-128,test,sentence,nde,not_covered,1997,1997,29.6867,29.6867,,,,,,,,,0,0,0,0,1997,1.0000,0.0200
+ntrex,NTREX-128,test,sentence,nso,validated,1997,1997,32.1533,32.1533,0.6146,0.6146,,,0.5995,0.5995,,,1997,0,1997,0,1997,1.0000,0.9860
+ntrex,NTREX-128,test,sentence,nya,validated,1997,1997,45.2096,45.2096,0.6022,0.6022,0.5800,0.5800,0.6412,0.6412,0.5697,0.5697,1997,1997,1997,1997,1997,1.0000,0.9975
+ntrex,NTREX-128,test,sentence,orm,validated,1997,1997,27.7272,27.7272,0.5944,0.5944,0.5227,0.5227,0.5950,0.5950,0.4849,0.4849,1997,1997,1997,1997,1997,1.0000,0.9985
+ntrex,NTREX-128,test,sentence,shi,not_covered,1997,1997,1.1788,1.1788,,,,,,,,,0,0,0,0,1997,0.9990,0.8302
+ntrex,NTREX-128,test,sentence,sna,validated,1997,1997,40.2748,40.2748,0.5753,0.5753,0.5505,0.5505,0.6158,0.6158,0.5338,0.5338,1997,1997,1997,1997,1997,1.0000,0.9910
+ntrex,NTREX-128,test,sentence,som,validated,1997,1997,44.0435,44.0435,0.5775,0.5775,0.4731,0.4731,0.6329,0.6329,0.4820,0.4820,1997,1997,1997,1997,1997,1.0000,0.9955
+ntrex,NTREX-128,test,sentence,ssw,validated,1997,1996,38.5939,38.5995,0.5631,0.5631,,,0.6085,0.6084,,,1997,0,1997,0,1997,1.0000,0.9715
+ntrex,NTREX-128,test,sentence,swh,validated,1997,1997,58.2408,58.2408,0.6286,0.6286,0.5686,0.5686,0.6792,0.6792,0.5788,0.5788,1997,1997,1997,1997,1997,1.0000,0.9494
+ntrex,NTREX-128,test,sentence,tir,validated,1997,1997,12.3125,12.3125,0.5141,0.5141,0.3432,0.3432,0.5606,0.5606,0.3103,0.3103,1997,1997,1997,1997,1997,1.0000,0.9840
+ntrex,NTREX-128,test,sentence,tsn,validated,1997,1995,49.6388,49.6335,0.6284,0.6282,0.5897,0.5897,0.6798,0.6797,0.5811,0.5810,1997,1997,1997,1997,1997,1.0000,0.9945
+ntrex,NTREX-128,test,sentence,ven,listed,1997,1997,38.8243,38.8243,0.5150,0.5150,,,0.6385,0.6385,,,1997,0,1997,0,1997,1.0000,0.9885
+ntrex,NTREX-128,test,sentence,wol,validated,1997,1997,29.1456,29.1456,0.5531,0.5531,0.5309,0.5309,0.6302,0.6302,0.5396,0.5396,1997,1997,1997,1997,1997,1.0000,0.9885
+ntrex,NTREX-128,test,sentence,xho,validated,1997,1995,42.5800,42.5500,0.5750,0.5748,0.4643,0.4641,0.6175,0.6173,0.4605,0.4602,1997,1997,1997,1997,1997,1.0000,0.9770
+ntrex,NTREX-128,test,sentence,yor,validated,1997,1859,30.0645,30.0301,0.5757,0.5685,0.5708,0.5665,0.7054,0.7041,0.5671,0.5625,1997,1997,1997,1997,1997,1.0000,0.9935
+ntrex,NTREX-128,test,sentence,zul,validated,1997,1997,43.8539,43.8539,0.5969,0.5969,0.4831,0.4831,0.6326,0.6326,0.4776,0.4776,1997,1997,1997,1997,1997,1.0000,0.9454
+salt,SALT text-all test,test,sentence,ach,not_covered,500,500,27.8446,27.8446,,,,,,,,,0,0,0,0,500,1.0000,0.9920
+salt,SALT text-all test,test,sentence,ibo,validated,500,500,39.0625,39.0625,0.7073,0.7073,0.5627,0.5627,0.7451,0.7451,0.5572,0.5572,500,500,500,500,500,1.0000,1.0000
+salt,SALT text-all test,test,sentence,lug,validated,500,81,45.2567,38.6826,0.6894,0.5984,0.6261,0.5796,0.7056,0.6263,0.6193,0.5689,500,500,500,500,500,1.0000,0.9960
+salt,SALT text-all test,test,sentence,nyn,not_covered,500,500,29.1214,29.1214,,,,,,,,,0,0,0,0,500,1.0000,0.9320
+salt,SALT text-all test,test,sentence,swh,validated,500,500,60.3477,60.3477,0.7713,0.7713,0.6738,0.6738,0.7820,0.7820,0.6856,0.6856,500,500,500,500,500,1.0000,0.8540
+smol_sent,SmolSent (Google SMOL),test,sentence,ach,not_covered,863,863,25.9718,25.9718,,,,,,,,,0,0,0,0,863,1.0000,0.9954
+smol_sent,SmolSent (Google SMOL),test,sentence,afr,validated,863,863,57.6723,57.6723,0.6751,0.6751,0.5932,0.5932,0.7022,0.7022,0.5890,0.5890,863,863,863,863,863,1.0000,0.9977
+smol_sent,SmolSent (Google SMOL),test,sentence,amh,validated,863,863,15.6329,15.6329,0.4798,0.4798,0.2806,0.2806,0.4414,0.4414,0.2615,0.2615,863,863,863,863,863,1.0000,0.9977
+smol_sent,SmolSent (Google SMOL),test,sentence,bam,validated,863,299,20.0372,18.1728,0.3909,0.3326,,,0.4327,0.3884,,,863,0,863,0,863,1.0000,0.9154
+smol_sent,SmolSent (Google SMOL),test,sentence,bem,validated,863,863,27.5159,27.5159,0.5192,0.5192,,,0.5425,0.5425,,,863,0,863,0,863,1.0000,0.9965
+smol_sent,SmolSent (Google SMOL),test,sentence,dyu,listed,863,863,19.7035,19.7035,0.4037,0.4037,,,0.4660,0.4660,,,863,0,863,0,863,1.0000,0.9363
+smol_sent,SmolSent (Google SMOL),test,sentence,efi,validated,863,863,26.2941,26.2941,0.4908,0.4908,,,0.5369,0.5369,,,863,0,863,0,863,1.0000,0.9988
+smol_sent,SmolSent (Google SMOL),test,sentence,ewe,validated,863,339,27.5646,24.5882,0.5420,0.4864,0.4608,0.4201,0.6109,0.5671,0.4530,0.4121,863,863,863,863,863,1.0000,0.9977
+smol_sent,SmolSent (Google SMOL),test,sentence,fon,validated,863,862,17.7186,17.7078,0.5370,0.5370,,,0.6044,0.6044,,,863,0,863,0,863,1.0000,1.0000
+smol_sent,SmolSent (Google SMOL),test,sentence,hau,validated,863,791,39.4061,38.9195,0.5905,0.5848,0.4331,0.4281,0.6157,0.6096,0.4203,0.4142,863,863,863,863,863,1.0000,1.0000
+smol_sent,SmolSent (Google SMOL),test,sentence,ibo,validated,863,832,44.7170,44.6907,0.5880,0.5875,0.4993,0.4995,0.6936,0.6927,0.5123,0.5125,863,863,863,863,863,1.0000,0.9977
+smol_sent,SmolSent (Google SMOL),test,sentence,kab,validated,862,862,23.3193,23.3193,0.4428,0.4428,,,0.6685,0.6685,,,862,0,862,0,862,1.0000,0.9988
+smol_sent,SmolSent (Google SMOL),test,sentence,kik,validated,863,863,30.3022,30.3022,0.5420,0.5420,,,0.6513,0.6513,,,863,0,863,0,863,1.0000,0.9977
+smol_sent,SmolSent (Google SMOL),test,sentence,kin,validated,863,863,35.2539,35.2539,0.5952,0.5952,0.5448,0.5448,0.6438,0.6438,0.5287,0.5287,863,863,863,863,863,1.0000,0.9594
+smol_sent,SmolSent (Google SMOL),test,sentence,kon,listed,863,863,16.5896,16.5896,0.2995,0.2995,,,0.3037,0.3037,,,863,0,863,0,863,1.0000,0.0000
+smol_sent,SmolSent (Google SMOL),test,sentence,kri,not_covered,863,863,24.5223,24.5223,,,,,,,,,0,0,0,0,863,1.0000,0.9977
+smol_sent,SmolSent (Google SMOL),test,sentence,lin,validated,863,863,36.7339,36.7339,0.5294,0.5294,0.4627,0.4627,0.5814,0.5814,0.4389,0.4389,863,863,863,863,863,1.0000,0.9988
+smol_sent,SmolSent (Google SMOL),test,sentence,lug,validated,863,863,32.8496,32.8496,0.5725,0.5725,0.5256,0.5256,0.6150,0.6150,0.5105,0.5105,863,863,863,863,863,1.0000,0.9919
+smol_sent,SmolSent (Google SMOL),test,sentence,luo,validated,863,863,25.3265,25.3265,0.6059,0.6059,,,0.6390,0.6390,,,863,0,863,0,863,1.0000,0.9977
+smol_sent,SmolSent (Google SMOL),test,sentence,mlg,validated,863,863,38.2120,38.2120,0.5353,0.5353,0.4508,0.4508,0.5332,0.5332,0.4235,0.4235,863,863,863,863,863,1.0000,0.9954
+smol_sent,SmolSent (Google SMOL),test,sentence,mos,validated,863,863,17.5646,17.5646,0.5637,0.5637,,,0.5359,0.5359,,,863,0,863,0,863,1.0000,1.0000
+smol_sent,SmolSent (Google SMOL),test,sentence,nbl,not_covered,863,863,37.0348,37.0348,,,,,,,,,0,0,0,0,863,1.0000,0.9096
+smol_sent,SmolSent (Google SMOL),test,sentence,ndc,not_covered,863,863,21.9020,21.9020,,,,,,,,,0,0,0,0,863,1.0000,0.9815
+smol_sent,SmolSent (Google SMOL),test,sentence,nso,validated,863,863,41.6625,41.6625,0.6082,0.6082,,,0.6350,0.6350,,,863,0,863,0,863,1.0000,0.9977
+smol_sent,SmolSent (Google SMOL),test,sentence,nya,validated,863,863,34.7868,34.7868,0.5981,0.5981,0.5637,0.5637,0.6084,0.6084,0.5355,0.5355,863,863,863,863,863,1.0000,0.9988
+smol_sent,SmolSent (Google SMOL),test,sentence,nyn,not_covered,863,863,24.8805,24.8805,,,,,,,,,0,0,0,0,863,1.0000,0.9977
+smol_sent,SmolSent (Google SMOL),test,sentence,orm,validated,863,805,29.6223,29.4185,0.5785,0.5746,0.5034,0.5010,0.6077,0.6042,0.4741,0.4718,863,863,863,863,863,1.0000,0.9977
+smol_sent,SmolSent (Google SMOL),test,sentence,pcm,validated,863,863,51.4749,51.4749,0.4206,0.4206,,,0.5919,0.5919,,,863,0,863,0,863,1.0000,0.6559
+smol_sent,SmolSent (Google SMOL),test,sentence,run,validated,863,863,29.1100,29.1100,0.5818,0.5818,,,0.6162,0.6162,,,863,0,863,0,863,1.0000,0.8830
+smol_sent,SmolSent (Google SMOL),test,sentence,sna,validated,863,863,35.8100,35.8100,0.5657,0.5657,0.5271,0.5271,0.6006,0.6006,0.5103,0.5103,863,863,863,863,863,1.0000,0.9988
+smol_sent,SmolSent (Google SMOL),test,sentence,som,validated,862,862,33.9541,33.9541,0.5550,0.5550,0.4477,0.4477,0.5699,0.5699,0.4331,0.4331,862,862,862,862,862,1.0000,0.9988
+smol_sent,SmolSent (Google SMOL),test,sentence,sot,validated,863,863,38.1066,38.1066,0.5862,0.5862,0.5562,0.5562,0.6124,0.6124,0.5454,0.5454,863,863,863,863,863,1.0000,0.9849
+smol_sent,SmolSent (Google SMOL),test,sentence,ssw,validated,863,863,32.4887,32.4887,0.5569,0.5569,,,0.5760,0.5760,,,863,0,863,0,863,1.0000,0.9861
+smol_sent,SmolSent (Google SMOL),test,sentence,swh,validated,863,863,51.4629,51.4629,0.6245,0.6245,0.5551,0.5551,0.6481,0.6481,0.5630,0.5630,863,863,863,863,863,1.0000,0.8285
+smol_sent,SmolSent (Google SMOL),test,sentence,tir,validated,863,863,11.8147,11.8147,0.5191,0.5191,0.3504,0.3504,0.5688,0.5688,0.3237,0.3237,863,863,863,863,863,1.0000,0.9907
+smol_sent,SmolSent (Google SMOL),test,sentence,tiv,listed,863,863,26.9254,26.9254,0.5198,0.5198,,,0.5958,0.5958,,,863,0,863,0,863,1.0000,1.0000
+smol_sent,SmolSent (Google SMOL),test,sentence,tsn,validated,863,863,45.9961,45.9961,0.6236,0.6236,0.5713,0.5713,0.6735,0.6735,0.5654,0.5654,863,863,863,863,863,1.0000,0.9988
+smol_sent,SmolSent (Google SMOL),test,sentence,tso,validated,863,863,43.1861,43.1861,0.5690,0.5690,,,0.6284,0.6284,,,863,0,863,0,863,1.0000,1.0000
+smol_sent,SmolSent (Google SMOL),test,sentence,tum,validated,863,863,31.5491,31.5491,0.5684,0.5684,,,0.5755,0.5755,,,863,0,863,0,863,1.0000,0.9954
+smol_sent,SmolSent (Google SMOL),test,sentence,twi,validated,863,863,29.6921,29.6921,0.5691,0.5691,0.5332,0.5332,0.6320,0.6320,0.5280,0.5280,863,863,863,863,863,1.0000,0.9965
+smol_sent,SmolSent (Google SMOL),test,sentence,ven,listed,863,863,34.0882,34.0882,0.5052,0.5052,,,0.6196,0.6196,,,863,0,863,0,863,1.0000,0.9988
+smol_sent,SmolSent (Google SMOL),test,sentence,wol,validated,863,233,25.1597,22.0369,0.5336,0.4596,0.5268,0.4934,0.6319,0.5682,0.5166,0.4793,863,863,863,863,863,1.0000,0.9988
+smol_sent,SmolSent (Google SMOL),test,sentence,xho,validated,863,863,38.2693,38.2693,0.5835,0.5835,0.4563,0.4563,0.6006,0.6006,0.4475,0.4475,863,863,863,863,863,1.0000,0.9780
+smol_sent,SmolSent (Google SMOL),test,sentence,yor,validated,863,692,28.9414,28.4465,0.5687,0.5594,0.5437,0.5374,0.7215,0.7150,0.5452,0.5386,863,863,863,863,863,1.0000,0.9977
+smol_sent,SmolSent (Google SMOL),test,sentence,zul,validated,863,786,44.8820,44.6869,0.6018,0.5969,0.4733,0.4701,0.6378,0.6330,0.4735,0.4702,863,863,863,863,863,1.0000,0.9710

@@ -1,0 +1,126 @@
+{
+ "tok_geez_N1000": {
+  "class": "GemmaTokenizer",
+  "vocab_size_len": 262145,
+  "special_ids_equal": {
+   "<pad>": true,
+   "<eos>": true,
+   "<bos>": true,
+   "<unk>": true,
+   "<mask>": true,
+   "<start_of_turn>": true,
+   "<end_of_turn>": true,
+   "<unused0>": true,
+   "<unused98>": true,
+   "<unused99>": false,
+   "<unused6241>": true,
+   "<table>": true,
+   "<image_soft_token>": true
+  },
+  "chat_template_equal": true,
+  "chat_template_ids_equal": true,
+  "all_ids_decode_to_string": true,
+  "roundtrip": {
+   "amh_Ethi": "997/997",
+   "tir_Ethi": "997/997",
+   "fon_Latn": "997/997",
+   "hau_Latn": "997/997",
+   "yor_Latn": "997/997",
+   "eng_Latn": "997/997",
+   "ewe_Latn": "997/997"
+  }
+ },
+ "tok_geez_N3000": {
+  "class": "GemmaTokenizer",
+  "vocab_size_len": 262145,
+  "special_ids_equal": {
+   "<pad>": true,
+   "<eos>": true,
+   "<bos>": true,
+   "<unk>": true,
+   "<mask>": true,
+   "<start_of_turn>": true,
+   "<end_of_turn>": true,
+   "<unused0>": true,
+   "<unused98>": true,
+   "<unused99>": false,
+   "<unused6241>": true,
+   "<table>": true,
+   "<image_soft_token>": true
+  },
+  "chat_template_equal": true,
+  "chat_template_ids_equal": true,
+  "all_ids_decode_to_string": true,
+  "roundtrip": {
+   "amh_Ethi": "997/997",
+   "tir_Ethi": "997/997",
+   "fon_Latn": "997/997",
+   "hau_Latn": "997/997",
+   "yor_Latn": "997/997",
+   "eng_Latn": "997/997",
+   "ewe_Latn": "997/997"
+  }
+ },
+ "tok_fon_N1000": {
+  "class": "GemmaTokenizer",
+  "vocab_size_len": 262145,
+  "special_ids_equal": {
+   "<pad>": true,
+   "<eos>": true,
+   "<bos>": true,
+   "<unk>": true,
+   "<mask>": true,
+   "<start_of_turn>": true,
+   "<end_of_turn>": true,
+   "<unused0>": true,
+   "<unused98>": true,
+   "<unused99>": true,
+   "<unused6241>": false,
+   "<table>": true,
+   "<image_soft_token>": true
+  },
+  "chat_template_equal": true,
+  "chat_template_ids_equal": true,
+  "all_ids_decode_to_string": true,
+  "roundtrip": {
+   "amh_Ethi": "997/997",
+   "tir_Ethi": "997/997",
+   "fon_Latn": "997/997",
+   "hau_Latn": "997/997",
+   "yor_Latn": "997/997",
+   "eng_Latn": "997/997",
+   "ewe_Latn": "997/997"
+  }
+ },
+ "tok_fon_N3000": {
+  "class": "GemmaTokenizer",
+  "vocab_size_len": 262145,
+  "special_ids_equal": {
+   "<pad>": true,
+   "<eos>": true,
+   "<bos>": true,
+   "<unk>": true,
+   "<mask>": true,
+   "<start_of_turn>": true,
+   "<end_of_turn>": true,
+   "<unused0>": true,
+   "<unused98>": true,
+   "<unused99>": true,
+   "<unused6241>": false,
+   "<table>": true,
+   "<image_soft_token>": true
+  },
+  "chat_template_equal": true,
+  "chat_template_ids_equal": true,
+  "all_ids_decode_to_string": true,
+  "roundtrip": {
+   "amh_Ethi": "997/997",
+   "tir_Ethi": "997/997",
+   "fon_Latn": "997/997",
+   "hau_Latn": "997/997",
+   "yor_Latn": "997/997",
+   "eng_Latn": "997/997",
+   "ewe_Latn": "997/997"
+  }
+ }
+}

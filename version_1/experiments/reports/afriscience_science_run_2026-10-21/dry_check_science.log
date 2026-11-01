@@ -1,0 +1,31 @@
+PASS configs/rl_science.yaml: RLConfig and RewardConfig build (lid_enabled=True, consensus=True, chunking=sentences, calibration=/workspace/sft_build/gemma_mt/calibration/shaping_flores_dev_v7.json)
+PASS sacrebleu importable (dev chrF++ evaluation)
+PASS calibration file exists: /workspace/sft_build/gemma_mt/calibration/shaping_flores_dev_v7.json
+PASS all 77 RL languages have a content mode: {'qe': 32, 'blend': 22, 'consensus': 23}
+PASS the 23 languages outside AfriCOMET are in consensus mode
+PASS every RL language except (possibly) efi has an advantage weight > 0; weight 0: none; efi: mode blend, weight 0.897693079237713
+PASS every RL language has a lid block (75 with the guard on)
+PASS every QE-covered language that is not consensus-only has anchors (efi: consensus -> none)
+PASS prompt files for all 77 languages in /workspace/jobs/a4/sci/rl_prompts_sci_v1
+PASS load_rl_prompts reads the directory (2000 rows, dropped {'language_filtered': 12500}, name mismatches 0, 0.3s)
+PASS science prompts: 106922 rows loaded in 3s, domains {'science': 60901, 'general': 46021}, dropped {}
+PASS every (domain, bin) cell has prompts for all 77 languages (10 cells)
+PASS steps 1433 .. steps-1 are in the MIXED stage
+     100 steps x 42 prompts: domains {'science': 2894, 'general': 1306}; science bins {'b1024': 1031, 'b2048': 1009, 'b256': 285, 'b512': 430, 'b64': 139}; general bins {'b1024': 286, 'b2048': 257, 'b256': 260, 'b512': 252, 'b64': 251}
+     languages: min 24 max 111 of 4200 draws (77 languages); benchmark languages amh=95, hau=72, lug=80, nso=73, yor=89, zul=85
+PASS domain share science 0.689 (wanted 0.70); all 77 languages drawn
+PASS resume state present: /workspace/sft_build/runs/sci/last/trainer_state.pt (checked on the rental only)
+PASS benchmark_eval_path exists: /workspace/jobs/a4/afs_raw/bench_afrisci_dev_sent.jsonl
+PASS benchmark_aux[afrisci_dev_doc] exists: /workspace/jobs/a4/afs_raw/bench_afrisci_dev_doc.jsonl
+PASS benchmark_aux[general_dev] exists: /workspace/sft_build/bench/bench_dev_clean.jsonl
+PASS vllm_max_model_len 10240 >= largest max_new_tokens + 512 = 7680
+PASS science anchor thresholds loaded from /workspace/jobs/a4/gemma_mt_sci/calibration/science_anchor_v1.json: pooled {'num_recall': 1.0, 'num_precision': 1.0, 'pair_recall': 1.0, 'protected_recall': 1.0}, languages ['amh', 'hau', 'lug', 'nso', 'yor', 'zul']
+PASS science anchor: faithful chunk deficit 0.0, chunk without its numbers 1.0, statuses ok/ok, rewards 2.19 vs 1.72
+PASS GlotLID loaded and passed its self-test (3.6s, 3 model calls)
+PASS reward + real LID run on scripted samples: ['copy_source', 'copy_source', 'copy_source'], lid labels [None, None, None]
+PASS the reward runs on 4 scripted samples of each of the 77 languages (modes ['blend', 'consensus', 'qe'])
+PASS RewardOutput carries n_chunks / failed_chunks per sample (archive input)
+     archive_path /workspace/sft_build/runs/sci/archive/archive.sqlite: nearest existing directory /workspace/sft_build/runs/sci
+PASS archive directory is writable (checked on the rental only): /workspace/sft_build/runs/sci
+PASS archive: the hook + writer took 2 scripted batches of 308 samples without error: rows 8, eligible rate 0.10, thresholds {'qe': 1.0, 'blend': 1.0, 'consensus': 0.5}
+DRY CHECK OK

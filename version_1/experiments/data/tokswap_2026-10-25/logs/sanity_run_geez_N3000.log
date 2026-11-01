@@ -1,0 +1,6 @@
+[315s] loss amh_Ethi: tok/sent 53.8->41.6  nll/token 2.1761->5.3989 nll/char 1.3274->2.5468  identical-tokenisation sentences 0/300
+[707s] loss tir_Ethi: tok/sent 65.9->43.6  nll/token 2.7111->6.9747 nll/char 1.9739->3.3585  identical-tokenisation sentences 0/300
+[1610s] loss hau_Latn: tok/sent 48.0->48.0  nll/token 1.2367->1.2378 nll/char 0.4235->0.4239  identical-tokenisation sentences 300/300 restricted-diff max 0 full-diff max 0.294
+[2873s] loss yor_Latn: tok/sent 63.6->63.6  nll/token 2.3283->2.3313 nll/char 1.1560->1.1575  identical-tokenisation sentences 300/300 restricted-diff max 0 full-diff max 1.46
+[3980s] loss swh_Latn: tok/sent 45.9->45.9  nll/token 0.9856->0.9859 nll/char 0.3263->0.3264  identical-tokenisation sentences 300/300 restricted-diff max 0 full-diff max 0.121
+./sanity_one.sh: line 12: ds: command not found

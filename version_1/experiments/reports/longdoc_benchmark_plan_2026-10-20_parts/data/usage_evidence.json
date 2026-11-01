@@ -1,0 +1,74 @@
+{
+ "facebook/nllb-200-3.3B": {
+  "downloads_30d": 239289,
+  "likes": 483,
+  "last_modified": "2023-02-11",
+  "created": "2022-07-08"
+ },
+ "facebook/nllb-200-distilled-600M": {
+  "downloads_30d": 846973,
+  "likes": 996,
+  "last_modified": "2024-02-14",
+  "created": "2022-07-08"
+ },
+ "facebook/nllb-200-distilled-1.3B": {
+  "downloads_30d": 480413,
+  "likes": 192,
+  "last_modified": "2023-02-11",
+  "created": "2022-07-08"
+ },
+ "facebook/nllb-200-1.3B": {
+  "downloads_30d": 47685,
+  "likes": 83,
+  "last_modified": "2023-02-11",
+  "created": "2022-07-08"
+ },
+ "google/madlad400-3b-mt": {
+  "downloads_30d": 38473,
+  "likes": 240,
+  "last_modified": "2023-11-27",
+  "created": "2023-11-27"
+ },
+ "google/madlad400-7b-mt": {
+  "downloads_30d": 2450,
+  "likes": 24,
+  "last_modified": "2023-11-27",
+  "created": "2023-11-27"
+ },
+ "google/madlad400-7b-mt-bt": {
+  "downloads_30d": 648,
+  "likes": 11,
+  "last_modified": "2023-11-27",
+  "created": "2023-11-27"
+ },
+ "google/madlad400-10b-mt": {
+  "downloads_30d": 3418,
+  "likes": 140,
+  "last_modified": "2024-04-12",
+  "created": "2023-11-27"
+ },
+ "Helsinki-NLP/opus-mt-tc-bible-big-deu_eng_fra_por_spa-mul": {
+  "downloads_30d": 395,
+  "likes": 1,
+  "last_modified": "2024-10-12",
+  "created": "2024-10-09"
+ },
+ "Sunbird/Sunflower-Qwen3.8-27B": {
+  "downloads_30d": 783,
+  "likes": 0,
+  "last_modified": "2026-09-23",
+  "created": "2026-09-21"
+ },
+ "google/translategemma-12b-it": {
+  "downloads_30d": 9527,
+  "likes": 357,
+  "last_modified": "2026-01-28",
+  "created": "2026-01-12"
+ },
+ "NLLB-200 (No Language Left Behind)": {
+  "error": "HTTP Error 429: "
+ },
+ "MADLAD-400": {
+  "error": "HTTP Error 429: "
+ }
+}

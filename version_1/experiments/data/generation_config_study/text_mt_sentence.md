@@ -1,0 +1,1 @@
+For a single pass that cannot be split, T 1.0 + min-p 0.05 + `min_tokens = 1.4 x source tokens` is the best I found (37.4 / 30.0 at b1024 / b2048).

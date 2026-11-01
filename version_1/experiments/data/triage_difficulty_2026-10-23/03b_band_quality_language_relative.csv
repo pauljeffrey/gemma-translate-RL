@@ -1,0 +1,829 @@
+dataset,k,group,band,model,metric,n_rows,n_chunks,mean_relative_to_language_mean,ci_lo,ci_hi
+FLORES+ devtest,1,all,very easy,rl,chrF++,18114,419,-0.6868,-1.178,-0.205
+FLORES+ devtest,1,all,very easy,rl,AfriCOMET,16857,419,0.002375,-0.003495,0.008349
+FLORES+ devtest,1,all,very easy,nllb3b3,chrF++,17695,419,-0.5943,-1.188,-0.09915
+FLORES+ devtest,1,all,very easy,nllb3b3,AfriCOMET,16857,419,0.001406,-0.004597,0.006805
+FLORES+ devtest,1,all,very easy,sft,chrF++,18114,419,-0.4318,-0.943,0.07006
+FLORES+ devtest,1,all,very easy,sft,AfriCOMET,16857,419,0.005716,-0.001267,0.01292
+FLORES+ devtest,1,all,easy,rl,chrF++,23376,542,0.4058,0.05518,0.8593
+FLORES+ devtest,1,all,easy,rl,AfriCOMET,21750,542,-0.002135,-0.006588,0.002317
+FLORES+ devtest,1,all,easy,nllb3b3,chrF++,22834,542,0.2961,-0.0847,0.7527
+FLORES+ devtest,1,all,easy,nllb3b3,AfriCOMET,21750,542,-0.001588,-0.006389,0.002909
+FLORES+ devtest,1,all,easy,sft,chrF++,23376,542,0.2201,-0.1301,0.7103
+FLORES+ devtest,1,all,easy,sft,AfriCOMET,21750,542,-0.004527,-0.01043,0.0005761
+FLORES+ devtest,1,all,moderately difficult,rl,chrF++,1814,42,1.604,0.5836,2.769
+FLORES+ devtest,1,all,moderately difficult,rl,AfriCOMET,1688,42,0.003262,-0.007744,0.01616
+FLORES+ devtest,1,all,moderately difficult,nllb3b3,chrF++,1772,42,1.727,0.4998,3.129
+FLORES+ devtest,1,all,moderately difficult,nllb3b3,AfriCOMET,1688,42,0.005688,-0.005919,0.01861
+FLORES+ devtest,1,all,moderately difficult,sft,chrF++,1814,42,1.393,0.2988,2.622
+FLORES+ devtest,1,all,moderately difficult,sft,AfriCOMET,1688,42,7.19e-05,-0.01277,0.01395
+FLORES+ devtest,1,strong,very easy,rl,chrF++,5906,419,-0.3713,-0.9911,0.234
+FLORES+ devtest,1,strong,very easy,rl,AfriCOMET,5906,419,0.003792,-0.003652,0.01148
+FLORES+ devtest,1,strong,very easy,nllb3b3,chrF++,5906,419,-0.3466,-1.074,0.2487
+FLORES+ devtest,1,strong,very easy,nllb3b3,AfriCOMET,5906,419,0.003703,-0.002676,0.00979
+FLORES+ devtest,1,strong,very easy,sft,chrF++,5906,419,-0.3473,-0.9883,0.2514
+FLORES+ devtest,1,strong,very easy,sft,AfriCOMET,5906,419,0.00498,-0.002878,0.01384
+FLORES+ devtest,1,strong,easy,rl,chrF++,7649,542,0.1414,-0.2766,0.7138
+FLORES+ devtest,1,strong,easy,rl,AfriCOMET,7649,542,-0.003148,-0.009081,0.002705
+FLORES+ devtest,1,strong,easy,nllb3b3,chrF++,7649,542,0.1162,-0.3174,0.6579
+FLORES+ devtest,1,strong,easy,nllb3b3,AfriCOMET,7649,542,-0.002752,-0.008638,0.002752
+FLORES+ devtest,1,strong,easy,sft,chrF++,7649,542,0.1279,-0.2801,0.6981
+FLORES+ devtest,1,strong,easy,sft,AfriCOMET,7649,542,-0.003936,-0.01067,0.002467
+FLORES+ devtest,1,strong,moderately difficult,rl,chrF++,591,42,1.838,0.3674,3.435
+FLORES+ devtest,1,strong,moderately difficult,rl,AfriCOMET,591,42,0.005009,-0.009898,0.02142
+FLORES+ devtest,1,strong,moderately difficult,nllb3b3,chrF++,591,42,1.254,-0.1606,2.865
+FLORES+ devtest,1,strong,moderately difficult,nllb3b3,AfriCOMET,591,42,-0.002025,-0.01569,0.0139
+FLORES+ devtest,1,strong,moderately difficult,sft,chrF++,591,42,1.949,0.5282,3.47
+FLORES+ devtest,1,strong,moderately difficult,sft,AfriCOMET,591,42,0.006516,-0.009024,0.0239
+FLORES+ devtest,1,mid,very easy,rl,chrF++,6067,419,-0.8566,-1.406,-0.3289
+FLORES+ devtest,1,mid,very easy,rl,AfriCOMET,5648,419,-0.000326,-0.006848,0.005892
+FLORES+ devtest,1,mid,very easy,nllb3b3,chrF++,6067,419,-0.7658,-1.407,-0.2297
+FLORES+ devtest,1,mid,very easy,nllb3b3,AfriCOMET,5648,419,-0.00111,-0.007636,0.004856
+FLORES+ devtest,1,mid,very easy,sft,chrF++,6067,419,-0.6812,-1.304,-0.08757
+FLORES+ devtest,1,mid,very easy,sft,AfriCOMET,5648,419,0.001532,-0.006374,0.009566
+FLORES+ devtest,1,mid,easy,rl,chrF++,7799,542,0.5298,0.1044,1.053
+FLORES+ devtest,1,mid,easy,rl,AfriCOMET,7257,542,-0.0003022,-0.0053,0.004582
+FLORES+ devtest,1,mid,easy,nllb3b3,chrF++,7799,542,0.4006,-0.07043,0.9152
+FLORES+ devtest,1,mid,easy,nllb3b3,AfriCOMET,7257,542,-0.0003644,-0.00542,0.004581
+FLORES+ devtest,1,mid,easy,sft,chrF++,7799,542,0.3626,-0.07673,0.8865
+FLORES+ devtest,1,mid,easy,sft,AfriCOMET,7257,542,-0.002192,-0.008387,0.00379
+FLORES+ devtest,1,mid,moderately difficult,rl,chrF++,602,42,1.388,0.1274,2.724
+FLORES+ devtest,1,mid,moderately difficult,rl,AfriCOMET,560,42,0.004597,-0.0065,0.01817
+FLORES+ devtest,1,mid,moderately difficult,nllb3b3,chrF++,602,42,1.886,0.4871,3.408
+FLORES+ devtest,1,mid,moderately difficult,nllb3b3,AfriCOMET,560,42,0.01272,0.00107,0.02586
+FLORES+ devtest,1,mid,moderately difficult,sft,chrF++,602,42,1.718,0.3951,3.196
+FLORES+ devtest,1,mid,moderately difficult,sft,AfriCOMET,560,42,0.01073,-0.006591,0.0269
+FLORES+ devtest,1,weak,very easy,rl,chrF++,6141,419,-0.8224,-1.193,-0.4206
+FLORES+ devtest,1,weak,very easy,rl,AfriCOMET,5303,419,0.003674,-0.001173,0.008704
+FLORES+ devtest,1,weak,very easy,nllb3b3,chrF++,5722,419,-0.6682,-1.219,-0.1512
+FLORES+ devtest,1,weak,very easy,nllb3b3,AfriCOMET,5303,419,0.001528,-0.004338,0.007049
+FLORES+ devtest,1,weak,very easy,sft,chrF++,6141,419,-0.2666,-0.6858,0.1721
+FLORES+ devtest,1,weak,very easy,sft,AfriCOMET,5303,419,0.01099,0.004304,0.0169
+FLORES+ devtest,1,weak,easy,rl,chrF++,7928,542,0.5389,0.2565,0.8891
+FLORES+ devtest,1,weak,easy,rl,AfriCOMET,6844,542,-0.002947,-0.006883,0.0005585
+FLORES+ devtest,1,weak,easy,nllb3b3,chrF++,7386,542,0.3722,-0.007637,0.7858
+FLORES+ devtest,1,weak,easy,nllb3b3,AfriCOMET,6844,542,-0.001585,-0.006255,0.002821
+FLORES+ devtest,1,weak,easy,sft,chrF++,7928,542,0.1689,-0.1202,0.5557
+FLORES+ devtest,1,weak,easy,sft,AfriCOMET,6844,542,-0.007663,-0.01342,-0.002219
+FLORES+ devtest,1,weak,moderately difficult,rl,chrF++,621,42,1.591,0.6822,2.578
+FLORES+ devtest,1,weak,moderately difficult,rl,AfriCOMET,537,42,-5.403e-05,-0.0102,0.01313
+FLORES+ devtest,1,weak,moderately difficult,nllb3b3,chrF++,579,42,2.045,0.814,3.331
+FLORES+ devtest,1,weak,moderately difficult,nllb3b3,AfriCOMET,537,42,0.006841,-0.005103,0.02151
+FLORES+ devtest,1,weak,moderately difficult,sft,chrF++,621,42,0.5495,-0.3329,1.59
+FLORES+ devtest,1,weak,moderately difficult,sft,AfriCOMET,537,42,-0.01813,-0.0303,-0.004571
+FLORES+ devtest,3,all,very easy,rl,chrF++,1144,27,-1.126,-2.013,-0.1399
+FLORES+ devtest,3,all,very easy,rl,AfriCOMET,1063,27,-0.01332,-0.03063,0.004903
+FLORES+ devtest,3,all,very easy,nllb3b3,chrF++,1117,27,-1.429,-2.624,-0.1831
+FLORES+ devtest,3,all,very easy,nllb3b3,AfriCOMET,1063,27,-0.01632,-0.03517,0.00359
+FLORES+ devtest,3,all,very easy,sft,chrF++,1144,27,-1.007,-2.329,0.4111
+FLORES+ devtest,3,all,very easy,sft,AfriCOMET,1063,27,-0.01083,-0.03201,0.01273
+FLORES+ devtest,3,all,easy,rl,chrF++,7248,172,0.1925,-0.2554,0.6211
+FLORES+ devtest,3,all,easy,rl,AfriCOMET,6732,172,0.002074,-0.004873,0.008413
+FLORES+ devtest,3,all,easy,nllb3b3,chrF++,7076,172,0.1491,-0.3538,0.6225
+FLORES+ devtest,3,all,easy,nllb3b3,AfriCOMET,6732,172,0.0007409,-0.006131,0.007583
+FLORES+ devtest,3,all,easy,sft,chrF++,7248,172,0.1912,-0.355,0.7011
+FLORES+ devtest,3,all,easy,sft,AfriCOMET,6732,172,0.002179,-0.005704,0.009837
+FLORES+ devtest,3,all,moderately difficult,rl,chrF++,1444,34,-0.1066,-1.029,0.8578
+FLORES+ devtest,3,all,moderately difficult,rl,AfriCOMET,1342,34,0.0001243,-0.01166,0.01189
+FLORES+ devtest,3,all,moderately difficult,nllb3b3,chrF++,1410,34,0.3175,-0.6751,1.412
+FLORES+ devtest,3,all,moderately difficult,nllb3b3,AfriCOMET,1342,34,0.009213,-0.003372,0.02129
+FLORES+ devtest,3,all,moderately difficult,sft,chrF++,1444,34,-0.2123,-1.291,0.8531
+FLORES+ devtest,3,all,moderately difficult,sft,AfriCOMET,1342,34,-0.002738,-0.0177,0.01307
+FLORES+ devtest,3,strong,very easy,rl,chrF++,374,27,-1.369,-2.846,0.2674
+FLORES+ devtest,3,strong,very easy,rl,AfriCOMET,374,27,-0.01568,-0.03809,0.008695
+FLORES+ devtest,3,strong,very easy,nllb3b3,chrF++,374,27,-1.63,-3.376,0.06668
+FLORES+ devtest,3,strong,very easy,nllb3b3,AfriCOMET,374,27,-0.01545,-0.03665,0.006848
+FLORES+ devtest,3,strong,very easy,sft,chrF++,374,27,-2.005,-3.733,-0.1589
+FLORES+ devtest,3,strong,very easy,sft,AfriCOMET,374,27,-0.01737,-0.04304,0.01087
+FLORES+ devtest,3,strong,easy,rl,chrF++,2371,172,0.2217,-0.3073,0.7443
+FLORES+ devtest,3,strong,easy,rl,AfriCOMET,2371,172,0.001977,-0.006439,0.01012
+FLORES+ devtest,3,strong,easy,nllb3b3,chrF++,2371,172,0.2107,-0.3551,0.7816
+FLORES+ devtest,3,strong,easy,nllb3b3,AfriCOMET,2371,172,0.0009406,-0.006711,0.008698
+FLORES+ devtest,3,strong,easy,sft,chrF++,2371,172,0.3404,-0.2911,0.9325
+FLORES+ devtest,3,strong,easy,sft,AfriCOMET,2371,172,0.002751,-0.005922,0.01204
+FLORES+ devtest,3,strong,moderately difficult,rl,chrF++,472,34,-0.09417,-1.272,1.037
+FLORES+ devtest,3,strong,moderately difficult,rl,AfriCOMET,472,34,0.00323,-0.01262,0.01968
+FLORES+ devtest,3,strong,moderately difficult,nllb3b3,chrF++,472,34,0.1093,-1.001,1.382
+FLORES+ devtest,3,strong,moderately difficult,nllb3b3,AfriCOMET,472,34,0.008021,-0.00683,0.0223
+FLORES+ devtest,3,strong,moderately difficult,sft,chrF++,472,34,-0.2022,-1.432,1.122
+FLORES+ devtest,3,strong,moderately difficult,sft,AfriCOMET,472,34,0.000388,-0.01892,0.01931
+FLORES+ devtest,3,mid,very easy,rl,chrF++,381,27,-1.058,-2.069,0.06275
+FLORES+ devtest,3,mid,very easy,rl,AfriCOMET,354,27,-0.0147,-0.03486,0.006727
+FLORES+ devtest,3,mid,very easy,nllb3b3,chrF++,381,27,-1.364,-2.866,0.1797
+FLORES+ devtest,3,mid,very easy,nllb3b3,AfriCOMET,354,27,-0.01904,-0.04169,0.003129
+FLORES+ devtest,3,mid,very easy,sft,chrF++,381,27,-0.8428,-2.46,0.9382
+FLORES+ devtest,3,mid,very easy,sft,AfriCOMET,354,27,-0.01526,-0.03994,0.01179
+FLORES+ devtest,3,mid,easy,rl,chrF++,2417,172,0.201,-0.3123,0.7219
+FLORES+ devtest,3,mid,easy,rl,AfriCOMET,2245,172,0.002221,-0.004898,0.00886
+FLORES+ devtest,3,mid,easy,nllb3b3,chrF++,2417,172,0.141,-0.4228,0.7045
+FLORES+ devtest,3,mid,easy,nllb3b3,AfriCOMET,2245,172,0.0008228,-0.006284,0.007598
+FLORES+ devtest,3,mid,easy,sft,chrF++,2417,172,0.1487,-0.5744,0.8343
+FLORES+ devtest,3,mid,easy,sft,AfriCOMET,2245,172,0.002626,-0.006148,0.0113
+FLORES+ devtest,3,mid,moderately difficult,rl,chrF++,479,34,-0.2218,-1.287,0.8246
+FLORES+ devtest,3,mid,moderately difficult,rl,AfriCOMET,445,34,7.586e-05,-0.0121,0.01266
+FLORES+ devtest,3,mid,moderately difficult,nllb3b3,chrF++,479,34,0.3008,-0.9429,1.631
+FLORES+ devtest,3,mid,moderately difficult,nllb3b3,AfriCOMET,445,34,0.01067,-0.002086,0.02242
+FLORES+ devtest,3,mid,moderately difficult,sft,chrF++,479,34,-0.1745,-1.407,1.109
+FLORES+ devtest,3,mid,moderately difficult,sft,AfriCOMET,445,34,-0.001645,-0.01848,0.01449
+FLORES+ devtest,3,weak,very easy,rl,chrF++,389,27,-0.9595,-1.542,-0.4224
+FLORES+ devtest,3,weak,very easy,rl,AfriCOMET,335,27,-0.009224,-0.02085,0.003873
+FLORES+ devtest,3,weak,very easy,nllb3b3,chrF++,362,27,-1.29,-2.218,-0.355
+FLORES+ devtest,3,weak,very easy,nllb3b3,AfriCOMET,335,27,-0.01441,-0.02981,0.001992
+FLORES+ devtest,3,weak,very easy,sft,chrF++,389,27,-0.2073,-1.287,0.6882
+FLORES+ devtest,3,weak,very easy,sft,AfriCOMET,335,27,0.001162,-0.01503,0.01684
+FLORES+ devtest,3,weak,easy,rl,chrF++,2460,172,0.1561,-0.248,0.5636
+FLORES+ devtest,3,weak,easy,rl,AfriCOMET,2116,172,0.002028,-0.004198,0.00687
+FLORES+ devtest,3,weak,easy,nllb3b3,chrF++,2288,172,0.09381,-0.3806,0.5505
+FLORES+ devtest,3,weak,easy,nllb3b3,AfriCOMET,2116,172,0.0004303,-0.006048,0.006812
+FLORES+ devtest,3,weak,easy,sft,chrF++,2460,172,0.08914,-0.4062,0.5207
+FLORES+ devtest,3,weak,easy,sft,AfriCOMET,2116,172,0.001063,-0.006106,0.007699
+FLORES+ devtest,3,weak,moderately difficult,rl,chrF++,493,34,-0.006409,-0.8111,0.83
+FLORES+ devtest,3,weak,moderately difficult,rl,AfriCOMET,425,34,-0.003274,-0.01219,0.005534
+FLORES+ devtest,3,weak,moderately difficult,nllb3b3,chrF++,459,34,0.549,-0.3061,1.561
+FLORES+ devtest,3,weak,moderately difficult,nllb3b3,AfriCOMET,425,34,0.009009,-0.002881,0.02053
+FLORES+ devtest,3,weak,moderately difficult,sft,chrF++,493,34,-0.2588,-1.09,0.668
+FLORES+ devtest,3,weak,moderately difficult,sft,AfriCOMET,425,34,-0.007354,-0.02158,0.006881
+FLORES+ devtest,5,all,easy,rl,chrF++,2301,55,0.118,-0.4825,0.7455
+FLORES+ devtest,5,all,easy,rl,AfriCOMET,2136,55,0.001385,-0.008449,0.01093
+FLORES+ devtest,5,all,easy,nllb3b3,chrF++,2246,55,-0.002738,-0.6823,0.6728
+FLORES+ devtest,5,all,easy,nllb3b3,AfriCOMET,2136,55,-0.001433,-0.01237,0.008562
+FLORES+ devtest,5,all,easy,sft,chrF++,2301,55,0.1607,-0.553,0.7561
+FLORES+ devtest,5,all,easy,sft,AfriCOMET,2136,55,0.002289,-0.01023,0.01365
+FLORES+ devtest,5,strong,easy,rl,chrF++,754,55,0.1774,-0.6052,0.8851
+FLORES+ devtest,5,strong,easy,rl,AfriCOMET,754,55,0.001616,-0.01103,0.01269
+FLORES+ devtest,5,strong,easy,nllb3b3,chrF++,754,55,0.1739,-0.6471,1.018
+FLORES+ devtest,5,strong,easy,nllb3b3,AfriCOMET,754,55,-0.0009107,-0.0145,0.01004
+FLORES+ devtest,5,strong,easy,sft,chrF++,754,55,0.3269,-0.531,1.042
+FLORES+ devtest,5,strong,easy,sft,AfriCOMET,754,55,0.002799,-0.01241,0.01607
+FLORES+ devtest,5,mid,easy,rl,chrF++,767,55,0.08351,-0.6472,0.8035
+FLORES+ devtest,5,mid,easy,rl,AfriCOMET,712,55,0.0003094,-0.01066,0.01068
+FLORES+ devtest,5,mid,easy,nllb3b3,chrF++,767,55,-0.03568,-0.8811,0.7933
+FLORES+ devtest,5,mid,easy,nllb3b3,AfriCOMET,712,55,-0.001596,-0.01266,0.008302
+FLORES+ devtest,5,mid,easy,sft,chrF++,767,55,0.2303,-0.813,1.073
+FLORES+ devtest,5,mid,easy,sft,AfriCOMET,712,55,0.002473,-0.01143,0.01528
+FLORES+ devtest,5,weak,easy,rl,chrF++,780,55,0.09453,-0.3978,0.6399
+FLORES+ devtest,5,weak,easy,rl,AfriCOMET,670,55,0.002269,-0.005136,0.0101
+FLORES+ devtest,5,weak,easy,nllb3b3,chrF++,725,55,-0.1516,-0.6767,0.4182
+FLORES+ devtest,5,weak,easy,nllb3b3,AfriCOMET,670,55,-0.001847,-0.01119,0.007448
+FLORES+ devtest,5,weak,easy,sft,chrF++,780,55,-0.06827,-0.6525,0.5104
+FLORES+ devtest,5,weak,easy,sft,AfriCOMET,670,55,0.001518,-0.008175,0.01135
+NTREX-128,1,all,very easy,rl,chrF++,14230,600,-1.525,-2.15,-0.9905
+NTREX-128,1,all,very easy,rl,AfriCOMET,13030,600,0.02338,0.01674,0.02955
+NTREX-128,1,all,very easy,nllb3b3,chrF++,12430,600,-1.809,-2.457,-1.177
+NTREX-128,1,all,very easy,nllb3b3,AfriCOMET,12430,600,0.01685,0.01107,0.02308
+NTREX-128,1,all,very easy,sft,chrF++,14230,600,-1.498,-2.113,-0.9782
+NTREX-128,1,all,very easy,sft,AfriCOMET,13030,600,0.03071,0.02412,0.03777
+NTREX-128,1,all,easy,rl,chrF++,26645,1125,0.8655,0.4901,1.182
+NTREX-128,1,all,easy,rl,AfriCOMET,24395,1125,-0.005422,-0.01021,-0.0007384
+NTREX-128,1,all,easy,nllb3b3,chrF++,23270,1125,1.048,0.6746,1.385
+NTREX-128,1,all,easy,nllb3b3,AfriCOMET,23270,1125,-0.002213,-0.006284,0.001985
+NTREX-128,1,all,easy,sft,chrF++,26645,1125,0.9063,0.526,1.237
+NTREX-128,1,all,easy,sft,AfriCOMET,24395,1125,-0.00648,-0.01166,-0.001308
+NTREX-128,1,all,moderately difficult,rl,chrF++,5969,250,0.4051,-0.0295,0.8841
+NTREX-128,1,all,moderately difficult,rl,AfriCOMET,5469,250,-0.02973,-0.0378,-0.02202
+NTREX-128,1,all,moderately difficult,nllb3b3,chrF++,5219,250,0.3233,-0.1419,0.8503
+NTREX-128,1,all,moderately difficult,nllb3b3,AfriCOMET,5219,250,-0.0278,-0.03556,-0.01938
+NTREX-128,1,all,moderately difficult,sft,chrF++,5969,250,0.09287,-0.402,0.6153
+NTREX-128,1,all,moderately difficult,sft,AfriCOMET,5469,250,-0.04467,-0.0538,-0.03495
+NTREX-128,1,all,english-form (kept in English),rl,chrF++,521,22,-7.248,-10.27,-3.789
+NTREX-128,1,all,english-form (kept in English),rl,AfriCOMET,477,22,-0.02058,-0.06121,0.02626
+NTREX-128,1,all,english-form (kept in English),nllb3b3,chrF++,455,22,-7.918,-11.44,-4.261
+NTREX-128,1,all,english-form (kept in English),nllb3b3,AfriCOMET,455,22,-0.02835,-0.06104,0.01111
+NTREX-128,1,all,english-form (kept in English),sft,chrF++,521,22,-6.5,-9.368,-2.961
+NTREX-128,1,all,english-form (kept in English),sft,AfriCOMET,477,22,0.004707,-0.03609,0.05148
+NTREX-128,1,strong,very easy,rl,chrF++,7086,600,-1.407,-2.203,-0.749
+NTREX-128,1,strong,very easy,rl,AfriCOMET,7086,600,0.02315,0.01533,0.03074
+NTREX-128,1,strong,very easy,nllb3b3,chrF++,7086,600,-1.943,-2.723,-1.209
+NTREX-128,1,strong,very easy,nllb3b3,AfriCOMET,7086,600,0.01744,0.01076,0.02397
+NTREX-128,1,strong,very easy,sft,chrF++,7086,600,-1.612,-2.425,-0.8959
+NTREX-128,1,strong,very easy,sft,AfriCOMET,7086,600,0.02453,0.01628,0.03226
+NTREX-128,1,strong,easy,rl,chrF++,13227,1125,0.883,0.4416,1.264
+NTREX-128,1,strong,easy,rl,AfriCOMET,13227,1125,-0.004786,-0.01033,0.0008744
+NTREX-128,1,strong,easy,nllb3b3,chrF++,13227,1125,1.147,0.6978,1.528
+NTREX-128,1,strong,easy,nllb3b3,AfriCOMET,13227,1125,-0.002174,-0.006846,0.002533
+NTREX-128,1,strong,easy,sft,chrF++,13227,1125,0.998,0.4972,1.377
+NTREX-128,1,strong,easy,sft,AfriCOMET,13227,1125,-0.003782,-0.009766,0.002048
+NTREX-128,1,strong,moderately difficult,rl,chrF++,2970,250,0.1481,-0.4385,0.7599
+NTREX-128,1,strong,moderately difficult,rl,AfriCOMET,2970,250,-0.03208,-0.04192,-0.02287
+NTREX-128,1,strong,moderately difficult,nllb3b3,chrF++,2970,250,0.2749,-0.2772,0.8917
+NTREX-128,1,strong,moderately difficult,nllb3b3,AfriCOMET,2970,250,-0.02933,-0.0379,-0.02068
+NTREX-128,1,strong,moderately difficult,sft,chrF++,2970,250,0.1061,-0.5706,0.7696
+NTREX-128,1,strong,moderately difficult,sft,AfriCOMET,2970,250,-0.04061,-0.05107,-0.02993
+NTREX-128,1,strong,english-form (kept in English),rl,chrF++,260,22,-8.258,-12.26,-3.887
+NTREX-128,1,strong,english-form (kept in English),rl,AfriCOMET,260,22,-0.02094,-0.06618,0.03206
+NTREX-128,1,strong,english-form (kept in English),nllb3b3,chrF++,260,22,-8.545,-12.96,-4.461
+NTREX-128,1,strong,english-form (kept in English),nllb3b3,AfriCOMET,260,22,-0.02978,-0.06768,0.01305
+NTREX-128,1,strong,english-form (kept in English),sft,chrF++,260,22,-8.056,-11.57,-3.58
+NTREX-128,1,strong,english-form (kept in English),sft,AfriCOMET,260,22,-0.01207,-0.05872,0.04352
+NTREX-128,1,mid,very easy,rl,chrF++,3597,600,-2.082,-2.757,-1.457
+NTREX-128,1,mid,very easy,rl,AfriCOMET,3597,600,0.02027,0.01437,0.02628
+NTREX-128,1,mid,very easy,nllb3b3,chrF++,3597,600,-1.996,-2.685,-1.317
+NTREX-128,1,mid,very easy,nllb3b3,AfriCOMET,3597,600,0.01326,0.007474,0.01945
+NTREX-128,1,mid,very easy,sft,chrF++,3597,600,-1.85,-2.504,-1.237
+NTREX-128,1,mid,very easy,sft,AfriCOMET,3597,600,0.02807,0.02176,0.03529
+NTREX-128,1,mid,easy,rl,chrF++,6750,1125,1.104,0.719,1.464
+NTREX-128,1,mid,easy,rl,AfriCOMET,6750,1125,-0.004391,-0.008245,-0.0003345
+NTREX-128,1,mid,easy,nllb3b3,chrF++,6750,1125,1.11,0.7216,1.519
+NTREX-128,1,mid,easy,nllb3b3,AfriCOMET,6750,1125,-0.001432,-0.005522,0.002292
+NTREX-128,1,mid,easy,sft,chrF++,6750,1125,1.037,0.6147,1.455
+NTREX-128,1,mid,easy,sft,AfriCOMET,6750,1125,-0.006109,-0.01063,-0.001156
+NTREX-128,1,mid,moderately difficult,rl,chrF++,1500,250,0.7181,0.1884,1.313
+NTREX-128,1,mid,moderately difficult,rl,AfriCOMET,1500,250,-0.02601,-0.03341,-0.01925
+NTREX-128,1,mid,moderately difficult,nllb3b3,chrF++,1500,250,0.4905,-0.09441,1.071
+NTREX-128,1,mid,moderately difficult,nllb3b3,AfriCOMET,1500,250,-0.0231,-0.03073,-0.01504
+NTREX-128,1,mid,moderately difficult,sft,chrF++,1500,250,0.3165,-0.3075,0.952
+NTREX-128,1,mid,moderately difficult,sft,AfriCOMET,1500,250,-0.04005,-0.04944,-0.03096
+NTREX-128,1,mid,english-form (kept in English),rl,chrF++,131,22,-7.935,-10.99,-4.162
+NTREX-128,1,mid,english-form (kept in English),rl,AfriCOMET,131,22,-0.03238,-0.07019,0.006493
+NTREX-128,1,mid,english-form (kept in English),nllb3b3,chrF++,131,22,-8.005,-11.5,-4.393
+NTREX-128,1,mid,english-form (kept in English),nllb3b3,AfriCOMET,131,22,-0.02573,-0.05391,0.006336
+NTREX-128,1,mid,english-form (kept in English),sft,chrF++,131,22,-6.248,-9.172,-2.661
+NTREX-128,1,mid,english-form (kept in English),sft,AfriCOMET,131,22,0.002727,-0.03436,0.04187
+NTREX-128,1,weak,very easy,rl,chrF++,1747,600,-0.8656,-1.411,-0.4427
+NTREX-128,1,weak,very easy,rl,AfriCOMET,1747,600,0.0333,0.02632,0.04071
+NTREX-128,1,weak,very easy,nllb3b3,chrF++,1747,600,-0.8776,-1.657,-0.143
+NTREX-128,1,weak,very easy,nllb3b3,AfriCOMET,1747,600,0.02187,0.01363,0.0299
+NTREX-128,1,weak,very easy,sft,chrF++,1747,600,-0.5598,-1.032,-0.0764
+NTREX-128,1,weak,very easy,sft,AfriCOMET,1747,600,0.06076,0.05247,0.07087
+NTREX-128,1,weak,easy,rl,chrF++,3293,1125,0.4289,0.1602,0.7134
+NTREX-128,1,weak,easy,rl,AfriCOMET,3293,1125,-0.01026,-0.01484,-0.005958
+NTREX-128,1,weak,easy,nllb3b3,chrF++,3293,1125,0.5254,0.1743,0.898
+NTREX-128,1,weak,easy,nllb3b3,AfriCOMET,3293,1125,-0.003973,-0.009206,0.0008807
+NTREX-128,1,weak,easy,sft,chrF++,3293,1125,0.4604,0.1357,0.7664
+NTREX-128,1,weak,easy,sft,AfriCOMET,3293,1125,-0.01697,-0.02295,-0.01133
+NTREX-128,1,weak,moderately difficult,rl,chrF++,749,250,0.4317,-0.02582,0.8733
+NTREX-128,1,weak,moderately difficult,rl,AfriCOMET,749,250,-0.03241,-0.04056,-0.02376
+NTREX-128,1,weak,moderately difficult,nllb3b3,chrF++,749,250,0.1805,-0.5198,0.8808
+NTREX-128,1,weak,moderately difficult,nllb3b3,AfriCOMET,749,250,-0.03117,-0.04223,-0.02102
+NTREX-128,1,weak,moderately difficult,sft,chrF++,749,250,-0.5056,-1.121,0.02001
+NTREX-128,1,weak,moderately difficult,sft,AfriCOMET,749,250,-0.07283,-0.08536,-0.06125
+NTREX-128,1,weak,english-form (kept in English),rl,chrF++,64,22,-3.492,-5.771,-0.9611
+NTREX-128,1,weak,english-form (kept in English),rl,AfriCOMET,64,22,-0.002003,-0.04276,0.04252
+NTREX-128,1,weak,english-form (kept in English),nllb3b3,chrF++,64,22,-5.192,-8.876,-0.5815
+NTREX-128,1,weak,english-form (kept in English),nllb3b3,AfriCOMET,64,22,-0.02785,-0.07219,0.02646
+NTREX-128,1,weak,english-form (kept in English),sft,chrF++,64,22,-2.489,-4.708,-0.05832
+NTREX-128,1,weak,english-form (kept in English),sft,AfriCOMET,64,22,0.06681,0.01739,0.1176
+NTREX-128,3,all,very easy,rl,chrF++,1010,44,-1.997,-3.382,-0.5765
+NTREX-128,3,all,very easy,rl,AfriCOMET,922,44,0.03303,0.01495,0.04969
+NTREX-128,3,all,very easy,nllb3b3,chrF++,878,44,-2.165,-3.659,-0.6976
+NTREX-128,3,all,very easy,nllb3b3,AfriCOMET,878,44,0.01835,0.0004452,0.03497
+NTREX-128,3,all,very easy,sft,chrF++,1010,44,-1.45,-2.937,-0.03051
+NTREX-128,3,all,very easy,sft,AfriCOMET,922,44,0.04446,0.02546,0.06166
+NTREX-128,3,all,easy,rl,chrF++,7602,326,0.0001418,-0.3529,0.3378
+NTREX-128,3,all,easy,rl,AfriCOMET,6950,326,0.006258,-0.0001532,0.01268
+NTREX-128,3,all,easy,nllb3b3,chrF++,6624,326,0.07012,-0.325,0.4696
+NTREX-128,3,all,easy,nllb3b3,AfriCOMET,6624,326,0.006638,0.0007856,0.01281
+NTREX-128,3,all,easy,sft,chrF++,7602,326,-0.006769,-0.4281,0.4033
+NTREX-128,3,all,easy,sft,AfriCOMET,6950,326,0.008348,0.001287,0.0156
+NTREX-128,3,all,moderately difficult,rl,chrF++,6899,295,0.2922,-0.02696,0.6383
+NTREX-128,3,all,moderately difficult,rl,AfriCOMET,6309,295,-0.01172,-0.01833,-0.005017
+NTREX-128,3,all,moderately difficult,nllb3b3,chrF++,6014,295,0.2388,-0.1099,0.5793
+NTREX-128,3,all,moderately difficult,nllb3b3,AfriCOMET,6014,295,-0.00999,-0.01685,-0.003078
+NTREX-128,3,all,moderately difficult,sft,chrF++,6899,295,0.2197,-0.152,0.6062
+NTREX-128,3,all,moderately difficult,sft,AfriCOMET,6309,295,-0.01569,-0.02266,-0.008381
+NTREX-128,3,strong,very easy,rl,chrF++,499,44,-1.815,-3.599,-0.06461
+NTREX-128,3,strong,very easy,rl,AfriCOMET,499,44,0.03453,0.01334,0.05343
+NTREX-128,3,strong,very easy,nllb3b3,chrF++,499,44,-1.769,-3.488,-0.1072
+NTREX-128,3,strong,very easy,nllb3b3,AfriCOMET,499,44,0.02293,0.001965,0.04154
+NTREX-128,3,strong,very easy,sft,chrF++,499,44,-1.661,-3.564,0.04318
+NTREX-128,3,strong,very easy,sft,AfriCOMET,499,44,0.03714,0.01495,0.0557
+NTREX-128,3,strong,easy,rl,chrF++,3743,326,0.1134,-0.3485,0.5514
+NTREX-128,3,strong,easy,rl,AfriCOMET,3743,326,0.007887,0.001007,0.01558
+NTREX-128,3,strong,easy,nllb3b3,chrF++,3743,326,0.1298,-0.3767,0.6158
+NTREX-128,3,strong,easy,nllb3b3,AfriCOMET,3743,326,0.007346,0.0008238,0.01399
+NTREX-128,3,strong,easy,sft,chrF++,3743,326,0.03508,-0.4897,0.5322
+NTREX-128,3,strong,easy,sft,AfriCOMET,3743,326,0.007642,4.375e-05,0.01598
+NTREX-128,3,strong,moderately difficult,rl,chrF++,3409,295,0.1411,-0.2747,0.5955
+NTREX-128,3,strong,moderately difficult,rl,AfriCOMET,3409,295,-0.01371,-0.02205,-0.005498
+NTREX-128,3,strong,moderately difficult,nllb3b3,chrF++,3409,295,0.1165,-0.3185,0.5497
+NTREX-128,3,strong,moderately difficult,nllb3b3,AfriCOMET,3409,295,-0.01142,-0.01887,-0.003639
+NTREX-128,3,strong,moderately difficult,sft,chrF++,3409,295,0.2047,-0.238,0.6714
+NTREX-128,3,strong,moderately difficult,sft,AfriCOMET,3409,295,-0.01383,-0.02236,-0.005128
+NTREX-128,3,mid,very easy,rl,chrF++,262,44,-2.562,-3.934,-1.083
+NTREX-128,3,mid,very easy,rl,AfriCOMET,262,44,0.02315,0.00763,0.03711
+NTREX-128,3,mid,very easy,nllb3b3,chrF++,262,44,-2.372,-3.843,-0.8463
+NTREX-128,3,mid,very easy,nllb3b3,AfriCOMET,262,44,0.01395,-0.002262,0.03085
+NTREX-128,3,mid,very easy,sft,chrF++,262,44,-1.678,-3.342,0.07707
+NTREX-128,3,mid,very easy,sft,AfriCOMET,262,44,0.03708,0.02151,0.05251
+NTREX-128,3,mid,easy,rl,chrF++,1954,326,-0.2123,-0.6223,0.1981
+NTREX-128,3,mid,easy,rl,AfriCOMET,1954,326,0.004242,-0.0014,0.01005
+NTREX-128,3,mid,easy,nllb3b3,chrF++,1954,326,-0.08225,-0.5321,0.3481
+NTREX-128,3,mid,easy,nllb3b3,AfriCOMET,1954,326,0.004872,-0.0002673,0.0111
+NTREX-128,3,mid,easy,sft,chrF++,1954,326,-0.1093,-0.6599,0.4601
+NTREX-128,3,mid,easy,sft,AfriCOMET,1954,326,0.007001,0.0001355,0.01385
+NTREX-128,3,mid,moderately difficult,rl,chrF++,1770,295,0.6136,0.245,0.9912
+NTREX-128,3,mid,moderately difficult,rl,AfriCOMET,1770,295,-0.00811,-0.01369,-0.002616
+NTREX-128,3,mid,moderately difficult,nllb3b3,chrF++,1770,295,0.4418,0.07053,0.8307
+NTREX-128,3,mid,moderately difficult,nllb3b3,AfriCOMET,1770,295,-0.007443,-0.01349,-0.001248
+NTREX-128,3,mid,moderately difficult,sft,chrF++,1770,295,0.369,-0.2048,0.9026
+NTREX-128,3,mid,moderately difficult,sft,AfriCOMET,1770,295,-0.01322,-0.01969,-0.006304
+NTREX-128,3,weak,very easy,rl,chrF++,117,44,-1.537,-2.75,-0.04084
+NTREX-128,3,weak,very easy,rl,AfriCOMET,117,44,0.05342,0.03294,0.07466
+NTREX-128,3,weak,very easy,nllb3b3,chrF++,117,44,-3.387,-5.079,-1.476
+NTREX-128,3,weak,very easy,nllb3b3,AfriCOMET,117,44,0.008654,-0.0145,0.03179
+NTREX-128,3,weak,very easy,sft,chrF++,117,44,0.1364,-1.286,1.712
+NTREX-128,3,weak,very easy,sft,AfriCOMET,117,44,0.0942,0.07177,0.1185
+NTREX-128,3,weak,easy,rl,chrF++,927,326,0.03336,-0.3317,0.3895
+NTREX-128,3,weak,easy,rl,AfriCOMET,927,326,0.00536,-0.001351,0.01159
+NTREX-128,3,weak,easy,nllb3b3,chrF++,927,326,0.1504,-0.3622,0.6988
+NTREX-128,3,weak,easy,nllb3b3,AfriCOMET,927,326,0.007504,0.0006502,0.0147
+NTREX-128,3,weak,easy,sft,chrF++,927,326,-0.02435,-0.4596,0.3974
+NTREX-128,3,weak,easy,sft,AfriCOMET,927,326,0.01549,0.007143,0.02398
+NTREX-128,3,weak,moderately difficult,rl,chrF++,835,295,0.1784,-0.1258,0.4743
+NTREX-128,3,weak,moderately difficult,rl,AfriCOMET,835,295,-0.01344,-0.01964,-0.006664
+NTREX-128,3,weak,moderately difficult,nllb3b3,chrF++,835,295,0.3075,-0.1094,0.6982
+NTREX-128,3,weak,moderately difficult,nllb3b3,AfriCOMET,835,295,-0.009543,-0.0171,-0.0026
+NTREX-128,3,weak,moderately difficult,sft,chrF++,835,295,0.00792,-0.417,0.4519
+NTREX-128,3,weak,moderately difficult,sft,AfriCOMET,835,295,-0.03039,-0.038,-0.02133
+NTREX-128,5,all,easy,rl,chrF++,3661,159,0.1026,-0.3652,0.5551
+NTREX-128,5,all,easy,rl,AfriCOMET,3343,159,0.01211,0.004757,0.01934
+NTREX-128,5,all,easy,nllb3b3,chrF++,3184,159,0.2157,-0.2447,0.7229
+NTREX-128,5,all,easy,nllb3b3,AfriCOMET,3184,159,0.01253,0.005762,0.01908
+NTREX-128,5,all,easy,sft,chrF++,3661,159,0.1265,-0.3963,0.6354
+NTREX-128,5,all,easy,sft,AfriCOMET,3343,159,0.0155,0.00712,0.02358
+NTREX-128,5,all,moderately difficult,rl,chrF++,5376,232,-0.0001696,-0.3307,0.3154
+NTREX-128,5,all,moderately difficult,rl,AfriCOMET,4912,232,-0.009228,-0.01745,-0.001262
+NTREX-128,5,all,moderately difficult,nllb3b3,chrF++,4680,232,-0.07729,-0.4393,0.278
+NTREX-128,5,all,moderately difficult,nllb3b3,AfriCOMET,4680,232,-0.009221,-0.01734,-0.001913
+NTREX-128,5,all,moderately difficult,sft,chrF++,5376,232,-0.03836,-0.4475,0.3633
+NTREX-128,5,all,moderately difficult,sft,AfriCOMET,4912,232,-0.01177,-0.02055,-0.003563
+NTREX-128,5,strong,easy,rl,chrF++,1795,159,0.3235,-0.2567,0.939
+NTREX-128,5,strong,easy,rl,AfriCOMET,1795,159,0.01541,0.00683,0.02473
+NTREX-128,5,strong,easy,nllb3b3,chrF++,1795,159,0.3241,-0.2203,0.9297
+NTREX-128,5,strong,easy,nllb3b3,AfriCOMET,1795,159,0.01466,0.00717,0.02227
+NTREX-128,5,strong,easy,sft,chrF++,1795,159,0.2368,-0.4438,0.9062
+NTREX-128,5,strong,easy,sft,AfriCOMET,1795,159,0.01614,0.006249,0.02547
+NTREX-128,5,strong,moderately difficult,rl,chrF++,2645,232,-0.1271,-0.5845,0.3073
+NTREX-128,5,strong,moderately difficult,rl,AfriCOMET,2645,232,-0.01139,-0.02116,-0.002303
+NTREX-128,5,strong,moderately difficult,nllb3b3,chrF++,2645,232,-0.1559,-0.5805,0.2395
+NTREX-128,5,strong,moderately difficult,nllb3b3,AfriCOMET,2645,232,-0.01094,-0.01969,-0.002692
+NTREX-128,5,strong,moderately difficult,sft,chrF++,2645,232,-0.08329,-0.5918,0.3999
+NTREX-128,5,strong,moderately difficult,sft,AfriCOMET,2645,232,-0.01189,-0.02165,-0.002296
+NTREX-128,5,mid,easy,rl,chrF++,953,159,-0.133,-0.5974,0.3766
+NTREX-128,5,mid,easy,rl,AfriCOMET,953,159,0.006793,0.0004075,0.01244
+NTREX-128,5,mid,easy,nllb3b3,chrF++,953,159,0.03495,-0.4362,0.5648
+NTREX-128,5,mid,easy,nllb3b3,AfriCOMET,953,159,0.00748,0.001248,0.01301
+NTREX-128,5,mid,easy,sft,chrF++,953,159,0.2305,-0.404,0.8851
+NTREX-128,5,mid,easy,sft,AfriCOMET,953,159,0.01165,0.00448,0.01886
+NTREX-128,5,mid,moderately difficult,rl,chrF++,1391,232,0.1701,-0.1559,0.5261
+NTREX-128,5,mid,moderately difficult,rl,AfriCOMET,1391,232,-0.005525,-0.01229,0.001131
+NTREX-128,5,mid,moderately difficult,nllb3b3,chrF++,1391,232,0.05329,-0.2965,0.4079
+NTREX-128,5,mid,moderately difficult,nllb3b3,AfriCOMET,1391,232,-0.005737,-0.01274,0.0009955
+NTREX-128,5,mid,moderately difficult,sft,chrF++,1391,232,-0.1229,-0.6477,0.3942
+NTREX-128,5,mid,moderately difficult,sft,AfriCOMET,1391,232,-0.009123,-0.01689,-0.001714
+NTREX-128,5,weak,easy,rl,chrF++,436,159,-0.1084,-0.5515,0.3057
+NTREX-128,5,weak,easy,rl,AfriCOMET,436,159,0.01309,0.004796,0.02016
+NTREX-128,5,weak,easy,nllb3b3,chrF++,436,159,0.1645,-0.4604,0.7786
+NTREX-128,5,weak,easy,nllb3b3,AfriCOMET,436,159,0.01482,0.005852,0.02315
+NTREX-128,5,weak,easy,sft,chrF++,436,159,-0.2757,-0.8441,0.2227
+NTREX-128,5,weak,easy,sft,AfriCOMET,436,159,0.0242,0.01315,0.03362
+NTREX-128,5,weak,moderately difficult,rl,chrF++,644,232,0.06992,-0.2623,0.3869
+NTREX-128,5,weak,moderately difficult,rl,AfriCOMET,644,232,-0.01043,-0.0178,-0.002947
+NTREX-128,5,weak,moderately difficult,nllb3b3,chrF++,644,232,-0.03649,-0.4762,0.4374
+NTREX-128,5,weak,moderately difficult,nllb3b3,AfriCOMET,644,232,-0.009689,-0.01838,-0.001784
+NTREX-128,5,weak,moderately difficult,sft,chrF++,644,232,0.159,-0.2564,0.6009
+NTREX-128,5,weak,moderately difficult,sft,AfriCOMET,644,232,-0.01904,-0.02818,-0.01052
+MAFAND-MT,1,all,very easy,rl,chrF++,4712,4323,-1.413,-1.887,-0.9488
+MAFAND-MT,1,all,very easy,rl,AfriCOMET,4712,4323,0.008605,0.004889,0.01267
+MAFAND-MT,1,all,very easy,nllb3b3,chrF++,4380,3991,-0.9697,-1.578,-0.3762
+MAFAND-MT,1,all,very easy,nllb3b3,AfriCOMET,4380,3991,0.007443,0.003394,0.01143
+MAFAND-MT,1,all,very easy,sft,chrF++,4712,4323,-1.489,-1.982,-1.014
+MAFAND-MT,1,all,very easy,sft,AfriCOMET,4712,4323,0.01055,0.006139,0.01472
+MAFAND-MT,1,all,easy,rl,chrF++,10424,9082,0.581,0.3493,0.8178
+MAFAND-MT,1,all,easy,rl,AfriCOMET,10424,9082,-0.001023,-0.002866,0.001028
+MAFAND-MT,1,all,easy,nllb3b3,chrF++,9640,8298,0.5645,0.301,0.8272
+MAFAND-MT,1,all,easy,nllb3b3,AfriCOMET,9640,8298,0.0002521,-0.001724,0.002314
+MAFAND-MT,1,all,easy,sft,chrF++,10424,9082,0.6161,0.3694,0.8855
+MAFAND-MT,1,all,easy,sft,AfriCOMET,10424,9082,-0.001107,-0.003844,0.00144
+MAFAND-MT,1,all,moderately difficult,rl,chrF++,1694,1498,0.5948,0.147,1.087
+MAFAND-MT,1,all,moderately difficult,rl,AfriCOMET,1694,1498,-0.01626,-0.0199,-0.01213
+MAFAND-MT,1,all,moderately difficult,nllb3b3,chrF++,1442,1246,-0.4467,-1.011,0.1216
+MAFAND-MT,1,all,moderately difficult,nllb3b3,AfriCOMET,1442,1246,-0.02231,-0.02655,-0.01745
+MAFAND-MT,1,all,moderately difficult,sft,chrF++,1694,1498,0.6092,0.06372,1.164
+MAFAND-MT,1,all,moderately difficult,sft,AfriCOMET,1694,1498,-0.02179,-0.02715,-0.01614
+MAFAND-MT,1,all,english-form (kept in English),rl,chrF++,82,78,-5,-8.376,-1.134
+MAFAND-MT,1,all,english-form (kept in English),rl,AfriCOMET,82,78,-0.02868,-0.06272,0.005278
+MAFAND-MT,1,all,english-form (kept in English),nllb3b3,chrF++,76,72,-7.334,-11.37,-3.065
+MAFAND-MT,1,all,english-form (kept in English),nllb3b3,AfriCOMET,76,72,-0.03832,-0.06974,-0.004341
+MAFAND-MT,1,all,english-form (kept in English),sft,chrF++,82,78,-5.496,-9.842,-1.408
+MAFAND-MT,1,all,english-form (kept in English),sft,AfriCOMET,82,78,-0.01672,-0.05217,0.01947
+MAFAND-MT,1,strong,very easy,rl,chrF++,2622,2267,-0.8533,-1.536,-0.1227
+MAFAND-MT,1,strong,very easy,rl,AfriCOMET,2622,2267,0.01556,0.009938,0.02076
+MAFAND-MT,1,strong,very easy,nllb3b3,chrF++,2622,2267,-0.988,-1.731,-0.2184
+MAFAND-MT,1,strong,very easy,nllb3b3,AfriCOMET,2622,2267,0.01235,0.007636,0.01717
+MAFAND-MT,1,strong,very easy,sft,chrF++,2622,2267,-1.153,-1.831,-0.4437
+MAFAND-MT,1,strong,very easy,sft,AfriCOMET,2622,2267,0.01532,0.009217,0.02081
+MAFAND-MT,1,strong,easy,rl,chrF++,5731,4443,0.3996,0.06489,0.7194
+MAFAND-MT,1,strong,easy,rl,AfriCOMET,5731,4443,-0.003796,-0.007024,-0.0009255
+MAFAND-MT,1,strong,easy,nllb3b3,chrF++,5731,4443,0.5074,0.1678,0.8877
+MAFAND-MT,1,strong,easy,nllb3b3,AfriCOMET,5731,4443,-0.001839,-0.004776,0.000855
+MAFAND-MT,1,strong,easy,sft,chrF++,5731,4443,0.5472,0.1823,0.8864
+MAFAND-MT,1,strong,easy,sft,AfriCOMET,5731,4443,-0.002866,-0.006566,0.0006522
+MAFAND-MT,1,strong,moderately difficult,rl,chrF++,898,707,0.3279,-0.3357,0.9979
+MAFAND-MT,1,strong,moderately difficult,rl,AfriCOMET,898,707,-0.01841,-0.0248,-0.01234
+MAFAND-MT,1,strong,moderately difficult,nllb3b3,chrF++,898,707,0.1321,-0.6586,0.8564
+MAFAND-MT,1,strong,moderately difficult,nllb3b3,AfriCOMET,898,707,-0.02166,-0.02728,-0.01604
+MAFAND-MT,1,strong,moderately difficult,sft,chrF++,898,707,0.245,-0.5188,1.008
+MAFAND-MT,1,strong,moderately difficult,sft,AfriCOMET,898,707,-0.02462,-0.03206,-0.01706
+MAFAND-MT,1,strong,english-form (kept in English),rl,chrF++,49,45,-7.133,-12.84,-1.479
+MAFAND-MT,1,strong,english-form (kept in English),rl,AfriCOMET,49,45,-0.05139,-0.09408,-0.0106
+MAFAND-MT,1,strong,english-form (kept in English),nllb3b3,chrF++,49,45,-9.041,-14.65,-2.773
+MAFAND-MT,1,strong,english-form (kept in English),nllb3b3,AfriCOMET,49,45,-0.04957,-0.08603,-0.009349
+MAFAND-MT,1,strong,english-form (kept in English),sft,chrF++,49,45,-7.086,-13.77,-0.1297
+MAFAND-MT,1,strong,english-form (kept in English),sft,AfriCOMET,49,45,-0.0353,-0.07779,0.01197
+MAFAND-MT,1,mid,very easy,rl,chrF++,1076,1062,-1.853,-2.881,-0.8194
+MAFAND-MT,1,mid,very easy,rl,AfriCOMET,1076,1062,0.007097,0.0001738,0.01327
+MAFAND-MT,1,mid,very easy,nllb3b3,chrF++,1076,1062,-1.277,-2.506,-0.07208
+MAFAND-MT,1,mid,very easy,nllb3b3,AfriCOMET,1076,1062,-0.0002209,-0.007859,0.006957
+MAFAND-MT,1,mid,very easy,sft,chrF++,1076,1062,-1.274,-2.289,-0.1799
+MAFAND-MT,1,mid,very easy,sft,AfriCOMET,1076,1062,0.01249,0.005104,0.02126
+MAFAND-MT,1,mid,easy,rl,chrF++,3060,3020,0.7869,0.3651,1.226
+MAFAND-MT,1,mid,easy,rl,AfriCOMET,3060,3020,0.00114,-0.001805,0.004109
+MAFAND-MT,1,mid,easy,nllb3b3,chrF++,3060,3020,0.7307,0.3023,1.183
+MAFAND-MT,1,mid,easy,nllb3b3,AfriCOMET,3060,3020,0.003443,0.0006312,0.006344
+MAFAND-MT,1,mid,easy,sft,chrF++,3060,3020,0.6243,0.18,1.084
+MAFAND-MT,1,mid,easy,sft,AfriCOMET,3060,3020,0.0007455,-0.003043,0.005016
+MAFAND-MT,1,mid,moderately difficult,rl,chrF++,401,396,-0.9679,-1.886,-0.1085
+MAFAND-MT,1,mid,moderately difficult,rl,AfriCOMET,401,396,-0.02717,-0.03465,-0.02
+MAFAND-MT,1,mid,moderately difficult,nllb3b3,chrF++,401,396,-2.034,-3.089,-1.056
+MAFAND-MT,1,mid,moderately difficult,nllb3b3,AfriCOMET,401,396,-0.02511,-0.03276,-0.01791
+MAFAND-MT,1,mid,moderately difficult,sft,chrF++,401,396,-1.22,-2.282,-0.1472
+MAFAND-MT,1,mid,moderately difficult,sft,AfriCOMET,401,396,-0.03905,-0.04942,-0.0284
+MAFAND-MT,1,weak,very easy,rl,chrF++,682,664,-1.45,-2.401,-0.5261
+MAFAND-MT,1,weak,very easy,rl,AfriCOMET,682,664,-0.00229,-0.01279,0.007729
+MAFAND-MT,1,weak,very easy,nllb3b3,chrF++,682,664,-0.4143,-1.816,0.9553
+MAFAND-MT,1,weak,very easy,nllb3b3,AfriCOMET,682,664,0.0006796,-0.01051,0.01222
+MAFAND-MT,1,weak,very easy,sft,chrF++,682,664,-1.675,-2.738,-0.7172
+MAFAND-MT,1,weak,very easy,sft,AfriCOMET,682,664,0.004001,-0.009116,0.01544
+MAFAND-MT,1,weak,easy,rl,chrF++,849,843,0.9993,0.3193,1.661
+MAFAND-MT,1,weak,easy,rl,AfriCOMET,849,843,0.001723,-0.005988,0.008313
+MAFAND-MT,1,weak,easy,nllb3b3,chrF++,849,843,0.3513,-0.611,1.194
+MAFAND-MT,1,weak,easy,nllb3b3,AfriCOMET,849,843,0.00287,-0.007929,0.0125
+MAFAND-MT,1,weak,easy,sft,chrF++,849,843,0.9336,0.2762,1.568
+MAFAND-MT,1,weak,easy,sft,AfriCOMET,849,843,-0.004578,-0.01528,0.00569
+MAFAND-MT,1,weak,moderately difficult,rl,chrF++,143,143,1.268,0.01385,2.526
+MAFAND-MT,1,weak,moderately difficult,rl,AfriCOMET,143,143,-0.001661,-0.01294,0.01083
+MAFAND-MT,1,weak,moderately difficult,nllb3b3,chrF++,143,143,0.3689,-1.676,2.347
+MAFAND-MT,1,weak,moderately difficult,nllb3b3,AfriCOMET,143,143,-0.01849,-0.0442,0.006652
+MAFAND-MT,1,weak,moderately difficult,sft,chrF++,143,143,2.571,1.101,4.218
+MAFAND-MT,1,weak,moderately difficult,sft,AfriCOMET,143,143,0.001653,-0.02064,0.0266
+MAFAND-MT,1,weak,english-form (kept in English),rl,chrF++,20,20,-2.027,-5.251,1.456
+MAFAND-MT,1,weak,english-form (kept in English),rl,AfriCOMET,20,20,0.01682,-0.05624,0.08274
+MAFAND-MT,1,weak,english-form (kept in English),nllb3b3,chrF++,20,20,-3.424,-9.973,3.188
+MAFAND-MT,1,weak,english-form (kept in English),nllb3b3,AfriCOMET,20,20,-0.01281,-0.09021,0.0485
+MAFAND-MT,1,weak,english-form (kept in English),sft,chrF++,20,20,-0.8814,-5.546,3.767
+MAFAND-MT,1,weak,english-form (kept in English),sft,AfriCOMET,20,20,0.04608,-0.01715,0.103
+MAFAND-MT,3,all,very easy,rl,chrF++,186,185,-2.695,-4.032,-1.281
+MAFAND-MT,3,all,very easy,rl,AfriCOMET,186,185,0.0003803,-0.01095,0.0138
+MAFAND-MT,3,all,very easy,nllb3b3,chrF++,174,173,-2.834,-4.537,-1.204
+MAFAND-MT,3,all,very easy,nllb3b3,AfriCOMET,174,173,-0.009752,-0.02664,0.005143
+MAFAND-MT,3,all,very easy,sft,chrF++,186,185,-3.36,-4.787,-1.954
+MAFAND-MT,3,all,very easy,sft,AfriCOMET,186,185,-0.004159,-0.01647,0.008879
+MAFAND-MT,3,all,easy,rl,chrF++,2747,2688,0.159,-0.1276,0.442
+MAFAND-MT,3,all,easy,rl,AfriCOMET,2747,2688,0.004656,0.002025,0.007246
+MAFAND-MT,3,all,easy,nllb3b3,chrF++,2609,2550,0.3911,0.08811,0.7022
+MAFAND-MT,3,all,easy,nllb3b3,AfriCOMET,2609,2550,0.005255,0.002831,0.007838
+MAFAND-MT,3,all,easy,sft,chrF++,2747,2688,0.238,-0.08456,0.5532
+MAFAND-MT,3,all,easy,sft,AfriCOMET,2747,2688,0.006539,0.00369,0.009871
+MAFAND-MT,3,all,moderately difficult,rl,chrF++,1942,1903,0.02621,-0.2851,0.3259
+MAFAND-MT,3,all,moderately difficult,rl,AfriCOMET,1942,1903,-0.006624,-0.009088,-0.003932
+MAFAND-MT,3,all,moderately difficult,nllb3b3,chrF++,1732,1693,-0.3043,-0.6127,0.03401
+MAFAND-MT,3,all,moderately difficult,nllb3b3,AfriCOMET,1732,1693,-0.006884,-0.009475,-0.00436
+MAFAND-MT,3,all,moderately difficult,sft,chrF++,1942,1903,-0.0228,-0.3801,0.3823
+MAFAND-MT,3,all,moderately difficult,sft,AfriCOMET,1942,1903,-0.008863,-0.01206,-0.005405
+MAFAND-MT,3,strong,very easy,rl,chrF++,107,106,-2.356,-4.271,-0.4538
+MAFAND-MT,3,strong,very easy,rl,AfriCOMET,107,106,0.000988,-0.01576,0.0184
+MAFAND-MT,3,strong,very easy,nllb3b3,chrF++,107,106,-2.436,-4.561,-0.3718
+MAFAND-MT,3,strong,very easy,nllb3b3,AfriCOMET,107,106,0.001755,-0.01654,0.01762
+MAFAND-MT,3,strong,very easy,sft,chrF++,107,106,-3.888,-6.1,-1.754
+MAFAND-MT,3,strong,very easy,sft,AfriCOMET,107,106,-0.007323,-0.02519,0.009444
+MAFAND-MT,3,strong,easy,rl,chrF++,1632,1575,0.121,-0.2572,0.451
+MAFAND-MT,3,strong,easy,rl,AfriCOMET,1632,1575,0.004768,0.001218,0.007993
+MAFAND-MT,3,strong,easy,nllb3b3,chrF++,1632,1575,0.2375,-0.1548,0.6058
+MAFAND-MT,3,strong,easy,nllb3b3,AfriCOMET,1632,1575,0.0055,0.002312,0.008502
+MAFAND-MT,3,strong,easy,sft,chrF++,1632,1575,0.2852,-0.1376,0.6572
+MAFAND-MT,3,strong,easy,sft,AfriCOMET,1632,1575,0.008035,0.004243,0.01161
+MAFAND-MT,3,strong,moderately difficult,rl,chrF++,1080,1041,0.04917,-0.2793,0.3903
+MAFAND-MT,3,strong,moderately difficult,rl,AfriCOMET,1080,1041,-0.007247,-0.01122,-0.003635
+MAFAND-MT,3,strong,moderately difficult,nllb3b3,chrF++,1080,1041,-0.1172,-0.4811,0.3131
+MAFAND-MT,3,strong,moderately difficult,nllb3b3,AfriCOMET,1080,1041,-0.008401,-0.01201,-0.004544
+MAFAND-MT,3,strong,moderately difficult,sft,chrF++,1080,1041,-0.04996,-0.5029,0.3785
+MAFAND-MT,3,strong,moderately difficult,sft,AfriCOMET,1080,1041,-0.01137,-0.01667,-0.006754
+MAFAND-MT,3,mid,very easy,rl,chrF++,32,32,-3.474,-6.963,0.8118
+MAFAND-MT,3,mid,very easy,rl,AfriCOMET,32,32,-0.002549,-0.03638,0.0314
+MAFAND-MT,3,mid,very easy,nllb3b3,chrF++,32,32,-2.681,-6.277,1.482
+MAFAND-MT,3,mid,very easy,nllb3b3,AfriCOMET,32,32,-0.01405,-0.046,0.01882
+MAFAND-MT,3,mid,very easy,sft,chrF++,32,32,-2.098,-5.367,2.118
+MAFAND-MT,3,mid,very easy,sft,AfriCOMET,32,32,-0.008587,-0.03876,0.02673
+MAFAND-MT,3,mid,easy,rl,chrF++,802,800,0.5031,0.06334,0.9483
+MAFAND-MT,3,mid,easy,rl,AfriCOMET,802,800,0.005931,0.002622,0.009975
+MAFAND-MT,3,mid,easy,nllb3b3,chrF++,802,800,0.5782,0.09717,1.102
+MAFAND-MT,3,mid,easy,nllb3b3,AfriCOMET,802,800,0.003327,-0.0001942,0.006758
+MAFAND-MT,3,mid,easy,sft,chrF++,802,800,0.423,-0.1434,0.9895
+MAFAND-MT,3,mid,easy,sft,AfriCOMET,802,800,0.006476,0.00112,0.01195
+MAFAND-MT,3,mid,moderately difficult,rl,chrF++,577,577,-0.5065,-1.039,-0.01335
+MAFAND-MT,3,mid,moderately difficult,rl,AfriCOMET,577,577,-0.008102,-0.01226,-0.00416
+MAFAND-MT,3,mid,moderately difficult,nllb3b3,chrF++,577,577,-0.655,-1.272,-0.1322
+MAFAND-MT,3,mid,moderately difficult,nllb3b3,AfriCOMET,577,577,-0.003844,-0.008024,0.0004
+MAFAND-MT,3,mid,moderately difficult,sft,chrF++,577,577,-0.4715,-1.091,0.1649
+MAFAND-MT,3,mid,moderately difficult,sft,AfriCOMET,577,577,-0.008525,-0.01432,-0.002305
+MAFAND-MT,3,weak,very easy,rl,chrF++,35,35,-1.885,-4.803,1.469
+MAFAND-MT,3,weak,very easy,rl,AfriCOMET,35,35,0.01561,-0.0184,0.05745
+MAFAND-MT,3,weak,very easy,nllb3b3,chrF++,35,35,-4.188,-7.991,0.699
+MAFAND-MT,3,weak,very easy,nllb3b3,AfriCOMET,35,35,-0.041,-0.09146,0.01458
+MAFAND-MT,3,weak,very easy,sft,chrF++,35,35,-2.314,-4.013,-0.3735
+MAFAND-MT,3,weak,very easy,sft,AfriCOMET,35,35,0.02183,-0.009585,0.05802
+MAFAND-MT,3,weak,easy,rl,chrF++,175,175,0.3491,-0.515,1.219
+MAFAND-MT,3,weak,easy,rl,AfriCOMET,175,175,0.005069,-0.008396,0.01824
+MAFAND-MT,3,weak,easy,nllb3b3,chrF++,175,175,0.9661,-0.2499,2.116
+MAFAND-MT,3,weak,easy,nllb3b3,AfriCOMET,175,175,0.01181,-0.00502,0.02839
+MAFAND-MT,3,weak,easy,sft,chrF++,175,175,0.3161,-0.6839,1.368
+MAFAND-MT,3,weak,easy,sft,AfriCOMET,175,175,0.002385,-0.01315,0.01696
+MAFAND-MT,3,weak,moderately difficult,rl,chrF++,75,75,0.06497,-1.249,1.301
+MAFAND-MT,3,weak,moderately difficult,rl,AfriCOMET,75,75,-0.01911,-0.03631,-0.001641
+MAFAND-MT,3,weak,moderately difficult,nllb3b3,chrF++,75,75,-0.2997,-2.228,1.482
+MAFAND-MT,3,weak,moderately difficult,nllb3b3,AfriCOMET,75,75,-0.008433,-0.03476,0.01735
+MAFAND-MT,3,weak,moderately difficult,sft,chrF++,75,75,0.3421,-1.258,1.926
+MAFAND-MT,3,weak,moderately difficult,sft,AfriCOMET,75,75,-0.01575,-0.03568,0.005692
+MAFAND-MT,5,all,very easy,rl,chrF++,33,33,-3.393,-6.574,-0.7856
+MAFAND-MT,5,all,very easy,rl,AfriCOMET,33,33,-0.01957,-0.04321,0.003397
+MAFAND-MT,5,all,very easy,nllb3b3,chrF++,33,33,-4.106,-7.309,-1.03
+MAFAND-MT,5,all,very easy,nllb3b3,AfriCOMET,33,33,-0.05125,-0.08388,-0.02004
+MAFAND-MT,5,all,very easy,sft,chrF++,33,33,-3.687,-7.127,-0.5121
+MAFAND-MT,5,all,very easy,sft,AfriCOMET,33,33,-0.02204,-0.04536,0.0007566
+MAFAND-MT,5,all,easy,rl,chrF++,1000,990,0.1197,-0.2288,0.4519
+MAFAND-MT,5,all,easy,rl,AfriCOMET,1000,990,0.006629,0.002952,0.01018
+MAFAND-MT,5,all,easy,nllb3b3,chrF++,964,954,0.2953,-0.1416,0.7129
+MAFAND-MT,5,all,easy,nllb3b3,AfriCOMET,964,954,0.005244,0.002055,0.008474
+MAFAND-MT,5,all,easy,sft,chrF++,1000,990,0.1445,-0.296,0.5274
+MAFAND-MT,5,all,easy,sft,AfriCOMET,1000,990,0.008751,0.004676,0.01278
+MAFAND-MT,5,all,moderately difficult,rl,chrF++,1631,1602,-0.004716,-0.2565,0.2382
+MAFAND-MT,5,all,moderately difficult,rl,AfriCOMET,1631,1602,-0.003668,-0.006118,-0.001236
+MAFAND-MT,5,all,moderately difficult,nllb3b3,chrF++,1502,1473,-0.09935,-0.3779,0.1584
+MAFAND-MT,5,all,moderately difficult,nllb3b3,AfriCOMET,1502,1473,-0.00224,-0.004642,0.0003592
+MAFAND-MT,5,all,moderately difficult,sft,chrF++,1631,1602,-0.01402,-0.3323,0.2956
+MAFAND-MT,5,all,moderately difficult,sft,AfriCOMET,1631,1602,-0.004919,-0.007874,-0.002005
+MAFAND-MT,5,strong,easy,rl,chrF++,650,641,0.1306,-0.2671,0.5774
+MAFAND-MT,5,strong,easy,rl,AfriCOMET,650,641,0.005672,0.0008825,0.01063
+MAFAND-MT,5,strong,easy,nllb3b3,chrF++,650,641,0.1107,-0.335,0.6068
+MAFAND-MT,5,strong,easy,nllb3b3,AfriCOMET,650,641,0.005283,0.001278,0.00946
+MAFAND-MT,5,strong,easy,sft,chrF++,650,641,0.06612,-0.4622,0.6072
+MAFAND-MT,5,strong,easy,sft,AfriCOMET,650,641,0.00836,0.003392,0.01365
+MAFAND-MT,5,strong,moderately difficult,rl,chrF++,910,882,-0.02889,-0.3032,0.2713
+MAFAND-MT,5,strong,moderately difficult,rl,AfriCOMET,910,882,-0.003436,-0.006692,3.036e-05
+MAFAND-MT,5,strong,moderately difficult,nllb3b3,chrF++,910,882,-0.0394,-0.394,0.3105
+MAFAND-MT,5,strong,moderately difficult,nllb3b3,AfriCOMET,910,882,-0.003244,-0.006409,-0.0001088
+MAFAND-MT,5,strong,moderately difficult,sft,chrF++,910,882,0.05995,-0.3392,0.454
+MAFAND-MT,5,strong,moderately difficult,sft,AfriCOMET,910,882,-0.005283,-0.009127,-0.001499
+MAFAND-MT,5,mid,easy,rl,chrF++,266,265,0.3661,-0.2735,1.023
+MAFAND-MT,5,mid,easy,rl,AfriCOMET,266,265,0.007933,0.002696,0.01333
+MAFAND-MT,5,mid,easy,nllb3b3,chrF++,266,265,0.5526,-0.2727,1.368
+MAFAND-MT,5,mid,easy,nllb3b3,AfriCOMET,266,265,0.003337,-0.002371,0.00838
+MAFAND-MT,5,mid,easy,sft,chrF++,266,265,0.5685,-0.3502,1.519
+MAFAND-MT,5,mid,easy,sft,AfriCOMET,266,265,0.009713,0.002491,0.01697
+MAFAND-MT,5,mid,moderately difficult,rl,chrF++,540,539,-0.136,-0.5552,0.2994
+MAFAND-MT,5,mid,moderately difficult,rl,AfriCOMET,540,539,-0.00383,-0.007297,-2.098e-05
+MAFAND-MT,5,mid,moderately difficult,nllb3b3,chrF++,540,539,-0.2246,-0.706,0.2468
+MAFAND-MT,5,mid,moderately difficult,nllb3b3,AfriCOMET,540,539,-0.001421,-0.004664,0.001762
+MAFAND-MT,5,mid,moderately difficult,sft,chrF++,540,539,-0.2514,-0.8515,0.3213
+MAFAND-MT,5,mid,moderately difficult,sft,AfriCOMET,540,539,-0.004637,-0.009702,0.0003569
+MAFAND-MT,5,weak,easy,rl,chrF++,48,48,-0.1916,-1.102,0.714
+MAFAND-MT,5,weak,easy,rl,AfriCOMET,48,48,0.01466,-0.005226,0.03718
+MAFAND-MT,5,weak,easy,nllb3b3,chrF++,48,48,1.37,-0.6381,3.219
+MAFAND-MT,5,weak,easy,nllb3b3,AfriCOMET,48,48,0.01528,-0.01351,0.04241
+MAFAND-MT,5,weak,easy,sft,chrF++,48,48,-0.1513,-1.429,1.227
+MAFAND-MT,5,weak,easy,sft,AfriCOMET,48,48,0.01408,-0.008999,0.03772
+MAFAND-MT,5,weak,moderately difficult,rl,chrF++,52,52,0.743,-0.6275,2.28
+MAFAND-MT,5,weak,moderately difficult,rl,AfriCOMET,52,52,-0.01268,-0.03383,0.008435
+MAFAND-MT,5,weak,moderately difficult,nllb3b3,chrF++,52,52,0.1527,-1.882,2.209
+MAFAND-MT,5,weak,moderately difficult,nllb3b3,AfriCOMET,52,52,0.006845,-0.02758,0.0373
+MAFAND-MT,5,weak,moderately difficult,sft,chrF++,52,52,0.306,-1.554,2.118
+MAFAND-MT,5,weak,moderately difficult,sft,AfriCOMET,52,52,-0.0126,-0.03502,0.01017
+pooled (all benchmarks),1,all,very easy,rl,chrF++,68068,7243,-0.5614,-0.7631,-0.3511
+pooled (all benchmarks),1,all,very easy,rl,AfriCOMET,60709,6862,0.006504,0.003583,0.009449
+pooled (all benchmarks),1,all,very easy,nllb3b3,chrF++,55957,6014,-0.5858,-0.8645,-0.3391
+pooled (all benchmarks),1,all,very easy,nllb3b3,AfriCOMET,55119,6014,0.005069,0.001942,0.00822
+pooled (all benchmarks),1,all,very easy,sft,chrF++,68068,7243,-0.5077,-0.7215,-0.2838
+pooled (all benchmarks),1,all,very easy,sft,AfriCOMET,60709,6862,0.009163,0.005535,0.01256
+pooled (all benchmarks),1,all,easy,rl,chrF++,70767,11108,0.5382,0.3147,0.7565
+pooled (all benchmarks),1,all,easy,rl,AfriCOMET,65502,11102,-0.002679,-0.005451,2.383e-06
+pooled (all benchmarks),1,all,easy,nllb3b3,chrF++,63685,10299,0.5312,0.3093,0.7616
+pooled (all benchmarks),1,all,easy,nllb3b3,AfriCOMET,62601,10299,-0.001096,-0.003629,0.001382
+pooled (all benchmarks),1,all,easy,sft,chrF++,70767,11108,0.5133,0.2947,0.7369
+pooled (all benchmarks),1,all,easy,sft,AfriCOMET,65502,11102,-0.0039,-0.007237,-0.0007877
+pooled (all benchmarks),1,all,moderately difficult,rl,chrF++,9816,1799,0.6859,0.2953,1.051
+pooled (all benchmarks),1,all,moderately difficult,rl,AfriCOMET,9148,1799,-0.01938,-0.02546,-0.01347
+pooled (all benchmarks),1,all,moderately difficult,nllb3b3,chrF++,8698,1547,0.496,0.07472,0.9391
+pooled (all benchmarks),1,all,moderately difficult,nllb3b3,AfriCOMET,8614,1547,-0.01884,-0.02532,-0.01282
+pooled (all benchmarks),1,all,moderately difficult,sft,chrF++,9816,1799,0.4502,0.0183,0.8527
+pooled (all benchmarks),1,all,moderately difficult,sft,AfriCOMET,9148,1799,-0.02987,-0.03719,-0.02246
+pooled (all benchmarks),1,all,english-form (kept in English),rl,chrF++,1529,141,-4.319,-5.937,-2.585
+pooled (all benchmarks),1,all,english-form (kept in English),rl,AfriCOMET,1370,135,-0.03068,-0.05319,-0.006975
+pooled (all benchmarks),1,all,english-form (kept in English),nllb3b3,chrF++,1270,119,-4.23,-6.719,-2.139
+pooled (all benchmarks),1,all,english-form (kept in English),nllb3b3,AfriCOMET,1252,119,-0.0388,-0.06452,-0.01666
+pooled (all benchmarks),1,all,english-form (kept in English),sft,chrF++,1529,141,-4.056,-5.692,-2.306
+pooled (all benchmarks),1,all,english-form (kept in English),sft,AfriCOMET,1370,135,-0.02018,-0.04255,0.003522
+pooled (all benchmarks),1,strong,very easy,rl,chrF++,25107,4290,-0.5141,-0.815,-0.1749
+pooled (all benchmarks),1,strong,very easy,rl,AfriCOMET,25107,4290,0.009324,0.005647,0.01366
+pooled (all benchmarks),1,strong,very easy,nllb3b3,chrF++,25107,4290,-0.5919,-0.9228,-0.2472
+pooled (all benchmarks),1,strong,very easy,nllb3b3,AfriCOMET,25107,4290,0.007717,0.004124,0.01127
+pooled (all benchmarks),1,strong,very easy,sft,chrF++,25107,4290,-0.618,-0.9301,-0.2705
+pooled (all benchmarks),1,strong,very easy,sft,AfriCOMET,25107,4290,0.00993,0.005884,0.01488
+pooled (all benchmarks),1,strong,easy,rl,chrF++,30134,6444,0.49,0.2413,0.7448
+pooled (all benchmarks),1,strong,easy,rl,AfriCOMET,30134,6444,-0.003393,-0.006648,-7.861e-06
+pooled (all benchmarks),1,strong,easy,nllb3b3,chrF++,30134,6444,0.5502,0.2806,0.7951
+pooled (all benchmarks),1,strong,easy,nllb3b3,AfriCOMET,30134,6444,-0.001996,-0.005023,0.0009389
+pooled (all benchmarks),1,strong,easy,sft,chrF++,30134,6444,0.5803,0.2952,0.8343
+pooled (all benchmarks),1,strong,easy,sft,AfriCOMET,30134,6444,-0.002934,-0.006649,0.0005417
+pooled (all benchmarks),1,strong,moderately difficult,rl,chrF++,4578,1008,0.4419,-0.0007838,0.9863
+pooled (all benchmarks),1,strong,moderately difficult,rl,AfriCOMET,4578,1008,-0.02294,-0.02962,-0.01598
+pooled (all benchmarks),1,strong,moderately difficult,nllb3b3,chrF++,4578,1008,0.3791,-0.06748,0.8874
+pooled (all benchmarks),1,strong,moderately difficult,nllb3b3,AfriCOMET,4578,1008,-0.02314,-0.02945,-0.01712
+pooled (all benchmarks),1,strong,moderately difficult,sft,chrF++,4578,1008,0.427,-0.07914,1.004
+pooled (all benchmarks),1,strong,moderately difficult,sft,AfriCOMET,4578,1008,-0.02931,-0.03773,-0.02114
+pooled (all benchmarks),1,strong,english-form (kept in English),rl,chrF++,590,92,-6.587,-9.412,-4.191
+pooled (all benchmarks),1,strong,english-form (kept in English),rl,AfriCOMET,590,92,-0.04548,-0.07318,-0.01542
+pooled (all benchmarks),1,strong,english-form (kept in English),nllb3b3,chrF++,590,92,-5.866,-8.891,-3.42
+pooled (all benchmarks),1,strong,english-form (kept in English),nllb3b3,AfriCOMET,590,92,-0.04698,-0.0744,-0.02035
+pooled (all benchmarks),1,strong,english-form (kept in English),sft,chrF++,590,92,-6.675,-9.495,-4.161
+pooled (all benchmarks),1,strong,english-form (kept in English),sft,AfriCOMET,590,92,-0.04548,-0.07498,-0.01467
+pooled (all benchmarks),1,mid,very easy,rl,chrF++,17691,3085,-0.7843,-1.047,-0.4909
+pooled (all benchmarks),1,mid,very easy,rl,AfriCOMET,17272,3085,0.004738,0.001605,0.007897
+pooled (all benchmarks),1,mid,very easy,nllb3b3,chrF++,17691,3085,-0.6913,-1.013,-0.328
+pooled (all benchmarks),1,mid,very easy,nllb3b3,AfriCOMET,17272,3085,0.002311,-0.0009522,0.005623
+pooled (all benchmarks),1,mid,very easy,sft,chrF++,17691,3085,-0.6561,-0.9572,-0.3511
+pooled (all benchmarks),1,mid,very easy,sft,AfriCOMET,17272,3085,0.007183,0.003182,0.01114
+pooled (all benchmarks),1,mid,easy,rl,chrF++,20151,5021,0.6798,0.4523,0.8951
+pooled (all benchmarks),1,mid,easy,rl,AfriCOMET,19609,5021,-0.001183,-0.003753,0.001243
+pooled (all benchmarks),1,mid,easy,nllb3b3,chrF++,20151,5021,0.6056,0.338,0.8563
+pooled (all benchmarks),1,mid,easy,nllb3b3,AfriCOMET,19609,5021,0.0004457,-0.002308,0.003055
+pooled (all benchmarks),1,mid,easy,sft,chrF++,20151,5021,0.5902,0.35,0.8237
+pooled (all benchmarks),1,mid,easy,sft,AfriCOMET,19609,5021,-0.00245,-0.005785,0.0009147
+pooled (all benchmarks),1,mid,moderately difficult,rl,chrF++,2584,697,0.6002,0.1363,1.072
+pooled (all benchmarks),1,mid,moderately difficult,rl,AfriCOMET,2542,697,-0.01823,-0.02454,-0.01195
+pooled (all benchmarks),1,mid,moderately difficult,nllb3b3,chrF++,2584,697,0.4319,-0.05522,1.031
+pooled (all benchmarks),1,mid,moderately difficult,nllb3b3,AfriCOMET,2542,697,-0.01404,-0.02015,-0.007963
+pooled (all benchmarks),1,mid,moderately difficult,sft,chrF++,2584,697,0.4009,-0.09036,0.9398
+pooled (all benchmarks),1,mid,moderately difficult,sft,AfriCOMET,2542,697,-0.02661,-0.03457,-0.01876
+pooled (all benchmarks),1,mid,english-form (kept in English),rl,chrF++,385,54,-3.57,-5.958,-1.292
+pooled (all benchmarks),1,mid,english-form (kept in English),rl,AfriCOMET,376,54,-0.03269,-0.05955,-0.008165
+pooled (all benchmarks),1,mid,english-form (kept in English),nllb3b3,chrF++,385,54,-2.826,-5.264,-0.3891
+pooled (all benchmarks),1,mid,english-form (kept in English),nllb3b3,AfriCOMET,376,54,-0.0345,-0.05819,-0.01083
+pooled (all benchmarks),1,mid,english-form (kept in English),sft,chrF++,385,54,-3.434,-5.569,-1.332
+pooled (all benchmarks),1,mid,english-form (kept in English),sft,AfriCOMET,376,54,-0.02226,-0.0487,0.002845
+pooled (all benchmarks),1,weak,very easy,rl,chrF++,12964,2297,-0.567,-0.8102,-0.3592
+pooled (all benchmarks),1,weak,very easy,rl,AfriCOMET,12126,2297,0.006671,0.003319,0.009473
+pooled (all benchmarks),1,weak,very easy,nllb3b3,chrF++,12545,2297,-0.4766,-0.7737,-0.2083
+pooled (all benchmarks),1,weak,very easy,nllb3b3,AfriCOMET,12126,2297,0.003829,0.0002,0.006859
+pooled (all benchmarks),1,weak,very easy,sft,chrF++,12964,2297,-0.2867,-0.5172,-0.06384
+pooled (all benchmarks),1,weak,very easy,sft,AfriCOMET,12126,2297,0.01446,0.01057,0.01832
+pooled (all benchmarks),1,weak,easy,rl,chrF++,13711,2741,0.4733,0.2856,0.6809
+pooled (all benchmarks),1,weak,easy,rl,AfriCOMET,12627,2741,-0.004421,-0.006908,-0.00161
+pooled (all benchmarks),1,weak,easy,nllb3b3,chrF++,13169,2741,0.3974,0.1207,0.6577
+pooled (all benchmarks),1,weak,easy,nllb3b3,AfriCOMET,12627,2741,-0.001499,-0.004561,0.001591
+pooled (all benchmarks),1,weak,easy,sft,chrF++,13711,2741,0.2699,0.06129,0.4842
+pooled (all benchmarks),1,weak,easy,sft,AfriCOMET,12627,2741,-0.009464,-0.01295,-0.005933
+pooled (all benchmarks),1,weak,moderately difficult,rl,chrF++,1570,443,0.9976,0.5268,1.466
+pooled (all benchmarks),1,weak,moderately difficult,rl,AfriCOMET,1486,443,-0.01574,-0.02196,-0.00928
+pooled (all benchmarks),1,weak,moderately difficult,nllb3b3,chrF++,1528,443,0.9827,0.3602,1.558
+pooled (all benchmarks),1,weak,moderately difficult,nllb3b3,AfriCOMET,1486,443,-0.01399,-0.02276,-0.005821
+pooled (all benchmarks),1,weak,moderately difficult,sft,chrF++,1570,443,0.2061,-0.3214,0.6814
+pooled (all benchmarks),1,weak,moderately difficult,sft,AfriCOMET,1486,443,-0.0431,-0.05216,-0.03363
+pooled (all benchmarks),1,weak,english-form (kept in English),rl,chrF++,294,61,-2.399,-3.439,-1.375
+pooled (all benchmarks),1,weak,english-form (kept in English),rl,AfriCOMET,276,61,-0.006121,-0.02692,0.01228
+pooled (all benchmarks),1,weak,english-form (kept in English),nllb3b3,chrF++,285,61,-2.656,-4.275,-0.989
+pooled (all benchmarks),1,weak,english-form (kept in English),nllb3b3,AfriCOMET,276,61,-0.02429,-0.04544,-0.004835
+pooled (all benchmarks),1,weak,english-form (kept in English),sft,chrF++,294,61,-1.046,-2.078,-0.05909
+pooled (all benchmarks),1,weak,english-form (kept in English),sft,AfriCOMET,276,61,0.02962,0.004811,0.05283
+pooled (all benchmarks),3,all,very easy,rl,chrF++,3273,520,-1.265,-1.868,-0.671
+pooled (all benchmarks),3,all,very easy,rl,AfriCOMET,2797,405,0.005146,-0.004734,0.01542
+pooled (all benchmarks),3,all,very easy,nllb3b3,chrF++,2169,244,-1.839,-2.694,-0.9271
+pooled (all benchmarks),3,all,very easy,nllb3b3,AfriCOMET,2115,244,-0.001387,-0.01319,0.01081
+pooled (all benchmarks),3,all,very easy,sft,chrF++,3273,520,-1.124,-1.896,-0.4119
+pooled (all benchmarks),3,all,very easy,sft,AfriCOMET,2797,405,0.009422,-0.00227,0.021
+pooled (all benchmarks),3,all,easy,rl,chrF++,17660,3201,0.1228,-0.1181,0.3647
+pooled (all benchmarks),3,all,easy,rl,AfriCOMET,16476,3198,0.004383,0.0006166,0.008264
+pooled (all benchmarks),3,all,easy,nllb3b3,chrF++,16309,3048,0.1557,-0.1381,0.4254
+pooled (all benchmarks),3,all,easy,nllb3b3,AfriCOMET,15965,3048,0.003925,-0.0004175,0.007829
+pooled (all benchmarks),3,all,easy,sft,chrF++,17660,3201,0.1374,-0.1569,0.4277
+pooled (all benchmarks),3,all,easy,sft,AfriCOMET,16476,3198,0.005645,0.001517,0.009926
+pooled (all benchmarks),3,all,moderately difficult,rl,chrF++,10285,2232,0.186,-0.1229,0.4788
+pooled (all benchmarks),3,all,moderately difficult,rl,AfriCOMET,9593,2232,-0.009032,-0.01403,-0.004276
+pooled (all benchmarks),3,all,moderately difficult,nllb3b3,chrF++,9156,2022,0.1482,-0.1536,0.4431
+pooled (all benchmarks),3,all,moderately difficult,nllb3b3,AfriCOMET,9088,2022,-0.006562,-0.01184,-0.001403
+pooled (all benchmarks),3,all,moderately difficult,sft,chrF++,10285,2232,0.1133,-0.2363,0.4481
+pooled (all benchmarks),3,all,moderately difficult,sft,AfriCOMET,9593,2232,-0.0125,-0.01814,-0.007061
+pooled (all benchmarks),3,strong,very easy,rl,chrF++,980,177,-1.704,-2.84,-0.549
+pooled (all benchmarks),3,strong,very easy,rl,AfriCOMET,980,177,0.01171,-0.0022,0.02631
+pooled (all benchmarks),3,strong,very easy,nllb3b3,chrF++,980,177,-1.789,-2.944,-0.5677
+pooled (all benchmarks),3,strong,very easy,nllb3b3,AfriCOMET,980,177,0.005971,-0.006412,0.01928
+pooled (all benchmarks),3,strong,very easy,sft,chrF++,980,177,-2.036,-3.206,-0.7567
+pooled (all benchmarks),3,strong,very easy,sft,AfriCOMET,980,177,0.01149,-0.003611,0.02735
+pooled (all benchmarks),3,strong,easy,rl,chrF++,7746,2073,0.1482,-0.119,0.4849
+pooled (all benchmarks),3,strong,easy,rl,AfriCOMET,7746,2073,0.005421,0.0006273,0.0102
+pooled (all benchmarks),3,strong,easy,nllb3b3,chrF++,7746,2073,0.1772,-0.0947,0.5056
+pooled (all benchmarks),3,strong,easy,nllb3b3,AfriCOMET,7746,2073,0.004996,0.0004697,0.009159
+pooled (all benchmarks),3,strong,easy,sft,chrF++,7746,2073,0.1812,-0.1624,0.5358
+pooled (all benchmarks),3,strong,easy,sft,AfriCOMET,7746,2073,0.006228,0.001089,0.01128
+pooled (all benchmarks),3,strong,moderately difficult,rl,chrF++,4961,1370,0.0987,-0.2484,0.4357
+pooled (all benchmarks),3,strong,moderately difficult,rl,AfriCOMET,4961,1370,-0.01069,-0.01636,-0.003841
+pooled (all benchmarks),3,strong,moderately difficult,nllb3b3,chrF++,4961,1370,0.06496,-0.2559,0.4239
+pooled (all benchmarks),3,strong,moderately difficult,nllb3b3,AfriCOMET,4961,1370,-0.008914,-0.01422,-0.002755
+pooled (all benchmarks),3,strong,moderately difficult,sft,chrF++,4961,1370,0.1105,-0.2736,0.4952
+pooled (all benchmarks),3,strong,moderately difficult,sft,AfriCOMET,4961,1370,-0.01194,-0.01778,-0.005387
+pooled (all benchmarks),3,mid,very easy,rl,chrF++,675,103,-1.756,-2.628,-0.8693
+pooled (all benchmarks),3,mid,very easy,rl,AfriCOMET,648,103,0.001203,-0.01293,0.01359
+pooled (all benchmarks),3,mid,very easy,nllb3b3,chrF++,675,103,-1.817,-2.912,-0.7571
+pooled (all benchmarks),3,mid,very easy,nllb3b3,AfriCOMET,648,103,-0.005455,-0.02072,0.007641
+pooled (all benchmarks),3,mid,very easy,sft,chrF++,675,103,-1.226,-2.35,-0.0174
+pooled (all benchmarks),3,mid,very easy,sft,AfriCOMET,648,103,0.006231,-0.009332,0.02257
+pooled (all benchmarks),3,mid,easy,rl,chrF++,5173,1298,0.09173,-0.1828,0.4126
+pooled (all benchmarks),3,mid,easy,rl,AfriCOMET,5001,1298,0.003605,3.837e-05,0.00759
+pooled (all benchmarks),3,mid,easy,nllb3b3,chrF++,5173,1298,0.1244,-0.2085,0.4343
+pooled (all benchmarks),3,mid,easy,nllb3b3,AfriCOMET,5001,1298,0.002806,-0.0008745,0.006871
+pooled (all benchmarks),3,mid,easy,sft,chrF++,5173,1298,0.09378,-0.2803,0.4845
+pooled (all benchmarks),3,mid,easy,sft,AfriCOMET,5001,1298,0.004953,0.0001065,0.01003
+pooled (all benchmarks),3,mid,moderately difficult,rl,chrF++,2826,906,0.2433,-0.1254,0.565
+pooled (all benchmarks),3,mid,moderately difficult,rl,AfriCOMET,2792,906,-0.006804,-0.01135,-0.002807
+pooled (all benchmarks),3,mid,moderately difficult,nllb3b3,chrF++,2826,906,0.194,-0.1791,0.5623
+pooled (all benchmarks),3,mid,moderately difficult,nllb3b3,AfriCOMET,2792,906,-0.003812,-0.008678,0.0003862
+pooled (all benchmarks),3,mid,moderately difficult,sft,chrF++,2826,906,0.1052,-0.3212,0.5471
+pooled (all benchmarks),3,mid,moderately difficult,sft,AfriCOMET,2792,906,-0.0104,-0.01609,-0.005268
+pooled (all benchmarks),3,weak,very easy,rl,chrF++,541,106,-1.144,-1.663,-0.6513
+pooled (all benchmarks),3,weak,very easy,rl,AfriCOMET,487,106,0.007611,-0.002232,0.01904
+pooled (all benchmarks),3,weak,very easy,nllb3b3,chrF++,514,106,-1.965,-2.71,-1.115
+pooled (all benchmarks),3,weak,very easy,nllb3b3,AfriCOMET,487,106,-0.01078,-0.02222,0.001029
+pooled (all benchmarks),3,weak,very easy,sft,chrF++,541,106,-0.2693,-1.038,0.4868
+pooled (all benchmarks),3,weak,very easy,sft,AfriCOMET,487,106,0.025,0.01208,0.03979
+pooled (all benchmarks),3,weak,easy,rl,chrF++,3562,673,0.1336,-0.1711,0.4362
+pooled (all benchmarks),3,weak,easy,rl,AfriCOMET,3218,673,0.003153,-0.001451,0.007209
+pooled (all benchmarks),3,weak,easy,nllb3b3,chrF++,3390,673,0.1543,-0.2452,0.5059
+pooled (all benchmarks),3,weak,easy,nllb3b3,AfriCOMET,3218,673,0.003087,-0.001731,0.008008
+pooled (all benchmarks),3,weak,easy,sft,chrF++,3562,673,0.07076,-0.2392,0.3891
+pooled (all benchmarks),3,weak,easy,sft,AfriCOMET,3218,673,0.00529,9.788e-05,0.01094
+pooled (all benchmarks),3,weak,moderately difficult,rl,chrF++,1403,404,0.1074,-0.1858,0.4298
+pooled (all benchmarks),3,weak,moderately difficult,rl,AfriCOMET,1335,404,-0.01052,-0.01565,-0.004969
+pooled (all benchmarks),3,weak,moderately difficult,nllb3b3,chrF++,1369,404,0.3552,-0.06316,0.8018
+pooled (all benchmarks),3,weak,moderately difficult,nllb3b3,AfriCOMET,1335,404,-0.003575,-0.01106,0.003504
+pooled (all benchmarks),3,weak,moderately difficult,sft,chrF++,1403,404,-0.06793,-0.4864,0.3752
+pooled (all benchmarks),3,weak,moderately difficult,sft,AfriCOMET,1335,404,-0.02224,-0.02992,-0.01478
+pooled (all benchmarks),5,all,very easy,rl,chrF++,829,188,-0.7958,-1.743,0.1389
+pooled (all benchmarks),5,all,very easy,rl,AfriCOMET,638,128,0.0005234,-0.01314,0.01481
+pooled (all benchmarks),5,all,very easy,nllb3b3,chrF++,268,43,-1.188,-3.578,0.9851
+pooled (all benchmarks),5,all,very easy,nllb3b3,AfriCOMET,264,43,-0.001194,-0.02394,0.02146
+pooled (all benchmarks),5,all,very easy,sft,chrF++,829,188,-0.8659,-1.889,0.1811
+pooled (all benchmarks),5,all,very easy,sft,AfriCOMET,638,128,0.0001071,-0.0169,0.01761
+pooled (all benchmarks),5,all,easy,rl,chrF++,6988,1211,0.1315,-0.1647,0.4469
+pooled (all benchmarks),5,all,easy,rl,AfriCOMET,6497,1210,0.007893,0.002654,0.01327
+pooled (all benchmarks),5,all,easy,nllb3b3,chrF++,6394,1168,0.151,-0.1931,0.4863
+pooled (all benchmarks),5,all,easy,nllb3b3,AfriCOMET,6284,1168,0.006668,0.001543,0.0115
+pooled (all benchmarks),5,all,easy,sft,chrF++,6988,1211,0.1685,-0.1587,0.5341
+pooled (all benchmarks),5,all,easy,sft,AfriCOMET,6497,1210,0.01028,0.003725,0.01661
+pooled (all benchmarks),5,all,moderately difficult,rl,chrF++,7596,1848,-0.03414,-0.2933,0.2161
+pooled (all benchmarks),5,all,moderately difficult,rl,AfriCOMET,7090,1848,-0.00728,-0.01275,-0.001759
+pooled (all benchmarks),5,all,moderately difficult,nllb3b3,chrF++,6757,1719,-0.09574,-0.3502,0.1567
+pooled (all benchmarks),5,all,moderately difficult,nllb3b3,AfriCOMET,6729,1719,-0.00618,-0.01141,-0.0009177
+pooled (all benchmarks),5,all,moderately difficult,sft,chrF++,7596,1848,-0.06048,-0.3711,0.2252
+pooled (all benchmarks),5,all,moderately difficult,sft,AfriCOMET,7090,1848,-0.009429,-0.01545,-0.003363
+pooled (all benchmarks),5,strong,very easy,rl,chrF++,132,28,-2.437,-4.859,-0.1085
+pooled (all benchmarks),5,strong,very easy,rl,AfriCOMET,132,28,0.00662,-0.02332,0.03308
+pooled (all benchmarks),5,strong,very easy,nllb3b3,chrF++,132,28,-1.238,-3.555,0.6437
+pooled (all benchmarks),5,strong,very easy,nllb3b3,AfriCOMET,132,28,0.01046,-0.0188,0.03309
+pooled (all benchmarks),5,strong,very easy,sft,chrF++,132,28,-3.036,-5.384,-1.106
+pooled (all benchmarks),5,strong,very easy,sft,AfriCOMET,132,28,0.003495,-0.02492,0.02968
+pooled (all benchmarks),5,strong,easy,rl,chrF++,3199,855,0.2499,-0.1311,0.6642
+pooled (all benchmarks),5,strong,easy,rl,AfriCOMET,3199,855,0.01018,0.003765,0.01632
+pooled (all benchmarks),5,strong,easy,nllb3b3,chrF++,3199,855,0.2454,-0.1378,0.6353
+pooled (all benchmarks),5,strong,easy,nllb3b3,AfriCOMET,3199,855,0.009085,0.003732,0.01429
+pooled (all benchmarks),5,strong,easy,sft,chrF++,3199,855,0.2234,-0.2543,0.6589
+pooled (all benchmarks),5,strong,easy,sft,AfriCOMET,3199,855,0.01142,0.004285,0.01772
+pooled (all benchmarks),5,strong,moderately difficult,rl,chrF++,3748,1128,-0.1275,-0.4172,0.1944
+pooled (all benchmarks),5,strong,moderately difficult,rl,AfriCOMET,3748,1128,-0.008923,-0.01511,-0.002295
+pooled (all benchmarks),5,strong,moderately difficult,nllb3b3,chrF++,3748,1128,-0.1658,-0.4652,0.1496
+pooled (all benchmarks),5,strong,moderately difficult,nllb3b3,AfriCOMET,3748,1128,-0.008123,-0.01414,-0.002076
+pooled (all benchmarks),5,strong,moderately difficult,sft,chrF++,3748,1128,-0.08372,-0.4245,0.2924
+pooled (all benchmarks),5,strong,moderately difficult,sft,AfriCOMET,3748,1128,-0.009866,-0.01653,-0.002944
+pooled (all benchmarks),5,mid,easy,rl,chrF++,1986,479,0.01748,-0.3593,0.406
+pooled (all benchmarks),5,mid,easy,rl,AfriCOMET,1931,479,0.004559,-0.0007529,0.009951
+pooled (all benchmarks),5,mid,easy,nllb3b3,chrF++,1986,479,0.077,-0.326,0.538
+pooled (all benchmarks),5,mid,easy,nllb3b3,AfriCOMET,1931,479,0.003563,-0.001996,0.009128
+pooled (all benchmarks),5,mid,easy,sft,chrF++,1986,479,0.2757,-0.2255,0.7907
+pooled (all benchmarks),5,mid,easy,sft,AfriCOMET,1931,479,0.008002,0.00114,0.01486
+pooled (all benchmarks),5,mid,moderately difficult,rl,chrF++,2127,785,0.05202,-0.1932,0.3603
+pooled (all benchmarks),5,mid,moderately difficult,rl,AfriCOMET,2113,785,-0.004358,-0.008857,0.0001108
+pooled (all benchmarks),5,mid,moderately difficult,nllb3b3,chrF++,2127,785,-0.03368,-0.3177,0.2887
+pooled (all benchmarks),5,mid,moderately difficult,nllb3b3,AfriCOMET,2113,785,-0.003352,-0.007826,0.001321
+pooled (all benchmarks),5,mid,moderately difficult,sft,chrF++,2127,785,-0.2105,-0.6105,0.2112
+pooled (all benchmarks),5,mid,moderately difficult,sft,AfriCOMET,2113,785,-0.007399,-0.01266,-0.001899
+pooled (all benchmarks),5,weak,easy,rl,chrF++,1264,262,0.01366,-0.3783,0.3757
+pooled (all benchmarks),5,weak,easy,rl,AfriCOMET,1154,262,0.006871,0.001519,0.01279
+pooled (all benchmarks),5,weak,easy,nllb3b3,chrF++,1209,262,0.02282,-0.4365,0.4571
+pooled (all benchmarks),5,weak,easy,nllb3b3,AfriCOMET,1154,262,0.005163,-0.001497,0.01243
+pooled (all benchmarks),5,weak,easy,sft,chrF++,1264,262,-0.143,-0.5669,0.2821
+pooled (all benchmarks),5,weak,easy,sft,AfriCOMET,1154,262,0.01061,0.003377,0.01834
+pooled (all benchmarks),5,weak,moderately difficult,rl,chrF++,896,298,0.0008216,-0.2977,0.3289
+pooled (all benchmarks),5,weak,moderately difficult,rl,AfriCOMET,868,298,-0.009277,-0.01503,-0.003216
+pooled (all benchmarks),5,weak,moderately difficult,nllb3b3,chrF++,882,298,0.0524,-0.3752,0.4534
+pooled (all benchmarks),5,weak,moderately difficult,nllb3b3,AfriCOMET,868,298,-0.004677,-0.01229,0.002877
+pooled (all benchmarks),5,weak,moderately difficult,sft,chrF++,896,298,0.1977,-0.1795,0.5926
+pooled (all benchmarks),5,weak,moderately difficult,sft,AfriCOMET,868,298,-0.01471,-0.02212,-0.007724

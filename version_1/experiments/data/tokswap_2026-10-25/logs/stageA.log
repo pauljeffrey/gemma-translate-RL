@@ -1,0 +1,89 @@
+{
+ "tokenizer_sha256": "daab2354f8a74e70d70b4d1f804939b68a8c9624dd06cb7858e52dd8970e9726",
+ "vocab_size": 262144,
+ "n_merges": 514906,
+ "NOTHING_IS_REMOVED": "slots for new tokens are the unused tail only; the freeable counts below are reporting only",
+ "unused_tail": {
+  "n": 6143,
+  "first_id": 256001,
+  "last_id": 262143,
+  "also_in_merges": 0,
+  "names": "<unused99>..<unused6241>",
+  "all_in_added_tokens": true,
+  "low_unused_block_ids_6_104_kept": true
+ },
+ "slots": {
+  "geez": "tail ascending from 256001",
+  "fon": "tail descending from 262143"
+ },
+ "policy_for_scenarios": {
+  "KEEP_never_touched": "all added/special/unused tokens (incl. <start_of_turn>=105, <end_of_turn>=106, <bos>, <pad>, <eos>, <unused0..98>, html markup), byte tokens <0xHH>, tokens with no letter (digits, punctuation, symbols, emoji, whitespace pieces), always kept in every scenario",
+  "freeable": "a token with at least one letter of a script outside the kept set (mixed tokens count as freeable); counts exclude the unused tail, plus_unused_tail adds the 6,143 tail ids (S0 convention)"
+ },
+ "scenarios": {
+  "S1 keep Latin+Ethiopic": {
+   "freeable_letter_tokens": 93360,
+   "plus_unused_tail": 99503,
+   "share_of_vocab_incl_tail": 0.3796
+  },
+  "S2 = S1 + Arabic": {
+   "freeable_letter_tokens": 85033,
+   "plus_unused_tail": 91176,
+   "share_of_vocab_incl_tail": 0.3478
+  },
+  "S3 = S2 + Greek": {
+   "freeable_letter_tokens": 83538,
+   "plus_unused_tail": 89681,
+   "share_of_vocab_incl_tail": 0.3421
+  },
+  "S4 = S3 + Cyrillic + Hebrew": {
+   "freeable_letter_tokens": 69340,
+   "plus_unused_tail": 75483,
+   "share_of_vocab_incl_tail": 0.2879
+  },
+  "OUR policy (KEEP_SCRIPTS)": {
+   "freeable_letter_tokens": 83473,
+   "plus_unused_tail": 89616,
+   "share_of_vocab_incl_tail": 0.3419
+  }
+ },
+ "free_script_policy_tokens": 82187,
+ "free_script_leaf_tokens": 46884,
+ "free_by_script_group": {
+  "cjk_ideograph_and_mixed_kana": 20587,
+  "hangul": 4678,
+  "kana": 3578,
+  "thai": 2142,
+  "devanagari": 13638,
+  "bengali": 9786,
+  "cyrillic": 13397,
+  "tamil": 3834
+ }
+}
+step 0: 61 Ethiopic letters without a token get a single-character token (min count 3)
+[257s] /workspace/tokswap/in/text/amh.train.txt: 179691 lines, 25199969 chars, 15366219 tokens; word types so far 491682
+[415s] /workspace/tokswap/in/text/tir.train.txt: 149178 lines, 25199710 chars, 17809974 tokens; word types so far 976396
+[513s] merges 500  last count 4721  ሳዊ
+[542s] merges 1000  last count 2927  ▁ቪ
+[566s] merges 1500  last count 2158  ▁ሲል
+[580s] merges 2000  last count 1698  ልዮን
+[601s] merges 2500  last count 1367  ▁የነበሩ
+learned 2939 merges; last count 1155; wrote /workspace/tokswap/out/merges_geez_N3000.json
+[3s] /workspace/tokswap/in/text/fon.wiki.txt: 3679 lines, 408423 chars, 215372 tokens; word types so far 8948
+[17s] /workspace/tokswap/in/text/fon.mt560.txt: 31124 lines, 2921071 chars, 1586127 tokens; word types so far 15244
+[41s] /workspace/tokswap/in/text/fon.fineweb2.txt: 29696 lines, 5593774 chars, 2784149 tokens; word types so far 33505
+[43s] merges 500  last count 386  ▁kpléɖókpɔ́
+[43s] merges 1000  last count 152  kɛ́
+[43s] merges 1500  last count 83  ▁ɖido
+[43s] merges 2000  last count 54  ▁zǐn
+[43s] merges 2500  last count 36  ▁Dǐndínwáyixwe
+[43s] merges 3000  last count 26  ▁mɛhw
+learned 3000 merges; last count 26; wrote /workspace/tokswap/out/merges_fon_N3000.json
+built /workspace/tokswap/out/tok_geez_N1000: 1000 new tokens in 1000 unused ids (ids 256001..257000), 0 merges removed, 939 appended; vocab size 262144; sha256 6abc83a429a48f6da8409ac504d907343b4642a66bd973a7578e1bb9091d94f6
+built /workspace/tokswap/out/tok_fon_N1000: 1000 new tokens in 1000 unused ids (ids 261144..262143), 0 merges removed, 1000 appended; vocab size 262144; sha256 c8fe3f575ae530bf8c1a545def84555ef252f586fe388a36b38de0eb403a8d9b
+wrote /workspace/tokswap/out/tok_geez_N1000/tokenizer.model sha256 bd9dfa8566905c041a748d757efbd1f1d9f8f596ca7ea26d122d7fdee884abad
+wrote /workspace/tokswap/out/tok_fon_N1000/tokenizer.model sha256 fdf8245d78c2ee986be09fe0a98c2c3bbc069e4094fac06758d5c323807ef2b6
+built /workspace/tokswap/out/tok_geez_N3000: 3000 new tokens in 3000 unused ids (ids 256001..259000), 0 merges removed, 2939 appended; vocab size 262144; sha256 6772d90b0914f94091e9f33a38616c7d129d09c5bd7a509437bbabcdb54dce8b
+built /workspace/tokswap/out/tok_fon_N3000: 3000 new tokens in 3000 unused ids (ids 259144..262143), 0 merges removed, 3000 appended; vocab size 262144; sha256 1759ccb8f18a0b1f8e9670de638865db668edb318f03474708673c2960fecbf8
+wrote /workspace/tokswap/out/tok_geez_N3000/tokenizer.model sha256 81591d2eb7f74c0c8597716b7c9d2668e853c4365bc4e93b23edd29bc9ed6843
+wrote /workspace/tokswap/out/tok_fon_N3000/tokenizer.model sha256 67bb4b9d9ca299fe4560be7fee7d54288c7d6dccafb4af99f01ea4f358655ab3

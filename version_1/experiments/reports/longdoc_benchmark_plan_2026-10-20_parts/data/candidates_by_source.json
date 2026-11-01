@@ -1,0 +1,128 @@
+{
+ "pool_after_policy": {
+  "cp_doab": 263,
+  "cp_books": 1089,
+  "cp_news": 1153,
+  "eb1911": 755,
+  "globalvoices": 1299,
+  "govreport": 1500,
+  "govuk": 1069,
+  "gutenberg": 638,
+  "nasa": 1598,
+  "fedhealth": 240,
+  "openstax": 258,
+  "owid": 372,
+  "voa": 274,
+  "wikinews": 6561
+ },
+ "candidates": {
+  "cp_doab": 140,
+  "cp_books": 673,
+  "cp_news": 842,
+  "eb1911": 648,
+  "globalvoices": 388,
+  "govreport": 1353,
+  "govuk": 416,
+  "gutenberg": 562,
+  "nasa": 832,
+  "fedhealth": 181,
+  "openstax": 195,
+  "owid": 253,
+  "voa": 248,
+  "wikinews": 5217
+ },
+ "cand_licence": {
+  "cp_doab": {
+   "CC-BY-4.0": 139,
+   "CC-BY-3.0": 1
+  },
+  "cp_books": {
+   "CC-BY-4.0": 611,
+   "Public domain": 29,
+   "CC0-1.0": 17,
+   "CC-BY-3.0": 16
+  },
+  "cp_news": {
+   "CC-BY-4.0": 842
+  },
+  "eb1911": {
+   "Public domain": 648
+  },
+  "globalvoices": {
+   "CC-BY-3.0": 388
+  },
+  "govreport": {
+   "Public domain": 1353
+  },
+  "govuk": {
+   "OGL-3.0": 416
+  },
+  "gutenberg": {
+   "Public domain": 562
+  },
+  "nasa": {
+   "Public domain": 832
+  },
+  "fedhealth": {
+   "Public domain": 181
+  },
+  "openstax": {
+   "CC-BY-4.0": 195
+  },
+  "owid": {
+   "CC-BY-4.0": 253
+  },
+  "voa": {
+   "Public domain": 248
+  },
+  "wikinews": {
+   "CC-BY-2.5": 4724,
+   "Public domain": 439,
+   "CC-BY-4.0": 54
+  }
+ },
+ "cand_by_domain": {
+  "encyclopedia": 981,
+  "education": 716,
+  "travel": 119,
+  "science_explainer": 1500,
+  "opinion_magazine": 300,
+  "news": 6395,
+  "government_public": 1667,
+  "stories": 270
+ },
+ "cand_domain_bin": {
+  "encyclopedia|512": 706,
+  "encyclopedia|1024": 783,
+  "encyclopedia|2048": 572,
+  "encyclopedia|4096": 310,
+  "education|512": 694,
+  "education|1024": 451,
+  "education|2048": 234,
+  "education|4096": 120,
+  "travel|512": 110,
+  "travel|1024": 108,
+  "travel|2048": 98,
+  "travel|4096": 55,
+  "science_explainer|512": 1478,
+  "science_explainer|1024": 879,
+  "science_explainer|2048": 369,
+  "science_explainer|4096": 138,
+  "opinion_magazine|512": 300,
+  "opinion_magazine|1024": 273,
+  "opinion_magazine|2048": 158,
+  "news|512": 6382,
+  "news|1024": 1788,
+  "news|2048": 554,
+  "news|4096": 97,
+  "opinion_magazine|4096": 21,
+  "government_public|512": 1613,
+  "government_public|1024": 1506,
+  "government_public|2048": 1400,
+  "government_public|4096": 1205,
+  "stories|512": 258,
+  "stories|1024": 256,
+  "stories|2048": 227,
+  "stories|4096": 125
+ }
+}

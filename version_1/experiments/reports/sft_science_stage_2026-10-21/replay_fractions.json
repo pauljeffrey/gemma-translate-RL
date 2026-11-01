@@ -1,0 +1,464 @@
+{
+"yor": {
+"orig_samples": 1519727,
+"orig_tokens": 232549460,
+"replay_frac_tokens": 0.001277027261211443,
+"replay_frac_samples": 0.0013245800068038536
+},
+"hau": {
+"orig_samples": 1155980,
+"orig_tokens": 239563738,
+"replay_frac_tokens": 0.001241894964921611,
+"replay_frac_samples": 0.001186871745185903
+},
+"ibo": {
+"orig_samples": 2964219,
+"orig_tokens": 433119441,
+"replay_frac_tokens": 0.00034424915135591893,
+"replay_frac_samples": 0.00036299612140668416
+},
+"pcm": {
+"orig_samples": 124861,
+"orig_tokens": 22903079,
+"replay_frac_tokens": 0.006481355629083758,
+"replay_frac_samples": 0.0062549555105277065
+},
+"efi": {
+"orig_samples": 168862,
+"orig_tokens": 26420696,
+"replay_frac_tokens": 0.0056378151430984255,
+"replay_frac_samples": 0.005720647629425211
+},
+"twi": {
+"orig_samples": 537664,
+"orig_tokens": 267166431,
+"replay_frac_tokens": 0.0010816403801868356,
+"replay_frac_samples": 0.001115938578740626
+},
+"ewe": {
+"orig_samples": 30182,
+"orig_tokens": 5197422,
+"replay_frac_tokens": 0.028574743401632578,
+"replay_frac_samples": 0.027698628321516136
+},
+"fon": {
+"orig_samples": 375361,
+"orig_tokens": 53907216,
+"replay_frac_tokens": 0.002753175010929891,
+"replay_frac_samples": 0.002618812290035459
+},
+"wol": {
+"orig_samples": 50459,
+"orig_tokens": 9061112,
+"replay_frac_tokens": 0.016382426351202812,
+"replay_frac_samples": 0.01617154521492697
+},
+"swh": {
+"orig_samples": 279040,
+"orig_tokens": 62832389,
+"replay_frac_tokens": 0.0023618710407461987,
+"replay_frac_samples": 0.002383170871559633
+},
+"kin": {
+"orig_samples": 183557,
+"orig_tokens": 48860737,
+"replay_frac_tokens": 0.003203021681805577,
+"replay_frac_samples": 0.0032687394106462844
+},
+"som": {
+"orig_samples": 193714,
+"orig_tokens": 60898047,
+"replay_frac_tokens": 0.003099032059271129,
+"replay_frac_samples": 0.003097349701105754
+},
+"orm": {
+"orig_samples": 111026,
+"orig_tokens": 23392454,
+"replay_frac_tokens": 0.006373080823414251,
+"replay_frac_samples": 0.005836470736584223
+},
+"amh": {
+"orig_samples": 59035,
+"orig_tokens": 14002740,
+"replay_frac_tokens": 0.02119877966740795,
+"replay_frac_samples": 0.021834504954687896
+},
+"tir": {
+"orig_samples": 48410,
+"orig_tokens": 8923145,
+"replay_frac_tokens": 0.01662788176141932,
+"replay_frac_samples": 0.015699235695104317
+},
+"lug": {
+"orig_samples": 119739,
+"orig_tokens": 21588783,
+"replay_frac_tokens": 0.013747509528443544,
+"replay_frac_samples": 0.01352107500480211
+},
+"lin": {
+"orig_samples": 37254,
+"orig_tokens": 6521444,
+"replay_frac_tokens": 0.022765816895767257,
+"replay_frac_samples": 0.0244805926880335
+},
+"zul": {
+"orig_samples": 229980,
+"orig_tokens": 54951835,
+"replay_frac_tokens": 0.005402148991020955,
+"replay_frac_samples": 0.005230889642577615
+},
+"xho": {
+"orig_samples": 367026,
+"orig_tokens": 77464860,
+"replay_frac_tokens": 0.0019206127784907893,
+"replay_frac_samples": 0.0017682670982437211
+},
+"afr": {
+"orig_samples": 298234,
+"orig_tokens": 61426554,
+"replay_frac_tokens": 0.002416544480095693,
+"replay_frac_samples": 0.0020487268386568938
+},
+"sna": {
+"orig_samples": 120779,
+"orig_tokens": 27251792,
+"replay_frac_tokens": 0.00546055833686093,
+"replay_frac_samples": 0.005224418152162214
+},
+"nya": {
+"orig_samples": 129583,
+"orig_tokens": 34654047,
+"replay_frac_tokens": 0.004601627048061659,
+"replay_frac_samples": 0.004630236990963321
+},
+"sot": {
+"orig_samples": 130669,
+"orig_tokens": 40037057,
+"replay_frac_tokens": 0.0044223280447411506,
+"replay_frac_samples": 0.004591754739073537
+},
+"tsn": {
+"orig_samples": 332597,
+"orig_tokens": 56439358,
+"replay_frac_tokens": 0.0026327018106761598,
+"replay_frac_samples": 0.002666891162578135
+},
+"mlg": {
+"orig_samples": 84787,
+"orig_tokens": 16735311,
+"replay_frac_tokens": 0.008879070129022401,
+"replay_frac_samples": 0.00917593499003385
+},
+"ibb": {
+"orig_samples": 2060,
+"orig_tokens": 343025,
+"replay_frac_tokens": 0.43281685008381315,
+"replay_frac_samples": 0.43640776699029127
+},
+"urh": {
+"orig_samples": 12528,
+"orig_tokens": 2024327,
+"replay_frac_tokens": 0.07330485637942882,
+"replay_frac_samples": 0.07551085568326947
+},
+"bem": {
+"orig_samples": 46881,
+"orig_tokens": 8679496,
+"replay_frac_tokens": 0.01712069456567524,
+"replay_frac_samples": 0.018216334975789766
+},
+"tum": {
+"orig_samples": 35350,
+"orig_tokens": 6516452,
+"replay_frac_tokens": 0.022867812116163826,
+"replay_frac_samples": 0.023366336633663366
+},
+"run": {
+"orig_samples": 38923,
+"orig_tokens": 6933783,
+"replay_frac_tokens": 0.02140981337316152,
+"replay_frac_samples": 0.01998818179482568
+},
+"ven": {
+"orig_samples": 47047,
+"orig_tokens": 7726842,
+"replay_frac_tokens": 0.01920409398820372,
+"replay_frac_samples": 0.01885348693859332
+},
+"tso": {
+"orig_samples": 84895,
+"orig_tokens": 14657045,
+"replay_frac_tokens": 0.010143790921021256,
+"replay_frac_samples": 0.010801578420401673
+},
+"nso": {
+"orig_samples": 100637,
+"orig_tokens": 17164191,
+"replay_frac_tokens": 0.017290648886393773,
+"replay_frac_samples": 0.016455180500213638
+},
+"ssw": {
+"orig_samples": 31467,
+"orig_tokens": 5979592,
+"replay_frac_tokens": 0.02482426894677764,
+"replay_frac_samples": 0.02551879747036578
+},
+"nbl": {
+"orig_samples": 37195,
+"orig_tokens": 6719398,
+"replay_frac_tokens": 0.02211775519175974,
+"replay_frac_samples": 0.0222341712595779
+},
+"sag": {
+"orig_samples": 39516,
+"orig_tokens": 6817940,
+"replay_frac_tokens": 0.02177343889796625,
+"replay_frac_samples": 0.022497216317441036
+},
+"tiv": {
+"orig_samples": 40656,
+"orig_tokens": 7044212,
+"replay_frac_tokens": 0.02109107448782064,
+"replay_frac_samples": 0.021497441951987408
+},
+"umb": {
+"orig_samples": 34376,
+"orig_tokens": 6304189,
+"replay_frac_tokens": 0.023629050461526455,
+"replay_frac_samples": 0.024173842215499185
+},
+"kmb": {
+"orig_samples": 23819,
+"orig_tokens": 4236888,
+"replay_frac_tokens": 0.035033732305409064,
+"replay_frac_samples": 0.03572778034342332
+},
+"mos": {
+"orig_samples": 46190,
+"orig_tokens": 7620011,
+"replay_frac_tokens": 0.01949879074977713,
+"replay_frac_samples": 0.019484736956051095
+},
+"kik": {
+"orig_samples": 33879,
+"orig_tokens": 5507897,
+"replay_frac_tokens": 0.026950213484384332,
+"replay_frac_samples": 0.02609285988370377
+},
+"luo": {
+"orig_samples": 171483,
+"orig_tokens": 30942882,
+"replay_frac_tokens": 0.004796805934237153,
+"replay_frac_samples": 0.004927602152983095
+},
+"kam": {
+"orig_samples": 18073,
+"orig_tokens": 2928681,
+"replay_frac_tokens": 0.050914729190376144,
+"replay_frac_samples": 0.04603552260277762
+},
+"bin": {
+"orig_samples": 17995,
+"orig_tokens": 2782635,
+"replay_frac_tokens": 0.05343855733863766,
+"replay_frac_samples": 0.056348985829397055
+},
+"dag": {
+"orig_samples": 15310,
+"orig_tokens": 3252955,
+"replay_frac_tokens": 0.04563297063746655,
+"replay_frac_samples": 0.04663618549967342
+},
+"oke": {
+"orig_samples": 7856,
+"orig_tokens": 1210311,
+"replay_frac_tokens": 0.12263707427264563,
+"replay_frac_samples": 0.12029022403258656
+},
+"shi": {
+"orig_samples": 9212,
+"orig_tokens": 1415326,
+"replay_frac_tokens": 0.10490869241432715,
+"replay_frac_samples": 0.10486322188449848
+},
+"dyu": {
+"orig_samples": 4504,
+"orig_tokens": 785017,
+"replay_frac_tokens": 0.1890188365347502,
+"replay_frac_samples": 0.19316163410301954
+},
+"bam": {
+"orig_samples": 3736,
+"orig_tokens": 628602,
+"replay_frac_tokens": 0.2360826087094855,
+"replay_frac_samples": 0.2679336188436831
+},
+"kbp": {
+"orig_samples": 4311,
+"orig_tokens": 662404,
+"replay_frac_tokens": 0.2240309539193604,
+"replay_frac_samples": 0.23312456506610996
+},
+"bbj": {
+"orig_samples": 3540,
+"orig_tokens": 599246,
+"replay_frac_tokens": 0.24791988599006085,
+"replay_frac_samples": 0.24548022598870056
+},
+"kon": {
+"orig_samples": 1331,
+"orig_tokens": 249088,
+"replay_frac_tokens": 0.5959138938848921,
+"replay_frac_samples": 0.5987978963185575
+},
+"kea": {
+"orig_samples": 1066,
+"orig_tokens": 203387,
+"replay_frac_tokens": 0.7351993981916248,
+"replay_frac_samples": 0.7157598499061913
+},
+"kab": {
+"orig_samples": 39105,
+"orig_tokens": 6525332,
+"replay_frac_tokens": 0.02288665159106081,
+"replay_frac_samples": 0.02247794399693134
+},
+"nus": {
+"orig_samples": 90891,
+"orig_tokens": 15331216,
+"replay_frac_tokens": 0.009680314986104168,
+"replay_frac_samples": 0.009505891672442816
+},
+"swc": {
+"orig_samples": 53316,
+"orig_tokens": 11817767,
+"replay_frac_tokens": 0.012643674562207902,
+"replay_frac_samples": 0.012397779278265436
+},
+"lua": {
+"orig_samples": 82124,
+"orig_tokens": 15095746,
+"replay_frac_tokens": 0.0098561541774749,
+"replay_frac_samples": 0.009096001168964005
+},
+"kqn": {
+"orig_samples": 58468,
+"orig_tokens": 10884079,
+"replay_frac_tokens": 0.01363900427404101,
+"replay_frac_samples": 0.013323527399603201
+},
+"lun": {
+"orig_samples": 34525,
+"orig_tokens": 6435710,
+"replay_frac_tokens": 0.02310017076592948,
+"replay_frac_samples": 0.02172338884866039
+},
+"iso": {
+"orig_samples": 73114,
+"orig_tokens": 12035779,
+"replay_frac_tokens": 0.012331814999261784,
+"replay_frac_samples": 0.011502585004239955
+},
+"loz": {
+"orig_samples": 116310,
+"orig_tokens": 21262839,
+"replay_frac_tokens": 0.00702262759925897,
+"replay_frac_samples": 0.0071361017969220186
+},
+"wal": {
+"orig_samples": 35349,
+"orig_tokens": 6355447,
+"replay_frac_tokens": 0.023454683832624203,
+"replay_frac_samples": 0.023649891086027892
+},
+"ach": {
+"orig_samples": 17534,
+"orig_tokens": 3273848,
+"replay_frac_tokens": 0.04532434004266539,
+"replay_frac_samples": 0.04448500057032052
+},
+"tsc": {
+"orig_samples": 22954,
+"orig_tokens": 4129509,
+"replay_frac_tokens": 0.03595003667506234,
+"replay_frac_samples": 0.03615927507188289
+},
+"vmw": {
+"orig_samples": 19613,
+"orig_tokens": 3573337,
+"replay_frac_tokens": 0.041531487234481385,
+"replay_frac_samples": 0.04160505786978025
+},
+"kua": {
+"orig_samples": 27744,
+"orig_tokens": 5143861,
+"replay_frac_tokens": 0.028852257088595512,
+"replay_frac_samples": 0.02858275663206459
+},
+"seh": {
+"orig_samples": 12821,
+"orig_tokens": 2379537,
+"replay_frac_tokens": 0.06238188353448591,
+"replay_frac_samples": 0.06380157554012947
+},
+"nyn": {
+"orig_samples": 13297,
+"orig_tokens": 2430934,
+"replay_frac_tokens": 0.06115756330694293,
+"replay_frac_samples": 0.06272091449199067
+},
+"her": {
+"orig_samples": 2170,
+"orig_tokens": 387614,
+"replay_frac_tokens": 0.3834330029359105,
+"replay_frac_samples": 0.3898617511520737
+},
+"yao": {
+"orig_samples": 12176,
+"orig_tokens": 2203530,
+"replay_frac_tokens": 0.06753527294840551,
+"replay_frac_samples": 0.066688567674113
+},
+"sid": {
+"orig_samples": 12467,
+"orig_tokens": 2277451,
+"replay_frac_tokens": 0.0654705633622853,
+"replay_frac_samples": 0.06449025427127617
+},
+"ndc": {
+"orig_samples": 7511,
+"orig_tokens": 1396053,
+"replay_frac_tokens": 0.10632261096104517,
+"replay_frac_samples": 0.1038476900545866
+},
+"kri": {
+"orig_samples": 12902,
+"orig_tokens": 2139249,
+"replay_frac_tokens": 0.06938696710855072,
+"replay_frac_samples": 0.06952410478995505
+},
+"ish": {
+"orig_samples": 1697,
+"orig_tokens": 266394,
+"replay_frac_tokens": 0.5570470806399543,
+"replay_frac_samples": 0.5397760754272245
+},
+"dua": {
+"orig_samples": 5027,
+"orig_tokens": 833190,
+"replay_frac_tokens": 0.17837348023860103,
+"replay_frac_samples": 0.1772428884026258
+},
+"bas": {
+"orig_samples": 7843,
+"orig_tokens": 1368640,
+"replay_frac_tokens": 0.10877732639700725,
+"replay_frac_samples": 0.10710187428279995
+},
+"wes": {
+"orig_samples": 4170,
+"orig_tokens": 835688,
+"replay_frac_tokens": 0.1781909037822728,
+"replay_frac_samples": 0.1920863309352518
+}
+}

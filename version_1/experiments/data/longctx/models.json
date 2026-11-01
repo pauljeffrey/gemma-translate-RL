@@ -1,0 +1,50 @@
+[
+ {
+  "label": "SabiYarn-270M SFT-final (step 27,638) / RL-final 2c (step 1,433) / A2W a0.7 / live run step 250 / final run final2 step 401",
+  "params": "270M",
+  "context": "32,768 (Gemma-3-270M positions); trained on windows <= 2,048 tokens; tested here to 10,240",
+  "limits": "whole-document generation is the advertised use up to 2,048 tokens; no end-of-text guarantee above ~512 tokens for SFT/RL (R6)",
+  "fits": "yes / yes / yes / yes / yes (prompt + output <= 10,240; b4096 outputs hit the 3.5x budget)",
+  "langs": "12 human-reference languages + AfriScience 6 (all 77 supported)"
+ },
+ {
+  "label": "NLLB-200-distilled-600M (CT2 fp16, beam 4)",
+  "params": "615M",
+  "context": "max_position_embeddings 1,024 (HF config); model card: trained on inputs <= 512 tokens, 'not intended for document translation'",
+  "limits": "CTranslate2 truncates the input at 1,024 tokens; default max decoding length 256 (we allowed 1,024)",
+  "fits": "b512 yes (median 560 NLLB tokens) / b1024 no (90 % truncated) / b2048 no (100 %) / AfriScience dev 64 % fit, test 43 % fit",
+  "langs": "whole-document: hau yor swh amh zul ibo + the 6 AfriScience languages, no b4096; sentence-by-sentence: 12 core/human languages + 6 AfriScience languages"
+ },
+ {
+  "label": "NLLB-200-3.3B (OpenNMT CT2 int8, beam 4)",
+  "params": "3.3B",
+  "context": "same as above (1,024 positions; <= 512 trained)",
+  "limits": "same",
+  "fits": "same as NLLB-600M",
+  "langs": "whole-document: hau yor swh amh zul ibo + the 6 AfriScience languages, no b4096; sentence-by-sentence: 12 core/human languages + 6 AfriScience languages"
+ },
+ {
+  "label": "TranslatePsy-AfriSLM-0.8B / 2B",
+  "params": "0.8B (1.1B incl. unused vision tower) / 2B (2.7B)",
+  "context": "262,144 (Qwen3.5 config)",
+  "limits": "model card: quality 'not guaranteed for ... very long documents'; paper evaluates sentence/short-text benchmarks; GGUF evaluations used a 2,048-token context",
+  "fits": "all bins fit by context",
+  "langs": "supports 19 African languages (amh hau ibo kin lug mlg som swh wol xho yor zul + afr lin nya orm sna sot tsn), NOT twi, nso. Run: 0.8B on hau yor swh amh zul ibo lug, all bins + b4096; 2B on hau yor swh amh zul, bins stitched ~1,024 / ~2,048, b2048 and AfriScience dev only"
+ },
+ {
+  "label": "Qwen3.5-0.8B (zero-shot, chat template, no thinking); 2B NOT run",
+  "params": "0.8B / 2B",
+  "context": "262,144",
+  "limits": "none documented for translation",
+  "fits": "all bins fit by context",
+  "langs": "sentence-by-sentence only (the whole-document job was stopped for time): hau yor swh amh zul; no African-language training claim"
+ },
+ {
+  "label": "Gemma-3-1B-it (zero-shot)",
+  "params": "1B",
+  "context": "32,768",
+  "limits": "none documented for translation",
+  "fits": "all bins fit by context",
+  "langs": "sentence-by-sentence only, hau yor swh amh zul, bins stitched ~1,024 / ~2,048 and AfriScience dev; no African-language training claim (gated model; 4B-it not run: 8.6 GB weights > cap)"
+ }
+]

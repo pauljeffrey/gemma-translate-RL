@@ -1,0 +1,34 @@
+subset,scope,metric_1,metric_2,n,n_both_nontie,agree_nontie,agree_3class,kappa_3class,spearman_delta
+all,all_langs,chrf_sub,afri_ref,58101,42581,0.74559,0.61228,0.35807,0.55723
+all,all_langs,chrf_sub,afri_qe,58101,42379,0.61115,0.50722,0.17908,0.23557
+all,all_langs,chrf_sub,ssa_ref,58101,42634,0.69008,0.56868,0.28297,0.4319
+all,all_langs,chrf_sub,ssa_qe,58101,42923,0.62586,0.52285,0.20467,0.2824
+all,all_langs,afri_ref,afri_qe,58101,44113,0.83823,0.71078,0.49309,0.70498
+all,all_langs,afri_ref,ssa_ref,58101,44268,0.81287,0.69283,0.46475,0.67156
+all,all_langs,afri_ref,ssa_qe,58101,44451,0.76696,0.65662,0.39983,0.5664
+all,all_langs,afri_qe,ssa_ref,58101,44129,0.79354,0.67288,0.42212,0.61571
+all,all_langs,afri_qe,ssa_qe,58101,44416,0.79375,0.6751,0.42427,0.61501
+all,all_langs,ssa_ref,ssa_qe,58101,45580,0.93752,0.8203,0.68354,0.90008
+all,all_langs,ens_qe(B wins both QE),ens_ref,58101,26679,0.86356,0.052588,0.083849,
+no_pair,all_langs,chrf_sub,afri_ref,58101,42581,0.74559,0.61228,0.35807,0.55723
+no_pair,all_langs,chrf_sub,afri_qe,58101,42379,0.61115,0.50722,0.17908,0.23557
+no_pair,all_langs,chrf_sub,ssa_ref,58101,42634,0.69008,0.56868,0.28297,0.4319
+no_pair,all_langs,chrf_sub,ssa_qe,58101,42923,0.62586,0.52285,0.20467,0.2824
+no_pair,all_langs,afri_ref,afri_qe,58101,44113,0.83823,0.71078,0.49309,0.70498
+no_pair,all_langs,afri_ref,ssa_ref,58101,44268,0.81287,0.69283,0.46475,0.67156
+no_pair,all_langs,afri_ref,ssa_qe,58101,44451,0.76696,0.65662,0.39983,0.5664
+no_pair,all_langs,afri_qe,ssa_ref,58101,44129,0.79354,0.67288,0.42212,0.61571
+no_pair,all_langs,afri_qe,ssa_qe,58101,44416,0.79375,0.6751,0.42427,0.61501
+no_pair,all_langs,ssa_ref,ssa_qe,58101,45580,0.93752,0.8203,0.68354,0.90008
+no_pair,all_langs,ens_qe(B wins both QE),ens_ref,58101,26679,0.86356,0.052588,0.083849,
+clean,all_langs,chrf_sub,afri_ref,58101,42581,0.74559,0.61228,0.35807,0.55723
+clean,all_langs,chrf_sub,afri_qe,58101,42379,0.61115,0.50722,0.17908,0.23557
+clean,all_langs,chrf_sub,ssa_ref,58101,42634,0.69008,0.56868,0.28297,0.4319
+clean,all_langs,chrf_sub,ssa_qe,58101,42923,0.62586,0.52285,0.20467,0.2824
+clean,all_langs,afri_ref,afri_qe,58101,44113,0.83823,0.71078,0.49309,0.70498
+clean,all_langs,afri_ref,ssa_ref,58101,44268,0.81287,0.69283,0.46475,0.67156
+clean,all_langs,afri_ref,ssa_qe,58101,44451,0.76696,0.65662,0.39983,0.5664
+clean,all_langs,afri_qe,ssa_ref,58101,44129,0.79354,0.67288,0.42212,0.61571
+clean,all_langs,afri_qe,ssa_qe,58101,44416,0.79375,0.6751,0.42427,0.61501
+clean,all_langs,ssa_ref,ssa_qe,58101,45580,0.93752,0.8203,0.68354,0.90008
+clean,all_langs,ens_qe(B wins both QE),ens_ref,58101,26679,0.86356,0.052588,0.083849,

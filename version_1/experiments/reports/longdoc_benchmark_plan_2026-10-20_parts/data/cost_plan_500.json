@@ -1,0 +1,203 @@
+{
+ "n_docs": 500,
+ "languages": 77,
+ "bundle_full": {
+  "translator": {
+   "nllb200-3.3b": {
+    "languages": 44,
+    "output_tokens_total": 44750223.49689399,
+    "tok_s_range": [
+     26065.454545454548,
+     46917.818181818184
+    ],
+    "gpu_hours": [
+     0.26494449485810234,
+     0.47690009074458417
+    ],
+    "backend": "ctranslate2",
+    "precision": "int8_float16",
+    "batch": 192,
+    "roofline_tok_s": 104261.81818181819
+   },
+   "madlad400-7b-mt": {
+    "languages": 44,
+    "output_tokens_total": 44750223.49689399,
+    "tok_s_range": [
+     7964.444444444444,
+     14336.0
+    ],
+    "gpu_hours": [
+     0.8670910740810622,
+     1.560763933345912
+    ],
+    "backend": "ctranslate2",
+    "precision": "int8_float16",
+    "batch": 128,
+    "roofline_tok_s": 31857.777777777777
+   }
+  },
+  "translator_hours": [
+   1.1320355689391646,
+   2.037664024090496
+  ]
+ },
+ "bundle_min": {
+  "translator": {
+   "nllb200-3.3b": {
+    "languages": 44,
+    "output_tokens_total": 44750223.49689399,
+    "tok_s_range": [
+     26065.454545454548,
+     46917.818181818184
+    ],
+    "gpu_hours": [
+     0.26494449485810234,
+     0.47690009074458417
+    ],
+    "backend": "ctranslate2",
+    "precision": "int8_float16",
+    "batch": 192,
+    "roofline_tok_s": 104261.81818181819
+   },
+   "madlad400-3b-mt": {
+    "languages": 44,
+    "output_tokens_total": 44750223.49689399,
+    "tok_s_range": [
+     28672.0,
+     51609.6
+    ],
+    "gpu_hours": [
+     0.24085863168918395,
+     0.4335455370405311
+    ],
+    "backend": "ctranslate2",
+    "precision": "int8_float16",
+    "batch": 192,
+    "roofline_tok_s": 114688.0
+   }
+  },
+  "translator_hours": [
+   0.5058031265472863,
+   0.9104456277851153
+  ]
+ },
+ "opus_supplement": {
+  "translator": {
+   "opus-mt-tc-bible-big-eng-mul": {
+    "languages": 59,
+    "output_tokens_total": 60005981.50719875,
+    "tok_s_range": [
+     19114.666666666668,
+     43008.0
+    ],
+    "gpu_hours": [
+     0.38756343462714143,
+     0.872017727911068
+    ],
+    "backend": "hf",
+    "precision": "bf16",
+    "batch": 64,
+    "roofline_tok_s": 238933.33333333334
+   }
+  },
+  "translator_hours": [
+   0.38756343462714143,
+   0.872017727911068
+  ]
+ },
+ "english_tokens": 705041.0000000001,
+ "sentences_per_language": 26905.000000000007,
+ "target_gemma_tokens_all_languages": 104417188.1594193,
+ "own_model": {
+  "output_tokens_total": 313251564.4782579,
+  "gpu_hours": [
+   2.1753580866545685,
+   8.701432346618274
+  ],
+  "models": 3,
+  "name": "gemma-3-270m SabiYarn-MT (vLLM)",
+  "tok_s_low": 10000.0,
+  "tok_s_high": 40000.0,
+  "anchor": "MEASURED 5,347 tok/s with 4 sequences of b1024 on a card at 100% load from another job (reports/gemma_rl_vllm_2026-10-17.md); 5-10k tok/s sustained there. ASSUMPTION for a dedicated 96 GB card with 256-512 concurrent sequences: 10-40k tok/s."
+ },
+ "africomet_ref": {
+  "triples_total": 6215055.000000002,
+  "triples_per_s_range": [
+   290.0,
+   700.0
+  ],
+  "gpu_hours": [
+   2.4662916666666677,
+   5.953117816091956
+  ],
+  "anchor": "MEASURED on the RTX 5070 (AfriCOMET-QE fp16, 87.5 AfroXLM tokens per (src, mt) pair): 290-350 pairs/s single process, 480 pairs/s with three (reports/gemma_rl_cost_estimate_2026-10-17.md)",
+  "assumption": "x1.5-3 vs the RTX 5070 and x1.5 encoder tokens for the extra reference segment"
+ },
+ "africomet_qe": {
+  "pairs_total": 6215055.000000002,
+  "gpu_hours": [
+   1.644194444444445,
+   3.9687452107279704
+  ]
+ },
+ "reward_qe": {
+  "pairs_total": 6215055.000000002,
+  "gpu_hours": [
+   1.644194444444445,
+   3.9687452107279704
+  ],
+  "cpu_note": "GlotLID, chunk planning, consensus (group mode) and the shaping run on the CPU: about 1 core-second per document (assumption)",
+  "cpu_core_hours": 32.083333333333336
+ },
+ "human_subset": {
+  "SmolDoc": {
+   "rows": 12499,
+   "english_tokens": 3650957.9000000004,
+   "own_model_tokens": 21066625.526065566,
+   "own_model_hours": [
+    0.14629601059767752,
+    0.5851840423907101
+   ],
+   "pairs": 349472.04000000004,
+   "africomet_ref_hours": [
+    0.13867938095238097,
+    0.33474333333333334
+   ],
+   "qe_plus_reward_hours": [
+    0.1849058412698413,
+    0.4463244444444445
+   ]
+  },
+  "SmolDoc stitched to 1024 tokens": {
+   "rows": 2744,
+   "english_tokens": 2943214.4,
+   "own_model_tokens": 16982829.522006743,
+   "own_model_hours": [
+    0.11793631612504683,
+    0.47174526450018733
+   ],
+   "pairs": 406660.80000000005,
+   "africomet_ref_hours": [
+    0.16137333333333334,
+    0.3895218390804598
+   ],
+   "qe_plus_reward_hours": [
+    0.21516444444444446,
+    0.5193624521072797
+   ]
+  }
+ },
+ "total_hours_full": [
+  10.026429537872016,
+  27.37658598411308
+ ],
+ "total_hours_min": [
+  9.400197095480136,
+  26.2493675878077
+ ],
+ "total_hours_full_dedup": [
+  8.382235093427571,
+  23.40784077338511
+ ],
+ "markdown": "| item | volume | GPU hours (estimate) |\n|---|---|---|\n| English set | 500 documents x 77 languages; 705 k English tokens, 26905 sentences per language | |\n| pseudo-references, NLLB-3.3B + MADLAD-7B: nllb200-3.3b (44 languages) | 44.8 M tokens | 0.3 - 0.5 |\n| pseudo-references, NLLB-3.3B + MADLAD-7B: madlad400-7b-mt (44 languages) | 44.8 M tokens | 0.9 - 1.6 |\n| **translators, NLLB-3.3B + MADLAD-7B** | | **1.1 - 2.0** |\n| pseudo-references, NLLB-3.3B + MADLAD-3B: nllb200-3.3b (44 languages) | 44.8 M tokens | 0.3 - 0.5 |\n| pseudo-references, NLLB-3.3B + MADLAD-3B: madlad400-3b-mt (44 languages) | 44.8 M tokens | 0.2 - 0.4 |\n| **translators, NLLB-3.3B + MADLAD-3B** | | **0.5 - 0.9** |\n| pseudo-references, optional OPUS tc-bible supplement: opus-mt-tc-bible-big-eng-mul (59 languages) | 60.0 M tokens | 0.4 - 0.9 |\n| **translators, optional OPUS tc-bible supplement** | | **0.4 - 0.9** |\n| our model, 3 checkpoints | 313 M generated tokens | 2.2 - 8.7 |\n| AfriCOMET reference based (chunked) | 6.22 M triples | 2.5 - 6.0 |\n| AfriCOMET QE (metric) | 6.22 M pairs | 1.6 - 4.0 |\n| RL reward (QE per chunk + CPU rules) | 6.22 M pairs, 32 CPU core-hours | 1.6 - 4.0 (identical pairs as the QE metric: a pair cache removes one of the two) |\n| human subset SmolDoc | 12,499 (document, language) rows, 3.65 M English tokens | model 0.1 - 0.6 + ref 0.1 - 0.3 + QE and reward 0.2 - 0.4 |\n| human subset SmolDoc stitched to 1024 tokens | 2,744 (document, language) rows, 2.94 M English tokens | model 0.1 - 0.5 + ref 0.2 - 0.4 + QE and reward 0.2 - 0.5 |\n| **TOTAL, NLLB-3.3B + MADLAD-7B** | | **10.0 - 27.4** (8.4 - 23.4 with the QE pair cache) |\n| **TOTAL, NLLB-3.3B + MADLAD-3B** | | **9.4 - 26.2** |\n"
+}

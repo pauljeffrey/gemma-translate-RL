@@ -1,0 +1,81 @@
+{
+ "two": {
+  "sentences_per_language": 997,
+  "systems": {
+   "nllb200-3.3b": {
+    "languages": 44,
+    "output_tokens": 1771878.8540514556,
+    "gpu_hours": [
+     0.010490440298449002,
+     0.018882792537208204
+    ],
+    "weights_gb_bf16": 6.6
+   },
+   "madlad400-7b-mt": {
+    "languages": 44,
+    "output_tokens": 1771878.8540514556,
+    "gpu_hours": [
+     0.03433235006765128,
+     0.0617982301217723
+    ],
+    "weights_gb_bf16": 14.4
+   }
+  },
+  "africomet": {
+   "triples": 87736,
+   "gpu_hours": [
+    0.034815873015873015,
+    0.08403831417624522
+   ]
+  },
+  "total_gpu_hours": [
+   0.07963866338197328,
+   0.16471933683522572
+  ],
+  "note": "decoding only plus AfriCOMET; add model download / load time (weights of the 27B system alone are 55 GB) and 2-4x if HF generate is used instead of CTranslate2 / vLLM"
+ },
+ "two_small_opus": {
+  "sentences_per_language": 997,
+  "systems": {
+   "nllb200-3.3b": {
+    "languages": 44,
+    "output_tokens": 1771878.8540514556,
+    "gpu_hours": [
+     0.010490440298449002,
+     0.018882792537208204
+    ],
+    "weights_gb_bf16": 6.6
+   },
+   "madlad400-3b-mt": {
+    "languages": 44,
+    "output_tokens": 1771878.8540514556,
+    "gpu_hours": [
+     0.009536763907680912,
+     0.01716617503382564
+    ],
+    "weights_gb_bf16": 6.0
+   },
+   "opus-mt-tc-bible-big-eng-mul": {
+    "languages": 59,
+    "output_tokens": 2375928.463387179,
+    "gpu_hours": [
+     0.01534552010599565,
+     0.03452742023849021
+    ],
+    "weights_gb_bf16": 0.48
+   }
+  },
+  "africomet": {
+   "triples": 131604,
+   "gpu_hours": [
+    0.05222380952380952,
+    0.1260574712643678
+   ]
+  },
+  "total_gpu_hours": [
+   0.08759653383593508,
+   0.19663385907389186
+  ],
+  "note": "decoding only plus AfriCOMET; add model download / load time (weights of the 27B system alone are 55 GB) and 2-4x if HF generate is used instead of CTranslate2 / vLLM"
+ }
+}

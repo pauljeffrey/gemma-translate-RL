@@ -1,0 +1,2182 @@
+{
+ "meta": {
+  "started": "2026-10-19 15:49:55",
+  "args": {
+   "sft_model": "<HF_ORG>/gemma3-270m-translate",
+   "sft_revision": null,
+   "base_model": "google/gemma-3-270m-it",
+   "skip_base": false,
+   "out": "/workspace/sft_build/eval/other_sets",
+   "bench_dir": "/workspace/sft_build/bench",
+   "contamination_dir": null,
+   "benchmarks": [
+    "ibom_mt",
+    "flores_moz",
+    "glot_story",
+    "salt"
+   ],
+   "languages": [
+    "ibb",
+    "efi",
+    "seh",
+    "kqn",
+    "lun",
+    "loz",
+    "kua",
+    "her",
+    "dag",
+    "tsc",
+    "nbl",
+    "nyn",
+    "ach",
+    "lug",
+    "ibo",
+    "swh"
+   ],
+   "max_per_language": 0,
+   "bench_limit": [],
+   "max_new_tokens": 320,
+   "doc_max_new_tokens": 1024,
+   "word_max_new_tokens": 48,
+   "sampler": "hf",
+   "sampler_fallback_hf": true,
+   "vllm_python": "/nonexistent/vllm_python",
+   "vllm_gpu_util": 0.2,
+   "vllm_max_model_len": 4096,
+   "vllm_max_num_seqs": 512,
+   "hf_batch_size": 128,
+   "doc_batch_size": 0,
+   "word_batch_size": 0,
+   "unit_rows": 2000,
+   "vllm_chunk": 8192,
+   "budget_seconds": 3600.0,
+   "dtype": "bfloat16",
+   "no_comet": false,
+   "comet_python": "/venv/main/bin/python",
+   "comet_pythonpath": "/workspace/sft_build/pylibs_comet:/workspace/sft_build/pylibs",
+   "comet_batch_size": 16,
+   "comet_sequential": true,
+   "min_subset_rows": 20,
+   "gen_timeout": 5400.0,
+   "score_timeout": 5400.0,
+   "total_timeout": 27880.0,
+   "gpu_min_free_gib": 1.5,
+   "gpu_wait": 3000.0,
+   "extra_libs": "/workspace/sft_build/pylibs",
+   "allow_missing_contamination": false,
+   "no_resume": false
+  },
+  "environment": {
+   "python": "3.12.14",
+   "platform": "Linux-6.8.0-136-generic-x86_64-with-glibc2.39",
+   "host": "043978645c01",
+   "torch": "2.14.0+cu132",
+   "transformers": "5.19.0",
+   "huggingface_hub": "1.33.0",
+   "gpu": "NVIDIA GeForce RTX 5070, 12227 MiB"
+  },
+  "contamination_files": {
+   "ibom_mt": "/workspace/sft_build/bench/contamination_ibom_mt.json",
+   "flores_moz": "/workspace/sft_build/bench/contamination_flores_moz.json",
+   "glot_story": "/workspace/sft_build/bench/contamination_glot_story.json",
+   "salt": "/workspace/sft_build/bench/contamination_salt.json"
+  },
+  "rows": {
+   "ibom_mt": 2024,
+   "flores_moz": 1012,
+   "glot_story": 3426,
+   "salt": 2500
+  },
+  "finished": "2026-10-19 16:10:15",
+  "seconds": 1219.6
+ },
+ "failures": [],
+ "warnings": [],
+ "systems": {
+  "sft": {
+   "meta": {
+    "name": "sft",
+    "model": "<HF_ORG>/gemma3-270m-translate",
+    "revision": null,
+    "sha": "376a94f2314da6445878962fe22d59900ee2d2b9",
+    "path": "/workspace/sft_build/hf/hub/models--<HF_ORG>--gemma3-270m-translate/snapshots/376a94f2314da6445878962fe22d59900ee2d2b9",
+    "decoding": "greedy",
+    "max_new_tokens": 320,
+    "prompt_template": "Translate the text to {african_language}:  {english_text}",
+    "direction": "en2x",
+    "stop_ids": [
+     106,
+     1
+    ],
+    "training_state": {
+     "step": 27638,
+     "val_loss_macro": 1.2654279679601028,
+     "best_step": 27638,
+     "pushed_at_utc": "2026-10-19 08:55:29",
+     "tokens_seen": 280050213,
+     "epoch_equivalents": 1.6424793486658347
+    },
+    "timings": {
+     "ibom_mt": {
+      "generation_seconds": 134.7,
+      "units": 1,
+      "units_cached": 0,
+      "sampler": "hf",
+      "scoring_seconds": 45.9
+     },
+     "flores_moz": {
+      "generation_seconds": 66.7,
+      "units": 1,
+      "units_cached": 0,
+      "sampler": "hf",
+      "scoring_seconds": 1.3
+     },
+     "glot_story": {
+      "generation_seconds": 226.7,
+      "units": 2,
+      "units_cached": 0,
+      "sampler": "hf",
+      "scoring_seconds": 8.6
+     },
+     "salt": {
+      "generation_seconds": 118.1,
+      "units": 2,
+      "units_cached": 0,
+      "sampler": "hf",
+      "scoring_seconds": 42.8
+     }
+    },
+    "gpu_free_gib_before_start": 4.3,
+    "sampler": "hf",
+    "seconds_total": 651.8,
+    "spbleu_tokenizer": "flores200",
+    "max_new_tokens_by_benchmark": {
+     "ibom_mt": 320,
+     "flores_moz": 320,
+     "glot_story": 320,
+     "salt": 320
+    },
+    "comet": {
+     "qe": {
+      "cache_hits": 0,
+      "scored": 1500
+     }
+    }
+   },
+   "benchmarks": {
+    "ibom_mt": {
+     "languages": {
+      "efi": {
+       "language": "Efik",
+       "n": 1012,
+       "chrf": 21.329553450716006,
+       "spbleu": 4.387823130304255,
+       "bleu": 2.6097631999771425,
+       "prefix_ok_rate": 0.9990118577075099,
+       "finished_rate": 0.8804347826086957,
+       "empty_rate": 0.0,
+       "comet": 0.47624749345741724,
+       "comet_qe": 0.4537450013895751,
+       "n_contaminated": 964,
+       "n_sentence_rule": 850,
+       "n_near": 0,
+       "n_pair": 0,
+       "clean": {
+        "n": 48,
+        "chrf": 18.559621717669337,
+        "spbleu": 2.8252455691947262,
+        "bleu": 1.1495619322772483,
+        "prefix_ok_rate": 1.0,
+        "finished_rate": 0.8125,
+        "empty_rate": 0.0,
+        "comet": 0.4056854248046875,
+        "comet_qe": 0.32733790079752606
+       },
+       "clean_sentence": {
+        "n": 162,
+        "chrf": 20.378194845362252,
+        "prefix_ok_rate": 1.0,
+        "finished_rate": 0.8703703703703703,
+        "empty_rate": 0.0,
+        "comet": 0.45221700786072533,
+        "comet_qe": 0.4161375069323881
+       },
+       "clean_strict": {
+        "n": 48,
+        "chrf": 18.559621717669337,
+        "prefix_ok_rate": 1.0,
+        "finished_rate": 0.8125,
+        "empty_rate": 0.0,
+        "comet": 0.4056854248046875,
+        "comet_qe": 0.32733790079752606
+       },
+       "no_pair": {
+        "n": 1012,
+        "chrf": 21.329553450716006,
+        "prefix_ok_rate": 0.9990118577075099,
+        "finished_rate": 0.8804347826086957,
+        "empty_rate": 0.0,
+        "comet": 0.47624749345741724,
+        "comet_qe": 0.4537450013895751
+       }
+      },
+      "ibb": {
+       "language": "Ibibio",
+       "n": 1012,
+       "chrf": 15.655562264650449,
+       "spbleu": 1.8227939913840623,
+       "bleu": 1.0702259872038111,
+       "prefix_ok_rate": 0.9980237154150198,
+       "finished_rate": 0.8438735177865613,
+       "empty_rate": 0.0,
+       "n_contaminated": 964,
+       "n_sentence_rule": 850,
+       "n_near": 0,
+       "n_pair": 0,
+       "clean": {
+        "n": 48,
+        "chrf": 14.711339102234275,
+        "spbleu": 1.4943795979196766,
+        "bleu": 0.6102852138475233,
+        "prefix_ok_rate": 1.0,
+        "finished_rate": 0.8125,
+        "empty_rate": 0.0
+       },
+       "clean_sentence": {
+        "n": 162,
+        "chrf": 16.07906244955302,
+        "prefix_ok_rate": 1.0,
+        "finished_rate": 0.8580246913580247,
+        "empty_rate": 0.0
+       },
+       "clean_strict": {
+        "n": 48,
+        "chrf": 14.711339102234275,
+        "prefix_ok_rate": 1.0,
+        "finished_rate": 0.8125,
+        "empty_rate": 0.0
+       },
+       "no_pair": {
+        "n": 1012,
+        "chrf": 15.655562264650449,
+        "prefix_ok_rate": 0.9980237154150198,
+        "finished_rate": 0.8438735177865613,
+        "empty_rate": 0.0
+       }
+      }
+     },
+     "macro": {
+      "chrf": 18.492557857683227,
+      "chrf_n_languages": 2,
+      "spbleu": 3.1053085608441586,
+      "spbleu_n_languages": 2,
+      "bleu": 1.8399945935904767,
+      "bleu_n_languages": 2,
+      "comet": 0.47624749345741724,
+      "comet_n_languages": 1,
+      "comet_qe": 0.4537450013895751,
+      "comet_qe_n_languages": 1,
+      "n_languages": 2
+     },
+     "macro_clean": {
+      "chrf": 16.635480409951807,
+      "chrf_n_languages": 2,
+      "spbleu": 2.1598125835572013,
+      "spbleu_n_languages": 2,
+      "bleu": 0.8799235730623858,
+      "bleu_n_languages": 2,
+      "comet": 0.4056854248046875,
+      "comet_n_languages": 1,
+      "comet_qe": 0.32733790079752606,
+      "comet_qe_n_languages": 1,
+      "n_languages": 2,
+      "n_rows": 96
+     },
+     "macro_clean_sentence": {
+      "chrf": 18.228628647457636,
+      "chrf_n_languages": 2,
+      "comet": 0.45221700786072533,
+      "comet_n_languages": 1,
+      "comet_qe": 0.4161375069323881,
+      "comet_qe_n_languages": 1,
+      "n_languages": 2,
+      "n_rows": 324
+     },
+     "macro_clean_strict": {
+      "chrf": 16.635480409951807,
+      "chrf_n_languages": 2,
+      "comet": 0.4056854248046875,
+      "comet_n_languages": 1,
+      "comet_qe": 0.32733790079752606,
+      "comet_qe_n_languages": 1,
+      "n_languages": 2,
+      "n_rows": 96
+     },
+     "macro_no_pair": {
+      "chrf": 18.492557857683227,
+      "chrf_n_languages": 2,
+      "comet": 0.47624749345741724,
+      "comet_n_languages": 1,
+      "comet_qe": 0.4537450013895751,
+      "comet_qe_n_languages": 1,
+      "n_languages": 2,
+      "n_rows": 2024
+     }
+    },
+    "flores_moz": {
+     "languages": {
+      "seh": {
+       "language": "Sena",
+       "n": 1012,
+       "chrf": 25.59024865729854,
+       "spbleu": 4.023029677427208,
+       "bleu": 2.856732146368358,
+       "prefix_ok_rate": 0.9990118577075099,
+       "finished_rate": 0.9357707509881423,
+       "empty_rate": 0.0,
+       "n_contaminated": 964,
+       "n_sentence_rule": 850,
+       "n_near": 0,
+       "n_pair": 0,
+       "clean": {
+        "n": 48,
+        "chrf": 25.02182293205164,
+        "spbleu": 2.850603968333023,
+        "bleu": 2.059539334416788,
+        "prefix_ok_rate": 1.0,
+        "finished_rate": 0.9375,
+        "empty_rate": 0.0
+       },
+       "clean_sentence": {
+        "n": 162,
+        "chrf": 27.080659639860716,
+        "prefix_ok_rate": 1.0,
+        "finished_rate": 0.9629629629629629,
+        "empty_rate": 0.0
+       },
+       "clean_strict": {
+        "n": 48,
+        "chrf": 25.02182293205164,
+        "prefix_ok_rate": 1.0,
+        "finished_rate": 0.9375,
+        "empty_rate": 0.0
+       },
+       "no_pair": {
+        "n": 1012,
+        "chrf": 25.59024865729854,
+        "prefix_ok_rate": 0.9990118577075099,
+        "finished_rate": 0.9357707509881423,
+        "empty_rate": 0.0
+       }
+      }
+     },
+     "macro": {
+      "chrf": 25.59024865729854,
+      "chrf_n_languages": 1,
+      "spbleu": 4.023029677427208,
+      "spbleu_n_languages": 1,
+      "bleu": 2.856732146368358,
+      "bleu_n_languages": 1,
+      "n_languages": 1
+     },
+     "macro_clean": {
+      "chrf": 25.02182293205164,
+      "chrf_n_languages": 1,
+      "spbleu": 2.850603968333023,
+      "spbleu_n_languages": 1,
+      "bleu": 2.059539334416788,
+      "bleu_n_languages": 1,
+      "n_languages": 1,
+      "n_rows": 48
+     },
+     "macro_clean_sentence": {
+      "chrf": 27.080659639860716,
+      "chrf_n_languages": 1,
+      "n_languages": 1,
+      "n_rows": 162
+     },
+     "macro_clean_strict": {
+      "chrf": 25.02182293205164,
+      "chrf_n_languages": 1,
+      "n_languages": 1,
+      "n_rows": 48
+     },
+     "macro_no_pair": {
+      "chrf": 25.59024865729854,
+      "chrf_n_languages": 1,
+      "n_languages": 1,
+      "n_rows": 1012
+     }
+    },
+    "glot_story": {
+     "languages": {
+      "dag": {
+       "language": "Dagbani",
+       "n": 135,
+       "chrf": 18.974826829658312,
+       "spbleu": 3.131731743296541,
+       "bleu": 2.5927549806363923,
+       "prefix_ok_rate": 1.0,
+       "finished_rate": 0.8740740740740741,
+       "empty_rate": 0.014814814814814815,
+       "n_contaminated": 29,
+       "n_sentence_rule": 29,
+       "n_near": 3,
+       "n_pair": 0,
+       "clean": {
+        "n": 106,
+        "chrf": 19.332453969569276,
+        "spbleu": 3.2911111472511467,
+        "bleu": 2.7090506861913046,
+        "prefix_ok_rate": 1.0,
+        "finished_rate": 0.8490566037735849,
+        "empty_rate": 0.0
+       },
+       "clean_sentence": {
+        "n": 106,
+        "chrf": 19.332453969569276,
+        "prefix_ok_rate": 1.0,
+        "finished_rate": 0.8490566037735849,
+        "empty_rate": 0.0
+       },
+       "clean_strict": {
+        "n": 103,
+        "chrf": 19.379266211437603,
+        "prefix_ok_rate": 1.0,
+        "finished_rate": 0.8543689320388349,
+        "empty_rate": 0.0
+       },
+       "no_pair": {
+        "n": 135,
+        "chrf": 18.974826829658312,
+        "prefix_ok_rate": 1.0,
+        "finished_rate": 0.8740740740740741,
+        "empty_rate": 0.014814814814814815
+       }
+      },
+      "her": {
+       "language": "Herero",
+       "n": 549,
+       "chrf": 20.815218688837984,
+       "spbleu": 3.5441060745622908,
+       "bleu": 2.3637527463016395,
+       "prefix_ok_rate": 1.0,
+       "finished_rate": 0.8178506375227687,
+       "empty_rate": 0.0,
+       "n_contaminated": 39,
+       "n_sentence_rule": 36,
+       "n_near": 9,
+       "n_pair": 0,
+       "clean": {
+        "n": 510,
+        "chrf": 20.808268832434774,
+        "spbleu": 3.52820905576216,
+        "bleu": 2.3611624045728976,
+        "prefix_ok_rate": 1.0,
+        "finished_rate": 0.803921568627451,
+        "empty_rate": 0.0
+       },
+       "clean_sentence": {
+        "n": 513,
+        "chrf": 20.830146564244796,
+        "prefix_ok_rate": 1.0,
+        "finished_rate": 0.8050682261208577,
+        "empty_rate": 0.0
+       },
+       "clean_strict": {
+        "n": 501,
+        "chrf": 20.745050415456472,
+        "prefix_ok_rate": 1.0,
+        "finished_rate": 0.8023952095808383,
+        "empty_rate": 0.0
+       },
+       "no_pair": {
+        "n": 549,
+        "chrf": 20.815218688837984,
+        "prefix_ok_rate": 1.0,
+        "finished_rate": 0.8178506375227687,
+        "empty_rate": 0.0
+       }
+      },
+      "kqn": {
+       "language": "Kaonde",
+       "n": 420,
+       "chrf": 27.602728253696686,
+       "spbleu": 5.948385977874536,
+       "bleu": 2.9945460185317385,
+       "prefix_ok_rate": 1.0,
+       "finished_rate": 0.8857142857142857,
+       "empty_rate": 0.0,
+       "n_contaminated": 33,
+       "n_sentence_rule": 30,
+       "n_near": 8,
+       "n_pair": 0,
+       "clean": {
+        "n": 387,
+        "chrf": 27.53574250225722,
+        "spbleu": 5.989153764544112,
+        "bleu": 3.040874579892651,
+        "prefix_ok_rate": 1.0,
+        "finished_rate": 0.8811369509043928,
+        "empty_rate": 0.0
+       },
+       "clean_sentence": {
+        "n": 390,
+        "chrf": 27.535938175080176,
+        "prefix_ok_rate": 1.0,
+        "finished_rate": 0.8794871794871795,
+        "empty_rate": 0.0
+       },
+       "clean_strict": {
+        "n": 379,
+        "chrf": 27.50481922224712,
+        "prefix_ok_rate": 1.0,
+        "finished_rate": 0.8812664907651715,
+        "empty_rate": 0.0
+       },
+       "no_pair": {
+        "n": 420,
+        "chrf": 27.602728253696686,
+        "prefix_ok_rate": 1.0,
+        "finished_rate": 0.8857142857142857,
+        "empty_rate": 0.0
+       }
+      },
+      "kua": {
+       "language": "Kuanyama",
+       "n": 520,
+       "chrf": 28.281874553726148,
+       "spbleu": 5.955427170788753,
+       "bleu": 3.349819990463386,
+       "prefix_ok_rate": 1.0,
+       "finished_rate": 0.9211538461538461,
+       "empty_rate": 0.0,
+       "n_contaminated": 33,
+       "n_sentence_rule": 30,
+       "n_near": 8,
+       "n_pair": 0,
+       "clean": {
+        "n": 487,
+        "chrf": 28.25822089979898,
+        "spbleu": 5.9011554494822045,
+        "bleu": 3.3493519797579787,
+        "prefix_ok_rate": 1.0,
+        "finished_rate": 0.9158110882956879,
+        "empty_rate": 0.0
+       },
+       "clean_sentence": {
+        "n": 490,
+        "chrf": 28.28634903975672,
+        "prefix_ok_rate": 1.0,
+        "finished_rate": 0.9163265306122449,
+        "empty_rate": 0.0
+       },
+       "clean_strict": {
+        "n": 479,
+        "chrf": 28.140438781522683,
+        "prefix_ok_rate": 1.0,
+        "finished_rate": 0.9144050104384134,
+        "empty_rate": 0.0
+       },
+       "no_pair": {
+        "n": 520,
+        "chrf": 28.281874553726148,
+        "prefix_ok_rate": 1.0,
+        "finished_rate": 0.9211538461538461,
+        "empty_rate": 0.0
+       }
+      },
+      "loz": {
+       "language": "Lozi",
+       "n": 960,
+       "chrf": 32.320096274469755,
+       "spbleu": 6.351747879256229,
+       "bleu": 3.8797318063929125,
+       "prefix_ok_rate": 1.0,
+       "finished_rate": 0.9489583333333333,
+       "empty_rate": 0.0,
+       "n_contaminated": 63,
+       "n_sentence_rule": 57,
+       "n_near": 14,
+       "n_pair": 0,
+       "clean": {
+        "n": 897,
+        "chrf": 32.17796216393708,
+        "spbleu": 6.269653498328811,
+        "bleu": 3.822549726863178,
+        "prefix_ok_rate": 1.0,
+        "finished_rate": 0.9453734671125975,
+        "empty_rate": 0.0
+       },
+       "clean_sentence": {
+        "n": 903,
+        "chrf": 32.24384808396443,
+        "prefix_ok_rate": 1.0,
+        "finished_rate": 0.9457364341085271,
+        "empty_rate": 0.0
+       },
+       "clean_strict": {
+        "n": 883,
+        "chrf": 32.105197919941126,
+        "prefix_ok_rate": 1.0,
+        "finished_rate": 0.9445073612684032,
+        "empty_rate": 0.0
+       },
+       "no_pair": {
+        "n": 960,
+        "chrf": 32.320096274469755,
+        "prefix_ok_rate": 1.0,
+        "finished_rate": 0.9489583333333333,
+        "empty_rate": 0.0
+       }
+      },
+      "lun": {
+       "language": "Lunda",
+       "n": 420,
+       "chrf": 24.273062946030326,
+       "spbleu": 4.68072298535815,
+       "bleu": 2.2658926514985356,
+       "prefix_ok_rate": 1.0,
+       "finished_rate": 0.9214285714285714,
+       "empty_rate": 0.0,
+       "n_contaminated": 33,
+       "n_sentence_rule": 30,
+       "n_near": 8,
+       "n_pair": 0,
+       "clean": {
+        "n": 387,
+        "chrf": 24.241851764137788,
+        "spbleu": 4.689333183018122,
+        "bleu": 2.313088733129318,
+        "prefix_ok_rate": 1.0,
+        "finished_rate": 0.917312661498708,
+        "empty_rate": 0.0
+       },
+       "clean_sentence": {
+        "n": 390,
+        "chrf": 24.307476013684802,
+        "prefix_ok_rate": 1.0,
+        "finished_rate": 0.9179487179487179,
+        "empty_rate": 0.0
+       },
+       "clean_strict": {
+        "n": 379,
+        "chrf": 24.077247316154967,
+        "prefix_ok_rate": 1.0,
+        "finished_rate": 0.9155672823218998,
+        "empty_rate": 0.0
+       },
+       "no_pair": {
+        "n": 420,
+        "chrf": 24.273062946030326,
+        "prefix_ok_rate": 1.0,
+        "finished_rate": 0.9214285714285714,
+        "empty_rate": 0.0
+       }
+      },
+      "nbl": {
+       "language": "South Ndebele",
+       "n": 321,
+       "chrf": 16.103328892424273,
+       "spbleu": 3.193508283069951,
+       "bleu": 1.671534314970503,
+       "prefix_ok_rate": 1.0,
+       "finished_rate": 0.9439252336448598,
+       "empty_rate": 0.0,
+       "n_contaminated": 16,
+       "n_sentence_rule": 15,
+       "n_near": 3,
+       "n_pair": 0,
+       "clean": {
+        "n": 305,
+        "chrf": 16.196060343641,
+        "spbleu": 3.1843141374177333,
+        "bleu": 1.6866070790048147,
+        "prefix_ok_rate": 1.0,
+        "finished_rate": 0.940983606557377,
+        "empty_rate": 0.0
+       },
+       "clean_sentence": {
+        "n": 306,
+        "chrf": 16.152014133840193,
+        "prefix_ok_rate": 1.0,
+        "finished_rate": 0.9411764705882353,
+        "empty_rate": 0.0
+       },
+       "clean_strict": {
+        "n": 302,
+        "chrf": 16.101068771165522,
+        "prefix_ok_rate": 1.0,
+        "finished_rate": 0.9403973509933775,
+        "empty_rate": 0.0
+       },
+       "no_pair": {
+        "n": 321,
+        "chrf": 16.103328892424273,
+        "prefix_ok_rate": 1.0,
+        "finished_rate": 0.9439252336448598,
+        "empty_rate": 0.0
+       }
+      },
+      "tsc": {
+       "language": "Tswa",
+       "n": 101,
+       "chrf": 14.417400772152256,
+       "spbleu": 0.8049568348425594,
+       "bleu": 0.6533917472021448,
+       "prefix_ok_rate": 1.0,
+       "finished_rate": 0.7722772277227723,
+       "empty_rate": 0.0,
+       "n_contaminated": 1,
+       "n_sentence_rule": 1,
+       "n_near": 0,
+       "n_pair": 0,
+       "clean": {
+        "n": 100,
+        "chrf": 14.426486475462607,
+        "spbleu": 0.805094147067679,
+        "bleu": 0.6532704142226894,
+        "prefix_ok_rate": 1.0,
+        "finished_rate": 0.77,
+        "empty_rate": 0.0
+       },
+       "clean_sentence": {
+        "n": 100,
+        "chrf": 14.426486475462607,
+        "prefix_ok_rate": 1.0,
+        "finished_rate": 0.77,
+        "empty_rate": 0.0
+       },
+       "clean_strict": {
+        "n": 100,
+        "chrf": 14.426486475462607,
+        "prefix_ok_rate": 1.0,
+        "finished_rate": 0.77,
+        "empty_rate": 0.0
+       },
+       "no_pair": {
+        "n": 101,
+        "chrf": 14.417400772152256,
+        "prefix_ok_rate": 1.0,
+        "finished_rate": 0.7722772277227723,
+        "empty_rate": 0.0
+       }
+      }
+     },
+     "macro": {
+      "chrf": 22.848567151374468,
+      "chrf_n_languages": 8,
+      "spbleu": 4.201323368631126,
+      "spbleu_n_languages": 8,
+      "bleu": 2.4714280319996567,
+      "bleu_n_languages": 8,
+      "n_languages": 8
+     },
+     "macro_clean": {
+      "chrf": 22.87213086890484,
+      "chrf_n_languages": 8,
+      "spbleu": 4.2072530478589965,
+      "spbleu_n_languages": 8,
+      "bleu": 2.491994450454354,
+      "bleu_n_languages": 8,
+      "n_languages": 8,
+      "n_rows": 3179
+     },
+     "macro_clean_sentence": {
+      "chrf": 22.889339056950377,
+      "chrf_n_languages": 8,
+      "n_languages": 8,
+      "n_rows": 3198
+     },
+     "macro_clean_strict": {
+      "chrf": 22.809946889173514,
+      "chrf_n_languages": 8,
+      "n_languages": 8,
+      "n_rows": 3126
+     },
+     "macro_no_pair": {
+      "chrf": 22.848567151374468,
+      "chrf_n_languages": 8,
+      "n_languages": 8,
+      "n_rows": 3426
+     }
+    },
+    "salt": {
+     "languages": {
+      "ach": {
+       "language": "Acholi",
+       "n": 500,
+       "chrf": 24.50259321702637,
+       "spbleu": 4.822993642576731,
+       "bleu": 2.937885891765657,
+       "prefix_ok_rate": 1.0,
+       "finished_rate": 0.974,
+       "empty_rate": 0.0,
+       "n_contaminated": 422,
+       "n_sentence_rule": 422,
+       "n_near": 0,
+       "n_pair": 0,
+       "clean": {
+        "n": 78,
+        "chrf": 22.332171700463796,
+        "spbleu": 3.678599087691483,
+        "bleu": 2.9347855447234594,
+        "prefix_ok_rate": 1.0,
+        "finished_rate": 0.9743589743589743,
+        "empty_rate": 0.0
+       },
+       "clean_sentence": {
+        "n": 78,
+        "chrf": 22.332171700463796,
+        "prefix_ok_rate": 1.0,
+        "finished_rate": 0.9743589743589743,
+        "empty_rate": 0.0
+       },
+       "clean_strict": {
+        "n": 78,
+        "chrf": 22.332171700463796,
+        "prefix_ok_rate": 1.0,
+        "finished_rate": 0.9743589743589743,
+        "empty_rate": 0.0
+       },
+       "no_pair": {
+        "n": 500,
+        "chrf": 24.50259321702637,
+        "prefix_ok_rate": 1.0,
+        "finished_rate": 0.974,
+        "empty_rate": 0.0
+       }
+      },
+      "ibo": {
+       "language": "Igbo",
+       "n": 500,
+       "chrf": 35.19882994588129,
+       "spbleu": 13.652237687938973,
+       "bleu": 9.785953671564236,
+       "prefix_ok_rate": 1.0,
+       "finished_rate": 0.988,
+       "empty_rate": 0.0,
+       "comet": 0.721246826171875,
+       "comet_qe": 0.686673583984375,
+       "n_contaminated": 422,
+       "n_sentence_rule": 422,
+       "n_near": 0,
+       "n_pair": 0,
+       "clean": {
+        "n": 78,
+        "chrf": 35.47176929220346,
+        "spbleu": 15.805322607163456,
+        "bleu": 13.003268458506922,
+        "prefix_ok_rate": 1.0,
+        "finished_rate": 1.0,
+        "empty_rate": 0.0,
+        "comet": 0.6813151041666666,
+        "comet_qe": 0.6340551131810898
+       },
+       "clean_sentence": {
+        "n": 78,
+        "chrf": 35.47176929220346,
+        "prefix_ok_rate": 1.0,
+        "finished_rate": 1.0,
+        "empty_rate": 0.0,
+        "comet": 0.6813151041666666,
+        "comet_qe": 0.6340551131810898
+       },
+       "clean_strict": {
+        "n": 78,
+        "chrf": 35.47176929220346,
+        "prefix_ok_rate": 1.0,
+        "finished_rate": 1.0,
+        "empty_rate": 0.0,
+        "comet": 0.6813151041666666,
+        "comet_qe": 0.6340551131810898
+       },
+       "no_pair": {
+        "n": 500,
+        "chrf": 35.19882994588129,
+        "prefix_ok_rate": 1.0,
+        "finished_rate": 0.988,
+        "empty_rate": 0.0,
+        "comet": 0.721246826171875,
+        "comet_qe": 0.686673583984375
+       }
+      },
+      "lug": {
+       "language": "Luganda",
+       "n": 500,
+       "chrf": 45.64435129918459,
+       "spbleu": 24.363823465691507,
+       "bleu": 15.104632849714111,
+       "prefix_ok_rate": 1.0,
+       "finished_rate": 0.998,
+       "empty_rate": 0.0,
+       "comet": 0.69950634765625,
+       "comet_qe": 0.6817255859375,
+       "n_contaminated": 422,
+       "n_sentence_rule": 422,
+       "n_near": 0,
+       "n_pair": 419,
+       "clean": {
+        "n": 78,
+        "chrf": 36.93864007545641,
+        "spbleu": 13.27776037478465,
+        "bleu": 9.134252707740188,
+        "prefix_ok_rate": 1.0,
+        "finished_rate": 0.9871794871794872,
+        "empty_rate": 0.0,
+        "comet": 0.6211438301282052,
+        "comet_qe": 0.5948016826923077
+       },
+       "clean_sentence": {
+        "n": 78,
+        "chrf": 36.93864007545641,
+        "prefix_ok_rate": 1.0,
+        "finished_rate": 0.9871794871794872,
+        "empty_rate": 0.0,
+        "comet": 0.6211438301282052,
+        "comet_qe": 0.5948016826923077
+       },
+       "clean_strict": {
+        "n": 78,
+        "chrf": 36.93864007545641,
+        "prefix_ok_rate": 1.0,
+        "finished_rate": 0.9871794871794872,
+        "empty_rate": 0.0,
+        "comet": 0.6211438301282052,
+        "comet_qe": 0.5948016826923077
+       },
+       "no_pair": {
+        "n": 81,
+        "chrf": 37.492180466168826,
+        "prefix_ok_rate": 1.0,
+        "finished_rate": 0.9876543209876543,
+        "empty_rate": 0.0,
+        "comet": 0.626977237654321,
+        "comet_qe": 0.5943377459490741
+       }
+      },
+      "nyn": {
+       "language": "Nyankore",
+       "n": 500,
+       "chrf": 26.722869080308925,
+       "spbleu": 5.3226947737528905,
+       "bleu": 2.3852269260305468,
+       "prefix_ok_rate": 1.0,
+       "finished_rate": 0.982,
+       "empty_rate": 0.0,
+       "n_contaminated": 422,
+       "n_sentence_rule": 422,
+       "n_near": 0,
+       "n_pair": 0,
+       "clean": {
+        "n": 78,
+        "chrf": 22.350499025623556,
+        "spbleu": 2.8695847061556052,
+        "bleu": 2.329700355973568,
+        "prefix_ok_rate": 1.0,
+        "finished_rate": 0.9743589743589743,
+        "empty_rate": 0.0
+       },
+       "clean_sentence": {
+        "n": 78,
+        "chrf": 22.350499025623556,
+        "prefix_ok_rate": 1.0,
+        "finished_rate": 0.9743589743589743,
+        "empty_rate": 0.0
+       },
+       "clean_strict": {
+        "n": 78,
+        "chrf": 22.350499025623556,
+        "prefix_ok_rate": 1.0,
+        "finished_rate": 0.9743589743589743,
+        "empty_rate": 0.0
+       },
+       "no_pair": {
+        "n": 500,
+        "chrf": 26.722869080308925,
+        "prefix_ok_rate": 1.0,
+        "finished_rate": 0.982,
+        "empty_rate": 0.0
+       }
+      },
+      "swh": {
+       "language": "Swahili",
+       "n": 500,
+       "chrf": 57.47244762213456,
+       "spbleu": 34.54958360580259,
+       "bleu": 29.47076745778604,
+       "prefix_ok_rate": 1.0,
+       "finished_rate": 1.0,
+       "empty_rate": 0.0,
+       "comet": 0.758290771484375,
+       "comet_qe": 0.75907080078125,
+       "n_contaminated": 422,
+       "n_sentence_rule": 422,
+       "n_near": 0,
+       "n_pair": 0,
+       "clean": {
+        "n": 78,
+        "chrf": 52.051163618749264,
+        "spbleu": 31.351305173228972,
+        "bleu": 27.719931667787037,
+        "prefix_ok_rate": 1.0,
+        "finished_rate": 1.0,
+        "empty_rate": 0.0,
+        "comet": 0.6795216095753205,
+        "comet_qe": 0.6954345703125
+       },
+       "clean_sentence": {
+        "n": 78,
+        "chrf": 52.051163618749264,
+        "prefix_ok_rate": 1.0,
+        "finished_rate": 1.0,
+        "empty_rate": 0.0,
+        "comet": 0.6795216095753205,
+        "comet_qe": 0.6954345703125
+       },
+       "clean_strict": {
+        "n": 78,
+        "chrf": 52.051163618749264,
+        "prefix_ok_rate": 1.0,
+        "finished_rate": 1.0,
+        "empty_rate": 0.0,
+        "comet": 0.6795216095753205,
+        "comet_qe": 0.6954345703125
+       },
+       "no_pair": {
+        "n": 500,
+        "chrf": 57.47244762213456,
+        "prefix_ok_rate": 1.0,
+        "finished_rate": 1.0,
+        "empty_rate": 0.0,
+        "comet": 0.758290771484375,
+        "comet_qe": 0.75907080078125
+       }
+      }
+     },
+     "macro": {
+      "chrf": 37.908218232907146,
+      "chrf_n_languages": 5,
+      "spbleu": 16.542266635152536,
+      "spbleu_n_languages": 5,
+      "bleu": 11.936893359372117,
+      "bleu_n_languages": 5,
+      "comet": 0.7263479817708333,
+      "comet_n_languages": 3,
+      "comet_qe": 0.7091566569010417,
+      "comet_qe_n_languages": 3,
+      "n_languages": 5
+     },
+     "macro_clean": {
+      "chrf": 33.8288487424993,
+      "chrf_n_languages": 5,
+      "spbleu": 13.396514389804832,
+      "spbleu_n_languages": 5,
+      "bleu": 11.024387746946235,
+      "bleu_n_languages": 5,
+      "comet": 0.6606601812900641,
+      "comet_n_languages": 3,
+      "comet_qe": 0.6414304553952991,
+      "comet_qe_n_languages": 3,
+      "n_languages": 5,
+      "n_rows": 390
+     },
+     "macro_clean_sentence": {
+      "chrf": 33.8288487424993,
+      "chrf_n_languages": 5,
+      "comet": 0.6606601812900641,
+      "comet_n_languages": 3,
+      "comet_qe": 0.6414304553952991,
+      "comet_qe_n_languages": 3,
+      "n_languages": 5,
+      "n_rows": 390
+     },
+     "macro_clean_strict": {
+      "chrf": 33.8288487424993,
+      "chrf_n_languages": 5,
+      "comet": 0.6606601812900641,
+      "comet_n_languages": 3,
+      "comet_qe": 0.6414304553952991,
+      "comet_qe_n_languages": 3,
+      "n_languages": 5,
+      "n_rows": 390
+     },
+     "macro_no_pair": {
+      "chrf": 36.277784066303994,
+      "chrf_n_languages": 5,
+      "comet": 0.7021716117701903,
+      "comet_n_languages": 3,
+      "comet_qe": 0.6800273769048997,
+      "comet_qe_n_languages": 3,
+      "n_languages": 5,
+      "n_rows": 2081
+     }
+    }
+   },
+   "macro_all": {
+    "chrf": 27.18156204676228,
+    "chrf_n_languages": 16,
+    "spbleu": 7.909722932745452,
+    "spbleu_n_languages": 16,
+    "bleu": 5.3745382741504475,
+    "bleu_n_languages": 16,
+    "comet": 0.6638228596924793,
+    "comet_n_languages": 4,
+    "comet_qe": 0.645303743023175,
+    "comet_qe_n_languages": 4
+   },
+   "min_subset_rows": 20,
+   "macro_all_clean": {
+    "chrf": 25.650879650980656,
+    "chrf_n_languages": 16,
+    "spbleu": 6.738176591708973,
+    "spbleu_n_languages": 16,
+    "bleu": 4.929830051181723,
+    "bleu_n_languages": 16,
+    "comet": 0.59691649216872,
+    "comet_n_languages": 4,
+    "comet_qe": 0.5629073167458559,
+    "comet_qe_n_languages": 4
+   }
+  },
+  "base": {
+   "meta": {
+    "name": "base",
+    "model": "google/gemma-3-270m-it",
+    "revision": null,
+    "sha": "ac82b4e820549b854eebf28ce6dedaf9fdfa17b3",
+    "path": "/workspace/sft_build/hf/hub/models--google--gemma-3-270m-it/snapshots/ac82b4e820549b854eebf28ce6dedaf9fdfa17b3",
+    "decoding": "greedy",
+    "max_new_tokens": 320,
+    "prompt_template": "Translate the text to {african_language}:  {english_text}",
+    "direction": "en2x",
+    "stop_ids": [
+     106,
+     1
+    ],
+    "training_state": {},
+    "timings": {
+     "ibom_mt": {
+      "generation_seconds": 126.8,
+      "units": 1,
+      "units_cached": 0,
+      "sampler": "hf",
+      "scoring_seconds": 43.9
+     },
+     "flores_moz": {
+      "generation_seconds": 33.2,
+      "units": 1,
+      "units_cached": 0,
+      "sampler": "hf",
+      "scoring_seconds": 1.2
+     },
+     "glot_story": {
+      "generation_seconds": 137.1,
+      "units": 2,
+      "units_cached": 0,
+      "sampler": "hf",
+      "scoring_seconds": 8.4
+     },
+     "salt": {
+      "generation_seconds": 158.8,
+      "units": 2,
+      "units_cached": 0,
+      "sampler": "hf",
+      "scoring_seconds": 52.7
+     }
+    },
+    "gpu_free_gib_before_start": 4.0,
+    "sampler": "hf",
+    "seconds_total": 565.3,
+    "spbleu_tokenizer": "flores200",
+    "max_new_tokens_by_benchmark": {
+     "ibom_mt": 320,
+     "flores_moz": 320,
+     "glot_story": 320,
+     "salt": 320
+    },
+    "comet": {
+     "qe": {
+      "cache_hits": 0,
+      "scored": 3000
+     }
+    }
+   },
+   "benchmarks": {
+    "ibom_mt": {
+     "languages": {
+      "efi": {
+       "language": "Efik",
+       "n": 1012,
+       "chrf": 14.58538797627228,
+       "spbleu": 2.1471096071930913,
+       "bleu": 1.3535569287603113,
+       "prefix_ok_rate": 0.0,
+       "finished_rate": 0.9723320158102767,
+       "empty_rate": 0.0,
+       "comet": 0.24163993262490735,
+       "comet_qe": 0.45947601861162146,
+       "n_contaminated": 964,
+       "n_sentence_rule": 850,
+       "n_near": 0,
+       "n_pair": 0,
+       "clean": {
+        "n": 48,
+        "chrf": 14.83503756153311,
+        "spbleu": 2.448047771148497,
+        "bleu": 0.6446922284491602,
+        "prefix_ok_rate": 0.0,
+        "finished_rate": 1.0,
+        "empty_rate": 0.0,
+        "comet": 0.2171656290690104,
+        "comet_qe": 0.40466753641764325
+       },
+       "clean_sentence": {
+        "n": 162,
+        "chrf": 14.957855832350134,
+        "prefix_ok_rate": 0.0,
+        "finished_rate": 0.9753086419753086,
+        "empty_rate": 0.0,
+        "comet": 0.2276185589072145,
+        "comet_qe": 0.4266182228370949
+       },
+       "clean_strict": {
+        "n": 48,
+        "chrf": 14.83503756153311,
+        "prefix_ok_rate": 0.0,
+        "finished_rate": 1.0,
+        "empty_rate": 0.0,
+        "comet": 0.2171656290690104,
+        "comet_qe": 0.40466753641764325
+       },
+       "no_pair": {
+        "n": 1012,
+        "chrf": 14.58538797627228,
+        "prefix_ok_rate": 0.0,
+        "finished_rate": 0.9723320158102767,
+        "empty_rate": 0.0,
+        "comet": 0.24163993262490735,
+        "comet_qe": 0.45947601861162146
+       }
+      },
+      "ibb": {
+       "language": "Ibibio",
+       "n": 1012,
+       "chrf": 13.187421126663162,
+       "spbleu": 1.4953227238345528,
+       "bleu": 0.8310796605084806,
+       "prefix_ok_rate": 0.0,
+       "finished_rate": 0.9950592885375494,
+       "empty_rate": 0.0,
+       "n_contaminated": 964,
+       "n_sentence_rule": 850,
+       "n_near": 0,
+       "n_pair": 0,
+       "clean": {
+        "n": 48,
+        "chrf": 12.621365520155905,
+        "spbleu": 1.2953080345312904,
+        "bleu": 0.46525785285315474,
+        "prefix_ok_rate": 0.0,
+        "finished_rate": 1.0,
+        "empty_rate": 0.0
+       },
+       "clean_sentence": {
+        "n": 162,
+        "chrf": 13.52166645473928,
+        "prefix_ok_rate": 0.0,
+        "finished_rate": 1.0,
+        "empty_rate": 0.0
+       },
+       "clean_strict": {
+        "n": 48,
+        "chrf": 12.621365520155905,
+        "prefix_ok_rate": 0.0,
+        "finished_rate": 1.0,
+        "empty_rate": 0.0
+       },
+       "no_pair": {
+        "n": 1012,
+        "chrf": 13.187421126663162,
+        "prefix_ok_rate": 0.0,
+        "finished_rate": 0.9950592885375494,
+        "empty_rate": 0.0
+       }
+      }
+     },
+     "macro": {
+      "chrf": 13.88640455146772,
+      "chrf_n_languages": 2,
+      "spbleu": 1.821216165513822,
+      "spbleu_n_languages": 2,
+      "bleu": 1.092318294634396,
+      "bleu_n_languages": 2,
+      "comet": 0.24163993262490735,
+      "comet_n_languages": 1,
+      "comet_qe": 0.45947601861162146,
+      "comet_qe_n_languages": 1,
+      "n_languages": 2
+     },
+     "macro_clean": {
+      "chrf": 13.728201540844507,
+      "chrf_n_languages": 2,
+      "spbleu": 1.8716779028398935,
+      "spbleu_n_languages": 2,
+      "bleu": 0.5549750406511574,
+      "bleu_n_languages": 2,
+      "comet": 0.2171656290690104,
+      "comet_n_languages": 1,
+      "comet_qe": 0.40466753641764325,
+      "comet_qe_n_languages": 1,
+      "n_languages": 2,
+      "n_rows": 96
+     },
+     "macro_clean_sentence": {
+      "chrf": 14.239761143544708,
+      "chrf_n_languages": 2,
+      "comet": 0.2276185589072145,
+      "comet_n_languages": 1,
+      "comet_qe": 0.4266182228370949,
+      "comet_qe_n_languages": 1,
+      "n_languages": 2,
+      "n_rows": 324
+     },
+     "macro_clean_strict": {
+      "chrf": 13.728201540844507,
+      "chrf_n_languages": 2,
+      "comet": 0.2171656290690104,
+      "comet_n_languages": 1,
+      "comet_qe": 0.40466753641764325,
+      "comet_qe_n_languages": 1,
+      "n_languages": 2,
+      "n_rows": 96
+     },
+     "macro_no_pair": {
+      "chrf": 13.88640455146772,
+      "chrf_n_languages": 2,
+      "comet": 0.24163993262490735,
+      "comet_n_languages": 1,
+      "comet_qe": 0.45947601861162146,
+      "comet_qe_n_languages": 1,
+      "n_languages": 2,
+      "n_rows": 2024
+     }
+    },
+    "flores_moz": {
+     "languages": {
+      "seh": {
+       "language": "Sena",
+       "n": 1012,
+       "chrf": 13.163982445804725,
+       "spbleu": 2.0044353102451087,
+       "bleu": 1.1554465494043515,
+       "prefix_ok_rate": 0.0,
+       "finished_rate": 1.0,
+       "empty_rate": 0.0,
+       "n_contaminated": 964,
+       "n_sentence_rule": 850,
+       "n_near": 0,
+       "n_pair": 0,
+       "clean": {
+        "n": 48,
+        "chrf": 12.817943811075954,
+        "spbleu": 2.0163520602409486,
+        "bleu": 1.3333256828147282,
+        "prefix_ok_rate": 0.0,
+        "finished_rate": 1.0,
+        "empty_rate": 0.0
+       },
+       "clean_sentence": {
+        "n": 162,
+        "chrf": 13.045333669785386,
+        "prefix_ok_rate": 0.0,
+        "finished_rate": 1.0,
+        "empty_rate": 0.0
+       },
+       "clean_strict": {
+        "n": 48,
+        "chrf": 12.817943811075954,
+        "prefix_ok_rate": 0.0,
+        "finished_rate": 1.0,
+        "empty_rate": 0.0
+       },
+       "no_pair": {
+        "n": 1012,
+        "chrf": 13.163982445804725,
+        "prefix_ok_rate": 0.0,
+        "finished_rate": 1.0,
+        "empty_rate": 0.0
+       }
+      }
+     },
+     "macro": {
+      "chrf": 13.163982445804725,
+      "chrf_n_languages": 1,
+      "spbleu": 2.0044353102451087,
+      "spbleu_n_languages": 1,
+      "bleu": 1.1554465494043515,
+      "bleu_n_languages": 1,
+      "n_languages": 1
+     },
+     "macro_clean": {
+      "chrf": 12.817943811075954,
+      "chrf_n_languages": 1,
+      "spbleu": 2.0163520602409486,
+      "spbleu_n_languages": 1,
+      "bleu": 1.3333256828147282,
+      "bleu_n_languages": 1,
+      "n_languages": 1,
+      "n_rows": 48
+     },
+     "macro_clean_sentence": {
+      "chrf": 13.045333669785386,
+      "chrf_n_languages": 1,
+      "n_languages": 1,
+      "n_rows": 162
+     },
+     "macro_clean_strict": {
+      "chrf": 12.817943811075954,
+      "chrf_n_languages": 1,
+      "n_languages": 1,
+      "n_rows": 48
+     },
+     "macro_no_pair": {
+      "chrf": 13.163982445804725,
+      "chrf_n_languages": 1,
+      "n_languages": 1,
+      "n_rows": 1012
+     }
+    },
+    "glot_story": {
+     "languages": {
+      "dag": {
+       "language": "Dagbani",
+       "n": 135,
+       "chrf": 10.209472227351371,
+       "spbleu": 0.9299720110039065,
+       "bleu": 0.3129110071973865,
+       "prefix_ok_rate": 0.0,
+       "finished_rate": 1.0,
+       "empty_rate": 0.0,
+       "n_contaminated": 29,
+       "n_sentence_rule": 29,
+       "n_near": 3,
+       "n_pair": 0,
+       "clean": {
+        "n": 106,
+        "chrf": 10.520882386915412,
+        "spbleu": 1.0944337814457887,
+        "bleu": 0.3684666014978541,
+        "prefix_ok_rate": 0.0,
+        "finished_rate": 1.0,
+        "empty_rate": 0.0
+       },
+       "clean_sentence": {
+        "n": 106,
+        "chrf": 10.520882386915412,
+        "prefix_ok_rate": 0.0,
+        "finished_rate": 1.0,
+        "empty_rate": 0.0
+       },
+       "clean_strict": {
+        "n": 103,
+        "chrf": 10.177579806899589,
+        "prefix_ok_rate": 0.0,
+        "finished_rate": 1.0,
+        "empty_rate": 0.0
+       },
+       "no_pair": {
+        "n": 135,
+        "chrf": 10.209472227351371,
+        "prefix_ok_rate": 0.0,
+        "finished_rate": 1.0,
+        "empty_rate": 0.0
+       }
+      },
+      "her": {
+       "language": "Herero",
+       "n": 549,
+       "chrf": 13.818527277601264,
+       "spbleu": 2.357483442701603,
+       "bleu": 1.3107086077603827,
+       "prefix_ok_rate": 0.0,
+       "finished_rate": 0.9872495446265938,
+       "empty_rate": 0.0,
+       "n_contaminated": 39,
+       "n_sentence_rule": 36,
+       "n_near": 9,
+       "n_pair": 0,
+       "clean": {
+        "n": 510,
+        "chrf": 13.93970829235855,
+        "spbleu": 2.3934004659578023,
+        "bleu": 1.3595743751940101,
+        "prefix_ok_rate": 0.0,
+        "finished_rate": 0.9941176470588236,
+        "empty_rate": 0.0
+       },
+       "clean_sentence": {
+        "n": 513,
+        "chrf": 13.928232361531299,
+        "prefix_ok_rate": 0.0,
+        "finished_rate": 0.9922027290448343,
+        "empty_rate": 0.0
+       },
+       "clean_strict": {
+        "n": 501,
+        "chrf": 13.985961054361443,
+        "prefix_ok_rate": 0.0,
+        "finished_rate": 0.9940119760479041,
+        "empty_rate": 0.0
+       },
+       "no_pair": {
+        "n": 549,
+        "chrf": 13.818527277601264,
+        "prefix_ok_rate": 0.0,
+        "finished_rate": 0.9872495446265938,
+        "empty_rate": 0.0
+       }
+      },
+      "kqn": {
+       "language": "Kaonde",
+       "n": 420,
+       "chrf": 12.346298804154813,
+       "spbleu": 1.7913444264249705,
+       "bleu": 0.9168626301860665,
+       "prefix_ok_rate": 0.0,
+       "finished_rate": 1.0,
+       "empty_rate": 0.0,
+       "n_contaminated": 33,
+       "n_sentence_rule": 30,
+       "n_near": 8,
+       "n_pair": 0,
+       "clean": {
+        "n": 387,
+        "chrf": 12.442651082401126,
+        "spbleu": 1.8491673273298508,
+        "bleu": 0.9486828873472244,
+        "prefix_ok_rate": 0.0,
+        "finished_rate": 1.0,
+        "empty_rate": 0.0
+       },
+       "clean_sentence": {
+        "n": 390,
+        "chrf": 12.427662759337663,
+        "prefix_ok_rate": 0.0,
+        "finished_rate": 1.0,
+        "empty_rate": 0.0
+       },
+       "clean_strict": {
+        "n": 379,
+        "chrf": 12.467118341643921,
+        "prefix_ok_rate": 0.0,
+        "finished_rate": 1.0,
+        "empty_rate": 0.0
+       },
+       "no_pair": {
+        "n": 420,
+        "chrf": 12.346298804154813,
+        "prefix_ok_rate": 0.0,
+        "finished_rate": 1.0,
+        "empty_rate": 0.0
+       }
+      },
+      "kua": {
+       "language": "Kuanyama",
+       "n": 520,
+       "chrf": 14.64414888716387,
+       "spbleu": 2.8588328514118206,
+       "bleu": 2.1423826140337754,
+       "prefix_ok_rate": 0.0,
+       "finished_rate": 0.9980769230769231,
+       "empty_rate": 0.0,
+       "n_contaminated": 33,
+       "n_sentence_rule": 30,
+       "n_near": 8,
+       "n_pair": 0,
+       "clean": {
+        "n": 487,
+        "chrf": 14.721034677937755,
+        "spbleu": 2.8999387082355694,
+        "bleu": 2.17889329141436,
+        "prefix_ok_rate": 0.0,
+        "finished_rate": 0.997946611909651,
+        "empty_rate": 0.0
+       },
+       "clean_sentence": {
+        "n": 490,
+        "chrf": 14.728549245187903,
+        "prefix_ok_rate": 0.0,
+        "finished_rate": 0.9979591836734694,
+        "empty_rate": 0.0
+       },
+       "clean_strict": {
+        "n": 479,
+        "chrf": 14.743378227750533,
+        "prefix_ok_rate": 0.0,
+        "finished_rate": 0.9979123173277662,
+        "empty_rate": 0.0
+       },
+       "no_pair": {
+        "n": 520,
+        "chrf": 14.64414888716387,
+        "prefix_ok_rate": 0.0,
+        "finished_rate": 0.9980769230769231,
+        "empty_rate": 0.0
+       }
+      },
+      "loz": {
+       "language": "Lozi",
+       "n": 960,
+       "chrf": 12.823703041516744,
+       "spbleu": 2.4684842530524675,
+       "bleu": 1.3403347370004608,
+       "prefix_ok_rate": 0.0,
+       "finished_rate": 0.9989583333333333,
+       "empty_rate": 0.0,
+       "n_contaminated": 63,
+       "n_sentence_rule": 57,
+       "n_near": 14,
+       "n_pair": 0,
+       "clean": {
+        "n": 897,
+        "chrf": 12.872586909054515,
+        "spbleu": 2.526994617176954,
+        "bleu": 1.3647958161208606,
+        "prefix_ok_rate": 0.0,
+        "finished_rate": 0.9988851727982163,
+        "empty_rate": 0.0
+       },
+       "clean_sentence": {
+        "n": 903,
+        "chrf": 12.883948717216043,
+        "prefix_ok_rate": 0.0,
+        "finished_rate": 0.9988925802879292,
+        "empty_rate": 0.0
+       },
+       "clean_strict": {
+        "n": 883,
+        "chrf": 12.898121311936203,
+        "prefix_ok_rate": 0.0,
+        "finished_rate": 0.9988674971687429,
+        "empty_rate": 0.0
+       },
+       "no_pair": {
+        "n": 960,
+        "chrf": 12.823703041516744,
+        "prefix_ok_rate": 0.0,
+        "finished_rate": 0.9989583333333333,
+        "empty_rate": 0.0
+       }
+      },
+      "lun": {
+       "language": "Lunda",
+       "n": 420,
+       "chrf": 12.379837901179377,
+       "spbleu": 1.9605323679685591,
+       "bleu": 0.9603041435654447,
+       "prefix_ok_rate": 0.0,
+       "finished_rate": 0.9976190476190476,
+       "empty_rate": 0.0,
+       "n_contaminated": 33,
+       "n_sentence_rule": 30,
+       "n_near": 8,
+       "n_pair": 0,
+       "clean": {
+        "n": 387,
+        "chrf": 12.437613695269507,
+        "spbleu": 2.0174184129277486,
+        "bleu": 0.9815493335924746,
+        "prefix_ok_rate": 0.0,
+        "finished_rate": 0.9974160206718347,
+        "empty_rate": 0.0
+       },
+       "clean_sentence": {
+        "n": 390,
+        "chrf": 12.43764710591994,
+        "prefix_ok_rate": 0.0,
+        "finished_rate": 0.9974358974358974,
+        "empty_rate": 0.0
+       },
+       "clean_strict": {
+        "n": 379,
+        "chrf": 12.449911981008789,
+        "prefix_ok_rate": 0.0,
+        "finished_rate": 0.9973614775725593,
+        "empty_rate": 0.0
+       },
+       "no_pair": {
+        "n": 420,
+        "chrf": 12.379837901179377,
+        "prefix_ok_rate": 0.0,
+        "finished_rate": 0.9976190476190476,
+        "empty_rate": 0.0
+       }
+      },
+      "nbl": {
+       "language": "South Ndebele",
+       "n": 321,
+       "chrf": 11.515697227991481,
+       "spbleu": 0.2796685268377688,
+       "bleu": 0.11326879513301073,
+       "prefix_ok_rate": 0.0,
+       "finished_rate": 0.9532710280373832,
+       "empty_rate": 0.0,
+       "n_contaminated": 16,
+       "n_sentence_rule": 15,
+       "n_near": 3,
+       "n_pair": 0,
+       "clean": {
+        "n": 305,
+        "chrf": 11.758548248626541,
+        "spbleu": 0.29453573162496566,
+        "bleu": 0.11550621850282632,
+        "prefix_ok_rate": 0.0,
+        "finished_rate": 0.9606557377049181,
+        "empty_rate": 0.0
+       },
+       "clean_sentence": {
+        "n": 306,
+        "chrf": 11.728128013305854,
+        "prefix_ok_rate": 0.0,
+        "finished_rate": 0.9607843137254902,
+        "empty_rate": 0.0
+       },
+       "clean_strict": {
+        "n": 302,
+        "chrf": 11.77679496457538,
+        "prefix_ok_rate": 0.0,
+        "finished_rate": 0.9602649006622517,
+        "empty_rate": 0.0
+       },
+       "no_pair": {
+        "n": 321,
+        "chrf": 11.515697227991481,
+        "prefix_ok_rate": 0.0,
+        "finished_rate": 0.9532710280373832,
+        "empty_rate": 0.0
+       }
+      },
+      "tsc": {
+       "language": "Tswa",
+       "n": 101,
+       "chrf": 9.182628626710054,
+       "spbleu": 0.1348681972487116,
+       "bleu": 0.6373527138183911,
+       "prefix_ok_rate": 0.0,
+       "finished_rate": 1.0,
+       "empty_rate": 0.0,
+       "n_contaminated": 1,
+       "n_sentence_rule": 1,
+       "n_near": 0,
+       "n_pair": 0,
+       "clean": {
+        "n": 100,
+        "chrf": 9.198706598715141,
+        "spbleu": 0.13548902902872442,
+        "bleu": 0.6399786368715038,
+        "prefix_ok_rate": 0.0,
+        "finished_rate": 1.0,
+        "empty_rate": 0.0
+       },
+       "clean_sentence": {
+        "n": 100,
+        "chrf": 9.198706598715141,
+        "prefix_ok_rate": 0.0,
+        "finished_rate": 1.0,
+        "empty_rate": 0.0
+       },
+       "clean_strict": {
+        "n": 100,
+        "chrf": 9.198706598715141,
+        "prefix_ok_rate": 0.0,
+        "finished_rate": 1.0,
+        "empty_rate": 0.0
+       },
+       "no_pair": {
+        "n": 101,
+        "chrf": 9.182628626710054,
+        "prefix_ok_rate": 0.0,
+        "finished_rate": 1.0,
+        "empty_rate": 0.0
+       }
+      }
+     },
+     "macro": {
+      "chrf": 12.115039249208621,
+      "chrf_n_languages": 8,
+      "spbleu": 1.597648259581226,
+      "spbleu_n_languages": 8,
+      "bleu": 0.9667656560868648,
+      "bleu_n_languages": 8,
+      "n_languages": 8
+     },
+     "macro_clean": {
+      "chrf": 12.236466486409817,
+      "chrf_n_languages": 8,
+      "spbleu": 1.6514222592159256,
+      "spbleu_n_languages": 8,
+      "bleu": 0.9946808950676392,
+      "bleu_n_languages": 8,
+      "n_languages": 8,
+      "n_rows": 3179
+     },
+     "macro_clean_sentence": {
+      "chrf": 12.231719648516156,
+      "chrf_n_languages": 8,
+      "n_languages": 8,
+      "n_rows": 3198
+     },
+     "macro_clean_strict": {
+      "chrf": 12.212196535861375,
+      "chrf_n_languages": 8,
+      "n_languages": 8,
+      "n_rows": 3126
+     },
+     "macro_no_pair": {
+      "chrf": 12.115039249208621,
+      "chrf_n_languages": 8,
+      "n_languages": 8,
+      "n_rows": 3426
+     }
+    },
+    "salt": {
+     "languages": {
+      "ach": {
+       "language": "Acholi",
+       "n": 500,
+       "chrf": 10.866252765447264,
+       "spbleu": 0.30037045897772213,
+       "bleu": 0.26305862036607225,
+       "prefix_ok_rate": 0.0,
+       "finished_rate": 0.988,
+       "empty_rate": 0.0,
+       "n_contaminated": 422,
+       "n_sentence_rule": 422,
+       "n_near": 0,
+       "n_pair": 0,
+       "clean": {
+        "n": 78,
+        "chrf": 10.744201917499181,
+        "spbleu": 0.40046392648204276,
+        "bleu": 0.6069383049890983,
+        "prefix_ok_rate": 0.0,
+        "finished_rate": 0.9871794871794872,
+        "empty_rate": 0.0
+       },
+       "clean_sentence": {
+        "n": 78,
+        "chrf": 10.744201917499181,
+        "prefix_ok_rate": 0.0,
+        "finished_rate": 0.9871794871794872,
+        "empty_rate": 0.0
+       },
+       "clean_strict": {
+        "n": 78,
+        "chrf": 10.744201917499181,
+        "prefix_ok_rate": 0.0,
+        "finished_rate": 0.9871794871794872,
+        "empty_rate": 0.0
+       },
+       "no_pair": {
+        "n": 500,
+        "chrf": 10.866252765447264,
+        "prefix_ok_rate": 0.0,
+        "finished_rate": 0.988,
+        "empty_rate": 0.0
+       }
+      },
+      "ibo": {
+       "language": "Igbo",
+       "n": 500,
+       "chrf": 6.310738096460737,
+       "spbleu": 0.09434617471355002,
+       "bleu": 0.09854504044876014,
+       "prefix_ok_rate": 0.0,
+       "finished_rate": 0.564,
+       "empty_rate": 0.0,
+       "comet": 0.22176333618164062,
+       "comet_qe": 0.39771826171875,
+       "n_contaminated": 422,
+       "n_sentence_rule": 422,
+       "n_near": 0,
+       "n_pair": 0,
+       "clean": {
+        "n": 78,
+        "chrf": 5.645569535709644,
+        "spbleu": 0.16059409767362146,
+        "bleu": 0.16911628265998915,
+        "prefix_ok_rate": 0.0,
+        "finished_rate": 0.5128205128205128,
+        "empty_rate": 0.0,
+        "comet": 0.2061759753104968,
+        "comet_qe": 0.3521110339042468
+       },
+       "clean_sentence": {
+        "n": 78,
+        "chrf": 5.645569535709644,
+        "prefix_ok_rate": 0.0,
+        "finished_rate": 0.5128205128205128,
+        "empty_rate": 0.0,
+        "comet": 0.2061759753104968,
+        "comet_qe": 0.3521110339042468
+       },
+       "clean_strict": {
+        "n": 78,
+        "chrf": 5.645569535709644,
+        "prefix_ok_rate": 0.0,
+        "finished_rate": 0.5128205128205128,
+        "empty_rate": 0.0,
+        "comet": 0.2061759753104968,
+        "comet_qe": 0.3521110339042468
+       },
+       "no_pair": {
+        "n": 500,
+        "chrf": 6.310738096460737,
+        "prefix_ok_rate": 0.0,
+        "finished_rate": 0.564,
+        "empty_rate": 0.0,
+        "comet": 0.22176333618164062,
+        "comet_qe": 0.39771826171875
+       }
+      },
+      "lug": {
+       "language": "Luganda",
+       "n": 500,
+       "chrf": 7.581747204166908,
+       "spbleu": 0.11206971152586089,
+       "bleu": 0.0989324312777547,
+       "prefix_ok_rate": 0.0,
+       "finished_rate": 0.786,
+       "empty_rate": 0.0,
+       "comet": 0.2550130615234375,
+       "comet_qe": 0.443872314453125,
+       "n_contaminated": 422,
+       "n_sentence_rule": 422,
+       "n_near": 0,
+       "n_pair": 419,
+       "clean": {
+        "n": 78,
+        "chrf": 7.3788598745204,
+        "spbleu": 0.2053428736468806,
+        "bleu": 0.20427006920715157,
+        "prefix_ok_rate": 0.0,
+        "finished_rate": 0.8846153846153846,
+        "empty_rate": 0.0,
+        "comet": 0.2528436122796474,
+        "comet_qe": 0.4480340419671474
+       },
+       "clean_sentence": {
+        "n": 78,
+        "chrf": 7.3788598745204,
+        "prefix_ok_rate": 0.0,
+        "finished_rate": 0.8846153846153846,
+        "empty_rate": 0.0,
+        "comet": 0.2528436122796474,
+        "comet_qe": 0.4480340419671474
+       },
+       "clean_strict": {
+        "n": 78,
+        "chrf": 7.3788598745204,
+        "prefix_ok_rate": 0.0,
+        "finished_rate": 0.8846153846153846,
+        "empty_rate": 0.0,
+        "comet": 0.2528436122796474,
+        "comet_qe": 0.4480340419671474
+       },
+       "no_pair": {
+        "n": 81,
+        "chrf": 7.344901363360437,
+        "prefix_ok_rate": 0.0,
+        "finished_rate": 0.8888888888888888,
+        "empty_rate": 0.0,
+        "comet": 0.2520118995949074,
+        "comet_qe": 0.45300895785108025
+       }
+      },
+      "nyn": {
+       "language": "Nyankore",
+       "n": 500,
+       "chrf": 10.02005010583543,
+       "spbleu": 0.12276592854191147,
+       "bleu": 0.1572740588029402,
+       "prefix_ok_rate": 0.0,
+       "finished_rate": 0.968,
+       "empty_rate": 0.0,
+       "n_contaminated": 422,
+       "n_sentence_rule": 422,
+       "n_near": 0,
+       "n_pair": 0,
+       "clean": {
+        "n": 78,
+        "chrf": 9.806519550089282,
+        "spbleu": 0.07688849535126353,
+        "bleu": 0.4994830570232259,
+        "prefix_ok_rate": 0.0,
+        "finished_rate": 0.9743589743589743,
+        "empty_rate": 0.0
+       },
+       "clean_sentence": {
+        "n": 78,
+        "chrf": 9.806519550089282,
+        "prefix_ok_rate": 0.0,
+        "finished_rate": 0.9743589743589743,
+        "empty_rate": 0.0
+       },
+       "clean_strict": {
+        "n": 78,
+        "chrf": 9.806519550089282,
+        "prefix_ok_rate": 0.0,
+        "finished_rate": 0.9743589743589743,
+        "empty_rate": 0.0
+       },
+       "no_pair": {
+        "n": 500,
+        "chrf": 10.02005010583543,
+        "prefix_ok_rate": 0.0,
+        "finished_rate": 0.968,
+        "empty_rate": 0.0
+       }
+      },
+      "swh": {
+       "language": "Swahili",
+       "n": 500,
+       "chrf": 8.574085769252097,
+       "spbleu": 0.11150874094199939,
+       "bleu": 0.08603193214904223,
+       "prefix_ok_rate": 0.0,
+       "finished_rate": 0.856,
+       "empty_rate": 0.0,
+       "comet": 0.2915113525390625,
+       "comet_qe": 0.4896539306640625,
+       "n_contaminated": 422,
+       "n_sentence_rule": 422,
+       "n_near": 0,
+       "n_pair": 0,
+       "clean": {
+        "n": 78,
+        "chrf": 8.213426629309,
+        "spbleu": 0.2854383022344094,
+        "bleu": 0.24970771107545237,
+        "prefix_ok_rate": 0.0,
+        "finished_rate": 0.8717948717948718,
+        "empty_rate": 0.0,
+        "comet": 0.2598110101161859,
+        "comet_qe": 0.4488032414362981
+       },
+       "clean_sentence": {
+        "n": 78,
+        "chrf": 8.213426629309,
+        "prefix_ok_rate": 0.0,
+        "finished_rate": 0.8717948717948718,
+        "empty_rate": 0.0,
+        "comet": 0.2598110101161859,
+        "comet_qe": 0.4488032414362981
+       },
+       "clean_strict": {
+        "n": 78,
+        "chrf": 8.213426629309,
+        "prefix_ok_rate": 0.0,
+        "finished_rate": 0.8717948717948718,
+        "empty_rate": 0.0,
+        "comet": 0.2598110101161859,
+        "comet_qe": 0.4488032414362981
+       },
+       "no_pair": {
+        "n": 500,
+        "chrf": 8.574085769252097,
+        "prefix_ok_rate": 0.0,
+        "finished_rate": 0.856,
+        "empty_rate": 0.0,
+        "comet": 0.2915113525390625,
+        "comet_qe": 0.4896539306640625
+       }
+      }
+     },
+     "macro": {
+      "chrf": 8.670574788232488,
+      "chrf_n_languages": 5,
+      "spbleu": 0.1482122029402088,
+      "spbleu_n_languages": 5,
+      "bleu": 0.1407684166089139,
+      "bleu_n_languages": 5,
+      "comet": 0.2560959167480469,
+      "comet_n_languages": 3,
+      "comet_qe": 0.4437481689453125,
+      "comet_qe_n_languages": 3,
+      "n_languages": 5
+     },
+     "macro_clean": {
+      "chrf": 8.357715501425501,
+      "chrf_n_languages": 5,
+      "spbleu": 0.22574553907764355,
+      "spbleu_n_languages": 5,
+      "bleu": 0.34590308499098343,
+      "bleu_n_languages": 5,
+      "comet": 0.23961019923544336,
+      "comet_n_languages": 3,
+      "comet_qe": 0.4163161057692308,
+      "comet_qe_n_languages": 3,
+      "n_languages": 5,
+      "n_rows": 390
+     },
+     "macro_clean_sentence": {
+      "chrf": 8.357715501425501,
+      "chrf_n_languages": 5,
+      "comet": 0.23961019923544336,
+      "comet_n_languages": 3,
+      "comet_qe": 0.4163161057692308,
+      "comet_qe_n_languages": 3,
+      "n_languages": 5,
+      "n_rows": 390
+     },
+     "macro_clean_strict": {
+      "chrf": 8.357715501425501,
+      "chrf_n_languages": 5,
+      "comet": 0.23961019923544336,
+      "comet_n_languages": 3,
+      "comet_qe": 0.4163161057692308,
+      "comet_qe_n_languages": 3,
+      "n_languages": 5,
+      "n_rows": 390
+     },
+     "macro_no_pair": {
+      "chrf": 8.623205620071193,
+      "chrf_n_languages": 5,
+      "comet": 0.25509552943853686,
+      "comet_n_languages": 3,
+      "comet_qe": 0.4467937167446309,
+      "comet_qe_n_languages": 3,
+      "n_languages": 5,
+      "n_rows": 2081
+     }
+    }
+   },
+   "macro_all": {
+    "chrf": 11.325623717723223,
+    "chrf_n_languages": 16,
+    "spbleu": 1.1980696707889753,
+    "spbleu_n_languages": 16,
+    "bleu": 0.7361281544007895,
+    "bleu_n_languages": 16,
+    "comet": 0.252481920717262,
+    "comet_n_languages": 4,
+    "comet_qe": 0.4476801313618898,
+    "comet_qe_n_languages": 4
+   },
+   "min_subset_rows": 20,
+   "macro_all_clean": {
+    "chrf": 11.24716601819819,
+    "chrf_n_languages": 16,
+    "spbleu": 1.2562383521897724,
+    "spbleu_n_languages": 16,
+    "bleu": 0.7581398968508172,
+    "bleu_n_languages": 16,
+    "comet": 0.23399905669383514,
+    "comet_n_languages": 4,
+    "comet_qe": 0.4134039634313339,
+    "comet_qe_n_languages": 4
+   }
+  }
+ }
+}

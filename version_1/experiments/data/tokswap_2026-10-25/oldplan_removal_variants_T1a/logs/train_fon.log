@@ -1,0 +1,13 @@
+[1s] in/text/fon.wiki.txt: 3679 lines, 408423 chars, 215372 tokens; word types so far 8948
+[7s] in/text/fon.mt560.txt: 31124 lines, 2921071 chars, 1586127 tokens; word types so far 15244
+[8s] merges 500  last count 149  ▁sɛntɔ́
+[9s] merges 1000  last count 57  fɔ
+[9s] merges 1500  last count 27  ▁Falizyɛn
+[9s] merges 2000  last count 15  ▁Sɛ̀
+[9s] merges 2500  last count 10  ▁dobanúnǔtɔ́
+[9s] merges 3000  last count 7  unkuntɔ́
+[9s] merges 3500  last count 5  ▁elɔ́
+[9s] merges 4000  last count 4  gbazazɔ́
+[9s] merges 4500  last count 3  undatɛn
+[9s] merges 5000  last count 3  ▁tɔɔ
+learned 5278 merges; last count 3; wrote out/merges_fon.json

@@ -1,0 +1,47 @@
+{
+ "rows_read": {
+  "rl2c": 6142,
+  "final2": 894
+ },
+ "provenance_missing": 0,
+ "unrecognised_or_nc_licence_rows": 0,
+ "decontam_sets": {
+  "english_sentences": 57734,
+  "english_8grams": 973277,
+  "reference_sentences": 193415,
+  "reference_8grams": 2807684
+ },
+ "rows_final": 6357,
+ "dropped": {
+  "row_filter:repetition": 628,
+  "row_filter:copy_of_source": 10,
+  "dedupe_same_source_two_runs": 9,
+  "licence_forbids_or_unknown": 0,
+  "contam_source_ngram8": 23,
+  "contam_translation_ngram8": 9
+ },
+ "by_run": {
+  "rl2c": 5595,
+  "final2": 762
+ },
+ "by_mode": {
+  "consensus": 636,
+  "qe": 5014,
+  "blend": 707
+ },
+ "by_licence": {
+  "('wikimedia/wikipedia:20231101.en', 'share_alike')": 2073,
+  "('HuggingFaceFW/fineweb-edu:sample-10BT', 'odc-by')": 3959,
+  "('common-pile/libretexts', 'cc-by')": 64,
+  "('common-pile/pubmed', 'cc-by')": 61,
+  "('dsfsi/afriscience_mt:train(en)', 'apache-2.0')": 162,
+  "('HuggingFaceFW/finetranslations(en)', 'odc-by')": 15,
+  "('common-pile/arxiv_papers', 'cc-by')": 10,
+  "('gfissore/arxiv-abstracts-2021', 'cc0-1.0')": 3,
+  "('common-pile/pubmed', 'cc0')": 3,
+  "('Sunbird/salt:text-all', 'cc-by-sa-4.0')": 4,
+  "('common-pile/arxiv_papers', 'cc0')": 3
+ },
+ "languages": 72,
+ "nllb_flagged": 3
+}

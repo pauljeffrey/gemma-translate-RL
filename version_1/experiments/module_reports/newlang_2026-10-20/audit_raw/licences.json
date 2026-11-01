@@ -1,0 +1,313 @@
+{
+ "michsethowusu/english-fulah_sentence-pairs": {
+  "license": null,
+  "license_name": null,
+  "gated": false,
+  "private": false,
+  "downloads": 8,
+  "lastmod": "2025-05-18"
+ },
+ "michsethowusu/dinka-english_sentence-pairs": {
+  "license": null,
+  "license_name": null,
+  "gated": false,
+  "private": false,
+  "downloads": 7,
+  "lastmod": "2025-05-18"
+ },
+ "michsethowusu/english-southwestern-dinka_sentence-pairs_mt560": {
+  "license": "cc-by-4.0",
+  "license_name": null,
+  "gated": false,
+  "private": false,
+  "downloads": 7,
+  "lastmod": "2025-07-06"
+ },
+ "michsethowusu/english-central_atlas_tamazight_sentence-pairs": {
+  "license": null,
+  "license_name": null,
+  "gated": false,
+  "private": false,
+  "downloads": 18,
+  "lastmod": "2025-05-18"
+ },
+ "michsethowusu/english-tachelhit_sentence-pairs_mt560": {
+  "license": "cc-by-4.0",
+  "license_name": null,
+  "gated": false,
+  "private": false,
+  "downloads": 25,
+  "lastmod": "2025-07-06"
+ },
+ "michsethowusu/english-chokwe_sentence-pairs_mt560": {
+  "license": "cc-by-4.0",
+  "license_name": null,
+  "gated": false,
+  "private": false,
+  "downloads": 15,
+  "lastmod": "2025-07-06"
+ },
+ "michsethowusu/english-tamashek_sentence-pairs_mt560": {
+  "license": "cc-by-4.0",
+  "license_name": null,
+  "gated": false,
+  "private": false,
+  "downloads": 14,
+  "lastmod": "2025-07-06"
+ },
+ "michsethowusu/english-tamasheq_sentence-pairs": {
+  "license": null,
+  "license_name": null,
+  "gated": false,
+  "private": false,
+  "downloads": 11,
+  "lastmod": "2025-05-17"
+ },
+ "michsethowusu/english-mende_sentence-pairs_mt560": {
+  "license": "cc-by-4.0",
+  "license_name": null,
+  "gated": false,
+  "private": false,
+  "downloads": 21,
+  "lastmod": "2025-07-06"
+ },
+ "michsethowusu/english-morisyen_sentence-pairs_mt560": {
+  "license": "cc-by-4.0",
+  "license_name": null,
+  "gated": false,
+  "private": false,
+  "downloads": 22,
+  "lastmod": "2025-07-06"
+ },
+ "michsethowusu/english-zarma_sentence-pairs_mt560": {
+  "license": "cc-by-4.0",
+  "license_name": null,
+  "gated": false,
+  "private": false,
+  "downloads": 48,
+  "lastmod": "2025-07-06"
+ },
+ "michsethowusu/english-alur_sentence-pairs_mt560": {
+  "license": "cc-by-4.0",
+  "license_name": null,
+  "gated": false,
+  "private": false,
+  "downloads": 13,
+  "lastmod": "2025-07-06"
+ },
+ "michsethowusu/english-tonga_sentence-pairs_mt560": {
+  "license": "cc-by-4.0",
+  "license_name": null,
+  "gated": false,
+  "private": false,
+  "downloads": 9,
+  "lastmod": "2025-07-06"
+ },
+ "michsethowusu/Code-170k-fulani": {
+  "license": "apache-2.0",
+  "license_name": null,
+  "gated": false,
+  "private": false,
+  "downloads": 34,
+  "lastmod": "2025-10-23"
+ },
+ "michsethowusu/french-fulah_sentence-pairs": {
+  "license": null,
+  "license_name": null,
+  "gated": false,
+  "private": false,
+  "downloads": 21,
+  "lastmod": "2025-05-17"
+ },
+ "2ADT-Consulting/susu-parallel": {
+  "license": "other",
+  "license_name": "youversion-tos-derived",
+  "gated": false,
+  "private": false,
+  "downloads": 35,
+  "lastmod": "2026-07-21"
+ },
+ "ghanaopenai/ghana-farmer-qa-ga": {
+  "license": "cc-by-nc-4.0",
+  "license_name": null,
+  "gated": false,
+  "private": false,
+  "downloads": 40,
+  "lastmod": "2026-07-30"
+ },
+ "openlanguagedata/oldi_seed": {
+  "license": "cc-by-sa-4.0",
+  "license_name": null,
+  "gated": false,
+  "private": false,
+  "downloads": 1142,
+  "lastmod": "2026-07-01"
+ },
+ "Ghana-NLP/FANTE_ENGLISH_PARALLEL_TEXT": {
+  "license": null,
+  "license_name": null,
+  "gated": false,
+  "private": false,
+  "downloads": 51,
+  "lastmod": "2025-12-10"
+ },
+ "mteb/biblenlp-corpus-mmteb": {
+  "license": "cc-by-sa-4.0",
+  "license_name": null,
+  "gated": false,
+  "private": false,
+  "downloads": 1253,
+  "lastmod": "2025-12-06"
+ },
+ "nordpolemil/biblenlp-corpus": {
+  "license": [
+   "cc-by-4.0",
+   "other"
+  ],
+  "license_name": null,
+  "gated": false,
+  "private": false,
+  "downloads": 334,
+  "lastmod": "2026-06-29"
+ },
+ "HuggingFaceFW/finetranslations": {
+  "license": "odc-by",
+  "license_name": null,
+  "gated": false,
+  "private": false,
+  "downloads": 25244,
+  "lastmod": "2026-01-09"
+ },
+ "HuggingFaceFW/fineweb-2": {
+  "license": "odc-by",
+  "license_name": null,
+  "gated": false,
+  "private": false,
+  "downloads": 126599,
+  "lastmod": "2025-10-27"
+ },
+ "cis-lmu/glotcc-v1": {
+  "license": "cc0-1.0",
+  "license_name": null,
+  "gated": false,
+  "private": false,
+  "downloads": 2489,
+  "lastmod": "2024-11-01"
+ },
+ "allenai/madlad-400": {
+  "license": "odc-by",
+  "license_name": null,
+  "gated": false,
+  "private": false,
+  "downloads": 46257,
+  "lastmod": "2024-09-09"
+ },
+ "HPLT/HPLT2.0_cleaned": {
+  "license": "cc0-1.0",
+  "license_name": null,
+  "gated": false,
+  "private": false,
+  "downloads": 182522,
+  "lastmod": "2026-06-11"
+ },
+ "google/smol": {
+  "license": "cc-by-4.0",
+  "license_name": null,
+  "gated": false,
+  "private": false,
+  "downloads": 7053,
+  "lastmod": "2026-08-06"
+ },
+ "openlanguagedata/flores_plus": {
+  "license": [
+   "cc-by-sa-4.0"
+  ],
+  "license_name": null,
+  "gated": "auto",
+  "private": false,
+  "downloads": 12311,
+  "lastmod": "2026-10-01"
+ },
+ "Tamazight-NLP/Weblate-Translations": {
+  "license": "other",
+  "license_name": null,
+  "gated": false,
+  "private": false,
+  "downloads": 514,
+  "lastmod": "2026-06-23"
+ },
+ "ayymen/Pontoon-Translations": {
+  "license": "mpl-2.0",
+  "license_name": null,
+  "gated": false,
+  "private": false,
+  "downloads": 1015,
+  "lastmod": "2024-01-19"
+ },
+ "CLEAR-Global/Synthetic-Text": {
+  "license": null,
+  "license_name": null,
+  "gated": false,
+  "private": false,
+  "downloads": 79,
+  "lastmod": "2025-07-03"
+ },
+ "dsfsi/umsuka-english": {
+  "license": "cc-by-4.0",
+  "license_name": null,
+  "gated": false,
+  "private": false,
+  "downloads": 48,
+  "lastmod": "2026-03-17"
+ },
+ "AfriSpeech/african-corpus-jw": {
+  "license": "other",
+  "license_name": null,
+  "gated": false,
+  "private": false,
+  "downloads": 3231,
+  "lastmod": "2026-09-23"
+ },
+ "AfriSpeech/madlad-91-african": {
+  "license": "odc-by",
+  "license_name": null,
+  "gated": false,
+  "private": false,
+  "downloads": 2770,
+  "lastmod": "2026-09-24"
+ },
+ "cointegrated/panlex-meanings": {
+  "license": "cc0-1.0",
+  "license_name": null,
+  "gated": false,
+  "private": false,
+  "downloads": 9005,
+  "lastmod": "2025-04-01"
+ },
+ "Davlan/sib200": {
+  "license": [
+   "cc-by-sa-4.0"
+  ],
+  "license_name": null,
+  "gated": false,
+  "private": false,
+  "downloads": 16823,
+  "lastmod": "2024-02-19"
+ },
+ "facebook/belebele": {
+  "license": "cc-by-sa-4.0",
+  "license_name": null,
+  "gated": false,
+  "private": false,
+  "downloads": 43486,
+  "lastmod": "2024-08-12"
+ },
+ "ciatech-africa/kanuri-english-lexicon": {
+  "license": null,
+  "license_name": null,
+  "gated": false,
+  "private": false,
+  "downloads": 31,
+  "lastmod": "2026-09-11"
+ }
+}

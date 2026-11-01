@@ -1,0 +1,27 @@
+{
+ "a": "sft",
+ "b": "rl",
+ "boot": 1000,
+ "min_n": 20,
+ "thresholds": {
+  "chrf": 1.0,
+  "fin": 0.5,
+  "loop": 0.5,
+  "rep3": 0.5,
+  "lid": 0.5,
+  "lid_sib": 0.5,
+  "lratio": null,
+  "empty": 0.5,
+  "same": 0.5,
+  "chrf_sub": 1.0,
+  "afri_ref": 0.01,
+  "afri_qe": 0.01,
+  "ssa_ref": 0.01,
+  "ssa_qe": 0.01,
+  "ens_ref": 0.5,
+  "ens_unan": 0.5,
+  "ens_qe": 0.5
+ },
+ "n_rows": 161274,
+ "n_neural_rows": 79062
+}

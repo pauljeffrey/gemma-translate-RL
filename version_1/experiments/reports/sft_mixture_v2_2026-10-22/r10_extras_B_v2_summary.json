@@ -1,0 +1,254 @@
+{
+ "commercial_ok": {
+  "tir": {
+   "budget": 2000000,
+   "available": 8075261,
+   "chosen_windows": 1542,
+   "chosen_tokens": 1999993,
+   "synthetic_tokens": 1996649,
+   "by_source": {
+    "opus:Tatoeba:v2026-07-08": 3344,
+    "HuggingFaceFW/finetranslations": 1996649
+   }
+  },
+  "amh": {
+   "budget": 1500000,
+   "available": 10800650,
+   "chosen_windows": 1650,
+   "chosen_tokens": 1499994,
+   "synthetic_tokens": 1047609,
+   "by_source": {
+    "opus:Tatoeba:v2026-07-08": 3012,
+    "opus:GlobalVoices:v2018q4": 59861,
+    "HuggingFaceFW/finetranslations": 1047609,
+    "opus:GoURMET:v1": 389512
+   }
+  },
+  "sid": {
+   "budget": 600000,
+   "available": 1973965,
+   "chosen_windows": 540,
+   "chosen_tokens": 599983,
+   "synthetic_tokens": 599983,
+   "by_source": {
+    "HuggingFaceFW/finetranslations": 599983
+   }
+  },
+  "bas": {
+   "budget": 200000,
+   "available": 633462,
+   "chosen_windows": 138,
+   "chosen_tokens": 199973,
+   "synthetic_tokens": 199973,
+   "by_source": {
+    "HuggingFaceFW/finetranslations": 199973
+   }
+  },
+  "her": {
+   "budget": 250000,
+   "available": 2485547,
+   "chosen_windows": 185,
+   "chosen_tokens": 249972,
+   "synthetic_tokens": 249972,
+   "by_source": {
+    "HuggingFaceFW/finetranslations": 249972
+   }
+  },
+  "kea": {
+   "budget": 250000,
+   "available": 2420141,
+   "chosen_windows": 220,
+   "chosen_tokens": 249977,
+   "synthetic_tokens": 249977,
+   "by_source": {
+    "HuggingFaceFW/finetranslations": 249977
+   }
+  },
+  "kam": {
+   "budget": 250000,
+   "available": 2515662,
+   "chosen_windows": 198,
+   "chosen_tokens": 249975,
+   "synthetic_tokens": 249795,
+   "by_source": {
+    "opus:Tatoeba:v2026-07-08": 180,
+    "HuggingFaceFW/finetranslations": 249795
+   }
+  },
+  "kua": {
+   "budget": 250000,
+   "available": 2777423,
+   "chosen_windows": 185,
+   "chosen_tokens": 249972,
+   "synthetic_tokens": 249972,
+   "by_source": {
+    "HuggingFaceFW/finetranslations": 249972
+   }
+  },
+  "nyn": {
+   "budget": 300000,
+   "available": 2076541,
+   "chosen_windows": 273,
+   "chosen_tokens": 299948,
+   "synthetic_tokens": 299948,
+   "by_source": {
+    "HuggingFaceFW/finetranslations": 299948
+   }
+  },
+  "bam": {
+   "budget": 500000,
+   "available": 2242676,
+   "chosen_windows": 607,
+   "chosen_tokens": 499998,
+   "synthetic_tokens": 499998,
+   "by_source": {
+    "HuggingFaceFW/finetranslations": 499998
+   }
+  },
+  "shi": {
+   "budget": 150000,
+   "available": 308591,
+   "chosen_windows": 339,
+   "chosen_tokens": 149991,
+   "synthetic_tokens": 0,
+   "by_source": {
+    "opus:Tatoeba:v2026-07-08": 37342,
+    "abdelhaqueidali/Tashelhit-Tifinagh-Latin-Parallel-Tatoeba-Dataset": 112649
+   }
+  },
+  "nus": {
+   "budget": 250000,
+   "available": 247823,
+   "chosen_windows": 167,
+   "chosen_tokens": 247823,
+   "synthetic_tokens": 247823,
+   "by_source": {
+    "HuggingFaceFW/finetranslations": 247823
+   }
+  }
+ },
+ "share_alike": {
+  "nus": {
+   "budget": 690000,
+   "available": 670370,
+   "chosen_windows": 1200,
+   "chosen_tokens": 670370,
+   "synthetic_tokens": 0,
+   "by_source": {
+    "openlanguagedata/oldi_seed": 670370
+   }
+  },
+  "ach": {
+   "budget": 700000,
+   "available": 681045,
+   "chosen_windows": 1407,
+   "chosen_tokens": 681045,
+   "synthetic_tokens": 0,
+   "by_source": {
+    "Sunbird/salt:text-all": 681045
+   }
+  },
+  "nyn": {
+   "budget": 800000,
+   "available": 776617,
+   "chosen_windows": 1504,
+   "chosen_tokens": 776617,
+   "synthetic_tokens": 0,
+   "by_source": {
+    "Sunbird/salt:text-all": 776617
+   }
+  },
+  "bam": {
+   "budget": 400000,
+   "available": 508879,
+   "chosen_windows": 894,
+   "chosen_tokens": 399988,
+   "synthetic_tokens": 0,
+   "by_source": {
+    "openlanguagedata/oldi_seed": 399988
+   }
+  },
+  "dag": {
+   "budget": 54000,
+   "available": 52297,
+   "chosen_windows": 59,
+   "chosen_tokens": 52297,
+   "synthetic_tokens": 0,
+   "by_source": {
+    "opus:wikimedia:v20260327": 52297
+   }
+  },
+  "kon": {
+   "budget": 12500,
+   "available": 12567,
+   "chosen_windows": 7,
+   "chosen_tokens": 10095,
+   "synthetic_tokens": 0,
+   "by_source": {
+    "opus:wikimedia:v20260327": 10095
+   }
+  },
+  "shi": {
+   "budget": 30000,
+   "available": 30577,
+   "chosen_windows": 28,
+   "chosen_tokens": 29971,
+   "synthetic_tokens": 0,
+   "by_source": {
+    "opus:wikimedia:v20260327": 29971
+   }
+  },
+  "amh": {
+   "budget": 390000,
+   "available": 370555,
+   "chosen_windows": 182,
+   "chosen_tokens": 370555,
+   "synthetic_tokens": 0,
+   "by_source": {
+    "opus:wikimedia:v20260327": 370555
+   }
+  }
+ },
+ "owner_code_switch": {
+  "amh": {
+   "budget": 140000,
+   "available": 143146,
+   "chosen_windows": 80,
+   "chosen_tokens": 137481,
+   "synthetic_tokens": 0,
+   "by_source": {
+    "<HF_ORG>/African-Code-Switch (m_text = Gemma-4-31B-it translation of eng; 266 human-gold rows)": 137481
+   }
+  },
+  "mlg": {
+   "budget": 120000,
+   "available": 135067,
+   "chosen_windows": 257,
+   "chosen_tokens": 119992,
+   "synthetic_tokens": 0,
+   "by_source": {
+    "<HF_ORG>/African-Code-Switch (m_text = Gemma-4-31B-it translation of eng; 266 human-gold rows)": 119992
+   }
+  },
+  "orm": {
+   "budget": 120000,
+   "available": 140769,
+   "chosen_windows": 76,
+   "chosen_tokens": 119302,
+   "synthetic_tokens": 0,
+   "by_source": {
+    "<HF_ORG>/African-Code-Switch (m_text = Gemma-4-31B-it translation of eng; 266 human-gold rows)": 119302
+   }
+  },
+  "som": {
+   "budget": 120000,
+   "available": 142667,
+   "chosen_windows": 68,
+   "chosen_tokens": 119427,
+   "synthetic_tokens": 0,
+   "by_source": {
+    "<HF_ORG>/African-Code-Switch (m_text = Gemma-4-31B-it translation of eng; 266 human-gold rows)": 119427
+   }
+  }
+ }
+}

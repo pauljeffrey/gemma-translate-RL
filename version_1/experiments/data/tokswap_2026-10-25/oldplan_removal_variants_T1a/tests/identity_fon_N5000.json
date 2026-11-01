@@ -1,0 +1,1491 @@
+{
+ "mode": "fon",
+ "per_set": {
+  "flores_dev_ace_Arab": {
+   "n_plain": 997
+  },
+  "flores_dev_ace_Latn": {
+   "n_plain": 910,
+   "n_freed_script": 87
+  },
+  "flores_dev_acm_Arab": {
+   "n_plain": 997
+  },
+  "flores_dev_acq_Arab": {
+   "n_plain": 997
+  },
+  "flores_dev_aeb_Arab": {
+   "n_plain": 997
+  },
+  "flores_dev_afr_Latn": {
+   "n_plain": 997
+  },
+  "flores_dev_als_Latn": {
+   "n_plain": 997
+  },
+  "flores_dev_amh_Ethi": {
+   "n_plain": 997
+  },
+  "flores_dev_apc_Arab_nort3139": {
+   "n_plain": 997
+  },
+  "flores_dev_apc_Arab_sout3123": {
+   "n_plain": 997
+  },
+  "flores_dev_apd_Arab": {
+   "n_plain": 997
+  },
+  "flores_dev_arb_Arab": {
+   "n_plain": 997
+  },
+  "flores_dev_arb_Latn": {
+   "n_plain": 997
+  },
+  "flores_dev_arg_Latn": {
+   "n_plain": 997
+  },
+  "flores_dev_ars_Arab": {
+   "n_plain": 997
+  },
+  "flores_dev_ary_Arab": {
+   "n_plain": 997
+  },
+  "flores_dev_arz_Arab": {
+   "n_plain": 997
+  },
+  "flores_dev_asm_Beng": {
+   "n_freed_script": 997
+  },
+  "flores_dev_ast_Latn": {
+   "n_plain": 997
+  },
+  "flores_dev_awa_Deva": {
+   "n_freed_script": 997
+  },
+  "flores_dev_ayr_Latn": {
+   "n_plain": 997
+  },
+  "flores_dev_azb_Arab": {
+   "n_plain": 997
+  },
+  "flores_dev_azj_Latn": {
+   "n_plain": 997
+  },
+  "flores_dev_bak_Cyrl": {
+   "n_freed_script": 997
+  },
+  "flores_dev_bam_Latn": {
+   "n_special": 924,
+   "diff_special": 914,
+   "n_plain": 73
+  },
+  "flores_dev_ban_Latn": {
+   "n_plain": 997
+  },
+  "flores_dev_bel_Cyrl": {
+   "n_freed_script": 997
+  },
+  "flores_dev_bem_Latn": {
+   "n_plain": 997
+  },
+  "flores_dev_ben_Beng": {
+   "n_freed_script": 997
+  },
+  "flores_dev_bho_Deva": {
+   "n_freed_script": 997
+  },
+  "flores_dev_bjn_Arab": {
+   "n_plain": 997
+  },
+  "flores_dev_bjn_Latn": {
+   "n_plain": 997
+  },
+  "flores_dev_bod_Tibt": {
+   "n_freed_script": 997
+  },
+  "flores_dev_bos_Latn": {
+   "n_plain": 997
+  },
+  "flores_dev_brx_Deva": {
+   "n_freed_script": 997
+  },
+  "flores_dev_bug_Latn": {
+   "n_plain": 997
+  },
+  "flores_dev_bul_Cyrl": {
+   "n_freed_script": 997
+  },
+  "flores_dev_cat_Latn": {
+   "n_plain": 997
+  },
+  "flores_dev_ccp_Cakm": {
+   "n_plain": 995,
+   "n_freed_script": 2
+  },
+  "flores_dev_ceb_Latn": {
+   "n_plain": 997
+  },
+  "flores_dev_ces_Latn": {
+   "n_special": 769,
+   "n_plain": 228
+  },
+  "flores_dev_chv_Cyrl": {
+   "n_freed_script": 997
+  },
+  "flores_dev_cjk_Latn": {
+   "n_plain": 997
+  },
+  "flores_dev_ckb_Arab": {
+   "n_plain": 997
+  },
+  "flores_dev_cmn_Hans": {
+   "n_freed_script": 997,
+   "diff_freed_script": 841
+  },
+  "flores_dev_cmn_Hant": {
+   "n_freed_script": 997,
+   "diff_freed_script": 833
+  },
+  "flores_dev_crh_Latn": {
+   "n_plain": 989,
+   "n_freed_script": 8
+  },
+  "flores_dev_cym_Latn": {
+   "n_plain": 997
+  },
+  "flores_dev_dan_Latn": {
+   "n_plain": 997
+  },
+  "flores_dev_dar_Cyrl": {
+   "n_freed_script": 997
+  },
+  "flores_dev_deu_Latn": {
+   "n_plain": 997
+  },
+  "flores_dev_dgo_Deva": {
+   "n_freed_script": 997
+  },
+  "flores_dev_dik_Latn": {
+   "n_special": 967,
+   "diff_special": 859,
+   "n_plain": 30
+  },
+  "flores_dev_dyu_Latn": {
+   "n_plain": 964,
+   "n_special": 33,
+   "diff_special": 31
+  },
+  "flores_dev_dzo_Tibt": {
+   "n_freed_script": 997
+  },
+  "flores_dev_ekk_Latn": {
+   "n_plain": 997
+  },
+  "flores_dev_ell_Grek": {
+   "n_plain": 997
+  },
+  "flores_dev_eng_Latn": {
+   "n_plain": 997
+  },
+  "flores_dev_epo_Latn": {
+   "n_plain": 997
+  },
+  "flores_dev_eus_Latn": {
+   "n_plain": 997
+  },
+  "flores_dev_ewe_Latn": {
+   "n_special": 986,
+   "diff_special": 946,
+   "n_plain": 10,
+   "n_freed_script": 1
+  },
+  "flores_dev_fao_Latn": {
+   "n_plain": 997
+  },
+  "flores_dev_fij_Latn": {
+   "n_plain": 997
+  },
+  "flores_dev_fil_Latn": {
+   "n_plain": 997
+  },
+  "flores_dev_fin_Latn": {
+   "n_plain": 997
+  },
+  "flores_dev_fon_Latn": {
+   "n_special": 997,
+   "diff_special": 997
+  },
+  "flores_dev_fra_Latn": {
+   "n_plain": 997
+  },
+  "flores_dev_frp_Latn_savo1253": {
+   "n_plain": 997
+  },
+  "flores_dev_fur_Latn": {
+   "n_plain": 997
+  },
+  "flores_dev_fuv_Latn": {
+   "n_plain": 996,
+   "n_special": 1
+  },
+  "flores_dev_gaz_Latn": {
+   "n_plain": 997
+  },
+  "flores_dev_gla_Latn": {
+   "n_plain": 997
+  },
+  "flores_dev_gle_Latn": {
+   "n_plain": 997
+  },
+  "flores_dev_glg_Latn": {
+   "n_plain": 997
+  },
+  "flores_dev_gom_Deva": {
+   "n_freed_script": 997
+  },
+  "flores_dev_gug_Latn": {
+   "n_plain": 997
+  },
+  "flores_dev_guj_Gujr": {
+   "n_freed_script": 997
+  },
+  "flores_dev_hat_Latn": {
+   "n_plain": 997
+  },
+  "flores_dev_hau_Latn": {
+   "n_plain": 997
+  },
+  "flores_dev_heb_Hebr": {
+   "n_freed_script": 997
+  },
+  "flores_dev_hin_Deva": {
+   "n_freed_script": 997
+  },
+  "flores_dev_hne_Deva": {
+   "n_freed_script": 997
+  },
+  "flores_dev_hrv_Latn": {
+   "n_plain": 997
+  },
+  "flores_dev_hun_Latn": {
+   "n_plain": 997
+  },
+  "flores_dev_hye_Armn": {
+   "n_freed_script": 997
+  },
+  "flores_dev_ibo_Latn": {
+   "n_plain": 997
+  },
+  "flores_dev_ilo_Latn": {
+   "n_plain": 997
+  },
+  "flores_dev_ind_Latn": {
+   "n_plain": 997
+  },
+  "flores_dev_isl_Latn": {
+   "n_plain": 997
+  },
+  "flores_dev_ita_Latn": {
+   "n_plain": 997
+  },
+  "flores_dev_jav_Latn": {
+   "n_plain": 997
+  },
+  "flores_dev_jpn_Jpan": {
+   "n_freed_script": 997,
+   "diff_freed_script": 784
+  },
+  "flores_dev_kab_Latn": {
+   "n_plain": 689,
+   "n_special": 308,
+   "diff_special": 53
+  },
+  "flores_dev_kac_Latn": {
+   "n_plain": 997
+  },
+  "flores_dev_kam_Latn": {
+   "n_plain": 997
+  },
+  "flores_dev_kan_Knda": {
+   "n_freed_script": 997
+  },
+  "flores_dev_kas_Arab": {
+   "n_plain": 997
+  },
+  "flores_dev_kas_Deva": {
+   "n_freed_script": 997
+  },
+  "flores_dev_kat_Geor": {
+   "n_freed_script": 997
+  },
+  "flores_dev_kaz_Cyrl": {
+   "n_freed_script": 997
+  },
+  "flores_dev_kbp_Latn": {
+   "n_special": 997,
+   "diff_special": 996
+  },
+  "flores_dev_kea_Latn": {
+   "n_plain": 997
+  },
+  "flores_dev_khk_Cyrl": {
+   "n_freed_script": 997
+  },
+  "flores_dev_khm_Khmr": {
+   "n_freed_script": 997
+  },
+  "flores_dev_kik_Latn": {
+   "n_plain": 997
+  },
+  "flores_dev_kin_Latn": {
+   "n_plain": 997
+  },
+  "flores_dev_kir_Cyrl": {
+   "n_freed_script": 997
+  },
+  "flores_dev_kjh_Cyrl": {
+   "n_freed_script": 997
+  },
+  "flores_dev_kmb_Latn": {
+   "n_plain": 997
+  },
+  "flores_dev_kmr_Latn": {
+   "n_plain": 997
+  },
+  "flores_dev_knc_Arab": {
+   "n_plain": 997
+  },
+  "flores_dev_knc_Latn": {
+   "n_plain": 846,
+   "n_freed_script": 151
+  },
+  "flores_dev_kor_Hang": {
+   "n_freed_script": 997
+  },
+  "flores_dev_ktu_Latn": {
+   "n_plain": 997
+  },
+  "flores_dev_lao_Laoo": {
+   "n_freed_script": 997
+  },
+  "flores_dev_lij_Latn": {
+   "n_plain": 997
+  },
+  "flores_dev_lim_Latn": {
+   "n_plain": 997
+  },
+  "flores_dev_lin_Latn": {
+   "n_plain": 997
+  },
+  "flores_dev_lit_Latn": {
+   "n_plain": 997
+  },
+  "flores_dev_lld_Latn": {
+   "n_plain": 997
+  },
+  "flores_dev_lld_Latn_gard1241": {
+   "n_plain": 997
+  },
+  "flores_dev_lmo_Latn": {
+   "n_plain": 996,
+   "n_special": 1
+  },
+  "flores_dev_lmo_Latn_east2276": {
+   "n_plain": 997
+  },
+  "flores_dev_ltg_Latn": {
+   "n_plain": 997
+  },
+  "flores_dev_ltz_Latn": {
+   "n_plain": 997
+  },
+  "flores_dev_lua_Latn": {
+   "n_plain": 997
+  },
+  "flores_dev_lug_Latn": {
+   "n_plain": 996,
+   "n_special": 1
+  },
+  "flores_dev_luo_Latn": {
+   "n_plain": 997
+  },
+  "flores_dev_lus_Latn": {
+   "n_plain": 997
+  },
+  "flores_dev_lvs_Latn": {
+   "n_plain": 997
+  },
+  "flores_dev_mag_Deva": {
+   "n_freed_script": 997
+  },
+  "flores_dev_mai_Deva": {
+   "n_freed_script": 997
+  },
+  "flores_dev_mal_Mlym": {
+   "n_freed_script": 997
+  },
+  "flores_dev_mar_Deva": {
+   "n_freed_script": 997
+  },
+  "flores_dev_mfe_Latn": {
+   "n_plain": 997
+  },
+  "flores_dev_mhr_Cyrl": {
+   "n_freed_script": 997
+  },
+  "flores_dev_min_Arab": {
+   "n_plain": 997
+  },
+  "flores_dev_min_Latn": {
+   "n_plain": 997
+  },
+  "flores_dev_mkd_Cyrl": {
+   "n_freed_script": 997
+  },
+  "flores_dev_mlt_Latn": {
+   "n_plain": 997
+  },
+  "flores_dev_mni_Beng": {
+   "n_freed_script": 997
+  },
+  "flores_dev_mni_Mtei": {
+   "n_plain": 997
+  },
+  "flores_dev_mos_Latn": {
+   "n_plain": 765,
+   "n_special": 232,
+   "diff_special": 171
+  },
+  "flores_dev_mri_Latn": {
+   "n_plain": 997
+  },
+  "flores_dev_mya_Mymr": {
+   "n_freed_script": 997
+  },
+  "flores_dev_myv_Cyrl": {
+   "n_freed_script": 997
+  },
+  "flores_dev_nld_Latn": {
+   "n_plain": 997
+  },
+  "flores_dev_nno_Latn": {
+   "n_plain": 997
+  },
+  "flores_dev_nob_Latn": {
+   "n_plain": 997
+  },
+  "flores_dev_nob_Latn_radical": {
+   "n_plain": 997
+  },
+  "flores_dev_npi_Deva": {
+   "n_freed_script": 997
+  },
+  "flores_dev_nqo_Nkoo": {
+   "n_plain": 997
+  },
+  "flores_dev_nso_Latn": {
+   "n_plain": 997
+  },
+  "flores_dev_nus_Latn": {
+   "n_special": 996,
+   "diff_special": 989,
+   "n_plain": 1
+  },
+  "flores_dev_nya_Latn": {
+   "n_plain": 997
+  },
+  "flores_dev_nya_Latn_MZ": {
+   "n_plain": 997
+  },
+  "flores_dev_oci_Latn": {
+   "n_plain": 997
+  },
+  "flores_dev_oci_Latn_aran1260": {
+   "n_plain": 997
+  },
+  "flores_dev_ory_Orya": {
+   "n_freed_script": 997
+  },
+  "flores_dev_pag_Latn": {
+   "n_plain": 997
+  },
+  "flores_dev_pan_Guru": {
+   "n_freed_script": 997
+  },
+  "flores_dev_pap_Latn": {
+   "n_plain": 997
+  },
+  "flores_dev_pbt_Arab": {
+   "n_plain": 997
+  },
+  "flores_dev_pes_Arab": {
+   "n_plain": 997
+  },
+  "flores_dev_plt_Latn": {
+   "n_plain": 997
+  },
+  "flores_dev_pol_Latn": {
+   "n_plain": 997
+  },
+  "flores_dev_por_Latn": {
+   "n_plain": 997
+  },
+  "flores_dev_prs_Arab": {
+   "n_plain": 997
+  },
+  "flores_dev_quy_Latn": {
+   "n_plain": 997
+  },
+  "flores_dev_ron_Latn": {
+   "n_plain": 997
+  },
+  "flores_dev_run_Latn": {
+   "n_plain": 997
+  },
+  "flores_dev_rus_Cyrl": {
+   "n_freed_script": 997
+  },
+  "flores_dev_sag_Latn": {
+   "n_plain": 997
+  },
+  "flores_dev_san_Deva": {
+   "n_freed_script": 997
+  },
+  "flores_dev_sat_Olck": {
+   "n_plain": 997
+  },
+  "flores_dev_scn_Latn": {
+   "n_plain": 997
+  },
+  "flores_dev_seh_Latn_MZ": {
+   "n_plain": 997
+  },
+  "flores_dev_shn_Mymr": {
+   "n_freed_script": 997
+  },
+  "flores_dev_sin_Sinh": {
+   "n_freed_script": 997
+  },
+  "flores_dev_slk_Latn": {
+   "n_plain": 997
+  },
+  "flores_dev_slv_Latn": {
+   "n_plain": 997
+  },
+  "flores_dev_smo_Latn": {
+   "n_plain": 997
+  },
+  "flores_dev_sna_Latn": {
+   "n_plain": 997
+  },
+  "flores_dev_snd_Arab": {
+   "n_plain": 997
+  },
+  "flores_dev_snd_Deva": {
+   "n_freed_script": 997
+  },
+  "flores_dev_som_Latn": {
+   "n_plain": 997
+  },
+  "flores_dev_sot_Latn": {
+   "n_plain": 997
+  },
+  "flores_dev_spa_Latn": {
+   "n_plain": 997
+  },
+  "flores_dev_srd_Latn": {
+   "n_plain": 997
+  },
+  "flores_dev_srp_Cyrl": {
+   "n_freed_script": 997
+  },
+  "flores_dev_ssw_Latn": {
+   "n_plain": 997
+  },
+  "flores_dev_sun_Latn": {
+   "n_plain": 997
+  },
+  "flores_dev_swe_Latn": {
+   "n_plain": 997
+  },
+  "flores_dev_swh_Latn": {
+   "n_plain": 997
+  },
+  "flores_dev_szl_Latn": {
+   "n_plain": 997
+  },
+  "flores_dev_tam_Taml": {
+   "n_freed_script": 997
+  },
+  "flores_dev_taq_Latn": {
+   "n_plain": 941,
+   "n_special": 56,
+   "diff_special": 1
+  },
+  "flores_dev_taq_Tfng": {
+   "n_plain": 993,
+   "n_special": 4
+  },
+  "flores_dev_tat_Cyrl": {
+   "n_freed_script": 997
+  },
+  "flores_dev_tel_Telu": {
+   "n_freed_script": 997
+  },
+  "flores_dev_tgk_Cyrl": {
+   "n_freed_script": 997
+  },
+  "flores_dev_tha_Thai": {
+   "n_freed_script": 997
+  },
+  "flores_dev_tir_Ethi": {
+   "n_plain": 997
+  },
+  "flores_dev_tpi_Latn": {
+   "n_plain": 997
+  },
+  "flores_dev_tsn_Latn": {
+   "n_plain": 997
+  },
+  "flores_dev_tso_Latn": {
+   "n_plain": 997
+  },
+  "flores_dev_tso_Latn_MZ": {
+   "n_plain": 997
+  },
+  "flores_dev_tuk_Latn": {
+   "n_plain": 997
+  },
+  "flores_dev_tum_Latn": {
+   "n_plain": 997
+  },
+  "flores_dev_tur_Latn": {
+   "n_plain": 997
+  },
+  "flores_dev_twi_Latn_akua1239": {
+   "n_special": 987,
+   "diff_special": 924,
+   "n_plain": 6,
+   "n_freed_script": 4
+  },
+  "flores_dev_twi_Latn_asan1239": {
+   "n_special": 940,
+   "diff_special": 801,
+   "n_freed_script": 17,
+   "n_plain": 40
+  },
+  "flores_dev_tyv_Cyrl": {
+   "n_freed_script": 997
+  },
+  "flores_dev_udm_Cyrl": {
+   "n_freed_script": 997
+  },
+  "flores_dev_uig_Arab": {
+   "n_plain": 997
+  },
+  "flores_dev_ukr_Cyrl": {
+   "n_freed_script": 997
+  },
+  "flores_dev_umb_Latn": {
+   "n_plain": 997
+  },
+  "flores_dev_urd_Arab": {
+   "n_plain": 997
+  },
+  "flores_dev_uzn_Latn": {
+   "n_plain": 996,
+   "n_freed_script": 1
+  },
+  "flores_dev_uzs_Arab": {
+   "n_plain": 997
+  },
+  "flores_dev_vec_Latn": {
+   "n_plain": 997
+  },
+  "flores_dev_vie_Latn": {
+   "n_plain": 997
+  },
+  "flores_dev_vmw_Latn": {
+   "n_plain": 997
+  },
+  "flores_dev_war_Latn": {
+   "n_plain": 997
+  },
+  "flores_dev_wol_Latn": {
+   "n_plain": 962,
+   "n_special": 35
+  },
+  "flores_dev_wuu_Hans": {
+   "n_freed_script": 997,
+   "diff_freed_script": 733
+  },
+  "flores_dev_xho_Latn": {
+   "n_plain": 997
+  },
+  "flores_dev_ydd_Hebr": {
+   "n_freed_script": 997
+  },
+  "flores_dev_yor_Latn": {
+   "n_plain": 997
+  },
+  "flores_dev_yue_Hant": {
+   "n_freed_script": 997,
+   "diff_freed_script": 751
+  },
+  "flores_dev_zgh_Tfng": {
+   "n_plain": 997
+  },
+  "flores_dev_zsm_Latn": {
+   "n_plain": 997
+  },
+  "flores_dev_zul_Latn": {
+   "n_plain": 997
+  },
+  "flores_devtest_ace_Arab": {
+   "n_plain": 1012
+  },
+  "flores_devtest_ace_Latn": {
+   "n_plain": 932,
+   "n_freed_script": 80
+  },
+  "flores_devtest_acm_Arab": {
+   "n_plain": 1012
+  },
+  "flores_devtest_acq_Arab": {
+   "n_plain": 1012
+  },
+  "flores_devtest_aeb_Arab": {
+   "n_plain": 1012
+  },
+  "flores_devtest_afr_Latn": {
+   "n_plain": 1012
+  },
+  "flores_devtest_als_Latn": {
+   "n_plain": 1012
+  },
+  "flores_devtest_amh_Ethi": {
+   "n_plain": 1012
+  },
+  "flores_devtest_apc_Arab_nort3139": {
+   "n_plain": 1012
+  },
+  "flores_devtest_apc_Arab_sout3123": {
+   "n_plain": 1012
+  },
+  "flores_devtest_apd_Arab": {
+   "n_plain": 1012
+  },
+  "flores_devtest_arb_Arab": {
+   "n_plain": 1012
+  },
+  "flores_devtest_arb_Latn": {
+   "n_plain": 1012
+  },
+  "flores_devtest_arg_Latn": {
+   "n_plain": 1012
+  },
+  "flores_devtest_ars_Arab": {
+   "n_plain": 1012
+  },
+  "flores_devtest_ary_Arab": {
+   "n_plain": 1012
+  },
+  "flores_devtest_arz_Arab": {
+   "n_plain": 1012
+  },
+  "flores_devtest_asm_Beng": {
+   "n_freed_script": 1012
+  },
+  "flores_devtest_ast_Latn": {
+   "n_plain": 1012
+  },
+  "flores_devtest_awa_Deva": {
+   "n_freed_script": 1012
+  },
+  "flores_devtest_ayr_Latn": {
+   "n_plain": 1012
+  },
+  "flores_devtest_azb_Arab": {
+   "n_plain": 1012
+  },
+  "flores_devtest_azj_Latn": {
+   "n_plain": 1012
+  },
+  "flores_devtest_bak_Cyrl": {
+   "n_freed_script": 1012
+  },
+  "flores_devtest_bam_Latn": {
+   "n_special": 940,
+   "diff_special": 932,
+   "n_plain": 72
+  },
+  "flores_devtest_ban_Latn": {
+   "n_plain": 1012
+  },
+  "flores_devtest_bel_Cyrl": {
+   "n_freed_script": 1012
+  },
+  "flores_devtest_bem_Latn": {
+   "n_plain": 1012
+  },
+  "flores_devtest_ben_Beng": {
+   "n_freed_script": 1012
+  },
+  "flores_devtest_bho_Deva": {
+   "n_freed_script": 1012
+  },
+  "flores_devtest_bjn_Arab": {
+   "n_plain": 1012
+  },
+  "flores_devtest_bjn_Latn": {
+   "n_plain": 1012
+  },
+  "flores_devtest_bod_Tibt": {
+   "n_freed_script": 1012
+  },
+  "flores_devtest_bos_Latn": {
+   "n_plain": 1012
+  },
+  "flores_devtest_bug_Latn": {
+   "n_plain": 1012
+  },
+  "flores_devtest_bul_Cyrl": {
+   "n_freed_script": 1012
+  },
+  "flores_devtest_cat_Latn": {
+   "n_plain": 1012
+  },
+  "flores_devtest_cat_Latn_vale1252": {
+   "n_plain": 1012
+  },
+  "flores_devtest_ccp_Cakm": {
+   "n_plain": 1009,
+   "n_freed_script": 3
+  },
+  "flores_devtest_ceb_Latn": {
+   "n_plain": 1012
+  },
+  "flores_devtest_ces_Latn": {
+   "n_special": 771,
+   "n_plain": 241
+  },
+  "flores_devtest_chv_Cyrl": {
+   "n_freed_script": 1012
+  },
+  "flores_devtest_cjk_Latn": {
+   "n_plain": 1012
+  },
+  "flores_devtest_ckb_Arab": {
+   "n_plain": 1012
+  },
+  "flores_devtest_cmn_Hans": {
+   "n_freed_script": 1012,
+   "diff_freed_script": 848
+  },
+  "flores_devtest_cmn_Hant": {
+   "n_freed_script": 1012,
+   "diff_freed_script": 864
+  },
+  "flores_devtest_crh_Latn": {
+   "n_plain": 998,
+   "n_freed_script": 14
+  },
+  "flores_devtest_cym_Latn": {
+   "n_plain": 1012
+  },
+  "flores_devtest_dan_Latn": {
+   "n_plain": 1012
+  },
+  "flores_devtest_deu_Latn": {
+   "n_plain": 1012
+  },
+  "flores_devtest_dik_Latn": {
+   "n_special": 982,
+   "diff_special": 860,
+   "n_plain": 30
+  },
+  "flores_devtest_dyu_Latn": {
+   "n_plain": 968,
+   "n_special": 44,
+   "diff_special": 41
+  },
+  "flores_devtest_dzo_Tibt": {
+   "n_freed_script": 1012
+  },
+  "flores_devtest_ekk_Latn": {
+   "n_plain": 1012
+  },
+  "flores_devtest_ell_Grek": {
+   "n_plain": 1012
+  },
+  "flores_devtest_eng_Latn": {
+   "n_plain": 1012
+  },
+  "flores_devtest_epo_Latn": {
+   "n_plain": 1012
+  },
+  "flores_devtest_eus_Latn": {
+   "n_plain": 1012
+  },
+  "flores_devtest_ewe_Latn": {
+   "n_special": 991,
+   "diff_special": 949,
+   "n_plain": 19,
+   "n_freed_script": 2
+  },
+  "flores_devtest_fao_Latn": {
+   "n_plain": 1012
+  },
+  "flores_devtest_fij_Latn": {
+   "n_plain": 1012
+  },
+  "flores_devtest_fil_Latn": {
+   "n_plain": 1012
+  },
+  "flores_devtest_fin_Latn": {
+   "n_plain": 1012
+  },
+  "flores_devtest_fon_Latn": {
+   "n_special": 1012,
+   "diff_special": 1012
+  },
+  "flores_devtest_fra_Latn": {
+   "n_plain": 1012
+  },
+  "flores_devtest_frp_Latn_savo1253": {
+   "n_plain": 1012
+  },
+  "flores_devtest_fur_Latn": {
+   "n_plain": 1012
+  },
+  "flores_devtest_fuv_Latn": {
+   "n_plain": 1010,
+   "n_special": 2
+  },
+  "flores_devtest_gaz_Latn": {
+   "n_plain": 1012
+  },
+  "flores_devtest_gla_Latn": {
+   "n_plain": 1012
+  },
+  "flores_devtest_gle_Latn": {
+   "n_plain": 1012
+  },
+  "flores_devtest_glg_Latn": {
+   "n_plain": 1012
+  },
+  "flores_devtest_gug_Latn": {
+   "n_plain": 1012
+  },
+  "flores_devtest_guj_Gujr": {
+   "n_freed_script": 1012
+  },
+  "flores_devtest_hat_Latn": {
+   "n_plain": 1012
+  },
+  "flores_devtest_hau_Latn": {
+   "n_plain": 1012
+  },
+  "flores_devtest_heb_Hebr": {
+   "n_freed_script": 1012
+  },
+  "flores_devtest_hin_Deva": {
+   "n_freed_script": 1012
+  },
+  "flores_devtest_hne_Deva": {
+   "n_freed_script": 1012
+  },
+  "flores_devtest_hrv_Latn": {
+   "n_plain": 1012
+  },
+  "flores_devtest_hun_Latn": {
+   "n_plain": 1012
+  },
+  "flores_devtest_hye_Armn": {
+   "n_freed_script": 1012
+  },
+  "flores_devtest_ibo_Latn": {
+   "n_plain": 1012
+  },
+  "flores_devtest_ilo_Latn": {
+   "n_plain": 1011,
+   "n_freed_script": 1
+  },
+  "flores_devtest_ind_Latn": {
+   "n_plain": 1012
+  },
+  "flores_devtest_isl_Latn": {
+   "n_plain": 1012
+  },
+  "flores_devtest_ita_Latn": {
+   "n_plain": 1012
+  },
+  "flores_devtest_jav_Latn": {
+   "n_plain": 1012
+  },
+  "flores_devtest_jpn_Jpan": {
+   "n_freed_script": 1012,
+   "diff_freed_script": 796
+  },
+  "flores_devtest_kaa_Latn": {
+   "n_plain": 1011,
+   "n_freed_script": 1
+  },
+  "flores_devtest_kab_Latn": {
+   "n_plain": 693,
+   "n_special": 319,
+   "diff_special": 58
+  },
+  "flores_devtest_kac_Latn": {
+   "n_plain": 1012
+  },
+  "flores_devtest_kam_Latn": {
+   "n_plain": 1012
+  },
+  "flores_devtest_kan_Knda": {
+   "n_freed_script": 1012
+  },
+  "flores_devtest_kas_Arab": {
+   "n_plain": 1012
+  },
+  "flores_devtest_kas_Deva": {
+   "n_freed_script": 1012
+  },
+  "flores_devtest_kat_Geor": {
+   "n_freed_script": 1012
+  },
+  "flores_devtest_kaz_Cyrl": {
+   "n_freed_script": 1011,
+   "n_plain": 1
+  },
+  "flores_devtest_kbp_Latn": {
+   "n_special": 1012,
+   "diff_special": 1012
+  },
+  "flores_devtest_kea_Latn": {
+   "n_plain": 1012
+  },
+  "flores_devtest_khk_Cyrl": {
+   "n_freed_script": 1012
+  },
+  "flores_devtest_khk_Mong": {
+   "n_freed_script": 1012
+  },
+  "flores_devtest_khm_Khmr": {
+   "n_freed_script": 1012
+  },
+  "flores_devtest_kik_Latn": {
+   "n_plain": 1012
+  },
+  "flores_devtest_kin_Latn": {
+   "n_plain": 1012
+  },
+  "flores_devtest_kir_Cyrl": {
+   "n_freed_script": 1012
+  },
+  "flores_devtest_kjh_Cyrl": {
+   "n_freed_script": 1012
+  },
+  "flores_devtest_kmb_Latn": {
+   "n_plain": 1012
+  },
+  "flores_devtest_kmr_Latn": {
+   "n_plain": 1012
+  },
+  "flores_devtest_knc_Arab": {
+   "n_plain": 1012
+  },
+  "flores_devtest_knc_Latn": {
+   "n_plain": 799,
+   "n_freed_script": 213
+  },
+  "flores_devtest_kor_Hang": {
+   "n_freed_script": 1012
+  },
+  "flores_devtest_ktu_Latn": {
+   "n_plain": 1012
+  },
+  "flores_devtest_lao_Laoo": {
+   "n_freed_script": 1012
+  },
+  "flores_devtest_lij_Latn": {
+   "n_plain": 1012
+  },
+  "flores_devtest_lim_Latn": {
+   "n_plain": 1012
+  },
+  "flores_devtest_lin_Latn": {
+   "n_plain": 1012
+  },
+  "flores_devtest_lit_Latn": {
+   "n_plain": 1012
+  },
+  "flores_devtest_lld_Latn": {
+   "n_plain": 1012
+  },
+  "flores_devtest_lld_Latn_gard1241": {
+   "n_plain": 1012
+  },
+  "flores_devtest_lmo_Latn": {
+   "n_plain": 1012
+  },
+  "flores_devtest_lmo_Latn_east2276": {
+   "n_plain": 1012
+  },
+  "flores_devtest_ltg_Latn": {
+   "n_plain": 1012
+  },
+  "flores_devtest_ltz_Latn": {
+   "n_plain": 1012
+  },
+  "flores_devtest_lua_Latn": {
+   "n_plain": 1012
+  },
+  "flores_devtest_lug_Latn": {
+   "n_plain": 1012
+  },
+  "flores_devtest_luo_Latn": {
+   "n_plain": 1012
+  },
+  "flores_devtest_lus_Latn": {
+   "n_plain": 1012
+  },
+  "flores_devtest_lvs_Latn": {
+   "n_plain": 1012
+  },
+  "flores_devtest_mag_Deva": {
+   "n_freed_script": 1012
+  },
+  "flores_devtest_mai_Deva": {
+   "n_freed_script": 1012
+  },
+  "flores_devtest_mal_Mlym": {
+   "n_freed_script": 1012
+  },
+  "flores_devtest_mar_Deva": {
+   "n_freed_script": 1012
+  },
+  "flores_devtest_mfe_Latn": {
+   "n_plain": 1011,
+   "n_freed_script": 1
+  },
+  "flores_devtest_mhr_Cyrl": {
+   "n_freed_script": 1012
+  },
+  "flores_devtest_min_Arab": {
+   "n_plain": 1012
+  },
+  "flores_devtest_min_Latn": {
+   "n_plain": 1012
+  },
+  "flores_devtest_mkd_Cyrl": {
+   "n_freed_script": 1012
+  },
+  "flores_devtest_mlt_Latn": {
+   "n_plain": 1012
+  },
+  "flores_devtest_mni_Beng": {
+   "n_freed_script": 1012
+  },
+  "flores_devtest_mni_Mtei": {
+   "n_plain": 1012
+  },
+  "flores_devtest_mos_Latn": {
+   "n_plain": 778,
+   "n_special": 234,
+   "diff_special": 173
+  },
+  "flores_devtest_mri_Latn": {
+   "n_plain": 1012
+  },
+  "flores_devtest_mya_Mymr": {
+   "n_freed_script": 1012
+  },
+  "flores_devtest_myv_Cyrl": {
+   "n_freed_script": 1012
+  },
+  "flores_devtest_nld_Latn": {
+   "n_plain": 1012
+  },
+  "flores_devtest_nno_Latn": {
+   "n_plain": 1012
+  },
+  "flores_devtest_nob_Latn": {
+   "n_plain": 1012
+  },
+  "flores_devtest_nob_Latn_radical": {
+   "n_plain": 1012
+  },
+  "flores_devtest_npi_Deva": {
+   "n_freed_script": 1012
+  },
+  "flores_devtest_nqo_Nkoo": {
+   "n_plain": 1012
+  },
+  "flores_devtest_nso_Latn": {
+   "n_plain": 1012
+  },
+  "flores_devtest_nus_Latn": {
+   "n_special": 1012,
+   "diff_special": 1009
+  },
+  "flores_devtest_nya_Latn": {
+   "n_plain": 1012
+  },
+  "flores_devtest_nya_Latn_MZ": {
+   "n_plain": 1012
+  },
+  "flores_devtest_oci_Latn": {
+   "n_plain": 1012
+  },
+  "flores_devtest_oci_Latn_aran1260": {
+   "n_plain": 1012
+  },
+  "flores_devtest_ory_Orya": {
+   "n_freed_script": 1012
+  },
+  "flores_devtest_pag_Latn": {
+   "n_plain": 1012
+  },
+  "flores_devtest_pan_Guru": {
+   "n_freed_script": 1012
+  },
+  "flores_devtest_pap_Latn": {
+   "n_plain": 1012
+  },
+  "flores_devtest_pbt_Arab": {
+   "n_plain": 1012
+  },
+  "flores_devtest_pes_Arab": {
+   "n_plain": 1012
+  },
+  "flores_devtest_plt_Latn": {
+   "n_plain": 1012
+  },
+  "flores_devtest_pol_Latn": {
+   "n_plain": 1012
+  },
+  "flores_devtest_por_Latn": {
+   "n_plain": 1012
+  },
+  "flores_devtest_prs_Arab": {
+   "n_plain": 1012
+  },
+  "flores_devtest_quy_Latn": {
+   "n_plain": 1012
+  },
+  "flores_devtest_ron_Latn": {
+   "n_plain": 1012
+  },
+  "flores_devtest_run_Latn": {
+   "n_plain": 1012
+  },
+  "flores_devtest_rus_Cyrl": {
+   "n_freed_script": 1012
+  },
+  "flores_devtest_sag_Latn": {
+   "n_plain": 1012
+  },
+  "flores_devtest_san_Deva": {
+   "n_freed_script": 1012
+  },
+  "flores_devtest_sat_Olck": {
+   "n_plain": 1012
+  },
+  "flores_devtest_scn_Latn": {
+   "n_plain": 1012
+  },
+  "flores_devtest_seh_Latn_MZ": {
+   "n_plain": 1012
+  },
+  "flores_devtest_shn_Mymr": {
+   "n_freed_script": 1012
+  },
+  "flores_devtest_sin_Sinh": {
+   "n_freed_script": 1012
+  },
+  "flores_devtest_slk_Latn": {
+   "n_plain": 1012
+  },
+  "flores_devtest_slv_Latn": {
+   "n_plain": 1012
+  },
+  "flores_devtest_smo_Latn": {
+   "n_plain": 1012
+  },
+  "flores_devtest_sna_Latn": {
+   "n_plain": 1012
+  },
+  "flores_devtest_snd_Arab": {
+   "n_plain": 1012
+  },
+  "flores_devtest_som_Latn": {
+   "n_plain": 1012
+  },
+  "flores_devtest_sot_Latn": {
+   "n_plain": 1012
+  },
+  "flores_devtest_spa_Latn": {
+   "n_plain": 1012
+  },
+  "flores_devtest_srd_Latn": {
+   "n_plain": 1012
+  },
+  "flores_devtest_srp_Cyrl": {
+   "n_freed_script": 1012
+  },
+  "flores_devtest_ssw_Latn": {
+   "n_plain": 1012
+  },
+  "flores_devtest_sun_Latn": {
+   "n_plain": 1012
+  },
+  "flores_devtest_swe_Latn": {
+   "n_plain": 1012
+  },
+  "flores_devtest_swh_Latn": {
+   "n_plain": 1012
+  },
+  "flores_devtest_szl_Latn": {
+   "n_plain": 1012
+  },
+  "flores_devtest_tam_Taml": {
+   "n_freed_script": 1012
+  },
+  "flores_devtest_taq_Latn": {
+   "n_plain": 945,
+   "n_special": 67,
+   "diff_special": 1
+  },
+  "flores_devtest_taq_Tfng": {
+   "n_plain": 1006,
+   "n_special": 6
+  },
+  "flores_devtest_tat_Cyrl": {
+   "n_freed_script": 1012
+  },
+  "flores_devtest_tel_Telu": {
+   "n_freed_script": 1012
+  },
+  "flores_devtest_tgk_Cyrl": {
+   "n_freed_script": 1012
+  },
+  "flores_devtest_tha_Thai": {
+   "n_freed_script": 1012
+  },
+  "flores_devtest_tir_Ethi": {
+   "n_plain": 1012
+  },
+  "flores_devtest_tpi_Latn": {
+   "n_plain": 1012
+  },
+  "flores_devtest_tsn_Latn": {
+   "n_plain": 1012
+  },
+  "flores_devtest_tso_Latn": {
+   "n_plain": 1012
+  },
+  "flores_devtest_tso_Latn_MZ": {
+   "n_plain": 1012
+  },
+  "flores_devtest_tuk_Latn": {
+   "n_plain": 1012
+  },
+  "flores_devtest_tum_Latn": {
+   "n_plain": 1012
+  },
+  "flores_devtest_tur_Latn": {
+   "n_plain": 1012
+  },
+  "flores_devtest_twi_Latn_akua1239": {
+   "n_special": 999,
+   "diff_special": 952,
+   "n_plain": 4,
+   "n_freed_script": 9
+  },
+  "flores_devtest_twi_Latn_asan1239": {
+   "n_special": 959,
+   "diff_special": 839,
+   "n_plain": 40,
+   "n_freed_script": 13
+  },
+  "flores_devtest_tyv_Cyrl": {
+   "n_freed_script": 1012
+  },
+  "flores_devtest_uig_Arab": {
+   "n_plain": 1012
+  },
+  "flores_devtest_ukr_Cyrl": {
+   "n_freed_script": 1012
+  },
+  "flores_devtest_umb_Latn": {
+   "n_plain": 1012
+  },
+  "flores_devtest_urd_Arab": {
+   "n_plain": 1012
+  },
+  "flores_devtest_uzn_Latn": {
+   "n_plain": 1012
+  },
+  "flores_devtest_vec_Latn": {
+   "n_plain": 1012
+  },
+  "flores_devtest_vie_Latn": {
+   "n_plain": 1012
+  },
+  "flores_devtest_vmw_Latn": {
+   "n_plain": 1012
+  },
+  "flores_devtest_war_Latn": {
+   "n_plain": 1012
+  },
+  "flores_devtest_wol_Latn": {
+   "n_plain": 962,
+   "n_special": 50
+  },
+  "flores_devtest_xho_Latn": {
+   "n_plain": 1012
+  },
+  "flores_devtest_ydd_Hebr": {
+   "n_freed_script": 1012
+  },
+  "flores_devtest_yor_Latn": {
+   "n_plain": 1012
+  },
+  "flores_devtest_yue_Hant": {
+   "n_freed_script": 1012,
+   "diff_freed_script": 794
+  },
+  "flores_devtest_zgh_Tfng": {
+   "n_plain": 1012
+  },
+  "flores_devtest_zsm_Latn": {
+   "n_plain": 1012
+  },
+  "flores_devtest_zul_Latn": {
+   "n_plain": 1012
+  },
+  "code_snippets": {
+   "n_plain": 18
+  },
+  "python_code_lines": {
+   "n_plain": 30000
+  },
+  "random_digit_strings": {
+   "n_plain": 5000
+  }
+ },
+ "totals": {
+  "n_plain": 362337,
+  "n_freed_script": 117084,
+  "n_special": 18634,
+  "diff_special": 15520,
+  "diff_freed_script": 7244
+ },
+ "vocab_strings": {
+  "kept_token_strings_tested": 250474,
+  "diff_plain": 0,
+  "diff_special_script": 0
+ },
+ "plain_diff_examples": []
+}

@@ -1,0 +1,2 @@
+wrote /workspace/tokswap/out/model_geez_N1000 (bf16, 1000 rows re-initialised, tied=True, control=False); sha256 aa741301a88180f57f157bf56dfbb475d56f26e6502a0f5b8153f5a225bb9f52
+wrote /workspace/tokswap/out/model_fon_N1000 (bf16, 1000 rows re-initialised, tied=True, control=False); sha256 be2772953a610d93b28bdaad2a22c6a9de2f830c27419e43f5d02b063bf246da

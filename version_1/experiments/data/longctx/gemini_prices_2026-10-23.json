@@ -1,0 +1,80 @@
+{
+  "read_date": "2026-10-23",
+  "currency": "USD",
+  "unit": "per 1M tokens, paid tier, text input / text output (output includes thinking tokens)",
+  "sources": {
+    "pricing": "https://ai.google.dev/gemini-api/docs/pricing  (page states: 'Last updated 2026-10-22 UTC'; read 2026-10-23 via WebFetch, two independent fetches agreed)",
+    "batch": "https://ai.google.dev/gemini-api/docs/batch-api  (Batch = 50% of the standard interactive price; target turnaround 24h; job expires after 48h; results kept 6 weeks; inline requests < 20 MB; input file max 2 GB)",
+    "rate_limits": "https://ai.google.dev/gemini-api/docs/rate-limits  (batch: 100 concurrent batch requests, 2 GB input file, 20 GB file storage, enqueued-token cap per model and tier)",
+    "thinking": "https://ai.google.dev/gemini-api/docs/thinking  (today's page documents control via thinking_level in generation_config; it does NOT mention thinkingBudget, so the budget semantics below are UNVERIFIED)",
+    "deprecations": "https://ai.google.dev/gemini-api/docs/deprecations  (2.5 Pro/Flash/Flash-Lite: GA, no shutdown date, 'access limited to users who have actively used them in the past' -> a NEW key may not get 2.5 models)",
+    "terms": "https://ai.google.dev/gemini-api/terms  (paid services: prompts/responses not used to improve products; prohibits using the Services to develop competing models; says nothing on benchmark references or SynthID)"
+  },
+  "batch_discount": 0.5,
+  "notes": [
+    "Gemini 3.6 Flash, 3.8 Flash and Gemini 4 Argon have introductory prices that rise on a fixed date (see *_later fields); the cost script uses the CURRENT price by default, --phase later uses the later price.",
+    "Gemini 2.5 Pro and 3.1 Pro have a >200k-token prompt tier; every request here is far below 200k, so only the <=200k price is used.",
+    "Prices for 3.1 Flash-Lite: the pricing page lists it, but the thinking page does not list a plain gemini-3.1-flash-lite entry, so its availability for Batch text translation was not independently verified."
+  ],
+  "models": {
+    "gemini-2.5-flash-lite": {
+      "label": "Gemini 2.5 Flash-Lite", "family": "2.5", "verified": true,
+      "standard": {"in": 0.10, "out": 0.40}, "batch": {"in": 0.05, "out": 0.20},
+      "can_disable_thinking": true, "thinking_default_hidden_tokens": 0,
+      "thinking_note": "Off by default on the thinking page; so default == off."
+    },
+    "gemini-2.5-flash": {
+      "label": "Gemini 2.5 Flash", "family": "2.5", "verified": true,
+      "standard": {"in": 0.30, "out": 2.50}, "batch": {"in": 0.15, "out": 1.25},
+      "can_disable_thinking": true, "thinking_default_hidden_tokens": 2000,
+      "thinking_note": "Thinking ON by default (dynamic). Disabling (budget 0 in the 2.5 API) is from memory of the 2.5 docs: UNVERIFIED on today's page, which documents only thinking_level."
+    },
+    "gemini-2.5-pro": {
+      "label": "Gemini 2.5 Pro", "family": "2.5", "verified": true,
+      "standard": {"in": 1.25, "out": 10.00}, "batch": {"in": 0.625, "out": 5.00},
+      "standard_gt200k": {"in": 2.50, "out": 15.00}, "batch_gt200k": {"in": 1.25, "out": 7.50},
+      "can_disable_thinking": false, "thinking_default_hidden_tokens": 2000,
+      "thinking_note": "Thinking ON, cannot be switched off (from memory of 2.5 docs, UNVERIFIED today; the thinking page lists levels low/medium/high only)."
+    },
+    "gemini-3.1-flash-lite": {
+      "label": "Gemini 3.1 Flash-Lite", "family": "3.x", "verified": true,
+      "standard": {"in": 0.25, "out": 1.50}, "batch": {"in": 0.125, "out": 0.75},
+      "can_disable_thinking": true, "thinking_default_hidden_tokens": 0,
+      "thinking_note": "Not on the thinking page table (unverified); assumed minimal/off like 3.5 Flash-Lite."
+    },
+    "gemini-3.5-flash-lite": {
+      "label": "Gemini 3.5 Flash-Lite", "family": "3.x", "verified": true,
+      "standard": {"in": 0.30, "out": 2.50}, "batch": {"in": 0.15, "out": 1.25},
+      "can_disable_thinking": true, "thinking_default_hidden_tokens": 200,
+      "thinking_note": "Default thinking_level = minimal (thinking page); 'minimal' is not stated to be exactly zero thinking, so default is modelled as +200 hidden tokens."
+    },
+    "gemini-3.6-flash": {
+      "label": "Gemini 3.6 Flash", "family": "3.x", "verified": true,
+      "standard": {"in": 0.75, "out": 3.75}, "batch": {"in": 0.375, "out": 1.875},
+      "standard_later": {"in": 1.50, "out": 7.50}, "batch_later": {"in": 0.75, "out": 3.75}, "later_from": "2027-01-01",
+      "can_disable_thinking": true, "thinking_default_hidden_tokens": 2000,
+      "thinking_note": "Default thinking_level medium; supports minimal..high (thinking page)."
+    },
+    "gemini-3.8-flash": {
+      "label": "Gemini 3.8 Flash", "family": "3.x", "verified": true,
+      "standard": {"in": 0.75, "out": 3.75}, "batch": {"in": 0.375, "out": 1.875},
+      "standard_later": {"in": 1.50, "out": 7.50}, "batch_later": {"in": 0.75, "out": 3.75}, "later_from": "2027-01-01",
+      "can_disable_thinking": false, "thinking_default_hidden_tokens": 2000,
+      "thinking_note": "Default thinking_level medium; lowest listed level is 'low' (no 'minimal'), so thinking cannot be fully switched off: the 'off' row is omitted."
+    },
+    "gemini-3.1-pro-preview": {
+      "label": "Gemini 3.1 Pro (preview)", "family": "3.x", "verified": true,
+      "standard": {"in": 2.00, "out": 12.00}, "batch": {"in": 1.00, "out": 6.00},
+      "standard_gt200k": {"in": 4.00, "out": 18.00}, "batch_gt200k": {"in": 2.00, "out": 9.00},
+      "can_disable_thinking": false, "thinking_default_hidden_tokens": 2000,
+      "thinking_note": "Default high; levels low/medium/high; cannot be off."
+    },
+    "gemini-4-argon": {
+      "label": "Gemini 4 Argon", "family": "4", "verified": true,
+      "standard": {"in": 2.00, "out": 10.00}, "batch": {"in": 1.00, "out": 5.00},
+      "standard_later": {"in": 4.00, "out": 20.00}, "batch_later": {"in": 2.00, "out": 10.00}, "later_from": "2026-12-01",
+      "can_disable_thinking": false, "thinking_default_hidden_tokens": 2000,
+      "thinking_note": "Default medium; levels low/medium/high; cannot be off."
+    }
+  }
+}

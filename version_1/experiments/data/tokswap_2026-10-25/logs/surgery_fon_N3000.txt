@@ -1,0 +1,1 @@
+wrote /workspace/tokswap/out/model_fon_N3000 (bf16, 3000 rows re-initialised, tied=True, control=False); sha256 2d667f634b5e84d8e64fb3446bb7ff12708793553732a0c8c1c8f914b526a9d1

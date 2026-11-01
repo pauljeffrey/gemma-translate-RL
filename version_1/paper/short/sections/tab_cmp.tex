@@ -1,0 +1,20 @@
+% Table 3 of the earlier short paper, moved to Appendix D (2026-10-25e) to keep the main body within 9 pages; its numbers are inline in Section 5.2
+\begin{table*}[t]
+\centering\small\setlength{\tabcolsep}{4pt}
+\begin{tabular}{@{}lrrrrrrr@{}}
+\toprule
+ & params & chrF++ & AfriCOMET & chrF++ & AfriCOMET & chrF++ & SSA-COMET \\
+ & & NLLB-43 & 42 lang. & TPsy-19 & TPsy-19 & Afrique-21 & Afrique-21 \\
+\midrule
+SabiYarn-270M RL-final & 270M & 34.7 & 0.620 & 41.2 & 0.657 & 39.1 & 52.1 \\
+SabiYarn-270M SFT-final & 270M & 29.5 & 0.559 & 38.2 & 0.613 & 36.1 & 47.6 \\
+SabiYarn-270M final run (step 401) & 270M & 34.9 & 0.618 & 41.6 & 0.654 & 39.5 & 52.0 \\
+\midrule
+NLLB-200-distilled-600M (reference) & 615M & 36.4 & 0.654 & 42.6 & 0.688 & 40.7 & 56.7 \\
+NLLB-200 3.3B (reference) & 3.3B & 38.4 & 0.669 & 44.7 & 0.701 & 42.8 & 59.3 \\
+TranslatePsy-AfriSLM-0.8B (reference) & 800M & n/a & n/a & 45.3 & 0.717 & n/a & n/a \\
+\bottomrule
+\end{tabular}
+\caption{Identical FLORES+ devtest sentences (\nopair{} rows), one metric stack: macro chrF++ and reference-based AfriCOMET-STL-1.1 (0--1) over the 43 languages NLLB-200 covers (AfriCOMET: 42), the 19 TranslatePsy languages and the 21 languages of the AfriqueLLM study (SSA-COMET with reference, $\times100$). These sets include Amharic and Tigrinya; Table~\ref{tab:nogeezflores} gives the headline without them. NLLB re-run with CTranslate2 and beam 4, ours and TranslatePsy greedy; n/a: the system does not cover the set. Intervals: Appendix~\ref{app:perlang}. Moved here from Section~\ref{sec:cmp}.}
+\label{tab:cmp}
+\end{table*}

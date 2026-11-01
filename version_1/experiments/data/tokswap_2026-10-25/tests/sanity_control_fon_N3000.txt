@@ -1,0 +1,10 @@
+Loading weights:   0%|          | 0/236 [00:00<?, ?it/s]Loading weights:   0%|          | 1/236 [00:01<06:08,  1.57s/it]Loading weights: 100%|██████████| 236/236 [00:01<00:00, 149.06it/s]
+Loading weights:   0%|          | 0/236 [00:00<?, ?it/s]Loading weights: 100%|██████████| 236/236 [00:00<00:00, 5991.07it/s]
+[51s] loss amh_Ethi: tok/sent 58.4->58.4  nll/token 2.2131->2.2131 nll/char 1.3484->1.3484  identical-tokenisation sentences 150/150 restricted-diff max 0 full-diff max 0.0684
+[110s] loss tir_Ethi: tok/sent 71.0->71.0  nll/token 2.8581->2.8581 nll/char 2.0895->2.0896  identical-tokenisation sentences 150/150 restricted-diff max 0 full-diff max 0.315
+[154s] loss hau_Latn: tok/sent 51.5->51.5  nll/token 1.2365->1.2371 nll/char 0.4203->0.4205  identical-tokenisation sentences 150/150 restricted-diff max 0 full-diff max 0.263
+[214s] loss yor_Latn: tok/sent 67.7->67.7  nll/token 2.2763->2.2981 nll/char 1.1252->1.1360  identical-tokenisation sentences 150/150 restricted-diff max 0 full-diff max 12.4
+[261s] loss swh_Latn: tok/sent 49.3->49.3  nll/token 0.9863->0.9869 nll/char 0.3242->0.3244  identical-tokenisation sentences 150/150 restricted-diff max 0 full-diff max 0.173
+[330s] loss fon_Latn: tok/sent 87.0->87.0  nll/token 4.0007->4.5800 nll/char 2.1238->2.4313  identical-tokenisation sentences 150/150 restricted-diff max 0 full-diff max 194
+[367s] greedy hau_Latn: token-identical 25/25, text-identical 25/25, chrF++ orig 50.40 swapped 50.40
+[408s] greedy amh_Ethi: token-identical 25/25, text-identical 25/25, chrF++ orig 14.76 swapped 14.76

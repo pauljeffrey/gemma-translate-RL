@@ -1,0 +1,2098 @@
+{
+ "michsethowusu/english-fulah_sentence-pairs": {
+  "rows": 1511069,
+  "partial": false,
+  "configs": [
+   {
+    "config": "default",
+    "rows": 1511069
+   }
+  ],
+  "n_configs": 1
+ },
+ "michsethowusu/dinka-english_sentence-pairs": {
+  "rows": 159138,
+  "partial": false,
+  "configs": [
+   {
+    "config": "default",
+    "rows": 159138
+   }
+  ],
+  "n_configs": 1
+ },
+ "michsethowusu/english-southwestern-dinka_sentence-pairs_mt560": {
+  "rows": 13319,
+  "partial": false,
+  "configs": [
+   {
+    "config": "default",
+    "rows": 13319
+   }
+  ],
+  "n_configs": 1
+ },
+ "michsethowusu/dinka-english-emotions-corpus": {
+  "rows": 38798,
+  "partial": false,
+  "configs": [
+   {
+    "config": "default",
+    "rows": 38798
+   }
+  ],
+  "n_configs": 1
+ },
+ "michsethowusu/english-central_atlas_tamazight_sentence-pairs": {
+  "rows": 212771,
+  "partial": false,
+  "configs": [
+   {
+    "config": "default",
+    "rows": 212771
+   }
+  ],
+  "n_configs": 1
+ },
+ "michsethowusu/english-tachelhit_sentence-pairs_mt560": {
+  "rows": 15288,
+  "partial": false,
+  "configs": [
+   {
+    "config": "default",
+    "rows": 15288
+   }
+  ],
+  "n_configs": 1
+ },
+ "michsethowusu/english-chokwe_sentence-pairs_mt560": {
+  "rows": 35767,
+  "partial": false,
+  "configs": [
+   {
+    "config": "default",
+    "rows": 35767
+   }
+  ],
+  "n_configs": 1
+ },
+ "michsethowusu/english-tamashek_sentence-pairs_mt560": {
+  "rows": 5363,
+  "partial": false,
+  "configs": [
+   {
+    "config": "default",
+    "rows": 5363
+   }
+  ],
+  "n_configs": 1
+ },
+ "michsethowusu/english-tamasheq_sentence-pairs": {
+  "rows": 450227,
+  "partial": false,
+  "configs": [
+   {
+    "config": "default",
+    "rows": 450227
+   }
+  ],
+  "n_configs": 1
+ },
+ "michsethowusu/english-mende_sentence-pairs_mt560": {
+  "rows": 1668,
+  "partial": false,
+  "configs": [
+   {
+    "config": "default",
+    "rows": 1668
+   }
+  ],
+  "n_configs": 1
+ },
+ "michsethowusu/english-morisyen_sentence-pairs_mt560": {
+  "rows": 181560,
+  "partial": false,
+  "configs": [
+   {
+    "config": "default",
+    "rows": 181560
+   }
+  ],
+  "n_configs": 1
+ },
+ "michsethowusu/english-zarma_sentence-pairs_mt560": {
+  "rows": 60515,
+  "partial": false,
+  "configs": [
+   {
+    "config": "default",
+    "rows": 60515
+   }
+  ],
+  "n_configs": 1
+ },
+ "michsethowusu/english-tigrigna_sentence-pairs_mt560": {
+  "rows": 320856,
+  "partial": false,
+  "configs": [
+   {
+    "config": "default",
+    "rows": 320856
+   }
+  ],
+  "n_configs": 1
+ },
+ "michsethowusu/english-alur_sentence-pairs_mt560": {
+  "rows": 7567,
+  "partial": false,
+  "configs": [
+   {
+    "config": "default",
+    "rows": 7567
+   }
+  ],
+  "n_configs": 1
+ },
+ "michsethowusu/english-tonga_sentence-pairs_mt560": {
+  "rows": 3898,
+  "partial": false,
+  "configs": [
+   {
+    "config": "default",
+    "rows": 3898
+   }
+  ],
+  "n_configs": 1
+ },
+ "michsethowusu/Code-170k-fulani": {
+  "rows": 176999,
+  "partial": false,
+  "configs": [
+   {
+    "config": "default",
+    "rows": 176999
+   }
+  ],
+  "n_configs": 1
+ },
+ "michsethowusu/Code-170k-kanuri": {
+  "rows": 176999,
+  "partial": false,
+  "configs": [
+   {
+    "config": "default",
+    "rows": 176999
+   }
+  ],
+  "n_configs": 1
+ },
+ "michsethowusu/Code-170k-dinka": {
+  "rows": 176999,
+  "partial": false,
+  "configs": [
+   {
+    "config": "default",
+    "rows": 176999
+   }
+  ],
+  "n_configs": 1
+ },
+ "michsethowusu/Code-170k-susu": {
+  "rows": 176999,
+  "partial": false,
+  "configs": [
+   {
+    "config": "default",
+    "rows": 176999
+   }
+  ],
+  "n_configs": 1
+ },
+ "michsethowusu/Code-170k-baoule": {
+  "rows": 176999,
+  "partial": false,
+  "configs": [
+   {
+    "config": "default",
+    "rows": 176999
+   }
+  ],
+  "n_configs": 1
+ },
+ "michsethowusu/Code-170k-alur": {
+  "rows": 176999,
+  "partial": false,
+  "configs": [
+   {
+    "config": "default",
+    "rows": 176999
+   }
+  ],
+  "n_configs": 1
+ },
+ "michsethowusu/Code-170k-dombe": {
+  "rows": 176999,
+  "partial": false,
+  "configs": [
+   {
+    "config": "default",
+    "rows": 176999
+   }
+  ],
+  "n_configs": 1
+ },
+ "michsethowusu/Code-170k-mauritian-creole": {
+  "rows": 176999,
+  "partial": false,
+  "configs": [
+   {
+    "config": "default",
+    "rows": 176999
+   }
+  ],
+  "n_configs": 1
+ },
+ "michsethowusu/Code-170k-tamazight-tifinagh": {
+  "rows": 176999,
+  "partial": false,
+  "configs": [
+   {
+    "config": "default",
+    "rows": 176999
+   }
+  ],
+  "n_configs": 1
+ },
+ "michsethowusu/Code-170k-ndebele-south": {
+  "rows": 176999,
+  "partial": false,
+  "configs": [
+   {
+    "config": "default",
+    "rows": 176999
+   }
+  ],
+  "n_configs": 1
+ },
+ "michsethowusu/fulah-swahili_sentence-pairs": {
+  "rows": 323996,
+  "partial": false,
+  "configs": [
+   {
+    "config": "default",
+    "rows": 323996
+   }
+  ],
+  "n_configs": 1
+ },
+ "michsethowusu/dinka-swahili_sentence-pairs": {
+  "rows": 106278,
+  "partial": false,
+  "configs": [
+   {
+    "config": "default",
+    "rows": 106278
+   }
+  ],
+  "n_configs": 1
+ },
+ "michsethowusu/bambara-fulah_sentence-pairs": {
+  "rows": 38120,
+  "partial": false,
+  "configs": [
+   {
+    "config": "default",
+    "rows": 38120
+   }
+  ],
+  "n_configs": 1
+ },
+ "michsethowusu/french-fulah_sentence-pairs": {
+  "rows": 701161,
+  "partial": false,
+  "configs": [
+   {
+    "config": "default",
+    "rows": 701161
+   }
+  ],
+  "n_configs": 1
+ },
+ "michsethowusu/dinka-french_sentence-pairs": {
+  "rows": 262851,
+  "partial": false,
+  "configs": [
+   {
+    "config": "default",
+    "rows": 262851
+   }
+  ],
+  "n_configs": 1
+ },
+ "michsethowusu/bambara-french_sentence-pairs": {
+  "rows": 307535,
+  "partial": false,
+  "configs": [
+   {
+    "config": "default",
+    "rows": 307535
+   }
+  ],
+  "n_configs": 1
+ },
+ "2ADT-Consulting/susu-parallel": {
+  "rows": 267369,
+  "partial": false,
+  "configs": [
+   {
+    "config": "lexicon",
+    "rows": 7146
+   },
+   {
+    "config": "monolingual",
+    "rows": 30724
+   },
+   {
+    "config": "sus-en",
+    "rows": 112996
+   },
+   {
+    "config": "sus-fr",
+    "rows": 116503
+   }
+  ],
+  "n_configs": 4
+ },
+ "ghanaopenai/ghana-farmer-qa-ga": {
+  "rows": 151427,
+  "partial": false,
+  "configs": [
+   {
+    "config": "default",
+    "rows": 151427
+   }
+  ],
+  "n_configs": 1
+ },
+ "ghananlpcommunity/ghana-farmer-qa-ga": {
+  "rows": 151427,
+  "partial": false,
+  "configs": [
+   {
+    "config": "default",
+    "rows": 151427
+   }
+  ],
+  "n_configs": 1
+ },
+ "openlanguagedata/oldi_seed": {
+  "rows": 557370,
+  "partial": false,
+  "configs": [
+   {
+    "config": "default",
+    "rows": 284878
+   },
+   {
+    "config": "ace_Arab",
+    "rows": 6193
+   },
+   {
+    "config": "ace_Latn",
+    "rows": 6193
+   },
+   {
+    "config": "ary_Arab",
+    "rows": 6193
+   },
+   {
+    "config": "arz_Arab",
+    "rows": 6193
+   },
+   {
+    "config": "bam_Latn",
+    "rows": 6193
+   },
+   {
+    "config": "ban_Latn",
+    "rows": 6193
+   },
+   {
+    "config": "ben_Beng",
+    "rows": 6193
+   },
+   {
+    "config": "bho_Deva",
+    "rows": 6193
+   },
+   {
+    "config": "bjn_Arab",
+    "rows": 6193
+   },
+   {
+    "config": "bjn_Latn",
+    "rows": 6193
+   },
+   {
+    "config": "bug_Latn",
+    "rows": 6193
+   },
+   {
+    "config": "crh_Latn",
+    "rows": 6193
+   },
+   {
+    "config": "dik_Latn",
+    "rows": 6193
+   },
+   {
+    "config": "dzo_Tibt",
+    "rows": 6193
+   },
+   {
+    "config": "eng_Latn",
+    "rows": 6193
+   },
+   {
+    "config": "fra_Latn",
+    "rows": 6193
+   },
+   {
+    "config": "fur_Latn",
+    "rows": 6193
+   },
+   {
+    "config": "fuv_Latn",
+    "rows": 6193
+   },
+   {
+    "config": "gug_Latn",
+    "rows": 6193
+   },
+   {
+    "config": "hne_Deva",
+    "rows": 6193
+   },
+   {
+    "config": "ita_Latn",
+    "rows": 6193
+   },
+   {
+    "config": "kas_Arab",
+    "rows": 6193
+   },
+   {
+    "config": "kas_Deva",
+    "rows": 6193
+   },
+   {
+    "config": "knc_Arab",
+    "rows": 6193
+   },
+   {
+    "config": "knc_Latn",
+    "rows": 6193
+   },
+   {
+    "config": "lij_Latn",
+    "rows": 6193
+   },
+   {
+    "config": "lim_Latn",
+    "rows": 6193
+   },
+   {
+    "config": "lmo_Latn",
+    "rows": 6193
+   },
+   {
+    "config": "ltg_Latn",
+    "rows": 6193
+   },
+   {
+    "config": "mag_Deva",
+    "rows": 6193
+   },
+   {
+    "config": "mni_Beng",
+    "rows": 6193
+   },
+   {
+    "config": "mri_Latn",
+    "rows": 6193
+   },
+   {
+    "config": "nqo_Nkoo",
+    "rows": 6193
+   },
+   {
+    "config": "nus_Latn",
+    "rows": 6193
+   },
+   {
+    "config": "pbt_Arab",
+    "rows": 6193
+   },
+   {
+    "config": "prs_Arab",
+    "rows": 6193
+   },
+   {
+    "config": "shn_Mymr",
+    "rows": 6193
+   },
+   {
+    "config": "spa_Latn",
+    "rows": 6193
+   },
+   {
+    "config": "srd_Latn",
+    "rows": 6193
+   },
+   {
+    "config": "szl_Latn",
+    "rows": 6193
+   },
+   {
+    "config": "taq_Latn",
+    "rows": 6193
+   },
+   {
+    "config": "taq_Tfng",
+    "rows": 6193
+   },
+   {
+    "config": "vec_Latn",
+    "rows": 6193
+   },
+   {
+    "config": "zgh_Tfng",
+    "rows": 6193
+   }
+  ],
+  "n_configs": 45
+ },
+ "taqbaylit/tatoeba-en-kab": {
+  "rows": 244954,
+  "partial": false,
+  "configs": [
+   {
+    "config": "default",
+    "rows": 244954
+   }
+  ],
+  "n_configs": 1
+ },
+ "AfriSpeech/african-corpus-jw": {
+  "rows": 2255071,
+  "partial": false,
+  "configs": [
+   {
+    "config": "english",
+    "rows": 552432
+   },
+   {
+    "config": "reference_caches",
+    "rows": 1702639
+   }
+  ],
+  "n_configs": 2
+ },
+ "AfriSpeech/madlad-91-african": {
+  "rows": 7911854,
+  "partial": true,
+  "configs": [
+   {
+    "config": "african_languages",
+    "rows": 883866
+   },
+   {
+    "config": "ach_clean",
+    "rows": 915
+   },
+   {
+    "config": "ach_noisy",
+    "rows": 1994
+   },
+   {
+    "config": "ada_clean",
+    "rows": 3095
+   },
+   {
+    "config": "ada_noisy",
+    "rows": 6504
+   },
+   {
+    "config": "adh_clean",
+    "rows": 87
+   },
+   {
+    "config": "adh_noisy",
+    "rows": 2600
+   },
+   {
+    "config": "af_clean",
+    "rows": 868671
+   },
+   {
+    "config": "af_noisy",
+    "rows": 1210000
+   },
+   {
+    "config": "ak_clean",
+    "rows": 4768
+   },
+   {
+    "config": "ak_noisy",
+    "rows": 19513
+   },
+   {
+    "config": "alz_clean",
+    "rows": 195
+   },
+   {
+    "config": "alz_noisy",
+    "rows": 2237
+   },
+   {
+    "config": "am_clean",
+    "rows": 106301
+   },
+   {
+    "config": "ann_clean",
+    "rows": 56
+   },
+   {
+    "config": "ann_noisy",
+    "rows": 464
+   },
+   {
+    "config": "bas_clean",
+    "rows": 216
+   },
+   {
+    "config": "bas_noisy",
+    "rows": 4169
+   },
+   {
+    "config": "bci_clean",
+    "rows": 1329
+   },
+   {
+    "config": "bci_noisy",
+    "rows": 7392
+   },
+   {
+    "config": "bim_clean",
+    "rows": 40
+   },
+   {
+    "config": "bim_noisy",
+    "rows": 410
+   },
+   {
+    "config": "bm_clean",
+    "rows": 702
+   },
+   {
+    "config": "bm_noisy",
+    "rows": 21939
+   },
+   {
+    "config": "bqc_clean",
+    "rows": 228
+   },
+   {
+    "config": "bqc_noisy",
+    "rows": 275
+   },
+   {
+    "config": "bum_clean",
+    "rows": 559
+   },
+   {
+    "config": "bum_noisy",
+    "rows": 4662
+   },
+   {
+    "config": "bus_clean",
+    "rows": 322
+   },
+   {
+    "config": "bus_noisy",
+    "rows": 467
+   },
+   {
+    "config": "cce_clean",
+    "rows": 116
+   },
+   {
+    "config": "cce_noisy",
+    "rows": 847
+   },
+   {
+    "config": "crs_clean",
+    "rows": 873
+   },
+   {
+    "config": "crs_noisy",
+    "rows": 7639
+   },
+   {
+    "config": "din_clean",
+    "rows": 611
+   },
+   {
+    "config": "din_noisy",
+    "rows": 128368
+   },
+   {
+    "config": "dje_clean",
+    "rows": 100
+   },
+   {
+    "config": "dje_noisy",
+    "rows": 913
+   },
+   {
+    "config": "dov_clean",
+    "rows": 923
+   },
+   {
+    "config": "dov_noisy",
+    "rows": 3479
+   },
+   {
+    "config": "dwr_clean",
+    "rows": 215
+   },
+   {
+    "config": "dwr_noisy",
+    "rows": 452
+   },
+   {
+    "config": "dyu_clean",
+    "rows": 483
+   },
+   {
+    "config": "dyu_noisy",
+    "rows": 1241
+   },
+   {
+    "config": "ee_clean",
+    "rows": 4536
+   },
+   {
+    "config": "ee_noisy",
+    "rows": 14051
+   },
+   {
+    "config": "ff_clean",
+    "rows": 26
+   },
+   {
+    "config": "ff_noisy",
+    "rows": 13559
+   },
+   {
+    "config": "ffm_clean",
+    "rows": 65
+   },
+   {
+    "config": "ffm_noisy",
+    "rows": 1772
+   },
+   {
+    "config": "fip_clean",
+    "rows": 729
+   },
+   {
+    "config": "fip_noisy",
+    "rows": 3748
+   },
+   {
+    "config": "fon_clean",
+    "rows": 1065
+   },
+   {
+    "config": "fon_noisy",
+    "rows": 5264
+   },
+   {
+    "config": "gof_clean",
+    "rows": 97
+   },
+   {
+    "config": "gof_noisy",
+    "rows": 2752
+   },
+   {
+    "config": "gvl_clean",
+    "rows": 126
+   },
+   {
+    "config": "gvl_noisy",
+    "rows": 37861
+   },
+   {
+    "config": "ha_clean",
+    "rows": 173485
+   },
+   {
+    "config": "ha_noisy",
+    "rows": 443905
+   }
+  ],
+  "n_configs": 126
+ },
+ "HuggingFaceFW/finetranslations": {
+  "rows": 3325521370,
+  "partial": false,
+  "configs": [
+   {
+    "config": "abk_Cyrl",
+    "rows": 2670
+   },
+   {
+    "config": "abq_Cyrl",
+    "rows": 968
+   },
+   {
+    "config": "abs_Latn",
+    "rows": 208
+   },
+   {
+    "config": "acm_Arab",
+    "rows": 7078
+   },
+   {
+    "config": "adh_Latn",
+    "rows": 23
+   },
+   {
+    "config": "ady_Cyrl",
+    "rows": 6863
+   },
+   {
+    "config": "aeb_Arab",
+    "rows": 19092
+   },
+   {
+    "config": "afr_Latn",
+    "rows": 1982363
+   },
+   {
+    "config": "agx_Cyrl",
+    "rows": 664
+   },
+   {
+    "config": "aii_Syrc",
+    "rows": 458
+   },
+   {
+    "config": "aim_Latn",
+    "rows": 4
+   },
+   {
+    "config": "ain_Latn",
+    "rows": 19
+   },
+   {
+    "config": "ajz_Latn",
+    "rows": 4
+   },
+   {
+    "config": "akb_Latn",
+    "rows": 174
+   },
+   {
+    "config": "all",
+    "rows": 1666372172
+   },
+   {
+    "config": "aln_Latn",
+    "rows": 563
+   },
+   {
+    "config": "als_Latn",
+    "rows": 8571860
+   },
+   {
+    "config": "alt_Cyrl",
+    "rows": 1880
+   },
+   {
+    "config": "amh_Ethi",
+    "rows": 421933
+   },
+   {
+    "config": "anp_Deva",
+    "rows": 57875
+   },
+   {
+    "config": "aoz_Latn",
+    "rows": 51
+   },
+   {
+    "config": "apt_Latn",
+    "rows": 34
+   },
+   {
+    "config": "arb_Arab",
+    "rows": 49418264
+   },
+   {
+    "config": "arb_Latn",
+    "rows": 1919
+   },
+   {
+    "config": "arg_Latn",
+    "rows": 26206
+   },
+   {
+    "config": "arq_Arab",
+    "rows": 96
+   },
+   {
+    "config": "ars_Arab",
+    "rows": 296518
+   },
+   {
+    "config": "ary_Arab",
+    "rows": 2318236
+   },
+   {
+    "config": "arz_Arab",
+    "rows": 832762
+   },
+   {
+    "config": "asm_Beng",
+    "rows": 267124
+   },
+   {
+    "config": "asm_Latn",
+    "rows": 528
+   },
+   {
+    "config": "ast_Latn",
+    "rows": 71231
+   },
+   {
+    "config": "atb_Latn",
+    "rows": 389
+   },
+   {
+    "config": "ava_Cyrl",
+    "rows": 8766
+   },
+   {
+    "config": "awa_Deva",
+    "rows": 1901
+   },
+   {
+    "config": "ayp_Arab",
+    "rows": 82
+   },
+   {
+    "config": "ayr_Latn",
+    "rows": 3392
+   },
+   {
+    "config": "azb_Arab",
+    "rows": 79168
+   },
+   {
+    "config": "bak_Cyrl",
+    "rows": 181971
+   },
+   {
+    "config": "bam_Latn",
+    "rows": 2570
+   },
+   {
+    "config": "bar_Latn",
+    "rows": 36908
+   },
+   {
+    "config": "bas_Latn",
+    "rows": 371
+   },
+   {
+    "config": "bbc_Latn",
+    "rows": 4975
+   },
+   {
+    "config": "bcl_Latn",
+    "rows": 8810
+   },
+   {
+    "config": "bdq_Latn",
+    "rows": 19
+   },
+   {
+    "config": "bel_Cyrl",
+    "rows": 2091974
+   },
+   {
+    "config": "ben_Beng",
+    "rows": 15113742
+   },
+   {
+    "config": "ben_Latn",
+    "rows": 7180
+   },
+   {
+    "config": "bew_Latn",
+    "rows": 424272
+   },
+   {
+    "config": "bho_Deva",
+    "rows": 17894
+   },
+   {
+    "config": "bhp_Latn",
+    "rows": 8
+   },
+   {
+    "config": "bis_Latn",
+    "rows": 5259
+   },
+   {
+    "config": "biu_Latn",
+    "rows": 15
+   },
+   {
+    "config": "bjn_Arab",
+    "rows": 1649
+   },
+   {
+    "config": "bjn_Latn",
+    "rows": 2323
+   },
+   {
+    "config": "bod_Tibt",
+    "rows": 161016
+   },
+   {
+    "config": "bos_Latn",
+    "rows": 21185477
+   },
+   {
+    "config": "brh_Arab",
+    "rows": 6759
+   },
+   {
+    "config": "brx_Deva",
+    "rows": 3260
+   },
+   {
+    "config": "bts_Latn",
+    "rows": 2732
+   }
+  ],
+  "n_configs": 528
+ },
+ "mteb/biblenlp-corpus-mmteb": {
+  "rows": 3485840,
+  "partial": false,
+  "configs": [
+   {
+    "config": "default",
+    "rows": 1743371
+   },
+   {
+    "config": "eng_Latn-aai_Latn",
+    "rows": 901
+   },
+   {
+    "config": "eng_Latn-aak_Arab",
+    "rows": 939
+   },
+   {
+    "config": "eng_Latn-aau_Latn",
+    "rows": 887
+   },
+   {
+    "config": "eng_Latn-aaz_Latn",
+    "rows": 1201
+   },
+   {
+    "config": "eng_Latn-abt_Latn",
+    "rows": 7861
+   },
+   {
+    "config": "eng_Latn-abx_Latn",
+    "rows": 875
+   },
+   {
+    "config": "eng_Latn-aby_Latn",
+    "rows": 1340
+   },
+   {
+    "config": "eng_Latn-acf_Latn",
+    "rows": 891
+   },
+   {
+    "config": "eng_Latn-acr_Latn",
+    "rows": 8358
+   },
+   {
+    "config": "eng_Latn-acu_Latn",
+    "rows": 1424
+   },
+   {
+    "config": "eng_Latn-adz_Latn",
+    "rows": 515
+   },
+   {
+    "config": "eng_Latn-aer_Latn",
+    "rows": 1327
+   },
+   {
+    "config": "eng_Latn-aey_Latn",
+    "rows": 1322
+   },
+   {
+    "config": "eng_Latn-agd_Latn",
+    "rows": 887
+   },
+   {
+    "config": "eng_Latn-agg_Latn",
+    "rows": 947
+   },
+   {
+    "config": "eng_Latn-agm_Latn",
+    "rows": 903
+   },
+   {
+    "config": "eng_Latn-agn_Latn",
+    "rows": 894
+   },
+   {
+    "config": "eng_Latn-agr_Latn",
+    "rows": 1474
+   },
+   {
+    "config": "eng_Latn-agt_Latn",
+    "rows": 994
+   },
+   {
+    "config": "eng_Latn-agu_Latn",
+    "rows": 1532
+   },
+   {
+    "config": "eng_Latn-aia_Latn",
+    "rows": 883
+   },
+   {
+    "config": "eng_Latn-aii_Syrc",
+    "rows": 915
+   },
+   {
+    "config": "eng_Latn-aka_Latn",
+    "rows": 1952
+   },
+   {
+    "config": "eng_Latn-ake_Latn",
+    "rows": 891
+   },
+   {
+    "config": "eng_Latn-alp_Latn",
+    "rows": 903
+   },
+   {
+    "config": "eng_Latn-alq_Latn",
+    "rows": 891
+   },
+   {
+    "config": "eng_Latn-als_Latn",
+    "rows": 1955
+   },
+   {
+    "config": "eng_Latn-aly_Latn",
+    "rows": 1181
+   },
+   {
+    "config": "eng_Latn-ame_Latn",
+    "rows": 941
+   },
+   {
+    "config": "eng_Latn-amf_Latn",
+    "rows": 923
+   },
+   {
+    "config": "eng_Latn-amk_Latn",
+    "rows": 895
+   },
+   {
+    "config": "eng_Latn-amm_Latn",
+    "rows": 918
+   },
+   {
+    "config": "eng_Latn-amn_Latn",
+    "rows": 8282
+   },
+   {
+    "config": "eng_Latn-amo_Latn",
+    "rows": 899
+   },
+   {
+    "config": "eng_Latn-amp_Latn",
+    "rows": 946
+   },
+   {
+    "config": "eng_Latn-amr_Latn",
+    "rows": 968
+   },
+   {
+    "config": "eng_Latn-amu_Latn",
+    "rows": 894
+   },
+   {
+    "config": "eng_Latn-amx_Latn",
+    "rows": 600
+   },
+   {
+    "config": "eng_Latn-anh_Latn",
+    "rows": 137
+   },
+   {
+    "config": "eng_Latn-anv_Latn",
+    "rows": 895
+   },
+   {
+    "config": "eng_Latn-aoi_Latn",
+    "rows": 497
+   },
+   {
+    "config": "eng_Latn-aoj_Latn",
+    "rows": 8179
+   },
+   {
+    "config": "eng_Latn-aom_Latn",
+    "rows": 901
+   },
+   {
+    "config": "eng_Latn-aon_Latn",
+    "rows": 933
+   },
+   {
+    "config": "eng_Latn-apb_Latn",
+    "rows": 875
+   },
+   {
+    "config": "eng_Latn-ape_Latn",
+    "rows": 8195
+   },
+   {
+    "config": "eng_Latn-apn_Latn",
+    "rows": 1072
+   },
+   {
+    "config": "eng_Latn-apr_Latn",
+    "rows": 885
+   },
+   {
+    "config": "eng_Latn-apu_Latn",
+    "rows": 899
+   },
+   {
+    "config": "eng_Latn-apw_Latn",
+    "rows": 901
+   },
+   {
+    "config": "eng_Latn-apz_Latn",
+    "rows": 917
+   },
+   {
+    "config": "eng_Latn-arb_Arab",
+    "rows": 31852
+   },
+   {
+    "config": "eng_Latn-are_Latn",
+    "rows": 887
+   },
+   {
+    "config": "eng_Latn-arl_Latn",
+    "rows": 910
+   },
+   {
+    "config": "eng_Latn-arn_Latn",
+    "rows": 905
+   },
+   {
+    "config": "eng_Latn-arp_Latn",
+    "rows": 103
+   },
+   {
+    "config": "eng_Latn-asm_Beng",
+    "rows": 1941
+   },
+   {
+    "config": "eng_Latn-aso_Latn",
+    "rows": 945
+   },
+   {
+    "config": "eng_Latn-ata_Latn",
+    "rows": 1220
+   }
+  ],
+  "n_configs": 828
+ },
+ "Tamazight-NLP/Weblate-Translations": {
+  "rows": 23167039,
+  "partial": false,
+  "configs": [
+   {
+    "config": "en-zgh",
+    "rows": 5479
+   },
+   {
+    "config": "_asterisk-ca_ES",
+    "rows": 212
+   },
+   {
+    "config": "_asterisk-cs_CZ",
+    "rows": 158
+   },
+   {
+    "config": "_asterisk-de_DE",
+    "rows": 50
+   },
+   {
+    "config": "_asterisk-en_US",
+    "rows": 533
+   },
+   {
+    "config": "_asterisk-eo_XX",
+    "rows": 25
+   },
+   {
+    "config": "_asterisk-es_ES",
+    "rows": 259
+   },
+   {
+    "config": "_asterisk-et_EE",
+    "rows": 22
+   },
+   {
+    "config": "_asterisk-fr_FR",
+    "rows": 289
+   },
+   {
+    "config": "_asterisk-hu_HU",
+    "rows": 282
+   },
+   {
+    "config": "_asterisk-id_ID",
+    "rows": 486
+   },
+   {
+    "config": "_asterisk-it_IT",
+    "rows": 337
+   },
+   {
+    "config": "_asterisk-kab",
+    "rows": 15
+   },
+   {
+    "config": "_asterisk-nb_NO",
+    "rows": 2
+   },
+   {
+    "config": "_asterisk-nl_NL",
+    "rows": 530
+   },
+   {
+    "config": "_asterisk-pl_PL",
+    "rows": 50
+   },
+   {
+    "config": "_asterisk-pt_BR",
+    "rows": 259
+   },
+   {
+    "config": "_asterisk-pt_PT",
+    "rows": 153
+   },
+   {
+    "config": "_asterisk-ro_RO",
+    "rows": 55
+   },
+   {
+    "config": "_asterisk-ru_RU",
+    "rows": 84
+   },
+   {
+    "config": "_asterisk-uk_UA",
+    "rows": 303
+   },
+   {
+    "config": "_asterisk-zh_Hans",
+    "rows": 252
+   },
+   {
+    "config": "de-ar",
+    "rows": 74
+   },
+   {
+    "config": "de-cs",
+    "rows": 359
+   },
+   {
+    "config": "de-da",
+    "rows": 21
+   },
+   {
+    "config": "de-el",
+    "rows": 80
+   },
+   {
+    "config": "de-en",
+    "rows": 4393
+   },
+   {
+    "config": "de-es",
+    "rows": 2979
+   },
+   {
+    "config": "de-et",
+    "rows": 1
+   },
+   {
+    "config": "de-fr",
+    "rows": 3451
+   },
+   {
+    "config": "de-id",
+    "rows": 16
+   },
+   {
+    "config": "de-it",
+    "rows": 2730
+   },
+   {
+    "config": "de-ja",
+    "rows": 1
+   },
+   {
+    "config": "de-lb",
+    "rows": 34
+   },
+   {
+    "config": "de-lt",
+    "rows": 296
+   },
+   {
+    "config": "de-nb_NO",
+    "rows": 3225
+   },
+   {
+    "config": "de-ne",
+    "rows": 1
+   },
+   {
+    "config": "de-nl",
+    "rows": 184
+   },
+   {
+    "config": "de-pl",
+    "rows": 3530
+   },
+   {
+    "config": "de-pt",
+    "rows": 3575
+   },
+   {
+    "config": "de-pt-BR",
+    "rows": 1
+   },
+   {
+    "config": "de-ru",
+    "rows": 2269
+   },
+   {
+    "config": "de-ta",
+    "rows": 3686
+   },
+   {
+    "config": "de-tr",
+    "rows": 3085
+   },
+   {
+    "config": "de-uk",
+    "rows": 18
+   },
+   {
+    "config": "de-zh-Hans",
+    "rows": 6
+   },
+   {
+    "config": "de-zh_Hans",
+    "rows": 84
+   },
+   {
+    "config": "dev-en",
+    "rows": 379
+   },
+   {
+    "config": "dev-fa",
+    "rows": 1
+   },
+   {
+    "config": "dev-fr",
+    "rows": 569
+   },
+   {
+    "config": "dev-hu",
+    "rows": 323
+   },
+   {
+    "config": "dev-ko",
+    "rows": 323
+   },
+   {
+    "config": "dev-pt",
+    "rows": 1
+   },
+   {
+    "config": "dev-uk",
+    "rows": 576
+   },
+   {
+    "config": "en-BrazilianPortuguese",
+    "rows": 323
+   },
+   {
+    "config": "en-Cy-sr-SP",
+    "rows": 17
+   },
+   {
+    "config": "en-DE",
+    "rows": 3311
+   },
+   {
+    "config": "en-Dutch",
+    "rows": 174
+   },
+   {
+    "config": "en-ES",
+    "rows": 645
+   },
+   {
+    "config": "en-Esperanto",
+    "rows": 126
+   }
+  ],
+  "n_configs": 1950
+ },
+ "ayymen/Pontoon-Translations": {
+  "rows": 3559829,
+  "partial": false,
+  "configs": [
+   {
+    "config": "en-ab",
+    "rows": 639
+   },
+   {
+    "config": "en-ace",
+    "rows": 1842
+   },
+   {
+    "config": "en-ach",
+    "rows": 10862
+   },
+   {
+    "config": "en-ady",
+    "rows": 2
+   },
+   {
+    "config": "en-af",
+    "rows": 13087
+   },
+   {
+    "config": "en-am",
+    "rows": 4665
+   },
+   {
+    "config": "en-an",
+    "rows": 15189
+   },
+   {
+    "config": "en-ann",
+    "rows": 127
+   },
+   {
+    "config": "en-anp",
+    "rows": 1023
+   },
+   {
+    "config": "en-ar",
+    "rows": 30070
+   },
+   {
+    "config": "en-arn",
+    "rows": 21
+   },
+   {
+    "config": "en-as",
+    "rows": 8233
+   },
+   {
+    "config": "en-ast",
+    "rows": 22734
+   },
+   {
+    "config": "en-ay",
+    "rows": 188
+   },
+   {
+    "config": "en-az",
+    "rows": 17093
+   },
+   {
+    "config": "en-azb",
+    "rows": 109
+   },
+   {
+    "config": "en-azz",
+    "rows": 643
+   },
+   {
+    "config": "en-ba",
+    "rows": 851
+   },
+   {
+    "config": "en-ban",
+    "rows": 145
+   },
+   {
+    "config": "en-bas",
+    "rows": 729
+   },
+   {
+    "config": "en-be",
+    "rows": 30548
+   },
+   {
+    "config": "en-bg",
+    "rows": 35760
+   },
+   {
+    "config": "en-bm",
+    "rows": 633
+   },
+   {
+    "config": "en-bn",
+    "rows": 20458
+   },
+   {
+    "config": "en-bn-BD",
+    "rows": 16180
+   },
+   {
+    "config": "en-bn-IN",
+    "rows": 14265
+   },
+   {
+    "config": "en-bo",
+    "rows": 1141
+   },
+   {
+    "config": "en-br",
+    "rows": 22403
+   },
+   {
+    "config": "en-brx",
+    "rows": 4654
+   },
+   {
+    "config": "en-bs",
+    "rows": 27713
+   },
+   {
+    "config": "en-bxr",
+    "rows": 343
+   },
+   {
+    "config": "en-ca",
+    "rows": 29933
+   },
+   {
+    "config": "en-ca-valencia",
+    "rows": 8370
+   },
+   {
+    "config": "en-cak",
+    "rows": 31946
+   },
+   {
+    "config": "en-ceb",
+    "rows": 470
+   },
+   {
+    "config": "en-ckb",
+    "rows": 5649
+   },
+   {
+    "config": "en-cnh",
+    "rows": 640
+   },
+   {
+    "config": "en-co",
+    "rows": 5019
+   },
+   {
+    "config": "en-crh",
+    "rows": 7125
+   },
+   {
+    "config": "en-cs",
+    "rows": 59846
+   },
+   {
+    "config": "en-csb",
+    "rows": 4
+   },
+   {
+    "config": "en-cv",
+    "rows": 397
+   },
+   {
+    "config": "en-cy",
+    "rows": 39595
+   },
+   {
+    "config": "en-da",
+    "rows": 37274
+   },
+   {
+    "config": "en-dag",
+    "rows": 15
+   },
+   {
+    "config": "en-de",
+    "rows": 71368
+   },
+   {
+    "config": "en-dsb",
+    "rows": 48756
+   },
+   {
+    "config": "en-dv",
+    "rows": 458
+   },
+   {
+    "config": "en-dyu",
+    "rows": 1113
+   },
+   {
+    "config": "en-ee",
+    "rows": 2402
+   },
+   {
+    "config": "en-el",
+    "rows": 60232
+   },
+   {
+    "config": "en-en-CA",
+    "rows": 2080
+   },
+   {
+    "config": "en-en-GB",
+    "rows": 4056
+   },
+   {
+    "config": "en-en-ZA",
+    "rows": 6
+   },
+   {
+    "config": "en-eo",
+    "rows": 24400
+   },
+   {
+    "config": "en-es",
+    "rows": 34665
+   },
+   {
+    "config": "en-es-AR",
+    "rows": 38255
+   },
+   {
+    "config": "en-es-CL",
+    "rows": 30065
+   },
+   {
+    "config": "en-es-ES",
+    "rows": 38331
+   },
+   {
+    "config": "en-es-MX",
+    "rows": 37687
+   }
+  ],
+  "n_configs": 246
+ },
+ "facebook/omnilingual-asr-corpus": {
+  "rows": 547546,
+  "partial": false,
+  "configs": [
+   {
+    "config": "default",
+    "rows": 273773
+   },
+   {
+    "config": "aae_Latn",
+    "rows": 1042
+   },
+   {
+    "config": "aal_Latn",
+    "rows": 444
+   },
+   {
+    "config": "aao_Arab",
+    "rows": 298
+   },
+   {
+    "config": "abn_Latn",
+    "rows": 495
+   },
+   {
+    "config": "abr_Latn",
+    "rows": 518
+   },
+   {
+    "config": "abs_Latn",
+    "rows": 482
+   },
+   {
+    "config": "abv_Arab",
+    "rows": 1486
+   },
+   {
+    "config": "acm_Arab",
+    "rows": 596
+   },
+   {
+    "config": "acw_Arab",
+    "rows": 2955
+   },
+   {
+    "config": "acx_Arab",
+    "rows": 2953
+   },
+   {
+    "config": "adf_Arab",
+    "rows": 50
+   },
+   {
+    "config": "aeb_Arab",
+    "rows": 2925
+   },
+   {
+    "config": "aec_Arab",
+    "rows": 1468
+   },
+   {
+    "config": "afb_Arab",
+    "rows": 2815
+   },
+   {
+    "config": "afo_Latn",
+    "rows": 527
+   },
+   {
+    "config": "ahl_Latn",
+    "rows": 555
+   },
+   {
+    "config": "ahs_Latn",
+    "rows": 484
+   },
+   {
+    "config": "aju_Hebr",
+    "rows": 1015
+   },
+   {
+    "config": "ala_Latn",
+    "rows": 524
+   },
+   {
+    "config": "aln_Latn",
+    "rows": 597
+   },
+   {
+    "config": "alo_Latn",
+    "rows": 475
+   },
+   {
+    "config": "amu_Latn",
+    "rows": 604
+   },
+   {
+    "config": "anc_Latn",
+    "rows": 458
+   },
+   {
+    "config": "ank_Latn",
+    "rows": 503
+   },
+   {
+    "config": "anp_Deva",
+    "rows": 974
+   },
+   {
+    "config": "anw_Latn",
+    "rows": 603
+   },
+   {
+    "config": "aom_Latn",
+    "rows": 361
+   },
+   {
+    "config": "apc_Arab",
+    "rows": 517
+   },
+   {
+    "config": "apd_Arab",
+    "rows": 1097
+   },
+   {
+    "config": "arq_Arab",
+    "rows": 1489
+   },
+   {
+    "config": "ars_Arab",
+    "rows": 2831
+   },
+   {
+    "config": "ary_Arab",
+    "rows": 1922
+   },
+   {
+    "config": "arz_Arab",
+    "rows": 2980
+   },
+   {
+    "config": "avl_Arab",
+    "rows": 300
+   },
+   {
+    "config": "awo_Latn",
+    "rows": 427
+   },
+   {
+    "config": "ayl_Arab",
+    "rows": 2980
+   },
+   {
+    "config": "ayp_Arab",
+    "rows": 1500
+   },
+   {
+    "config": "bbu_Latn",
+    "rows": 454
+   },
+   {
+    "config": "bcs_Latn",
+    "rows": 486
+   },
+   {
+    "config": "bcy_Latn",
+    "rows": 443
+   },
+   {
+    "config": "bda_Latn",
+    "rows": 685
+   },
+   {
+    "config": "bde_Latn",
+    "rows": 489
+   },
+   {
+    "config": "bdm_Latn",
+    "rows": 459
+   },
+   {
+    "config": "bew_Latn",
+    "rows": 569
+   },
+   {
+    "config": "bhb_Deva",
+    "rows": 786
+   },
+   {
+    "config": "bhh_Cyrl",
+    "rows": 1500
+   },
+   {
+    "config": "bho_Deva",
+    "rows": 993
+   },
+   {
+    "config": "bhp_Latn",
+    "rows": 509
+   },
+   {
+    "config": "bhr_Latn",
+    "rows": 1952
+   },
+   {
+    "config": "bjj_Deva",
+    "rows": 617
+   },
+   {
+    "config": "bjk_Latn",
+    "rows": 451
+   },
+   {
+    "config": "bjn_Latn",
+    "rows": 563
+   },
+   {
+    "config": "bjt_Latn",
+    "rows": 808
+   },
+   {
+    "config": "bky_Latn",
+    "rows": 468
+   },
+   {
+    "config": "bmm_Latn",
+    "rows": 2998
+   },
+   {
+    "config": "bmq_Latn",
+    "rows": 1500
+   },
+   {
+    "config": "bns_Deva",
+    "rows": 567
+   },
+   {
+    "config": "bou_Latn",
+    "rows": 546
+   },
+   {
+    "config": "bqg_Latn",
+    "rows": 609
+   }
+  ],
+  "n_configs": 349
+ },
+ "cis-lmu/GlotStoryBook": {
+  "rows": 80138,
+  "partial": false,
+  "configs": [
+   {
+    "config": "default",
+    "rows": 79111
+   },
+   {
+    "config": "nalibali",
+    "rows": 1027
+   }
+  ],
+  "n_configs": 2
+ }
+}

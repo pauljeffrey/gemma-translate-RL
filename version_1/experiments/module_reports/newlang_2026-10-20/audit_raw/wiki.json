@@ -1,0 +1,61 @@
+{
+ "ber": {
+  "exists": false
+ },
+ "bm": {
+  "exists": true,
+  "name": "bamanankan",
+  "closed": false,
+  "articles": 931,
+  "pages": 3271
+ },
+ "din": {
+  "exists": true,
+  "name": "Thuɔŋjäŋ",
+  "closed": false,
+  "articles": 339,
+  "pages": 1089
+ },
+ "ff": {
+  "exists": true,
+  "name": "Fulfulde",
+  "closed": false,
+  "articles": 22542,
+  "pages": 39111
+ },
+ "kr": {
+  "exists": true,
+  "name": "kanuri",
+  "closed": true
+ },
+ "mfe": {
+  "exists": false
+ },
+ "nd": {
+  "exists": false
+ },
+ "nqo": {
+  "exists": true,
+  "name": "ߒߞߏ",
+  "closed": false,
+  "articles": 1621,
+  "pages": 3497
+ },
+ "shi": {
+  "exists": true,
+  "name": "Taclḥit",
+  "closed": false,
+  "articles": 10894,
+  "pages": 14994
+ },
+ "tzm": {
+  "exists": false
+ },
+ "zgh": {
+  "exists": true,
+  "name": "ⵜⴰⵎⴰⵣⵉⵖⵜ ⵜⴰⵏⴰⵡⴰⵢⵜ",
+  "closed": false,
+  "articles": 12265,
+  "pages": 54471
+ }
+}

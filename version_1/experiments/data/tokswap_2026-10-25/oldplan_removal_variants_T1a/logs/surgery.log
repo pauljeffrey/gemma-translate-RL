@@ -1,0 +1,3 @@
+wrote out/model/geez_N3000 (bf16, 3000 rows re-initialised, tied=True, control=False); sha256 d05d9d467b2710fdb2790cd7f6d03424a6905833c4e7e59e9cda3cdc05362ff7
+wrote out/model/geez_N1000 (bf16, 1000 rows re-initialised, tied=True, control=False); sha256 7143f222cd1308233d1685c5954abf4f6eb60c70130db79d9946cb565ef82cf1
+wrote out/model/geez_N8000 (bf16, 8000 rows re-initialised, tied=True, control=False); sha256 dfc9115e5c351e1a53d84bf41a86e53135ac567739e5e95d5180497aa141551c

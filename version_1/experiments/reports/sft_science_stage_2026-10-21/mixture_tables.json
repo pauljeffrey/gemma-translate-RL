@@ -1,0 +1,1550 @@
+{
+ "train_science": {
+  "yor": {
+   "examples": 4926,
+   "tokens": 1338723,
+   "target_tokens": 948940
+  },
+  "hau": {
+   "examples": 4926,
+   "tokens": 996229,
+   "target_tokens": 601520
+  },
+  "ibo": {
+   "examples": 0,
+   "tokens": 0,
+   "target_tokens": 0
+  },
+  "pcm": {
+   "examples": 0,
+   "tokens": 0,
+   "target_tokens": 0
+  },
+  "efi": {
+   "examples": 0,
+   "tokens": 0,
+   "target_tokens": 0
+  },
+  "twi": {
+   "examples": 0,
+   "tokens": 0,
+   "target_tokens": 0
+  },
+  "ewe": {
+   "examples": 0,
+   "tokens": 0,
+   "target_tokens": 0
+  },
+  "fon": {
+   "examples": 0,
+   "tokens": 0,
+   "target_tokens": 0
+  },
+  "wol": {
+   "examples": 0,
+   "tokens": 0,
+   "target_tokens": 0
+  },
+  "swh": {
+   "examples": 0,
+   "tokens": 0,
+   "target_tokens": 0
+  },
+  "kin": {
+   "examples": 0,
+   "tokens": 0,
+   "target_tokens": 0
+  },
+  "som": {
+   "examples": 0,
+   "tokens": 0,
+   "target_tokens": 0
+  },
+  "orm": {
+   "examples": 0,
+   "tokens": 0,
+   "target_tokens": 0
+  },
+  "amh": {
+   "examples": 4926,
+   "tokens": 1046659,
+   "target_tokens": 647024
+  },
+  "tir": {
+   "examples": 0,
+   "tokens": 0,
+   "target_tokens": 0
+  },
+  "lug": {
+   "examples": 4926,
+   "tokens": 1085971,
+   "target_tokens": 691262
+  },
+  "lin": {
+   "examples": 0,
+   "tokens": 0,
+   "target_tokens": 0
+  },
+  "zul": {
+   "examples": 4926,
+   "tokens": 1030061,
+   "target_tokens": 640310
+  },
+  "xho": {
+   "examples": 0,
+   "tokens": 0,
+   "target_tokens": 0
+  },
+  "afr": {
+   "examples": 0,
+   "tokens": 0,
+   "target_tokens": 0
+  },
+  "sna": {
+   "examples": 0,
+   "tokens": 0,
+   "target_tokens": 0
+  },
+  "nya": {
+   "examples": 0,
+   "tokens": 0,
+   "target_tokens": 0
+  },
+  "sot": {
+   "examples": 0,
+   "tokens": 0,
+   "target_tokens": 0
+  },
+  "tsn": {
+   "examples": 0,
+   "tokens": 0,
+   "target_tokens": 0
+  },
+  "mlg": {
+   "examples": 0,
+   "tokens": 0,
+   "target_tokens": 0
+  },
+  "ibb": {
+   "examples": 0,
+   "tokens": 0,
+   "target_tokens": 0
+  },
+  "urh": {
+   "examples": 0,
+   "tokens": 0,
+   "target_tokens": 0
+  },
+  "bem": {
+   "examples": 0,
+   "tokens": 0,
+   "target_tokens": 0
+  },
+  "tum": {
+   "examples": 0,
+   "tokens": 0,
+   "target_tokens": 0
+  },
+  "run": {
+   "examples": 0,
+   "tokens": 0,
+   "target_tokens": 0
+  },
+  "ven": {
+   "examples": 0,
+   "tokens": 0,
+   "target_tokens": 0
+  },
+  "tso": {
+   "examples": 0,
+   "tokens": 0,
+   "target_tokens": 0
+  },
+  "nso": {
+   "examples": 4926,
+   "tokens": 1133451,
+   "target_tokens": 738742
+  },
+  "ssw": {
+   "examples": 0,
+   "tokens": 0,
+   "target_tokens": 0
+  },
+  "nbl": {
+   "examples": 0,
+   "tokens": 0,
+   "target_tokens": 0
+  },
+  "sag": {
+   "examples": 0,
+   "tokens": 0,
+   "target_tokens": 0
+  },
+  "tiv": {
+   "examples": 0,
+   "tokens": 0,
+   "target_tokens": 0
+  },
+  "umb": {
+   "examples": 0,
+   "tokens": 0,
+   "target_tokens": 0
+  },
+  "kmb": {
+   "examples": 0,
+   "tokens": 0,
+   "target_tokens": 0
+  },
+  "mos": {
+   "examples": 0,
+   "tokens": 0,
+   "target_tokens": 0
+  },
+  "kik": {
+   "examples": 0,
+   "tokens": 0,
+   "target_tokens": 0
+  },
+  "luo": {
+   "examples": 0,
+   "tokens": 0,
+   "target_tokens": 0
+  },
+  "kam": {
+   "examples": 0,
+   "tokens": 0,
+   "target_tokens": 0
+  },
+  "bin": {
+   "examples": 0,
+   "tokens": 0,
+   "target_tokens": 0
+  },
+  "dag": {
+   "examples": 0,
+   "tokens": 0,
+   "target_tokens": 0
+  },
+  "oke": {
+   "examples": 0,
+   "tokens": 0,
+   "target_tokens": 0
+  },
+  "shi": {
+   "examples": 0,
+   "tokens": 0,
+   "target_tokens": 0
+  },
+  "dyu": {
+   "examples": 0,
+   "tokens": 0,
+   "target_tokens": 0
+  },
+  "bam": {
+   "examples": 0,
+   "tokens": 0,
+   "target_tokens": 0
+  },
+  "kbp": {
+   "examples": 0,
+   "tokens": 0,
+   "target_tokens": 0
+  },
+  "bbj": {
+   "examples": 0,
+   "tokens": 0,
+   "target_tokens": 0
+  },
+  "kon": {
+   "examples": 0,
+   "tokens": 0,
+   "target_tokens": 0
+  },
+  "kea": {
+   "examples": 0,
+   "tokens": 0,
+   "target_tokens": 0
+  },
+  "kab": {
+   "examples": 0,
+   "tokens": 0,
+   "target_tokens": 0
+  },
+  "nus": {
+   "examples": 0,
+   "tokens": 0,
+   "target_tokens": 0
+  },
+  "swc": {
+   "examples": 0,
+   "tokens": 0,
+   "target_tokens": 0
+  },
+  "lua": {
+   "examples": 0,
+   "tokens": 0,
+   "target_tokens": 0
+  },
+  "kqn": {
+   "examples": 0,
+   "tokens": 0,
+   "target_tokens": 0
+  },
+  "lun": {
+   "examples": 0,
+   "tokens": 0,
+   "target_tokens": 0
+  },
+  "iso": {
+   "examples": 0,
+   "tokens": 0,
+   "target_tokens": 0
+  },
+  "loz": {
+   "examples": 0,
+   "tokens": 0,
+   "target_tokens": 0
+  },
+  "wal": {
+   "examples": 0,
+   "tokens": 0,
+   "target_tokens": 0
+  },
+  "ach": {
+   "examples": 0,
+   "tokens": 0,
+   "target_tokens": 0
+  },
+  "tsc": {
+   "examples": 0,
+   "tokens": 0,
+   "target_tokens": 0
+  },
+  "vmw": {
+   "examples": 0,
+   "tokens": 0,
+   "target_tokens": 0
+  },
+  "kua": {
+   "examples": 0,
+   "tokens": 0,
+   "target_tokens": 0
+  },
+  "seh": {
+   "examples": 0,
+   "tokens": 0,
+   "target_tokens": 0
+  },
+  "nyn": {
+   "examples": 0,
+   "tokens": 0,
+   "target_tokens": 0
+  },
+  "her": {
+   "examples": 0,
+   "tokens": 0,
+   "target_tokens": 0
+  },
+  "yao": {
+   "examples": 0,
+   "tokens": 0,
+   "target_tokens": 0
+  },
+  "sid": {
+   "examples": 0,
+   "tokens": 0,
+   "target_tokens": 0
+  },
+  "ndc": {
+   "examples": 0,
+   "tokens": 0,
+   "target_tokens": 0
+  },
+  "kri": {
+   "examples": 0,
+   "tokens": 0,
+   "target_tokens": 0
+  },
+  "ish": {
+   "examples": 0,
+   "tokens": 0,
+   "target_tokens": 0
+  },
+  "dua": {
+   "examples": 0,
+   "tokens": 0,
+   "target_tokens": 0
+  },
+  "bas": {
+   "examples": 0,
+   "tokens": 0,
+   "target_tokens": 0
+  },
+  "wes": {
+   "examples": 0,
+   "tokens": 0,
+   "target_tokens": 0
+  }
+ },
+ "train_replay": {
+  "yor": {
+   "examples": 2013,
+   "tokens": 296972,
+   "target_tokens": 184958
+  },
+  "hau": {
+   "examples": 1372,
+   "tokens": 297513,
+   "target_tokens": 168098
+  },
+  "ibo": {
+   "examples": 1076,
+   "tokens": 149101,
+   "target_tokens": 89223
+  },
+  "pcm": {
+   "examples": 781,
+   "tokens": 148443,
+   "target_tokens": 69170
+  },
+  "efi": {
+   "examples": 966,
+   "tokens": 148955,
+   "target_tokens": 87898
+  },
+  "twi": {
+   "examples": 600,
+   "tokens": 288978,
+   "target_tokens": 178596
+  },
+  "ewe": {
+   "examples": 836,
+   "tokens": 148515,
+   "target_tokens": 88970
+  },
+  "fon": {
+   "examples": 983,
+   "tokens": 148416,
+   "target_tokens": 94023
+  },
+  "wol": {
+   "examples": 816,
+   "tokens": 148443,
+   "target_tokens": 82133
+  },
+  "swh": {
+   "examples": 665,
+   "tokens": 148402,
+   "target_tokens": 83649
+  },
+  "kin": {
+   "examples": 600,
+   "tokens": 156502,
+   "target_tokens": 92216
+  },
+  "som": {
+   "examples": 600,
+   "tokens": 188725,
+   "target_tokens": 117106
+  },
+  "orm": {
+   "examples": 648,
+   "tokens": 149082,
+   "target_tokens": 93088
+  },
+  "amh": {
+   "examples": 1289,
+   "tokens": 296841,
+   "target_tokens": 175436
+  },
+  "tir": {
+   "examples": 760,
+   "tokens": 148373,
+   "target_tokens": 93622
+  },
+  "lug": {
+   "examples": 1619,
+   "tokens": 296792,
+   "target_tokens": 176228
+  },
+  "lin": {
+   "examples": 912,
+   "tokens": 148466,
+   "target_tokens": 85753
+  },
+  "zul": {
+   "examples": 1203,
+   "tokens": 296858,
+   "target_tokens": 181733
+  },
+  "xho": {
+   "examples": 649,
+   "tokens": 148780,
+   "target_tokens": 89989
+  },
+  "afr": {
+   "examples": 611,
+   "tokens": 148440,
+   "target_tokens": 81403
+  },
+  "sna": {
+   "examples": 631,
+   "tokens": 148810,
+   "target_tokens": 86494
+  },
+  "nya": {
+   "examples": 600,
+   "tokens": 159465,
+   "target_tokens": 96129
+  },
+  "sot": {
+   "examples": 600,
+   "tokens": 177057,
+   "target_tokens": 109310
+  },
+  "tsn": {
+   "examples": 887,
+   "tokens": 148588,
+   "target_tokens": 90226
+  },
+  "mlg": {
+   "examples": 778,
+   "tokens": 148594,
+   "target_tokens": 89093
+  },
+  "ibb": {
+   "examples": 899,
+   "tokens": 148467,
+   "target_tokens": 87508
+  },
+  "urh": {
+   "examples": 946,
+   "tokens": 148393,
+   "target_tokens": 89178
+  },
+  "bem": {
+   "examples": 854,
+   "tokens": 148599,
+   "target_tokens": 85293
+  },
+  "tum": {
+   "examples": 826,
+   "tokens": 149017,
+   "target_tokens": 87229
+  },
+  "run": {
+   "examples": 778,
+   "tokens": 148451,
+   "target_tokens": 88765
+  },
+  "ven": {
+   "examples": 887,
+   "tokens": 148387,
+   "target_tokens": 93270
+  },
+  "tso": {
+   "examples": 917,
+   "tokens": 148678,
+   "target_tokens": 90169
+  },
+  "nso": {
+   "examples": 1656,
+   "tokens": 296780,
+   "target_tokens": 182446
+  },
+  "ssw": {
+   "examples": 803,
+   "tokens": 148439,
+   "target_tokens": 88404
+  },
+  "nbl": {
+   "examples": 827,
+   "tokens": 148618,
+   "target_tokens": 91641
+  },
+  "sag": {
+   "examples": 889,
+   "tokens": 148450,
+   "target_tokens": 86578
+  },
+  "tiv": {
+   "examples": 874,
+   "tokens": 148570,
+   "target_tokens": 89927
+  },
+  "umb": {
+   "examples": 831,
+   "tokens": 148962,
+   "target_tokens": 86407
+  },
+  "kmb": {
+   "examples": 851,
+   "tokens": 148434,
+   "target_tokens": 88088
+  },
+  "mos": {
+   "examples": 900,
+   "tokens": 148581,
+   "target_tokens": 92749
+  },
+  "kik": {
+   "examples": 884,
+   "tokens": 148439,
+   "target_tokens": 94071
+  },
+  "luo": {
+   "examples": 845,
+   "tokens": 148427,
+   "target_tokens": 81993
+  },
+  "kam": {
+   "examples": 832,
+   "tokens": 149113,
+   "target_tokens": 95843
+  },
+  "bin": {
+   "examples": 1014,
+   "tokens": 148700,
+   "target_tokens": 90919
+  },
+  "dag": {
+   "examples": 714,
+   "tokens": 148442,
+   "target_tokens": 87744
+  },
+  "oke": {
+   "examples": 945,
+   "tokens": 148429,
+   "target_tokens": 90471
+  },
+  "shi": {
+   "examples": 966,
+   "tokens": 148480,
+   "target_tokens": 97775
+  },
+  "dyu": {
+   "examples": 870,
+   "tokens": 148383,
+   "target_tokens": 91083
+  },
+  "bam": {
+   "examples": 1001,
+   "tokens": 148402,
+   "target_tokens": 87481
+  },
+  "kbp": {
+   "examples": 1005,
+   "tokens": 148399,
+   "target_tokens": 95880
+  },
+  "bbj": {
+   "examples": 869,
+   "tokens": 148565,
+   "target_tokens": 92963
+  },
+  "kon": {
+   "examples": 797,
+   "tokens": 148435,
+   "target_tokens": 81190
+  },
+  "kea": {
+   "examples": 763,
+   "tokens": 149530,
+   "target_tokens": 83010
+  },
+  "kab": {
+   "examples": 879,
+   "tokens": 149343,
+   "target_tokens": 89026
+  },
+  "nus": {
+   "examples": 864,
+   "tokens": 148411,
+   "target_tokens": 90872
+  },
+  "swc": {
+   "examples": 661,
+   "tokens": 149420,
+   "target_tokens": 85848
+  },
+  "lua": {
+   "examples": 747,
+   "tokens": 148786,
+   "target_tokens": 86489
+  },
+  "kqn": {
+   "examples": 779,
+   "tokens": 148448,
+   "target_tokens": 86832
+  },
+  "lun": {
+   "examples": 750,
+   "tokens": 148666,
+   "target_tokens": 87687
+  },
+  "iso": {
+   "examples": 841,
+   "tokens": 148423,
+   "target_tokens": 91285
+  },
+  "loz": {
+   "examples": 830,
+   "tokens": 149321,
+   "target_tokens": 87638
+  },
+  "wal": {
+   "examples": 836,
+   "tokens": 149065,
+   "target_tokens": 88207
+  },
+  "ach": {
+   "examples": 780,
+   "tokens": 148385,
+   "target_tokens": 84254
+  },
+  "tsc": {
+   "examples": 830,
+   "tokens": 148456,
+   "target_tokens": 89281
+  },
+  "vmw": {
+   "examples": 816,
+   "tokens": 148406,
+   "target_tokens": 88513
+  },
+  "kua": {
+   "examples": 793,
+   "tokens": 148412,
+   "target_tokens": 89320
+  },
+  "seh": {
+   "examples": 818,
+   "tokens": 148440,
+   "target_tokens": 88609
+  },
+  "nyn": {
+   "examples": 834,
+   "tokens": 148670,
+   "target_tokens": 87536
+  },
+  "her": {
+   "examples": 846,
+   "tokens": 148624,
+   "target_tokens": 89822
+  },
+  "yao": {
+   "examples": 812,
+   "tokens": 148816,
+   "target_tokens": 90489
+  },
+  "sid": {
+   "examples": 804,
+   "tokens": 149106,
+   "target_tokens": 89493
+  },
+  "ndc": {
+   "examples": 780,
+   "tokens": 148432,
+   "target_tokens": 87953
+  },
+  "kri": {
+   "examples": 897,
+   "tokens": 148436,
+   "target_tokens": 90819
+  },
+  "ish": {
+   "examples": 916,
+   "tokens": 148394,
+   "target_tokens": 91781
+  },
+  "dua": {
+   "examples": 891,
+   "tokens": 148619,
+   "target_tokens": 95073
+  },
+  "bas": {
+   "examples": 840,
+   "tokens": 148877,
+   "target_tokens": 88466
+  },
+  "wes": {
+   "examples": 801,
+   "tokens": 148912,
+   "target_tokens": 75828
+  }
+ },
+ "val_replay": {
+  "yor": {
+   "examples": 100,
+   "tokens": 12085,
+   "target_tokens": 7345
+  },
+  "hau": {
+   "examples": 100,
+   "tokens": 22359,
+   "target_tokens": 12751
+  },
+  "ibo": {
+   "examples": 100,
+   "tokens": 16668,
+   "target_tokens": 10296
+  },
+  "pcm": {
+   "examples": 100,
+   "tokens": 19333,
+   "target_tokens": 9183
+  },
+  "efi": {
+   "examples": 100,
+   "tokens": 11746,
+   "target_tokens": 6616
+  },
+  "twi": {
+   "examples": 100,
+   "tokens": 44923,
+   "target_tokens": 27593
+  },
+  "ewe": {
+   "examples": 82,
+   "tokens": 16019,
+   "target_tokens": 9570
+  },
+  "fon": {
+   "examples": 100,
+   "tokens": 12442,
+   "target_tokens": 7663
+  },
+  "wol": {
+   "examples": 100,
+   "tokens": 21578,
+   "target_tokens": 12103
+  },
+  "swh": {
+   "examples": 100,
+   "tokens": 22562,
+   "target_tokens": 12607
+  },
+  "kin": {
+   "examples": 100,
+   "tokens": 28846,
+   "target_tokens": 17202
+  },
+  "som": {
+   "examples": 100,
+   "tokens": 34110,
+   "target_tokens": 21296
+  },
+  "orm": {
+   "examples": 100,
+   "tokens": 13783,
+   "target_tokens": 8160
+  },
+  "amh": {
+   "examples": 100,
+   "tokens": 23471,
+   "target_tokens": 14035
+  },
+  "tir": {
+   "examples": 100,
+   "tokens": 18554,
+   "target_tokens": 11676
+  },
+  "lug": {
+   "examples": 100,
+   "tokens": 18566,
+   "target_tokens": 10946
+  },
+  "lin": {
+   "examples": 90,
+   "tokens": 13958,
+   "target_tokens": 8041
+  },
+  "zul": {
+   "examples": 100,
+   "tokens": 19717,
+   "target_tokens": 11745
+  },
+  "xho": {
+   "examples": 100,
+   "tokens": 25713,
+   "target_tokens": 15749
+  },
+  "afr": {
+   "examples": 100,
+   "tokens": 25396,
+   "target_tokens": 13997
+  },
+  "sna": {
+   "examples": 100,
+   "tokens": 25273,
+   "target_tokens": 14873
+  },
+  "nya": {
+   "examples": 100,
+   "tokens": 26514,
+   "target_tokens": 15918
+  },
+  "sot": {
+   "examples": 100,
+   "tokens": 27970,
+   "target_tokens": 17349
+  },
+  "tsn": {
+   "examples": 100,
+   "tokens": 12636,
+   "target_tokens": 7286
+  },
+  "mlg": {
+   "examples": 100,
+   "tokens": 21249,
+   "target_tokens": 12908
+  },
+  "ibb": {
+   "examples": 60,
+   "tokens": 11736,
+   "target_tokens": 7042
+  },
+  "urh": {
+   "examples": 100,
+   "tokens": 10745,
+   "target_tokens": 6157
+  },
+  "bem": {
+   "examples": 100,
+   "tokens": 13438,
+   "target_tokens": 7558
+  },
+  "tum": {
+   "examples": 100,
+   "tokens": 17687,
+   "target_tokens": 10324
+  },
+  "run": {
+   "examples": 95,
+   "tokens": 15753,
+   "target_tokens": 9298
+  },
+  "ven": {
+   "examples": 100,
+   "tokens": 14507,
+   "target_tokens": 8955
+  },
+  "tso": {
+   "examples": 100,
+   "tokens": 17425,
+   "target_tokens": 10709
+  },
+  "nso": {
+   "examples": 100,
+   "tokens": 15621,
+   "target_tokens": 9369
+  },
+  "ssw": {
+   "examples": 100,
+   "tokens": 14950,
+   "target_tokens": 8642
+  },
+  "nbl": {
+   "examples": 76,
+   "tokens": 10719,
+   "target_tokens": 6380
+  },
+  "sag": {
+   "examples": 100,
+   "tokens": 11279,
+   "target_tokens": 6159
+  },
+  "tiv": {
+   "examples": 100,
+   "tokens": 12707,
+   "target_tokens": 7494
+  },
+  "umb": {
+   "examples": 78,
+   "tokens": 10313,
+   "target_tokens": 5716
+  },
+  "kmb": {
+   "examples": 83,
+   "tokens": 13225,
+   "target_tokens": 7725
+  },
+  "mos": {
+   "examples": 100,
+   "tokens": 12721,
+   "target_tokens": 7808
+  },
+  "kik": {
+   "examples": 100,
+   "tokens": 9414,
+   "target_tokens": 5447
+  },
+  "luo": {
+   "examples": 100,
+   "tokens": 16047,
+   "target_tokens": 8824
+  },
+  "kam": {
+   "examples": 100,
+   "tokens": 11184,
+   "target_tokens": 6843
+  },
+  "bin": {
+   "examples": 100,
+   "tokens": 12392,
+   "target_tokens": 7420
+  },
+  "dag": {
+   "examples": 73,
+   "tokens": 17770,
+   "target_tokens": 10783
+  },
+  "oke": {
+   "examples": 100,
+   "tokens": 10561,
+   "target_tokens": 6063
+  },
+  "shi": {
+   "examples": 60,
+   "tokens": 8403,
+   "target_tokens": 5456
+  },
+  "dyu": {
+   "examples": 70,
+   "tokens": 15937,
+   "target_tokens": 10124
+  },
+  "bam": {
+   "examples": 48,
+   "tokens": 8471,
+   "target_tokens": 5180
+  },
+  "kbp": {
+   "examples": 62,
+   "tokens": 8947,
+   "target_tokens": 5814
+  },
+  "bbj": {
+   "examples": 60,
+   "tokens": 9408,
+   "target_tokens": 5840
+  },
+  "kon": {
+   "examples": 60,
+   "tokens": 12660,
+   "target_tokens": 7056
+  },
+  "kea": {
+   "examples": 60,
+   "tokens": 9543,
+   "target_tokens": 5169
+  },
+  "kab": {
+   "examples": 99,
+   "tokens": 14103,
+   "target_tokens": 8306
+  },
+  "nus": {
+   "examples": 100,
+   "tokens": 16729,
+   "target_tokens": 10276
+  },
+  "swc": {
+   "examples": 100,
+   "tokens": 20258,
+   "target_tokens": 11435
+  },
+  "lua": {
+   "examples": 100,
+   "tokens": 17061,
+   "target_tokens": 9722
+  },
+  "kqn": {
+   "examples": 100,
+   "tokens": 16464,
+   "target_tokens": 9460
+  },
+  "lun": {
+   "examples": 100,
+   "tokens": 14483,
+   "target_tokens": 8211
+  },
+  "iso": {
+   "examples": 100,
+   "tokens": 13992,
+   "target_tokens": 8530
+  },
+  "loz": {
+   "examples": 100,
+   "tokens": 12952,
+   "target_tokens": 7254
+  },
+  "wal": {
+   "examples": 100,
+   "tokens": 10771,
+   "target_tokens": 5873
+  },
+  "ach": {
+   "examples": 77,
+   "tokens": 12068,
+   "target_tokens": 6782
+  },
+  "tsc": {
+   "examples": 87,
+   "tokens": 12874,
+   "target_tokens": 7525
+  },
+  "vmw": {
+   "examples": 72,
+   "tokens": 9093,
+   "target_tokens": 5107
+  },
+  "kua": {
+   "examples": 100,
+   "tokens": 13610,
+   "target_tokens": 7941
+  },
+  "seh": {
+   "examples": 70,
+   "tokens": 11376,
+   "target_tokens": 6721
+  },
+  "nyn": {
+   "examples": 70,
+   "tokens": 14827,
+   "target_tokens": 8902
+  },
+  "her": {
+   "examples": 65,
+   "tokens": 6210,
+   "target_tokens": 3448
+  },
+  "yao": {
+   "examples": 100,
+   "tokens": 13896,
+   "target_tokens": 8276
+  },
+  "sid": {
+   "examples": 100,
+   "tokens": 12797,
+   "target_tokens": 7376
+  },
+  "ndc": {
+   "examples": 61,
+   "tokens": 7890,
+   "target_tokens": 4497
+  },
+  "kri": {
+   "examples": 70,
+   "tokens": 11312,
+   "target_tokens": 6940
+  },
+  "ish": {
+   "examples": 63,
+   "tokens": 8082,
+   "target_tokens": 4836
+  },
+  "dua": {
+   "examples": 92,
+   "tokens": 11976,
+   "target_tokens": 7391
+  },
+  "bas": {
+   "examples": 87,
+   "tokens": 13327,
+   "target_tokens": 7754
+  },
+  "wes": {
+   "examples": 64,
+   "tokens": 9146,
+   "target_tokens": 4532
+  }
+ },
+ "val_science_dev": {
+  "yor": {
+   "examples": 868,
+   "tokens": 192216,
+   "target_tokens": 133622
+  },
+  "hau": {
+   "examples": 868,
+   "tokens": 144158,
+   "target_tokens": 84696
+  },
+  "ibo": {
+   "examples": 0,
+   "tokens": 0,
+   "target_tokens": 0
+  },
+  "pcm": {
+   "examples": 0,
+   "tokens": 0,
+   "target_tokens": 0
+  },
+  "efi": {
+   "examples": 0,
+   "tokens": 0,
+   "target_tokens": 0
+  },
+  "twi": {
+   "examples": 0,
+   "tokens": 0,
+   "target_tokens": 0
+  },
+  "ewe": {
+   "examples": 0,
+   "tokens": 0,
+   "target_tokens": 0
+  },
+  "fon": {
+   "examples": 0,
+   "tokens": 0,
+   "target_tokens": 0
+  },
+  "wol": {
+   "examples": 0,
+   "tokens": 0,
+   "target_tokens": 0
+  },
+  "swh": {
+   "examples": 0,
+   "tokens": 0,
+   "target_tokens": 0
+  },
+  "kin": {
+   "examples": 0,
+   "tokens": 0,
+   "target_tokens": 0
+  },
+  "som": {
+   "examples": 0,
+   "tokens": 0,
+   "target_tokens": 0
+  },
+  "orm": {
+   "examples": 0,
+   "tokens": 0,
+   "target_tokens": 0
+  },
+  "amh": {
+   "examples": 868,
+   "tokens": 154070,
+   "target_tokens": 93740
+  },
+  "tir": {
+   "examples": 0,
+   "tokens": 0,
+   "target_tokens": 0
+  },
+  "lug": {
+   "examples": 868,
+   "tokens": 159176,
+   "target_tokens": 99714
+  },
+  "lin": {
+   "examples": 0,
+   "tokens": 0,
+   "target_tokens": 0
+  },
+  "zul": {
+   "examples": 868,
+   "tokens": 150430,
+   "target_tokens": 91836
+  },
+  "xho": {
+   "examples": 0,
+   "tokens": 0,
+   "target_tokens": 0
+  },
+  "afr": {
+   "examples": 0,
+   "tokens": 0,
+   "target_tokens": 0
+  },
+  "sna": {
+   "examples": 0,
+   "tokens": 0,
+   "target_tokens": 0
+  },
+  "nya": {
+   "examples": 0,
+   "tokens": 0,
+   "target_tokens": 0
+  },
+  "sot": {
+   "examples": 0,
+   "tokens": 0,
+   "target_tokens": 0
+  },
+  "tsn": {
+   "examples": 0,
+   "tokens": 0,
+   "target_tokens": 0
+  },
+  "mlg": {
+   "examples": 0,
+   "tokens": 0,
+   "target_tokens": 0
+  },
+  "ibb": {
+   "examples": 0,
+   "tokens": 0,
+   "target_tokens": 0
+  },
+  "urh": {
+   "examples": 0,
+   "tokens": 0,
+   "target_tokens": 0
+  },
+  "bem": {
+   "examples": 0,
+   "tokens": 0,
+   "target_tokens": 0
+  },
+  "tum": {
+   "examples": 0,
+   "tokens": 0,
+   "target_tokens": 0
+  },
+  "run": {
+   "examples": 0,
+   "tokens": 0,
+   "target_tokens": 0
+  },
+  "ven": {
+   "examples": 0,
+   "tokens": 0,
+   "target_tokens": 0
+  },
+  "tso": {
+   "examples": 0,
+   "tokens": 0,
+   "target_tokens": 0
+  },
+  "nso": {
+   "examples": 868,
+   "tokens": 164446,
+   "target_tokens": 104984
+  },
+  "ssw": {
+   "examples": 0,
+   "tokens": 0,
+   "target_tokens": 0
+  },
+  "nbl": {
+   "examples": 0,
+   "tokens": 0,
+   "target_tokens": 0
+  },
+  "sag": {
+   "examples": 0,
+   "tokens": 0,
+   "target_tokens": 0
+  },
+  "tiv": {
+   "examples": 0,
+   "tokens": 0,
+   "target_tokens": 0
+  },
+  "umb": {
+   "examples": 0,
+   "tokens": 0,
+   "target_tokens": 0
+  },
+  "kmb": {
+   "examples": 0,
+   "tokens": 0,
+   "target_tokens": 0
+  },
+  "mos": {
+   "examples": 0,
+   "tokens": 0,
+   "target_tokens": 0
+  },
+  "kik": {
+   "examples": 0,
+   "tokens": 0,
+   "target_tokens": 0
+  },
+  "luo": {
+   "examples": 0,
+   "tokens": 0,
+   "target_tokens": 0
+  },
+  "kam": {
+   "examples": 0,
+   "tokens": 0,
+   "target_tokens": 0
+  },
+  "bin": {
+   "examples": 0,
+   "tokens": 0,
+   "target_tokens": 0
+  },
+  "dag": {
+   "examples": 0,
+   "tokens": 0,
+   "target_tokens": 0
+  },
+  "oke": {
+   "examples": 0,
+   "tokens": 0,
+   "target_tokens": 0
+  },
+  "shi": {
+   "examples": 0,
+   "tokens": 0,
+   "target_tokens": 0
+  },
+  "dyu": {
+   "examples": 0,
+   "tokens": 0,
+   "target_tokens": 0
+  },
+  "bam": {
+   "examples": 0,
+   "tokens": 0,
+   "target_tokens": 0
+  },
+  "kbp": {
+   "examples": 0,
+   "tokens": 0,
+   "target_tokens": 0
+  },
+  "bbj": {
+   "examples": 0,
+   "tokens": 0,
+   "target_tokens": 0
+  },
+  "kon": {
+   "examples": 0,
+   "tokens": 0,
+   "target_tokens": 0
+  },
+  "kea": {
+   "examples": 0,
+   "tokens": 0,
+   "target_tokens": 0
+  },
+  "kab": {
+   "examples": 0,
+   "tokens": 0,
+   "target_tokens": 0
+  },
+  "nus": {
+   "examples": 0,
+   "tokens": 0,
+   "target_tokens": 0
+  },
+  "swc": {
+   "examples": 0,
+   "tokens": 0,
+   "target_tokens": 0
+  },
+  "lua": {
+   "examples": 0,
+   "tokens": 0,
+   "target_tokens": 0
+  },
+  "kqn": {
+   "examples": 0,
+   "tokens": 0,
+   "target_tokens": 0
+  },
+  "lun": {
+   "examples": 0,
+   "tokens": 0,
+   "target_tokens": 0
+  },
+  "iso": {
+   "examples": 0,
+   "tokens": 0,
+   "target_tokens": 0
+  },
+  "loz": {
+   "examples": 0,
+   "tokens": 0,
+   "target_tokens": 0
+  },
+  "wal": {
+   "examples": 0,
+   "tokens": 0,
+   "target_tokens": 0
+  },
+  "ach": {
+   "examples": 0,
+   "tokens": 0,
+   "target_tokens": 0
+  },
+  "tsc": {
+   "examples": 0,
+   "tokens": 0,
+   "target_tokens": 0
+  },
+  "vmw": {
+   "examples": 0,
+   "tokens": 0,
+   "target_tokens": 0
+  },
+  "kua": {
+   "examples": 0,
+   "tokens": 0,
+   "target_tokens": 0
+  },
+  "seh": {
+   "examples": 0,
+   "tokens": 0,
+   "target_tokens": 0
+  },
+  "nyn": {
+   "examples": 0,
+   "tokens": 0,
+   "target_tokens": 0
+  },
+  "her": {
+   "examples": 0,
+   "tokens": 0,
+   "target_tokens": 0
+  },
+  "yao": {
+   "examples": 0,
+   "tokens": 0,
+   "target_tokens": 0
+  },
+  "sid": {
+   "examples": 0,
+   "tokens": 0,
+   "target_tokens": 0
+  },
+  "ndc": {
+   "examples": 0,
+   "tokens": 0,
+   "target_tokens": 0
+  },
+  "kri": {
+   "examples": 0,
+   "tokens": 0,
+   "target_tokens": 0
+  },
+  "ish": {
+   "examples": 0,
+   "tokens": 0,
+   "target_tokens": 0
+  },
+  "dua": {
+   "examples": 0,
+   "tokens": 0,
+   "target_tokens": 0
+  },
+  "bas": {
+   "examples": 0,
+   "tokens": 0,
+   "target_tokens": 0
+  },
+  "wes": {
+   "examples": 0,
+   "tokens": 0,
+   "target_tokens": 0
+  }
+ }
+}

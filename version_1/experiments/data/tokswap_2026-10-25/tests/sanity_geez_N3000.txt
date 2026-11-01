@@ -1,0 +1,15 @@
+Loading weights:   0%|          | 0/236 [00:00<?, ?it/s]Loading weights:   0%|          | 1/236 [00:00<02:30,  1.56it/s]Loading weights: 100%|██████████| 236/236 [00:00<00:00, 365.82it/s]
+Loading weights:   0%|          | 0/236 [00:00<?, ?it/s]Loading weights: 100%|██████████| 236/236 [00:00<00:00, 4542.46it/s]
+[82s] loss amh_Ethi: tok/sent 53.8->41.7  nll/token 2.1761->5.3681 nll/char 1.3274->2.5404  identical-tokenisation sentences 0/300
+[175s] loss tir_Ethi: tok/sent 65.9->43.8  nll/token 2.7111->6.9405 nll/char 1.9739->3.3528  identical-tokenisation sentences 0/300
+[261s] loss hau_Latn: tok/sent 48.0->48.0  nll/token 1.2367->1.2378 nll/char 0.4235->0.4238  identical-tokenisation sentences 300/300 restricted-diff max 0 full-diff max 0.294
+[363s] loss yor_Latn: tok/sent 63.6->63.6  nll/token 2.3282->2.3312 nll/char 1.1559->1.1574  identical-tokenisation sentences 300/300 restricted-diff max 0 full-diff max 1.47
+[457s] loss swh_Latn: tok/sent 45.9->45.9  nll/token 0.9855->0.9859 nll/char 0.3263->0.3264  identical-tokenisation sentences 300/300 restricted-diff max 0 full-diff max 0.122
+[572s] loss kin_Latn: tok/sent 53.0->53.0  nll/token 1.4125->1.4134 nll/char 0.5090->0.5094  identical-tokenisation sentences 300/300 restricted-diff max 0 full-diff max 0.274
+[675s] loss ibo_Latn: tok/sent 57.2->57.2  nll/token 1.6983->1.7004 nll/char 0.7211->0.7220  identical-tokenisation sentences 300/300 restricted-diff max 0 full-diff max 0.444
+[798s] loss fon_Latn: tok/sent 75.0->75.0  nll/token 3.9460->3.9522 nll/char 2.0744->2.0777  identical-tokenisation sentences 300/300 restricted-diff max 0 full-diff max 2.61
+[862s] greedy hau_Latn: token-identical 50/50, text-identical 50/50, chrF++ orig 50.08 swapped 50.08
+[927s] greedy yor_Latn: token-identical 50/50, text-identical 50/50, chrF++ orig 28.31 swapped 28.31
+[970s] greedy swh_Latn: token-identical 50/50, text-identical 50/50, chrF++ orig 59.28 swapped 59.28
+[1054s] greedy amh_Ethi: token-identical 40/50, text-identical 40/50, chrF++ orig 16.05 swapped 15.88
+[1136s] greedy tir_Ethi: token-identical 41/50, text-identical 41/50, chrF++ orig 11.16 swapped 11.23

@@ -1,0 +1,623 @@
+{
+ "CohereLabs/aya-101": {
+  "safetensors_gb": 51.68,
+  "pytorch_bin_gb": 0.0,
+  "all_files_gb": 51.7,
+  "big": [
+   [
+    "model-00008-of-00011.safetensors",
+    5.0
+   ],
+   [
+    "model-00009-of-00011.safetensors",
+    5.0
+   ],
+   [
+    "model-00002-of-00011.safetensors",
+    5.0
+   ],
+   [
+    "model-00005-of-00011.safetensors",
+    4.97
+   ],
+   [
+    "model-00006-of-00011.safetensors",
+    4.97
+   ],
+   [
+    "model-00003-of-00011.safetensors",
+    4.97
+   ]
+  ]
+ },
+ "CohereLabs/tiny-aya-earth": {
+  "safetensors_gb": 6.7,
+  "pytorch_bin_gb": 0.0,
+  "all_files_gb": 6.72,
+  "big": [
+   [
+    "model-00001-of-00002.safetensors",
+    4.99
+   ],
+   [
+    "model-00002-of-00002.safetensors",
+    1.71
+   ]
+  ]
+ },
+ "CohereLabs/tiny-aya-global": {
+  "safetensors_gb": 6.7,
+  "pytorch_bin_gb": 0.0,
+  "all_files_gb": 6.72,
+  "big": [
+   [
+    "model-00001-of-00002.safetensors",
+    4.99
+   ],
+   [
+    "model-00002-of-00002.safetensors",
+    1.71
+   ]
+  ]
+ },
+ "Helsinki-NLP/opus-mt-tc-bible-big-deu_eng_fra_por_spa-afa": {
+  "safetensors_gb": 0.96,
+  "pytorch_bin_gb": 0.96,
+  "all_files_gb": 1.92,
+  "big": [
+   [
+    "pytorch_model.bin",
+    0.96
+   ],
+   [
+    "model.safetensors",
+    0.96
+   ]
+  ]
+ },
+ "Helsinki-NLP/opus-mt-tc-bible-big-deu_eng_fra_por_spa-bnt": {
+  "safetensors_gb": 0.96,
+  "pytorch_bin_gb": 0.96,
+  "all_files_gb": 1.92,
+  "big": [
+   [
+    "pytorch_model.bin",
+    0.96
+   ],
+   [
+    "model.safetensors",
+    0.96
+   ]
+  ]
+ },
+ "Helsinki-NLP/opus-mt-tc-bible-big-deu_eng_fra_por_spa-mul": {
+  "safetensors_gb": 0.96,
+  "pytorch_bin_gb": 0.96,
+  "all_files_gb": 1.93,
+  "big": [
+   [
+    "pytorch_model.bin",
+    0.96
+   ],
+   [
+    "model.safetensors",
+    0.96
+   ]
+  ]
+ },
+ "LLaMAX/LLaMAX3-8B-Alpaca": {
+  "safetensors_gb": 32.12,
+  "pytorch_bin_gb": 0.0,
+  "all_files_gb": 32.13,
+  "big": [
+   [
+    "model-00004-of-00007.safetensors",
+    5.0
+   ],
+   [
+    "model-00006-of-00007.safetensors",
+    5.0
+   ],
+   [
+    "model-00003-of-00007.safetensors",
+    5.0
+   ],
+   [
+    "model-00001-of-00007.safetensors",
+    4.89
+   ],
+   [
+    "model-00005-of-00007.safetensors",
+    4.83
+   ],
+   [
+    "model-00002-of-00007.safetensors",
+    4.83
+   ]
+  ]
+ },
+ "McGill-NLP/AfriqueQwen3.5-9B-50Langs-Instruct-v1": {
+  "safetensors_gb": 17.91,
+  "pytorch_bin_gb": 0.0,
+  "all_files_gb": 17.93,
+  "big": [
+   [
+    "model.safetensors",
+    17.91
+   ]
+  ]
+ },
+ "NCAIR1/N-ATLaS": {
+  "safetensors_gb": 16.06,
+  "pytorch_bin_gb": 0.0,
+  "all_files_gb": 16.08,
+  "big": [
+   [
+    "model-00002-of-00004.safetensors",
+    5.0
+   ],
+   [
+    "model-00001-of-00004.safetensors",
+    4.98
+   ],
+   [
+    "model-00003-of-00004.safetensors",
+    4.92
+   ],
+   [
+    "model-00004-of-00004.safetensors",
+    1.17
+   ]
+  ]
+ },
+ "Qwen/Qwen3-32B": {
+  "safetensors_gb": 65.52,
+  "pytorch_bin_gb": 0.0,
+  "all_files_gb": 65.54,
+  "big": [
+   [
+    "model-00001-of-00017.safetensors",
+    3.96
+   ],
+   [
+    "model-00004-of-00017.safetensors",
+    3.9
+   ],
+   [
+    "model-00005-of-00017.safetensors",
+    3.9
+   ],
+   [
+    "model-00006-of-00017.safetensors",
+    3.9
+   ],
+   [
+    "model-00007-of-00017.safetensors",
+    3.9
+   ],
+   [
+    "model-00008-of-00017.safetensors",
+    3.9
+   ]
+  ]
+ },
+ "Sunbird/Sunflower-Qwen3.5-9B": {
+  "safetensors_gb": 18.82,
+  "pytorch_bin_gb": 0.0,
+  "all_files_gb": 18.84,
+  "big": [
+   [
+    "model.safetensors",
+    18.82
+   ]
+  ]
+ },
+ "Sunbird/Sunflower-Qwen3.8-27B": {
+  "safetensors_gb": 54.71,
+  "pytorch_bin_gb": 0.0,
+  "all_files_gb": 54.73,
+  "big": [
+   [
+    "model-00001-of-00002.safetensors",
+    49.83
+   ],
+   [
+    "model-00002-of-00002.safetensors",
+    4.89
+   ]
+  ]
+ },
+ "bigscience/bloomz-7b1-mt": {
+  "safetensors_gb": 14.14,
+  "pytorch_bin_gb": 14.14,
+  "all_files_gb": 28.32,
+  "big": [
+   [
+    "pytorch_model.bin",
+    14.14
+   ],
+   [
+    "model.safetensors",
+    14.14
+   ]
+  ]
+ },
+ "bigscience/mt0-xxl-mt": {
+  "safetensors_gb": 55.78,
+  "pytorch_bin_gb": 55.78,
+  "all_files_gb": 111.59,
+  "big": [
+   [
+    "pytorch_model-00004-of-00006.bin",
+    10.0
+   ],
+   [
+    "pytorch_model-00005-of-00006.bin",
+    10.0
+   ],
+   [
+    "model-00004-of-00006.safetensors",
+    10.0
+   ],
+   [
+    "model-00005-of-00006.safetensors",
+    10.0
+   ],
+   [
+    "pytorch_model-00001-of-00006.bin",
+    9.94
+   ],
+   [
+    "model-00001-of-00006.safetensors",
+    9.94
+   ]
+  ]
+ },
+ "facebook/nllb-200-1.3B": {
+  "safetensors_gb": 0.0,
+  "pytorch_bin_gb": 5.48,
+  "all_files_gb": 5.51,
+  "big": [
+   [
+    "pytorch_model.bin",
+    5.48
+   ]
+  ]
+ },
+ "facebook/nllb-200-3.3B": {
+  "safetensors_gb": 0.0,
+  "pytorch_bin_gb": 17.58,
+  "all_files_gb": 17.6,
+  "big": [
+   [
+    "pytorch_model-00002-of-00003.bin",
+    8.55
+   ],
+   [
+    "pytorch_model-00001-of-00003.bin",
+    6.93
+   ],
+   [
+    "pytorch_model-00003-of-00003.bin",
+    2.1
+   ]
+  ]
+ },
+ "facebook/nllb-200-distilled-1.3B": {
+  "safetensors_gb": 0.0,
+  "pytorch_bin_gb": 5.48,
+  "all_files_gb": 5.51,
+  "big": [
+   [
+    "pytorch_model.bin",
+    5.48
+   ]
+  ]
+ },
+ "facebook/nllb-200-distilled-600M": {
+  "safetensors_gb": 0.0,
+  "pytorch_bin_gb": 2.46,
+  "all_files_gb": 2.48,
+  "big": [
+   [
+    "pytorch_model.bin",
+    2.46
+   ]
+  ]
+ },
+ "facebook/seamless-m4t-v2-large": {
+  "safetensors_gb": 9.24,
+  "pytorch_bin_gb": 20.62,
+  "all_files_gb": 29.88,
+  "big": [
+   [
+    "m4t_v2_multitask_unity2.pt",
+    11.39
+   ],
+   [
+    "seamlessM4T_v2_large.pt",
+    9.07
+   ],
+   [
+    "model-00001-of-00002.safetensors",
+    5.0
+   ],
+   [
+    "model-00002-of-00002.safetensors",
+    4.24
+   ]
+  ]
+ },
+ "google/gemma-3-27b-it": {
+  "safetensors_gb": 54.86,
+  "pytorch_bin_gb": 0.0,
+  "all_files_gb": 54.9,
+  "big": [
+   [
+    "model-00004-of-00012.safetensors",
+    4.95
+   ],
+   [
+    "model-00005-of-00012.safetensors",
+    4.95
+   ],
+   [
+    "model-00006-of-00012.safetensors",
+    4.95
+   ],
+   [
+    "model-00007-of-00012.safetensors",
+    4.95
+   ],
+   [
+    "model-00008-of-00012.safetensors",
+    4.95
+   ],
+   [
+    "model-00009-of-00012.safetensors",
+    4.95
+   ]
+  ]
+ },
+ "google/gemma-4-31B-it": {
+  "safetensors_gb": 62.55,
+  "pytorch_bin_gb": 0.0,
+  "all_files_gb": 62.58,
+  "big": [
+   [
+    "model-00001-of-00002.safetensors",
+    49.78
+   ],
+   [
+    "model-00002-of-00002.safetensors",
+    12.76
+   ]
+  ]
+ },
+ "google/madlad400-10b-mt": {
+  "safetensors_gb": 42.85,
+  "pytorch_bin_gb": 0.0,
+  "all_files_gb": 57.69,
+  "big": [
+   [
+    "model-q6k.gguf",
+    8.79
+   ],
+   [
+    "model-q4k.gguf",
+    6.03
+   ],
+   [
+    "model-00005-of-00009.safetensors",
+    5.0
+   ],
+   [
+    "model-00007-of-00009.safetensors",
+    5.0
+   ],
+   [
+    "model-00004-of-00009.safetensors",
+    4.97
+   ],
+   [
+    "model-00003-of-00009.safetensors",
+    4.97
+   ]
+  ]
+ },
+ "google/madlad400-3b-mt": {
+  "safetensors_gb": 11.76,
+  "pytorch_bin_gb": 0.0,
+  "all_files_gb": 15.67,
+  "big": [
+   [
+    "model.safetensors",
+    11.76
+   ],
+   [
+    "model-q4k.gguf",
+    1.65
+   ],
+   [
+    "model-q3k.gguf",
+    1.26
+   ],
+   [
+    "model-q2k.gguf",
+    0.97
+   ]
+  ]
+ },
+ "google/madlad400-7b-mt": {
+  "safetensors_gb": 33.19,
+  "pytorch_bin_gb": 0.0,
+  "all_files_gb": 44.69,
+  "big": [
+   [
+    "model-q6k.gguf",
+    6.81
+   ],
+   [
+    "model-00006-of-00007.safetensors",
+    5.0
+   ],
+   [
+    "model-00001-of-00007.safetensors",
+    4.98
+   ],
+   [
+    "model-00004-of-00007.safetensors",
+    4.97
+   ],
+   [
+    "model-00005-of-00007.safetensors",
+    4.97
+   ],
+   [
+    "model-00002-of-00007.safetensors",
+    4.97
+   ]
+  ]
+ },
+ "google/madlad400-7b-mt-bt": {
+  "safetensors_gb": 33.19,
+  "pytorch_bin_gb": 0.0,
+  "all_files_gb": 44.69,
+  "big": [
+   [
+    "model-q6k.gguf",
+    6.81
+   ],
+   [
+    "model-00006-of-00007.safetensors",
+    5.0
+   ],
+   [
+    "model-00001-of-00007.safetensors",
+    4.98
+   ],
+   [
+    "model-00004-of-00007.safetensors",
+    4.97
+   ],
+   [
+    "model-00005-of-00007.safetensors",
+    4.97
+   ],
+   [
+    "model-00002-of-00007.safetensors",
+    4.97
+   ]
+  ]
+ },
+ "google/translategemma-12b-it": {
+  "safetensors_gb": 24.37,
+  "pytorch_bin_gb": 0.0,
+  "all_files_gb": 24.41,
+  "big": [
+   [
+    "model-00001-of-00005.safetensors",
+    4.98
+   ],
+   [
+    "model-00003-of-00005.safetensors",
+    4.93
+   ],
+   [
+    "model-00004-of-00005.safetensors",
+    4.93
+   ],
+   [
+    "model-00002-of-00005.safetensors",
+    4.93
+   ],
+   [
+    "model-00005-of-00005.safetensors",
+    4.6
+   ]
+  ]
+ },
+ "google/translategemma-27b-it": {
+  "safetensors_gb": 54.86,
+  "pytorch_bin_gb": 0.0,
+  "all_files_gb": 54.9,
+  "big": [
+   [
+    "model-00004-of-00012.safetensors",
+    4.95
+   ],
+   [
+    "model-00005-of-00012.safetensors",
+    4.95
+   ],
+   [
+    "model-00006-of-00012.safetensors",
+    4.95
+   ],
+   [
+    "model-00007-of-00012.safetensors",
+    4.95
+   ],
+   [
+    "model-00008-of-00012.safetensors",
+    4.95
+   ],
+   [
+    "model-00009-of-00012.safetensors",
+    4.95
+   ]
+  ]
+ },
+ "google/translategemma-4b-it": {
+  "safetensors_gb": 8.6,
+  "pytorch_bin_gb": 0.0,
+  "all_files_gb": 8.64,
+  "big": [
+   [
+    "model-00001-of-00002.safetensors",
+    4.96
+   ],
+   [
+    "model-00002-of-00002.safetensors",
+    3.64
+   ]
+  ]
+ },
+ "_opus_pairs_mb": {
+  "hau": 298,
+  "ibo": 294,
+  "efi": 292,
+  "twi": 296,
+  "ewe": 297,
+  "swh": 300,
+  "kin": 303,
+  "orm": 302,
+  "tir": 308,
+  "lug": 303,
+  "lin": 298,
+  "xho": 304,
+  "afr": 297,
+  "sna": 304,
+  "nya": 301,
+  "sot": 296,
+  "tsn": 296,
+  "mlg": 291,
+  "bem": 301,
+  "run": 194,
+  "tso": 297,
+  "nso": 297,
+  "ssw": 292,
+  "sag": 269,
+  "tiv": 267,
+  "umb": 299,
+  "mos": 275,
+  "luo": 286,
+  "kon": 276,
+  "swc": 300,
+  "lua": 301,
+  "kqn": 302,
+  "lun": 295,
+  "iso": 271,
+  "loz": 298
+ }
+}

@@ -1,0 +1,7 @@
+set,bin,n_docs,mean_src_tokens,score_mean,score_sd,score_min,score_max,n_english_form
+human,sm,60,264.233,3.107,0.612,1.85,4.35,0
+human,st1024,33,1053.697,3.514,0.481,2.7,4.55,0
+human,st2048,16,2016.438,3.612,0.389,2.9,4.3,0
+human,st512,38,505.711,3.197,0.59,2.05,4.55,0
+sci,sci_dev,25,876.04,4.52,0.295,4.0,5.1,0
+sci,sci_test,28,936.0,4.518,0.29,3.8,5.1,0

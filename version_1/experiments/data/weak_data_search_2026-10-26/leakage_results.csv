@@ -1,0 +1,13 @@
+candidate,n,exact_hits,ngram8_hits,exact_pct,ngram8_pct
+gamayun_tig,200,0,0,0.0,0.0
+gamayun_kau,200,0,0,0.0,0.0
+oldi_seed_eng,460,0,0,0.0,0.0
+tico19_first300,300,0,1,0.0,0.3
+tico19_last300,300,0,0,0.0,0.0
+tatoeba_rn,300,1,0,0.3,0.0
+hornmt,300,0,0,0.0,0.0
+ft_run,550,0,0,0.0,0.0
+ft_luo,1195,0,0,0.0,0.0
+ft_knc,714,0,0,0.0,0.0
+ft_kea,1089,1,0,0.1,0.0
+travis_first1500,1500,0,0,0.0,0.0

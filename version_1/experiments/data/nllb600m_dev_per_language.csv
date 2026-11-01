@@ -1,0 +1,44 @@
+benchmark,family,group,iso,language,n,nllb_code,subset,nllb_n33_beam4_chrf,nllb_n33_beam4_spbleu
+flores_plus_dev,"Other (Indo-European, Austronesian)",qe_validated,afr,Afrikaans,997,afr_Latn,all,64.53,44.0203
+flores_plus_dev,Afroasiatic,qe_validated,amh,Amharic,997,amh_Ethi,all,34.5343,26.6519
+flores_plus_dev,Mande,qe_validated,bam,Bambara,997,bam_Latn,all,31.5141,10.4726
+flores_plus_dev,Bantu,qe_validated,bem,Bemba,997,bem_Latn,all,36.8335,11.9089
+flores_plus_dev,Mande,blend,dyu,Dyula,997,dyu_Latn,all,15.3785,1.9908
+flores_plus_dev,Atlantic-Congo (non-Bantu),qe_validated,ewe,Ewe,997,ewe_Latn,all,38.6161,16.2033
+flores_plus_dev,Atlantic-Congo (non-Bantu),qe_validated,fon,Fon,997,fon_Latn,all,20.6905,5.0105
+flores_plus_dev,Afroasiatic,qe_validated,hau,Hausa,997,hau_Latn,all,51.9199,28.8858
+flores_plus_dev,Atlantic-Congo (non-Bantu),qe_validated,ibo,Igbo,997,ibo_Latn,all,40.3731,19.5342
+flores_plus_dev,Afroasiatic,qe_validated,kab,Kabyle,997,kab_Latn,all,32.3822,13.0855
+flores_plus_dev,Bantu,qe_validated,kam,Kamba,997,kam_Latn,all,23.2515,4.8693
+flores_plus_dev,Atlantic-Congo (non-Bantu),qe_validated,kbp,Kabiye,997,kbp_Latn,all,28.7913,11.5753
+flores_plus_dev,Creole / Pidgin,consensus_only,kea,Kabuverdianu,997,kea_Latn,all,47.4303,26.3128
+flores_plus_dev,Bantu,qe_validated,kik,Kikuyu,997,kik_Latn,all,37.542,15.4827
+flores_plus_dev,Bantu,qe_validated,kin,Kinyarwanda,997,kin_Latn,all,47.8471,24.4122
+flores_plus_dev,Bantu,qe_validated,kmb,Kimbundu,997,kmb_Latn,all,24.0245,4.1703
+flores_plus_dev,Bantu,qe_validated,lin,Lingala,997,lin_Latn,all,48.0841,20.0995
+flores_plus_dev,Bantu,qe_validated,lua,Luba-Kasai,997,lua_Latn,all,35.1961,9.1425
+flores_plus_dev,Bantu,qe_validated,lug,Luganda,997,lug_Latn,all,38.3697,12.4004
+flores_plus_dev,Nilo-Saharan,qe_validated,luo,Luo,997,luo_Latn,all,38.9161,15.5291
+flores_plus_dev,"Other (Indo-European, Austronesian)",qe_validated,mlg,Malagasy,997,plt_Latn,all,49.6086,24.5696
+flores_plus_dev,Atlantic-Congo (non-Bantu),qe_validated,mos,Mossi,997,mos_Latn,all,24.6133,6.427
+flores_plus_dev,Bantu,qe_validated,nso,Sepedi,997,nso_Latn,all,50.7364,26.7578
+flores_plus_dev,Nilo-Saharan,qe_validated,nus,Nuer,997,nus_Latn,all,27.7547,13.268
+flores_plus_dev,Bantu,qe_validated,nya,Chichewa,997,nya_Latn,all,44.3708,17.5862
+flores_plus_dev,Afroasiatic,qe_validated,orm,Oromo,997,gaz_Latn,all,35.9001,11.1285
+flores_plus_dev,Bantu,qe_validated,run,Kirundi,997,run_Latn,all,42.3263,19.3212
+flores_plus_dev,Atlantic-Congo (non-Bantu),blend,sag,Sango,997,sag_Latn,all,36.6015,11.659
+flores_plus_dev,Bantu,qe_validated,sna,Shona,997,sna_Latn,all,42.6771,19.4568
+flores_plus_dev,Afroasiatic,qe_validated,som,Somali,997,som_Latn,all,43.8049,19.0729
+flores_plus_dev,Bantu,qe_validated,sot,Sesotho,997,sot_Latn,all,46.0381,20.5189
+flores_plus_dev,Bantu,qe_validated,ssw,Swati,997,ssw_Latn,all,43.6399,20.4939
+flores_plus_dev,Bantu,qe_validated,swh,Swahili,997,swh_Latn,all,59.3845,37.7884
+flores_plus_dev,Afroasiatic,qe_validated,tir,Tigrinya,997,tir_Ethi,all,25.6961,17.3726
+flores_plus_dev,Bantu,qe_validated,tsn,Setswana,997,tsn_Latn,all,48.6881,25.7303
+flores_plus_dev,Bantu,qe_validated,tso,Tsonga,997,tso_Latn,all,49.8673,26.4373
+flores_plus_dev,Bantu,qe_validated,tum,Tumbuka,997,tum_Latn,all,36.4302,13.9219
+flores_plus_dev,Atlantic-Congo (non-Bantu),qe_validated,twi,Twi,997,twi_Latn,all,38.6564,15.9553
+flores_plus_dev,Bantu,qe_validated,umb,Umbundu,997,umb_Latn,all,23.1792,2.6684
+flores_plus_dev,Atlantic-Congo (non-Bantu),qe_validated,wol,Wolof,997,wol_Latn,all,28.588,9.1771
+flores_plus_dev,Bantu,qe_validated,xho,Xhosa,997,xho_Latn,all,47.7569,24.21
+flores_plus_dev,Atlantic-Congo (non-Bantu),qe_validated,yor,Yoruba,997,yor_Latn,all,27.7991,12.2788
+flores_plus_dev,Bantu,qe_validated,zul,Zulu,997,zul_Latn,all,53.3059,31.1494

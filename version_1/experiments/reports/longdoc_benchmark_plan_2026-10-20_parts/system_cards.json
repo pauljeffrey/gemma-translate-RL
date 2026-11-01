@@ -1,0 +1,1493 @@
+{
+ "generated": "2026-10-20",
+ "note": "Evidence for gemma_mt/gemma_mt/eval/longdoc_systems.py. All licence/language facts read from the public cards/papers on the retrieval date; Hub metadata via HfApi.model_info.",
+ "systems": [
+  {
+   "name": "nllb-200-distilled-600m",
+   "hf_id": "facebook/nllb-200-distilled-600M",
+   "card_url": "https://huggingface.co/facebook/nllb-200-distilled-600M",
+   "retrieved": "2026-10-20",
+   "revision": "f8d333a098d19b4fd9a8b18f94170487ad3f821d",
+   "licence_string_on_card": "cc-by-nc-4.0 (YAML) / License: CC-BY-NC (text)",
+   "licence_normalised": "CC-BY-NC-4.0",
+   "licence_class": "noncommercial",
+   "licence_url": "https://creativecommons.org/licenses/by-nc/4.0/legalcode",
+   "language_list_source": "tokenizer special_tokens_map.json additional_special_tokens (202 codes); FLORES-200 list https://github.com/facebookresearch/flores/blob/main/flores200/README.md",
+   "n_explicit": 44,
+   "n_proxy": 6,
+   "hub": {
+    "lic": [
+     "license:cc-by-nc-4.0"
+    ],
+    "gated": false,
+    "mod": "2024-02-14",
+    "params": null,
+    "weights_gb": 2.46
+   }
+  },
+  {
+   "name": "nllb-200-distilled-1.3b",
+   "hf_id": "facebook/nllb-200-distilled-1.3B",
+   "card_url": "https://huggingface.co/facebook/nllb-200-distilled-1.3B",
+   "retrieved": "2026-10-20",
+   "revision": "7be3e24664b38ce1cac29b8aeed6911aa0cf0576",
+   "licence_string_on_card": "cc-by-nc-4.0 (YAML) / License: CC-BY-NC (text)",
+   "licence_normalised": "CC-BY-NC-4.0",
+   "licence_class": "noncommercial",
+   "licence_url": "https://creativecommons.org/licenses/by-nc/4.0/legalcode",
+   "language_list_source": "tokenizer special_tokens_map.json additional_special_tokens (202 codes); FLORES-200 list https://github.com/facebookresearch/flores/blob/main/flores200/README.md",
+   "n_explicit": 44,
+   "n_proxy": 6,
+   "hub": {
+    "lic": [
+     "license:cc-by-nc-4.0"
+    ],
+    "gated": false,
+    "mod": "2023-02-11",
+    "params": null,
+    "weights_gb": 5.48
+   }
+  },
+  {
+   "name": "nllb-200-1.3b",
+   "hf_id": "facebook/nllb-200-1.3B",
+   "card_url": "https://huggingface.co/facebook/nllb-200-1.3B",
+   "retrieved": "2026-10-20",
+   "revision": "b0de46b488af0cf31749cd8da5ed3171e11b2309",
+   "licence_string_on_card": "cc-by-nc-4.0 (YAML) / License: CC-BY-NC (text)",
+   "licence_normalised": "CC-BY-NC-4.0",
+   "licence_class": "noncommercial",
+   "licence_url": "https://creativecommons.org/licenses/by-nc/4.0/legalcode",
+   "language_list_source": "tokenizer special_tokens_map.json additional_special_tokens (202 codes); FLORES-200 list https://github.com/facebookresearch/flores/blob/main/flores200/README.md",
+   "n_explicit": 44,
+   "n_proxy": 6,
+   "hub": {
+    "lic": [
+     "license:cc-by-nc-4.0"
+    ],
+    "gated": false,
+    "mod": "2023-02-11",
+    "params": null,
+    "weights_gb": 5.48
+   }
+  },
+  {
+   "name": "nllb-200-3.3b",
+   "hf_id": "facebook/nllb-200-3.3B",
+   "card_url": "https://huggingface.co/facebook/nllb-200-3.3B",
+   "retrieved": "2026-10-20",
+   "revision": "1a07f7d195896b2114afcb79b7b57ab512e7b43e",
+   "licence_string_on_card": "cc-by-nc-4.0 (YAML) / License: CC-BY-NC (text)",
+   "licence_normalised": "CC-BY-NC-4.0",
+   "licence_class": "noncommercial",
+   "licence_url": "https://creativecommons.org/licenses/by-nc/4.0/legalcode",
+   "language_list_source": "tokenizer special_tokens_map.json additional_special_tokens (202 codes); FLORES-200 list https://github.com/facebookresearch/flores/blob/main/flores200/README.md",
+   "n_explicit": 44,
+   "n_proxy": 6,
+   "hub": {
+    "lic": [
+     "license:cc-by-nc-4.0"
+    ],
+    "gated": false,
+    "mod": "2023-02-11",
+    "params": null,
+    "weights_gb": 17.58
+   }
+  },
+  {
+   "name": "madlad400-3b-mt",
+   "hf_id": "google/madlad400-3b-mt",
+   "card_url": "https://huggingface.co/google/madlad400-3b-mt",
+   "retrieved": "2026-10-20",
+   "revision": "fa184c675da0b5c9e1c8694fccd4e12e2d422094",
+   "licence_string_on_card": "license: apache-2.0 (YAML) / Apache 2.0 (text)",
+   "licence_normalised": "Apache-2.0",
+   "licence_class": "permissive",
+   "licence_url": "https://www.apache.org/licenses/LICENSE-2.0",
+   "language_list_source": "README YAML language list (419) + spiece.model <2xx> tokens + paper arXiv:2309.04662 Appendix language table",
+   "n_explicit": 44,
+   "n_proxy": 7,
+   "hub": {
+    "lic": [
+     "license:apache-2.0"
+    ],
+    "gated": false,
+    "mod": "2023-11-27",
+    "params": 2940374016,
+    "weights_gb": 11.76
+   }
+  },
+  {
+   "name": "madlad400-7b-mt",
+   "hf_id": "google/madlad400-7b-mt",
+   "card_url": "https://huggingface.co/google/madlad400-7b-mt",
+   "retrieved": "2026-10-20",
+   "revision": "1ff63ce7ddd571a69d45cad9672c553428419671",
+   "licence_string_on_card": "license: apache-2.0 (YAML) / Apache 2.0 (text)",
+   "licence_normalised": "Apache-2.0",
+   "licence_class": "permissive",
+   "licence_url": "https://www.apache.org/licenses/LICENSE-2.0",
+   "language_list_source": "README YAML language list (419) + spiece.model <2xx> tokens + paper arXiv:2309.04662 Appendix language table",
+   "n_explicit": 44,
+   "n_proxy": 7,
+   "hub": {
+    "lic": [
+     "license:apache-2.0"
+    ],
+    "gated": false,
+    "mod": "2023-11-27",
+    "params": 8296829952,
+    "weights_gb": 33.19
+   }
+  },
+  {
+   "name": "madlad400-7b-mt-bt",
+   "hf_id": "google/madlad400-7b-mt-bt",
+   "card_url": "https://huggingface.co/google/madlad400-7b-mt-bt",
+   "retrieved": "2026-10-20",
+   "revision": "1259294dcefa2a4d8e0167ad418fdb47cfaeeca3",
+   "licence_string_on_card": "license: apache-2.0 (YAML) / Apache 2.0 (text)",
+   "licence_normalised": "Apache-2.0",
+   "licence_class": "permissive",
+   "licence_url": "https://www.apache.org/licenses/LICENSE-2.0",
+   "language_list_source": "README YAML language list (419) + spiece.model <2xx> tokens + paper arXiv:2309.04662 Appendix language table",
+   "n_explicit": 44,
+   "n_proxy": 7,
+   "hub": {
+    "lic": [
+     "license:apache-2.0"
+    ],
+    "gated": false,
+    "mod": "2023-11-27",
+    "params": 8296829952,
+    "weights_gb": 33.19
+   }
+  },
+  {
+   "name": "madlad400-10b-mt",
+   "hf_id": "google/madlad400-10b-mt",
+   "card_url": "https://huggingface.co/google/madlad400-10b-mt",
+   "retrieved": "2026-10-20",
+   "revision": "9f2797629c31e69617186dbe5f0ca43bf662f36d",
+   "licence_string_on_card": "license: apache-2.0 (YAML) / Apache 2.0 (text)",
+   "licence_normalised": "Apache-2.0",
+   "licence_class": "permissive",
+   "licence_url": "https://www.apache.org/licenses/LICENSE-2.0",
+   "language_list_source": "README YAML language list (419) + spiece.model <2xx> tokens + paper arXiv:2309.04662 Appendix language table",
+   "n_explicit": 44,
+   "n_proxy": 7,
+   "hub": {
+    "lic": [
+     "license:apache-2.0"
+    ],
+    "gated": false,
+    "mod": "2024-04-12",
+    "params": 10712586240,
+    "weights_gb": 42.85
+   }
+  },
+  {
+   "name": "translategemma-4b-it",
+   "hf_id": "google/translategemma-4b-it",
+   "card_url": "https://huggingface.co/google/translategemma-4b-it",
+   "retrieved": "2026-10-20",
+   "revision": "10042cb0e6e7fdce748996a71dc3dc432a4e0c89",
+   "licence_string_on_card": "license: gemma (YAML); Terms: https://ai.google.dev/gemma/terms",
+   "licence_normalised": "gemma",
+   "licence_class": "gemma_terms",
+   "licence_url": "https://ai.google.dev/gemma/terms",
+   "language_list_source": "arXiv:2601.09012 Appendix C tables 5-7; template language-name table in chat_template.jinja",
+   "n_explicit": 47,
+   "n_proxy": 8,
+   "hub": {
+    "lic": [
+     "license:gemma"
+    ],
+    "gated": "manual",
+    "mod": "2026-01-28",
+    "params": 4971331952,
+    "weights_gb": 8.6
+   }
+  },
+  {
+   "name": "translategemma-12b-it",
+   "hf_id": "google/translategemma-12b-it",
+   "card_url": "https://huggingface.co/google/translategemma-12b-it",
+   "retrieved": "2026-10-20",
+   "revision": "d1b225e1caa17f1ddc7e62065d8637d0923f34e2",
+   "licence_string_on_card": "license: gemma (YAML); Terms: https://ai.google.dev/gemma/terms",
+   "licence_normalised": "gemma",
+   "licence_class": "gemma_terms",
+   "licence_url": "https://ai.google.dev/gemma/terms",
+   "language_list_source": "arXiv:2601.09012 Appendix C tables 5-7; template language-name table in chat_template.jinja",
+   "n_explicit": 47,
+   "n_proxy": 8,
+   "hub": {
+    "lic": [
+     "license:gemma"
+    ],
+    "gated": "manual",
+    "mod": "2026-01-28",
+    "params": 13194203760,
+    "weights_gb": 24.37
+   }
+  },
+  {
+   "name": "translategemma-27b-it",
+   "hf_id": "google/translategemma-27b-it",
+   "card_url": "https://huggingface.co/google/translategemma-27b-it",
+   "retrieved": "2026-10-20",
+   "revision": "7d10f0b72f89a2d0f268cea30727d8b77c0d25c2",
+   "licence_string_on_card": "license: gemma (YAML); Terms: https://ai.google.dev/gemma/terms",
+   "licence_normalised": "gemma",
+   "licence_class": "gemma_terms",
+   "licence_url": "https://ai.google.dev/gemma/terms",
+   "language_list_source": "arXiv:2601.09012 Appendix C tables 5-7; template language-name table in chat_template.jinja",
+   "n_explicit": 47,
+   "n_proxy": 8,
+   "hub": {
+    "lic": [
+     "license:gemma"
+    ],
+    "gated": "manual",
+    "mod": "2026-01-28",
+    "params": 28842036848,
+    "weights_gb": 54.86
+   }
+  },
+  {
+   "name": "gemma-3-27b-it",
+   "hf_id": "google/gemma-3-27b-it",
+   "card_url": "https://huggingface.co/google/gemma-3-27b-it",
+   "retrieved": "2026-10-20",
+   "revision": "005ad3404e59d6023443cb575daa05336842228a",
+   "licence_string_on_card": "license: gemma (YAML)",
+   "licence_normalised": "gemma",
+   "licence_class": "gemma_terms",
+   "licence_url": "https://ai.google.dev/gemma/terms",
+   "language_list_source": "no per-language list on card; TranslateGemma report Table 4 for sw/zu",
+   "n_explicit": 2,
+   "n_proxy": 0,
+   "hub": {
+    "lic": [
+     "license:gemma"
+    ],
+    "gated": "manual",
+    "mod": "2025-03-21",
+    "params": 27432406640,
+    "weights_gb": 54.86
+   }
+  },
+  {
+   "name": "gemma-4-31b-it",
+   "hf_id": "google/gemma-4-31B-it",
+   "card_url": "https://huggingface.co/google/gemma-4-31B-it",
+   "retrieved": "2026-10-20",
+   "revision": "842da3794eaa0b77d5f08bae87a17459d91ff475",
+   "licence_string_on_card": "license: apache-2.0 (YAML); license_link https://ai.google.dev/gemma/docs/gemma_4_license",
+   "licence_normalised": "Apache-2.0",
+   "licence_class": "permissive",
+   "licence_url": "https://www.apache.org/licenses/LICENSE-2.0",
+   "language_list_source": "none on card",
+   "n_explicit": 0,
+   "n_proxy": 0,
+   "hub": {
+    "lic": [
+     "license:apache-2.0"
+    ],
+    "gated": false,
+    "mod": "2026-07-20",
+    "params": 31273088876,
+    "weights_gb": 62.55
+   }
+  },
+  {
+   "name": "qwen3-32b",
+   "hf_id": "Qwen/Qwen3-32B",
+   "card_url": "https://huggingface.co/Qwen/Qwen3-32B",
+   "retrieved": "2026-10-20",
+   "revision": "9216db5781bf21249d130ec9da846c4624c16137",
+   "licence_string_on_card": "license: apache-2.0 (YAML)",
+   "licence_normalised": "Apache-2.0",
+   "licence_class": "permissive",
+   "licence_url": "https://www.apache.org/licenses/LICENSE-2.0",
+   "language_list_source": "arXiv:2505.09388 Table 36",
+   "n_explicit": 3,
+   "n_proxy": 0,
+   "hub": {
+    "lic": [
+     "license:apache-2.0"
+    ],
+    "gated": false,
+    "mod": "2025-07-26",
+    "params": 32762123264,
+    "weights_gb": 65.52
+   }
+  },
+  {
+   "name": "aya-101",
+   "hf_id": "CohereLabs/aya-101",
+   "card_url": "https://huggingface.co/CohereLabs/aya-101",
+   "retrieved": "2026-10-20",
+   "revision": "e7dad472b9de8a30a00cf08a05c19003bf59028d",
+   "licence_string_on_card": "license: apache-2.0 (YAML)",
+   "licence_normalised": "Apache-2.0",
+   "licence_class": "permissive",
+   "licence_url": "https://www.apache.org/licenses/LICENSE-2.0",
+   "language_list_source": "README YAML language list (101)",
+   "n_explicit": 15,
+   "n_proxy": 4,
+   "hub": {
+    "lic": [
+     "license:apache-2.0"
+    ],
+    "gated": false,
+    "mod": "2025-09-10",
+    "params": 12921057280,
+    "weights_gb": 51.68
+   }
+  },
+  {
+   "name": "tiny-aya-earth",
+   "hf_id": "CohereLabs/tiny-aya-earth",
+   "card_url": "https://huggingface.co/CohereLabs/tiny-aya-earth",
+   "retrieved": "2026-10-20",
+   "revision": "0624fafbe200f930b89566fc4ec4da314ba48d89",
+   "licence_string_on_card": "license: cc-by-nc-4.0 (YAML); 'License: CC-BY-NC, requires also adhering to Cohere Lab's Acceptable Use Policy' (text)",
+   "licence_normalised": "CC-BY-NC-4.0 + Cohere Labs Acceptable Use Policy",
+   "licence_class": "noncommercial",
+   "licence_url": "https://cohere.com/cohere-labs-cc-by-nc-license",
+   "language_list_source": "README YAML language list (70)",
+   "n_explicit": 10,
+   "n_proxy": 3,
+   "hub": {
+    "lic": [
+     "license:cc-by-nc-4.0"
+    ],
+    "gated": "auto",
+    "mod": "2026-09-30",
+    "params": 3349227520,
+    "weights_gb": 6.7
+   }
+  },
+  {
+   "name": "tiny-aya-global",
+   "hf_id": "CohereLabs/tiny-aya-global",
+   "card_url": "https://huggingface.co/CohereLabs/tiny-aya-global",
+   "retrieved": "2026-10-20",
+   "revision": "af89d219b53ed9b13b8a4645f9c8028973510324",
+   "licence_string_on_card": "license: cc-by-nc-4.0 (YAML); 'License: CC-BY-NC, requires also adhering to Cohere Lab's Acceptable Use Policy' (text)",
+   "licence_normalised": "CC-BY-NC-4.0 + Cohere Labs Acceptable Use Policy",
+   "licence_class": "noncommercial",
+   "licence_url": "https://cohere.com/cohere-labs-cc-by-nc-license",
+   "language_list_source": "README YAML language list (70)",
+   "n_explicit": 10,
+   "n_proxy": 3,
+   "hub": {
+    "lic": [
+     "license:cc-by-nc-4.0"
+    ],
+    "gated": "auto",
+    "mod": "2026-09-30",
+    "params": 3349227520,
+    "weights_gb": 6.7
+   }
+  },
+  {
+   "name": "seamless-m4t-v2-large",
+   "hf_id": "facebook/seamless-m4t-v2-large",
+   "card_url": "https://huggingface.co/facebook/seamless-m4t-v2-large",
+   "retrieved": "2026-10-20",
+   "revision": "5f8cc790b19fc3f67a61c105133b20b34e3dcb76",
+   "licence_string_on_card": "license: cc-by-nc-4.0 (YAML)",
+   "licence_normalised": "CC-BY-NC-4.0",
+   "licence_class": "noncommercial",
+   "licence_url": "https://creativecommons.org/licenses/by-nc/4.0/legalcode",
+   "language_list_source": "README 'Supported Languages' table (Sp/Tx source/target columns)",
+   "n_explicit": 12,
+   "n_proxy": 3,
+   "hub": {
+    "lic": [
+     "license:cc-by-nc-4.0"
+    ],
+    "gated": false,
+    "mod": "2024-01-04",
+    "params": 2309249669,
+    "weights_gb": 29.86
+   }
+  },
+  {
+   "name": "mt0-xxl-mt",
+   "hf_id": "bigscience/mt0-xxl-mt",
+   "card_url": "https://huggingface.co/bigscience/mt0-xxl-mt",
+   "retrieved": "2026-10-20",
+   "revision": "db491aacb6a2601e3e8aac52214dbf6af7cd3f49",
+   "licence_string_on_card": "license: apache-2.0 (YAML)",
+   "licence_normalised": "Apache-2.0",
+   "licence_class": "permissive",
+   "licence_url": "https://www.apache.org/licenses/LICENSE-2.0",
+   "language_list_source": "README YAML language list (101 = mC4)",
+   "n_explicit": 13,
+   "n_proxy": 4,
+   "hub": {
+    "lic": [
+     "license:apache-2.0"
+    ],
+    "gated": false,
+    "mod": "2024-06-07",
+    "params": 13945516032,
+    "weights_gb": 111.56
+   }
+  },
+  {
+   "name": "bloomz-7b1-mt",
+   "hf_id": "bigscience/bloomz-7b1-mt",
+   "card_url": "https://huggingface.co/bigscience/bloomz-7b1-mt",
+   "retrieved": "2026-10-20",
+   "revision": "fba4ea6dc5719f12df4f36b4236aa042f6998f24",
+   "licence_string_on_card": "license: bigscience-bloom-rail-1.0 (YAML)",
+   "licence_normalised": "bigscience-bloom-rail-1.0",
+   "licence_class": "other",
+   "licence_url": "https://huggingface.co/spaces/bigscience/license",
+   "language_list_source": "README YAML language list",
+   "n_explicit": 21,
+   "n_proxy": 5,
+   "hub": {
+    "lic": [
+     "license:bigscience-bloom-rail-1.0"
+    ],
+    "gated": false,
+    "mod": "2024-01-10",
+    "params": 7069016064,
+    "weights_gb": 28.28
+   }
+  },
+  {
+   "name": "opus-mt-en-x",
+   "hf_id": "",
+   "card_url": "https://huggingface.co/Helsinki-NLP",
+   "retrieved": "2026-10-20",
+   "revision": "",
+   "licence_string_on_card": "license: apache-2.0 (YAML)",
+   "licence_normalised": "Apache-2.0",
+   "licence_class": "permissive",
+   "licence_url": "https://www.apache.org/licenses/LICENSE-2.0",
+   "language_list_source": "Hub model listing Helsinki-NLP/opus-mt-en-* (checked via HfApi.model_info)",
+   "n_explicit": 35,
+   "n_proxy": 3,
+   "hub": null
+  },
+  {
+   "name": "opus-mt-tc-bible-big-eng-mul",
+   "hf_id": "Helsinki-NLP/opus-mt-tc-bible-big-deu_eng_fra_por_spa-mul",
+   "card_url": "https://huggingface.co/Helsinki-NLP/opus-mt-tc-bible-big-deu_eng_fra_por_spa-mul",
+   "retrieved": "2026-10-20",
+   "revision": "160f64269da14c836871f8acf97553b23c63b979",
+   "licence_string_on_card": "License: Apache-2.0 (text) / license: apache-2.0 (YAML)",
+   "licence_normalised": "Apache-2.0",
+   "licence_class": "permissive",
+   "licence_url": "https://www.apache.org/licenses/LICENSE-2.0",
+   "language_list_source": "README 'Target Language(s)' line (1196 ISO-639-3 codes)",
+   "n_explicit": 59,
+   "n_proxy": 5,
+   "hub": {
+    "lic": [
+     "license:apache-2.0"
+    ],
+    "gated": false,
+    "mod": "2024-10-12",
+    "params": 240890351,
+    "weights_gb": 1.93
+   }
+  },
+  {
+   "name": "opus-mt-tc-bible-big-eng-bnt",
+   "hf_id": "Helsinki-NLP/opus-mt-tc-bible-big-deu_eng_fra_por_spa-bnt",
+   "card_url": "https://huggingface.co/Helsinki-NLP/opus-mt-tc-bible-big-deu_eng_fra_por_spa-bnt",
+   "retrieved": "2026-10-20",
+   "revision": "ad19d20784f2a0213872851d3d998590f4889e45",
+   "licence_string_on_card": "License: Apache-2.0 (text)",
+   "licence_normalised": "Apache-2.0",
+   "licence_class": "permissive",
+   "licence_url": "https://www.apache.org/licenses/LICENSE-2.0",
+   "language_list_source": "README 'Target Language(s)' line (78 ISO-639-3 codes)",
+   "n_explicit": 31,
+   "n_proxy": 3,
+   "hub": {
+    "lic": [
+     "license:apache-2.0"
+    ],
+    "gated": false,
+    "mod": "2024-10-08",
+    "params": 240211801,
+    "weights_gb": 1.92
+   }
+  },
+  {
+   "name": "opus-mt-tc-bible-big-eng-afa",
+   "hf_id": "Helsinki-NLP/opus-mt-tc-bible-big-deu_eng_fra_por_spa-afa",
+   "card_url": "https://huggingface.co/Helsinki-NLP/opus-mt-tc-bible-big-deu_eng_fra_por_spa-afa",
+   "retrieved": "2026-10-20",
+   "revision": "90100f6582781668d640eca8e3cbfe36a9e6d156",
+   "licence_string_on_card": "License: Apache-2.0 (text)",
+   "licence_normalised": "Apache-2.0",
+   "licence_class": "permissive",
+   "licence_url": "https://www.apache.org/licenses/LICENSE-2.0",
+   "language_list_source": "README 'Target Language(s)' line (62 ISO-639-3 codes)",
+   "n_explicit": 8,
+   "n_proxy": 0,
+   "hub": {
+    "lic": [
+     "license:apache-2.0"
+    ],
+    "gated": false,
+    "mod": "2024-10-08",
+    "params": 239717751,
+    "weights_gb": 1.92
+   }
+  },
+  {
+   "name": "sunflower-qwen3.8-27b",
+   "hf_id": "Sunbird/Sunflower-Qwen3.8-27B",
+   "card_url": "https://huggingface.co/Sunbird/Sunflower-Qwen3.8-27B",
+   "retrieved": "2026-10-20",
+   "revision": "42774a09a1893c5c83c5cb1cb521386eaa104fcd",
+   "licence_string_on_card": "license: apache-2.0 (YAML); 'Apache 2.0' (text)",
+   "licence_normalised": "Apache-2.0",
+   "licence_class": "permissive",
+   "licence_url": "https://www.apache.org/licenses/LICENSE-2.0",
+   "language_list_source": "README YAML language list (68)",
+   "n_explicit": 31,
+   "n_proxy": 6,
+   "hub": {
+    "lic": [
+     "license:apache-2.0"
+    ],
+    "gated": "auto",
+    "mod": "2026-09-23",
+    "params": 27356728560,
+    "weights_gb": 54.71
+   }
+  },
+  {
+   "name": "sunflower-qwen3.5-9b",
+   "hf_id": "Sunbird/Sunflower-Qwen3.5-9B",
+   "card_url": "https://huggingface.co/Sunbird/Sunflower-Qwen3.5-9B",
+   "retrieved": "2026-10-20",
+   "revision": "c56081c5024b1c11186a69898f5f6a7a2dabe454",
+   "licence_string_on_card": "license: apache-2.0 (YAML)",
+   "licence_normalised": "Apache-2.0",
+   "licence_class": "permissive",
+   "licence_url": "https://www.apache.org/licenses/LICENSE-2.0",
+   "language_list_source": "README YAML language list (70 entries incl. eng, fra)",
+   "n_explicit": 31,
+   "n_proxy": 6,
+   "hub": {
+    "lic": [
+     "license:apache-2.0"
+    ],
+    "gated": "auto",
+    "mod": "2026-09-30",
+    "params": 9409813744,
+    "weights_gb": 18.82
+   }
+  },
+  {
+   "name": "afriqueqwen3.5-9b-50langs-instruct",
+   "hf_id": "McGill-NLP/AfriqueQwen3.5-9B-50Langs-Instruct-v1",
+   "card_url": "https://huggingface.co/McGill-NLP/AfriqueQwen3.5-9B-50Langs-Instruct-v1",
+   "retrieved": "2026-10-20",
+   "revision": "693f12e444a30971ca53889128d7bade9491ecb3",
+   "licence_string_on_card": "license: cc-by-4.0 (YAML)",
+   "licence_normalised": "CC-BY-4.0",
+   "licence_class": "permissive",
+   "licence_url": "https://creativecommons.org/licenses/by/4.0/legalcode",
+   "language_list_source": "base-model README table 'Supported Languages' (50) https://huggingface.co/McGill-NLP/AfriqueQwen3.5-9B-50Langs",
+   "n_explicit": 41,
+   "n_proxy": 6,
+   "hub": {
+    "lic": [
+     "license:cc-by-4.0"
+    ],
+    "gated": false,
+    "mod": "2026-09-18",
+    "params": 8953803264,
+    "weights_gb": 17.91
+   }
+  },
+  {
+   "name": "llamax3-8b-alpaca",
+   "hf_id": "LLaMAX/LLaMAX3-8B-Alpaca",
+   "card_url": "https://huggingface.co/LLaMAX/LLaMAX3-8B-Alpaca",
+   "retrieved": "2026-10-20",
+   "revision": "111f2fa166ff8bd3413757cbda9900374ce38f9e",
+   "licence_string_on_card": "license: mit (YAML) over a Llama-3-8B base",
+   "licence_normalised": "Llama-3 Community License (Hub tag: MIT)",
+   "licence_class": "llama",
+   "licence_url": "https://github.com/meta-llama/llama3/blob/main/LICENSE",
+   "language_list_source": "README language list (Afrikaans ... Zulu, 101)",
+   "n_explicit": 20,
+   "n_proxy": 3,
+   "hub": {
+    "lic": [
+     "license:mit"
+    ],
+    "gated": false,
+    "mod": "2025-05-12",
+    "params": 8030261248,
+    "weights_gb": 32.12
+   }
+  },
+  {
+   "name": "n-atlas-llm",
+   "hf_id": "NCAIR1/N-ATLaS",
+   "card_url": "https://huggingface.co/NCAIR1/N-ATLaS",
+   "retrieved": "2026-10-20",
+   "revision": "e294476928aca9030e924ca27bb8e085e8581273",
+   "licence_string_on_card": "no YAML license (empty front matter); README section 'License'",
+   "licence_normalised": "N-ATLaS Open-Source Research and Innovation License (custom, 1000-user cap)",
+   "licence_class": "other",
+   "licence_url": "https://huggingface.co/NCAIR1/N-ATLaS",
+   "language_list_source": "README (Key Features / Training Data tables)",
+   "n_explicit": 3,
+   "n_proxy": 0,
+   "hub": {
+    "lic": [],
+    "gated": "auto",
+    "mod": "2025-09-23",
+    "params": 8030261248,
+    "weights_gb": 16.06
+   }
+  }
+ ],
+ "opus_mt_en_x_models": {
+  "bem": {
+   "repo": "Helsinki-NLP/opus-mt-en-bem",
+   "revision": "d0a2a6070188e90d567c089747695c257cb2a370",
+   "license_tag": [
+    "license:apache-2.0"
+   ]
+  },
+  "efi": {
+   "repo": "Helsinki-NLP/opus-mt-en-efi",
+   "revision": "5dc25901fa8fdfdf4d63f2ea3d2aed948114f4ee",
+   "license_tag": [
+    "license:apache-2.0"
+   ]
+  },
+  "iso": {
+   "repo": "Helsinki-NLP/opus-mt-en-iso",
+   "revision": "8763b60c1733c4ea0cd8873d5cf520bd7ab81c0b",
+   "license_tag": [
+    "license:apache-2.0"
+   ]
+  },
+  "loz": {
+   "repo": "Helsinki-NLP/opus-mt-en-loz",
+   "revision": "648b907bfb6eff55d74a59931b72be8222a8627c",
+   "license_tag": [
+    "license:apache-2.0"
+   ]
+  },
+  "lun": {
+   "repo": "Helsinki-NLP/opus-mt-en-lun",
+   "revision": "035847b8eefd9bd77e9e64f83c0bed1f20e052ab",
+   "license_tag": [
+    "license:apache-2.0"
+   ]
+  },
+  "luo": {
+   "repo": "Helsinki-NLP/opus-mt-en-luo",
+   "revision": "d5b172b3beee08f5bac8ffcffb6d786a782af1ca",
+   "license_tag": [
+    "license:apache-2.0"
+   ]
+  },
+  "mos": {
+   "repo": "Helsinki-NLP/opus-mt-en-mos",
+   "revision": "712e2f64e9e92a28744f6d7be3aa45a55f35016c",
+   "license_tag": [
+    "license:apache-2.0"
+   ]
+  },
+  "om": {
+   "repo": "Helsinki-NLP/opus-mt-en-om",
+   "revision": "e321b18f8c9def1c9aebf9e83926ea99fac90c75",
+   "license_tag": [
+    "license:apache-2.0"
+   ]
+  },
+  "run": {
+   "repo": "Helsinki-NLP/opus-mt-en-run",
+   "revision": "71ab479e437dc32f3f05e1a2fba8b3ce5e90f360",
+   "license_tag": [
+    "license:apache-2.0"
+   ]
+  },
+  "rn": {
+   "repo": "Helsinki-NLP/opus-mt-en-rn",
+   "revision": "3b1113cc16fdb27c46a8486f118cf5714de76d2f",
+   "license_tag": [
+    "license:apache-2.0"
+   ]
+  },
+  "swc": {
+   "repo": "Helsinki-NLP/opus-mt-en-swc",
+   "revision": "58078d2b07a44658e181d6643db043b3c63c5d66",
+   "license_tag": [
+    "license:apache-2.0"
+   ]
+  },
+  "tiv": {
+   "repo": "Helsinki-NLP/opus-mt-en-tiv",
+   "revision": "7de8a539240b5cd64f52432fc0f23781041b71da",
+   "license_tag": [
+    "license:apache-2.0"
+   ]
+  },
+  "umb": {
+   "repo": "Helsinki-NLP/opus-mt-en-umb",
+   "revision": "70bbc1c0fcbe57bb94ecd5d35f88d45d74caa963",
+   "license_tag": [
+    "license:apache-2.0"
+   ]
+  },
+  "kqn": {
+   "repo": "Helsinki-NLP/opus-mt-en-kqn",
+   "revision": "6c93d137cc96be77aa105386fb0844da18f30197",
+   "license_tag": [
+    "license:apache-2.0"
+   ]
+  },
+  "lua": {
+   "repo": "Helsinki-NLP/opus-mt-en-lua",
+   "revision": "bc62ccf622689f84cdcfe6b9ce759be77c0593f8",
+   "license_tag": [
+    "license:apache-2.0"
+   ]
+  },
+  "lu": {
+   "repo": "Helsinki-NLP/opus-mt-en-lu",
+   "revision": "47b010c52d75b2e3c75faddb37dbbb4a307412da",
+   "license_tag": [
+    "license:apache-2.0"
+   ]
+  },
+  "lue": {
+   "repo": "Helsinki-NLP/opus-mt-en-lue",
+   "revision": "c7683aeb48d193bbb2f35b6760d086a1376be981",
+   "license_tag": [
+    "license:apache-2.0"
+   ]
+  },
+  "kg": {
+   "repo": "Helsinki-NLP/opus-mt-en-kg",
+   "revision": "b061c8ed547c256869806098f77c63ec442b99a8",
+   "license_tag": [
+    "license:apache-2.0"
+   ]
+  },
+  "ig": {
+   "repo": "Helsinki-NLP/opus-mt-en-ig",
+   "revision": "0657b968cb9068ab59fe68e8b7dbc89eb21a2a20",
+   "license_tag": [
+    "license:apache-2.0"
+   ]
+  },
+  "ha": {
+   "repo": "Helsinki-NLP/opus-mt-en-ha",
+   "revision": "9736e603aa1c79372d62b3a9d96029d0b51f7466",
+   "license_tag": [
+    "license:apache-2.0"
+   ]
+  },
+  "ee": {
+   "repo": "Helsinki-NLP/opus-mt-en-ee",
+   "revision": "fef1362558b7948e5257f06f192d700761b3b57d",
+   "license_tag": [
+    "license:apache-2.0"
+   ]
+  },
+  "tw": {
+   "repo": "Helsinki-NLP/opus-mt-en-tw",
+   "revision": "d75a505a96de52043b9d57d19b4992564769d6dd",
+   "license_tag": [
+    "license:apache-2.0"
+   ]
+  },
+  "sg": {
+   "repo": "Helsinki-NLP/opus-mt-en-sg",
+   "revision": "b1ee58bf47b9585780ec534fe89d3d7327c5a74f",
+   "license_tag": [
+    "license:apache-2.0"
+   ]
+  },
+  "ss": {
+   "repo": "Helsinki-NLP/opus-mt-en-ss",
+   "revision": "35b704501dcb7a6cc4eaad2eee7468554bf64bd4",
+   "license_tag": [
+    "license:apache-2.0"
+   ]
+  },
+  "st": {
+   "repo": "Helsinki-NLP/opus-mt-en-st",
+   "revision": "38f5c02c804772fd38c723df2cc6ac645fb1ec56",
+   "license_tag": [
+    "license:apache-2.0"
+   ]
+  },
+  "nso": {
+   "repo": "Helsinki-NLP/opus-mt-en-nso",
+   "revision": "415eba25da84f7f4e6023e4a625cbdc9670c6030",
+   "license_tag": [
+    "license:apache-2.0"
+   ]
+  },
+  "ny": {
+   "repo": "Helsinki-NLP/opus-mt-en-ny",
+   "revision": "b15534958111196e4bd6abf1e1573e5a80e45806",
+   "license_tag": [
+    "license:apache-2.0"
+   ]
+  },
+  "rw": {
+   "repo": "Helsinki-NLP/opus-mt-en-rw",
+   "revision": "958a15ecacbd5c1d34986f70c69cf55164b63216",
+   "license_tag": [
+    "license:apache-2.0"
+   ]
+  },
+  "sn": {
+   "repo": "Helsinki-NLP/opus-mt-en-sn",
+   "revision": "7313e969b1783060740e1ea49cf5ad0876e4792e",
+   "license_tag": [
+    "license:apache-2.0"
+   ]
+  },
+  "sw": {
+   "repo": "Helsinki-NLP/opus-mt-en-sw",
+   "revision": "28780399d37e1161afc94577a717d7fcfa54fecc",
+   "license_tag": [
+    "license:apache-2.0"
+   ]
+  },
+  "tn": {
+   "repo": "Helsinki-NLP/opus-mt-en-tn",
+   "revision": "adaf6aebad6f871274e0980f4e5185b9b5661f8f",
+   "license_tag": [
+    "license:apache-2.0"
+   ]
+  },
+  "ts": {
+   "repo": "Helsinki-NLP/opus-mt-en-ts",
+   "revision": "1baa05f9ffce9b8308319c16577f262390e9bb3e",
+   "license_tag": [
+    "license:apache-2.0"
+   ]
+  },
+  "ti": {
+   "repo": "Helsinki-NLP/opus-mt-en-ti",
+   "revision": "72f1e40b4b60ff4863407f90792b4fac517562ec",
+   "license_tag": [
+    "license:apache-2.0"
+   ]
+  },
+  "xh": {
+   "repo": "Helsinki-NLP/opus-mt-en-xh",
+   "revision": "2dac5576cc2d08a6b157491b1279c226bb72ce6d",
+   "license_tag": [
+    "license:apache-2.0"
+   ]
+  },
+  "mg": {
+   "repo": "Helsinki-NLP/opus-mt-en-mg",
+   "revision": "19162a29183c46a0bbd7e6d24fa398f4e7d651b7",
+   "license_tag": [
+    "license:apache-2.0"
+   ]
+  },
+  "af": {
+   "repo": "Helsinki-NLP/opus-mt-en-af",
+   "revision": "6bb29b2752ad425fae1ecdaba201e2de636ecc24",
+   "license_tag": [
+    "license:apache-2.0"
+   ]
+  },
+  "lg": {
+   "repo": "Helsinki-NLP/opus-mt-en-lg",
+   "revision": "f83e1d2ddaee499d863e1ae66f7970cd42f33286",
+   "license_tag": [
+    "license:apache-2.0"
+   ]
+  },
+  "ln": {
+   "repo": "Helsinki-NLP/opus-mt-en-ln",
+   "revision": "80f16312468611b39b2afed2a4ae0741eaef1d47",
+   "license_tag": [
+    "license:apache-2.0"
+   ]
+  },
+  "ber": {
+   "repo": "Helsinki-NLP/opus-mt-en-ber",
+   "revision": "66bab8cffbcdbffd671727b30ad2d70b194e53fe",
+   "license_tag": [
+    "license:apache-2.0"
+   ]
+  },
+  "bnt": {
+   "repo": "Helsinki-NLP/opus-mt-en-bnt",
+   "revision": "3077799df6682da2bb40d2b05d5ef3e12e65658a",
+   "license_tag": [
+    "license:apache-2.0"
+   ]
+  },
+  "afa": {
+   "repo": "Helsinki-NLP/opus-mt-en-afa",
+   "revision": "7d3a337bc5f0dafaf02c4b7287baf1fdba57b2b6",
+   "license_tag": [
+    "license:apache-2.0"
+   ]
+  },
+  "nic": {
+   "repo": "Helsinki-NLP/opus-mt-en-nic",
+   "revision": "f28e69479a311f852b1f6847bdbfe749fae03795",
+   "license_tag": [
+    "license:apache-2.0"
+   ]
+  },
+  "mul": {
+   "repo": "Helsinki-NLP/opus-mt-en-mul",
+   "revision": "07ab277b060b29b7208dc0a198327eeeea92224d",
+   "license_tag": [
+    "license:apache-2.0"
+   ]
+  },
+  "toi": {
+   "repo": "Helsinki-NLP/opus-mt-en-toi",
+   "revision": "5ca92a334a19414863a20ad6db562eb6e929c5de",
+   "license_tag": [
+    "license:apache-2.0"
+   ]
+  },
+  "mfe": {
+   "repo": "Helsinki-NLP/opus-mt-en-mfe",
+   "revision": "b93c90ac06816049e84e1b3a1c4fce6ef5aff0ec",
+   "license_tag": [
+    "license:apache-2.0"
+   ]
+  },
+  "crs": {
+   "repo": "Helsinki-NLP/opus-mt-en-crs",
+   "revision": "972b14b8c6ab8154cc5e0ed27e3f52ee033a737e",
+   "license_tag": [
+    "license:apache-2.0"
+   ]
+  },
+  "guw": {
+   "repo": "Helsinki-NLP/opus-mt-en-guw",
+   "revision": "2a429e21c54f64d206e998907fbf091af51e2a08",
+   "license_tag": [
+    "license:apache-2.0"
+   ]
+  },
+  "nyk": {
+   "repo": "Helsinki-NLP/opus-mt-en-nyk",
+   "revision": "96d148e48cd347ef9fde6bb20beb31e047e75ccb",
+   "license_tag": [
+    "license:apache-2.0"
+   ]
+  },
+  "rnd": {
+   "repo": "Helsinki-NLP/opus-mt-en-rnd",
+   "revision": "eb3ce3455dede897a793ed5841575eef5217ed1a",
+   "license_tag": [
+    "license:apache-2.0"
+   ]
+  },
+  "sal": {
+   "repo": "Helsinki-NLP/opus-mt-en-sal",
+   "revision": "ffc2388071bd2ec6e5e77a6717c67f10512096f7",
+   "license_tag": [
+    "license:apache-2.0"
+   ]
+  },
+  "tll": {
+   "repo": "Helsinki-NLP/opus-mt-en-tll",
+   "revision": "ede19a2b39c3d96eafd1e75f77cf60d24c542453",
+   "license_tag": [
+    "license:apache-2.0"
+   ]
+  },
+  "tdt": {
+   "repo": "Helsinki-NLP/opus-mt-en-tdt",
+   "revision": "f6bfeb4e1b3a65fea968c6e7892a388282525b36",
+   "license_tag": [
+    "license:apache-2.0"
+   ]
+  }
+ },
+ "published_numbers": {
+  "madlad_paper_table17_flores200_enxx_chrF": {
+   "source": "Kudugunta et al. 2023, arXiv:2309.04662, Table 17 (en-centric FLORES-200, <bleu>/<chrf>, sacrebleu; NLLB column is the 54B MoE, not the released dense checkpoints). Published, not measured by us. Languages absent from the MADLAD vocab (bem tum umb mos ki luo kam kea kab lua) score ~2 chrF for 3B/10B = unsupported.",
+   "per_language": {
+    "yor": {
+     "table_key": "yo",
+     "NLLB-54B-MoE": 27.4,
+     "MADLAD-3B": 19.7,
+     "MADLAD-7.2B": 20.3,
+     "MADLAD-10.7B": 20.7
+    },
+    "hau": {
+     "table_key": "ha",
+     "NLLB-54B-MoE": 56.0,
+     "MADLAD-3B": 44.4,
+     "MADLAD-7.2B": 45.3,
+     "MADLAD-10.7B": 47.1
+    },
+    "ibo": {
+     "table_key": "ig",
+     "NLLB-54B-MoE": 43.6,
+     "MADLAD-3B": 34.6,
+     "MADLAD-7.2B": 38.7,
+     "MADLAD-10.7B": 38.5
+    },
+    "ewe": {
+     "table_key": "ee",
+     "NLLB-54B-MoE": 41.9,
+     "MADLAD-3B": 26.9,
+     "MADLAD-7.2B": 29.2,
+     "MADLAD-10.7B": 28.4
+    },
+    "fon": {
+     "table_key": "fon",
+     "NLLB-54B-MoE": 23.5,
+     "MADLAD-3B": 15.6,
+     "MADLAD-7.2B": 16.0,
+     "MADLAD-10.7B": 15.9
+    },
+    "wol": {
+     "table_key": "wo",
+     "NLLB-54B-MoE": 31.8,
+     "MADLAD-3B": 13.2,
+     "MADLAD-7.2B": 12.6,
+     "MADLAD-10.7B": 15.4
+    },
+    "swh": {
+     "table_key": "sw",
+     "NLLB-54B-MoE": 61.2,
+     "MADLAD-3B": 57.6,
+     "MADLAD-7.2B": 58.1,
+     "MADLAD-10.7B": 58.5
+    },
+    "kin": {
+     "table_key": "rw",
+     "NLLB-54B-MoE": 53.8,
+     "MADLAD-3B": 14.6,
+     "MADLAD-7.2B": 9.6,
+     "MADLAD-10.7B": 11.9
+    },
+    "som": {
+     "table_key": "so",
+     "NLLB-54B-MoE": 47.3,
+     "MADLAD-3B": 41.8,
+     "MADLAD-7.2B": 43.4,
+     "MADLAD-10.7B": 43.0
+    },
+    "orm": {
+     "table_key": "om",
+     "NLLB-54B-MoE": 43.3,
+     "MADLAD-3B": 22.8,
+     "MADLAD-7.2B": 29.3,
+     "MADLAD-10.7B": 29.1
+    },
+    "amh": {
+     "table_key": "am",
+     "NLLB-54B-MoE": 42.2,
+     "MADLAD-3B": 31.2,
+     "MADLAD-7.2B": 32.2,
+     "MADLAD-10.7B": 32.5
+    },
+    "tir": {
+     "table_key": "ti",
+     "NLLB-54B-MoE": 27.9,
+     "MADLAD-3B": 15.7,
+     "MADLAD-7.2B": 18.6,
+     "MADLAD-10.7B": 18.9
+    },
+    "lug": {
+     "table_key": "lg",
+     "NLLB-54B-MoE": 44.7,
+     "MADLAD-3B": 27.0,
+     "MADLAD-7.2B": 30.3,
+     "MADLAD-10.7B": 29.6
+    },
+    "lin": {
+     "table_key": "ln",
+     "NLLB-54B-MoE": 50.8,
+     "MADLAD-3B": 18.1,
+     "MADLAD-7.2B": 18.8,
+     "MADLAD-10.7B": 20.8
+    },
+    "zul": {
+     "table_key": "zu",
+     "NLLB-54B-MoE": 58.8,
+     "MADLAD-3B": 44.7,
+     "MADLAD-7.2B": 48.6,
+     "MADLAD-10.7B": 47.6
+    },
+    "xho": {
+     "table_key": "xh",
+     "NLLB-54B-MoE": 54.7,
+     "MADLAD-3B": 47.4,
+     "MADLAD-7.2B": 50.1,
+     "MADLAD-10.7B": 49.2
+    },
+    "afr": {
+     "table_key": "af",
+     "NLLB-54B-MoE": 66.6,
+     "MADLAD-3B": 66.1,
+     "MADLAD-7.2B": 67.6,
+     "MADLAD-10.7B": 67.3
+    },
+    "sna": {
+     "table_key": "sn",
+     "NLLB-54B-MoE": 48.8,
+     "MADLAD-3B": 38.2,
+     "MADLAD-7.2B": 42.3,
+     "MADLAD-10.7B": 41.8
+    },
+    "nya": {
+     "table_key": "ny",
+     "NLLB-54B-MoE": 48.7,
+     "MADLAD-3B": 38.6,
+     "MADLAD-7.2B": 44.9,
+     "MADLAD-10.7B": 43.5
+    },
+    "sot": {
+     "table_key": "st",
+     "NLLB-54B-MoE": 49.2,
+     "MADLAD-3B": 34.7,
+     "MADLAD-7.2B": 43.1,
+     "MADLAD-10.7B": 41.6
+    },
+    "tsn": {
+     "table_key": "tn",
+     "NLLB-54B-MoE": 51.0,
+     "MADLAD-3B": 34.8,
+     "MADLAD-7.2B": 38.6,
+     "MADLAD-10.7B": 37.7
+    },
+    "mlg": {
+     "table_key": "mg",
+     "NLLB-54B-MoE": 54.2,
+     "MADLAD-3B": 50.8,
+     "MADLAD-7.2B": 53.1,
+     "MADLAD-10.7B": 52.8
+    },
+    "bem": {
+     "table_key": "bem",
+     "NLLB-54B-MoE": 42.3,
+     "MADLAD-3B": 2.4,
+     "MADLAD-7.2B": 17.7,
+     "MADLAD-10.7B": 2.7
+    },
+    "tum": {
+     "table_key": "tum",
+     "NLLB-54B-MoE": 38.5,
+     "MADLAD-3B": 2.2,
+     "MADLAD-7.2B": 15.3,
+     "MADLAD-10.7B": 2.5
+    },
+    "run": {
+     "table_key": "rn",
+     "NLLB-54B-MoE": 47.3,
+     "MADLAD-3B": 31.8,
+     "MADLAD-7.2B": 32.6,
+     "MADLAD-10.7B": 30.7
+    },
+    "tso": {
+     "table_key": "ts",
+     "NLLB-54B-MoE": 53.2,
+     "MADLAD-3B": 34.7,
+     "MADLAD-7.2B": 38.1,
+     "MADLAD-10.7B": 37.0
+    },
+    "nso": {
+     "table_key": "nso",
+     "NLLB-54B-MoE": 53.3,
+     "MADLAD-3B": 37.7,
+     "MADLAD-7.2B": 41.1,
+     "MADLAD-10.7B": 40.5
+    },
+    "ssw": {
+     "table_key": "ss",
+     "NLLB-54B-MoE": 49.2,
+     "MADLAD-3B": 33.4,
+     "MADLAD-7.2B": 34.7,
+     "MADLAD-10.7B": 36.0
+    },
+    "sag": {
+     "table_key": "sg",
+     "NLLB-54B-MoE": 38.0,
+     "MADLAD-3B": 30.1,
+     "MADLAD-7.2B": 29.2,
+     "MADLAD-10.7B": 30.7
+    },
+    "umb": {
+     "table_key": "umb",
+     "NLLB-54B-MoE": 31.2,
+     "MADLAD-3B": 2.9,
+     "MADLAD-7.2B": 10.5,
+     "MADLAD-10.7B": 2.5
+    },
+    "kmb": {
+     "table_key": "kmb",
+     "NLLB-54B-MoE": 28.3,
+     "MADLAD-3B": 19.8,
+     "MADLAD-7.2B": 19.1,
+     "MADLAD-10.7B": 19.4
+    },
+    "mos": {
+     "table_key": "mos",
+     "NLLB-54B-MoE": 26.4,
+     "MADLAD-3B": 2.3,
+     "MADLAD-7.2B": 16.6,
+     "MADLAD-10.7B": 2.2
+    },
+    "kik": {
+     "table_key": "ki",
+     "NLLB-54B-MoE": 40.1,
+     "MADLAD-3B": 2.2,
+     "MADLAD-7.2B": 15.5,
+     "MADLAD-10.7B": 1.8
+    },
+    "luo": {
+     "table_key": "luo",
+     "NLLB-54B-MoE": 41.7,
+     "MADLAD-3B": 2.7,
+     "MADLAD-7.2B": 18.3,
+     "MADLAD-10.7B": 2.7
+    },
+    "kam": {
+     "table_key": "kam",
+     "NLLB-54B-MoE": 28.8,
+     "MADLAD-3B": 2.3,
+     "MADLAD-7.2B": 17.7,
+     "MADLAD-10.7B": 3.6
+    },
+    "dyu": {
+     "table_key": "dyu",
+     "NLLB-54B-MoE": 19.8,
+     "MADLAD-3B": 21.0,
+     "MADLAD-7.2B": 21.1,
+     "MADLAD-10.7B": 22.1
+    },
+    "bam": {
+     "table_key": "bm",
+     "NLLB-54B-MoE": 32.9,
+     "MADLAD-3B": 27.8,
+     "MADLAD-7.2B": 26.8,
+     "MADLAD-10.7B": 30.1
+    },
+    "kbp": {
+     "table_key": "kbp",
+     "NLLB-54B-MoE": 30.4,
+     "MADLAD-3B": 14.7,
+     "MADLAD-7.2B": 16.4,
+     "MADLAD-10.7B": 16.9
+    },
+    "kon": {
+     "table_key": "kg",
+     "NLLB-54B-MoE": 48.2,
+     "MADLAD-3B": 14.7,
+     "MADLAD-7.2B": 16.3,
+     "MADLAD-10.7B": 19.0
+    },
+    "kea": {
+     "table_key": "kea",
+     "NLLB-54B-MoE": 44.9,
+     "MADLAD-3B": 3.1,
+     "MADLAD-7.2B": 10.0,
+     "MADLAD-10.7B": 3.1
+    },
+    "kab": {
+     "table_key": "kab",
+     "NLLB-54B-MoE": 37.9,
+     "MADLAD-3B": 1.4,
+     "MADLAD-7.2B": 12.4,
+     "MADLAD-10.7B": 1.9
+    },
+    "nus": {
+     "table_key": "nus",
+     "NLLB-54B-MoE": 31.5,
+     "MADLAD-3B": 29.3,
+     "MADLAD-7.2B": 27.7,
+     "MADLAD-10.7B": 30.2
+    },
+    "lua": {
+     "table_key": "lua",
+     "NLLB-54B-MoE": 39.4,
+     "MADLAD-3B": 2.2,
+     "MADLAD-7.2B": 12.0,
+     "MADLAD-10.7B": 2.6
+    }
+   }
+  },
+  "opus_tc_bible_cards": "chrF x100 from benchmark_results.txt / model-index, see registry notes for -bnt and -afa",
+  "sunflower_readme": "salt-69 test set chrF eng->xx, see registry notes",
+  "translategemma_report": "WMT24++ MetricX en->sw_KE 4.45/5.36/10.65, en->zu_ZA 6.99/10.73/18.29 for 27B/12B/4B; Gemma-3 27B 5.92 / 9.05 (arXiv:2601.09012 Table 4)"
+ },
+ "considered_not_in_registry": [
+  {
+   "hf_id": "google/gemma-3n-E4B-it",
+   "licence": "gemma",
+   "reason": "card claims 140 text languages without a list; no African per-language evidence; use TranslateGemma/Gemma-4 instead",
+   "card": "https://huggingface.co/google/gemma-3n-E4B-it"
+  },
+  {
+   "hf_id": "google/gemma-3-12b-it / gemma-3-4b-it",
+   "licence": "gemma",
+   "reason": "same as gemma-3-27b-it (no list); 27B entry kept as the representative",
+   "card": "https://huggingface.co/google/gemma-3-27b-it"
+  },
+  {
+   "hf_id": "google/gemma-4-12B-it / gemma-4-E4B-it / gemma-4-26B-A4B-it",
+   "licence": "Apache-2.0",
+   "reason": "same family as gemma-4-31b-it (no language list); only the 31B kept in the registry; vLLM registry has Gemma4UnifiedForConditionalGeneration for the 12B 'Unified' model",
+   "card": "https://huggingface.co/google/gemma-4-12B-it"
+  },
+  {
+   "hf_id": "CohereLabs/aya-23-8B, aya-expanse-8b/32b",
+   "licence": "CC-BY-NC-4.0",
+   "reason": "23 languages, none of ours (Arabic only African-adjacent)",
+   "card": "https://huggingface.co/CohereLabs/aya-23-8B"
+  },
+  {
+   "hf_id": "CohereLabs/tiny-aya-base/fire/water",
+   "licence": "CC-BY-NC-4.0",
+   "reason": "regional variants; same 70-language card list as earth/global; earth+global kept",
+   "card": "https://huggingface.co/CohereLabs/tiny-aya-fire"
+  },
+  {
+   "hf_id": "CohereLabs/North-Small-Translate-1.0, command-a-translate-08-2025",
+   "licence": "CC-BY-NC-4.0",
+   "reason": "50 / 23 languages, none African",
+   "card": "https://huggingface.co/CohereLabs/North-Small-Translate-1.0"
+  },
+  {
+   "hf_id": "CohereLabs/command-a-plus-05-2026-bf16",
+   "licence": "Apache-2.0",
+   "reason": "48 trained languages, none African (list read on card)",
+   "card": "https://huggingface.co/CohereLabs/command-a-plus-05-2026-bf16"
+  },
+  {
+   "hf_id": "tencent/Hy-MT2-1.8B/7B/30B-A3B, HY-MT1.5, Hunyuan-MT-7B",
+   "licence": "Apache-2.0 (Hy-MT2)",
+   "reason": "33 languages, none African",
+   "card": "https://huggingface.co/tencent/Hy-MT2-7B"
+  },
+  {
+   "hf_id": "ModelSpace/GemmaX2-28-9B-v0.1",
+   "licence": "gemma",
+   "reason": "28 languages, none African",
+   "card": "https://huggingface.co/ModelSpace/GemmaX2-28-9B-v0.1"
+  },
+  {
+   "hf_id": "ByteDance-Seed/Seed-X-Instruct-7B",
+   "licence": "other",
+   "reason": "NOT checked in detail (card not read); not expected to cover African languages; Seed-X licence tag is 'other'",
+   "card": "https://huggingface.co/ByteDance-Seed/Seed-X-Instruct-7B"
+  },
+  {
+   "hf_id": "meta-llama/Llama-4-Scout-17B-16E-Instruct, Llama-3.3-70B-Instruct",
+   "licence": "Llama community licences",
+   "reason": "cards not read (gated; only Hub metadata fetched); from memory (unverified today) the official language sets contain no African language; Llama licences restrictive",
+   "card": "https://huggingface.co/meta-llama/Llama-4-Scout-17B-16E-Instruct"
+  },
+  {
+   "hf_id": "openai/gpt-oss-20b/120b",
+   "licence": "Apache-2.0",
+   "reason": "card has no language list or mention of African languages (grep of README); not a translator",
+   "card": "https://huggingface.co/openai/gpt-oss-120b"
+  },
+  {
+   "hf_id": "deepseek-ai/DeepSeek-V4-Flash-0731, mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+   "licence": "MIT / Apache-2.0",
+   "reason": "README grep found no mention of languages / Swahili / African; no list to rely on",
+   "card": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Flash-0731"
+  },
+  {
+   "hf_id": "Qwen/Qwen3.5-*, Qwen3.6-*, Qwen3.8-27B (base of Sunflower)",
+   "licence": "Apache-2.0",
+   "reason": "Qwen3.5 card claims 201 languages and dialects without listing them; Sunbird README gives Qwen3.8-27B chrF 29.7 on its 68-language set vs 46.2 for Sunflower (published)",
+   "card": "https://huggingface.co/Qwen/Qwen3.5-9B"
+  },
+  {
+   "hf_id": "Sunbird/sunflower-14B, sunflower-32B",
+   "licence": "Apache-2.0",
+   "reason": "superseded by Sunflower-Qwen3.5/3.8; 31 Ugandan languages (ours: ach kin lug nyn swh)",
+   "card": "https://huggingface.co/Sunbird/sunflower-32B"
+  },
+  {
+   "hf_id": "Sunbird/translategemma-12b-ug40, -sft-merged",
+   "licence": "Hub tag apache-2.0 on a google/translategemma-12b-it derivative",
+   "reason": "licence label inconsistent with the Gemma Terms of its base; Ugandan languages only; not used",
+   "card": "https://huggingface.co/Sunbird/translategemma-12b-ug40"
+  },
+  {
+   "hf_id": "Sunbird/translate-nllb-1.3b-salt, translate-nllb-3.3b-salt",
+   "licence": "CC-BY-NC-4.0",
+   "reason": "NLLB derivatives (Ugandan languages)",
+   "card": "https://huggingface.co/Sunbird/translate-nllb-3.3b-salt"
+  },
+  {
+   "hf_id": "AfriNLP/AfriNLLB-* (8 pruned/distilled NLLB-600M variants)",
+   "licence": "CC-BY-NC-4.0",
+   "reason": "NLLB-600M derivatives for 15 languages (ar am af arz es en fr ha ln pt so sw wo yo zu); Feb 2026, arXiv 2602.09373; CT2 versions exist",
+   "card": "https://huggingface.co/AfriNLP/AfriNLLB-12enc-12dec-full-ft-kd"
+  },
+  {
+   "hf_id": "McGill-NLP/AfriqueGemma-4B/12B, AfriqueLlama-8B, AfriqueQwen-4B/8B/14B, AfriqueQwen3.5-*",
+   "licence": "CC-BY-4.0 tag (over Gemma/Llama/Qwen bases)",
+   "reason": "continued-pretrained base LMs (20 languages: af am ar en fr ha ig mg ny om pt rw sn so st sw ti tn xh yo zu) - not translation-tuned; the 50-language Instruct v1 of Qwen3.5 is in the registry; AfriqueGemma carries Gemma Terms, AfriqueLlama Llama 3.1 terms",
+   "card": "https://huggingface.co/McGill-NLP/AfriqueGemma-12B"
+  },
+  {
+   "hf_id": "Helsinki-NLP/opus-mt-en-mul, opus-mt-tc-bible-big-mul-mul, opus-mt-en-afa/bnt/nic/ber (2020 group models)",
+   "licence": "Apache-2.0",
+   "reason": "older/weaker Tatoeba-style multi-target models; superseded by the tc-bible-big eng->mul/bnt/afa entries; mul-mul has 596 targets but no per-language scores",
+   "card": "https://huggingface.co/Helsinki-NLP/opus-mt-tc-bible-big-mul-mul"
+  },
+  {
+   "hf_id": "LLaMAX/LLaMAX2-7B-*, other LLaMAX",
+   "licence": "MIT tag over Llama-2/3",
+   "reason": "Llama-derived; LLaMAX3-8B-Alpaca kept as the representative",
+   "card": "https://huggingface.co/LLaMAX/LLaMAX3-8B-Alpaca"
+  },
+  {
+   "hf_id": "Meta Omnilingual MT (OMT-LLaMA, OMT-NLLB), arXiv 2603.16309, 2026-03-17",
+   "licence": "unknown",
+   "reason": "1,600-language MT system announced; as of 2026-10-20 no weights found (no facebook/omt* or omnilingual-mt repo on the Hub, none on facebookresearch GitHub; paper page only mentions BOUQuET evaluation data and a leaderboard)",
+   "card": "https://arxiv.org/abs/2603.16309"
+  },
+  {
+   "hf_id": "facebook/nllb-moe-54b",
+   "licence": "CC-BY-NC-4.0",
+   "reason": "54B MoE NLLB; too large for the planned hardware; its published scores are used as the reference column in MADLAD Table 17",
+   "card": "https://huggingface.co/facebook/nllb-moe-54b"
+  },
+  {
+   "hf_id": "NCAIR1/N-ATLaS (kept in registry as n-atlas-llm)",
+   "licence": "custom",
+   "reason": "see registry entry",
+   "card": "https://huggingface.co/NCAIR1/N-ATLaS"
+  }
+ ],
+ "environment": {
+  "rental_transformers": "5.19.0 in venv_gemma, 5.17.0 in venv_vllm: M2M100ForConditionalGeneration, NllbTokenizer(Fast), T5ForConditionalGeneration, MT5ForConditionalGeneration, MarianMTModel, SeamlessM4Tv2ForTextToText, Gemma3ForConditionalGeneration, Gemma3nForConditionalGeneration, Gemma4ForConditionalGeneration/ForCausalLM, Qwen3ForCausalLM, Qwen3_5ForConditionalGeneration, Cohere2ForCausalLM, LlamaForCausalLM all importable (import check only, 2026-10-20)",
+  "rental_vllm": "0.31.0 (venv_vllm). ModelRegistry (387 archs, CPU import, CUDA_VISIBLE_DEVICES=''): registered = Gemma3ForConditionalGeneration, Gemma3nForConditionalGeneration, Gemma4ForConditionalGeneration, Gemma4UnifiedForConditionalGeneration, Qwen3ForCausalLM, Qwen3_5ForConditionalGeneration, Cohere2ForCausalLM, LlamaForCausalLM, BloomForCausalLM, GptOssForCausalLM; NOT registered = T5ForConditionalGeneration, MT5ForConditionalGeneration, M2M100ForConditionalGeneration, MarianMTModel, BartForConditionalGeneration, SeamlessM4Tv2ForTextToText, T5GemmaForConditionalGeneration",
+  "rental_ctranslate2": "package not installed in venv_gemma or venv_vllm (accelerate, bitsandbytes, optimum, sacremoses also absent from venv_gemma). CTranslate2 docs (master docs/guides/transformers.md, retrieved 2026-10-20) list: BART, BERT, BLOOM, Falcon, Gemma 2/3(text only)/4(text only), Llama, M2M100, MarianMT, MBART, NLLB, Qwen 2.5/3, T5, T5Gemma(2), UMT5, Whisper; no SeamlessM4T, no Qwen3.5, no mT5 (UMT5 only).",
+  "rental_pytest": "pytest 9.1.1 present in venv_gemma; tests/run_tests.py does not expand @parametrize when real pytest is installed (use python -m pytest on the rental)."
+ },
+ "closed_systems_note": "see reports/longdoc_benchmark_plan_2026-10-20_parts/translators.md section (g)"
+}

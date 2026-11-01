@@ -1,0 +1,26 @@
+{
+ "NLLB-200": {
+  "title": "No Language Left Behind: Scaling Human-Centered Machine Translation",
+  "cited_by_count": 370,
+  "publication_year": 2022,
+  "doi": "https://doi.org/10.48550/arxiv.2207.04672"
+ },
+ "MADLAD-400": {
+  "title": "MADLAD-400: A Multilingual And Document-Level Large Audited Dataset",
+  "cited_by_count": 19,
+  "publication_year": 2023,
+  "doi": "https://doi.org/10.52202/075280-2940"
+ },
+ "SMOL": {
+  "title": "SMOL: Professionally translated parallel data for 115 under-represented languages",
+  "cited_by_count": 0,
+  "publication_year": 2025,
+  "doi": "https://doi.org/10.48550/arxiv.2502.12301"
+ },
+ "FLORES-101": {
+  "title": "The Flores-101 Evaluation Benchmark for Low-Resource and Multilingual Machine Translation",
+  "cited_by_count": 205,
+  "publication_year": 2022,
+  "doi": "https://doi.org/10.1162/tacl_a_00474"
+ }
+}

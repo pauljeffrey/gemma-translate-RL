@@ -1,0 +1,6 @@
+G1 check (2026-10-24, box CPU): rows on which the final2 hypothesis (Hub dataset <HF_ORG_LEGACY>/SabiYarn-MT-benchmark-translations, R20 scoring pipeline) and the RL-final hypothesis (/workspace/jobs/e1/sys_rl.jsonl.gz, E1/T1 scoring pipeline) are the same NFC text, NTREX-128 + MAFAND-MT + SmolSent + FLORES+ (152,309 rows), score difference final2 pipeline minus E1/T1 pipeline:
+identical hyps 14339 of 152309
+afri_ref 11239 rows: mean diff -0.000002, mean |diff| 0.000172, max |diff| 0.00537, share |diff| > 0.01: 0.0000
+ssa_ref 5447 rows: mean diff 0.000000, mean |diff| 0.000060, max |diff| 0.00391, share |diff| > 0.01: 0.0000
+chrf 14339 rows: mean |diff| 0.000025, max |diff| 0.00005
+(script: scratch, 30 lines; imports paper/scripts/box_g1_pairwise_final2.py)

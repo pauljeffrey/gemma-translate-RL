@@ -1,0 +1,446 @@
+{
+ "per_language": {
+  "ach": {
+   "docs": 130,
+   "sentences": 1609,
+   "gemma_ref_per_src": 1.4679524510979411,
+   "afroxlm_ref_per_src": 1.3460729746444031,
+   "gemma_tokens_per_src_sentence": 18.142324425108765,
+   "afroxlm_src_per_sentence": 20.0994406463642
+  },
+  "afr": {
+   "docs": 400,
+   "sentences": 3065,
+   "gemma_ref_per_src": 1.4492246466309866,
+   "afroxlm_ref_per_src": 1.165699350896352,
+   "gemma_tokens_per_src_sentence": 23.774877650897228,
+   "afroxlm_src_per_sentence": 26.589559543230017
+  },
+  "amh": {
+   "docs": 400,
+   "sentences": 4818,
+   "gemma_ref_per_src": 1.7866132464122413,
+   "afroxlm_ref_per_src": 1.246345978786732,
+   "gemma_tokens_per_src_sentence": 18.3387297633873,
+   "afroxlm_src_per_sentence": 20.29244499792445
+  },
+  "bam": {
+   "docs": 400,
+   "sentences": 4106,
+   "gemma_ref_per_src": 2.140323375285529,
+   "afroxlm_ref_per_src": 1.9053822145057857,
+   "gemma_tokens_per_src_sentence": 21.7506088650755,
+   "afroxlm_src_per_sentence": 24.26765708718948
+  },
+  "bem": {
+   "docs": 400,
+   "sentences": 2591,
+   "gemma_ref_per_src": 1.8573383017407428,
+   "afroxlm_ref_per_src": 1.6178070288362514,
+   "gemma_tokens_per_src_sentence": 21.439984561945195,
+   "afroxlm_src_per_sentence": 23.984561945194905
+  },
+  "dyu": {
+   "docs": 400,
+   "sentences": 2591,
+   "gemma_ref_per_src": 1.908552501305107,
+   "afroxlm_ref_per_src": 1.7006307929969104,
+   "gemma_tokens_per_src_sentence": 21.439984561945195,
+   "afroxlm_src_per_sentence": 23.984561945194905
+  },
+  "efi": {
+   "docs": 130,
+   "sentences": 1609,
+   "gemma_ref_per_src": 1.9823575759651948,
+   "afroxlm_ref_per_src": 1.8708410636982065,
+   "gemma_tokens_per_src_sentence": 18.142324425108765,
+   "afroxlm_src_per_sentence": 20.0994406463642
+  },
+  "ewe": {
+   "docs": 400,
+   "sentences": 3022,
+   "gemma_ref_per_src": 2.1200482021164606,
+   "afroxlm_ref_per_src": 1.9894640516409863,
+   "gemma_tokens_per_src_sentence": 23.89013898080741,
+   "afroxlm_src_per_sentence": 26.759099933818664
+  },
+  "fon": {
+   "docs": 400,
+   "sentences": 2591,
+   "gemma_ref_per_src": 2.5790534823855555,
+   "afroxlm_ref_per_src": 2.533052265705458,
+   "gemma_tokens_per_src_sentence": 21.439984561945195,
+   "afroxlm_src_per_sentence": 23.984561945194905
+  },
+  "hau": {
+   "docs": 400,
+   "sentences": 4818,
+   "gemma_ref_per_src": 1.6322830368056498,
+   "afroxlm_ref_per_src": 1.3707207806155326,
+   "gemma_tokens_per_src_sentence": 18.3387297633873,
+   "afroxlm_src_per_sentence": 20.29244499792445
+  },
+  "ibo": {
+   "docs": 400,
+   "sentences": 4841,
+   "gemma_ref_per_src": 2.0707200752317405,
+   "afroxlm_ref_per_src": 2.1313598239788454,
+   "gemma_tokens_per_src_sentence": 18.451559595124973,
+   "afroxlm_src_per_sentence": 20.466639124147903
+  },
+  "kab": {
+   "docs": 400,
+   "sentences": 3014,
+   "gemma_ref_per_src": 2.0354851147035333,
+   "afroxlm_ref_per_src": 1.8293173182988112,
+   "gemma_tokens_per_src_sentence": 24.094890510948904,
+   "afroxlm_src_per_sentence": 27.070338420703383
+  },
+  "kam": {
+   "docs": 281,
+   "sentences": 1012,
+   "gemma_ref_per_src": 1.859137243315113,
+   "afroxlm_ref_per_src": 1.6186686670363002,
+   "gemma_tokens_per_src_sentence": 26.75494071146245,
+   "afroxlm_src_per_sentence": 30.297430830039527
+  },
+  "kbp": {
+   "docs": 281,
+   "sentences": 1012,
+   "gemma_ref_per_src": 3.1936401240951398,
+   "afroxlm_ref_per_src": 2.9606666449235184,
+   "gemma_tokens_per_src_sentence": 26.75494071146245,
+   "afroxlm_src_per_sentence": 30.297430830039527
+  },
+  "kea": {
+   "docs": 281,
+   "sentences": 1012,
+   "gemma_ref_per_src": 1.564632885211996,
+   "afroxlm_ref_per_src": 1.3497602817912004,
+   "gemma_tokens_per_src_sentence": 26.75494071146245,
+   "afroxlm_src_per_sentence": 30.297430830039527
+  },
+  "kik": {
+   "docs": 400,
+   "sentences": 2591,
+   "gemma_ref_per_src": 2.3592734604237546,
+   "afroxlm_ref_per_src": 2.160980947476828,
+   "gemma_tokens_per_src_sentence": 21.439984561945195,
+   "afroxlm_src_per_sentence": 23.984561945194905
+  },
+  "kin": {
+   "docs": 400,
+   "sentences": 4163,
+   "gemma_ref_per_src": 1.858595630751232,
+   "afroxlm_ref_per_src": 1.650155546830167,
+   "gemma_tokens_per_src_sentence": 21.353350948834976,
+   "afroxlm_src_per_sentence": 23.859476339178478
+  },
+  "kmb": {
+   "docs": 281,
+   "sentences": 1012,
+   "gemma_ref_per_src": 1.8829960112276556,
+   "afroxlm_ref_per_src": 1.642477414304817,
+   "gemma_tokens_per_src_sentence": 26.75494071146245,
+   "afroxlm_src_per_sentence": 30.297430830039527
+  },
+  "kon": {
+   "docs": 130,
+   "sentences": 1609,
+   "gemma_ref_per_src": 1.667637285464698,
+   "afroxlm_ref_per_src": 1.481447124304267,
+   "gemma_tokens_per_src_sentence": 18.142324425108765,
+   "afroxlm_src_per_sentence": 20.0994406463642
+  },
+  "kri": {
+   "docs": 207,
+   "sentences": 2391,
+   "gemma_ref_per_src": 1.8801857756316924,
+   "afroxlm_ref_per_src": 1.785468947723052,
+   "gemma_tokens_per_src_sentence": 22.69301547469678,
+   "afroxlm_src_per_sentence": 25.44918444165621
+  },
+  "lin": {
+   "docs": 400,
+   "sentences": 4060,
+   "gemma_ref_per_src": 1.6717193492023872,
+   "afroxlm_ref_per_src": 1.5141092222177142,
+   "gemma_tokens_per_src_sentence": 21.70886699507389,
+   "afroxlm_src_per_sentence": 24.282758620689656
+  },
+  "lua": {
+   "docs": 281,
+   "sentences": 1012,
+   "gemma_ref_per_src": 1.7441276407150244,
+   "afroxlm_ref_per_src": 1.5503408238478849,
+   "gemma_tokens_per_src_sentence": 26.75494071146245,
+   "afroxlm_src_per_sentence": 30.297430830039527
+  },
+  "lug": {
+   "docs": 400,
+   "sentences": 4138,
+   "gemma_ref_per_src": 1.8744562331220411,
+   "afroxlm_ref_per_src": 1.6409944807332018,
+   "gemma_tokens_per_src_sentence": 21.387868535524408,
+   "afroxlm_src_per_sentence": 23.86297728371194
+  },
+  "luo": {
+   "docs": 400,
+   "sentences": 4090,
+   "gemma_ref_per_src": 1.5576485432955545,
+   "afroxlm_ref_per_src": 1.4035851782989601,
+   "gemma_tokens_per_src_sentence": 21.702200488997555,
+   "afroxlm_src_per_sentence": 24.196332518337407
+  },
+  "mlg": {
+   "docs": 400,
+   "sentences": 4841,
+   "gemma_ref_per_src": 1.9742622363530518,
+   "afroxlm_ref_per_src": 1.531555627327688,
+   "gemma_tokens_per_src_sentence": 18.451559595124973,
+   "afroxlm_src_per_sentence": 20.466639124147903
+  },
+  "mos": {
+   "docs": 400,
+   "sentences": 2591,
+   "gemma_ref_per_src": 1.9879210095227808,
+   "afroxlm_ref_per_src": 1.7878958547888775,
+   "gemma_tokens_per_src_sentence": 21.439984561945195,
+   "afroxlm_src_per_sentence": 23.984561945194905
+  },
+  "nbl": {
+   "docs": 130,
+   "sentences": 1609,
+   "gemma_ref_per_src": 1.71689904422596,
+   "afroxlm_ref_per_src": 1.4326839826839828,
+   "gemma_tokens_per_src_sentence": 18.142324425108765,
+   "afroxlm_src_per_sentence": 20.0994406463642
+  },
+  "ndc": {
+   "docs": 130,
+   "sentences": 1609,
+   "gemma_ref_per_src": 1.7126169024699394,
+   "afroxlm_ref_per_src": 1.4996598639455783,
+   "gemma_tokens_per_src_sentence": 18.142324425108765,
+   "afroxlm_src_per_sentence": 20.0994406463642
+  },
+  "nso": {
+   "docs": 400,
+   "sentences": 3120,
+   "gemma_ref_per_src": 1.9344012737074383,
+   "afroxlm_ref_per_src": 1.7152059291683248,
+   "gemma_tokens_per_src_sentence": 22.949358974358976,
+   "afroxlm_src_per_sentence": 25.774358974358975
+  },
+  "nus": {
+   "docs": 281,
+   "sentences": 1012,
+   "gemma_ref_per_src": 2.9292731570394444,
+   "afroxlm_ref_per_src": 2.618309905091158,
+   "gemma_tokens_per_src_sentence": 26.75494071146245,
+   "afroxlm_src_per_sentence": 30.297430830039527
+  },
+  "nya": {
+   "docs": 400,
+   "sentences": 4064,
+   "gemma_ref_per_src": 1.824300300847844,
+   "afroxlm_ref_per_src": 1.5795238581792173,
+   "gemma_tokens_per_src_sentence": 21.59251968503937,
+   "afroxlm_src_per_sentence": 24.082185039370078
+  },
+  "nyn": {
+   "docs": 130,
+   "sentences": 1609,
+   "gemma_ref_per_src": 1.582782364427392,
+   "afroxlm_ref_per_src": 1.4064007421150277,
+   "gemma_tokens_per_src_sentence": 18.142324425108765,
+   "afroxlm_src_per_sentence": 20.0994406463642
+  },
+  "orm": {
+   "docs": 400,
+   "sentences": 4841,
+   "gemma_ref_per_src": 1.9638954816174825,
+   "afroxlm_ref_per_src": 1.696010254443424,
+   "gemma_tokens_per_src_sentence": 18.451559595124973,
+   "afroxlm_src_per_sentence": 20.466639124147903
+  },
+  "pcm": {
+   "docs": 213,
+   "sentences": 2503,
+   "gemma_ref_per_src": 1.1240038484578938,
+   "afroxlm_ref_per_src": 1.0933428520435482,
+   "gemma_tokens_per_src_sentence": 22.008389932081503,
+   "afroxlm_src_per_sentence": 24.62365161805833
+  },
+  "run": {
+   "docs": 400,
+   "sentences": 2591,
+   "gemma_ref_per_src": 1.9123508127666469,
+   "afroxlm_ref_per_src": 1.6793576210092689,
+   "gemma_tokens_per_src_sentence": 21.439984561945195,
+   "afroxlm_src_per_sentence": 23.984561945194905
+  },
+  "sag": {
+   "docs": 281,
+   "sentences": 1012,
+   "gemma_ref_per_src": 1.8688506426355445,
+   "afroxlm_ref_per_src": 1.6531424284922214,
+   "gemma_tokens_per_src_sentence": 26.75494071146245,
+   "afroxlm_src_per_sentence": 30.297430830039527
+  },
+  "sna": {
+   "docs": 400,
+   "sentences": 4024,
+   "gemma_ref_per_src": 1.7877399974872363,
+   "afroxlm_ref_per_src": 1.5834814769406813,
+   "gemma_tokens_per_src_sentence": 21.757703777335983,
+   "afroxlm_src_per_sentence": 24.323558648111334
+  },
+  "som": {
+   "docs": 400,
+   "sentences": 4191,
+   "gemma_ref_per_src": 1.8827872531418313,
+   "afroxlm_ref_per_src": 1.3738281210832923,
+   "gemma_tokens_per_src_sentence": 21.264614650441423,
+   "afroxlm_src_per_sentence": 23.796945836315913
+  },
+  "sot": {
+   "docs": 400,
+   "sentences": 4080,
+   "gemma_ref_per_src": 1.9287719298245614,
+   "afroxlm_ref_per_src": 1.7319392985839719,
+   "gemma_tokens_per_src_sentence": 21.654411764705884,
+   "afroxlm_src_per_sentence": 24.145833333333332
+  },
+  "ssw": {
+   "docs": 400,
+   "sentences": 2591,
+   "gemma_ref_per_src": 1.8524238987596984,
+   "afroxlm_ref_per_src": 1.5563851699279094,
+   "gemma_tokens_per_src_sentence": 21.439984561945195,
+   "afroxlm_src_per_sentence": 23.984561945194905
+  },
+  "swh": {
+   "docs": 400,
+   "sentences": 4818,
+   "gemma_ref_per_src": 1.5382882882882882,
+   "afroxlm_ref_per_src": 1.1163456719410039,
+   "gemma_tokens_per_src_sentence": 18.3387297633873,
+   "afroxlm_src_per_sentence": 20.29244499792445
+  },
+  "tir": {
+   "docs": 400,
+   "sentences": 4162,
+   "gemma_ref_per_src": 2.3394581092332967,
+   "afroxlm_ref_per_src": 1.912150305572924,
+   "gemma_tokens_per_src_sentence": 21.35367611725132,
+   "afroxlm_src_per_sentence": 23.8246035559827
+  },
+  "tiv": {
+   "docs": 130,
+   "sentences": 1609,
+   "gemma_ref_per_src": 1.5654139974649721,
+   "afroxlm_ref_per_src": 1.4443104514533085,
+   "gemma_tokens_per_src_sentence": 18.142324425108765,
+   "afroxlm_src_per_sentence": 20.0994406463642
+  },
+  "tsn": {
+   "docs": 400,
+   "sentences": 2591,
+   "gemma_ref_per_src": 1.9989019099566165,
+   "afroxlm_ref_per_src": 1.786415422245108,
+   "gemma_tokens_per_src_sentence": 21.439984561945195,
+   "afroxlm_src_per_sentence": 23.984561945194905
+  },
+  "tso": {
+   "docs": 400,
+   "sentences": 2591,
+   "gemma_ref_per_src": 1.9975698007236593,
+   "afroxlm_ref_per_src": 1.734407183316169,
+   "gemma_tokens_per_src_sentence": 21.439984561945195,
+   "afroxlm_src_per_sentence": 23.984561945194905
+  },
+  "tum": {
+   "docs": 400,
+   "sentences": 2591,
+   "gemma_ref_per_src": 2.0376590880452197,
+   "afroxlm_ref_per_src": 1.7394760556127704,
+   "gemma_tokens_per_src_sentence": 21.439984561945195,
+   "afroxlm_src_per_sentence": 23.984561945194905
+  },
+  "twi": {
+   "docs": 400,
+   "sentences": 4201,
+   "gemma_ref_per_src": 1.9450514719162002,
+   "afroxlm_ref_per_src": 1.8934383945459878,
+   "gemma_tokens_per_src_sentence": 21.088312306593668,
+   "afroxlm_src_per_sentence": 23.53320637943347
+  },
+  "umb": {
+   "docs": 281,
+   "sentences": 1012,
+   "gemma_ref_per_src": 1.8835500073866154,
+   "afroxlm_ref_per_src": 1.5843253644695214,
+   "gemma_tokens_per_src_sentence": 26.75494071146245,
+   "afroxlm_src_per_sentence": 30.297430830039527
+  },
+  "ven": {
+   "docs": 130,
+   "sentences": 1609,
+   "gemma_ref_per_src": 2.1997533486348533,
+   "afroxlm_ref_per_src": 1.9143475572047,
+   "gemma_tokens_per_src_sentence": 18.142324425108765,
+   "afroxlm_src_per_sentence": 20.0994406463642
+  },
+  "vmw": {
+   "docs": 281,
+   "sentences": 1012,
+   "gemma_ref_per_src": 2.2382183483527847,
+   "afroxlm_ref_per_src": 1.8965461009099507,
+   "gemma_tokens_per_src_sentence": 26.75494071146245,
+   "afroxlm_src_per_sentence": 30.297430830039527
+  },
+  "wol": {
+   "docs": 400,
+   "sentences": 4038,
+   "gemma_ref_per_src": 1.6709332543083797,
+   "afroxlm_ref_per_src": 1.549626358348412,
+   "gemma_tokens_per_src_sentence": 21.727587914809313,
+   "afroxlm_src_per_sentence": 24.22511144130758
+  },
+  "xho": {
+   "docs": 400,
+   "sentences": 4106,
+   "gemma_ref_per_src": 1.8403769628786255,
+   "afroxlm_ref_per_src": 1.464232586850707,
+   "gemma_tokens_per_src_sentence": 21.604724792985873,
+   "afroxlm_src_per_sentence": 24.06697515830492
+  },
+  "yor": {
+   "docs": 400,
+   "sentences": 4818,
+   "gemma_ref_per_src": 2.6612793698220836,
+   "afroxlm_ref_per_src": 2.624195808487353,
+   "gemma_tokens_per_src_sentence": 18.3387297633873,
+   "afroxlm_src_per_sentence": 20.29244499792445
+  },
+  "zul": {
+   "docs": 400,
+   "sentences": 4191,
+   "gemma_ref_per_src": 1.8192141493317255,
+   "afroxlm_ref_per_src": 1.4523575736929644,
+   "gemma_tokens_per_src_sentence": 21.369362920544024,
+   "afroxlm_src_per_sentence": 23.814364113576712
+  }
+ },
+ "summary": {
+  "languages": 54,
+  "gemma_ref_per_src": {
+   "min": 1.1240038484578938,
+   "median": 1.8827872531418313,
+   "mean": 1.923387971328982,
+   "p90": 2.2382183483527847,
+   "max": 3.1936401240951398
+  }
+ }
+}

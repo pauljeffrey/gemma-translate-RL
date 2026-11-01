@@ -1,0 +1,11 @@
+file,compute,threads,set,batch,n,prompt_mismatch_vs_hf_template,rss_before_model_mb,peak_rss_mb,total_s,sent_per_s,gen_tok_per_s
+fp32_T32,float32,4,T,32,120,0,385,3099,83.93,1.43,84.1
+fp32_T8,float32,4,T,8,120,0,385,2635,162.18,0.74,43.5
+hyb_P1,default,4,P,1,20,0,386,2603,1070.89,0.019,15.8
+hyb_P8,default,4,P,8,20,0,385,3646,636.85,0.031,26.5
+hyb_T1,default,4,T,1,120,0,385,2507,454.49,0.264,15.9
+hyb_T32,default,4,T,32,120,0,385,3166,104.98,1.143,68.7
+hyb_T8,default,4,T,8,120,0,385,2692,159.33,0.753,45.2
+int8_P8,int8,4,P,8,20,0,385,2162,425.82,0.047,39.6
+int8_T32,int8,4,T,32,120,0,385,1425,55.51,2.162,129.7
+int8_T8,int8,4,T,8,120,0,386,1033,76.77,1.563,92.6

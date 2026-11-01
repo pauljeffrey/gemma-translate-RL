@@ -1,0 +1,9 @@
+model,params,vocab,amharic_tokens,tokens_per_char,amharic_over_english_tokens
+gemma-3-270m (final_1433 tokenizer),270M,262145,60,0.81,2.07
+SmolLM2-135M,135M,49152,222,3.00,6.94
+SmolLM2-360M,360M,49152,222,3.00,6.94
+Qwen3-0.6B,600M,151669,124,1.68,3.88
+GPT-2,124M,50257,222,3.00,6.94
+Pythia-160M,160M,50277,240,3.24,7.50
+BLOOM-560M,560M,250680,147,1.99,4.90
+mGPT (ai-forever),1.3B,100000,220,2.97,6.67

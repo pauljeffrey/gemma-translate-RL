@@ -1,0 +1,4 @@
+[669s] loss amh_Ethi: tok/sent 56.1->37.1  nll/token 2.1581->6.8858 nll/char 1.3221->2.7913  identical-tokenisation sentences 0/200
+[1445s] loss tir_Ethi: tok/sent 68.7->39.8  nll/token 2.7574->7.9283 nll/char 2.0196->3.3630  identical-tokenisation sentences 0/200
+[2161s] loss hau_Latn: tok/sent 49.7->49.7  nll/token 1.2441->1.2460 nll/char 0.4240->0.4246  identical-tokenisation sentences 200/200 restricted-diff max 0 full-diff max 0.457
+./sanity_one.sh: line 12: GL: command not found

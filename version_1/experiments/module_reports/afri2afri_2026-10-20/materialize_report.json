@@ -1,0 +1,24 @@
+{
+ "train": {
+  "selected": 6957252,
+  "dropped_by_text_filters": {
+   "copy": 4308,
+   "benchmark_leak": 1764,
+   "length_ratio": 64020,
+   "script": 36,
+   "basic": 276
+  },
+  "kept": 6886848
+ },
+ "val": {
+  "selected": 83214,
+  "dropped_by_text_filters": {
+   "length_ratio": 923,
+   "basic": 2,
+   "copy": 57,
+   "benchmark_leak": 51,
+   "script": 1
+  },
+  "kept": 82180
+ }
+}

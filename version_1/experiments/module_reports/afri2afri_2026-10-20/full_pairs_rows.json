@@ -1,0 +1,22 @@
+{
+ "pivot_en": {
+  "files": 89,
+  "rows": 50824383,
+  "bytes": 4117070965
+ },
+ "direct": {
+  "files": 1,
+  "rows": 1053147,
+  "bytes": 136752702
+ },
+ "nllb_mined": {
+  "files": 526,
+  "rows": 105658159,
+  "bytes": 7767908334
+ },
+ "pivot_en_sentences": {
+  "files": 1,
+  "rows": 1552726,
+  "bytes": 90169849
+ }
+}

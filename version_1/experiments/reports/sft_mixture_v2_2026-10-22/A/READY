@@ -1,0 +1,9 @@
+READY_A  2026-10-22 04:29 UTC  (agent R11)
+Variant A = mix_v1 (science + replay, samples unchanged) + high-confidence RL archive (2,158 rows, 1.04 M tokens) + long-document distillation round 1 (881 documents, 1.39 M tokens).
+data     : /workspace/jobs/r11/mix_v2A   (train: 99,978 samples, 2,641 packs x 8192, 21,627,045 tokens; val/ and val_sci/ are mix_v1s, unchanged)
+audit    : audit_packed OK on train, val, val_sci (tokenizer fingerprint = final_1433 = mix_v1); smoke (4 steps, real data, real start weights, 7.5 GiB cap) peak 6.52 GiB, loss 1.46 -> 1.27, val macro 1.370
+config   : /workspace/jobs/r11/configs/sft_science_v2_A.yaml   (R4 hyper-parameters; 331 optimizer steps at 65,536 tokens)
+tables   : /workspace/jobs/r11/mix_v2A/mixture_tables_v2.md  (+ licence_class_tables.json, components/*.jsonl with per-row source + licence)
+command  : cd /workspace/jobs/r11/code && source /workspace/jobs/r11/env.sh && nice -n 10 $PY -m gemma_mt.train_sft --config /workspace/jobs/r11/configs/sft_science_v2_A.yaml
+           (the same module and config format as R4s run_sci_sft_stage.sh train; out_dir /workspace/jobs/r11/runs/sci_sft_v2A; override with out_dir=... ; R7s tree gemma_mt_run has the identical train_sft.py / data code)
+NOT in A: anchors (self-distilled windows of weak languages), long-document round 2, R10 data (variants A2 / B / C follow, markers READY_A2, READY_B, READY_C).

@@ -1,0 +1,206 @@
+{
+ "files": {
+  "google/gemma-3-1b-it/tokenizer.json": {
+   "sha256": "4667f2089529e8e7657cfb6d1c19910ae71ff5f28aa7ab2ff2763330affad795",
+   "bytes": 33384568
+  },
+  "google/gemma-3-1b-it/tokenizer.model": {
+   "sha256": "1299c11d7cf632ef3b4e11937501358ada021bbdf7c47638d13c0ee982f2e79c",
+   "bytes": 4689074
+  },
+  "google/gemma-3-1b-it/tokenizer_config.json": {
+   "sha256": "bfe25c2735e395407beb78456ea9a6984a1f00d8c16fa04a8b75f2a614cf53e1",
+   "bytes": 1156999
+  },
+  "google/gemma-3-1b-it/special_tokens_map.json": {
+   "sha256": "2f7b0adf4fb469770bb1490e3e35df87b1dc578246c5e7e6fc76ecf33213a397",
+   "bytes": 662
+  },
+  "google/gemma-3-1b-it/config.json": {
+   "sha256": "19cb5d28c97778271ba2b3c3df47bf76bdd6706724777a2318b3522230afe91e",
+   "bytes": 899
+  },
+  "google/gemma-3-270m-it/tokenizer.json": {
+   "sha256": "7d4046bf0505a327dd5a0abbb427ecd4fc82f99c2ceaa170bc61ecde12809b0c",
+   "bytes": 33384570
+  },
+  "google/gemma-3-270m-it/tokenizer.model": {
+   "sha256": "1299c11d7cf632ef3b4e11937501358ada021bbdf7c47638d13c0ee982f2e79c",
+   "bytes": 4689074
+  },
+  "google/gemma-3-270m-it/tokenizer_config.json": {
+   "sha256": "94b03056ec5831e9021c3e3fe9db682778c4f2d081c4188f1fcb8b90541cf1cf",
+   "bytes": 1155375
+  },
+  "google/gemma-3-270m-it/special_tokens_map.json": {
+   "sha256": "2f7b0adf4fb469770bb1490e3e35df87b1dc578246c5e7e6fc76ecf33213a397",
+   "bytes": 662
+  },
+  "google/gemma-3-270m-it/config.json": {
+   "sha256": "8983343e5bfbf8e336d222a522a1d781443491e9de2d081b8856f8fd26ab6046",
+   "bytes": 1352
+  },
+  "google/gemma-3-4b-it/tokenizer.json": {
+   "sha256": "4667f2089529e8e7657cfb6d1c19910ae71ff5f28aa7ab2ff2763330affad795",
+   "bytes": 33384568
+  },
+  "google/gemma-3-4b-it/tokenizer.model": {
+   "sha256": "1299c11d7cf632ef3b4e11937501358ada021bbdf7c47638d13c0ee982f2e79c",
+   "bytes": 4689074
+  },
+  "google/gemma-3-4b-it/tokenizer_config.json": {
+   "sha256": "bfe25c2735e395407beb78456ea9a6984a1f00d8c16fa04a8b75f2a614cf53e1",
+   "bytes": 1156999
+  },
+  "google/gemma-3-4b-it/special_tokens_map.json": {
+   "sha256": "2f7b0adf4fb469770bb1490e3e35df87b1dc578246c5e7e6fc76ecf33213a397",
+   "bytes": 662
+  },
+  "google/gemma-3-4b-it/config.json": {
+   "sha256": "9059f680f4dbd1957f35cb44b9fdd6948f4792db7a7a35ee353ea42e68adf7ff",
+   "bytes": 855
+  },
+  "facebook/nllb-200-distilled-600M/tokenizer.json": {
+   "sha256": "e316b82de11d0f951f370943b3c438311629547285129b0b81dadabd01bca665",
+   "bytes": 17331176
+  },
+  "facebook/nllb-200-distilled-600M/tokenizer_config.json": {
+   "sha256": "d1aa8c3697d3e35674f97b5b7e9c99d22b010f528e80140257d97316be90d044",
+   "bytes": 564
+  },
+  "facebook/nllb-200-distilled-600M/sentencepiece.bpe.model": {
+   "sha256": "14bb8dfb35c0ffdea7bc01e56cea38b9e3d5efcdcb9c251d6b40538e1aab555a",
+   "bytes": 4852054
+  },
+  "facebook/nllb-200-distilled-600M/special_tokens_map.json": {
+   "sha256": "992bd4ed610d644d6823081937bcc91bb8878dd556cea4ae5327f2480361330e",
+   "bytes": 3548
+  },
+  "facebook/nllb-200-distilled-600M/config.json": {
+   "sha256": "f9b4081d3d108e9d06532ea8d92b932c04ed3a15ff2f87e6982f8e14db51fbc5",
+   "bytes": 846
+  },
+  "<HF_ORG_LEGACY>/gemma-3-270m-translate-rl2c/latest/tokenizer.json": {
+   "sha256": "daab2354f8a74e70d70b4d1f804939b68a8c9624dd06cb7858e52dd8970e9726",
+   "bytes": 33384567
+  },
+  "<HF_ORG_LEGACY>/gemma-3-270m-translate-rl2c/latest/tokenizer_config.json": {
+   "sha256": "0c2eff39d77838f2da416cde4ab20111bae5b4ac6fcb11c627431f1658e1ee4d",
+   "bytes": 730
+  },
+  "<HF_ORG_LEGACY>/gemma-3-270m-translate-rl2c/latest/config.json": {
+   "sha256": "344bcbada53057ca2337f30551d4973d299879ae69338662b97606d416d3cb54",
+   "bytes": 1496
+  },
+  "<HF_ORG_LEGACY>/gemma-3-270m-translate-rl2c/latest/chat_template.jinja": {
+   "sha256": "7de1c58e208eda46e9c7f86397df37ec49883aeece39fb961e0a6b24088dd3c4",
+   "bytes": 1532
+  },
+  "<HF_ORG_LEGACY>/gemma-3-270m-translate-rl2c/latest/generation_config.json": {
+   "sha256": "ed177df29c7dbfe24476f84b87bf9896a3a86526d9864caafc24d64851670ad0",
+   "bytes": 189
+  },
+  "flores_plus/dev/eng_Latn": {
+   "path": "datasets--openlanguagedata--flores_plus/snapshots/1147e2dc59f37fbb5c22fd8478770de02cd399f9/dev/eng_Latn.jsonl",
+   "bytes": 422669
+  },
+  "flores_plus/dev/amh_Ethi": {
+   "path": "datasets--openlanguagedata--flores_plus/snapshots/1147e2dc59f37fbb5c22fd8478770de02cd399f9/dev/amh_Ethi.jsonl",
+   "bytes": 515688
+  },
+  "flores_plus/dev/tir_Ethi": {
+   "path": "datasets--openlanguagedata--flores_plus/snapshots/1147e2dc59f37fbb5c22fd8478770de02cd399f9/dev/tir_Ethi.jsonl",
+   "bytes": 517622
+  },
+  "flores_plus/dev/fon_Latn": {
+   "path": "datasets--openlanguagedata--flores_plus/snapshots/1147e2dc59f37fbb5c22fd8478770de02cd399f9/dev/fon_Latn.jsonl",
+   "bytes": 455420
+  },
+  "flores_plus/dev/hau_Latn": {
+   "path": "datasets--openlanguagedata--flores_plus/snapshots/1147e2dc59f37fbb5c22fd8478770de02cd399f9/dev/hau_Latn.jsonl",
+   "bytes": 434949
+  },
+  "flores_plus/dev/yor_Latn": {
+   "path": "datasets--openlanguagedata--flores_plus/snapshots/1147e2dc59f37fbb5c22fd8478770de02cd399f9/dev/yor_Latn.jsonl",
+   "bytes": 458566
+  },
+  "flores_plus/dev/swh_Latn": {
+   "path": "datasets--openlanguagedata--flores_plus/snapshots/1147e2dc59f37fbb5c22fd8478770de02cd399f9/dev/swh_Latn.jsonl",
+   "bytes": 429158
+  },
+  "flores_plus/dev/kin_Latn": {
+   "path": "datasets--openlanguagedata--flores_plus/snapshots/1147e2dc59f37fbb5c22fd8478770de02cd399f9/dev/kin_Latn.jsonl",
+   "bytes": 440566
+  },
+  "flores_plus/dev/ibo_Latn": {
+   "path": "datasets--openlanguagedata--flores_plus/snapshots/1147e2dc59f37fbb5c22fd8478770de02cd399f9/dev/ibo_Latn.jsonl",
+   "bytes": 447119
+  },
+  "flores_plus/devtest/eng_Latn": {
+   "path": "datasets--openlanguagedata--flores_plus/snapshots/1147e2dc59f37fbb5c22fd8478770de02cd399f9/devtest/eng_Latn.jsonl",
+   "bytes": 439951
+  },
+  "flores_plus/devtest/amh_Ethi": {
+   "path": "datasets--openlanguagedata--flores_plus/snapshots/1147e2dc59f37fbb5c22fd8478770de02cd399f9/devtest/amh_Ethi.jsonl",
+   "bytes": 533213
+  },
+  "flores_plus/devtest/tir_Ethi": {
+   "path": "datasets--openlanguagedata--flores_plus/snapshots/1147e2dc59f37fbb5c22fd8478770de02cd399f9/devtest/tir_Ethi.jsonl",
+   "bytes": 539563
+  },
+  "flores_plus/devtest/fon_Latn": {
+   "path": "datasets--openlanguagedata--flores_plus/snapshots/1147e2dc59f37fbb5c22fd8478770de02cd399f9/devtest/fon_Latn.jsonl",
+   "bytes": 474767
+  },
+  "flores_plus/devtest/hau_Latn": {
+   "path": "datasets--openlanguagedata--flores_plus/snapshots/1147e2dc59f37fbb5c22fd8478770de02cd399f9/devtest/hau_Latn.jsonl",
+   "bytes": 449327
+  },
+  "flores_plus/devtest/yor_Latn": {
+   "path": "datasets--openlanguagedata--flores_plus/snapshots/1147e2dc59f37fbb5c22fd8478770de02cd399f9/devtest/yor_Latn.jsonl",
+   "bytes": 476566
+  },
+  "flores_plus/devtest/swh_Latn": {
+   "path": "datasets--openlanguagedata--flores_plus/snapshots/1147e2dc59f37fbb5c22fd8478770de02cd399f9/devtest/swh_Latn.jsonl",
+   "bytes": 446113
+  },
+  "flores_plus/devtest/kin_Latn": {
+   "path": "datasets--openlanguagedata--flores_plus/snapshots/1147e2dc59f37fbb5c22fd8478770de02cd399f9/devtest/kin_Latn.jsonl",
+   "bytes": 456986
+  },
+  "flores_plus/devtest/ibo_Latn": {
+   "path": "datasets--openlanguagedata--flores_plus/snapshots/1147e2dc59f37fbb5c22fd8478770de02cd399f9/devtest/ibo_Latn.jsonl",
+   "bytes": 468847
+  }
+ },
+ "failures": {
+  "<HF_ORG_LEGACY>/gemma-3-270m-translate-rl2c/tokenizer.json": "FAIL RemoteEntryNotFoundError: 404 Client Error. (Request ID: Root=1-6adee28a-06dc56d4509958cc7af719b2;954f95c8-277d-4250-8a12-693b1174a620)\n\nEntry Not",
+  "<HF_ORG_LEGACY>/gemma-3-270m-translate-rl2c/tokenizer.model": "FAIL RemoteEntryNotFoundError: 404 Client Error. (Request ID: Root=1-6adee28a-44756a792f4e90aa5cd211d6;0ee15873-97f2-4310-ba54-fe707c2ea4a8)\n\nEntry Not",
+  "<HF_ORG_LEGACY>/gemma-3-270m-translate-rl2c/tokenizer_config.json": "FAIL RemoteEntryNotFoundError: 404 Client Error. (Request ID: Root=1-6adee28a-6049f2295815f2bf39983192;237d54f3-a0cf-40d6-989f-d12a094114dc)\n\nEntry Not",
+  "<HF_ORG_LEGACY>/gemma-3-270m-translate-rl2c/sentencepiece.bpe.model": "FAIL RemoteEntryNotFoundError: 404 Client Error. (Request ID: Root=1-6adee28a-7102757e5b70a2560343e2fe;2ed1db47-04c2-46d8-8ddb-5a0464a6ccd9)\n\nEntry Not",
+  "<HF_ORG_LEGACY>/gemma-3-270m-translate-rl2c/special_tokens_map.json": "FAIL RemoteEntryNotFoundError: 404 Client Error. (Request ID: Root=1-6adee28a-21393ddd106dbbc752be6e5b;be674816-6c79-4a1d-9e5a-215a637cccfc)\n\nEntry Not",
+  "<HF_ORG_LEGACY>/gemma-3-270m-translate-rl2c/config.json": "FAIL RemoteEntryNotFoundError: 404 Client Error. (Request ID: Root=1-6adee28a-47fa67882a57827f224b219f;9c7246b4-a802-45cc-8c9f-66b01667cee7)\n\nEntry Not",
+  "google/gemma-3-1b-it/sentencepiece.bpe.model": "FAIL RemoteEntryNotFoundError: 404 Client Error. (Request ID: Root=1-6adee28b-5df17dd975500c4121d45f5f;4e9ac72a-8f7e-4aef-9faa-070e62ad84e3)\n\nEntry Not",
+  "google/gemma-3-270m-it/sentencepiece.bpe.model": "FAIL RemoteEntryNotFoundError: 404 Client Error. (Request ID: Root=1-6adee28c-13d8f7c80a25924e537e8910;ba4e6383-26c4-479c-a039-3059181590a4)\n\nEntry Not",
+  "google/gemma-3-4b-it/sentencepiece.bpe.model": "FAIL RemoteEntryNotFoundError: 404 Client Error. (Request ID: Root=1-6adee28d-1448503d0ea59db27647462c;acd8e8ff-fa6c-4aa1-a162-88e5e3b9dbd2)\n\nEntry Not",
+  "facebook/nllb-200-distilled-600M/tokenizer.model": "FAIL RemoteEntryNotFoundError: 404 Client Error. (Request ID: Root=1-6adee28d-66e4fdb6443ddaf7047c15b3;6d544407-0ddb-4e91-99e1-fe9cbc38bc50)\n\nEntry Not",
+  "openlanguagedata/flores_plus/dev/eng_Latn.parquet": "FAIL RemoteEntryNotFoundError: 404 Client Error. (Request ID: Root=1-6adee295-32f1a2bd760a10c9780a442a;0005a6b2-edc3-4ae2-90a2-cc5752fce9d4)\n\nEntry Not",
+  "openlanguagedata/flores_plus/dev/amh_Ethi.parquet": "FAIL RemoteEntryNotFoundError: 404 Client Error. (Request ID: Root=1-6adee295-4f46fdb209ea6303604c1b8e;92d09eee-1ee6-4d37-a915-db477c0dc2a0)\n\nEntry Not",
+  "openlanguagedata/flores_plus/dev/tir_Ethi.parquet": "FAIL RemoteEntryNotFoundError: 404 Client Error. (Request ID: Root=1-6adee295-5c43938b21e5039f26d2c301;c72f999d-718b-43a2-b817-146ccf6e2398)\n\nEntry Not",
+  "openlanguagedata/flores_plus/dev/fon_Latn.parquet": "FAIL RemoteEntryNotFoundError: 404 Client Error. (Request ID: Root=1-6adee295-1b74cf774b575f404d2dd19d;49f6d516-8403-49d2-b9f5-c6b88902e479)\n\nEntry Not",
+  "openlanguagedata/flores_plus/dev/hau_Latn.parquet": "FAIL RemoteEntryNotFoundError: 404 Client Error. (Request ID: Root=1-6adee296-5da0b4f867e3f6af50055627;4c448b96-c0bb-488f-9179-aa4cbdbd4304)\n\nEntry Not",
+  "openlanguagedata/flores_plus/dev/yor_Latn.parquet": "FAIL RemoteEntryNotFoundError: 404 Client Error. (Request ID: Root=1-6adee296-2cf33e711fa466a40a03e2a2;a638fdf5-8a59-4475-a9df-4e5e3d10e7e9)\n\nEntry Not",
+  "openlanguagedata/flores_plus/dev/swh_Latn.parquet": "FAIL RemoteEntryNotFoundError: 404 Client Error. (Request ID: Root=1-6adee296-5c3a22f273c8c112728163d3;486103bb-fb3e-43f2-b81a-5ab13bc78b62)\n\nEntry Not",
+  "openlanguagedata/flores_plus/dev/kin_Latn.parquet": "FAIL RemoteEntryNotFoundError: 404 Client Error. (Request ID: Root=1-6adee297-3d8ac6d25e46b4601fb3542d;7e71b079-5279-48f4-bb74-e5fd4362987f)\n\nEntry Not",
+  "openlanguagedata/flores_plus/dev/ibo_Latn.parquet": "FAIL RemoteEntryNotFoundError: 404 Client Error. (Request ID: Root=1-6adee297-3fe1d2be0e1e99b92b91c7d8;825e2b63-ef9e-44cd-8550-2f73cc9e3d8e)\n\nEntry Not",
+  "openlanguagedata/flores_plus/devtest/eng_Latn.parquet": "FAIL RemoteEntryNotFoundError: 404 Client Error. (Request ID: Root=1-6adee297-5274e4b560dd0a953dde0d45;6205f21a-1dad-411f-b0b1-17263ffaa0f6)\n\nEntry Not",
+  "openlanguagedata/flores_plus/devtest/amh_Ethi.parquet": "FAIL RemoteEntryNotFoundError: 404 Client Error. (Request ID: Root=1-6adee298-7303c01b148db73d4a1f5dd7;5f39b15d-30b3-4960-b4dd-a2450aa3be48)\n\nEntry Not",
+  "openlanguagedata/flores_plus/devtest/tir_Ethi.parquet": "FAIL RemoteEntryNotFoundError: 404 Client Error. (Request ID: Root=1-6adee298-6e8c599852de1f4a140f61da;86c4de8a-26d1-493c-9dec-9292845a8418)\n\nEntry Not",
+  "openlanguagedata/flores_plus/devtest/fon_Latn.parquet": "FAIL RemoteEntryNotFoundError: 404 Client Error. (Request ID: Root=1-6adee298-4b9f6af57fa04ad10656d0d8;4bcbb02c-283c-45ac-a5e6-6886733a8924)\n\nEntry Not",
+  "openlanguagedata/flores_plus/devtest/hau_Latn.parquet": "FAIL RemoteEntryNotFoundError: 404 Client Error. (Request ID: Root=1-6adee298-0352bc4660f0c5fd01317cec;58fb11f3-4c10-4bf5-9291-854bb992d718)\n\nEntry Not",
+  "openlanguagedata/flores_plus/devtest/yor_Latn.parquet": "FAIL RemoteEntryNotFoundError: 404 Client Error. (Request ID: Root=1-6adee299-7396cba807d4d4491b57d653;be968c36-756b-48b3-9256-39cb4786d6bf)\n\nEntry Not",
+  "openlanguagedata/flores_plus/devtest/swh_Latn.parquet": "FAIL RemoteEntryNotFoundError: 404 Client Error. (Request ID: Root=1-6adee299-1faf11bd2ff95ba01e6f33b6;6028faf8-9241-4871-9d40-58acfd934f8f)\n\nEntry Not",
+  "openlanguagedata/flores_plus/devtest/kin_Latn.parquet": "FAIL RemoteEntryNotFoundError: 404 Client Error. (Request ID: Root=1-6adee299-3cc3ef06269f3409321181c3;e9dbcc9a-d413-41cc-a753-125c472f3e81)\n\nEntry Not",
+  "openlanguagedata/flores_plus/devtest/ibo_Latn.parquet": "FAIL RemoteEntryNotFoundError: 404 Client Error. (Request ID: Root=1-6adee29a-71f64ef529fadab034a7b04a;dd5b6bbc-d271-4f33-a991-86d1e1b9ddbe)\n\nEntry Not"
+ }
+}

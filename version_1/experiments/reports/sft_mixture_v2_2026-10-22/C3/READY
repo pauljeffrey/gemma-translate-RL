@@ -1,0 +1,8 @@
+READY_C3  2026-10-22 08:51 UTC (agent R11)
+C3 = A2W (R7 round-2 winner: A2 composition, unfiltered self-distilled anchors, weak-language human replay x0.5, same seeds -> identical A2W samples) + R14 NLLB-3.3B teacher data (licence_class nc_teacher, CC-BY-NC weights; the model must be treated as NON-COMMERCIAL).
+teacher : 31,582 windows, 4,470,873 tokens = 17.6 % of the mixture, 27 languages; caps per language: full (kbp nus kea bam knc tir kon amh: 277-282 k each), mid 170 k (kab sag luo ewe bem orm run tum kik), strong 70 k (zul xho lug kin mlg sna tsn lin ssw tso); languages NLLB does not cover keep the A2W composition unchanged.
+data    : /workspace/jobs/r11/mix_v2C3  (25,351,639 tokens, 115,767 samples, 3,096 packs; 387 steps; audit_packed OK on train/val/val_sci; fingerprint = final_1433; train/source.npy code 6 = teacher, train/licence_class.npy 4 = nc_teacher; components/*.jsonl hardlinked)
+config  : /workspace/jobs/r11/configs/sft_science_v2_C3.yaml (R4 hyper-parameters, lr 3e-6); smoke 4 steps OK (peak 6.52 GiB, val macro 1.372)
+tables  : mix_v2C3/mixture_tables_v2.md ; /workspace/jobs/r11/work/c3_vs_a2w.md (amh tir kea kab nus bam kbp first, change vs A2W) 
+command : cd /workspace/jobs/r11/code && source /workspace/jobs/r11/env.sh && nice -n 10 \$PY -m gemma_mt.train_sft --config /workspace/jobs/r11/configs/sft_science_v2_C3.yaml
+C3b (+ R15 Gemma-4-31B partial): NOT built - /workspace/jobs/r15/READY_GEMMA_partial did not exist.

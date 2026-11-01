@@ -1,0 +1,1 @@
+wrote /workspace/tokswap/out/model_geez_N3000 (bf16, 3000 rows re-initialised, tied=True, control=False); sha256 99f81f062a2dec6af7f3b5dcb05146633ccad5d1dd81d3e61b979c282fdd029f

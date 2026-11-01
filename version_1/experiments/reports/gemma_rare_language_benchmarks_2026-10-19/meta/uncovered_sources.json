@@ -1,0 +1,846 @@
+{
+"kon": [
+{
+"source": "michsethowusu/english-kikongo_sentence-pairs_mt560",
+"windows": 1239,
+"pairs": 4701,
+"tgt_tokens": 123338,
+"mean_qe": 0.619
+},
+{
+"source": "michsethowusu/english-kongo_sentence-pairs_mt560",
+"windows": 143,
+"pairs": 928,
+"tgt_tokens": 15746,
+"mean_qe": 0.71
+},
+{
+"source": "UBC-NLP/AfroLingu-MT",
+"windows": 9,
+"pairs": 81,
+"tgt_tokens": 1075,
+"mean_qe": 0.515
+}
+],
+"dag": [
+{
+"source": "michsethowusu/african-bible-parallel",
+"windows": 11681,
+"pairs": 22336,
+"tgt_tokens": 1229991,
+"mean_qe": 0.355
+},
+{
+"source": "fiifinketia/navigation-corpus-dagbani",
+"windows": 3501,
+"pairs": 3501,
+"tgt_tokens": 703165,
+"mean_qe": 0.31
+},
+{
+"source": "Tommy0201/igbo-to-english",
+"windows": 44,
+"pairs": 68,
+"tgt_tokens": 1032,
+"mean_qe": 0.594
+},
+{
+"source": "Tommy0201/WebScraped_Igbo_To_Eng",
+"windows": 34,
+"pairs": 50,
+"tgt_tokens": 705,
+"mean_qe": 0.625
+},
+{
+"source": "taresco/afri-dict",
+"windows": 3,
+"pairs": 39,
+"tgt_tokens": 162,
+"mean_qe": 0.403
+},
+{
+"source": "MALIBA-AI/bambara-mt-dataset",
+"windows": 8,
+"pairs": 38,
+"tgt_tokens": 472,
+"mean_qe": 0.513
+},
+{
+"source": "NaathNLP/nuer_greetings_monolingual_pairs_eng_nuer_dinka",
+"windows": 8,
+"pairs": 36,
+"tgt_tokens": 709,
+"mean_qe": 0.51
+},
+{
+"source": "Mollel/Swahili-stsb-SWH-ENG",
+"windows": 6,
+"pairs": 23,
+"tgt_tokens": 277,
+"mean_qe": 0.507
+},
+{
+"source": "Inioluwa/nigerianLanguageTranslator",
+"windows": 8,
+"pairs": 18,
+"tgt_tokens": 517,
+"mean_qe": 0.381
+},
+{
+"source": "Rogendo/English-Swahili-Sentence-Pairs",
+"windows": 3,
+"pairs": 16,
+"tgt_tokens": 117,
+"mean_qe": 0.629
+},
+{
+"source": "Tamazight-NLP/Anki-Translations",
+"windows": 7,
+"pairs": 16,
+"tgt_tokens": 258,
+"mean_qe": 0.527
+},
+{
+"source": "zarnite/english-somali_sentence-pairs_mt560",
+"windows": 14,
+"pairs": 14,
+"tgt_tokens": 168,
+"mean_qe": 0.47
+},
+{
+"source": "ccibeekeoc42/english_to_igbo",
+"windows": 5,
+"pairs": 14,
+"tgt_tokens": 172,
+"mean_qe": 0.59
+},
+{
+"source": "taqbaylit/kabyle-english-TM",
+"windows": 4,
+"pairs": 12,
+"tgt_tokens": 214,
+"mean_qe": 0.485
+},
+{
+"source": "Tamazight-NLP/Pontoon-Translations",
+"windows": 3,
+"pairs": 12,
+"tgt_tokens": 201,
+"mean_qe": 0.52
+},
+{
+"source": "deepdml/igbo-dict-16khz",
+"windows": 3,
+"pairs": 10,
+"tgt_tokens": 104,
+"mean_qe": 0.505
+},
+{
+"source": "iamwille/igbo_language_translation_dataset",
+"windows": 7,
+"pairs": 9,
+"tgt_tokens": 111,
+"mean_qe": 0.6
+},
+{
+"source": "dayomtechnologies/English_Nuer_parallel_translation_open_corpus",
+"windows": 3,
+"pairs": 8,
+"tgt_tokens": 139,
+"mean_qe": 0.487
+},
+{
+"source": "mathewhe/OpenHermes-2.5-Formatted",
+"windows": 6,
+"pairs": 7,
+"tgt_tokens": 101,
+"mean_qe": 0.473
+},
+{
+"source": "NaathNLP/Nuer_Dinka_Parallel_translation_pairs",
+"windows": 4,
+"pairs": 6,
+"tgt_tokens": 97,
+"mean_qe": 0.422
+},
+{
+"source": "NupePilot/NupePilotV1.0",
+"windows": 5,
+"pairs": 6,
+"tgt_tokens": 97,
+"mean_qe": 0.497
+},
+{
+"source": "dmatekenya/chichewa-machine-translation",
+"windows": 3,
+"pairs": 6,
+"tgt_tokens": 23,
+"mean_qe": 0.296
+},
+{
+"source": "TutlaytAI/Kabyle_ASR-En_Translation",
+"windows": 2,
+"pairs": 5,
+"tgt_tokens": 27,
+"mean_qe": 0.375
+},
+{
+"source": "CapitainVigs/mece-fongbe-corpus",
+"windows": 4,
+"pairs": 4,
+"tgt_tokens": 123,
+"mean_qe": 0.449
+},
+{
+"source": "Tommy0201/JW300_Igbo_To_Eng",
+"windows": 2,
+"pairs": 4,
+"tgt_tokens": 74,
+"mean_qe": 0.556
+},
+{
+"source": "tonative/xnli-extension",
+"windows": 3,
+"pairs": 3,
+"tgt_tokens": 32,
+"mean_qe": 0.474
+},
+{
+"source": "Tamazight-NLP/Beni-Mellal-Tamazight",
+"windows": 2,
+"pairs": 2,
+"tgt_tokens": 40,
+"mean_qe": 0.346
+},
+{
+"source": "taqbaylit/kabyle-named-entities",
+"windows": 1,
+"pairs": 2,
+"tgt_tokens": 24,
+"mean_qe": 0.462
+},
+{
+"source": "adab-tech/murya-hausa-en-lexicon-robinson1914",
+"windows": 2,
+"pairs": 2,
+"tgt_tokens": 12,
+"mean_qe": 0.395
+},
+{
+"source": "OxxoCodes/pulabert-dataset",
+"windows": 1,
+"pairs": 1,
+"tgt_tokens": 8,
+"mean_qe": 0.261
+},
+{
+"source": "kambale/luganda-english-parallel-corpus",
+"windows": 1,
+"pairs": 1,
+"tgt_tokens": 25,
+"mean_qe": 0.403
+},
+{
+"source": "beethogedeon/Helsinki-en-fon",
+"windows": 1,
+"pairs": 1,
+"tgt_tokens": 6,
+"mean_qe": 0.621
+},
+{
+"source": "JoshOrdin/english-yoruba_sentence-pairs_mt560",
+"windows": 1,
+"pairs": 1,
+"tgt_tokens": 12,
+"mean_qe": 0.863
+},
+{
+"source": "oza75/bambara-gec-synthetic",
+"windows": 1,
+"pairs": 1,
+"tgt_tokens": 18,
+"mean_qe": 0.538
+},
+{
+"source": "tufaax/en-so-parallel-clean-8k",
+"windows": 1,
+"pairs": 1,
+"tgt_tokens": 7,
+"mean_qe": 0.364
+},
+{
+"source": "abdelhaqueidali/Amazigh-English-Tatoeba-Extended",
+"windows": 1,
+"pairs": 1,
+"tgt_tokens": 8,
+"mean_qe": 0.282
+}
+],
+"nbl": [
+{
+"source": "Mehgoss/sa-languages-translation",
+"windows": 36587,
+"pairs": 87506,
+"tgt_tokens": 3776118,
+"mean_qe": 0.607
+},
+{
+"source": "dsfsi/govza-sa-cabinet-statements-sentence-aligned",
+"windows": 601,
+"pairs": 814,
+"tgt_tokens": 62442,
+"mean_qe": 0.61
+},
+{
+"source": "dsfsi/za-mafoko-dsac",
+"windows": 18,
+"pairs": 188,
+"tgt_tokens": 1521,
+"mean_qe": 0.547
+},
+{
+"source": "MaLA-LM/PolyWrite",
+"windows": 49,
+"pairs": 112,
+"tgt_tokens": 5760,
+"mean_qe": 0.68
+},
+{
+"source": "dsfsi/umsuka-english",
+"windows": 10,
+"pairs": 41,
+"tgt_tokens": 1302,
+"mean_qe": 0.676
+},
+{
+"source": "Rogendo/English-Swahili-Sentence-Pairs",
+"windows": 2,
+"pairs": 2,
+"tgt_tokens": 13,
+"mean_qe": 0.893
+},
+{
+"source": "Tamazight-NLP/Pontoon-Translations",
+"windows": 2,
+"pairs": 2,
+"tgt_tokens": 25,
+"mean_qe": 0.511
+},
+{
+"source": "taqbaylit/kabyle-english-TM",
+"windows": 1,
+"pairs": 2,
+"tgt_tokens": 31,
+"mean_qe": 0.466
+},
+{
+"source": "OxxoCodes/pulabert-dataset",
+"windows": 1,
+"pairs": 1,
+"tgt_tokens": 20,
+"mean_qe": 0.496
+}
+],
+"efi": [
+{
+"source": "<HF_ORG_LEGACY>/naija",
+"windows": 113952,
+"pairs": 245953,
+"tgt_tokens": 12051818,
+"mean_qe": 0.652
+},
+{
+"source": "michsethowusu/english-efik_sentence-pairs_mt560",
+"windows": 54105,
+"pairs": 110127,
+"tgt_tokens": 5630373,
+"mean_qe": 0.661
+},
+{
+"source": "<HF_ORG_LEGACY>/naija2",
+"windows": 844,
+"pairs": 2646,
+"tgt_tokens": 80531,
+"mean_qe": 0.583
+},
+{
+"source": "<HF_ORG>/English_efik_bible_translation",
+"windows": 375,
+"pairs": 908,
+"tgt_tokens": 41179,
+"mean_qe": 0.553
+},
+{
+"source": "<HF_ORG>/tds",
+"windows": 58,
+"pairs": 208,
+"tgt_tokens": 5090,
+"mean_qe": 0.649
+},
+{
+"source": "Tommy0201/igbo-to-english",
+"windows": 19,
+"pairs": 19,
+"tgt_tokens": 325,
+"mean_qe": 0.732
+},
+{
+"source": "Tommy0201/WebScraped_Igbo_To_Eng",
+"windows": 5,
+"pairs": 6,
+"tgt_tokens": 100,
+"mean_qe": 0.756
+},
+{
+"source": "<HF_ORG_LEGACY>/Clean_translate",
+"windows": 3,
+"pairs": 3,
+"tgt_tokens": 88,
+"mean_qe": 0.646
+},
+{
+"source": "ccibeekeoc42/english_to_igbo",
+"windows": 2,
+"pairs": 3,
+"tgt_tokens": 73,
+"mean_qe": 0.592
+},
+{
+"source": "iamwille/igbo_language_translation_dataset",
+"windows": 2,
+"pairs": 2,
+"tgt_tokens": 37,
+"mean_qe": 0.728
+},
+{
+"source": "deepdml/igbo-dict-16khz",
+"windows": 2,
+"pairs": 2,
+"tgt_tokens": 18,
+"mean_qe": 0.59
+},
+{
+"source": "Inioluwa/nigerianLanguageTranslator",
+"windows": 1,
+"pairs": 1,
+"tgt_tokens": 12,
+"mean_qe": 0.592
+},
+{
+"source": "DigitalUmuganda/NMT_Rwandan-Gazette_parallel_data_en_kin",
+"windows": 1,
+"pairs": 1,
+"tgt_tokens": 11,
+"mean_qe": 0.654
+}
+],
+"urh": [
+{
+"source": "michsethowusu/english-urhobo_sentence-pairs_mt560",
+"windows": 9588,
+"pairs": 22463,
+"tgt_tokens": 1029443,
+"mean_qe": 0.546
+},
+{
+"source": "<HF_ORG_LEGACY>/naija",
+"windows": 1844,
+"pairs": 3709,
+"tgt_tokens": 189123,
+"mean_qe": 0.537
+},
+{
+"source": "<HF_ORG>/tds",
+"windows": 729,
+"pairs": 1969,
+"tgt_tokens": 77734,
+"mean_qe": 0.612
+},
+{
+"source": "<HF_ORG_LEGACY>/naija2",
+"windows": 458,
+"pairs": 1467,
+"tgt_tokens": 33501,
+"mean_qe": 0.538
+},
+{
+"source": "<HF_ORG>/clean_data",
+"windows": 31,
+"pairs": 95,
+"tgt_tokens": 1772,
+"mean_qe": 0.508
+},
+{
+"source": "<HF_ORG>/low_resource_multilingual_sft_short",
+"windows": 2,
+"pairs": 2,
+"tgt_tokens": 42,
+"mean_qe": 0.454
+},
+{
+"source": "Inioluwa/nigerianLanguageTranslator",
+"windows": 1,
+"pairs": 1,
+"tgt_tokens": 8,
+"mean_qe": 0.477
+},
+{
+"source": "deepdml/igbo-dict-16khz",
+"windows": 1,
+"pairs": 1,
+"tgt_tokens": 12,
+"mean_qe": 0.698
+}
+],
+"tiv": [
+{
+"source": "michsethowusu/english-tiv_sentence-pairs_mt560",
+"windows": 40693,
+"pairs": 101215,
+"tgt_tokens": 4373541,
+"mean_qe": 0.656
+},
+{
+"source": "MaLA-LM/PolyWrite",
+"windows": 57,
+"pairs": 82,
+"tgt_tokens": 5408,
+"mean_qe": 0.623
+},
+{
+"source": "Mollel/Swahili-stsb-SWH-ENG",
+"windows": 2,
+"pairs": 4,
+"tgt_tokens": 37,
+"mean_qe": 0.572
+},
+{
+"source": "Tamazight-NLP/Pontoon-Translations",
+"windows": 2,
+"pairs": 3,
+"tgt_tokens": 28,
+"mean_qe": 0.619
+},
+{
+"source": "iamwille/igbo_language_translation_dataset",
+"windows": 1,
+"pairs": 2,
+"tgt_tokens": 13,
+"mean_qe": 0.718
+},
+{
+"source": "Tommy0201/WebScraped_Igbo_To_Eng",
+"windows": 2,
+"pairs": 2,
+"tgt_tokens": 19,
+"mean_qe": 0.668
+},
+{
+"source": "soynade-research/Wolof-Non-Standard-Orthography",
+"windows": 1,
+"pairs": 1,
+"tgt_tokens": 13,
+"mean_qe": 0.751
+},
+{
+"source": "Inioluwa/nigerianLanguageTranslator",
+"windows": 1,
+"pairs": 1,
+"tgt_tokens": 12,
+"mean_qe": 0.537
+},
+{
+"source": "ccibeekeoc42/english_to_igbo",
+"windows": 1,
+"pairs": 1,
+"tgt_tokens": 8,
+"mean_qe": 0.626
+},
+{
+"source": "taqbaylit/kabyle-english-TM",
+"windows": 1,
+"pairs": 1,
+"tgt_tokens": 8,
+"mean_qe": 0.58
+}
+],
+"oke": [
+{
+"source": "michsethowusu/english-okpe_sentence-pairs_mt560",
+"windows": 7964,
+"pairs": 17939,
+"tgt_tokens": 848289,
+"mean_qe": 0.498
+},
+{
+"source": "Rogendo/English-Swahili-Sentence-Pairs",
+"windows": 1,
+"pairs": 1,
+"tgt_tokens": 10,
+"mean_qe": 0.487
+},
+{
+"source": "Tommy0201/igbo-to-english",
+"windows": 1,
+"pairs": 1,
+"tgt_tokens": 17,
+"mean_qe": 0.759
+},
+{
+"source": "deepdml/igbo-dict-16khz",
+"windows": 1,
+"pairs": 1,
+"tgt_tokens": 14,
+"mean_qe": 0.555
+},
+{
+"source": "Tommy0201/WebScraped_Igbo_To_Eng",
+"windows": 1,
+"pairs": 1,
+"tgt_tokens": 17,
+"mean_qe": 0.654
+}
+],
+"bin": [
+{
+"source": "michsethowusu/african-bible-parallel",
+"windows": 13395,
+"pairs": 21339,
+"tgt_tokens": 1427111,
+"mean_qe": 0.482
+},
+{
+"source": "michsethowusu/english-edo_sentence-pairs_mt560",
+"windows": 4726,
+"pairs": 10217,
+"tgt_tokens": 492127,
+"mean_qe": 0.533
+},
+{
+"source": "deepdml/igbo-dict-16khz",
+"windows": 2,
+"pairs": 5,
+"tgt_tokens": 57,
+"mean_qe": 0.599
+},
+{
+"source": "Inioluwa/nigerianLanguageTranslator",
+"windows": 1,
+"pairs": 1,
+"tgt_tokens": 10,
+"mean_qe": 0.428
+}
+],
+"bbj": [
+{
+"source": "michsethowusu/african-bible-parallel",
+"windows": 3600,
+"pairs": 6381,
+"tgt_tokens": 385609,
+"mean_qe": 0.324
+}
+],
+"ibb": [
+{
+"source": "<HF_ORG_LEGACY>/naija",
+"windows": 2115,
+"pairs": 4837,
+"tgt_tokens": 238121,
+"mean_qe": 0.661
+},
+{
+"source": "<HF_ORG_LEGACY>/naija2",
+"windows": 5,
+"pairs": 20,
+"tgt_tokens": 937,
+"mean_qe": 0.588
+}
+],
+"wes": [
+{
+"source": "fotiecodes/Turaco-NLLB-mt-en-wes-cleaned-dataset",
+"windows": 2432,
+"pairs": 9945,
+"tgt_tokens": 257779,
+"mean_qe": 0.391
+},
+{
+"source": "michsethowusu/english-cameroon-pidgin_sentence-pairs_mt560",
+"windows": 1802,
+"pairs": 7053,
+"tgt_tokens": 189613,
+"mean_qe": 0.398
+}
+],
+"ach": [
+{
+"source": "michsethowusu/english-acholi_sentence-pairs_mt560",
+"windows": 17611,
+"pairs": 54214,
+"tgt_tokens": 1917237,
+"mean_qe": 0.485
+}
+],
+"bas": [
+{
+"source": "michsethowusu/english-basaa_sentence-pairs_mt560",
+"windows": 7930,
+"pairs": 20683,
+"tgt_tokens": 854758,
+"mean_qe": 0.405
+}
+],
+"swc": [
+{
+"source": "michsethowusu/english-congo-swahili_sentence-pairs_mt560",
+"windows": 53478,
+"pairs": 191558,
+"tgt_tokens": 5720264,
+"mean_qe": 0.778
+}
+],
+"dua": [
+{
+"source": "michsethowusu/english-duala_sentence-pairs_mt560",
+"windows": 5119,
+"pairs": 11354,
+"tgt_tokens": 549715,
+"mean_qe": 0.386
+}
+],
+"ish": [
+{
+"source": "michsethowusu/english-esan_sentence-pairs_mt560",
+"windows": 1760,
+"pairs": 3926,
+"tgt_tokens": 189577,
+"mean_qe": 0.435
+}
+],
+"her": [
+{
+"source": "michsethowusu/english-herero_sentence-pairs_mt560",
+"windows": 2235,
+"pairs": 6078,
+"tgt_tokens": 242210,
+"mean_qe": 0.469
+}
+],
+"iso": [
+{
+"source": "michsethowusu/english-isoko_sentence-pairs_mt560",
+"windows": 73367,
+"pairs": 161652,
+"tgt_tokens": 7883851,
+"mean_qe": 0.656
+}
+],
+"kua": [
+{
+"source": "michsethowusu/english-oshiwambo_sentence-pairs_mt560",
+"windows": 27872,
+"pairs": 75332,
+"tgt_tokens": 3064797,
+"mean_qe": 0.637
+}
+],
+"seh": [
+{
+"source": "michsethowusu/english-sena_sentence-pairs_mt560",
+"windows": 12891,
+"pairs": 36903,
+"tgt_tokens": 1415047,
+"mean_qe": 0.688
+}
+],
+"sid": [
+{
+"source": "michsethowusu/english-sidaama_sentence-pairs_mt560",
+"windows": 12567,
+"pairs": 35004,
+"tgt_tokens": 1368515,
+"mean_qe": 0.52
+}
+],
+"tsc": [
+{
+"source": "michsethowusu/english-tswa_sentence-pairs_mt560",
+"windows": 23041,
+"pairs": 61663,
+"tgt_tokens": 2504211,
+"mean_qe": 0.511
+}
+],
+"wal": [
+{
+"source": "michsethowusu/english-wolaytta_sentence-pairs_mt560",
+"windows": 35497,
+"pairs": 90367,
+"tgt_tokens": 3856840,
+"mean_qe": 0.637
+}
+],
+"yao": [
+{
+"source": "michsethowusu/english-yao_sentence-pairs_mt560",
+"windows": 12278,
+"pairs": 33016,
+"tgt_tokens": 1335694,
+"mean_qe": 0.477
+}
+],
+"kqn": [
+{
+"source": "michsethowusu/english-kaonde_sentence-pairs_mt560",
+"windows": 58625,
+"pairs": 164743,
+"tgt_tokens": 6377571,
+"mean_qe": 0.694
+}
+],
+"kri": [
+{
+"source": "michsethowusu/english-krio_sentence-pairs_mt560",
+"windows": 12972,
+"pairs": 30952,
+"tgt_tokens": 1399031,
+"mean_qe": 0.354
+}
+],
+"loz": [
+{
+"source": "michsethowusu/english-lozi_sentence-pairs_mt560",
+"windows": 116598,
+"pairs": 311078,
+"tgt_tokens": 12643076,
+"mean_qe": 0.699
+}
+],
+"lun": [
+{
+"source": "michsethowusu/english-lunda_sentence-pairs_mt560",
+"windows": 34632,
+"pairs": 100212,
+"tgt_tokens": 3782543,
+"mean_qe": 0.638
+}
+],
+"ndc": [
+{
+"source": "michsethowusu/english-ndau_sentence-pairs_mt560",
+"windows": 7572,
+"pairs": 22681,
+"tgt_tokens": 822257,
+"mean_qe": 0.693
+}
+],
+"nyn": [
+{
+"source": "michsethowusu/english-nyankore_sentence-pairs_mt560",
+"windows": 13367,
+"pairs": 37193,
+"tgt_tokens": 1456532,
+"mean_qe": 0.536
+}
+]
+}

@@ -1,0 +1,106 @@
+{
+ "kea": {
+  "stages": {
+   "generated": 2640,
+   "numbers_lost": 18,
+   "empty_or_multiline": 1,
+   "copy_en": 7,
+   "repetition": 8,
+   "meta_text": 1,
+   "truncated": 4,
+   "lid_wrong": 50,
+   "inconsistent_samples": 36,
+   "kept": 2515
+  },
+  "yield_": 0.9526515151515151,
+  "windows_train": 387,
+  "windows_val": 8,
+  "target_tokens": 177507,
+  "distinct_ngram": {
+   "1": {
+    "synth": 0.13595595417813694,
+    "pool": 0.04384182688271346
+   },
+   "2": {
+    "synth": 0.5588562640386912,
+    "pool": 0.36810287412264975
+   },
+   "3": {
+    "synth": 0.8720501666337898,
+    "pool": 0.7236970118137596
+   }
+  },
+  "novelty_4gram_vs_pool": 0.9869728369792333,
+  "duplicate_source_rate": 0.0,
+  "tau": 60.0,
+  "length_ratio_bounds": [
+   0.4565194805194805,
+   3.296590909090908
+  ],
+  "by_source": {
+   "HuggingFaceFW/fineweb-edu:sample-10BT": 376,
+   "wikimedia/wikipedia:20231101.en": 358,
+   "common-pile/pubmed": 367,
+   "common-pile/libretexts": 363,
+   "dsfsi/afriscience_mt:train(en)": 375,
+   "common-pile/arxiv_papers": 373,
+   "gfissore/arxiv-abstracts-2021": 303
+  }
+ },
+ "kri": {
+  "stages": {
+   "generated": 2160,
+   "repetition": 8,
+   "numbers_lost": 22,
+   "copy_en": 3,
+   "truncated": 12,
+   "lid_wrong": 14,
+   "inconsistent_samples": 214,
+   "kept": 1887
+  },
+  "yield_": 0.8736111111111111,
+  "windows_train": 266,
+  "windows_val": 11,
+  "target_tokens": 175200,
+  "distinct_ngram": {
+   "1": {
+    "synth": 0.12410547648762839,
+    "pool": 0.03036114316746996
+   },
+   "2": {
+    "synth": 0.47846693973083676,
+    "pool": 0.274593995636968
+   },
+   "3": {
+    "synth": 0.7960819980134749,
+    "pool": 0.6272441334464235
+   }
+  },
+  "novelty_4gram_vs_pool": 0.9579435819579804,
+  "duplicate_source_rate": 0.0,
+  "tau": 60.0,
+  "length_ratio_bounds": [
+   0.5830958230958231,
+   3.5901785714285666
+  ],
+  "by_source": {
+   "HuggingFaceFW/fineweb-edu:sample-10BT": 271,
+   "common-pile/pubmed": 263,
+   "common-pile/libretexts": 254,
+   "dsfsi/afriscience_mt:train(en)": 276,
+   "common-pile/arxiv_papers": 269,
+   "gfissore/arxiv-abstracts-2021": 269,
+   "wikimedia/wikipedia:20231101.en": 285
+  }
+ },
+ "_probe": {
+  "teacher": "google/gemma-4-31B-it-qat-w4a16-ct",
+  "generation": "retrieval 8-shot BM25 from replay pool, greedy candidate + T0.7 sample for consistency (chrF++>=60), GlotLID, copy/repetition/length/number filters",
+  "verdict": {
+   "kea": "PASS: fs8 +16.1 chrF++ [+13.9,+18.1] vs final_1433 (FLORES+ +20.6, val +8.9, seen +11.5)",
+   "kri": "CONDITIONAL PASS: fs8 +3.5 [+1.4,+5.8]; SmolSent +10.8 but SFT-val (JW) -3.6 [-5.9,-1.3]: use with lower weight than kea"
+  },
+  "note": "all other 21 consensus-only languages FAIL the rule (see reports); no data generated for them",
+  "licence_note": "Gemma-4 model card: apache-2.0; no clause on training on outputs; English source licences in rows.parquet src_licence (share_alike rows = Wikipedia)"
+ }
+}

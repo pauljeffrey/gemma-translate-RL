@@ -1,0 +1,21 @@
+{
+ "bytes": {
+  "bf16_270M": 536223056,
+  "bf16_1B": 1999811208,
+  "Q8_0_1B_ggml-org": 1069306368,
+  "Q4_K_M_1B_ggml-org": 806058240,
+  "QAT_q4_0_1B_google": 1003541152,
+  "f16_1B_ggml-org": 2006573568,
+  "Q8_0_270M_ggml-org": 291545600,
+  "Q8_0_270M_ours": 299748320
+ },
+ "estimates": {
+  "Q4_0 uniform 4.5 bpw (all weights)": 150805224.0,
+  "Q4_K_M by the 1B ratio (806.1/1069.3 x our 299.7 MB)": 225954516.3974529,
+  "QAT-style (embedding f16 + transformer Q4_0), as Google's 1B file": 391977704.0
+ },
+ "check": {
+  "1B QAT-style check (embedding f16 + transformer 4.5 bpw)": 996546312.0
+ },
+ "ratio_per_token_compute": 3.729551490868778
+}

@@ -1,0 +1,98 @@
+{
+ "arms": {
+  "S": {
+   "start_flores": 28.77,
+   "end_flores": 34.49,
+   "gain_flores": 5.72,
+   "finished": "0.943 / 0.991",
+   "geez_gain": "n/a (Ge'ez languages not in this design)",
+   "weak_gain": 5.72,
+   "completions": 50176,
+   "gain_per_m": 114.0,
+   "curve": [
+    [
+     0,
+     30.717396231016593
+    ],
+    [
+     10,
+     34.23596328553549
+    ],
+    [
+     20,
+     35.78959940455391
+    ],
+    [
+     30,
+     35.77626979469916
+    ],
+    [
+     40,
+     35.237497828947205
+    ],
+    [
+     49,
+     34.51853763832427
+    ]
+   ]
+  },
+  "W": {
+   "start_flores": 15.16,
+   "end_flores": 22.52,
+   "gain_flores": 7.36,
+   "finished": "0.700 / 0.887",
+   "geez_gain": "n/a (Ge'ez languages not in this design)",
+   "weak_gain": 7.36,
+   "completions": 50176,
+   "gain_per_m": 146.68,
+   "curve": [
+    [
+     0,
+     19.755741558087017
+    ],
+    [
+     10,
+     24.606791756134864
+    ],
+    [
+     20,
+     25.315650676806982
+    ],
+    [
+     30,
+     25.291164002853716
+    ],
+    [
+     40,
+     24.750871573657236
+    ],
+    [
+     49,
+     24.54782454714329
+    ]
+   ]
+  },
+  "W_S1": {
+   "start_flores": 15.16,
+   "end_flores": 15.48,
+   "gain_flores": 0.32,
+   "finished": "0.700 / 0.725",
+   "geez_gain": "n/a (Ge'ez languages not in this design)",
+   "weak_gain": 0.32,
+   "completions": "0 (continued SFT, 367 steps)",
+   "curve": []
+  },
+  "W_S1P": {
+   "start_flores": 15.16,
+   "end_flores": 14.15,
+   "gain_flores": -1.01,
+   "finished": "0.700 / 0.673",
+   "geez_gain": "n/a (Ge'ez languages not in this design)",
+   "weak_gain": -1.01,
+   "completions": "0 (continued SFT, pair-matched)",
+   "curve": []
+  }
+ },
+ "units": "RL steps",
+ "note": "S = RL from SFT-final (arm F); W = RL from the weak SFT; W_S1 / W_S1P = continued SFT controls from the weak SFT (GPU-time matched / pair-matched). Values: FLORES+ devtest no_pair, language macro over yor kin orm lin (not the 45-language macro)."
+}

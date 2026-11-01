@@ -1,0 +1,241 @@
+{
+ "model": "/path/to/repo/gemma_mt/artifacts/tokswap_2026-10-25/model_geez_N3000",
+ "n_removed_ids": 3000,
+ "loss": {
+  "amh_Ethi": {
+   "n": 300,
+   "chars": 26462,
+   "n_identical_tokenisation": 0,
+   "orig_tokens": 16142,
+   "swapped_tokens": 12523,
+   "orig_nll_per_token": 2.17607374584759,
+   "swapped_nll_per_token": 5.368062975307075,
+   "orig_nll_per_char": 1.3274197870709623,
+   "swapped_nll_per_char": 2.540407098472168,
+   "sentences_with_identical_token_count": 0,
+   "changed_sentences_max_abs_diff_full_nll": 291.05999755859375,
+   "changed_sentences_median_abs_diff_full_nll": 102.93701934814453
+  },
+  "tir_Ethi": {
+   "n": 300,
+   "chars": 27172,
+   "n_identical_tokenisation": 0,
+   "orig_tokens": 19783,
+   "swapped_tokens": 13126,
+   "orig_nll_per_token": 2.71112773197037,
+   "swapped_nll_per_token": 6.940505819278538,
+   "orig_nll_per_char": 1.9738789901946792,
+   "swapped_nll_per_char": 3.352755755330859,
+   "sentences_with_identical_token_count": 0,
+   "changed_sentences_max_abs_diff_full_nll": 306.4645080566406,
+   "changed_sentences_median_abs_diff_full_nll": 116.76878356933594
+  },
+  "hau_Latn": {
+   "n": 300,
+   "chars": 42097,
+   "n_identical_tokenisation": 300,
+   "orig_tokens": 14415,
+   "swapped_tokens": 14415,
+   "orig_nll_per_token": 1.2366820654272,
+   "swapped_nll_per_token": 1.2377633845355418,
+   "orig_nll_per_char": 0.42346894014141356,
+   "swapped_nll_per_char": 0.42383920916169404,
+   "sentences_with_identical_token_count": 300,
+   "identical_sentences_full_nll_orig": 17826.771973133087,
+   "identical_sentences_full_nll_swapped": 17842.359188079834,
+   "identical_sentences_restricted_nll_orig": 17826.730882167816,
+   "identical_sentences_restricted_nll_swapped": 17826.730882167816,
+   "identical_sentences_max_abs_diff_full_nll": 0.2937774658203125,
+   "identical_sentences_max_abs_diff_restricted_nll": 0.0
+  },
+  "yor_Latn": {
+   "n": 300,
+   "chars": 38420,
+   "n_identical_tokenisation": 300,
+   "orig_tokens": 19075,
+   "swapped_tokens": 19075,
+   "orig_nll_per_token": 2.3282480631337097,
+   "swapped_nll_per_token": 2.3312314501721145,
+   "orig_nll_per_char": 1.1559430454001955,
+   "swapped_nll_per_char": 1.157424255909242,
+   "sentences_with_identical_token_count": 300,
+   "identical_sentences_full_nll_orig": 44411.33180427551,
+   "identical_sentences_full_nll_swapped": 44468.23991203308,
+   "identical_sentences_restricted_nll_orig": 44411.134298324585,
+   "identical_sentences_restricted_nll_swapped": 44411.134298324585,
+   "identical_sentences_max_abs_diff_full_nll": 1.46759033203125,
+   "identical_sentences_max_abs_diff_restricted_nll": 0.0
+  },
+  "swh_Latn": {
+   "n": 300,
+   "chars": 41629,
+   "n_identical_tokenisation": 300,
+   "orig_tokens": 13781,
+   "swapped_tokens": 13781,
+   "orig_nll_per_token": 0.9855370033670515,
+   "swapped_nll_per_token": 0.9858864975999777,
+   "orig_nll_per_char": 0.3262553855101332,
+   "swapped_nll_per_char": 0.3263710832214392,
+   "sentences_with_identical_token_count": 300,
+   "identical_sentences_full_nll_orig": 13581.685443401337,
+   "identical_sentences_full_nll_swapped": 13586.501823425293,
+   "identical_sentences_restricted_nll_orig": 13581.611344337463,
+   "identical_sentences_restricted_nll_swapped": 13581.611344337463,
+   "identical_sentences_max_abs_diff_full_nll": 0.12170028686523438,
+   "identical_sentences_max_abs_diff_restricted_nll": 0.0
+  },
+  "kin_Latn": {
+   "n": 300,
+   "chars": 44162,
+   "n_identical_tokenisation": 300,
+   "orig_tokens": 15915,
+   "swapped_tokens": 15915,
+   "orig_nll_per_token": 1.4125336587110706,
+   "swapped_nll_per_token": 1.4134358020462483,
+   "orig_nll_per_char": 0.5090456315018951,
+   "swapped_nll_per_char": 0.509370743842354,
+   "sentences_with_identical_token_count": 300,
+   "identical_sentences_full_nll_orig": 22480.47317838669,
+   "identical_sentences_full_nll_swapped": 22494.83078956604,
+   "identical_sentences_restricted_nll_orig": 22480.380084514618,
+   "identical_sentences_restricted_nll_swapped": 22480.380084514618,
+   "identical_sentences_max_abs_diff_full_nll": 0.27391815185546875,
+   "identical_sentences_max_abs_diff_restricted_nll": 0.0
+  },
+  "ibo_Latn": {
+   "n": 300,
+   "chars": 40448,
+   "n_identical_tokenisation": 300,
+   "orig_tokens": 17174,
+   "swapped_tokens": 17174,
+   "orig_nll_per_token": 1.6982979230279902,
+   "swapped_nll_per_token": 1.7003927205291105,
+   "orig_nll_per_char": 0.7210880273457947,
+   "swapped_nll_per_char": 0.7219774669295624,
+   "sentences_with_identical_token_count": 300,
+   "identical_sentences_full_nll_orig": 29166.568530082703,
+   "identical_sentences_full_nll_swapped": 29202.544582366943,
+   "identical_sentences_restricted_nll_orig": 29166.441381454468,
+   "identical_sentences_restricted_nll_swapped": 29166.441381454468,
+   "identical_sentences_max_abs_diff_full_nll": 0.444000244140625,
+   "identical_sentences_max_abs_diff_restricted_nll": 0.0
+  },
+  "fon_Latn": {
+   "n": 300,
+   "chars": 42783,
+   "n_identical_tokenisation": 300,
+   "orig_tokens": 22491,
+   "swapped_tokens": 22491,
+   "orig_nll_per_token": 3.9460347201760477,
+   "swapped_nll_per_token": 3.95224806875604,
+   "orig_nll_per_char": 2.0744283217978987,
+   "swapped_nll_per_char": 2.0776946757916015,
+   "sentences_with_identical_token_count": 300,
+   "identical_sentences_full_nll_orig": 88750.26689147949,
+   "identical_sentences_full_nll_swapped": 88890.01131439209,
+   "identical_sentences_restricted_nll_orig": 88749.83180236816,
+   "identical_sentences_restricted_nll_swapped": 88749.83180236816,
+   "identical_sentences_max_abs_diff_full_nll": 2.6083984375,
+   "identical_sentences_max_abs_diff_restricted_nll": 0.0
+  }
+ },
+ "gen": {
+  "hau_Latn": {
+   "n": 50,
+   "token_id_identical": 50,
+   "text_identical": 50,
+   "chrF++_original_vs_ref": 50.0798734312078,
+   "chrF++_swapped_vs_ref": 50.0798734312078,
+   "chrF++_swapped_vs_original_output": 100.0,
+   "orig_gen_tokens_mean": 46.26,
+   "swapped_gen_tokens_mean": 46.26,
+   "examples": []
+  },
+  "yor_Latn": {
+   "n": 50,
+   "token_id_identical": 50,
+   "text_identical": 50,
+   "chrF++_original_vs_ref": 28.314392697883584,
+   "chrF++_swapped_vs_ref": 28.314392697883584,
+   "chrF++_swapped_vs_original_output": 100.0,
+   "orig_gen_tokens_mean": 64.38,
+   "swapped_gen_tokens_mean": 64.38,
+   "examples": []
+  },
+  "swh_Latn": {
+   "n": 50,
+   "token_id_identical": 50,
+   "text_identical": 50,
+   "chrF++_original_vs_ref": 59.279520200224844,
+   "chrF++_swapped_vs_ref": 59.279520200224844,
+   "chrF++_swapped_vs_original_output": 100.0,
+   "orig_gen_tokens_mean": 45.5,
+   "swapped_gen_tokens_mean": 45.5,
+   "examples": []
+  },
+  "amh_Ethi": {
+   "n": 50,
+   "token_id_identical": 40,
+   "text_identical": 40,
+   "chrF++_original_vs_ref": 16.054715514012212,
+   "chrF++_swapped_vs_ref": 15.882813006297361,
+   "chrF++_swapped_vs_original_output": 94.69267345840575,
+   "orig_gen_tokens_mean": 74.8,
+   "swapped_gen_tokens_mean": 75.12,
+   "examples": [
+    {
+     "src": "On Monday, scientists from the Stanford University School of Medicine announced the invention of a new diagnostic tool t",
+     "orig": "ዶክተር ሻንቲን ዴንሰሮን የጤና ጥበቃ ትምህርት ቤት የሶንደፍ ዩኒቨርሲቲ የህክምና ትምህርት ቤት መሠረት የሰነዘር ኬሚካሎችን በየመደቡ ኬሚካላዊ ኬሚካላዊ ኬሚካላዊ ኬሚካላዊ ኬሚካላዊ ኬሚካላዊ ኬሚካላዊ ኬሚካላዊ ኬሚካላዊ ኬሚካላዊ ኬሚካላዊ ኬሚካላዊ ኬሚካላዊ ኬሚካላዊ ኬሚካላዊ ኬሚካ",
+     "swapped": "ዶክተር ሻንቲን ዴንሰሮን የጤና ጥበቃ ትምህርት ቤት የሶንደፍ ዩኒቨርሲቲ የህክምና ትምህርት ቤት መሠረት የሰነዘር ኬሚካሎችን በየመደቡ ኬሚካላዊ ኬሚንኮል ኬሚካላዊ ኬሚካላዊ ኬሚካላዊ ኬሚካላዊ ኬሚካላዊ ኬሚካላዊ ኬሚካላዊ ኬሚካላዊ ኬሚካላዊ ኬሚካላዊ ኬሚካላዊ ኬሚካላዊ ኬሚካላዊ ኬሚካላ"
+    },
+    {
+     "src": "28-year-old Vidal had joined Barça three seasons ago, from Sevilla.",
+     "orig": "28 ዓመት የሆኑት ቪልድ ከሳዊፈ ሦስት ጊዜያት በፊት በቤርካ ተቀላቀሉ፡፡",
+     "swapped": "28 ዓመት የሆኑት ቪልድ ከሳዊፈ ሦስት ጊዜያት በፊት በቤርካን ተሳለዋል፡፡"
+    },
+    {
+     "src": "Since moving to the Catalan-capital, Vidal had played 49 games for the club.",
+     "orig": "ወደ ካታሊናዋዊው ዋና ከተማ በመሄድ ቪድል ለኩለቡ 49 ጨዋታዎችን ተጫውቷል፡፡",
+     "swapped": "ወደ ካታሊልናዋይ ዋና ከተማ በመሄድ ቪድል ለኩለቡ 49 ጨዋታዎችን ተጫውቷል፡፡"
+    },
+    {
+     "src": "Around 11:29, the protest moved up Whitehall, past Trafalgar Square, along the Strand, passing by Aldwych and up Kingswa",
+     "orig": "በ11:29 ላይ የፖረዚን ድምፅ በሜላስልስን፣ በታንትስስ ላይ፣ በሰርልስ ላይ፣ በአልዶይክ እና በንጉሡ ጃንደረስ ላይ በሄደው ወደ ሖልቦር በኩል ሲሄድ የኮረሲቲ ፓርቲ በገጠመው የሰሜን ጆሮ ሆቴል ውስጥ ያካሄዱትን የነገሮች ፖረዚን ድምፅ አድራጊነትን አድርገው አቀረበ።",
+     "swapped": "በ11:29 ላይ የፖረዚን ድምፅ በሜላስልስን፣ በታላንፊልትስስ ሬስድስን፣ በሰንተር አጠገብ፣ በአልዶይክ እና በንጉሡ ጃልባ ላይ በሄዱት በሃሎብ ውስጥ የኮረሲቲ ፓርቲ በገጠመው ሮማን ኮንግንኮል ሆቴል ውስጥ ያካሄዱትን የነገሮች አዋጅ አውድማዎች አድራጊነት አድርገው ነበር።"
+    }
+   ]
+  },
+  "tir_Ethi": {
+   "n": 50,
+   "token_id_identical": 41,
+   "text_identical": 41,
+   "chrF++_original_vs_ref": 11.159639221338018,
+   "chrF++_swapped_vs_ref": 11.227976646193065,
+   "chrF++_swapped_vs_original_output": 92.3934339449517,
+   "orig_gen_tokens_mean": 85.34,
+   "swapped_gen_tokens_mean": 84.96,
+   "examples": [
+    {
+     "src": "Lead researchers say this may bring early detection of cancer, tuberculosis, HIV and malaria to patients in low-income c",
+     "orig": "ተመራመርቲ መጽናዕቲ፡ እዚ ኸኣ ነቶም ኣብ ውሽጢ ዜድልዮም ሃገራት፡ ከም ካንሰር ጸባርቕ፡ ካብቲ ሓሚድ ዚመጽእ ሕማም፡ ከም እቲ ኣብ ውሽጢ ዜድልዮም ሃገራት፡ ነቲ ኻብቲ ሓሚድ ዚመጽእ ህሙማት ዜምጽእ ህሞት ኪግለጽ ይኽእል እዩ።",
+     "swapped": "ተመራመርቲ መጽናዕቲ፡ እዚ ኸኣ ነቶም ኣብ ውሽጢ ዜድልዮም ሃገራት፡ ከም ካንሰር ጸባርቕ፡ ካብቲ ሓሚድ ዚበመጽሕ ሕማም፡ ከም እቲ ኣብ ውሽጢ ዜድልዮም ሃገራት፡ ነቲ ኻብቲ ዜድልዮም ሕማም ዚመጽእ ህሙማት ዜምጽኦ ቐደም ዜመሓላልፍ ኪኸውን ይኽእል እዩ።"
+    },
+    {
+     "src": "The pilot was identified as Squadron Leader Dilokrit Pattavee.",
+     "orig": "እቲ መራሕቲ መርከብ፡ ዶክተር ዴልዮርት ፒታቫይ ተባሂሉ ተገሊጹ ነበረ።",
+     "swapped": "እቲ መራሕቲ መርከሓት፡ ዶክተር ዴልዮርት ፒታቫይ ተባሂሉ ተገሊጹ ነበረ።"
+    },
+    {
+     "src": "\"Panama Papers\" is an umbrella term for roughly ten million documents from Panamanian law firm Mossack Fonseca, leaked t",
+     "orig": "\"ፓናማ ፖረዚን\" ኪብሃል ከሎ ፡ ንእሽቶ ዚኸውን ሓያል ጸብጻብ ፡ ፕላንማ ዚርከብ ፖርናማዊ ሕጊ ፊልም ፡ ሎሚ ፡ ኣብ 2016 ፡ ንሰነ ዚብል ጸብጻብ ፡ ፕላንማ ዚርከብ ፖርናማዊ ሕጊ ፊልም ፡ ፕላንማ ዚብሃል ፖርናማዊ ሕጊ ፊልም ፡ ሎሚ ፡ ፕላንማ ዚብሃል ፖርናማዊ ሕ",
+     "swapped": "\"ፓናማ ፖረዚን\" ኪብሃል ከሎ ፡ ንእሽቶ ዚኸውን ሓያል ጸብጻብ ፡ ፕላንማ ዚርከብ ፖርናማዊ ሕጊ ፊልም ፡ ሎሚ ፡ ኣብ 2016 ፡ ንሰነ ዚርብከብ ሓያል ጸብጻብ ፡ ፕላንማ ዚብሃል ፖርናማዊ ሕጊ ፊልም ፡ ሎሚ ፡ ኣብ ፕላንማ ዚርከብ ፖርናማዊ ሕጊ ፊልም ፡ ሎሚ ፡ ኣብ ፕላንማ"
+    },
+    {
+     "src": "The documents showed fourteen banks helped wealthy clients hide billions of US dollars of wealth to avoid taxes and othe",
+     "orig": "እቲ ጽሑፋት፡ እቶም ሃብታማት ዚርከቡ ሰባት ነቲ ኻብ ብልዕሊ ሓያሎ ሚልዮን ዶላር ሃብታም ዚርከብ ግብረ - ብልዕሊ - ዶላር ብሚልዮናት ዚቝጸሩ ዶላር ዚግበሩ ሰባት ኪሕብሩ ሓገዝዎም እዩ።",
+     "swapped": "እቲ ጽሑፋት፡ እቶም ሃብታማት ዚርከቡ ሰባት ነቲ ኻኽልስ ወለዶ ብልዕሊ ሓያሎ ዶላር ኡካብ ዚኸውን ሃብቲ ንምውሳድ ብቢልዮናት ዶላር ኡካብ ዚኸውን ሃብቲ ኺሓድግዎ ሓገዝዎም እዩ።"
+    }
+   ]
+  }
+ }
+}

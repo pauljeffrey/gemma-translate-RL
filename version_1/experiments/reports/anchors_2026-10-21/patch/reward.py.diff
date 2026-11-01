@@ -1,0 +1,215 @@
+--- a/gemma_mt/rl/reward.py	2026-10-21 16:45:41
++++ b/gemma_mt/rl/reward.py	2026-10-21 16:35:37
+@@ -149,6 +149,25 @@
+     qe_ensemble_prior_langs: bool = True               # languages with a pooled-prior `qe2` (no dev reference): True = ensemble too, False = AfriCOMET alone as before
+     qe_ensemble_reliability: str = "ensemble"          # advantage weights: ensemble = the baked `ens.reliability*` of the calibration (max of v7 and the ensemble's own measurement) | keep = the v7 weights
+ 
++    # D-56: CONSTRAINT PENALTIES for the languages whose content signal is consensus (no AfriCOMET) or a blend (weak AfriCOMET): rl/anchors.py, thresholds fitted on HUMAN references
++    # (calibration/anchors_v1.json, scripts/build_anchors_calibration.py). PENALTIES only (never a bonus), each subtracted from the chunk / sample reward (floor: the failure penalty), each
++    # with its own weight, each active for a language only where its false-positive rate on human text is small. Off by default.
++    anchors_enabled: bool = False
++    anchors_calibration_path: Optional[str] = None     # calibration/anchors_v1.json; required when anchors_enabled
++    anchors_modes: List[str] = field(default_factory=lambda: ["consensus", "blend"])     # content modes the penalties apply to ("qe" languages have the real QE signal)
++    anchors_off_languages: List[str] = field(default_factory=list)     # CONTROL list: these languages never get an anchor penalty (A/B inside one run), whatever the mode
++    anchors_entity_weight: float = 0.5                 # (a) chunk level: reward per unit of number / name preservation deficit (0..1: share of the entities missing below the human low quantile)
++    anchors_repeat_weight: float = 1.0                 # (b) sample level: reward per unit of word 3/4/5-gram repetition deficit (0..1 from the human p97 of that length to a 30 % repeated share)
++    anchors_boiler_weight: float = 1.0                 # (c) sample level: reward per unit of cross-prompt boilerplate deficit (0..1 from the human 3 % to 40 % of the 5-grams found in >= 3 other prompts' outputs)
++    anchors_lexicon_weight: float = 0.0                # (d) chunk level, hook of rl/lexicon.py: reward per unit of lexicon-overlap deficit below the human low quantile (0 = off)
++    anchors_lid_prob_weight: float = 0.0               # (e) sample level: reward per unit of GlotLID-probability deficit below the human p05 of that language (0 = off); needs reward.lid_enabled
++    anchors_lexicon_dir: Optional[str] = None          # default: $GEMMA_MT_LEXICON_DIR or ./lexicon
++    anchors_buffer_capacity: int = 600                 # outputs kept per language for (c)
++    anchors_buffer_per_prompt: int = 4                 # ... at most this many of one prompt's group (so 600 outputs cover >= 150 prompts)
++    anchors_buffer_min_outputs: int = 150              # no boilerplate penalty before the language's buffer holds this many outputs ...
++    anchors_buffer_min_prompts: int = 30               # ... from this many distinct prompts
++    anchors_buffer_min_other: int = 3                  # an output 5-gram is boilerplate when it occurs in the outputs of >= this many OTHER prompts
++    anchors_related_min: int = 1                       # prompts whose English sources share this many word 6-grams with the current one do not count as "other"
+ 
+ 
+ @dataclass
+@@ -177,6 +196,7 @@
+     failed_chunks: List[int] = field(default_factory=list)                  # per sample: chunks of the plan that are FAILED chunks (omitted / extra / copied text; D-30)
+     science_deficit: List[Optional[float]] = field(default_factory=list)    # per sample: mean science-anchor deficit of its scored chunks (D-52; None = not judged / anchor off)
+     qe2: List[Optional[float]] = field(default_factory=list)                # per sample: mean RAW SSA-COMET-MTL score of its scored chunks (D-55; None = not used / ensemble off)
++    anchors_penalty: List[float] = field(default_factory=list)              # per sample: reward subtracted by the constraint penalties (D-56; 0.0 = none / anchors off)
+ 
+ 
+ class TranslationReward:
+@@ -209,6 +229,26 @@
+             from gemma_mt.rl.sci_anchor import ScienceAnchor
+ 
+             self.sci_anchor = ScienceAnchor(cfg.science_anchor_path)
++        self.anchors = None
++        if cfg.anchors_enabled:                         # D-56: built here, so a missing / unreadable calibration stops the run before step 1
++            from gemma_mt.rl.anchors import Anchors
++
++            if not cfg.anchors_calibration_path:
++                raise ValueError("reward.anchors_enabled needs reward.anchors_calibration_path (calibration/anchors_v1.json)")
++            det = [d for d, w in (("entity", cfg.anchors_entity_weight), ("repeat", cfg.anchors_repeat_weight), ("boiler", cfg.anchors_boiler_weight),
++                                  ("lexicon", cfg.anchors_lexicon_weight), ("lid_prob", cfg.anchors_lid_prob_weight)) if w > 0]
++            for name in ("entity", "repeat", "boiler", "lexicon", "lid_prob"):
++                if getattr(cfg, f"anchors_{name}_weight") < 0:
++                    raise ValueError(f"anchors_{name}_weight must be >= 0 (penalties only)")
++            if cfg.anchors_lid_prob_weight > 0 and not cfg.lid_enabled:
++                raise ValueError("anchors_lid_prob_weight > 0 needs reward.lid_enabled (the probability comes from the GlotLID guard's classifier)")
++            bad = [m for m in cfg.anchors_modes if m not in CONTENT_MODES]
++            if bad:
++                raise ValueError(f"anchors_modes {bad} are not content modes {CONTENT_MODES}")
++            self.anchors = Anchors.from_file(cfg.anchors_calibration_path, modes=cfg.anchors_modes, off_languages=cfg.anchors_off_languages, detectors=det,
++                                             lexicon_dir=cfg.anchors_lexicon_dir, buffer_capacity=cfg.anchors_buffer_capacity, buffer_min_outputs=cfg.anchors_buffer_min_outputs,
++                                             buffer_min_prompts=cfg.anchors_buffer_min_prompts, buffer_min_other=cfg.anchors_buffer_min_other,
++                                             buffer_per_prompt=cfg.anchors_buffer_per_prompt, related_min=cfg.anchors_related_min)
+         self.qe_ens = None
+         if cfg.qe_ensemble:                             # D-55: needs a QEPairScorer (train_rl.build_scorer with scorer.ensemble_model_id) or any scorer with `score_secondary`
+             from gemma_mt.rl.qe_ensemble import QEEnsemble
+@@ -416,6 +456,7 @@
+         rewards, weights = [], []
+         n_chunks = [len(chunk_plan[i]) if i in chunk_plan else 0 for i in range(n)]
+         failed_chunks = [sum(1 for seg, _ in chunk_plan[i] if seg is None) if i in chunk_plan else 0 for i in range(n)]
++        anc = self._anchors_prepass(samples, langs, modes, srcs, texts, chunk_plan, lid_label, group_size) if self.anchors is not None else None   # D-56
+         for i, s in enumerate(samples):
+             lang = langs[i]
+             mode_i, beta_i = applied[i]
+@@ -448,6 +489,8 @@
+                             d = self.shaper.lexical_deficit(lang, seg_src[seg], seg_mt[seg])
+                             if d > 0:
+                                 r = max(self.penalty, r - cfg.lexical_penalty * d)
++                        if anc is not None and anc["on"][i]:                      # D-56: chunk-level constraint penalties (entities, lexicon); penalties only
++                            r = self._anchors_chunk(anc, i, lang, seg_src[seg], seg_mt[seg], r, w)
+                         if self.sci_anchor is not None and s.domain in cfg.science_anchor_domains:       # D-52
+                             sd = self.sci_anchor.deficit(lang, seg_src[seg], seg_mt[seg])
+                             sci_w[0] += w; sci_w[1] += w * sd
+@@ -460,6 +503,8 @@
+                                 r = max(self.penalty, r - cfg.diacritic_penalty * dd)
+                         seg_reward[seg] = r
+                 rewards.append(aggregate(chunk_plan[i], seg_reward, self.penalty))
++                if anc is not None and anc["on"][i]:                                   # D-56: sample-level constraint penalties (repetition, boilerplate, LID probability)
++                    rewards[-1] = self._anchors_sample(anc, i, rewards[-1])
+                 qe[i] = sum(raw) / len(raw) if raw else None
+                 if dia_w[0] > 0:
+                     dia_def[i] = dia_w[1] / dia_w[0]
+@@ -472,6 +517,9 @@
+                            lid_label=lid_label, consensus_chrf=chrf_mean, content_mode=[m for m, _ in applied],
+                            n_chunks=n_chunks, failed_chunks=failed_chunks)
+         out.science_deficit = sci_def
++        if anc is not None:                           # D-56
++            out.anchors_penalty = list(anc["pen"])
++            out.stats.update(self._anchors_finish(anc, langs, n))
+         if self.qe_ens is not None:                   # D-55
+             out.qe2 = [self._mean_raw(chunk_plan.get(i), seg_qe2) for i in range(n)]
+             out.stats.update(self.qe_ens.pop_stats(self.scorer))
+@@ -501,6 +549,115 @@
+                 out.stats["chunk/mt_truncated_rate"] = sum(1 for l in lens if l - 2 > cfg.max_comet_tokens) / len(lens)
+         return out
+ 
++    # ------------------------------------------------------------------------------------------ constraint penalties (D-56; rl/anchors.py)
++    def _anchors_prepass(self, samples, langs, modes, srcs, texts, chunk_plan, lid_label, group_size) -> Dict[str, Any]:
++        """Sample-level work that needs all samples of the call: which samples the penalties apply to, repetition / boilerplate / LID-probability deficits. The boilerplate buffer is
++        READ here (every sample is scored against the outputs of EARLIER calls) and filled afterwards (`_anchors_observe`), so the order of the groups in a call never matters.
++        Only a TRAINING call (group_size > 1) scores boilerplate and feeds the buffer; the greedy evaluation (group_size 1 / None) neither reads nor writes it."""
++        from gemma_mt.rl import anchors as AN
++
++        A, cfg, n = self.anchors, self.cfg, len(samples)
++        train_call = group_size is not None and int(group_size) > 1
++        on = [i in chunk_plan and A.applies(langs[i], modes[i][0]) for i in range(n)]
++        d: Dict[str, Any] = {"on": on, "pen": [0.0] * n, "train": train_call, "rep": [None] * n, "boi": [None] * n, "lidp": [None] * n, "prep": {},
++                             "ent": [[0.0, 0.0] for _ in range(n)], "lex": [[0.0, 0.0] for _ in range(n)], "chunk_dec": [0.0] * n, "sample_dec": [0.0] * n,
++                             "boiler_ready": [None] * n,
++                             "wtot": [sum(w for _, w in chunk_plan[i]) or 1.0 if i in chunk_plan else 1.0 for i in range(n)]}
++        for i in range(n):
++            if not on[i]:
++                continue
++            lang = langs[i]
++            want_rep = cfg.anchors_repeat_weight > 0 and A.enabled(lang, "repeat")
++            want_boi = train_call and cfg.anchors_boiler_weight > 0 and A.enabled(lang, "boiler")
++            if want_rep or want_boi:
++                p = AN.prepare(lang, srcs[i], texts[i], with_grams=want_boi)
++                d["prep"][i] = p
++                if want_rep:
++                    d["rep"][i] = A.repeat_deficit(lang, p)
++                if want_boi:
++                    d["boiler_ready"][i] = A.buffer.ready(lang)
++                    d["boi"][i] = A.boiler_deficit(lang, p)
++            if cfg.anchors_lid_prob_weight > 0 and lid_label[i] is not None and A.enabled(lang, "lid_prob") and hasattr(self.lid, "top"):
++                try:
++                    top = self.lid.top([texts[i]], 1)[0]
++                    d["lidp"][i] = A.lid_prob_deficit(lang, True, float(top[0][1]) if top else None)
++                except Exception:
++                    d["lidp"][i] = None
++        if train_call and cfg.anchors_boiler_weight > 0:     # fill the buffer AFTER every sample was scored
++            for i, p in d["prep"].items():
++                if p.grams.size:
++                    A.observe(langs[i], p)
++        return d
++
++    def _anchors_chunk(self, anc: Dict[str, Any], i: int, lang: str, src: str, mt: str, r: float, w: float) -> float:
++        cfg, A = self.cfg, self.anchors
++        if cfg.anchors_entity_weight > 0 and A.enabled(lang, "entity"):
++            de, nj = A.entity_deficit(lang, src, mt)
++            if nj:
++                anc["ent"][i][0] += w; anc["ent"][i][1] += w * de
++                if de > 0:
++                    r2 = max(self.penalty, r - cfg.anchors_entity_weight * de)
++                    anc["chunk_dec"][i] += w / anc["wtot"][i] * (r - r2)
++                    r = r2
++        if cfg.anchors_lexicon_weight > 0 and A.enabled(lang, "lexicon"):
++            dl = A.lexicon_deficit(lang, src, mt)
++            if dl is not None:
++                anc["lex"][i][0] += w; anc["lex"][i][1] += w * dl
++                if dl > 0:
++                    r2 = max(self.penalty, r - cfg.anchors_lexicon_weight * dl)
++                    anc["chunk_dec"][i] += w / anc["wtot"][i] * (r - r2)
++                    r = r2
++        return r
++
++    def _anchors_sample(self, anc: Dict[str, Any], i: int, r: float) -> float:
++        cfg = self.cfg
++        dec = 0.0
++        for key, wt in (("rep", cfg.anchors_repeat_weight), ("boi", cfg.anchors_boiler_weight), ("lidp", cfg.anchors_lid_prob_weight)):
++            v = anc[key][i]
++            if v is not None and v > 0:
++                dec += wt * v
++        r2 = max(self.penalty, r - dec) if dec > 0 else r
++        anc["sample_dec"][i] = r - r2
++        anc["pen"][i] = anc["chunk_dec"][i] + anc["sample_dec"][i]
++        return r2
++
++    def _anchors_finish(self, anc: Dict[str, Any], langs, n: int) -> Dict[str, float]:
++        """reward/anchors/*: coverage, per-detector judged / penalised rates and mean deficits, penalty sizes, boilerplate buffer state."""
++        on = [i for i in range(n) if anc["on"][i]]
++        st: Dict[str, float] = {"anchors/applied_rate": len(on) / max(n, 1)}
++        pen = [anc["pen"][i] for i in on]
++        st["anchors/penalty_mean"] = sum(pen) / len(on) if on else 0.0
++        st["anchors/penalty_max"] = max(pen) if on else 0.0
++        st["anchors/penalised_rate"] = sum(1 for x in pen if x > 1e-9) / len(on) if on else 0.0
++
++        def det(name: str, vals: List[Optional[float]], weight: float) -> None:
++            j = [v for v in vals if v is not None]
++            st[f"anchors/{name}/judged_rate"] = len(j) / len(on) if on else 0.0
++            if j:
++                st[f"anchors/{name}/penalised_rate"] = sum(1 for v in j if v > 0) / len(j)
++                st[f"anchors/{name}/deficit_mean"] = sum(j) / len(j)
++                st[f"anchors/{name}/penalty_mean"] = weight * sum(j) / len(on)
++
++        cfg = self.cfg
++        ent = [(anc["ent"][i][1] / anc["ent"][i][0]) if anc["ent"][i][0] > 0 else None for i in on]
++        lex = [(anc["lex"][i][1] / anc["lex"][i][0]) if anc["lex"][i][0] > 0 else None for i in on]
++        for name, vals, wt in (("entity", ent, cfg.anchors_entity_weight), ("lexicon", lex, cfg.anchors_lexicon_weight), ("repeat", [anc["rep"][i] for i in on], cfg.anchors_repeat_weight),
++                               ("boiler", [anc["boi"][i] for i in on], cfg.anchors_boiler_weight), ("lid_prob", [anc["lidp"][i] for i in on], cfg.anchors_lid_prob_weight)):
++            if wt > 0:
++                det(name, vals, wt)
++        if anc["train"] and cfg.anchors_boiler_weight > 0:
++            rd = [anc["boiler_ready"][i] for i in on if anc["boiler_ready"][i] is not None]
++            st["anchors/boiler/ready_rate"] = sum(1 for x in rd if x) / len(rd) if rd else 0.0
++            sizes = [self.anchors.buffer.size(l) for l in sorted({langs[i] for i in on})]
++            st["anchors/boiler/buffer_outputs_mean"] = sum(s[0] for s in sizes) / max(len(sizes), 1)
++            st["anchors/boiler/buffer_prompts_mean"] = sum(s[1] for s in sizes) / max(len(sizes), 1)
++        by: Dict[str, List[float]] = {}
++        for i in on:
++            by.setdefault(langs[i], []).append(anc["pen"][i])
++        for l, v in sorted(by.items()):
++            st[f"anchors/penalty/{l}"] = sum(v) / len(v)
++        return st
++
+     # ------------------------------------------------------------------------------------------ QE ensemble hooks (D-55; rl/qe_ensemble.py)
+     def _shape_qe(self, c1: float, c2: Optional[float], lang: str) -> float:
+         """The shaped QE value of one chunk: the language curve of AfriCOMET alone (default), or the ensemble rule."""

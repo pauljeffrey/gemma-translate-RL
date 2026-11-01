@@ -1,0 +1,13 @@
+engine,lang,n_reps,sent_per_s_mean,sent_per_s_best_rep,sent_per_s_min,h_per_1M_best_rep,gen_tok_mean,ref_tok_mean,prompt_tok_mean
+llama.cpp Q8_0,amh,2,2.042,2.154,1.931,129.0,55.1,54.7,45.5
+llama.cpp Q8_0,hau,2,2.436,2.502,2.371,111.0,48.8,49.4,45.5
+llama.cpp Q8_0,kin,2,1.265,2.11,0.42,131.6,54.9,57.5,47.7
+llama.cpp Q8_0,swh,2,2.389,2.463,2.316,112.8,44.5,46.5,43.6
+llama.cpp Q8_0,tir,2,1.536,1.55,1.523,179.2,74.3,70.2,45.6
+llama.cpp Q8_0,yor,2,1.553,1.58,1.526,175.8,76.3,69.7,43.5
+CTranslate2 int8,amh,2,2.791,2.854,2.728,97.3,55.1,54.7,45.5
+CTranslate2 int8,hau,2,3.297,3.327,3.267,83.5,48.8,49.4,45.5
+CTranslate2 int8,kin,2,2.888,2.896,2.879,95.9,54.9,57.5,47.7
+CTranslate2 int8,swh,2,3.624,3.655,3.593,76.0,44.5,46.5,43.6
+CTranslate2 int8,tir,2,2.082,2.22,1.944,125.1,74.3,70.2,45.6
+CTranslate2 int8,yor,2,2.196,2.327,2.066,119.4,76.3,69.7,43.5

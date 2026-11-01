@@ -1,0 +1,1871 @@
+{
+ "config": {
+  "work": "/workspace/jobs/r11/work/ldall",
+  "model": "/workspace/sft_build/runs/final_1433",
+  "rel_q": 0.7,
+  "mean_r_clip": "0.3,1.0",
+  "p25_r_clip": "0.0,0.4",
+  "mean_conf_clip": "50,58.8",
+  "p25_conf_clip": "38,45",
+  "budget_tokens": 60000,
+  "bin_share": "b512=0.25,b1024=0.40,b2048=0.35",
+  "max_pack": 8192,
+  "out_name": "ld_selected",
+  "total_cap": 4000000,
+  "lang_budget_mult": "amh=1.5,tir=1.5"
+ },
+ "documents_scored": 8778,
+ "eligible": 2074,
+ "selected": 1715,
+ "tokens": 2825610,
+ "target_tokens": 1865721,
+ "by_bin": {
+  "b2048": 286,
+  "b1024": 572,
+  "b512": 857
+ },
+ "by_domain": {
+  "general": 1254,
+  "science": 461
+ },
+ "by_mode": {
+  "consensus": 279,
+  "qe": 1436
+ },
+ "drops": {
+  "mean_r": 2859,
+  "uncovered_sentence": 1833,
+  "diacritics": 255,
+  "p25_r": 178,
+  "loop": 20,
+  "repetition": 49,
+  "mean_conf": 1476,
+  "p25_conf": 34
+ },
+ "languages_with_data": 71,
+ "per_language": {
+  "ach": {
+   "candidates": 114,
+   "eligible": 18,
+   "selected": 18,
+   "tokens": 26127,
+   "by_bin": {
+    "b2048": 2,
+    "b1024": 6,
+    "b512": 10
+   },
+   "by_domain": {
+    "general": 18
+   },
+   "mode": "consensus",
+   "pass_rate": 0.15789473684210525
+  },
+  "afr": {
+   "candidates": 114,
+   "eligible": 33,
+   "selected": 33,
+   "tokens": 42940,
+   "by_bin": {
+    "b2048": 6,
+    "b1024": 12,
+    "b512": 15
+   },
+   "by_domain": {
+    "science": 8,
+    "general": 25
+   },
+   "mode": "qe",
+   "pass_rate": 0.2894736842105263
+  },
+  "amh": {
+   "candidates": 114,
+   "eligible": 25,
+   "selected": 25,
+   "tokens": 37367,
+   "by_bin": {
+    "b2048": 2,
+    "b1024": 10,
+    "b512": 13
+   },
+   "by_domain": {
+    "science": 6,
+    "general": 19
+   },
+   "mode": "qe",
+   "pass_rate": 0.21929824561403508
+  },
+  "bam": {
+   "candidates": 114,
+   "eligible": 17,
+   "selected": 17,
+   "tokens": 24585,
+   "by_bin": {
+    "b2048": 1,
+    "b1024": 2,
+    "b512": 14
+   },
+   "by_domain": {
+    "general": 13,
+    "science": 4
+   },
+   "mode": "qe",
+   "pass_rate": 0.14912280701754385
+  },
+  "bas": {
+   "candidates": 114,
+   "eligible": 5,
+   "selected": 5,
+   "tokens": 5887,
+   "by_bin": {
+    "b1024": 2,
+    "b512": 3
+   },
+   "by_domain": {
+    "general": 5
+   },
+   "mode": "consensus",
+   "pass_rate": 0.043859649122807015
+  },
+  "bbj": {
+   "candidates": 114,
+   "eligible": 0,
+   "selected": 0,
+   "tokens": 0,
+   "by_bin": {},
+   "by_domain": {},
+   "mode": "consensus",
+   "pass_rate": 0.0
+  },
+  "bem": {
+   "candidates": 114,
+   "eligible": 28,
+   "selected": 28,
+   "tokens": 43734,
+   "by_bin": {
+    "b2048": 4,
+    "b1024": 10,
+    "b512": 14
+   },
+   "by_domain": {
+    "science": 6,
+    "general": 22
+   },
+   "mode": "qe",
+   "pass_rate": 0.24561403508771928
+  },
+  "bin": {
+   "candidates": 114,
+   "eligible": 8,
+   "selected": 8,
+   "tokens": 15156,
+   "by_bin": {
+    "b2048": 1,
+    "b1024": 3,
+    "b512": 4
+   },
+   "by_domain": {
+    "general": 8
+   },
+   "mode": "consensus",
+   "pass_rate": 0.07017543859649122
+  },
+  "dag": {
+   "candidates": 114,
+   "eligible": 8,
+   "selected": 8,
+   "tokens": 9621,
+   "by_bin": {
+    "b1024": 3,
+    "b512": 5
+   },
+   "by_domain": {
+    "science": 2,
+    "general": 6
+   },
+   "mode": "consensus",
+   "pass_rate": 0.07017543859649122
+  },
+  "dua": {
+   "candidates": 114,
+   "eligible": 1,
+   "selected": 1,
+   "tokens": 1129,
+   "by_bin": {
+    "b512": 1
+   },
+   "by_domain": {
+    "general": 1
+   },
+   "mode": "consensus",
+   "pass_rate": 0.008771929824561403
+  },
+  "dyu": {
+   "candidates": 114,
+   "eligible": 4,
+   "selected": 4,
+   "tokens": 8371,
+   "by_bin": {
+    "b2048": 1,
+    "b1024": 1,
+    "b512": 2
+   },
+   "by_domain": {
+    "general": 3,
+    "science": 1
+   },
+   "mode": "qe",
+   "pass_rate": 0.03508771929824561
+  },
+  "efi": {
+   "candidates": 114,
+   "eligible": 0,
+   "selected": 0,
+   "tokens": 0,
+   "by_bin": {},
+   "by_domain": {},
+   "mode": "qe",
+   "pass_rate": 0.0
+  },
+  "ewe": {
+   "candidates": 114,
+   "eligible": 24,
+   "selected": 24,
+   "tokens": 41803,
+   "by_bin": {
+    "b2048": 4,
+    "b1024": 8,
+    "b512": 12
+   },
+   "by_domain": {
+    "science": 5,
+    "general": 19
+   },
+   "mode": "qe",
+   "pass_rate": 0.21052631578947367
+  },
+  "fon": {
+   "candidates": 114,
+   "eligible": 25,
+   "selected": 25,
+   "tokens": 37790,
+   "by_bin": {
+    "b2048": 1,
+    "b1024": 6,
+    "b512": 18
+   },
+   "by_domain": {
+    "general": 23,
+    "science": 2
+   },
+   "mode": "qe",
+   "pass_rate": 0.21929824561403508
+  },
+  "hau": {
+   "candidates": 114,
+   "eligible": 26,
+   "selected": 26,
+   "tokens": 37221,
+   "by_bin": {
+    "b2048": 5,
+    "b1024": 6,
+    "b512": 15
+   },
+   "by_domain": {
+    "science": 6,
+    "general": 20
+   },
+   "mode": "qe",
+   "pass_rate": 0.22807017543859648
+  },
+  "her": {
+   "candidates": 114,
+   "eligible": 1,
+   "selected": 1,
+   "tokens": 904,
+   "by_bin": {
+    "b512": 1
+   },
+   "by_domain": {
+    "general": 1
+   },
+   "mode": "consensus",
+   "pass_rate": 0.008771929824561403
+  },
+  "ibb": {
+   "candidates": 114,
+   "eligible": 31,
+   "selected": 31,
+   "tokens": 51729,
+   "by_bin": {
+    "b2048": 5,
+    "b1024": 12,
+    "b512": 14
+   },
+   "by_domain": {
+    "science": 9,
+    "general": 22
+   },
+   "mode": "consensus",
+   "pass_rate": 0.2719298245614035
+  },
+  "ibo": {
+   "candidates": 114,
+   "eligible": 60,
+   "selected": 37,
+   "tokens": 59392,
+   "by_bin": {
+    "b2048": 6,
+    "b1024": 14,
+    "b512": 17
+   },
+   "by_domain": {
+    "science": 15,
+    "general": 22
+   },
+   "mode": "qe",
+   "pass_rate": 0.5263157894736842
+  },
+  "ish": {
+   "candidates": 114,
+   "eligible": 4,
+   "selected": 4,
+   "tokens": 3687,
+   "by_bin": {
+    "b512": 4
+   },
+   "by_domain": {
+    "general": 4
+   },
+   "mode": "consensus",
+   "pass_rate": 0.03508771929824561
+  },
+  "iso": {
+   "candidates": 114,
+   "eligible": 20,
+   "selected": 20,
+   "tokens": 43705,
+   "by_bin": {
+    "b2048": 4,
+    "b1024": 10,
+    "b512": 6
+   },
+   "by_domain": {
+    "science": 8,
+    "general": 12
+   },
+   "mode": "qe",
+   "pass_rate": 0.17543859649122806
+  },
+  "kab": {
+   "candidates": 114,
+   "eligible": 23,
+   "selected": 23,
+   "tokens": 37723,
+   "by_bin": {
+    "b2048": 3,
+    "b1024": 7,
+    "b512": 13
+   },
+   "by_domain": {
+    "science": 5,
+    "general": 18
+   },
+   "mode": "qe",
+   "pass_rate": 0.20175438596491227
+  },
+  "kam": {
+   "candidates": 114,
+   "eligible": 43,
+   "selected": 29,
+   "tokens": 59785,
+   "by_bin": {
+    "b2048": 5,
+    "b1024": 11,
+    "b512": 13
+   },
+   "by_domain": {
+    "science": 10,
+    "general": 19
+   },
+   "mode": "qe",
+   "pass_rate": 0.37719298245614036
+  },
+  "kbp": {
+   "candidates": 114,
+   "eligible": 0,
+   "selected": 0,
+   "tokens": 0,
+   "by_bin": {},
+   "by_domain": {},
+   "mode": "qe",
+   "pass_rate": 0.0
+  },
+  "kea": {
+   "candidates": 114,
+   "eligible": 4,
+   "selected": 4,
+   "tokens": 4097,
+   "by_bin": {
+    "b1024": 1,
+    "b512": 3
+   },
+   "by_domain": {
+    "general": 4
+   },
+   "mode": "consensus",
+   "pass_rate": 0.03508771929824561
+  },
+  "kik": {
+   "candidates": 114,
+   "eligible": 37,
+   "selected": 31,
+   "tokens": 58346,
+   "by_bin": {
+    "b2048": 5,
+    "b1024": 11,
+    "b512": 15
+   },
+   "by_domain": {
+    "science": 5,
+    "general": 26
+   },
+   "mode": "qe",
+   "pass_rate": 0.32456140350877194
+  },
+  "kin": {
+   "candidates": 114,
+   "eligible": 27,
+   "selected": 27,
+   "tokens": 42846,
+   "by_bin": {
+    "b2048": 4,
+    "b1024": 10,
+    "b512": 13
+   },
+   "by_domain": {
+    "science": 6,
+    "general": 21
+   },
+   "mode": "qe",
+   "pass_rate": 0.23684210526315788
+  },
+  "kmb": {
+   "candidates": 114,
+   "eligible": 31,
+   "selected": 30,
+   "tokens": 58228,
+   "by_bin": {
+    "b2048": 6,
+    "b1024": 13,
+    "b512": 11
+   },
+   "by_domain": {
+    "science": 7,
+    "general": 23
+   },
+   "mode": "qe",
+   "pass_rate": 0.2719298245614035
+  },
+  "kon": {
+   "candidates": 114,
+   "eligible": 2,
+   "selected": 2,
+   "tokens": 1595,
+   "by_bin": {
+    "b512": 2
+   },
+   "by_domain": {
+    "general": 2
+   },
+   "mode": "qe",
+   "pass_rate": 0.017543859649122806
+  },
+  "kqn": {
+   "candidates": 114,
+   "eligible": 40,
+   "selected": 37,
+   "tokens": 58735,
+   "by_bin": {
+    "b2048": 7,
+    "b1024": 12,
+    "b512": 18
+   },
+   "by_domain": {
+    "science": 7,
+    "general": 30
+   },
+   "mode": "qe",
+   "pass_rate": 0.3508771929824561
+  },
+  "kri": {
+   "candidates": 114,
+   "eligible": 10,
+   "selected": 10,
+   "tokens": 14987,
+   "by_bin": {
+    "b2048": 2,
+    "b1024": 1,
+    "b512": 7
+   },
+   "by_domain": {
+    "general": 9,
+    "science": 1
+   },
+   "mode": "consensus",
+   "pass_rate": 0.08771929824561403
+  },
+  "kua": {
+   "candidates": 114,
+   "eligible": 25,
+   "selected": 25,
+   "tokens": 51848,
+   "by_bin": {
+    "b2048": 8,
+    "b1024": 3,
+    "b512": 14
+   },
+   "by_domain": {
+    "science": 9,
+    "general": 16
+   },
+   "mode": "qe",
+   "pass_rate": 0.21929824561403508
+  },
+  "lin": {
+   "candidates": 114,
+   "eligible": 43,
+   "selected": 37,
+   "tokens": 59949,
+   "by_bin": {
+    "b2048": 7,
+    "b1024": 13,
+    "b512": 17
+   },
+   "by_domain": {
+    "science": 7,
+    "general": 30
+   },
+   "mode": "qe",
+   "pass_rate": 0.37719298245614036
+  },
+  "loz": {
+   "candidates": 114,
+   "eligible": 44,
+   "selected": 36,
+   "tokens": 59238,
+   "by_bin": {
+    "b2048": 6,
+    "b1024": 12,
+    "b512": 18
+   },
+   "by_domain": {
+    "science": 13,
+    "general": 23
+   },
+   "mode": "qe",
+   "pass_rate": 0.38596491228070173
+  },
+  "lua": {
+   "candidates": 114,
+   "eligible": 79,
+   "selected": 37,
+   "tokens": 59924,
+   "by_bin": {
+    "b2048": 7,
+    "b1024": 14,
+    "b512": 16
+   },
+   "by_domain": {
+    "science": 19,
+    "general": 18
+   },
+   "mode": "qe",
+   "pass_rate": 0.6929824561403509
+  },
+  "lug": {
+   "candidates": 114,
+   "eligible": 55,
+   "selected": 36,
+   "tokens": 60032,
+   "by_bin": {
+    "b2048": 7,
+    "b1024": 12,
+    "b512": 17
+   },
+   "by_domain": {
+    "science": 14,
+    "general": 22
+   },
+   "mode": "qe",
+   "pass_rate": 0.4824561403508772
+  },
+  "lun": {
+   "candidates": 114,
+   "eligible": 26,
+   "selected": 26,
+   "tokens": 41397,
+   "by_bin": {
+    "b2048": 3,
+    "b1024": 8,
+    "b512": 15
+   },
+   "by_domain": {
+    "science": 7,
+    "general": 19
+   },
+   "mode": "qe",
+   "pass_rate": 0.22807017543859648
+  },
+  "luo": {
+   "candidates": 114,
+   "eligible": 26,
+   "selected": 26,
+   "tokens": 38065,
+   "by_bin": {
+    "b2048": 3,
+    "b1024": 12,
+    "b512": 11
+   },
+   "by_domain": {
+    "science": 3,
+    "general": 23
+   },
+   "mode": "qe",
+   "pass_rate": 0.22807017543859648
+  },
+  "mlg": {
+   "candidates": 114,
+   "eligible": 26,
+   "selected": 26,
+   "tokens": 43011,
+   "by_bin": {
+    "b2048": 4,
+    "b1024": 9,
+    "b512": 13
+   },
+   "by_domain": {
+    "science": 6,
+    "general": 20
+   },
+   "mode": "qe",
+   "pass_rate": 0.22807017543859648
+  },
+  "mos": {
+   "candidates": 114,
+   "eligible": 19,
+   "selected": 19,
+   "tokens": 32534,
+   "by_bin": {
+    "b2048": 3,
+    "b1024": 7,
+    "b512": 9
+   },
+   "by_domain": {
+    "general": 18,
+    "science": 1
+   },
+   "mode": "qe",
+   "pass_rate": 0.16666666666666666
+  },
+  "nbl": {
+   "candidates": 114,
+   "eligible": 57,
+   "selected": 36,
+   "tokens": 60027,
+   "by_bin": {
+    "b2048": 7,
+    "b1024": 13,
+    "b512": 16
+   },
+   "by_domain": {
+    "science": 12,
+    "general": 24
+   },
+   "mode": "consensus",
+   "pass_rate": 0.5
+  },
+  "ndc": {
+   "candidates": 114,
+   "eligible": 18,
+   "selected": 18,
+   "tokens": 25052,
+   "by_bin": {
+    "b2048": 2,
+    "b1024": 6,
+    "b512": 10
+   },
+   "by_domain": {
+    "science": 4,
+    "general": 14
+   },
+   "mode": "consensus",
+   "pass_rate": 0.15789473684210525
+  },
+  "nso": {
+   "candidates": 114,
+   "eligible": 55,
+   "selected": 33,
+   "tokens": 60774,
+   "by_bin": {
+    "b2048": 6,
+    "b1024": 12,
+    "b512": 15
+   },
+   "by_domain": {
+    "science": 17,
+    "general": 16
+   },
+   "mode": "qe",
+   "pass_rate": 0.4824561403508772
+  },
+  "nus": {
+   "candidates": 114,
+   "eligible": 0,
+   "selected": 0,
+   "tokens": 0,
+   "by_bin": {},
+   "by_domain": {},
+   "mode": "qe",
+   "pass_rate": 0.0
+  },
+  "nya": {
+   "candidates": 114,
+   "eligible": 54,
+   "selected": 38,
+   "tokens": 59982,
+   "by_bin": {
+    "b2048": 6,
+    "b1024": 13,
+    "b512": 19
+   },
+   "by_domain": {
+    "science": 14,
+    "general": 24
+   },
+   "mode": "qe",
+   "pass_rate": 0.47368421052631576
+  },
+  "nyn": {
+   "candidates": 114,
+   "eligible": 19,
+   "selected": 19,
+   "tokens": 28487,
+   "by_bin": {
+    "b2048": 3,
+    "b1024": 7,
+    "b512": 9
+   },
+   "by_domain": {
+    "general": 16,
+    "science": 3
+   },
+   "mode": "consensus",
+   "pass_rate": 0.16666666666666666
+  },
+  "oke": {
+   "candidates": 114,
+   "eligible": 13,
+   "selected": 13,
+   "tokens": 16351,
+   "by_bin": {
+    "b2048": 1,
+    "b1024": 3,
+    "b512": 9
+   },
+   "by_domain": {
+    "general": 11,
+    "science": 2
+   },
+   "mode": "consensus",
+   "pass_rate": 0.11403508771929824
+  },
+  "orm": {
+   "candidates": 114,
+   "eligible": 38,
+   "selected": 34,
+   "tokens": 59974,
+   "by_bin": {
+    "b2048": 6,
+    "b1024": 11,
+    "b512": 17
+   },
+   "by_domain": {
+    "science": 9,
+    "general": 25
+   },
+   "mode": "qe",
+   "pass_rate": 0.3333333333333333
+  },
+  "pcm": {
+   "candidates": 114,
+   "eligible": 22,
+   "selected": 22,
+   "tokens": 28280,
+   "by_bin": {
+    "b2048": 6,
+    "b1024": 9,
+    "b512": 7
+   },
+   "by_domain": {
+    "science": 9,
+    "general": 13
+   },
+   "mode": "qe",
+   "pass_rate": 0.19298245614035087
+  },
+  "run": {
+   "candidates": 114,
+   "eligible": 40,
+   "selected": 37,
+   "tokens": 59229,
+   "by_bin": {
+    "b2048": 6,
+    "b1024": 10,
+    "b512": 21
+   },
+   "by_domain": {
+    "science": 10,
+    "general": 27
+   },
+   "mode": "qe",
+   "pass_rate": 0.3508771929824561
+  },
+  "sag": {
+   "candidates": 114,
+   "eligible": 79,
+   "selected": 36,
+   "tokens": 59888,
+   "by_bin": {
+    "b2048": 6,
+    "b1024": 13,
+    "b512": 17
+   },
+   "by_domain": {
+    "science": 19,
+    "general": 17
+   },
+   "mode": "qe",
+   "pass_rate": 0.6929824561403509
+  },
+  "seh": {
+   "candidates": 114,
+   "eligible": 24,
+   "selected": 24,
+   "tokens": 39240,
+   "by_bin": {
+    "b2048": 4,
+    "b1024": 8,
+    "b512": 12
+   },
+   "by_domain": {
+    "science": 4,
+    "general": 20
+   },
+   "mode": "consensus",
+   "pass_rate": 0.21052631578947367
+  },
+  "shi": {
+   "candidates": 114,
+   "eligible": 0,
+   "selected": 0,
+   "tokens": 0,
+   "by_bin": {},
+   "by_domain": {},
+   "mode": "consensus",
+   "pass_rate": 0.0
+  },
+  "sid": {
+   "candidates": 114,
+   "eligible": 0,
+   "selected": 0,
+   "tokens": 0,
+   "by_bin": {},
+   "by_domain": {},
+   "mode": "consensus",
+   "pass_rate": 0.0
+  },
+  "sna": {
+   "candidates": 114,
+   "eligible": 30,
+   "selected": 30,
+   "tokens": 46024,
+   "by_bin": {
+    "b2048": 6,
+    "b1024": 11,
+    "b512": 13
+   },
+   "by_domain": {
+    "science": 8,
+    "general": 22
+   },
+   "mode": "qe",
+   "pass_rate": 0.2631578947368421
+  },
+  "som": {
+   "candidates": 114,
+   "eligible": 45,
+   "selected": 37,
+   "tokens": 59739,
+   "by_bin": {
+    "b2048": 6,
+    "b1024": 14,
+    "b512": 17
+   },
+   "by_domain": {
+    "science": 14,
+    "general": 23
+   },
+   "mode": "qe",
+   "pass_rate": 0.39473684210526316
+  },
+  "sot": {
+   "candidates": 114,
+   "eligible": 31,
+   "selected": 31,
+   "tokens": 50187,
+   "by_bin": {
+    "b2048": 6,
+    "b1024": 12,
+    "b512": 13
+   },
+   "by_domain": {
+    "science": 9,
+    "general": 22
+   },
+   "mode": "qe",
+   "pass_rate": 0.2719298245614035
+  },
+  "ssw": {
+   "candidates": 114,
+   "eligible": 25,
+   "selected": 25,
+   "tokens": 41530,
+   "by_bin": {
+    "b2048": 4,
+    "b1024": 7,
+    "b512": 14
+   },
+   "by_domain": {
+    "science": 7,
+    "general": 18
+   },
+   "mode": "qe",
+   "pass_rate": 0.21929824561403508
+  },
+  "swc": {
+   "candidates": 114,
+   "eligible": 29,
+   "selected": 29,
+   "tokens": 40162,
+   "by_bin": {
+    "b2048": 4,
+    "b1024": 11,
+    "b512": 14
+   },
+   "by_domain": {
+    "general": 26,
+    "science": 3
+   },
+   "mode": "qe",
+   "pass_rate": 0.2543859649122807
+  },
+  "swh": {
+   "candidates": 114,
+   "eligible": 27,
+   "selected": 27,
+   "tokens": 33611,
+   "by_bin": {
+    "b2048": 3,
+    "b1024": 6,
+    "b512": 18
+   },
+   "by_domain": {
+    "science": 5,
+    "general": 22
+   },
+   "mode": "qe",
+   "pass_rate": 0.23684210526315788
+  },
+  "tir": {
+   "candidates": 114,
+   "eligible": 27,
+   "selected": 27,
+   "tokens": 68145,
+   "by_bin": {
+    "b2048": 10,
+    "b1024": 10,
+    "b512": 7
+   },
+   "by_domain": {
+    "science": 5,
+    "general": 22
+   },
+   "mode": "qe",
+   "pass_rate": 0.23684210526315788
+  },
+  "tiv": {
+   "candidates": 114,
+   "eligible": 23,
+   "selected": 23,
+   "tokens": 37865,
+   "by_bin": {
+    "b2048": 4,
+    "b1024": 5,
+    "b512": 14
+   },
+   "by_domain": {
+    "science": 4,
+    "general": 19
+   },
+   "mode": "qe",
+   "pass_rate": 0.20175438596491227
+  },
+  "tsc": {
+   "candidates": 114,
+   "eligible": 30,
+   "selected": 30,
+   "tokens": 51679,
+   "by_bin": {
+    "b2048": 5,
+    "b1024": 8,
+    "b512": 17
+   },
+   "by_domain": {
+    "general": 27,
+    "science": 3
+   },
+   "mode": "consensus",
+   "pass_rate": 0.2631578947368421
+  },
+  "tsn": {
+   "candidates": 114,
+   "eligible": 51,
+   "selected": 37,
+   "tokens": 59593,
+   "by_bin": {
+    "b2048": 5,
+    "b1024": 12,
+    "b512": 20
+   },
+   "by_domain": {
+    "general": 29,
+    "science": 8
+   },
+   "mode": "qe",
+   "pass_rate": 0.4473684210526316
+  },
+  "tso": {
+   "candidates": 114,
+   "eligible": 34,
+   "selected": 34,
+   "tokens": 58205,
+   "by_bin": {
+    "b2048": 7,
+    "b1024": 11,
+    "b512": 16
+   },
+   "by_domain": {
+    "science": 5,
+    "general": 29
+   },
+   "mode": "qe",
+   "pass_rate": 0.2982456140350877
+  },
+  "tum": {
+   "candidates": 114,
+   "eligible": 23,
+   "selected": 23,
+   "tokens": 35871,
+   "by_bin": {
+    "b2048": 3,
+    "b1024": 8,
+    "b512": 12
+   },
+   "by_domain": {
+    "science": 3,
+    "general": 20
+   },
+   "mode": "qe",
+   "pass_rate": 0.20175438596491227
+  },
+  "twi": {
+   "candidates": 114,
+   "eligible": 67,
+   "selected": 34,
+   "tokens": 59976,
+   "by_bin": {
+    "b2048": 6,
+    "b1024": 12,
+    "b512": 16
+   },
+   "by_domain": {
+    "science": 16,
+    "general": 18
+   },
+   "mode": "qe",
+   "pass_rate": 0.5877192982456141
+  },
+  "umb": {
+   "candidates": 114,
+   "eligible": 64,
+   "selected": 35,
+   "tokens": 59604,
+   "by_bin": {
+    "b2048": 5,
+    "b1024": 13,
+    "b512": 17
+   },
+   "by_domain": {
+    "science": 13,
+    "general": 22
+   },
+   "mode": "qe",
+   "pass_rate": 0.5614035087719298
+  },
+  "urh": {
+   "candidates": 114,
+   "eligible": 7,
+   "selected": 7,
+   "tokens": 13873,
+   "by_bin": {
+    "b2048": 1,
+    "b1024": 4,
+    "b512": 2
+   },
+   "by_domain": {
+    "general": 7
+   },
+   "mode": "consensus",
+   "pass_rate": 0.06140350877192982
+  },
+  "ven": {
+   "candidates": 114,
+   "eligible": 21,
+   "selected": 21,
+   "tokens": 40116,
+   "by_bin": {
+    "b2048": 4,
+    "b1024": 7,
+    "b512": 10
+   },
+   "by_domain": {
+    "science": 5,
+    "general": 16
+   },
+   "mode": "qe",
+   "pass_rate": 0.18421052631578946
+  },
+  "vmw": {
+   "candidates": 114,
+   "eligible": 13,
+   "selected": 13,
+   "tokens": 22873,
+   "by_bin": {
+    "b2048": 2,
+    "b1024": 4,
+    "b512": 7
+   },
+   "by_domain": {
+    "general": 11,
+    "science": 2
+   },
+   "mode": "consensus",
+   "pass_rate": 0.11403508771929824
+  },
+  "wal": {
+   "candidates": 114,
+   "eligible": 28,
+   "selected": 28,
+   "tokens": 45685,
+   "by_bin": {
+    "b2048": 3,
+    "b1024": 11,
+    "b512": 14
+   },
+   "by_domain": {
+    "science": 11,
+    "general": 17
+   },
+   "mode": "qe",
+   "pass_rate": 0.24561403508771928
+  },
+  "wes": {
+   "candidates": 114,
+   "eligible": 20,
+   "selected": 20,
+   "tokens": 22524,
+   "by_bin": {
+    "b2048": 2,
+    "b1024": 4,
+    "b512": 14
+   },
+   "by_domain": {
+    "general": 18,
+    "science": 2
+   },
+   "mode": "consensus",
+   "pass_rate": 0.17543859649122806
+  },
+  "wol": {
+   "candidates": 114,
+   "eligible": 17,
+   "selected": 17,
+   "tokens": 29773,
+   "by_bin": {
+    "b2048": 6,
+    "b1024": 4,
+    "b512": 7
+   },
+   "by_domain": {
+    "science": 5,
+    "general": 12
+   },
+   "mode": "qe",
+   "pass_rate": 0.14912280701754385
+  },
+  "xho": {
+   "candidates": 114,
+   "eligible": 49,
+   "selected": 35,
+   "tokens": 59536,
+   "by_bin": {
+    "b2048": 7,
+    "b1024": 11,
+    "b512": 17
+   },
+   "by_domain": {
+    "science": 13,
+    "general": 22
+   },
+   "mode": "qe",
+   "pass_rate": 0.4298245614035088
+  },
+  "yao": {
+   "candidates": 114,
+   "eligible": 9,
+   "selected": 9,
+   "tokens": 15349,
+   "by_bin": {
+    "b2048": 1,
+    "b1024": 4,
+    "b512": 4
+   },
+   "by_domain": {
+    "general": 8,
+    "science": 1
+   },
+   "mode": "consensus",
+   "pass_rate": 0.07894736842105263
+  },
+  "yor": {
+   "candidates": 114,
+   "eligible": 60,
+   "selected": 30,
+   "tokens": 60237,
+   "by_bin": {
+    "b2048": 6,
+    "b1024": 10,
+    "b512": 14
+   },
+   "by_domain": {
+    "science": 14,
+    "general": 16
+   },
+   "mode": "qe",
+   "pass_rate": 0.5263157894736842
+  },
+  "zul": {
+   "candidates": 114,
+   "eligible": 27,
+   "selected": 27,
+   "tokens": 42681,
+   "by_bin": {
+    "b2048": 5,
+    "b1024": 7,
+    "b512": 15
+   },
+   "by_domain": {
+    "science": 10,
+    "general": 17
+   },
+   "mode": "qe",
+   "pass_rate": 0.23684210526315788
+  }
+ },
+ "thresholds": {
+  "ach": [
+   50.0,
+   41.738329811321925
+  ],
+  "afr": [
+   1.0,
+   0.4
+  ],
+  "amh": [
+   0.3141775138197751,
+   0.07686784237122714
+  ],
+  "bam": [
+   0.3615541791629969,
+   0.0
+  ],
+  "bas": [
+   50.0,
+   38.0
+  ],
+  "bbj": [
+   50.0,
+   38.0
+  ],
+  "bem": [
+   0.9295544094114647,
+   0.4
+  ],
+  "bin": [
+   50.0,
+   38.19089827895472
+  ],
+  "dag": [
+   50.0,
+   39.765263404410724
+  ],
+  "dua": [
+   50.0,
+   38.0
+  ],
+  "dyu": [
+   0.3,
+   0.0
+  ],
+  "ewe": [
+   0.9980609465117949,
+   0.4
+  ],
+  "fon": [
+   1.0,
+   0.4
+  ],
+  "hau": [
+   0.926388271883963,
+   0.4
+  ],
+  "her": [
+   50.0,
+   38.0
+  ],
+  "ibb": [
+   58.8,
+   45.0
+  ],
+  "ibo": [
+   1.0,
+   0.4
+  ],
+  "ish": [
+   50.0,
+   38.0
+  ],
+  "iso": [
+   0.8583637999377348,
+   0.4
+  ],
+  "kab": [
+   0.7660310303617619,
+   0.21426007908438988
+  ],
+  "kam": [
+   1.0,
+   0.4
+  ],
+  "kbp": [
+   0.3,
+   0.0
+  ],
+  "kea": [
+   50.0,
+   38.0
+  ],
+  "kik": [
+   1.0,
+   0.4
+  ],
+  "kin": [
+   0.8965476512880689,
+   0.4
+  ],
+  "kmb": [
+   1.0,
+   0.4
+  ],
+  "kon": [
+   0.3,
+   0.0
+  ],
+  "kqn": [
+   1.0,
+   0.4
+  ],
+  "kri": [
+   58.8,
+   45.0
+  ],
+  "kua": [
+   0.8183320816787008,
+   0.4
+  ],
+  "lin": [
+   1.0,
+   0.4
+  ],
+  "loz": [
+   1.0,
+   0.4
+  ],
+  "lua": [
+   1.0,
+   0.4
+  ],
+  "lug": [
+   1.0,
+   0.4
+  ],
+  "lun": [
+   0.7994547324134889,
+   0.32069286756528365
+  ],
+  "luo": [
+   1.0,
+   0.4
+  ],
+  "mlg": [
+   0.7428428304889299,
+   0.4
+  ],
+  "mos": [
+   0.8783026232010089,
+   0.38291406435019093
+  ],
+  "nbl": [
+   58.8,
+   45.0
+  ],
+  "ndc": [
+   51.648193195228586,
+   43.655184265658384
+  ],
+  "nso": [
+   1.0,
+   0.4
+  ],
+  "nus": [
+   0.3,
+   0.0
+  ],
+  "nya": [
+   1.0,
+   0.4
+  ],
+  "nyn": [
+   50.0,
+   41.595394441145324
+  ],
+  "oke": [
+   50.0,
+   38.0
+  ],
+  "orm": [
+   1.0,
+   0.4
+  ],
+  "pcm": [
+   0.9094881058652781,
+   0.0
+  ],
+  "run": [
+   1.0,
+   0.4
+  ],
+  "sag": [
+   1.0,
+   0.4
+  ],
+  "seh": [
+   54.68428576708468,
+   45.0
+  ],
+  "shi": [
+   50.0,
+   38.0
+  ],
+  "sid": [
+   50.0,
+   38.0
+  ],
+  "sna": [
+   0.9530983542141156,
+   0.4
+  ],
+  "som": [
+   1.0,
+   0.4
+  ],
+  "sot": [
+   1.0,
+   0.4
+  ],
+  "ssw": [
+   0.823640089557536,
+   0.3829264158977011
+  ],
+  "swc": [
+   0.8873798792776716,
+   0.4
+  ],
+  "swh": [
+   0.9350617818298282,
+   0.4
+  ],
+  "tir": [
+   0.45750976731659726,
+   0.12348126984515376
+  ],
+  "tiv": [
+   0.8703686804064712,
+   0.4
+  ],
+  "tsc": [
+   58.04697214972985,
+   45.0
+  ],
+  "tsn": [
+   1.0,
+   0.4
+  ],
+  "tso": [
+   1.0,
+   0.4
+  ],
+  "tum": [
+   0.8036126246888552,
+   0.3793756484707951
+  ],
+  "twi": [
+   1.0,
+   0.4
+  ],
+  "umb": [
+   1.0,
+   0.4
+  ],
+  "urh": [
+   50.0,
+   38.0
+  ],
+  "ven": [
+   0.9046497574100495,
+   0.35145513813633233
+  ],
+  "vmw": [
+   50.0,
+   38.82721962300366
+  ],
+  "wal": [
+   0.8443589221365111,
+   0.4
+  ],
+  "wes": [
+   58.8,
+   45.0
+  ],
+  "wol": [
+   0.9010049107182097,
+   0.3882671800820486
+  ],
+  "xho": [
+   1.0,
+   0.4
+  ],
+  "yao": [
+   50.0,
+   39.35317554811974
+  ],
+  "yor": [
+   1.0,
+   0.4
+  ],
+  "zul": [
+   1.0,
+   0.4
+  ]
+ },
+ "drops_by_language": {
+  "mean_r": {
+   "yor": 17,
+   "hau": 62,
+   "ibo": 27,
+   "pcm": 64,
+   "twi": 20,
+   "ewe": 62,
+   "fon": 20,
+   "wol": 60,
+   "swh": 66,
+   "kin": 66,
+   "som": 55,
+   "orm": 68,
+   "amh": 78,
+   "tir": 78,
+   "lug": 42,
+   "lin": 49,
+   "zul": 58,
+   "xho": 54,
+   "afr": 68,
+   "sna": 70,
+   "nya": 42,
+   "sot": 55,
+   "tsn": 38,
+   "mlg": 67,
+   "bem": 65,
+   "tum": 62,
+   "run": 58,
+   "ven": 65,
+   "tso": 68,
+   "nso": 21,
+   "ssw": 70,
+   "sag": 10,
+   "tiv": 60,
+   "umb": 20,
+   "kmb": 36,
+   "mos": 60,
+   "kik": 60,
+   "luo": 58,
+   "kam": 47,
+   "dyu": 70,
+   "bam": 54,
+   "kbp": 23,
+   "kon": 98,
+   "kab": 65,
+   "nus": 33,
+   "swc": 68,
+   "lua": 13,
+   "kqn": 57,
+   "lun": 73,
+   "iso": 65,
+   "loz": 49,
+   "wal": 72,
+   "kua": 73
+  },
+  "uncovered_sentence": {
+   "yor": 32,
+   "hau": 20,
+   "ibo": 18,
+   "pcm": 22,
+   "efi": 11,
+   "twi": 15,
+   "ewe": 16,
+   "fon": 51,
+   "wol": 21,
+   "swh": 19,
+   "kin": 9,
+   "som": 14,
+   "orm": 6,
+   "tir": 2,
+   "lug": 16,
+   "lin": 20,
+   "zul": 29,
+   "xho": 10,
+   "afr": 12,
+   "sna": 12,
+   "nya": 16,
+   "sot": 27,
+   "tsn": 25,
+   "mlg": 15,
+   "ibb": 23,
+   "urh": 15,
+   "bem": 20,
+   "tum": 17,
+   "run": 15,
+   "ven": 20,
+   "tso": 11,
+   "nso": 27,
+   "ssw": 13,
+   "nbl": 10,
+   "sag": 20,
+   "tiv": 27,
+   "umb": 23,
+   "kmb": 39,
+   "mos": 23,
+   "kik": 7,
+   "luo": 28,
+   "kam": 17,
+   "bin": 56,
+   "dag": 24,
+   "oke": 29,
+   "shi": 87,
+   "dyu": 11,
+   "bam": 30,
+   "kbp": 86,
+   "bbj": 88,
+   "kon": 8,
+   "kea": 43,
+   "kab": 9,
+   "nus": 59,
+   "swc": 16,
+   "lua": 22,
+   "kqn": 14,
+   "lun": 9,
+   "iso": 20,
+   "loz": 17,
+   "wal": 11,
+   "ach": 30,
+   "tsc": 15,
+   "vmw": 15,
+   "kua": 9,
+   "seh": 20,
+   "nyn": 17,
+   "her": 8,
+   "yao": 8,
+   "sid": 10,
+   "ndc": 34,
+   "kri": 82,
+   "ish": 29,
+   "dua": 43,
+   "bas": 11,
+   "wes": 68,
+   "amh": 2
+  },
+  "diacritics": {
+   "yor": 3,
+   "hau": 5,
+   "ibo": 7,
+   "efi": 102,
+   "twi": 7,
+   "ewe": 9,
+   "fon": 8,
+   "wol": 6,
+   "kin": 9,
+   "mlg": 3,
+   "tum": 8,
+   "nso": 7,
+   "sag": 4,
+   "umb": 6,
+   "mos": 4,
+   "kik": 9,
+   "dyu": 17,
+   "bam": 6,
+   "kab": 11,
+   "nus": 19,
+   "kbp": 5
+  },
+  "p25_r": {
+   "hau": 1,
+   "pcm": 6,
+   "twi": 5,
+   "ewe": 3,
+   "fon": 4,
+   "wol": 10,
+   "swh": 2,
+   "kin": 2,
+   "orm": 2,
+   "amh": 9,
+   "tir": 7,
+   "lug": 1,
+   "nya": 1,
+   "mlg": 3,
+   "bem": 1,
+   "tum": 4,
+   "ven": 8,
+   "nso": 2,
+   "ssw": 6,
+   "sag": 1,
+   "tiv": 4,
+   "kmb": 8,
+   "mos": 8,
+   "luo": 2,
+   "kam": 7,
+   "dyu": 12,
+   "bam": 7,
+   "kon": 4,
+   "kab": 5,
+   "kqn": 3,
+   "lun": 6,
+   "iso": 9,
+   "wal": 3,
+   "kua": 7,
+   "yor": 2,
+   "ibo": 2,
+   "xho": 1,
+   "sna": 1,
+   "sot": 1,
+   "tso": 1,
+   "kik": 1,
+   "nus": 1,
+   "swc": 1,
+   "loz": 4
+  },
+  "loop": {
+   "efi": 1,
+   "lin": 1,
+   "kon": 2,
+   "dua": 13,
+   "nya": 1,
+   "nso": 1,
+   "seh": 1
+  },
+  "repetition": {
+   "fon": 6,
+   "afr": 1,
+   "nso": 1,
+   "umb": 1,
+   "bin": 20,
+   "dag": 5,
+   "nus": 2,
+   "kri": 2,
+   "ish": 3,
+   "wes": 2,
+   "kin": 1,
+   "lin": 1,
+   "sna": 1,
+   "run": 1,
+   "bbj": 1,
+   "kab": 1
+  },
+  "mean_conf": {
+   "ibb": 60,
+   "urh": 86,
+   "nbl": 46,
+   "bin": 29,
+   "dag": 75,
+   "oke": 72,
+   "shi": 27,
+   "bbj": 25,
+   "kea": 67,
+   "ach": 62,
+   "tsc": 69,
+   "vmw": 84,
+   "seh": 65,
+   "nyn": 73,
+   "her": 105,
+   "yao": 97,
+   "sid": 104,
+   "ndc": 56,
+   "kri": 20,
+   "ish": 77,
+   "dua": 57,
+   "bas": 96,
+   "wes": 24
+  },
+  "p25_conf": {
+   "urh": 6,
+   "ach": 4,
+   "vmw": 2,
+   "seh": 4,
+   "nyn": 5,
+   "ndc": 6,
+   "bas": 2,
+   "nbl": 1,
+   "bin": 1,
+   "dag": 2,
+   "ish": 1
+  }
+ }
+}

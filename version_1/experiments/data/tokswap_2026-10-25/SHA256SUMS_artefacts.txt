@@ -1,0 +1,10 @@
+6abc83a429a48f6da8409ac504d907343b4642a66bd973a7578e1bb9091d94f6  tokenizer.json (uncompressed) geez_N1000/tokenizer.json
+6772d90b0914f94091e9f33a38616c7d129d09c5bd7a509437bbabcdb54dce8b  tokenizer.json (uncompressed) geez_N3000/tokenizer.json
+c8fe3f575ae530bf8c1a545def84555ef252f586fe388a36b38de0eb403a8d9b  tokenizer.json (uncompressed) fon_N1000/tokenizer.json
+1759ccb8f18a0b1f8e9670de638865db668edb318f03474708673c2960fecbf8  tokenizer.json (uncompressed) fon_N3000/tokenizer.json
+aa741301a88180f57f157bf56dfbb475d56f26e6502a0f5b8153f5a225bb9f52  checkpoint gemma_mt/artifacts/tokswap_2026-10-25/model_geez_N1000/model.safetensors
+99f81f062a2dec6af7f3b5dcb05146633ccad5d1dd81d3e61b979c282fdd029f  checkpoint gemma_mt/artifacts/tokswap_2026-10-25/model_geez_N3000/model.safetensors
+be2772953a610d93b28bdaad2a22c6a9de2f830c27419e43f5d02b063bf246da  checkpoint gemma_mt/artifacts/tokswap_2026-10-25/model_fon_N1000/model.safetensors
+2d667f634b5e84d8e64fb3446bb7ff12708793553732a0c8c1c8f914b526a9d1  checkpoint gemma_mt/artifacts/tokswap_2026-10-25/model_fon_N3000/model.safetensors
+daab2354f8a74e70d70b4d1f804939b68a8c9624dd06cb7858e52dd8970e9726  original tokenizer.json (SFT-final repo, = rl2c sha daab2354...)
+SFT-final fp32 model.safetensors md5 4838a75997e09842e98fb8c50fe66975 (<HF_ORG>/gemma3-270m-translate step-27638)

@@ -1,0 +1,7 @@
+[geez] sets=464 sentences: plain=376282 (diff 0), special=4018 (diff 3988), freed_script=117755 (diff 30); vocab-string test: 254474 strings, plain diffs 0
+fon_N1000 [fon] sets=464 sentences: plain=362337 (diff 0), special=18634 (diff 14998), freed_script=117084 (diff 2034); vocab-string test: 254474 strings, plain diffs 0
+geez_N3000 [geez] sets=464 sentences: plain=376282 (diff 0), special=4018 (diff 4017), freed_script=117755 (diff 263); vocab-string test: 252474 strings, plain diffs 0
+both_g3000_f1000 [both] sets=464 sentences: plain=358319 (diff 0), special=22652 (diff 19015), freed_script=117084 (diff 2257); vocab-string test: 251474 strings, plain diffs 0
+fon_N3000 [fon] sets=464 sentences: plain=362337 (diff 0), special=18634 (diff 15363), freed_script=117084 (diff 5176); vocab-string test: 252474 strings, plain diffs 0
+fon_N5000 [fon] sets=464 sentences: plain=362337 (diff 0), special=18634 (diff 15520), freed_script=117084 (diff 7244); vocab-string test: 250474 strings, plain diffs 0
+geez_N8000 [geez] sets=464 sentences: plain=376282 (diff 0), special=4018 (diff 4018), freed_script=117755 (diff 6604); vocab-string test: 247474 strings, plain diffs 0

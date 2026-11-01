@@ -1,0 +1,362 @@
+[
+ {
+  "iso": "efi",
+  "raw": 365385,
+  "kept": 272956,
+  "rel": 162618,
+  "nonrel": 110338,
+  "held": 600
+ },
+ {
+  "iso": "bam",
+  "raw": 394,
+  "kept": 175,
+  "rel": 4,
+  "nonrel": 171,
+  "held": 17
+ },
+ {
+  "iso": "fon",
+  "raw": 142642,
+  "kept": 65870,
+  "rel": 41476,
+  "nonrel": 24394,
+  "held": 600
+ },
+ {
+  "iso": "kab",
+  "raw": 49621,
+  "kept": 28938,
+  "rel": 8466,
+  "nonrel": 20472,
+  "held": 600
+ },
+ {
+  "iso": "kam",
+  "raw": 69430,
+  "kept": 38329,
+  "rel": 33409,
+  "nonrel": 4920,
+  "held": 600
+ },
+ {
+  "iso": "kbp",
+  "raw": 14269,
+  "kept": 6459,
+  "rel": 5527,
+  "nonrel": 932,
+  "held": 393
+ },
+ {
+  "iso": "kmb",
+  "raw": 111390,
+  "kept": 65117,
+  "rel": 58119,
+  "nonrel": 6998,
+  "held": 600
+ },
+ {
+  "iso": "mos",
+  "raw": 166504,
+  "kept": 98334,
+  "rel": 86795,
+  "nonrel": 11539,
+  "held": 600
+ },
+ {
+  "iso": "nus",
+  "raw": 1072,
+  "kept": 615,
+  "rel": 256,
+  "nonrel": 359,
+  "held": 60
+ },
+ {
+  "iso": "umb",
+  "raw": 164321,
+  "kept": 98900,
+  "rel": 87317,
+  "nonrel": 11583,
+  "held": 600
+ },
+ {
+  "iso": "dyu",
+  "raw": 22343,
+  "kept": 11576,
+  "rel": 11414,
+  "nonrel": 162,
+  "held": 316
+ },
+ {
+  "iso": "sag",
+  "raw": 165733,
+  "kept": 98780,
+  "rel": 85291,
+  "nonrel": 13489,
+  "held": 600
+ },
+ {
+  "iso": "swc",
+  "raw": 245515,
+  "kept": 167156,
+  "rel": 135527,
+  "nonrel": 31629,
+  "held": 600
+ },
+ {
+  "iso": "loz",
+  "raw": 420978,
+  "kept": 303535,
+  "rel": 271593,
+  "nonrel": 31942,
+  "held": 600
+ },
+ {
+  "iso": "ven",
+  "raw": 168655,
+  "kept": 102105,
+  "rel": 87721,
+  "nonrel": 14384,
+  "held": 600
+ },
+ {
+  "iso": "iso",
+  "raw": 256769,
+  "kept": 159837,
+  "rel": 141925,
+  "nonrel": 17912,
+  "held": 600
+ },
+ {
+  "iso": "tiv",
+  "raw": 166915,
+  "kept": 99492,
+  "rel": 87440,
+  "nonrel": 12052,
+  "held": 600
+ },
+ {
+  "iso": "kqn",
+  "raw": 260049,
+  "kept": 162409,
+  "rel": 143553,
+  "nonrel": 18856,
+  "held": 600
+ },
+ {
+  "iso": "wal",
+  "raw": 159560,
+  "kept": 89151,
+  "rel": 79578,
+  "nonrel": 9573,
+  "held": 600
+ },
+ {
+  "iso": "lun",
+  "raw": 170770,
+  "kept": 99080,
+  "rel": 88166,
+  "nonrel": 10914,
+  "held": 600
+ },
+ {
+  "iso": "kua",
+  "raw": 131534,
+  "kept": 73836,
+  "rel": 69323,
+  "nonrel": 4513,
+  "held": 600
+ },
+ {
+  "iso": "kon",
+  "raw": 10375,
+  "kept": 5246,
+  "rel": 4530,
+  "nonrel": 716,
+  "held": 371
+ },
+ {
+  "iso": "ibb",
+  "raw": 9817,
+  "kept": 4837,
+  "rel": 2592,
+  "nonrel": 2245,
+  "held": 483
+ },
+ {
+  "iso": "urh",
+  "raw": 47329,
+  "kept": 25153,
+  "rel": 19742,
+  "nonrel": 5411,
+  "held": 600
+ },
+ {
+  "iso": "nbl",
+  "raw": 46153,
+  "kept": 34528,
+  "rel": 241,
+  "nonrel": 34287,
+  "held": 324
+ },
+ {
+  "iso": "bin",
+  "raw": 52182,
+  "kept": 30802,
+  "rel": 30749,
+  "nonrel": 53,
+  "held": 305
+ },
+ {
+  "iso": "dag",
+  "raw": 34885,
+  "kept": 21827,
+  "rel": 21715,
+  "nonrel": 112,
+  "held": 311
+ },
+ {
+  "iso": "oke",
+  "raw": 34326,
+  "kept": 17770,
+  "rel": 16542,
+  "nonrel": 1228,
+  "held": 422
+ },
+ {
+  "iso": "shi",
+  "raw": 24219,
+  "kept": 11074,
+  "rel": 9324,
+  "nonrel": 1750,
+  "held": 475
+ },
+ {
+  "iso": "bbj",
+  "raw": 10915,
+  "kept": 6340,
+  "rel": 6340,
+  "nonrel": 0,
+  "held": 300
+ },
+ {
+  "iso": "kea",
+  "raw": 8173,
+  "kept": 3933,
+  "rel": 3856,
+  "nonrel": 77,
+  "held": 307
+ },
+ {
+  "iso": "ach",
+  "raw": 94845,
+  "kept": 53514,
+  "rel": 53272,
+  "nonrel": 242,
+  "held": 324
+ },
+ {
+  "iso": "tsc",
+  "raw": 106854,
+  "kept": 60362,
+  "rel": 57375,
+  "nonrel": 2987,
+  "held": 598
+ },
+ {
+  "iso": "vmw",
+  "raw": 93158,
+  "kept": 52297,
+  "rel": 49663,
+  "nonrel": 2634,
+  "held": 563
+ },
+ {
+  "iso": "seh",
+  "raw": 65142,
+  "kept": 36335,
+  "rel": 35332,
+  "nonrel": 1003,
+  "held": 400
+ },
+ {
+  "iso": "nyn",
+  "raw": 66772,
+  "kept": 36718,
+  "rel": 36195,
+  "nonrel": 523,
+  "held": 352
+ },
+ {
+  "iso": "her",
+  "raw": 12637,
+  "kept": 6000,
+  "rel": 5932,
+  "nonrel": 68,
+  "held": 306
+ },
+ {
+  "iso": "yao",
+  "raw": 61619,
+  "kept": 32293,
+  "rel": 30680,
+  "nonrel": 1613,
+  "held": 461
+ },
+ {
+  "iso": "sid",
+  "raw": 64848,
+  "kept": 34523,
+  "rel": 33685,
+  "nonrel": 838,
+  "held": 383
+ },
+ {
+  "iso": "ndc",
+  "raw": 40831,
+  "kept": 22346,
+  "rel": 22136,
+  "nonrel": 210,
+  "held": 321
+ },
+ {
+  "iso": "kri",
+  "raw": 55907,
+  "kept": 30502,
+  "rel": 29783,
+  "nonrel": 719,
+  "held": 371
+ },
+ {
+  "iso": "ish",
+  "raw": 8060,
+  "kept": 3854,
+  "rel": 3802,
+  "nonrel": 52,
+  "held": 305
+ },
+ {
+  "iso": "dua",
+  "raw": 22700,
+  "kept": 11251,
+  "rel": 11145,
+  "nonrel": 106,
+  "held": 310
+ },
+ {
+  "iso": "bas",
+  "raw": 39689,
+  "kept": 20315,
+  "rel": 18966,
+  "nonrel": 1349,
+  "held": 434
+ },
+ {
+  "iso": "wes",
+  "raw": 21493,
+  "kept": 11054,
+  "rel": 9172,
+  "nonrel": 1882,
+  "held": 488
+ }
+]

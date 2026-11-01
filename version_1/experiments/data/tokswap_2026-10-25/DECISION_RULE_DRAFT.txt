@@ -1,0 +1,77 @@
+DECISION RULE (DRAFT) -- vocabulary-swap ablation for amh / tir / fon.  Written 2026-10-25/26 by agent T1 BEFORE any training.
+Status: DRAFT. Every value marked [OWNER TO CONFIRM] is not decided. Once confirmed: freeze this file, record its sha256 (as in AB2:
+reports/... DECISION_RULE.sha256), and only then start training. Nothing in this file was tuned on the outcome of any training run.
+
+0. FRAMING (read first)
+   * Step 0 (reports/ge_ez_step0_2026-10-25.md) showed that our tokenizer needs 1.31x (amh), 1.53x (tir), 1.47x (fon) NLLB's tokens, close to the 1.39x mean
+     over eight African languages; tokenisation therefore does NOT explain the amh gap to NLLB (19.0 vs 38.0 chrF++) by itself.
+   * The swap is therefore justified by sequence length / decoding speed / context budget (tokens per sentence amh -22%, tir -35%, fon -27% at N=3,000 in
+     this build) and is tested as a SEPARATE FACTOR; it is NOT presented as a proven quality fix. Capacity (270M vs 1B) is a different factor.
+   * The tokenizer swap is an experimental factor on its own. The swapped tokenizer is bit-identical to the original on all text without Ethiopic
+     (Ge'ez variants) / Fon-specific characters (Fon variants) -- measured, see the build report. The Fon variant is NOT "safe": it also changes the
+     tokenisation of Ewe, Bambara and other languages that use the same characters (measured numbers in the build report); those languages must be in the
+     evaluation and the training mixture of every Fon arm.
+
+1. FIXED FACTORS (identical in all arms that are compared with each other)
+   base checkpoint (<HF_ORG>/gemma3-270m-translate @ step-27638, SFT-final, stored fp32) ; SFT examples and their order (same example ids, same number
+   of optimizer steps; token counts differ by arm and are REPORTED, not equalised) ; optimizer and hyper-parameters ; LR schedule ; batch size in examples ;
+   seed(s) [OWNER TO CONFIRM: number of seeds; recommended >= 3 for the headline contrasts] ; numeric precision (bf16 everywhere, or FP8 everywhere;
+   FP8 only after the bf16-vs-FP8 validation of the proposal addendum) ; evaluation sets (FLORES+ devtest no_pair and clean subsets, never "all";
+   NTREX/MAFAND for amh where available) ; decoding settings (greedy, same max_new_tokens, same stop ids {1, 106}) ; chat template and prompt
+   ("Translate the text to {Language}:  {text}", two spaces) ; the original model's non-embedding weights (the swap changes embedding rows only).
+
+2. FACTORS
+   F1 tokenizer  : {original (O), Ge'ez swap N=1000 (G1), Ge'ez swap N=3000 (G3), Fon swap N=1000 (F1), Fon swap N=3000 (F3)}
+                   [N=8,000 is NOT built: it needs ids beyond the 6,143 unused ones, i.e. removing other tokens -- optional later step, OWNER TO CONFIRM]
+   F2 training set: {multilingual (all 77 languages, production mixture), Ge'ez specialist (amh+tir only), Fon specialist}
+   F3 model size : {270M, 1B}
+   Controls (mandatory):
+   C-emb : ORIGINAL tokenizer, the SAME embedding rows re-initialised (control_* checkpoints) and re-trained with the same recipe as the swap arm: separates
+           "new tokens" from "embeddings were re-trained / perturbed".
+   C-seq : original tokenizer, same data, [OPTIONAL, OWNER TO CONFIRM] additional steps matched to the swap arm's token count (swap arms see ~25-35 % fewer
+           target tokens per example; matching tokens instead of examples is a separate contrast and is reported as such).
+
+3. ARMS (270M; the 1B arms repeat the first four with the 1B vocabulary swap, identical tokenizer)
+   A0  O  + multilingual           (the existing production line; re-run with the same recipe if the swap arms are trained from a different state)
+   A5g G3 + multilingual           (Ge'ez swap, multilingual mixture)        -> contrast A5g - A0 = effect of the Ge'ez tokenizer
+   A5f F3 + multilingual           (Fon swap, multilingual mixture, incl. Ewe/Bambara)
+   A6  O-with-re-init (C-emb for G3) + multilingual                          -> contrast A5g - A6 = effect of the NEW TOKENS beyond re-training the rows
+   A1  O  + Ge'ez specialist (amh,tir) ; A1g  G3 + Ge'ez specialist          (specialist vs multilingual is a separate factor; as in the proposal)
+   A2  O  + multilingual up-weighted to the same amh/tir token count as A1   (separates specialisation from sampling frequency)
+   A3  1B O + multilingual           ; A3g 1B G3 + multilingual              (size and tokenizer crossed)
+   (Optional: G1 vs G3 to choose N; F1 vs F3.)
+
+4. METRICS (each reported per language: amh, tir, fon + Latin controls hau, yor, swh, kin, ibo + Ewe/Bambara for Fon arms)
+   M1 chrF++ and spBLEU on FLORES+ devtest `no_pair` and `clean` (sacreBLEU settings fixed in the eval scripts)
+   M2 AfriCOMET and SSA-COMET (amh only; none for tir/fon -- Fon and tir rest on M1)
+   M3 Flash judge on the 200-sentence amh sample (validated language only)
+   M4 per-CHARACTER (not per-token) negative log-likelihood on held-out dev text, because per-token numbers are not comparable across tokenizers
+   M5 efficiency: tokens per sentence (source and target), generated tokens, decoding wall-clock on the same CPU / GPU, KV-cache length; reported next to quality
+   M6 identity checks on the Latin controls: tokenisation identical (build report: 0 differences), outputs of arms with swapped vs original tokenizer on
+      hau/yor/swh/kin/ibo within [OWNER TO CONFIRM: |delta chrF++| <= 0.3] and no new copy failures
+   Inference: paired bootstrap over sentences (10,000 resamples), 95 % CI; seeds as in section 1.
+
+5. DECISION (thresholds are placeholders: OWNER TO CONFIRM before freezing)
+   D1 "The Ge'ez swap helps quality"      : A5g beats A0 on amh AND tir chrF++ by >= [2.0 chrF++, OWNER TO CONFIRM] with the 95 % CI of the paired difference
+                                            excluding 0, AND A5g beats A6 (the embedding-re-init control) by >= [1.0, OWNER TO CONFIRM] with CI excluding 0.
+                                            If A5g beats A0 but not A6 -> the gain is attributed to re-training the rows, not to the tokens.
+   D2 "The swap is efficiency-only"       : quality within [-0.5, +0.5 chrF++, OWNER TO CONFIRM] of A0 (CI includes 0) and M5 shows >= [20 %, OWNER TO CONFIRM] fewer
+                                            target tokens per sentence; the swap is then adopted only if M6 holds and the owner values the speed / context gain.
+   D3 "The swap hurts"                    : A5g below A0 by more than [1.0, OWNER TO CONFIRM] on amh or tir with CI excluding 0, or any M6 violation -> do not adopt.
+   D4 "Fon swap"                          : adopted only if F3 passes the same tests on fon AND Ewe/Bambara/Lingala/Wolof/Hausa/Yoruba show no loss beyond
+                                            [-0.5 chrF++, OWNER TO CONFIRM] (their tokenisation changes; measured in the build report).
+   D5 "Capacity vs tokenizer"             : tokenizer effect = A5g - A0 at 270M and A3g - A3 at 1B; capacity effect = A3 - A0 and A3g - A5g. Claims about capacity
+                                            use the tokenizer-matched contrasts only (O vs O, G3 vs G3). Interaction (difference of the two tokenizer effects) is
+                                            reported with its CI, no claim without it.
+   D6 Nothing is claimed about NLLB beyond "gap under matched conditions of our own family".
+
+6. REPRODUCTION / ARTEFACT INTEGRITY
+   Every checkpoint used must have the sha256 listed in reports/data/tokswap_2026-10-25/SHA256SUMS.txt; the tokenizer files used for scoring are the ones in the
+   same directory; the evaluation harness must assert vocab size 262,144 and the id of <end_of_turn> = 106.
+   Measured in this build (tests/tables.md): (a) the new rows are NOT neutral under the ORIGINAL tokenizer: in the control checkpoints (rows re-initialised, original tokenizer)
+   the loss on amh rises from 1.35 to 1.73 nats/char (geez N=3000) because the mean-initialised rows of Ethiopic-looking tokens take probability mass that the original
+   tokenizer never uses; the swapped model's amh loss is 2.54 nats/char. The C-emb control arm is therefore required AND its first-step loss must be reported next to
+   the swap arm's; (b) Latin text: tokenisation, restricted-softmax loss and greedy outputs are identical, the full-softmax loss differs by +0.0002..+0.012 nats/char.
+   Known limits of this build (not decided here): new-token rows are initialised, not trained; the SFT-final checkpoint is stored fp32 and the swapped
+   checkpoints are bf16 (a --dtype fp32 option exists); llama.cpp / vLLM conversions of the swapped tokenizer are tested only as stated in the build report;
+   Fon training text is small (8.9 M characters: Wikipedia fon, mt560 target side, FineWeb-2 fon) and was NOT tuned on FLORES; Ge'ez text is web (jw.org-style heavy) + Wikipedia.

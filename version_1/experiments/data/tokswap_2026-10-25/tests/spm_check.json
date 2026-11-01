@@ -1,0 +1,732 @@
+{
+ "original": {
+  "dev/amh_Ethi": {
+   "n": 997,
+   "identical": 997,
+   "tokens_json": 50934,
+   "tokens_spm": 50934
+  },
+  "dev/tir_Ethi": {
+   "n": 997,
+   "identical": 997,
+   "tokens_json": 64053,
+   "tokens_spm": 64053
+  },
+  "dev/fon_Latn": {
+   "n": 997,
+   "identical": 997,
+   "tokens_json": 67906,
+   "tokens_spm": 67906
+  },
+  "dev/eng_Latn": {
+   "n": 997,
+   "identical": 997,
+   "tokens_json": 25881,
+   "tokens_spm": 25881
+  },
+  "dev/hau_Latn": {
+   "n": 997,
+   "identical": 997,
+   "tokens_json": 45972,
+   "tokens_spm": 45972
+  },
+  "dev/yor_Latn": {
+   "n": 997,
+   "identical": 997,
+   "tokens_json": 62062,
+   "tokens_spm": 62062
+  },
+  "dev/swh_Latn": {
+   "n": 997,
+   "identical": 997,
+   "tokens_json": 42242,
+   "tokens_spm": 42242
+  },
+  "dev/kin_Latn": {
+   "n": 997,
+   "identical": 997,
+   "tokens_json": 50937,
+   "tokens_spm": 50937
+  },
+  "dev/ibo_Latn": {
+   "n": 997,
+   "identical": 997,
+   "tokens_json": 54724,
+   "tokens_spm": 54724
+  },
+  "dev/fra_Latn": {
+   "n": 997,
+   "identical": 997,
+   "tokens_json": 35818,
+   "tokens_spm": 35818
+  },
+  "dev/ewe_Latn": {
+   "n": 997,
+   "identical": 997,
+   "tokens_json": 56866,
+   "tokens_spm": 56866
+  },
+  "dev/bam_Latn": {
+   "n": 997,
+   "identical": 997,
+   "tokens_json": 53862,
+   "tokens_spm": 53862
+  },
+  "devtest/amh_Ethi": {
+   "n": 1012,
+   "identical": 1012,
+   "tokens_json": 52552,
+   "tokens_spm": 52552
+  },
+  "devtest/tir_Ethi": {
+   "n": 1012,
+   "identical": 1012,
+   "tokens_json": 67131,
+   "tokens_spm": 67131
+  },
+  "devtest/fon_Latn": {
+   "n": 1012,
+   "identical": 1012,
+   "tokens_json": 71792,
+   "tokens_spm": 71792
+  },
+  "devtest/eng_Latn": {
+   "n": 1012,
+   "identical": 1012,
+   "tokens_json": 27114,
+   "tokens_spm": 27114
+  },
+  "devtest/hau_Latn": {
+   "n": 1012,
+   "identical": 1012,
+   "tokens_json": 46837,
+   "tokens_spm": 46837
+  },
+  "devtest/yor_Latn": {
+   "n": 1012,
+   "identical": 1012,
+   "tokens_json": 65233,
+   "tokens_spm": 65233
+  },
+  "devtest/swh_Latn": {
+   "n": 1012,
+   "identical": 1012,
+   "tokens_json": 44433,
+   "tokens_spm": 44433
+  },
+  "devtest/kin_Latn": {
+   "n": 1012,
+   "identical": 1012,
+   "tokens_json": 53301,
+   "tokens_spm": 53301
+  },
+  "devtest/ibo_Latn": {
+   "n": 1012,
+   "identical": 1012,
+   "tokens_json": 58748,
+   "tokens_spm": 58748
+  },
+  "devtest/fra_Latn": {
+   "n": 1012,
+   "identical": 1012,
+   "tokens_json": 38180,
+   "tokens_spm": 38180
+  },
+  "devtest/ewe_Latn": {
+   "n": 1012,
+   "identical": 1012,
+   "tokens_json": 59275,
+   "tokens_spm": 59275
+  },
+  "devtest/bam_Latn": {
+   "n": 1012,
+   "identical": 1012,
+   "tokens_json": 56375,
+   "tokens_spm": 56375
+  }
+ },
+ "geez_N1000": {
+  "dev/amh_Ethi": {
+   "n": 997,
+   "identical": 997,
+   "tokens_json": 45494,
+   "tokens_spm": 45494
+  },
+  "dev/tir_Ethi": {
+   "n": 997,
+   "identical": 997,
+   "tokens_json": 48467,
+   "tokens_spm": 48467
+  },
+  "dev/fon_Latn": {
+   "n": 997,
+   "identical": 997,
+   "tokens_json": 67906,
+   "tokens_spm": 67906
+  },
+  "dev/eng_Latn": {
+   "n": 997,
+   "identical": 997,
+   "tokens_json": 25881,
+   "tokens_spm": 25881
+  },
+  "dev/hau_Latn": {
+   "n": 997,
+   "identical": 997,
+   "tokens_json": 45972,
+   "tokens_spm": 45972
+  },
+  "dev/yor_Latn": {
+   "n": 997,
+   "identical": 997,
+   "tokens_json": 62062,
+   "tokens_spm": 62062
+  },
+  "dev/swh_Latn": {
+   "n": 997,
+   "identical": 997,
+   "tokens_json": 42242,
+   "tokens_spm": 42242
+  },
+  "dev/kin_Latn": {
+   "n": 997,
+   "identical": 997,
+   "tokens_json": 50937,
+   "tokens_spm": 50937
+  },
+  "dev/ibo_Latn": {
+   "n": 997,
+   "identical": 997,
+   "tokens_json": 54724,
+   "tokens_spm": 54724
+  },
+  "dev/fra_Latn": {
+   "n": 997,
+   "identical": 997,
+   "tokens_json": 35818,
+   "tokens_spm": 35818
+  },
+  "dev/ewe_Latn": {
+   "n": 997,
+   "identical": 997,
+   "tokens_json": 56866,
+   "tokens_spm": 56866
+  },
+  "dev/bam_Latn": {
+   "n": 997,
+   "identical": 997,
+   "tokens_json": 53862,
+   "tokens_spm": 53862
+  },
+  "devtest/amh_Ethi": {
+   "n": 1012,
+   "identical": 1012,
+   "tokens_json": 46927,
+   "tokens_spm": 46927
+  },
+  "devtest/tir_Ethi": {
+   "n": 1012,
+   "identical": 1012,
+   "tokens_json": 50588,
+   "tokens_spm": 50588
+  },
+  "devtest/fon_Latn": {
+   "n": 1012,
+   "identical": 1012,
+   "tokens_json": 71792,
+   "tokens_spm": 71792
+  },
+  "devtest/eng_Latn": {
+   "n": 1012,
+   "identical": 1012,
+   "tokens_json": 27114,
+   "tokens_spm": 27114
+  },
+  "devtest/hau_Latn": {
+   "n": 1012,
+   "identical": 1012,
+   "tokens_json": 46837,
+   "tokens_spm": 46837
+  },
+  "devtest/yor_Latn": {
+   "n": 1012,
+   "identical": 1012,
+   "tokens_json": 65233,
+   "tokens_spm": 65233
+  },
+  "devtest/swh_Latn": {
+   "n": 1012,
+   "identical": 1012,
+   "tokens_json": 44433,
+   "tokens_spm": 44433
+  },
+  "devtest/kin_Latn": {
+   "n": 1012,
+   "identical": 1012,
+   "tokens_json": 53301,
+   "tokens_spm": 53301
+  },
+  "devtest/ibo_Latn": {
+   "n": 1012,
+   "identical": 1012,
+   "tokens_json": 58748,
+   "tokens_spm": 58748
+  },
+  "devtest/fra_Latn": {
+   "n": 1012,
+   "identical": 1012,
+   "tokens_json": 38180,
+   "tokens_spm": 38180
+  },
+  "devtest/ewe_Latn": {
+   "n": 1012,
+   "identical": 1012,
+   "tokens_json": 59275,
+   "tokens_spm": 59275
+  },
+  "devtest/bam_Latn": {
+   "n": 1012,
+   "identical": 1012,
+   "tokens_json": 56375,
+   "tokens_spm": 56375
+  }
+ },
+ "geez_N3000": {
+  "dev/amh_Ethi": {
+   "n": 997,
+   "identical": 997,
+   "tokens_json": 39460,
+   "tokens_spm": 39460
+  },
+  "dev/tir_Ethi": {
+   "n": 997,
+   "identical": 997,
+   "tokens_json": 41532,
+   "tokens_spm": 41532
+  },
+  "dev/fon_Latn": {
+   "n": 997,
+   "identical": 997,
+   "tokens_json": 67906,
+   "tokens_spm": 67906
+  },
+  "dev/eng_Latn": {
+   "n": 997,
+   "identical": 997,
+   "tokens_json": 25881,
+   "tokens_spm": 25881
+  },
+  "dev/hau_Latn": {
+   "n": 997,
+   "identical": 997,
+   "tokens_json": 45972,
+   "tokens_spm": 45972
+  },
+  "dev/yor_Latn": {
+   "n": 997,
+   "identical": 997,
+   "tokens_json": 62062,
+   "tokens_spm": 62062
+  },
+  "dev/swh_Latn": {
+   "n": 997,
+   "identical": 997,
+   "tokens_json": 42242,
+   "tokens_spm": 42242
+  },
+  "dev/kin_Latn": {
+   "n": 997,
+   "identical": 997,
+   "tokens_json": 50937,
+   "tokens_spm": 50937
+  },
+  "dev/ibo_Latn": {
+   "n": 997,
+   "identical": 997,
+   "tokens_json": 54724,
+   "tokens_spm": 54724
+  },
+  "dev/fra_Latn": {
+   "n": 997,
+   "identical": 997,
+   "tokens_json": 35818,
+   "tokens_spm": 35818
+  },
+  "dev/ewe_Latn": {
+   "n": 997,
+   "identical": 997,
+   "tokens_json": 56866,
+   "tokens_spm": 56866
+  },
+  "dev/bam_Latn": {
+   "n": 997,
+   "identical": 997,
+   "tokens_json": 53862,
+   "tokens_spm": 53862
+  },
+  "devtest/amh_Ethi": {
+   "n": 1012,
+   "identical": 1012,
+   "tokens_json": 40814,
+   "tokens_spm": 40814
+  },
+  "devtest/tir_Ethi": {
+   "n": 1012,
+   "identical": 1012,
+   "tokens_json": 43483,
+   "tokens_spm": 43483
+  },
+  "devtest/fon_Latn": {
+   "n": 1012,
+   "identical": 1012,
+   "tokens_json": 71792,
+   "tokens_spm": 71792
+  },
+  "devtest/eng_Latn": {
+   "n": 1012,
+   "identical": 1012,
+   "tokens_json": 27114,
+   "tokens_spm": 27114
+  },
+  "devtest/hau_Latn": {
+   "n": 1012,
+   "identical": 1012,
+   "tokens_json": 46837,
+   "tokens_spm": 46837
+  },
+  "devtest/yor_Latn": {
+   "n": 1012,
+   "identical": 1012,
+   "tokens_json": 65233,
+   "tokens_spm": 65233
+  },
+  "devtest/swh_Latn": {
+   "n": 1012,
+   "identical": 1012,
+   "tokens_json": 44433,
+   "tokens_spm": 44433
+  },
+  "devtest/kin_Latn": {
+   "n": 1012,
+   "identical": 1012,
+   "tokens_json": 53301,
+   "tokens_spm": 53301
+  },
+  "devtest/ibo_Latn": {
+   "n": 1012,
+   "identical": 1012,
+   "tokens_json": 58748,
+   "tokens_spm": 58748
+  },
+  "devtest/fra_Latn": {
+   "n": 1012,
+   "identical": 1012,
+   "tokens_json": 38180,
+   "tokens_spm": 38180
+  },
+  "devtest/ewe_Latn": {
+   "n": 1012,
+   "identical": 1012,
+   "tokens_json": 59275,
+   "tokens_spm": 59275
+  },
+  "devtest/bam_Latn": {
+   "n": 1012,
+   "identical": 1012,
+   "tokens_json": 56375,
+   "tokens_spm": 56375
+  }
+ },
+ "fon_N1000": {
+  "dev/amh_Ethi": {
+   "n": 997,
+   "identical": 997,
+   "tokens_json": 50934,
+   "tokens_spm": 50934
+  },
+  "dev/tir_Ethi": {
+   "n": 997,
+   "identical": 997,
+   "tokens_json": 64053,
+   "tokens_spm": 64053
+  },
+  "dev/fon_Latn": {
+   "n": 997,
+   "identical": 997,
+   "tokens_json": 51463,
+   "tokens_spm": 51463
+  },
+  "dev/eng_Latn": {
+   "n": 997,
+   "identical": 997,
+   "tokens_json": 25881,
+   "tokens_spm": 25881
+  },
+  "dev/hau_Latn": {
+   "n": 997,
+   "identical": 997,
+   "tokens_json": 45972,
+   "tokens_spm": 45972
+  },
+  "dev/yor_Latn": {
+   "n": 997,
+   "identical": 997,
+   "tokens_json": 62062,
+   "tokens_spm": 62062
+  },
+  "dev/swh_Latn": {
+   "n": 997,
+   "identical": 997,
+   "tokens_json": 42242,
+   "tokens_spm": 42242
+  },
+  "dev/kin_Latn": {
+   "n": 997,
+   "identical": 997,
+   "tokens_json": 50937,
+   "tokens_spm": 50937
+  },
+  "dev/ibo_Latn": {
+   "n": 997,
+   "identical": 997,
+   "tokens_json": 54724,
+   "tokens_spm": 54724
+  },
+  "dev/fra_Latn": {
+   "n": 997,
+   "identical": 997,
+   "tokens_json": 35818,
+   "tokens_spm": 35818
+  },
+  "dev/ewe_Latn": {
+   "n": 997,
+   "identical": 997,
+   "tokens_json": 53037,
+   "tokens_spm": 53037
+  },
+  "dev/bam_Latn": {
+   "n": 997,
+   "identical": 997,
+   "tokens_json": 48375,
+   "tokens_spm": 48375
+  },
+  "devtest/amh_Ethi": {
+   "n": 1012,
+   "identical": 1012,
+   "tokens_json": 52552,
+   "tokens_spm": 52552
+  },
+  "devtest/tir_Ethi": {
+   "n": 1012,
+   "identical": 1012,
+   "tokens_json": 67131,
+   "tokens_spm": 67131
+  },
+  "devtest/fon_Latn": {
+   "n": 1012,
+   "identical": 1012,
+   "tokens_json": 54291,
+   "tokens_spm": 54291
+  },
+  "devtest/eng_Latn": {
+   "n": 1012,
+   "identical": 1012,
+   "tokens_json": 27114,
+   "tokens_spm": 27114
+  },
+  "devtest/hau_Latn": {
+   "n": 1012,
+   "identical": 1012,
+   "tokens_json": 46837,
+   "tokens_spm": 46837
+  },
+  "devtest/yor_Latn": {
+   "n": 1012,
+   "identical": 1012,
+   "tokens_json": 65233,
+   "tokens_spm": 65233
+  },
+  "devtest/swh_Latn": {
+   "n": 1012,
+   "identical": 1012,
+   "tokens_json": 44433,
+   "tokens_spm": 44433
+  },
+  "devtest/kin_Latn": {
+   "n": 1012,
+   "identical": 1012,
+   "tokens_json": 53301,
+   "tokens_spm": 53301
+  },
+  "devtest/ibo_Latn": {
+   "n": 1012,
+   "identical": 1012,
+   "tokens_json": 58748,
+   "tokens_spm": 58748
+  },
+  "devtest/fra_Latn": {
+   "n": 1012,
+   "identical": 1012,
+   "tokens_json": 38180,
+   "tokens_spm": 38180
+  },
+  "devtest/ewe_Latn": {
+   "n": 1012,
+   "identical": 1012,
+   "tokens_json": 55081,
+   "tokens_spm": 55081
+  },
+  "devtest/bam_Latn": {
+   "n": 1012,
+   "identical": 1012,
+   "tokens_json": 50754,
+   "tokens_spm": 50754
+  }
+ },
+ "fon_N3000": {
+  "dev/amh_Ethi": {
+   "n": 997,
+   "identical": 997,
+   "tokens_json": 50934,
+   "tokens_spm": 50934
+  },
+  "dev/tir_Ethi": {
+   "n": 997,
+   "identical": 997,
+   "tokens_json": 64053,
+   "tokens_spm": 64053
+  },
+  "dev/fon_Latn": {
+   "n": 997,
+   "identical": 997,
+   "tokens_json": 49517,
+   "tokens_spm": 49517
+  },
+  "dev/eng_Latn": {
+   "n": 997,
+   "identical": 997,
+   "tokens_json": 25881,
+   "tokens_spm": 25881
+  },
+  "dev/hau_Latn": {
+   "n": 997,
+   "identical": 997,
+   "tokens_json": 45972,
+   "tokens_spm": 45972
+  },
+  "dev/yor_Latn": {
+   "n": 997,
+   "identical": 997,
+   "tokens_json": 62062,
+   "tokens_spm": 62062
+  },
+  "dev/swh_Latn": {
+   "n": 997,
+   "identical": 997,
+   "tokens_json": 42242,
+   "tokens_spm": 42242
+  },
+  "dev/kin_Latn": {
+   "n": 997,
+   "identical": 997,
+   "tokens_json": 50937,
+   "tokens_spm": 50937
+  },
+  "dev/ibo_Latn": {
+   "n": 997,
+   "identical": 997,
+   "tokens_json": 54724,
+   "tokens_spm": 54724
+  },
+  "dev/fra_Latn": {
+   "n": 997,
+   "identical": 997,
+   "tokens_json": 35818,
+   "tokens_spm": 35818
+  },
+  "dev/ewe_Latn": {
+   "n": 997,
+   "identical": 997,
+   "tokens_json": 52221,
+   "tokens_spm": 52221
+  },
+  "dev/bam_Latn": {
+   "n": 997,
+   "identical": 997,
+   "tokens_json": 47626,
+   "tokens_spm": 47626
+  },
+  "devtest/amh_Ethi": {
+   "n": 1012,
+   "identical": 1012,
+   "tokens_json": 52552,
+   "tokens_spm": 52552
+  },
+  "devtest/tir_Ethi": {
+   "n": 1012,
+   "identical": 1012,
+   "tokens_json": 67131,
+   "tokens_spm": 67131
+  },
+  "devtest/fon_Latn": {
+   "n": 1012,
+   "identical": 1012,
+   "tokens_json": 52249,
+   "tokens_spm": 52249
+  },
+  "devtest/eng_Latn": {
+   "n": 1012,
+   "identical": 1012,
+   "tokens_json": 27114,
+   "tokens_spm": 27114
+  },
+  "devtest/hau_Latn": {
+   "n": 1012,
+   "identical": 1012,
+   "tokens_json": 46837,
+   "tokens_spm": 46837
+  },
+  "devtest/yor_Latn": {
+   "n": 1012,
+   "identical": 1012,
+   "tokens_json": 65233,
+   "tokens_spm": 65233
+  },
+  "devtest/swh_Latn": {
+   "n": 1012,
+   "identical": 1012,
+   "tokens_json": 44433,
+   "tokens_spm": 44433
+  },
+  "devtest/kin_Latn": {
+   "n": 1012,
+   "identical": 1012,
+   "tokens_json": 53301,
+   "tokens_spm": 53301
+  },
+  "devtest/ibo_Latn": {
+   "n": 1012,
+   "identical": 1012,
+   "tokens_json": 58748,
+   "tokens_spm": 58748
+  },
+  "devtest/fra_Latn": {
+   "n": 1012,
+   "identical": 1012,
+   "tokens_json": 38180,
+   "tokens_spm": 38180
+  },
+  "devtest/ewe_Latn": {
+   "n": 1012,
+   "identical": 1012,
+   "tokens_json": 54318,
+   "tokens_spm": 54318
+  },
+  "devtest/bam_Latn": {
+   "n": 1012,
+   "identical": 1012,
+   "tokens_json": 49832,
+   "tokens_spm": 49832
+  }
+ }
+}

@@ -1,0 +1,7 @@
+variant,batch,sent_per_s_solo,sent_per_s_with_other_benchmarks_running,parallel_penalty_pct
+Q8_0 llama.cpp,1,0.973,0.825,15.2
+Q8_0 llama.cpp,8,1.849,1.534,17.0
+Q8_0 llama.cpp,32,1.995,1.825,8.5
+CT2 int8,1,0.766,0.71,7.3
+CT2 int8,8,1.954,1.689,13.6
+CT2 int8,32,2.873,2.575,10.4

@@ -1,0 +1,22 @@
+system,macro_chrF++_on_Q(1170 sent),timing_conditions,batch,sent_per_s_mean_of_3,min,max,s_per_1000,hours_per_1M,decode_tok_per_s,prompt_tok_per_s,first_token_ms_p50(b1),peak_rss_mb(incl python/torch for ct2+nllb)
+ours Q8_0 llama.cpp,34.96,"solo,4thr",1,0.973,0.962,0.985,1027.7,285.5,61.1,549.5,80.0,418
+ours Q8_0 llama.cpp,34.96,"solo,4thr",8,1.849,1.835,1.86,540.8,150.2,125.1,667.7,,593
+ours Q8_0 llama.cpp,34.96,"solo,4thr",32,1.995,1.942,2.022,501.3,139.2,135.4,706.0,,1175
+ours CT2 int8,33.27,"solo,4thr",1,0.766,0.751,0.794,1305.5,362.6,48.2,660.7,67.6,1754
+ours CT2 int8,33.27,"solo,4thr",8,1.954,1.9,2.027,511.8,142.2,128.1,922.0,,1924
+ours CT2 int8,33.27,"solo,4thr",32,2.873,2.835,2.905,348.1,96.7,208.0,784.9,,2306
+"ours CT2 hybrid (attn fp32, ffn/emb int8)",34.73,"with other streams,4thr",1,0.298,0.275,0.328,3355.7,932.1,18.9,307.8,144.4,3481
+"ours CT2 hybrid (attn fp32, ffn/emb int8)",34.73,"with other streams,4thr",8,0.896,0.831,1.01,1116.1,310.0,58.8,480.9,,3665
+"ours CT2 hybrid (attn fp32, ffn/emb int8)",34.73,"with other streams,4thr",32,1.687,1.526,1.89,592.8,164.7,119.6,501.8,,4080
+ours CT2 fp32,35.03,"with other streams,4thr,1 rep",1,0.272,0.272,0.272,3676.5,1021.2,16.5,235.4,157.5,3412
+ours CT2 fp32,35.03,"with other streams,4thr,1 rep",8,0.796,0.796,0.796,1256.3,349.0,51.4,402.1,,3586
+ours CT2 fp32,35.03,"with other streams,4thr,1 rep",32,1.567,1.567,1.567,638.2,177.3,108.1,484.0,,3955
+ours Q4_K_M llama.cpp,33.56,"with other streams,4thr",1,0.834,0.776,0.928,1199.0,333.1,54.8,494.1,89.6,394
+ours Q4_K_M llama.cpp,33.56,"with other streams,4thr",8,1.602,1.474,1.818,624.2,173.4,110.3,567.1,,570
+ours Q4_K_M llama.cpp,33.56,"with other streams,4thr",32,1.715,1.268,2.007,583.1,162.0,116.8,607.4,,1156
+NLLB-600M CT2 int8 beam4,38.72,"solo,4thr",1,0.44,0.428,0.461,2272.7,631.3,,,,2177
+NLLB-600M CT2 int8 beam4,38.72,"solo,4thr",8,1.232,1.214,1.255,811.7,225.5,,,,2377
+NLLB-600M CT2 int8 beam4,38.72,"solo,4thr",32,1.492,1.455,1.538,670.2,186.2,,,,3204
+NLLB-600M CT2 int8 greedy,37.35,"solo,4thr",32,4.169,4.038,4.281,239.9,66.6,,,,2298
+NLLB-3.3B CT2 int8 beam4,41.03,"solo,4thr",32,0.484,0.457,0.517,2066.1,573.9,,,,10946
+NLLB-3.3B CT2 int8 greedy,39.72,"solo,4thr",32,1.194,1.124,1.306,837.5,232.6,,,,8230

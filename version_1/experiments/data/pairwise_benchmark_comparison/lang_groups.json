@@ -1,0 +1,617 @@
+{
+"yor": {
+"group": "qe_validated",
+"family": "Atlantic-Congo (non-Bantu)",
+"name": "Yoruba",
+"qe_covered": true,
+"rl": true,
+"tier": "weak"
+},
+"hau": {
+"group": "qe_validated",
+"family": "Afroasiatic",
+"name": "Hausa",
+"qe_covered": true,
+"rl": true,
+"tier": "strong"
+},
+"ibo": {
+"group": "qe_validated",
+"family": "Atlantic-Congo (non-Bantu)",
+"name": "Igbo",
+"qe_covered": true,
+"rl": true,
+"tier": "medium"
+},
+"pcm": {
+"group": "qe_validated",
+"family": "Creole / Pidgin",
+"name": "Pidgin",
+"qe_covered": true,
+"rl": true
+},
+"efi": {
+"group": "qe_validated",
+"family": "Atlantic-Congo (non-Bantu)",
+"name": "Efik",
+"qe_covered": true,
+"rl": true,
+"tier": "weak"
+},
+"twi": {
+"group": "qe_validated",
+"family": "Atlantic-Congo (non-Bantu)",
+"name": "Twi",
+"qe_covered": true,
+"rl": true
+},
+"ewe": {
+"group": "qe_validated",
+"family": "Atlantic-Congo (non-Bantu)",
+"name": "Ewe",
+"qe_covered": true,
+"rl": true
+},
+"fon": {
+"group": "qe_validated",
+"family": "Atlantic-Congo (non-Bantu)",
+"name": "Fon",
+"qe_covered": true,
+"rl": true,
+"tier": "weak"
+},
+"wol": {
+"group": "qe_validated",
+"family": "Atlantic-Congo (non-Bantu)",
+"name": "Wolof",
+"qe_covered": true,
+"rl": true,
+"tier": "weak"
+},
+"swh": {
+"group": "qe_validated",
+"family": "Bantu",
+"name": "Swahili",
+"qe_covered": true,
+"rl": true,
+"tier": "strong"
+},
+"kin": {
+"group": "qe_validated",
+"family": "Bantu",
+"name": "Kinyarwanda",
+"qe_covered": true,
+"rl": true,
+"tier": "strong"
+},
+"som": {
+"group": "qe_validated",
+"family": "Afroasiatic",
+"name": "Somali",
+"qe_covered": true,
+"rl": true,
+"tier": "strong"
+},
+"orm": {
+"group": "qe_validated",
+"family": "Afroasiatic",
+"name": "Oromo",
+"qe_covered": true,
+"rl": true
+},
+"amh": {
+"group": "qe_validated",
+"family": "Afroasiatic",
+"name": "Amharic",
+"qe_covered": true,
+"rl": true,
+"tier": "weak"
+},
+"tir": {
+"group": "qe_validated",
+"family": "Afroasiatic",
+"name": "Tigrinya",
+"qe_covered": true,
+"rl": true,
+"tier": "weak"
+},
+"lug": {
+"group": "qe_validated",
+"family": "Bantu",
+"name": "Luganda",
+"qe_covered": true,
+"rl": true,
+"tier": "medium"
+},
+"lin": {
+"group": "qe_validated",
+"family": "Bantu",
+"name": "Lingala",
+"qe_covered": true,
+"rl": true
+},
+"zul": {
+"group": "qe_validated",
+"family": "Bantu",
+"name": "Zulu",
+"qe_covered": true,
+"rl": true,
+"tier": "strong"
+},
+"xho": {
+"group": "qe_validated",
+"family": "Bantu",
+"name": "Xhosa",
+"qe_covered": true,
+"rl": true
+},
+"afr": {
+"group": "qe_validated",
+"family": "Other (Indo-European, Austronesian)",
+"name": "Afrikaans",
+"qe_covered": true,
+"rl": true
+},
+"sna": {
+"group": "qe_validated",
+"family": "Bantu",
+"name": "Shona",
+"qe_covered": true,
+"rl": true,
+"tier": "medium"
+},
+"nya": {
+"group": "qe_validated",
+"family": "Bantu",
+"name": "Chichewa",
+"qe_covered": true,
+"rl": true
+},
+"sot": {
+"group": "qe_validated",
+"family": "Bantu",
+"name": "Sesotho",
+"qe_covered": true,
+"rl": true
+},
+"tsn": {
+"group": "qe_validated",
+"family": "Bantu",
+"name": "Setswana",
+"qe_covered": true,
+"rl": true
+},
+"mlg": {
+"group": "qe_validated",
+"family": "Other (Indo-European, Austronesian)",
+"name": "Malagasy",
+"qe_covered": true,
+"rl": true
+},
+"ibb": {
+"group": "consensus_only",
+"family": "Atlantic-Congo (non-Bantu)",
+"name": "Ibibio",
+"qe_covered": false,
+"rl": true
+},
+"urh": {
+"group": "consensus_only",
+"family": "Atlantic-Congo (non-Bantu)",
+"name": "Urhobo",
+"qe_covered": false,
+"rl": true
+},
+"bem": {
+"group": "qe_validated",
+"family": "Bantu",
+"name": "Bemba",
+"qe_covered": true,
+"rl": true,
+"tier": "medium"
+},
+"tum": {
+"group": "qe_validated",
+"family": "Bantu",
+"name": "Tumbuka",
+"qe_covered": true,
+"rl": true
+},
+"run": {
+"group": "qe_validated",
+"family": "Bantu",
+"name": "Kirundi",
+"qe_covered": true,
+"rl": true
+},
+"ven": {
+"group": "blend",
+"family": "Bantu",
+"name": "Venda",
+"qe_covered": true,
+"rl": true
+},
+"tso": {
+"group": "qe_validated",
+"family": "Bantu",
+"name": "Tsonga",
+"qe_covered": true,
+"rl": true
+},
+"nso": {
+"group": "qe_validated",
+"family": "Bantu",
+"name": "Sepedi",
+"qe_covered": true,
+"rl": true
+},
+"ssw": {
+"group": "qe_validated",
+"family": "Bantu",
+"name": "Swati",
+"qe_covered": true,
+"rl": true
+},
+"nbl": {
+"group": "consensus_only",
+"family": "Bantu",
+"name": "South Ndebele",
+"qe_covered": false,
+"rl": true,
+"tier": "medium"
+},
+"nde": {
+"group": "sft_only",
+"family": "Bantu",
+"name": "North Ndebele",
+"qe_covered": false,
+"rl": false
+},
+"sag": {
+"group": "blend",
+"family": "Atlantic-Congo (non-Bantu)",
+"name": "Sango",
+"qe_covered": true,
+"rl": true
+},
+"tiv": {
+"group": "blend",
+"family": "Atlantic-Congo (non-Bantu)",
+"name": "Tiv",
+"qe_covered": true,
+"rl": true
+},
+"umb": {
+"group": "qe_validated",
+"family": "Bantu",
+"name": "Umbundu",
+"qe_covered": true,
+"rl": true
+},
+"kmb": {
+"group": "qe_validated",
+"family": "Bantu",
+"name": "Kimbundu",
+"qe_covered": true,
+"rl": true
+},
+"mos": {
+"group": "qe_validated",
+"family": "Atlantic-Congo (non-Bantu)",
+"name": "Mossi",
+"qe_covered": true,
+"rl": true
+},
+"kik": {
+"group": "qe_validated",
+"family": "Bantu",
+"name": "Kikuyu",
+"qe_covered": true,
+"rl": true
+},
+"luo": {
+"group": "qe_validated",
+"family": "Nilo-Saharan",
+"name": "Luo",
+"qe_covered": true,
+"rl": true
+},
+"kam": {
+"group": "qe_validated",
+"family": "Bantu",
+"name": "Kamba",
+"qe_covered": true,
+"rl": true
+},
+"bin": {
+"group": "consensus_only",
+"family": "Atlantic-Congo (non-Bantu)",
+"name": "Edo",
+"qe_covered": false,
+"rl": true
+},
+"dag": {
+"group": "consensus_only",
+"family": "Atlantic-Congo (non-Bantu)",
+"name": "Dagbani",
+"qe_covered": false,
+"rl": true
+},
+"oke": {
+"group": "consensus_only",
+"family": "Atlantic-Congo (non-Bantu)",
+"name": "Okpe",
+"qe_covered": false,
+"rl": true
+},
+"shi": {
+"group": "consensus_only",
+"family": "Afroasiatic",
+"name": "Tachelhit",
+"qe_covered": false,
+"rl": true
+},
+"dyu": {
+"group": "blend",
+"family": "Mande",
+"name": "Dyula",
+"qe_covered": true,
+"rl": true
+},
+"bam": {
+"group": "qe_validated",
+"family": "Mande",
+"name": "Bambara",
+"qe_covered": true,
+"rl": true
+},
+"kbp": {
+"group": "qe_validated",
+"family": "Atlantic-Congo (non-Bantu)",
+"name": "Kabiye",
+"qe_covered": true,
+"rl": true,
+"tier": "weak"
+},
+"bbj": {
+"group": "consensus_only",
+"family": "Atlantic-Congo (non-Bantu)",
+"name": "Ghomala",
+"qe_covered": false,
+"rl": true
+},
+"kon": {
+"group": "blend",
+"family": "Bantu",
+"name": "Kongo",
+"qe_covered": true,
+"rl": true
+},
+"kea": {
+"group": "consensus_only",
+"family": "Creole / Pidgin",
+"name": "Kabuverdianu",
+"qe_covered": false,
+"rl": true
+},
+"fat": {
+"group": "sft_only",
+"family": "Atlantic-Congo (non-Bantu)",
+"name": "Fante",
+"qe_covered": false,
+"rl": false
+},
+"knc": {
+"group": "sft_only",
+"family": "Nilo-Saharan",
+"name": "Kanuri",
+"qe_covered": false,
+"rl": false
+},
+"gaa": {
+"group": "sft_only",
+"family": "Atlantic-Congo (non-Bantu)",
+"name": "Ga",
+"qe_covered": false,
+"rl": false
+},
+"kab": {
+"group": "qe_validated",
+"family": "Afroasiatic",
+"name": "Kabyle",
+"qe_covered": true,
+"rl": true,
+"tier": "weak"
+},
+"nus": {
+"group": "qe_validated",
+"family": "Nilo-Saharan",
+"name": "Nuer",
+"qe_covered": true,
+"rl": true,
+"tier": "weak"
+},
+"swc": {
+"group": "blend",
+"family": "Bantu",
+"name": "Congo Swahili",
+"qe_covered": true,
+"rl": true
+},
+"lua": {
+"group": "qe_validated",
+"family": "Bantu",
+"name": "Luba-Kasai",
+"qe_covered": true,
+"rl": true
+},
+"kqn": {
+"group": "blend",
+"family": "Bantu",
+"name": "Kaonde",
+"qe_covered": true,
+"rl": true
+},
+"lun": {
+"group": "blend",
+"family": "Bantu",
+"name": "Lunda",
+"qe_covered": true,
+"rl": true
+},
+"iso": {
+"group": "blend",
+"family": "Atlantic-Congo (non-Bantu)",
+"name": "Isoko",
+"qe_covered": true,
+"rl": true
+},
+"loz": {
+"group": "blend",
+"family": "Bantu",
+"name": "Lozi",
+"qe_covered": true,
+"rl": true
+},
+"wal": {
+"group": "blend",
+"family": "Afroasiatic",
+"name": "Wolaytta",
+"qe_covered": true,
+"rl": true
+},
+"ach": {
+"group": "consensus_only",
+"family": "Nilo-Saharan",
+"name": "Acholi",
+"qe_covered": false,
+"rl": true,
+"tier": "weak"
+},
+"tsc": {
+"group": "consensus_only",
+"family": "Bantu",
+"name": "Tswa",
+"qe_covered": false,
+"rl": true
+},
+"vmw": {
+"group": "consensus_only",
+"family": "Bantu",
+"name": "Makhuwa",
+"qe_covered": false,
+"rl": true
+},
+"kua": {
+"group": "blend",
+"family": "Bantu",
+"name": "Kuanyama",
+"qe_covered": true,
+"rl": true
+},
+"seh": {
+"group": "consensus_only",
+"family": "Bantu",
+"name": "Sena",
+"qe_covered": false,
+"rl": true
+},
+"nyn": {
+"group": "consensus_only",
+"family": "Bantu",
+"name": "Nyankore",
+"qe_covered": false,
+"rl": true
+},
+"her": {
+"group": "consensus_only",
+"family": "Bantu",
+"name": "Herero",
+"qe_covered": false,
+"rl": true
+},
+"yao": {
+"group": "consensus_only",
+"family": "Bantu",
+"name": "Yao",
+"qe_covered": false,
+"rl": true
+},
+"sid": {
+"group": "consensus_only",
+"family": "Afroasiatic",
+"name": "Sidamo",
+"qe_covered": false,
+"rl": true
+},
+"ndc": {
+"group": "consensus_only",
+"family": "Bantu",
+"name": "Ndau",
+"qe_covered": false,
+"rl": true
+},
+"men": {
+"group": "sft_only",
+"family": "Mande",
+"name": "Mende",
+"qe_covered": false,
+"rl": false
+},
+"kri": {
+"group": "consensus_only",
+"family": "Creole / Pidgin",
+"name": "Krio",
+"qe_covered": false,
+"rl": true
+},
+"luy": {
+"group": "sft_only",
+"family": "Bantu",
+"name": "Luyia",
+"qe_covered": false,
+"rl": false
+},
+"ish": {
+"group": "consensus_only",
+"family": "Atlantic-Congo (non-Bantu)",
+"name": "Esan",
+"qe_covered": false,
+"rl": true
+},
+"dua": {
+"group": "consensus_only",
+"family": "Bantu",
+"name": "Duala",
+"qe_covered": false,
+"rl": true
+},
+"bas": {
+"group": "consensus_only",
+"family": "Bantu",
+"name": "Basaa",
+"qe_covered": false,
+"rl": true
+},
+"wes": {
+"group": "consensus_only",
+"family": "Creole / Pidgin",
+"name": "Cameroon Pidgin",
+"qe_covered": false,
+"rl": true
+},
+"tzm": {
+"group": "sft_only",
+"family": "Afroasiatic",
+"name": "Tamazight",
+"qe_covered": false,
+"rl": false
+},
+"ful": {
+"group": "sft_only",
+"family": "Atlantic-Congo (non-Bantu)",
+"name": "Fulah",
+"qe_covered": false,
+"rl": false
+}
+}

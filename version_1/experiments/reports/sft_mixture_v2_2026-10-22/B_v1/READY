@@ -1,0 +1,7 @@
+READY_B_v1  2026-10-22 05:13 UTC (agent R11)
+B_v1 = A + R10 commercial_ok extras (HuggingFaceFW/finetranslations ODC-By: real African web text with machine-translated English input; Tatoeba CC-BY; Tashelhit-Tifinagh Tatoeba) under tier caps (weak 250k, Ge ez 600k, other 150k tokens per language; synthetic-English-side share <= 50% of the language total).
+data    : /workspace/jobs/r11/mix_v2B_v1   (train: 101,929 samples, 2,900 packs x 8192, 23,747,513 tokens; val/ val_sci/ unchanged; train/source.npy + train/licence_class.npy per sample; components/*.jsonl with per-row licence)
+audit   : audit_packed OK (train); smoke 4 steps peak 6.52 GiB, val macro 1.380
+config  : /workspace/jobs/r11/configs/sft_science_v2_B_v1.yaml
+command : cd /workspace/jobs/r11/code && source /workspace/jobs/r11/env.sh && nice -n 10 \$PY -m gemma_mt.train_sft --config /workspace/jobs/r11/configs/sft_science_v2_B_v1.yaml
+tables  : mix_v2B_v1/mixture_tables_v2.md (+licence classes); work/cmp_A_Bv1.md (weak languages A vs B_v1)

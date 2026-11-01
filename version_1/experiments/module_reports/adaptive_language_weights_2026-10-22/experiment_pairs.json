@@ -1,0 +1,128 @@
+{
+ "rule": "Candidates: RL languages that keep draw weight 1.0 in the final run and have FLORES+ devtest rows (the primary outcome set). Pairs: identical content mode and script, SFT chrF++ within 4 points\n(greedy nearest). Assignment: all 2^P treated / control assignments are enumerated; the ones whose mean difference in PAST SFT->RL gain is <= 0.25 and in SFT level <= 0.5 chrF++ are kept (the\nrandomisation is restricted to balanced allocations: with 9 pairs an unrestricted coin flip gave a 1.5 chrF++ head start to the treated side in a trial draw), and ONE of them is chosen by the\nsmallest sha1('lw-exp-v1|' + the assignment string). Nothing here depends on future data.",
+ "n_candidates": 23,
+ "n_pairs": 9,
+ "balanced_assignments": 94,
+ "past_gain_diff_treated_minus_control": -0.224,
+ "sft_diff": -0.095,
+ "rms_pair_gain_difference": 1.839,
+ "pairs": [
+  {
+   "treated": "tum",
+   "control": "bem",
+   "mode": "qe",
+   "sft": [
+    25.8,
+    25.2
+   ],
+   "gain_sft_to_rl_2c": [
+    7.2,
+    7.7
+   ]
+  },
+  {
+   "treated": "wol",
+   "control": "lua",
+   "mode": "qe",
+   "sft": [
+    26.0,
+    26.9
+   ],
+   "gain_sft_to_rl_2c": [
+    3.1,
+    6.4
+   ]
+  },
+  {
+   "treated": "run",
+   "control": "ewe",
+   "mode": "qe",
+   "sft": [
+    27.8,
+    28.2
+   ],
+   "gain_sft_to_rl_2c": [
+    4.4,
+    2.7
+   ]
+  },
+  {
+   "treated": "twi",
+   "control": "ssw",
+   "mode": "qe",
+   "sft": [
+    34.2,
+    33.6
+   ],
+   "gain_sft_to_rl_2c": [
+    1.4,
+    3.6
+   ]
+  },
+  {
+   "treated": "kin",
+   "control": "lin",
+   "mode": "qe",
+   "sft": [
+    34.3,
+    34.3
+   ],
+   "gain_sft_to_rl_2c": [
+    7.2,
+    5.1
+   ]
+  },
+  {
+   "treated": "sna",
+   "control": "ibo",
+   "mode": "qe",
+   "sft": [
+    35.2,
+    38.9
+   ],
+   "gain_sft_to_rl_2c": [
+    1.9,
+    3.6
+   ]
+  },
+  {
+   "treated": "nya",
+   "control": "mlg",
+   "mode": "qe",
+   "sft": [
+    39.3,
+    38.9
+   ],
+   "gain_sft_to_rl_2c": [
+    3.0,
+    1.7
+   ]
+  },
+  {
+   "treated": "tso",
+   "control": "som",
+   "mode": "qe",
+   "sft": [
+    42.0,
+    40.1
+   ],
+   "gain_sft_to_rl_2c": [
+    2.9,
+    1.6
+   ]
+  },
+  {
+   "treated": "sot",
+   "control": "xho",
+   "mode": "qe",
+   "sft": [
+    43.5,
+    42.9
+   ],
+   "gain_sft_to_rl_2c": [
+    0.7,
+    1.4
+   ]
+  }
+ ]
+}

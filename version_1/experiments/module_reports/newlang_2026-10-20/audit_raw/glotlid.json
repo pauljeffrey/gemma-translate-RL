@@ -1,0 +1,104 @@
+{
+ "fuv": [
+  "fub_Latn",
+  "fuv_Latn",
+  "fuh_Latn",
+  "fuf_Latn",
+  "fuq_Latn",
+  "ffm_Latn",
+  "fue_Latn",
+  "fuv_Arab"
+ ],
+ "gaa": [
+  "gaa_Latn"
+ ],
+ "knc": [
+  "knc_Latn",
+  "knc_Arab",
+  "kby_Latn"
+ ],
+ "tzm": [
+  "taq_Latn",
+  "shi_Latn",
+  "ttq_Latn",
+  "taq_Tfng",
+  "ttq_Tfng",
+  "zgh_Tfng",
+  "tzm_Tfng",
+  "thv_Latn"
+ ],
+ "dik": [
+  "dik_Latn",
+  "dks_Latn",
+  "dip_Latn"
+ ],
+ "cjk": [
+  "cjk_Latn"
+ ],
+ "taq": [
+  "taq_Latn",
+  "ttq_Latn",
+  "taq_Tfng",
+  "ttq_Tfng",
+  "thv_Latn"
+ ],
+ "nqo": [
+  "nqo_Nkoo"
+ ],
+ "nde": [
+  "nde_Latn"
+ ],
+ "fat": [
+  "fat_Latn"
+ ],
+ "men": [
+  "men_Latn"
+ ],
+ "luy": [
+  "xog_Latn",
+  "lsm_Latn",
+  "lwg_Latn"
+ ],
+ "mfe": [
+  "mfe_Latn"
+ ],
+ "dje": [
+  "dje_Latn"
+ ],
+ "sus": [
+  "sus_Arab",
+  "sus_Latn"
+ ],
+ "bci": [
+  "bci_Latn"
+ ],
+ "tig": [
+  "tig_Ethi"
+ ],
+ "alz": [
+  "alz_Latn"
+ ],
+ "dov": [
+  "toi_Latn"
+ ],
+ "mnk": [
+  "mnk_Latn",
+  "msc_Latn"
+ ],
+ "snk": [],
+ "srr": [
+  "srr_Latn"
+ ],
+ "mas": [
+  "kpe_Latn",
+  "mas_Latn"
+ ],
+ "kln": [
+  "niq_Latn",
+  "enb_Latn",
+  "sgc_Latn"
+ ],
+ "mer": [
+  "mer_Latn"
+ ]
+}

@@ -1,0 +1,118 @@
+iso,language,catalog_pretrain_datasets,glotlid_labels,fineweb2_docs,finetranslations_docs
+aar,Afar,77,,0,0
+ach,Acholi,27,ach_Latn,2522,0
+aeb,Tunisian Arabic,38,aeb_Arab,19979,19092
+afr,Afrikaans,261,afr_Latn,1992040,1982363
+amh,Amharic,411,amh_Ethi,428373,421933
+ann,Obolo,9,ann_Latn,0,0
+apd,Sudanese Arabic,10,,0,0
+ara,Arabic (general; DEFERRED),5,,0,0
+ary,Moroccan Arabic (Darija),115,ary_Arab,2365405,2318236
+arz,Egyptian Arabic,110,arz_Arab,853290,832762
+bam,Bambara,175,bam_Latn,2573,2570
+bas,Basaa,11,bas_Latn,371,371
+bba,Baatonum,10,bba_Latn,2753,0
+bem,Bemba,69,bem_Latn,1787,0
+bin,Edo (Bini),11,bin_Latn,802,0
+dag,Dagbani,81,dag_Latn,1035,0
+dga,Dagaare,33,dga_Latn,219,0
+dua,Duala,8,dua_Latn,317,0
+dyu,Dyula,65,dyu_Latn,2752,0
+ebu,Embu,6,,0,0
+efi,Efik,17,efi_Latn,4579,0
+ewe,Ewe,169,ewe_Latn,6973,0
+ewo,Ewondo,9,ewo_Latn,211,209
+fon,Fon,127,fon_Latn,1639,0
+fub,Adamawa Fulfulde,5,fub_Latn,0,0
+fuh,Western Niger Fulfulde,14,fuh_Latn,285,0
+fui,Bagirmi Fulfulde,4,,0,0
+fuq,Central-Eastern Niger Fulfulde,7,fuq_Latn,0,0
+gaz,West Central Oromo,20,gaz_Latn,47883,47852
+gbr,Gbagyi,8,gbr_Latn,0,0
+gpe,Ghanaian Pidgin,33,,0,0
+gur,Frafra,43,gur_Latn,1690,0
+hae,Eastern Oromo,5,hae_Latn,130,129
+hau,Hausa,404,hau_Latn,570004,568441
+her,Herero,17,her_Latn,1268,1267
+ibb,Ibibio,11,,0,0
+ibo,Igbo,297,ibo_Latn,98785,98350
+idu,Idoma,13,idu_Latn,141,0
+igl,Igala,7,,0,0
+ijs,Southeast Ijo,2,,0,0
+ish,Esan,9,ish_Latn,45,0
+iso,Isoko,14,iso_Latn,2186,0
+kab,Kabyle,99,kab_Latn,11541,11523
+kam,Kamba,64,kam_Latn,1438,1438
+kau,Kanuri,26,,0,0
+kbp,Kabiyè,53,kbp_Latn,1308,0
+kby,Manga Kanuri,4,kby_Latn,0,0
+kcg,Tyap,34,kcg_Latn,178,0
+kik,Kikuyu,136,kik_Latn,7292,7290
+kin,Kinyarwanda,210,kin_Latn,326120,325577
+kon,Kongo,97,,0,0
+kqn,Kaonde,9,kqn_Latn,505,0
+kri,Krio,24,kri_Latn,130,0
+ktu,Kituba,10,ktu_Latn,78,0
+kua,Kuanyama,15,kua_Latn,4006,4004
+lgg,Lugbara,10,lgg_Latn,460,0
+lin,Lingala,185,lin_Latn,21473,21443
+loz,Lozi,11,loz_Latn,3699,0
+lua,Luba-Kasai,17,lua_Latn,2332,0
+lub,Luba-Katanga,6,lub_Latn,2891,0
+lug,Luganda,173,lug_Latn,35503,35368
+lun,Lunda,9,lun_Latn,0,0
+luo,Luo,71,luo_Latn,2698,2692
+mfn,Mbembe (Cross River),5,,0,0
+mgh,Makhuwa-Meetto,11,mgh_Latn,186,0
+mlg,Malagasy,123,,0,0
+mos,Mossi,59,mos_Latn,2240,0
+myx,Masaaba,8,myx_Latn,0,77
+naq,Nama,8,naq_Latn,542,542
+nbl,South Ndebele,57,nbl_Latn,2519,0
+ndc,Ndau,10,ndc_Latn,764,0
+ndo,Ndonga,7,ndo_Latn,8837,8836
+nso,Northern Sotho (Sepedi),104,nso_Latn,6444,0
+nup,Nupe,12,,0,0
+nus,Nuer,66,nus_Latn,130,130
+nya,Chichewa,149,nya_Latn,103045,102427
+nyn,Nyankore,34,nyn_Latn,1744,1743
+ogo,Khana,9,ogo_Latn,258,0
+oke,Okpe,4,oke_Latn,0,0
+orm,Oromo,157,,0,0
+pcm,Nigerian Pidgin,140,pcm_Latn,1209,1160
+run,Kirundi,73,run_Latn,74530,74480
+sag,Sango,57,sag_Latn,4428,0
+seh,Sena,12,seh_Latn,955,0
+shi,Tachelhit,48,shi_Latn,817,0
+sid,Sidama,32,sid_Latn,1487,1482
+sna,Shona,189,sna_Latn,84381,83574
+som,Somali,235,som_Latn,1070384,1066618
+sot,Sesotho,127,sot_Latn,92492,92146
+ssw,Swazi,96,ssw_Latn,2115,2109
+ssy,Saho,2,,0,0
+swa,Swahili (macro),60,,0,0
+swc,Congo Swahili,9,swc_Latn,5957,0
+swh,Swahili,443,swh_Latn,1206300,1198114
+tem,Temne,14,tem_Latn,0,0
+teo,Teso,10,teo_Latn,787,0
+tir,Tigrinya,160,tir_Ethi,72033,72009
+tiv,Tiv,15,tiv_Latn,2139,0
+toi,Tonga (Zambia),10,toi_Latn,1649,0
+tsc,Tswa,8,tsc_Latn,391,0
+tsn,Setswana,131,tsn_Latn,6129,0
+tso,Tsonga,140,tso_Latn,6906,0
+tum,Tumbuka,90,tum_Latn,516,0
+twi,Twi,387,twi_Latn,6023,0
+umb,Umbundu,53,umb_Latn,1315,0
+urh,Urhobo,13,urh_Latn,768,0
+ven,Venda,87,ven_Latn,3836,0
+vmw,Makhuwa,15,vmw_Latn,956,0
+wal,Wolaytta,36,wal_Ethi wal_Latn,2590,0
+wes,Cameroon Pidgin,10,wes_Latn,0,4
+wof,Gambian Wolof,4,,0,0
+wol,Wolof,231,wol_Latn,6621,6524
+xho,Xhosa,226,xho_Latn,254164,252788
+xsm,Kasem,11,xsm_Latn,1005,0
+yao,Yao,8,yao_Latn,251,0
+yor,Yoruba,387,yor_Latn,79999,138441
+zul,Zulu,241,zul_Latn,127335,126666

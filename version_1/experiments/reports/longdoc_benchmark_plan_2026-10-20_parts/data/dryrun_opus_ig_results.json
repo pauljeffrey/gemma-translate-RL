@@ -1,0 +1,51 @@
+{
+ "system": "Helsinki-NLP/opus-mt-en-ig",
+ "hf_id": "Helsinki-NLP/opus-mt-en-ig",
+ "weights_licence": "unknown",
+ "licence_class": "unknown",
+ "refset": "flores_dev",
+ "limit": 40,
+ "allow_proxy": false,
+ "created": "2026-10-20 06:30:52",
+ "per_language": {
+  "ibo": {
+   "iso": "ibo",
+   "status": "ok",
+   "code": "ig",
+   "proxy": false,
+   "n": 40,
+   "chrf": {
+    "value": 30.179715116878075,
+    "lo": 26.67557625959065,
+    "hi": 33.45439579627856,
+    "se": 1.7958878690482316
+   },
+   "bleu": {
+    "value": 6.133081990732198,
+    "lo": 3.418155622016814,
+    "hi": 8.966500704851873,
+    "se": 1.3471133220909426
+   },
+   "africomet": {
+    "value": 0.5260124702006579,
+    "n": 40,
+    "lo": 0.47691247388720515,
+    "hi": 0.5695191454142332
+   },
+   "africomet_qe": {
+    "value": 0.4837492618709803,
+    "n": 40,
+    "lo": 0.44298235066235064,
+    "hi": 0.5309251118451357
+   },
+   "rate_empty": 0.0,
+   "rate_copy": 0.0,
+   "rate_loop": 0.0,
+   "rate_short": 0.0,
+   "rate_long": 0.0,
+   "length_ratio": 1.0241536705971852,
+   "seconds": 13.18,
+   "sentences_per_second": 3.03
+  }
+ }
+}

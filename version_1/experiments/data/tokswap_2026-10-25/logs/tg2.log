@@ -1,0 +1,3 @@
+fon_N1000 [fon] sets=464 sentences: plain=362337 (diff 0), special=18634 (diff 14998), freed_script=117084 (diff 2034); vocab-string test: 254474 strings, plain diffs 0
+fon_N3000 [fon] sets=464 sentences: plain=362337 (diff 0), special=18634 (diff 15363), freed_script=117084 (diff 5176); vocab-string test: 252474 strings, plain diffs 0
+fon_N5000 [fon] sets=464 sentences: plain=362337 (diff 0), special=18634 (diff 15520), freed_script=117084 (diff 7244); vocab-string test: 250474 strings, plain diffs 0

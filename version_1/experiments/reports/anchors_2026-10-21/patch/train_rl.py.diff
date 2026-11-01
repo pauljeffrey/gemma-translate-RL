@@ -1,0 +1,178 @@
+--- a/gemma_mt/rl/train_rl.py
++++ b/gemma_mt/rl/train_rl.py
+@@ -35,6 +35,7 @@
+ from gemma_mt.languages import canonical_iso
+ from gemma_mt.rl.data import LENGTH_BINS, MIXED, PromptSchedule, RLPrompts, load_rl_prompts
+ from gemma_mt.rl.reward import RewardConfig, Sample, TranslationReward
++from gemma_mt.rl.run_controls import RunControls
+ from gemma_mt.rl.sampling import Rollout, assemble_batch, generate_completions, merge_greedy_into_groups
+ from gemma_mt.utils import (MetricsLogger, dataclass_from_dict, get_rng_state, load_yaml, parse_overrides,
+                             set_rng_state, set_seed)
+@@ -156,6 +157,9 @@
+     # D-52: monitor-only dev sets next to the selection benchmark (logged as bench_aux/<name>/chrf_macro|bleu_macro|finished_rate|chrf/<iso>, never used for selection or pushes).
+     # Each entry: {name, path, per_language (default 40), max_new_tokens (default benchmark_max_new_tokens), batch_size (default benchmark_batch_size)}; same cadence as the benchmark.
+     benchmark_aux: List[Dict[str, Any]] = field(default_factory=list)
++    # D-56: run controls read from files in out_dir at every step (rl/run_controls.py): WINDDOWN ("50": the learning rate decays linearly to 0 over the next N steps, then the run ends normally:
++    # last/ saved, latest + best pushed, summary.json) and LR_SCALE (a float multiplier on the learning rate). Nothing happens without those files. aux entries may carry `every: N` (steps).
++    run_controls: bool = True
+     # Hub: push the BEST checkpoint (by held-out eval reward) as soon as it is found; nothing else is uploaded
+     hub_repo_id: Optional[str] = None               # None = never push
+     hub_branch: Optional[str] = None                # e.g. "rl" to keep the SFT model on main; None = main of hub_repo_id
+@@ -250,6 +254,10 @@
+ 
+ def build_scorer(spec: Dict[str, Any], device: Optional[str] = None):
+     t = spec.get("type", "comet")
++    if spec.get("ensemble_model_id"):          # D-55: QE ensemble (reward.qe_ensemble): two checkpoints, one worker process (rl/qe_ensemble.py)
++        from gemma_mt.rl.qe_ensemble import build_pair_scorer
++
++        return build_pair_scorer(spec, device)
+     if t == "fake":
+         from gemma_mt.rl.comet import FakeScorer
+ 
+@@ -405,6 +413,7 @@
+         ref = [rows[i]["reference"] for i in idx]
+         c, b = M.chrf_pp(h, ref), M.bleu(h, ref)
+         res[f"bench/chrf/{iso}"] = c
++        res[f"bench/finished/{iso}"] = sum(bool(outs[i].get("finished", True)) for i in idx) / max(len(idx), 1)
+         chrf.append(c)
+         bleu.append(b)
+     res["bench/chrf_macro"] = sum(chrf) / max(len(chrf), 1)
+@@ -414,13 +423,23 @@
+     return res
+ 
+ 
+-def evaluate_aux_benchmarks(aux: List[Dict[str, Any]], policy, tokenizer, cfg: RLConfig, stop_ids, pad_id, device, autocast, sampler=None) -> Dict[str, float]:
+-    """D-52: the monitor-only dev sets (`cfg.benchmark_aux`): greedy, macro chrF++ / BLEU per set, keys `bench_aux/<name>/...`. `aux` = [{name, rows, max_new_tokens, batch_size}]."""
++def evaluate_aux_benchmarks(aux: List[Dict[str, Any]], policy, tokenizer, cfg: RLConfig, stop_ids, pad_id, device, autocast, sampler=None, step: Optional[int] = None,
++                            last_step: Optional[int] = None) -> Dict[str, float]:
++    """D-52: the monitor-only dev sets (`cfg.benchmark_aux`): greedy, macro chrF++ / BLEU per set, keys `bench_aux/<name>/...` (+ `finished/<iso>`, `seconds`). `aux` = [{name, rows,
++    max_new_tokens, batch_size, every}]. D-56: an entry with `every: N` is evaluated only when `step` is a multiple of N or the last step (a costly set - whole papers - can run less often);
++    `step=None` evaluates everything."""
+     res: Dict[str, float] = {}
++    t_all = time.time()
+     for a in aux:
++        ev = int(a.get("every") or 0)
++        if step is not None and ev > 0 and step % ev != 0 and step != last_step:
++            continue
++        t0 = time.time()
+         sub = dataclasses.replace(cfg, benchmark_max_new_tokens=a["max_new_tokens"], benchmark_batch_size=a["batch_size"])
+         r = evaluate_benchmark(policy, tokenizer, a["rows"], sub, stop_ids, pad_id, device, autocast, sampler=sampler)
+         res.update({k.replace("bench/", f"bench_aux/{a['name']}/", 1): v for k, v in r.items()})
++        res[f"bench_aux/{a['name']}/seconds"] = time.time() - t0
++    res["bench_aux/seconds_total"] = time.time() - t_all
+     return res
+ 
+ 
+@@ -633,7 +652,7 @@
+         if not rows_a:
+             raise ValueError(f"benchmark_aux {a['name']!r}: no dev rows for the RL languages in {a['path']}")
+         aux_sets.append({"name": str(a["name"]), "rows": rows_a, "max_new_tokens": int(a.get("max_new_tokens", cfg.benchmark_max_new_tokens)),
+-                         "batch_size": int(a.get("batch_size", cfg.benchmark_batch_size))})
++                         "batch_size": int(a.get("batch_size", cfg.benchmark_batch_size)), "every": int(a.get("every", 0) or 0)})
+     if aux_sets and (not resumed or reset_selection):
+         sync_policy()
+         a0 = evaluate_aux_benchmarks(aux_sets, policy, tokenizer, cfg, stop.ids, pad_id, device, autocast(), sampler=vsampler)
+@@ -646,9 +665,17 @@
+     summary: Dict[str, Any] = {"steps": step}
+     kl_hist: List[float] = []
+     lr_scale, last_cut = 1.0, -10 ** 9
+-    while step < cfg.steps:
++    controls = RunControls(cfg.out_dir, cfg.steps) if cfg.run_controls else None      # D-56: WINDDOWN / LR_SCALE files in out_dir
++    end_step = cfg.steps
++    ctl = None
++    while step < end_step:
+         t0 = time.time()
+-        lr = cfg.learning_rate * lr_scale * min(1.0, (step + 1) / max(cfg.warmup_steps, 1))
++        if controls is not None:
++            ctl = controls.update(step)
++            end_step = ctl.end_step
++            if step >= end_step:                       # a wind-down that was already complete when this (restarted) run began
++                break
++        lr = cfg.learning_rate * lr_scale * min(1.0, (step + 1) / max(cfg.warmup_steps, 1)) * (ctl.lr_mult if ctl is not None else 1.0)
+         for g in optimizer.param_groups:
+             g["lr"] = lr
+         step_bin = schedule.bin_of_step(step) if cfg.length_bins else None
+@@ -774,6 +801,10 @@
+             rec.update({"sampler_logp_gap_mean": sampler_gap_mean, "t_sync": t_sync, "t_gen": t_gen,
+                         "gen_tokens_per_s": vsampler.last_generate_tokens / max(t_gen, 1e-9)})
+         rec.update({f"reward/{k}": v for k, v in out.stats.items()})
++        if ctl is not None and (ctl.file_scale != 1.0 or ctl.winddown):
++            rec["lr_file_scale"] = ctl.file_scale
++            rec["winddown_factor"] = ctl.winddown_factor
++            rec["winddown_steps_left"] = float(max(end_step - step, 0))
+         if cfg.kl_guard_threshold > 0:
+             kl_hist = (kl_hist + [rec["kl"]])[-max(cfg.kl_guard_window, 1):]
+             kl_med = sorted(kl_hist)[len(kl_hist) // 2]        # median: a single-token outlier step (2c steps 607, 747) must not cut the learning rate
+@@ -789,7 +820,7 @@
+             rec["archive/hook_ms"] = 1000.0 * t_archive
+         if step % cfg.log_every == 0 or step == 1:
+             logger.log(step, rec)
+-            print(f"[gemma_mt] rl step {step}/{cfg.steps} reward {rec['reward']:.3f} kl {rec['kl']:.4f} "
++            print(f"[gemma_mt] rl step {step}/{end_step} reward {rec['reward']:.3f} kl {rec['kl']:.4f} "
+                   f"fin {rec['finished_rate']:.2f} len {rec['completion_len']:.1f} flat {flat_frac:.2f} "
+                   f"gnorm {gnorm:.2f}" + (f" archive {int(rec['archive/size'])} (+{int(rec['archive/inserted'])} ~{int(rec['archive/improved'])} drop {int(rec['archive/dropped_queue'])})" if archive is not None else ""), flush=True)
+             if step == 1 or step % max(cfg.log_every, 1) == 0:
+@@ -802,16 +833,16 @@
+                       + (f" mode={out.content_mode[j]}" if out.content_mode else ""),
+                       flush=True)
+ 
+-        if cfg.eval_every and (step % cfg.eval_every == 0 or step == cfg.steps) and len(eval_prompts):
++        if cfg.eval_every and (step % cfg.eval_every == 0 or step == end_step) and len(eval_prompts):
+             sync_policy()
+             ev = evaluate_policy(policy, tokenizer, reward, eval_prompts, cfg, stop.ids, pad_id, device, autocast(), sampler=vsampler)
+             bench = None
+             b_every = cfg.benchmark_eval_every or cfg.eval_every
+-            if bench_rows and (step % b_every == 0 or step == cfg.steps):
++            if bench_rows and (step % b_every == 0 or step == end_step):
+                 bench = evaluate_benchmark(policy, tokenizer, bench_rows, cfg, stop.ids, pad_id, device, autocast(), sampler=vsampler)
+                 ev.update(bench)
+                 if aux_sets:
+-                    ev.update(evaluate_aux_benchmarks(aux_sets, policy, tokenizer, cfg, stop.ids, pad_id, device, autocast(), sampler=vsampler))
++                    ev.update(evaluate_aux_benchmarks(aux_sets, policy, tokenizer, cfg, stop.ids, pad_id, device, autocast(), sampler=vsampler, step=step, last_step=end_step))
+             if vsampler is not None:
+                 vsampler.sleep()
+             logger.log(step, ev)
+@@ -840,12 +871,12 @@
+                         state.update({k: v for k, v in bench.items()})
+                     pusher.push(stage_dir, step, state, as_best=False, cleanup=cfg.keep_single_checkpoint, block=False)
+             summary["last_eval"] = ev
+-        if latest_pusher is not None and latest_pusher.enabled and (step % cfg.hub_latest_every == 0 or step == cfg.steps):
++        if latest_pusher is not None and latest_pusher.enabled and (step % cfg.hub_latest_every == 0 or step == end_step):
+             latest_dir = os.path.join(cfg.out_dir, "hub_stage_latest")
+             save_model(policy, tokenizer, latest_dir, stop_ids=stop.ids)
+             latest_pusher.push(latest_dir, step, {"role": "latest", "reward": rec.get("reward"), "kl": rec.get("kl"), "best_selection_value": best_select,
+                                                   "selected_by": cfg.select_by, "config": dataclasses.asdict(cfg)},
+-                               as_best=False, cleanup=True, block=(step == cfg.steps))
++                               as_best=False, cleanup=True, block=(step == end_step))
+         if step in stage_ends:
+             sp = CheckpointPusher(cfg.hub_repo_id, private=cfg.hub_private, stage="rl", branch=f"stage-{stage_ends[step]}", tag_prefix=None, squash=cfg.hub_squash)
+             if sp.enabled:
+@@ -855,7 +886,7 @@
+                                            "best_selection_value": best_select, "selected_by": cfg.select_by, "config": dataclasses.asdict(cfg)},
+                         as_best=False, cleanup=True, block=False)
+                 stage_pushers.append(sp)
+-        if (cfg.save_every and step % cfg.save_every == 0) or step == cfg.steps:
++        if (cfg.save_every and step % cfg.save_every == 0) or step == end_step:
+             save_last()
+ 
+     pusher.wait()
+@@ -867,6 +898,10 @@
+         save_model(policy, tokenizer, os.path.join(cfg.out_dir, "final"), stop_ids=stop.ids)
+     summary.update({"steps": step, "best_eval_reward": best_eval, "seconds": round(time.time() - t_start, 1),
+                     "reward_range": [lo, hi]})
++    if controls is not None:
++        wd = controls.finish(step)
++        if wd is not None:
++            summary["winddown"] = wd
+     if archive is not None:
+         summary["archive"] = archive.close()
+     with open(os.path.join(cfg.out_dir, "summary.json"), "w") as f:
+@@ -927,7 +962,7 @@
+ 
+         cfg.sampler, cfg.vllm_check_every = "vllm", 1
+         vs = VLLMSampler(HFBackedEngine(cfg.model_name), seed=cfg.seed)
+-    summary = train_rl(cfg, tokenizer=tok, scorer=FakeScorer(), vllm_sampler=vs)
++    summary = train_rl(cfg, tokenizer=tok, scorer=build_scorer(cfg.scorer) if cfg.scorer.get("ensemble_model_id") else FakeScorer(), vllm_sampler=vs)
+     if vs is not None:
+         summary["engine_pushes"], summary["engine_generate_calls"] = vs.engine.pushes, vs.engine.generate_calls
+     summary["workdir"] = work

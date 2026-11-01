@@ -1,0 +1,205 @@
+{
+ "efi": {
+  "groups_used": 149,
+  "within_prompt_mean": 0.3801492149312963,
+  "within_prompt_median": 0.4523809523809524,
+  "within_prompt_se": 0.03310345490172665,
+  "share_positive": 0.8120805369127517,
+  "centered": 0.4192551370681004,
+  "overall": 0.6110105591769439,
+  "samples": 1197,
+  "iso": "efi",
+  "model": "/workspace/sft_build/efi_calib/model_rl2c_latest",
+  "sources": 150,
+  "group": 8,
+  "status_counts": {
+   "bad_prefix": 1,
+   "degenerate": 1,
+   "ok": 1197,
+   "wrong_language": 1
+  },
+  "english_seen_share": 0.86
+ },
+ "ach": {
+  "groups_used": 150,
+  "within_prompt_mean": 0.32983362019506596,
+  "within_prompt_median": 0.35714285714285715,
+  "within_prompt_se": 0.03034713425666757,
+  "share_positive": 0.82,
+  "centered": 0.3750298355821517,
+  "overall": 0.643564033522663,
+  "samples": 1198,
+  "status_counts": {
+   "bad_prefix": 2,
+   "ok": 1198
+  }
+ },
+ "nyn": {
+  "groups_used": 150,
+  "within_prompt_mean": 0.38320297333486314,
+  "within_prompt_median": 0.4642857142857143,
+  "within_prompt_se": 0.031516047988730686,
+  "share_positive": 0.8066666666666666,
+  "centered": 0.425658738235834,
+  "overall": 0.6563608225605186,
+  "samples": 1176,
+  "status_counts": {
+   "ok": 1176,
+   "wrong_language": 24
+  }
+ },
+ "ibb": {
+  "groups_used": 150,
+  "within_prompt_mean": 0.26575827117995793,
+  "within_prompt_median": 0.34523809523809523,
+  "within_prompt_se": 0.0312030504973051,
+  "share_positive": 0.74,
+  "centered": 0.30841754821016365,
+  "overall": 0.41175967738669034,
+  "samples": 1199,
+  "status_counts": {
+   "bad_prefix": 1,
+   "ok": 1199
+  }
+ },
+ "qe_vs_consensus_efi": {
+  "consensus": {
+   "within_prompt_mean": 0.3801492149312963,
+   "within_prompt_se": 0.03310345490172665,
+   "groups": 149,
+   "centered": 0.4192551370681004
+  },
+  "qe": {
+   "within_prompt_mean": 0.22009550287656265,
+   "within_prompt_se": 0.034398032866866796,
+   "groups": 149,
+   "centered": 0.22094457493314282
+  },
+  "blend50": {
+   "within_prompt_mean": 0.38319122063784544,
+   "within_prompt_se": 0.03090153530364324,
+   "groups": 149,
+   "centered": 0.40904811509383066
+  },
+  "qe_overall": 0.27568260535957967,
+  "qe_vs_consensus_within_prompt": 0.21297993099048607
+ },
+ "greedy_efi_rl2c": {
+  "iso": "efi",
+  "model": "/workspace/sft_build/efi_calib/model_rl2c_latest",
+  "n": 150,
+  "mean_chrf": 28.07278137994804,
+  "status_counts": {
+   "degenerate": 1,
+   "ok": 149
+  }
+ },
+ "greedy_efi_sft": {
+  "iso": "efi",
+  "model": "/workspace/sft_build/hf/hub/models--<HF_ORG>--gemma3-270m-translate/snapshots/376a94f2314da6445878962fe22d59900ee2d2b9",
+  "n": 150,
+  "mean_chrf": 19.720745048269805,
+  "status_counts": {
+   "degenerate": 5,
+   "no_end_of_turn": 11,
+   "ok": 133,
+   "wrong_language": 1
+  }
+ },
+ "split_efi": {
+  "iso": "efi",
+  "spec": {
+   "smol_sent": "efi",
+   "ibom_mt": "efi",
+   "smol_doc": "efi"
+  },
+  "frac": 0.5,
+  "salt": "calib-split-v1",
+  "pairs": 3481,
+  "calibration": 1791,
+  "holdout": 1690,
+  "calibration_by_source": {
+   "smol_sent": 432,
+   "ibom_mt": 545,
+   "smol_doc": 814
+  },
+  "calibration_english_seen": "1533/1791",
+  "calibration_pair_seen": "0/1791",
+  "holdout_by_source": {
+   "smol_sent": 431,
+   "ibom_mt": 467,
+   "smol_doc": 792
+  },
+  "holdout_english_seen": "1467/1690",
+  "holdout_pair_seen": "0/1690"
+ },
+ "split_ach": {
+  "iso": "ach",
+  "spec": {
+   "smol_sent": "ach",
+   "smol_doc": "ach",
+   "salt": "ach"
+  },
+  "frac": 0.5,
+  "salt": "calib-split-v1",
+  "pairs": 2969,
+  "calibration": 1509,
+  "holdout": 1460,
+  "calibration_by_source": {
+   "smol_sent": 432,
+   "smol_doc": 814,
+   "salt": 263
+  },
+  "calibration_english_seen": "1242/1509",
+  "calibration_pair_seen": "0/1509",
+  "holdout_by_source": {
+   "smol_sent": 431,
+   "smol_doc": 792,
+   "salt": 237
+  },
+  "holdout_english_seen": "1216/1460",
+  "holdout_pair_seen": "0/1460"
+ },
+ "split_nyn": {
+  "iso": "nyn",
+  "spec": {
+   "salt": "nyn"
+  },
+  "frac": 0.5,
+  "salt": "calib-split-v1",
+  "pairs": 500,
+  "calibration": 263,
+  "holdout": 237,
+  "calibration_by_source": {
+   "salt": 263
+  },
+  "calibration_english_seen": "221/263",
+  "calibration_pair_seen": "0/263",
+  "holdout_by_source": {
+   "salt": 237
+  },
+  "holdout_english_seen": "201/237",
+  "holdout_pair_seen": "0/237"
+ },
+ "split_ibb": {
+  "iso": "ibb",
+  "spec": {
+   "ibom_mt": "ibb"
+  },
+  "frac": 0.5,
+  "salt": "calib-split-v1",
+  "pairs": 1012,
+  "calibration": 545,
+  "holdout": 467,
+  "calibration_by_source": {
+   "ibom_mt": 545
+  },
+  "calibration_english_seen": "512/545",
+  "calibration_pair_seen": "0/545",
+  "holdout_by_source": {
+   "ibom_mt": 467
+  },
+  "holdout_english_seen": "452/467",
+  "holdout_pair_seen": "0/467"
+ }
+}

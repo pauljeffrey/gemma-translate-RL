@@ -1,0 +1,7 @@
+split,system,n_papers,mean_ratio_macro_language,median_ratio,share_ratio_below_0.8,share_ratio_above_1.25,finished_rate
+dev,RL-final (a4 pipeline),150,1.392,0.894,0.387,0.333,0.747
+dev,A2W alpha 0.7 (r7 pipeline),150,1.095,0.881,0.367,0.180,0.920
+dev,final2 step 401 (a4 pipeline),150,0.895,0.837,0.440,0.087,0.980
+test,RL-final (a4 pipeline),168,1.385,0.920,0.304,0.369,0.732
+test,A2W alpha 0.7 (r7 pipeline),168,0.974,0.841,0.423,0.131,0.940
+test,final2 step 401 (a4 pipeline),168,0.877,0.837,0.452,0.083,0.982

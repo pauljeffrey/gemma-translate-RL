@@ -1,0 +1,6 @@
+read-only listing 2026-10-23 of private repo <HF_ORG_LEGACY>/gemma-science-translate
+branches [('final2/step401', '8bb1a029'), ('latest', '8bb1a029'), ('main', '7f0a6917')]
+tags [('final2-step401', 'f279f5d5')]
+final2-step401 commit 8bb1a029 model.safetensors sha256 1bd2e310f146e233aac0c0be339329321f30823dfe05d95c39f561cfbd6589c5
+latest commit 8bb1a029 model.safetensors sha256 1bd2e310f146e233aac0c0be339329321f30823dfe05d95c39f561cfbd6589c5
+final2/step401 commit 8bb1a029 model.safetensors sha256 1bd2e310f146e233aac0c0be339329321f30823dfe05d95c39f561cfbd6589c5

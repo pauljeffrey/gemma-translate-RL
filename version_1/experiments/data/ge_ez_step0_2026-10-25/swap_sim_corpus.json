@@ -1,0 +1,17 @@
+{
+ "amh": {
+  "lines": 213392,
+  "chars": 25213557,
+  "devtest_sentences_found_verbatim_in_training_text": 0
+ },
+ "tir": {
+  "lines": 167952,
+  "chars": 25168276,
+  "devtest_sentences_found_verbatim_in_training_text": 0
+ },
+ "fon": {
+  "lines": 38336,
+  "chars": 6224291,
+  "devtest_sentences_found_verbatim_in_training_text": 0
+ }
+}

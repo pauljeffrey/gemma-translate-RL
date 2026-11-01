@@ -1,0 +1,658 @@
+{
+ "funnel": {
+  "overall": {
+   "pool": 4926,
+   "not_in_hard_domains": 3560
+  },
+  "by_domain": {
+   "law": {
+    "pool": 2463,
+    "drop_too_short": 103,
+    "drop_contam_weak": 593,
+    "candidates": 1045,
+    "candidates_bin512": 900,
+    "candidates_bin1024": 761,
+    "drop_contam_contaminated": 653,
+    "candidates_bin2048": 510,
+    "drop_no_bin_fits": 34,
+    "drop_no_acceptable_paragraph": 1,
+    "drop_sentence_length": 11,
+    "drop_few_sentences": 9,
+    "drop_ocr_single_letters": 1,
+    "drop_long_sentences": 5,
+    "candidates_bin4096": 240,
+    "drop_fragments": 6,
+    "drop_exact_duplicate": 2
+   },
+   "math_science": {
+    "pool": 988,
+    "drop_contam_contaminated": 129,
+    "candidates": 685,
+    "candidates_bin512": 659,
+    "drop_no_bin_fits": 15,
+    "drop_too_short": 62,
+    "candidates_bin1024": 363,
+    "drop_contam_weak": 80,
+    "candidates_bin2048": 134,
+    "candidates_bin4096": 27,
+    "drop_in_core_500": 15,
+    "drop_url_or_email": 1,
+    "drop_ocr_single_letters": 1
+   },
+   "medicine": {
+    "pool": 1475,
+    "drop_contam_weak": 258,
+    "candidates": 905,
+    "candidates_bin512": 887,
+    "candidates_bin1024": 606,
+    "drop_contam_contaminated": 220,
+    "candidates_bin2048": 306,
+    "drop_too_short": 74,
+    "drop_no_bin_fits": 15,
+    "drop_fragments": 1,
+    "candidates_bin4096": 83,
+    "drop_long_sentences": 2
+   }
+  },
+  "pool_by_domain_source": {
+   "law|billsum": 330,
+   "law|caselaw": 220,
+   "law|cp_usgpo": 563,
+   "law|cuad": 98,
+   "law|eurlex": 130,
+   "law|federalregister": 898,
+   "law|legislation": 224,
+   "math_science|arxiv": 220,
+   "math_science|cp_libretexts": 187,
+   "math_science|cp_pressbooks": 200,
+   "math_science|openstax": 320,
+   "math_science|wikipedia": 61,
+   "medicine|cp_libretexts": 103,
+   "medicine|cp_pressbooks": 202,
+   "medicine|europepmc": 70,
+   "medicine|fedhealth": 243,
+   "medicine|govuk": 154,
+   "medicine|openstax": 320,
+   "medicine|pmc": 263,
+   "medicine|who": 120
+  }
+ },
+ "candidate_cells": {
+  "law|1024": 761,
+  "law|2048": 510,
+  "law|4096": 240,
+  "law|512": 900,
+  "math_science|1024": 363,
+  "math_science|2048": 134,
+  "math_science|4096": 27,
+  "math_science|512": 659,
+  "medicine|1024": 606,
+  "medicine|2048": 306,
+  "medicine|4096": 83,
+  "medicine|512": 887
+ },
+ "candidates_by_domain_source": {
+  "law|billsum": 62,
+  "law|caselaw": 126,
+  "law|cp_usgpo": 153,
+  "law|cuad": 90,
+  "law|eurlex": 64,
+  "law|federalregister": 400,
+  "law|legislation": 150,
+  "math_science|arxiv": 203,
+  "math_science|cp_libretexts": 97,
+  "math_science|cp_pressbooks": 107,
+  "math_science|openstax": 219,
+  "math_science|wikipedia": 59,
+  "medicine|cp_libretexts": 46,
+  "medicine|cp_pressbooks": 93,
+  "medicine|europepmc": 68,
+  "medicine|fedhealth": 70,
+  "medicine|govuk": 71,
+  "medicine|openstax": 264,
+  "medicine|pmc": 220,
+  "medicine|who": 73
+ },
+ "quota": {
+  "law|512": 20,
+  "law|1024": 18,
+  "law|2048": 10,
+  "law|4096": 2,
+  "math_science|512": 20,
+  "math_science|1024": 18,
+  "math_science|2048": 10,
+  "math_science|4096": 2,
+  "medicine|512": 20,
+  "medicine|1024": 18,
+  "medicine|2048": 10,
+  "medicine|4096": 2
+ },
+ "shortfall_cells": {},
+ "unfilled_after_last_bin": {},
+ "source_cap": {
+  "law": 17,
+  "math_science": 17,
+  "medicine": 17
+ },
+ "set": {
+  "n": 150,
+  "tokens_total": 163924,
+  "tokens_mean": 1092.8266666666666,
+  "sentences_total": 5336,
+  "by_domain": {
+   "law": 50,
+   "math_science": 50,
+   "medicine": 50
+  },
+  "by_bin": {
+   "512": 60,
+   "1024": 54,
+   "2048": 30,
+   "4096": 6
+  },
+  "by_domain_bin": {
+   "law|512": 20,
+   "law|1024": 18,
+   "law|2048": 10,
+   "law|4096": 2,
+   "math_science|512": 20,
+   "math_science|1024": 18,
+   "math_science|2048": 10,
+   "math_science|4096": 2,
+   "medicine|512": 20,
+   "medicine|1024": 18,
+   "medicine|2048": 10,
+   "medicine|4096": 2
+  },
+  "by_domain_source": {
+   "law": {
+    "eurlex": 9,
+    "legislation": 8,
+    "caselaw": 8,
+    "cp_usgpo": 7,
+    "federalregister": 7,
+    "cuad": 6,
+    "billsum": 5
+   },
+   "math_science": {
+    "arxiv": 17,
+    "wikipedia": 16,
+    "cp_libretexts": 6,
+    "openstax": 6,
+    "cp_pressbooks": 5
+   },
+   "medicine": {
+    "europepmc": 8,
+    "pmc": 7,
+    "govuk": 7,
+    "cp_libretexts": 6,
+    "who": 6,
+    "openstax": 6,
+    "fedhealth": 5,
+    "cp_pressbooks": 5
+   }
+  },
+  "by_domain_licence_class": {
+   "law": {
+    "pd": 27,
+    "permissive": 23
+   },
+   "math_science": {
+    "pd": 2,
+    "permissive": 32,
+    "share_alike": 16
+   },
+   "medicine": {
+    "noncommercial": 14,
+    "pd": 5,
+    "permissive": 31
+   }
+  },
+  "by_licence": {
+   "CC-BY-4.0": 51,
+   "CC-BY-SA-4.0": 16,
+   "OGL-3.0": 15,
+   "Public domain (US federal government work)": 12,
+   "CC-BY-4.0 (EU reuse)": 9,
+   "Public Domain / CC0 (Caselaw Access Project)": 8,
+   "Public domain (US government work)": 7,
+   "CC-BY-4.0 (CUAD v1)": 6,
+   "CC-BY-NC-SA-3.0-IGO": 6,
+   "Public domain (US Congressional bill; dataset CC0-1.0)": 5,
+   "CC-BY (version not stated in the article)": 5,
+   "CC-BY-NC-ND-4.0": 3,
+   "CC-BY-NC-SA (version not stated; Europe PMC licence field)": 2,
+   "CC0-1.0": 1,
+   "Public domain": 1,
+   "CC-BY-NC-ND (version not stated; Europe PMC licence field)": 1,
+   "CC-BY-NC (version not stated; Europe PMC licence field)": 1,
+   "CC-BY-NC-SA-4.0": 1
+  },
+  "by_licence_class": {
+   "noncommercial": 14,
+   "pd": 34,
+   "permissive": 86,
+   "share_alike": 16
+  },
+  "hard_features_share": {
+   "law": 1.0,
+   "math_science": 0.58,
+   "medicine": 1.0
+  },
+  "docs_with_formulas": {
+   "law": 0,
+   "math_science": 30,
+   "medicine": 0
+  },
+  "composition_domain_bin_source": {
+   "law|1024": {
+    "cp_usgpo": 3,
+    "eurlex": 3,
+    "legislation": 3,
+    "federalregister": 3,
+    "cuad": 2,
+    "caselaw": 2,
+    "billsum": 2
+   },
+   "law|2048": {
+    "eurlex": 2,
+    "caselaw": 2,
+    "legislation": 2,
+    "federalregister": 1,
+    "cp_usgpo": 1,
+    "billsum": 1,
+    "cuad": 1
+   },
+   "law|4096": {
+    "caselaw": 1,
+    "eurlex": 1
+   },
+   "law|512": {
+    "cuad": 3,
+    "cp_usgpo": 3,
+    "legislation": 3,
+    "caselaw": 3,
+    "eurlex": 3,
+    "federalregister": 3,
+    "billsum": 2
+   },
+   "math_science|1024": {
+    "arxiv": 6,
+    "openstax": 3,
+    "cp_pressbooks": 3,
+    "cp_libretexts": 3,
+    "wikipedia": 3
+   },
+   "math_science|2048": {
+    "arxiv": 10
+   },
+   "math_science|4096": {
+    "arxiv": 1,
+    "openstax": 1
+   },
+   "math_science|512": {
+    "cp_libretexts": 3,
+    "wikipedia": 13,
+    "cp_pressbooks": 2,
+    "openstax": 2
+   },
+   "medicine|1024": {
+    "pmc": 3,
+    "govuk": 3,
+    "openstax": 2,
+    "cp_pressbooks": 2,
+    "fedhealth": 2,
+    "cp_libretexts": 2,
+    "europepmc": 2,
+    "who": 2
+   },
+   "medicine|2048": {
+    "europepmc": 2,
+    "govuk": 2,
+    "pmc": 1,
+    "fedhealth": 1,
+    "who": 1,
+    "cp_pressbooks": 1,
+    "cp_libretexts": 1,
+    "openstax": 1
+   },
+   "medicine|4096": {
+    "europepmc": 1,
+    "openstax": 1
+   },
+   "medicine|512": {
+    "cp_libretexts": 3,
+    "pmc": 3,
+    "europepmc": 3,
+    "who": 3,
+    "fedhealth": 2,
+    "govuk": 2,
+    "cp_pressbooks": 2,
+    "openstax": 2
+   }
+  }
+ },
+ "public": {
+  "n": 135,
+  "tokens_total": 148575,
+  "tokens_mean": 1100.5555555555557,
+  "sentences_total": 4834,
+  "by_domain": {
+   "law": 45,
+   "math_science": 45,
+   "medicine": 45
+  },
+  "by_bin": {
+   "512": 54,
+   "1024": 48,
+   "2048": 27,
+   "4096": 6
+  },
+  "by_domain_bin": {
+   "law|512": 18,
+   "law|1024": 16,
+   "law|2048": 9,
+   "law|4096": 2,
+   "math_science|512": 18,
+   "math_science|1024": 16,
+   "math_science|2048": 9,
+   "math_science|4096": 2,
+   "medicine|512": 18,
+   "medicine|1024": 16,
+   "medicine|2048": 9,
+   "medicine|4096": 2
+  },
+  "by_domain_source": {
+   "law": {
+    "legislation": 8,
+    "eurlex": 8,
+    "cp_usgpo": 7,
+    "caselaw": 6,
+    "federalregister": 6,
+    "cuad": 5,
+    "billsum": 5
+   },
+   "math_science": {
+    "arxiv": 15,
+    "wikipedia": 13,
+    "cp_libretexts": 6,
+    "openstax": 6,
+    "cp_pressbooks": 5
+   },
+   "medicine": {
+    "europepmc": 8,
+    "govuk": 7,
+    "pmc": 6,
+    "who": 6,
+    "cp_libretexts": 5,
+    "fedhealth": 5,
+    "openstax": 5,
+    "cp_pressbooks": 3
+   }
+  },
+  "by_domain_licence_class": {
+   "law": {
+    "pd": 24,
+    "permissive": 21
+   },
+   "math_science": {
+    "pd": 1,
+    "permissive": 31,
+    "share_alike": 13
+   },
+   "medicine": {
+    "noncommercial": 14,
+    "pd": 5,
+    "permissive": 26
+   }
+  },
+  "by_licence": {
+   "CC-BY-4.0": 46,
+   "OGL-3.0": 15,
+   "CC-BY-SA-4.0": 13,
+   "Public domain (US federal government work)": 11,
+   "CC-BY-4.0 (EU reuse)": 8,
+   "Public domain (US government work)": 7,
+   "Public Domain / CC0 (Caselaw Access Project)": 6,
+   "CC-BY-NC-SA-3.0-IGO": 6,
+   "CC-BY-4.0 (CUAD v1)": 5,
+   "Public domain (US Congressional bill; dataset CC0-1.0)": 5,
+   "CC-BY (version not stated in the article)": 4,
+   "CC-BY-NC-ND-4.0": 3,
+   "CC-BY-NC-SA (version not stated; Europe PMC licence field)": 2,
+   "Public domain": 1,
+   "CC-BY-NC-ND (version not stated; Europe PMC licence field)": 1,
+   "CC-BY-NC (version not stated; Europe PMC licence field)": 1,
+   "CC-BY-NC-SA-4.0": 1
+  },
+  "by_licence_class": {
+   "noncommercial": 14,
+   "pd": 30,
+   "permissive": 78,
+   "share_alike": 13
+  },
+  "hard_features_share": {
+   "law": 1.0,
+   "math_science": 0.578,
+   "medicine": 1.0
+  },
+  "docs_with_formulas": {
+   "law": 0,
+   "math_science": 27,
+   "medicine": 0
+  },
+  "composition_domain_bin_source": {
+   "law|1024": {
+    "cp_usgpo": 3,
+    "legislation": 3,
+    "federalregister": 3,
+    "cuad": 1,
+    "caselaw": 2,
+    "billsum": 2,
+    "eurlex": 2
+   },
+   "law|2048": {
+    "eurlex": 2,
+    "caselaw": 2,
+    "legislation": 2,
+    "cp_usgpo": 1,
+    "billsum": 1,
+    "cuad": 1
+   },
+   "law|4096": {
+    "caselaw": 1,
+    "eurlex": 1
+   },
+   "law|512": {
+    "cuad": 3,
+    "cp_usgpo": 3,
+    "legislation": 3,
+    "caselaw": 1,
+    "eurlex": 3,
+    "federalregister": 3,
+    "billsum": 2
+   },
+   "math_science|1024": {
+    "arxiv": 5,
+    "openstax": 3,
+    "cp_pressbooks": 3,
+    "cp_libretexts": 3,
+    "wikipedia": 2
+   },
+   "math_science|2048": {
+    "arxiv": 9
+   },
+   "math_science|4096": {
+    "arxiv": 1,
+    "openstax": 1
+   },
+   "math_science|512": {
+    "cp_libretexts": 3,
+    "wikipedia": 11,
+    "cp_pressbooks": 2,
+    "openstax": 2
+   },
+   "medicine|1024": {
+    "pmc": 2,
+    "govuk": 3,
+    "openstax": 2,
+    "fedhealth": 2,
+    "cp_libretexts": 2,
+    "europepmc": 2,
+    "who": 2,
+    "cp_pressbooks": 1
+   },
+   "medicine|2048": {
+    "europepmc": 2,
+    "govuk": 2,
+    "pmc": 1,
+    "fedhealth": 1,
+    "who": 1,
+    "cp_libretexts": 1,
+    "openstax": 1
+   },
+   "medicine|4096": {
+    "europepmc": 1,
+    "openstax": 1
+   },
+   "medicine|512": {
+    "cp_libretexts": 2,
+    "pmc": 3,
+    "europepmc": 3,
+    "who": 3,
+    "fedhealth": 2,
+    "govuk": 2,
+    "cp_pressbooks": 2,
+    "openstax": 1
+   }
+  }
+ },
+ "private": {
+  "n": 15,
+  "tokens_total": 15349,
+  "tokens_mean": 1023.2666666666667,
+  "sentences_total": 502,
+  "by_domain": {
+   "law": 5,
+   "math_science": 5,
+   "medicine": 5
+  },
+  "by_bin": {
+   "512": 6,
+   "1024": 6,
+   "2048": 3
+  },
+  "by_domain_bin": {
+   "law|512": 2,
+   "law|1024": 2,
+   "law|2048": 1,
+   "math_science|512": 2,
+   "math_science|1024": 2,
+   "math_science|2048": 1,
+   "medicine|512": 2,
+   "medicine|1024": 2,
+   "medicine|2048": 1
+  },
+  "by_domain_source": {
+   "law": {
+    "caselaw": 2,
+    "eurlex": 1,
+    "cuad": 1,
+    "federalregister": 1
+   },
+   "math_science": {
+    "wikipedia": 3,
+    "arxiv": 2
+   },
+   "medicine": {
+    "cp_pressbooks": 2,
+    "cp_libretexts": 1,
+    "openstax": 1,
+    "pmc": 1
+   }
+  },
+  "by_domain_licence_class": {
+   "law": {
+    "pd": 3,
+    "permissive": 2
+   },
+   "math_science": {
+    "pd": 1,
+    "permissive": 1,
+    "share_alike": 3
+   },
+   "medicine": {
+    "permissive": 5
+   }
+  },
+  "by_licence": {
+   "CC-BY-4.0": 5,
+   "CC-BY-SA-4.0": 3,
+   "Public Domain / CC0 (Caselaw Access Project)": 2,
+   "CC-BY-4.0 (EU reuse)": 1,
+   "CC-BY-4.0 (CUAD v1)": 1,
+   "Public domain (US federal government work)": 1,
+   "CC0-1.0": 1,
+   "CC-BY (version not stated in the article)": 1
+  },
+  "by_licence_class": {
+   "pd": 4,
+   "permissive": 8,
+   "share_alike": 3
+  },
+  "hard_features_share": {
+   "law": 1.0,
+   "math_science": 0.6,
+   "medicine": 1.0
+  },
+  "docs_with_formulas": {
+   "law": 0,
+   "math_science": 3,
+   "medicine": 0
+  },
+  "composition_domain_bin_source": {
+   "law|1024": {
+    "eurlex": 1,
+    "cuad": 1
+   },
+   "law|2048": {
+    "federalregister": 1
+   },
+   "law|512": {
+    "caselaw": 2
+   },
+   "math_science|1024": {
+    "arxiv": 1,
+    "wikipedia": 1
+   },
+   "math_science|2048": {
+    "arxiv": 1
+   },
+   "math_science|512": {
+    "wikipedia": 2
+   },
+   "medicine|1024": {
+    "cp_pressbooks": 1,
+    "pmc": 1
+   },
+   "medicine|2048": {
+    "cp_pressbooks": 1
+   },
+   "medicine|512": {
+    "cp_libretexts": 1,
+    "openstax": 1
+   }
+  }
+ },
+ "n": 150,
+ "seed": 0,
+ "private_share": 0.1,
+ "source_share": 0.35,
+ "allow_weak": false,
+ "excluded_urls": 20644,
+ "contam_flags_loaded": 58372,
+ "core_ids_excluded": 500,
+ "contamination_of_selected": {
+  "clean": 150
+ }
+}

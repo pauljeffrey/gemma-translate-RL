@@ -1,0 +1,26 @@
+iso,language,group,have_target_tokens_M_origSFT_plus_R10built,new_human_permissive_pairs,new_ui_string_pairs_permissive_label,new_FineTranslations_pairs_est_synthetic_English,new_share_alike_pairs_incl_FLORES_dev,new_pivot_pairs_non_English_source,other_candidates_NOT_counted_unstated_or_NC,est_new_target_tokens_M_excl_FT_and_pivot,reaches_100k_clean,fetch_sources,download_MB_excl_FT,download_note
+tir,Tigrinya,W1 weak #1,11.3,11251,4776,50000,5897,0,"HornMT 2,030 (benchmark); eyosidesta ?; NLLB-mined 1.4M; Travis JW 58k",0.87,no,"Gamayun tig-eng (hf_hub_download file); TICO en-ti (OPUS zip); translatewiki en-ti (OPUS zip); Travis first 10k lines (GitHub raw range request); FLORES+ dev (hf_hub_download, token); FineTranslations tir_Ethi (load_dataset config, streaming take)",4,+<=670 MB FT config (stream 50k docs ~250 MB)
+dyu,Dyula,W1 weak #2,0.48,0,0,0,897,0,NLLB-mined 286k (gated burkimbia copies); Koumankan gated,0.06,no,FLORES+ dev file,0.5,
+amh,Amharic,W1 weak #3,15.5,3287,3166,100000,1197,0,"Gezmu/EthioMT/QED/Tanzil are NC or unreleased; HornMT 2,030",0.4,only via FT (synthetic English),"TICO-19 original release (tico-19.github.io, amh is not on OPUS); translatewiki en-am, Tatoeba am-en, wikimedia en-am (OPUS zips); FLORES+ dev; FineTranslations amh_Ethi (config, streaming; 4.1 GB total, take N)",8,+FT stream
+kbp,Kabiye,W1 weak #4,0.43,0,625,0,897,0,NLLB-mined 1.59M; Eyaa-Tom NC,0.07,no,translatewiki en-kbp (OPUS zip); FLORES+ dev; Wikipedia kbp (mono),0.7,
+fon,Fon,W1 weak #5,34.0,0,0,0,1009,35000,OPUS FFR fr-fon 82k (licence unstated); NLLB-mined 1.9M,0.07,only via French pivot,FLORES+ dev; OPUS wikimedia en-fon (zip); Zenodo 4266935 French_to_fongbe.csv (3.2 MB),4,
+nus,Nuer,W1 weak #6,10.2,3180,0,0,897,0,NaathNLP MIT-labelled templated sets; NLLB-mined 1.2M,0.31,no,TICO en-nus (OPUS zip 0.33 MB); OPUS Tatoeba en-nus; FLORES+ dev,1,
+mos,Mossi,W1 weak #7,4.8,0,5952,0,897,0,burkimbia gated NLLB copies,0.2,no,translatewiki en-mos (OPUS zip); FLORES+ dev,1,
+kam,Kamba,W1 weak #8,3.6,10,0,0,897,0,LughaGen gated; NLLB-mined 1.63M,0.06,no,FLORES+ dev,0.5,
+bam,Bambara,W1 weak #9,2.2,0,0,0,897,0,QED NC; OLDI and FT already used,0.05,no,FLORES+ dev,0.5,
+umb,Umbundu,W1 weak #10,3.7,32,0,0,897,0,NLLB-mined 298k,0.06,no,FLORES+ dev,0.5,
+kea,Kabuverdianu,W1 weak #11,1.55,0,7320,0,897,0,"frgr3618 2,000 (ODC-By label, NLLB-derived); NLLB-mined 1.23M",0.22,no,translatewiki en-kea (OPUS zip 0.18 MB); frgr3618 (GitHub raw 0.2 MB); FLORES+ dev,1,
+kmb,Kimbundu,W1 weak #12,2.5,0,0,0,897,18100,NLLB-mined 196k,0.06,only via Portuguese pivot,FLORES+ dev; KmbPtMT dataset_v1.2_cleaned.csv (hf_hub_download 2 MB),3,
+vmw,Makhuwa,W1 weak #13,2.1,0,610,0,897,0,,0.05,no,translatewiki en-vmw (OPUS zip); FLORES+ dev,0.6,
+kab,Kabyle,W1 weak #14,3.9,58674,11992,0,2033,0,bible-uedin 15.9k; NLLB-mined 4.1M,0.9,"no (73k, Tatoeba maybe already in SFT)",OPUS Tatoeba en-kab (zip ~2 MB); translatewiki en-kab; wikimedia en-kab; FLORES+ dev,4,
+seh,Sena,W1 weak #15,1.4,0,0,0,897,0,,0.05,no,FLORES+ dev,0.5,
+yor,Yoruba,W1 weak #16,145.2,176,5995,0,40945,0,GNOME 10k (GPL-family),2.9,SA only (40.9k wikimedia); volume is not the issue (145M tokens),OPUS wikimedia en-yo (zip ~3 MB); translatewiki; FLORES+ dev,6,
+wol,Wolof,W1 weak #17,5.0,0,1700,0,1123,0,"bible-uedin 15.8k (Bible, CC0-labelled compilation); XLEnt entity pairs",0.12,no,translatewiki en-wo; wikimedia en-wo; FLORES+ dev,1,
+ewe,Ewe,W1 weak #18,3.1,0,1343,0,1796,35000,ghananlp NC; bible-uedin 16k,0.15,only via French pivot,wikimedia en-ee; translatewiki en-ee; FLORES+ dev; Zenodo 4266935 French_to_ewe_dataset.xlsx (2.8 MB),4,
+luo,Luo,W1 weak #19,17.1,0,0,9000,31897,0,Dholuo-Swahili-English 29k (licence conflict); BlakHasan/Knox NC,1.2,"no (32k SA, mostly Bible)","FineTranslations luo_Latn (22 MB config); FLORES+ dev; ebible.org luo USFM zip (~5 MB, SA, Bible)",30,
+tum,Tumbuka,W1 weak #20,3.8,19,1227,0,2654,0,,0.2,no,wikimedia en-tum (zip 28 KB); translatewiki en-tum; FLORES+ dev,1,
+efi,Efik,owner addition,15.6,0,539,0,0,0,"IbomMT NC; QED NC; arXiv Efik corpus 13,865 unreleased",0.01,no,translatewiki en-efi (OPUS zip),0.1,
+ibb,Ibibio,owner addition,0.2,0,847,0,0,0,IbomMT NC,0.02,no,translatewiki en-ibb (OPUS zip),0.1,
+urh,Urhobo,owner addition,1.2,0,0,0,0,0,,0,no,nothing to fetch,0,
+knc,Kanuri,owner list,0,8113,597,760,7090,0,"CLEAR kanuri-books-corpus (mono, author copyright); Kanuri grammar paper 2,001 sentences (licence unknown)",1.0,no (15k + 6k Ajami-script pairs),Gamayun kau-eng; TICO en-kr; OLDI knc_Latn (+knc_Arab) + eng_Latn; FLORES+ dev knc; FineTranslations knc_Latn,8,
+run,Kirundi,owner list,4.1,1706,902,20000,897,0,eligapris sets (gated/unlicensed); NLLB-mined 771k,0.1,only via FT (flagged),OPUS Tatoeba en-rn (47 KB); FLORES+ dev; FineTranslations run_Latn (349 MB config; stream 20-30k docs),2,+FT stream (~120 MB)

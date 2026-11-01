@@ -1,0 +1,86 @@
+iso,language,group,nllb_code,nllb_coverage,benchmark,subset,n,ours_chrf,nllb33_chrf,nllb600_chrf,d33,d33_lo,d33_hi,d600,d600_lo,d600_hi,ours_spbleu,nllb33_spbleu,nllb600_spbleu,d33_spbleu,d600_spbleu,nllb33_greedy_chrf,nllb600_greedy_chrf,category_3.3B,category_600M,useful_as_reward_signal_3.3B,useful_as_reward_signal_600M,note
+yor,Yoruba,qe_validated,yor_Latn,exact,flores_plus,no_pair,657,27.25,26.22,25.18,-1.03,-1.77,-0.28,-2.07,-2.71,-1.48,11.42,11.18,9.85,-0.24,-1.58,,24.57,similar (-2..+2) [CI<0],NLLB worse (<-2) [CI<0],no,no,
+hau,Hausa,qe_validated,hau_Latn,exact,flores_plus,no_pair,170,45.41,47.26,45.4,1.85,0.35,3.35,-0.02,-1.44,1.39,20.92,24.05,21.85,3.13,0.93,,44.08,similar (-2..+2) [CI>0],similar (-2..+2) [CI incl. 0],weak/uncertain,weak/uncertain,
+ibo,Igbo,qe_validated,ibo_Latn,exact,flores_plus,no_pair,453,38.49,37.74,36.9,-0.75,-1.44,-0.01,-1.58,-2.35,-0.89,17.53,17.4,16.74,-0.13,-0.8,,35.2,similar (-2..+2) [CI<0],similar (-2..+2) [CI<0],no,no,
+pcm,Pidgin,qe_validated,,none,,,,,,,,,,,,,,,,,,,,NOT COVERED by NLLB,NOT COVERED by NLLB,no (not covered),no (not covered),"Nigerian Pidgin is not in NLLB-200 (nearest: eng_Latn / tpi_Latn Tok Pisin, not a substitute)"
+efi,Efik,qe_validated,,none,,,,,,,,,,,,,,,,,,,,NOT COVERED by NLLB,NOT COVERED by NLLB,no (not covered),no (not covered),Efik not in NLLB-200
+twi,Twi,qe_validated,twi_Latn,exact,flores_plus,no_pair,1012,37.35,38.08,34.93,0.73,0.22,1.26,-2.42,-3.05,-1.84,14.44,15.19,12.89,0.74,-1.56,,33.23,similar (-2..+2) [CI>0],NLLB worse (<-2) [CI<0],weak/uncertain,no,NLLB has both twi_Latn and aka_Latn; FLORES+ twi = Akuapem Twi
+ewe,Ewe,qe_validated,ewe_Latn,exact,flores_plus,no_pair,1012,31.12,38.32,35.23,7.2,6.69,7.74,4.11,3.5,4.75,9.53,15.7,13.26,6.17,3.72,,34.04,NLLB much better (>=+5) [CI>0],NLLB better (+2..+5) [CI>0],yes,yes,
+fon,Fon,qe_validated,fon_Latn,exact,flores_plus,no_pair,1012,21.67,20.27,17.92,-1.39,-1.88,-0.93,-3.75,-4.31,-3.17,4.86,5.04,3.43,0.19,-1.43,,18.0,similar (-2..+2) [CI<0],NLLB worse (<-2) [CI<0],no,no,
+wol,Wolof,qe_validated,wol_Latn,exact,flores_plus,no_pair,1012,29.56,27.59,23.31,-1.97,-2.47,-1.46,-6.26,-6.87,-5.74,10.02,8.59,6.58,-1.43,-3.44,,21.62,similar (-2..+2) [CI<0],NLLB worse (<-2) [CI<0],no,no,
+swh,Swahili,qe_validated,swh_Latn,exact,flores_plus,no_pair,1012,58.41,59.83,57.96,1.42,0.81,2.07,-0.45,-1.05,0.16,35.87,38.12,35.49,2.25,-0.38,,56.07,similar (-2..+2) [CI>0],similar (-2..+2) [CI incl. 0],weak/uncertain,weak/uncertain,
+kin,Kinyarwanda,qe_validated,kin_Latn,exact,flores_plus,no_pair,1012,42.05,48.21,43.49,6.16,5.49,6.84,1.45,0.81,2.1,17.69,24.71,19.88,7.02,2.19,,41.6,NLLB much better (>=+5) [CI>0],similar (-2..+2) [CI>0],yes,weak/uncertain,
+som,Somali,qe_validated,som_Latn,exact,flores_plus,no_pair,1012,40.63,42.61,41.37,1.98,1.52,2.37,0.74,0.29,1.15,15.71,18.27,16.57,2.57,0.87,,40.64,similar (-2..+2) [CI>0],similar (-2..+2) [CI>0],weak/uncertain,weak/uncertain,
+orm,Oromo,qe_validated,gaz_Latn,exact,flores_plus,no_pair,988,31.34,35.58,31.14,4.24,3.72,4.73,-0.2,-0.85,0.42,6.99,10.81,6.92,3.81,-0.07,,30.84,NLLB better (+2..+5) [CI>0],similar (-2..+2) [CI incl. 0],yes,weak/uncertain,West Central Oromo (gaz) = the FLORES code of 'Oromo'
+amh,Amharic,qe_validated,amh_Ethi,exact,flores_plus,no_pair,1012,19.06,37.96,37.26,18.9,17.95,19.82,18.2,17.38,19.02,7.38,30.24,28.39,22.85,21.01,,34.77,NLLB much better (>=+5) [CI>0],NLLB much better (>=+5) [CI>0],yes,yes,Ge'ez script
+tir,Tigrinya,qe_validated,tir_Ethi,exact,flores_plus,no_pair,1012,13.73,24.73,22.37,11.0,10.4,11.53,8.64,8.1,9.14,3.93,16.45,13.59,12.52,9.67,,21.25,NLLB much better (>=+5) [CI>0],NLLB much better (>=+5) [CI>0],yes,yes,Ge'ez script
+lug,Luganda,qe_validated,lug_Latn,exact,flores_plus,no_pair,1010,35.16,38.52,34.56,3.36,2.83,3.83,-0.59,-1.09,-0.09,10.08,12.52,10.06,2.44,-0.02,,33.27,NLLB better (+2..+5) [CI>0],similar (-2..+2) [CI<0],yes,no,
+lin,Lingala,qe_validated,lin_Latn,exact,flores_plus,no_pair,1012,42.04,47.77,46.32,5.73,5.11,6.28,4.28,3.64,4.84,14.01,20.41,19.89,6.4,5.88,,45.5,NLLB much better (>=+5) [CI>0],NLLB better (+2..+5) [CI>0],yes,yes,
+zul,Zulu,qe_validated,zul_Latn,exact,flores_plus,no_pair,976,48.59,54.39,51.61,5.81,5.17,6.49,3.02,2.42,3.65,24.2,32.49,29.17,8.29,4.97,,49.87,NLLB much better (>=+5) [CI>0],NLLB better (+2..+5) [CI>0],yes,yes,
+xho,Xhosa,qe_validated,xho_Latn,exact,flores_plus,no_pair,1012,44.91,48.48,46.43,3.57,2.88,4.25,1.52,0.93,2.14,19.65,24.98,23.11,5.32,3.46,,44.34,NLLB better (+2..+5) [CI>0],similar (-2..+2) [CI>0],yes,weak/uncertain,
+afr,Afrikaans,qe_validated,afr_Latn,exact,flores_plus,no_pair,1012,63.55,64.28,61.89,0.73,0.14,1.38,-1.66,-2.33,-1.02,42.78,44.15,40.85,1.37,-1.93,,61.16,similar (-2..+2) [CI>0],similar (-2..+2) [CI<0],weak/uncertain,no,
+sna,Shona,qe_validated,sna_Latn,exact,flores_plus,no_pair,1012,39.49,42.62,42.68,3.13,2.63,3.65,3.19,2.7,3.66,14.55,19.02,18.95,4.46,4.39,,41.56,NLLB better (+2..+5) [CI>0],NLLB better (+2..+5) [CI>0],yes,yes,
+nya,Chichewa,qe_validated,nya_Latn,exact,flores_plus,no_pair,1012,43.29,44.84,44.03,1.55,1.0,2.06,0.74,0.2,1.27,16.15,18.24,17.36,2.09,1.21,,42.42,similar (-2..+2) [CI>0],similar (-2..+2) [CI>0],weak/uncertain,weak/uncertain,
+sot,Sesotho,qe_validated,sot_Latn,exact,flores_plus,no_pair,1012,45.45,46.25,45.36,0.8,0.31,1.28,-0.09,-0.56,0.45,20.15,20.86,20.03,0.71,-0.12,,44.56,similar (-2..+2) [CI>0],similar (-2..+2) [CI incl. 0],weak/uncertain,weak/uncertain,
+tsn,Setswana,qe_validated,tsn_Latn,exact,flores_plus,no_pair,982,45.9,48.36,46.32,2.46,1.93,2.98,0.43,-0.06,0.96,21.78,25.41,22.76,3.63,0.98,,45.42,NLLB better (+2..+5) [CI>0],similar (-2..+2) [CI incl. 0],yes,weak/uncertain,
+mlg,Malagasy,qe_validated,plt_Latn,exact,flores_plus,no_pair,1012,43.05,50.01,47.75,6.96,6.42,7.58,4.7,4.15,5.28,15.55,24.81,22.26,9.26,6.71,,46.82,NLLB much better (>=+5) [CI>0],NLLB better (+2..+5) [CI>0],yes,yes,Plateau Malagasy
+ibb,Ibibio,consensus_only,,none,,,,,,,,,,,,,,,,,,,,NOT COVERED by NLLB,NOT COVERED by NLLB,no (not covered),no (not covered),Ibibio not in NLLB-200 (Efik/Ibibio are not covered)
+urh,Urhobo,consensus_only,,none,,,,,,,,,,,,,,,,,,,,NOT COVERED by NLLB,NOT COVERED by NLLB,no (not covered),no (not covered),Urhobo not in NLLB-200
+bem,Bemba,qe_validated,bem_Latn,exact,flores_plus,no_pair,1012,34.06,37.28,34.74,3.21,2.7,3.72,0.68,0.16,1.22,9.64,12.57,10.55,2.93,0.91,,32.27,NLLB better (+2..+5) [CI>0],similar (-2..+2) [CI>0],yes,weak/uncertain,
+tum,Tumbuka,qe_validated,tum_Latn,exact,flores_plus,no_pair,1012,33.72,35.77,33.49,2.05,1.49,2.65,-0.24,-0.86,0.38,10.14,13.66,11.74,3.52,1.6,,32.52,NLLB better (+2..+5) [CI>0],similar (-2..+2) [CI incl. 0],yes,weak/uncertain,
+run,Kirundi,qe_validated,run_Latn,exact,flores_plus,no_pair,1012,33.88,41.56,38.94,7.68,7.04,8.32,5.06,4.45,5.63,10.46,18.25,16.43,7.8,5.97,,37.17,NLLB much better (>=+5) [CI>0],NLLB much better (>=+5) [CI>0],yes,yes,
+ven,Venda,blend,,none,,,,,,,,,,,,,,,,,,,,NOT COVERED by NLLB,NOT COVERED by NLLB,no (not covered),no (not covered),"Venda not in NLLB-200 (nearest covered Bantu: tso/nso/sot, not a substitute)"
+tso,Tsonga,qe_validated,tso_Latn,exact,flores_plus,no_pair,1012,46.14,50.11,48.95,3.97,3.33,4.6,2.8,2.24,3.44,20.95,26.75,25.38,5.79,4.43,,47.8,NLLB better (+2..+5) [CI>0],NLLB better (+2..+5) [CI>0],yes,yes,
+nso,Sepedi,qe_validated,nso_Latn,exact,flores_plus,no_pair,1012,48.84,50.35,48.87,1.51,0.92,2.05,0.02,-0.56,0.54,24.47,26.25,24.65,1.78,0.18,,47.97,similar (-2..+2) [CI>0],similar (-2..+2) [CI incl. 0],weak/uncertain,weak/uncertain,
+ssw,Swati,qe_validated,ssw_Latn,exact,flores_plus,no_pair,1012,37.57,43.13,41.14,5.56,4.97,6.16,3.57,2.94,4.15,12.3,20.16,18.07,7.85,5.76,,39.23,NLLB much better (>=+5) [CI>0],NLLB better (+2..+5) [CI>0],yes,yes,
+nbl,South Ndebele,consensus_only,,none,,,,,,,,,,,,,,,,,,,,NOT COVERED by NLLB,NOT COVERED by NLLB,no (not covered),no (not covered),"South Ndebele not in NLLB-200 (zul_Latn is the closest, not used)"
+nde,North Ndebele,sft_only,,none,,,,,,,,,,,,,,,,,,,,NOT COVERED by NLLB,NOT COVERED by NLLB,no (not covered),no (not covered),North Ndebele not in NLLB-200
+sag,Sango,blend,sag_Latn,exact,flores_plus,no_pair,1012,34.73,36.35,33.9,1.62,1.2,2.03,-0.83,-1.31,-0.35,9.27,11.07,10.02,1.8,0.75,,32.5,similar (-2..+2) [CI>0],similar (-2..+2) [CI<0],weak/uncertain,no,
+tiv,Tiv,blend,,none,,,,,,,,,,,,,,,,,,,,NOT COVERED by NLLB,NOT COVERED by NLLB,no (not covered),no (not covered),Tiv not in NLLB-200
+umb,Umbundu,qe_validated,umb_Latn,exact,flores_plus,no_pair,1012,25.34,22.88,25.25,-2.46,-2.86,-2.05,-0.09,-0.46,0.33,3.1,2.65,3.48,-0.45,0.38,,24.9,NLLB worse (<-2) [CI<0],similar (-2..+2) [CI incl. 0],no,weak/uncertain,
+kmb,Kimbundu,qe_validated,kmb_Latn,exact,flores_plus,no_pair,1012,25.62,23.7,24.84,-1.92,-2.33,-1.5,-0.79,-1.23,-0.35,4.24,4.22,4.66,-0.02,0.42,,24.81,similar (-2..+2) [CI<0],similar (-2..+2) [CI<0],no,no,
+mos,Mossi,qe_validated,mos_Latn,exact,flores_plus,no_pair,1012,22.77,23.68,20.69,0.92,0.52,1.33,-2.08,-2.5,-1.62,4.17,5.52,4.47,1.35,0.29,,19.27,similar (-2..+2) [CI>0],NLLB worse (<-2) [CI<0],weak/uncertain,no,
+kik,Kikuyu,qe_validated,kik_Latn,exact,flores_plus,no_pair,1012,31.88,37.02,34.66,5.15,4.62,5.67,2.78,2.25,3.31,9.51,15.34,13.19,5.83,3.68,,32.73,NLLB much better (>=+5) [CI>0],NLLB better (+2..+5) [CI>0],yes,yes,
+luo,Luo,qe_validated,luo_Latn,exact,flores_plus,no_pair,1012,32.95,38.44,36.78,5.49,4.98,6.0,3.82,3.31,4.38,10.33,14.68,13.53,4.35,3.21,,35.59,NLLB much better (>=+5) [CI>0],NLLB better (+2..+5) [CI>0],yes,yes,
+kam,Kamba,qe_validated,kam_Latn,exact,flores_plus,no_pair,1012,24.9,22.9,26.34,-2.0,-2.47,-1.56,1.44,0.97,1.89,5.91,4.83,6.57,-1.07,0.66,,24.69,similar (-2..+2) [CI<0],similar (-2..+2) [CI>0],no,weak/uncertain,
+bin,Edo,consensus_only,,none,,,,,,,,,,,,,,,,,,,,NOT COVERED by NLLB,NOT COVERED by NLLB,no (not covered),no (not covered),Edo not in NLLB-200
+dag,Dagbani,consensus_only,,none,,,,,,,,,,,,,,,,,,,,NOT COVERED by NLLB,NOT COVERED by NLLB,no (not covered),no (not covered),Dagbani not in NLLB-200
+oke,Okpe,consensus_only,,none,,,,,,,,,,,,,,,,,,,,NOT COVERED by NLLB,NOT COVERED by NLLB,no (not covered),no (not covered),Okpe not in NLLB-200
+shi,Tachelhit,consensus_only,,none,,,,,,,,,,,,,,,,,,,,NOT COVERED by NLLB,NOT COVERED by NLLB,no (not covered),no (not covered),"Tachelhit (Latin/Tifinagh) not in NLLB-200; tzm_Tfng (Central Atlas Tamazight) is a related Tamazight variety, not Tachelhit"
+dyu,Dyula,blend,dyu_Latn,exact,flores_plus,no_pair,1012,18.29,15.45,16.64,-2.84,-3.22,-2.46,-1.65,-2.04,-1.3,3.0,2.07,2.55,-0.93,-0.45,,16.54,NLLB worse (<-2) [CI<0],similar (-2..+2) [CI<0],no,no,
+bam,Bambara,qe_validated,bam_Latn,exact,flores_plus,no_pair,1012,24.96,30.97,28.35,6.01,5.53,6.5,3.39,2.84,3.92,5.46,9.96,8.36,4.5,2.9,,27.42,NLLB much better (>=+5) [CI>0],NLLB better (+2..+5) [CI>0],yes,yes,
+kbp,Kabiye,qe_validated,kbp_Latn,exact,flores_plus,no_pair,1012,21.77,28.82,23.5,7.05,6.36,7.68,1.73,1.04,2.4,3.77,12.15,7.44,8.38,3.67,,22.31,NLLB much better (>=+5) [CI>0],similar (-2..+2) [CI>0],yes,weak/uncertain,
+bbj,Ghomala,consensus_only,,none,,,,,,,,,,,,,,,,,,,,NOT COVERED by NLLB,NOT COVERED by NLLB,no (not covered),no (not covered),Ghomala not in NLLB-200
+kon,Kongo,blend,kon_Latn,exact,smol_sent,no_pair,863,16.7,47.81,,31.11,30.27,31.87,,,,0.89,18.97,,18.08,,,,NLLB much better (>=+5) [CI>0],,yes,not run,code exists in NLLB-200 but FLORES-200 has no kon evaluation set
+kea,Kabuverdianu,consensus_only,kea_Latn,exact,flores_plus,no_pair,1012,26.74,47.82,44.07,21.08,20.26,21.94,17.33,16.47,18.17,6.57,27.09,22.04,20.52,15.47,,40.86,NLLB much better (>=+5) [CI>0],NLLB much better (>=+5) [CI>0],yes,yes,
+fat,Fante,sft_only,twi_Latn,proxy,,,,,,,,,,,,,,,,,,,,no benchmark,no benchmark,unknown (no human reference),unknown (no human reference),Fante is an Akan variety; NLLB has aka_Latn/twi_Latn (Akuapem Twi)
+knc,Kanuri,sft_only,knc_Latn,exact,flores_plus,no_pair,1012,14.7,24.37,14.66,9.67,9.21,10.13,-0.04,-0.64,0.56,2.63,5.91,1.96,3.28,-0.66,,13.11,NLLB much better (>=+5) [CI>0],similar (-2..+2) [CI incl. 0],yes,weak/uncertain,Central Kanuri; knc_Arab also exists (we have no SFT data for knc)
+gaa,Ga,sft_only,,none,,,,,,,,,,,,,,,,,,,,NOT COVERED by NLLB,NOT COVERED by NLLB,no (not covered),no (not covered),Ga not in NLLB-200
+kab,Kabyle,qe_validated,kab_Latn,exact,flores_plus,no_pair,1012,26.67,31.83,27.36,5.16,4.71,5.61,0.69,0.27,1.13,7.14,12.71,8.78,5.58,1.64,,26.15,NLLB much better (>=+5) [CI>0],similar (-2..+2) [CI>0],yes,weak/uncertain,
+nus,Nuer,qe_validated,nus_Latn,exact,flores_plus,no_pair,1012,20.78,28.7,25.27,7.92,7.46,8.37,4.49,3.99,4.98,6.92,14.02,10.15,7.1,3.22,,24.42,NLLB much better (>=+5) [CI>0],NLLB better (+2..+5) [CI>0],yes,yes,
+swc,Congo Swahili,blend,swh_Latn,proxy,,,,,,,,,,,,,,,,,,,,no benchmark,no benchmark,unknown (no human reference),unknown (no human reference),"Congo Swahili; NLLB swh_Latn is (East African) Swahili, same macro-language"
+lua,Luba-Kasai,qe_validated,lua_Latn,exact,flores_plus,no_pair,1012,33.36,35.07,33.44,1.7,1.22,2.19,0.08,-0.46,0.61,8.36,9.8,8.68,1.44,0.32,,32.48,similar (-2..+2) [CI>0],similar (-2..+2) [CI incl. 0],weak/uncertain,weak/uncertain,Luba-Kasai
+kqn,Kaonde,blend,,none,,,,,,,,,,,,,,,,,,,,NOT COVERED by NLLB,NOT COVERED by NLLB,no (not covered),no (not covered),Kaonde not in NLLB-200
+lun,Lunda,blend,,none,,,,,,,,,,,,,,,,,,,,NOT COVERED by NLLB,NOT COVERED by NLLB,no (not covered),no (not covered),Lunda not in NLLB-200
+iso,Isoko,blend,,none,,,,,,,,,,,,,,,,,,,,NOT COVERED by NLLB,NOT COVERED by NLLB,no (not covered),no (not covered),Isoko not in NLLB-200
+loz,Lozi,blend,,none,,,,,,,,,,,,,,,,,,,,NOT COVERED by NLLB,NOT COVERED by NLLB,no (not covered),no (not covered),Lozi not in NLLB-200
+wal,Wolaytta,blend,,none,,,,,,,,,,,,,,,,,,,,NOT COVERED by NLLB,NOT COVERED by NLLB,no (not covered),no (not covered),Wolaytta not in NLLB-200
+ach,Acholi,consensus_only,,none,,,,,,,,,,,,,,,,,,,,NOT COVERED by NLLB,NOT COVERED by NLLB,no (not covered),no (not covered),"Acholi not in NLLB-200 (luo_Latn is Dholuo, a different language)"
+tsc,Tswa,consensus_only,,none,,,,,,,,,,,,,,,,,,,,NOT COVERED by NLLB,NOT COVERED by NLLB,no (not covered),no (not covered),Tswa not in NLLB-200
+vmw,Makhuwa,consensus_only,,none,,,,,,,,,,,,,,,,,,,,NOT COVERED by NLLB,NOT COVERED by NLLB,no (not covered),no (not covered),Makhuwa not in NLLB-200
+kua,Kuanyama,blend,,none,,,,,,,,,,,,,,,,,,,,NOT COVERED by NLLB,NOT COVERED by NLLB,no (not covered),no (not covered),Kuanyama not in NLLB-200
+seh,Sena,consensus_only,,none,,,,,,,,,,,,,,,,,,,,NOT COVERED by NLLB,NOT COVERED by NLLB,no (not covered),no (not covered),Sena not in NLLB-200
+nyn,Nyankore,consensus_only,,none,,,,,,,,,,,,,,,,,,,,NOT COVERED by NLLB,NOT COVERED by NLLB,no (not covered),no (not covered),Nyankore not in NLLB-200 (lug_Latn is Luganda)
+her,Herero,consensus_only,,none,,,,,,,,,,,,,,,,,,,,NOT COVERED by NLLB,NOT COVERED by NLLB,no (not covered),no (not covered),Herero not in NLLB-200
+yao,Yao,consensus_only,,none,,,,,,,,,,,,,,,,,,,,NOT COVERED by NLLB,NOT COVERED by NLLB,no (not covered),no (not covered),Yao not in NLLB-200
+sid,Sidamo,consensus_only,,none,,,,,,,,,,,,,,,,,,,,NOT COVERED by NLLB,NOT COVERED by NLLB,no (not covered),no (not covered),Sidamo not in NLLB-200
+ndc,Ndau,consensus_only,,none,,,,,,,,,,,,,,,,,,,,NOT COVERED by NLLB,NOT COVERED by NLLB,no (not covered),no (not covered),Ndau not in NLLB-200 (sna_Latn is Shona)
+men,Mende,sft_only,,none,,,,,,,,,,,,,,,,,,,,NOT COVERED by NLLB,NOT COVERED by NLLB,no (not covered),no (not covered),Mende not in NLLB-200
+kri,Krio,consensus_only,,none,,,,,,,,,,,,,,,,,,,,NOT COVERED by NLLB,NOT COVERED by NLLB,no (not covered),no (not covered),Krio not in NLLB-200
+luy,Luyia,sft_only,,none,,,,,,,,,,,,,,,,,,,,NOT COVERED by NLLB,NOT COVERED by NLLB,no (not covered),no (not covered),Luyia not in NLLB-200
+ish,Esan,consensus_only,,none,,,,,,,,,,,,,,,,,,,,NOT COVERED by NLLB,NOT COVERED by NLLB,no (not covered),no (not covered),Esan not in NLLB-200
+dua,Duala,consensus_only,,none,,,,,,,,,,,,,,,,,,,,NOT COVERED by NLLB,NOT COVERED by NLLB,no (not covered),no (not covered),Duala not in NLLB-200
+bas,Basaa,consensus_only,,none,,,,,,,,,,,,,,,,,,,,NOT COVERED by NLLB,NOT COVERED by NLLB,no (not covered),no (not covered),Basaa not in NLLB-200
+wes,Cameroon Pidgin,consensus_only,,none,,,,,,,,,,,,,,,,,,,,NOT COVERED by NLLB,NOT COVERED by NLLB,no (not covered),no (not covered),Cameroon Pidgin not in NLLB-200
+tzm,Tamazight,sft_only,tzm_Tfng,exact,,,,,,,,,,,,,,,,,,,,no benchmark,no benchmark,unknown (no human reference),unknown (no human reference),"Central Atlas Tamazight, Tifinagh script (our tzm has no SFT data)"
+ful,Fulah,sft_only,fuv_Latn,proxy,,,,,,,,,,,,,,,,,,,,no benchmark,no benchmark,unknown (no human reference),unknown (no human reference),Nigerian Fulfulde (fuv) only; 'ful' is a macro-language (Pular/Pulaar/Fulfulde varieties differ)

@@ -1,0 +1,42 @@
+[
+ {
+  "label": "topup",
+  "key": "fuv",
+  "set": "flores_fuv_Latn",
+  "cond": "free",
+  "n": 60,
+  "name": "Fulah",
+  "tag": "ful",
+  "seconds": 0,
+  "greedy_chrf": 13.1631,
+  "sample_chrf": 15.5793,
+  "greedy_chrf_valid": 16.2305,
+  "mismatch_floor": 8.5532,
+  "greedy_finished": 0.9,
+  "sample_finished": 1,
+  "greedy_lid_right": 0.9833,
+  "sample_lid_right": 1,
+  "lid_checked_share": 0.9967,
+  "greedy_copy": 0,
+  "sample_copy": 0,
+  "greedy_degenerate": 0.4333,
+  "sample_degenerate": 0,
+  "greedy_valid": 0.5667,
+  "sample_valid": 0.9667,
+  "greedy_tag_ok": 1,
+  "tags": {
+   "ful": 60
+  },
+  "greedy_lid_top": {
+   "fuv_Latn": 54,
+   "mug_Latn": 1,
+   "fuf_Latn": 1,
+   "fue_Latn": 1
+  },
+  "sample_logp": -3.991,
+  "greedy_logp": -1.0409,
+  "sample_len_ratio": 1.068,
+  "greedy_len_ratio": 1.0091,
+  "consensus_mean": 16.2296
+ }
+]

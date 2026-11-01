@@ -1,0 +1,34 @@
+metrics: /tmp/scratch (1433 distinct training steps, last step 1433); signal source: proxy
+NOTE: this file has no per-language training reward; the reward-driven terms are silent, only failure / penalty / dev-chrF terms can move a weight.
+updater: every 50 steps from step 100, 77 treated languages, 27 updates
+  update @   100: 15 languages moved >2% bem 1.00->1.03, ewe 1.00->1.03, swh 1.00->1.03, orm 2.50->2.57, lin 1.00->1.03, hau 1.00->1.03, pcm 1.00->1.03, kin 1.00->1.02
+  update @   150:  0 languages moved >2% 
+  update @   200:  0 languages moved >2% 
+  update @   250:  0 languages moved >2% 
+  update @   300:  0 languages moved >2% 
+  update @   350:  0 languages moved >2% 
+  update @   400:  0 languages moved >2% 
+  update @   450:  0 languages moved >2% 
+  update @   500:  0 languages moved >2% 
+  update @   550:  0 languages moved >2% 
+  update @   600:  0 languages moved >2% 
+  update @   650:  0 languages moved >2% 
+  update @   700:  0 languages moved >2% 
+  update @   750:  0 languages moved >2% 
+  update @   800:  0 languages moved >2% 
+  update @   850:  0 languages moved >2% 
+  update @   900:  4 languages moved >2% wes 0.99->1.09, sag 0.98->1.04, her 0.98->1.03, shi 0.98->1.00
+  update @   950:  0 languages moved >2% 
+  update @  1000:  5 languages moved >2% lua 0.97->1.03, lug 0.97->1.03, wes 1.11->1.16, her 1.02->0.99, ssw 1.09->1.11
+  update @  1050:  4 languages moved >2% shi 1.00->1.11, wes 1.16->1.06, lua 1.03->1.07, lug 1.03->1.07 | flagged: wes
+  update @  1100:  3 languages moved >2% tiv 0.97->1.04, wes 1.06->1.01, shi 1.11->1.15 | flagged: wes
+  update @  1150:  1 languages moved >2% wes 1.01->0.98 | flagged: wes
+  update @  1200:  2 languages moved >2% sag 1.07->1.12, kri 0.96->0.98 | flagged: wes
+  update @  1250:  1 languages moved >2% tiv 1.03->0.99 | flagged: wes
+  update @  1300:  0 languages moved >2%  | flagged: wes
+  update @  1350:  1 languages moved >2% sag 1.11->1.07 | flagged: wes
+  update @  1400:  1 languages moved >2% shi 1.16->1.12 | flagged: wes
+final vs base: sum 104.00 / 104.00; largest decreases ach 1.00->0.96, afr 1.00->0.96, bas 1.00->0.96, bin 1.00->0.96, dag 1.00->0.96, dua 1.00->0.96; largest increases shi 1.00->1.12, lug 1.00->1.11, lua 1.00->1.10, bem 1.00->1.10, ssw 1.00->1.09, hau 1.00->1.09
+flags at the last update: {'loops': 1}
+factor summary at the last update (languages with a signal): 77 | boosted >1.05: 28 | shrunk <0.95: 0
+wrote reports/adaptive_language_weights_2026-10-22/replay_2c_trajectory.csv

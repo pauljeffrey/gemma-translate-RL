@@ -1,0 +1,877 @@
+{
+ "amh": {
+  "windows": 2598,
+  "window_cov": 0.7278675904541956,
+  "sentences": 39058,
+  "sentence_cov": 0.46976291668800246,
+  "by_bin": {
+   "b1024": {
+    "windows": 578,
+    "window_cov": 0.27335640138408307,
+    "sentence_cov": 0.31425047162966185
+   },
+   "b2048": {
+    "windows": 340,
+    "window_cov": 0.17058823529411765,
+    "sentence_cov": 0.2067944742035523
+   },
+   "b256": {
+    "windows": 580,
+    "window_cov": 0.9948275862068966,
+    "sentence_cov": 0.9990521327014218
+   },
+   "b512": {
+    "windows": 560,
+    "window_cov": 0.9964285714285714,
+    "sentence_cov": 0.9997086247086248
+   },
+   "b64": {
+    "windows": 540,
+    "window_cov": 1.0,
+    "sentence_cov": 1.0
+   }
+  },
+  "expected_draw_window_cov_uniform_bins": 0.6870401588627337,
+  "expected_draw_sentence_cov_uniform_bins": 0.7039611406486521
+ },
+ "bam": {
+  "windows": 1387,
+  "window_cov": 0.7368421052631579,
+  "sentences": 26546,
+  "sentence_cov": 0.6695170647178482,
+  "by_bin": {
+   "b1024": {
+    "windows": 340,
+    "window_cov": 0.5617647058823529,
+    "sentence_cov": 0.6543450064850843
+   },
+   "b2048": {
+    "windows": 337,
+    "window_cov": 0.47477744807121663,
+    "sentence_cov": 0.5700841294738344
+   },
+   "b256": {
+    "windows": 239,
+    "window_cov": 0.9497907949790795,
+    "sentence_cov": 0.9892650701899257
+   },
+   "b512": {
+    "windows": 270,
+    "window_cov": 0.9185185185185185,
+    "sentence_cov": 0.9818016378525932
+   },
+   "b64": {
+    "windows": 201,
+    "window_cov": 0.9751243781094527,
+    "sentence_cov": 0.9834437086092715
+   }
+  },
+  "expected_draw_window_cov_uniform_bins": 0.7759951691121241,
+  "expected_draw_sentence_cov_uniform_bins": 0.8357879105221417
+ },
+ "bem": {
+  "windows": 1389,
+  "window_cov": 0.5608351331893449,
+  "sentences": 26995,
+  "sentence_cov": 0.3299129468420078,
+  "by_bin": {
+   "b1024": {
+    "windows": 340,
+    "window_cov": 0.22647058823529412,
+    "sentence_cov": 0.26130258157515396
+   },
+   "b2048": {
+    "windows": 338,
+    "window_cov": 0.11242603550295859,
+    "sentence_cov": 0.153414534008485
+   },
+   "b256": {
+    "windows": 240,
+    "window_cov": 0.9375,
+    "sentence_cov": 0.9848357203032856
+   },
+   "b512": {
+    "windows": 270,
+    "window_cov": 0.9,
+    "sentence_cov": 0.9827904118008605
+   },
+   "b64": {
+    "windows": 201,
+    "window_cov": 0.9751243781094527,
+    "sentence_cov": 0.9805825242718447
+   }
+  },
+  "expected_draw_window_cov_uniform_bins": 0.630304200369541,
+  "expected_draw_sentence_cov_uniform_bins": 0.6725851543919259
+ },
+ "ewe": {
+  "windows": 1390,
+  "window_cov": 0.5798561151079137,
+  "sentences": 26966,
+  "sentence_cov": 0.33223318252614403,
+  "by_bin": {
+   "b1024": {
+    "windows": 339,
+    "window_cov": 0.22123893805309736,
+    "sentence_cov": 0.2617529880478088
+   },
+   "b2048": {
+    "windows": 340,
+    "window_cov": 0.12941176470588237,
+    "sentence_cov": 0.15138869886441372
+   },
+   "b256": {
+    "windows": 240,
+    "window_cov": 0.9625,
+    "sentence_cov": 0.9902120717781403
+   },
+   "b512": {
+    "windows": 270,
+    "window_cov": 0.9518518518518518,
+    "sentence_cov": 0.9911800486618005
+   },
+   "b64": {
+    "windows": 201,
+    "window_cov": 0.9900497512437811,
+    "sentence_cov": 0.993421052631579
+   }
+  },
+  "expected_draw_window_cov_uniform_bins": 0.6510104611709225,
+  "expected_draw_sentence_cov_uniform_bins": 0.6775909719967484
+ },
+ "kab": {
+  "windows": 1389,
+  "window_cov": 0.7048236141108711,
+  "sentences": 27069,
+  "sentence_cov": 0.5474158631645055,
+  "by_bin": {
+   "b1024": {
+    "windows": 339,
+    "window_cov": 0.471976401179941,
+    "sentence_cov": 0.5270477162541465
+   },
+   "b2048": {
+    "windows": 339,
+    "window_cov": 0.37168141592920356,
+    "sentence_cov": 0.4112563092027933
+   },
+   "b256": {
+    "windows": 240,
+    "window_cov": 0.975,
+    "sentence_cov": 0.9935012185215272
+   },
+   "b512": {
+    "windows": 270,
+    "window_cov": 0.9592592592592593,
+    "sentence_cov": 0.9938195302843016
+   },
+   "b64": {
+    "windows": 201,
+    "window_cov": 0.9950248756218906,
+    "sentence_cov": 0.9966777408637874
+   }
+  },
+  "expected_draw_window_cov_uniform_bins": 0.7545883903980589,
+  "expected_draw_sentence_cov_uniform_bins": 0.7844605030253111
+ },
+ "kbp": {
+  "windows": 2598,
+  "window_cov": 0.8002309468822171,
+  "sentences": 39784,
+  "sentence_cov": 0.6646139151417655,
+  "by_bin": {
+   "b1024": {
+    "windows": 580,
+    "window_cov": 0.45,
+    "sentence_cov": 0.48146840804800567
+   },
+   "b2048": {
+    "windows": 338,
+    "window_cov": 0.5473372781065089,
+    "sentence_cov": 0.592363686306826
+   },
+   "b256": {
+    "windows": 580,
+    "window_cov": 0.9793103448275862,
+    "sentence_cov": 0.9954156479217604
+   },
+   "b512": {
+    "windows": 559,
+    "window_cov": 0.9427549194991055,
+    "sentence_cov": 0.9935036173040012
+   },
+   "b64": {
+    "windows": 541,
+    "window_cov": 0.9944547134935305,
+    "sentence_cov": 0.9970355731225297
+   }
+  },
+  "expected_draw_window_cov_uniform_bins": 0.7827714511853462,
+  "expected_draw_sentence_cov_uniform_bins": 0.8119573865406245
+ },
+ "kea": {
+  "windows": 1388,
+  "window_cov": 0.7737752161383286,
+  "sentences": 26952,
+  "sentence_cov": 0.6484119916889285,
+  "by_bin": {
+   "b1024": {
+    "windows": 339,
+    "window_cov": 0.5870206489675516,
+    "sentence_cov": 0.63409238776838
+   },
+   "b2048": {
+    "windows": 339,
+    "window_cov": 0.5191740412979351,
+    "sentence_cov": 0.5404714177092693
+   },
+   "b256": {
+    "windows": 240,
+    "window_cov": 0.9875,
+    "sentence_cov": 0.9961059190031153
+   },
+   "b512": {
+    "windows": 269,
+    "window_cov": 0.9739776951672863,
+    "sentence_cov": 0.9968886123210952
+   },
+   "b64": {
+    "windows": 201,
+    "window_cov": 0.9950248756218906,
+    "sentence_cov": 0.9966887417218543
+   }
+  },
+  "expected_draw_window_cov_uniform_bins": 0.8125394522109326,
+  "expected_draw_sentence_cov_uniform_bins": 0.8328494157047428
+ },
+ "kik": {
+  "windows": 1388,
+  "window_cov": 0.5951008645533141,
+  "sentences": 26799,
+  "sentence_cov": 0.3659838053658719,
+  "by_bin": {
+   "b1024": {
+    "windows": 339,
+    "window_cov": 0.2831858407079646,
+    "sentence_cov": 0.31575603557814486
+   },
+   "b2048": {
+    "windows": 339,
+    "window_cov": 0.14454277286135694,
+    "sentence_cov": 0.18314344349302952
+   },
+   "b256": {
+    "windows": 240,
+    "window_cov": 0.9875,
+    "sentence_cov": 0.9975470155355682
+   },
+   "b512": {
+    "windows": 269,
+    "window_cov": 0.9144981412639405,
+    "sentence_cov": 0.9825634750688284
+   },
+   "b64": {
+    "windows": 201,
+    "window_cov": 0.9850746268656716,
+    "sentence_cov": 0.9901960784313726
+   }
+  },
+  "expected_draw_window_cov_uniform_bins": 0.6629602763397867,
+  "expected_draw_sentence_cov_uniform_bins": 0.6938412096213887
+ },
+ "kin": {
+  "windows": 1388,
+  "window_cov": 0.5951008645533141,
+  "sentences": 26858,
+  "sentence_cov": 0.33684563258619404,
+  "by_bin": {
+   "b1024": {
+    "windows": 340,
+    "window_cov": 0.24411764705882352,
+    "sentence_cov": 0.26559571619812583
+   },
+   "b2048": {
+    "windows": 339,
+    "window_cov": 0.13569321533923304,
+    "sentence_cov": 0.158624931656643
+   },
+   "b256": {
+    "windows": 240,
+    "window_cov": 0.9833333333333333,
+    "sentence_cov": 0.9968329374505146
+   },
+   "b512": {
+    "windows": 269,
+    "window_cov": 0.9739776951672863,
+    "sentence_cov": 0.9971760276121745
+   },
+   "b64": {
+    "windows": 200,
+    "window_cov": 0.995,
+    "sentence_cov": 0.9967320261437909
+   }
+  },
+  "expected_draw_window_cov_uniform_bins": 0.6664243781797352,
+  "expected_draw_sentence_cov_uniform_bins": 0.6829923278122497
+ },
+ "kon": {
+  "windows": 2598,
+  "window_cov": 0.8160123171670516,
+  "sentences": 39667,
+  "sentence_cov": 0.6909269670002773,
+  "by_bin": {
+   "b1024": {
+    "windows": 579,
+    "window_cov": 0.4991364421416235,
+    "sentence_cov": 0.529680039905936
+   },
+   "b2048": {
+    "windows": 338,
+    "window_cov": 0.5295857988165681,
+    "sentence_cov": 0.610795847750865
+   },
+   "b256": {
+    "windows": 580,
+    "window_cov": 0.9810344827586207,
+    "sentence_cov": 0.996
+   },
+   "b512": {
+    "windows": 560,
+    "window_cov": 0.9696428571428571,
+    "sentence_cov": 0.9968180503326584
+   },
+   "b64": {
+    "windows": 541,
+    "window_cov": 0.9981515711645101,
+    "sentence_cov": 0.9990196078431373
+   }
+  },
+  "expected_draw_window_cov_uniform_bins": 0.7955102304048359,
+  "expected_draw_sentence_cov_uniform_bins": 0.8264627091665193
+ },
+ "lin": {
+  "windows": 1390,
+  "window_cov": 0.5899280575539568,
+  "sentences": 26725,
+  "sentence_cov": 0.3354162768942937,
+  "by_bin": {
+   "b1024": {
+    "windows": 339,
+    "window_cov": 0.23303834808259588,
+    "sentence_cov": 0.257433489827856
+   },
+   "b2048": {
+    "windows": 340,
+    "window_cov": 0.13529411764705881,
+    "sentence_cov": 0.1546398989189948
+   },
+   "b256": {
+    "windows": 240,
+    "window_cov": 0.9708333333333333,
+    "sentence_cov": 0.9927536231884058
+   },
+   "b512": {
+    "windows": 270,
+    "window_cov": 0.9740740740740741,
+    "sentence_cov": 0.996011046333231
+   },
+   "b64": {
+    "windows": 201,
+    "window_cov": 0.9900497512437811,
+    "sentence_cov": 0.9935483870967742
+   }
+  },
+  "expected_draw_window_cov_uniform_bins": 0.6606579248761687,
+  "expected_draw_sentence_cov_uniform_bins": 0.6788772890730523
+ },
+ "lug": {
+  "windows": 1389,
+  "window_cov": 0.5716342692584593,
+  "sentences": 26418,
+  "sentence_cov": 0.3614580967522144,
+  "by_bin": {
+   "b1024": {
+    "windows": 340,
+    "window_cov": 0.22647058823529412,
+    "sentence_cov": 0.31367804381049413
+   },
+   "b2048": {
+    "windows": 340,
+    "window_cov": 0.12058823529411765,
+    "sentence_cov": 0.17752970831832912
+   },
+   "b256": {
+    "windows": 240,
+    "window_cov": 0.9541666666666667,
+    "sentence_cov": 0.9884963023829088
+   },
+   "b512": {
+    "windows": 269,
+    "window_cov": 0.9368029739776952,
+    "sentence_cov": 0.9876699336073348
+   },
+   "b64": {
+    "windows": 200,
+    "window_cov": 0.975,
+    "sentence_cov": 0.9767441860465116
+   }
+  },
+  "expected_draw_window_cov_uniform_bins": 0.6426056928347548,
+  "expected_draw_sentence_cov_uniform_bins": 0.6888236348331157
+ },
+ "luo": {
+  "windows": 1385,
+  "window_cov": 0.5768953068592058,
+  "sentences": 27129,
+  "sentence_cov": 0.36068413874451694,
+  "by_bin": {
+   "b1024": {
+    "windows": 339,
+    "window_cov": 0.24188790560471976,
+    "sentence_cov": 0.29718670076726345
+   },
+   "b2048": {
+    "windows": 338,
+    "window_cov": 0.12721893491124261,
+    "sentence_cov": 0.191983556012333
+   },
+   "b256": {
+    "windows": 240,
+    "window_cov": 0.9583333333333334,
+    "sentence_cov": 0.9852430555555556
+   },
+   "b512": {
+    "windows": 267,
+    "window_cov": 0.9250936329588015,
+    "sentence_cov": 0.9897990726429675
+   },
+   "b64": {
+    "windows": 201,
+    "window_cov": 0.9800995024875622,
+    "sentence_cov": 0.9847094801223242
+   }
+  },
+  "expected_draw_window_cov_uniform_bins": 0.6465266618591319,
+  "expected_draw_sentence_cov_uniform_bins": 0.6897843730200888
+ },
+ "mlg": {
+  "windows": 1387,
+  "window_cov": 0.5955299206921413,
+  "sentences": 27009,
+  "sentence_cov": 0.33862786478581214,
+  "by_bin": {
+   "b1024": {
+    "windows": 338,
+    "window_cov": 0.22781065088757396,
+    "sentence_cov": 0.27500320965464115
+   },
+   "b2048": {
+    "windows": 340,
+    "window_cov": 0.14705882352941177,
+    "sentence_cov": 0.15807631270268405
+   },
+   "b256": {
+    "windows": 239,
+    "window_cov": 0.9874476987447699,
+    "sentence_cov": 0.9966969446738233
+   },
+   "b512": {
+    "windows": 270,
+    "window_cov": 0.9777777777777777,
+    "sentence_cov": 0.9972032318210068
+   },
+   "b64": {
+    "windows": 200,
+    "window_cov": 0.995,
+    "sentence_cov": 0.9966442953020134
+   }
+  },
+  "expected_draw_window_cov_uniform_bins": 0.6670189901879067,
+  "expected_draw_sentence_cov_uniform_bins": 0.6847247988308338
+ },
+ "nus": {
+  "windows": 2601,
+  "window_cov": 0.7777777777777778,
+  "sentences": 40445,
+  "sentence_cov": 0.6957349486957597,
+  "by_bin": {
+   "b1024": {
+    "windows": 580,
+    "window_cov": 0.4793103448275862,
+    "sentence_cov": 0.5630344072781996
+   },
+   "b2048": {
+    "windows": 340,
+    "window_cov": 0.46176470588235297,
+    "sentence_cov": 0.6024386883438964
+   },
+   "b256": {
+    "windows": 580,
+    "window_cov": 0.9396551724137931,
+    "sentence_cov": 0.9847076461769115
+   },
+   "b512": {
+    "windows": 560,
+    "window_cov": 0.925,
+    "sentence_cov": 0.9885523837125054
+   },
+   "b64": {
+    "windows": 541,
+    "window_cov": 0.9704251386321626,
+    "sentence_cov": 0.984171322160149
+   }
+  },
+  "expected_draw_window_cov_uniform_bins": 0.755231072351179,
+  "expected_draw_sentence_cov_uniform_bins": 0.8245808895343323
+ },
+ "orm": {
+  "windows": 1390,
+  "window_cov": 0.5453237410071943,
+  "sentences": 26712,
+  "sentence_cov": 0.3383498053309374,
+  "by_bin": {
+   "b1024": {
+    "windows": 340,
+    "window_cov": 0.2,
+    "sentence_cov": 0.2715811141129551
+   },
+   "b2048": {
+    "windows": 339,
+    "window_cov": 0.11209439528023599,
+    "sentence_cov": 0.16244296244296244
+   },
+   "b256": {
+    "windows": 240,
+    "window_cov": 0.9291666666666667,
+    "sentence_cov": 0.9816819317235637
+   },
+   "b512": {
+    "windows": 270,
+    "window_cov": 0.8518518518518519,
+    "sentence_cov": 0.9821428571428571
+   },
+   "b64": {
+    "windows": 201,
+    "window_cov": 0.9900497512437811,
+    "sentence_cov": 0.9933554817275747
+   }
+  },
+  "expected_draw_window_cov_uniform_bins": 0.6166325330085072,
+  "expected_draw_sentence_cov_uniform_bins": 0.6782408694299826
+ },
+ "run": {
+  "windows": 1390,
+  "window_cov": 0.5870503597122302,
+  "sentences": 27338,
+  "sentence_cov": 0.34486794937449705,
+  "by_bin": {
+   "b1024": {
+    "windows": 340,
+    "window_cov": 0.22941176470588234,
+    "sentence_cov": 0.2586758867972852
+   },
+   "b2048": {
+    "windows": 339,
+    "window_cov": 0.12979351032448377,
+    "sentence_cov": 0.16895698776968532
+   },
+   "b256": {
+    "windows": 240,
+    "window_cov": 0.9833333333333333,
+    "sentence_cov": 0.9968553459119497
+   },
+   "b512": {
+    "windows": 270,
+    "window_cov": 0.9518518518518518,
+    "sentence_cov": 0.9934988179669031
+   },
+   "b64": {
+    "windows": 201,
+    "window_cov": 1.0,
+    "sentence_cov": 1.0
+   }
+  },
+  "expected_draw_window_cov_uniform_bins": 0.6588780920431103,
+  "expected_draw_sentence_cov_uniform_bins": 0.6835974076891647
+ },
+ "sna": {
+  "windows": 1390,
+  "window_cov": 0.5654676258992806,
+  "sentences": 27000,
+  "sentence_cov": 0.32911111111111113,
+  "by_bin": {
+   "b1024": {
+    "windows": 340,
+    "window_cov": 0.2323529411764706,
+    "sentence_cov": 0.2627718440355167
+   },
+   "b2048": {
+    "windows": 340,
+    "window_cov": 0.11176470588235295,
+    "sentence_cov": 0.1533708636550872
+   },
+   "b256": {
+    "windows": 240,
+    "window_cov": 0.9375,
+    "sentence_cov": 0.9821580288870009
+   },
+   "b512": {
+    "windows": 269,
+    "window_cov": 0.9107806691449815,
+    "sentence_cov": 0.9906337808304714
+   },
+   "b64": {
+    "windows": 201,
+    "window_cov": 0.9900497512437811,
+    "sentence_cov": 0.9929328621908127
+   }
+  },
+  "expected_draw_window_cov_uniform_bins": 0.6364896134895173,
+  "expected_draw_sentence_cov_uniform_bins": 0.6763734759197778
+ },
+ "ssw": {
+  "windows": 1390,
+  "window_cov": 0.5863309352517986,
+  "sentences": 26999,
+  "sentence_cov": 0.3332345642431201,
+  "by_bin": {
+   "b1024": {
+    "windows": 340,
+    "window_cov": 0.23529411764705882,
+    "sentence_cov": 0.24990222917481422
+   },
+   "b2048": {
+    "windows": 339,
+    "window_cov": 0.11799410029498525,
+    "sentence_cov": 0.15783306912950582
+   },
+   "b256": {
+    "windows": 240,
+    "window_cov": 0.9916666666666667,
+    "sentence_cov": 0.9982440737489026
+   },
+   "b512": {
+    "windows": 270,
+    "window_cov": 0.9555555555555556,
+    "sentence_cov": 0.9925683709869203
+   },
+   "b64": {
+    "windows": 201,
+    "window_cov": 0.9900497512437811,
+    "sentence_cov": 0.9936708860759493
+   }
+  },
+  "expected_draw_window_cov_uniform_bins": 0.6581120382816095,
+  "expected_draw_sentence_cov_uniform_bins": 0.6784437258232184
+ },
+ "tir": {
+  "windows": 2601,
+  "window_cov": 0.7139561707035755,
+  "sentences": 39733,
+  "sentence_cov": 0.4436362721163768,
+  "by_bin": {
+   "b1024": {
+    "windows": 580,
+    "window_cov": 0.2655172413793103,
+    "sentence_cov": 0.289823779341088
+   },
+   "b2048": {
+    "windows": 340,
+    "window_cov": 0.16470588235294117,
+    "sentence_cov": 0.18385588558855886
+   },
+   "b256": {
+    "windows": 580,
+    "window_cov": 0.9741379310344828,
+    "sentence_cov": 0.994649039974819
+   },
+   "b512": {
+    "windows": 560,
+    "window_cov": 0.9714285714285714,
+    "sentence_cov": 0.9969897652016857
+   },
+   "b64": {
+    "windows": 541,
+    "window_cov": 0.9944547134935305,
+    "sentence_cov": 0.9970326409495549
+   }
+  },
+  "expected_draw_window_cov_uniform_bins": 0.6740488679377672,
+  "expected_draw_sentence_cov_uniform_bins": 0.6924702222111413
+ },
+ "tsn": {
+  "windows": 1387,
+  "window_cov": 0.5717375630857967,
+  "sentences": 27110,
+  "sentence_cov": 0.3349686462559941,
+  "by_bin": {
+   "b1024": {
+    "windows": 340,
+    "window_cov": 0.22058823529411764,
+    "sentence_cov": 0.2669642857142857
+   },
+   "b2048": {
+    "windows": 338,
+    "window_cov": 0.11242603550295859,
+    "sentence_cov": 0.15795266923500276
+   },
+   "b256": {
+    "windows": 238,
+    "window_cov": 0.9537815126050421,
+    "sentence_cov": 0.9828431372549019
+   },
+   "b512": {
+    "windows": 270,
+    "window_cov": 0.9481481481481482,
+    "sentence_cov": 0.9946708463949844
+   },
+   "b64": {
+    "windows": 201,
+    "window_cov": 0.9800995024875622,
+    "sentence_cov": 0.9875
+   }
+  },
+  "expected_draw_window_cov_uniform_bins": 0.6430086868075657,
+  "expected_draw_sentence_cov_uniform_bins": 0.677986187719835
+ },
+ "tso": {
+  "windows": 1387,
+  "window_cov": 0.5811103100216294,
+  "sentences": 26664,
+  "sentence_cov": 0.32905790579057903,
+  "by_bin": {
+   "b1024": {
+    "windows": 340,
+    "window_cov": 0.22647058823529412,
+    "sentence_cov": 0.2504089593557317
+   },
+   "b2048": {
+    "windows": 337,
+    "window_cov": 0.11572700296735905,
+    "sentence_cov": 0.16245690564975726
+   },
+   "b256": {
+    "windows": 240,
+    "window_cov": 0.975,
+    "sentence_cov": 0.993960310612597
+   },
+   "b512": {
+    "windows": 269,
+    "window_cov": 0.9591078066914498,
+    "sentence_cov": 0.9941157240928408
+   },
+   "b64": {
+    "windows": 201,
+    "window_cov": 0.9850746268656716,
+    "sentence_cov": 0.986013986013986
+   }
+  },
+  "expected_draw_window_cov_uniform_bins": 0.6522760049519549,
+  "expected_draw_sentence_cov_uniform_bins": 0.6773911771449825
+ },
+ "tum": {
+  "windows": 1388,
+  "window_cov": 0.5554755043227666,
+  "sentences": 27321,
+  "sentence_cov": 0.3365176970096263,
+  "by_bin": {
+   "b1024": {
+    "windows": 339,
+    "window_cov": 0.2153392330383481,
+    "sentence_cov": 0.26727992845279164
+   },
+   "b2048": {
+    "windows": 339,
+    "window_cov": 0.10914454277286136,
+    "sentence_cov": 0.1603271983640082
+   },
+   "b256": {
+    "windows": 240,
+    "window_cov": 0.9583333333333334,
+    "sentence_cov": 0.9907640638119227
+   },
+   "b512": {
+    "windows": 270,
+    "window_cov": 0.8777777777777778,
+    "sentence_cov": 0.9828571428571429
+   },
+   "b64": {
+    "windows": 200,
+    "window_cov": 0.97,
+    "sentence_cov": 0.9805194805194806
+   }
+  },
+  "expected_draw_window_cov_uniform_bins": 0.6261189773844641,
+  "expected_draw_sentence_cov_uniform_bins": 0.6763495628010692
+ },
+ "xho": {
+  "windows": 1385,
+  "window_cov": 0.5935018050541516,
+  "sentences": 26813,
+  "sentence_cov": 0.33722448066236527,
+  "by_bin": {
+   "b1024": {
+    "windows": 339,
+    "window_cov": 0.24778761061946902,
+    "sentence_cov": 0.2558983666061706
+   },
+   "b2048": {
+    "windows": 337,
+    "window_cov": 0.13649851632047477,
+    "sentence_cov": 0.16667823672335993
+   },
+   "b256": {
+    "windows": 239,
+    "window_cov": 0.9874476987447699,
+    "sentence_cov": 0.9966722129783694
+   },
+   "b512": {
+    "windows": 270,
+    "window_cov": 0.9592592592592593,
+    "sentence_cov": 0.9937067337948395
+   },
+   "b64": {
+    "windows": 200,
+    "window_cov": 0.985,
+    "sentence_cov": 0.9904458598726115
+   }
+  },
+  "expected_draw_window_cov_uniform_bins": 0.6631986169887946,
+  "expected_draw_sentence_cov_uniform_bins": 0.6806802819950702
+ },
+ "zul": {
+  "windows": 1388,
+  "window_cov": 0.5929394812680115,
+  "sentences": 26776,
+  "sentence_cov": 0.37705407827905585,
+  "by_bin": {
+   "b1024": {
+    "windows": 338,
+    "window_cov": 0.23668639053254437,
+    "sentence_cov": 0.3243964421855146
+   },
+   "b2048": {
+    "windows": 340,
+    "window_cov": 0.13823529411764707,
+    "sentence_cov": 0.19549032120825358
+   },
+   "b256": {
+    "windows": 240,
+    "window_cov": 0.9916666666666667,
+    "sentence_cov": 0.9984025559105432
+   },
+   "b512": {
+    "windows": 270,
+    "window_cov": 0.9592592592592593,
+    "sentence_cov": 0.9957042037434796
+   },
+   "b64": {
+    "windows": 200,
+    "window_cov": 0.995,
+    "sentence_cov": 0.9965753424657534
+   }
+  },
+  "expected_draw_window_cov_uniform_bins": 0.6641695221152235,
+  "expected_draw_sentence_cov_uniform_bins": 0.702113773102709
+ }
+}

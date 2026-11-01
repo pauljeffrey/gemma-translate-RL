@@ -1,0 +1,8 @@
+metrics: /tmp/scratch (5 distinct training steps, last step 5); signal source: proxy
+NOTE: this file has no per-language training reward; the reward-driven terms are silent, only failure / penalty / dev-chrF terms can move a weight.
+updater: every 2 steps from step 2, 77 treated languages, 2 updates
+  update @     2:  2 languages moved >2% seh 1.00->1.06, dua 1.00->1.02 | flagged: sag
+  update @     4:  3 languages moved >2% kea 2.49->2.60, kon 2.99->3.09, seh 1.06->1.03 | flagged: sag,wes
+final vs base: sum 122.50 / 122.50; largest decreases afr 1.00->0.99, ewe 1.00->0.99, hau 2.00->1.99, ibb 1.00->0.99, ibo 1.00->0.99, iso 1.00->0.99; largest increases kea 2.50->2.60, kon 3.00->3.09, seh 1.00->1.03, ish 3.00->3.06, vmw 2.50->2.52, shi 1.00->1.01
+flags at the last update: {'loops': 2}
+factor summary at the last update (languages with a signal): 52 | boosted >1.05: 2 | shrunk <0.95: 0

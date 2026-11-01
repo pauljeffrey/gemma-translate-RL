@@ -1,0 +1,1 @@
+[geez] sets=464 sentences: plain=376277 (diff 0), special=4018 (diff 4017), freed_script=117760 (diff 0); vocab-string test: 255474 strings, plain diffs 0

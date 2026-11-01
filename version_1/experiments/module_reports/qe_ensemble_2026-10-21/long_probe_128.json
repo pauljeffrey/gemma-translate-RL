@@ -1,0 +1,19 @@
+{
+ "n": 384,
+ "avg_src_words": 240.8515625,
+ "avg_mt_words": 280.2890625,
+ "batch_size": 128,
+ "ensemble_batch_size": null,
+ "seconds_africomet": 6.8464202880859375,
+ "seconds_ssa_mtl": 14.188953399658203,
+ "ssa_stats": {
+  "joint_split": 384,
+  "joint_pieces": 1016,
+  "n": 384
+ },
+ "peak_gpu_mb": 13010,
+ "mean_scores": [
+  0.31620049476623535,
+  0.36233301874232304
+ ]
+}

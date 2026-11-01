@@ -1,0 +1,5942 @@
+{
+ "READ_ME": "R10 SFT extras by licence class. Default merge = commercial_ok only; NC_noncommercial = separate file, only if the owner accepts NC for the model; owner_code_switch = <HF_ORG>/African-Code-Switch (synthetic Gemma-4-31B, capped); share_alike is a separate optional dir (CC-BY-SA: attribution + share-alike obligations); EXCLUDED_unknown_licence must not be merged (licence unstated / underlying text unclear). Numbers: tokens = prompt+answer Gemma tokens of the packed windows (train+val), target_tokens = answer tokens.",
+ "dirs": {
+  "commercial_ok": "/workspace/jobs/r10/sft_extra_v1/commercial_ok",
+  "share_alike": "/workspace/jobs/r10/sft_extra_v1/share_alike",
+  "EXCLUDED_unknown_licence": "/workspace/jobs/r10/sft_extra_v1/EXCLUDED_unknown_licence",
+  "NC_noncommercial": "/workspace/jobs/r10/sft_extra_v1/NC_noncommercial",
+  "owner_code_switch": "/workspace/jobs/r10/sft_extra_v1/owner_code_switch"
+ },
+ "languages": {
+  "yor": {
+   "name": "Yoruba",
+   "group": "other",
+   "geez": false,
+   "original_sft_samples": 1519727,
+   "original_sft_target_tokens": 145155296,
+   "r4_mix_replay_tokens": 296972,
+   "r4_mix_science_tokens": 1338723,
+   "pool_jw_style_pct_of_tokens": 27.2,
+   "commercial_ok": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "share_alike": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "EXCLUDED_unknown_licence": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "NC_noncommercial": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "owner_code_switch": {
+    "windows": 82,
+    "pairs": 545,
+    "tokens": 145079,
+    "target_tokens": 105032,
+    "sources": [
+     "<HF_ORG>/African-Code-Switch (m_text = Gemma-4-31B-it translation of eng; 266 human-gold rows)"
+    ],
+    "licences": [
+     "owner (private dataset; seeds include NC/research sources as inspiration only)"
+    ],
+    "licence_class": [
+     "owner"
+    ],
+    "synthetic_english_source": false
+   },
+   "commercial_new_target_tokens": 0,
+   "commercial_plus_sa_target_tokens": 0,
+   "commercial_new_vs_original_sft": 0.0,
+   "note": "NO new commercial-OK English-parallel data found - only sample weight / teacher / NC data can add signal"
+  },
+  "hau": {
+   "name": "Hausa",
+   "group": "other",
+   "geez": false,
+   "original_sft_samples": 1155980,
+   "original_sft_target_tokens": 135024789,
+   "r4_mix_replay_tokens": 297513,
+   "r4_mix_science_tokens": 996229,
+   "pool_jw_style_pct_of_tokens": 3.3,
+   "commercial_ok": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "share_alike": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "EXCLUDED_unknown_licence": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "NC_noncommercial": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "owner_code_switch": {
+    "windows": 94,
+    "pairs": 746,
+    "tokens": 142586,
+    "target_tokens": 90718,
+    "sources": [
+     "<HF_ORG>/African-Code-Switch (m_text = Gemma-4-31B-it translation of eng; 266 human-gold rows)"
+    ],
+    "licences": [
+     "owner (private dataset; seeds include NC/research sources as inspiration only)"
+    ],
+    "licence_class": [
+     "owner"
+    ],
+    "synthetic_english_source": false
+   },
+   "commercial_new_target_tokens": 0,
+   "commercial_plus_sa_target_tokens": 0,
+   "commercial_new_vs_original_sft": 0.0,
+   "note": "NO new commercial-OK English-parallel data found - only sample weight / teacher / NC data can add signal"
+  },
+  "ibo": {
+   "name": "Igbo",
+   "group": "other",
+   "geez": false,
+   "original_sft_samples": 2964219,
+   "original_sft_target_tokens": 260311732,
+   "r4_mix_replay_tokens": 149101,
+   "r4_mix_science_tokens": 0,
+   "pool_jw_style_pct_of_tokens": 25.6,
+   "commercial_ok": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "share_alike": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "EXCLUDED_unknown_licence": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "NC_noncommercial": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "owner_code_switch": {
+    "windows": 79,
+    "pairs": 621,
+    "tokens": 144065,
+    "target_tokens": 99011,
+    "sources": [
+     "<HF_ORG>/African-Code-Switch (m_text = Gemma-4-31B-it translation of eng; 266 human-gold rows)"
+    ],
+    "licences": [
+     "owner (private dataset; seeds include NC/research sources as inspiration only)"
+    ],
+    "licence_class": [
+     "owner"
+    ],
+    "synthetic_english_source": false
+   },
+   "commercial_new_target_tokens": 0,
+   "commercial_plus_sa_target_tokens": 0,
+   "commercial_new_vs_original_sft": 0.0,
+   "note": "NO new commercial-OK English-parallel data found - only sample weight / teacher / NC data can add signal"
+  },
+  "pcm": {
+   "name": "Pidgin",
+   "group": "other",
+   "geez": false,
+   "original_sft_samples": 124861,
+   "original_sft_target_tokens": 10612775,
+   "r4_mix_replay_tokens": 148443,
+   "r4_mix_science_tokens": 0,
+   "pool_jw_style_pct_of_tokens": 8.2,
+   "commercial_ok": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "share_alike": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "EXCLUDED_unknown_licence": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "NC_noncommercial": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "owner_code_switch": {
+    "windows": 2,
+    "pairs": 20,
+    "tokens": 1886,
+    "target_tokens": 983,
+    "sources": [
+     "<HF_ORG>/African-Code-Switch (m_text = Gemma-4-31B-it translation of eng; 266 human-gold rows)"
+    ],
+    "licences": [
+     "owner (private dataset; seeds include NC/research sources as inspiration only)"
+    ],
+    "licence_class": [
+     "owner"
+    ],
+    "synthetic_english_source": false
+   },
+   "commercial_new_target_tokens": 0,
+   "commercial_plus_sa_target_tokens": 0,
+   "commercial_new_vs_original_sft": 0.0,
+   "note": "NO new commercial-OK English-parallel data found - only sample weight / teacher / NC data can add signal"
+  },
+  "efi": {
+   "name": "Efik",
+   "group": "other",
+   "geez": false,
+   "original_sft_samples": 168862,
+   "original_sft_target_tokens": 15626749,
+   "r4_mix_replay_tokens": 148955,
+   "r4_mix_science_tokens": 0,
+   "pool_jw_style_pct_of_tokens": 79.4,
+   "commercial_ok": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "share_alike": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "EXCLUDED_unknown_licence": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "NC_noncommercial": {
+    "windows": 175,
+    "pairs": 920,
+    "tokens": 78545,
+    "target_tokens": 49855,
+    "sources": [
+     "ibom_train"
+    ],
+    "licences": [
+     "cc-by-nc-4.0"
+    ],
+    "licence_class": [
+     "nc"
+    ],
+    "synthetic_english_source": false
+   },
+   "owner_code_switch": {
+    "windows": 1,
+    "pairs": 14,
+    "tokens": 2347,
+    "target_tokens": 1616,
+    "sources": [
+     "<HF_ORG>/African-Code-Switch (m_text = Gemma-4-31B-it translation of eng; 266 human-gold rows)"
+    ],
+    "licences": [
+     "owner (private dataset; seeds include NC/research sources as inspiration only)"
+    ],
+    "licence_class": [
+     "owner"
+    ],
+    "synthetic_english_source": false
+   },
+   "commercial_new_target_tokens": 0,
+   "commercial_plus_sa_target_tokens": 0,
+   "commercial_new_vs_original_sft": 0.0,
+   "note": "NO new commercial-OK English-parallel data found - only sample weight / teacher / NC data can add signal"
+  },
+  "twi": {
+   "name": "Twi",
+   "group": "other",
+   "geez": false,
+   "original_sft_samples": 537664,
+   "original_sft_target_tokens": 165853001,
+   "r4_mix_replay_tokens": 288978,
+   "r4_mix_science_tokens": 0,
+   "pool_jw_style_pct_of_tokens": 9.2,
+   "commercial_ok": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "share_alike": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "EXCLUDED_unknown_licence": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "NC_noncommercial": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "owner_code_switch": {
+    "windows": 1,
+    "pairs": 10,
+    "tokens": 1826,
+    "target_tokens": 1195,
+    "sources": [
+     "<HF_ORG>/African-Code-Switch (m_text = Gemma-4-31B-it translation of eng; 266 human-gold rows)"
+    ],
+    "licences": [
+     "owner (private dataset; seeds include NC/research sources as inspiration only)"
+    ],
+    "licence_class": [
+     "owner"
+    ],
+    "synthetic_english_source": false
+   },
+   "commercial_new_target_tokens": 0,
+   "commercial_plus_sa_target_tokens": 0,
+   "commercial_new_vs_original_sft": 0.0,
+   "note": "NO new commercial-OK English-parallel data found - only sample weight / teacher / NC data can add signal"
+  },
+  "ewe": {
+   "name": "Ewe",
+   "group": "other",
+   "geez": false,
+   "original_sft_samples": 30182,
+   "original_sft_target_tokens": 3101519,
+   "r4_mix_replay_tokens": 148515,
+   "r4_mix_science_tokens": 0,
+   "pool_jw_style_pct_of_tokens": 9.2,
+   "commercial_ok": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "share_alike": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "EXCLUDED_unknown_licence": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "NC_noncommercial": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "owner_code_switch": {
+    "windows": 2,
+    "pairs": 3,
+    "tokens": 624,
+    "target_tokens": 401,
+    "sources": [
+     "<HF_ORG>/African-Code-Switch (m_text = Gemma-4-31B-it translation of eng; 266 human-gold rows)"
+    ],
+    "licences": [
+     "owner (private dataset; seeds include NC/research sources as inspiration only)"
+    ],
+    "licence_class": [
+     "owner"
+    ],
+    "synthetic_english_source": false
+   },
+   "commercial_new_target_tokens": 0,
+   "commercial_plus_sa_target_tokens": 0,
+   "commercial_new_vs_original_sft": 0.0,
+   "note": "NO new commercial-OK English-parallel data found - only sample weight / teacher / NC data can add signal"
+  },
+  "fon": {
+   "name": "Fon",
+   "group": "bottom15",
+   "geez": false,
+   "original_sft_samples": 375361,
+   "original_sft_target_tokens": 34028294,
+   "r4_mix_replay_tokens": 148416,
+   "r4_mix_science_tokens": 0,
+   "pool_jw_style_pct_of_tokens": 9.9,
+   "commercial_ok": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "share_alike": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "EXCLUDED_unknown_licence": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "NC_noncommercial": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "owner_code_switch": {
+    "windows": 3,
+    "pairs": 7,
+    "tokens": 1323,
+    "target_tokens": 920,
+    "sources": [
+     "<HF_ORG>/African-Code-Switch (m_text = Gemma-4-31B-it translation of eng; 266 human-gold rows)"
+    ],
+    "licences": [
+     "owner (private dataset; seeds include NC/research sources as inspiration only)"
+    ],
+    "licence_class": [
+     "owner"
+    ],
+    "synthetic_english_source": false
+   },
+   "commercial_new_target_tokens": 0,
+   "commercial_plus_sa_target_tokens": 0,
+   "commercial_new_vs_original_sft": 0.0,
+   "note": "NO new commercial-OK English-parallel data found - only sample weight / teacher / NC data can add signal"
+  },
+  "wol": {
+   "name": "Wolof",
+   "group": "other",
+   "geez": false,
+   "original_sft_samples": 50459,
+   "original_sft_target_tokens": 5031731,
+   "r4_mix_replay_tokens": 148443,
+   "r4_mix_science_tokens": 0,
+   "pool_jw_style_pct_of_tokens": 9.7,
+   "commercial_ok": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "share_alike": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "EXCLUDED_unknown_licence": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "NC_noncommercial": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "owner_code_switch": {
+    "windows": 87,
+    "pairs": 594,
+    "tokens": 144505,
+    "target_tokens": 94625,
+    "sources": [
+     "<HF_ORG>/African-Code-Switch (m_text = Gemma-4-31B-it translation of eng; 266 human-gold rows)"
+    ],
+    "licences": [
+     "owner (private dataset; seeds include NC/research sources as inspiration only)"
+    ],
+    "licence_class": [
+     "owner"
+    ],
+    "synthetic_english_source": false
+   },
+   "commercial_new_target_tokens": 0,
+   "commercial_plus_sa_target_tokens": 0,
+   "commercial_new_vs_original_sft": 0.0,
+   "note": "NO new commercial-OK English-parallel data found - only sample weight / teacher / NC data can add signal"
+  },
+  "swh": {
+   "name": "Swahili",
+   "group": "other",
+   "geez": false,
+   "original_sft_samples": 279040,
+   "original_sft_target_tokens": 35364489,
+   "r4_mix_replay_tokens": 148402,
+   "r4_mix_science_tokens": 0,
+   "pool_jw_style_pct_of_tokens": 2.4,
+   "commercial_ok": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "share_alike": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "EXCLUDED_unknown_licence": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "NC_noncommercial": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "owner_code_switch": {
+    "windows": 103,
+    "pairs": 779,
+    "tokens": 142633,
+    "target_tokens": 89023,
+    "sources": [
+     "<HF_ORG>/African-Code-Switch (m_text = Gemma-4-31B-it translation of eng; 266 human-gold rows)"
+    ],
+    "licences": [
+     "owner (private dataset; seeds include NC/research sources as inspiration only)"
+    ],
+    "licence_class": [
+     "owner"
+    ],
+    "synthetic_english_source": false
+   },
+   "commercial_new_target_tokens": 0,
+   "commercial_plus_sa_target_tokens": 0,
+   "commercial_new_vs_original_sft": 0.0,
+   "note": "NO new commercial-OK English-parallel data found - only sample weight / teacher / NC data can add signal"
+  },
+  "kin": {
+   "name": "Kinyarwanda",
+   "group": "other",
+   "geez": false,
+   "original_sft_samples": 183557,
+   "original_sft_target_tokens": 28839951,
+   "r4_mix_replay_tokens": 156502,
+   "r4_mix_science_tokens": 0,
+   "pool_jw_style_pct_of_tokens": 3.8,
+   "commercial_ok": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "share_alike": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "EXCLUDED_unknown_licence": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "NC_noncommercial": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "owner_code_switch": {
+    "windows": 66,
+    "pairs": 549,
+    "tokens": 109418,
+    "target_tokens": 72732,
+    "sources": [
+     "<HF_ORG>/African-Code-Switch (m_text = Gemma-4-31B-it translation of eng; 266 human-gold rows)"
+    ],
+    "licences": [
+     "owner (private dataset; seeds include NC/research sources as inspiration only)"
+    ],
+    "licence_class": [
+     "owner"
+    ],
+    "synthetic_english_source": false
+   },
+   "commercial_new_target_tokens": 0,
+   "commercial_plus_sa_target_tokens": 0,
+   "commercial_new_vs_original_sft": 0.0,
+   "note": "NO new commercial-OK English-parallel data found - only sample weight / teacher / NC data can add signal"
+  },
+  "som": {
+   "name": "Somali",
+   "group": "other",
+   "geez": false,
+   "original_sft_samples": 193714,
+   "original_sft_target_tokens": 37763040,
+   "r4_mix_replay_tokens": 188725,
+   "r4_mix_science_tokens": 0,
+   "pool_jw_style_pct_of_tokens": 9.4,
+   "commercial_ok": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "share_alike": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "EXCLUDED_unknown_licence": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "NC_noncommercial": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "owner_code_switch": {
+    "windows": 79,
+    "pairs": 638,
+    "tokens": 143693,
+    "target_tokens": 97284,
+    "sources": [
+     "<HF_ORG>/African-Code-Switch (m_text = Gemma-4-31B-it translation of eng; 266 human-gold rows)"
+    ],
+    "licences": [
+     "owner (private dataset; seeds include NC/research sources as inspiration only)"
+    ],
+    "licence_class": [
+     "owner"
+    ],
+    "synthetic_english_source": false
+   },
+   "commercial_new_target_tokens": 0,
+   "commercial_plus_sa_target_tokens": 0,
+   "commercial_new_vs_original_sft": 0.0,
+   "note": "NO new commercial-OK English-parallel data found - only sample weight / teacher / NC data can add signal"
+  },
+  "orm": {
+   "name": "Oromo",
+   "group": "other",
+   "geez": false,
+   "original_sft_samples": 111026,
+   "original_sft_target_tokens": 14483322,
+   "r4_mix_replay_tokens": 149082,
+   "r4_mix_science_tokens": 0,
+   "pool_jw_style_pct_of_tokens": 33.4,
+   "commercial_ok": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "share_alike": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "EXCLUDED_unknown_licence": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "NC_noncommercial": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "owner_code_switch": {
+    "windows": 84,
+    "pairs": 637,
+    "tokens": 143979,
+    "target_tokens": 96364,
+    "sources": [
+     "<HF_ORG>/African-Code-Switch (m_text = Gemma-4-31B-it translation of eng; 266 human-gold rows)"
+    ],
+    "licences": [
+     "owner (private dataset; seeds include NC/research sources as inspiration only)"
+    ],
+    "licence_class": [
+     "owner"
+    ],
+    "synthetic_english_source": false
+   },
+   "commercial_new_target_tokens": 0,
+   "commercial_plus_sa_target_tokens": 0,
+   "commercial_new_vs_original_sft": 0.0,
+   "note": "NO new commercial-OK English-parallel data found - only sample weight / teacher / NC data can add signal"
+  },
+  "amh": {
+   "name": "Amharic",
+   "group": "bottom15",
+   "geez": true,
+   "original_sft_samples": 59035,
+   "original_sft_target_tokens": 8289388,
+   "r4_mix_replay_tokens": 296841,
+   "r4_mix_science_tokens": 1046659,
+   "pool_jw_style_pct_of_tokens": 58.0,
+   "commercial_ok": {
+    "windows": 12903,
+    "pairs": 69244,
+    "tokens": 11175651,
+    "target_tokens": 7211121,
+    "sources": [
+     "finetranslations",
+     "opus-GlobalVoices",
+     "opus-GoURMET",
+     "opus_Tatoeba"
+    ],
+    "licences": [
+     "cc-by-2.0-fr",
+     "cc-by-3.0 (Global Voices site terms; OPUS README silent)",
+     "cc0-1.0 (OPUS GoURMET README)",
+     "odc-by"
+    ],
+    "licence_class": [
+     "commercial_ok"
+    ],
+    "synthetic_english_source": true
+   },
+   "share_alike": {
+    "windows": 189,
+    "pairs": 1575,
+    "tokens": 391258,
+    "target_tokens": 256413,
+    "sources": [
+     "opus_wikimedia"
+    ],
+    "licences": [
+     "cc-by-sa-4.0"
+    ],
+    "licence_class": [
+     "share_alike"
+    ],
+    "synthetic_english_source": false
+   },
+   "EXCLUDED_unknown_licence": {
+    "windows": 13550,
+    "pairs": 112848,
+    "tokens": 8139086,
+    "target_tokens": 4877128,
+    "sources": [
+     "opus-CCAligned",
+     "opus_bible-uedin"
+    ],
+    "licences": [
+     "unspecified (bible-uedin; underlying Bible translation terms differ)",
+     "unstated (web-mined; no licence)"
+    ],
+    "licence_class": [
+     "unknown"
+    ],
+    "synthetic_english_source": false
+   },
+   "NC_noncommercial": {
+    "windows": 8392,
+    "pairs": 41646,
+    "tokens": 6496549,
+    "target_tokens": 4277993,
+    "sources": [
+     "africanfinetranslations",
+     "afridocmt-doc10",
+     "afridocmt-doc25",
+     "afridocmt-document",
+     "afridocmt-sentence",
+     "mafand-dev",
+     "opus-TED2020",
+     "opus-Tanzil",
+     "polynews"
+    ],
+    "licences": [
+     "TED Talks usage policy (CC BY-NC-ND)",
+     "cc-by-nc-4.0",
+     "cc-by-nc-sa-3.0 (catalogue; card unstated)",
+     "non-commercial (Tanzil terms of use)"
+    ],
+    "licence_class": [
+     "nc"
+    ],
+    "synthetic_english_source": false
+   },
+   "owner_code_switch": {
+    "windows": 82,
+    "pairs": 693,
+    "tokens": 143146,
+    "target_tokens": 93460,
+    "sources": [
+     "<HF_ORG>/African-Code-Switch (m_text = Gemma-4-31B-it translation of eng; 266 human-gold rows)"
+    ],
+    "licences": [
+     "owner (private dataset; seeds include NC/research sources as inspiration only)"
+    ],
+    "licence_class": [
+     "owner"
+    ],
+    "synthetic_english_source": false
+   },
+   "commercial_new_target_tokens": 7211121,
+   "commercial_plus_sa_target_tokens": 7467534,
+   "commercial_new_vs_original_sft": 0.901,
+   "note": ""
+  },
+  "tir": {
+   "name": "Tigrinya",
+   "group": "bottom15",
+   "geez": true,
+   "original_sft_samples": 48410,
+   "original_sft_target_tokens": 5600654,
+   "r4_mix_replay_tokens": 148373,
+   "r4_mix_science_tokens": 0,
+   "pool_jw_style_pct_of_tokens": 83.4,
+   "commercial_ok": {
+    "windows": 6406,
+    "pairs": 15077,
+    "tokens": 8311279,
+    "target_tokens": 5688783,
+    "sources": [
+     "finetranslations",
+     "opus_Tatoeba"
+    ],
+    "licences": [
+     "cc-by-2.0-fr",
+     "odc-by"
+    ],
+    "licence_class": [
+     "commercial_ok"
+    ],
+    "synthetic_english_source": true
+   },
+   "share_alike": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "EXCLUDED_unknown_licence": {
+    "windows": 507,
+    "pairs": 6264,
+    "tokens": 538290,
+    "target_tokens": 390235,
+    "sources": [
+     "opus-CCAligned"
+    ],
+    "licences": [
+     "unstated (web-mined; no licence)"
+    ],
+    "licence_class": [
+     "unknown"
+    ],
+    "synthetic_english_source": false
+   },
+   "NC_noncommercial": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "owner_code_switch": {
+    "windows": 11,
+    "pairs": 27,
+    "tokens": 4353,
+    "target_tokens": 2999,
+    "sources": [
+     "<HF_ORG>/African-Code-Switch (m_text = Gemma-4-31B-it translation of eng; 266 human-gold rows)"
+    ],
+    "licences": [
+     "owner (private dataset; seeds include NC/research sources as inspiration only)"
+    ],
+    "licence_class": [
+     "owner"
+    ],
+    "synthetic_english_source": false
+   },
+   "commercial_new_target_tokens": 5688783,
+   "commercial_plus_sa_target_tokens": 5688783,
+   "commercial_new_vs_original_sft": 1.016,
+   "note": ""
+  },
+  "lug": {
+   "name": "Luganda",
+   "group": "other",
+   "geez": false,
+   "original_sft_samples": 119739,
+   "original_sft_target_tokens": 12779860,
+   "r4_mix_replay_tokens": 296792,
+   "r4_mix_science_tokens": 1085971,
+   "pool_jw_style_pct_of_tokens": 51.9,
+   "commercial_ok": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "share_alike": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "EXCLUDED_unknown_licence": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "NC_noncommercial": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "owner_code_switch": {
+    "windows": 89,
+    "pairs": 614,
+    "tokens": 144358,
+    "target_tokens": 98051,
+    "sources": [
+     "<HF_ORG>/African-Code-Switch (m_text = Gemma-4-31B-it translation of eng; 266 human-gold rows)"
+    ],
+    "licences": [
+     "owner (private dataset; seeds include NC/research sources as inspiration only)"
+    ],
+    "licence_class": [
+     "owner"
+    ],
+    "synthetic_english_source": false
+   },
+   "commercial_new_target_tokens": 0,
+   "commercial_plus_sa_target_tokens": 0,
+   "commercial_new_vs_original_sft": 0.0,
+   "note": "NO new commercial-OK English-parallel data found - only sample weight / teacher / NC data can add signal"
+  },
+  "lin": {
+   "name": "Lingala",
+   "group": "other",
+   "geez": false,
+   "original_sft_samples": 37254,
+   "original_sft_target_tokens": 3793007,
+   "r4_mix_replay_tokens": 148466,
+   "r4_mix_science_tokens": 0,
+   "pool_jw_style_pct_of_tokens": 81.4,
+   "commercial_ok": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "share_alike": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "EXCLUDED_unknown_licence": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "NC_noncommercial": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "owner_code_switch": {
+    "windows": 2,
+    "pairs": 19,
+    "tokens": 4261,
+    "target_tokens": 2770,
+    "sources": [
+     "<HF_ORG>/African-Code-Switch (m_text = Gemma-4-31B-it translation of eng; 266 human-gold rows)"
+    ],
+    "licences": [
+     "owner (private dataset; seeds include NC/research sources as inspiration only)"
+    ],
+    "licence_class": [
+     "owner"
+    ],
+    "synthetic_english_source": false
+   },
+   "commercial_new_target_tokens": 0,
+   "commercial_plus_sa_target_tokens": 0,
+   "commercial_new_vs_original_sft": 0.0,
+   "note": "NO new commercial-OK English-parallel data found - only sample weight / teacher / NC data can add signal"
+  },
+  "zul": {
+   "name": "Zulu",
+   "group": "other",
+   "geez": false,
+   "original_sft_samples": 229980,
+   "original_sft_target_tokens": 33585226,
+   "r4_mix_replay_tokens": 296858,
+   "r4_mix_science_tokens": 1030061,
+   "pool_jw_style_pct_of_tokens": 36.1,
+   "commercial_ok": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "share_alike": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "EXCLUDED_unknown_licence": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "NC_noncommercial": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "owner_code_switch": {
+    "windows": 89,
+    "pairs": 720,
+    "tokens": 142941,
+    "target_tokens": 94008,
+    "sources": [
+     "<HF_ORG>/African-Code-Switch (m_text = Gemma-4-31B-it translation of eng; 266 human-gold rows)"
+    ],
+    "licences": [
+     "owner (private dataset; seeds include NC/research sources as inspiration only)"
+    ],
+    "licence_class": [
+     "owner"
+    ],
+    "synthetic_english_source": false
+   },
+   "commercial_new_target_tokens": 0,
+   "commercial_plus_sa_target_tokens": 0,
+   "commercial_new_vs_original_sft": 0.0,
+   "note": "NO new commercial-OK English-parallel data found - only sample weight / teacher / NC data can add signal"
+  },
+  "xho": {
+   "name": "Xhosa",
+   "group": "other",
+   "geez": false,
+   "original_sft_samples": 367026,
+   "original_sft_target_tokens": 46705118,
+   "r4_mix_replay_tokens": 148780,
+   "r4_mix_science_tokens": 0,
+   "pool_jw_style_pct_of_tokens": 16.1,
+   "commercial_ok": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "share_alike": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "EXCLUDED_unknown_licence": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "NC_noncommercial": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "owner_code_switch": {
+    "windows": 71,
+    "pairs": 662,
+    "tokens": 143566,
+    "target_tokens": 95636,
+    "sources": [
+     "<HF_ORG>/African-Code-Switch (m_text = Gemma-4-31B-it translation of eng; 266 human-gold rows)"
+    ],
+    "licences": [
+     "owner (private dataset; seeds include NC/research sources as inspiration only)"
+    ],
+    "licence_class": [
+     "owner"
+    ],
+    "synthetic_english_source": false
+   },
+   "commercial_new_target_tokens": 0,
+   "commercial_plus_sa_target_tokens": 0,
+   "commercial_new_vs_original_sft": 0.0,
+   "note": "NO new commercial-OK English-parallel data found - only sample weight / teacher / NC data can add signal"
+  },
+  "afr": {
+   "name": "Afrikaans",
+   "group": "other",
+   "geez": false,
+   "original_sft_samples": 298234,
+   "original_sft_target_tokens": 33190969,
+   "r4_mix_replay_tokens": 148440,
+   "r4_mix_science_tokens": 0,
+   "pool_jw_style_pct_of_tokens": 12.9,
+   "commercial_ok": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "share_alike": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "EXCLUDED_unknown_licence": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "NC_noncommercial": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "owner_code_switch": {
+    "windows": 111,
+    "pairs": 711,
+    "tokens": 116470,
+    "target_tokens": 71799,
+    "sources": [
+     "<HF_ORG>/African-Code-Switch (m_text = Gemma-4-31B-it translation of eng; 266 human-gold rows)"
+    ],
+    "licences": [
+     "owner (private dataset; seeds include NC/research sources as inspiration only)"
+    ],
+    "licence_class": [
+     "owner"
+    ],
+    "synthetic_english_source": false
+   },
+   "commercial_new_target_tokens": 0,
+   "commercial_plus_sa_target_tokens": 0,
+   "commercial_new_vs_original_sft": 0.0,
+   "note": "NO new commercial-OK English-parallel data found - only sample weight / teacher / NC data can add signal"
+  },
+  "sna": {
+   "name": "Shona",
+   "group": "other",
+   "geez": false,
+   "original_sft_samples": 120779,
+   "original_sft_target_tokens": 15848709,
+   "r4_mix_replay_tokens": 148810,
+   "r4_mix_science_tokens": 0,
+   "pool_jw_style_pct_of_tokens": 39.8,
+   "commercial_ok": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "share_alike": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "EXCLUDED_unknown_licence": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "NC_noncommercial": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "owner_code_switch": {
+    "windows": 100,
+    "pairs": 706,
+    "tokens": 143336,
+    "target_tokens": 92512,
+    "sources": [
+     "<HF_ORG>/African-Code-Switch (m_text = Gemma-4-31B-it translation of eng; 266 human-gold rows)"
+    ],
+    "licences": [
+     "owner (private dataset; seeds include NC/research sources as inspiration only)"
+    ],
+    "licence_class": [
+     "owner"
+    ],
+    "synthetic_english_source": false
+   },
+   "commercial_new_target_tokens": 0,
+   "commercial_plus_sa_target_tokens": 0,
+   "commercial_new_vs_original_sft": 0.0,
+   "note": "NO new commercial-OK English-parallel data found - only sample weight / teacher / NC data can add signal"
+  },
+  "nya": {
+   "name": "Chichewa",
+   "group": "other",
+   "geez": false,
+   "original_sft_samples": 129583,
+   "original_sft_target_tokens": 20969998,
+   "r4_mix_replay_tokens": 159465,
+   "r4_mix_science_tokens": 0,
+   "pool_jw_style_pct_of_tokens": 38.8,
+   "commercial_ok": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "share_alike": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "EXCLUDED_unknown_licence": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "NC_noncommercial": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "owner_code_switch": {
+    "windows": 88,
+    "pairs": 699,
+    "tokens": 143282,
+    "target_tokens": 95160,
+    "sources": [
+     "<HF_ORG>/African-Code-Switch (m_text = Gemma-4-31B-it translation of eng; 266 human-gold rows)"
+    ],
+    "licences": [
+     "owner (private dataset; seeds include NC/research sources as inspiration only)"
+    ],
+    "licence_class": [
+     "owner"
+    ],
+    "synthetic_english_source": false
+   },
+   "commercial_new_target_tokens": 0,
+   "commercial_plus_sa_target_tokens": 0,
+   "commercial_new_vs_original_sft": 0.0,
+   "note": "NO new commercial-OK English-parallel data found - only sample weight / teacher / NC data can add signal"
+  },
+  "sot": {
+   "name": "Sesotho",
+   "group": "other",
+   "geez": false,
+   "original_sft_samples": 130669,
+   "original_sft_target_tokens": 24842204,
+   "r4_mix_replay_tokens": 177057,
+   "r4_mix_science_tokens": 0,
+   "pool_jw_style_pct_of_tokens": 5.2,
+   "commercial_ok": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "share_alike": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "EXCLUDED_unknown_licence": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "NC_noncommercial": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "owner_code_switch": {
+    "windows": 80,
+    "pairs": 629,
+    "tokens": 132400,
+    "target_tokens": 87902,
+    "sources": [
+     "<HF_ORG>/African-Code-Switch (m_text = Gemma-4-31B-it translation of eng; 266 human-gold rows)"
+    ],
+    "licences": [
+     "owner (private dataset; seeds include NC/research sources as inspiration only)"
+    ],
+    "licence_class": [
+     "owner"
+    ],
+    "synthetic_english_source": false
+   },
+   "commercial_new_target_tokens": 0,
+   "commercial_plus_sa_target_tokens": 0,
+   "commercial_new_vs_original_sft": 0.0,
+   "note": "NO new commercial-OK English-parallel data found - only sample weight / teacher / NC data can add signal"
+  },
+  "tsn": {
+   "name": "Setswana",
+   "group": "other",
+   "geez": false,
+   "original_sft_samples": 332597,
+   "original_sft_target_tokens": 34209543,
+   "r4_mix_replay_tokens": 148588,
+   "r4_mix_science_tokens": 0,
+   "pool_jw_style_pct_of_tokens": 71.3,
+   "commercial_ok": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "share_alike": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "EXCLUDED_unknown_licence": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "NC_noncommercial": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "owner_code_switch": {
+    "windows": 102,
+    "pairs": 680,
+    "tokens": 143956,
+    "target_tokens": 96948,
+    "sources": [
+     "<HF_ORG>/African-Code-Switch (m_text = Gemma-4-31B-it translation of eng; 266 human-gold rows)"
+    ],
+    "licences": [
+     "owner (private dataset; seeds include NC/research sources as inspiration only)"
+    ],
+    "licence_class": [
+     "owner"
+    ],
+    "synthetic_english_source": false
+   },
+   "commercial_new_target_tokens": 0,
+   "commercial_plus_sa_target_tokens": 0,
+   "commercial_new_vs_original_sft": 0.0,
+   "note": "NO new commercial-OK English-parallel data found - only sample weight / teacher / NC data can add signal"
+  },
+  "mlg": {
+   "name": "Malagasy",
+   "group": "other",
+   "geez": false,
+   "original_sft_samples": 84787,
+   "original_sft_target_tokens": 10078629,
+   "r4_mix_replay_tokens": 148594,
+   "r4_mix_science_tokens": 0,
+   "pool_jw_style_pct_of_tokens": 43.0,
+   "commercial_ok": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "share_alike": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "EXCLUDED_unknown_licence": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "NC_noncommercial": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "owner_code_switch": {
+    "windows": 290,
+    "pairs": 1298,
+    "tokens": 140563,
+    "target_tokens": 91651,
+    "sources": [
+     "<HF_ORG>/African-Code-Switch (m_text = Gemma-4-31B-it translation of eng; 266 human-gold rows)"
+    ],
+    "licences": [
+     "owner (private dataset; seeds include NC/research sources as inspiration only)"
+    ],
+    "licence_class": [
+     "owner"
+    ],
+    "synthetic_english_source": false
+   },
+   "commercial_new_target_tokens": 0,
+   "commercial_plus_sa_target_tokens": 0,
+   "commercial_new_vs_original_sft": 0.0,
+   "note": "NO new commercial-OK English-parallel data found - only sample weight / teacher / NC data can add signal"
+  },
+  "ibb": {
+   "name": "Ibibio",
+   "group": "other",
+   "geez": false,
+   "original_sft_samples": 2060,
+   "original_sft_target_tokens": 202632,
+   "r4_mix_replay_tokens": 148467,
+   "r4_mix_science_tokens": 0,
+   "pool_jw_style_pct_of_tokens": 76.2,
+   "commercial_ok": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "share_alike": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "EXCLUDED_unknown_licence": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "NC_noncommercial": {
+    "windows": 163,
+    "pairs": 986,
+    "tokens": 87913,
+    "target_tokens": 57240,
+    "sources": [
+     "ibom_train"
+    ],
+    "licences": [
+     "cc-by-nc-4.0"
+    ],
+    "licence_class": [
+     "nc"
+    ],
+    "synthetic_english_source": false
+   },
+   "owner_code_switch": {
+    "windows": 2,
+    "pairs": 18,
+    "tokens": 3121,
+    "target_tokens": 2163,
+    "sources": [
+     "<HF_ORG>/African-Code-Switch (m_text = Gemma-4-31B-it translation of eng; 266 human-gold rows)"
+    ],
+    "licences": [
+     "owner (private dataset; seeds include NC/research sources as inspiration only)"
+    ],
+    "licence_class": [
+     "owner"
+    ],
+    "synthetic_english_source": false
+   },
+   "commercial_new_target_tokens": 0,
+   "commercial_plus_sa_target_tokens": 0,
+   "commercial_new_vs_original_sft": 0.0,
+   "note": "NO new commercial-OK English-parallel data found - only sample weight / teacher / NC data can add signal"
+  },
+  "urh": {
+   "name": "Urhobo",
+   "group": "no_benchmark",
+   "geez": false,
+   "original_sft_samples": 12528,
+   "original_sft_target_tokens": 1223228,
+   "r4_mix_replay_tokens": 148393,
+   "r4_mix_science_tokens": 0,
+   "pool_jw_style_pct_of_tokens": 76.6,
+   "commercial_ok": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "share_alike": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "EXCLUDED_unknown_licence": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "NC_noncommercial": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "owner_code_switch": {
+    "windows": 4,
+    "pairs": 12,
+    "tokens": 2360,
+    "target_tokens": 1688,
+    "sources": [
+     "<HF_ORG>/African-Code-Switch (m_text = Gemma-4-31B-it translation of eng; 266 human-gold rows)"
+    ],
+    "licences": [
+     "owner (private dataset; seeds include NC/research sources as inspiration only)"
+    ],
+    "licence_class": [
+     "owner"
+    ],
+    "synthetic_english_source": false
+   },
+   "commercial_new_target_tokens": 0,
+   "commercial_plus_sa_target_tokens": 0,
+   "commercial_new_vs_original_sft": 0.0,
+   "note": "NO new commercial-OK English-parallel data found - only sample weight / teacher / NC data can add signal"
+  },
+  "bem": {
+   "name": "Bemba",
+   "group": "other",
+   "geez": false,
+   "original_sft_samples": 46881,
+   "original_sft_target_tokens": 5023191,
+   "r4_mix_replay_tokens": 148599,
+   "r4_mix_science_tokens": 0,
+   "pool_jw_style_pct_of_tokens": 69.7,
+   "commercial_ok": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "share_alike": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "EXCLUDED_unknown_licence": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "NC_noncommercial": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "owner_code_switch": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "commercial_new_target_tokens": 0,
+   "commercial_plus_sa_target_tokens": 0,
+   "commercial_new_vs_original_sft": 0.0,
+   "note": "NO new commercial-OK English-parallel data found - only sample weight / teacher / NC data can add signal"
+  },
+  "tum": {
+   "name": "Tumbuka",
+   "group": "other",
+   "geez": false,
+   "original_sft_samples": 35350,
+   "original_sft_target_tokens": 3819053,
+   "r4_mix_replay_tokens": 149017,
+   "r4_mix_science_tokens": 0,
+   "pool_jw_style_pct_of_tokens": 83.2,
+   "commercial_ok": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "share_alike": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "EXCLUDED_unknown_licence": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "NC_noncommercial": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "owner_code_switch": {
+    "windows": 10,
+    "pairs": 27,
+    "tokens": 3737,
+    "target_tokens": 2401,
+    "sources": [
+     "<HF_ORG>/African-Code-Switch (m_text = Gemma-4-31B-it translation of eng; 266 human-gold rows)"
+    ],
+    "licences": [
+     "owner (private dataset; seeds include NC/research sources as inspiration only)"
+    ],
+    "licence_class": [
+     "owner"
+    ],
+    "synthetic_english_source": false
+   },
+   "commercial_new_target_tokens": 0,
+   "commercial_plus_sa_target_tokens": 0,
+   "commercial_new_vs_original_sft": 0.0,
+   "note": "NO new commercial-OK English-parallel data found - only sample weight / teacher / NC data can add signal"
+  },
+  "run": {
+   "name": "Kirundi",
+   "group": "other",
+   "geez": false,
+   "original_sft_samples": 38923,
+   "original_sft_target_tokens": 4108968,
+   "r4_mix_replay_tokens": 148451,
+   "r4_mix_science_tokens": 0,
+   "pool_jw_style_pct_of_tokens": 81.8,
+   "commercial_ok": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "share_alike": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "EXCLUDED_unknown_licence": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "NC_noncommercial": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "owner_code_switch": {
+    "windows": 8,
+    "pairs": 33,
+    "tokens": 7082,
+    "target_tokens": 4436,
+    "sources": [
+     "<HF_ORG>/African-Code-Switch (m_text = Gemma-4-31B-it translation of eng; 266 human-gold rows)"
+    ],
+    "licences": [
+     "owner (private dataset; seeds include NC/research sources as inspiration only)"
+    ],
+    "licence_class": [
+     "owner"
+    ],
+    "synthetic_english_source": false
+   },
+   "commercial_new_target_tokens": 0,
+   "commercial_plus_sa_target_tokens": 0,
+   "commercial_new_vs_original_sft": 0.0,
+   "note": "NO new commercial-OK English-parallel data found - only sample weight / teacher / NC data can add signal"
+  },
+  "ven": {
+   "name": "Venda",
+   "group": "other",
+   "geez": false,
+   "original_sft_samples": 47047,
+   "original_sft_target_tokens": 4850851,
+   "r4_mix_replay_tokens": 148387,
+   "r4_mix_science_tokens": 0,
+   "pool_jw_style_pct_of_tokens": 75.2,
+   "commercial_ok": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "share_alike": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "EXCLUDED_unknown_licence": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "NC_noncommercial": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "owner_code_switch": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "commercial_new_target_tokens": 0,
+   "commercial_plus_sa_target_tokens": 0,
+   "commercial_new_vs_original_sft": 0.0,
+   "note": "NO new commercial-OK English-parallel data found - only sample weight / teacher / NC data can add signal"
+  },
+  "tso": {
+   "name": "Tsonga",
+   "group": "other",
+   "geez": false,
+   "original_sft_samples": 84895,
+   "original_sft_target_tokens": 8948175,
+   "r4_mix_replay_tokens": 148678,
+   "r4_mix_science_tokens": 0,
+   "pool_jw_style_pct_of_tokens": 68.7,
+   "commercial_ok": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "share_alike": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "EXCLUDED_unknown_licence": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "NC_noncommercial": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "owner_code_switch": {
+    "windows": 1,
+    "pairs": 13,
+    "tokens": 1727,
+    "target_tokens": 1215,
+    "sources": [
+     "<HF_ORG>/African-Code-Switch (m_text = Gemma-4-31B-it translation of eng; 266 human-gold rows)"
+    ],
+    "licences": [
+     "owner (private dataset; seeds include NC/research sources as inspiration only)"
+    ],
+    "licence_class": [
+     "owner"
+    ],
+    "synthetic_english_source": false
+   },
+   "commercial_new_target_tokens": 0,
+   "commercial_plus_sa_target_tokens": 0,
+   "commercial_new_vs_original_sft": 0.0,
+   "note": "NO new commercial-OK English-parallel data found - only sample weight / teacher / NC data can add signal"
+  },
+  "nso": {
+   "name": "Sepedi",
+   "group": "other",
+   "geez": false,
+   "original_sft_samples": 100637,
+   "original_sft_target_tokens": 10464494,
+   "r4_mix_replay_tokens": 296780,
+   "r4_mix_science_tokens": 1133451,
+   "pool_jw_style_pct_of_tokens": 59.4,
+   "commercial_ok": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "share_alike": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "EXCLUDED_unknown_licence": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "NC_noncommercial": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "owner_code_switch": {
+    "windows": 78,
+    "pairs": 560,
+    "tokens": 133363,
+    "target_tokens": 90079,
+    "sources": [
+     "<HF_ORG>/African-Code-Switch (m_text = Gemma-4-31B-it translation of eng; 266 human-gold rows)"
+    ],
+    "licences": [
+     "owner (private dataset; seeds include NC/research sources as inspiration only)"
+    ],
+    "licence_class": [
+     "owner"
+    ],
+    "synthetic_english_source": false
+   },
+   "commercial_new_target_tokens": 0,
+   "commercial_plus_sa_target_tokens": 0,
+   "commercial_new_vs_original_sft": 0.0,
+   "note": "NO new commercial-OK English-parallel data found - only sample weight / teacher / NC data can add signal"
+  },
+  "ssw": {
+   "name": "Swati",
+   "group": "other",
+   "geez": false,
+   "original_sft_samples": 31467,
+   "original_sft_target_tokens": 3565671,
+   "r4_mix_replay_tokens": 148439,
+   "r4_mix_science_tokens": 0,
+   "pool_jw_style_pct_of_tokens": 73.0,
+   "commercial_ok": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "share_alike": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "EXCLUDED_unknown_licence": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "NC_noncommercial": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "owner_code_switch": {
+    "windows": 7,
+    "pairs": 33,
+    "tokens": 4619,
+    "target_tokens": 2992,
+    "sources": [
+     "<HF_ORG>/African-Code-Switch (m_text = Gemma-4-31B-it translation of eng; 266 human-gold rows)"
+    ],
+    "licences": [
+     "owner (private dataset; seeds include NC/research sources as inspiration only)"
+    ],
+    "licence_class": [
+     "owner"
+    ],
+    "synthetic_english_source": false
+   },
+   "commercial_new_target_tokens": 0,
+   "commercial_plus_sa_target_tokens": 0,
+   "commercial_new_vs_original_sft": 0.0,
+   "note": "NO new commercial-OK English-parallel data found - only sample weight / teacher / NC data can add signal"
+  },
+  "nbl": {
+   "name": "South Ndebele",
+   "group": "other",
+   "geez": false,
+   "original_sft_samples": 37195,
+   "original_sft_target_tokens": 4141565,
+   "r4_mix_replay_tokens": 148618,
+   "r4_mix_science_tokens": 0,
+   "pool_jw_style_pct_of_tokens": 67.3,
+   "commercial_ok": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "share_alike": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "EXCLUDED_unknown_licence": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "NC_noncommercial": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "owner_code_switch": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "commercial_new_target_tokens": 0,
+   "commercial_plus_sa_target_tokens": 0,
+   "commercial_new_vs_original_sft": 0.0,
+   "note": "NO new commercial-OK English-parallel data found - only sample weight / teacher / NC data can add signal"
+  },
+  "nde": {
+   "name": "North Ndebele",
+   "group": "other",
+   "geez": false,
+   "original_sft_samples": 0,
+   "original_sft_target_tokens": 0,
+   "r4_mix_replay_tokens": 0,
+   "r4_mix_science_tokens": 0,
+   "pool_jw_style_pct_of_tokens": null,
+   "commercial_ok": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "share_alike": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "EXCLUDED_unknown_licence": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "NC_noncommercial": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "owner_code_switch": {
+    "windows": 6,
+    "pairs": 13,
+    "tokens": 2160,
+    "target_tokens": 1362,
+    "sources": [
+     "<HF_ORG>/African-Code-Switch (m_text = Gemma-4-31B-it translation of eng; 266 human-gold rows)"
+    ],
+    "licences": [
+     "owner (private dataset; seeds include NC/research sources as inspiration only)"
+    ],
+    "licence_class": [
+     "owner"
+    ],
+    "synthetic_english_source": false
+   },
+   "commercial_new_target_tokens": 0,
+   "commercial_plus_sa_target_tokens": 0,
+   "commercial_new_vs_original_sft": 0.0,
+   "note": "NO new commercial-OK English-parallel data found - only sample weight / teacher / NC data can add signal"
+  },
+  "sag": {
+   "name": "Sango",
+   "group": "other",
+   "geez": false,
+   "original_sft_samples": 39516,
+   "original_sft_target_tokens": 3992368,
+   "r4_mix_replay_tokens": 148450,
+   "r4_mix_science_tokens": 0,
+   "pool_jw_style_pct_of_tokens": 84.3,
+   "commercial_ok": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "share_alike": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "EXCLUDED_unknown_licence": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "NC_noncommercial": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "owner_code_switch": {
+    "windows": 1,
+    "pairs": 5,
+    "tokens": 914,
+    "target_tokens": 645,
+    "sources": [
+     "<HF_ORG>/African-Code-Switch (m_text = Gemma-4-31B-it translation of eng; 266 human-gold rows)"
+    ],
+    "licences": [
+     "owner (private dataset; seeds include NC/research sources as inspiration only)"
+    ],
+    "licence_class": [
+     "owner"
+    ],
+    "synthetic_english_source": false
+   },
+   "commercial_new_target_tokens": 0,
+   "commercial_plus_sa_target_tokens": 0,
+   "commercial_new_vs_original_sft": 0.0,
+   "note": "NO new commercial-OK English-parallel data found - only sample weight / teacher / NC data can add signal"
+  },
+  "tiv": {
+   "name": "Tiv",
+   "group": "other",
+   "geez": false,
+   "original_sft_samples": 40656,
+   "original_sft_target_tokens": 4270512,
+   "r4_mix_replay_tokens": 148570,
+   "r4_mix_science_tokens": 0,
+   "pool_jw_style_pct_of_tokens": 82.2,
+   "commercial_ok": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "share_alike": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "EXCLUDED_unknown_licence": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "NC_noncommercial": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "owner_code_switch": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "commercial_new_target_tokens": 0,
+   "commercial_plus_sa_target_tokens": 0,
+   "commercial_new_vs_original_sft": 0.0,
+   "note": "NO new commercial-OK English-parallel data found - only sample weight / teacher / NC data can add signal"
+  },
+  "umb": {
+   "name": "Umbundu",
+   "group": "other",
+   "geez": false,
+   "original_sft_samples": 34376,
+   "original_sft_target_tokens": 3675942,
+   "r4_mix_replay_tokens": 148962,
+   "r4_mix_science_tokens": 0,
+   "pool_jw_style_pct_of_tokens": 84.0,
+   "commercial_ok": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "share_alike": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "EXCLUDED_unknown_licence": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "NC_noncommercial": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "owner_code_switch": {
+    "windows": 3,
+    "pairs": 5,
+    "tokens": 857,
+    "target_tokens": 534,
+    "sources": [
+     "<HF_ORG>/African-Code-Switch (m_text = Gemma-4-31B-it translation of eng; 266 human-gold rows)"
+    ],
+    "licences": [
+     "owner (private dataset; seeds include NC/research sources as inspiration only)"
+    ],
+    "licence_class": [
+     "owner"
+    ],
+    "synthetic_english_source": false
+   },
+   "commercial_new_target_tokens": 0,
+   "commercial_plus_sa_target_tokens": 0,
+   "commercial_new_vs_original_sft": 0.0,
+   "note": "NO new commercial-OK English-parallel data found - only sample weight / teacher / NC data can add signal"
+  },
+  "kmb": {
+   "name": "Kimbundu",
+   "group": "other",
+   "geez": false,
+   "original_sft_samples": 23819,
+   "original_sft_target_tokens": 2522745,
+   "r4_mix_replay_tokens": 148434,
+   "r4_mix_science_tokens": 0,
+   "pool_jw_style_pct_of_tokens": 82.5,
+   "commercial_ok": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "share_alike": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "EXCLUDED_unknown_licence": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "NC_noncommercial": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "owner_code_switch": {
+    "windows": 2,
+    "pairs": 5,
+    "tokens": 947,
+    "target_tokens": 649,
+    "sources": [
+     "<HF_ORG>/African-Code-Switch (m_text = Gemma-4-31B-it translation of eng; 266 human-gold rows)"
+    ],
+    "licences": [
+     "owner (private dataset; seeds include NC/research sources as inspiration only)"
+    ],
+    "licence_class": [
+     "owner"
+    ],
+    "synthetic_english_source": false
+   },
+   "commercial_new_target_tokens": 0,
+   "commercial_plus_sa_target_tokens": 0,
+   "commercial_new_vs_original_sft": 0.0,
+   "note": "NO new commercial-OK English-parallel data found - only sample weight / teacher / NC data can add signal"
+  },
+  "mos": {
+   "name": "Mossi",
+   "group": "other",
+   "geez": false,
+   "original_sft_samples": 46190,
+   "original_sft_target_tokens": 4758571,
+   "r4_mix_replay_tokens": 148581,
+   "r4_mix_science_tokens": 0,
+   "pool_jw_style_pct_of_tokens": 76.3,
+   "commercial_ok": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "share_alike": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "EXCLUDED_unknown_licence": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "NC_noncommercial": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "owner_code_switch": {
+    "windows": 1,
+    "pairs": 5,
+    "tokens": 1093,
+    "target_tokens": 810,
+    "sources": [
+     "<HF_ORG>/African-Code-Switch (m_text = Gemma-4-31B-it translation of eng; 266 human-gold rows)"
+    ],
+    "licences": [
+     "owner (private dataset; seeds include NC/research sources as inspiration only)"
+    ],
+    "licence_class": [
+     "owner"
+    ],
+    "synthetic_english_source": false
+   },
+   "commercial_new_target_tokens": 0,
+   "commercial_plus_sa_target_tokens": 0,
+   "commercial_new_vs_original_sft": 0.0,
+   "note": "NO new commercial-OK English-parallel data found - only sample weight / teacher / NC data can add signal"
+  },
+  "kik": {
+   "name": "Kikuyu",
+   "group": "other",
+   "geez": false,
+   "original_sft_samples": 33879,
+   "original_sft_target_tokens": 3477346,
+   "r4_mix_replay_tokens": 148439,
+   "r4_mix_science_tokens": 0,
+   "pool_jw_style_pct_of_tokens": 76.9,
+   "commercial_ok": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "share_alike": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "EXCLUDED_unknown_licence": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "NC_noncommercial": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "owner_code_switch": {
+    "windows": 11,
+    "pairs": 19,
+    "tokens": 3200,
+    "target_tokens": 2282,
+    "sources": [
+     "<HF_ORG>/African-Code-Switch (m_text = Gemma-4-31B-it translation of eng; 266 human-gold rows)"
+    ],
+    "licences": [
+     "owner (private dataset; seeds include NC/research sources as inspiration only)"
+    ],
+    "licence_class": [
+     "owner"
+    ],
+    "synthetic_english_source": false
+   },
+   "commercial_new_target_tokens": 0,
+   "commercial_plus_sa_target_tokens": 0,
+   "commercial_new_vs_original_sft": 0.0,
+   "note": "NO new commercial-OK English-parallel data found - only sample weight / teacher / NC data can add signal"
+  },
+  "luo": {
+   "name": "Luo",
+   "group": "other",
+   "geez": false,
+   "original_sft_samples": 171483,
+   "original_sft_target_tokens": 17146609,
+   "r4_mix_replay_tokens": 148427,
+   "r4_mix_science_tokens": 0,
+   "pool_jw_style_pct_of_tokens": 21.6,
+   "commercial_ok": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "share_alike": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "EXCLUDED_unknown_licence": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "NC_noncommercial": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "owner_code_switch": {
+    "windows": 9,
+    "pairs": 23,
+    "tokens": 2656,
+    "target_tokens": 1617,
+    "sources": [
+     "<HF_ORG>/African-Code-Switch (m_text = Gemma-4-31B-it translation of eng; 266 human-gold rows)"
+    ],
+    "licences": [
+     "owner (private dataset; seeds include NC/research sources as inspiration only)"
+    ],
+    "licence_class": [
+     "owner"
+    ],
+    "synthetic_english_source": false
+   },
+   "commercial_new_target_tokens": 0,
+   "commercial_plus_sa_target_tokens": 0,
+   "commercial_new_vs_original_sft": 0.0,
+   "note": "NO new commercial-OK English-parallel data found - only sample weight / teacher / NC data can add signal"
+  },
+  "kam": {
+   "name": "Kamba",
+   "group": "other",
+   "geez": false,
+   "original_sft_samples": 18073,
+   "original_sft_target_tokens": 1859930,
+   "r4_mix_replay_tokens": 149113,
+   "r4_mix_science_tokens": 0,
+   "pool_jw_style_pct_of_tokens": 78.7,
+   "commercial_ok": {
+    "windows": 2055,
+    "pairs": 4895,
+    "tokens": 2585968,
+    "target_tokens": 1724861,
+    "sources": [
+     "finetranslations",
+     "opus_Tatoeba"
+    ],
+    "licences": [
+     "cc-by-2.0-fr",
+     "odc-by"
+    ],
+    "licence_class": [
+     "commercial_ok"
+    ],
+    "synthetic_english_source": true
+   },
+   "share_alike": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "EXCLUDED_unknown_licence": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "NC_noncommercial": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "owner_code_switch": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "commercial_new_target_tokens": 1724861,
+   "commercial_plus_sa_target_tokens": 1724861,
+   "commercial_new_vs_original_sft": 0.927,
+   "note": ""
+  },
+  "bin": {
+   "name": "Edo",
+   "group": "weak8",
+   "geez": false,
+   "original_sft_samples": 17995,
+   "original_sft_target_tokens": 1712912,
+   "r4_mix_replay_tokens": 148700,
+   "r4_mix_science_tokens": 0,
+   "pool_jw_style_pct_of_tokens": 21.8,
+   "commercial_ok": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "share_alike": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "EXCLUDED_unknown_licence": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "NC_noncommercial": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "owner_code_switch": {
+    "windows": 4,
+    "pairs": 5,
+    "tokens": 1051,
+    "target_tokens": 711,
+    "sources": [
+     "<HF_ORG>/African-Code-Switch (m_text = Gemma-4-31B-it translation of eng; 266 human-gold rows)"
+    ],
+    "licences": [
+     "owner (private dataset; seeds include NC/research sources as inspiration only)"
+    ],
+    "licence_class": [
+     "owner"
+    ],
+    "synthetic_english_source": false
+   },
+   "commercial_new_target_tokens": 0,
+   "commercial_plus_sa_target_tokens": 0,
+   "commercial_new_vs_original_sft": 0.0,
+   "note": "NO new commercial-OK English-parallel data found - only sample weight / teacher / NC data can add signal"
+  },
+  "dag": {
+   "name": "Dagbani",
+   "group": "weak8",
+   "geez": false,
+   "original_sft_samples": 15310,
+   "original_sft_target_tokens": 1927495,
+   "r4_mix_replay_tokens": 148442,
+   "r4_mix_science_tokens": 0,
+   "pool_jw_style_pct_of_tokens": 5.5,
+   "commercial_ok": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "share_alike": {
+    "windows": 62,
+    "pairs": 511,
+    "tokens": 53956,
+    "target_tokens": 34425,
+    "sources": [
+     "opus_wikimedia"
+    ],
+    "licences": [
+     "cc-by-sa-4.0"
+    ],
+    "licence_class": [
+     "share_alike"
+    ],
+    "synthetic_english_source": false
+   },
+   "EXCLUDED_unknown_licence": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "NC_noncommercial": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "owner_code_switch": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "commercial_new_target_tokens": 0,
+   "commercial_plus_sa_target_tokens": 34425,
+   "commercial_new_vs_original_sft": 0.018,
+   "note": ""
+  },
+  "oke": {
+   "name": "Okpe",
+   "group": "weak8",
+   "geez": false,
+   "original_sft_samples": 7856,
+   "original_sft_target_tokens": 735410,
+   "r4_mix_replay_tokens": 148429,
+   "r4_mix_science_tokens": 0,
+   "pool_jw_style_pct_of_tokens": 78.3,
+   "commercial_ok": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "share_alike": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "EXCLUDED_unknown_licence": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "NC_noncommercial": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "owner_code_switch": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "commercial_new_target_tokens": 0,
+   "commercial_plus_sa_target_tokens": 0,
+   "commercial_new_vs_original_sft": 0.0,
+   "note": "NO new commercial-OK English-parallel data found - only sample weight / teacher / NC data can add signal"
+  },
+  "shi": {
+   "name": "Tachelhit",
+   "group": "bottom15",
+   "geez": false,
+   "original_sft_samples": 9212,
+   "original_sft_target_tokens": 932398,
+   "r4_mix_replay_tokens": 148480,
+   "r4_mix_science_tokens": 0,
+   "pool_jw_style_pct_of_tokens": 81.7,
+   "commercial_ok": {
+    "windows": 693,
+    "pairs": 17414,
+    "tokens": 320218,
+    "target_tokens": 192496,
+    "sources": [
+     "opus_Tatoeba",
+     "shi_tatoeba"
+    ],
+    "licences": [
+     "cc-by-2.0-fr"
+    ],
+    "licence_class": [
+     "commercial_ok"
+    ],
+    "synthetic_english_source": false
+   },
+   "share_alike": {
+    "windows": 30,
+    "pairs": 380,
+    "tokens": 30762,
+    "target_tokens": 18087,
+    "sources": [
+     "opus_wikimedia"
+    ],
+    "licences": [
+     "cc-by-sa-4.0"
+    ],
+    "licence_class": [
+     "share_alike"
+    ],
+    "synthetic_english_source": false
+   },
+   "EXCLUDED_unknown_licence": {
+    "windows": 2840,
+    "pairs": 15761,
+    "tokens": 1415346,
+    "target_tokens": 929857,
+    "sources": [
+     "opus_bible-uedin"
+    ],
+    "licences": [
+     "unspecified (bible-uedin; underlying Bible translation terms differ)"
+    ],
+    "licence_class": [
+     "unknown"
+    ],
+    "synthetic_english_source": false
+   },
+   "NC_noncommercial": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "owner_code_switch": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "commercial_new_target_tokens": 192496,
+   "commercial_plus_sa_target_tokens": 210583,
+   "commercial_new_vs_original_sft": 0.226,
+   "note": ""
+  },
+  "dyu": {
+   "name": "Dyula",
+   "group": "bottom15",
+   "geez": false,
+   "original_sft_samples": 4504,
+   "original_sft_target_tokens": 481760,
+   "r4_mix_replay_tokens": 148383,
+   "r4_mix_science_tokens": 0,
+   "pool_jw_style_pct_of_tokens": 80.5,
+   "commercial_ok": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "share_alike": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "EXCLUDED_unknown_licence": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "NC_noncommercial": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "owner_code_switch": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "commercial_new_target_tokens": 0,
+   "commercial_plus_sa_target_tokens": 0,
+   "commercial_new_vs_original_sft": 0.0,
+   "note": "NO new commercial-OK English-parallel data found - only sample weight / teacher / NC data can add signal"
+  },
+  "bam": {
+   "name": "Bambara",
+   "group": "other",
+   "geez": false,
+   "original_sft_samples": 3736,
+   "original_sft_target_tokens": 377272,
+   "r4_mix_replay_tokens": 148402,
+   "r4_mix_science_tokens": 0,
+   "pool_jw_style_pct_of_tokens": 0.0,
+   "commercial_ok": {
+    "windows": 2787,
+    "pairs": 4527,
+    "tokens": 2307764,
+    "target_tokens": 1481736,
+    "sources": [
+     "finetranslations"
+    ],
+    "licences": [
+     "odc-by"
+    ],
+    "licence_class": [
+     "commercial_ok"
+    ],
+    "synthetic_english_source": true
+   },
+   "share_alike": {
+    "windows": 1205,
+    "pairs": 6019,
+    "tokens": 525784,
+    "target_tokens": 336668,
+    "sources": [
+     "oldi_seed"
+    ],
+    "licences": [
+     "cc-by-sa-4.0"
+    ],
+    "licence_class": [
+     "share_alike"
+    ],
+    "synthetic_english_source": false
+   },
+   "EXCLUDED_unknown_licence": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "NC_noncommercial": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "owner_code_switch": {
+    "windows": 3,
+    "pairs": 8,
+    "tokens": 1491,
+    "target_tokens": 1006,
+    "sources": [
+     "<HF_ORG>/African-Code-Switch (m_text = Gemma-4-31B-it translation of eng; 266 human-gold rows)"
+    ],
+    "licences": [
+     "owner (private dataset; seeds include NC/research sources as inspiration only)"
+    ],
+    "licence_class": [
+     "owner"
+    ],
+    "synthetic_english_source": false
+   },
+   "commercial_new_target_tokens": 1481736,
+   "commercial_plus_sa_target_tokens": 1818404,
+   "commercial_new_vs_original_sft": 4.82,
+   "note": ""
+  },
+  "kbp": {
+   "name": "Kabiye",
+   "group": "bottom15",
+   "geez": false,
+   "original_sft_samples": 4311,
+   "original_sft_target_tokens": 430136,
+   "r4_mix_replay_tokens": 148399,
+   "r4_mix_science_tokens": 0,
+   "pool_jw_style_pct_of_tokens": 70.9,
+   "commercial_ok": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "share_alike": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "EXCLUDED_unknown_licence": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "NC_noncommercial": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "owner_code_switch": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "commercial_new_target_tokens": 0,
+   "commercial_plus_sa_target_tokens": 0,
+   "commercial_new_vs_original_sft": 0.0,
+   "note": "NO new commercial-OK English-parallel data found - only sample weight / teacher / NC data can add signal"
+  },
+  "bbj": {
+   "name": "Ghomala",
+   "group": "weak8",
+   "geez": false,
+   "original_sft_samples": 3540,
+   "original_sft_target_tokens": 375594,
+   "r4_mix_replay_tokens": 148565,
+   "r4_mix_science_tokens": 0,
+   "pool_jw_style_pct_of_tokens": 2.4,
+   "commercial_ok": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "share_alike": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "EXCLUDED_unknown_licence": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "NC_noncommercial": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "owner_code_switch": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "commercial_new_target_tokens": 0,
+   "commercial_plus_sa_target_tokens": 0,
+   "commercial_new_vs_original_sft": 0.0,
+   "note": "NO new commercial-OK English-parallel data found - only sample weight / teacher / NC data can add signal"
+  },
+  "kon": {
+   "name": "Kongo",
+   "group": "weak8",
+   "geez": false,
+   "original_sft_samples": 1331,
+   "original_sft_target_tokens": 136064,
+   "r4_mix_replay_tokens": 148435,
+   "r4_mix_science_tokens": 0,
+   "pool_jw_style_pct_of_tokens": 92.8,
+   "commercial_ok": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "share_alike": {
+    "windows": 8,
+    "pairs": 87,
+    "tokens": 12567,
+    "target_tokens": 7312,
+    "sources": [
+     "opus_wikimedia"
+    ],
+    "licences": [
+     "cc-by-sa-4.0"
+    ],
+    "licence_class": [
+     "share_alike"
+    ],
+    "synthetic_english_source": false
+   },
+   "EXCLUDED_unknown_licence": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "NC_noncommercial": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "owner_code_switch": {
+    "windows": 3,
+    "pairs": 5,
+    "tokens": 916,
+    "target_tokens": 607,
+    "sources": [
+     "<HF_ORG>/African-Code-Switch (m_text = Gemma-4-31B-it translation of eng; 266 human-gold rows)"
+    ],
+    "licences": [
+     "owner (private dataset; seeds include NC/research sources as inspiration only)"
+    ],
+    "licence_class": [
+     "owner"
+    ],
+    "synthetic_english_source": false
+   },
+   "commercial_new_target_tokens": 0,
+   "commercial_plus_sa_target_tokens": 7312,
+   "commercial_new_vs_original_sft": 0.054,
+   "note": ""
+  },
+  "kea": {
+   "name": "Kabuverdianu",
+   "group": "other",
+   "geez": false,
+   "original_sft_samples": 1066,
+   "original_sft_target_tokens": 112439,
+   "r4_mix_replay_tokens": 149530,
+   "r4_mix_science_tokens": 0,
+   "pool_jw_style_pct_of_tokens": 87.3,
+   "commercial_ok": {
+    "windows": 2091,
+    "pairs": 3825,
+    "tokens": 2486689,
+    "target_tokens": 1442677,
+    "sources": [
+     "finetranslations"
+    ],
+    "licences": [
+     "odc-by"
+    ],
+    "licence_class": [
+     "commercial_ok"
+    ],
+    "synthetic_english_source": true
+   },
+   "share_alike": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "EXCLUDED_unknown_licence": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "NC_noncommercial": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "owner_code_switch": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "commercial_new_target_tokens": 1442677,
+   "commercial_plus_sa_target_tokens": 1442677,
+   "commercial_new_vs_original_sft": 12.831,
+   "note": ""
+  },
+  "fat": {
+   "name": "Fante",
+   "group": "other",
+   "geez": false,
+   "original_sft_samples": 0,
+   "original_sft_target_tokens": 0,
+   "r4_mix_replay_tokens": 0,
+   "r4_mix_science_tokens": 0,
+   "pool_jw_style_pct_of_tokens": null,
+   "commercial_ok": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "share_alike": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "EXCLUDED_unknown_licence": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "NC_noncommercial": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "owner_code_switch": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "commercial_new_target_tokens": 0,
+   "commercial_plus_sa_target_tokens": 0,
+   "commercial_new_vs_original_sft": 0.0,
+   "note": "NO new commercial-OK English-parallel data found - only sample weight / teacher / NC data can add signal"
+  },
+  "knc": {
+   "name": "Kanuri",
+   "group": "other",
+   "geez": false,
+   "original_sft_samples": 0,
+   "original_sft_target_tokens": 0,
+   "r4_mix_replay_tokens": 0,
+   "r4_mix_science_tokens": 0,
+   "pool_jw_style_pct_of_tokens": null,
+   "commercial_ok": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "share_alike": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "EXCLUDED_unknown_licence": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "NC_noncommercial": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "owner_code_switch": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "commercial_new_target_tokens": 0,
+   "commercial_plus_sa_target_tokens": 0,
+   "commercial_new_vs_original_sft": 0.0,
+   "note": "NO new commercial-OK English-parallel data found - only sample weight / teacher / NC data can add signal"
+  },
+  "gaa": {
+   "name": "Ga",
+   "group": "other",
+   "geez": false,
+   "original_sft_samples": 0,
+   "original_sft_target_tokens": 0,
+   "r4_mix_replay_tokens": 0,
+   "r4_mix_science_tokens": 0,
+   "pool_jw_style_pct_of_tokens": null,
+   "commercial_ok": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "share_alike": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "EXCLUDED_unknown_licence": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "NC_noncommercial": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "owner_code_switch": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "commercial_new_target_tokens": 0,
+   "commercial_plus_sa_target_tokens": 0,
+   "commercial_new_vs_original_sft": 0.0,
+   "note": "NO new commercial-OK English-parallel data found - only sample weight / teacher / NC data can add signal"
+  },
+  "kab": {
+   "name": "Kabyle",
+   "group": "other",
+   "geez": false,
+   "original_sft_samples": 39105,
+   "original_sft_target_tokens": 3885266,
+   "r4_mix_replay_tokens": 149343,
+   "r4_mix_science_tokens": 0,
+   "pool_jw_style_pct_of_tokens": 14.4,
+   "commercial_ok": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "share_alike": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "EXCLUDED_unknown_licence": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "NC_noncommercial": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "owner_code_switch": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "commercial_new_target_tokens": 0,
+   "commercial_plus_sa_target_tokens": 0,
+   "commercial_new_vs_original_sft": 0.0,
+   "note": "NO new commercial-OK English-parallel data found - only sample weight / teacher / NC data can add signal"
+  },
+  "nus": {
+   "name": "Nuer",
+   "group": "weak8",
+   "geez": false,
+   "original_sft_samples": 90891,
+   "original_sft_target_tokens": 9371086,
+   "r4_mix_replay_tokens": 148411,
+   "r4_mix_science_tokens": 0,
+   "pool_jw_style_pct_of_tokens": 0.0,
+   "commercial_ok": {
+    "windows": 173,
+    "pairs": 407,
+    "tokens": 257556,
+    "target_tokens": 174588,
+    "sources": [
+     "finetranslations"
+    ],
+    "licences": [
+     "odc-by"
+    ],
+    "licence_class": [
+     "commercial_ok"
+    ],
+    "synthetic_english_source": true
+   },
+   "share_alike": {
+    "windows": 1240,
+    "pairs": 5951,
+    "tokens": 695756,
+    "target_tokens": 508391,
+    "sources": [
+     "oldi_seed"
+    ],
+    "licences": [
+     "cc-by-sa-4.0"
+    ],
+    "licence_class": [
+     "share_alike"
+    ],
+    "synthetic_english_source": false
+   },
+   "EXCLUDED_unknown_licence": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "NC_noncommercial": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "owner_code_switch": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "commercial_new_target_tokens": 174588,
+   "commercial_plus_sa_target_tokens": 682979,
+   "commercial_new_vs_original_sft": 0.073,
+   "note": ""
+  },
+  "swc": {
+   "name": "Congo Swahili",
+   "group": "no_benchmark",
+   "geez": false,
+   "original_sft_samples": 53316,
+   "original_sft_target_tokens": 6757824,
+   "r4_mix_replay_tokens": 149420,
+   "r4_mix_science_tokens": 0,
+   "pool_jw_style_pct_of_tokens": 88.2,
+   "commercial_ok": {
+    "windows": 1,
+    "pairs": 2,
+    "tokens": 54,
+    "target_tokens": 23,
+    "sources": [
+     "opus_Tatoeba"
+    ],
+    "licences": [
+     "cc-by-2.0-fr"
+    ],
+    "licence_class": [
+     "commercial_ok"
+    ],
+    "synthetic_english_source": false
+   },
+   "share_alike": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "EXCLUDED_unknown_licence": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "NC_noncommercial": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "owner_code_switch": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "commercial_new_target_tokens": 23,
+   "commercial_plus_sa_target_tokens": 23,
+   "commercial_new_vs_original_sft": 0.0,
+   "note": ""
+  },
+  "lua": {
+   "name": "Luba-Kasai",
+   "group": "other",
+   "geez": false,
+   "original_sft_samples": 82124,
+   "original_sft_target_tokens": 8690290,
+   "r4_mix_replay_tokens": 148786,
+   "r4_mix_science_tokens": 0,
+   "pool_jw_style_pct_of_tokens": 84.1,
+   "commercial_ok": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "share_alike": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "EXCLUDED_unknown_licence": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "NC_noncommercial": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "owner_code_switch": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "commercial_new_target_tokens": 0,
+   "commercial_plus_sa_target_tokens": 0,
+   "commercial_new_vs_original_sft": 0.0,
+   "note": "NO new commercial-OK English-parallel data found - only sample weight / teacher / NC data can add signal"
+  },
+  "kqn": {
+   "name": "Kaonde",
+   "group": "other",
+   "geez": false,
+   "original_sft_samples": 58468,
+   "original_sft_target_tokens": 6355468,
+   "r4_mix_replay_tokens": 148448,
+   "r4_mix_science_tokens": 0,
+   "pool_jw_style_pct_of_tokens": 84.9,
+   "commercial_ok": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "share_alike": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "EXCLUDED_unknown_licence": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "NC_noncommercial": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "owner_code_switch": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "commercial_new_target_tokens": 0,
+   "commercial_plus_sa_target_tokens": 0,
+   "commercial_new_vs_original_sft": 0.0,
+   "note": "NO new commercial-OK English-parallel data found - only sample weight / teacher / NC data can add signal"
+  },
+  "lun": {
+   "name": "Lunda",
+   "group": "other",
+   "geez": false,
+   "original_sft_samples": 34525,
+   "original_sft_target_tokens": 3768742,
+   "r4_mix_replay_tokens": 148666,
+   "r4_mix_science_tokens": 0,
+   "pool_jw_style_pct_of_tokens": 85.5,
+   "commercial_ok": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "share_alike": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "EXCLUDED_unknown_licence": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "NC_noncommercial": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "owner_code_switch": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "commercial_new_target_tokens": 0,
+   "commercial_plus_sa_target_tokens": 0,
+   "commercial_new_vs_original_sft": 0.0,
+   "note": "NO new commercial-OK English-parallel data found - only sample weight / teacher / NC data can add signal"
+  },
+  "iso": {
+   "name": "Isoko",
+   "group": "no_benchmark",
+   "geez": false,
+   "original_sft_samples": 73114,
+   "original_sft_target_tokens": 7347545,
+   "r4_mix_replay_tokens": 148423,
+   "r4_mix_science_tokens": 0,
+   "pool_jw_style_pct_of_tokens": 81.9,
+   "commercial_ok": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "share_alike": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "EXCLUDED_unknown_licence": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "NC_noncommercial": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "owner_code_switch": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "commercial_new_target_tokens": 0,
+   "commercial_plus_sa_target_tokens": 0,
+   "commercial_new_vs_original_sft": 0.0,
+   "note": "NO new commercial-OK English-parallel data found - only sample weight / teacher / NC data can add signal"
+  },
+  "loz": {
+   "name": "Lozi",
+   "group": "other",
+   "geez": false,
+   "original_sft_samples": 116310,
+   "original_sft_target_tokens": 12490309,
+   "r4_mix_replay_tokens": 149321,
+   "r4_mix_science_tokens": 0,
+   "pool_jw_style_pct_of_tokens": 83.2,
+   "commercial_ok": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "share_alike": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "EXCLUDED_unknown_licence": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "NC_noncommercial": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "owner_code_switch": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "commercial_new_target_tokens": 0,
+   "commercial_plus_sa_target_tokens": 0,
+   "commercial_new_vs_original_sft": 0.0,
+   "note": "NO new commercial-OK English-parallel data found - only sample weight / teacher / NC data can add signal"
+  },
+  "wal": {
+   "name": "Wolaytta",
+   "group": "no_benchmark",
+   "geez": false,
+   "original_sft_samples": 35349,
+   "original_sft_target_tokens": 3773484,
+   "r4_mix_replay_tokens": 149065,
+   "r4_mix_science_tokens": 0,
+   "pool_jw_style_pct_of_tokens": 86.5,
+   "commercial_ok": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "share_alike": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "EXCLUDED_unknown_licence": {
+    "windows": 2637,
+    "pairs": 15205,
+    "tokens": 1241518,
+    "target_tokens": 773885,
+    "sources": [
+     "opus_bible-uedin"
+    ],
+    "licences": [
+     "unspecified (bible-uedin; underlying Bible translation terms differ)"
+    ],
+    "licence_class": [
+     "unknown"
+    ],
+    "synthetic_english_source": false
+   },
+   "NC_noncommercial": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "owner_code_switch": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "commercial_new_target_tokens": 0,
+   "commercial_plus_sa_target_tokens": 0,
+   "commercial_new_vs_original_sft": 0.0,
+   "note": "NO new commercial-OK English-parallel data found - only sample weight / teacher / NC data can add signal"
+  },
+  "ach": {
+   "name": "Acholi",
+   "group": "other",
+   "geez": false,
+   "original_sft_samples": 17534,
+   "original_sft_target_tokens": 1861626,
+   "r4_mix_replay_tokens": 148385,
+   "r4_mix_science_tokens": 0,
+   "pool_jw_style_pct_of_tokens": 87.4,
+   "commercial_ok": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "share_alike": {
+    "windows": 1464,
+    "pairs": 24251,
+    "tokens": 710919,
+    "target_tokens": 432077,
+    "sources": [
+     "salt_dev",
+     "salt_train"
+    ],
+    "licences": [
+     "cc-by-sa-4.0"
+    ],
+    "licence_class": [
+     "share_alike"
+    ],
+    "synthetic_english_source": false
+   },
+   "EXCLUDED_unknown_licence": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "NC_noncommercial": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "owner_code_switch": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "commercial_new_target_tokens": 0,
+   "commercial_plus_sa_target_tokens": 432077,
+   "commercial_new_vs_original_sft": 0.232,
+   "note": ""
+  },
+  "tsc": {
+   "name": "Tswa",
+   "group": "weak8",
+   "geez": false,
+   "original_sft_samples": 22954,
+   "original_sft_target_tokens": 2485201,
+   "r4_mix_replay_tokens": 148456,
+   "r4_mix_science_tokens": 0,
+   "pool_jw_style_pct_of_tokens": 83.2,
+   "commercial_ok": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "share_alike": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "EXCLUDED_unknown_licence": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "NC_noncommercial": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "owner_code_switch": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "commercial_new_target_tokens": 0,
+   "commercial_plus_sa_target_tokens": 0,
+   "commercial_new_vs_original_sft": 0.0,
+   "note": "NO new commercial-OK English-parallel data found - only sample weight / teacher / NC data can add signal"
+  },
+  "vmw": {
+   "name": "Makhuwa",
+   "group": "other",
+   "geez": false,
+   "original_sft_samples": 19613,
+   "original_sft_target_tokens": 2132204,
+   "r4_mix_replay_tokens": 148406,
+   "r4_mix_science_tokens": 0,
+   "pool_jw_style_pct_of_tokens": 86.1,
+   "commercial_ok": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "share_alike": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "EXCLUDED_unknown_licence": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "NC_noncommercial": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "owner_code_switch": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "commercial_new_target_tokens": 0,
+   "commercial_plus_sa_target_tokens": 0,
+   "commercial_new_vs_original_sft": 0.0,
+   "note": "NO new commercial-OK English-parallel data found - only sample weight / teacher / NC data can add signal"
+  },
+  "kua": {
+   "name": "Kuanyama",
+   "group": "other",
+   "geez": false,
+   "original_sft_samples": 27744,
+   "original_sft_target_tokens": 3101117,
+   "r4_mix_replay_tokens": 148412,
+   "r4_mix_science_tokens": 0,
+   "pool_jw_style_pct_of_tokens": 84.4,
+   "commercial_ok": {
+    "windows": 2029,
+    "pairs": 4876,
+    "tokens": 2865976,
+    "target_tokens": 1826309,
+    "sources": [
+     "finetranslations"
+    ],
+    "licences": [
+     "odc-by"
+    ],
+    "licence_class": [
+     "commercial_ok"
+    ],
+    "synthetic_english_source": true
+   },
+   "share_alike": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "EXCLUDED_unknown_licence": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "NC_noncommercial": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "owner_code_switch": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "commercial_new_target_tokens": 1826309,
+   "commercial_plus_sa_target_tokens": 1826309,
+   "commercial_new_vs_original_sft": 0.589,
+   "note": ""
+  },
+  "seh": {
+   "name": "Sena",
+   "group": "other",
+   "geez": false,
+   "original_sft_samples": 12821,
+   "original_sft_target_tokens": 1426424,
+   "r4_mix_replay_tokens": 148440,
+   "r4_mix_science_tokens": 0,
+   "pool_jw_style_pct_of_tokens": 84.2,
+   "commercial_ok": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "share_alike": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "EXCLUDED_unknown_licence": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "NC_noncommercial": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "owner_code_switch": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "commercial_new_target_tokens": 0,
+   "commercial_plus_sa_target_tokens": 0,
+   "commercial_new_vs_original_sft": 0.0,
+   "note": "NO new commercial-OK English-parallel data found - only sample weight / teacher / NC data can add signal"
+  },
+  "nyn": {
+   "name": "Nyankore",
+   "group": "other",
+   "geez": false,
+   "original_sft_samples": 13297,
+   "original_sft_target_tokens": 1439508,
+   "r4_mix_replay_tokens": 148670,
+   "r4_mix_science_tokens": 0,
+   "pool_jw_style_pct_of_tokens": 84.6,
+   "commercial_ok": {
+    "windows": 1941,
+    "pairs": 3371,
+    "tokens": 2144878,
+    "target_tokens": 1337780,
+    "sources": [
+     "finetranslations"
+    ],
+    "licences": [
+     "odc-by"
+    ],
+    "licence_class": [
+     "commercial_ok"
+    ],
+    "synthetic_english_source": true
+   },
+   "share_alike": {
+    "windows": 1589,
+    "pairs": 24342,
+    "tokens": 820784,
+    "target_tokens": 537041,
+    "sources": [
+     "salt_dev",
+     "salt_train"
+    ],
+    "licences": [
+     "cc-by-sa-4.0"
+    ],
+    "licence_class": [
+     "share_alike"
+    ],
+    "synthetic_english_source": false
+   },
+   "EXCLUDED_unknown_licence": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "NC_noncommercial": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "owner_code_switch": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "commercial_new_target_tokens": 1337780,
+   "commercial_plus_sa_target_tokens": 1874821,
+   "commercial_new_vs_original_sft": 1.302,
+   "note": ""
+  },
+  "her": {
+   "name": "Herero",
+   "group": "other",
+   "geez": false,
+   "original_sft_samples": 2170,
+   "original_sft_target_tokens": 234739,
+   "r4_mix_replay_tokens": 148624,
+   "r4_mix_science_tokens": 0,
+   "pool_jw_style_pct_of_tokens": 83.5,
+   "commercial_ok": {
+    "windows": 1846,
+    "pairs": 4355,
+    "tokens": 2582768,
+    "target_tokens": 1633543,
+    "sources": [
+     "finetranslations"
+    ],
+    "licences": [
+     "odc-by"
+    ],
+    "licence_class": [
+     "commercial_ok"
+    ],
+    "synthetic_english_source": true
+   },
+   "share_alike": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "EXCLUDED_unknown_licence": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "NC_noncommercial": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "owner_code_switch": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "commercial_new_target_tokens": 1633543,
+   "commercial_plus_sa_target_tokens": 1633543,
+   "commercial_new_vs_original_sft": 6.959,
+   "note": ""
+  },
+  "yao": {
+   "name": "Yao",
+   "group": "no_benchmark",
+   "geez": false,
+   "original_sft_samples": 12176,
+   "original_sft_target_tokens": 1342259,
+   "r4_mix_replay_tokens": 148816,
+   "r4_mix_science_tokens": 0,
+   "pool_jw_style_pct_of_tokens": 82.5,
+   "commercial_ok": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "share_alike": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "EXCLUDED_unknown_licence": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "NC_noncommercial": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "owner_code_switch": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "commercial_new_target_tokens": 0,
+   "commercial_plus_sa_target_tokens": 0,
+   "commercial_new_vs_original_sft": 0.0,
+   "note": "NO new commercial-OK English-parallel data found - only sample weight / teacher / NC data can add signal"
+  },
+  "sid": {
+   "name": "Sidamo",
+   "group": "no_benchmark",
+   "geez": false,
+   "original_sft_samples": 12467,
+   "original_sft_target_tokens": 1363870,
+   "r4_mix_replay_tokens": 149106,
+   "r4_mix_science_tokens": 0,
+   "pool_jw_style_pct_of_tokens": 85.7,
+   "commercial_ok": {
+    "windows": 1778,
+    "pairs": 3568,
+    "tokens": 2026177,
+    "target_tokens": 1294443,
+    "sources": [
+     "finetranslations"
+    ],
+    "licences": [
+     "odc-by"
+    ],
+    "licence_class": [
+     "commercial_ok"
+    ],
+    "synthetic_english_source": true
+   },
+   "share_alike": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "EXCLUDED_unknown_licence": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "NC_noncommercial": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "owner_code_switch": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "commercial_new_target_tokens": 1294443,
+   "commercial_plus_sa_target_tokens": 1294443,
+   "commercial_new_vs_original_sft": 0.949,
+   "note": ""
+  },
+  "ndc": {
+   "name": "Ndau",
+   "group": "bottom15",
+   "geez": false,
+   "original_sft_samples": 7511,
+   "original_sft_target_tokens": 826303,
+   "r4_mix_replay_tokens": 148432,
+   "r4_mix_science_tokens": 0,
+   "pool_jw_style_pct_of_tokens": 85.7,
+   "commercial_ok": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "share_alike": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "EXCLUDED_unknown_licence": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "NC_noncommercial": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "owner_code_switch": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "commercial_new_target_tokens": 0,
+   "commercial_plus_sa_target_tokens": 0,
+   "commercial_new_vs_original_sft": 0.0,
+   "note": "NO new commercial-OK English-parallel data found - only sample weight / teacher / NC data can add signal"
+  },
+  "men": {
+   "name": "Mende",
+   "group": "other",
+   "geez": false,
+   "original_sft_samples": 0,
+   "original_sft_target_tokens": 0,
+   "r4_mix_replay_tokens": 0,
+   "r4_mix_science_tokens": 0,
+   "pool_jw_style_pct_of_tokens": null,
+   "commercial_ok": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "share_alike": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "EXCLUDED_unknown_licence": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "NC_noncommercial": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "owner_code_switch": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "commercial_new_target_tokens": 0,
+   "commercial_plus_sa_target_tokens": 0,
+   "commercial_new_vs_original_sft": 0.0,
+   "note": "NO new commercial-OK English-parallel data found - only sample weight / teacher / NC data can add signal"
+  },
+  "kri": {
+   "name": "Krio",
+   "group": "other",
+   "geez": false,
+   "original_sft_samples": 12902,
+   "original_sft_target_tokens": 1313946,
+   "r4_mix_replay_tokens": 148436,
+   "r4_mix_science_tokens": 0,
+   "pool_jw_style_pct_of_tokens": 80.6,
+   "commercial_ok": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "share_alike": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "EXCLUDED_unknown_licence": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "NC_noncommercial": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "owner_code_switch": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "commercial_new_target_tokens": 0,
+   "commercial_plus_sa_target_tokens": 0,
+   "commercial_new_vs_original_sft": 0.0,
+   "note": "NO new commercial-OK English-parallel data found - only sample weight / teacher / NC data can add signal"
+  },
+  "luy": {
+   "name": "Luyia",
+   "group": "other",
+   "geez": false,
+   "original_sft_samples": 0,
+   "original_sft_target_tokens": 0,
+   "r4_mix_replay_tokens": 0,
+   "r4_mix_science_tokens": 0,
+   "pool_jw_style_pct_of_tokens": null,
+   "commercial_ok": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "share_alike": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "EXCLUDED_unknown_licence": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "NC_noncommercial": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "owner_code_switch": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "commercial_new_target_tokens": 0,
+   "commercial_plus_sa_target_tokens": 0,
+   "commercial_new_vs_original_sft": 0.0,
+   "note": "NO new commercial-OK English-parallel data found - only sample weight / teacher / NC data can add signal"
+  },
+  "ish": {
+   "name": "Esan",
+   "group": "weak8",
+   "geez": false,
+   "original_sft_samples": 1697,
+   "original_sft_target_tokens": 163946,
+   "r4_mix_replay_tokens": 148394,
+   "r4_mix_science_tokens": 0,
+   "pool_jw_style_pct_of_tokens": 78.0,
+   "commercial_ok": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "share_alike": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "EXCLUDED_unknown_licence": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "NC_noncommercial": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "owner_code_switch": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "commercial_new_target_tokens": 0,
+   "commercial_plus_sa_target_tokens": 0,
+   "commercial_new_vs_original_sft": 0.0,
+   "note": "NO new commercial-OK English-parallel data found - only sample weight / teacher / NC data can add signal"
+  },
+  "dua": {
+   "name": "Duala",
+   "group": "no_benchmark",
+   "geez": false,
+   "original_sft_samples": 5027,
+   "original_sft_target_tokens": 532596,
+   "r4_mix_replay_tokens": 148619,
+   "r4_mix_science_tokens": 0,
+   "pool_jw_style_pct_of_tokens": 77.3,
+   "commercial_ok": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "share_alike": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "EXCLUDED_unknown_licence": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "NC_noncommercial": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "owner_code_switch": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "commercial_new_target_tokens": 0,
+   "commercial_plus_sa_target_tokens": 0,
+   "commercial_new_vs_original_sft": 0.0,
+   "note": "NO new commercial-OK English-parallel data found - only sample weight / teacher / NC data can add signal"
+  },
+  "bas": {
+   "name": "Basaa",
+   "group": "no_benchmark",
+   "geez": false,
+   "original_sft_samples": 7843,
+   "original_sft_target_tokens": 815088,
+   "r4_mix_replay_tokens": 148877,
+   "r4_mix_science_tokens": 0,
+   "pool_jw_style_pct_of_tokens": 82.5,
+   "commercial_ok": {
+    "windows": 474,
+    "pairs": 1055,
+    "tokens": 651894,
+    "target_tokens": 406583,
+    "sources": [
+     "finetranslations"
+    ],
+    "licences": [
+     "odc-by"
+    ],
+    "licence_class": [
+     "commercial_ok"
+    ],
+    "synthetic_english_source": true
+   },
+   "share_alike": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "EXCLUDED_unknown_licence": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "NC_noncommercial": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "owner_code_switch": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "commercial_new_target_tokens": 406583,
+   "commercial_plus_sa_target_tokens": 406583,
+   "commercial_new_vs_original_sft": 0.499,
+   "note": ""
+  },
+  "wes": {
+   "name": "Cameroon Pidgin",
+   "group": "no_benchmark",
+   "geez": false,
+   "original_sft_samples": 4170,
+   "original_sft_target_tokens": 428204,
+   "r4_mix_replay_tokens": 148912,
+   "r4_mix_science_tokens": 0,
+   "pool_jw_style_pct_of_tokens": 75.9,
+   "commercial_ok": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "share_alike": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "EXCLUDED_unknown_licence": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "NC_noncommercial": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "owner_code_switch": {
+    "windows": 15,
+    "pairs": 188,
+    "tokens": 6090,
+    "target_tokens": 3197,
+    "sources": [
+     "<HF_ORG>/African-Code-Switch (m_text = Gemma-4-31B-it translation of eng; 266 human-gold rows)"
+    ],
+    "licences": [
+     "owner (private dataset; seeds include NC/research sources as inspiration only)"
+    ],
+    "licence_class": [
+     "owner"
+    ],
+    "synthetic_english_source": false
+   },
+   "commercial_new_target_tokens": 0,
+   "commercial_plus_sa_target_tokens": 0,
+   "commercial_new_vs_original_sft": 0.0,
+   "note": "NO new commercial-OK English-parallel data found - only sample weight / teacher / NC data can add signal"
+  },
+  "tzm": {
+   "name": "Tamazight",
+   "group": "other",
+   "geez": false,
+   "original_sft_samples": 0,
+   "original_sft_target_tokens": 0,
+   "r4_mix_replay_tokens": 0,
+   "r4_mix_science_tokens": 0,
+   "pool_jw_style_pct_of_tokens": null,
+   "commercial_ok": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "share_alike": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "EXCLUDED_unknown_licence": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "NC_noncommercial": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "owner_code_switch": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "commercial_new_target_tokens": 0,
+   "commercial_plus_sa_target_tokens": 0,
+   "commercial_new_vs_original_sft": 0.0,
+   "note": "NO new commercial-OK English-parallel data found - only sample weight / teacher / NC data can add signal"
+  },
+  "ful": {
+   "name": "Fulah",
+   "group": "other",
+   "geez": false,
+   "original_sft_samples": 0,
+   "original_sft_target_tokens": 0,
+   "r4_mix_replay_tokens": 0,
+   "r4_mix_science_tokens": 0,
+   "pool_jw_style_pct_of_tokens": null,
+   "commercial_ok": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "share_alike": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "EXCLUDED_unknown_licence": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "NC_noncommercial": {
+    "windows": 0,
+    "pairs": 0,
+    "tokens": 0,
+    "target_tokens": 0,
+    "sources": [],
+    "licences": [],
+    "licence_class": [],
+    "synthetic_english_source": false
+   },
+   "owner_code_switch": {
+    "windows": 3,
+    "pairs": 6,
+    "tokens": 1149,
+    "target_tokens": 777,
+    "sources": [
+     "<HF_ORG>/African-Code-Switch (m_text = Gemma-4-31B-it translation of eng; 266 human-gold rows)"
+    ],
+    "licences": [
+     "owner (private dataset; seeds include NC/research sources as inspiration only)"
+    ],
+    "licence_class": [
+     "owner"
+    ],
+    "synthetic_english_source": false
+   },
+   "commercial_new_target_tokens": 0,
+   "commercial_plus_sa_target_tokens": 0,
+   "commercial_new_vs_original_sft": 0.0,
+   "note": "NO new commercial-OK English-parallel data found - only sample weight / teacher / NC data can add signal"
+  }
+ },
+ "totals": {
+  "commercial_ok": {
+   "windows": 35177,
+   "tokens": 37716872,
+   "target_tokens": 24414943,
+   "languages": 13
+  },
+  "share_alike": {
+   "windows": 5787,
+   "tokens": 3241786,
+   "target_tokens": 2130414,
+   "languages": 8
+  },
+  "EXCLUDED_unknown_licence": {
+   "windows": 19534,
+   "tokens": 11334240,
+   "target_tokens": 6971105,
+   "languages": 4
+  },
+  "NC_noncommercial": {
+   "windows": 8730,
+   "tokens": 6663007,
+   "target_tokens": 4385088,
+   "languages": 3
+  },
+  "owner_code_switch": {
+   "windows": 1969,
+   "tokens": 2705129,
+   "target_tokens": 1791971,
+   "languages": 44
+  }
+ }
+}

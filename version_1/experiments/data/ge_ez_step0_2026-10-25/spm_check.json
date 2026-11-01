@@ -1,0 +1,34 @@
+{
+ "amh": {
+  "n": 1012,
+  "base_spm_equals_base_json": 1.0,
+  "modified_spm_equals_modified_json": 1.0,
+  "tokens_per_sent_base": 51.92885375494071,
+  "tokens_per_sent_json": 40.57411067193676,
+  "tokens_per_sent_spm": 40.57411067193676
+ },
+ "tir": {
+  "n": 1012,
+  "base_spm_equals_base_json": 1.0,
+  "modified_spm_equals_modified_json": 1.0,
+  "tokens_per_sent_base": 66.33498023715416,
+  "tokens_per_sent_json": 43.040513833992094,
+  "tokens_per_sent_spm": 43.040513833992094
+ },
+ "eng": {
+  "n": 1012,
+  "base_spm_equals_base_json": 1.0,
+  "modified_spm_equals_modified_json": 1.0,
+  "tokens_per_sent_base": 26.792490118577074,
+  "tokens_per_sent_json": 26.792490118577074,
+  "tokens_per_sent_spm": 26.792490118577074
+ },
+ "hau": {
+  "n": 1012,
+  "base_spm_equals_base_json": 1.0,
+  "modified_spm_equals_modified_json": 1.0,
+  "tokens_per_sent_base": 46.28162055335969,
+  "tokens_per_sent_json": 46.28162055335969,
+  "tokens_per_sent_spm": 46.28162055335969
+ }
+}

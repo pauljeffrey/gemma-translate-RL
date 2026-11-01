@@ -1,0 +1,22 @@
+built out/tok/geez_N1000: 1000 new tokens, 1000 ids re-used, 0 merges removed, 1000 appended; vocab size 262144; sha256 1cd82de64593967ebb7f2a9b225b96f5aec4b5ad6972119c85010bba6c693767
+built out/tok/geez_N3000: 3000 new tokens, 3000 ids re-used, 0 merges removed, 3000 appended; vocab size 262144; sha256 b82a6942ecb1b4a7d5eb9424be6b5a9bf3badf516c6d9e46e4a893fef4f95ecf
+built out/tok/geez_N8000: 8000 new tokens, 8000 ids re-used, 769 merges removed, 8000 appended; vocab size 262144; sha256 cfd97afbac4aabdf0ddd39cb47ee23cabaa7b0feb24e167ae8d3e8199d563d34
+built out/tok/fon_N1000: 1000 new tokens, 1000 ids re-used, 1129 merges removed, 1000 appended; vocab size 262144; sha256 3ba0770c0061ffb4653da4473f1e108a7bfb2af84ae5d2c33639684a9fe6b50d
+built out/tok/fon_N3000: 3000 new tokens, 3000 ids re-used, 3357 merges removed, 3000 appended; vocab size 262144; sha256 5ebf7469289ca70db9035c34e31763ee2eb3926733ba613d007386c4b8fe1254
+built out/tok/fon_N5000: 5000 new tokens, 5000 ids re-used, 5553 merges removed, 5000 appended; vocab size 262144; sha256 a29b73840c08bd346c2644a23c2396328953df2b53b27465a010a3cae231570d
+built out/tok/both_g3000_f1000: 4000 new tokens, 4000 ids re-used, 1129 merges removed, 4000 appended; vocab size 262144; sha256 c942b930f041a0ebbc000f1e80add2fdfe8f76865d6f6af23bf3eea45545f6d1
+Traceback (most recent call last):
+  File "/workspace/tokswap/swap_vocab.py", line 642, in <module>
+    main()
+  File "/workspace/tokswap/swap_vocab.py", line 638, in main
+    a.f(a)
+  File "/workspace/tokswap/swap_vocab.py", line 580, in cmd_simcheck
+    lines = read_lines(a.text, a.max_chars)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/tokswap/swap_vocab.py", line 277, in read_lines
+    with open(path, encoding="utf-8") as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'in/text/amh.ft.txt'
+simcheck fon: 15962 lines, 0 mismatches between simulation and the real swapped tokenizer
+simcheck fon: 15962 lines, 0 mismatches between simulation and the real swapped tokenizer
+simcheck fon: 15962 lines, 0 mismatches between simulation and the real swapped tokenizer

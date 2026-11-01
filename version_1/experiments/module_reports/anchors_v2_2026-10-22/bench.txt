@@ -1,0 +1,5 @@
+[bench] 1344 samples, 30 languages, mean source words 191
+[bench] anchors off: 19.7 s (min 19.1, max 20.7); anchors applied 0.00, penalty_mean 0.000
+[bench] anchors v1: 22.0 s (min 21.4, max 22.7); anchors applied 1.00, penalty_mean 0.006
+[bench] anchors v1 + v2: 22.9 s (min 22.5, max 23.2); anchors applied 1.00, penalty_mean 0.103
+[bench] v2 net cost +0.8 s; v1 net cost +2.3 s

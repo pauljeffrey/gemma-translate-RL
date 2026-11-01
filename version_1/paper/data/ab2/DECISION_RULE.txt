@@ -1,0 +1,74 @@
+AB2 DECISION RULE (pre-registration)
+====================================
+Written 2026-10-23, BEFORE any run of this ablation exists (no weak SFT, no RL arm, no control, no evaluation of AB2 has been started). The order script
+(scripts/run_ab2_order.sh) records the sha256 of THIS file in results/DECISION_RULE.sha256 when the chain is released (ORDER_GO); scripts/ab2_analyze.py applies exactly the rule
+below in decide() and writes results/decision.json. Anything not in this file is exploratory and is labelled so in the report.
+
+1. QUESTION
+Does the gain that RL (learned-metric rewards, no parallel targets) gives on top of a strong SFT checkpoint survive when it starts from a much weaker SFT checkpoint, and, from that
+weak start, does RL give more than continued SFT of equal cost?  (The paper's Section 8 states this as a research question, not a result.)
+
+2. SYSTEMS (one run each; every RL arm and every control uses ONE seed)
+ F0     SFT-final (27,638 steps, 3.62 B tokens)                       W0     weak SFT: the first 3,500 steps of SFT stage A re-run (0.459 B tokens, 12.7%), lr annealed 5e-5 -> 5e-6
+ F_RL   F0 + RL      W_RL   W0 + RL: the IDENTICAL RL recipe (configs differ only in model_name / out_dir / run_name): 49 steps x 64 b64 prompts x group 16 = 50,176
+        completions, languages yor kin orm lin (uniform draws), same prompts and seeds, reward / KL / lr as in AB1 (phase-2c recipe), warm-up 5 steps.
+ W_S1   W0 + continued SFT on the real stage-A packs of steps 3,501.. (92-93% of the draws are packs W never drew; all 77 languages as in the real schedule), N steps with N chosen
+        so that the job's wall-clock equals one RL arm (scripts/ab2_set_n.py, from the measured F_RL job); fresh AdamW, warm-up 20, lr 5e-6 (W's end value) constant for 80% of the
+        steps, linear anneal to 5e-7.
+ W_S1P  W0 + continued SFT on 784 short samples per language (3,136) of the chosen languages taken from packs W never drew (pair-matched in COUNT to the 3,136 RL prompt draws), same lr
+        recipe, 8 packs per step, 1 epoch.  (No TranslatePsy / NLLB-derived data is used anywhere.)
+
+3. DATA OF THE VERDICTS
+Primary set: FLORES+ devtest, rows whose reference pair is not in the SFT text (no_pair), greedy decoding, 768 new tokens, languages yor kin orm lin (n = 657 / 1012 / 988 / 1012 sentences).
+Primary endpoint: language-macro chrF++ (corpus chrF++ per language, unweighted mean of the four), paired sentence bootstrap B = 1000, 95% percentile intervals; all systems scored on the same sentences.
+Confirmation sets (same pipeline, no_pair rows): NTREX (yor kin orm), MAFAND (yor kin), SMOL-sent (all four), and the common-finished subset (sentences that EVERY system finished within 768 tokens).
+Confirmation metrics: spBLEU (flores200 tokenizer), SSA-COMET with reference (mean of its three views), AfriCOMET with reference. AfriCOMET-QE is the RL reward model and SSA-COMET-QE is
+reported only: neither is used in any verdict. Finished rate and GlotLID-ok rate are reported for every system.
+
+4. QUANTITIES (language macro on the primary set unless said otherwise)
+ gain_F = F_RL - F0     gain_W = W_RL - W0     DiD = gain_W - gain_F     gap0 = F0 - W0
+ survival = gain_W / gain_F      closed = gain_W / gap0 (share of the SFT gap that RL closes)      W_RL - F0     W_RL - F_RL
+ RL - S1 = W_RL - W_S1 (equal GPU time)       RL - S1P = W_RL - W_S1P (equal number of source sentences)       gain_S1, gain_S1P, closed_S1, closed_S1P
+MINIMUM DETECTABLE EFFECT (80% power, two-sided 5%, from the paired-bootstrap standard errors of the main run's SFT-final -> RL-final comparison on these four languages:
+SE per language 0.56 / 0.61 / 0.53 / 0.64 chrF++; command: python scripts/ab2_analyze.py --power-from data/main_run_power_inputs.csv):
+ macro of four languages: SE of one gain 0.29; DiD (two gains) 0.42 -> MDE 1.16 chrF++;  RL vs a control (paired, same sentences) MDE about 0.82 chrF++;  a single language: DiD MDE about 2.3.
+These describe TEST-SET sampling only; ONE run per arm means seed-to-seed variance of RL is not in any interval: a difference smaller than the MDE is not evidence of anything.
+
+5. PRECONDITIONS (if one fails, verdict A is INCONCLUSIVE and the reason is reported; nothing else is concluded)
+ P1  gap0 >= 3.0 chrF++ (the weak start is meaningfully weaker)
+ P2  gain_F has a 95% interval above 0 (RL works in this 49-step regime from the strong start)
+ P3  W0 finishes >= 60% of its FLORES+ no_pair translations within 768 tokens (a W that mostly loops would be a different experiment). The order script evaluates W0 while arm F trains and HOLDS
+     before arm W if P3 fails (owner decides: ORDER_W_OK).
+
+6. VERDICT A  (does RL's gain survive a weak start?)
+ REFUTE   : the 95% interval of gain_W does not lie above 0, AND its upper end is below gain_F - MDE(DiD) (= 1.16).   (If gain_W is not above 0 but the upper end is not that low: INCONCLUSIVE.)
+ SUPPORT  : ALL of  (a) gain_W interval above 0;  (b) survival point estimate >= 0.5;  (c) gain_W interval above 0 on at least 2 of NTREX / MAFAND / SMOL-sent;  (d) gain_W interval above 0
+            on the common-finished sentences (so it is not only "learning to stop");  (e) gain_W interval above 0 in at least 3 of the 4 languages;  (f) gain_W interval above 0 for SSA-COMET-ref
+            AND AfriCOMET-ref.
+ PARTIAL SUPPORT : gain_W interval above 0 but at least one of (b)-(f) fails.
+ The sentence "RL replaces SFT" may be written only if the interval of W_RL - F_RL contains 0; "W_RL reaches the level F0 started from" only if the interval of W_RL - F0 contains 0 or is above it.
+
+7. VERDICT B  (from the weak start, RL against continued SFT)
+ For each control c in {S1, S1P}:  RL BETTER if the interval of W_RL - W_c is above 0;  SFT BETTER if it is below 0;  otherwise NO DIFFERENCE DETECTABLE (at the MDE of section 4).
+ Combined: "RL better than continued SFT" only if RL is BETTER against both; "continued SFT better" if SFT is BETTER against at least one; otherwise "comparable / mixed" and both parts are reported.
+ Reading: S1 tests equal compute (the stronger competitor: about 400 times more training tokens than the source tokens of the RL prompts, in-distribution, all 77 languages as in the real schedule, so only about
+ 10% of its tokens are in the four evaluated languages); S1P tests equal NUMBER OF SENTENCES in the chosen languages (data efficiency). S1 and S1P are not a test of "more of the same SFT forever".
+
+8. FIXED IN ADVANCE, NOT TO BE CHANGED AFTER SEEING A RESULT
+ languages, steps (49), recipe, N of S1 (rule: wall-clock of the F_RL job, section 2), the primary endpoint and the thresholds above, B = 1000, bootstrap seed 0.
+ Extension: the OWNER may extend BOTH RL arms to 98 steps (+50,176 completions each; S1 N is then recomputed from the measured 98-step arm), decided only from arm F's own dev curve
+ (macro dev chrF++ every 10 steps, scripts/ab2_set_n.py prints it) BEFORE W_RL exists; if used, the report says so. Nothing else may be tuned after the first result.
+ Prediction made now (not a test): gain_F will be smaller than the main run's +7.25 chrF++ macro for these languages (+7.7 yor, +8.2 kin, +7.7 orm, +5.4 lin from 1.76 M completions) because 49 steps
+ are 2.9% of its completions; the dev evidence is that about 60% of the dev gain exists after ~50 steps (see the report).
+
+9. WHAT THIS DESIGN CANNOT SHOW
+ * It is not the production multi-phase RL (that was 1.76 M completions in five phases with length curricula, science / anchor / ensemble rewards): the question is answered for ONE short b64 phase.
+ * Four languages only (yor kin orm lin: all validated-QE languages with an AfriCOMET model; three of them mid-resource): no statement about the 45 languages, about Ge'ez (amh, tir), about the
+   weak consensus-only languages or about languages without a QE model.
+ * One seed per arm and per control: no run-to-run variance. Differences below the MDE are not evidence.
+ * 49 steps at lr 2e-6: late-RL behaviour, KL drift and saturation are not tested.  The weak start is a re-created, ANNEALED 12.7% SFT, not a snapshot of the real run at step 3,500 (it may be
+   better than a mid-run snapshot).
+ * The continued-SFT controls use the project's own commercial-clean SFT windows; they bound "more of the same data", not "better data" (a stronger teacher, human-curated data).
+ * The reward models (AfriCOMET-QE and the consensus / constraint terms) are learned from human judgements and human references; gains are measured against human references and the
+   human-judgement-correlated metrics AfriCOMET and SSA-COMET, not by human evaluation.
+ * chrF++, spBLEU, AfriCOMET and SSA-COMET are sentence-level metrics of short texts: nothing about documents.

@@ -1,0 +1,1 @@
+[fon] sets=464 sentences: plain=362332 (diff 0), special=18634 (diff 15412), freed_script=117089 (diff 0); vocab-string test: 255474 strings, plain diffs 0

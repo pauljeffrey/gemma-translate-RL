@@ -1,0 +1,19 @@
+subset,metric,n,delta_micro,delta_macro_lang,win,tie,loss,pref
+all rows,chrf,153220,2.5976,3.3194,0.50726,0.20396,0.28878,0.63723
+all rows,chrf_sub,76804,2.4491,3.2076,0.49596,0.20146,0.30258,0.62109
+all rows,afri_ref,76804,0.050291,0.059118,0.60373,0.13805,0.25822,0.70043
+all rows,ssa_ref,76804,0.05097,0.059069,0.6058,0.13963,0.25457,0.70412
+all rows,afri_qe,76804,0.056946,0.069167,0.63456,0.12962,0.23582,0.72906
+all rows,ssa_qe,76804,0.058316,0.068723,0.61718,0.12778,0.25504,0.7076
+neither model loops / unfinished,chrf,140204,1.4084,1.6663,0.47123,0.21403,0.31474,0.59955
+neither model loops / unfinished,chrf_sub,71794,1.3349,1.5718,0.46182,0.21512,0.32306,0.58839
+neither model loops / unfinished,afri_ref,71794,0.0348,0.038681,0.57726,0.14717,0.27557,0.67688
+neither model loops / unfinished,ssa_ref,71794,0.040438,0.047795,0.58424,0.14784,0.26792,0.6856
+neither model loops / unfinished,afri_qe,71794,0.040223,0.047984,0.61039,0.13837,0.25125,0.70841
+neither model loops / unfinished,ssa_qe,71794,0.044771,0.052666,0.59336,0.13592,0.27072,0.6867
+"neither loops, both length ratio in [0.5, 2]",chrf,136993,1.3504,1.5432,0.46901,0.21367,0.31732,0.59645
+"neither loops, both length ratio in [0.5, 2]",chrf_sub,70207,1.2755,1.4791,0.45927,0.21515,0.32558,0.58517
+"neither loops, both length ratio in [0.5, 2]",afri_ref,70207,0.034,0.037684,0.57486,0.14835,0.2768,0.67499
+"neither loops, both length ratio in [0.5, 2]",ssa_ref,70207,0.039468,0.046674,0.58131,0.14895,0.26975,0.68305
+"neither loops, both length ratio in [0.5, 2]",afri_qe,70207,0.039608,0.047236,0.60893,0.13926,0.25181,0.70745
+"neither loops, both length ratio in [0.5, 2]",ssa_qe,70207,0.043719,0.051484,0.5906,0.13701,0.27239,0.68436

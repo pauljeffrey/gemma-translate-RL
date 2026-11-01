@@ -1,0 +1,1234 @@
+{
+ "format_version": 1,
+ "dtype": "uint32",
+ "seq_len": 8192,
+ "instruction_template": "Translate the text to {african_language}:  {english_text}",
+ "end_of_turn": "<end_of_turn>",
+ "ignore_index": -100,
+ "tokenizer": {
+  "name": "/workspace/sft_build/runs/final_1433",
+  "requested": "/workspace/sft_build/runs/final_1433",
+  "revision": null,
+  "fingerprint": "69f7f26e2deede417601468df553168c39714aeb3e171eea3482408fe6e3c218",
+  "vocab_size": 262145,
+  "bos_id": 2,
+  "eos_id": 1,
+  "pad_id": 0,
+  "end_of_turn_id": 106
+ },
+ "iso_table": [
+  "yor",
+  "hau",
+  "ibo",
+  "pcm",
+  "efi",
+  "twi",
+  "ewe",
+  "fon",
+  "wol",
+  "swh",
+  "kin",
+  "som",
+  "orm",
+  "amh",
+  "tir",
+  "lug",
+  "lin",
+  "zul",
+  "xho",
+  "afr",
+  "sna",
+  "nya",
+  "sot",
+  "tsn",
+  "mlg",
+  "ibb",
+  "urh",
+  "bem",
+  "tum",
+  "run",
+  "ven",
+  "tso",
+  "nso",
+  "ssw",
+  "nbl",
+  "nde",
+  "sag",
+  "tiv",
+  "umb",
+  "kmb",
+  "mos",
+  "kik",
+  "luo",
+  "kam",
+  "bin",
+  "dag",
+  "oke",
+  "shi",
+  "dyu",
+  "bam",
+  "kbp",
+  "bbj",
+  "kon",
+  "kea",
+  "fat",
+  "knc",
+  "gaa",
+  "kab",
+  "nus",
+  "swc",
+  "lua",
+  "kqn",
+  "lun",
+  "iso",
+  "loz",
+  "wal",
+  "ach",
+  "tsc",
+  "vmw",
+  "kua",
+  "seh",
+  "nyn",
+  "her",
+  "yao",
+  "sid",
+  "ndc",
+  "men",
+  "kri",
+  "luy",
+  "ish",
+  "dua",
+  "bas",
+  "wes",
+  "tzm",
+  "ful"
+ ],
+ "directions": [
+  "en2x"
+ ],
+ "pivot_tag": "eng",
+ "splits": {
+  "train": {
+   "n_samples": 96939,
+   "n_packs": 2344,
+   "n_tokens": 19193643,
+   "target_tokens": 11771538,
+   "packing_efficiency": 0.9995622862727975,
+   "padding_fraction": 0.00043771372720247115,
+   "mean_samples_per_pack": 41.35622866894198,
+   "per_language": {
+    "amh": {
+     "samples": 6215,
+     "target_tokens": 822460,
+     "en2x": 6215,
+     "x2en": 0
+    },
+    "hau": {
+     "samples": 6298,
+     "target_tokens": 769618,
+     "en2x": 6298,
+     "x2en": 0
+    },
+    "lug": {
+     "samples": 6545,
+     "target_tokens": 867490,
+     "en2x": 6545,
+     "x2en": 0
+    },
+    "nso": {
+     "samples": 6582,
+     "target_tokens": 921188,
+     "en2x": 6582,
+     "x2en": 0
+    },
+    "yor": {
+     "samples": 6939,
+     "target_tokens": 1133898,
+     "en2x": 6939,
+     "x2en": 0
+    },
+    "zul": {
+     "samples": 6129,
+     "target_tokens": 822043,
+     "en2x": 6129,
+     "x2en": 0
+    },
+    "ibo": {
+     "samples": 1076,
+     "target_tokens": 89223,
+     "en2x": 1076,
+     "x2en": 0
+    },
+    "pcm": {
+     "samples": 781,
+     "target_tokens": 69170,
+     "en2x": 781,
+     "x2en": 0
+    },
+    "efi": {
+     "samples": 966,
+     "target_tokens": 87898,
+     "en2x": 966,
+     "x2en": 0
+    },
+    "twi": {
+     "samples": 600,
+     "target_tokens": 178596,
+     "en2x": 600,
+     "x2en": 0
+    },
+    "ewe": {
+     "samples": 836,
+     "target_tokens": 88970,
+     "en2x": 836,
+     "x2en": 0
+    },
+    "fon": {
+     "samples": 983,
+     "target_tokens": 94023,
+     "en2x": 983,
+     "x2en": 0
+    },
+    "wol": {
+     "samples": 816,
+     "target_tokens": 82133,
+     "en2x": 816,
+     "x2en": 0
+    },
+    "swh": {
+     "samples": 665,
+     "target_tokens": 83649,
+     "en2x": 665,
+     "x2en": 0
+    },
+    "kin": {
+     "samples": 600,
+     "target_tokens": 92216,
+     "en2x": 600,
+     "x2en": 0
+    },
+    "som": {
+     "samples": 600,
+     "target_tokens": 117106,
+     "en2x": 600,
+     "x2en": 0
+    },
+    "orm": {
+     "samples": 648,
+     "target_tokens": 93088,
+     "en2x": 648,
+     "x2en": 0
+    },
+    "tir": {
+     "samples": 760,
+     "target_tokens": 93622,
+     "en2x": 760,
+     "x2en": 0
+    },
+    "lin": {
+     "samples": 912,
+     "target_tokens": 85753,
+     "en2x": 912,
+     "x2en": 0
+    },
+    "xho": {
+     "samples": 649,
+     "target_tokens": 89989,
+     "en2x": 649,
+     "x2en": 0
+    },
+    "afr": {
+     "samples": 611,
+     "target_tokens": 81403,
+     "en2x": 611,
+     "x2en": 0
+    },
+    "sna": {
+     "samples": 631,
+     "target_tokens": 86494,
+     "en2x": 631,
+     "x2en": 0
+    },
+    "nya": {
+     "samples": 600,
+     "target_tokens": 96129,
+     "en2x": 600,
+     "x2en": 0
+    },
+    "sot": {
+     "samples": 600,
+     "target_tokens": 109310,
+     "en2x": 600,
+     "x2en": 0
+    },
+    "tsn": {
+     "samples": 887,
+     "target_tokens": 90226,
+     "en2x": 887,
+     "x2en": 0
+    },
+    "mlg": {
+     "samples": 778,
+     "target_tokens": 89093,
+     "en2x": 778,
+     "x2en": 0
+    },
+    "ibb": {
+     "samples": 899,
+     "target_tokens": 87508,
+     "en2x": 899,
+     "x2en": 0
+    },
+    "urh": {
+     "samples": 946,
+     "target_tokens": 89178,
+     "en2x": 946,
+     "x2en": 0
+    },
+    "bem": {
+     "samples": 854,
+     "target_tokens": 85293,
+     "en2x": 854,
+     "x2en": 0
+    },
+    "tum": {
+     "samples": 826,
+     "target_tokens": 87229,
+     "en2x": 826,
+     "x2en": 0
+    },
+    "run": {
+     "samples": 778,
+     "target_tokens": 88765,
+     "en2x": 778,
+     "x2en": 0
+    },
+    "ven": {
+     "samples": 887,
+     "target_tokens": 93270,
+     "en2x": 887,
+     "x2en": 0
+    },
+    "tso": {
+     "samples": 917,
+     "target_tokens": 90169,
+     "en2x": 917,
+     "x2en": 0
+    },
+    "ssw": {
+     "samples": 803,
+     "target_tokens": 88404,
+     "en2x": 803,
+     "x2en": 0
+    },
+    "nbl": {
+     "samples": 827,
+     "target_tokens": 91641,
+     "en2x": 827,
+     "x2en": 0
+    },
+    "sag": {
+     "samples": 889,
+     "target_tokens": 86578,
+     "en2x": 889,
+     "x2en": 0
+    },
+    "tiv": {
+     "samples": 874,
+     "target_tokens": 89927,
+     "en2x": 874,
+     "x2en": 0
+    },
+    "umb": {
+     "samples": 831,
+     "target_tokens": 86407,
+     "en2x": 831,
+     "x2en": 0
+    },
+    "kmb": {
+     "samples": 851,
+     "target_tokens": 88088,
+     "en2x": 851,
+     "x2en": 0
+    },
+    "mos": {
+     "samples": 900,
+     "target_tokens": 92749,
+     "en2x": 900,
+     "x2en": 0
+    },
+    "kik": {
+     "samples": 884,
+     "target_tokens": 94071,
+     "en2x": 884,
+     "x2en": 0
+    },
+    "luo": {
+     "samples": 845,
+     "target_tokens": 81993,
+     "en2x": 845,
+     "x2en": 0
+    },
+    "kam": {
+     "samples": 832,
+     "target_tokens": 95843,
+     "en2x": 832,
+     "x2en": 0
+    },
+    "bin": {
+     "samples": 1014,
+     "target_tokens": 90919,
+     "en2x": 1014,
+     "x2en": 0
+    },
+    "dag": {
+     "samples": 714,
+     "target_tokens": 87744,
+     "en2x": 714,
+     "x2en": 0
+    },
+    "oke": {
+     "samples": 945,
+     "target_tokens": 90471,
+     "en2x": 945,
+     "x2en": 0
+    },
+    "shi": {
+     "samples": 966,
+     "target_tokens": 97775,
+     "en2x": 966,
+     "x2en": 0
+    },
+    "dyu": {
+     "samples": 870,
+     "target_tokens": 91083,
+     "en2x": 870,
+     "x2en": 0
+    },
+    "bam": {
+     "samples": 1001,
+     "target_tokens": 87481,
+     "en2x": 1001,
+     "x2en": 0
+    },
+    "kbp": {
+     "samples": 1005,
+     "target_tokens": 95880,
+     "en2x": 1005,
+     "x2en": 0
+    },
+    "bbj": {
+     "samples": 869,
+     "target_tokens": 92963,
+     "en2x": 869,
+     "x2en": 0
+    },
+    "kon": {
+     "samples": 797,
+     "target_tokens": 81190,
+     "en2x": 797,
+     "x2en": 0
+    },
+    "kea": {
+     "samples": 763,
+     "target_tokens": 83010,
+     "en2x": 763,
+     "x2en": 0
+    },
+    "kab": {
+     "samples": 879,
+     "target_tokens": 89026,
+     "en2x": 879,
+     "x2en": 0
+    },
+    "nus": {
+     "samples": 864,
+     "target_tokens": 90872,
+     "en2x": 864,
+     "x2en": 0
+    },
+    "swc": {
+     "samples": 661,
+     "target_tokens": 85848,
+     "en2x": 661,
+     "x2en": 0
+    },
+    "lua": {
+     "samples": 747,
+     "target_tokens": 86489,
+     "en2x": 747,
+     "x2en": 0
+    },
+    "kqn": {
+     "samples": 779,
+     "target_tokens": 86832,
+     "en2x": 779,
+     "x2en": 0
+    },
+    "lun": {
+     "samples": 750,
+     "target_tokens": 87687,
+     "en2x": 750,
+     "x2en": 0
+    },
+    "iso": {
+     "samples": 841,
+     "target_tokens": 91285,
+     "en2x": 841,
+     "x2en": 0
+    },
+    "loz": {
+     "samples": 830,
+     "target_tokens": 87638,
+     "en2x": 830,
+     "x2en": 0
+    },
+    "wal": {
+     "samples": 836,
+     "target_tokens": 88207,
+     "en2x": 836,
+     "x2en": 0
+    },
+    "ach": {
+     "samples": 780,
+     "target_tokens": 84254,
+     "en2x": 780,
+     "x2en": 0
+    },
+    "tsc": {
+     "samples": 830,
+     "target_tokens": 89281,
+     "en2x": 830,
+     "x2en": 0
+    },
+    "vmw": {
+     "samples": 816,
+     "target_tokens": 88513,
+     "en2x": 816,
+     "x2en": 0
+    },
+    "kua": {
+     "samples": 793,
+     "target_tokens": 89320,
+     "en2x": 793,
+     "x2en": 0
+    },
+    "seh": {
+     "samples": 818,
+     "target_tokens": 88609,
+     "en2x": 818,
+     "x2en": 0
+    },
+    "nyn": {
+     "samples": 834,
+     "target_tokens": 87536,
+     "en2x": 834,
+     "x2en": 0
+    },
+    "her": {
+     "samples": 846,
+     "target_tokens": 89822,
+     "en2x": 846,
+     "x2en": 0
+    },
+    "yao": {
+     "samples": 812,
+     "target_tokens": 90489,
+     "en2x": 812,
+     "x2en": 0
+    },
+    "sid": {
+     "samples": 804,
+     "target_tokens": 89493,
+     "en2x": 804,
+     "x2en": 0
+    },
+    "ndc": {
+     "samples": 780,
+     "target_tokens": 87953,
+     "en2x": 780,
+     "x2en": 0
+    },
+    "kri": {
+     "samples": 897,
+     "target_tokens": 90819,
+     "en2x": 897,
+     "x2en": 0
+    },
+    "ish": {
+     "samples": 916,
+     "target_tokens": 91781,
+     "en2x": 916,
+     "x2en": 0
+    },
+    "dua": {
+     "samples": 891,
+     "target_tokens": 95073,
+     "en2x": 891,
+     "x2en": 0
+    },
+    "bas": {
+     "samples": 840,
+     "target_tokens": 88466,
+     "en2x": 840,
+     "x2en": 0
+    },
+    "wes": {
+     "samples": 801,
+     "target_tokens": 75828,
+     "en2x": 801,
+     "x2en": 0
+    }
+   },
+   "per_direction": {
+    "en2x": {
+     "samples": 96939,
+     "tokens": 19193643,
+     "target_tokens": 11771538
+    },
+    "x2en": {
+     "samples": 0,
+     "tokens": 0,
+     "target_tokens": 0
+    }
+   }
+  },
+  "val": {
+   "n_samples": 6934,
+   "n_packs": 146,
+   "n_tokens": 1194331,
+   "target_tokens": 703358,
+   "packing_efficiency": 0.998577797249572,
+   "padding_fraction": 0.0014222027504280366,
+   "mean_samples_per_pack": 47.49315068493151,
+   "per_language": {
+    "yor": {
+     "samples": 100,
+     "target_tokens": 7345,
+     "en2x": 100,
+     "x2en": 0
+    },
+    "hau": {
+     "samples": 100,
+     "target_tokens": 12751,
+     "en2x": 100,
+     "x2en": 0
+    },
+    "ibo": {
+     "samples": 100,
+     "target_tokens": 10296,
+     "en2x": 100,
+     "x2en": 0
+    },
+    "pcm": {
+     "samples": 100,
+     "target_tokens": 9183,
+     "en2x": 100,
+     "x2en": 0
+    },
+    "efi": {
+     "samples": 100,
+     "target_tokens": 6616,
+     "en2x": 100,
+     "x2en": 0
+    },
+    "twi": {
+     "samples": 100,
+     "target_tokens": 27593,
+     "en2x": 100,
+     "x2en": 0
+    },
+    "ewe": {
+     "samples": 82,
+     "target_tokens": 9570,
+     "en2x": 82,
+     "x2en": 0
+    },
+    "fon": {
+     "samples": 100,
+     "target_tokens": 7663,
+     "en2x": 100,
+     "x2en": 0
+    },
+    "wol": {
+     "samples": 100,
+     "target_tokens": 12103,
+     "en2x": 100,
+     "x2en": 0
+    },
+    "swh": {
+     "samples": 100,
+     "target_tokens": 12607,
+     "en2x": 100,
+     "x2en": 0
+    },
+    "kin": {
+     "samples": 100,
+     "target_tokens": 17202,
+     "en2x": 100,
+     "x2en": 0
+    },
+    "som": {
+     "samples": 100,
+     "target_tokens": 21296,
+     "en2x": 100,
+     "x2en": 0
+    },
+    "orm": {
+     "samples": 100,
+     "target_tokens": 8160,
+     "en2x": 100,
+     "x2en": 0
+    },
+    "amh": {
+     "samples": 100,
+     "target_tokens": 14035,
+     "en2x": 100,
+     "x2en": 0
+    },
+    "tir": {
+     "samples": 100,
+     "target_tokens": 11676,
+     "en2x": 100,
+     "x2en": 0
+    },
+    "lug": {
+     "samples": 100,
+     "target_tokens": 10946,
+     "en2x": 100,
+     "x2en": 0
+    },
+    "lin": {
+     "samples": 90,
+     "target_tokens": 8041,
+     "en2x": 90,
+     "x2en": 0
+    },
+    "zul": {
+     "samples": 100,
+     "target_tokens": 11745,
+     "en2x": 100,
+     "x2en": 0
+    },
+    "xho": {
+     "samples": 100,
+     "target_tokens": 15749,
+     "en2x": 100,
+     "x2en": 0
+    },
+    "afr": {
+     "samples": 100,
+     "target_tokens": 13997,
+     "en2x": 100,
+     "x2en": 0
+    },
+    "sna": {
+     "samples": 100,
+     "target_tokens": 14873,
+     "en2x": 100,
+     "x2en": 0
+    },
+    "nya": {
+     "samples": 100,
+     "target_tokens": 15918,
+     "en2x": 100,
+     "x2en": 0
+    },
+    "sot": {
+     "samples": 100,
+     "target_tokens": 17349,
+     "en2x": 100,
+     "x2en": 0
+    },
+    "tsn": {
+     "samples": 100,
+     "target_tokens": 7286,
+     "en2x": 100,
+     "x2en": 0
+    },
+    "mlg": {
+     "samples": 100,
+     "target_tokens": 12908,
+     "en2x": 100,
+     "x2en": 0
+    },
+    "ibb": {
+     "samples": 60,
+     "target_tokens": 7042,
+     "en2x": 60,
+     "x2en": 0
+    },
+    "urh": {
+     "samples": 100,
+     "target_tokens": 6157,
+     "en2x": 100,
+     "x2en": 0
+    },
+    "bem": {
+     "samples": 100,
+     "target_tokens": 7558,
+     "en2x": 100,
+     "x2en": 0
+    },
+    "tum": {
+     "samples": 100,
+     "target_tokens": 10324,
+     "en2x": 100,
+     "x2en": 0
+    },
+    "run": {
+     "samples": 95,
+     "target_tokens": 9298,
+     "en2x": 95,
+     "x2en": 0
+    },
+    "ven": {
+     "samples": 100,
+     "target_tokens": 8955,
+     "en2x": 100,
+     "x2en": 0
+    },
+    "tso": {
+     "samples": 100,
+     "target_tokens": 10709,
+     "en2x": 100,
+     "x2en": 0
+    },
+    "nso": {
+     "samples": 100,
+     "target_tokens": 9369,
+     "en2x": 100,
+     "x2en": 0
+    },
+    "ssw": {
+     "samples": 100,
+     "target_tokens": 8642,
+     "en2x": 100,
+     "x2en": 0
+    },
+    "nbl": {
+     "samples": 76,
+     "target_tokens": 6380,
+     "en2x": 76,
+     "x2en": 0
+    },
+    "sag": {
+     "samples": 100,
+     "target_tokens": 6159,
+     "en2x": 100,
+     "x2en": 0
+    },
+    "tiv": {
+     "samples": 100,
+     "target_tokens": 7494,
+     "en2x": 100,
+     "x2en": 0
+    },
+    "umb": {
+     "samples": 78,
+     "target_tokens": 5716,
+     "en2x": 78,
+     "x2en": 0
+    },
+    "kmb": {
+     "samples": 83,
+     "target_tokens": 7725,
+     "en2x": 83,
+     "x2en": 0
+    },
+    "mos": {
+     "samples": 100,
+     "target_tokens": 7808,
+     "en2x": 100,
+     "x2en": 0
+    },
+    "kik": {
+     "samples": 100,
+     "target_tokens": 5447,
+     "en2x": 100,
+     "x2en": 0
+    },
+    "luo": {
+     "samples": 100,
+     "target_tokens": 8824,
+     "en2x": 100,
+     "x2en": 0
+    },
+    "kam": {
+     "samples": 100,
+     "target_tokens": 6843,
+     "en2x": 100,
+     "x2en": 0
+    },
+    "bin": {
+     "samples": 100,
+     "target_tokens": 7420,
+     "en2x": 100,
+     "x2en": 0
+    },
+    "dag": {
+     "samples": 73,
+     "target_tokens": 10783,
+     "en2x": 73,
+     "x2en": 0
+    },
+    "oke": {
+     "samples": 100,
+     "target_tokens": 6063,
+     "en2x": 100,
+     "x2en": 0
+    },
+    "shi": {
+     "samples": 60,
+     "target_tokens": 5456,
+     "en2x": 60,
+     "x2en": 0
+    },
+    "dyu": {
+     "samples": 70,
+     "target_tokens": 10124,
+     "en2x": 70,
+     "x2en": 0
+    },
+    "bam": {
+     "samples": 48,
+     "target_tokens": 5180,
+     "en2x": 48,
+     "x2en": 0
+    },
+    "kbp": {
+     "samples": 62,
+     "target_tokens": 5814,
+     "en2x": 62,
+     "x2en": 0
+    },
+    "bbj": {
+     "samples": 60,
+     "target_tokens": 5840,
+     "en2x": 60,
+     "x2en": 0
+    },
+    "kon": {
+     "samples": 60,
+     "target_tokens": 7056,
+     "en2x": 60,
+     "x2en": 0
+    },
+    "kea": {
+     "samples": 60,
+     "target_tokens": 5169,
+     "en2x": 60,
+     "x2en": 0
+    },
+    "kab": {
+     "samples": 99,
+     "target_tokens": 8306,
+     "en2x": 99,
+     "x2en": 0
+    },
+    "nus": {
+     "samples": 100,
+     "target_tokens": 10276,
+     "en2x": 100,
+     "x2en": 0
+    },
+    "swc": {
+     "samples": 100,
+     "target_tokens": 11435,
+     "en2x": 100,
+     "x2en": 0
+    },
+    "lua": {
+     "samples": 100,
+     "target_tokens": 9722,
+     "en2x": 100,
+     "x2en": 0
+    },
+    "kqn": {
+     "samples": 100,
+     "target_tokens": 9460,
+     "en2x": 100,
+     "x2en": 0
+    },
+    "lun": {
+     "samples": 100,
+     "target_tokens": 8211,
+     "en2x": 100,
+     "x2en": 0
+    },
+    "iso": {
+     "samples": 100,
+     "target_tokens": 8530,
+     "en2x": 100,
+     "x2en": 0
+    },
+    "loz": {
+     "samples": 100,
+     "target_tokens": 7254,
+     "en2x": 100,
+     "x2en": 0
+    },
+    "wal": {
+     "samples": 100,
+     "target_tokens": 5873,
+     "en2x": 100,
+     "x2en": 0
+    },
+    "ach": {
+     "samples": 77,
+     "target_tokens": 6782,
+     "en2x": 77,
+     "x2en": 0
+    },
+    "tsc": {
+     "samples": 87,
+     "target_tokens": 7525,
+     "en2x": 87,
+     "x2en": 0
+    },
+    "vmw": {
+     "samples": 72,
+     "target_tokens": 5107,
+     "en2x": 72,
+     "x2en": 0
+    },
+    "kua": {
+     "samples": 100,
+     "target_tokens": 7941,
+     "en2x": 100,
+     "x2en": 0
+    },
+    "seh": {
+     "samples": 70,
+     "target_tokens": 6721,
+     "en2x": 70,
+     "x2en": 0
+    },
+    "nyn": {
+     "samples": 70,
+     "target_tokens": 8902,
+     "en2x": 70,
+     "x2en": 0
+    },
+    "her": {
+     "samples": 65,
+     "target_tokens": 3448,
+     "en2x": 65,
+     "x2en": 0
+    },
+    "yao": {
+     "samples": 100,
+     "target_tokens": 8276,
+     "en2x": 100,
+     "x2en": 0
+    },
+    "sid": {
+     "samples": 100,
+     "target_tokens": 7376,
+     "en2x": 100,
+     "x2en": 0
+    },
+    "ndc": {
+     "samples": 61,
+     "target_tokens": 4497,
+     "en2x": 61,
+     "x2en": 0
+    },
+    "kri": {
+     "samples": 70,
+     "target_tokens": 6940,
+     "en2x": 70,
+     "x2en": 0
+    },
+    "ish": {
+     "samples": 63,
+     "target_tokens": 4836,
+     "en2x": 63,
+     "x2en": 0
+    },
+    "dua": {
+     "samples": 92,
+     "target_tokens": 7391,
+     "en2x": 92,
+     "x2en": 0
+    },
+    "bas": {
+     "samples": 87,
+     "target_tokens": 7754,
+     "en2x": 87,
+     "x2en": 0
+    },
+    "wes": {
+     "samples": 64,
+     "target_tokens": 4532,
+     "en2x": 64,
+     "x2en": 0
+    }
+   },
+   "per_direction": {
+    "en2x": {
+     "samples": 6934,
+     "tokens": 1194331,
+     "target_tokens": 703358
+    },
+    "x2en": {
+     "samples": 0,
+     "tokens": 0,
+     "target_tokens": 0
+    }
+   }
+  },
+  "val_sci": {
+   "n_samples": 5208,
+   "n_packs": 118,
+   "n_tokens": 964496,
+   "target_tokens": 608592,
+   "packing_efficiency": 0.9977654925847458,
+   "padding_fraction": 0.0022345074152542166,
+   "mean_samples_per_pack": 44.13559322033898,
+   "per_language": {
+    "amh": {
+     "samples": 868,
+     "target_tokens": 93740,
+     "en2x": 868,
+     "x2en": 0
+    },
+    "hau": {
+     "samples": 868,
+     "target_tokens": 84696,
+     "en2x": 868,
+     "x2en": 0
+    },
+    "lug": {
+     "samples": 868,
+     "target_tokens": 99714,
+     "en2x": 868,
+     "x2en": 0
+    },
+    "nso": {
+     "samples": 868,
+     "target_tokens": 104984,
+     "en2x": 868,
+     "x2en": 0
+    },
+    "yor": {
+     "samples": 868,
+     "target_tokens": 133622,
+     "en2x": 868,
+     "x2en": 0
+    },
+    "zul": {
+     "samples": 868,
+     "target_tokens": 91836,
+     "en2x": 868,
+     "x2en": 0
+    }
+   },
+   "per_direction": {
+    "en2x": {
+     "samples": 5208,
+     "tokens": 964496,
+     "target_tokens": 608592
+    },
+    "x2en": {
+     "samples": 0,
+     "tokens": 0,
+     "target_tokens": 0
+    }
+   }
+  }
+ },
+ "mixture": {
+  "science_share_target": 0.35,
+  "passes": 2,
+  "mode_weights": {
+   "S": 0.35,
+   "A": 0.25,
+   "B": 0.2,
+   "W": 0.2
+  },
+  "replay_tokens_budget": 12314888.85714286,
+  "replay_max_epochs": 1.0,
+  "min_examples": 600,
+  "science_stats": {
+   "dropped_ratio": {
+    "zul": 1
+   },
+   "dropped_holdout_sentence": 0,
+   "dropped_holdout_ngram8": 26,
+   "kept_sentences": {
+    "amh": 5766,
+    "hau": 5766,
+    "lug": 5766,
+    "nso": 5766,
+    "yor": 5766,
+    "zul": 5765
+   },
+   "windows": {
+    "amh/W": 79,
+    "amh/A": 1166,
+    "amh/S": 3393,
+    "amh/B": 288,
+    "hau/W": 79,
+    "hau/A": 1166,
+    "hau/S": 3393,
+    "hau/B": 288,
+    "lug/W": 79,
+    "lug/A": 1166,
+    "lug/S": 3393,
+    "lug/B": 288,
+    "nso/W": 79,
+    "nso/A": 1166,
+    "nso/S": 3393,
+    "nso/B": 288,
+    "yor/W": 79,
+    "yor/A": 1166,
+    "yor/S": 3393,
+    "yor/B": 288,
+    "zul/W": 79,
+    "zul/A": 1166,
+    "zul/S": 3393,
+    "zul/B": 288
+   }
+  },
+  "replay_stats": {
+   "hit_sentence": 173,
+   "hit_ngram8": 51,
+   "undecodable": 0,
+   "short_of_budget": []
+  },
+  "holdout": {
+   "afriscience_dev_papers": 25,
+   "afriscience_test_papers": 28,
+   "afrilongdoc_hard_docs": 135,
+   "afrilongdoc_core_docs": 450,
+   "general_dev_sentences": 8111,
+   "flores_plus_dev_english": 997,
+   "rl_vs_sft_pool": 4487
+  },
+  "science_windows_too_long": 0,
+  "seed": 20261021
+ },
+ "config": {
+  "out": "/workspace/jobs/r4/mix_v1",
+  "model": "/workspace/sft_build/runs/final_1433",
+  "corpus_dir": "/workspace/jobs/a4/afs_raw/corpus",
+  "longdoc_dir": "/workspace/jobs/a4/holdout/afrilongdoc",
+  "bench_dev": "/workspace/sft_build/bench/bench_dev_clean.jsonl",
+  "flores_dev_eng": "/workspace/sft_build/hf/hub/datasets--openlanguagedata--flores_plus/snapshots/*/dev/eng_Latn.jsonl",
+  "eval_pool": "/workspace/rlcheck/res/pool.jsonl",
+  "replay_tar": "/workspace/jobs/r4/raw/gemma_packed_fwd_sft_windows.tar.zst",
+  "replay_meta": "/workspace/jobs/r4/raw/meta/gemma/packed_fwd",
+  "seq_len": 8192,
+  "passes": 2,
+  "science_share": 0.35,
+  "replay_max_epochs": 1.0,
+  "min_examples": 600,
+  "sci_replay_weight": 2.0,
+  "oversample": 1.3,
+  "val_per_language": 100,
+  "seed": 20261021,
+  "limit_replay_tokens": 0.0
+ },
+ "seconds": 69.1
+}

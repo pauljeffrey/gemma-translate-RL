@@ -1,0 +1,2068 @@
+{
+ "HuggingFaceFW/fineweb-2": {
+  "total_rows": 4484929995,
+  "hits": [
+   {
+    "config": "alz_Latn",
+    "split": "test",
+    "rows": 4
+   },
+   {
+    "config": "alz_Latn",
+    "split": "train",
+    "rows": 623
+   },
+   {
+    "config": "bci_Latn",
+    "split": "test",
+    "rows": 15
+   },
+   {
+    "config": "bci_Latn",
+    "split": "train",
+    "rows": 1503
+   },
+   {
+    "config": "dik_Latn",
+    "split": "test",
+    "rows": 8
+   },
+   {
+    "config": "dik_Latn",
+    "split": "train",
+    "rows": 821
+   },
+   {
+    "config": "dks_Latn",
+    "split": "test",
+    "rows": 1
+   },
+   {
+    "config": "dks_Latn",
+    "split": "train",
+    "rows": 6
+   },
+   {
+    "config": "enb_Latn",
+    "split": "test",
+    "rows": 5
+   },
+   {
+    "config": "enb_Latn",
+    "split": "train",
+    "rows": 424
+   },
+   {
+    "config": "fat_Latn",
+    "split": "test",
+    "rows": 4
+   },
+   {
+    "config": "fat_Latn",
+    "split": "train",
+    "rows": 345
+   },
+   {
+    "config": "ffm_Latn",
+    "split": "test",
+    "rows": 5
+   },
+   {
+    "config": "ffm_Latn",
+    "split": "train",
+    "rows": 614
+   },
+   {
+    "config": "fue_Latn",
+    "split": "test",
+    "rows": 1
+   },
+   {
+    "config": "fue_Latn",
+    "split": "train",
+    "rows": 25
+   },
+   {
+    "config": "fuf_Latn",
+    "split": "test",
+    "rows": 18
+   },
+   {
+    "config": "fuf_Latn",
+    "split": "train",
+    "rows": 1541
+   },
+   {
+    "config": "fuh_Latn",
+    "split": "test",
+    "rows": 3
+   },
+   {
+    "config": "fuh_Latn",
+    "split": "train",
+    "rows": 285
+   },
+   {
+    "config": "fuv_Latn",
+    "split": "test",
+    "rows": 5
+   },
+   {
+    "config": "fuv_Latn",
+    "split": "train",
+    "rows": 956
+   },
+   {
+    "config": "gaa_Latn",
+    "split": "test",
+    "rows": 46
+   },
+   {
+    "config": "gaa_Latn",
+    "split": "train",
+    "rows": 3965
+   },
+   {
+    "config": "knc_Latn",
+    "split": "test",
+    "rows": 1
+   },
+   {
+    "config": "knc_Latn",
+    "split": "train",
+    "rows": 220
+   },
+   {
+    "config": "kpe_Latn",
+    "split": "test",
+    "rows": 3
+   },
+   {
+    "config": "kpe_Latn",
+    "split": "train",
+    "rows": 230
+   },
+   {
+    "config": "lsm_Latn",
+    "split": "test",
+    "rows": 1
+   },
+   {
+    "config": "lsm_Latn",
+    "split": "train",
+    "rows": 269
+   },
+   {
+    "config": "mas_Latn",
+    "split": "test",
+    "rows": 5
+   },
+   {
+    "config": "mas_Latn",
+    "split": "train",
+    "rows": 711
+   },
+   {
+    "config": "men_Latn",
+    "split": "test",
+    "rows": 9
+   },
+   {
+    "config": "men_Latn",
+    "split": "train",
+    "rows": 608
+   },
+   {
+    "config": "mer_Latn",
+    "split": "test",
+    "rows": 9
+   },
+   {
+    "config": "mer_Latn",
+    "split": "train",
+    "rows": 613
+   },
+   {
+    "config": "mfe_Latn",
+    "split": "test",
+    "rows": 109
+   },
+   {
+    "config": "mfe_Latn",
+    "split": "train",
+    "rows": 8899
+   },
+   {
+    "config": "mnk_Latn",
+    "split": "test",
+    "rows": 2
+   },
+   {
+    "config": "mnk_Latn",
+    "split": "train",
+    "rows": 76
+   },
+   {
+    "config": "nde_Latn",
+    "split": "test",
+    "rows": 232
+   },
+   {
+    "config": "nde_Latn",
+    "split": "train",
+    "rows": 22657
+   },
+   {
+    "config": "nqo_Nkoo",
+    "split": "test",
+    "rows": 5
+   },
+   {
+    "config": "nqo_Nkoo",
+    "split": "train",
+    "rows": 590
+   },
+   {
+    "config": "sgc_Latn",
+    "split": "test",
+    "rows": 12
+   },
+   {
+    "config": "sgc_Latn",
+    "split": "train",
+    "rows": 963
+   },
+   {
+    "config": "shi_Latn",
+    "split": "test",
+    "rows": 11
+   },
+   {
+    "config": "shi_Latn",
+    "split": "train",
+    "rows": 817
+   },
+   {
+    "config": "sus_Arab",
+    "split": "test",
+    "rows": 5
+   },
+   {
+    "config": "sus_Arab",
+    "split": "train",
+    "rows": 597
+   },
+   {
+    "config": "sus_Latn",
+    "split": "test",
+    "rows": 5
+   },
+   {
+    "config": "sus_Latn",
+    "split": "train",
+    "rows": 623
+   },
+   {
+    "config": "taq_Latn",
+    "split": "test",
+    "rows": 3
+   },
+   {
+    "config": "taq_Latn",
+    "split": "train",
+    "rows": 442
+   },
+   {
+    "config": "taq_Tfng",
+    "split": "test",
+    "rows": 5
+   },
+   {
+    "config": "taq_Tfng",
+    "split": "train",
+    "rows": 116
+   },
+   {
+    "config": "toi_Latn",
+    "split": "test",
+    "rows": 15
+   },
+   {
+    "config": "toi_Latn",
+    "split": "train",
+    "rows": 1649
+   },
+   {
+    "config": "ttq_Latn",
+    "split": "test",
+    "rows": 1
+   },
+   {
+    "config": "ttq_Latn",
+    "split": "train",
+    "rows": 8
+   },
+   {
+    "config": "tzm_Tfng",
+    "split": "test",
+    "rows": 26
+   },
+   {
+    "config": "tzm_Tfng",
+    "split": "train",
+    "rows": 2736
+   },
+   {
+    "config": "xog_Latn",
+    "split": "test",
+    "rows": 1
+   },
+   {
+    "config": "xog_Latn",
+    "split": "train",
+    "rows": 36
+   },
+   {
+    "config": "zgh_Tfng",
+    "split": "test",
+    "rows": 3
+   },
+   {
+    "config": "zgh_Tfng",
+    "split": "train",
+    "rows": 237
+   }
+  ],
+  "partial": false
+ },
+ "HuggingFaceFW/finetranslations": {
+  "total_rows": 3325521370,
+  "hits": [
+   {
+    "config": "dik_Latn",
+    "split": "train",
+    "rows": 820
+   },
+   {
+    "config": "dje_Latn",
+    "split": "train",
+    "rows": 46
+   },
+   {
+    "config": "dks_Latn",
+    "split": "train",
+    "rows": 6
+   },
+   {
+    "config": "ffm_Latn",
+    "split": "train",
+    "rows": 614
+   },
+   {
+    "config": "fuf_Latn",
+    "split": "train",
+    "rows": 1540
+   },
+   {
+    "config": "fuv_Latn",
+    "split": "train",
+    "rows": 953
+   },
+   {
+    "config": "knc_Latn",
+    "split": "train",
+    "rows": 220
+   },
+   {
+    "config": "lwg_Latn",
+    "split": "train",
+    "rows": 56
+   },
+   {
+    "config": "mas_Latn",
+    "split": "train",
+    "rows": 710
+   },
+   {
+    "config": "mer_Latn",
+    "split": "train",
+    "rows": 613
+   },
+   {
+    "config": "mfe_Latn",
+    "split": "train",
+    "rows": 8885
+   },
+   {
+    "config": "mnk_Latn",
+    "split": "train",
+    "rows": 76
+   },
+   {
+    "config": "nde_Latn",
+    "split": "train",
+    "rows": 22569
+   },
+   {
+    "config": "sgc_Latn",
+    "split": "train",
+    "rows": 961
+   },
+   {
+    "config": "taq_Tfng",
+    "split": "train",
+    "rows": 116
+   },
+   {
+    "config": "tig_Ethi",
+    "split": "train",
+    "rows": 1
+   },
+   {
+    "config": "tzm_Tfng",
+    "split": "train",
+    "rows": 2736
+   },
+   {
+    "config": "xog_Latn",
+    "split": "train",
+    "rows": 36
+   },
+   {
+    "config": "zgh_Tfng",
+    "split": "train",
+    "rows": 237
+   }
+  ],
+  "partial": false
+ },
+ "mteb/biblenlp-corpus-mmteb": {
+  "total_rows": 3485840,
+  "hits": [
+   {
+    "config": "eng_Latn-dik_Latn",
+    "split": "train",
+    "rows": 810
+   },
+   {
+    "config": "eng_Latn-dik_Latn",
+    "split": "test",
+    "rows": 35
+   },
+   {
+    "config": "eng_Latn-dik_Latn",
+    "split": "validation",
+    "rows": 53
+   },
+   {
+    "config": "eng_Latn-dov_Latn",
+    "split": "train",
+    "rows": 826
+   },
+   {
+    "config": "eng_Latn-dov_Latn",
+    "split": "test",
+    "rows": 43
+   },
+   {
+    "config": "eng_Latn-dov_Latn",
+    "split": "validation",
+    "rows": 28
+   },
+   {
+    "config": "eng_Latn-ffm_Latn",
+    "split": "train",
+    "rows": 800
+   },
+   {
+    "config": "eng_Latn-ffm_Latn",
+    "split": "test",
+    "rows": 57
+   },
+   {
+    "config": "eng_Latn-ffm_Latn",
+    "split": "validation",
+    "rows": 44
+   },
+   {
+    "config": "eng_Latn-fue_Latn",
+    "split": "train",
+    "rows": 390
+   },
+   {
+    "config": "eng_Latn-fue_Latn",
+    "split": "test",
+    "rows": 2
+   },
+   {
+    "config": "eng_Latn-fue_Latn",
+    "split": "validation",
+    "rows": 21
+   },
+   {
+    "config": "eng_Latn-fuf_Latn",
+    "split": "train",
+    "rows": 833
+   },
+   {
+    "config": "eng_Latn-fuf_Latn",
+    "split": "test",
+    "rows": 21
+   },
+   {
+    "config": "eng_Latn-fuf_Latn",
+    "split": "validation",
+    "rows": 40
+   },
+   {
+    "config": "eng_Latn-fuh_Latn",
+    "split": "train",
+    "rows": 831
+   },
+   {
+    "config": "eng_Latn-fuh_Latn",
+    "split": "test",
+    "rows": 37
+   },
+   {
+    "config": "eng_Latn-fuh_Latn",
+    "split": "validation",
+    "rows": 29
+   },
+   {
+    "config": "eng_Latn-msc_Latn",
+    "split": "train",
+    "rows": 415
+   },
+   {
+    "config": "eng_Latn-msc_Latn",
+    "split": "test",
+    "rows": 37
+   },
+   {
+    "config": "eng_Latn-msc_Latn",
+    "split": "validation",
+    "rows": 41
+   },
+   {
+    "config": "eng_Latn-sus_Arab",
+    "split": "train",
+    "rows": 28764
+   },
+   {
+    "config": "eng_Latn-sus_Arab",
+    "split": "test",
+    "rows": 1565
+   },
+   {
+    "config": "eng_Latn-sus_Arab",
+    "split": "validation",
+    "rows": 1567
+   }
+  ],
+  "partial": false
+ },
+ "openlanguagedata/oldi_seed": {
+  "total_rows": 557370,
+  "hits": [
+   {
+    "config": "dik_Latn",
+    "split": "train",
+    "rows": 6193
+   },
+   {
+    "config": "fuv_Latn",
+    "split": "train",
+    "rows": 6193
+   },
+   {
+    "config": "knc_Arab",
+    "split": "train",
+    "rows": 6193
+   },
+   {
+    "config": "knc_Latn",
+    "split": "train",
+    "rows": 6193
+   },
+   {
+    "config": "nqo_Nkoo",
+    "split": "train",
+    "rows": 6193
+   },
+   {
+    "config": "taq_Latn",
+    "split": "train",
+    "rows": 6193
+   },
+   {
+    "config": "taq_Tfng",
+    "split": "train",
+    "rows": 6193
+   },
+   {
+    "config": "zgh_Tfng",
+    "split": "train",
+    "rows": 6193
+   }
+  ],
+  "partial": false
+ },
+ "AfriSpeech/madlad-91-african": {
+  "total_rows": 7911854,
+  "hits": [
+   {
+    "config": "alz_clean",
+    "split": "train",
+    "rows": 195
+   },
+   {
+    "config": "alz_noisy",
+    "split": "train",
+    "rows": 2237
+   },
+   {
+    "config": "bci_clean",
+    "split": "train",
+    "rows": 1329
+   },
+   {
+    "config": "bci_noisy",
+    "split": "train",
+    "rows": 7392
+   },
+   {
+    "config": "dje_clean",
+    "split": "train",
+    "rows": 100
+   },
+   {
+    "config": "dje_noisy",
+    "split": "train",
+    "rows": 913
+   },
+   {
+    "config": "dov_clean",
+    "split": "train",
+    "rows": 923
+   },
+   {
+    "config": "dov_noisy",
+    "split": "train",
+    "rows": 3479
+   },
+   {
+    "config": "ff_clean",
+    "split": "train",
+    "rows": 26
+   },
+   {
+    "config": "ff_noisy",
+    "split": "train",
+    "rows": 13559
+   },
+   {
+    "config": "ffm_clean",
+    "split": "train",
+    "rows": 65
+   },
+   {
+    "config": "ffm_noisy",
+    "split": "train",
+    "rows": 1772
+   },
+   {
+    "config": "mas_clean",
+    "split": "train",
+    "rows": 405
+   },
+   {
+    "config": "mas_noisy",
+    "split": "train",
+    "rows": 15230
+   },
+   {
+    "config": "mfe_clean",
+    "split": "train",
+    "rows": 320
+   },
+   {
+    "config": "mfe_noisy",
+    "split": "train",
+    "rows": 7492
+   },
+   {
+    "config": "niq_clean",
+    "split": "train",
+    "rows": 226
+   },
+   {
+    "config": "niq_noisy",
+    "split": "train",
+    "rows": 26651
+   }
+  ],
+  "partial": true
+ },
+ "AfriSpeech/african-corpus-jw": {
+  "total_rows": 2255071,
+  "hits": [],
+  "partial": false
+ },
+ "cis-lmu/GlotStoryBook": {
+  "total_rows": 80138,
+  "hits": [],
+  "partial": false
+ },
+ "Tamazight-NLP/Weblate-Translations": {
+  "total_rows": 23167039,
+  "hits": [
+   {
+    "config": "en-zgh",
+    "split": "train",
+    "rows": 5479
+   },
+   {
+    "config": "en-ber",
+    "split": "train",
+    "rows": 3151
+   },
+   {
+    "config": "en-ff",
+    "split": "train",
+    "rows": 2705
+   },
+   {
+    "config": "en-ko-kr",
+    "split": "train",
+    "rows": 1820
+   },
+   {
+    "config": "en-ko_kr",
+    "split": "train",
+    "rows": 5987
+   },
+   {
+    "config": "en-kr",
+    "split": "train",
+    "rows": 6
+   },
+   {
+    "config": "en-mfe",
+    "split": "train",
+    "rows": 106
+   },
+   {
+    "config": "en-nqo",
+    "split": "train",
+    "rows": 744
+   },
+   {
+    "config": "en-sus",
+    "split": "train",
+    "rows": 94
+   },
+   {
+    "config": "en-tzm",
+    "split": "train",
+    "rows": 3329
+   },
+   {
+    "config": "en_GB-ff",
+    "split": "train",
+    "rows": 84
+   },
+   {
+    "config": "en_GB-tig",
+    "split": "train",
+    "rows": 3287
+   },
+   {
+    "config": "en_GB-tzm",
+    "split": "train",
+    "rows": 9
+   },
+   {
+    "config": "en_GB-zgh",
+    "split": "train",
+    "rows": 71
+   },
+   {
+    "config": "en_US-ber",
+    "split": "train",
+    "rows": 8
+   },
+   {
+    "config": "en_US-ko_kr",
+    "split": "train",
+    "rows": 21
+   },
+   {
+    "config": "en_US-tzm",
+    "split": "train",
+    "rows": 10
+   },
+   {
+    "config": "messages-mfe",
+    "split": "train",
+    "rows": 147
+   },
+   {
+    "config": "zh_Hant-zgh",
+    "split": "train",
+    "rows": 3
+   }
+  ],
+  "partial": false
+ },
+ "ayymen/Pontoon-Translations": {
+  "total_rows": 3559829,
+  "hits": [
+   {
+    "config": "en-ff",
+    "split": "train",
+    "rows": 15359
+   },
+   {
+    "config": "en-fuf",
+    "split": "train",
+    "rows": 533
+   },
+   {
+    "config": "en-shi",
+    "split": "train",
+    "rows": 3
+   },
+   {
+    "config": "en-tig",
+    "split": "train",
+    "rows": 901
+   },
+   {
+    "config": "en-tzm",
+    "split": "train",
+    "rows": 266
+   },
+   {
+    "config": "en-zgh",
+    "split": "train",
+    "rows": 1394
+   }
+  ],
+  "partial": false
+ },
+ "facebook/omnilingual-asr-corpus": {
+  "total_rows": 547546,
+  "hits": [
+   {
+    "config": "dje_Latn",
+    "split": "train",
+    "rows": 316
+   },
+   {
+    "config": "dje_Latn",
+    "split": "test",
+    "rows": 64
+   },
+   {
+    "config": "dje_Latn",
+    "split": "dev",
+    "rows": 61
+   },
+   {
+    "config": "fat_Latn",
+    "split": "train",
+    "rows": 1197
+   },
+   {
+    "config": "ffm_Latn",
+    "split": "train",
+    "rows": 1500
+   },
+   {
+    "config": "fue_Latn",
+    "split": "train",
+    "rows": 1197
+   },
+   {
+    "config": "fuf_Latn",
+    "split": "train",
+    "rows": 2983
+   },
+   {
+    "config": "fuh_Latn",
+    "split": "train",
+    "rows": 906
+   },
+   {
+    "config": "fui_Latn",
+    "split": "train",
+    "rows": 2964
+   },
+   {
+    "config": "fuq_Latn",
+    "split": "test",
+    "rows": 445
+   },
+   {
+    "config": "fuq_Latn",
+    "split": "dev",
+    "rows": 431
+   },
+   {
+    "config": "fuq_Latn",
+    "split": "train",
+    "rows": 600
+   },
+   {
+    "config": "fuv_Latn",
+    "split": "train",
+    "rows": 347
+   },
+   {
+    "config": "fuv_Latn",
+    "split": "test",
+    "rows": 75
+   },
+   {
+    "config": "fuv_Latn",
+    "split": "dev",
+    "rows": 74
+   },
+   {
+    "config": "lwg_Latn",
+    "split": "dev",
+    "rows": 76
+   },
+   {
+    "config": "lwg_Latn",
+    "split": "test",
+    "rows": 110
+   },
+   {
+    "config": "lwg_Latn",
+    "split": "train",
+    "rows": 297
+   },
+   {
+    "config": "mer_Latn",
+    "split": "dev",
+    "rows": 105
+   },
+   {
+    "config": "mer_Latn",
+    "split": "train",
+    "rows": 279
+   },
+   {
+    "config": "mer_Latn",
+    "split": "test",
+    "rows": 68
+   },
+   {
+    "config": "thv_Tfng",
+    "split": "dev",
+    "rows": 149
+   },
+   {
+    "config": "thv_Tfng",
+    "split": "train",
+    "rows": 298
+   },
+   {
+    "config": "thv_Tfng",
+    "split": "test",
+    "rows": 149
+   }
+  ],
+  "partial": false
+ },
+ "CohereLabs/xP3x": {
+  "total_rows": 433773188,
+  "hits": [
+   {
+    "config": "ber_Latn",
+    "split": "train",
+    "rows": 693602
+   },
+   {
+    "config": "cjk_Latn",
+    "split": "train",
+    "rows": 1223481
+   },
+   {
+    "config": "dik_Latn",
+    "split": "train",
+    "rows": 1223481
+   },
+   {
+    "config": "fuv_Latn",
+    "split": "train",
+    "rows": 2126652
+   },
+   {
+    "config": "knc_Arab",
+    "split": "train",
+    "rows": 1223481
+   },
+   {
+    "config": "knc_Latn",
+    "split": "train",
+    "rows": 1223481
+   },
+   {
+    "config": "taq_Latn",
+    "split": "train",
+    "rows": 1223481
+   },
+   {
+    "config": "taq_Tfng",
+    "split": "train",
+    "rows": 1223481
+   },
+   {
+    "config": "tzm_Tfng",
+    "split": "train",
+    "rows": 1223481
+   }
+  ],
+  "partial": false
+ },
+ "HuggingFaceFW/finepdfs": {
+  "total_rows": 476178356,
+  "hits": [
+   {
+    "config": "alz_Latn",
+    "split": "train",
+    "rows": 15
+   },
+   {
+    "config": "bci_Latn",
+    "split": "train",
+    "rows": 14
+   },
+   {
+    "config": "cjk_Latn",
+    "split": "train",
+    "rows": 2
+   },
+   {
+    "config": "dik_Latn",
+    "split": "train",
+    "rows": 942
+   },
+   {
+    "config": "dik_Latn",
+    "split": "test",
+    "rows": 10
+   },
+   {
+    "config": "dip_Latn",
+    "split": "train",
+    "rows": 61
+   },
+   {
+    "config": "dje_Latn",
+    "split": "train",
+    "rows": 29
+   },
+   {
+    "config": "dks_Latn",
+    "split": "train",
+    "rows": 61
+   },
+   {
+    "config": "enb_Latn",
+    "split": "train",
+    "rows": 5
+   },
+   {
+    "config": "fat_Latn",
+    "split": "train",
+    "rows": 66
+   },
+   {
+    "config": "ffm_Latn",
+    "split": "train",
+    "rows": 119
+   },
+   {
+    "config": "ffm_Latn",
+    "split": "test",
+    "rows": 2
+   },
+   {
+    "config": "fub_Latn",
+    "split": "train",
+    "rows": 58
+   },
+   {
+    "config": "fue_Latn",
+    "split": "train",
+    "rows": 26
+   },
+   {
+    "config": "fuf_Latn",
+    "split": "train",
+    "rows": 17
+   },
+   {
+    "config": "fuh_Latn",
+    "split": "train",
+    "rows": 56
+   },
+   {
+    "config": "fuq_Latn",
+    "split": "train",
+    "rows": 84
+   },
+   {
+    "config": "fuv_Arab",
+    "split": "train",
+    "rows": 498
+   },
+   {
+    "config": "fuv_Arab",
+    "split": "test",
+    "rows": 4
+   },
+   {
+    "config": "fuv_Latn",
+    "split": "train",
+    "rows": 14437
+   },
+   {
+    "config": "fuv_Latn",
+    "split": "test",
+    "rows": 170
+   },
+   {
+    "config": "gaa_Latn",
+    "split": "train",
+    "rows": 19
+   },
+   {
+    "config": "kby_Latn",
+    "split": "train",
+    "rows": 23
+   },
+   {
+    "config": "knc_Arab",
+    "split": "train",
+    "rows": 3112
+   },
+   {
+    "config": "knc_Arab",
+    "split": "test",
+    "rows": 30
+   },
+   {
+    "config": "knc_Latn",
+    "split": "train",
+    "rows": 35
+   },
+   {
+    "config": "kpe_Latn",
+    "split": "train",
+    "rows": 4
+   },
+   {
+    "config": "lsm_Latn",
+    "split": "train",
+    "rows": 15
+   },
+   {
+    "config": "lwg_Latn",
+    "split": "train",
+    "rows": 7
+   },
+   {
+    "config": "mas_Latn",
+    "split": "train",
+    "rows": 17
+   },
+   {
+    "config": "men_Latn",
+    "split": "train",
+    "rows": 14
+   },
+   {
+    "config": "mer_Latn",
+    "split": "train",
+    "rows": 37
+   },
+   {
+    "config": "mfe_Latn",
+    "split": "train",
+    "rows": 299
+   },
+   {
+    "config": "mfe_Latn",
+    "split": "test",
+    "rows": 6
+   },
+   {
+    "config": "mnk_Latn",
+    "split": "train",
+    "rows": 58
+   },
+   {
+    "config": "msc_Latn",
+    "split": "train",
+    "rows": 10
+   },
+   {
+    "config": "nde_Latn",
+    "split": "train",
+    "rows": 224
+   },
+   {
+    "config": "nde_Latn",
+    "split": "test",
+    "rows": 5
+   },
+   {
+    "config": "nqo_Nkoo",
+    "split": "train",
+    "rows": 1
+   },
+   {
+    "config": "sgc_Latn",
+    "split": "train",
+    "rows": 32
+   },
+   {
+    "config": "shi_Latn",
+    "split": "train",
+    "rows": 7
+   },
+   {
+    "config": "srr_Latn",
+    "split": "train",
+    "rows": 5
+   },
+   {
+    "config": "sus_Arab",
+    "split": "train",
+    "rows": 32
+   },
+   {
+    "config": "sus_Latn",
+    "split": "train",
+    "rows": 24
+   },
+   {
+    "config": "taq_Latn",
+    "split": "train",
+    "rows": 36
+   },
+   {
+    "config": "taq_Tfng",
+    "split": "train",
+    "rows": 30
+   },
+   {
+    "config": "tig_Ethi",
+    "split": "train",
+    "rows": 18
+   },
+   {
+    "config": "toi_Latn",
+    "split": "train",
+    "rows": 6
+   },
+   {
+    "config": "ttq_Latn",
+    "split": "train",
+    "rows": 15
+   },
+   {
+    "config": "tzm_Tfng",
+    "split": "train",
+    "rows": 22
+   },
+   {
+    "config": "xog_Latn",
+    "split": "train",
+    "rows": 175
+   },
+   {
+    "config": "xog_Latn",
+    "split": "test",
+    "rows": 1
+   },
+   {
+    "config": "zgh_Tfng",
+    "split": "train",
+    "rows": 15
+   }
+  ],
+  "partial": false
+ },
+ "WueNLP/sib-fleurs": {
+  "total_rows": 94449,
+  "hits": [
+   {
+    "config": "fuv_Latn",
+    "split": "train",
+    "rows": 752
+   },
+   {
+    "config": "fuv_Latn",
+    "split": "validation",
+    "rows": 68
+   },
+   {
+    "config": "fuv_Latn",
+    "split": "test",
+    "rows": 166
+   }
+  ],
+  "partial": false
+ },
+ "Davlan/sib200": {
+  "total_rows": 205820,
+  "hits": [
+   {
+    "config": "cjk_Latn",
+    "split": "train",
+    "rows": 701
+   },
+   {
+    "config": "cjk_Latn",
+    "split": "validation",
+    "rows": 99
+   },
+   {
+    "config": "cjk_Latn",
+    "split": "test",
+    "rows": 204
+   },
+   {
+    "config": "dik_Latn",
+    "split": "train",
+    "rows": 701
+   },
+   {
+    "config": "dik_Latn",
+    "split": "validation",
+    "rows": 99
+   },
+   {
+    "config": "dik_Latn",
+    "split": "test",
+    "rows": 204
+   },
+   {
+    "config": "fuv_Latn",
+    "split": "train",
+    "rows": 701
+   },
+   {
+    "config": "fuv_Latn",
+    "split": "validation",
+    "rows": 99
+   },
+   {
+    "config": "fuv_Latn",
+    "split": "test",
+    "rows": 204
+   },
+   {
+    "config": "knc_Arab",
+    "split": "train",
+    "rows": 701
+   },
+   {
+    "config": "knc_Arab",
+    "split": "validation",
+    "rows": 99
+   },
+   {
+    "config": "knc_Arab",
+    "split": "test",
+    "rows": 204
+   },
+   {
+    "config": "knc_Latn",
+    "split": "train",
+    "rows": 701
+   },
+   {
+    "config": "knc_Latn",
+    "split": "validation",
+    "rows": 99
+   },
+   {
+    "config": "knc_Latn",
+    "split": "test",
+    "rows": 204
+   },
+   {
+    "config": "nqo_Nkoo",
+    "split": "train",
+    "rows": 701
+   },
+   {
+    "config": "nqo_Nkoo",
+    "split": "validation",
+    "rows": 99
+   },
+   {
+    "config": "nqo_Nkoo",
+    "split": "test",
+    "rows": 204
+   },
+   {
+    "config": "taq_Latn",
+    "split": "train",
+    "rows": 701
+   },
+   {
+    "config": "taq_Latn",
+    "split": "validation",
+    "rows": 99
+   },
+   {
+    "config": "taq_Latn",
+    "split": "test",
+    "rows": 204
+   },
+   {
+    "config": "taq_Tfng",
+    "split": "train",
+    "rows": 701
+   },
+   {
+    "config": "taq_Tfng",
+    "split": "validation",
+    "rows": 99
+   },
+   {
+    "config": "taq_Tfng",
+    "split": "test",
+    "rows": 204
+   },
+   {
+    "config": "tzm_Tfng",
+    "split": "train",
+    "rows": 701
+   },
+   {
+    "config": "tzm_Tfng",
+    "split": "validation",
+    "rows": 99
+   },
+   {
+    "config": "tzm_Tfng",
+    "split": "test",
+    "rows": 204
+   }
+  ],
+  "partial": false
+ },
+ "cis-lmu/glotcc-v1": {
+  "error": "HTTP Error 404: Not Found"
+ },
+ "wikimedia/wikipedia": {
+  "total_rows": 61614907,
+  "hits": [
+   {
+    "config": "20231101.fat",
+    "split": "train",
+    "rows": 1122
+   },
+   {
+    "config": "20231101.ff",
+    "split": "train",
+    "rows": 2419
+   },
+   {
+    "config": "20231101.nqo",
+    "split": "train",
+    "rows": 1580
+   },
+   {
+    "config": "20231101.shi",
+    "split": "train",
+    "rows": 1779
+   }
+  ],
+  "partial": false
+ },
+ "mteb/biblenlp-corpus": {
+  "total_rows": 1743371,
+  "hits": [
+   {
+    "config": "eng-dik",
+    "split": "train",
+    "rows": 810
+   },
+   {
+    "config": "eng-dik",
+    "split": "validation",
+    "rows": 53
+   },
+   {
+    "config": "eng-dik",
+    "split": "test",
+    "rows": 35
+   },
+   {
+    "config": "eng-dov",
+    "split": "train",
+    "rows": 826
+   },
+   {
+    "config": "eng-dov",
+    "split": "validation",
+    "rows": 28
+   },
+   {
+    "config": "eng-dov",
+    "split": "test",
+    "rows": 43
+   },
+   {
+    "config": "eng-ffm",
+    "split": "train",
+    "rows": 800
+   },
+   {
+    "config": "eng-ffm",
+    "split": "validation",
+    "rows": 44
+   },
+   {
+    "config": "eng-ffm",
+    "split": "test",
+    "rows": 57
+   },
+   {
+    "config": "eng-fue",
+    "split": "train",
+    "rows": 390
+   },
+   {
+    "config": "eng-fue",
+    "split": "validation",
+    "rows": 21
+   },
+   {
+    "config": "eng-fue",
+    "split": "test",
+    "rows": 2
+   },
+   {
+    "config": "eng-fuf",
+    "split": "train",
+    "rows": 833
+   },
+   {
+    "config": "eng-fuf",
+    "split": "validation",
+    "rows": 40
+   },
+   {
+    "config": "eng-fuf",
+    "split": "test",
+    "rows": 21
+   },
+   {
+    "config": "eng-fuh",
+    "split": "train",
+    "rows": 831
+   },
+   {
+    "config": "eng-fuh",
+    "split": "validation",
+    "rows": 29
+   },
+   {
+    "config": "eng-fuh",
+    "split": "test",
+    "rows": 37
+   },
+   {
+    "config": "eng-msc",
+    "split": "train",
+    "rows": 415
+   },
+   {
+    "config": "eng-msc",
+    "split": "validation",
+    "rows": 41
+   },
+   {
+    "config": "eng-msc",
+    "split": "test",
+    "rows": 37
+   },
+   {
+    "config": "eng-sus",
+    "split": "train",
+    "rows": 28764
+   },
+   {
+    "config": "eng-sus",
+    "split": "validation",
+    "rows": 1567
+   },
+   {
+    "config": "eng-sus",
+    "split": "test",
+    "rows": 1565
+   }
+  ],
+  "partial": false
+ },
+ "openbmb/DCAD-2000": {
+  "total_rows": 295656514,
+  "hits": [
+   {
+    "config": "ber_Latn",
+    "split": "train",
+    "rows": 5014
+   },
+   {
+    "config": "cjk_Latn",
+    "split": "train",
+    "rows": 34
+   },
+   {
+    "config": "dik_Latn",
+    "split": "train",
+    "rows": 876
+   },
+   {
+    "config": "dip_Latn",
+    "split": "train",
+    "rows": 5
+   },
+   {
+    "config": "dks_Latn",
+    "split": "train",
+    "rows": 14
+   },
+   {
+    "config": "dov_Latn",
+    "split": "train",
+    "rows": 846
+   },
+   {
+    "config": "fue_Latn",
+    "split": "train",
+    "rows": 21
+   },
+   {
+    "config": "fuf_Latn",
+    "split": "train",
+    "rows": 1553
+   },
+   {
+    "config": "ful_Latn",
+    "split": "train",
+    "rows": 53792
+   },
+   {
+    "config": "fuq_Latn",
+    "split": "train",
+    "rows": 21
+   },
+   {
+    "config": "fuv_Arab",
+    "split": "train",
+    "rows": 13
+   },
+   {
+    "config": "fuv_Latn",
+    "split": "train",
+    "rows": 1979
+   },
+   {
+    "config": "gaa_Latn",
+    "split": "train",
+    "rows": 2346
+   },
+   {
+    "config": "knc_Arab",
+    "split": "train",
+    "rows": 263
+   },
+   {
+    "config": "knc_Latn",
+    "split": "train",
+    "rows": 383
+   },
+   {
+    "config": "kpe_Latn",
+    "split": "train",
+    "rows": 286
+   },
+   {
+    "config": "lsm_Latn",
+    "split": "train",
+    "rows": 234
+   },
+   {
+    "config": "luy_Latn",
+    "split": "train",
+    "rows": 1
+   },
+   {
+    "config": "lwg_Latn",
+    "split": "train",
+    "rows": 153
+   },
+   {
+    "config": "men_Latn",
+    "split": "train",
+    "rows": 380
+   },
+   {
+    "config": "mer_Latn",
+    "split": "train",
+    "rows": 1684
+   },
+   {
+    "config": "mnk_Latn",
+    "split": "train",
+    "rows": 87
+   },
+   {
+    "config": "msc_Latn",
+    "split": "train",
+    "rows": 11
+   },
+   {
+    "config": "niq_Latn",
+    "split": "train",
+    "rows": 189
+   },
+   {
+    "config": "nqo_Latn",
+    "split": "train",
+    "rows": 2
+   },
+   {
+    "config": "sgc_Latn",
+    "split": "train",
+    "rows": 1812
+   },
+   {
+    "config": "shi_Arab",
+    "split": "train",
+    "rows": 1
+   },
+   {
+    "config": "sus_Arab",
+    "split": "train",
+    "rows": 465
+   },
+   {
+    "config": "taq_Latn",
+    "split": "train",
+    "rows": 1557
+   },
+   {
+    "config": "taq_Tfng",
+    "split": "train",
+    "rows": 195
+   },
+   {
+    "config": "tig_Ethi",
+    "split": "train",
+    "rows": 4
+   },
+   {
+    "config": "ttq_Latn",
+    "split": "train",
+    "rows": 16
+   },
+   {
+    "config": "tzm_Tfng",
+    "split": "train",
+    "rows": 2160
+   },
+   {
+    "config": "zgh_Tfng",
+    "split": "train",
+    "rows": 122
+   }
+  ],
+  "partial": true
+ },
+ "google/WaxalNLP": {
+  "total_rows": 3378718,
+  "hits": [
+   {
+    "config": "fat_tts",
+    "split": "train",
+    "rows": 953
+   },
+   {
+    "config": "fat_tts",
+    "split": "validation",
+    "rows": 117
+   },
+   {
+    "config": "fat_tts",
+    "split": "test",
+    "rows": 101
+   },
+   {
+    "config": "ful_asr",
+    "split": "train",
+    "rows": 19132
+   },
+   {
+    "config": "ful_asr",
+    "split": "validation",
+    "rows": 2358
+   },
+   {
+    "config": "ful_asr",
+    "split": "test",
+    "rows": 2391
+   },
+   {
+    "config": "ful_asr",
+    "split": "unlabeled",
+    "rows": 76946
+   },
+   {
+    "config": "ful_tts",
+    "split": "train",
+    "rows": 3100
+   },
+   {
+    "config": "ful_tts",
+    "split": "validation",
+    "rows": 380
+   },
+   {
+    "config": "ful_tts",
+    "split": "test",
+    "rows": 398
+   },
+   {
+    "config": "mas_asr",
+    "split": "train",
+    "rows": 6867
+   },
+   {
+    "config": "mas_asr",
+    "split": "validation",
+    "rows": 849
+   },
+   {
+    "config": "mas_asr",
+    "split": "test",
+    "rows": 858
+   },
+   {
+    "config": "mas_asr",
+    "split": "unlabeled",
+    "rows": 107528
+   }
+  ],
+  "partial": false
+ },
+ "jake-anto/wiktionary": {
+  "total_rows": 163509985,
+  "hits": [],
+  "partial": false
+ },
+ "cointegrated/panlex-meanings": {
+  "total_rows": 157307939,
+  "hits": [
+   {
+    "config": "dje",
+    "split": "train",
+    "rows": 11628
+   },
+   {
+    "config": "fub",
+    "split": "train",
+    "rows": 2457
+   },
+   {
+    "config": "fuf",
+    "split": "train",
+    "rows": 7298
+   },
+   {
+    "config": "fuh",
+    "split": "train",
+    "rows": 32437
+   },
+   {
+    "config": "gaa",
+    "split": "train",
+    "rows": 1578
+   },
+   {
+    "config": "kln",
+    "split": "train",
+    "rows": 2028
+   },
+   {
+    "config": "knc",
+    "split": "train",
+    "rows": 2739
+   },
+   {
+    "config": "lsm",
+    "split": "train",
+    "rows": 1701
+   },
+   {
+    "config": "luy",
+    "split": "train",
+    "rows": 2424
+   },
+   {
+    "config": "mas",
+    "split": "train",
+    "rows": 1181
+   },
+   {
+    "config": "men",
+    "split": "train",
+    "rows": 1038
+   },
+   {
+    "config": "mer",
+    "split": "train",
+    "rows": 1056
+   },
+   {
+    "config": "mfe",
+    "split": "train",
+    "rows": 5296
+   },
+   {
+    "config": "nde",
+    "split": "train",
+    "rows": 6426
+   },
+   {
+    "config": "shi",
+    "split": "train",
+    "rows": 9189
+   },
+   {
+    "config": "taq",
+    "split": "train",
+    "rows": 57454
+   },
+   {
+    "config": "tzm",
+    "split": "train",
+    "rows": 6924
+   },
+   {
+    "config": "xog",
+    "split": "train",
+    "rows": 2555
+   }
+  ],
+  "partial": false
+ },
+ "gtak1/panlex-meanings": {
+  "total_rows": 64079643,
+  "hits": [
+   {
+    "config": "dje",
+    "split": "train",
+    "rows": 11628
+   },
+   {
+    "config": "fub",
+    "split": "train",
+    "rows": 2457
+   },
+   {
+    "config": "fuf",
+    "split": "train",
+    "rows": 7298
+   },
+   {
+    "config": "fuh",
+    "split": "train",
+    "rows": 32437
+   },
+   {
+    "config": "gaa",
+    "split": "train",
+    "rows": 1578
+   },
+   {
+    "config": "kln",
+    "split": "train",
+    "rows": 2028
+   },
+   {
+    "config": "knc",
+    "split": "train",
+    "rows": 2739
+   },
+   {
+    "config": "lsm",
+    "split": "train",
+    "rows": 1701
+   },
+   {
+    "config": "luy",
+    "split": "train",
+    "rows": 2424
+   },
+   {
+    "config": "mas",
+    "split": "train",
+    "rows": 1181
+   },
+   {
+    "config": "men",
+    "split": "train",
+    "rows": 1038
+   },
+   {
+    "config": "mer",
+    "split": "train",
+    "rows": 1056
+   },
+   {
+    "config": "mfe",
+    "split": "train",
+    "rows": 5296
+   },
+   {
+    "config": "nde",
+    "split": "train",
+    "rows": 6426
+   },
+   {
+    "config": "shi",
+    "split": "train",
+    "rows": 9189
+   },
+   {
+    "config": "taq",
+    "split": "train",
+    "rows": 57454
+   },
+   {
+    "config": "tzm",
+    "split": "train",
+    "rows": 6924
+   },
+   {
+    "config": "xog",
+    "split": "train",
+    "rows": 2555
+   }
+  ],
+  "partial": false
+ }
+}

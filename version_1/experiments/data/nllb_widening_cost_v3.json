@@ -1,0 +1,14 @@
+{
+ "languages": 24,
+ "store_load_seconds_total": 2.05,
+ "chunks_timed": 4300,
+ "seconds_for_chunks": 2.284,
+ "ms_per_chunk": 0.531,
+ "stats": {
+  "chunks": 4300,
+  "applied": 4300,
+  "no_pseudoref": 0,
+  "seconds": 2.2596075534820557,
+  "forced_pairs": 0
+ }
+}

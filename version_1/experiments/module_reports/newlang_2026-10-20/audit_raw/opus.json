@@ -1,0 +1,342 @@
+{
+ "Helsinki-NLP/opus-mt-tc-bible-big-afa-en": {
+  "src": "aar acm afb amh apc ara arc arq arz bcw byn cop daa dsh gde gnd hau hbo heb hig irk jpa kab ker kqp ktb kxc lln lme meq mfh mfi mfk mif mlt mpg mqb muy oar orm pbi phn rif sgw shi shy som sur syc syr taq tig tir tmc tmh tmr ttr tzm wal xed zgh",
+  "tgt": "eng"
+ },
+ "Helsinki-NLP/opus-mt-tc-bible-big-sla-en": {
+  "src": "bel bos bul ces chu cnr csb dsb hbs hrv hsb mkd orv pol rue rus slk slv srp szl ukr",
+  "tgt": "eng"
+ },
+ "Helsinki-NLP/opus-mt-tc-bible-big-ine-deu_eng_nld": {
+  "src": "acf afr aln ang anp arg asm ast awa bal bar bel ben bho bis bos bpy bre bul bzj cat cbk ces chu ckb cnr cor cos crs csb cym dan deu diq div djk drt dsb dty egl ell eng enm ext fao fas fra frm frp frr fry fur gbm gcf gla gle glg glk glv gos got grc gsw guj hat hbs hif hin hne hns hrv hrx hsb hwc hye hyw icr isl ita jam jdt kas kea kmr kok kri ksh kur lad lah lat lav lij lim lit lld lmo lou lrc ltz mag mai mar mfe mkd mol mwl mzn nap nds nep nld nno nob non nor npi oci ofs ori orv osp oss pal pan pap pcm pdc pes pfl pih pis pli pms pnt pol por prg prs pus rhg rmy roh rom ron rop rue rup rus san scn sco sdh sgs sin skr slk slv snd spa sqi srd srm srn srp stq swe swg syl szl tcs tgk tly tpi ukr urd vec vls wae wln xcl yid zea zza",
+  "tgt": "deu eng nld"
+ },
+ "Helsinki-NLP/opus-mt-tc-bible-big-bnt-deu_eng_fra_por_spa": {
+  "src": "bas bem bnt bss cce cjk cwe dig dug gog gwr hay heh her jmc kam kdc kdn kik kin kki kkj kmb kng kon ksb kua ldi lem lin lon lsm lua lug luy mcp myx nbl nde ndo nim nnb nso nuj nya nyf nyn nyo nyy old ozm pkb rim run seh sna sot ssw suk swa swc swh sxb thk tlj toh toi tsn tso tum umb ven vmw vun wmw xho xog zul",
+  "tgt": "deu eng fra por spa"
+ },
+ "Helsinki-NLP/opus-mt-tc-bible-big-aav-fra_ita_por_spa": {
+  "src": "bru cmo hoc jun kha khm kxm vie wbm",
+  "tgt": "fra ita por spa"
+ },
+ "Helsinki-NLP/opus-mt-tc-bible-big-afa-deu_eng_fra_por_spa": {
+  "src": "aar acm afb amh apc ara arc arq arz bcw byn cop daa dsh gde gnd hau hbo heb hig irk jpa kab ker kqp ktb kxc lln lme meq mfh mfi mfk mif mlt mpg mqb muy oar orm pbi phn rif sgw shi shy som sur syc syr taq thv tig tir tmc tmh tmr ttr tzm wal xed zgh",
+  "tgt": "deu eng fra por spa"
+ },
+ "Helsinki-NLP/opus-mt-tc-bible-big-afa-deu_eng_nld": {
+  "src": "aar acm afb amh apc ara arc arq arz bcw byn cop daa dsh gde gnd hau hbo heb hig irk jpa kab ker kqp ktb kxc lln lme meq mfh mfi mfk mif mlt mpg mqb muy oar orm pbi phn rif sgw shi shy som sur syc syr taq tig tir tmc tmh tmr ttr tzm wal xed zgh",
+  "tgt": "deu eng nld"
+ },
+ "Helsinki-NLP/opus-mt-tc-bible-big-afa-fra_ita_por_spa": {
+  "src": "amh apc ara arq arz bcw cop daa dsh gde gnd hau hbo heb hig irk jpa kab ker kqp ktb kxc lln lme meq mfh mfi mfk mif mlt mpg mqb muy oar pbi phn rif sgw shi shy som sur syc thv tir tmc tmh tmr ttr wal xed zgh",
+  "tgt": "fra ita por spa"
+ },
+ "Helsinki-NLP/opus-mt-tc-bible-big-alv-deu_eng_fra_por_spa": {
+  "src": "abi acd ade adj aka akp ann anv atg avn bas bav bba beh bem bfd bfo bim biv bkv blh bmq bmv bom bov box bqj bss btt bud bwu cce cjk cko cme csk cwe cwt dag dga dgi dig dop dug dyi dyo efi ewe fal fon fuc ful gej gkn gng gog gud gur guw gux gwr hag hay heh her ibo ife iri izr jbu jmc kam kbp kdc kdl kdn ken keu kez kia kik kin kki kkj kma kmb kon ksb ktj kua kub kus kyf las lee lef lem lia lin lip lob lon lua lug luy maw mcp mcu mda mfq mgo mnf mnh mor mos muh myk myx mzk mzm mzw nbl ncu nde ndo ndz nfr nhu nim nin nmz nnb nnh nnw nso ntm ntr nuj nwb nya nyf nyn nyo nyy nzi oku old ozm pai pbl pkb rim run sag seh sig sil sld sna snw sot soy spp ssw suk swa swc swh sxb tbz tem thk tik tlj toh toi tpm tsn tso tsw tum twi umb vag ven vmw vun wmw wob wol xho xog xon xrb xsm xuo yam yaz yor zul",
+  "tgt": "deu eng fra por spa"
+ },
+ "Helsinki-NLP/opus-mt-tc-bible-big-bat-deu_eng_fra_por_spa": {
+  "src": "lav lit prg sgs",
+  "tgt": "deu eng fra por spa"
+ },
+ "Helsinki-NLP/opus-mt-tc-bible-big-bat-deu_eng_nld": {
+  "src": "lav lit prg sgs",
+  "tgt": "deu eng nld"
+ },
+ "Helsinki-NLP/opus-mt-tc-bible-big-bat-en": {
+  "src": "lav lit prg sgs",
+  "tgt": "eng"
+ },
+ "Helsinki-NLP/opus-mt-tc-bible-big-cel-deu_eng_fra_por_spa": {
+  "src": "bre cor cym gla gle glv",
+  "tgt": "deu eng fra por spa"
+ },
+ "Helsinki-NLP/opus-mt-tc-bible-big-deu_eng_fra_por_spa-aav": {
+  "src": "deu eng fra por spa",
+  "tgt": "bru cmo hoc jun kha khm kxm mnw ngt sat vie wbm"
+ },
+ "Helsinki-NLP/opus-mt-tc-bible-big-deu_eng_fra_por_spa-afa": {
+  "src": "deu eng fra por spa",
+  "tgt": "aar acm afb amh apc ara arc arq arz bcw byn cop daa dsh gde gnd hau hbo heb hig irk jpa kab ker kqp ktb kxc lln lme meq mfh mfi mfk mif mlt mpg mqb muy oar orm pbi phn rif sgw shi shy som sur syc syr taq thv tig tir tmc tmh tmr ttr tzm wal xed zgh"
+ },
+ "Helsinki-NLP/opus-mt-tc-bible-big-deu_eng_fra_por_spa-bat": {
+  "src": "deu eng fra por spa",
+  "tgt": "lav lit prg sgs"
+ },
+ "Helsinki-NLP/opus-mt-tc-bible-big-deu_eng_fra_por_spa-bnt": {
+  "src": "deu eng fra por spa",
+  "tgt": "bas bem bnt bss cce cjk cwe dig dug gog gwr hay heh her jmc kam kdc kdn kik kin kki kkj kmb kng kon ksb kua ldi lem lin lon lsm lua lug luy mcp myx nbl nde ndo nim nnb nso nuj nya nyf nyn nyo nyy old ozm pkb rim run seh sna sot ssw suk swa swc swh sxb thk tlj toh toi tsn tso tum umb ven vmw vun wmw xho xog zul"
+ },
+ "Helsinki-NLP/opus-mt-tc-bible-big-deu_eng_fra_por_spa-fiu": {
+  "src": "deu eng fra por spa",
+  "tgt": "chm est fin fkv hun izh koi kom kpv krl liv mdf mrj myv sma sme smn udm vep vot vro"
+ },
+ "Helsinki-NLP/opus-mt-tc-bible-big-deu_eng_fra_por_spa-gem": {
+  "src": "deu eng fra por spa",
+  "tgt": "afr ang bar bis bzj dan deu djk drt eng enm fao frr fry gos got gsw hrx hwc icr isl jam kri ksh lim ltz nds nld nno nob non nor ofs pcm pdc pfl pih pis rop sco srm srn stq swe swg tcs tpi vls wae yid zea"
+ },
+ "Helsinki-NLP/opus-mt-tc-bible-big-deu_eng_fra_por_spa-gmq": {
+  "src": "deu eng fra por spa",
+  "tgt": "dan fao isl nno nob non nor swe"
+ },
+ "Helsinki-NLP/opus-mt-tc-bible-big-deu_eng_fra_por_spa-gmw": {
+  "src": "deu eng fra por spa",
+  "tgt": "afr ang bar bis bzj deu djk drt eng enm frr fry gos gsw hrx hwc icr jam kri ksh lim ltz nds nld ofs pcm pdc pfl pih pis rop sco srm srn stq swg tcs tpi vls wae yid zea"
+ },
+ "Helsinki-NLP/opus-mt-tc-bible-big-deu_eng_fra_por_spa-iir": {
+  "src": "deu eng fra por spa",
+  "tgt": "anp asm awa bal ben bho bpy ckb diq div dty fas gbm glk guj hif hin hne hns jdt kas kmr kok kur lah lrc mag mai mar mzn nep npi ori oss pal pan pes pli prs pus rhg rmy rom san sdh sin skr snd syl tgk tly urd zza"
+ },
+ "Helsinki-NLP/opus-mt-tc-bible-big-deu_eng_fra_por_spa-inc": {
+  "src": "deu eng fra por spa",
+  "tgt": "anp asm awa ben bho bpy div dty gbm guj hif hin hne hns kas kok lah mag mai mar nep npi ori pan pli rhg rmy rom san sin skr snd syl urd"
+ },
+ "Helsinki-NLP/opus-mt-tc-bible-big-deu_eng_fra_por_spa-ine": {
+  "src": "deu eng fra por spa",
+  "tgt": "acf afr aln ang anp arg asm ast awa bal bar bel ben bho bis bos bpy bre bul bzj cat cbk ces chu ckb cnr cor cos crs csb cym dan deu diq div djk drt dsb dty egl ell eng enm ext fao fas fra frm fro frp frr fry fur gbm gcf gla gle glg glk glv gos got grc gsw guj hat hbs hif hin hne hns hrv hrx hsb hwc hye hyw icr isl ita jam jdt kas kea kmr kok kri ksh kur lad lah lat lav lij lim lit lld lmo lou lrc ltz mag mai mar mfe mkd mol mwl mzn nap nds nep nld nno nob non nor npi oci ofs ori orv osp oss pal pan pap pcd pcm pdc pes pfl pih pis pli pms pnt pol por prg prs pus rhg rmy roh rom ron rop rue rup rus san scn sco sdh sgs sin skr slk slv snd spa sqi srd srm srn srp stq swe swg syl szl tcs tgk tly tpi ukr urd vec vls wae wln xcl yid zea zza"
+ },
+ "Helsinki-NLP/opus-mt-tc-bible-big-deu_eng_fra_por_spa-itc": {
+  "src": "deu eng fra por spa",
+  "tgt": "acf arg ast cat cbk cos crs egl ext fra frm fro frp fur gcf glg hat ita kea lad lat lij lld lmo lou mfe mol mwl nap oci osp pap pcd pms por roh ron rup scn spa srd vec wln"
+ },
+ "Helsinki-NLP/opus-mt-tc-bible-big-deu_eng_fra_por_spa-mkh": {
+  "src": "deu eng fra por spa",
+  "tgt": "bru cmo kha khm kxm mnw ngt vie wbm"
+ },
+ "Helsinki-NLP/opus-mt-tc-bible-big-deu_eng_fra_por_spa-pqw": {
+  "src": "deu eng fra por spa",
+  "tgt": "ace akl ban bcl bik btd bth bto bts btx bug ceb cgc cha dtp fil gor hil iba ify ilo ind jak jav krj ljp mad mak max mbb mbt mhy mlg mog mrw msa msm mta mwv nia nij obo pag pam pau plt rej sas sda sml sun sxn tbl tmw war zlm zsm"
+ },
+ "Helsinki-NLP/opus-mt-tc-bible-big-deu_eng_fra_por_spa-roa": {
+  "src": "deu eng fra por spa",
+  "tgt": "acf arg ast cat cbk cos crs egl ext fra frm fro frp fur gcf glg hat ita kea lad lij lld lmo lou mfe mol mwl nap oci osp pap pcd pms por roh ron rup scn spa srd vec wln"
+ },
+ "Helsinki-NLP/opus-mt-tc-bible-big-deu_eng_fra_por_spa-sem": {
+  "src": "deu eng fra por spa",
+  "tgt": "acm afb amh apc ara arc arq arz hbo heb jpa mlt oar phn sgw syc syr tig tir tmr"
+ },
+ "Helsinki-NLP/opus-mt-tc-bible-big-deu_eng_fra_por_spa-sla": {
+  "src": "deu eng fra por spa",
+  "tgt": "bel bos bul ces chu cnr csb dsb hbs hrv hsb mkd orv pol rue rus slk slv srp szl ukr"
+ },
+ "Helsinki-NLP/opus-mt-tc-bible-big-deu_eng_fra_por_spa-trk": {
+  "src": "deu eng fra por spa",
+  "tgt": "alt aze bak chv crh gag kaa kaz kir kjh krc kum nog ota otk sah tat tuk tur tyv uig uzb"
+ },
+ "Helsinki-NLP/opus-mt-tc-bible-big-deu_eng_fra_por_spa-urj": {
+  "src": "deu eng fra por spa",
+  "tgt": "chm est fin fkv hun izh koi kom kpv krl liv mdf mrj myv sma sme smn udm vep vot vro"
+ },
+ "Helsinki-NLP/opus-mt-tc-bible-big-dra-deu_eng_nld": {
+  "src": "kan kru mal tam tcy tel",
+  "tgt": "deu eng"
+ },
+ "Helsinki-NLP/opus-mt-tc-bible-big-dra-en": {
+  "src": "kan kru mal tam tcy tel",
+  "tgt": "eng"
+ },
+ "Helsinki-NLP/opus-mt-tc-bible-big-fiu-deu_eng_fra_por_spa": {
+  "src": "chm est fin fkv hun izh koi kom kpv krl liv mdf mrj myv sma sme smn udm vep vot vro",
+  "tgt": "deu eng fra por spa"
+ },
+ "Helsinki-NLP/opus-mt-tc-bible-big-fiu-en": {
+  "src": "chm est fin fkv hun izh koi kom kpv krl liv mdf mrj myv sma sme smn udm vot vro",
+  "tgt": "eng"
+ },
+ "Helsinki-NLP/opus-mt-tc-bible-big-fiu-fra_ita_por_spa": {
+  "src": "chm est fin fkv hun krl liv mrj myv sme udm vep vro",
+  "tgt": "fra ita por spa"
+ },
+ "Helsinki-NLP/opus-mt-tc-bible-big-gem-deu_eng_fra_por_spa": {
+  "src": "afr ang bar bis bzj dan deu djk drt eng enm fao frr fry gos got gsw hrx hwc icr isl jam kri ksh lim ltz nds nld nno nob non nor ofs pcm pdc pfl pih pis rop sco srm srn stq swe swg tcs tpi vls wae yid zea",
+  "tgt": "deu eng fra por spa"
+ },
+ "Helsinki-NLP/opus-mt-tc-bible-big-gem-fra_ita_por_spa": {
+  "src": "afr ang bar bis bzj dan deu djk drt eng enm fao frr fry gos got gsw hrx hwc icr isl jam kri ksh lim ltz nds nld nno nob non nor pcm pis rop sco srm srn stq swe swg tcs tpi yid zea",
+  "tgt": "fra ita por spa"
+ },
+ "Helsinki-NLP/opus-mt-tc-bible-big-gmq-deu_eng_fra_por_spa": {
+  "src": "dan fao isl nno nob non nor swe",
+  "tgt": "deu eng fra por spa"
+ },
+ "Helsinki-NLP/opus-mt-tc-bible-big-gmq-en": {
+  "src": "dan fao isl nno nob non nor swe",
+  "tgt": "eng"
+ },
+ "Helsinki-NLP/opus-mt-tc-bible-big-gmw-deu_eng_fra_por_spa": {
+  "src": "afr ang bar bis bzj deu djk drt eng enm frr fry gos gsw hrx hwc icr jam kri ksh lim ltz nds nld ofs pcm pdc pfl pih pis rop sco srm srn stq swg tcs tpi vls wae yid zea",
+  "tgt": "deu eng fra por spa"
+ },
+ "Helsinki-NLP/opus-mt-tc-bible-big-gmw-deu_eng_nld": {
+  "src": "afr ang bar bis bzj deu djk drt eng enm frr fry gos gsw hrx hwc icr jam kri ksh lim ltz nds nld ofs pcm pdc pfl pih pis rop sco srm srn stq swg tcs tpi vls wae yid zea",
+  "tgt": "deu eng nld"
+ },
+ "Helsinki-NLP/opus-mt-tc-bible-big-gmw-en": {
+  "src": "afr ang bar bis bzj deu djk drt eng enm frr fry gos gsw hrx hwc icr jam kri ksh lim ltz nds nld ofs pcm pdc pfl pih pis rop sco srm srn stq swg tcs tpi vls wae yid zea",
+  "tgt": "eng"
+ },
+ "Helsinki-NLP/opus-mt-tc-bible-big-gmw-fra_ita_por_spa": {
+  "src": "afr ang bar bis bzj deu djk drt eng enm frr fry gos gsw hrx hwc icr jam kri ksh lim ltz nds nld pcm pis rop sco srm srn stq swg tcs tpi yid zea",
+  "tgt": "fra ita por spa"
+ },
+ "Helsinki-NLP/opus-mt-tc-bible-big-iir-deu_eng_fra_por_spa": {
+  "src": "anp asm awa bal ben bho bpy ckb diq div dty fas gbm glk guj hif hin hne hns jdt kas kmr kok kur lah lrc mag mai mar mzn nep npi ori oss pal pan pes pli prs pus rhg rmy rom san sdh sin skr snd syl tgk tly urd zza",
+  "tgt": "deu eng fra por spa"
+ },
+ "Helsinki-NLP/opus-mt-tc-bible-big-iir-en": {
+  "src": "anp asm awa bal ben bho bpy ckb diq div dty fas gbm glk guj hif hin hne hns jdt kas kmr kok kur lah lrc mag mai mar mzn nep npi ori oss pal pan pes pli prs pus rhg rmy rom san sdh sin skr snd syl tgk tly urd zza",
+  "tgt": "eng"
+ },
+ "Helsinki-NLP/opus-mt-tc-bible-big-inc-deu_eng_fra_por_spa": {
+  "src": "anp asm awa ben bho bpy div dty gbm guj hif hin hne hns kas kok lah mag mai mar nep npi ori pan pli rhg rmy rom san sin skr snd syl urd",
+  "tgt": "deu eng fra por spa"
+ },
+ "Helsinki-NLP/opus-mt-tc-bible-big-inc-deu_eng_nld": {
+  "src": "anp asm awa ben bho bpy div dty gbm guj hif hin hne hns kas kok lah mag mai mar nep npi ori pan pli rhg rmy rom san sin skr snd syl urd",
+  "tgt": "deu eng nld"
+ },
+ "Helsinki-NLP/opus-mt-tc-bible-big-inc-en": {
+  "src": "anp asm awa ben bho bpy div dty gbm guj hif hin hne hns kas kok lah mag mai mar nep npi ori pan pli rhg rmy rom san sin skr snd syl urd",
+  "tgt": "eng"
+ },
+ "Helsinki-NLP/opus-mt-tc-bible-big-ine-deu_eng_fra_por_spa": {
+  "src": "acf afr aln ang anp arg asm ast awa bal bar bel ben bho bis bos bpy bre bul bzj cat cbk ces chu ckb cnr cor cos crs csb cym dan deu diq div djk drt dsb dty egl ell eng enm ext fao fas fra frm fro frp frr fry fur gbm gcf gla gle glg glk glv gos got grc gsw guj hat hbs hif hin hne hns hrv hrx hsb hwc hye hyw icr isl ita jam jdt kas kea kmr kok kri ksh kur lad lah lat lav lij lim lit lld lmo lou lrc ltz mag mai mar mfe mkd mol mwl mzn nap nds nep nld nno nob non nor npi oci ofs ori orv osp oss pal pan pap pcd pcm pdc pes pfl pih pis pli pms pnt pol por prg prs pus rhg rmy roh rom ron rop rue rup rus san scn sco sdh sgs sin skr slk slv snd spa sqi srd srm srn srp stq swe swg syl szl tcs tgk tly tpi ukr urd vec vls wae wln xcl yid zea zza",
+  "tgt": "deu eng fra por spa"
+ },
+ "Helsinki-NLP/opus-mt-tc-bible-big-ira-deu_eng_fra_por_spa": {
+  "src": "bal ckb diq fas glk jdt kmr kur lrc mzn oss pal pes prs pus sdh tgk tly zza",
+  "tgt": "deu eng fra por spa"
+ },
+ "Helsinki-NLP/opus-mt-tc-bible-big-itc-deu_eng_fra_por_spa": {
+  "src": "acf arg ast cat cbk cos crs egl ext fra frm fro frp fur gcf glg hat ita kea lad lat lij lld lmo lou mfe mol mwl nap oci osp pap pcd pms por roh ron rup scn spa srd vec wln",
+  "tgt": "deu eng fra por spa"
+ },
+ "Helsinki-NLP/opus-mt-tc-bible-big-itc-deu_eng_nld": {
+  "src": "acf arg ast cat cbk cos crs egl ext fra frm frp fur gcf glg hat ita kea lad lat lij lld lmo lou mfe mol mwl nap oci osp pap pms por roh ron rup scn spa srd vec wln",
+  "tgt": "deu eng nld"
+ },
+ "Helsinki-NLP/opus-mt-tc-bible-big-itc-fra_ita_por_spa": {
+  "src": "acf arg ast cat cbk cos crs egl fra frm fro fur gcf glg hat ita lad lat lij lld lmo lou mfe mol mwl nap oci osp pap pcd pms por roh ron scn spa srd vec wln",
+  "tgt": "fra ita por spa"
+ },
+ "Helsinki-NLP/opus-mt-tc-bible-big-map-en": {
+  "src": "aai ace agn aia akl alj alp ami amk aoz apr atq aui ban bcl bep bhz bik bku blz bmk bnp bpr bps btd bth bto bts btx bug buk bvy bzh ceb cgc cha dad dob dtp dww emi far fij fil frd gfk gil gor haw hil hla hnn hot hvn iba ifa ifb ifk ifu ify ilo ind iry itv jak jav jvn kbm khz kje kne kpg kqe kqf kqw krj kud kwf kzf laa law lcm leu lew lex lid ljp lnd mad mah mak max mbb mbf mbt mee mek mgm mhy mlg mmo mmx mna mnb mog mox mpx mqj mri mrw msa msm mta mva mvp mvv mwc mwv myw mzz nak nau nia nij niu npy nsn nss nwi obo pag pam pau plt plw pmf pmy pne ppk prf ptp ptu pwg rai rap rej rro rug sas sbl sda sgb sgz smk sml smo snc sps stn sun swp sxn tah tbc tbl tbo tet tgl tgo tgp tkl tlx tmw ton tpa tpz trv tte tuc tvl twb twu txa ubr uvl viv war wed wuv xsb xsi yml zlm zsm",
+  "tgt": "eng"
+ },
+ "Helsinki-NLP/opus-mt-tc-bible-big-map-fra_ita_por_spa": {
+  "src": "aai ace agn aia alj alp amk aoz apr atq aui ban bcl bep bhz bku blz bmk bnp bpr bps btd bth bto bts btx bug buk bzh ceb cgc cha dad dob dtp dww emi far fij fil frd gfk gil gor haw hil hla hnn hot hvn iba ifa ifb ifk ifu ify ilo ind iry itv jak jav jvn kbm khz kje kne kpg kqe kqf kqw krj kud kwf kzf law lcm leu lew lex lid ljp lnd mad mah mak mbb mbf mbt mee mek mhy mlg mmo mmx mna mnb mog mox mpx mqj mri mrw msa msm mta mva mvp mwc mwv myw mzz nak nau nia nij npy nsn nss nwi obo pag pam pau plt plw pmf pne ppk prf ptp ptu pwg rai rej rro rug sas sbl sda sgb sgz smk sml smo snc sps stn sun swp sxn tah tbc tbl tbo tet tgl tgo tgp tlx ton tpa tpz tte tuc twb twu txa ubr uvl viv war wed wuv xsb xsi yml zsm",
+  "tgt": "fra ita por spa"
+ },
+ "Helsinki-NLP/opus-mt-tc-bible-big-mkh-deu_eng_nld": {
+  "src": "bru cmo kha khm kxm mnw ngt vie wbm",
+  "tgt": "deu eng nld"
+ },
+ "Helsinki-NLP/opus-mt-tc-bible-big-mkh-fra_ita_por_spa": {
+  "src": "bru cmo kha khm kxm vie wbm",
+  "tgt": "fra ita por spa"
+ },
+ "Helsinki-NLP/opus-mt-tc-bible-big-mul-deu_eng_nld": {
+  "src": "aai aar aau abi abk acd ace acf ach acm acn acr ade adj ady aeu aey afb afh afr agd agn agu ahk aia aka akh akl akp alj aln alp alq alt alz ame amh ami amk amu ang ann anp anv aoz apc apr apu ara arc arg arq arz asm aso ast atg atj atq aui auy ava avk avn avu awa awb awx aze azg azz bak bal bam ban bar bas bav bba bbo bbr bcl bcw bef beh bel bem ben bep bex bfa bfd bfo bgr bhl bho bhz bib bik bim bis biv bjr bjv bku bkv blh blt blz bmh bmk bmq bmu bmv bnp bod boj bom bos bov box bpr bps bpy bqc bqj bqp bre bru brx bss btd bth bto bts btt btx bua bud bug buk bul bus bvy bwq bwu byn bzd bzh bzj bzt caa cab cac cak cat cay cbk cce cco ceb ces cfm cgc cha che chf chm chq chr chu chv chy chz cjk cjo cjp cjv cjy ckb cko cle cme cmn cmo cmr cnh cni cnl cnr cnt cnw cok cop cor cos cot cpa cpu cre crh crn crs crx csb csk cso csy cta ctd ctp ctu cuc cui cuk cut cux cwe cwt cya cym czt daa dad dag dah dan ded deu dga dgi dig dik din diq div dje djk dng dni dnj dob dop drt dsb dsh dtp dty dug dws dww dyi dyo dyu dzo efi egl ell emi eng enm epo ess est eus ewe ext fai fal fao far fas fij fil fin fkv fon for fra frd frm frp frr fry fuc ful fur gag gah gaw gbm gcf gde gej gfk ghs gil gkn gla gle glg glk glv gnd gng gog gor gos got gqr grc grn gsw guc gud guh guj guo gur guw gux gvf gvl gwi gwr gym gyr hag hat hau haw hay hbo hbs hch heb heh her hif hig hil hin hla hlt hmn hne hnj hnn hns hoc hot hrv hrx hsb hsn hui hun hus hvn hwc hye hyw iba ibo icr ido ifa ifb ife ifk ifu ify ign iii ike iku ile ilo imo ina ind inh ino iou ipi ipk iri irk iry isl ita itv ium ixl izh izr jaa jac jak jam jav jbo jbu jdt jmc jpa jpn jun jvn kaa kab kac kal kam kan kao kas kat kau kaz kbd kbm kbp kdc kdj kdl kdn kea kek ken keo ker keu kew kez kgf kgk kha khm khz kia kik kin kir kjb kje kjh kjs kki kkj kle kma kmb kmg kmh kmo kmr kmu knc kne knj knk kno kog koi kok kom kon kpf kpg kpr kpv kpw kpz kqe kqf kqp kqw krc kri krj krl kru ksb ksh ksr ktb ktj kua kub kud kue kum kur kus kvn kwf kxc kxm kyc kyf kyg kyq kzf laa lac lad lah lao las lat lav law lbe lcm ldn lee lef lem leu lew lex lez lfn lgg lhu lia lid lif lij lim lin lip lit liv ljp lkt lld lln lme lmo lnd lob lok lon lou lrc lsi ltz lua luc lug luo lus lut luy lzz maa mad mag mah mai maj mak mal mam maq mar mau maw max maz mbb mbf mbt mcb mcp mcu mda mdf med mee meh mek men meq mfe mfh mfi mfk mfq mfy mgd mgm mgo mhi mhl mhx mhy mib mic mie mif mig mih mil mio mit mix miy miz mjc mkd mks mlg mlh mlp mlt mmo mmx mna mnb mnf mnh mni mnr mnw moa mog moh mol mon mop mor mos mox mpg mpm mpt mpx mqb mqj mri mrj mrw msa msm mta muh mux muy mva mvp mvv mwc mwl mwm mwv mww mxb mxt mya myb myk myu myv myw myx mzk mzm mzn mzw mzz naf nak nap nas nau nav nbl nca nch ncj ncl ncu nde ndo nds ndz neb nep new nfr ngt ngu nhe nhg nhi nhn nhu nhw nhx nhy nia nif nii nij nim nin niu njm nlc nld nlv nmz nnb nnh nno nnw nob nog non nop nor not nou nov npi npl npy nqo nsn nso nss nst nsu ntm ntp ntr nuj nus nuy nwb nwi nya nyf nyn nyo nyy nzi ",
+  "tgt": "deu eng nld"
+ },
+ "Helsinki-NLP/opus-mt-tc-bible-big-phi-deu_eng_fra_por_spa": {
+  "src": "akl bcl bik bto ceb cgc fil gor hil ify ilo krj mbb mbt mog mrw msm mta obo pag pam sxn tbl war",
+  "tgt": "deu eng fra por spa"
+ },
+ "Helsinki-NLP/opus-mt-tc-bible-big-phi-en": {
+  "src": "akl bcl bik bto ceb cgc fil gor hil ify ilo krj mbb mbt mog mrw msm mta obo pag pam sxn tbl war",
+  "tgt": "eng"
+ },
+ "Helsinki-NLP/opus-mt-tc-bible-big-poz-deu_eng_fra_por_spa": {
+  "src": "aai ace agn aia akl alj alp amk aoz apr atq aui ban bcl bep bhz bik bku blz bmk bnp bpr bps btd bth bto bts btx bug buk bvy bzh ceb cgc cha dad dob dtp dww emi far fij fil frd gfk gil gor haw hil hla hnn hot hvn iba ifa ifb ifk ifu ify ilo ind iry itv jak jav jvn kbm khz kje kne kpg kqe kqf kqw krj kud kwf kzf laa law lcm leu lew lex lid ljp lnd mad mah mak max mbb mbf mbt mee mek mgm mhy mlg mmo mmx mna mnb mog mox mpx mqj mri mrw msa msm mta mva mvp mvv mwc mwv myw mzz nak nau nia nij niu npy nsn nss nwi obo pag pam pau plt plw pmf pmy pne ppk prf ptp ptu pwg rai rap rej rro rug sas sbl sda sgb sgz smk sml smo snc sps stn sun swp sxn tah tbc tbl tbo tet tgl tgo tgp tkl tlx tmw ton tpa tpz tte tuc tvl twb twu txa ubr uvl viv war wed wuv xsb xsi yml zlm zsm",
+  "tgt": "deu eng fra por spa"
+ },
+ "Helsinki-NLP/opus-mt-tc-bible-big-poz-en": {
+  "src": "aai ace agn aia akl alj alp amk aoz apr atq aui ban bcl bep bhz bik bku blz bmk bnp bpr bps btd bth bto bts btx bug buk bvy bzh ceb cgc cha dad dob dtp dww emi far fij fil frd gfk gil gor haw hil hla hnn hot hvn iba ifa ifb ifk ifu ify ilo ind iry itv jak jav jvn kbm khz kje kne kpg kqe kqf kqw krj kud kwf kzf laa law lcm leu lew lex lid ljp lnd mad mah mak max mbb mbf mbt mee mek mgm mhy mlg mmo mmx mna mnb mog mox mpx mqj mri mrw msa msm mta mva mvp mvv mwc mwv myw mzz nak nau nia nij niu npy nsn nss nwi obo pag pam pau plt plw pmf pmy pne ppk prf ptp ptu pwg rai rap rej rro rug sas sbl sda sgb sgz smk sml smo snc sps stn sun swp sxn tah tbc tbl tbo tet tgl tgo tgp tkl tlx tmw ton tpa tpz tte tuc tvl twb twu txa ubr uvl viv war wed wuv xsb xsi yml zlm zsm",
+  "tgt": "eng"
+ },
+ "Helsinki-NLP/opus-mt-tc-bible-big-poz-fra_ita_por_spa": {
+  "src": "aai ace agn aia alj alp amk aoz apr atq aui ban bcl bep bhz bku blz bmk bnp bpr bps btd bth bto bts btx bug buk bzh ceb cgc cha dad dob dtp dww emi far fij fil frd gfk gil gor haw hil hla hnn hot hvn iba ifa ifb ifk ifu ify ilo ind iry itv jak jav jvn kbm khz kje kne kpg kqe kqf kqw krj kud kwf kzf law lcm leu lew lex lid ljp lnd mad mah mak mbb mbf mbt mee mek mhy mlg mmo mmx mna mnb mog mox mpx mqj mri mrw msa msm mta mva mvp mwc mwv myw mzz nak nau nia nij npy nsn nss nwi obo pag pam pau plt plw pmf pne ppk prf ptp ptu pwg rai rej rro rug sas sbl sda sgb sgz smk sml smo snc sps stn sun swp sxn tah tbc tbl tbo tet tgl tgo tgp tlx ton tpa tpz tte tuc twb twu txa ubr uvl viv war wed wuv xsb xsi yml zsm",
+  "tgt": "fra ita por spa"
+ },
+ "Helsinki-NLP/opus-mt-tc-bible-big-pqe-deu_eng_fra_por_spa": {
+  "src": "aai aia alp amk aoz apr aui bmk bnp buk bzh dad dob dww emi far fij frd gfk gil haw hla hot hvn kbm khz kje kpg kqf kqw kud kwf lcm leu lex lid mah mee mek mgm mmo mmx mna mox mpx mri mva mwc myw mzz nak nau niu nsn nss nwi ptp pwg rai rap rro rug sgz smo snc sps stn swp tah tbc tbo tet tgo tgp tkl tlx ton tpa tpz tte tuc tvl twu ubr uvl viv wed wuv xsi yml",
+  "tgt": "deu eng fra por spa"
+ },
+ "Helsinki-NLP/opus-mt-tc-bible-big-pqw-deu_eng_fra_por_spa": {
+  "src": "ace akl ban bcl bik btd bth bto bts btx bug ceb cgc cha dtp fil gor hil iba ify ilo ind jak jav krj ljp mad mak max mbb mbt mhy mlg mog mrw msa msm mta mwv nia nij obo pag pam pau plt rej sas sda sml sun sxn tbl tmw war zlm zsm",
+  "tgt": "deu eng fra por spa"
+ },
+ "Helsinki-NLP/opus-mt-tc-bible-big-pqw-en": {
+  "src": "ace akl ban bcl bik btd bth bto bts btx bug ceb cgc cha dtp fil gor hil iba ify ilo ind jak jav krj ljp mad mak max mbb mbt mhy mlg mog mrw msa msm mta mwv nia nij obo pag pam pau plt rej sas sda sml sun sxn tbl tmw war zlm zsm",
+  "tgt": "eng"
+ },
+ "Helsinki-NLP/opus-mt-tc-bible-big-pqw-fra_ita_por_spa": {
+  "src": "ace ban bcl btd bth bto bts btx bug ceb cgc cha dtp fil gor hil iba ify ilo ind jak jav krj ljp mad mak mbb mbt mhy mlg mog mrw msa msm mta mwv nia nij obo pag pam pau plt rej sas sda sml sun sxn tbl war zsm",
+  "tgt": "fra ita por spa"
+ },
+ "Helsinki-NLP/opus-mt-tc-bible-big-roa-deu_eng_fra_por_spa": {
+  "src": "acf arg ast cat cbk cos crs egl ext fra frm fro frp fur gcf glg hat ita kea lad lij lld lmo lou mfe mol mwl nap oci osp pap pcd pms por roh ron rup scn spa srd vec wln",
+  "tgt": "deu eng fra por spa"
+ },
+ "Helsinki-NLP/opus-mt-tc-bible-big-roa-en": {
+  "src": "acf arg ast cat cbk cos egl ext fra frm frp fur gcf glg hat ita kea lad lij lld lmo lou mfe mol mwl nap oci osp pap pms por roh ron rup scn spa srd vec wln",
+  "tgt": "eng"
+ },
+ "Helsinki-NLP/opus-mt-tc-bible-big-sem-deu_eng_fra_por_spa": {
+  "src": "acm afb amh apc ara arc arq arz hbo heb jpa mlt oar phn sgw syc syr tig tir tmr",
+  "tgt": "deu eng fra por spa"
+ },
+ "Helsinki-NLP/opus-mt-tc-bible-big-sem-deu_eng_nld": {
+  "src": "acm afb amh apc ara arc arq arz hbo heb jpa mlt oar phn sgw syc syr tig tir tmr",
+  "tgt": "deu eng nld"
+ },
+ "Helsinki-NLP/opus-mt-tc-bible-big-sem-en": {
+  "src": "acm afb amh apc ara arc arq arz hbo heb jpa mlt oar phn sgw syc syr tig tir tmr",
+  "tgt": "eng"
+ },
+ "Helsinki-NLP/opus-mt-tc-bible-big-sla-deu_eng_nld": {
+  "src": "bel bos bul ces chu cnr csb dsb hbs hrv hsb mkd orv pol rue rus slk slv srp szl ukr",
+  "tgt": "deu eng nld"
+ },
+ "Helsinki-NLP/opus-mt-tc-bible-big-tai-deu_eng_fra_por_spa": {
+  "src": "blt lao shn tha tts tyj zha",
+  "tgt": "deu eng fra por spa"
+ },
+ "Helsinki-NLP/opus-mt-tc-bible-big-trk-deu_eng_fra_por_spa": {
+  "src": "alt aze bak chv crh gag kaa kaz kir kjh krc kum nog ota otk sah tat tuk tur tyv uig uzb",
+  "tgt": "deu eng fra por spa"
+ },
+ "Helsinki-NLP/opus-mt-tc-bible-big-urj-deu_eng_fra_por_spa": {
+  "src": "chm est fin fkv hun izh koi kom kpv krl liv mdf mrj myv sma sme smn udm vep vot vro",
+  "tgt": "deu eng fra por spa"
+ },
+ "Helsinki-NLP/opus-mt-tc-bible-big-urj-deu_eng_nld": {
+  "src": "chm est fin fkv hun izh koi kom kpv krl liv mdf mrj myv sma sme smn udm vot vro",
+  "tgt": "deu eng nld"
+ },
+ "Helsinki-NLP/opus-mt-tc-bible-big-urj-fra_ita_por_spa": {
+  "src": "chm est fin fkv hun krl liv mrj myv sme udm vep vro",
+  "tgt": "fra ita por spa"
+ },
+ "Helsinki-NLP/opus-mt-tc-bible-big-zhx-deu_eng_fra_por_spa": {
+  "src": "cjy cmn hsn wuu yue",
+  "tgt": "deu eng fra por spa"
+ },
+ "Helsinki-NLP/opus-mt-tc-bible-big-zhx-en": {
+  "src": "cjy cmn hsn wuu yue",
+  "tgt": "eng"
+ },
+ "Helsinki-NLP/opus-mt-tc-bible-big-mul-deu_eng_fra_por_spa": {
+  "src": "aai aar aau abi abk acd ace acf ach acm acn acr ade adj ady aeu aey afb afh afr agd agn agu ahk aia aka akh akl akp alj aln alp alq alt alz ame amh ami amk amu ang ann anp anv aoz apc apr apu ara arc arg arq arz asm aso ast atg atj atq aui auy ava avk avn avu awa awb awx aze azg azz bak bal bam ban bar bas bav bba bbo bbr bcl bcw bef beh bel bem ben bep bex bfa bfd bfo bgr bhl bho bhz bib bik bim bis biv bjr bjv bku bkv blh blt blz bmh bmk bmq bmu bmv bnp bod boj bom bos bov box bpr bps bpy bqc bqj bqp bre bru brx bss btd bth bto bts btt btx bua bud bug buk bul bus bvy bwq bwu byn bzd bzh bzj bzt caa cab cac cak cat cay cbk cce cco ceb ces cfm cgc cha che chf chm chq chr chu chv chy chz cjk cjo cjp cjv cjy ckb cko cle cme cmn cmo cmr cnh cni cnl cnr cnt cnw cok cop cor cos cot cpa cpu cre crh crn crs crx csb csk cso csy cta ctd ctp ctu cuc cui cuk cut cux cwe cwt cya cym czt daa dad dag dah dan ded deu dga dgi dig dik din diq div dje djk dng dni dnj dob dop drt dsb dsh dtp dty dug dws dww dyi dyo dyu dzo efi egl ell emi eng enm epo ess est eus ewe ext fai fal fao far fas fij fil fin fkv fon for fra frd frm fro frp frr fry fuc ful fur gag gah gaw gbm gcf gde gej gfk ghs gil gkn gla gle glg glk glv gnd gng gog gor gos got gqr grc grn gsw guc gud guh guj guo gur guw gux gvf gvl gwi gwr gym gyr hag hat hau haw hay hbo hbs hch heb heh her hif hig hil hin hla hlt hmn hne hnj hnn hns hoc hot hrv hrx hsb hsn hui hun hus hvn hwc hye hyw iba ibo icr ido ifa ifb ife ifk ifu ify ign igs iii ike iku ile ilo imo ina ind inh ino iou ipi ipk iri irk iry isl ita itv ium ixl izh izr jaa jac jak jam jav jbo jbu jdt jmc jpa jpn jun jvn kaa kab kac kal kam kan kao kas kat kau kaz kbd kbm kbp kdc kdj kdl kdn kea kek ken keo ker keu kew kez kgf kgk kha khm khz kia kik kin kir kjb kje kjh kjs kki kkj kle kma kmb kmg kmh kmo kmr kmu knc kne knj knk kno kog koi kok kom kon kpf kpg kpr kpv kpw kpz kqe kqf kqp kqw krc kri krj krl kru ksb ksh ksr ktb ktj kua kub kud kue kum kur kus kvn kwf kxc kxm kyc kyf kyg kyq kzf laa lac lad lah lao las lat lav law lbe lcm ldn lee lef lem leu lew lex lez lfn lgg lhu lia lid lif lij lim lin lip lit liv ljp lkt lld lln lme lmo lnd lob lok lon lou lrc lsi ltz lua luc lug luo lus lut luy lzz maa mad mag mah mai maj mak mal mam maq mar mau maw max maz mbb mbf mbt mcb mcp mcu mda mdf med mee meh mek men meq mfe mfh mfi mfk mfq mfy mgd mgm mgo mhi mhl mhx mhy mib mic mie mif mig mih mil mio mit mix miy miz mjc mkd mks mlg mlh mlp mlt mmo mmx mna mnb mnf mnh mni mnr mnw moa mog moh mol mon mop mor mos mox mpg mpm mpt mpx mqb mqj mri mrj mrw msa msm mta muh mux muy mva mvp mvv mwc mwl mwm mwv mww mxb mxt mya myb myk myu myv myw myx mzk mzm mzn mzw mzz naf nak nap nas nau nav nbl nca nch ncj ncl ncu nde ndo nds ndz neb nep new nfr ngt ngu nhe nhg nhi nhn nhu nhw nhx nhy nia nif nii nij nim nin niu njm nlc nld nlv nmz nnb nnh nno nnw nob nog non nop nor not nou nov npi npl npy nqo nsn nso nss nst nsu ntm ntp ntr nuj nus nuy nwb nwi nya nyf nyn nyo ",
+  "tgt": "deu eng fra por spa"
+ },
+ "Helsinki-NLP/opus-mt-tc-bible-big-deu_eng_fra_por_spa-mul": {
+  "src": "deu eng fra por spa",
+  "tgt": "aai aar aau abi abk acd ace acf ach acm acn acr ade adj ady aeu aey afb afh_Latn afr agd agn agu ahk aia aka akh akl_Latn akp alj aln alp alq alt alz ame amh ami ami_Latn amk amu amu_Latn ang_Latn ann anp anv aoz apc apr apu ara arc arg arq arz asm aso ast atg atj atq aui auy ava avk_Latn avn avu awa awb awx aze_Cyrl aze_Latn azg azz azz_Latn bak bal bal_Latn bam bam_Latn ban bar bas bav bba bbo bbr bcl bcw bef beh bel bem ben bep bex bfa bfd bfo bgr bhl bho bhz bib bik bim bis biv bjr bjv bku bkv blh blt blz bmh bmk bmq bmu bmv bnp bod boj bom_Latn bos_Cyrl bos_Latn bov box bpr bps bpy bqc bqj bqp bre bru brx bss btd bth bto bts btt btx bua bud bug buk bul bus bvy_Latn bwq bwu byn bzd bzh bzj bzt_Latn caa cab cac cak cak_Latn cat cay cbk_Latn cce cco ceb ces cfm cgc cha che chf chm chq chq_Latn chr chu chv chy chz cjk cjk_Latn cjo cjp cjp_Latn cjv cjy_Hans cjy_Hant ckb cko cle cme cmn cmn_Hans cmn_Hant cmo cmr cnh cnh_Latn cni cni_Latn cnl cnr cnr_Latn cnt cnw cok cop cop_Copt cor cos cot cpa cpu cre cre_Latn crh crn crs crx csb csb_Latn csk cso csy cta ctd ctp ctu cuc cui cuk cut cux cwe cwt cya cym czt daa dad dag_Latn dah dan ded deu dga dgi dig dik din diq div dje djk djk_Latn dng dni dnj dob dop dop_Latn drt_Latn dsb dsh dtp dty dug dws_Latn dww dyi dyo dyu dzo efi egl ell emi eng enm_Latn epo ess est eus ewe ext fai fal fao far fas fij fil fin fkv_Latn fon for fra frd frm_Latn fro_Latn frp frr fry fuc ful fur gag gah gaw gbm gcf gcf_Latn gde gej gfk ghs gil gkn gla gle glg glk glv gnd gng gog gor gos got got_Goth gqr grc grc_Grek grn gsw guc gud guh guj guo gur guw guw_Latn gux gvf gvl gwi gwr gym gyr hag hat hau hau_Latn haw hay hbo hbo_Hebr hbs hbs_Cyrl hbs_Latn hch heb heh her hif hif_Latn hig hil hin hin_Latn hla hlt hmn hne hnj hnn hns hoc hoc_Wara hot hrv hrx_Latn hsb hsn hui hun hus hus_Latn hvn hwc hye hyw hyw_Armn hyw_Latn iba ibo icr ido_Latn ifa ifb ife ifk ifu ify ign igs_Latn iii ike_Latn iku iku_Latn ile_Latn ilo imo ina_Latn ind inh inh_Latn ino iou ipi ipk iri irk iry isl ita itv ium ixl ixl_Latn izh izr jaa jaa_Bopo jaa_Hira jaa_Kana jaa_Yiii jac jak_Latn jam jav jav_Java jbo jbo_Cyrl jbo_Latn jbu jdt_Cyrl jmc jpa_Hebr jpn jun jvn kaa kab kac kal kam kan kao kas_Arab kas_Deva kat kau kaz kaz_Cyrl kbd kbm kbp kbp_Cans kbp_Ethi kbp_Geor kbp_Grek kbp_Hang kbp_Latn kbp_Mlym kbp_Yiii kdc kdj kdl kdn kea kek kek_Latn ken keo ker keu kew kez kgf kgk kha khm khz kia kik kin kir_Cyrl kjb kje kjh kjs kki kkj kle kma kmb kmg kmh kmo kmr kmu knc kne knj knk kno kog koi kok kom kon kpf kpg kpr kpv kpw kpz kqe kqf kqp kqw krc kri krj krl kru ksb ksh ksr ktb ktj kua kub kud kue kum kur_Arab kur_Cyrl kur_Latn kus kvn kwf kxc kxm kyc kyf kyg kyq kzf laa_Latn lac lad lad_Latn lah lao las lat lat_Latn lav law lbe lcm ldn_Latn lee lef lem leu lew lex lez lfn_Cyrl lfn_Latn lgg lhu lia lid lif lij lim lin lip lit liv_Latn ljp lkt lld_Latn lln lme lmo lnd lob lok lon lou_Latn lrc lsi ltz lua luc lug luo lus lut_Latn luy lzz_Latn maa mad mag mah "
+ },
+ "Helsinki-NLP/opus-mt-tc-bible-big-mul-mul": {
+  "src": "aar abk ace ach acm ady afb afh afr aii ajp aka akl aln alt amh ami amu ang anp aoz apc ara arc arg arq arz asm ast atj ava avk awa ayl aze azz bak bal bam ban bar bas bcl bel bem ben bho bik bis bod bom bos bpy bre brx bua bug bul bvy byn bzt cak cat cay cbk ceb ces cha che chg chm chq chr chu chv chy cjk cjp cjy ckb cmn cnh cni cnr cop cor cos cre crh crk crs csb cym dag dan deu dik din diq div dje djk dng dop drt dsb dtp dty dws dyu dzo efi egl ell emx eng enm epo est eus evn ewe ext fao fas fij fil fin fkv fon fra frm fro frp frr fry fuc ful fur gag gbm gcf gil gla gle glg glk glv gor gos got grc grn gsw guc guj guw hat hau haw hbo hbs heb her hif hil hin hmn hne hnj hoc hrv hrx hsb hsn hun hus hye hyw iba ibo ido igs iii ike iku ile ilo ina ind inh ipk isl ita ixl izh jaa jak jam jav jbo jdt jpa jpn kaa kab kac kal kam kan kas kat kau kaz kbd kbp kea kek kha khm kik kin kir kiu kjh kmb kmr knc koi kok kom kon kpv krc krl ksh kua kum kur kxi laa lad lah lao lat lav lbe ldn lez lfn lij lim lin lit liv lkt lld lmo lou lrc ltz lua lug luo lus lut luy lzz mad mag mah mai mal mam mar max mdf meh mfa mfe mgm mic mix mkd mlg mlt mnc mni mnr mnw moh mol mon mos mri mrj msa mvv mwl mww mya myv mzn nap nau nav nbl nch nde nds nep new ngt ngu nhg nhn nia niu nld nlv nnb nno nob nog non nov npi nqo nso nst nus nya oar oci ofs oji ood ori orm orv osp oss ota otk pag pai pal pam pan pap pau pcd pck pcm pdc pes pfl phn pih pli plt pms pmy pnt pol por pot ppk ppl prg prs pus quc qxq qya rap rhg rif rmy roh rom ron rue run rup rus sag sah san sat scn sco sdh ses sgs shi shn shs shy sin sjn skr slk slv sma sme sml smn smo sna snd som sot spa sqi srd srn srp ssw stq sun swa swc swe swg swh syc syl syr szl tah tam taq tat tcy tel tet tgk tgl tha thv tig tir tkl tlh tly tmh tmr tmw toi ton tpi tpw trs trv tsn tso tts tuk tum tur tvl twi tyj tyv tzl tzm udm uig ukr umb urd usp uzb vec ven vep vie vls vol vot vro wae wal war wln wol wuu xal xcl xho xmf yid yor yua yue zam zap zea zgh zha zlm zsm zul zza",
+  "tgt": "aar abk ace ach acm ady afb afh_Latn afr aii_Syrc ajp aka akl_Latn aln alt amh ami ami_Latn amu_Latn ang_Latn anp aoz apc ara arc arg arq arz asm ast atj ava avk_Latn awa ayl aze_Cyrl aze_Latn azz azz_Latn bak bal bal_Latn bam_Latn ban bar bas bcl bel bem ben bho bik bis bod bom_Latn bos_Cyrl bos_Latn bpy bre brx bua bug bul bvy_Latn byn bzt_Latn cak cak_Latn cat cay cbk_Latn ceb ces cha che chg_Arab chg_Latn chm chq_Latn chr chu chv chy cjk cjk_Latn cjp_Latn cjy_Hans cjy_Hant ckb cmn cmn_Hans cmn_Hant cnh cnh_Latn cni_Latn cnr cnr_Latn cop cop_Copt cor cos cre cre_Latn crh crk crs csb csb_Latn cym dag_Latn dan deu dik din diq div dje djk djk_Latn dng dop_Latn drt_Latn dsb dtp dty dws_Latn dyu dzo efi egl ell emx_Latn eng enm_Latn epo est eus evn ewe ext fao fas fij fil fin fkv_Latn fon fra frm_Latn fro_Latn frp frr fry fuc ful fur gag gbm gcf gcf_Latn gil gla gle glg glk glv gor gos got got_Goth grc grc_Grek grn gsw guc guj guw guw_Latn hat hau_Latn haw hbo_Hebr hbs hbs_Cyrl hbs_Latn heb her hif_Latn hil hin hin_Latn hmn hne hnj hoc hoc_Wara hrv hrx_Latn hsb hsn hun hus hus_Latn hye hyw hyw_Armn hyw_Latn iba ibo ido_Latn igs_Latn iii ike_Latn iku_Latn ile ile_Latn ilo ina_Latn ind inh inh_Latn ipk isl ita ixl_Latn izh jaa jaa_Bopo jaa_Hira jaa_Kana jaa_Yiii jak_Latn jam jav jav_Java jbo jbo_Cyrl jbo_Latn jdt_Cyrl jpa_Hebr jpn kaa kab kac kal kam kan kas_Arab kas_Deva kat kau kaz kaz_Cyrl kbd kbp kbp_Cans kbp_Ethi kbp_Geor kbp_Grek kbp_Hang kbp_Latn kbp_Mlym kbp_Yiii kea kek kek_Latn kha khm kik kin kir_Cyrl kiu kjh kmb kmr knc koi kok kom kon kpv krc krl ksh kua kum kur_Arab kur_Cyrl kur_Latn kxi_Latn laa_Latn lad lad_Latn lah lao lat lat_Latn lav lbe ldn_Latn lez lfn_Cyrl lfn_Latn lij lim lin lit liv_Latn lkt lld_Latn lmo lou_Latn lrc ltz lua lug luo lus lut_Latn luy lzz_Geor lzz_Latn mad mag mah mai mal mam mam_Latn mar max_Latn mdf meh_Latn mfa mfe mgm_Latn mic mix mix_Latn mkd mlg mlt mnc_Mong mni mnr_Latn mnw moh mol mon mos mri mrj msa_Arab msa_Latn mvv_Latn mwl mww mya myv mzn nap nau nav nbl nch nde nds nep new ngt_Latn ngu ngu_Latn nhg_Latn nhn_Latn nia niu nld nlv_Latn nnb_Latn nno nob nog non nov_Latn npi nqo nso nst_Latn nus nya oar_Hebr oar_Syrc oci ofs_Latn oji_Latn ood_Latn ori orm orv_Cyrl osp_Latn oss ota_Arab ota_Latn ota_Rohg ota_Syrc ota_Thaa ota_Yezi otk otk_Orkh pag pai_Latn pal pam pan pan_Guru pap pau pcd pck_Latn pcm pdc pes pfl phn_Phnx pih pih_Latn pli plt pms pmy_Latn pnt_Grek pol por pot_Latn ppk_Latn ppl_Latn prg_Latn prs pus quc qxq_Arab qxq_Latn qya qya_Latn rap rhg_Latn rif_Latn rmy roh rom rom_Cyrl ron rue run rup rus sag sah san san_Deva sat sat_Latn scn sco sdh ses sgs shi_Latn shn shs_Latn shy_Latn sin sjn_Latn skr slk slv sma sme sml_Latn smn smo sna snd_Arab som sot spa sqi srd srn srp_Cyrl ssw stq sun swa swc swe swg swh syc_Syrc syl_Sylo syr szl tah tam taq tat tcy tel tet tgk_Cyrl tgk_Latn tgl tgl_Latn tgl_Tglg tha thv tig tir tkl tlh tlh_Latn tly_Latn tmh tmr_Hebr tmw_Latn toi toi_Latn ton tpi tpw_Latn "
+ }
+}

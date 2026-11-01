@@ -1,0 +1,159 @@
+{
+ "model": "/path/to/repo/gemma_mt/artifacts/tokswap_2026-10-25/control_geez_N3000",
+ "n_removed_ids": 3000,
+ "loss": {
+  "amh_Ethi": {
+   "n": 150,
+   "chars": 14369,
+   "n_identical_tokenisation": 150,
+   "orig_tokens": 8755,
+   "swapped_tokens": 8755,
+   "orig_nll_per_token": 2.2130788026436066,
+   "swapped_nll_per_token": 2.839793633461543,
+   "orig_nll_per_char": 1.3484240320930319,
+   "swapped_nll_per_char": 1.730279995890863,
+   "sentences_with_identical_token_count": 150,
+   "identical_sentences_full_nll_orig": 19375.504917144775,
+   "identical_sentences_full_nll_swapped": 24862.39326095581,
+   "identical_sentences_restricted_nll_orig": 19375.495695114136,
+   "identical_sentences_restricted_nll_swapped": 19375.495695114136,
+   "identical_sentences_max_abs_diff_full_nll": 131.07839965820312,
+   "identical_sentences_max_abs_diff_restricted_nll": 0.0
+  },
+  "tir_Ethi": {
+   "n": 150,
+   "chars": 14574,
+   "n_identical_tokenisation": 150,
+   "orig_tokens": 10655,
+   "swapped_tokens": 10655,
+   "orig_nll_per_token": 2.8580568006596954,
+   "swapped_nll_per_token": 3.749833614755717,
+   "orig_nll_per_char": 2.0895152470858416,
+   "swapped_nll_per_char": 2.7414901307274713,
+   "sentences_with_identical_token_count": 150,
+   "identical_sentences_full_nll_orig": 30452.595211029053,
+   "identical_sentences_full_nll_swapped": 39954.47716522217,
+   "identical_sentences_restricted_nll_orig": 30452.582458496094,
+   "identical_sentences_restricted_nll_swapped": 30452.582458496094,
+   "identical_sentences_max_abs_diff_full_nll": 145.7666015625,
+   "identical_sentences_max_abs_diff_restricted_nll": 0.0
+  },
+  "hau_Latn": {
+   "n": 150,
+   "chars": 22716,
+   "n_identical_tokenisation": 150,
+   "orig_tokens": 7721,
+   "swapped_tokens": 7721,
+   "orig_nll_per_token": 1.2365102229410465,
+   "swapped_nll_per_token": 1.2375344106098358,
+   "orig_nll_per_char": 0.42028065818488375,
+   "swapped_nll_per_char": 0.4206287719809184,
+   "sentences_with_identical_token_count": 150,
+   "identical_sentences_full_nll_orig": 9547.09543132782,
+   "identical_sentences_full_nll_swapped": 9555.003184318542,
+   "identical_sentences_restricted_nll_orig": 9547.06854724884,
+   "identical_sentences_restricted_nll_swapped": 9547.06854724884,
+   "identical_sentences_max_abs_diff_full_nll": 0.1596527099609375,
+   "identical_sentences_max_abs_diff_restricted_nll": 0.0
+  },
+  "yor_Latn": {
+   "n": 150,
+   "chars": 20556,
+   "n_identical_tokenisation": 150,
+   "orig_tokens": 10161,
+   "swapped_tokens": 10161,
+   "orig_nll_per_token": 2.2763037856621673,
+   "swapped_nll_per_token": 2.2791266871676554,
+   "orig_nll_per_char": 1.1251956979039346,
+   "swapped_nll_per_char": 1.1265910813538893,
+   "sentences_with_identical_token_count": 150,
+   "identical_sentences_full_nll_orig": 23129.52276611328,
+   "identical_sentences_full_nll_swapped": 23158.206268310547,
+   "identical_sentences_restricted_nll_orig": 23129.40389251709,
+   "identical_sentences_restricted_nll_swapped": 23129.40389251709,
+   "identical_sentences_max_abs_diff_full_nll": 1.0526123046875,
+   "identical_sentences_max_abs_diff_restricted_nll": 0.0
+  },
+  "swh_Latn": {
+   "n": 150,
+   "chars": 22489,
+   "n_identical_tokenisation": 150,
+   "orig_tokens": 7392,
+   "swapped_tokens": 7392,
+   "orig_nll_per_token": 0.9863020288737822,
+   "swapped_nll_per_token": 0.9866356142671593,
+   "orig_nll_per_char": 0.3241915868840321,
+   "swapped_nll_per_char": 0.3243012344107271,
+   "sentences_with_identical_token_count": 150,
+   "identical_sentences_full_nll_orig": 7290.744597434998,
+   "identical_sentences_full_nll_swapped": 7293.210460662842,
+   "identical_sentences_restricted_nll_orig": 7290.694773197174,
+   "identical_sentences_restricted_nll_swapped": 7290.694773197174,
+   "identical_sentences_max_abs_diff_full_nll": 0.07537078857421875,
+   "identical_sentences_max_abs_diff_restricted_nll": 0.0
+  },
+  "fon_Latn": {
+   "n": 150,
+   "chars": 24579,
+   "n_identical_tokenisation": 150,
+   "orig_tokens": 13048,
+   "swapped_tokens": 13048,
+   "orig_nll_per_token": 4.0007081882563345,
+   "swapped_nll_per_token": 4.00710227634189,
+   "orig_nll_per_char": 2.1238146564290106,
+   "swapped_nll_per_char": 2.1272090199645626,
+   "sentences_with_identical_token_count": 150,
+   "identical_sentences_full_nll_orig": 52201.24044036865,
+   "identical_sentences_full_nll_swapped": 52284.670501708984,
+   "identical_sentences_restricted_nll_orig": 52200.97225189209,
+   "identical_sentences_restricted_nll_swapped": 52200.97225189209,
+   "identical_sentences_max_abs_diff_full_nll": 2.6083984375,
+   "identical_sentences_max_abs_diff_restricted_nll": 0.0
+  }
+ },
+ "gen": {
+  "hau_Latn": {
+   "n": 25,
+   "token_id_identical": 25,
+   "text_identical": 25,
+   "chrF++_original_vs_ref": 50.40250001731484,
+   "chrF++_swapped_vs_ref": 50.40250001731484,
+   "chrF++_swapped_vs_original_output": 100.0,
+   "orig_gen_tokens_mean": 46.08,
+   "swapped_gen_tokens_mean": 46.08,
+   "examples": []
+  },
+  "amh_Ethi": {
+   "n": 25,
+   "token_id_identical": 18,
+   "text_identical": 18,
+   "chrF++_original_vs_ref": 14.760527337034477,
+   "chrF++_swapped_vs_ref": 14.805046048403975,
+   "chrF++_swapped_vs_original_output": 91.43671352215831,
+   "orig_gen_tokens_mean": 73.64,
+   "swapped_gen_tokens_mean": 73.76,
+   "examples": [
+    {
+     "src": "On Monday, scientists from the Stanford University School of Medicine announced the invention of a new diagnostic tool t",
+     "orig": "ዶክተር ሻንቲን ዴንሰሮን የጤና ጥበቃ ትምህርት ቤት የሶንደፍ ዩኒቨርሲቲ የህክምና ትምህርት ቤት መሠረት የሰነዘር ኬሚካሎችን በየመደቡ ኬሚካላዊ ኬሚካላዊ ኬሚካላዊ ኬሚካላዊ ኬሚካላዊ ኬሚካላዊ ኬሚካላዊ ኬሚካላዊ ኬሚካላዊ ኬሚካላዊ ኬሚካላዊ ኬሚካላዊ ኬሚካላዊ ኬሚካላዊ ኬሚካላዊ ኬሚካ",
+     "swapped": "ዶክተር ሻንቲን ዴንሰሮን የጤና ጥበቃ ትምህርት ቤት የሶንደፍ ዩኒቨርሲቲ የህክምና ትምህርት ቤት መሠረት የሰነዘር ኬሚካሎችን በየመደቡ ኬሚካላዊ ኬ<unused2642>ኮል ኬሚካላዊ ኬሚካላዊ ኬሚካላዊ ኬሚካላዊ ኬሚካላዊ ኬሚካላዊ ኬሚካላዊ ኬሚካላዊ ኬሚካላዊ ኬሚካላዊ ኬሚካላዊ ኬሚካላዊ ኬሚካላዊ ኬሚካላ"
+    },
+    {
+     "src": "28-year-old Vidal had joined Barça three seasons ago, from Sevilla.",
+     "orig": "28 ዓመት የሆኑት ቪልድ ከሳዊፈ ሦስት ጊዜያት በፊት በቤርካ ተቀላቀሉ፡፡",
+     "swapped": "28 ዓመት የሆኑት ቪልድ ከሳዊፈ ሦስት ጊዜያት በፊት በቤ<unused1010>ን ተሳለዋል፡፡"
+    },
+    {
+     "src": "Since moving to the Catalan-capital, Vidal had played 49 games for the club.",
+     "orig": "ወደ ካታሊናዋዊው ዋና ከተማ በመሄድ ቪድል ለኩለቡ 49 ጨዋታዎችን ተጫውቷል፡፡",
+     "swapped": "ወደ ካታሊ<unused270>ዋይ ዋና ከተማ በመሄድ ቪድል ለኩለቡ 49 ጨዋታዎችን ተጫውቷል፡፡"
+    },
+    {
+     "src": "Around 11:29, the protest moved up Whitehall, past Trafalgar Square, along the Strand, passing by Aldwych and up Kingswa",
+     "orig": "በ11:29 ላይ የፖረዚን ድምፅ በሜላስልስን፣ በታንትስስ ላይ፣ በሰርልስ ላይ፣ በአልዶይክ እና በንጉሡ ጃንደረስ ላይ በሄደው ወደ ሖልቦር በኩል ሲሄድ የኮረሲቲ ፓርቲ በገጠመው የሰሜን ጆሮ ሆቴል ውስጥ ያካሄዱትን የነገሮች ፖረዚን ድምፅ አድራጊነትን አድርገው አቀረበ።",
+     "swapped": "በ11:29 ላይ የፖረዚን ድምፅ በሜላስልስን፣ በታ<unused608>ፊልትስስ ሬስድስን፣ በሰንተር አጠገብ፣ በአልዶይክ እና በንጉሡ ጃልባ ላይ በሄዱት በሃሎብ ውስጥ የኮረሲቲ ፓርቲ በገጠመው ሮማን ኮንግንኮል ሆቴል ውስጥ ያካሄዱትን የነገሮች አዋጅ አውድማዎች አድራጊነት አድርገው ነበር።"
+    }
+   ]
+  }
+ }
+}

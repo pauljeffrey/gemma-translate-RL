@@ -1,0 +1,2 @@
+[638s] loss amh_Ethi: tok/sent 58.4->58.4  nll/token 2.2131->2.2131 nll/char 1.3484->1.3484  identical-tokenisation sentences 150/150 restricted-diff max 0 full-diff max 0.0322
+[1033s] loss hau_Latn: tok/sent 51.5->51.5  nll/token 1.2365->1.2368 nll/char 0.4203->0.4204  identical-tokenisation sentences 150/150 restricted-diff max 0 full-diff max 0.124

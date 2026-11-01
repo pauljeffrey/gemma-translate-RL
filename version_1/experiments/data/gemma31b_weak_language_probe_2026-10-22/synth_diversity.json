@@ -1,0 +1,223 @@
+{
+ "kea": {
+  "n_pairs": 2515,
+  "curve": [
+   {
+    "pairs": 250,
+    "types": 2922,
+    "bigrams": 7530,
+    "new_types_per_100_pairs": 1168.8,
+    "new_bigrams_per_100_pairs": 3012.0
+   },
+   {
+    "pairs": 500,
+    "types": 4766,
+    "bigrams": 14075,
+    "new_types_per_100_pairs": 737.6,
+    "new_bigrams_per_100_pairs": 2618.0
+   },
+   {
+    "pairs": 750,
+    "types": 6313,
+    "bigrams": 19996,
+    "new_types_per_100_pairs": 618.8,
+    "new_bigrams_per_100_pairs": 2368.4
+   },
+   {
+    "pairs": 1000,
+    "types": 7643,
+    "bigrams": 25559,
+    "new_types_per_100_pairs": 532.0,
+    "new_bigrams_per_100_pairs": 2225.2
+   },
+   {
+    "pairs": 1250,
+    "types": 8818,
+    "bigrams": 30793,
+    "new_types_per_100_pairs": 470.0,
+    "new_bigrams_per_100_pairs": 2093.6
+   },
+   {
+    "pairs": 1500,
+    "types": 9858,
+    "bigrams": 35652,
+    "new_types_per_100_pairs": 416.0,
+    "new_bigrams_per_100_pairs": 1943.6
+   },
+   {
+    "pairs": 1750,
+    "types": 10853,
+    "bigrams": 40666,
+    "new_types_per_100_pairs": 398.0,
+    "new_bigrams_per_100_pairs": 2005.6
+   },
+   {
+    "pairs": 2000,
+    "types": 11827,
+    "bigrams": 45544,
+    "new_types_per_100_pairs": 389.6,
+    "new_bigrams_per_100_pairs": 1951.2
+   },
+   {
+    "pairs": 2250,
+    "types": 12808,
+    "bigrams": 50307,
+    "new_types_per_100_pairs": 392.4,
+    "new_bigrams_per_100_pairs": 1905.2
+   },
+   {
+    "pairs": 2500,
+    "types": 13726,
+    "bigrams": 54971,
+    "new_types_per_100_pairs": 367.2,
+    "new_bigrams_per_100_pairs": 1865.6
+   },
+   {
+    "pairs": 2515,
+    "types": 13779,
+    "bigrams": 55234,
+    "new_types_per_100_pairs": 353.3,
+    "new_bigrams_per_100_pairs": 1753.3
+   }
+  ],
+  "distinct_equal_size": {
+   "1": {
+    "synth": 0.24185,
+    "pool": 0.0827
+   },
+   "2": {
+    "synth": 0.7268863443172159,
+    "pool": 0.5062253112655632
+   },
+   "3": {
+    "synth": 0.9444944494449445,
+    "pool": 0.8281328132813282
+   }
+  },
+  "vocab_types_synth": 13779,
+  "vocab_types_pool": 2611,
+  "share_synth_types_not_in_pool": 0.906234124392191,
+  "exact_dup_targets": 0.0,
+  "src_licence": {
+   "cc-by": 1003,
+   "odc-by": 376,
+   "apache-2.0": 375,
+   "share_alike": 358,
+   "cc0-1.0": 303,
+   "cc0": 100
+  },
+  "src_dataset": {
+   "HuggingFaceFW/fineweb-edu:sample-10BT": 376,
+   "dsfsi/afriscience_mt:train(en)": 375,
+   "common-pile/arxiv_papers": 373,
+   "common-pile/pubmed": 367,
+   "common-pile/libretexts": 363,
+   "wikimedia/wikipedia:20231101.en": 358,
+   "gfissore/arxiv-abstracts-2021": 303
+  },
+  "domain": {
+   "science": 1781,
+   "general": 734
+  }
+ },
+ "kri": {
+  "n_pairs": 1887,
+  "curve": [
+   {
+    "pairs": 250,
+    "types": 2668,
+    "bigrams": 7483,
+    "new_types_per_100_pairs": 1067.2,
+    "new_bigrams_per_100_pairs": 2993.2
+   },
+   {
+    "pairs": 500,
+    "types": 4385,
+    "bigrams": 13508,
+    "new_types_per_100_pairs": 686.8,
+    "new_bigrams_per_100_pairs": 2410.0
+   },
+   {
+    "pairs": 750,
+    "types": 5843,
+    "bigrams": 19130,
+    "new_types_per_100_pairs": 583.2,
+    "new_bigrams_per_100_pairs": 2248.8
+   },
+   {
+    "pairs": 1000,
+    "types": 7051,
+    "bigrams": 24156,
+    "new_types_per_100_pairs": 483.2,
+    "new_bigrams_per_100_pairs": 2010.4
+   },
+   {
+    "pairs": 1250,
+    "types": 8166,
+    "bigrams": 29058,
+    "new_types_per_100_pairs": 446.0,
+    "new_bigrams_per_100_pairs": 1960.8
+   },
+   {
+    "pairs": 1500,
+    "types": 9293,
+    "bigrams": 33828,
+    "new_types_per_100_pairs": 450.8,
+    "new_bigrams_per_100_pairs": 1908.0
+   },
+   {
+    "pairs": 1750,
+    "types": 10331,
+    "bigrams": 38525,
+    "new_types_per_100_pairs": 415.2,
+    "new_bigrams_per_100_pairs": 1878.8
+   },
+   {
+    "pairs": 1887,
+    "types": 10839,
+    "bigrams": 40885,
+    "new_types_per_100_pairs": 370.8,
+    "new_bigrams_per_100_pairs": 1722.6
+   }
+  ],
+  "distinct_equal_size": {
+   "1": {
+    "synth": 0.1931,
+    "pool": 0.0574
+   },
+   "2": {
+    "synth": 0.6051802590129507,
+    "pool": 0.40047002350117505
+   },
+   "3": {
+    "synth": 0.8831883188318832,
+    "pool": 0.7605760576057605
+   }
+  },
+  "vocab_types_synth": 10839,
+  "vocab_types_pool": 1789,
+  "share_synth_types_not_in_pool": 0.9093089768428821,
+  "exact_dup_targets": 0.0,
+  "src_licence": {
+   "cc-by": 730,
+   "share_alike": 285,
+   "apache-2.0": 276,
+   "odc-by": 271,
+   "cc0-1.0": 269,
+   "cc0": 56
+  },
+  "src_dataset": {
+   "wikimedia/wikipedia:20231101.en": 285,
+   "dsfsi/afriscience_mt:train(en)": 276,
+   "HuggingFaceFW/fineweb-edu:sample-10BT": 271,
+   "common-pile/arxiv_papers": 269,
+   "gfissore/arxiv-abstracts-2021": 269,
+   "common-pile/pubmed": 263,
+   "common-pile/libretexts": 254
+  },
+  "domain": {
+   "science": 1331,
+   "general": 556
+  }
+ }
+}

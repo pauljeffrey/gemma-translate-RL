@@ -1,0 +1,56 @@
+{
+ "pivot_en_all": {
+  "directions": 5852,
+  "ge1": 5640,
+  "ge100": 4806,
+  "ge1k": 4086,
+  "ge10k": 2362,
+  "ge100k": 128,
+  "total": 102902360
+ },
+ "pivot_en_without_religious_or_synthetic": {
+  "directions": 5852,
+  "ge1": 3672,
+  "ge100": 2272,
+  "ge1k": 1100,
+  "ge10k": 478,
+  "ge100k": 44,
+  "total": 27003532
+ },
+ "pivot_en_human_curated_only": {
+  "directions": 5852,
+  "ge1": 846,
+  "ge100": 280,
+  "ge1k": 124,
+  "ge10k": 18,
+  "ge100k": 0,
+  "total": 785854
+ },
+ "direct_rows_of_the_sft_corpus": {
+  "directions": 5852,
+  "ge1": 1232,
+  "ge100": 198,
+  "ge1k": 158,
+  "ge10k": 70,
+  "ge100k": 4,
+  "total": 2114506
+ },
+ "NOT_HELD_nllb_mined_michsethowusu_catalogue": {
+  "directions": 5852,
+  "ge1": 1002,
+  "ge100": 1002,
+  "ge1k": 1002,
+  "ge10k": 994,
+  "ge100k": 544,
+  "total": 221736070
+ },
+ "built_dataset_pairs": {
+  "directions": 5852,
+  "ge1": 5618,
+  "ge100": 4636,
+  "ge1k": 3854,
+  "ge10k": 0,
+  "ge100k": 0,
+  "total": 13366634
+ }
+}

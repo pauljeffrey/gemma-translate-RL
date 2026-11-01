@@ -1,0 +1,86 @@
+language,name,trained,afri_status,ssa_set,long_docs_rows,long_docs_afri_qe_n,long_docs_ssa_qe_n,bench_sentence_rows,bench_benchmarks,bench_afri_qe_n,bench_ssa_qe_n,bench_afri_ref_n,bench_ssa_ref_n,bench_chrf_n
+yor,Yoruba,True,validated,True,414,414,414,7243,AfriScience-MT dev;AfriScience-MT test;FLORES+ devtest;MAFAND-MT test;NTREX-128;SmolSent (Google SMOL),7243,7243,7243,7243,7243
+hau,Hausa,True,validated,True,414,414,414,7185,AfriScience-MT dev;AfriScience-MT test;FLORES+ devtest;MAFAND-MT test;NTREX-128;SmolSent (Google SMOL),7185,7185,7185,7185,7185
+ibo,Igbo,True,validated,True,414,414,414,5872,FLORES+ devtest;MAFAND-MT test;NTREX-128;SALT text-all test;SmolSent (Google SMOL),5872,5872,5872,5872,5872
+pcm,Pidgin,True,validated,False,414,414,0,2427,MAFAND-MT test;SmolSent (Google SMOL),2427,0,2427,0,2427
+efi,Efik,True,validated,False,414,414,0,863,SmolSent (Google SMOL),863,0,863,0,863
+twi,Twi,True,validated,True,414,414,414,3375,FLORES+ devtest;MAFAND-MT test;SmolSent (Google SMOL),3375,3375,3375,3375,3375
+ewe,Ewe,True,validated,True,414,414,414,3872,FLORES+ devtest;NTREX-128;SmolSent (Google SMOL),3872,3872,3872,3872,3872
+fon,Fon,True,validated,False,414,414,0,1875,FLORES+ devtest;SmolSent (Google SMOL),1875,0,1875,0,1875
+wol,Wolof,True,validated,True,414,414,414,3872,FLORES+ devtest;NTREX-128;SmolSent (Google SMOL),3872,3872,3872,3872,3872
+swh,Swahili,True,validated,True,414,414,414,6207,FLORES+ devtest;MAFAND-MT test;NTREX-128;SALT text-all test;SmolSent (Google SMOL),6207,6207,6207,6207,6207
+kin,Kinyarwanda,True,validated,True,414,414,414,4878,FLORES+ devtest;MAFAND-MT test;NTREX-128;SmolSent (Google SMOL),4878,4878,4878,4878,4878
+som,Somali,True,validated,True,414,414,414,3871,FLORES+ devtest;NTREX-128;SmolSent (Google SMOL),3871,3871,3871,3871,3871
+orm,Oromo,True,validated,True,414,414,414,3872,FLORES+ devtest;NTREX-128;SmolSent (Google SMOL),3872,3872,3872,3872,3872
+amh,Amharic,True,validated,True,414,414,414,6722,AfriScience-MT dev;AfriScience-MT test;FLORES+ devtest;MAFAND-MT test;NTREX-128;SmolSent (Google SMOL),6722,6722,6722,6722,6722
+tir,Tigrinya,True,validated,True,414,414,414,3872,FLORES+ devtest;NTREX-128;SmolSent (Google SMOL),3872,3872,3872,3872,3872
+lug,Luganda,True,validated,True,414,414,414,5688,AfriScience-MT dev;AfriScience-MT test;FLORES+ devtest;MAFAND-MT test;SALT text-all test;SmolSent (Google SMOL),5688,5688,5688,5688,5688
+lin,Lingala,True,validated,True,414,414,414,1875,FLORES+ devtest;SmolSent (Google SMOL),1875,1875,1875,1875,1875
+zul,Zulu,True,validated,True,414,414,414,6683,AfriScience-MT dev;AfriScience-MT test;FLORES+ devtest;MAFAND-MT test;NTREX-128;SmolSent (Google SMOL),6683,6683,6683,6683,6683
+xho,Xhosa,True,validated,True,414,414,414,4874,FLORES+ devtest;MAFAND-MT test;NTREX-128;SmolSent (Google SMOL),4874,4874,4874,4874,4874
+afr,Afrikaans,True,validated,True,414,414,414,3872,FLORES+ devtest;NTREX-128;SmolSent (Google SMOL),3872,3872,3872,3872,3872
+sna,Shona,True,validated,True,414,414,414,4877,FLORES+ devtest;MAFAND-MT test;NTREX-128;SmolSent (Google SMOL),4877,4877,4877,4877,4877
+nya,Chichewa,True,validated,True,414,414,414,4876,FLORES+ devtest;MAFAND-MT test;NTREX-128;SmolSent (Google SMOL),4876,4876,4876,4876,4876
+sot,Sesotho,True,validated,True,414,414,414,1875,FLORES+ devtest;SmolSent (Google SMOL),1875,1875,1875,1875,1875
+tsn,Setswana,True,validated,True,414,414,414,5372,FLORES+ devtest;MAFAND-MT test;NTREX-128;SmolSent (Google SMOL),5372,5372,5372,5372,5372
+mlg,Malagasy,True,validated,True,414,414,414,3872,FLORES+ devtest;NTREX-128;SmolSent (Google SMOL),3872,3872,3872,3872,3872
+ibb,Ibibio,True,not_covered,False,414,0,0,0,,0,0,0,0,0
+urh,Urhobo,True,not_covered,False,414,0,0,0,,0,0,0,0,0
+bem,Bemba,True,validated,False,414,414,0,3872,FLORES+ devtest;NTREX-128;SmolSent (Google SMOL),3872,0,3872,0,3872
+tum,Tumbuka,True,validated,False,414,414,0,1875,FLORES+ devtest;SmolSent (Google SMOL),1875,0,1875,0,1875
+run,Kirundi,True,validated,False,414,414,0,1875,FLORES+ devtest;SmolSent (Google SMOL),1875,0,1875,0,1875
+ven,Venda,True,listed,False,414,414,0,2860,NTREX-128;SmolSent (Google SMOL),2860,0,2860,0,2860
+tso,Tsonga,True,validated,False,414,414,0,1875,FLORES+ devtest;SmolSent (Google SMOL),1875,0,1875,0,1875
+nso,Sepedi,True,validated,False,414,414,0,5685,AfriScience-MT dev;AfriScience-MT test;FLORES+ devtest;NTREX-128;SmolSent (Google SMOL),5685,0,5685,0,5685
+ssw,Swati,True,validated,False,414,414,0,3872,FLORES+ devtest;NTREX-128;SmolSent (Google SMOL),3872,0,3872,0,3872
+nbl,South Ndebele,True,not_covered,False,414,0,0,1184,GlotStoryBook;SmolSent (Google SMOL),0,0,0,0,1184
+nde,North Ndebele,False,not_covered,False,0,0,0,1997,NTREX-128,0,0,0,0,1997
+sag,Sango,True,listed,False,414,414,0,1012,FLORES+ devtest,1012,0,1012,0,1012
+tiv,Tiv,True,listed,False,414,414,0,863,SmolSent (Google SMOL),863,0,863,0,863
+umb,Umbundu,True,validated,False,414,414,0,1012,FLORES+ devtest,1012,0,1012,0,1012
+kmb,Kimbundu,True,validated,False,414,414,0,1012,FLORES+ devtest,1012,0,1012,0,1012
+mos,Mossi,True,validated,False,414,414,0,1875,FLORES+ devtest;SmolSent (Google SMOL),1875,0,1875,0,1875
+kik,Kikuyu,True,validated,False,414,414,0,1875,FLORES+ devtest;SmolSent (Google SMOL),1875,0,1875,0,1875
+luo,Luo,True,validated,False,414,414,0,3375,FLORES+ devtest;MAFAND-MT test;SmolSent (Google SMOL),3375,0,3375,0,3375
+kam,Kamba,True,validated,False,414,414,0,1012,FLORES+ devtest,1012,0,1012,0,1012
+bin,Edo,True,not_covered,False,414,0,0,0,,0,0,0,0,0
+dag,Dagbani,True,not_covered,False,414,0,0,135,GlotStoryBook,0,0,0,0,135
+oke,Okpe,True,not_covered,False,414,0,0,0,,0,0,0,0,0
+shi,Tachelhit,True,not_covered,False,414,0,0,1997,NTREX-128,0,0,0,0,1997
+dyu,Dyula,True,listed,False,414,414,0,1875,FLORES+ devtest;SmolSent (Google SMOL),1875,0,1875,0,1875
+bam,Bambara,True,validated,False,414,414,0,1875,FLORES+ devtest;SmolSent (Google SMOL),1875,0,1875,0,1875
+kbp,Kabiye,True,validated,False,414,414,0,1012,FLORES+ devtest,1012,0,1012,0,1012
+bbj,Ghomala,True,not_covered,False,414,0,0,0,,0,0,0,0,0
+kon,Kongo,True,listed,False,414,414,0,863,SmolSent (Google SMOL),863,0,863,0,863
+kea,Kabuverdianu,True,not_covered,False,414,0,0,1012,FLORES+ devtest,0,0,0,0,1012
+fat,Fante,False,not_covered,False,0,0,0,0,,0,0,0,0,0
+knc,Kanuri,False,not_covered,False,0,0,0,1012,FLORES+ devtest,0,0,0,0,1012
+gaa,Ga,False,not_covered,False,0,0,0,0,,0,0,0,0,0
+kab,Kabyle,True,validated,False,414,414,0,1874,FLORES+ devtest;SmolSent (Google SMOL),1874,0,1874,0,1874
+nus,Nuer,True,validated,False,414,414,0,1012,FLORES+ devtest,1012,0,1012,0,1012
+swc,Congo Swahili,True,listed,False,414,414,0,0,,0,0,0,0,0
+lua,Luba-Kasai,True,validated,False,414,414,0,1012,FLORES+ devtest,1012,0,1012,0,1012
+kqn,Kaonde,True,listed,False,414,414,0,420,GlotStoryBook,420,0,420,0,420
+lun,Lunda,True,listed,False,414,414,0,420,GlotStoryBook,420,0,420,0,420
+iso,Isoko,True,listed,False,414,414,0,0,,0,0,0,0,0
+loz,Lozi,True,listed,False,414,414,0,960,GlotStoryBook,960,0,960,0,960
+wal,Wolaytta,True,listed,False,414,414,0,0,,0,0,0,0,0
+ach,Acholi,True,not_covered,False,414,0,0,1363,SALT text-all test;SmolSent (Google SMOL),0,0,0,0,1363
+tsc,Tswa,True,not_covered,False,414,0,0,101,GlotStoryBook,0,0,0,0,101
+vmw,Makhuwa,True,not_covered,False,414,0,0,1012,FLORES+ devtest,0,0,0,0,1012
+kua,Kuanyama,True,listed,False,414,414,0,520,GlotStoryBook,520,0,520,0,520
+seh,Sena,True,not_covered,False,414,0,0,0,,0,0,0,0,0
+nyn,Nyankore,True,not_covered,False,414,0,0,1363,SALT text-all test;SmolSent (Google SMOL),0,0,0,0,1363
+her,Herero,True,not_covered,False,414,0,0,549,GlotStoryBook,0,0,0,0,549
+yao,Yao,True,not_covered,False,414,0,0,0,,0,0,0,0,0
+sid,Sidamo,True,not_covered,False,414,0,0,0,,0,0,0,0,0
+ndc,Ndau,True,not_covered,False,414,0,0,863,SmolSent (Google SMOL),0,0,0,0,863
+men,Mende,False,not_covered,False,0,0,0,0,,0,0,0,0,0
+kri,Krio,True,not_covered,False,414,0,0,863,SmolSent (Google SMOL),0,0,0,0,863
+luy,Luyia,False,not_covered,False,0,0,0,0,,0,0,0,0,0
+ish,Esan,True,not_covered,False,414,0,0,0,,0,0,0,0,0
+dua,Duala,True,not_covered,False,414,0,0,0,,0,0,0,0,0
+bas,Basaa,True,not_covered,False,414,0,0,0,,0,0,0,0,0
+wes,Cameroon Pidgin,True,not_covered,False,414,0,0,0,,0,0,0,0,0
+tzm,Tamazight,False,not_covered,False,0,0,0,0,,0,0,0,0,0
+ful,Fulah,False,not_covered,False,0,0,0,0,,0,0,0,0,0

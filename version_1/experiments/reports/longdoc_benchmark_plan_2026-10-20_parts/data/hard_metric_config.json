@@ -1,0 +1,186 @@
+{
+ "version": "0.1",
+ "note": "string-level checks; none of them proves that a translation is correct (see the module docstring)",
+ "numbers": {
+  "small_int_max": 10,
+  "year_range": [
+   1000,
+   2100
+  ],
+  "thousands_separators_source": [
+   ","
+  ],
+  "decimal_separators_source": [
+   "."
+  ],
+  "target_conventions": [
+   "en: 1,234.5",
+   "eu: 1.234,5",
+   "space: 1 234,5 (no-break / thin / narrow no-break space only)"
+  ],
+  "units": [
+   "%",
+   "°C",
+   "°F",
+   "K",
+   "mg",
+   "g",
+   "kg",
+   "ug",
+   "ml",
+   "l",
+   "mmol",
+   "mol",
+   "mmHg",
+   "cm",
+   "mm",
+   "m",
+   "km",
+   "Hz",
+   "kHz",
+   "MHz",
+   "GHz",
+   "J",
+   "kJ",
+   "W",
+   "kW",
+   "V",
+   "mV",
+   "A",
+   "mA",
+   "eV",
+   "s",
+   "ms",
+   "h",
+   "min",
+   "bp",
+   "kb",
+   "Mb",
+   "Gb",
+   "IU",
+   "$",
+   "€",
+   "£",
+   "USD",
+   "EUR",
+   "GBP"
+  ],
+  "unit_note": "symbols only; unit WORDS (years, days, percent, dollars) are translated and therefore not checked",
+  "any_numeric_error_strict": "recall < 1 or precision < 1 on the multiset of numerals",
+  "any_numeric_error_lenient": "as strict, ignoring integers <= small_int_max (they may be spelled out) on both sides"
+ },
+ "protected": {
+  "classes": {
+   "us_cite": {
+    "regex": "\\b\\d{1,3}\\s+(?:U\\.S\\.C\\.|C\\.F\\.R\\.|U\\.S\\.|S\\.\\s?Ct\\.|F\\.(?:2d|3d|4th)?|F\\.\\s?Supp\\.(?:\\s?[23]d)?|L\\.\\s?Ed\\.(?:\\s?2d)?|N\\.[EW]\\.(?:2d|3d)?|P\\.(?:2d|3d)?|A\\.(?:2d|3d)?|So\\.(?:\\s?[23]d)?)\\s+(?:§\\s?)?\\d+(?:\\.\\d+)?",
+    "latin_only": false,
+    "note": "123 U.S.C. 456, 410 U.S. 113, 5 F.3d 100"
+   },
+   "eu_number": {
+    "regex": "\\b\\d{1,4}/\\d{2,4}(?:/(?:EU|EC|EEC|CFSP|EURATOM))?\\b|\\b[CT]-\\d+/\\d+\\b",
+    "latin_only": false,
+    "note": "2016/635, 2011/833/EU, C-123/45"
+   },
+   "statute_ref": {
+    "regex": "(?:§+\\s?|\\b(?:Sections?|Sec\\.|Articles?|Art\\.|Rules?|Clauses?|Paragraphs?|Chapters?|Annex(?:es)?|Schedules?|Parts?|Regulations?|Directives?)\\s)\\d+[A-Za-z]?(?:\\.\\d+)*(?:\\([A-Za-z0-9]+\\))*",
+    "latin_only": false,
+    "value_group": "locator",
+    "note": "reference locator after the keyword is checked (Section 5(1)(a), Article 12); the keyword itself is translated"
+   },
+   "citation_bracket": {
+    "regex": "\\[\\d{1,3}(?:\\s*[–\\-,]\\s*\\d{1,3})*\\]",
+    "latin_only": false,
+    "note": "numeric citation markers [12], [3-5], [1,2]"
+   },
+   "citation_author_year": {
+    "regex": "\\([A-Z][A-Za-z\\-]+(?:\\s+et al\\.?|\\s+and\\s+[A-Z][A-Za-z\\-]+)?,?\\s+(?:19|20)\\d\\d[a-z]?\\)",
+    "latin_only": true,
+    "note": "(Smith et al., 2019): copied for Latin-script targets"
+   },
+   "url": {
+    "regex": "(?:https?://|www\\.)[^\\s<>\\\"')\\]]+",
+    "latin_only": false,
+    "note": "the documents of the split contain none (removed); kept for other uses of the metric"
+   },
+   "chem_gene": {
+    "regex": "\\b(?:[A-Z][a-z]?\\d+(?:[A-Z][a-z]?\\d*)*[+\\-]{0,2}|[A-Z]{1,5}-\\d+[A-Za-z]?|[A-Za-z]{2,5}-[A-Z]{2,4}\\d?)\\b",
+    "latin_only": false,
+    "note": "CO2, H2O, CD4, IL-6, COVID-19, SARS-CoV, Ca2+"
+   },
+   "drug": {
+    "regex": "\\b[a-z]{3,}(?:mab|nib|vir|cillin|mycin|statin|pril|sartan|olol|azole|prazole|dipine|oxetine|formin|gliptin|parin|caine|profen|barbital|azepam|triptan|tidine|floxacin|cycline|thiazide|setron|lukast|terol|sone|olone)s?\\b",
+    "latin_only": true,
+    "note": "INN-style stems (heuristic): imatinib, amoxicillin, atorvastatin ..."
+   },
+   "latin_name": {
+    "regex": "\\b(?:[A-Z][a-z]{3,}\\s+[a-z]{4,}(?:us|um|ae|is|ii|ensis|icus|ans|ens|ata|ica|i)|[A-Z]\\.\\s?[a-z]{4,}(?:us|um|ae|is|ii|i|a))\\b",
+    "latin_only": true,
+    "note": "binomials (heuristic: capitalised genus + Latin-looking epithet): Plasmodium falciparum, E. coli; sentence-initial false positives are possible"
+   },
+   "acronym": {
+    "regex": "\\b[A-Z][A-Z0-9]{1,7}\\b",
+    "latin_only": false,
+    "note": "all-caps tokens of 2-8 characters (WHO, DNA, BRCA1, USD); roman numerals included"
+   }
+  },
+  "latin_script_min_share": 0.8,
+  "latin_only_note": "classes marked latin_only are scored only when >= 80% of the letters of the translation are Latin/Greek (names are transliterated in other scripts)"
+ },
+ "formulas": {
+  "spans": [
+   "$..$",
+   "$$..$$",
+   "\\(..\\)",
+   "\\[..\\]",
+   "LaTeX math environments",
+   "<math>..</math> (MathML)"
+  ],
+  "compared_on": "content without delimiters and white space",
+  "exact_share": "multiset overlap / number of source spans",
+  "order": "longest common subsequence of the span sequence / number of source spans; edit distance of the sequence"
+ },
+ "term_consistency": {
+  "min_occurrences": 3,
+  "max_terms": 20,
+  "min_contrast": 0.3,
+  "rendering_prefix_chars": 5,
+  "top_common_target_words_ignored": 40,
+  "common_word_share": 0.6,
+  "heuristic": "word-alignment-free: for each English term (1-2 content words, >= 3 occurrences in sentences/beads), the candidate rendering is a target word (5-character prefix, for inflection) whose contrast (share of the term's beads containing it minus share of the other beads containing it) is >= min_contrast; the one covering most of the term's beads is the modal rendering; consistency = share of the term's beads that contain it. Undetermined terms (contrast < min_contrast) are not counted. The same statistic is computed on the reference as a baseline."
+ },
+ "modality": {
+  "cues": {
+   "negation": [
+    "not",
+    "no",
+    "never",
+    "cannot",
+    "without",
+    "neither",
+    "nor"
+   ],
+   "obligation": [
+    "must",
+    "shall",
+    "required",
+    "prohibited"
+   ],
+   "permission": [
+    "may"
+   ]
+  },
+  "lexicon_learning": {
+   "min_support": 12,
+   "min_contrast": 0.35,
+   "top_tokens_per_cue": 2
+  },
+  "short_ratio_vs_ref": 0.6,
+  "note": "a FLAG LIST for human audit, not a score: a bead is flagged when the source bead has a cue, and the learned target equivalent(s) of the cue (learned from the sentence-aligned reference) occur in the reference bead but not in the translation bead, or (no lexicon) the translation bead is much shorter than the reference bead"
+ },
+ "bootstrap": {
+  "n_boot": 1000,
+  "seed": 0,
+  "alpha": 0.05,
+  "resampling_unit": "document"
+ }
+}

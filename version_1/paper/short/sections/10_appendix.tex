@@ -1,0 +1,150 @@
+\section{Reward: formulas and calibration facts}\label{app:reward}
+% Long paper: Appendix C, D, B
+\paragraph{Shaping.} With per-language anchors $(t_{\rm fail},t_{\rm mid},t_{\rm great})$ the shaped reward is the piecewise-linear interpolation through $(0,-2)$, $(t_{\rm fail},0)$, $(t_{\rm mid},+1)$, $(t_{\rm great},+2)$ and $(\max(1,t_{\rm great}+0.001),+2.25)$, constant outside. $t_{\rm fail}=\max(\text{floor},P_{90}$ of the score of mismatched human references$)$ (floor 0 for the ensemble), $t_{\rm mid}=\max(P_{50}$ of human references$,\,t_{\rm fail}+0.05)$, $t_{\rm great}=\max(P_{90}$ of human references$,\,t_{\rm mid}+0.05)$; calibration on FLORES+ dev (997 sentences per language; Pidgin: MAFAND dev; Efik: the IbomMT test set, Appendix~\ref{app:exposure}). In the first QE-only calibration the $+0.05$ spacing floor was active for $t_{\rm mid}$ in 21 of 41 languages, so in those languages the band between the failure line and the human median is only 0.05 QE units wide.
+\paragraph{Advantage weight.} $w_\ell=\mathrm{clip}((h-0.5)/0.4,0,1)$, where $h$ is the mean accuracy of ranking the human reference above a mismatched and above a half-omitted version of the same source; hand-set 0.3--0.5 for blend and consensus languages without validation.
+\paragraph{Ensemble.} $r=\tfrac12(r_1+r_2)$ if $|r_1-r_2|\le1.0$, else $\min(r_1,r_2)$; the min branch takes 14.0\% of policy chunks (12.3\% in QE languages, 19.3\% in blend languages). The joint encoder budget is 508 tokens for source and translation together; longer pairs are split at sentence boundaries and the piece scores averaged by source characters.
+\paragraph{Consensus.} For completion $i$ of a group with at least three valid members $V$: $c_i=\frac1{|V|-1}\sum_{j\in V,j\ne i}\mathrm{chrF{+}{+}}(y_i,y_j)$ (sentence level, word order 2, NFC) and $r_i=-2+4.25\,c_i/100$.
+\paragraph{Hard failure classes} (reward $-2$, never scored, first match wins): no end token; text after the end token; turn marker before it; missing or wrong language tag; empty; copy of source (Jaccard $\ge0.9$); degenerate (a word repeated more than four times in a row, fewer than 30\% distinct words of at least 8, zlib ratio $<0.18$); character-length ratio outside $[0.2,5]$; GlotLID mismatch (75 of 77 languages; minimum text length 15--120 characters).
+\paragraph{Constraint detectors} (every threshold a quantile of human text): repetition (language-specific quantiles, cross-validated false-positive rate at most 4.5\%); boilerplate (five-grams in at least three other prompts' outputs, buffer of 600 outputs); entity loss (numbers enabled in 67 of 74 calibrated languages, names in 54 of 76); substring copy (threshold $\max(0.08,P_{99.5})$ of the human fraction; $P_{99.8}$ with floor 0.30 in version 3); function-word profile (55 of 77 languages, switched off where no out-of-domain held-out text exists, because thresholds fitted on religious text flagged a median 34.6\% of out-of-domain human text); padding by a segmental type/token ratio (version 3; the first, length-sensitive version flagged 5/14/31/81/100\% of human documents of $<100$/100--200/200--400/400--800/$>800$ words and was replaced).
+\paragraph{Long-document reward v2} (sources of at least 150 words). Severity $s\in[0,1]$ is the largest of five ramps (word 4-gram repeat share, words in repeated 8-grams, duplicated-sentence characters, repeated blocks, periodic word cycles), each measured as the excess over the English source and ramped from 1.15 times the 99.5th percentile of human documents of the length bucket to 0.5 (0.6 for the 4-gram share); the reward is $r-s(r+2)$. Aggregation: $R=\bar r-\alpha\max(0,(\bar r-\mathrm{CVaR}_{25})-g_0)$ with $g_0$ the human median of $\bar r-\mathrm{CVaR}_{25}$ per length bucket and $\alpha=1$; a coverage term moves the reward towards $-2$ by $\kappa u$, $\kappa=0.5$, $u$ the failed share of the source weight. With anchored alignment the pair F1 against twelve corruptions is 0.89 (legacy aligner 0.66).
+
+\section{Hyper-parameters}\label{app:hparams}
+% Long paper: Section 3.5, Appendix B, t_hparams
+\begin{table*}[h]
+\centering\small\setlength{\tabcolsep}{6pt}
+\begin{tabular}{@{}lll@{}}
+\toprule
+Setting & RL-final (phase 2c) & Final run \\
+\midrule
+steps (planned / ended) & 1,433 & 700 / 401 \\
+prompts per step; group size & 84 (by bin: 64--21--42); 16 & same \\
+greedy member in group & no & yes (stats from sampled members, scale 0.3) \\
+temperature, top-$p$, top-$k$ & 1.0, 1.0, off & same \\
+learning rate; warm-up & $2\times10^{-6}$; 10 & $1\times10^{-6}$; 20 \\
+optimiser; clip & AdamW (0.9, 0.95), wd 0; 1.0 & same \\
+KL: coefficient; estimator & 0.05; $k_{3c}$ (clamp 5) & 0.1; $k_{3c}$ \\
+KL guard: threshold, window, factor & 0.15, 5, 0.5 (min 1/8) & same \\
+advantage normalisation & mean/std & mean/std \\
+max new tokens (b64 \ldots{} b2048) & 384 \ldots{} 7,168 & same \\
+start model & phase-2b step-488 & science stage, $\alpha=0.7$ \\
+seed & 1234 & 1234 \\
+\bottomrule
+\end{tabular}
+\caption{RL hyper-parameters. AB2 arms use the phase-2c recipe with 49 steps of 64 b64 prompts, learning rate $2\times10^{-6}$, warm-up 5, no science text, anchors, ensemble or long-document reward. SFT: stage A AdamW, lr $5\times10^{-5}$, 3\% warm-up, cosine, 131,072 tokens per step, language sampling $\propto\sqrt{\text{packs}}$; stage B Muon, lr $4\times10^{-5}$, UniMax-style 3 B-token budget, 20 priority languages at four times the weight.}
+\label{tab:hp}
+\end{table*}
+
+\section{LLM judge: protocol, validation and results}\label{app:judge}
+% Long paper: Section 6.12, 7.1a, Appendix J; ledger Part R
+\paragraph{Protocol.} Judge: gemini-3.8-flash as served on 2026-10-25, with Figure~8 (reference-based) and Figure~9 (reference-free) of \citet{li2025ssacomet}, verbatim except that ``[67]Most'' is written ``[67] Most'' (the long report, Appendix J, prints the prompts); five demonstrations, one per adequacy interval (SSA-MTE train split for amh, hau, kin, yor; other rows of the same AfriMTE-WMT2024 pair, min--max scaled, for swh, ibo, som, xho); score only; temperature 0, default thinking, Batch API, one run per request. None of the 6,190 responses failed to parse. Cost USD 5.42 (pilot with a second judge, USD 1.82). \emph{Why Flash:} Gemini-2.5-Pro, the judge of the SSA-COMET paper, returned ``no longer available to new users'' for our API key (Batch and standard), so we did not run it and the judge here is not a reproduction of theirs. We compared Gemini-3.1-Pro-preview (Google's named successor) with Gemini-3.8-Flash on the same 300 SSA-MTE/AfriMTE segments (one run each): pooled Spearman with the human score 0.511 $\ci{0.41}{0.60}$ for Flash against 0.454 $\ci{0.35}{0.55}$ for 3.1 Pro, difference Pro minus Flash $-0.057$ $\ci{-0.09}{-0.02}$, per-language intervals of the difference including zero except for Hausa and Somali, at about one fifth of the cost (USD 0.29 against 1.53). We therefore used Flash; we do not claim that it is better than 2.5 Pro. Data: SSA-MTE (CC-BY-SA-4.0), AfriMTE-WMT2024 (CC-BY-4.0), FLORES+, AfriLongDoc core documents; existing outputs of NLLB-200 3.3B and TranslatePsy-AfriSLM-0.8B were sent to the API for evaluation only, and no TranslatePsy data was used in any experiment.
+\paragraph{Validation (Table~\ref{tab:judgepilot}).} 300 segments of other systems' output (SSA-MTE amh, hau, kin, yor, 50 each; AfriMTE swh, ibo, som, xho, 25 each; seed 2026, five strata of the human z-score). The reference-free prompt is usable for amh, hau, kin, yor, swh and ibo (kin and ibo only just) and not for som and xho, which we do not use; the paired differences to the reference prompt and to SSA-COMET-MTL-QE are not distinguishable from zero.
+\paragraph{Sampling and units.} Run 2: up to 200 \nopair{} sentences per language (Hausa 170), the same for both systems, human reference in the prompt. Run 3: LongCtx-MT core documents of about 1,024 and 2,048 tokens (20 + 20 per language; hau, yor, swh, amh, ibo, kin), 100 sampled source sentences per language, outputs aligned to the source sentences with the long-document reward's aligner (omitted or copied sentences have no unit); whole-document units are blocks of 1.4 sentences on average, wrapper and baseline units single sentences, and the QE prompt was validated on sentences only. Of the final model's whole-document sentences in documents flagged as looping or unfinished (17.5\%) the judged mean is 8.9 against 27.3 elsewhere, so loops explain part of the gap, not all; 4.5\% of its units match a shifted block better than their own.
+\input{sections/tab_judge_pilot}
+\input{sections/tab_judge_run2}
+\input{sections/tab_judge_run3}
+\paragraph{Caveats.} The judge is a model validated at Spearman about 0.5, so the 2--7 point language-level gaps of Run 2 are weak evidence on their own (only the pooled +4.04 [3.21, 4.86] is well above the noise) while the 20--80 point gaps of Run 3 are not; it is harsher than chrF++ against pseudo-references; we did not test whether it prefers NLLB-like text; one run; no human reference for Run 3. Data: \texttt{McGill-NLP/SSA-MTE}, \texttt{masakhane/AfriMTE-WMT2024}.
+
+\section{Without the Ge'ez-script languages}\label{app:geez}
+% Long paper: Sections 6.8 and 6.12; ledger Part S; computed by paper/scripts/make_noGeez.py
+Amharic and Tigrinya are, with Kabuverdianu, the languages in which the model is furthest behind NLLB, and an outlier whose cause we have not tested; we leave them out of the headline comparison (42 languages) because of that, not because they are unimportant, and report them next to it. Table~\ref{tab:nogeezflores} gives all four systems for all 44 languages, the 42 without them, and Amharic, Tigrinya and Kabuverdianu alone (mean and median gap rows): the gap of RL-final to NLLB-200 3.3B is 3.85 chrF++ over 44 languages, 3.32 over 42, and 19.0 and 11.0 in Amharic and Tigrinya (to the 600M model 1.69, 1.13, 18.3 and 8.6; AfriCOMET 0.050, 0.043, 0.229 and 0.139 to the 3.3B model); RL-final is still below the 3.3B model in 34 of the 42 other languages. On the CPU test of Section~\ref{sec:cpu}, NLLB-600M with beam 4 scores 37.4 and 22.6 on Amharic and Tigrinya against 19.6 and 13.2 for ours. Table~\ref{tab:nogeezjudge} does the same for the judge on long documents: the wrapper-minus-NLLB gap is $-10.9$ on the four non-Ge'ez languages against $-18.8$ on five, so Ge'ez script explains part of the sentence-level gap (Amharic: $-50.3$), but not the gap in Yoruba ($-19.5$) or Kinyarwanda ($-25.8$), and not the whole-document failure: the final model's whole-document mean is 9.0 in Yoruba and 14.6 in Kinyarwanda as against 7.7 in Amharic, and whole document minus wrapper is larger in Yoruba ($-56.1$) than in Amharic ($-30.6$). We did not test what causes the weakness in Ge'ez script and make no claim about it: capacity shared by 270M parameters over 77 languages, tokenisation (862 Ethiopic entries in the 262,144-token vocabulary), the amount and quality of the Amharic and Tigrinya data and Gemma's pretraining coverage are all candidates, and NLLB is larger, trained on far more data and many more language pairs, so the comparison with it cannot separate them; a matched specialist and a larger model are future work. The mean gaps are point values (differences of macros) for FLORES+ and document-cluster bootstrap intervals for the judge.
+\input{sections/tab_nogeez_flores}
+\paragraph{Skew of the gap.} The mean gap to NLLB-200 3.3B is carried by a few languages (Tables~\ref{tab:skewsummary} and \ref{tab:skewlangs}; 44 languages, \nopair{} rows, chrF++, point values): mean 3.85 and median 3.17 (3.32 and 2.78 over the 42 without Amharic and Tigrinya; against the 600M model 1.69 and 0.62). The six largest gaps are Kabuverdianu 21.0, Amharic 19.0, Tigrinya 11.0, Kanuri 9.6, Nuer 7.9 and Kirundi 7.5; the first three carry 30\% of the summed gap and the six 45\%, and without the first three the mean is 2.89 and the median 2.48. Stated separately, the Ge'ez-script languages carry 17.7\% (mean 15.0 over the two) and Kabuverdianu, which stays in every set, 12.4\%. RL-final is at or above NLLB 3.3B in 8 languages (Dyula +2.9, Umbundu +2.4, Kamba +2.0, Wolof +1.9, Kimbundu +1.9, Fon +1.4, Yoruba +1.0, Igbo +0.7): point estimates, the stored unpaired 95\% intervals do not overlap for six of them (not Yoruba and Igbo), and no paired interval can be given because per-sentence NLLB scores are not stored. This is the chrF++ count; on AfriCOMET RL-final is above the 3.3B model in 4 of 42 languages (Fon, Igbo, Wolof, Yoruba). Kabuverdianu is both the largest gain over SFT (+14.2) and the largest remaining gap (21.0). The gains in Table~\ref{tab:skewlangs} come from the identical-sentence pipeline; the generation-run tables elsewhere differ by at most 0.53 chrF++ per language (Kabuverdianu +14.6, Kabiye +14.2, Nuer +11.5).
+\input{sections/tab_skew_summary}
+\input{sections/tab_skew_langs}
+\input{sections/tab_cmp}
+\input{sections/tab_nogeez_judge}
+
+\section{CPU deployment tables}\label{app:cpu}
+Quantisation against quality and tokenisation cost; the numbers are in Section~\ref{sec:cpu}.
+\begin{table*}[t]
+\centering\small\setlength{\tabcolsep}{3.5pt}
+\begin{minipage}[t]{0.57\textwidth}\centering
+\resizebox{\linewidth}{!}{\begin{tabular}{@{}lrrrr@{}}
+\toprule
+Variant & chrF++ & $\Delta$ vs GPU [95\% CI] & sent./s (b1/b32) & h per $10^6$ \\
+\midrule
+GPU (vLLM, bf16) & 34.98 & -- & -- & -- \\
+\textbf{GGUF Q8\_0} & 34.96 & $-$0.02 [$-$0.22, 0.16] & 0.97/2.00 & 139 \\
+GGUF Q6\_K & 34.76 & $-$0.20 [$-$0.42, $-$0.01] & -- & -- \\
+GGUF Q4\_K\_M & 33.56 & $-$1.40 [$-$1.83, $-$1.07] & 0.83/1.72$^{*}$ & 162$^{*}$ \\
+CTranslate2 int8 & 33.27 & $-$1.71 [$-$1.99, $-$1.38] & 0.77/2.87 & 97 \\
+\bottomrule
+\end{tabular}}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.40\textwidth}\centering
+\resizebox{\linewidth}{!}{\begin{tabular}{@{}lrrrr@{}}
+\toprule
+Language & chars/ token & time/ sent. & chrF++ \\
+\midrule
+Swahili & 3.11 & 1.00 & 58.0 \\
+Hausa & 2.99 & 0.98 & 45.7 \\
+Kinyarwanda & 2.74 & 1.17 & 43.5 \\
+Yoruba & 1.94 & 1.56 & 29.4 \\
+Amharic & 1.66 & 1.14 & 19.3 \\
+Tigrinya & 1.35 & 1.59 & 13.8 \\
+\bottomrule
+\end{tabular}}
+\end{minipage}
+\caption{Left: quantisation against quality on 1,170 FLORES+ sentences of six languages (final checkpoint, greedy), four cores of a shared Xeon Gold 6126, solo runs ($^*$ shared box, 7--17\% too slow); h per $10^6$: hours per million sentences at batch 32. Right: tokenisation cost (characters per Gemma token on FLORES+; time per sentence of the Q8\_0 build relative to Swahili) and chrF++ on the same sentences.}
+\label{tab:cpu}
+\end{table*}
+
+\section{Full per-language results}\label{app:perlang}
+Figure~\ref{fig:gain} shows FLORES+ per language. The per-language table of every language on its primary benchmark with paired intervals (long report, Appendix A), the per-language comparison with NLLB-200, TranslatePsy and the Afrique models (Appendix G), the intervals of Table~\ref{tab:cmp}, the pairwise comparison per language (Appendix H) and the per-language ablation (Section 8.4) are in the full technical report, \texttt{paper\_full.pdf} (the long version). Source files are listed in the long report's reproducibility statement and claims ledger.
+
+\section{Release and licence note}\label{app:release}
+All repositories are private until the owner releases them. RL-final (GRPO step 1,433, the headline model), SFT-final (step 27,638), the final-run checkpoint (step 401, branch \texttt{latest}), its GGUF Q8\_0 build and the datasets of translations and scores are on the Hugging Face Hub under the accounts of the project; licences are set to ``other'' pending a decision. The draft addendum (``open-output addendum'', v0.1) has not been reviewed by counsel. What is not planned for release: the SFT and RL training texts (we plan to release the source list with licence classes), the private subset of long-document benchmark items kept for leakage control, and the generations on the benchmarks gated by their own licences. Open owner items: \todoowner{attach the licence verification of the SFT corpus}, \todoowner{decide the licence of the weights and derived data}, \todoowner{confirm the release plan and the use of the word ``open''}, \todoowner{confirm native-speaker review plan}. The full technical report documents every number with its source file (claims ledger) and all negative results.
+
+\section{Exposure of the evaluation sets to our training, selection and reward fitting}\label{app:exposure}
+% Long paper: Section 6.9a; ledger Part V; tables generated by paper/scripts/make_exposure.py from reports/data/contamination_audit_2026-10-26/
+A contamination audit of 2026-10-26 traced where the evaluation text entered our pipeline, separating training signal, selection or monitoring signal and reported evaluation. Table~\ref{tab:exposure} gives the stages with their evidence labels (VERIFIED: read from a scan output, configuration, script or the Hub; UNKNOWN: no file settles it). Three points need stating plainly. (i) The SFT text held FLORES+ sentence by sentence: the English side of 964 of 1,012 devtest sentences, and the translation itself in at least one language for 933; a sample of 87,498 SFT windows shows the English entering through single-sentence Luganda windows (independent translations) and through Igbo, Yoruba, Hausa and Zulu windows, some with the FLORES+ translation, which is why 95.3\% of the English side but only 4.1\% of the pairs were visible to the scan; one carrier repository is named (\texttt{African-Languages-Lab/multi-open} as repackaged in \texttt{<HF_ORG_LEGACY>/sft-new}), the others are UNKNOWN because the windows were not backed up. (ii) The reward's thresholds were fitted on human references, mostly FLORES+ dev and MAFAND dev (no devtest), but the Efik thresholds of RL-final and of the final run on 997 of the 1,012 IbomMT \emph{test} sentences, the final run's anchors on the test splits of six benchmarks, its long-document limits on SmolDoc and the AfriLongDoc core, and its five NLLB-signal languages from FLORES+ devtest gaps; the science stage's replay hold-out omitted devtest. We did not recompute any result without these components. (iii) Selection and monitoring used development sets only; RL-final is the last step (1,433), not the dev-best (986). Table~\ref{tab:exposuresize} gives the size of the effect and what survives it: the RL gain is positive with an interval above zero on the never-seen rows of all eight benchmarks, and NLLB-200 3.3B stays 3.16 chrF++ ahead on the never-seen rows of identical sentences (3.84 on all rows, 3.85 on \nopair{}; 44 languages). Other findings: the SSA-MTE train split is in the SFT text, and the English of AfriMTE-WMT2024 (used to validate the LLM judge) is 100\% FLORES+ devtest; the judge validation scored other systems' output, so our exposure does not enter its correlations, but the material is not independent of our text; on the 129 never-seen sentences of the judge's Run 2 the pooled difference is +3.4 $\ci{0.3}{6.2}$ against +4.0 $\ci{3.2}{4.9}$ on all. Exact overlap of FLORES+ devtest English with an RL prompt: 7 of 1,012 sentences, 0 on \clean{} rows.
+\input{sections/tab_exposure_stages}
+\input{sections/tab_exposure_size}
+
+\section{Ablation and long-input tables (moved from the main text)}\label{app:abtables}
+% moved here on 2026-10-26 to keep the main body within 9 pages after the exposure paragraph was added; the numbers are inline in Sections 5.3 and 5.4
+\begin{table*}[t]
+\centering\footnotesize\setlength{\tabcolsep}{7pt}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{@{}lllll@{}}
+\toprule
+Macro of yor, kin, orm, lin; FLORES+ \nopair{} & Arm F: RL from SFT-final & Arm W: RL from weak SFT & S1: W + SFT, equal GPU time & S1P: W + SFT, equal sentences \\
+\midrule
+Start model, chrF++ & 28.77 [28.20, 29.38] & 15.16 [14.74, 15.65] & 15.16 & 15.16 \\
+End model, chrF++ & 34.49 [34.09, 34.90] & 22.52 [22.07, 22.94] & 15.48 [15.04, 15.98] & 14.15 [13.74, 14.62] \\
+\textbf{Gain, chrF++} & \textbf{+5.72 [5.15, 6.30]} & \textbf{+7.36 [6.80, 7.85]} & +0.32 [$-$0.18, 0.82] & $-$1.01 [$-$1.49, $-$0.55] \\
+$W_{RL}$ minus control (RL minus continued SFT) & -- & -- & +7.04 [6.49, 7.54] & +8.37 [7.84, 8.83] \\
+Gain, \emph{only sentences finished by every system} & +2.23 [1.83, 2.65] & +1.13 [0.71, 1.55] & -- & -- \\
+$W_{RL}$ minus control, finished-by-all sentences & -- & -- & +1.29 [0.95, 1.64] & +1.45 [1.06, 1.82] \\
+Finished within 768 tokens, before/after (\%) & 94.3/99.1 & 70.0/88.7 & 70.0/72.5 & 70.0/67.3 \\
+Gain, AfriCOMET with reference ($\times100$) & +6.98 [6.52, 7.41] & +10.31 [9.84, 10.81] & +0.25 [$-$0.18, 0.65] & $-$0.72 [$-$1.14, $-$0.31] \\
+Gain, SSA-COMET with reference ($\times100$) & +5.79 [5.39, 6.15] & +7.79 [7.35, 8.22] & +0.44 [0.05, 0.83] & $-$0.87 [$-$1.27, $-$0.48] \\
+\bottomrule
+\end{tabular}}
+\caption{Controlled ablation AB2, one run per arm. Differences of the two RL gains: +1.64 [0.84, 2.36] on all sentences and $-$1.10 [$-$1.60, $-$0.58] on the finished-by-all sentences (1,750 of 3,669). $W_{RL}-F_0=-6.25$ [$-$6.87, $-$5.66]; $W_{RL}-F_{RL}=-11.97$ [$-$12.44, $-$11.50]. Intervals cover sentence sampling only.}
+\label{tab:ab2}
+\end{table*}
+\begin{figure*}[t]
+\centering
+\includegraphics[width=0.78\textwidth]{figures/fig11_ablation.pdf}
+\caption{AB2. (a) Dev-set chrF++ during the 49 RL steps. (b) FLORES+ \nopair{} macro chrF++ before (grey) and after (colour), with 95\% intervals and the gain above each bar. One run per arm.}
+\label{fig:ab2}
+\end{figure*}
+\begin{table*}[t]
+\centering\small\setlength{\tabcolsep}{4pt}
+\begin{tabular}{@{}lrrrrrrr@{}}
+\toprule
+ & \multicolumn{3}{c}{Whole document in one pass} & \multicolumn{3}{c}{Sentence by sentence (+ repair)} & Finished / covered \\
+\cmidrule(lr){2-4}\cmidrule(lr){5-7}
+System & $\sim$1,024 & $\sim$2,048 & AfriSci. test & $\sim$1,024 & $\sim$2,048 & AfriSci. test & at $\sim$2,048, whole \\
+\midrule
+SabiYarn RL-final & 25.6 & 17.9 & 31.5 & 52.1 & 55.1 & 53.0 & 0.39 / 0.94 \\
+SabiYarn final run (step 401) & 39.6 & 27.7 & 41.3 & 52.6 & 55.5 & 55.4 & 0.92 / 0.73 \\
+NLLB-200-distilled-600M & 12.4 & 8.5 & 10.8 & 53.9 & 56.6 & 54.6 & 0.45 / 0.31 \\
+NLLB-200 3.3B & 9.7 & 5.9 & 8.4 & 55.0 & 57.6 & 56.9 & 0.85 / 0.33 \\
+TranslatePsy-AfriSLM-0.8B & 11.7 & 8.1 & 17.9 & 56.0 & 58.7 & 57.6 & 0.61 / 0.53 \\
+\bottomrule
+\end{tabular}
+\caption{Long-input benchmark against human references: chrF++ (macro over the languages common to the systems (6 for SmolDoc, 5 for AfriScience); stitched SmolDoc documents of about 1,024 and 2,048 Gemma tokens, 33 and 16 English documents, each translated into the common languages, and AfriScience-MT test papers; stitched documents test length, not discourse). Last column: share of documents that end at their own end token / share of source sentences with an aligned, non-copied output sentence (looping outputs can be ``covered''). The final run and the AfriScience columns were trained on the AfriScience training split (in-domain). Whole-document mode is outside the design of NLLB-200 (inputs of at most 512 tokens).}
+\label{tab:longctx}
+\end{table*}

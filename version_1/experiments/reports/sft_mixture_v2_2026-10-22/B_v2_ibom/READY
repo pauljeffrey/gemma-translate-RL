@@ -1,0 +1,7 @@
+READY_B_v2_ibom  2026-10-22 06:11 UTC (agent R11)
+B_v2_ibom = B_v2 + ONLY R10 IbomMT train (howard-nlp/ibom-mt ibom_train, CC-BY-NC: ibb 159 + efi 170 windows, 161,074 tokens). No AfriDocMT / PolyNews / Tanzil / TED2020 / MAFAND-dev / AfricanFineTranslations. The model must be treated as NON-COMMERCIAL (IbomMT).
+data    : /workspace/jobs/r11/mix_v2B_v2_ibom  (33,698,138 tokens, 114,407 samples, 4,115 packs; 515 steps; audit_packed OK on train and val_extra; tokenizer fingerprint = final_1433; val_extra = 970 samples, the NC part restricted to ibb/efi; components/*.jsonl hardlinked from B_v2)
+config  : /workspace/jobs/r11/configs/sft_science_v2_B_v2_ibom.yaml ; smoke 4 steps with val_extra OK (peak 6.52 GiB, val macro 1.381, val_sci 1.659, val_extra 3.32)
+hold-out: IbomMT test = FLORES+ devtest English (2,024 sentences, bench/test_sets/ibom_mt): 0 of the 329 train windows hit it (exact sentence or word 8-gram); IbomMT dev = FLORES+ dev English is inside the mix_v1 hold-out object used by the builder (R10 already dropped 977 of 997 dev rows); the only source of these windows is ibom_train.
+tables  : mix_v2B_v2_ibom/mixture_tables_v2.md (+ licence tables), work/cmp_ibom.md (weak languages B_v2 vs B_v2_ibom vs B_v2_nc)
+command : cd /workspace/jobs/r11/code && source /workspace/jobs/r11/env.sh && nice -n 10 \$PY -m gemma_mt.train_sft --config /workspace/jobs/r11/configs/sft_science_v2_B_v2_ibom.yaml

@@ -1,0 +1,571 @@
+iso,language,group,family,benchmark,checkpoint,subset,n,chrf,spbleu,finished,prefix_ok,empty,lid_ok,lid_ok_sibling,max_new_tokens
+yor,Yoruba,qe_validated,Atlantic-Congo (non-Bantu),flores_plus,sft_step27638_max320,all,1012,21.7746,7.1578,0.9713,0.9990,0.0000,0.9911,0.9911,320
+yor,Yoruba,qe_validated,Atlantic-Congo (non-Bantu),flores_plus,sft_step27638_max320,no_pair,657,20.4161,6.0683,0.9665,1.0000,0.0000,0.9893,0.9893,320
+yor,Yoruba,qe_validated,Atlantic-Congo (non-Bantu),flores_plus,sft_step27638_max320,clean,48,19.5440,6.2333,0.9583,1.0000,0.0000,1.0000,1.0000,320
+hau,Hausa,qe_validated,Afroasiatic,flores_plus,sft_step27638_max320,all,1012,48.3142,25.0314,0.9911,0.9980,0.0000,0.9951,0.9951,320
+hau,Hausa,qe_validated,Afroasiatic,flores_plus,sft_step27638_max320,no_pair,170,43.9099,19.6665,0.9882,1.0000,0.0000,1.0000,1.0000,320
+hau,Hausa,qe_validated,Afroasiatic,flores_plus,sft_step27638_max320,clean,48,43.8882,19.5142,1.0000,1.0000,0.0000,1.0000,1.0000,320
+ibo,Igbo,qe_validated,Atlantic-Congo (non-Bantu),flores_plus,sft_step27638_max320,all,1012,39.9955,19.3664,0.9921,0.9990,0.0000,0.9980,0.9980,320
+ibo,Igbo,qe_validated,Atlantic-Congo (non-Bantu),flores_plus,sft_step27638_max320,no_pair,453,37.3030,16.7230,0.9890,1.0000,0.0000,1.0000,1.0000,320
+ibo,Igbo,qe_validated,Atlantic-Congo (non-Bantu),flores_plus,sft_step27638_max320,clean,48,36.8345,18.7950,0.9792,1.0000,0.0000,1.0000,1.0000,320
+twi,Twi,qe_validated,Atlantic-Congo (non-Bantu),flores_plus,sft_step27638_max320,all,1012,34.8132,12.3255,0.9802,0.9990,0.0000,0.9960,0.9960,320
+twi,Twi,qe_validated,Atlantic-Congo (non-Bantu),flores_plus,sft_step27638_max320,no_pair,1012,34.8132,12.3255,0.9802,0.9990,0.0000,0.9960,0.9960,320
+twi,Twi,qe_validated,Atlantic-Congo (non-Bantu),flores_plus,sft_step27638_max320,clean,48,31.1903,11.2470,0.9792,1.0000,0.0000,1.0000,1.0000,320
+ewe,Ewe,qe_validated,Atlantic-Congo (non-Bantu),flores_plus,sft_step27638_max320,all,1012,30.2745,9.1892,0.9743,0.9990,0.0000,0.9990,0.9990,320
+ewe,Ewe,qe_validated,Atlantic-Congo (non-Bantu),flores_plus,sft_step27638_max320,no_pair,1012,30.2745,9.1892,0.9743,0.9990,0.0000,0.9990,0.9990,320
+ewe,Ewe,qe_validated,Atlantic-Congo (non-Bantu),flores_plus,sft_step27638_max320,clean,48,25.7147,6.2271,0.9375,1.0000,0.0000,1.0000,1.0000,320
+fon,Fon,qe_validated,Atlantic-Congo (non-Bantu),flores_plus,sft_step27638_max320,all,1012,19.6612,4.0815,0.9881,0.9990,0.0000,0.9980,0.9980,320
+fon,Fon,qe_validated,Atlantic-Congo (non-Bantu),flores_plus,sft_step27638_max320,no_pair,1012,19.6612,4.0815,0.9881,0.9990,0.0000,0.9980,0.9980,320
+fon,Fon,qe_validated,Atlantic-Congo (non-Bantu),flores_plus,sft_step27638_max320,clean,48,17.3585,2.1061,0.9792,1.0000,0.0000,1.0000,1.0000,320
+wol,Wolof,qe_validated,Atlantic-Congo (non-Bantu),flores_plus,sft_step27638_max320,all,1012,28.0296,9.2545,0.9753,0.9990,0.0000,0.9881,0.9881,320
+wol,Wolof,qe_validated,Atlantic-Congo (non-Bantu),flores_plus,sft_step27638_max320,no_pair,1012,28.0296,9.2545,0.9753,0.9990,0.0000,0.9881,0.9881,320
+wol,Wolof,qe_validated,Atlantic-Congo (non-Bantu),flores_plus,sft_step27638_max320,clean,48,25.8192,7.1121,0.9375,1.0000,0.0000,0.9792,0.9792,320
+swh,Swahili,qe_validated,Bantu,flores_plus,sft_step27638_max320,all,1012,57.1686,34.6937,0.9970,0.9990,0.0000,0.9565,0.9980,320
+swh,Swahili,qe_validated,Bantu,flores_plus,sft_step27638_max320,no_pair,1012,57.1686,34.6937,0.9970,0.9990,0.0000,0.9565,0.9980,320
+swh,Swahili,qe_validated,Bantu,flores_plus,sft_step27638_max320,clean,48,52.0442,27.8476,1.0000,1.0000,0.0000,0.9583,1.0000,320
+kin,Kinyarwanda,qe_validated,Bantu,flores_plus,sft_step27638_max320,all,1012,37.0755,12.8737,0.9565,0.9990,0.0000,0.9061,0.9911,320
+kin,Kinyarwanda,qe_validated,Bantu,flores_plus,sft_step27638_max320,no_pair,1012,37.0755,12.8737,0.9565,0.9990,0.0000,0.9061,0.9911,320
+kin,Kinyarwanda,qe_validated,Bantu,flores_plus,sft_step27638_max320,clean,48,32.4612,8.5456,0.9167,1.0000,0.0000,0.9167,0.9583,320
+som,Somali,qe_validated,Afroasiatic,flores_plus,sft_step27638_max320,all,1012,39.8999,15.5001,0.9951,0.9990,0.0000,0.9990,0.9990,320
+som,Somali,qe_validated,Afroasiatic,flores_plus,sft_step27638_max320,no_pair,1012,39.8999,15.5001,0.9951,0.9990,0.0000,0.9990,0.9990,320
+som,Somali,qe_validated,Afroasiatic,flores_plus,sft_step27638_max320,clean,48,33.9353,10.0256,0.9792,1.0000,0.0000,0.9792,0.9792,320
+orm,Oromo,qe_validated,Afroasiatic,flores_plus,sft_step27638_max320,all,1012,27.0770,4.4290,0.8903,1.0000,0.0000,0.9674,0.9773,320
+orm,Oromo,qe_validated,Afroasiatic,flores_plus,sft_step27638_max320,no_pair,988,27.0644,4.3881,0.8907,1.0000,0.0000,0.9686,0.9787,320
+orm,Oromo,qe_validated,Afroasiatic,flores_plus,sft_step27638_max320,clean,48,21.8053,2.3891,0.7917,1.0000,0.0000,0.9375,0.9583,320
+amh,Amharic,qe_validated,Afroasiatic,flores_plus,sft_step27638_max320,all,1012,16.3179,4.8955,0.9140,1.0000,0.0000,0.9852,0.9852,320
+amh,Amharic,qe_validated,Afroasiatic,flores_plus,sft_step27638_max320,no_pair,1012,16.3179,4.8955,0.9140,1.0000,0.0000,0.9852,0.9852,320
+amh,Amharic,qe_validated,Afroasiatic,flores_plus,sft_step27638_max320,clean,48,13.2006,2.1923,0.8750,1.0000,0.0000,1.0000,1.0000,320
+tir,Tigrinya,qe_validated,Afroasiatic,flores_plus,sft_step27638_max320,all,1012,11.0726,2.2808,0.8014,1.0000,0.0000,0.9792,0.9792,320
+tir,Tigrinya,qe_validated,Afroasiatic,flores_plus,sft_step27638_max320,no_pair,1012,11.0726,2.2808,0.8014,1.0000,0.0000,0.9792,0.9792,320
+tir,Tigrinya,qe_validated,Afroasiatic,flores_plus,sft_step27638_max320,clean,48,8.9220,1.4174,0.7083,1.0000,0.0000,0.9583,0.9583,320
+lug,Luganda,qe_validated,Bantu,flores_plus,sft_step27638_max320,all,1012,33.5591,8.6334,0.9733,0.9980,0.0000,0.9970,0.9980,320
+lug,Luganda,qe_validated,Bantu,flores_plus,sft_step27638_max320,no_pair,1010,33.5611,8.6266,0.9733,0.9980,0.0000,0.9970,0.9980,320
+lug,Luganda,qe_validated,Bantu,flores_plus,sft_step27638_max320,clean,48,27.5724,5.3181,0.9583,1.0000,0.0000,0.9792,0.9792,320
+lin,Lingala,qe_validated,Bantu,flores_plus,sft_step27638_max320,all,1012,39.7201,11.3773,0.9625,0.9990,0.0000,0.9862,0.9862,320
+lin,Lingala,qe_validated,Bantu,flores_plus,sft_step27638_max320,no_pair,1012,39.7201,11.3773,0.9625,0.9990,0.0000,0.9862,0.9862,320
+lin,Lingala,qe_validated,Bantu,flores_plus,sft_step27638_max320,clean,48,32.9743,7.0112,0.8542,1.0000,0.0000,0.9167,0.9167,320
+zul,Zulu,qe_validated,Bantu,flores_plus,sft_step27638_max320,all,1012,48.2122,24.9448,0.9970,1.0000,0.0000,0.9625,0.9990,320
+zul,Zulu,qe_validated,Bantu,flores_plus,sft_step27638_max320,no_pair,976,48.1138,24.8462,0.9969,1.0000,0.0000,0.9611,0.9990,320
+zul,Zulu,qe_validated,Bantu,flores_plus,sft_step27638_max320,clean,48,43.6650,20.5668,1.0000,1.0000,0.0000,0.8958,1.0000,320
+xho,Xhosa,qe_validated,Bantu,flores_plus,sft_step27638_max320,all,1012,44.3574,20.0068,0.9921,1.0000,0.0000,0.9852,0.9970,320
+xho,Xhosa,qe_validated,Bantu,flores_plus,sft_step27638_max320,no_pair,1012,44.3574,20.0068,0.9921,1.0000,0.0000,0.9852,0.9970,320
+xho,Xhosa,qe_validated,Bantu,flores_plus,sft_step27638_max320,clean,48,44.1518,21.6313,1.0000,1.0000,0.0000,1.0000,1.0000,320
+afr,Afrikaans,qe_validated,"Other (Indo-European, Austronesian)",flores_plus,sft_step27638_max320,all,1012,62.8105,42.0563,0.9990,0.9980,0.0000,1.0000,1.0000,320
+afr,Afrikaans,qe_validated,"Other (Indo-European, Austronesian)",flores_plus,sft_step27638_max320,no_pair,1012,62.8105,42.0563,0.9990,0.9980,0.0000,1.0000,1.0000,320
+afr,Afrikaans,qe_validated,"Other (Indo-European, Austronesian)",flores_plus,sft_step27638_max320,clean,48,60.1949,39.2046,1.0000,1.0000,0.0000,1.0000,1.0000,320
+sna,Shona,qe_validated,Bantu,flores_plus,sft_step27638_max320,all,1012,37.6764,13.8149,0.9832,0.9990,0.0000,0.9911,0.9911,320
+sna,Shona,qe_validated,Bantu,flores_plus,sft_step27638_max320,no_pair,1012,37.6764,13.8149,0.9832,0.9990,0.0000,0.9911,0.9911,320
+sna,Shona,qe_validated,Bantu,flores_plus,sft_step27638_max320,clean,48,33.7317,9.7095,0.9583,1.0000,0.0000,0.9583,0.9583,320
+nya,Chichewa,qe_validated,Bantu,flores_plus,sft_step27638_max320,all,1012,41.3228,15.4551,0.9862,0.9990,0.0000,0.9951,0.9951,320
+nya,Chichewa,qe_validated,Bantu,flores_plus,sft_step27638_max320,no_pair,1012,41.3228,15.4551,0.9862,0.9990,0.0000,0.9951,0.9951,320
+nya,Chichewa,qe_validated,Bantu,flores_plus,sft_step27638_max320,clean,48,34.5746,9.5127,0.9375,1.0000,0.0000,0.9792,0.9792,320
+sot,Sesotho,qe_validated,Bantu,flores_plus,sft_step27638_max320,all,1012,45.2299,20.9666,0.9960,0.9990,0.0000,0.9802,0.9970,320
+sot,Sesotho,qe_validated,Bantu,flores_plus,sft_step27638_max320,no_pair,1012,45.2299,20.9666,0.9960,0.9990,0.0000,0.9802,0.9970,320
+sot,Sesotho,qe_validated,Bantu,flores_plus,sft_step27638_max320,clean,48,41.4634,15.6441,1.0000,1.0000,0.0000,1.0000,1.0000,320
+tsn,Setswana,qe_validated,Bantu,flores_plus,sft_step27638_max320,all,1012,44.8587,20.7279,0.9852,0.9990,0.0000,0.9941,0.9970,320
+tsn,Setswana,qe_validated,Bantu,flores_plus,sft_step27638_max320,no_pair,982,44.7826,20.6658,0.9847,0.9990,0.0000,0.9939,0.9969,320
+tsn,Setswana,qe_validated,Bantu,flores_plus,sft_step27638_max320,clean,48,39.8056,15.6593,0.9792,1.0000,0.0000,0.9792,1.0000,320
+mlg,Malagasy,qe_validated,"Other (Indo-European, Austronesian)",flores_plus,sft_step27638_max320,all,1012,42.0829,15.6913,0.9792,1.0000,0.0000,0.9980,0.9980,320
+mlg,Malagasy,qe_validated,"Other (Indo-European, Austronesian)",flores_plus,sft_step27638_max320,no_pair,1012,42.0829,15.6913,0.9792,1.0000,0.0000,0.9980,0.9980,320
+mlg,Malagasy,qe_validated,"Other (Indo-European, Austronesian)",flores_plus,sft_step27638_max320,clean,48,36.7954,9.8146,0.9167,1.0000,0.0000,1.0000,1.0000,320
+bem,Bemba,qe_validated,Bantu,flores_plus,sft_step27638_max320,all,1012,28.9351,7.1010,0.9358,0.9990,0.0000,0.9862,0.9862,320
+bem,Bemba,qe_validated,Bantu,flores_plus,sft_step27638_max320,no_pair,1012,28.9351,7.1010,0.9358,0.9990,0.0000,0.9862,0.9862,320
+bem,Bemba,qe_validated,Bantu,flores_plus,sft_step27638_max320,clean,48,24.7109,4.9073,0.8542,1.0000,0.0000,0.9583,0.9583,320
+tum,Tumbuka,qe_validated,Bantu,flores_plus,sft_step27638_max320,all,1012,28.3025,8.1606,0.9536,1.0000,0.0000,0.9872,0.9872,320
+tum,Tumbuka,qe_validated,Bantu,flores_plus,sft_step27638_max320,no_pair,1012,28.3025,8.1606,0.9536,1.0000,0.0000,0.9872,0.9872,320
+tum,Tumbuka,qe_validated,Bantu,flores_plus,sft_step27638_max320,clean,48,23.7541,5.4941,0.8958,1.0000,0.0000,0.9792,0.9792,320
+run,Kirundi,qe_validated,Bantu,flores_plus,sft_step27638_max320,all,1012,31.0728,7.7450,0.9555,0.9990,0.0000,0.8271,0.9931,320
+run,Kirundi,qe_validated,Bantu,flores_plus,sft_step27638_max320,no_pair,1012,31.0728,7.7450,0.9555,0.9990,0.0000,0.8271,0.9931,320
+run,Kirundi,qe_validated,Bantu,flores_plus,sft_step27638_max320,clean,48,24.9419,3.9267,0.8750,1.0000,0.0000,0.7708,0.9792,320
+tso,Tsonga,qe_validated,Bantu,flores_plus,sft_step27638_max320,all,1012,43.9245,18.2034,0.9792,0.9990,0.0000,0.9921,0.9921,320
+tso,Tsonga,qe_validated,Bantu,flores_plus,sft_step27638_max320,no_pair,1012,43.9245,18.2034,0.9792,0.9990,0.0000,0.9921,0.9921,320
+tso,Tsonga,qe_validated,Bantu,flores_plus,sft_step27638_max320,clean,48,39.1758,12.1235,0.9375,1.0000,0.0000,0.9583,0.9583,320
+nso,Sepedi,qe_validated,Bantu,flores_plus,sft_step27638_max320,all,1012,48.2859,23.0206,0.9822,0.9990,0.0000,0.9980,0.9980,320
+nso,Sepedi,qe_validated,Bantu,flores_plus,sft_step27638_max320,no_pair,1012,48.2859,23.0206,0.9822,0.9990,0.0000,0.9980,0.9980,320
+nso,Sepedi,qe_validated,Bantu,flores_plus,sft_step27638_max320,clean,48,44.1327,19.1338,0.9583,1.0000,0.0000,1.0000,1.0000,320
+ssw,Swati,qe_validated,Bantu,flores_plus,sft_step27638_max320,all,1012,35.7546,11.5449,0.9723,1.0000,0.0000,0.9822,0.9970,320
+ssw,Swati,qe_validated,Bantu,flores_plus,sft_step27638_max320,no_pair,1012,35.7546,11.5449,0.9723,1.0000,0.0000,0.9822,0.9970,320
+ssw,Swati,qe_validated,Bantu,flores_plus,sft_step27638_max320,clean,48,30.2523,7.7055,0.9375,1.0000,0.0000,0.9792,1.0000,320
+sag,Sango,blend,Atlantic-Congo (non-Bantu),flores_plus,sft_step27638_max320,all,1012,31.3334,6.8202,0.9348,0.9990,0.0000,0.9802,0.9802,320
+sag,Sango,blend,Atlantic-Congo (non-Bantu),flores_plus,sft_step27638_max320,no_pair,1012,31.3334,6.8202,0.9348,0.9990,0.0000,0.9802,0.9802,320
+sag,Sango,blend,Atlantic-Congo (non-Bantu),flores_plus,sft_step27638_max320,clean,48,27.7253,4.1042,0.8750,1.0000,0.0000,0.9583,0.9583,320
+umb,Umbundu,qe_validated,Bantu,flores_plus,sft_step27638_max320,all,1012,19.6712,1.7260,0.8923,1.0000,0.0000,0.9970,0.9970,320
+umb,Umbundu,qe_validated,Bantu,flores_plus,sft_step27638_max320,no_pair,1012,19.6712,1.7260,0.8923,1.0000,0.0000,0.9970,0.9970,320
+umb,Umbundu,qe_validated,Bantu,flores_plus,sft_step27638_max320,clean,48,18.3931,1.1029,0.8750,1.0000,0.0000,1.0000,1.0000,320
+kmb,Kimbundu,qe_validated,Bantu,flores_plus,sft_step27638_max320,all,1012,19.9418,2.1622,0.8577,0.9990,0.0000,0.9773,0.9773,320
+kmb,Kimbundu,qe_validated,Bantu,flores_plus,sft_step27638_max320,no_pair,1012,19.9418,2.1622,0.8577,0.9990,0.0000,0.9773,0.9773,320
+kmb,Kimbundu,qe_validated,Bantu,flores_plus,sft_step27638_max320,clean,48,15.2494,1.0011,0.6875,1.0000,0.0000,0.9792,0.9792,320
+mos,Mossi,qe_validated,Atlantic-Congo (non-Bantu),flores_plus,sft_step27638_max320,all,1012,17.2711,2.5911,0.9308,1.0000,0.0000,0.9941,0.9941,320
+mos,Mossi,qe_validated,Atlantic-Congo (non-Bantu),flores_plus,sft_step27638_max320,no_pair,1012,17.2711,2.5911,0.9308,1.0000,0.0000,0.9941,0.9941,320
+mos,Mossi,qe_validated,Atlantic-Congo (non-Bantu),flores_plus,sft_step27638_max320,clean,48,17.2197,2.4175,0.9167,1.0000,0.0000,1.0000,1.0000,320
+kik,Kikuyu,qe_validated,Bantu,flores_plus,sft_step27638_max320,all,1012,26.3904,6.1121,0.8518,0.9980,0.0000,0.9822,0.9822,320
+kik,Kikuyu,qe_validated,Bantu,flores_plus,sft_step27638_max320,no_pair,1012,26.3904,6.1121,0.8518,0.9980,0.0000,0.9822,0.9822,320
+kik,Kikuyu,qe_validated,Bantu,flores_plus,sft_step27638_max320,clean,48,20.7192,3.2960,0.6458,0.9792,0.0000,0.9375,0.9375,320
+luo,Luo,qe_validated,Nilo-Saharan,flores_plus,sft_step27638_max320,all,1012,24.0688,4.3176,0.9022,1.0000,0.0000,0.9941,0.9941,320
+luo,Luo,qe_validated,Nilo-Saharan,flores_plus,sft_step27638_max320,no_pair,1012,24.0688,4.3176,0.9022,1.0000,0.0000,0.9941,0.9941,320
+luo,Luo,qe_validated,Nilo-Saharan,flores_plus,sft_step27638_max320,clean,48,21.8973,3.1835,0.8333,1.0000,0.0000,0.9792,0.9792,320
+kam,Kamba,qe_validated,Bantu,flores_plus,sft_step27638_max320,all,1012,16.3420,2.1848,0.6887,1.0000,0.0000,0.9881,0.9881,320
+kam,Kamba,qe_validated,Bantu,flores_plus,sft_step27638_max320,no_pair,1012,16.3420,2.1848,0.6887,1.0000,0.0000,0.9881,0.9881,320
+kam,Kamba,qe_validated,Bantu,flores_plus,sft_step27638_max320,clean,48,14.0393,1.7110,0.5208,1.0000,0.0000,1.0000,1.0000,320
+dyu,Dyula,blend,Mande,flores_plus,sft_step27638_max320,all,1012,13.3733,1.8417,0.8814,0.9990,0.0000,0.8676,0.9881,320
+dyu,Dyula,blend,Mande,flores_plus,sft_step27638_max320,no_pair,1012,13.3733,1.8417,0.8814,0.9990,0.0000,0.8676,0.9881,320
+dyu,Dyula,blend,Mande,flores_plus,sft_step27638_max320,clean,48,11.7105,1.0244,0.8542,1.0000,0.0000,0.8125,0.9792,320
+bam,Bambara,qe_validated,Mande,flores_plus,sft_step27638_max320,all,1012,18.4510,2.7271,0.8528,0.9990,0.0000,0.8982,0.9545,320
+bam,Bambara,qe_validated,Mande,flores_plus,sft_step27638_max320,no_pair,1012,18.4510,2.7271,0.8528,0.9990,0.0000,0.8982,0.9545,320
+bam,Bambara,qe_validated,Mande,flores_plus,sft_step27638_max320,clean,48,16.2088,2.3039,0.8542,1.0000,0.0000,0.8750,0.9375,320
+kbp,Kabiye,qe_validated,Atlantic-Congo (non-Bantu),flores_plus,sft_step27638_max320,all,1012,10.7924,0.8927,0.3152,1.0000,0.0000,0.9654,0.9654,320
+kbp,Kabiye,qe_validated,Atlantic-Congo (non-Bantu),flores_plus,sft_step27638_max320,no_pair,1012,10.7924,0.8927,0.3152,1.0000,0.0000,0.9654,0.9654,320
+kbp,Kabiye,qe_validated,Atlantic-Congo (non-Bantu),flores_plus,sft_step27638_max320,clean,48,10.0364,0.6077,0.2708,1.0000,0.0000,0.8958,0.8958,320
+kea,Kabuverdianu,consensus_only,Creole / Pidgin,flores_plus,sft_step27638_max320,all,1012,17.2491,2.2752,0.7737,0.9990,0.0000,0.9328,0.9328,320
+kea,Kabuverdianu,consensus_only,Creole / Pidgin,flores_plus,sft_step27638_max320,no_pair,1012,17.2491,2.2752,0.7737,0.9990,0.0000,0.9328,0.9328,320
+kea,Kabuverdianu,consensus_only,Creole / Pidgin,flores_plus,sft_step27638_max320,clean,48,14.3500,1.2131,0.6875,1.0000,0.0000,0.8958,0.8958,320
+knc,Kanuri,sft_only,Nilo-Saharan,flores_plus,sft_step27638_max320,all,1012,6.1942,0.4914,0.3399,0.0000,0.0000,0.0000,0.0000,320
+knc,Kanuri,sft_only,Nilo-Saharan,flores_plus,sft_step27638_max320,no_pair,1012,6.1942,0.4914,0.3399,0.0000,0.0000,0.0000,0.0000,320
+knc,Kanuri,sft_only,Nilo-Saharan,flores_plus,sft_step27638_max320,clean,48,4.5790,0.3280,0.2292,0.0000,0.0000,0.0000,0.0000,320
+kab,Kabyle,qe_validated,Afroasiatic,flores_plus,sft_step27638_max320,all,1012,23.2927,5.3359,0.9457,1.0000,0.0000,0.9862,0.9862,320
+kab,Kabyle,qe_validated,Afroasiatic,flores_plus,sft_step27638_max320,no_pair,1012,23.2927,5.3359,0.9457,1.0000,0.0000,0.9862,0.9862,320
+kab,Kabyle,qe_validated,Afroasiatic,flores_plus,sft_step27638_max320,clean,48,24.3295,5.8113,0.9792,1.0000,0.0000,1.0000,1.0000,320
+nus,Nuer,qe_validated,Nilo-Saharan,flores_plus,sft_step27638_max320,all,1012,12.9658,1.8784,0.4921,1.0000,0.0000,0.9644,0.9644,320
+nus,Nuer,qe_validated,Nilo-Saharan,flores_plus,sft_step27638_max320,no_pair,1012,12.9658,1.8784,0.4921,1.0000,0.0000,0.9644,0.9644,320
+nus,Nuer,qe_validated,Nilo-Saharan,flores_plus,sft_step27638_max320,clean,48,12.4475,1.9387,0.3542,1.0000,0.0000,0.9375,0.9375,320
+lua,Luba-Kasai,qe_validated,Bantu,flores_plus,sft_step27638_max320,all,1012,29.4888,5.1174,0.9358,0.9990,0.0000,0.9951,0.9951,320
+lua,Luba-Kasai,qe_validated,Bantu,flores_plus,sft_step27638_max320,no_pair,1012,29.4888,5.1174,0.9358,0.9990,0.0000,0.9951,0.9951,320
+lua,Luba-Kasai,qe_validated,Bantu,flores_plus,sft_step27638_max320,clean,48,25.0751,2.7794,0.8542,1.0000,0.0000,1.0000,1.0000,320
+vmw,Makhuwa,consensus_only,Bantu,flores_plus,sft_step27638_max320,all,1012,21.9647,3.3109,0.8804,0.9990,0.0000,0.9654,0.9654,320
+vmw,Makhuwa,consensus_only,Bantu,flores_plus,sft_step27638_max320,no_pair,1012,21.9647,3.3109,0.8804,0.9990,0.0000,0.9654,0.9654,320
+vmw,Makhuwa,consensus_only,Bantu,flores_plus,sft_step27638_max320,clean,48,18.9830,1.9282,0.7708,1.0000,0.0000,0.9375,0.9375,320
+yor,Yoruba,qe_validated,Atlantic-Congo (non-Bantu),ntrex,sft_step27638_max320,all,1997,23.6526,8.3874,0.9589,0.9995,0.0000,0.9845,0.9845,320
+yor,Yoruba,qe_validated,Atlantic-Congo (non-Bantu),ntrex,sft_step27638_max320,no_pair,1859,23.1566,8.0171,0.9575,0.9995,0.0000,0.9844,0.9844,320
+yor,Yoruba,qe_validated,Atlantic-Congo (non-Bantu),ntrex,sft_step27638_max320,clean,1201,22.1904,7.4813,0.9500,1.0000,0.0000,0.9808,0.9808,320
+hau,Hausa,qe_validated,Afroasiatic,ntrex,sft_step27638_max320,all,1997,49.1850,25.2206,0.9915,0.9990,0.0000,0.9905,0.9905,320
+hau,Hausa,qe_validated,Afroasiatic,ntrex,sft_step27638_max320,no_pair,1582,47.8767,23.5658,0.9905,0.9994,0.0000,0.9893,0.9893,320
+hau,Hausa,qe_validated,Afroasiatic,ntrex,sft_step27638_max320,clean,1201,46.6895,22.4871,0.9883,0.9992,0.0000,0.9867,0.9867,320
+ibo,Igbo,qe_validated,Atlantic-Congo (non-Bantu),ntrex,sft_step27638_max320,all,1997,42.7818,19.2152,0.9740,0.9995,0.0000,0.9920,0.9920,320
+ibo,Igbo,qe_validated,Atlantic-Congo (non-Bantu),ntrex,sft_step27638_max320,no_pair,1994,42.7829,19.2157,0.9739,0.9995,0.0000,0.9930,0.9930,320
+ibo,Igbo,qe_validated,Atlantic-Congo (non-Bantu),ntrex,sft_step27638_max320,clean,1201,40.4277,17.1457,0.9675,1.0000,0.0000,0.9925,0.9925,320
+ewe,Ewe,qe_validated,Atlantic-Congo (non-Bantu),ntrex,sft_step27638_max320,all,1997,29.6608,8.4618,0.9609,0.9985,0.0000,0.9935,0.9935,320
+ewe,Ewe,qe_validated,Atlantic-Congo (non-Bantu),ntrex,sft_step27638_max320,no_pair,1997,29.6608,8.4618,0.9609,0.9985,0.0000,0.9935,0.9935,320
+ewe,Ewe,qe_validated,Atlantic-Congo (non-Bantu),ntrex,sft_step27638_max320,clean,1201,28.2558,7.3256,0.9592,0.9983,0.0000,0.9925,0.9925,320
+wol,Wolof,qe_validated,Atlantic-Congo (non-Bantu),ntrex,sft_step27638_max320,all,1997,27.5758,7.7850,0.9649,0.9990,0.0000,0.9790,0.9790,320
+wol,Wolof,qe_validated,Atlantic-Congo (non-Bantu),ntrex,sft_step27638_max320,no_pair,1997,27.5758,7.7850,0.9649,0.9990,0.0000,0.9790,0.9790,320
+wol,Wolof,qe_validated,Atlantic-Congo (non-Bantu),ntrex,sft_step27638_max320,clean,1201,26.4090,6.9700,0.9642,1.0000,0.0000,0.9808,0.9808,320
+swh,Swahili,qe_validated,Bantu,ntrex,sft_step27638_max320,all,1997,56.8407,35.6012,0.9885,0.9995,0.0000,0.9439,0.9850,320
+swh,Swahili,qe_validated,Bantu,ntrex,sft_step27638_max320,no_pair,1997,56.8407,35.6012,0.9885,0.9995,0.0000,0.9439,0.9850,320
+swh,Swahili,qe_validated,Bantu,ntrex,sft_step27638_max320,clean,1201,53.8632,31.9230,0.9850,1.0000,0.0000,0.9326,0.9817,320
+kin,Kinyarwanda,qe_validated,Bantu,ntrex,sft_step27638_max320,all,1997,34.6932,11.8162,0.9559,1.0000,0.0000,0.8798,0.9940,320
+kin,Kinyarwanda,qe_validated,Bantu,ntrex,sft_step27638_max320,no_pair,1997,34.6932,11.8162,0.9559,1.0000,0.0000,0.8798,0.9940,320
+kin,Kinyarwanda,qe_validated,Bantu,ntrex,sft_step27638_max320,clean,1201,32.9724,10.3899,0.9525,1.0000,0.0000,0.8951,0.9925,320
+som,Somali,qe_validated,Afroasiatic,ntrex,sft_step27638_max320,all,1997,43.1908,18.7268,0.9900,0.9995,0.0000,0.9910,0.9910,320
+som,Somali,qe_validated,Afroasiatic,ntrex,sft_step27638_max320,no_pair,1997,43.1908,18.7268,0.9900,0.9995,0.0000,0.9910,0.9910,320
+som,Somali,qe_validated,Afroasiatic,ntrex,sft_step27638_max320,clean,1201,41.6133,17.1976,0.9875,0.9992,0.0000,0.9875,0.9875,320
+orm,Oromo,qe_validated,Afroasiatic,ntrex,sft_step27638_max320,all,1997,23.0225,2.2672,0.8653,1.0000,0.0000,0.9654,0.9760,320
+orm,Oromo,qe_validated,Afroasiatic,ntrex,sft_step27638_max320,no_pair,1997,23.0225,2.2672,0.8653,1.0000,0.0000,0.9654,0.9760,320
+orm,Oromo,qe_validated,Afroasiatic,ntrex,sft_step27638_max320,clean,1201,21.7854,1.9794,0.8385,1.0000,0.0000,0.9600,0.9725,320
+amh,Amharic,qe_validated,Afroasiatic,ntrex,sft_step27638_max320,all,1997,11.1719,2.4889,0.8608,1.0000,0.0005,0.9569,0.9569,320
+amh,Amharic,qe_validated,Afroasiatic,ntrex,sft_step27638_max320,no_pair,1997,11.1719,2.4889,0.8608,1.0000,0.0005,0.9569,0.9569,320
+amh,Amharic,qe_validated,Afroasiatic,ntrex,sft_step27638_max320,clean,1201,10.5348,1.9636,0.8485,1.0000,0.0000,0.9609,0.9609,320
+tir,Tigrinya,qe_validated,Afroasiatic,ntrex,sft_step27638_max320,all,1997,9.6285,1.6559,0.7516,0.9995,0.0000,0.9680,0.9680,320
+tir,Tigrinya,qe_validated,Afroasiatic,ntrex,sft_step27638_max320,no_pair,1997,9.6285,1.6559,0.7516,0.9995,0.0000,0.9680,0.9680,320
+tir,Tigrinya,qe_validated,Afroasiatic,ntrex,sft_step27638_max320,clean,1201,9.0078,1.4286,0.7327,0.9992,0.0000,0.9659,0.9659,320
+zul,Zulu,qe_validated,Bantu,ntrex,sft_step27638_max320,all,1997,43.5569,19.5876,0.9930,1.0000,0.0000,0.9374,0.9940,320
+zul,Zulu,qe_validated,Bantu,ntrex,sft_step27638_max320,no_pair,1997,43.5569,19.5876,0.9930,1.0000,0.0000,0.9374,0.9940,320
+zul,Zulu,qe_validated,Bantu,ntrex,sft_step27638_max320,clean,1201,41.1425,16.7674,0.9900,1.0000,0.0000,0.9392,0.9933,320
+xho,Xhosa,qe_validated,Bantu,ntrex,sft_step27638_max320,all,1997,41.3890,17.9628,0.9930,1.0000,0.0000,0.9785,0.9965,320
+xho,Xhosa,qe_validated,Bantu,ntrex,sft_step27638_max320,no_pair,1995,41.3877,17.9626,0.9930,1.0000,0.0000,0.9784,0.9965,320
+xho,Xhosa,qe_validated,Bantu,ntrex,sft_step27638_max320,clean,1201,39.4697,15.6767,0.9892,1.0000,0.0000,0.9808,0.9958,320
+afr,Afrikaans,qe_validated,"Other (Indo-European, Austronesian)",ntrex,sft_step27638_max320,all,1997,61.9769,41.6723,0.9990,0.9990,0.0000,0.9865,0.9865,320
+afr,Afrikaans,qe_validated,"Other (Indo-European, Austronesian)",ntrex,sft_step27638_max320,no_pair,1995,61.9766,41.6726,0.9990,0.9990,0.0000,0.9870,0.9870,320
+afr,Afrikaans,qe_validated,"Other (Indo-European, Austronesian)",ntrex,sft_step27638_max320,clean,1201,60.1335,39.6469,0.9983,1.0000,0.0000,0.9850,0.9850,320
+sna,Shona,qe_validated,Bantu,ntrex,sft_step27638_max320,all,1997,38.9708,15.5477,0.9875,0.9990,0.0000,0.9895,0.9895,320
+sna,Shona,qe_validated,Bantu,ntrex,sft_step27638_max320,no_pair,1997,38.9708,15.5477,0.9875,0.9990,0.0000,0.9895,0.9895,320
+sna,Shona,qe_validated,Bantu,ntrex,sft_step27638_max320,clean,1201,36.7580,13.5304,0.9825,0.9992,0.0000,0.9883,0.9883,320
+nya,Chichewa,qe_validated,Bantu,ntrex,sft_step27638_max320,all,1997,42.9502,19.0740,0.9830,0.9995,0.0000,0.9905,0.9905,320
+nya,Chichewa,qe_validated,Bantu,ntrex,sft_step27638_max320,no_pair,1997,42.9502,19.0740,0.9830,0.9995,0.0000,0.9905,0.9905,320
+nya,Chichewa,qe_validated,Bantu,ntrex,sft_step27638_max320,clean,1201,40.1779,16.2941,0.9775,1.0000,0.0000,0.9867,0.9867,320
+tsn,Setswana,qe_validated,Bantu,ntrex,sft_step27638_max320,all,1997,47.8710,26.6845,0.9770,0.9995,0.0000,0.9905,0.9950,320
+tsn,Setswana,qe_validated,Bantu,ntrex,sft_step27638_max320,no_pair,1995,47.8716,26.6858,0.9769,0.9995,0.0000,0.9905,0.9950,320
+tsn,Setswana,qe_validated,Bantu,ntrex,sft_step27638_max320,clean,1201,45.5664,23.6533,0.9700,0.9992,0.0000,0.9900,0.9950,320
+mlg,Malagasy,qe_validated,"Other (Indo-European, Austronesian)",ntrex,sft_step27638_max320,all,1997,39.5764,15.2928,0.9865,0.9990,0.0000,0.9925,0.9925,320
+mlg,Malagasy,qe_validated,"Other (Indo-European, Austronesian)",ntrex,sft_step27638_max320,no_pair,1997,39.5764,15.2928,0.9865,0.9990,0.0000,0.9925,0.9925,320
+mlg,Malagasy,qe_validated,"Other (Indo-European, Austronesian)",ntrex,sft_step27638_max320,clean,1201,37.7452,13.6394,0.9817,1.0000,0.0000,0.9917,0.9917,320
+bem,Bemba,qe_validated,Bantu,ntrex,sft_step27638_max320,all,1997,29.7916,7.4433,0.9349,1.0000,0.0000,0.9850,0.9850,320
+bem,Bemba,qe_validated,Bantu,ntrex,sft_step27638_max320,no_pair,1997,29.7916,7.4433,0.9349,1.0000,0.0000,0.9850,0.9850,320
+bem,Bemba,qe_validated,Bantu,ntrex,sft_step27638_max320,clean,1201,28.2486,6.2021,0.9284,1.0000,0.0000,0.9833,0.9833,320
+ven,Venda,blend,Bantu,ntrex,sft_step27638_max320,all,1997,35.5593,12.2813,0.9124,0.9980,0.0000,0.9830,0.9830,320
+ven,Venda,blend,Bantu,ntrex,sft_step27638_max320,no_pair,1997,35.5593,12.2813,0.9124,0.9980,0.0000,0.9830,0.9830,320
+ven,Venda,blend,Bantu,ntrex,sft_step27638_max320,clean,1201,33.7286,10.7823,0.8976,0.9975,0.0000,0.9800,0.9800,320
+nso,Sepedi,qe_validated,Bantu,ntrex,sft_step27638_max320,all,1997,31.1738,9.5356,0.9700,0.9965,0.0000,0.9825,0.9945,320
+nso,Sepedi,qe_validated,Bantu,ntrex,sft_step27638_max320,no_pair,1997,31.1738,9.5356,0.9700,0.9965,0.0000,0.9825,0.9945,320
+nso,Sepedi,qe_validated,Bantu,ntrex,sft_step27638_max320,clean,1201,29.3477,7.8973,0.9592,0.9975,0.0000,0.9833,0.9942,320
+ssw,Swati,qe_validated,Bantu,ntrex,sft_step27638_max320,all,1997,36.9028,13.0384,0.9664,0.9985,0.0000,0.9634,0.9900,320
+ssw,Swati,qe_validated,Bantu,ntrex,sft_step27638_max320,no_pair,1996,36.9034,13.0388,0.9664,0.9985,0.0000,0.9634,0.9900,320
+ssw,Swati,qe_validated,Bantu,ntrex,sft_step27638_max320,clean,1201,35.0547,11.3166,0.9617,0.9992,0.0000,0.9609,0.9883,320
+nde,North Ndebele,sft_only,Bantu,ntrex,sft_step27638_max320,all,1997,29.1653,8.2996,0.9900,0.0000,0.0000,0.0245,0.9915,320
+nde,North Ndebele,sft_only,Bantu,ntrex,sft_step27638_max320,no_pair,1997,29.1653,8.2996,0.9900,0.0000,0.0000,0.0245,0.9915,320
+nde,North Ndebele,sft_only,Bantu,ntrex,sft_step27638_max320,clean,1201,27.9482,7.2593,0.9900,0.0000,0.0000,0.0250,0.9942,320
+shi,Tachelhit,consensus_only,Afroasiatic,ntrex,sft_step27638_max320,all,1997,0.3467,0.0133,0.2308,1.0000,0.0015,0.2599,0.2599,320
+shi,Tachelhit,consensus_only,Afroasiatic,ntrex,sft_step27638_max320,no_pair,1997,0.3467,0.0133,0.2308,1.0000,0.0015,0.2599,0.2599,320
+shi,Tachelhit,consensus_only,Afroasiatic,ntrex,sft_step27638_max320,clean,1201,0.3345,0.0184,0.2331,1.0000,0.0025,0.2448,0.2448,320
+yor,Yoruba,qe_validated,Atlantic-Congo (non-Bantu),mafand,sft_step27638_max320,all,1558,25.8245,11.9523,0.9730,0.9994,0.0000,0.9904,0.9904,320
+yor,Yoruba,qe_validated,Atlantic-Congo (non-Bantu),mafand,sft_step27638_max320,no_pair,810,25.2366,11.6293,0.9728,1.0000,0.0000,0.9938,0.9938,320
+yor,Yoruba,qe_validated,Atlantic-Congo (non-Bantu),mafand,sft_step27638_max320,clean,247,23.8804,10.6161,0.9717,1.0000,0.0000,0.9879,0.9879,320
+hau,Hausa,qe_validated,Afroasiatic,mafand,sft_step27638_max320,all,1500,34.1096,10.9651,0.9940,1.0000,0.0000,0.9947,0.9947,320
+hau,Hausa,qe_validated,Afroasiatic,mafand,sft_step27638_max320,no_pair,1263,33.7096,10.6328,0.9929,1.0000,0.0000,0.9937,0.9937,320
+hau,Hausa,qe_validated,Afroasiatic,mafand,sft_step27638_max320,clean,1093,33.3066,10.1613,0.9927,1.0000,0.0000,0.9927,0.9927,320
+ibo,Igbo,qe_validated,Atlantic-Congo (non-Bantu),mafand,sft_step27638_max320,all,1500,45.6645,26.7596,0.9907,1.0000,0.0000,0.9567,0.9567,320
+ibo,Igbo,qe_validated,Atlantic-Congo (non-Bantu),mafand,sft_step27638_max320,no_pair,148,37.9040,15.4232,0.9797,1.0000,0.0000,0.6554,0.6554,320
+ibo,Igbo,qe_validated,Atlantic-Congo (non-Bantu),mafand,sft_step27638_max320,clean,131,37.8671,15.3571,0.9771,1.0000,0.0000,0.6794,0.6794,320
+pcm,Pidgin,qe_validated,Creole / Pidgin,mafand,sft_step27638_max320,all,1564,59.7292,38.1625,0.9994,0.9981,0.0000,0.6579,0.6579,320
+pcm,Pidgin,qe_validated,Creole / Pidgin,mafand,sft_step27638_max320,no_pair,1374,59.8759,38.5022,0.9993,0.9978,0.0000,0.6557,0.6557,320
+pcm,Pidgin,qe_validated,Creole / Pidgin,mafand,sft_step27638_max320,clean,1358,59.9401,38.5815,0.9993,0.9978,0.0000,0.6576,0.6576,320
+twi,Twi,qe_validated,Atlantic-Congo (non-Bantu),mafand,sft_step27638_max320,all,1500,36.6224,13.3267,0.9887,1.0000,0.0000,0.9980,0.9987,320
+twi,Twi,qe_validated,Atlantic-Congo (non-Bantu),mafand,sft_step27638_max320,no_pair,1500,36.6224,13.3267,0.9887,1.0000,0.0000,0.9980,0.9987,320
+twi,Twi,qe_validated,Atlantic-Congo (non-Bantu),mafand,sft_step27638_max320,clean,1486,36.6582,13.3281,0.9886,1.0000,0.0000,0.9980,0.9987,320
+swh,Swahili,qe_validated,Bantu,mafand,sft_step27638_max320,all,1835,51.7023,29.6762,0.9962,0.9995,0.0005,0.9019,0.9646,320
+swh,Swahili,qe_validated,Bantu,mafand,sft_step27638_max320,no_pair,1714,51.2564,29.2768,0.9959,0.9994,0.0006,0.8979,0.9627,320
+swh,Swahili,qe_validated,Bantu,mafand,sft_step27638_max320,clean,1616,51.2096,29.1087,0.9957,0.9994,0.0006,0.8998,0.9635,320
+kin,Kinyarwanda,qe_validated,Bantu,mafand,sft_step27638_max320,all,1006,45.0972,19.1337,0.9642,1.0000,0.0000,0.8628,0.9960,320
+kin,Kinyarwanda,qe_validated,Bantu,mafand,sft_step27638_max320,no_pair,1006,45.0972,19.1337,0.9642,1.0000,0.0000,0.8628,0.9960,320
+kin,Kinyarwanda,qe_validated,Bantu,mafand,sft_step27638_max320,clean,1001,45.1043,19.1355,0.9640,1.0000,0.0000,0.8621,0.9960,320
+amh,Amharic,qe_validated,Afroasiatic,mafand,sft_step27638_max320,all,1037,12.2929,3.5952,0.9065,1.0000,0.0039,0.9518,0.9518,320
+amh,Amharic,qe_validated,Afroasiatic,mafand,sft_step27638_max320,no_pair,884,11.9556,3.3305,0.9038,1.0000,0.0000,0.9581,0.9581,320
+amh,Amharic,qe_validated,Afroasiatic,mafand,sft_step27638_max320,clean,778,12.2707,3.5232,0.9100,1.0000,0.0000,0.9614,0.9614,320
+lug,Luganda,qe_validated,Bantu,mafand,sft_step27638_max320,all,1500,44.8110,21.7399,0.9927,0.9993,0.0000,0.9927,0.9947,320
+lug,Luganda,qe_validated,Bantu,mafand,sft_step27638_max320,no_pair,1500,44.8110,21.7399,0.9927,0.9993,0.0000,0.9927,0.9947,320
+lug,Luganda,qe_validated,Bantu,mafand,sft_step27638_max320,clean,1497,44.8052,21.7445,0.9927,0.9993,0.0000,0.9927,0.9947,320
+zul,Zulu,qe_validated,Bantu,mafand,sft_step27638_max320,all,998,46.7226,24.1114,0.9960,1.0000,0.0000,0.9168,0.9709,320
+zul,Zulu,qe_validated,Bantu,mafand,sft_step27638_max320,no_pair,807,46.3300,23.7984,0.9950,1.0000,0.0000,0.9058,0.9653,320
+zul,Zulu,qe_validated,Bantu,mafand,sft_step27638_max320,clean,547,45.2941,22.8919,0.9945,1.0000,0.0000,0.8830,0.9506,320
+xho,Xhosa,qe_validated,Bantu,mafand,sft_step27638_max320,all,1002,50.9834,28.3959,0.9950,1.0000,0.0000,0.9860,0.9980,320
+xho,Xhosa,qe_validated,Bantu,mafand,sft_step27638_max320,no_pair,1002,50.9834,28.3959,0.9950,1.0000,0.0000,0.9860,0.9980,320
+xho,Xhosa,qe_validated,Bantu,mafand,sft_step27638_max320,clean,999,50.9739,28.3969,0.9950,1.0000,0.0000,0.9860,0.9980,320
+sna,Shona,qe_validated,Bantu,mafand,sft_step27638_max320,all,1005,33.7065,11.1208,0.9881,1.0000,0.0000,0.9930,0.9930,320
+sna,Shona,qe_validated,Bantu,mafand,sft_step27638_max320,no_pair,1005,33.7065,11.1208,0.9881,1.0000,0.0000,0.9930,0.9930,320
+sna,Shona,qe_validated,Bantu,mafand,sft_step27638_max320,clean,1000,33.6956,11.1077,0.9880,1.0000,0.0000,0.9930,0.9930,320
+nya,Chichewa,qe_validated,Bantu,mafand,sft_step27638_max320,all,1004,40.7513,13.3893,0.9900,1.0000,0.0000,0.9930,0.9930,320
+nya,Chichewa,qe_validated,Bantu,mafand,sft_step27638_max320,no_pair,1004,40.7513,13.3893,0.9900,1.0000,0.0000,0.9930,0.9930,320
+nya,Chichewa,qe_validated,Bantu,mafand,sft_step27638_max320,clean,1001,40.7667,13.3954,0.9900,1.0000,0.0000,0.9930,0.9930,320
+tsn,Setswana,qe_validated,Bantu,mafand,sft_step27638_max320,all,1500,52.8161,29.1359,0.9873,0.9987,0.0000,0.9887,0.9947,320
+tsn,Setswana,qe_validated,Bantu,mafand,sft_step27638_max320,no_pair,1500,52.8161,29.1359,0.9873,0.9987,0.0000,0.9887,0.9947,320
+tsn,Setswana,qe_validated,Bantu,mafand,sft_step27638_max320,clean,1494,52.8126,29.1232,0.9873,0.9987,0.0000,0.9886,0.9946,320
+luo,Luo,qe_validated,Nilo-Saharan,mafand,sft_step27638_max320,all,1500,25.5034,5.7884,0.8860,1.0000,0.0000,0.9860,0.9860,320
+luo,Luo,qe_validated,Nilo-Saharan,mafand,sft_step27638_max320,no_pair,1396,25.4432,5.7749,0.8847,1.0000,0.0000,0.9871,0.9871,320
+luo,Luo,qe_validated,Nilo-Saharan,mafand,sft_step27638_max320,clean,1386,25.4490,5.7801,0.8846,1.0000,0.0000,0.9870,0.9870,320
+yor,Yoruba,qe_validated,Atlantic-Congo (non-Bantu),smol_sent,sft_step27638_max320,all,863,17.9822,5.0338,0.9490,1.0000,0.0000,0.9838,0.9838,320
+yor,Yoruba,qe_validated,Atlantic-Congo (non-Bantu),smol_sent,sft_step27638_max320,no_pair,692,17.4780,4.7638,0.9436,1.0000,0.0000,0.9827,0.9827,320
+yor,Yoruba,qe_validated,Atlantic-Congo (non-Bantu),smol_sent,sft_step27638_max320,clean,76,14.6463,2.7655,0.8947,1.0000,0.0000,0.9737,0.9737,320
+hau,Hausa,qe_validated,Afroasiatic,smol_sent,sft_step27638_max320,all,863,37.0874,12.3084,0.9861,1.0000,0.0000,0.9930,0.9930,320
+hau,Hausa,qe_validated,Afroasiatic,smol_sent,sft_step27638_max320,no_pair,791,36.5564,11.7488,0.9848,1.0000,0.0000,0.9924,0.9924,320
+hau,Hausa,qe_validated,Afroasiatic,smol_sent,sft_step27638_max320,clean,76,29.3026,6.0439,0.9342,1.0000,0.0000,0.9605,0.9605,320
+ibo,Igbo,qe_validated,Atlantic-Congo (non-Bantu),smol_sent,sft_step27638_max320,all,863,41.2280,21.0950,0.9733,1.0000,0.0000,0.9930,0.9930,320
+ibo,Igbo,qe_validated,Atlantic-Congo (non-Bantu),smol_sent,sft_step27638_max320,no_pair,832,41.1837,20.9459,0.9724,1.0000,0.0000,0.9928,0.9928,320
+ibo,Igbo,qe_validated,Atlantic-Congo (non-Bantu),smol_sent,sft_step27638_max320,clean,76,33.8024,14.2596,0.9342,1.0000,0.0000,0.9737,0.9737,320
+pcm,Pidgin,qe_validated,Creole / Pidgin,smol_sent,sft_step27638_max320,all,863,50.4716,25.0281,0.9907,0.9988,0.0000,0.4542,0.4542,320
+pcm,Pidgin,qe_validated,Creole / Pidgin,smol_sent,sft_step27638_max320,no_pair,863,50.4716,25.0281,0.9907,0.9988,0.0000,0.4542,0.4542,320
+pcm,Pidgin,qe_validated,Creole / Pidgin,smol_sent,sft_step27638_max320,clean,76,53.9698,33.3054,0.9868,0.9868,0.0000,0.3158,0.3158,320
+efi,Efik,qe_validated,Atlantic-Congo (non-Bantu),smol_sent,sft_step27638_max320,all,863,19.5686,3.1058,0.8980,1.0000,0.0000,0.9861,0.9861,320
+efi,Efik,qe_validated,Atlantic-Congo (non-Bantu),smol_sent,sft_step27638_max320,no_pair,863,19.5686,3.1058,0.8980,1.0000,0.0000,0.9861,0.9861,320
+efi,Efik,qe_validated,Atlantic-Congo (non-Bantu),smol_sent,sft_step27638_max320,clean,76,15.3952,1.4493,0.8026,1.0000,0.0000,0.9737,0.9737,320
+twi,Twi,qe_validated,Atlantic-Congo (non-Bantu),smol_sent,sft_step27638_max320,all,863,28.6778,7.2410,0.9803,0.9988,0.0012,0.9954,0.9954,320
+twi,Twi,qe_validated,Atlantic-Congo (non-Bantu),smol_sent,sft_step27638_max320,no_pair,863,28.6778,7.2410,0.9803,0.9988,0.0012,0.9954,0.9954,320
+twi,Twi,qe_validated,Atlantic-Congo (non-Bantu),smol_sent,sft_step27638_max320,clean,76,24.9068,5.2214,0.9737,0.9868,0.0132,0.9868,0.9868,320
+ewe,Ewe,qe_validated,Atlantic-Congo (non-Bantu),smol_sent,sft_step27638_max320,all,863,26.4618,6.2861,0.9687,0.9988,0.0000,0.9954,0.9954,320
+ewe,Ewe,qe_validated,Atlantic-Congo (non-Bantu),smol_sent,sft_step27638_max320,no_pair,339,23.0899,3.8707,0.9351,0.9971,0.0000,0.9941,0.9941,320
+ewe,Ewe,qe_validated,Atlantic-Congo (non-Bantu),smol_sent,sft_step27638_max320,clean,76,21.1878,2.9528,0.9211,0.9868,0.0000,1.0000,1.0000,320
+fon,Fon,qe_validated,Atlantic-Congo (non-Bantu),smol_sent,sft_step27638_max320,all,863,15.9251,1.7896,0.9722,0.9988,0.0000,0.9988,0.9988,320
+fon,Fon,qe_validated,Atlantic-Congo (non-Bantu),smol_sent,sft_step27638_max320,no_pair,862,15.9254,1.7900,0.9722,0.9988,0.0000,0.9988,0.9988,320
+fon,Fon,qe_validated,Atlantic-Congo (non-Bantu),smol_sent,sft_step27638_max320,clean,76,14.4939,1.1450,0.9868,0.9868,0.0000,1.0000,1.0000,320
+wol,Wolof,qe_validated,Atlantic-Congo (non-Bantu),smol_sent,sft_step27638_max320,all,863,23.5361,6.2554,0.9745,1.0000,0.0000,0.9861,0.9861,320
+wol,Wolof,qe_validated,Atlantic-Congo (non-Bantu),smol_sent,sft_step27638_max320,no_pair,233,19.6905,3.7444,0.9528,1.0000,0.0000,0.9785,0.9785,320
+wol,Wolof,qe_validated,Atlantic-Congo (non-Bantu),smol_sent,sft_step27638_max320,clean,76,18.9686,3.1903,0.9211,1.0000,0.0000,0.9474,0.9474,320
+swh,Swahili,qe_validated,Bantu,smol_sent,sft_step27638_max320,all,863,50.2094,28.1598,0.9988,1.0000,0.0000,0.8413,0.9988,320
+swh,Swahili,qe_validated,Bantu,smol_sent,sft_step27638_max320,no_pair,863,50.2094,28.1598,0.9988,1.0000,0.0000,0.8413,0.9988,320
+swh,Swahili,qe_validated,Bantu,smol_sent,sft_step27638_max320,clean,76,41.8742,20.4222,1.0000,1.0000,0.0000,0.8421,1.0000,320
+kin,Kinyarwanda,qe_validated,Bantu,smol_sent,sft_step27638_max320,all,863,29.8748,7.9396,0.9455,1.0000,0.0000,0.9490,0.9907,320
+kin,Kinyarwanda,qe_validated,Bantu,smol_sent,sft_step27638_max320,no_pair,863,29.8748,7.9396,0.9455,1.0000,0.0000,0.9490,0.9907,320
+kin,Kinyarwanda,qe_validated,Bantu,smol_sent,sft_step27638_max320,clean,76,21.1824,3.3971,0.8421,1.0000,0.0000,0.8947,0.9605,320
+som,Somali,qe_validated,Afroasiatic,smol_sent,sft_step27638_max320,all,862,32.8258,8.9688,0.9838,0.9988,0.0000,0.9930,0.9930,320
+som,Somali,qe_validated,Afroasiatic,smol_sent,sft_step27638_max320,no_pair,862,32.8258,8.9688,0.9838,0.9988,0.0000,0.9930,0.9930,320
+som,Somali,qe_validated,Afroasiatic,smol_sent,sft_step27638_max320,clean,76,27.3765,5.6862,0.9737,0.9868,0.0000,0.9737,0.9737,320
+orm,Oromo,qe_validated,Afroasiatic,smol_sent,sft_step27638_max320,all,863,23.1962,3.2449,0.8575,1.0000,0.0000,0.9397,0.9548,320
+orm,Oromo,qe_validated,Afroasiatic,smol_sent,sft_step27638_max320,no_pair,805,22.8921,3.0941,0.8534,1.0000,0.0000,0.9379,0.9540,320
+orm,Oromo,qe_validated,Afroasiatic,smol_sent,sft_step27638_max320,clean,76,15.4073,1.0801,0.6711,1.0000,0.0000,0.8421,0.8816,320
+amh,Amharic,qe_validated,Afroasiatic,smol_sent,sft_step27638_max320,all,863,12.9478,3.2261,0.9455,1.0000,0.0000,0.9838,0.9838,320
+amh,Amharic,qe_validated,Afroasiatic,smol_sent,sft_step27638_max320,no_pair,863,12.9478,3.2261,0.9455,1.0000,0.0000,0.9838,0.9838,320
+amh,Amharic,qe_validated,Afroasiatic,smol_sent,sft_step27638_max320,clean,76,9.8492,1.2742,0.8947,1.0000,0.0000,0.9868,0.9868,320
+tir,Tigrinya,qe_validated,Afroasiatic,smol_sent,sft_step27638_max320,all,863,9.4358,1.4932,0.8401,1.0000,0.0000,0.9710,0.9710,320
+tir,Tigrinya,qe_validated,Afroasiatic,smol_sent,sft_step27638_max320,no_pair,863,9.4358,1.4932,0.8401,1.0000,0.0000,0.9710,0.9710,320
+tir,Tigrinya,qe_validated,Afroasiatic,smol_sent,sft_step27638_max320,clean,76,6.4606,0.3785,0.6842,1.0000,0.0000,0.9605,0.9605,320
+lug,Luganda,qe_validated,Bantu,smol_sent,sft_step27638_max320,all,863,31.0748,8.8009,0.9699,1.0000,0.0000,0.9873,0.9930,320
+lug,Luganda,qe_validated,Bantu,smol_sent,sft_step27638_max320,no_pair,863,31.0748,8.8009,0.9699,1.0000,0.0000,0.9873,0.9930,320
+lug,Luganda,qe_validated,Bantu,smol_sent,sft_step27638_max320,clean,76,22.0065,3.4091,0.9474,1.0000,0.0000,0.9474,0.9737,320
+lin,Lingala,qe_validated,Bantu,smol_sent,sft_step27638_max320,all,863,33.8481,6.4957,0.9513,1.0000,0.0000,0.9757,0.9757,320
+lin,Lingala,qe_validated,Bantu,smol_sent,sft_step27638_max320,no_pair,863,33.8481,6.4957,0.9513,1.0000,0.0000,0.9757,0.9757,320
+lin,Lingala,qe_validated,Bantu,smol_sent,sft_step27638_max320,clean,76,26.4038,3.1974,0.8816,1.0000,0.0000,0.9474,0.9474,320
+zul,Zulu,qe_validated,Bantu,smol_sent,sft_step27638_max320,all,863,43.5640,19.1243,0.9954,1.0000,0.0000,0.9618,0.9988,320
+zul,Zulu,qe_validated,Bantu,smol_sent,sft_step27638_max320,no_pair,786,43.2566,18.9852,0.9949,1.0000,0.0000,0.9618,0.9987,320
+zul,Zulu,qe_validated,Bantu,smol_sent,sft_step27638_max320,clean,76,36.0479,12.8516,1.0000,1.0000,0.0000,0.9474,1.0000,320
+xho,Xhosa,qe_validated,Bantu,smol_sent,sft_step27638_max320,all,863,37.2338,12.9473,0.9942,1.0000,0.0000,0.9791,0.9977,320
+xho,Xhosa,qe_validated,Bantu,smol_sent,sft_step27638_max320,no_pair,863,37.2338,12.9473,0.9942,1.0000,0.0000,0.9791,0.9977,320
+xho,Xhosa,qe_validated,Bantu,smol_sent,sft_step27638_max320,clean,76,30.4719,6.8099,0.9737,1.0000,0.0000,0.9737,0.9868,320
+afr,Afrikaans,qe_validated,"Other (Indo-European, Austronesian)",smol_sent,sft_step27638_max320,all,863,57.4394,36.1978,1.0000,0.9988,0.0000,0.9965,0.9965,320
+afr,Afrikaans,qe_validated,"Other (Indo-European, Austronesian)",smol_sent,sft_step27638_max320,no_pair,863,57.4394,36.1978,1.0000,0.9988,0.0000,0.9965,0.9965,320
+afr,Afrikaans,qe_validated,"Other (Indo-European, Austronesian)",smol_sent,sft_step27638_max320,clean,76,46.3573,25.7979,1.0000,1.0000,0.0000,0.9868,0.9868,320
+sna,Shona,qe_validated,Bantu,smol_sent,sft_step27638_max320,all,863,33.7560,9.3793,0.9838,1.0000,0.0000,0.9930,0.9930,320
+sna,Shona,qe_validated,Bantu,smol_sent,sft_step27638_max320,no_pair,863,33.7560,9.3793,0.9838,1.0000,0.0000,0.9930,0.9930,320
+sna,Shona,qe_validated,Bantu,smol_sent,sft_step27638_max320,clean,76,26.1973,4.6011,0.9342,1.0000,0.0000,0.9737,0.9737,320
+nya,Chichewa,qe_validated,Bantu,smol_sent,sft_step27638_max320,all,863,31.8146,7.6140,0.9780,0.9988,0.0000,0.9896,0.9896,320
+nya,Chichewa,qe_validated,Bantu,smol_sent,sft_step27638_max320,no_pair,863,31.8146,7.6140,0.9780,0.9988,0.0000,0.9896,0.9896,320
+nya,Chichewa,qe_validated,Bantu,smol_sent,sft_step27638_max320,clean,76,26.4939,5.7191,0.9474,0.9868,0.0000,0.9868,0.9868,320
+sot,Sesotho,qe_validated,Bantu,smol_sent,sft_step27638_max320,all,863,36.8400,14.0103,0.9838,0.9988,0.0000,0.9733,0.9954,320
+sot,Sesotho,qe_validated,Bantu,smol_sent,sft_step27638_max320,no_pair,863,36.8400,14.0103,0.9838,0.9988,0.0000,0.9733,0.9954,320
+sot,Sesotho,qe_validated,Bantu,smol_sent,sft_step27638_max320,clean,76,29.4019,7.0084,0.9474,0.9868,0.0000,0.9605,1.0000,320
+tsn,Setswana,qe_validated,Bantu,smol_sent,sft_step27638_max320,all,863,43.8842,20.6469,0.9815,1.0000,0.0000,0.9942,0.9965,320
+tsn,Setswana,qe_validated,Bantu,smol_sent,sft_step27638_max320,no_pair,863,43.8842,20.6469,0.9815,1.0000,0.0000,0.9942,0.9965,320
+tsn,Setswana,qe_validated,Bantu,smol_sent,sft_step27638_max320,clean,76,37.8259,13.7698,0.9737,1.0000,0.0000,0.9868,1.0000,320
+mlg,Malagasy,qe_validated,"Other (Indo-European, Austronesian)",smol_sent,sft_step27638_max320,all,863,36.3180,10.9945,0.9664,1.0000,0.0000,0.9907,0.9907,320
+mlg,Malagasy,qe_validated,"Other (Indo-European, Austronesian)",smol_sent,sft_step27638_max320,no_pair,863,36.3180,10.9945,0.9664,1.0000,0.0000,0.9907,0.9907,320
+mlg,Malagasy,qe_validated,"Other (Indo-European, Austronesian)",smol_sent,sft_step27638_max320,clean,76,28.5772,5.8285,0.9342,1.0000,0.0000,0.9868,0.9868,320
+bem,Bemba,qe_validated,Bantu,smol_sent,sft_step27638_max320,all,863,22.8440,2.3792,0.9351,1.0000,0.0000,0.9896,0.9896,320
+bem,Bemba,qe_validated,Bantu,smol_sent,sft_step27638_max320,no_pair,863,22.8440,2.3792,0.9351,1.0000,0.0000,0.9896,0.9896,320
+bem,Bemba,qe_validated,Bantu,smol_sent,sft_step27638_max320,clean,76,18.6061,1.1938,0.8947,1.0000,0.0000,0.9868,0.9868,320
+tum,Tumbuka,qe_validated,Bantu,smol_sent,sft_step27638_max320,all,863,26.0383,4.9428,0.9467,1.0000,0.0000,0.9791,0.9791,320
+tum,Tumbuka,qe_validated,Bantu,smol_sent,sft_step27638_max320,no_pair,863,26.0383,4.9428,0.9467,1.0000,0.0000,0.9791,0.9791,320
+tum,Tumbuka,qe_validated,Bantu,smol_sent,sft_step27638_max320,clean,76,19.5759,2.2093,0.8684,1.0000,0.0000,0.9474,0.9474,320
+run,Kirundi,qe_validated,Bantu,smol_sent,sft_step27638_max320,all,863,26.3866,3.9194,0.9583,1.0000,0.0000,0.7636,0.9930,320
+run,Kirundi,qe_validated,Bantu,smol_sent,sft_step27638_max320,no_pair,863,26.3866,3.9194,0.9583,1.0000,0.0000,0.7636,0.9930,320
+run,Kirundi,qe_validated,Bantu,smol_sent,sft_step27638_max320,clean,76,20.3498,1.3067,0.8816,1.0000,0.0000,0.6447,0.9605,320
+ven,Venda,blend,Bantu,smol_sent,sft_step27638_max320,all,863,29.9385,8.6356,0.9212,1.0000,0.0000,0.9919,0.9919,320
+ven,Venda,blend,Bantu,smol_sent,sft_step27638_max320,no_pair,863,29.9385,8.6356,0.9212,1.0000,0.0000,0.9919,0.9919,320
+ven,Venda,blend,Bantu,smol_sent,sft_step27638_max320,clean,76,20.3455,3.1739,0.8026,1.0000,0.0000,0.9474,0.9474,320
+tso,Tsonga,qe_validated,Bantu,smol_sent,sft_step27638_max320,all,863,41.9524,15.8928,0.9733,1.0000,0.0000,0.9919,0.9942,320
+tso,Tsonga,qe_validated,Bantu,smol_sent,sft_step27638_max320,no_pair,863,41.9524,15.8928,0.9733,1.0000,0.0000,0.9919,0.9942,320
+tso,Tsonga,qe_validated,Bantu,smol_sent,sft_step27638_max320,clean,76,30.2027,5.8702,0.8947,1.0000,0.0000,0.9868,0.9868,320
+nso,Sepedi,qe_validated,Bantu,smol_sent,sft_step27638_max320,all,863,39.1949,15.4001,0.9757,1.0000,0.0000,0.9907,0.9954,320
+nso,Sepedi,qe_validated,Bantu,smol_sent,sft_step27638_max320,no_pair,863,39.1949,15.4001,0.9757,1.0000,0.0000,0.9907,0.9954,320
+nso,Sepedi,qe_validated,Bantu,smol_sent,sft_step27638_max320,clean,76,33.4924,9.0979,0.9737,1.0000,0.0000,0.9868,1.0000,320
+ssw,Swati,qe_validated,Bantu,smol_sent,sft_step27638_max320,all,863,31.0302,6.8970,0.9780,1.0000,0.0000,0.9780,0.9896,320
+ssw,Swati,qe_validated,Bantu,smol_sent,sft_step27638_max320,no_pair,863,31.0302,6.8970,0.9780,1.0000,0.0000,0.9780,0.9896,320
+ssw,Swati,qe_validated,Bantu,smol_sent,sft_step27638_max320,clean,76,23.8898,2.8296,0.9079,1.0000,0.0000,0.9474,0.9605,320
+nbl,South Ndebele,consensus_only,Bantu,smol_sent,sft_step27638_max320,all,863,35.8100,12.0865,0.9884,1.0000,0.0000,0.8946,0.9977,320
+nbl,South Ndebele,consensus_only,Bantu,smol_sent,sft_step27638_max320,no_pair,863,35.8100,12.0865,0.9884,1.0000,0.0000,0.8946,0.9977,320
+nbl,South Ndebele,consensus_only,Bantu,smol_sent,sft_step27638_max320,clean,76,29.5009,7.6195,0.9737,1.0000,0.0000,0.9079,0.9868,320
+tiv,Tiv,blend,Atlantic-Congo (non-Bantu),smol_sent,sft_step27638_max320,all,863,21.5901,3.4654,0.8888,0.9988,0.0000,0.9791,0.9791,320
+tiv,Tiv,blend,Atlantic-Congo (non-Bantu),smol_sent,sft_step27638_max320,no_pair,863,21.5901,3.4654,0.8888,0.9988,0.0000,0.9791,0.9791,320
+tiv,Tiv,blend,Atlantic-Congo (non-Bantu),smol_sent,sft_step27638_max320,clean,76,15.8578,1.3523,0.8026,0.9868,0.0000,0.9737,0.9737,320
+mos,Mossi,qe_validated,Atlantic-Congo (non-Bantu),smol_sent,sft_step27638_max320,all,863,14.3942,0.7814,0.9386,1.0000,0.0000,0.9988,0.9988,320
+mos,Mossi,qe_validated,Atlantic-Congo (non-Bantu),smol_sent,sft_step27638_max320,no_pair,863,14.3942,0.7814,0.9386,1.0000,0.0000,0.9988,0.9988,320
+mos,Mossi,qe_validated,Atlantic-Congo (non-Bantu),smol_sent,sft_step27638_max320,clean,76,12.1580,0.7138,0.9342,1.0000,0.0000,1.0000,1.0000,320
+kik,Kikuyu,qe_validated,Bantu,smol_sent,sft_step27638_max320,all,863,24.4908,4.4241,0.8459,1.0000,0.0000,0.9803,0.9803,320
+kik,Kikuyu,qe_validated,Bantu,smol_sent,sft_step27638_max320,no_pair,863,24.4908,4.4241,0.8459,1.0000,0.0000,0.9803,0.9803,320
+kik,Kikuyu,qe_validated,Bantu,smol_sent,sft_step27638_max320,clean,76,17.4913,1.3020,0.7105,1.0000,0.0000,1.0000,1.0000,320
+luo,Luo,qe_validated,Nilo-Saharan,smol_sent,sft_step27638_max320,all,863,19.6296,1.8093,0.9224,1.0000,0.0000,0.9873,0.9873,320
+luo,Luo,qe_validated,Nilo-Saharan,smol_sent,sft_step27638_max320,no_pair,863,19.6296,1.8093,0.9224,1.0000,0.0000,0.9873,0.9873,320
+luo,Luo,qe_validated,Nilo-Saharan,smol_sent,sft_step27638_max320,clean,76,15.7487,0.7702,0.8553,1.0000,0.0000,0.9737,0.9737,320
+dyu,Dyula,blend,Mande,smol_sent,sft_step27638_max320,all,863,15.1734,1.1108,0.8876,1.0000,0.0000,0.8737,0.9826,320
+dyu,Dyula,blend,Mande,smol_sent,sft_step27638_max320,no_pair,863,15.1734,1.1108,0.8876,1.0000,0.0000,0.8737,0.9826,320
+dyu,Dyula,blend,Mande,smol_sent,sft_step27638_max320,clean,76,11.5835,0.4524,0.7895,1.0000,0.0000,0.7895,0.9474,320
+bam,Bambara,qe_validated,Mande,smol_sent,sft_step27638_max320,all,863,14.5260,1.6325,0.8262,1.0000,0.0000,0.8378,0.9270,320
+bam,Bambara,qe_validated,Mande,smol_sent,sft_step27638_max320,no_pair,299,12.7945,1.0769,0.7926,1.0000,0.0000,0.8395,0.9231,320
+bam,Bambara,qe_validated,Mande,smol_sent,sft_step27638_max320,clean,76,10.1737,0.5469,0.6711,1.0000,0.0000,0.8158,0.9079,320
+kon,Kongo,blend,Bantu,smol_sent,sft_step27638_max320,all,863,6.2088,0.0964,0.3731,1.0000,0.0000,,,320
+kon,Kongo,blend,Bantu,smol_sent,sft_step27638_max320,no_pair,863,6.2088,0.0964,0.3731,1.0000,0.0000,,,320
+kon,Kongo,blend,Bantu,smol_sent,sft_step27638_max320,clean,76,5.2643,0.0387,0.2500,1.0000,0.0000,,,320
+kab,Kabyle,qe_validated,Afroasiatic,smol_sent,sft_step27638_max320,all,862,20.8406,4.2061,0.9687,1.0000,0.0000,0.9907,0.9907,320
+kab,Kabyle,qe_validated,Afroasiatic,smol_sent,sft_step27638_max320,no_pair,862,20.8406,4.2061,0.9687,1.0000,0.0000,0.9907,0.9907,320
+kab,Kabyle,qe_validated,Afroasiatic,smol_sent,sft_step27638_max320,clean,76,18.7577,3.2396,0.9737,1.0000,0.0000,0.9868,0.9868,320
+ach,Acholi,consensus_only,Nilo-Saharan,smol_sent,sft_step27638_max320,all,863,21.1054,2.1687,0.9131,1.0000,0.0000,0.9780,0.9780,320
+ach,Acholi,consensus_only,Nilo-Saharan,smol_sent,sft_step27638_max320,no_pair,863,21.1054,2.1687,0.9131,1.0000,0.0000,0.9780,0.9780,320
+ach,Acholi,consensus_only,Nilo-Saharan,smol_sent,sft_step27638_max320,clean,76,15.6456,0.5849,0.8289,1.0000,0.0000,0.9605,0.9605,320
+nyn,Nyankore,consensus_only,Bantu,smol_sent,sft_step27638_max320,all,863,21.2931,1.6083,0.9421,1.0000,0.0000,0.9618,0.9849,320
+nyn,Nyankore,consensus_only,Bantu,smol_sent,sft_step27638_max320,no_pair,863,21.2931,1.6083,0.9421,1.0000,0.0000,0.9618,0.9849,320
+nyn,Nyankore,consensus_only,Bantu,smol_sent,sft_step27638_max320,clean,76,16.5669,0.2730,0.8816,1.0000,0.0000,0.9079,0.9605,320
+ndc,Ndau,consensus_only,Bantu,smol_sent,sft_step27638_max320,all,863,17.6366,0.6982,0.8957,0.9757,0.0000,0.9618,0.9618,320
+ndc,Ndau,consensus_only,Bantu,smol_sent,sft_step27638_max320,no_pair,863,17.6366,0.6982,0.8957,0.9757,0.0000,0.9618,0.9618,320
+ndc,Ndau,consensus_only,Bantu,smol_sent,sft_step27638_max320,clean,76,12.3257,0.2240,0.7632,0.9868,0.0000,0.9605,0.9605,320
+kri,Krio,consensus_only,Creole / Pidgin,smol_sent,sft_step27638_max320,all,863,18.8051,3.3070,0.8401,1.0000,0.0000,0.9699,0.9699,320
+kri,Krio,consensus_only,Creole / Pidgin,smol_sent,sft_step27638_max320,no_pair,863,18.8051,3.3070,0.8401,1.0000,0.0000,0.9699,0.9699,320
+kri,Krio,consensus_only,Creole / Pidgin,smol_sent,sft_step27638_max320,clean,76,13.4226,0.7598,0.7105,1.0000,0.0000,0.9868,0.9868,320
+efi,Efik,qe_validated,Atlantic-Congo (non-Bantu),ibom_mt,sft_step27638_max320,all,1012,21.5846,4.6420,0.8794,0.9990,0.0000,0.9852,0.9852,320
+efi,Efik,qe_validated,Atlantic-Congo (non-Bantu),ibom_mt,sft_step27638_max320,no_pair,1012,21.5846,4.6420,0.8794,0.9990,0.0000,0.9852,0.9852,320
+efi,Efik,qe_validated,Atlantic-Congo (non-Bantu),ibom_mt,sft_step27638_max320,clean,48,20.0089,3.7299,0.8750,1.0000,0.0000,0.9583,0.9583,320
+ibb,Ibibio,consensus_only,Atlantic-Congo (non-Bantu),ibom_mt,sft_step27638_max320,all,1012,15.4843,1.7870,0.8399,0.9980,0.0000,0.9802,0.9802,320
+ibb,Ibibio,consensus_only,Atlantic-Congo (non-Bantu),ibom_mt,sft_step27638_max320,no_pair,1012,15.4843,1.7870,0.8399,0.9980,0.0000,0.9802,0.9802,320
+ibb,Ibibio,consensus_only,Atlantic-Congo (non-Bantu),ibom_mt,sft_step27638_max320,clean,48,13.1668,1.1632,0.7708,1.0000,0.0000,1.0000,1.0000,320
+seh,Sena,consensus_only,Bantu,flores_moz,sft_step27638_max320,all,1012,25.9287,4.0819,0.9387,0.9990,0.0000,0.9694,0.9694,320
+seh,Sena,consensus_only,Bantu,flores_moz,sft_step27638_max320,no_pair,1012,25.9287,4.0819,0.9387,0.9990,0.0000,0.9694,0.9694,320
+seh,Sena,consensus_only,Bantu,flores_moz,sft_step27638_max320,clean,48,25.0992,3.0189,0.9375,1.0000,0.0000,0.9792,0.9792,320
+ibo,Igbo,qe_validated,Atlantic-Congo (non-Bantu),salt,sft_step27638_max320,all,500,35.0132,13.3543,0.9860,1.0000,0.0000,0.9980,0.9980,320
+ibo,Igbo,qe_validated,Atlantic-Congo (non-Bantu),salt,sft_step27638_max320,no_pair,500,35.0132,13.3543,0.9860,1.0000,0.0000,0.9980,0.9980,320
+ibo,Igbo,qe_validated,Atlantic-Congo (non-Bantu),salt,sft_step27638_max320,clean,78,35.4946,15.8614,1.0000,1.0000,0.0000,1.0000,1.0000,320
+swh,Swahili,qe_validated,Bantu,salt,sft_step27638_max320,all,500,57.4440,34.8963,1.0000,1.0000,0.0000,0.8460,0.9900,320
+swh,Swahili,qe_validated,Bantu,salt,sft_step27638_max320,no_pair,500,57.4440,34.8963,1.0000,1.0000,0.0000,0.8460,0.9900,320
+swh,Swahili,qe_validated,Bantu,salt,sft_step27638_max320,clean,78,51.7738,31.7061,1.0000,1.0000,0.0000,0.7949,0.9744,320
+lug,Luganda,qe_validated,Bantu,salt,sft_step27638_max320,all,500,45.7455,24.6434,1.0000,1.0000,0.0000,1.0000,1.0000,320
+lug,Luganda,qe_validated,Bantu,salt,sft_step27638_max320,no_pair,81,38.5266,15.7267,1.0000,1.0000,0.0000,1.0000,1.0000,320
+lug,Luganda,qe_validated,Bantu,salt,sft_step27638_max320,clean,78,37.9783,15.2137,1.0000,1.0000,0.0000,1.0000,1.0000,320
+ach,Acholi,consensus_only,Nilo-Saharan,salt,sft_step27638_max320,all,500,25.4199,5.3310,0.9860,1.0000,0.0000,0.9780,0.9780,320
+ach,Acholi,consensus_only,Nilo-Saharan,salt,sft_step27638_max320,no_pair,500,25.4199,5.3310,0.9860,1.0000,0.0000,0.9780,0.9780,320
+ach,Acholi,consensus_only,Nilo-Saharan,salt,sft_step27638_max320,clean,78,23.0840,4.2757,0.9744,1.0000,0.0000,0.9744,0.9744,320
+nyn,Nyankore,consensus_only,Bantu,salt,sft_step27638_max320,all,500,26.7632,5.4638,0.9820,1.0000,0.0000,0.9160,0.9540,320
+nyn,Nyankore,consensus_only,Bantu,salt,sft_step27638_max320,no_pair,500,26.7632,5.4638,0.9820,1.0000,0.0000,0.9160,0.9540,320
+nyn,Nyankore,consensus_only,Bantu,salt,sft_step27638_max320,clean,78,22.8388,3.4999,0.9872,1.0000,0.0000,0.8462,0.9231,320
+nbl,South Ndebele,consensus_only,Bantu,glot_story,sft_step27638_max320,all,321,16.2621,3.2562,0.9470,1.0000,0.0000,0.4611,0.9875,320
+nbl,South Ndebele,consensus_only,Bantu,glot_story,sft_step27638_max320,no_pair,321,16.2621,3.2562,0.9470,1.0000,0.0000,0.4611,0.9875,320
+nbl,South Ndebele,consensus_only,Bantu,glot_story,sft_step27638_max320,clean,305,16.3634,3.2516,0.9443,1.0000,0.0000,0.4656,0.9934,320
+dag,Dagbani,consensus_only,Atlantic-Congo (non-Bantu),glot_story,sft_step27638_max320,all,135,19.5522,3.4829,0.9037,1.0000,0.0148,0.6593,0.6593,320
+dag,Dagbani,consensus_only,Atlantic-Congo (non-Bantu),glot_story,sft_step27638_max320,no_pair,135,19.5522,3.4829,0.9037,1.0000,0.0148,0.6593,0.6593,320
+dag,Dagbani,consensus_only,Atlantic-Congo (non-Bantu),glot_story,sft_step27638_max320,clean,106,19.9480,3.6609,0.8868,1.0000,0.0000,0.6509,0.6509,320
+kqn,Kaonde,blend,Bantu,glot_story,sft_step27638_max320,all,420,27.3123,5.8523,0.8833,1.0000,0.0000,0.9262,0.9262,320
+kqn,Kaonde,blend,Bantu,glot_story,sft_step27638_max320,no_pair,420,27.3123,5.8523,0.8833,1.0000,0.0000,0.9262,0.9262,320
+kqn,Kaonde,blend,Bantu,glot_story,sft_step27638_max320,clean,387,27.1899,5.8413,0.8786,1.0000,0.0000,0.9302,0.9302,320
+lun,Lunda,blend,Bantu,glot_story,sft_step27638_max320,all,420,24.6593,5.2949,0.9452,1.0000,0.0000,0.9619,0.9643,320
+lun,Lunda,blend,Bantu,glot_story,sft_step27638_max320,no_pair,420,24.6593,5.2949,0.9452,1.0000,0.0000,0.9619,0.9643,320
+lun,Lunda,blend,Bantu,glot_story,sft_step27638_max320,clean,387,24.6487,5.3266,0.9432,1.0000,0.0000,0.9638,0.9664,320
+loz,Lozi,blend,Bantu,glot_story,sft_step27638_max320,all,960,32.3591,6.4687,0.9510,1.0000,0.0000,0.9385,0.9385,320
+loz,Lozi,blend,Bantu,glot_story,sft_step27638_max320,no_pair,960,32.3591,6.4687,0.9510,1.0000,0.0000,0.9385,0.9385,320
+loz,Lozi,blend,Bantu,glot_story,sft_step27638_max320,clean,897,32.1969,6.3870,0.9476,1.0000,0.0000,0.9387,0.9387,320
+tsc,Tswa,consensus_only,Bantu,glot_story,sft_step27638_max320,all,101,14.7807,0.7151,0.7822,1.0000,0.0000,0.9208,0.9604,320
+tsc,Tswa,consensus_only,Bantu,glot_story,sft_step27638_max320,no_pair,101,14.7807,0.7151,0.7822,1.0000,0.0000,0.9208,0.9604,320
+tsc,Tswa,consensus_only,Bantu,glot_story,sft_step27638_max320,clean,100,14.7910,0.7152,0.7800,1.0000,0.0000,0.9200,0.9600,320
+kua,Kuanyama,blend,Bantu,glot_story,sft_step27638_max320,all,520,28.3194,6.1613,0.9385,1.0000,0.0000,0.9750,0.9750,320
+kua,Kuanyama,blend,Bantu,glot_story,sft_step27638_max320,no_pair,520,28.3194,6.1613,0.9385,1.0000,0.0000,0.9750,0.9750,320
+kua,Kuanyama,blend,Bantu,glot_story,sft_step27638_max320,clean,487,28.3064,6.1105,0.9343,1.0000,0.0000,0.9795,0.9795,320
+her,Herero,consensus_only,Bantu,glot_story,sft_step27638_max320,all,549,20.0419,3.3621,0.8051,1.0000,0.0000,0.9781,0.9781,320
+her,Herero,consensus_only,Bantu,glot_story,sft_step27638_max320,no_pair,549,20.0419,3.3621,0.8051,1.0000,0.0000,0.9781,0.9781,320
+her,Herero,consensus_only,Bantu,glot_story,sft_step27638_max320,clean,510,20.0053,3.3460,0.7902,1.0000,0.0000,0.9765,0.9765,320
+yor,Yoruba,qe_validated,Atlantic-Congo (non-Bantu),flores_plus,rl_final_step1433_max320,all,1012,29.6257,13.1708,1.0000,1.0000,0.0000,1.0000,1.0000,320
+yor,Yoruba,qe_validated,Atlantic-Congo (non-Bantu),flores_plus,rl_final_step1433_max320,no_pair,657,27.2450,11.3051,1.0000,1.0000,0.0000,1.0000,1.0000,320
+yor,Yoruba,qe_validated,Atlantic-Congo (non-Bantu),flores_plus,rl_final_step1433_max320,clean,48,27.4292,12.3673,1.0000,1.0000,0.0000,1.0000,1.0000,320
+hau,Hausa,qe_validated,Afroasiatic,flores_plus,rl_final_step1433_max320,all,1012,49.5670,25.8672,1.0000,0.9990,0.0000,0.9990,0.9990,320
+hau,Hausa,qe_validated,Afroasiatic,flores_plus,rl_final_step1433_max320,no_pair,170,45.1553,20.6899,1.0000,1.0000,0.0000,1.0000,1.0000,320
+hau,Hausa,qe_validated,Afroasiatic,flores_plus,rl_final_step1433_max320,clean,48,44.4705,19.3205,1.0000,1.0000,0.0000,1.0000,1.0000,320
+ibo,Igbo,qe_validated,Atlantic-Congo (non-Bantu),flores_plus,rl_final_step1433_max320,all,1012,41.1531,20.2164,1.0000,0.9990,0.0000,1.0000,1.0000,320
+ibo,Igbo,qe_validated,Atlantic-Congo (non-Bantu),flores_plus,rl_final_step1433_max320,no_pair,453,38.4079,17.4868,1.0000,1.0000,0.0000,1.0000,1.0000,320
+ibo,Igbo,qe_validated,Atlantic-Congo (non-Bantu),flores_plus,rl_final_step1433_max320,clean,48,38.3492,19.9889,1.0000,1.0000,0.0000,1.0000,1.0000,320
+twi,Twi,qe_validated,Atlantic-Congo (non-Bantu),flores_plus,rl_final_step1433_max320,all,1012,37.2195,14.2846,1.0000,1.0000,0.0000,1.0000,1.0000,320
+twi,Twi,qe_validated,Atlantic-Congo (non-Bantu),flores_plus,rl_final_step1433_max320,no_pair,1012,37.2195,14.2846,1.0000,1.0000,0.0000,1.0000,1.0000,320
+twi,Twi,qe_validated,Atlantic-Congo (non-Bantu),flores_plus,rl_final_step1433_max320,clean,48,34.3187,12.4665,1.0000,1.0000,0.0000,1.0000,1.0000,320
+ewe,Ewe,qe_validated,Atlantic-Congo (non-Bantu),flores_plus,rl_final_step1433_max320,all,1012,31.1052,9.5233,1.0000,1.0000,0.0000,1.0000,1.0000,320
+ewe,Ewe,qe_validated,Atlantic-Congo (non-Bantu),flores_plus,rl_final_step1433_max320,no_pair,1012,31.1052,9.5233,1.0000,1.0000,0.0000,1.0000,1.0000,320
+ewe,Ewe,qe_validated,Atlantic-Congo (non-Bantu),flores_plus,rl_final_step1433_max320,clean,48,27.3555,7.8191,1.0000,1.0000,0.0000,1.0000,1.0000,320
+fon,Fon,qe_validated,Atlantic-Congo (non-Bantu),flores_plus,rl_final_step1433_max320,all,1012,21.6606,4.8434,1.0000,0.9990,0.0000,1.0000,1.0000,320
+fon,Fon,qe_validated,Atlantic-Congo (non-Bantu),flores_plus,rl_final_step1433_max320,no_pair,1012,21.6606,4.8434,1.0000,0.9990,0.0000,1.0000,1.0000,320
+fon,Fon,qe_validated,Atlantic-Congo (non-Bantu),flores_plus,rl_final_step1433_max320,clean,48,19.9030,3.1064,1.0000,1.0000,0.0000,1.0000,1.0000,320
+wol,Wolof,qe_validated,Atlantic-Congo (non-Bantu),flores_plus,rl_final_step1433_max320,all,1012,29.5404,10.0025,1.0000,0.9990,0.0000,1.0000,1.0000,320
+wol,Wolof,qe_validated,Atlantic-Congo (non-Bantu),flores_plus,rl_final_step1433_max320,no_pair,1012,29.5404,10.0025,1.0000,0.9990,0.0000,1.0000,1.0000,320
+wol,Wolof,qe_validated,Atlantic-Congo (non-Bantu),flores_plus,rl_final_step1433_max320,clean,48,28.6341,9.3722,1.0000,1.0000,0.0000,1.0000,1.0000,320
+swh,Swahili,qe_validated,Bantu,flores_plus,rl_final_step1433_max320,all,1012,58.3759,35.8000,1.0000,0.9990,0.0000,0.9486,1.0000,320
+swh,Swahili,qe_validated,Bantu,flores_plus,rl_final_step1433_max320,no_pair,1012,58.3759,35.8000,1.0000,0.9990,0.0000,0.9486,1.0000,320
+swh,Swahili,qe_validated,Bantu,flores_plus,rl_final_step1433_max320,clean,48,51.7835,27.7780,1.0000,1.0000,0.0000,0.9583,1.0000,320
+kin,Kinyarwanda,qe_validated,Bantu,flores_plus,rl_final_step1433_max320,all,1012,41.9649,17.6085,1.0000,0.9990,0.0000,0.9259,0.9980,320
+kin,Kinyarwanda,qe_validated,Bantu,flores_plus,rl_final_step1433_max320,no_pair,1012,41.9649,17.6085,1.0000,0.9990,0.0000,0.9259,0.9980,320
+kin,Kinyarwanda,qe_validated,Bantu,flores_plus,rl_final_step1433_max320,clean,48,39.8297,16.0020,1.0000,1.0000,0.0000,0.9792,1.0000,320
+som,Somali,qe_validated,Afroasiatic,flores_plus,rl_final_step1433_max320,all,1012,40.4874,15.4889,1.0000,0.9990,0.0000,1.0000,1.0000,320
+som,Somali,qe_validated,Afroasiatic,flores_plus,rl_final_step1433_max320,no_pair,1012,40.4874,15.4889,1.0000,0.9990,0.0000,1.0000,1.0000,320
+som,Somali,qe_validated,Afroasiatic,flores_plus,rl_final_step1433_max320,clean,48,36.2000,10.9705,1.0000,1.0000,0.0000,1.0000,1.0000,320
+orm,Oromo,qe_validated,Afroasiatic,flores_plus,rl_final_step1433_max320,all,1012,31.4219,7.0340,1.0000,1.0000,0.0000,1.0000,1.0000,320
+orm,Oromo,qe_validated,Afroasiatic,flores_plus,rl_final_step1433_max320,no_pair,988,31.4251,7.0373,1.0000,1.0000,0.0000,1.0000,1.0000,320
+orm,Oromo,qe_validated,Afroasiatic,flores_plus,rl_final_step1433_max320,clean,48,28.4874,5.2790,1.0000,1.0000,0.0000,1.0000,1.0000,320
+amh,Amharic,qe_validated,Afroasiatic,flores_plus,rl_final_step1433_max320,all,1012,19.0369,7.3386,1.0000,0.9990,0.0000,0.9990,0.9990,320
+amh,Amharic,qe_validated,Afroasiatic,flores_plus,rl_final_step1433_max320,no_pair,1012,19.0369,7.3386,1.0000,0.9990,0.0000,0.9990,0.9990,320
+amh,Amharic,qe_validated,Afroasiatic,flores_plus,rl_final_step1433_max320,clean,48,15.8986,3.9278,1.0000,1.0000,0.0000,1.0000,1.0000,320
+tir,Tigrinya,qe_validated,Afroasiatic,flores_plus,rl_final_step1433_max320,all,1012,13.7834,3.9700,1.0000,1.0000,0.0000,0.9921,0.9921,320
+tir,Tigrinya,qe_validated,Afroasiatic,flores_plus,rl_final_step1433_max320,no_pair,1012,13.7834,3.9700,1.0000,1.0000,0.0000,0.9921,0.9921,320
+tir,Tigrinya,qe_validated,Afroasiatic,flores_plus,rl_final_step1433_max320,clean,48,12.3085,2.8649,1.0000,1.0000,0.0000,0.9792,0.9792,320
+lug,Luganda,qe_validated,Bantu,flores_plus,rl_final_step1433_max320,all,1012,35.1674,10.1332,1.0000,1.0000,0.0000,0.9980,0.9980,320
+lug,Luganda,qe_validated,Bantu,flores_plus,rl_final_step1433_max320,no_pair,1010,35.1561,10.1180,1.0000,1.0000,0.0000,0.9980,0.9980,320
+lug,Luganda,qe_validated,Bantu,flores_plus,rl_final_step1433_max320,clean,48,30.8092,7.4415,1.0000,1.0000,0.0000,1.0000,1.0000,320
+lin,Lingala,qe_validated,Bantu,flores_plus,rl_final_step1433_max320,all,1012,42.1113,14.1193,1.0000,1.0000,0.0000,0.9990,0.9990,320
+lin,Lingala,qe_validated,Bantu,flores_plus,rl_final_step1433_max320,no_pair,1012,42.1113,14.1193,1.0000,1.0000,0.0000,0.9990,0.9990,320
+lin,Lingala,qe_validated,Bantu,flores_plus,rl_final_step1433_max320,clean,48,38.8502,11.3131,1.0000,1.0000,0.0000,1.0000,1.0000,320
+zul,Zulu,qe_validated,Bantu,flores_plus,rl_final_step1433_max320,all,1012,48.8217,24.5378,1.0000,1.0000,0.0000,0.9634,1.0000,320
+zul,Zulu,qe_validated,Bantu,flores_plus,rl_final_step1433_max320,no_pair,976,48.7249,24.4416,1.0000,1.0000,0.0000,0.9621,1.0000,320
+zul,Zulu,qe_validated,Bantu,flores_plus,rl_final_step1433_max320,clean,48,43.7745,19.6818,1.0000,1.0000,0.0000,0.9167,1.0000,320
+xho,Xhosa,qe_validated,Bantu,flores_plus,rl_final_step1433_max320,all,1012,44.7783,19.6039,1.0000,1.0000,0.0000,0.9901,1.0000,320
+xho,Xhosa,qe_validated,Bantu,flores_plus,rl_final_step1433_max320,no_pair,1012,44.7783,19.6039,1.0000,1.0000,0.0000,0.9901,1.0000,320
+xho,Xhosa,qe_validated,Bantu,flores_plus,rl_final_step1433_max320,clean,48,43.6006,19.9448,1.0000,1.0000,0.0000,1.0000,1.0000,320
+afr,Afrikaans,qe_validated,"Other (Indo-European, Austronesian)",flores_plus,rl_final_step1433_max320,all,1012,63.5245,42.7172,1.0000,0.9980,0.0000,0.9990,0.9990,320
+afr,Afrikaans,qe_validated,"Other (Indo-European, Austronesian)",flores_plus,rl_final_step1433_max320,no_pair,1012,63.5245,42.7172,1.0000,0.9980,0.0000,0.9990,0.9990,320
+afr,Afrikaans,qe_validated,"Other (Indo-European, Austronesian)",flores_plus,rl_final_step1433_max320,clean,48,61.7653,40.9666,1.0000,1.0000,0.0000,1.0000,1.0000,320
+sna,Shona,qe_validated,Bantu,flores_plus,rl_final_step1433_max320,all,1012,39.5205,14.5990,1.0000,1.0000,0.0000,0.9990,0.9990,320
+sna,Shona,qe_validated,Bantu,flores_plus,rl_final_step1433_max320,no_pair,1012,39.5205,14.5990,1.0000,1.0000,0.0000,0.9990,0.9990,320
+sna,Shona,qe_validated,Bantu,flores_plus,rl_final_step1433_max320,clean,48,35.2690,10.5694,1.0000,1.0000,0.0000,1.0000,1.0000,320
+nya,Chichewa,qe_validated,Bantu,flores_plus,rl_final_step1433_max320,all,1012,43.3089,16.1138,1.0000,0.9990,0.0000,0.9990,0.9990,320
+nya,Chichewa,qe_validated,Bantu,flores_plus,rl_final_step1433_max320,no_pair,1012,43.3089,16.1138,1.0000,0.9990,0.0000,0.9990,0.9990,320
+nya,Chichewa,qe_validated,Bantu,flores_plus,rl_final_step1433_max320,clean,48,40.7216,13.4341,1.0000,1.0000,0.0000,1.0000,1.0000,320
+sot,Sesotho,qe_validated,Bantu,flores_plus,rl_final_step1433_max320,all,1012,45.4314,20.1362,1.0000,1.0000,0.0000,0.9901,0.9990,320
+sot,Sesotho,qe_validated,Bantu,flores_plus,rl_final_step1433_max320,no_pair,1012,45.4314,20.1362,1.0000,1.0000,0.0000,0.9901,0.9990,320
+sot,Sesotho,qe_validated,Bantu,flores_plus,rl_final_step1433_max320,clean,48,41.0008,16.5276,1.0000,1.0000,0.0000,1.0000,1.0000,320
+tsn,Setswana,qe_validated,Bantu,flores_plus,rl_final_step1433_max320,all,1012,45.9626,21.8026,1.0000,1.0000,0.0000,0.9980,0.9980,320
+tsn,Setswana,qe_validated,Bantu,flores_plus,rl_final_step1433_max320,no_pair,982,45.9383,21.8023,1.0000,1.0000,0.0000,0.9980,0.9980,320
+tsn,Setswana,qe_validated,Bantu,flores_plus,rl_final_step1433_max320,clean,48,42.6403,17.6073,1.0000,1.0000,0.0000,1.0000,1.0000,320
+mlg,Malagasy,qe_validated,"Other (Indo-European, Austronesian)",flores_plus,rl_final_step1433_max320,all,1012,43.0531,15.5967,1.0000,1.0000,0.0000,1.0000,1.0000,320
+mlg,Malagasy,qe_validated,"Other (Indo-European, Austronesian)",flores_plus,rl_final_step1433_max320,no_pair,1012,43.0531,15.5967,1.0000,1.0000,0.0000,1.0000,1.0000,320
+mlg,Malagasy,qe_validated,"Other (Indo-European, Austronesian)",flores_plus,rl_final_step1433_max320,clean,48,39.4549,12.3590,1.0000,1.0000,0.0000,1.0000,1.0000,320
+bem,Bemba,qe_validated,Bantu,flores_plus,rl_final_step1433_max320,all,1012,34.0554,9.6668,1.0000,1.0000,0.0000,0.9951,0.9951,320
+bem,Bemba,qe_validated,Bantu,flores_plus,rl_final_step1433_max320,no_pair,1012,34.0554,9.6668,1.0000,1.0000,0.0000,0.9951,0.9951,320
+bem,Bemba,qe_validated,Bantu,flores_plus,rl_final_step1433_max320,clean,48,31.9867,8.0235,1.0000,1.0000,0.0000,1.0000,1.0000,320
+tum,Tumbuka,qe_validated,Bantu,flores_plus,rl_final_step1433_max320,all,1012,33.7942,10.1626,1.0000,1.0000,0.0000,0.9970,0.9970,320
+tum,Tumbuka,qe_validated,Bantu,flores_plus,rl_final_step1433_max320,no_pair,1012,33.7942,10.1626,1.0000,1.0000,0.0000,0.9970,0.9970,320
+tum,Tumbuka,qe_validated,Bantu,flores_plus,rl_final_step1433_max320,clean,48,30.2612,7.8232,1.0000,1.0000,0.0000,1.0000,1.0000,320
+run,Kirundi,qe_validated,Bantu,flores_plus,rl_final_step1433_max320,all,1012,33.9275,10.3999,1.0000,1.0000,0.0000,0.9338,0.9980,320
+run,Kirundi,qe_validated,Bantu,flores_plus,rl_final_step1433_max320,no_pair,1012,33.9275,10.3999,1.0000,1.0000,0.0000,0.9338,0.9980,320
+run,Kirundi,qe_validated,Bantu,flores_plus,rl_final_step1433_max320,clean,48,30.0828,7.1016,1.0000,1.0000,0.0000,1.0000,1.0000,320
+tso,Tsonga,qe_validated,Bantu,flores_plus,rl_final_step1433_max320,all,1012,46.0400,20.8766,1.0000,1.0000,0.0000,0.9990,0.9990,320
+tso,Tsonga,qe_validated,Bantu,flores_plus,rl_final_step1433_max320,no_pair,1012,46.0400,20.8766,1.0000,1.0000,0.0000,0.9990,0.9990,320
+tso,Tsonga,qe_validated,Bantu,flores_plus,rl_final_step1433_max320,clean,48,41.9328,15.0075,1.0000,1.0000,0.0000,1.0000,1.0000,320
+nso,Sepedi,qe_validated,Bantu,flores_plus,rl_final_step1433_max320,all,1012,48.9103,24.6962,1.0000,1.0000,0.0000,0.9990,0.9990,320
+nso,Sepedi,qe_validated,Bantu,flores_plus,rl_final_step1433_max320,no_pair,1012,48.9103,24.6962,1.0000,1.0000,0.0000,0.9990,0.9990,320
+nso,Sepedi,qe_validated,Bantu,flores_plus,rl_final_step1433_max320,clean,48,45.8364,21.7468,1.0000,1.0000,0.0000,1.0000,1.0000,320
+ssw,Swati,qe_validated,Bantu,flores_plus,rl_final_step1433_max320,all,1012,37.4903,12.2189,1.0000,1.0000,0.0000,0.9822,1.0000,320
+ssw,Swati,qe_validated,Bantu,flores_plus,rl_final_step1433_max320,no_pair,1012,37.4903,12.2189,1.0000,1.0000,0.0000,0.9822,1.0000,320
+ssw,Swati,qe_validated,Bantu,flores_plus,rl_final_step1433_max320,clean,48,34.1386,8.6661,1.0000,1.0000,0.0000,0.9792,1.0000,320
+sag,Sango,blend,Atlantic-Congo (non-Bantu),flores_plus,rl_final_step1433_max320,all,1012,34.7241,9.1646,1.0000,1.0000,0.0000,0.9980,0.9980,320
+sag,Sango,blend,Atlantic-Congo (non-Bantu),flores_plus,rl_final_step1433_max320,no_pair,1012,34.7241,9.1646,1.0000,1.0000,0.0000,0.9980,0.9980,320
+sag,Sango,blend,Atlantic-Congo (non-Bantu),flores_plus,rl_final_step1433_max320,clean,48,33.0745,6.9486,1.0000,1.0000,0.0000,1.0000,1.0000,320
+umb,Umbundu,qe_validated,Bantu,flores_plus,rl_final_step1433_max320,all,1012,25.3229,3.0395,1.0000,1.0000,0.0000,1.0000,1.0000,320
+umb,Umbundu,qe_validated,Bantu,flores_plus,rl_final_step1433_max320,no_pair,1012,25.3229,3.0395,1.0000,1.0000,0.0000,1.0000,1.0000,320
+umb,Umbundu,qe_validated,Bantu,flores_plus,rl_final_step1433_max320,clean,48,24.4664,1.7938,1.0000,1.0000,0.0000,1.0000,1.0000,320
+kmb,Kimbundu,qe_validated,Bantu,flores_plus,rl_final_step1433_max320,all,1012,25.5935,4.2165,1.0000,1.0000,0.0000,1.0000,1.0000,320
+kmb,Kimbundu,qe_validated,Bantu,flores_plus,rl_final_step1433_max320,no_pair,1012,25.5935,4.2165,1.0000,1.0000,0.0000,1.0000,1.0000,320
+kmb,Kimbundu,qe_validated,Bantu,flores_plus,rl_final_step1433_max320,clean,48,24.0103,3.3058,1.0000,1.0000,0.0000,1.0000,1.0000,320
+mos,Mossi,qe_validated,Atlantic-Congo (non-Bantu),flores_plus,rl_final_step1433_max320,all,1012,22.8115,4.1788,1.0000,1.0000,0.0000,1.0000,1.0000,320
+mos,Mossi,qe_validated,Atlantic-Congo (non-Bantu),flores_plus,rl_final_step1433_max320,no_pair,1012,22.8115,4.1788,1.0000,1.0000,0.0000,1.0000,1.0000,320
+mos,Mossi,qe_validated,Atlantic-Congo (non-Bantu),flores_plus,rl_final_step1433_max320,clean,48,21.9674,4.0099,1.0000,1.0000,0.0000,1.0000,1.0000,320
+kik,Kikuyu,qe_validated,Bantu,flores_plus,rl_final_step1433_max320,all,1012,31.9798,9.4845,1.0000,0.9990,0.0000,0.9980,0.9980,320
+kik,Kikuyu,qe_validated,Bantu,flores_plus,rl_final_step1433_max320,no_pair,1012,31.9798,9.4845,1.0000,0.9990,0.0000,0.9980,0.9980,320
+kik,Kikuyu,qe_validated,Bantu,flores_plus,rl_final_step1433_max320,clean,48,28.9883,7.4783,1.0000,1.0000,0.0000,1.0000,1.0000,320
+luo,Luo,qe_validated,Nilo-Saharan,flores_plus,rl_final_step1433_max320,all,1012,33.1884,10.4080,1.0000,0.9990,0.0000,0.9980,0.9980,320
+luo,Luo,qe_validated,Nilo-Saharan,flores_plus,rl_final_step1433_max320,no_pair,1012,33.1884,10.4080,1.0000,0.9990,0.0000,0.9980,0.9980,320
+luo,Luo,qe_validated,Nilo-Saharan,flores_plus,rl_final_step1433_max320,clean,48,30.6672,8.8579,1.0000,1.0000,0.0000,1.0000,1.0000,320
+kam,Kamba,qe_validated,Bantu,flores_plus,rl_final_step1433_max320,all,1012,24.8849,5.8792,1.0000,0.9990,0.0000,0.9980,0.9980,320
+kam,Kamba,qe_validated,Bantu,flores_plus,rl_final_step1433_max320,no_pair,1012,24.8849,5.8792,1.0000,0.9990,0.0000,0.9980,0.9980,320
+kam,Kamba,qe_validated,Bantu,flores_plus,rl_final_step1433_max320,clean,48,22.9081,4.2856,1.0000,1.0000,0.0000,1.0000,1.0000,320
+dyu,Dyula,blend,Mande,flores_plus,rl_final_step1433_max320,all,1012,18.2866,3.0254,1.0000,1.0000,0.0000,0.9170,0.9960,320
+dyu,Dyula,blend,Mande,flores_plus,rl_final_step1433_max320,no_pair,1012,18.2866,3.0254,1.0000,1.0000,0.0000,0.9170,0.9960,320
+dyu,Dyula,blend,Mande,flores_plus,rl_final_step1433_max320,clean,48,17.0720,1.8776,1.0000,1.0000,0.0000,0.9583,1.0000,320
+bam,Bambara,qe_validated,Mande,flores_plus,rl_final_step1433_max320,all,1012,24.8530,5.4841,1.0000,1.0000,0.0000,0.9496,0.9980,320
+bam,Bambara,qe_validated,Mande,flores_plus,rl_final_step1433_max320,no_pair,1012,24.8530,5.4841,1.0000,1.0000,0.0000,0.9496,0.9980,320
+bam,Bambara,qe_validated,Mande,flores_plus,rl_final_step1433_max320,clean,48,23.2329,5.2793,1.0000,1.0000,0.0000,0.9375,1.0000,320
+kbp,Kabiye,qe_validated,Atlantic-Congo (non-Bantu),flores_plus,rl_final_step1433_max320,all,1012,21.7517,3.7774,1.0000,1.0000,0.0000,1.0000,1.0000,320
+kbp,Kabiye,qe_validated,Atlantic-Congo (non-Bantu),flores_plus,rl_final_step1433_max320,no_pair,1012,21.7517,3.7774,1.0000,1.0000,0.0000,1.0000,1.0000,320
+kbp,Kabiye,qe_validated,Atlantic-Congo (non-Bantu),flores_plus,rl_final_step1433_max320,clean,48,20.0212,2.2083,1.0000,1.0000,0.0000,1.0000,1.0000,320
+kea,Kabuverdianu,consensus_only,Creole / Pidgin,flores_plus,rl_final_step1433_max320,all,1012,26.8064,6.5689,0.9980,0.9990,0.0000,0.9792,0.9792,320
+kea,Kabuverdianu,consensus_only,Creole / Pidgin,flores_plus,rl_final_step1433_max320,no_pair,1012,26.8064,6.5689,0.9980,0.9990,0.0000,0.9792,0.9792,320
+kea,Kabuverdianu,consensus_only,Creole / Pidgin,flores_plus,rl_final_step1433_max320,clean,48,24.0805,4.7618,0.9792,1.0000,0.0000,0.9792,0.9792,320
+knc,Kanuri,sft_only,Nilo-Saharan,flores_plus,rl_final_step1433_max320,all,1012,14.9481,2.6862,0.9990,0.0000,0.0000,0.0000,0.0000,320
+knc,Kanuri,sft_only,Nilo-Saharan,flores_plus,rl_final_step1433_max320,no_pair,1012,14.9481,2.6862,0.9990,0.0000,0.0000,0.0000,0.0000,320
+knc,Kanuri,sft_only,Nilo-Saharan,flores_plus,rl_final_step1433_max320,clean,48,13.6114,2.3552,1.0000,0.0000,0.0000,0.0000,0.0000,320
+kab,Kabyle,qe_validated,Afroasiatic,flores_plus,rl_final_step1433_max320,all,1012,26.7168,7.1682,1.0000,1.0000,0.0000,1.0000,1.0000,320
+kab,Kabyle,qe_validated,Afroasiatic,flores_plus,rl_final_step1433_max320,no_pair,1012,26.7168,7.1682,1.0000,1.0000,0.0000,1.0000,1.0000,320
+kab,Kabyle,qe_validated,Afroasiatic,flores_plus,rl_final_step1433_max320,clean,48,25.9595,6.8721,1.0000,1.0000,0.0000,1.0000,1.0000,320
+nus,Nuer,qe_validated,Nilo-Saharan,flores_plus,rl_final_step1433_max320,all,1012,20.7186,6.9042,1.0000,1.0000,0.0000,0.9990,0.9990,320
+nus,Nuer,qe_validated,Nilo-Saharan,flores_plus,rl_final_step1433_max320,no_pair,1012,20.7186,6.9042,1.0000,1.0000,0.0000,0.9990,0.9990,320
+nus,Nuer,qe_validated,Nilo-Saharan,flores_plus,rl_final_step1433_max320,clean,48,21.5845,8.1680,1.0000,1.0000,0.0000,1.0000,1.0000,320
+lua,Luba-Kasai,qe_validated,Bantu,flores_plus,rl_final_step1433_max320,all,1012,33.3456,8.3670,1.0000,1.0000,0.0000,0.9990,0.9990,320
+lua,Luba-Kasai,qe_validated,Bantu,flores_plus,rl_final_step1433_max320,no_pair,1012,33.3456,8.3670,1.0000,1.0000,0.0000,0.9990,0.9990,320
+lua,Luba-Kasai,qe_validated,Bantu,flores_plus,rl_final_step1433_max320,clean,48,31.2254,6.1847,1.0000,1.0000,0.0000,1.0000,1.0000,320
+vmw,Makhuwa,consensus_only,Bantu,flores_plus,rl_final_step1433_max320,all,1012,26.9998,5.4640,1.0000,1.0000,0.0000,0.9990,0.9990,320
+vmw,Makhuwa,consensus_only,Bantu,flores_plus,rl_final_step1433_max320,no_pair,1012,26.9998,5.4640,1.0000,1.0000,0.0000,0.9990,0.9990,320
+vmw,Makhuwa,consensus_only,Bantu,flores_plus,rl_final_step1433_max320,clean,48,27.1843,4.6670,1.0000,1.0000,0.0000,1.0000,1.0000,320

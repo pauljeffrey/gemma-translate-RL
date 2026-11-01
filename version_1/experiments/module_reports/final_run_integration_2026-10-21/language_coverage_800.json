@@ -1,0 +1,704 @@
+{
+ "steps": 800,
+ "prompts_per_step": 42,
+ "group_size": 16,
+ "floor": [
+  20,
+  2
+ ],
+ "languages": [
+  {
+   "iso": "sid",
+   "prompts": 275,
+   "completions": 4400,
+   "share": 0.00818452380952381,
+   "science_prompts": 194,
+   "min_per_20_steps": 3,
+   "steps_absent": 559
+  },
+  {
+   "iso": "ibb",
+   "prompts": 279,
+   "completions": 4464,
+   "share": 0.00830357142857143,
+   "science_prompts": 196,
+   "min_per_20_steps": 3,
+   "steps_absent": 565
+  },
+  {
+   "iso": "twi",
+   "prompts": 283,
+   "completions": 4528,
+   "share": 0.008422619047619047,
+   "science_prompts": 206,
+   "min_per_20_steps": 3,
+   "steps_absent": 572
+  },
+  {
+   "iso": "tso",
+   "prompts": 283,
+   "completions": 4528,
+   "share": 0.008422619047619047,
+   "science_prompts": 207,
+   "min_per_20_steps": 3,
+   "steps_absent": 559
+  },
+  {
+   "iso": "bem",
+   "prompts": 286,
+   "completions": 4576,
+   "share": 0.008511904761904762,
+   "science_prompts": 194,
+   "min_per_20_steps": 4,
+   "steps_absent": 557
+  },
+  {
+   "iso": "lua",
+   "prompts": 288,
+   "completions": 4608,
+   "share": 0.008571428571428572,
+   "science_prompts": 210,
+   "min_per_20_steps": 3,
+   "steps_absent": 555
+  },
+  {
+   "iso": "ndc",
+   "prompts": 288,
+   "completions": 4608,
+   "share": 0.008571428571428572,
+   "science_prompts": 204,
+   "min_per_20_steps": 2,
+   "steps_absent": 554
+  },
+  {
+   "iso": "sna",
+   "prompts": 290,
+   "completions": 4640,
+   "share": 0.008630952380952382,
+   "science_prompts": 204,
+   "min_per_20_steps": 3,
+   "steps_absent": 550
+  },
+  {
+   "iso": "her",
+   "prompts": 291,
+   "completions": 4656,
+   "share": 0.008660714285714285,
+   "science_prompts": 209,
+   "min_per_20_steps": 3,
+   "steps_absent": 559
+  },
+  {
+   "iso": "kqn",
+   "prompts": 292,
+   "completions": 4672,
+   "share": 0.008690476190476191,
+   "science_prompts": 201,
+   "min_per_20_steps": 3,
+   "steps_absent": 557
+  },
+  {
+   "iso": "pcm",
+   "prompts": 293,
+   "completions": 4688,
+   "share": 0.008720238095238095,
+   "science_prompts": 201,
+   "min_per_20_steps": 3,
+   "steps_absent": 547
+  },
+  {
+   "iso": "swh",
+   "prompts": 293,
+   "completions": 4688,
+   "share": 0.008720238095238095,
+   "science_prompts": 204,
+   "min_per_20_steps": 4,
+   "steps_absent": 548
+  },
+  {
+   "iso": "kab",
+   "prompts": 294,
+   "completions": 4704,
+   "share": 0.00875,
+   "science_prompts": 207,
+   "min_per_20_steps": 4,
+   "steps_absent": 556
+  },
+  {
+   "iso": "iso",
+   "prompts": 295,
+   "completions": 4720,
+   "share": 0.008779761904761905,
+   "science_prompts": 196,
+   "min_per_20_steps": 3,
+   "steps_absent": 544
+  },
+  {
+   "iso": "wes",
+   "prompts": 296,
+   "completions": 4736,
+   "share": 0.008809523809523809,
+   "science_prompts": 204,
+   "min_per_20_steps": 3,
+   "steps_absent": 549
+  },
+  {
+   "iso": "swc",
+   "prompts": 297,
+   "completions": 4752,
+   "share": 0.008839285714285714,
+   "science_prompts": 211,
+   "min_per_20_steps": 4,
+   "steps_absent": 554
+  },
+  {
+   "iso": "kin",
+   "prompts": 298,
+   "completions": 4768,
+   "share": 0.008869047619047618,
+   "science_prompts": 213,
+   "min_per_20_steps": 4,
+   "steps_absent": 550
+  },
+  {
+   "iso": "xho",
+   "prompts": 298,
+   "completions": 4768,
+   "share": 0.008869047619047618,
+   "science_prompts": 198,
+   "min_per_20_steps": 3,
+   "steps_absent": 552
+  },
+  {
+   "iso": "kri",
+   "prompts": 298,
+   "completions": 4768,
+   "share": 0.008869047619047618,
+   "science_prompts": 201,
+   "min_per_20_steps": 3,
+   "steps_absent": 551
+  },
+  {
+   "iso": "wal",
+   "prompts": 301,
+   "completions": 4816,
+   "share": 0.008958333333333334,
+   "science_prompts": 211,
+   "min_per_20_steps": 3,
+   "steps_absent": 559
+  },
+  {
+   "iso": "nyn",
+   "prompts": 302,
+   "completions": 4832,
+   "share": 0.008988095238095238,
+   "science_prompts": 204,
+   "min_per_20_steps": 4,
+   "steps_absent": 549
+  },
+  {
+   "iso": "kua",
+   "prompts": 303,
+   "completions": 4848,
+   "share": 0.009017857142857143,
+   "science_prompts": 209,
+   "min_per_20_steps": 3,
+   "steps_absent": 548
+  },
+  {
+   "iso": "sot",
+   "prompts": 304,
+   "completions": 4864,
+   "share": 0.009047619047619047,
+   "science_prompts": 203,
+   "min_per_20_steps": 3,
+   "steps_absent": 543
+  },
+  {
+   "iso": "mlg",
+   "prompts": 304,
+   "completions": 4864,
+   "share": 0.009047619047619047,
+   "science_prompts": 212,
+   "min_per_20_steps": 4,
+   "steps_absent": 551
+  },
+  {
+   "iso": "urh",
+   "prompts": 304,
+   "completions": 4864,
+   "share": 0.009047619047619047,
+   "science_prompts": 210,
+   "min_per_20_steps": 4,
+   "steps_absent": 550
+  },
+  {
+   "iso": "run",
+   "prompts": 304,
+   "completions": 4864,
+   "share": 0.009047619047619047,
+   "science_prompts": 229,
+   "min_per_20_steps": 3,
+   "steps_absent": 543
+  },
+  {
+   "iso": "ven",
+   "prompts": 304,
+   "completions": 4864,
+   "share": 0.009047619047619047,
+   "science_prompts": 216,
+   "min_per_20_steps": 4,
+   "steps_absent": 550
+  },
+  {
+   "iso": "som",
+   "prompts": 307,
+   "completions": 4912,
+   "share": 0.009136904761904763,
+   "science_prompts": 212,
+   "min_per_20_steps": 3,
+   "steps_absent": 550
+  },
+  {
+   "iso": "wol",
+   "prompts": 308,
+   "completions": 4928,
+   "share": 0.009166666666666667,
+   "science_prompts": 210,
+   "min_per_20_steps": 3,
+   "steps_absent": 535
+  },
+  {
+   "iso": "lun",
+   "prompts": 308,
+   "completions": 4928,
+   "share": 0.009166666666666667,
+   "science_prompts": 205,
+   "min_per_20_steps": 4,
+   "steps_absent": 546
+  },
+  {
+   "iso": "ibo",
+   "prompts": 309,
+   "completions": 4944,
+   "share": 0.00919642857142857,
+   "science_prompts": 222,
+   "min_per_20_steps": 3,
+   "steps_absent": 544
+  },
+  {
+   "iso": "lin",
+   "prompts": 310,
+   "completions": 4960,
+   "share": 0.009226190476190476,
+   "science_prompts": 203,
+   "min_per_20_steps": 4,
+   "steps_absent": 536
+  },
+  {
+   "iso": "tum",
+   "prompts": 310,
+   "completions": 4960,
+   "share": 0.009226190476190476,
+   "science_prompts": 206,
+   "min_per_20_steps": 4,
+   "steps_absent": 529
+  },
+  {
+   "iso": "ach",
+   "prompts": 310,
+   "completions": 4960,
+   "share": 0.009226190476190476,
+   "science_prompts": 213,
+   "min_per_20_steps": 4,
+   "steps_absent": 550
+  },
+  {
+   "iso": "bas",
+   "prompts": 312,
+   "completions": 4992,
+   "share": 0.009285714285714286,
+   "science_prompts": 216,
+   "min_per_20_steps": 3,
+   "steps_absent": 546
+  },
+  {
+   "iso": "nbl",
+   "prompts": 314,
+   "completions": 5024,
+   "share": 0.009345238095238096,
+   "science_prompts": 207,
+   "min_per_20_steps": 2,
+   "steps_absent": 542
+  },
+  {
+   "iso": "shi",
+   "prompts": 314,
+   "completions": 5024,
+   "share": 0.009345238095238096,
+   "science_prompts": 213,
+   "min_per_20_steps": 2,
+   "steps_absent": 535
+  },
+  {
+   "iso": "nya",
+   "prompts": 315,
+   "completions": 5040,
+   "share": 0.009375,
+   "science_prompts": 227,
+   "min_per_20_steps": 3,
+   "steps_absent": 542
+  },
+  {
+   "iso": "afr",
+   "prompts": 320,
+   "completions": 5120,
+   "share": 0.009523809523809525,
+   "science_prompts": 218,
+   "min_per_20_steps": 4,
+   "steps_absent": 529
+  },
+  {
+   "iso": "sag",
+   "prompts": 320,
+   "completions": 5120,
+   "share": 0.009523809523809525,
+   "science_prompts": 225,
+   "min_per_20_steps": 4,
+   "steps_absent": 530
+  },
+  {
+   "iso": "seh",
+   "prompts": 321,
+   "completions": 5136,
+   "share": 0.009553571428571429,
+   "science_prompts": 228,
+   "min_per_20_steps": 4,
+   "steps_absent": 527
+  },
+  {
+   "iso": "ewe",
+   "prompts": 322,
+   "completions": 5152,
+   "share": 0.009583333333333333,
+   "science_prompts": 233,
+   "min_per_20_steps": 3,
+   "steps_absent": 525
+  },
+  {
+   "iso": "tiv",
+   "prompts": 322,
+   "completions": 5152,
+   "share": 0.009583333333333333,
+   "science_prompts": 234,
+   "min_per_20_steps": 3,
+   "steps_absent": 529
+  },
+  {
+   "iso": "loz",
+   "prompts": 322,
+   "completions": 5152,
+   "share": 0.009583333333333333,
+   "science_prompts": 227,
+   "min_per_20_steps": 3,
+   "steps_absent": 538
+  },
+  {
+   "iso": "yao",
+   "prompts": 322,
+   "completions": 5152,
+   "share": 0.009583333333333333,
+   "science_prompts": 228,
+   "min_per_20_steps": 2,
+   "steps_absent": 533
+  },
+  {
+   "iso": "tsn",
+   "prompts": 331,
+   "completions": 5296,
+   "share": 0.009851190476190477,
+   "science_prompts": 233,
+   "min_per_20_steps": 4,
+   "steps_absent": 533
+  },
+  {
+   "iso": "dua",
+   "prompts": 331,
+   "completions": 5296,
+   "share": 0.009851190476190477,
+   "science_prompts": 227,
+   "min_per_20_steps": 3,
+   "steps_absent": 528
+  },
+  {
+   "iso": "ssw",
+   "prompts": 333,
+   "completions": 5328,
+   "share": 0.009910714285714285,
+   "science_prompts": 228,
+   "min_per_20_steps": 3,
+   "steps_absent": 537
+  },
+  {
+   "iso": "lug",
+   "prompts": 497,
+   "completions": 7952,
+   "share": 0.014791666666666667,
+   "science_prompts": 353,
+   "min_per_20_steps": 7,
+   "steps_absent": 423
+  },
+  {
+   "iso": "zul",
+   "prompts": 528,
+   "completions": 8448,
+   "share": 0.015714285714285715,
+   "science_prompts": 358,
+   "min_per_20_steps": 8,
+   "steps_absent": 406
+  },
+  {
+   "iso": "hau",
+   "prompts": 546,
+   "completions": 8736,
+   "share": 0.01625,
+   "science_prompts": 391,
+   "min_per_20_steps": 7,
+   "steps_absent": 407
+  },
+  {
+   "iso": "fon",
+   "prompts": 602,
+   "completions": 9632,
+   "share": 0.017916666666666668,
+   "science_prompts": 422,
+   "min_per_20_steps": 7,
+   "steps_absent": 367
+  },
+  {
+   "iso": "kbp",
+   "prompts": 602,
+   "completions": 9632,
+   "share": 0.017916666666666668,
+   "science_prompts": 417,
+   "min_per_20_steps": 9,
+   "steps_absent": 375
+  },
+  {
+   "iso": "nso",
+   "prompts": 606,
+   "completions": 9696,
+   "share": 0.018035714285714287,
+   "science_prompts": 417,
+   "min_per_20_steps": 9,
+   "steps_absent": 360
+  },
+  {
+   "iso": "mos",
+   "prompts": 612,
+   "completions": 9792,
+   "share": 0.018214285714285714,
+   "science_prompts": 416,
+   "min_per_20_steps": 8,
+   "steps_absent": 365
+  },
+  {
+   "iso": "umb",
+   "prompts": 615,
+   "completions": 9840,
+   "share": 0.01830357142857143,
+   "science_prompts": 441,
+   "min_per_20_steps": 8,
+   "steps_absent": 373
+  },
+  {
+   "iso": "yor",
+   "prompts": 621,
+   "completions": 9936,
+   "share": 0.018482142857142857,
+   "science_prompts": 431,
+   "min_per_20_steps": 10,
+   "steps_absent": 357
+  },
+  {
+   "iso": "vmw",
+   "prompts": 622,
+   "completions": 9952,
+   "share": 0.01851190476190476,
+   "science_prompts": 426,
+   "min_per_20_steps": 8,
+   "steps_absent": 372
+  },
+  {
+   "iso": "kik",
+   "prompts": 631,
+   "completions": 10096,
+   "share": 0.018779761904761903,
+   "science_prompts": 443,
+   "min_per_20_steps": 6,
+   "steps_absent": 348
+  },
+  {
+   "iso": "efi",
+   "prompts": 633,
+   "completions": 10128,
+   "share": 0.018839285714285715,
+   "science_prompts": 438,
+   "min_per_20_steps": 9,
+   "steps_absent": 370
+  },
+  {
+   "iso": "tir",
+   "prompts": 639,
+   "completions": 10224,
+   "share": 0.019017857142857142,
+   "science_prompts": 428,
+   "min_per_20_steps": 9,
+   "steps_absent": 358
+  },
+  {
+   "iso": "bam",
+   "prompts": 645,
+   "completions": 10320,
+   "share": 0.019196428571428573,
+   "science_prompts": 445,
+   "min_per_20_steps": 7,
+   "steps_absent": 358
+  },
+  {
+   "iso": "kea",
+   "prompts": 651,
+   "completions": 10416,
+   "share": 0.019375,
+   "science_prompts": 457,
+   "min_per_20_steps": 10,
+   "steps_absent": 328
+  },
+  {
+   "iso": "kam",
+   "prompts": 652,
+   "completions": 10432,
+   "share": 0.019404761904761904,
+   "science_prompts": 449,
+   "min_per_20_steps": 11,
+   "steps_absent": 344
+  },
+  {
+   "iso": "kmb",
+   "prompts": 658,
+   "completions": 10528,
+   "share": 0.019583333333333335,
+   "science_prompts": 460,
+   "min_per_20_steps": 9,
+   "steps_absent": 346
+  },
+  {
+   "iso": "amh",
+   "prompts": 660,
+   "completions": 10560,
+   "share": 0.019642857142857142,
+   "science_prompts": 465,
+   "min_per_20_steps": 11,
+   "steps_absent": 352
+  },
+  {
+   "iso": "dyu",
+   "prompts": 662,
+   "completions": 10592,
+   "share": 0.019702380952380954,
+   "science_prompts": 457,
+   "min_per_20_steps": 9,
+   "steps_absent": 352
+  },
+  {
+   "iso": "luo",
+   "prompts": 667,
+   "completions": 10672,
+   "share": 0.019851190476190477,
+   "science_prompts": 457,
+   "min_per_20_steps": 9,
+   "steps_absent": 346
+  },
+  {
+   "iso": "orm",
+   "prompts": 685,
+   "completions": 10960,
+   "share": 0.020386904761904762,
+   "science_prompts": 479,
+   "min_per_20_steps": 10,
+   "steps_absent": 351
+  },
+  {
+   "iso": "bbj",
+   "prompts": 694,
+   "completions": 11104,
+   "share": 0.020654761904761905,
+   "science_prompts": 488,
+   "min_per_20_steps": 10,
+   "steps_absent": 343
+  },
+  {
+   "iso": "kon",
+   "prompts": 730,
+   "completions": 11680,
+   "share": 0.021726190476190475,
+   "science_prompts": 521,
+   "min_per_20_steps": 12,
+   "steps_absent": 319
+  },
+  {
+   "iso": "ish",
+   "prompts": 744,
+   "completions": 11904,
+   "share": 0.02214285714285714,
+   "science_prompts": 515,
+   "min_per_20_steps": 10,
+   "steps_absent": 315
+  },
+  {
+   "iso": "bin",
+   "prompts": 751,
+   "completions": 12016,
+   "share": 0.022351190476190476,
+   "science_prompts": 530,
+   "min_per_20_steps": 10,
+   "steps_absent": 315
+  },
+  {
+   "iso": "oke",
+   "prompts": 754,
+   "completions": 12064,
+   "share": 0.02244047619047619,
+   "science_prompts": 542,
+   "min_per_20_steps": 8,
+   "steps_absent": 302
+  },
+  {
+   "iso": "tsc",
+   "prompts": 755,
+   "completions": 12080,
+   "share": 0.022470238095238095,
+   "science_prompts": 540,
+   "min_per_20_steps": 9,
+   "steps_absent": 306
+  },
+  {
+   "iso": "dag",
+   "prompts": 759,
+   "completions": 12144,
+   "share": 0.022589285714285715,
+   "science_prompts": 535,
+   "min_per_20_steps": 12,
+   "steps_absent": 309
+  },
+  {
+   "iso": "nus",
+   "prompts": 775,
+   "completions": 12400,
+   "share": 0.023065476190476192,
+   "science_prompts": 540,
+   "min_per_20_steps": 11,
+   "steps_absent": 302
+  }
+ ]
+}

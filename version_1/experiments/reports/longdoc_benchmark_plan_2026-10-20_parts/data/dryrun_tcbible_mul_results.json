@@ -1,0 +1,144 @@
+{
+ "system": "opus-mt-tc-bible-big-eng-mul",
+ "hf_id": "Helsinki-NLP/opus-mt-tc-bible-big-deu_eng_fra_por_spa-mul",
+ "weights_licence": "Apache-2.0",
+ "licence_class": "permissive",
+ "refset": "flores_dev",
+ "limit": 30,
+ "allow_proxy": false,
+ "created": "2026-10-20 06:50:54",
+ "per_language": {
+  "zul": {
+   "iso": "zul",
+   "status": "ok",
+   "code": "zul",
+   "proxy": false,
+   "n": 30,
+   "chrf": {
+    "value": 36.81022100128554,
+    "lo": 33.779588518890556,
+    "hi": 39.89601885388011,
+    "se": 1.6653055012112423
+   },
+   "bleu": {
+    "value": 9.66054094424671,
+    "lo": 4.792205398300334,
+    "hi": 13.693123225904381,
+    "se": 2.513141606380584
+   },
+   "africomet": {
+    "value": 0.49300553401311237,
+    "n": 30,
+    "lo": 0.4529907613992691,
+    "hi": 0.5613197634617487
+   },
+   "rate_empty": 0.0,
+   "rate_copy": 0.0,
+   "rate_loop": 0.0,
+   "rate_short": 0.0,
+   "rate_long": 0.0,
+   "length_ratio": 0.8964354527938343,
+   "seconds": 49.54,
+   "sentences_per_second": 0.61
+  },
+  "sna": {
+   "iso": "sna",
+   "status": "ok",
+   "code": "sna",
+   "proxy": false,
+   "n": 30,
+   "chrf": {
+    "value": 36.29001218886134,
+    "lo": 34.001057509714926,
+    "hi": 39.19378437167967,
+    "se": 1.3615541650146898
+   },
+   "bleu": {
+    "value": 7.751828778061386,
+    "lo": 5.30910661689272,
+    "hi": 10.4294201122618,
+    "se": 1.507018825602469
+   },
+   "africomet": {
+    "value": 0.5294098744789759,
+    "n": 30,
+    "lo": 0.47692301174004875,
+    "hi": 0.5895322144031525
+   },
+   "rate_empty": 0.0,
+   "rate_copy": 0.0,
+   "rate_loop": 0.03333333333333333,
+   "rate_short": 0.0,
+   "rate_long": 0.0,
+   "length_ratio": 0.8717771639042358,
+   "seconds": 61.79,
+   "sentences_per_second": 0.49
+  },
+  "kin": {
+   "iso": "kin",
+   "status": "ok",
+   "code": "kin",
+   "proxy": false,
+   "n": 30,
+   "chrf": {
+    "value": 33.57904785740448,
+    "lo": 30.560668673515046,
+    "hi": 37.14816156533812,
+    "se": 1.7051744268432585
+   },
+   "bleu": {
+    "value": 10.810616766457755,
+    "lo": 7.510462321954913,
+    "hi": 14.30281950499419,
+    "se": 1.804185844426843
+   },
+   "africomet": {
+    "value": 0.5022878666718801,
+    "n": 30,
+    "lo": 0.44514851172765096,
+    "hi": 0.5420071254173915
+   },
+   "rate_empty": 0.0,
+   "rate_copy": 0.0,
+   "rate_loop": 0.1,
+   "rate_short": 0.0,
+   "rate_long": 0.0,
+   "length_ratio": 0.8963922294172063,
+   "seconds": 33.42,
+   "sentences_per_second": 0.9
+  },
+  "yor": {
+   "iso": "yor",
+   "status": "ok",
+   "code": "yor",
+   "proxy": false,
+   "n": 30,
+   "chrf": {
+    "value": 19.17632522157121,
+    "lo": 16.489173170587456,
+    "hi": 22.271200199539283,
+    "se": 1.495461039004989
+   },
+   "bleu": {
+    "value": 3.6859800060331946,
+    "lo": 1.9085242527281046,
+    "hi": 5.326356665656796,
+    "se": 0.8517658977837492
+   },
+   "africomet": {
+    "value": 0.38339053094387054,
+    "n": 30,
+    "lo": 0.3592416008313497,
+    "hi": 0.4180967758099238
+   },
+   "rate_empty": 0.0,
+   "rate_copy": 0.0,
+   "rate_loop": 0.03333333333333333,
+   "rate_short": 0.0,
+   "rate_long": 0.0,
+   "length_ratio": 0.9158442982456141,
+   "seconds": 102.2,
+   "sentences_per_second": 0.29
+  }
+ }
+}

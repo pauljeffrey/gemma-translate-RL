@@ -1,0 +1,1137 @@
+{
+ "domain_bin_class": {
+  "education|pd": {
+   "1600-3200": 33,
+   "400-800": 52,
+   "800-1600": 46,
+   ">=3200": 28
+  },
+  "education|permissive": {
+   "1600-3200": 549,
+   "400-800": 512,
+   "800-1600": 521,
+   ">=3200": 414
+  },
+  "encyclopedia|pd": {
+   "1600-3200": 300,
+   "400-800": 104,
+   "800-1600": 312,
+   ">=3200": 312
+  },
+  "encyclopedia|permissive": {
+   "1600-3200": 9,
+   "400-800": 69,
+   "800-1600": 41,
+   ">=3200": 125
+  },
+  "encyclopedia|share_alike": {
+   "1600-3200": 476,
+   "400-800": 704,
+   "800-1600": 1188,
+   ">=3200": 200
+  },
+  "government_public|pd": {
+   "1600-3200": 151,
+   "400-800": 1,
+   "800-1600": 20,
+   ">=3200": 1328
+  },
+  "health|pd": {
+   "1600-3200": 58,
+   "400-800": 176,
+   "800-1600": 129,
+   ">=3200": 49
+  },
+  "health|permissive": {
+   "1600-3200": 347,
+   "400-800": 239,
+   "800-1600": 380,
+   ">=3200": 171
+  },
+  "law_government|pd": {
+   "1600-3200": 443,
+   "400-800": 169,
+   "800-1600": 282,
+   ">=3200": 983
+  },
+  "law_government|permissive": {
+   "1600-3200": 277,
+   "400-800": 121,
+   "800-1600": 217,
+   ">=3200": 163
+  },
+  "news|pd": {
+   "1600-3200": 17,
+   "400-800": 658,
+   "800-1600": 169,
+   ">=3200": 3
+  },
+  "news|permissive": {
+   "1600-3200": 645,
+   "400-800": 5632,
+   "800-1600": 1947,
+   ">=3200": 157
+  },
+  "opinion_magazine|permissive": {
+   "1600-3200": 182,
+   "400-800": 23,
+   "800-1600": 112,
+   ">=3200": 34
+  },
+  "science_explainer|pd": {
+   "1600-3200": 184,
+   "400-800": 1000,
+   "800-1600": 768,
+   ">=3200": 165
+  },
+  "science_explainer|permissive": {
+   "1600-3200": 308,
+   "400-800": 438,
+   "800-1600": 424,
+   ">=3200": 107
+  },
+  "stories|pd": {
+   "1600-3200": 98,
+   "400-800": 8,
+   "800-1600": 31,
+   ">=3200": 152
+  },
+  "travel|pd": {
+   "1600-3200": 42,
+   "400-800": 15,
+   "800-1600": 11,
+   ">=3200": 60
+  },
+  "travel|permissive": {
+   "1600-3200": 115,
+   "400-800": 6,
+   "800-1600": 22,
+   ">=3200": 88
+  },
+  "travel|share_alike": {
+   "1600-3200": 542,
+   "400-800": 792,
+   "800-1600": 837,
+   ">=3200": 314
+  }
+ },
+ "files": {
+  "billsum__pd.jsonl": {
+   "bytes": 3187606,
+   "docs": 500,
+   "docs_per_bin": {
+    "1600-3200": 89,
+    "400-800": 160,
+    "800-1600": 250,
+    ">=3200": 1
+   },
+   "domains": {
+    "education": 36,
+    "health": 62,
+    "law_government": 330,
+    "science_explainer": 72
+   },
+   "licence_classes": {
+    "pd": 500
+   },
+   "licences": {
+    "Public domain (US Congressional bill; dataset CC0-1.0)": 500
+   },
+   "sources": {
+    "billsum": 500
+   },
+   "tokens": {
+    "max": 3298,
+    "median": 1000,
+    "min": 400,
+    "p10": 536,
+    "p25": 730,
+    "p75": 1406,
+    "p90": 1861
+   }
+  },
+  "cp_doab__permissive.jsonl": {
+   "bytes": 6201422,
+   "docs": 263,
+   "docs_per_bin": {
+    "1600-3200": 5,
+    ">=3200": 258
+   },
+   "domains": {
+    "education": 137,
+    "encyclopedia": 115,
+    "travel": 11
+   },
+   "licence_classes": {
+    "permissive": 263
+   },
+   "licences": {
+    "CC-BY-3.0": 3,
+    "CC-BY-4.0": 260
+   },
+   "sources": {
+    "cp_doab": 263
+   },
+   "tokens": {
+    "max": 5184,
+    "median": 4629,
+    "min": 2315,
+    "p10": 4555,
+    "p25": 4586,
+    "p75": 4691,
+    "p90": 4773
+   }
+  },
+  "cp_libretexts__permissive.jsonl": {
+   "bytes": 2949254,
+   "docs": 475,
+   "docs_per_bin": {
+    "1600-3200": 59,
+    "400-800": 251,
+    "800-1600": 149,
+    ">=3200": 16
+   },
+   "domains": {
+    "education": 172,
+    "encyclopedia": 9,
+    "health": 103,
+    "law_government": 4,
+    "science_explainer": 187
+   },
+   "licence_classes": {
+    "pd": 23,
+    "permissive": 452
+   },
+   "licences": {
+    "CC-BY-3.0": 22,
+    "CC-BY-4.0": 430,
+    "Public domain": 23
+   },
+   "sources": {
+    "cp_books": 475
+   },
+   "tokens": {
+    "max": 6256,
+    "median": 758,
+    "min": 400,
+    "p10": 449,
+    "p25": 533,
+    "p75": 1211,
+    "p90": 1891
+   }
+  },
+  "cp_news__permissive.jsonl": {
+   "bytes": 12263440,
+   "docs": 1153,
+   "docs_per_bin": {
+    "1600-3200": 544,
+    "400-800": 167,
+    "800-1600": 301,
+    ">=3200": 141
+   },
+   "domains": {
+    "news": 802,
+    "opinion_magazine": 351
+   },
+   "licence_classes": {
+    "permissive": 1153
+   },
+   "licences": {
+    "CC-BY-4.0": 1153
+   },
+   "sources": {
+    "cp_news": 1153
+   },
+   "tokens": {
+    "max": 6412,
+    "median": 1795,
+    "min": 403,
+    "p10": 666,
+    "p25": 1105,
+    "p75": 2661,
+    "p90": 3350
+   }
+  },
+  "cp_pressbooks__permissive.jsonl": {
+   "bytes": 5616002,
+   "docs": 957,
+   "docs_per_bin": {
+    "1600-3200": 88,
+    "400-800": 510,
+    "800-1600": 338,
+    ">=3200": 21
+   },
+   "domains": {
+    "education": 384,
+    "encyclopedia": 127,
+    "health": 202,
+    "law_government": 34,
+    "science_explainer": 200,
+    "travel": 10
+   },
+   "licence_classes": {
+    "pd": 58,
+    "permissive": 899
+   },
+   "licences": {
+    "CC-BY-4.0": 899,
+    "CC0-1.0": 25,
+    "Public domain": 33
+   },
+   "sources": {
+    "cp_books": 957
+   },
+   "tokens": {
+    "max": 6440,
+    "median": 763,
+    "min": 400,
+    "p10": 448,
+    "p25": 548,
+    "p75": 1109,
+    "p90": 1686
+   }
+  },
+  "cp_usgpo_a__pd.jsonl": {
+   "bytes": 10881004,
+   "docs": 560,
+   "docs_per_bin": {
+    "1600-3200": 155,
+    "400-800": 16,
+    "800-1600": 92,
+    ">=3200": 297
+   },
+   "domains": {
+    "education": 4,
+    "health": 10,
+    "law_government": 475,
+    "science_explainer": 71
+   },
+   "licence_classes": {
+    "pd": 560
+   },
+   "licences": {
+    "Public domain (US government work)": 560
+   },
+   "sources": {
+    "cp_usgpo": 560
+   },
+   "tokens": {
+    "max": 6483,
+    "median": 3606,
+    "min": 415,
+    "p10": 1242,
+    "p25": 1809,
+    "p75": 5867,
+    "p90": 6354
+   }
+  },
+  "cp_usgpo_b__pd.jsonl": {
+   "bytes": 2580293,
+   "docs": 105,
+   "docs_per_bin": {
+    "1600-3200": 19,
+    "400-800": 1,
+    "800-1600": 6,
+    ">=3200": 79
+   },
+   "domains": {
+    "law_government": 88,
+    "science_explainer": 17
+   },
+   "licence_classes": {
+    "pd": 105
+   },
+   "licences": {
+    "Public domain (US government work)": 105
+   },
+   "sources": {
+    "cp_usgpo": 105
+   },
+   "tokens": {
+    "max": 6482,
+    "median": 5512,
+    "min": 433,
+    "p10": 1753,
+    "p25": 3318,
+    "p75": 6146,
+    "p90": 6394
+   }
+  },
+  "eb1911__pd.jsonl": {
+   "bytes": 5994535,
+   "docs": 421,
+   "docs_per_bin": {
+    "1600-3200": 153,
+    "400-800": 7,
+    "800-1600": 112,
+    ">=3200": 149
+   },
+   "domains": {
+    "encyclopedia": 421
+   },
+   "licence_classes": {
+    "pd": 421
+   },
+   "licences": {
+    "Public domain (published 1910-1911)": 421
+   },
+   "sources": {
+    "eb1911": 421
+   },
+   "tokens": {
+    "max": 6467,
+    "median": 2312,
+    "min": 502,
+    "p10": 1117,
+    "p25": 1486,
+    "p75": 4517,
+    "p90": 5998
+   }
+  },
+  "eb1911_ext__pd.jsonl": {
+   "bytes": 4865752,
+   "docs": 334,
+   "docs_per_bin": {
+    "1600-3200": 101,
+    "400-800": 4,
+    "800-1600": 106,
+    ">=3200": 123
+   },
+   "domains": {
+    "encyclopedia": 334
+   },
+   "licence_classes": {
+    "pd": 334
+   },
+   "licences": {
+    "Public domain (published 1910-1911)": 334
+   },
+   "sources": {
+    "eb1911": 334
+   },
+   "tokens": {
+    "max": 6465,
+    "median": 2251,
+    "min": 738,
+    "p10": 1079,
+    "p25": 1413,
+    "p75": 5058,
+    "p90": 6289
+   }
+  },
+  "federalregister__pd.jsonl": {
+   "bytes": 18708928,
+   "docs": 898,
+   "docs_per_bin": {
+    "1600-3200": 213,
+    "400-800": 30,
+    "800-1600": 34,
+    ">=3200": 621
+   },
+   "domains": {
+    "law_government": 898
+   },
+   "licence_classes": {
+    "pd": 898
+   },
+   "licences": {
+    "Public domain (US federal government work)": 898
+   },
+   "sources": {
+    "federalregister": 898
+   },
+   "tokens": {
+    "max": 6437,
+    "median": 4363,
+    "min": 404,
+    "p10": 1846,
+    "p25": 2838,
+    "p75": 5633,
+    "p90": 6062
+   }
+  },
+  "fedhealth__pd.jsonl": {
+   "bytes": 2851413,
+   "docs": 473,
+   "docs_per_bin": {
+    "1600-3200": 45,
+    "400-800": 250,
+    "800-1600": 168,
+    ">=3200": 10
+   },
+   "domains": {
+    "health": 243,
+    "science_explainer": 230
+   },
+   "licence_classes": {
+    "pd": 473
+   },
+   "licences": {
+    "Public domain (US federal government work)": 473
+   },
+   "sources": {
+    "fedhealth": 473
+   },
+   "tokens": {
+    "max": 6337,
+    "median": 769,
+    "min": 401,
+    "p10": 476,
+    "p25": 589,
+    "p75": 1090,
+    "p90": 1781
+   }
+  },
+  "globalvoices__permissive.jsonl": {
+   "bytes": 7643709,
+   "docs": 1299,
+   "docs_per_bin": {
+    "1600-3200": 117,
+    "400-800": 442,
+    "800-1600": 733,
+    ">=3200": 7
+   },
+   "domains": {
+    "news": 1299
+   },
+   "licence_classes": {
+    "permissive": 1299
+   },
+   "licences": {
+    "CC-BY-3.0": 1299
+   },
+   "sources": {
+    "globalvoices": 1299
+   },
+   "tokens": {
+    "max": 5654,
+    "median": 970,
+    "min": 402,
+    "p10": 532,
+    "p25": 701,
+    "p75": 1286,
+    "p90": 1584
+   }
+  },
+  "govreport__pd.jsonl": {
+   "bytes": 44056408,
+   "docs": 1500,
+   "docs_per_bin": {
+    "1600-3200": 151,
+    "400-800": 1,
+    "800-1600": 20,
+    ">=3200": 1328
+   },
+   "domains": {
+    "government_public": 1500
+   },
+   "licence_classes": {
+    "pd": 1500
+   },
+   "licences": {
+    "Public domain (US federal government report)": 1500
+   },
+   "sources": {
+    "govreport": 1500
+   },
+   "tokens": {
+    "max": 6473,
+    "median": 6268,
+    "min": 797,
+    "p10": 3059,
+    "p25": 4686,
+    "p75": 6390,
+    "p90": 6427
+   }
+  },
+  "govuk__permissive.jsonl": {
+   "bytes": 11099356,
+   "docs": 1223,
+   "docs_per_bin": {
+    "1600-3200": 297,
+    "400-800": 432,
+    "800-1600": 338,
+    ">=3200": 156
+   },
+   "domains": {
+    "education": 125,
+    "health": 154,
+    "law_government": 288,
+    "news": 292,
+    "science_explainer": 154,
+    "travel": 210
+   },
+   "licence_classes": {
+    "permissive": 1223
+   },
+   "licences": {
+    "OGL-3.0": 1223
+   },
+   "sources": {
+    "govuk": 1223
+   },
+   "tokens": {
+    "max": 6341,
+    "median": 1132,
+    "min": 400,
+    "p10": 485,
+    "p25": 655,
+    "p75": 2231,
+    "p90": 3646
+   }
+  },
+  "gutenberg__pd.jsonl": {
+   "bytes": 12792403,
+   "docs": 800,
+   "docs_per_bin": {
+    "1600-3200": 220,
+    "400-800": 91,
+    "800-1600": 101,
+    ">=3200": 388
+   },
+   "domains": {
+    "education": 82,
+    "encyclopedia": 26,
+    "health": 80,
+    "law_government": 82,
+    "science_explainer": 113,
+    "stories": 289,
+    "travel": 128
+   },
+   "licence_classes": {
+    "pd": 800
+   },
+   "licences": {
+    "Public domain (US; author died 1527)": 3,
+    "Public domain (US; author died 1687)": 3,
+    "Public domain (US; author died 1731)": 3,
+    "Public domain (US; author died 1754)": 3,
+    "Public domain (US; author died 1764)": 3,
+    "Public domain (US; author died 1768)": 3,
+    "Public domain (US; author died 1780)": 3,
+    "Public domain (US; author died 1784)": 3,
+    "Public domain (US; author died 1797)": 6,
+    "Public domain (US; author died 1813)": 3,
+    "Public domain (US; author died 1823)": 5,
+    "Public domain (US; author died 1832)": 3,
+    "Public domain (US; author died 1837)": 3,
+    "Public domain (US; author died 1838)": 3,
+    "Public domain (US; author died 1843)": 3,
+    "Public domain (US; author died 1844)": 6,
+    "Public domain (US; author died 1845)": 3,
+    "Public domain (US; author died 1850)": 3,
+    "Public domain (US; author died 1852)": 6,
+    "Public domain (US; author died 1857)": 3,
+    "Public domain (US; author died 1858)": 3,
+    "Public domain (US; author died 1862)": 2,
+    "Public domain (US; author died 1863)": 3,
+    "Public domain (US; author died 1864)": 6,
+    "Public domain (US; author died 1865)": 3,
+    "Public domain (US; author died 1869)": 3,
+    "Public domain (US; author died 1870)": 3,
+    "Public domain (US; author died 1871)": 1,
+    "Public domain (US; author died 1872)": 3,
+    "Public domain (US; author died 1873)": 3,
+    "Public domain (US; author died 1875)": 12,
+    "Public domain (US; author died 1876)": 3,
+    "Public domain (US; author died 1877)": 3,
+    "Public domain (US; author died 1879)": 4,
+    "Public domain (US; author died 1880)": 6,
+    "Public domain (US; author died 1882)": 10,
+    "Public domain (US; author died 1883)": 3,
+    "Public domain (US; author died 1884)": 7,
+    "Public domain (US; author died 1885)": 6,
+    "Public domain (US; author died 1886)": 3,
+    "Public domain (US; author died 1888)": 3,
+    "Public domain (US; author died 1890)": 6,
+    "Public domain (US; author died 1891)": 9,
+    "Public domain (US; author died 1892)": 3,
+    "Public domain (US; author died 1893)": 3,
+    "Public domain (US; author died 1894)": 12,
+    "Public domain (US; author died 1895)": 3,
+    "Public domain (US; author died 1897)": 3,
+    "Public domain (US; author died 1898)": 3,
+    "Public domain (US; author died 1899)": 12,
+    "Public domain (US; author died 1900)": 1,
+    "Public domain (US; author died 1901)": 3,
+    "Public domain (US; author died 1902)": 10,
+    "Public domain (US; author died 1903)": 15,
+    "Public domain (US; author died 1904)": 3,
+    "Public domain (US; author died 1905)": 9,
+    "Public domain (US; author died 1906)": 15,
+    "Public domain (US; author died 1907)": 6,
+    "Public domain (US; author died 1908)": 3,
+    "Public domain (US; author died 1909)": 6,
+    "Public domain (US; author died 1910)": 15,
+    "Public domain (US; author died 1911)": 6,
+    "Public domain (US; author died 1912)": 6,
+    "Public domain (US; author died 1913)": 3,
+    "Public domain (US; author died 1914)": 24,
+    "Public domain (US; author died 1915)": 14,
+    "Public domain (US; author died 1916)": 8,
+    "Public domain (US; author died 1917)": 13,
+    "Public domain (US; author died 1918)": 6,
+    "Public domain (US; author died 1919)": 7,
+    "Public domain (US; author died 1920)": 9,
+    "Public domain (US; author died 1921)": 8,
+    "Public domain (US; author died 1922)": 19,
+    "Public domain (US; author died 1923)": 14,
+    "Public domain (US; author died 1924)": 12,
+    "Public domain (US; author died 1925)": 10,
+    "Public domain (US; author died 1926)": 14,
+    "Public domain (US; author died 1927)": 12,
+    "Public domain (US; author died 1928)": 12,
+    "Public domain (US; author died 1929)": 16,
+    "Public domain (US; author died 1930)": 16,
+    "Public domain (US; author died 1931)": 9,
+    "Public domain (US; author died 1932)": 12,
+    "Public domain (US; author died 1933)": 21,
+    "Public domain (US; author died 1934)": 9,
+    "Public domain (US; author died 1935)": 23,
+    "Public domain (US; author died 1936)": 15,
+    "Public domain (US; author died 1937)": 7,
+    "Public domain (US; author died 1938)": 18,
+    "Public domain (US; author died 1939)": 18,
+    "Public domain (US; author died 1940)": 6,
+    "Public domain (US; author died 1941)": 9,
+    "Public domain (US; author died 1942)": 16,
+    "Public domain (US; author died 1943)": 15,
+    "Public domain (US; author died 1944)": 12,
+    "Public domain (US; author died 1945)": 2,
+    "Public domain (US; author died 1946)": 19,
+    "Public domain (US; author died 1947)": 6,
+    "Public domain (US; author died 1948)": 11,
+    "Public domain (US; author died 1949)": 11,
+    "Public domain (US; author died 1950)": 9,
+    "Public domain (US; author died 1951)": 7,
+    "Public domain (US; author died 1952)": 3,
+    "Public domain (US; author died 1953)": 9,
+    "Public domain (US; author died 1954)": 3
+   },
+   "sources": {
+    "gutenberg": 800
+   },
+   "tokens": {
+    "max": 6470,
+    "median": 3136,
+    "min": 500,
+    "p10": 727,
+    "p25": 1658,
+    "p75": 5367,
+    "p90": 6369
+   }
+  },
+  "legislation__permissive.jsonl": {
+   "bytes": 3533630,
+   "docs": 224,
+   "docs_per_bin": {
+    "1600-3200": 103,
+    "400-800": 11,
+    "800-1600": 21,
+    ">=3200": 89
+   },
+   "domains": {
+    "law_government": 224
+   },
+   "licence_classes": {
+    "permissive": 224
+   },
+   "licences": {
+    "OGL-3.0": 224
+   },
+   "sources": {
+    "legislation": 224
+   },
+   "tokens": {
+    "max": 4697,
+    "median": 2659,
+    "min": 406,
+    "p10": 1096,
+    "p25": 2550,
+    "p75": 4454,
+    "p90": 4525
+   }
+  },
+  "nasa__pd.jsonl": {
+   "bytes": 8992584,
+   "docs": 1598,
+   "docs_per_bin": {
+    "1600-3200": 113,
+    "400-800": 833,
+    "800-1600": 594,
+    ">=3200": 58
+   },
+   "domains": {
+    "science_explainer": 1598
+   },
+   "licence_classes": {
+    "pd": 1598
+   },
+   "licences": {
+    "Public domain (US government work)": 1598
+   },
+   "sources": {
+    "nasa": 1598
+   },
+   "tokens": {
+    "max": 6302,
+    "median": 783,
+    "min": 400,
+    "p10": 458,
+    "p25": 551,
+    "p75": 1093,
+    "p90": 1668
+   }
+  },
+  "nps__pd.jsonl": {
+   "bytes": 1889569,
+   "docs": 240,
+   "docs_per_bin": {
+    "1600-3200": 43,
+    "400-800": 87,
+    "800-1600": 88,
+    ">=3200": 22
+   },
+   "domains": {
+    "encyclopedia": 240
+   },
+   "licence_classes": {
+    "pd": 240
+   },
+   "licences": {
+    "Public domain (US federal government work)": 240
+   },
+   "sources": {
+    "fedhealth": 240
+   },
+   "tokens": {
+    "max": 6448,
+    "median": 1051,
+    "min": 402,
+    "p10": 468,
+    "p25": 638,
+    "p75": 1747,
+    "p90": 2945
+   }
+  },
+  "openstax_ccby_current__permissive.jsonl": {
+   "bytes": 2012513,
+   "docs": 258,
+   "docs_per_bin": {
+    "1600-3200": 62,
+    "400-800": 81,
+    "800-1600": 104,
+    ">=3200": 11
+   },
+   "domains": {
+    "education": 159,
+    "law_government": 39,
+    "science_explainer": 60
+   },
+   "licence_classes": {
+    "permissive": 258
+   },
+   "licences": {
+    "CC-BY-4.0": 258
+   },
+   "sources": {
+    "openstax": 258
+   },
+   "tokens": {
+    "max": 6295,
+    "median": 1094,
+    "min": 402,
+    "p10": 485,
+    "p25": 668,
+    "p75": 1745,
+    "p90": 2095
+   }
+  },
+  "openstax_ccby_snapshot__permissive.jsonl": {
+   "bytes": 23963420,
+   "docs": 1889,
+   "docs_per_bin": {
+    "1600-3200": 733,
+    "400-800": 237,
+    "800-1600": 509,
+    ">=3200": 410
+   },
+   "domains": {
+    "education": 1056,
+    "health": 320,
+    "law_government": 193,
+    "science_explainer": 320
+   },
+   "licence_classes": {
+    "permissive": 1889
+   },
+   "licences": {
+    "CC-BY-4.0": 1889
+   },
+   "sources": {
+    "openstax": 1889
+   },
+   "tokens": {
+    "max": 6452,
+    "median": 1936,
+    "min": 400,
+    "p10": 715,
+    "p25": 1183,
+    "p75": 3009,
+    "p90": 4326
+   }
+  },
+  "owid__permissive.jsonl": {
+   "bytes": 5063251,
+   "docs": 484,
+   "docs_per_bin": {
+    "1600-3200": 188,
+    "400-800": 90,
+    "800-1600": 140,
+    ">=3200": 66
+   },
+   "domains": {
+    "health": 112,
+    "science_explainer": 372
+   },
+   "licence_classes": {
+    "permissive": 484
+   },
+   "licences": {
+    "CC-BY-4.0": 484
+   },
+   "sources": {
+    "owid": 484
+   },
+   "tokens": {
+    "max": 6399,
+    "median": 1660,
+    "min": 400,
+    "p10": 592,
+    "p25": 938,
+    "p75": 2542,
+    "p90": 3543
+   }
+  },
+  "pmc__permissive.jsonl": {
+   "bytes": 2193805,
+   "docs": 175,
+   "docs_per_bin": {
+    "1600-3200": 65,
+    "400-800": 15,
+    "800-1600": 64,
+    ">=3200": 31
+   },
+   "domains": {
+    "health": 175
+   },
+   "licence_classes": {
+    "permissive": 175
+   },
+   "licences": {
+    "CC-BY (version not stated in the article)": 97,
+    "CC-BY-3.0": 1,
+    "CC-BY-4.0": 77
+   },
+   "sources": {
+    "pmc": 175
+   },
+   "tokens": {
+    "max": 6347,
+    "median": 1718,
+    "min": 443,
+    "p10": 852,
+    "p25": 1154,
+    "p75": 2531,
+    "p90": 3863
+   }
+  },
+  "pmc_ext__permissive.jsonl": {
+   "bytes": 993603,
+   "docs": 88,
+   "docs_per_bin": {
+    "1600-3200": 27,
+    "400-800": 11,
+    "800-1600": 39,
+    ">=3200": 11
+   },
+   "domains": {
+    "health": 88
+   },
+   "licence_classes": {
+    "permissive": 88
+   },
+   "licences": {
+    "CC-BY (version not stated in the article)": 55,
+    "CC-BY-4.0": 33
+   },
+   "sources": {
+    "pmc": 88
+   },
+   "tokens": {
+    "max": 6342,
+    "median": 1484,
+    "min": 457,
+    "p10": 738,
+    "p25": 1043,
+    "p75": 2259,
+    "p90": 3447
+   }
+  },
+  "voa__pd.jsonl": {
+   "bytes": 1216555,
+   "docs": 274,
+   "docs_per_bin": {
+    "1600-3200": 5,
+    "400-800": 182,
+    "800-1600": 87
+   },
+   "domains": {
+    "news": 274
+   },
+   "licence_classes": {
+    "pd": 274
+   },
+   "licences": {
+    "Public domain (VOA-produced material)": 274
+   },
+   "sources": {
+    "voa": 274
+   },
+   "tokens": {
+    "max": 2723,
+    "median": 670,
+    "min": 400,
+    "p10": 457,
+    "p25": 526,
+    "p75": 898,
+    "p90": 1203
+   }
+  },
+  "wikinews__pd.jsonl": {
+   "bytes": 2199170,
+   "docs": 573,
+   "docs_per_bin": {
+    "1600-3200": 12,
+    "400-800": 476,
+    "800-1600": 82,
+    ">=3200": 3
+   },
+   "domains": {
+    "news": 573
+   },
+   "licence_classes": {
+    "pd": 573
+   },
+   "licences": {
+    "Public domain (published before 2005-09-25)": 573
+   },
+   "sources": {
+    "wikinews": 573
+   },
+   "tokens": {
+    "max": 3893,
+    "median": 548,
+    "min": 401,
+    "p10": 421,
+    "p25": 459,
+    "p75": 699,
+    "p90": 955
+   }
+  },
+  "wikinews__permissive.jsonl": {
+   "bytes": 23422129,
+   "docs": 5988,
+   "docs_per_bin": {
+    "1600-3200": 151,
+    "400-800": 4838,
+    "800-1600": 956,
+    ">=3200": 43
+   },
+   "domains": {
+    "news": 5988
+   },
+   "licence_classes": {
+    "permissive": 5988
+   },
+   "licences": {
+    "CC-BY-2.5": 5927,
+    "CC-BY-4.0": 61
+   },
+   "sources": {
+    "wikinews": 5988
+   },
+   "tokens": {
+    "max": 6358,
+    "median": 546,
+    "min": 400,
+    "p10": 421,
+    "p25": 457,
+    "p75": 727,
+    "p90": 1027
+   }
+  },
+  "wikipedia__share_alike.jsonl": {
+   "bytes": 18727991,
+   "docs": 2568,
+   "docs_per_bin": {
+    "1600-3200": 476,
+    "400-800": 704,
+    "800-1600": 1188,
+    ">=3200": 200
+   },
+   "domains": {
+    "encyclopedia": 2568
+   },
+   "licence_classes": {
+    "share_alike": 2568
+   },
+   "licences": {
+    "CC-BY-SA-4.0 / CC-BY-SA-3.0 + GFDL": 2568
+   },
+   "sources": {
+    "wikipedia": 2568
+   },
+   "tokens": {
+    "max": 6451,
+    "median": 1070,
+    "min": 400,
+    "p10": 643,
+    "p25": 779,
+    "p75": 1639,
+    "p90": 2855
+   }
+  },
+  "wikivoyage__share_alike.jsonl": {
+   "bytes": 20053782,
+   "docs": 2485,
+   "docs_per_bin": {
+    "1600-3200": 542,
+    "400-800": 792,
+    "800-1600": 837,
+    ">=3200": 314
+   },
+   "domains": {
+    "travel": 2485
+   },
+   "licence_classes": {
+    "share_alike": 2485
+   },
+   "licences": {
+    "CC-BY-SA-4.0": 2485
+   },
+   "sources": {
+    "wikivoyage": 2485
+   },
+   "tokens": {
+    "max": 6417,
+    "median": 1156,
+    "min": 400,
+    "p10": 516,
+    "p25": 691,
+    "p75": 2031,
+    "p90": 3765
+   }
+  }
+ }
+}

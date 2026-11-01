@@ -1,0 +1,3 @@
+wrote out/model/geez_N3000 (bf16, 3000 rows re-initialised, tied=True, control=False); sha256 d05d9d467b2710fdb2790cd7f6d03424a6905833c4e7e59e9cda3cdc05362ff7
+Loading weights:   0%|          | 0/236 [00:00<?, ?it/s]Loading weights: 100%|██████████| 236/236 [00:00<00:00, 3183.94it/s]
+Loading weights:   0%|          | 0/236 [00:00<?, ?it/s]Loading weights:  52%|█████▏    | 123/236 [00:00<00:00, 1225.98it/s]Loading weights: 100%|██████████| 236/236 [00:00<00:00, 1171.62it/s]

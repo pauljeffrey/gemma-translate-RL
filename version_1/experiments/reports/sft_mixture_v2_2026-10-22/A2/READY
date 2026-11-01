@@ -1,0 +1,6 @@
+READY_A2  2026-10-22 05:54 UTC (agent R11)
+A2 = A + long-document distillation rounds 1+2 (1,715 documents, 2.83 M tokens) + self-distilled anchor windows of the 47 weak / Ge ez languages (filtered best-of-4, 1,460 windows, 0.49 M tokens). No external data, weak-language replay unchanged.
+data    : /workspace/jobs/r11/mix_v2A2   (audit_packed OK on train; tokenizer fingerprint = final_1433; train/source.npy = component code per sample, train/licence_class.npy = licence class per sample; components/*.jsonl = every non-original row with source dataset + licence)
+config  : /workspace/jobs/r11/configs/sft_science_v2_A2.yaml   (R4 hyper-parameters; 360 optimizer steps at 65,536 tokens per step, 1 epoch)
+tables  : /workspace/jobs/r11/mix_v2A2/mixture_tables_v2.md (tokens per language by component + licence-class table), licence_filter.md (what an nc/unknown or share-alike filter would remove), /workspace/jobs/r11/work/cmp_all.md (weak-language comparison of all variants)
+command : cd /workspace/jobs/r11/code && source /workspace/jobs/r11/env.sh && nice -n 10 \$PY -m gemma_mt.train_sft --config /workspace/jobs/r11/configs/sft_science_v2_A2.yaml     (out_dir /workspace/jobs/r11/runs/sci_sft_v2A2 ; train_sft.py is identical to R4/R7 copies)

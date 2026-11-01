@@ -1,0 +1,27 @@
+{
+ "iso": "efi",
+ "spec": {
+  "smol_sent": "efi",
+  "ibom_mt": "efi",
+  "smol_doc": "efi"
+ },
+ "frac": 0.5,
+ "salt": "calib-split-v1",
+ "pairs": 3481,
+ "calibration": 1791,
+ "holdout": 1690,
+ "calibration_by_source": {
+  "smol_sent": 432,
+  "ibom_mt": 545,
+  "smol_doc": 814
+ },
+ "calibration_english_seen": "1533/1791",
+ "calibration_pair_seen": "0/1791",
+ "holdout_by_source": {
+  "smol_sent": 431,
+  "ibom_mt": 467,
+  "smol_doc": 792
+ },
+ "holdout_english_seen": "1467/1690",
+ "holdout_pair_seen": "0/1690"
+}

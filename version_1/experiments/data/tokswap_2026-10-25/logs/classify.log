@@ -1,0 +1,91 @@
+{
+ "tokenizer_sha256": "daab2354f8a74e70d70b4d1f804939b68a8c9624dd06cb7858e52dd8970e9726",
+ "vocab_size": 262144,
+ "n_merges": 514906,
+ "policy": {
+  "KEEP_never_touched": "all added/special/unused tokens (6,415 incl. <start_of_turn>, <end_of_turn>, <bos>, <unusedN>, html markup), byte tokens <0xHH>, tokens with no letter (digits, punctuation, symbols, emoji, whitespace pieces), Latin, Ethiopic, Arabic, Greek (science/LaTeX letters), Tifinagh, N'Ko, Vai, Adlam, Osmanya, Bamum, and any mixed token that contains a KEEP script",
+  "FREE_scripts_priority_order": [
+   "cjk",
+   "hangul",
+   "hiragana",
+   "katakana",
+   "bopomofo",
+   "thai",
+   "lao",
+   "khmer",
+   "myanmar",
+   "tibetan",
+   "sinhala",
+   "tamil",
+   "malayalam",
+   "telugu",
+   "kannada",
+   "gujarati",
+   "gurmukhi",
+   "oriya",
+   "bengali",
+   "devanagari",
+   "georgian",
+   "armenian",
+   "thaana",
+   "mongolian",
+   "cherokee",
+   "syriac",
+   "coptic",
+   "ogham",
+   "runic",
+   "canadian_syllabics",
+   "cyrillic",
+   "hebrew"
+  ],
+  "reserve_tail": [
+   "cyrillic",
+   "hebrew"
+  ],
+  "re_use_rule": "only LEAF tokens (not an input of any merge) of FREE scripts; priority by script order, then id descending; first 16000 form the pool",
+  "slots": {
+   "geez": "free_order[0:8000]",
+   "fon": "free_order[8000:16000]"
+  }
+ },
+ "n_free_tokens_all": 82187,
+ "n_free_leaf_tokens": 46884,
+ "n_pool": 16000,
+ "free_by_script_group": {
+  "cjk_ideograph_and_mixed_kana": 20587,
+  "hangul": 4678,
+  "kana": 3578,
+  "thai": 2142,
+  "devanagari": 13638,
+  "bengali": 9786,
+  "cyrillic": 13397,
+  "tamil": 3834
+ },
+ "pool_by_class": {
+  "cjk": 14968,
+  "mixed:cjk+hiragana": 1023,
+  "mixed:cjk+katakana": 9
+ },
+ "free_order_tokens_head": [
+  "蟳",
+  "膂",
+  "籙",
+  "兩",
+  "脿",
+  "粡",
+  "燡",
+  "滪",
+  "涳",
+  "恚",
+  "佾",
+  "亗",
+  "飡",
+  "雩",
+  "謢",
+  "詎",
+  "耔",
+  "橑",
+  "列",
+  "骓"
+ ]
+}

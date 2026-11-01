@@ -1,0 +1,338 @@
+{
+ "core": {
+  "docs": 200,
+  "languages": 77,
+  "mean_english_tokens_per_doc": 1455.0400000000002,
+  "english_tokens": 291008.00000000006,
+  "sentences_per_language": 10647.89528636337,
+  "target_gemma_tokens_per_language": 559721.2867605046,
+  "translator": {
+   "nllb200-3.3b": {
+    "languages": 44,
+    "output_tokens_total": 18470802.463096652,
+    "tok_s_range": [
+     26065.454545454548,
+     46917.818181818184
+    ],
+    "gpu_hours": [
+     0.1093567148005104,
+     0.1968420866409187
+    ],
+    "backend": "ctranslate2",
+    "precision": "int8_float16",
+    "batch": 192,
+    "roofline_tok_s": 104261.81818181819
+   },
+   "madlad400-7b-mt": {
+    "languages": 44,
+    "output_tokens_total": 18470802.463096652,
+    "tok_s_range": [
+     7964.444444444444,
+     14336.0
+    ],
+    "gpu_hours": [
+     0.3578947029834886,
+     0.6442104653702795
+    ],
+    "backend": "ctranslate2",
+    "precision": "int8_float16",
+    "batch": 128,
+    "roofline_tok_s": 31857.777777777777
+   },
+   "sunflower-qwen3.8-27b": {
+    "languages": 31,
+    "output_tokens_total": 13013519.917181732,
+    "tok_s_range": [
+     1046.4233576642337,
+     1883.5620437956206
+    ],
+    "gpu_hours": [
+     1.9191651560238332,
+     3.4544972808428995
+    ],
+    "backend": "vllm",
+    "precision": "bf16",
+    "batch": 128,
+    "roofline_tok_s": 4185.693430656935
+   },
+   "opus-mt-tc-bible-big-eng-mul": {
+    "languages": 59,
+    "output_tokens_total": 24767666.939152326,
+    "tok_s_range": [
+     19114.666666666668,
+     43008.0
+    ],
+    "gpu_hours": [
+     0.15996808693958958,
+     0.3599281956140765
+    ],
+    "backend": "hf",
+    "precision": "bf16",
+    "batch": 64,
+    "roofline_tok_s": 238933.33333333334
+   }
+  },
+  "assumptions": {
+   "gpu": {
+    "name": "NVIDIA RTX PRO 6000 Blackwell 96 GB",
+    "mem_bw_gbps": 1792.0,
+    "note": "memory bandwidth from the NVIDIA datasheet (GDDR7, ~1.8 TB/s); not measured by us"
+   },
+   "efficiency": {
+    "ctranslate2": [
+     0.25,
+     0.45
+    ],
+    "vllm": [
+     0.25,
+     0.45
+    ],
+    "hf": [
+     0.08,
+     0.18
+    ]
+   },
+   "translator_token_factor": 0.75,
+   "covered": {
+    "nllb200-3.3b": 44,
+    "madlad400-7b-mt": 44,
+    "sunflower-qwen3.8-27b": 31,
+    "opus-mt-tc-bible-big-eng-mul": 59
+   }
+  },
+  "own_model": {
+   "output_tokens_total": 129295617.24167655,
+   "gpu_hours": [
+    0.8978862308449761,
+    3.5915449233799044
+   ],
+   "models": 3,
+   "name": "gemma-3-270m SabiYarn-MT (vLLM)",
+   "tok_s_low": 10000.0,
+   "tok_s_high": 40000.0,
+   "anchor": "MEASURED 5,347 tok/s with 4 sequences of b1024 on a card at 100% load from another job (reports/gemma_rl_vllm_2026-10-17.md); 5-10k tok/s sustained there. ASSUMPTION for a dedicated 96 GB card with 256-512 concurrent sequences: 10-40k tok/s."
+  },
+  "africomet": {
+   "triples_total": 2459663.8111499385,
+   "triples_per_s_range": [
+    290.0,
+    700.0
+   ],
+   "gpu_hours": [
+    0.9760570679166423,
+    2.3559998191091367
+   ],
+   "anchor": "MEASURED on the RTX 5070 (AfriCOMET-QE fp16, 87.5 AfroXLM tokens per (src, mt) pair): 290-350 pairs/s single process, 480 pairs/s with three (reports/gemma_rl_cost_estimate_2026-10-17.md)",
+   "assumption": "x1.5-3 vs the RTX 5070 and x1.5 encoder tokens for the extra reference segment"
+  }
+ },
+ "extended": {
+  "docs": 1000,
+  "languages": 77,
+  "mean_english_tokens_per_doc": 1455.0400000000002,
+  "english_tokens": 1455040.0000000002,
+  "sentences_per_language": 53239.476431816845,
+  "target_gemma_tokens_per_language": 2798606.4338025227,
+  "translator": {
+   "nllb200-3.3b": {
+    "languages": 44,
+    "output_tokens_total": 92354012.31548324,
+    "tok_s_range": [
+     26065.454545454548,
+     46917.818181818184
+    ],
+    "gpu_hours": [
+     0.5467835740025518,
+     0.9842104332045932
+    ],
+    "backend": "ctranslate2",
+    "precision": "int8_float16",
+    "batch": 192,
+    "roofline_tok_s": 104261.81818181819
+   },
+   "madlad400-7b-mt": {
+    "languages": 44,
+    "output_tokens_total": 92354012.31548324,
+    "tok_s_range": [
+     7964.444444444444,
+     14336.0
+    ],
+    "gpu_hours": [
+     1.7894735149174426,
+     3.221052326851397
+    ],
+    "backend": "ctranslate2",
+    "precision": "int8_float16",
+    "batch": 128,
+    "roofline_tok_s": 31857.777777777777
+   },
+   "sunflower-qwen3.8-27b": {
+    "languages": 31,
+    "output_tokens_total": 65067599.58590865,
+    "tok_s_range": [
+     1046.4233576642337,
+     1883.5620437956206
+    ],
+    "gpu_hours": [
+     9.595825780119164,
+     17.272486404214494
+    ],
+    "backend": "vllm",
+    "precision": "bf16",
+    "batch": 128,
+    "roofline_tok_s": 4185.693430656935
+   },
+   "opus-mt-tc-bible-big-eng-mul": {
+    "languages": 59,
+    "output_tokens_total": 123838334.69576164,
+    "tok_s_range": [
+     19114.666666666668,
+     43008.0
+    ],
+    "gpu_hours": [
+     0.799840434697948,
+     1.7996409780703826
+    ],
+    "backend": "hf",
+    "precision": "bf16",
+    "batch": 64,
+    "roofline_tok_s": 238933.33333333334
+   }
+  },
+  "assumptions": {
+   "gpu": {
+    "name": "NVIDIA RTX PRO 6000 Blackwell 96 GB",
+    "mem_bw_gbps": 1792.0,
+    "note": "memory bandwidth from the NVIDIA datasheet (GDDR7, ~1.8 TB/s); not measured by us"
+   },
+   "efficiency": {
+    "ctranslate2": [
+     0.25,
+     0.45
+    ],
+    "vllm": [
+     0.25,
+     0.45
+    ],
+    "hf": [
+     0.08,
+     0.18
+    ]
+   },
+   "translator_token_factor": 0.75,
+   "covered": {
+    "nllb200-3.3b": 44,
+    "madlad400-7b-mt": 44,
+    "sunflower-qwen3.8-27b": 31,
+    "opus-mt-tc-bible-big-eng-mul": 59
+   }
+  },
+  "own_model": {
+   "output_tokens_total": 646478086.2083827,
+   "gpu_hours": [
+    4.48943115422488,
+    17.95772461689952
+   ],
+   "models": 3,
+   "name": "gemma-3-270m SabiYarn-MT (vLLM)",
+   "tok_s_low": 10000.0,
+   "tok_s_high": 40000.0,
+   "anchor": "MEASURED 5,347 tok/s with 4 sequences of b1024 on a card at 100% load from another job (reports/gemma_rl_vllm_2026-10-17.md); 5-10k tok/s sustained there. ASSUMPTION for a dedicated 96 GB card with 256-512 concurrent sequences: 10-40k tok/s."
+  },
+  "africomet": {
+   "triples_total": 12298319.055749692,
+   "triples_per_s_range": [
+    290.0,
+    700.0
+   ],
+   "gpu_hours": [
+    4.880285339583211,
+    11.779999095545682
+   ],
+   "anchor": "MEASURED on the RTX 5070 (AfriCOMET-QE fp16, 87.5 AfroXLM tokens per (src, mt) pair): 290-350 pairs/s single process, 480 pairs/s with three (reports/gemma_rl_cost_estimate_2026-10-17.md)",
+   "assumption": "x1.5-3 vs the RTX 5070 and x1.5 encoder tokens for the extra reference segment"
+  }
+ },
+ "bakeoff": {
+  "sentences_per_language": 997,
+  "systems": {
+   "nllb200-3.3b": {
+    "languages": 44,
+    "output_tokens": 1771878.8540514556,
+    "gpu_hours": [
+     0.010490440298449002,
+     0.018882792537208204
+    ],
+    "weights_gb_bf16": 6.6
+   },
+   "madlad400-7b-mt": {
+    "languages": 44,
+    "output_tokens": 1771878.8540514556,
+    "gpu_hours": [
+     0.03433235006765128,
+     0.0617982301217723
+    ],
+    "weights_gb_bf16": 14.4
+   },
+   "sunflower-qwen3.8-27b": {
+    "languages": 31,
+    "output_tokens": 1248369.192627162,
+    "gpu_hours": [
+     0.1841028923450947,
+     0.3313852062211704
+    ],
+    "weights_gb_bf16": 54.8
+   },
+   "opus-mt-tc-bible-big-eng-mul": {
+    "languages": 59,
+    "output_tokens": 2375928.463387179,
+    "gpu_hours": [
+     0.01534552010599565,
+     0.03452742023849021
+    ],
+    "weights_gb_bf16": 0.48
+   },
+   "translategemma-12b-it": {
+    "languages": 47,
+    "output_tokens": 1892688.7759186004,
+    "gpu_hours": [
+     0.13446837109830087,
+     0.24204306797694156
+    ],
+    "weights_gb_bf16": 26.4
+   },
+   "afriqueqwen3.5-9b-50langs-instruct": {
+    "languages": 41,
+    "output_tokens": 1651068.9321843109,
+    "gpu_hours": [
+     0.05331918002930691,
+     0.09597452405275243
+    ],
+    "weights_gb_bf16": 18.0
+   }
+  },
+  "africomet": {
+   "triples": 263208,
+   "gpu_hours": [
+    0.10444761904761904,
+    0.2521149425287356
+   ]
+  },
+  "total_gpu_hours": [
+   0.5365063729924174,
+   1.0367261836770707
+  ],
+  "note": "decoding only plus AfriCOMET; add model download / load time (weights of the 27B system alone are 55 GB) and 2-4x if HF generate is used instead of CTranslate2 / vLLM"
+ },
+ "markdown": "| item | core | extended |\n|---|---|---|\n| documents x languages | 200 x 77 | 1000 x 77 |\n| English tokens per language | 291 k | 1455 k |\n| English sentences per language | 10648 | 53239 |\n| target Gemma tokens, all languages | 43.1 M | 215.5 M |\n| translator nllb200-3.3b (44 languages): output tokens / GPU hours | 18.5 M / 0.1 - 0.2 | 92.4 M / 0.5 - 1.0 |\n| translator madlad400-7b-mt (44 languages): output tokens / GPU hours | 18.5 M / 0.4 - 0.6 | 92.4 M / 1.8 - 3.2 |\n| translator sunflower-qwen3.8-27b (31 languages): output tokens / GPU hours | 13.0 M / 1.9 - 3.5 | 65.1 M / 9.6 - 17.3 |\n| translator opus-mt-tc-bible-big-eng-mul (59 languages): output tokens / GPU hours | 24.8 M / 0.2 - 0.4 | 123.8 M / 0.8 - 1.8 |\n| our model (3 checkpoints): output tokens / GPU hours | 129.3 M / 0.9 - 3.6 | 646.5 M / 4.5 - 18.0 |\n| AfriCOMET (ref-based) triples / GPU hours | 2.46 M / 1.0 - 2.4 | 12.30 M / 4.9 - 11.8 |\n",
+ "inputs": {
+  "gemma_fertility": 1.923387971328982,
+  "english_tokens_per_sentence": 27.330095964851427,
+  "bin_shares": {
+   "512": 0.352,
+   "1024": 0.3,
+   "2048": 0.22,
+   "4096": 0.128
+  }
+ }
+}

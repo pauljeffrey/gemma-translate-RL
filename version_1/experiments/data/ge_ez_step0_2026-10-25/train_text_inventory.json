@@ -1,0 +1,94 @@
+{
+ "wiki_am": {
+  "path": "datasets--wikimedia--wikipedia/snapshots/b04c8d1ceb2f5cd4588862100d08de323dccfbaa/20231101.am/train-00000-of-00001.parquet",
+  "rows": 13906,
+  "cols": [
+   "id",
+   "url",
+   "title",
+   "text"
+  ],
+  "bytes": 10720027
+ },
+ "wiki_ti": {
+  "path": "datasets--wikimedia--wikipedia/snapshots/b04c8d1ceb2f5cd4588862100d08de323dccfbaa/20231101.ti/train-00000-of-00001.parquet",
+  "rows": 435,
+  "cols": [
+   "id",
+   "url",
+   "title",
+   "text"
+  ],
+  "bytes": 363723
+ },
+ "wiki_fon": {
+  "path": "datasets--wikimedia--wikipedia/snapshots/b04c8d1ceb2f5cd4588862100d08de323dccfbaa/20231101.fon/train-00000-of-00001.parquet",
+  "rows": 705,
+  "cols": [
+   "id",
+   "url",
+   "title",
+   "text"
+  ],
+  "bytes": 317444
+ },
+ "ft_amh_Ethi_files": [
+  "data/amh_Ethi/000_00000.parquet",
+  "data/amh_Ethi/001_00000.parquet"
+ ],
+ "ft_amh_Ethi": {
+  "path": "datasets--HuggingFaceFW--finetranslations/snapshots/af3f4ca895450216d4771cdbf3e3b95c5bacaa2a/data/amh_Ethi/000_00000.parquet",
+  "rows": 220000,
+  "cols": [
+   "id",
+   "translated_text",
+   "translated_chunks",
+   "og_chunks",
+   "og_full_text",
+   "og_language",
+   "og_language_score",
+   "og_token_count",
+   "og_quality_score",
+   "early_stop",
+   "url",
+   "warc_path",
+   "minhash_cluster_size",
+   "translated_token_count",
+   "edu_score_raw",
+   "edu_score"
+  ],
+  "bytes": 2155360186
+ },
+ "ft_tir_Ethi_files": [
+  "data/tir_Ethi/000_00000.parquet"
+ ],
+ "ft_tir_Ethi": {
+  "path": "datasets--HuggingFaceFW--finetranslations/snapshots/af3f4ca895450216d4771cdbf3e3b95c5bacaa2a/data/tir_Ethi/000_00000.parquet",
+  "rows": 72009,
+  "cols": [
+   "id",
+   "translated_text",
+   "translated_chunks",
+   "og_chunks",
+   "og_full_text",
+   "og_language",
+   "og_language_score",
+   "og_token_count",
+   "og_quality_score",
+   "early_stop",
+   "url",
+   "warc_path",
+   "minhash_cluster_size",
+   "translated_token_count",
+   "edu_score_raw",
+   "edu_score"
+  ],
+  "bytes": 666863907
+ },
+ "ft_fon_Latn_files": [],
+ "fineweb2_fon": {
+  "path": "datasets--HuggingFaceFW--fineweb-2/snapshots/af9c13333eb981300149d5ca60a8e9d659b276b9/data/fon_Latn/train/000_00000.parquet",
+  "rows": 1639,
+  "license": "ODC-By 1.0 (card)"
+ }
+}

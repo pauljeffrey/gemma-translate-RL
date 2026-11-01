@@ -1,0 +1,13 @@
+p_fail | rule      | E[grad on failure logit] (descent direction: negative lowers P(fail)) | mean |adv| of failed | of survivors
+ 0.03  | standard  | -0.0929 | 3.114 | 0.660
+ 0.03  | zero      | -0.0028 | 0.000 | 0.660
+ 0.03  | exclude   | -0.0000 | 0.000 | 0.811
+ 0.10  | standard  | -0.2420 | 2.420 | 0.505
+ 0.10  | zero      | -0.0242 | 0.000 | 0.505
+ 0.10  | exclude   | -0.0000 | 0.000 | 0.813
+ 0.25  | standard  | -0.4002 | 1.601 | 0.567
+ 0.25  | zero      | -0.1001 | 0.000 | 0.567
+ 0.25  | exclude   | -0.0000 | 0.000 | 0.816
+ 0.50  | standard  | -0.4773 | 0.953 | 0.956
+ 0.50  | zero      | -0.2386 | 0.000 | 0.956
+ 0.50  | exclude   | -0.0000 | 0.000 | 0.827

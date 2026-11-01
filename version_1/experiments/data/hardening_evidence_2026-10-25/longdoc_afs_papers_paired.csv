@@ -1,0 +1,145 @@
+a,b,scope,indicator,n_docs,n_lang,mean_a,mean_b,diff_b_minus_a,ci_lo,ci_hi,lang_ci_lo,lang_ci_hi,margin,verdict,negligible
+rl,final2,dev,unfinished,150,6,0.25333,0.02,-0.23333,-0.30667,-0.16667,-0.35333,-0.12667,0.005,final2 better,False
+rl,final2,dev,empty,150,6,0,0,0,0,0,0,0,0.001,equal,True
+rl,final2,dev,rep_flag,150,6,0.63333,0.42,-0.21333,-0.29333,-0.13333,-0.27333,-0.13333,0.01,final2 better,False
+rl,final2,dev,rep_severe,150,6,0.5,0.073333,-0.42667,-0.50667,-0.36,-0.59333,-0.2665,0.005,final2 better,False
+rl,final2,dev,rep_degenerate,150,6,0.42667,0.02,-0.40667,-0.48,-0.33333,-0.5935,-0.22,0.005,final2 better,False
+rl,final2,dev,rep_sev,150,6,0.49591,0.13671,-0.3592,-0.42321,-0.30163,-0.49296,-0.22561,0.005,final2 better,False
+rl,final2,dev,rep_rep4,150,6,0.40993,0.11729,-0.29264,-0.34271,-0.24638,-0.40865,-0.18035,0.005,final2 better,False
+rl,final2,dev,cover_failed,150,6,0.47064,0.27875,-0.19189,-0.2364,-0.15043,-0.28781,-0.092827,0.005,final2 better,False
+rl,final2,dev,pad_flag,150,6,0.50667,0.18667,-0.32,-0.4,-0.24667,-0.4335,-0.19333,0.01,final2 better,False
+rl,final2,dev,pad_def,150,6,0.43741,0.078094,-0.35931,-0.43006,-0.29644,-0.47913,-0.23045,0.005,final2 better,False
+rl,final2,dev,func_def,150,6,0.014802,0,-0.014802,-0.0245,-0.0063271,-0.03602,-0.00068493,0.005,final2 better,False
+rl,final2,dev,copy_flag,150,6,0,0.013333,0.013333,0,0.033333,0,0.026667,0.01,equal,False
+rl,final2,dev,copy_frac,150,6,0.0077545,0.010602,0.0028479,0.00088762,0.005077,0.00082248,0.0043406,0.002,final2 worse,False
+rl,final2,dev,num_loss,150,6,0.48414,0.25712,-0.22703,-0.27897,-0.17847,-0.31032,-0.14138,0.005,final2 better,False
+rl,final2,dev,lid_doc_wrong,150,6,0,0,0,0,0,0,0,0.01,equal,True
+rl,final2,dev,lid_sent_wrong_share,150,6,0.01474,0.015163,0.00042232,-0.005719,0.0063057,-0.0094485,0.0099794,0.005,equal,True
+rl,final2,dev+test,unfinished,318,6,0.26101,0.018868,-0.24214,-0.28931,-0.19497,-0.37429,-0.12264,0.005,final2 better,False
+rl,final2,dev+test,empty,318,6,0,0,0,0,0,0,0,0.001,equal,True
+rl,final2,dev+test,rep_flag,318,6,0.69182,0.48428,-0.20755,-0.26101,-0.15094,-0.27366,-0.14465,0.01,final2 better,False
+rl,final2,dev+test,rep_severe,318,6,0.53145,0.11635,-0.41509,-0.46541,-0.36156,-0.56604,-0.26415,0.005,final2 better,False
+rl,final2,dev+test,rep_degenerate,318,6,0.47484,0.022013,-0.45283,-0.50322,-0.40566,-0.63522,-0.26415,0.005,final2 better,False
+rl,final2,dev+test,rep_sev,318,6,0.54144,0.16844,-0.37301,-0.41755,-0.32955,-0.49491,-0.25522,0.005,final2 better,False
+rl,final2,dev+test,rep_rep4,318,6,0.44362,0.13245,-0.31117,-0.3485,-0.2785,-0.42597,-0.1981,0.005,final2 better,False
+rl,final2,dev+test,cover_failed,318,6,0.48994,0.30704,-0.1829,-0.21192,-0.15635,-0.27225,-0.096385,0.005,final2 better,False
+rl,final2,dev+test,pad_flag,318,6,0.55031,0.19811,-0.3522,-0.40566,-0.30189,-0.45597,-0.24843,0.01,final2 better,False
+rl,final2,dev+test,pad_def,318,6,0.47324,0.091446,-0.38179,-0.42838,-0.33671,-0.50227,-0.25323,0.005,final2 better,False
+rl,final2,dev+test,func_def,318,6,0.019639,0.00093867,-0.018701,-0.028311,-0.01013,-0.03767,-0.0033616,0.005,final2 better,False
+rl,final2,dev+test,copy_flag,318,6,0,0.0062893,0.0062893,0,0.015723,0,0.012579,0.01,equal,True
+rl,final2,dev+test,copy_frac,318,6,0.0072107,0.0092668,0.0020562,0.00085377,0.0032587,0.00019546,0.00379,0.002,final2 worse,False
+rl,final2,dev+test,num_loss,318,6,0.52222,0.28379,-0.23842,-0.27015,-0.20508,-0.30007,-0.17307,0.005,final2 better,False
+rl,final2,dev+test,lid_doc_wrong,318,6,0,0,0,0,0,0,0,0.01,equal,True
+rl,final2,dev+test,lid_sent_wrong_share,318,6,0.019679,0.011354,-0.0083252,-0.016868,-0.00059418,-0.016423,1.9229e-05,0.005,final2 better,False
+rl,final2,test,unfinished,168,6,0.26786,0.017857,-0.25,-0.30952,-0.19048,-0.39881,-0.11905,0.005,final2 better,False
+rl,final2,test,empty,168,6,0,0,0,0,0,0,0,0.001,equal,True
+rl,final2,test,rep_flag,168,6,0.74405,0.54167,-0.20238,-0.26786,-0.13095,-0.32738,-0.083333,0.01,final2 better,False
+rl,final2,test,rep_severe,168,6,0.55952,0.15476,-0.40476,-0.47619,-0.33333,-0.54762,-0.26786,0.005,final2 better,False
+rl,final2,test,rep_degenerate,168,6,0.51786,0.02381,-0.49405,-0.55952,-0.42857,-0.69048,-0.29762,0.005,final2 better,False
+rl,final2,test,rep_sev,168,6,0.5821,0.19676,-0.38534,-0.44433,-0.3263,-0.50285,-0.27087,0.005,final2 better,False
+rl,final2,test,rep_rep4,168,6,0.47371,0.14599,-0.32772,-0.37084,-0.2806,-0.44285,-0.20743,0.005,final2 better,False
+rl,final2,test,cover_failed,168,6,0.50718,0.3323,-0.17488,-0.21565,-0.13678,-0.26809,-0.086281,0.005,final2 better,False
+rl,final2,test,pad_flag,168,6,0.58929,0.20833,-0.38095,-0.44658,-0.31533,-0.4881,-0.27976,0.01,final2 better,False
+rl,final2,test,pad_def,168,6,0.50523,0.10337,-0.40187,-0.46346,-0.34441,-0.53346,-0.26729,0.005,final2 better,False
+rl,final2,test,func_def,168,6,0.023958,0.0017768,-0.022181,-0.038234,-0.008645,-0.042288,-0.0032303,0.005,final2 better,False
+rl,final2,test,copy_flag,168,6,0,0,0,0,0,0,0,0.01,equal,True
+rl,final2,test,copy_frac,168,6,0.0067252,0.0080744,0.0013492,7.6914e-05,0.0027547,-0.00043824,0.0036392,0.002,final2 worse,True
+rl,final2,test,num_loss,168,6,0.55747,0.30849,-0.24897,-0.29366,-0.20393,-0.29426,-0.20059,0.005,final2 better,False
+rl,final2,test,lid_doc_wrong,168,6,0,0,0,0,0,0,0,0.01,equal,True
+rl,final2,test,lid_sent_wrong_share,168,6,0.024088,0.0079524,-0.016136,-0.034287,-0.0032287,-0.029094,-0.003677,0.005,final2 better,False
+a2w,final2,dev,unfinished,150,6,0.08,0.02,-0.06,-0.10667,-0.013333,-0.14667,0,0.005,final2 better,False
+a2w,final2,dev,empty,150,6,0,0,0,0,0,0,0,0.001,equal,True
+a2w,final2,dev,rep_flag,150,6,0.52,0.42,-0.1,-0.1735,-0.02,-0.20667,-0.013333,0.01,final2 better,False
+a2w,final2,dev,rep_severe,150,6,0.26667,0.073333,-0.19333,-0.26667,-0.12667,-0.31333,-0.08,0.005,final2 better,False
+a2w,final2,dev,rep_degenerate,150,6,0.14667,0.02,-0.12667,-0.18,-0.08,-0.26667,-0.0066667,0.005,final2 better,False
+a2w,final2,dev,rep_sev,150,6,0.28855,0.13671,-0.15185,-0.20231,-0.1021,-0.26422,-0.056008,0.005,final2 better,False
+a2w,final2,dev,rep_rep4,150,6,0.21346,0.11729,-0.096171,-0.12921,-0.063687,-0.17224,-0.028912,0.005,final2 better,False
+a2w,final2,dev,cover_failed,150,6,0.37516,0.27875,-0.096412,-0.1361,-0.058026,-0.17566,-0.023581,0.005,final2 better,False
+a2w,final2,dev,pad_flag,150,6,0.18667,0.18667,0,-0.053333,0.053333,-0.08,0.1,0.01,equal,True
+a2w,final2,dev,pad_def,150,6,0.10406,0.078094,-0.025964,-0.063857,0.01004,-0.11313,0.04905,0.005,equal,False
+a2w,final2,dev,func_def,150,6,0.00038465,0,-0.00038465,-0.0011357,0,-0.0011539,0,0.005,equal,True
+a2w,final2,dev,copy_flag,150,6,0.0066667,0.013333,0.0066667,0,0.02,0,0.02,0.01,equal,True
+a2w,final2,dev,copy_frac,150,6,0.0080691,0.010602,0.0025333,0.00088057,0.0044777,0.00176,0.0034605,0.002,final2 worse,False
+a2w,final2,dev,num_loss,150,6,0.27248,0.25712,-0.015368,-0.051958,0.023814,-0.074204,0.047656,0.005,equal,False
+a2w,final2,dev,lid_doc_wrong,150,6,0,0,0,0,0,0,0,0.01,equal,True
+a2w,final2,dev,lid_sent_wrong_share,150,6,0.014959,0.015163,0.00020329,-0.0033733,0.0036739,-0.0027894,0.0039364,0.005,equal,True
+a2w,final2,dev+test,unfinished,318,6,0.069182,0.018868,-0.050314,-0.081761,-0.018868,-0.11006,-0.0062893,0.005,final2 better,False
+a2w,final2,dev+test,empty,318,6,0,0,0,0,0,0,0,0.001,equal,True
+a2w,final2,dev+test,rep_flag,318,6,0.57862,0.48428,-0.09434,-0.1478,-0.034591,-0.16981,-0.022013,0.01,final2 better,False
+a2w,final2,dev+test,rep_severe,318,6,0.29874,0.11635,-0.18239,-0.22956,-0.13829,-0.26415,-0.11635,0.005,final2 better,False
+a2w,final2,dev+test,rep_degenerate,318,6,0.13208,0.022013,-0.11006,-0.14465,-0.072327,-0.20755,-0.031447,0.005,final2 better,False
+a2w,final2,dev+test,rep_sev,318,6,0.31013,0.16844,-0.1417,-0.17813,-0.10798,-0.22274,-0.072258,0.005,final2 better,False
+a2w,final2,dev+test,rep_rep4,318,6,0.2186,0.13245,-0.086146,-0.10901,-0.06367,-0.13333,-0.045409,0.005,final2 better,False
+a2w,final2,dev+test,cover_failed,318,6,0.3673,0.30704,-0.060258,-0.087464,-0.035547,-0.12028,-0.010139,0.005,final2 better,False
+a2w,final2,dev+test,pad_flag,318,6,0.2044,0.19811,-0.0062893,-0.050314,0.040881,-0.072327,0.08805,0.01,equal,True
+a2w,final2,dev+test,pad_def,318,6,0.099287,0.091446,-0.0078411,-0.035439,0.018341,-0.05118,0.04752,0.005,equal,False
+a2w,final2,dev+test,func_def,318,6,0.0039346,0.00093867,-0.0029959,-0.0077829,0.00010476,-0.007579,-0.0002095,0.005,equal,True
+a2w,final2,dev+test,copy_flag,318,6,0.0031447,0.0062893,0.0031447,0,0.009434,0,0.009434,0.01,equal,True
+a2w,final2,dev+test,copy_frac,318,6,0.0083485,0.0092668,0.00091833,-5.0035e-05,0.0019656,0.00011251,0.0017321,0.002,equal,True
+a2w,final2,dev+test,num_loss,318,6,0.28487,0.28379,-0.0010759,-0.031979,0.028113,-0.035258,0.034641,0.005,equal,True
+a2w,final2,dev+test,lid_doc_wrong,318,6,0,0,0,0,0,0,0,0.01,equal,True
+a2w,final2,dev+test,lid_sent_wrong_share,318,6,0.016453,0.011354,-0.0050995,-0.013383,0.0011384,-0.010242,-7.9573e-05,0.005,equal,False
+a2w,final2,test,unfinished,168,6,0.059524,0.017857,-0.041667,-0.083333,0,-0.089286,0,0.005,equal,False
+a2w,final2,test,empty,168,6,0,0,0,0,0,0,0,0.001,equal,True
+a2w,final2,test,rep_flag,168,6,0.63095,0.54167,-0.089286,-0.16667,-0.011905,-0.19643,0.02381,0.01,final2 better,False
+a2w,final2,test,rep_severe,168,6,0.32738,0.15476,-0.17262,-0.2381,-0.11295,-0.24405,-0.1131,0.005,final2 better,False
+a2w,final2,test,rep_degenerate,168,6,0.11905,0.02381,-0.095238,-0.14301,-0.047619,-0.15476,-0.047619,0.005,final2 better,False
+a2w,final2,test,rep_sev,168,6,0.3294,0.19676,-0.13263,-0.18133,-0.084732,-0.18824,-0.071804,0.005,final2 better,False
+a2w,final2,test,rep_rep4,168,6,0.22319,0.14599,-0.077195,-0.10818,-0.046632,-0.1054,-0.046495,0.005,final2 better,False
+a2w,final2,test,cover_failed,168,6,0.36028,0.3323,-0.027977,-0.058497,0.003094,-0.078602,0.010238,0.005,equal,False
+a2w,final2,test,pad_flag,168,6,0.22024,0.20833,-0.011905,-0.077381,0.065476,-0.089286,0.083333,0.01,equal,False
+a2w,final2,test,pad_def,168,6,0.095027,0.10337,0.0083404,-0.027421,0.043813,-0.031947,0.063617,0.005,equal,False
+a2w,final2,test,func_def,168,6,0.0071042,0.0017768,-0.0053275,-0.01402,0.0007984,-0.013316,-0.00039656,0.005,equal,False
+a2w,final2,test,copy_flag,168,6,0,0,0,0,0,0,0,0.01,equal,True
+a2w,final2,test,copy_frac,168,6,0.008598,0.0080744,-0.00052364,-0.0015664,0.00055622,-0.0016883,0.00044426,0.002,equal,True
+a2w,final2,test,num_loss,168,6,0.29634,0.30849,0.012158,-0.027976,0.049682,-0.017569,0.046681,0.005,equal,False
+a2w,final2,test,lid_doc_wrong,168,6,0,0,0,0,0,0,0,0.01,equal,True
+a2w,final2,test,lid_sent_wrong_share,168,6,0.017787,0.0079524,-0.0098342,-0.02674,0.0022,-0.020754,0.0009205,0.005,equal,False
+rl,a2w,dev,unfinished,150,6,0.25333,0.08,-0.17333,-0.24667,-0.1,-0.26667,-0.086667,0.005,final2 better,False
+rl,a2w,dev,empty,150,6,0,0,0,0,0,0,0,0.001,equal,True
+rl,a2w,dev,rep_flag,150,6,0.63333,0.52,-0.11333,-0.18017,-0.046667,-0.17333,-0.04,0.01,final2 better,False
+rl,a2w,dev,rep_severe,150,6,0.5,0.26667,-0.23333,-0.32,-0.15333,-0.30667,-0.13333,0.005,final2 better,False
+rl,a2w,dev,rep_degenerate,150,6,0.42667,0.14667,-0.28,-0.36,-0.2,-0.4,-0.14,0.005,final2 better,False
+rl,a2w,dev,rep_sev,150,6,0.49591,0.28855,-0.20735,-0.27773,-0.13918,-0.29695,-0.092388,0.005,final2 better,False
+rl,a2w,dev,rep_rep4,150,6,0.40993,0.21346,-0.19647,-0.24935,-0.14133,-0.27625,-0.096336,0.005,final2 better,False
+rl,a2w,dev,cover_failed,150,6,0.47064,0.37516,-0.095481,-0.1372,-0.053955,-0.1594,-0.023789,0.005,final2 better,False
+rl,a2w,dev,pad_flag,150,6,0.50667,0.18667,-0.32,-0.39333,-0.24,-0.46667,-0.14667,0.01,final2 better,False
+rl,a2w,dev,pad_def,150,6,0.43741,0.10406,-0.33335,-0.40653,-0.26218,-0.46724,-0.17795,0.005,final2 better,False
+rl,a2w,dev,func_def,150,6,0.014802,0.00038465,-0.014418,-0.023949,-0.0060941,-0.034866,-0.00068493,0.005,final2 better,False
+rl,a2w,dev,copy_flag,150,6,0,0.0066667,0.0066667,0,0.02,0,0.02,0.01,equal,True
+rl,a2w,dev,copy_frac,150,6,0.0077545,0.0080691,0.00031456,-0.001538,0.0022084,-0.0015237,0.0017345,0.002,equal,True
+rl,a2w,dev,num_loss,150,6,0.48414,0.27248,-0.21166,-0.26194,-0.16479,-0.2974,-0.12006,0.005,final2 better,False
+rl,a2w,dev,lid_doc_wrong,150,6,0,0,0,0,0,0,0,0.01,equal,True
+rl,a2w,dev,lid_sent_wrong_share,150,6,0.01474,0.014959,0.00021903,-0.0061552,0.0065728,-0.0072806,0.0063563,0.005,equal,True
+rl,a2w,dev+test,unfinished,318,6,0.26101,0.069182,-0.19182,-0.24222,-0.14465,-0.29874,-0.10377,0.005,final2 better,False
+rl,a2w,dev+test,empty,318,6,0,0,0,0,0,0,0,0.001,equal,True
+rl,a2w,dev+test,rep_flag,318,6,0.69182,0.57862,-0.11321,-0.16667,-0.059748,-0.19497,-0.031447,0.01,final2 better,False
+rl,a2w,dev+test,rep_severe,318,6,0.53145,0.29874,-0.2327,-0.28931,-0.1761,-0.3239,-0.13514,0.005,final2 better,False
+rl,a2w,dev+test,rep_degenerate,318,6,0.47484,0.13208,-0.34277,-0.39945,-0.28616,-0.4717,-0.20126,0.005,final2 better,False
+rl,a2w,dev+test,rep_sev,318,6,0.54144,0.31013,-0.23131,-0.27934,-0.18673,-0.3233,-0.12845,0.005,final2 better,False
+rl,a2w,dev+test,rep_rep4,318,6,0.44362,0.2186,-0.22502,-0.2609,-0.18994,-0.3131,-0.11947,0.005,final2 better,False
+rl,a2w,dev+test,cover_failed,318,6,0.48994,0.3673,-0.12265,-0.15173,-0.096861,-0.17649,-0.061565,0.005,final2 better,False
+rl,a2w,dev+test,pad_flag,318,6,0.55031,0.2044,-0.34591,-0.40259,-0.29237,-0.47799,-0.19489,0.01,final2 better,False
+rl,a2w,dev+test,pad_def,318,6,0.47324,0.099287,-0.37395,-0.42481,-0.32611,-0.51453,-0.22027,0.005,final2 better,False
+rl,a2w,dev+test,func_def,318,6,0.019639,0.0039346,-0.015705,-0.025857,-0.0063585,-0.03141,-0.0031521,0.005,final2 better,False
+rl,a2w,dev+test,copy_flag,318,6,0,0.0031447,0.0031447,0,0.009434,0,0.009434,0.01,equal,True
+rl,a2w,dev+test,copy_frac,318,6,0.0072107,0.0083485,0.0011378,-4.1759e-05,0.0023775,-0.00066157,0.0024606,0.002,equal,True
+rl,a2w,dev+test,num_loss,318,6,0.52222,0.28487,-0.23735,-0.27685,-0.20004,-0.29469,-0.17534,0.005,final2 better,False
+rl,a2w,dev+test,lid_doc_wrong,318,6,0,0,0,0,0,0,0,0.01,equal,True
+rl,a2w,dev+test,lid_sent_wrong_share,318,6,0.019679,0.016453,-0.0032257,-0.013612,0.0067795,-0.011514,0.004443,0.005,equal,True
+rl,a2w,test,unfinished,168,6,0.26786,0.059524,-0.20833,-0.27976,-0.14286,-0.32738,-0.10714,0.005,final2 better,False
+rl,a2w,test,empty,168,6,0,0,0,0,0,0,0,0.001,equal,True
+rl,a2w,test,rep_flag,168,6,0.74405,0.63095,-0.1131,-0.18467,-0.035714,-0.22024,-0.017857,0.01,final2 better,False
+rl,a2w,test,rep_severe,168,6,0.55952,0.32738,-0.23214,-0.30952,-0.15476,-0.36905,-0.089286,0.005,final2 better,False
+rl,a2w,test,rep_degenerate,168,6,0.51786,0.11905,-0.39881,-0.47619,-0.33318,-0.55357,-0.24405,0.005,final2 better,False
+rl,a2w,test,rep_sev,168,6,0.5821,0.3294,-0.2527,-0.31853,-0.19299,-0.36787,-0.12711,0.005,final2 better,False
+rl,a2w,test,rep_rep4,168,6,0.47371,0.22319,-0.25052,-0.29632,-0.20642,-0.35654,-0.14281,0.005,final2 better,False
+rl,a2w,test,cover_failed,168,6,0.50718,0.36028,-0.1469,-0.18608,-0.11065,-0.20312,-0.090067,0.005,final2 better,False
+rl,a2w,test,pad_flag,168,6,0.58929,0.22024,-0.36905,-0.45238,-0.29152,-0.50595,-0.23214,0.01,final2 better,False
+rl,a2w,test,pad_def,168,6,0.50523,0.095027,-0.41021,-0.47553,-0.34628,-0.57096,-0.24664,0.005,final2 better,False
+rl,a2w,test,func_def,168,6,0.023958,0.0071042,-0.016854,-0.034126,-0.0013675,-0.033135,-0.0028338,0.005,final2 better,False
+rl,a2w,test,copy_flag,168,6,0,0,0,0,0,0,0,0.01,equal,True
+rl,a2w,test,copy_frac,168,6,0.0067252,0.008598,0.0018729,0.00054778,0.0034439,-0.0001827,0.004002,0.002,final2 worse,True
+rl,a2w,test,num_loss,168,6,0.55747,0.29634,-0.26113,-0.31016,-0.20791,-0.30043,-0.21904,0.005,final2 better,False
+rl,a2w,test,lid_doc_wrong,168,6,0,0,0,0,0,0,0,0.01,equal,True
+rl,a2w,test,lid_sent_wrong_share,168,6,0.024088,0.017787,-0.0063014,-0.025976,0.011991,-0.021603,0.005058,0.005,equal,False

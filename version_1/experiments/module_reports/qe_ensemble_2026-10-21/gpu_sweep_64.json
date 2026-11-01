@@ -1,0 +1,137 @@
+{
+ "config": "configs/rl_science.yaml",
+ "v8": "calibration/shaping_flores_dev_v8.json",
+ "steps": [
+  {
+   "n": 672,
+   "n_compared": 648,
+   "seconds_reward_old": 5.002981185913086,
+   "seconds_reward_new": 4.485279083251953,
+   "seconds_qe_primary": 2.265164852142334,
+   "seconds_qe_secondary": 1.689809799194336,
+   "pearson": 0.9236724527929141,
+   "spearman": 0.912037369843134,
+   "within_group_spearman_mean": 0.7671564899034755,
+   "mean_old": 0.5926913893846448,
+   "mean_new": 0.5524742889672203,
+   "std_old": 0.8549588948827885,
+   "std_new": 0.7516672922139701,
+   "min_new": -1.7758031968997394,
+   "max_new": 2.040254512316769,
+   "status_old": {
+    "ok": 672
+   },
+   "status_new": {
+    "ok": 672
+   },
+   "weights_changed": 144,
+   "qe_ens": {
+    "qe_ens/chunks": 760.0,
+    "qe_ens/seconds_primary": 2.265164852142334,
+    "qe_ens/seconds_secondary": 1.689809799194336,
+    "qe_ens/joint_split_rate": 0.0,
+    "qe_ens/both_share": 1.0,
+    "qe_ens/only1_share": 0.0,
+    "qe_ens/only2_share": 0.0,
+    "qe_ens/abs_diff_mean": 0.5496564628307485,
+    "qe_ens/signed_diff_mean": -0.00911443221192872,
+    "qe_ens/min_share": 0.14605263157894738,
+    "qe_ens/min_share_ssa_high": 0.05526315789473684,
+    "qe_ens/min_share_afri_high": 0.09078947368421053,
+    "qe_ens/r1_mean": 0.8161688589611508,
+    "qe_ens/r2_mean": 0.8070544267492221,
+    "qe_ens/combined_mean": 0.7165323533387561
+   }
+  },
+  {
+   "n": 672,
+   "n_compared": 608,
+   "seconds_reward_old": 3.7874629497528076,
+   "seconds_reward_new": 4.180207967758179,
+   "seconds_qe_primary": 1.7548508644104004,
+   "seconds_qe_secondary": 1.8345484733581543,
+   "pearson": 0.9478352260129426,
+   "spearman": 0.942687334016826,
+   "within_group_spearman_mean": 0.8293043662821082,
+   "mean_old": 0.14530609640053493,
+   "mean_new": 0.18021821129770604,
+   "std_old": 0.8113861953331822,
+   "std_new": 0.7354601027016683,
+   "min_new": -2.0,
+   "max_new": 2.044369596394718,
+   "status_old": {
+    "ok": 672
+   },
+   "status_new": {
+    "ok": 672
+   },
+   "weights_changed": 208,
+   "qe_ens": {
+    "qe_ens/chunks": 712.0,
+    "qe_ens/seconds_primary": 1.7548508644104004,
+    "qe_ens/seconds_secondary": 1.8345484733581543,
+    "qe_ens/joint_split_rate": 0.0,
+    "qe_ens/both_share": 1.0,
+    "qe_ens/only1_share": 0.0,
+    "qe_ens/only2_share": 0.0,
+    "qe_ens/abs_diff_mean": 0.552349827077531,
+    "qe_ens/signed_diff_mean": 0.18121847626027413,
+    "qe_ens/min_share": 0.13342696629213482,
+    "qe_ens/min_share_ssa_high": 0.08707865168539326,
+    "qe_ens/min_share_afri_high": 0.046348314606741575,
+    "qe_ens/r1_mean": 0.41804433224478016,
+    "qe_ens/r2_mean": 0.5992628085050542,
+    "qe_ens/combined_mean": 0.4190645732939472
+   }
+  },
+  {
+   "n": 672,
+   "n_compared": 664,
+   "seconds_reward_old": 3.021928310394287,
+   "seconds_reward_new": 4.366497039794922,
+   "seconds_qe_primary": 1.8318333625793457,
+   "seconds_qe_secondary": 1.9972968101501465,
+   "pearson": 0.9293574123477512,
+   "spearman": 0.927900766846063,
+   "within_group_spearman_mean": 0.7905625097536061,
+   "mean_old": 0.4894421240809766,
+   "mean_new": 0.4728506568118996,
+   "std_old": 0.8962929690699178,
+   "std_new": 0.8079272276748521,
+   "min_new": -1.6567402912112938,
+   "max_new": 2.0921631345609906,
+   "status_old": {
+    "ok": 672
+   },
+   "status_new": {
+    "ok": 672
+   },
+   "weights_changed": 120,
+   "qe_ens": {
+    "qe_ens/chunks": 824.0,
+    "qe_ens/seconds_primary": 1.8318333625793457,
+    "qe_ens/seconds_secondary": 1.9972968101501465,
+    "qe_ens/joint_split_rate": 0.0,
+    "qe_ens/both_share": 1.0,
+    "qe_ens/only1_share": 0.0,
+    "qe_ens/only2_share": 0.0,
+    "qe_ens/abs_diff_mean": 0.5470027020727034,
+    "qe_ens/signed_diff_mean": 0.11127647921288848,
+    "qe_ens/min_share": 0.125,
+    "qe_ens/min_share_ssa_high": 0.06067961165048544,
+    "qe_ens/min_share_afri_high": 0.06432038834951456,
+    "qe_ens/r1_mean": 0.7188730371070331,
+    "qe_ens/r2_mean": 0.8301495163199216,
+    "qe_ens/combined_mean": 0.6768929556396004
+   }
+  }
+ ],
+ "samples_per_step": 672,
+ "old_worker_startup_s": 43.171870708465576,
+ "old_gpu_mb_after_steps": 3886,
+ "old_gpu_mb_peak": 3886,
+ "new_worker_startup_s": 42.13624978065491,
+ "new_gpu_mb_after_steps": 2908,
+ "new_gpu_mb_peak": 5050,
+ "hack_probe": {}
+}

@@ -1,0 +1,12012 @@
+{
+"orig_tokenizer_sha256": "daab2354f8a74e70d70b4d1f804939b68a8c9624dd06cb7858e52dd8970e9726",
+"n_geez": 1000,
+"n_fon": 0,
+"removed_tokens": [
+{
+"id": 256001,
+"token": "<unused99>"
+},
+{
+"id": 256002,
+"token": "<unused100>"
+},
+{
+"id": 256003,
+"token": "<unused101>"
+},
+{
+"id": 256004,
+"token": "<unused102>"
+},
+{
+"id": 256005,
+"token": "<unused103>"
+},
+{
+"id": 256006,
+"token": "<unused104>"
+},
+{
+"id": 256007,
+"token": "<unused105>"
+},
+{
+"id": 256008,
+"token": "<unused106>"
+},
+{
+"id": 256009,
+"token": "<unused107>"
+},
+{
+"id": 256010,
+"token": "<unused108>"
+},
+{
+"id": 256011,
+"token": "<unused109>"
+},
+{
+"id": 256012,
+"token": "<unused110>"
+},
+{
+"id": 256013,
+"token": "<unused111>"
+},
+{
+"id": 256014,
+"token": "<unused112>"
+},
+{
+"id": 256015,
+"token": "<unused113>"
+},
+{
+"id": 256016,
+"token": "<unused114>"
+},
+{
+"id": 256017,
+"token": "<unused115>"
+},
+{
+"id": 256018,
+"token": "<unused116>"
+},
+{
+"id": 256019,
+"token": "<unused117>"
+},
+{
+"id": 256020,
+"token": "<unused118>"
+},
+{
+"id": 256021,
+"token": "<unused119>"
+},
+{
+"id": 256022,
+"token": "<unused120>"
+},
+{
+"id": 256023,
+"token": "<unused121>"
+},
+{
+"id": 256024,
+"token": "<unused122>"
+},
+{
+"id": 256025,
+"token": "<unused123>"
+},
+{
+"id": 256026,
+"token": "<unused124>"
+},
+{
+"id": 256027,
+"token": "<unused125>"
+},
+{
+"id": 256028,
+"token": "<unused126>"
+},
+{
+"id": 256029,
+"token": "<unused127>"
+},
+{
+"id": 256030,
+"token": "<unused128>"
+},
+{
+"id": 256031,
+"token": "<unused129>"
+},
+{
+"id": 256032,
+"token": "<unused130>"
+},
+{
+"id": 256033,
+"token": "<unused131>"
+},
+{
+"id": 256034,
+"token": "<unused132>"
+},
+{
+"id": 256035,
+"token": "<unused133>"
+},
+{
+"id": 256036,
+"token": "<unused134>"
+},
+{
+"id": 256037,
+"token": "<unused135>"
+},
+{
+"id": 256038,
+"token": "<unused136>"
+},
+{
+"id": 256039,
+"token": "<unused137>"
+},
+{
+"id": 256040,
+"token": "<unused138>"
+},
+{
+"id": 256041,
+"token": "<unused139>"
+},
+{
+"id": 256042,
+"token": "<unused140>"
+},
+{
+"id": 256043,
+"token": "<unused141>"
+},
+{
+"id": 256044,
+"token": "<unused142>"
+},
+{
+"id": 256045,
+"token": "<unused143>"
+},
+{
+"id": 256046,
+"token": "<unused144>"
+},
+{
+"id": 256047,
+"token": "<unused145>"
+},
+{
+"id": 256048,
+"token": "<unused146>"
+},
+{
+"id": 256049,
+"token": "<unused147>"
+},
+{
+"id": 256050,
+"token": "<unused148>"
+},
+{
+"id": 256051,
+"token": "<unused149>"
+},
+{
+"id": 256052,
+"token": "<unused150>"
+},
+{
+"id": 256053,
+"token": "<unused151>"
+},
+{
+"id": 256054,
+"token": "<unused152>"
+},
+{
+"id": 256055,
+"token": "<unused153>"
+},
+{
+"id": 256056,
+"token": "<unused154>"
+},
+{
+"id": 256057,
+"token": "<unused155>"
+},
+{
+"id": 256058,
+"token": "<unused156>"
+},
+{
+"id": 256059,
+"token": "<unused157>"
+},
+{
+"id": 256060,
+"token": "<unused158>"
+},
+{
+"id": 256061,
+"token": "<unused159>"
+},
+{
+"id": 256062,
+"token": "<unused160>"
+},
+{
+"id": 256063,
+"token": "<unused161>"
+},
+{
+"id": 256064,
+"token": "<unused162>"
+},
+{
+"id": 256065,
+"token": "<unused163>"
+},
+{
+"id": 256066,
+"token": "<unused164>"
+},
+{
+"id": 256067,
+"token": "<unused165>"
+},
+{
+"id": 256068,
+"token": "<unused166>"
+},
+{
+"id": 256069,
+"token": "<unused167>"
+},
+{
+"id": 256070,
+"token": "<unused168>"
+},
+{
+"id": 256071,
+"token": "<unused169>"
+},
+{
+"id": 256072,
+"token": "<unused170>"
+},
+{
+"id": 256073,
+"token": "<unused171>"
+},
+{
+"id": 256074,
+"token": "<unused172>"
+},
+{
+"id": 256075,
+"token": "<unused173>"
+},
+{
+"id": 256076,
+"token": "<unused174>"
+},
+{
+"id": 256077,
+"token": "<unused175>"
+},
+{
+"id": 256078,
+"token": "<unused176>"
+},
+{
+"id": 256079,
+"token": "<unused177>"
+},
+{
+"id": 256080,
+"token": "<unused178>"
+},
+{
+"id": 256081,
+"token": "<unused179>"
+},
+{
+"id": 256082,
+"token": "<unused180>"
+},
+{
+"id": 256083,
+"token": "<unused181>"
+},
+{
+"id": 256084,
+"token": "<unused182>"
+},
+{
+"id": 256085,
+"token": "<unused183>"
+},
+{
+"id": 256086,
+"token": "<unused184>"
+},
+{
+"id": 256087,
+"token": "<unused185>"
+},
+{
+"id": 256088,
+"token": "<unused186>"
+},
+{
+"id": 256089,
+"token": "<unused187>"
+},
+{
+"id": 256090,
+"token": "<unused188>"
+},
+{
+"id": 256091,
+"token": "<unused189>"
+},
+{
+"id": 256092,
+"token": "<unused190>"
+},
+{
+"id": 256093,
+"token": "<unused191>"
+},
+{
+"id": 256094,
+"token": "<unused192>"
+},
+{
+"id": 256095,
+"token": "<unused193>"
+},
+{
+"id": 256096,
+"token": "<unused194>"
+},
+{
+"id": 256097,
+"token": "<unused195>"
+},
+{
+"id": 256098,
+"token": "<unused196>"
+},
+{
+"id": 256099,
+"token": "<unused197>"
+},
+{
+"id": 256100,
+"token": "<unused198>"
+},
+{
+"id": 256101,
+"token": "<unused199>"
+},
+{
+"id": 256102,
+"token": "<unused200>"
+},
+{
+"id": 256103,
+"token": "<unused201>"
+},
+{
+"id": 256104,
+"token": "<unused202>"
+},
+{
+"id": 256105,
+"token": "<unused203>"
+},
+{
+"id": 256106,
+"token": "<unused204>"
+},
+{
+"id": 256107,
+"token": "<unused205>"
+},
+{
+"id": 256108,
+"token": "<unused206>"
+},
+{
+"id": 256109,
+"token": "<unused207>"
+},
+{
+"id": 256110,
+"token": "<unused208>"
+},
+{
+"id": 256111,
+"token": "<unused209>"
+},
+{
+"id": 256112,
+"token": "<unused210>"
+},
+{
+"id": 256113,
+"token": "<unused211>"
+},
+{
+"id": 256114,
+"token": "<unused212>"
+},
+{
+"id": 256115,
+"token": "<unused213>"
+},
+{
+"id": 256116,
+"token": "<unused214>"
+},
+{
+"id": 256117,
+"token": "<unused215>"
+},
+{
+"id": 256118,
+"token": "<unused216>"
+},
+{
+"id": 256119,
+"token": "<unused217>"
+},
+{
+"id": 256120,
+"token": "<unused218>"
+},
+{
+"id": 256121,
+"token": "<unused219>"
+},
+{
+"id": 256122,
+"token": "<unused220>"
+},
+{
+"id": 256123,
+"token": "<unused221>"
+},
+{
+"id": 256124,
+"token": "<unused222>"
+},
+{
+"id": 256125,
+"token": "<unused223>"
+},
+{
+"id": 256126,
+"token": "<unused224>"
+},
+{
+"id": 256127,
+"token": "<unused225>"
+},
+{
+"id": 256128,
+"token": "<unused226>"
+},
+{
+"id": 256129,
+"token": "<unused227>"
+},
+{
+"id": 256130,
+"token": "<unused228>"
+},
+{
+"id": 256131,
+"token": "<unused229>"
+},
+{
+"id": 256132,
+"token": "<unused230>"
+},
+{
+"id": 256133,
+"token": "<unused231>"
+},
+{
+"id": 256134,
+"token": "<unused232>"
+},
+{
+"id": 256135,
+"token": "<unused233>"
+},
+{
+"id": 256136,
+"token": "<unused234>"
+},
+{
+"id": 256137,
+"token": "<unused235>"
+},
+{
+"id": 256138,
+"token": "<unused236>"
+},
+{
+"id": 256139,
+"token": "<unused237>"
+},
+{
+"id": 256140,
+"token": "<unused238>"
+},
+{
+"id": 256141,
+"token": "<unused239>"
+},
+{
+"id": 256142,
+"token": "<unused240>"
+},
+{
+"id": 256143,
+"token": "<unused241>"
+},
+{
+"id": 256144,
+"token": "<unused242>"
+},
+{
+"id": 256145,
+"token": "<unused243>"
+},
+{
+"id": 256146,
+"token": "<unused244>"
+},
+{
+"id": 256147,
+"token": "<unused245>"
+},
+{
+"id": 256148,
+"token": "<unused246>"
+},
+{
+"id": 256149,
+"token": "<unused247>"
+},
+{
+"id": 256150,
+"token": "<unused248>"
+},
+{
+"id": 256151,
+"token": "<unused249>"
+},
+{
+"id": 256152,
+"token": "<unused250>"
+},
+{
+"id": 256153,
+"token": "<unused251>"
+},
+{
+"id": 256154,
+"token": "<unused252>"
+},
+{
+"id": 256155,
+"token": "<unused253>"
+},
+{
+"id": 256156,
+"token": "<unused254>"
+},
+{
+"id": 256157,
+"token": "<unused255>"
+},
+{
+"id": 256158,
+"token": "<unused256>"
+},
+{
+"id": 256159,
+"token": "<unused257>"
+},
+{
+"id": 256160,
+"token": "<unused258>"
+},
+{
+"id": 256161,
+"token": "<unused259>"
+},
+{
+"id": 256162,
+"token": "<unused260>"
+},
+{
+"id": 256163,
+"token": "<unused261>"
+},
+{
+"id": 256164,
+"token": "<unused262>"
+},
+{
+"id": 256165,
+"token": "<unused263>"
+},
+{
+"id": 256166,
+"token": "<unused264>"
+},
+{
+"id": 256167,
+"token": "<unused265>"
+},
+{
+"id": 256168,
+"token": "<unused266>"
+},
+{
+"id": 256169,
+"token": "<unused267>"
+},
+{
+"id": 256170,
+"token": "<unused268>"
+},
+{
+"id": 256171,
+"token": "<unused269>"
+},
+{
+"id": 256172,
+"token": "<unused270>"
+},
+{
+"id": 256173,
+"token": "<unused271>"
+},
+{
+"id": 256174,
+"token": "<unused272>"
+},
+{
+"id": 256175,
+"token": "<unused273>"
+},
+{
+"id": 256176,
+"token": "<unused274>"
+},
+{
+"id": 256177,
+"token": "<unused275>"
+},
+{
+"id": 256178,
+"token": "<unused276>"
+},
+{
+"id": 256179,
+"token": "<unused277>"
+},
+{
+"id": 256180,
+"token": "<unused278>"
+},
+{
+"id": 256181,
+"token": "<unused279>"
+},
+{
+"id": 256182,
+"token": "<unused280>"
+},
+{
+"id": 256183,
+"token": "<unused281>"
+},
+{
+"id": 256184,
+"token": "<unused282>"
+},
+{
+"id": 256185,
+"token": "<unused283>"
+},
+{
+"id": 256186,
+"token": "<unused284>"
+},
+{
+"id": 256187,
+"token": "<unused285>"
+},
+{
+"id": 256188,
+"token": "<unused286>"
+},
+{
+"id": 256189,
+"token": "<unused287>"
+},
+{
+"id": 256190,
+"token": "<unused288>"
+},
+{
+"id": 256191,
+"token": "<unused289>"
+},
+{
+"id": 256192,
+"token": "<unused290>"
+},
+{
+"id": 256193,
+"token": "<unused291>"
+},
+{
+"id": 256194,
+"token": "<unused292>"
+},
+{
+"id": 256195,
+"token": "<unused293>"
+},
+{
+"id": 256196,
+"token": "<unused294>"
+},
+{
+"id": 256197,
+"token": "<unused295>"
+},
+{
+"id": 256198,
+"token": "<unused296>"
+},
+{
+"id": 256199,
+"token": "<unused297>"
+},
+{
+"id": 256200,
+"token": "<unused298>"
+},
+{
+"id": 256201,
+"token": "<unused299>"
+},
+{
+"id": 256202,
+"token": "<unused300>"
+},
+{
+"id": 256203,
+"token": "<unused301>"
+},
+{
+"id": 256204,
+"token": "<unused302>"
+},
+{
+"id": 256205,
+"token": "<unused303>"
+},
+{
+"id": 256206,
+"token": "<unused304>"
+},
+{
+"id": 256207,
+"token": "<unused305>"
+},
+{
+"id": 256208,
+"token": "<unused306>"
+},
+{
+"id": 256209,
+"token": "<unused307>"
+},
+{
+"id": 256210,
+"token": "<unused308>"
+},
+{
+"id": 256211,
+"token": "<unused309>"
+},
+{
+"id": 256212,
+"token": "<unused310>"
+},
+{
+"id": 256213,
+"token": "<unused311>"
+},
+{
+"id": 256214,
+"token": "<unused312>"
+},
+{
+"id": 256215,
+"token": "<unused313>"
+},
+{
+"id": 256216,
+"token": "<unused314>"
+},
+{
+"id": 256217,
+"token": "<unused315>"
+},
+{
+"id": 256218,
+"token": "<unused316>"
+},
+{
+"id": 256219,
+"token": "<unused317>"
+},
+{
+"id": 256220,
+"token": "<unused318>"
+},
+{
+"id": 256221,
+"token": "<unused319>"
+},
+{
+"id": 256222,
+"token": "<unused320>"
+},
+{
+"id": 256223,
+"token": "<unused321>"
+},
+{
+"id": 256224,
+"token": "<unused322>"
+},
+{
+"id": 256225,
+"token": "<unused323>"
+},
+{
+"id": 256226,
+"token": "<unused324>"
+},
+{
+"id": 256227,
+"token": "<unused325>"
+},
+{
+"id": 256228,
+"token": "<unused326>"
+},
+{
+"id": 256229,
+"token": "<unused327>"
+},
+{
+"id": 256230,
+"token": "<unused328>"
+},
+{
+"id": 256231,
+"token": "<unused329>"
+},
+{
+"id": 256232,
+"token": "<unused330>"
+},
+{
+"id": 256233,
+"token": "<unused331>"
+},
+{
+"id": 256234,
+"token": "<unused332>"
+},
+{
+"id": 256235,
+"token": "<unused333>"
+},
+{
+"id": 256236,
+"token": "<unused334>"
+},
+{
+"id": 256237,
+"token": "<unused335>"
+},
+{
+"id": 256238,
+"token": "<unused336>"
+},
+{
+"id": 256239,
+"token": "<unused337>"
+},
+{
+"id": 256240,
+"token": "<unused338>"
+},
+{
+"id": 256241,
+"token": "<unused339>"
+},
+{
+"id": 256242,
+"token": "<unused340>"
+},
+{
+"id": 256243,
+"token": "<unused341>"
+},
+{
+"id": 256244,
+"token": "<unused342>"
+},
+{
+"id": 256245,
+"token": "<unused343>"
+},
+{
+"id": 256246,
+"token": "<unused344>"
+},
+{
+"id": 256247,
+"token": "<unused345>"
+},
+{
+"id": 256248,
+"token": "<unused346>"
+},
+{
+"id": 256249,
+"token": "<unused347>"
+},
+{
+"id": 256250,
+"token": "<unused348>"
+},
+{
+"id": 256251,
+"token": "<unused349>"
+},
+{
+"id": 256252,
+"token": "<unused350>"
+},
+{
+"id": 256253,
+"token": "<unused351>"
+},
+{
+"id": 256254,
+"token": "<unused352>"
+},
+{
+"id": 256255,
+"token": "<unused353>"
+},
+{
+"id": 256256,
+"token": "<unused354>"
+},
+{
+"id": 256257,
+"token": "<unused355>"
+},
+{
+"id": 256258,
+"token": "<unused356>"
+},
+{
+"id": 256259,
+"token": "<unused357>"
+},
+{
+"id": 256260,
+"token": "<unused358>"
+},
+{
+"id": 256261,
+"token": "<unused359>"
+},
+{
+"id": 256262,
+"token": "<unused360>"
+},
+{
+"id": 256263,
+"token": "<unused361>"
+},
+{
+"id": 256264,
+"token": "<unused362>"
+},
+{
+"id": 256265,
+"token": "<unused363>"
+},
+{
+"id": 256266,
+"token": "<unused364>"
+},
+{
+"id": 256267,
+"token": "<unused365>"
+},
+{
+"id": 256268,
+"token": "<unused366>"
+},
+{
+"id": 256269,
+"token": "<unused367>"
+},
+{
+"id": 256270,
+"token": "<unused368>"
+},
+{
+"id": 256271,
+"token": "<unused369>"
+},
+{
+"id": 256272,
+"token": "<unused370>"
+},
+{
+"id": 256273,
+"token": "<unused371>"
+},
+{
+"id": 256274,
+"token": "<unused372>"
+},
+{
+"id": 256275,
+"token": "<unused373>"
+},
+{
+"id": 256276,
+"token": "<unused374>"
+},
+{
+"id": 256277,
+"token": "<unused375>"
+},
+{
+"id": 256278,
+"token": "<unused376>"
+},
+{
+"id": 256279,
+"token": "<unused377>"
+},
+{
+"id": 256280,
+"token": "<unused378>"
+},
+{
+"id": 256281,
+"token": "<unused379>"
+},
+{
+"id": 256282,
+"token": "<unused380>"
+},
+{
+"id": 256283,
+"token": "<unused381>"
+},
+{
+"id": 256284,
+"token": "<unused382>"
+},
+{
+"id": 256285,
+"token": "<unused383>"
+},
+{
+"id": 256286,
+"token": "<unused384>"
+},
+{
+"id": 256287,
+"token": "<unused385>"
+},
+{
+"id": 256288,
+"token": "<unused386>"
+},
+{
+"id": 256289,
+"token": "<unused387>"
+},
+{
+"id": 256290,
+"token": "<unused388>"
+},
+{
+"id": 256291,
+"token": "<unused389>"
+},
+{
+"id": 256292,
+"token": "<unused390>"
+},
+{
+"id": 256293,
+"token": "<unused391>"
+},
+{
+"id": 256294,
+"token": "<unused392>"
+},
+{
+"id": 256295,
+"token": "<unused393>"
+},
+{
+"id": 256296,
+"token": "<unused394>"
+},
+{
+"id": 256297,
+"token": "<unused395>"
+},
+{
+"id": 256298,
+"token": "<unused396>"
+},
+{
+"id": 256299,
+"token": "<unused397>"
+},
+{
+"id": 256300,
+"token": "<unused398>"
+},
+{
+"id": 256301,
+"token": "<unused399>"
+},
+{
+"id": 256302,
+"token": "<unused400>"
+},
+{
+"id": 256303,
+"token": "<unused401>"
+},
+{
+"id": 256304,
+"token": "<unused402>"
+},
+{
+"id": 256305,
+"token": "<unused403>"
+},
+{
+"id": 256306,
+"token": "<unused404>"
+},
+{
+"id": 256307,
+"token": "<unused405>"
+},
+{
+"id": 256308,
+"token": "<unused406>"
+},
+{
+"id": 256309,
+"token": "<unused407>"
+},
+{
+"id": 256310,
+"token": "<unused408>"
+},
+{
+"id": 256311,
+"token": "<unused409>"
+},
+{
+"id": 256312,
+"token": "<unused410>"
+},
+{
+"id": 256313,
+"token": "<unused411>"
+},
+{
+"id": 256314,
+"token": "<unused412>"
+},
+{
+"id": 256315,
+"token": "<unused413>"
+},
+{
+"id": 256316,
+"token": "<unused414>"
+},
+{
+"id": 256317,
+"token": "<unused415>"
+},
+{
+"id": 256318,
+"token": "<unused416>"
+},
+{
+"id": 256319,
+"token": "<unused417>"
+},
+{
+"id": 256320,
+"token": "<unused418>"
+},
+{
+"id": 256321,
+"token": "<unused419>"
+},
+{
+"id": 256322,
+"token": "<unused420>"
+},
+{
+"id": 256323,
+"token": "<unused421>"
+},
+{
+"id": 256324,
+"token": "<unused422>"
+},
+{
+"id": 256325,
+"token": "<unused423>"
+},
+{
+"id": 256326,
+"token": "<unused424>"
+},
+{
+"id": 256327,
+"token": "<unused425>"
+},
+{
+"id": 256328,
+"token": "<unused426>"
+},
+{
+"id": 256329,
+"token": "<unused427>"
+},
+{
+"id": 256330,
+"token": "<unused428>"
+},
+{
+"id": 256331,
+"token": "<unused429>"
+},
+{
+"id": 256332,
+"token": "<unused430>"
+},
+{
+"id": 256333,
+"token": "<unused431>"
+},
+{
+"id": 256334,
+"token": "<unused432>"
+},
+{
+"id": 256335,
+"token": "<unused433>"
+},
+{
+"id": 256336,
+"token": "<unused434>"
+},
+{
+"id": 256337,
+"token": "<unused435>"
+},
+{
+"id": 256338,
+"token": "<unused436>"
+},
+{
+"id": 256339,
+"token": "<unused437>"
+},
+{
+"id": 256340,
+"token": "<unused438>"
+},
+{
+"id": 256341,
+"token": "<unused439>"
+},
+{
+"id": 256342,
+"token": "<unused440>"
+},
+{
+"id": 256343,
+"token": "<unused441>"
+},
+{
+"id": 256344,
+"token": "<unused442>"
+},
+{
+"id": 256345,
+"token": "<unused443>"
+},
+{
+"id": 256346,
+"token": "<unused444>"
+},
+{
+"id": 256347,
+"token": "<unused445>"
+},
+{
+"id": 256348,
+"token": "<unused446>"
+},
+{
+"id": 256349,
+"token": "<unused447>"
+},
+{
+"id": 256350,
+"token": "<unused448>"
+},
+{
+"id": 256351,
+"token": "<unused449>"
+},
+{
+"id": 256352,
+"token": "<unused450>"
+},
+{
+"id": 256353,
+"token": "<unused451>"
+},
+{
+"id": 256354,
+"token": "<unused452>"
+},
+{
+"id": 256355,
+"token": "<unused453>"
+},
+{
+"id": 256356,
+"token": "<unused454>"
+},
+{
+"id": 256357,
+"token": "<unused455>"
+},
+{
+"id": 256358,
+"token": "<unused456>"
+},
+{
+"id": 256359,
+"token": "<unused457>"
+},
+{
+"id": 256360,
+"token": "<unused458>"
+},
+{
+"id": 256361,
+"token": "<unused459>"
+},
+{
+"id": 256362,
+"token": "<unused460>"
+},
+{
+"id": 256363,
+"token": "<unused461>"
+},
+{
+"id": 256364,
+"token": "<unused462>"
+},
+{
+"id": 256365,
+"token": "<unused463>"
+},
+{
+"id": 256366,
+"token": "<unused464>"
+},
+{
+"id": 256367,
+"token": "<unused465>"
+},
+{
+"id": 256368,
+"token": "<unused466>"
+},
+{
+"id": 256369,
+"token": "<unused467>"
+},
+{
+"id": 256370,
+"token": "<unused468>"
+},
+{
+"id": 256371,
+"token": "<unused469>"
+},
+{
+"id": 256372,
+"token": "<unused470>"
+},
+{
+"id": 256373,
+"token": "<unused471>"
+},
+{
+"id": 256374,
+"token": "<unused472>"
+},
+{
+"id": 256375,
+"token": "<unused473>"
+},
+{
+"id": 256376,
+"token": "<unused474>"
+},
+{
+"id": 256377,
+"token": "<unused475>"
+},
+{
+"id": 256378,
+"token": "<unused476>"
+},
+{
+"id": 256379,
+"token": "<unused477>"
+},
+{
+"id": 256380,
+"token": "<unused478>"
+},
+{
+"id": 256381,
+"token": "<unused479>"
+},
+{
+"id": 256382,
+"token": "<unused480>"
+},
+{
+"id": 256383,
+"token": "<unused481>"
+},
+{
+"id": 256384,
+"token": "<unused482>"
+},
+{
+"id": 256385,
+"token": "<unused483>"
+},
+{
+"id": 256386,
+"token": "<unused484>"
+},
+{
+"id": 256387,
+"token": "<unused485>"
+},
+{
+"id": 256388,
+"token": "<unused486>"
+},
+{
+"id": 256389,
+"token": "<unused487>"
+},
+{
+"id": 256390,
+"token": "<unused488>"
+},
+{
+"id": 256391,
+"token": "<unused489>"
+},
+{
+"id": 256392,
+"token": "<unused490>"
+},
+{
+"id": 256393,
+"token": "<unused491>"
+},
+{
+"id": 256394,
+"token": "<unused492>"
+},
+{
+"id": 256395,
+"token": "<unused493>"
+},
+{
+"id": 256396,
+"token": "<unused494>"
+},
+{
+"id": 256397,
+"token": "<unused495>"
+},
+{
+"id": 256398,
+"token": "<unused496>"
+},
+{
+"id": 256399,
+"token": "<unused497>"
+},
+{
+"id": 256400,
+"token": "<unused498>"
+},
+{
+"id": 256401,
+"token": "<unused499>"
+},
+{
+"id": 256402,
+"token": "<unused500>"
+},
+{
+"id": 256403,
+"token": "<unused501>"
+},
+{
+"id": 256404,
+"token": "<unused502>"
+},
+{
+"id": 256405,
+"token": "<unused503>"
+},
+{
+"id": 256406,
+"token": "<unused504>"
+},
+{
+"id": 256407,
+"token": "<unused505>"
+},
+{
+"id": 256408,
+"token": "<unused506>"
+},
+{
+"id": 256409,
+"token": "<unused507>"
+},
+{
+"id": 256410,
+"token": "<unused508>"
+},
+{
+"id": 256411,
+"token": "<unused509>"
+},
+{
+"id": 256412,
+"token": "<unused510>"
+},
+{
+"id": 256413,
+"token": "<unused511>"
+},
+{
+"id": 256414,
+"token": "<unused512>"
+},
+{
+"id": 256415,
+"token": "<unused513>"
+},
+{
+"id": 256416,
+"token": "<unused514>"
+},
+{
+"id": 256417,
+"token": "<unused515>"
+},
+{
+"id": 256418,
+"token": "<unused516>"
+},
+{
+"id": 256419,
+"token": "<unused517>"
+},
+{
+"id": 256420,
+"token": "<unused518>"
+},
+{
+"id": 256421,
+"token": "<unused519>"
+},
+{
+"id": 256422,
+"token": "<unused520>"
+},
+{
+"id": 256423,
+"token": "<unused521>"
+},
+{
+"id": 256424,
+"token": "<unused522>"
+},
+{
+"id": 256425,
+"token": "<unused523>"
+},
+{
+"id": 256426,
+"token": "<unused524>"
+},
+{
+"id": 256427,
+"token": "<unused525>"
+},
+{
+"id": 256428,
+"token": "<unused526>"
+},
+{
+"id": 256429,
+"token": "<unused527>"
+},
+{
+"id": 256430,
+"token": "<unused528>"
+},
+{
+"id": 256431,
+"token": "<unused529>"
+},
+{
+"id": 256432,
+"token": "<unused530>"
+},
+{
+"id": 256433,
+"token": "<unused531>"
+},
+{
+"id": 256434,
+"token": "<unused532>"
+},
+{
+"id": 256435,
+"token": "<unused533>"
+},
+{
+"id": 256436,
+"token": "<unused534>"
+},
+{
+"id": 256437,
+"token": "<unused535>"
+},
+{
+"id": 256438,
+"token": "<unused536>"
+},
+{
+"id": 256439,
+"token": "<unused537>"
+},
+{
+"id": 256440,
+"token": "<unused538>"
+},
+{
+"id": 256441,
+"token": "<unused539>"
+},
+{
+"id": 256442,
+"token": "<unused540>"
+},
+{
+"id": 256443,
+"token": "<unused541>"
+},
+{
+"id": 256444,
+"token": "<unused542>"
+},
+{
+"id": 256445,
+"token": "<unused543>"
+},
+{
+"id": 256446,
+"token": "<unused544>"
+},
+{
+"id": 256447,
+"token": "<unused545>"
+},
+{
+"id": 256448,
+"token": "<unused546>"
+},
+{
+"id": 256449,
+"token": "<unused547>"
+},
+{
+"id": 256450,
+"token": "<unused548>"
+},
+{
+"id": 256451,
+"token": "<unused549>"
+},
+{
+"id": 256452,
+"token": "<unused550>"
+},
+{
+"id": 256453,
+"token": "<unused551>"
+},
+{
+"id": 256454,
+"token": "<unused552>"
+},
+{
+"id": 256455,
+"token": "<unused553>"
+},
+{
+"id": 256456,
+"token": "<unused554>"
+},
+{
+"id": 256457,
+"token": "<unused555>"
+},
+{
+"id": 256458,
+"token": "<unused556>"
+},
+{
+"id": 256459,
+"token": "<unused557>"
+},
+{
+"id": 256460,
+"token": "<unused558>"
+},
+{
+"id": 256461,
+"token": "<unused559>"
+},
+{
+"id": 256462,
+"token": "<unused560>"
+},
+{
+"id": 256463,
+"token": "<unused561>"
+},
+{
+"id": 256464,
+"token": "<unused562>"
+},
+{
+"id": 256465,
+"token": "<unused563>"
+},
+{
+"id": 256466,
+"token": "<unused564>"
+},
+{
+"id": 256467,
+"token": "<unused565>"
+},
+{
+"id": 256468,
+"token": "<unused566>"
+},
+{
+"id": 256469,
+"token": "<unused567>"
+},
+{
+"id": 256470,
+"token": "<unused568>"
+},
+{
+"id": 256471,
+"token": "<unused569>"
+},
+{
+"id": 256472,
+"token": "<unused570>"
+},
+{
+"id": 256473,
+"token": "<unused571>"
+},
+{
+"id": 256474,
+"token": "<unused572>"
+},
+{
+"id": 256475,
+"token": "<unused573>"
+},
+{
+"id": 256476,
+"token": "<unused574>"
+},
+{
+"id": 256477,
+"token": "<unused575>"
+},
+{
+"id": 256478,
+"token": "<unused576>"
+},
+{
+"id": 256479,
+"token": "<unused577>"
+},
+{
+"id": 256480,
+"token": "<unused578>"
+},
+{
+"id": 256481,
+"token": "<unused579>"
+},
+{
+"id": 256482,
+"token": "<unused580>"
+},
+{
+"id": 256483,
+"token": "<unused581>"
+},
+{
+"id": 256484,
+"token": "<unused582>"
+},
+{
+"id": 256485,
+"token": "<unused583>"
+},
+{
+"id": 256486,
+"token": "<unused584>"
+},
+{
+"id": 256487,
+"token": "<unused585>"
+},
+{
+"id": 256488,
+"token": "<unused586>"
+},
+{
+"id": 256489,
+"token": "<unused587>"
+},
+{
+"id": 256490,
+"token": "<unused588>"
+},
+{
+"id": 256491,
+"token": "<unused589>"
+},
+{
+"id": 256492,
+"token": "<unused590>"
+},
+{
+"id": 256493,
+"token": "<unused591>"
+},
+{
+"id": 256494,
+"token": "<unused592>"
+},
+{
+"id": 256495,
+"token": "<unused593>"
+},
+{
+"id": 256496,
+"token": "<unused594>"
+},
+{
+"id": 256497,
+"token": "<unused595>"
+},
+{
+"id": 256498,
+"token": "<unused596>"
+},
+{
+"id": 256499,
+"token": "<unused597>"
+},
+{
+"id": 256500,
+"token": "<unused598>"
+},
+{
+"id": 256501,
+"token": "<unused599>"
+},
+{
+"id": 256502,
+"token": "<unused600>"
+},
+{
+"id": 256503,
+"token": "<unused601>"
+},
+{
+"id": 256504,
+"token": "<unused602>"
+},
+{
+"id": 256505,
+"token": "<unused603>"
+},
+{
+"id": 256506,
+"token": "<unused604>"
+},
+{
+"id": 256507,
+"token": "<unused605>"
+},
+{
+"id": 256508,
+"token": "<unused606>"
+},
+{
+"id": 256509,
+"token": "<unused607>"
+},
+{
+"id": 256510,
+"token": "<unused608>"
+},
+{
+"id": 256511,
+"token": "<unused609>"
+},
+{
+"id": 256512,
+"token": "<unused610>"
+},
+{
+"id": 256513,
+"token": "<unused611>"
+},
+{
+"id": 256514,
+"token": "<unused612>"
+},
+{
+"id": 256515,
+"token": "<unused613>"
+},
+{
+"id": 256516,
+"token": "<unused614>"
+},
+{
+"id": 256517,
+"token": "<unused615>"
+},
+{
+"id": 256518,
+"token": "<unused616>"
+},
+{
+"id": 256519,
+"token": "<unused617>"
+},
+{
+"id": 256520,
+"token": "<unused618>"
+},
+{
+"id": 256521,
+"token": "<unused619>"
+},
+{
+"id": 256522,
+"token": "<unused620>"
+},
+{
+"id": 256523,
+"token": "<unused621>"
+},
+{
+"id": 256524,
+"token": "<unused622>"
+},
+{
+"id": 256525,
+"token": "<unused623>"
+},
+{
+"id": 256526,
+"token": "<unused624>"
+},
+{
+"id": 256527,
+"token": "<unused625>"
+},
+{
+"id": 256528,
+"token": "<unused626>"
+},
+{
+"id": 256529,
+"token": "<unused627>"
+},
+{
+"id": 256530,
+"token": "<unused628>"
+},
+{
+"id": 256531,
+"token": "<unused629>"
+},
+{
+"id": 256532,
+"token": "<unused630>"
+},
+{
+"id": 256533,
+"token": "<unused631>"
+},
+{
+"id": 256534,
+"token": "<unused632>"
+},
+{
+"id": 256535,
+"token": "<unused633>"
+},
+{
+"id": 256536,
+"token": "<unused634>"
+},
+{
+"id": 256537,
+"token": "<unused635>"
+},
+{
+"id": 256538,
+"token": "<unused636>"
+},
+{
+"id": 256539,
+"token": "<unused637>"
+},
+{
+"id": 256540,
+"token": "<unused638>"
+},
+{
+"id": 256541,
+"token": "<unused639>"
+},
+{
+"id": 256542,
+"token": "<unused640>"
+},
+{
+"id": 256543,
+"token": "<unused641>"
+},
+{
+"id": 256544,
+"token": "<unused642>"
+},
+{
+"id": 256545,
+"token": "<unused643>"
+},
+{
+"id": 256546,
+"token": "<unused644>"
+},
+{
+"id": 256547,
+"token": "<unused645>"
+},
+{
+"id": 256548,
+"token": "<unused646>"
+},
+{
+"id": 256549,
+"token": "<unused647>"
+},
+{
+"id": 256550,
+"token": "<unused648>"
+},
+{
+"id": 256551,
+"token": "<unused649>"
+},
+{
+"id": 256552,
+"token": "<unused650>"
+},
+{
+"id": 256553,
+"token": "<unused651>"
+},
+{
+"id": 256554,
+"token": "<unused652>"
+},
+{
+"id": 256555,
+"token": "<unused653>"
+},
+{
+"id": 256556,
+"token": "<unused654>"
+},
+{
+"id": 256557,
+"token": "<unused655>"
+},
+{
+"id": 256558,
+"token": "<unused656>"
+},
+{
+"id": 256559,
+"token": "<unused657>"
+},
+{
+"id": 256560,
+"token": "<unused658>"
+},
+{
+"id": 256561,
+"token": "<unused659>"
+},
+{
+"id": 256562,
+"token": "<unused660>"
+},
+{
+"id": 256563,
+"token": "<unused661>"
+},
+{
+"id": 256564,
+"token": "<unused662>"
+},
+{
+"id": 256565,
+"token": "<unused663>"
+},
+{
+"id": 256566,
+"token": "<unused664>"
+},
+{
+"id": 256567,
+"token": "<unused665>"
+},
+{
+"id": 256568,
+"token": "<unused666>"
+},
+{
+"id": 256569,
+"token": "<unused667>"
+},
+{
+"id": 256570,
+"token": "<unused668>"
+},
+{
+"id": 256571,
+"token": "<unused669>"
+},
+{
+"id": 256572,
+"token": "<unused670>"
+},
+{
+"id": 256573,
+"token": "<unused671>"
+},
+{
+"id": 256574,
+"token": "<unused672>"
+},
+{
+"id": 256575,
+"token": "<unused673>"
+},
+{
+"id": 256576,
+"token": "<unused674>"
+},
+{
+"id": 256577,
+"token": "<unused675>"
+},
+{
+"id": 256578,
+"token": "<unused676>"
+},
+{
+"id": 256579,
+"token": "<unused677>"
+},
+{
+"id": 256580,
+"token": "<unused678>"
+},
+{
+"id": 256581,
+"token": "<unused679>"
+},
+{
+"id": 256582,
+"token": "<unused680>"
+},
+{
+"id": 256583,
+"token": "<unused681>"
+},
+{
+"id": 256584,
+"token": "<unused682>"
+},
+{
+"id": 256585,
+"token": "<unused683>"
+},
+{
+"id": 256586,
+"token": "<unused684>"
+},
+{
+"id": 256587,
+"token": "<unused685>"
+},
+{
+"id": 256588,
+"token": "<unused686>"
+},
+{
+"id": 256589,
+"token": "<unused687>"
+},
+{
+"id": 256590,
+"token": "<unused688>"
+},
+{
+"id": 256591,
+"token": "<unused689>"
+},
+{
+"id": 256592,
+"token": "<unused690>"
+},
+{
+"id": 256593,
+"token": "<unused691>"
+},
+{
+"id": 256594,
+"token": "<unused692>"
+},
+{
+"id": 256595,
+"token": "<unused693>"
+},
+{
+"id": 256596,
+"token": "<unused694>"
+},
+{
+"id": 256597,
+"token": "<unused695>"
+},
+{
+"id": 256598,
+"token": "<unused696>"
+},
+{
+"id": 256599,
+"token": "<unused697>"
+},
+{
+"id": 256600,
+"token": "<unused698>"
+},
+{
+"id": 256601,
+"token": "<unused699>"
+},
+{
+"id": 256602,
+"token": "<unused700>"
+},
+{
+"id": 256603,
+"token": "<unused701>"
+},
+{
+"id": 256604,
+"token": "<unused702>"
+},
+{
+"id": 256605,
+"token": "<unused703>"
+},
+{
+"id": 256606,
+"token": "<unused704>"
+},
+{
+"id": 256607,
+"token": "<unused705>"
+},
+{
+"id": 256608,
+"token": "<unused706>"
+},
+{
+"id": 256609,
+"token": "<unused707>"
+},
+{
+"id": 256610,
+"token": "<unused708>"
+},
+{
+"id": 256611,
+"token": "<unused709>"
+},
+{
+"id": 256612,
+"token": "<unused710>"
+},
+{
+"id": 256613,
+"token": "<unused711>"
+},
+{
+"id": 256614,
+"token": "<unused712>"
+},
+{
+"id": 256615,
+"token": "<unused713>"
+},
+{
+"id": 256616,
+"token": "<unused714>"
+},
+{
+"id": 256617,
+"token": "<unused715>"
+},
+{
+"id": 256618,
+"token": "<unused716>"
+},
+{
+"id": 256619,
+"token": "<unused717>"
+},
+{
+"id": 256620,
+"token": "<unused718>"
+},
+{
+"id": 256621,
+"token": "<unused719>"
+},
+{
+"id": 256622,
+"token": "<unused720>"
+},
+{
+"id": 256623,
+"token": "<unused721>"
+},
+{
+"id": 256624,
+"token": "<unused722>"
+},
+{
+"id": 256625,
+"token": "<unused723>"
+},
+{
+"id": 256626,
+"token": "<unused724>"
+},
+{
+"id": 256627,
+"token": "<unused725>"
+},
+{
+"id": 256628,
+"token": "<unused726>"
+},
+{
+"id": 256629,
+"token": "<unused727>"
+},
+{
+"id": 256630,
+"token": "<unused728>"
+},
+{
+"id": 256631,
+"token": "<unused729>"
+},
+{
+"id": 256632,
+"token": "<unused730>"
+},
+{
+"id": 256633,
+"token": "<unused731>"
+},
+{
+"id": 256634,
+"token": "<unused732>"
+},
+{
+"id": 256635,
+"token": "<unused733>"
+},
+{
+"id": 256636,
+"token": "<unused734>"
+},
+{
+"id": 256637,
+"token": "<unused735>"
+},
+{
+"id": 256638,
+"token": "<unused736>"
+},
+{
+"id": 256639,
+"token": "<unused737>"
+},
+{
+"id": 256640,
+"token": "<unused738>"
+},
+{
+"id": 256641,
+"token": "<unused739>"
+},
+{
+"id": 256642,
+"token": "<unused740>"
+},
+{
+"id": 256643,
+"token": "<unused741>"
+},
+{
+"id": 256644,
+"token": "<unused742>"
+},
+{
+"id": 256645,
+"token": "<unused743>"
+},
+{
+"id": 256646,
+"token": "<unused744>"
+},
+{
+"id": 256647,
+"token": "<unused745>"
+},
+{
+"id": 256648,
+"token": "<unused746>"
+},
+{
+"id": 256649,
+"token": "<unused747>"
+},
+{
+"id": 256650,
+"token": "<unused748>"
+},
+{
+"id": 256651,
+"token": "<unused749>"
+},
+{
+"id": 256652,
+"token": "<unused750>"
+},
+{
+"id": 256653,
+"token": "<unused751>"
+},
+{
+"id": 256654,
+"token": "<unused752>"
+},
+{
+"id": 256655,
+"token": "<unused753>"
+},
+{
+"id": 256656,
+"token": "<unused754>"
+},
+{
+"id": 256657,
+"token": "<unused755>"
+},
+{
+"id": 256658,
+"token": "<unused756>"
+},
+{
+"id": 256659,
+"token": "<unused757>"
+},
+{
+"id": 256660,
+"token": "<unused758>"
+},
+{
+"id": 256661,
+"token": "<unused759>"
+},
+{
+"id": 256662,
+"token": "<unused760>"
+},
+{
+"id": 256663,
+"token": "<unused761>"
+},
+{
+"id": 256664,
+"token": "<unused762>"
+},
+{
+"id": 256665,
+"token": "<unused763>"
+},
+{
+"id": 256666,
+"token": "<unused764>"
+},
+{
+"id": 256667,
+"token": "<unused765>"
+},
+{
+"id": 256668,
+"token": "<unused766>"
+},
+{
+"id": 256669,
+"token": "<unused767>"
+},
+{
+"id": 256670,
+"token": "<unused768>"
+},
+{
+"id": 256671,
+"token": "<unused769>"
+},
+{
+"id": 256672,
+"token": "<unused770>"
+},
+{
+"id": 256673,
+"token": "<unused771>"
+},
+{
+"id": 256674,
+"token": "<unused772>"
+},
+{
+"id": 256675,
+"token": "<unused773>"
+},
+{
+"id": 256676,
+"token": "<unused774>"
+},
+{
+"id": 256677,
+"token": "<unused775>"
+},
+{
+"id": 256678,
+"token": "<unused776>"
+},
+{
+"id": 256679,
+"token": "<unused777>"
+},
+{
+"id": 256680,
+"token": "<unused778>"
+},
+{
+"id": 256681,
+"token": "<unused779>"
+},
+{
+"id": 256682,
+"token": "<unused780>"
+},
+{
+"id": 256683,
+"token": "<unused781>"
+},
+{
+"id": 256684,
+"token": "<unused782>"
+},
+{
+"id": 256685,
+"token": "<unused783>"
+},
+{
+"id": 256686,
+"token": "<unused784>"
+},
+{
+"id": 256687,
+"token": "<unused785>"
+},
+{
+"id": 256688,
+"token": "<unused786>"
+},
+{
+"id": 256689,
+"token": "<unused787>"
+},
+{
+"id": 256690,
+"token": "<unused788>"
+},
+{
+"id": 256691,
+"token": "<unused789>"
+},
+{
+"id": 256692,
+"token": "<unused790>"
+},
+{
+"id": 256693,
+"token": "<unused791>"
+},
+{
+"id": 256694,
+"token": "<unused792>"
+},
+{
+"id": 256695,
+"token": "<unused793>"
+},
+{
+"id": 256696,
+"token": "<unused794>"
+},
+{
+"id": 256697,
+"token": "<unused795>"
+},
+{
+"id": 256698,
+"token": "<unused796>"
+},
+{
+"id": 256699,
+"token": "<unused797>"
+},
+{
+"id": 256700,
+"token": "<unused798>"
+},
+{
+"id": 256701,
+"token": "<unused799>"
+},
+{
+"id": 256702,
+"token": "<unused800>"
+},
+{
+"id": 256703,
+"token": "<unused801>"
+},
+{
+"id": 256704,
+"token": "<unused802>"
+},
+{
+"id": 256705,
+"token": "<unused803>"
+},
+{
+"id": 256706,
+"token": "<unused804>"
+},
+{
+"id": 256707,
+"token": "<unused805>"
+},
+{
+"id": 256708,
+"token": "<unused806>"
+},
+{
+"id": 256709,
+"token": "<unused807>"
+},
+{
+"id": 256710,
+"token": "<unused808>"
+},
+{
+"id": 256711,
+"token": "<unused809>"
+},
+{
+"id": 256712,
+"token": "<unused810>"
+},
+{
+"id": 256713,
+"token": "<unused811>"
+},
+{
+"id": 256714,
+"token": "<unused812>"
+},
+{
+"id": 256715,
+"token": "<unused813>"
+},
+{
+"id": 256716,
+"token": "<unused814>"
+},
+{
+"id": 256717,
+"token": "<unused815>"
+},
+{
+"id": 256718,
+"token": "<unused816>"
+},
+{
+"id": 256719,
+"token": "<unused817>"
+},
+{
+"id": 256720,
+"token": "<unused818>"
+},
+{
+"id": 256721,
+"token": "<unused819>"
+},
+{
+"id": 256722,
+"token": "<unused820>"
+},
+{
+"id": 256723,
+"token": "<unused821>"
+},
+{
+"id": 256724,
+"token": "<unused822>"
+},
+{
+"id": 256725,
+"token": "<unused823>"
+},
+{
+"id": 256726,
+"token": "<unused824>"
+},
+{
+"id": 256727,
+"token": "<unused825>"
+},
+{
+"id": 256728,
+"token": "<unused826>"
+},
+{
+"id": 256729,
+"token": "<unused827>"
+},
+{
+"id": 256730,
+"token": "<unused828>"
+},
+{
+"id": 256731,
+"token": "<unused829>"
+},
+{
+"id": 256732,
+"token": "<unused830>"
+},
+{
+"id": 256733,
+"token": "<unused831>"
+},
+{
+"id": 256734,
+"token": "<unused832>"
+},
+{
+"id": 256735,
+"token": "<unused833>"
+},
+{
+"id": 256736,
+"token": "<unused834>"
+},
+{
+"id": 256737,
+"token": "<unused835>"
+},
+{
+"id": 256738,
+"token": "<unused836>"
+},
+{
+"id": 256739,
+"token": "<unused837>"
+},
+{
+"id": 256740,
+"token": "<unused838>"
+},
+{
+"id": 256741,
+"token": "<unused839>"
+},
+{
+"id": 256742,
+"token": "<unused840>"
+},
+{
+"id": 256743,
+"token": "<unused841>"
+},
+{
+"id": 256744,
+"token": "<unused842>"
+},
+{
+"id": 256745,
+"token": "<unused843>"
+},
+{
+"id": 256746,
+"token": "<unused844>"
+},
+{
+"id": 256747,
+"token": "<unused845>"
+},
+{
+"id": 256748,
+"token": "<unused846>"
+},
+{
+"id": 256749,
+"token": "<unused847>"
+},
+{
+"id": 256750,
+"token": "<unused848>"
+},
+{
+"id": 256751,
+"token": "<unused849>"
+},
+{
+"id": 256752,
+"token": "<unused850>"
+},
+{
+"id": 256753,
+"token": "<unused851>"
+},
+{
+"id": 256754,
+"token": "<unused852>"
+},
+{
+"id": 256755,
+"token": "<unused853>"
+},
+{
+"id": 256756,
+"token": "<unused854>"
+},
+{
+"id": 256757,
+"token": "<unused855>"
+},
+{
+"id": 256758,
+"token": "<unused856>"
+},
+{
+"id": 256759,
+"token": "<unused857>"
+},
+{
+"id": 256760,
+"token": "<unused858>"
+},
+{
+"id": 256761,
+"token": "<unused859>"
+},
+{
+"id": 256762,
+"token": "<unused860>"
+},
+{
+"id": 256763,
+"token": "<unused861>"
+},
+{
+"id": 256764,
+"token": "<unused862>"
+},
+{
+"id": 256765,
+"token": "<unused863>"
+},
+{
+"id": 256766,
+"token": "<unused864>"
+},
+{
+"id": 256767,
+"token": "<unused865>"
+},
+{
+"id": 256768,
+"token": "<unused866>"
+},
+{
+"id": 256769,
+"token": "<unused867>"
+},
+{
+"id": 256770,
+"token": "<unused868>"
+},
+{
+"id": 256771,
+"token": "<unused869>"
+},
+{
+"id": 256772,
+"token": "<unused870>"
+},
+{
+"id": 256773,
+"token": "<unused871>"
+},
+{
+"id": 256774,
+"token": "<unused872>"
+},
+{
+"id": 256775,
+"token": "<unused873>"
+},
+{
+"id": 256776,
+"token": "<unused874>"
+},
+{
+"id": 256777,
+"token": "<unused875>"
+},
+{
+"id": 256778,
+"token": "<unused876>"
+},
+{
+"id": 256779,
+"token": "<unused877>"
+},
+{
+"id": 256780,
+"token": "<unused878>"
+},
+{
+"id": 256781,
+"token": "<unused879>"
+},
+{
+"id": 256782,
+"token": "<unused880>"
+},
+{
+"id": 256783,
+"token": "<unused881>"
+},
+{
+"id": 256784,
+"token": "<unused882>"
+},
+{
+"id": 256785,
+"token": "<unused883>"
+},
+{
+"id": 256786,
+"token": "<unused884>"
+},
+{
+"id": 256787,
+"token": "<unused885>"
+},
+{
+"id": 256788,
+"token": "<unused886>"
+},
+{
+"id": 256789,
+"token": "<unused887>"
+},
+{
+"id": 256790,
+"token": "<unused888>"
+},
+{
+"id": 256791,
+"token": "<unused889>"
+},
+{
+"id": 256792,
+"token": "<unused890>"
+},
+{
+"id": 256793,
+"token": "<unused891>"
+},
+{
+"id": 256794,
+"token": "<unused892>"
+},
+{
+"id": 256795,
+"token": "<unused893>"
+},
+{
+"id": 256796,
+"token": "<unused894>"
+},
+{
+"id": 256797,
+"token": "<unused895>"
+},
+{
+"id": 256798,
+"token": "<unused896>"
+},
+{
+"id": 256799,
+"token": "<unused897>"
+},
+{
+"id": 256800,
+"token": "<unused898>"
+},
+{
+"id": 256801,
+"token": "<unused899>"
+},
+{
+"id": 256802,
+"token": "<unused900>"
+},
+{
+"id": 256803,
+"token": "<unused901>"
+},
+{
+"id": 256804,
+"token": "<unused902>"
+},
+{
+"id": 256805,
+"token": "<unused903>"
+},
+{
+"id": 256806,
+"token": "<unused904>"
+},
+{
+"id": 256807,
+"token": "<unused905>"
+},
+{
+"id": 256808,
+"token": "<unused906>"
+},
+{
+"id": 256809,
+"token": "<unused907>"
+},
+{
+"id": 256810,
+"token": "<unused908>"
+},
+{
+"id": 256811,
+"token": "<unused909>"
+},
+{
+"id": 256812,
+"token": "<unused910>"
+},
+{
+"id": 256813,
+"token": "<unused911>"
+},
+{
+"id": 256814,
+"token": "<unused912>"
+},
+{
+"id": 256815,
+"token": "<unused913>"
+},
+{
+"id": 256816,
+"token": "<unused914>"
+},
+{
+"id": 256817,
+"token": "<unused915>"
+},
+{
+"id": 256818,
+"token": "<unused916>"
+},
+{
+"id": 256819,
+"token": "<unused917>"
+},
+{
+"id": 256820,
+"token": "<unused918>"
+},
+{
+"id": 256821,
+"token": "<unused919>"
+},
+{
+"id": 256822,
+"token": "<unused920>"
+},
+{
+"id": 256823,
+"token": "<unused921>"
+},
+{
+"id": 256824,
+"token": "<unused922>"
+},
+{
+"id": 256825,
+"token": "<unused923>"
+},
+{
+"id": 256826,
+"token": "<unused924>"
+},
+{
+"id": 256827,
+"token": "<unused925>"
+},
+{
+"id": 256828,
+"token": "<unused926>"
+},
+{
+"id": 256829,
+"token": "<unused927>"
+},
+{
+"id": 256830,
+"token": "<unused928>"
+},
+{
+"id": 256831,
+"token": "<unused929>"
+},
+{
+"id": 256832,
+"token": "<unused930>"
+},
+{
+"id": 256833,
+"token": "<unused931>"
+},
+{
+"id": 256834,
+"token": "<unused932>"
+},
+{
+"id": 256835,
+"token": "<unused933>"
+},
+{
+"id": 256836,
+"token": "<unused934>"
+},
+{
+"id": 256837,
+"token": "<unused935>"
+},
+{
+"id": 256838,
+"token": "<unused936>"
+},
+{
+"id": 256839,
+"token": "<unused937>"
+},
+{
+"id": 256840,
+"token": "<unused938>"
+},
+{
+"id": 256841,
+"token": "<unused939>"
+},
+{
+"id": 256842,
+"token": "<unused940>"
+},
+{
+"id": 256843,
+"token": "<unused941>"
+},
+{
+"id": 256844,
+"token": "<unused942>"
+},
+{
+"id": 256845,
+"token": "<unused943>"
+},
+{
+"id": 256846,
+"token": "<unused944>"
+},
+{
+"id": 256847,
+"token": "<unused945>"
+},
+{
+"id": 256848,
+"token": "<unused946>"
+},
+{
+"id": 256849,
+"token": "<unused947>"
+},
+{
+"id": 256850,
+"token": "<unused948>"
+},
+{
+"id": 256851,
+"token": "<unused949>"
+},
+{
+"id": 256852,
+"token": "<unused950>"
+},
+{
+"id": 256853,
+"token": "<unused951>"
+},
+{
+"id": 256854,
+"token": "<unused952>"
+},
+{
+"id": 256855,
+"token": "<unused953>"
+},
+{
+"id": 256856,
+"token": "<unused954>"
+},
+{
+"id": 256857,
+"token": "<unused955>"
+},
+{
+"id": 256858,
+"token": "<unused956>"
+},
+{
+"id": 256859,
+"token": "<unused957>"
+},
+{
+"id": 256860,
+"token": "<unused958>"
+},
+{
+"id": 256861,
+"token": "<unused959>"
+},
+{
+"id": 256862,
+"token": "<unused960>"
+},
+{
+"id": 256863,
+"token": "<unused961>"
+},
+{
+"id": 256864,
+"token": "<unused962>"
+},
+{
+"id": 256865,
+"token": "<unused963>"
+},
+{
+"id": 256866,
+"token": "<unused964>"
+},
+{
+"id": 256867,
+"token": "<unused965>"
+},
+{
+"id": 256868,
+"token": "<unused966>"
+},
+{
+"id": 256869,
+"token": "<unused967>"
+},
+{
+"id": 256870,
+"token": "<unused968>"
+},
+{
+"id": 256871,
+"token": "<unused969>"
+},
+{
+"id": 256872,
+"token": "<unused970>"
+},
+{
+"id": 256873,
+"token": "<unused971>"
+},
+{
+"id": 256874,
+"token": "<unused972>"
+},
+{
+"id": 256875,
+"token": "<unused973>"
+},
+{
+"id": 256876,
+"token": "<unused974>"
+},
+{
+"id": 256877,
+"token": "<unused975>"
+},
+{
+"id": 256878,
+"token": "<unused976>"
+},
+{
+"id": 256879,
+"token": "<unused977>"
+},
+{
+"id": 256880,
+"token": "<unused978>"
+},
+{
+"id": 256881,
+"token": "<unused979>"
+},
+{
+"id": 256882,
+"token": "<unused980>"
+},
+{
+"id": 256883,
+"token": "<unused981>"
+},
+{
+"id": 256884,
+"token": "<unused982>"
+},
+{
+"id": 256885,
+"token": "<unused983>"
+},
+{
+"id": 256886,
+"token": "<unused984>"
+},
+{
+"id": 256887,
+"token": "<unused985>"
+},
+{
+"id": 256888,
+"token": "<unused986>"
+},
+{
+"id": 256889,
+"token": "<unused987>"
+},
+{
+"id": 256890,
+"token": "<unused988>"
+},
+{
+"id": 256891,
+"token": "<unused989>"
+},
+{
+"id": 256892,
+"token": "<unused990>"
+},
+{
+"id": 256893,
+"token": "<unused991>"
+},
+{
+"id": 256894,
+"token": "<unused992>"
+},
+{
+"id": 256895,
+"token": "<unused993>"
+},
+{
+"id": 256896,
+"token": "<unused994>"
+},
+{
+"id": 256897,
+"token": "<unused995>"
+},
+{
+"id": 256898,
+"token": "<unused996>"
+},
+{
+"id": 256899,
+"token": "<unused997>"
+},
+{
+"id": 256900,
+"token": "<unused998>"
+},
+{
+"id": 256901,
+"token": "<unused999>"
+},
+{
+"id": 256902,
+"token": "<unused1000>"
+},
+{
+"id": 256903,
+"token": "<unused1001>"
+},
+{
+"id": 256904,
+"token": "<unused1002>"
+},
+{
+"id": 256905,
+"token": "<unused1003>"
+},
+{
+"id": 256906,
+"token": "<unused1004>"
+},
+{
+"id": 256907,
+"token": "<unused1005>"
+},
+{
+"id": 256908,
+"token": "<unused1006>"
+},
+{
+"id": 256909,
+"token": "<unused1007>"
+},
+{
+"id": 256910,
+"token": "<unused1008>"
+},
+{
+"id": 256911,
+"token": "<unused1009>"
+},
+{
+"id": 256912,
+"token": "<unused1010>"
+},
+{
+"id": 256913,
+"token": "<unused1011>"
+},
+{
+"id": 256914,
+"token": "<unused1012>"
+},
+{
+"id": 256915,
+"token": "<unused1013>"
+},
+{
+"id": 256916,
+"token": "<unused1014>"
+},
+{
+"id": 256917,
+"token": "<unused1015>"
+},
+{
+"id": 256918,
+"token": "<unused1016>"
+},
+{
+"id": 256919,
+"token": "<unused1017>"
+},
+{
+"id": 256920,
+"token": "<unused1018>"
+},
+{
+"id": 256921,
+"token": "<unused1019>"
+},
+{
+"id": 256922,
+"token": "<unused1020>"
+},
+{
+"id": 256923,
+"token": "<unused1021>"
+},
+{
+"id": 256924,
+"token": "<unused1022>"
+},
+{
+"id": 256925,
+"token": "<unused1023>"
+},
+{
+"id": 256926,
+"token": "<unused1024>"
+},
+{
+"id": 256927,
+"token": "<unused1025>"
+},
+{
+"id": 256928,
+"token": "<unused1026>"
+},
+{
+"id": 256929,
+"token": "<unused1027>"
+},
+{
+"id": 256930,
+"token": "<unused1028>"
+},
+{
+"id": 256931,
+"token": "<unused1029>"
+},
+{
+"id": 256932,
+"token": "<unused1030>"
+},
+{
+"id": 256933,
+"token": "<unused1031>"
+},
+{
+"id": 256934,
+"token": "<unused1032>"
+},
+{
+"id": 256935,
+"token": "<unused1033>"
+},
+{
+"id": 256936,
+"token": "<unused1034>"
+},
+{
+"id": 256937,
+"token": "<unused1035>"
+},
+{
+"id": 256938,
+"token": "<unused1036>"
+},
+{
+"id": 256939,
+"token": "<unused1037>"
+},
+{
+"id": 256940,
+"token": "<unused1038>"
+},
+{
+"id": 256941,
+"token": "<unused1039>"
+},
+{
+"id": 256942,
+"token": "<unused1040>"
+},
+{
+"id": 256943,
+"token": "<unused1041>"
+},
+{
+"id": 256944,
+"token": "<unused1042>"
+},
+{
+"id": 256945,
+"token": "<unused1043>"
+},
+{
+"id": 256946,
+"token": "<unused1044>"
+},
+{
+"id": 256947,
+"token": "<unused1045>"
+},
+{
+"id": 256948,
+"token": "<unused1046>"
+},
+{
+"id": 256949,
+"token": "<unused1047>"
+},
+{
+"id": 256950,
+"token": "<unused1048>"
+},
+{
+"id": 256951,
+"token": "<unused1049>"
+},
+{
+"id": 256952,
+"token": "<unused1050>"
+},
+{
+"id": 256953,
+"token": "<unused1051>"
+},
+{
+"id": 256954,
+"token": "<unused1052>"
+},
+{
+"id": 256955,
+"token": "<unused1053>"
+},
+{
+"id": 256956,
+"token": "<unused1054>"
+},
+{
+"id": 256957,
+"token": "<unused1055>"
+},
+{
+"id": 256958,
+"token": "<unused1056>"
+},
+{
+"id": 256959,
+"token": "<unused1057>"
+},
+{
+"id": 256960,
+"token": "<unused1058>"
+},
+{
+"id": 256961,
+"token": "<unused1059>"
+},
+{
+"id": 256962,
+"token": "<unused1060>"
+},
+{
+"id": 256963,
+"token": "<unused1061>"
+},
+{
+"id": 256964,
+"token": "<unused1062>"
+},
+{
+"id": 256965,
+"token": "<unused1063>"
+},
+{
+"id": 256966,
+"token": "<unused1064>"
+},
+{
+"id": 256967,
+"token": "<unused1065>"
+},
+{
+"id": 256968,
+"token": "<unused1066>"
+},
+{
+"id": 256969,
+"token": "<unused1067>"
+},
+{
+"id": 256970,
+"token": "<unused1068>"
+},
+{
+"id": 256971,
+"token": "<unused1069>"
+},
+{
+"id": 256972,
+"token": "<unused1070>"
+},
+{
+"id": 256973,
+"token": "<unused1071>"
+},
+{
+"id": 256974,
+"token": "<unused1072>"
+},
+{
+"id": 256975,
+"token": "<unused1073>"
+},
+{
+"id": 256976,
+"token": "<unused1074>"
+},
+{
+"id": 256977,
+"token": "<unused1075>"
+},
+{
+"id": 256978,
+"token": "<unused1076>"
+},
+{
+"id": 256979,
+"token": "<unused1077>"
+},
+{
+"id": 256980,
+"token": "<unused1078>"
+},
+{
+"id": 256981,
+"token": "<unused1079>"
+},
+{
+"id": 256982,
+"token": "<unused1080>"
+},
+{
+"id": 256983,
+"token": "<unused1081>"
+},
+{
+"id": 256984,
+"token": "<unused1082>"
+},
+{
+"id": 256985,
+"token": "<unused1083>"
+},
+{
+"id": 256986,
+"token": "<unused1084>"
+},
+{
+"id": 256987,
+"token": "<unused1085>"
+},
+{
+"id": 256988,
+"token": "<unused1086>"
+},
+{
+"id": 256989,
+"token": "<unused1087>"
+},
+{
+"id": 256990,
+"token": "<unused1088>"
+},
+{
+"id": 256991,
+"token": "<unused1089>"
+},
+{
+"id": 256992,
+"token": "<unused1090>"
+},
+{
+"id": 256993,
+"token": "<unused1091>"
+},
+{
+"id": 256994,
+"token": "<unused1092>"
+},
+{
+"id": 256995,
+"token": "<unused1093>"
+},
+{
+"id": 256996,
+"token": "<unused1094>"
+},
+{
+"id": 256997,
+"token": "<unused1095>"
+},
+{
+"id": 256998,
+"token": "<unused1096>"
+},
+{
+"id": 256999,
+"token": "<unused1097>"
+},
+{
+"id": 257000,
+"token": "<unused1098>"
+}
+],
+"removed_merges": 0,
+"appended_merges": 939,
+"added_tokens_entries_removed": 1000,
+"new_tokens": [
+{
+"id": 256001,
+"token": "ኲ",
+"a": null,
+"b": null,
+"kind": "geez-letter",
+"count": 0
+},
+{
+"id": 256002,
+"token": "ዅ",
+"a": null,
+"b": null,
+"kind": "geez-letter",
+"count": 0
+},
+{
+"id": 256003,
+"token": "ቍ",
+"a": null,
+"b": null,
+"kind": "geez-letter",
+"count": 0
+},
+{
+"id": 256004,
+"token": "ቊ",
+"a": null,
+"b": null,
+"kind": "geez-letter",
+"count": 0
+},
+{
+"id": 256005,
+"token": "ሡ",
+"a": null,
+"b": null,
+"kind": "geez-letter",
+"count": 0
+},
+{
+"id": 256006,
+"token": "ቚ",
+"a": null,
+"b": null,
+"kind": "geez-letter",
+"count": 0
+},
+{
+"id": 256007,
+"token": "ፄ",
+"a": null,
+"b": null,
+"kind": "geez-letter",
+"count": 0
+},
+{
+"id": 256008,
+"token": "ዂ",
+"a": null,
+"b": null,
+"kind": "geez-letter",
+"count": 0
+},
+{
+"id": 256009,
+"token": "ቘ",
+"a": null,
+"b": null,
+"kind": "geez-letter",
+"count": 0
+},
+{
+"id": 256010,
+"token": "ዽ",
+"a": null,
+"b": null,
+"kind": "geez-letter",
+"count": 0
+},
+{
+"id": 256011,
+"token": "ኴ",
+"a": null,
+"b": null,
+"kind": "geez-letter",
+"count": 0
+},
+{
+"id": 256012,
+"token": "ዄ",
+"a": null,
+"b": null,
+"kind": "geez-letter",
+"count": 0
+},
+{
+"id": 256013,
+"token": "ጰ",
+"a": null,
+"b": null,
+"kind": "geez-letter",
+"count": 0
+},
+{
+"id": 256014,
+"token": "ኜ",
+"a": null,
+"b": null,
+"kind": "geez-letter",
+"count": 0
+},
+{
+"id": 256015,
+"token": "ሤ",
+"a": null,
+"b": null,
+"kind": "geez-letter",
+"count": 0
+},
+{
+"id": 256016,
+"token": "ኂ",
+"a": null,
+"b": null,
+"kind": "geez-letter",
+"count": 0
+},
+{
+"id": 256017,
+"token": "ዡ",
+"a": null,
+"b": null,
+"kind": "geez-letter",
+"count": 0
+},
+{
+"id": 256018,
+"token": "ኧ",
+"a": null,
+"b": null,
+"kind": "geez-letter",
+"count": 0
+},
+{
+"id": 256019,
+"token": "ሿ",
+"a": null,
+"b": null,
+"kind": "geez-letter",
+"count": 0
+},
+{
+"id": 256020,
+"token": "ጝ",
+"a": null,
+"b": null,
+"kind": "geez-letter",
+"count": 0
+},
+{
+"id": 256021,
+"token": "ቩ",
+"a": null,
+"b": null,
+"kind": "geez-letter",
+"count": 0
+},
+{
+"id": 256022,
+"token": "ኄ",
+"a": null,
+"b": null,
+"kind": "geez-letter",
+"count": 0
+},
+{
+"id": 256023,
+"token": "ኟ",
+"a": null,
+"b": null,
+"kind": "geez-letter",
+"count": 0
+},
+{
+"id": 256024,
+"token": "ቔ",
+"a": null,
+"b": null,
+"kind": "geez-letter",
+"count": 0
+},
+{
+"id": 256025,
+"token": "ዤ",
+"a": null,
+"b": null,
+"kind": "geez-letter",
+"count": 0
+},
+{
+"id": 256026,
+"token": "ኁ",
+"a": null,
+"b": null,
+"kind": "geez-letter",
+"count": 0
+},
+{
+"id": 256027,
+"token": "ጛ",
+"a": null,
+"b": null,
+"kind": "geez-letter",
+"count": 0
+},
+{
+"id": 256028,
+"token": "ሇ",
+"a": null,
+"b": null,
+"kind": "geez-letter",
+"count": 0
+},
+{
+"id": 256029,
+"token": "ዯ",
+"a": null,
+"b": null,
+"kind": "geez-letter",
+"count": 0
+},
+{
+"id": 256030,
+"token": "ኆ",
+"a": null,
+"b": null,
+"kind": "geez-letter",
+"count": 0
+},
+{
+"id": 256031,
+"token": "ሗ",
+"a": null,
+"b": null,
+"kind": "geez-letter",
+"count": 0
+},
+{
+"id": 256032,
+"token": "ጙ",
+"a": null,
+"b": null,
+"kind": "geez-letter",
+"count": 0
+},
+{
+"id": 256033,
+"token": "ጯ",
+"a": null,
+"b": null,
+"kind": "geez-letter",
+"count": 0
+},
+{
+"id": 256034,
+"token": "ጱ",
+"a": null,
+"b": null,
+"kind": "geez-letter",
+"count": 0
+},
+{
+"id": 256035,
+"token": "ጏ",
+"a": null,
+"b": null,
+"kind": "geez-letter",
+"count": 0
+},
+{
+"id": 256036,
+"token": "ኊ",
+"a": null,
+"b": null,
+"kind": "geez-letter",
+"count": 0
+},
+{
+"id": 256037,
+"token": "ቯ",
+"a": null,
+"b": null,
+"kind": "geez-letter",
+"count": 0
+},
+{
+"id": 256038,
+"token": "ጘ",
+"a": null,
+"b": null,
+"kind": "geez-letter",
+"count": 0
+},
+{
+"id": 256039,
+"token": "ጔ",
+"a": null,
+"b": null,
+"kind": "geez-letter",
+"count": 0
+},
+{
+"id": 256040,
+"token": "ቌ",
+"a": null,
+"b": null,
+"kind": "geez-letter",
+"count": 0
+},
+{
+"id": 256041,
+"token": "ጚ",
+"a": null,
+"b": null,
+"kind": "geez-letter",
+"count": 0
+},
+{
+"id": 256042,
+"token": "ቇ",
+"a": null,
+"b": null,
+"kind": "geez-letter",
+"count": 0
+},
+{
+"id": 256043,
+"token": "ዸ",
+"a": null,
+"b": null,
+"kind": "geez-letter",
+"count": 0
+},
+{
+"id": 256044,
+"token": "ዧ",
+"a": null,
+"b": null,
+"kind": "geez-letter",
+"count": 0
+},
+{
+"id": 256045,
+"token": "ፇ",
+"a": null,
+"b": null,
+"kind": "geez-letter",
+"count": 0
+},
+{
+"id": 256046,
+"token": "ᎀ",
+"a": null,
+"b": null,
+"kind": "geez-letter",
+"count": 0
+},
+{
+"id": 256047,
+"token": "ዾ",
+"a": null,
+"b": null,
+"kind": "geez-letter",
+"count": 0
+},
+{
+"id": 256048,
+"token": "ኌ",
+"a": null,
+"b": null,
+"kind": "geez-letter",
+"count": 0
+},
+{
+"id": 256049,
+"token": "ዏ",
+"a": null,
+"b": null,
+"kind": "geez-letter",
+"count": 0
+},
+{
+"id": 256050,
+"token": "ጟ",
+"a": null,
+"b": null,
+"kind": "geez-letter",
+"count": 0
+},
+{
+"id": 256051,
+"token": "ቜ",
+"a": null,
+"b": null,
+"kind": "geez-letter",
+"count": 0
+},
+{
+"id": 256052,
+"token": "ዺ",
+"a": null,
+"b": null,
+"kind": "geez-letter",
+"count": 0
+},
+{
+"id": 256053,
+"token": "ኍ",
+"a": null,
+"b": null,
+"kind": "geez-letter",
+"count": 0
+},
+{
+"id": 256054,
+"token": "ኯ",
+"a": null,
+"b": null,
+"kind": "geez-letter",
+"count": 0
+},
+{
+"id": 256055,
+"token": "ኈ",
+"a": null,
+"b": null,
+"kind": "geez-letter",
+"count": 0
+},
+{
+"id": 256056,
+"token": "ᎁ",
+"a": null,
+"b": null,
+"kind": "geez-letter",
+"count": 0
+},
+{
+"id": 256057,
+"token": "ሧ",
+"a": null,
+"b": null,
+"kind": "geez-letter",
+"count": 0
+},
+{
+"id": 256058,
+"token": "ዼ",
+"a": null,
+"b": null,
+"kind": "geez-letter",
+"count": 0
+},
+{
+"id": 256059,
+"token": "ፘ",
+"a": null,
+"b": null,
+"kind": "geez-letter",
+"count": 0
+},
+{
+"id": 256060,
+"token": "ጜ",
+"a": null,
+"b": null,
+"kind": "geez-letter",
+"count": 0
+},
+{
+"id": 256061,
+"token": "ⷅ",
+"a": null,
+"b": null,
+"kind": "geez-letter",
+"count": 0
+},
+{
+"id": 256062,
+"token": "▁ሓ",
+"a": "▁",
+"b": "ሓ",
+"kind": "geez",
+"count": 106590
+},
+{
+"id": 256063,
+"token": "▁ከም",
+"a": "▁ከ",
+"b": "ም",
+"kind": "geez",
+"count": 81777
+},
+{
+"id": 256064,
+"token": "▁ናይ",
+"a": "▁ና",
+"b": "ይ",
+"kind": "geez",
+"count": 80364
+},
+{
+"id": 256065,
+"token": "▁እዩ",
+"a": "▁እ",
+"b": "ዩ",
+"kind": "geez",
+"count": 53412
+},
+{
+"id": 256066,
+"token": "▁ካብ",
+"a": "▁ካ",
+"b": "ብ",
+"kind": "geez",
+"count": 53292
+},
+{
+"id": 256067,
+"token": "▁ዝተ",
+"a": "▁ዝ",
+"b": "ተ",
+"kind": "geez",
+"count": 46457
+},
+{
+"id": 256068,
+"token": "ትዮ",
+"a": "ት",
+"b": "ዮ",
+"kind": "geez",
+"count": 43496
+},
+{
+"id": 256069,
+"token": "ትዮጵ",
+"a": "ትዮ",
+"b": "ጵ",
+"kind": "geez",
+"count": 40089
+},
+{
+"id": 256070,
+"token": "ርትራ",
+"a": "ርት",
+"b": "ራ",
+"kind": "geez",
+"count": 37612
+},
+{
+"id": 256071,
+"token": "▁እቲ",
+"a": "▁እ",
+"b": "ቲ",
+"kind": "geez",
+"count": 35659
+},
+{
+"id": 256072,
+"token": "ቶም",
+"a": "ቶ",
+"b": "ም",
+"kind": "geez",
+"count": 35421
+},
+{
+"id": 256073,
+"token": "▁ኤርትራ",
+"a": "▁ኤ",
+"b": "ርትራ",
+"kind": "geez",
+"count": 33705
+},
+{
+"id": 256074,
+"token": "▁ህዝ",
+"a": "▁ህ",
+"b": "ዝ",
+"kind": "geez",
+"count": 31609
+},
+{
+"id": 256075,
+"token": "▁ዘይ",
+"a": "▁ዘ",
+"b": "ይ",
+"kind": "geez",
+"count": 31282
+},
+{
+"id": 256076,
+"token": "ትዮጵያ",
+"a": "ትዮጵ",
+"b": "ያ",
+"kind": "geez",
+"count": 30673
+},
+{
+"id": 256077,
+"token": "▁ናብ",
+"a": "▁ና",
+"b": "ብ",
+"kind": "geez",
+"count": 29853
+},
+{
+"id": 256078,
+"token": "▁ድማ",
+"a": "▁ድ",
+"b": "ማ",
+"kind": "geez",
+"count": 29241
+},
+{
+"id": 256079,
+"token": "▁እዩ።",
+"a": "▁እዩ",
+"b": "።",
+"kind": "geez",
+"count": 28601
+},
+{
+"id": 256080,
+"token": "▁ኣይ",
+"a": "▁ኣ",
+"b": "ይ",
+"kind": "geez",
+"count": 28539
+},
+{
+"id": 256081,
+"token": "▁ጸ",
+"a": "▁",
+"b": "ጸ",
+"kind": "geez",
+"count": 27085
+},
+{
+"id": 256082,
+"token": "▁መንግ",
+"a": "▁መን",
+"b": "ግ",
+"kind": "geez",
+"count": 26538
+},
+{
+"id": 256083,
+"token": "▁ንም",
+"a": "▁ን",
+"b": "ም",
+"kind": "geez",
+"count": 25558
+},
+{
+"id": 256084,
+"token": "ኣብ",
+"a": "ኣ",
+"b": "ብ",
+"kind": "geez",
+"count": 24844
+},
+{
+"id": 256085,
+"token": "▁ብም",
+"a": "▁ብ",
+"b": "ም",
+"kind": "geez",
+"count": 24542
+},
+{
+"id": 256086,
+"token": "▁እዚ",
+"a": "▁እ",
+"b": "ዚ",
+"kind": "geez",
+"count": 23827
+},
+{
+"id": 256087,
+"token": "▁እንተ",
+"a": "▁እን",
+"b": "ተ",
+"kind": "geez",
+"count": 23344
+},
+{
+"id": 256088,
+"token": "▁ዘሎ",
+"a": "▁ዘ",
+"b": "ሎ",
+"kind": "geez",
+"count": 23164
+},
+{
+"id": 256089,
+"token": "ብል",
+"a": "ብ",
+"b": "ል",
+"kind": "geez",
+"count": 22350
+},
+{
+"id": 256090,
+"token": "▁ጽ",
+"a": "▁",
+"b": "ጽ",
+"kind": "geez",
+"count": 22083
+},
+{
+"id": 256091,
+"token": "ሎም",
+"a": "ሎ",
+"b": "ም",
+"kind": "geez",
+"count": 21513
+},
+{
+"id": 256092,
+"token": "▁ር",
+"a": "▁",
+"b": "ር",
+"kind": "geez",
+"count": 21271
+},
+{
+"id": 256093,
+"token": "ሪካ",
+"a": "ሪ",
+"b": "ካ",
+"kind": "geez",
+"count": 21166
+},
+{
+"id": 256094,
+"token": "▁ዘለ",
+"a": "▁ዘ",
+"b": "ለ",
+"kind": "geez",
+"count": 20150
+},
+{
+"id": 256095,
+"token": "ምህ",
+"a": "ም",
+"b": "ህ",
+"kind": "geez",
+"count": 19065
+},
+{
+"id": 256096,
+"token": "▁ሃገ",
+"a": "▁ሃ",
+"b": "ገ",
+"kind": "geez",
+"count": 18997
+},
+{
+"id": 256097,
+"token": "▁ዝነ",
+"a": "▁ዝ",
+"b": "ነ",
+"kind": "geez",
+"count": 18955
+},
+{
+"id": 256098,
+"token": "▁ሰብ",
+"a": "▁ሰ",
+"b": "ብ",
+"kind": "geez",
+"count": 18613
+},
+{
+"id": 256099,
+"token": "ስቲ",
+"a": "ስ",
+"b": "ቲ",
+"kind": "geez",
+"count": 18426
+},
+{
+"id": 256100,
+"token": "ናን",
+"a": "ና",
+"b": "ን",
+"kind": "geez",
+"count": 18145
+},
+{
+"id": 256101,
+"token": "ራሕ",
+"a": "ራ",
+"b": "ሕ",
+"kind": "geez",
+"count": 17837
+},
+{
+"id": 256102,
+"token": "▁ክን",
+"a": "▁ክ",
+"b": "ን",
+"kind": "geez",
+"count": 17588
+},
+{
+"id": 256103,
+"token": "▁ከምዝ",
+"a": "▁ከም",
+"b": "ዝ",
+"kind": "geez",
+"count": 17585
+},
+{
+"id": 256104,
+"token": "▁ነቲ",
+"a": "▁ነ",
+"b": "ቲ",
+"kind": "geez",
+"count": 17496
+},
+{
+"id": 256105,
+"token": "▁ሓደ",
+"a": "▁ሓ",
+"b": "ደ",
+"kind": "geez",
+"count": 17350
+},
+{
+"id": 256106,
+"token": "ኾነ",
+"a": "ኾ",
+"b": "ነ",
+"kind": "geez",
+"count": 17297
+},
+{
+"id": 256107,
+"token": "ብረ",
+"a": "ብ",
+"b": "ረ",
+"kind": "geez",
+"count": 17222
+},
+{
+"id": 256108,
+"token": "▁ክል",
+"a": "▁ክ",
+"b": "ል",
+"kind": "geez",
+"count": 17220
+},
+{
+"id": 256109,
+"token": "ን።",
+"a": "ን",
+"b": "።",
+"kind": "geez",
+"count": 17139
+},
+{
+"id": 256110,
+"token": "ኽእ",
+"a": "ኽ",
+"b": "እ",
+"kind": "geez",
+"count": 16998
+},
+{
+"id": 256111,
+"token": "ሳብ",
+"a": "ሳ",
+"b": "ብ",
+"kind": "geez",
+"count": 16909
+},
+{
+"id": 256112,
+"token": "ውያን",
+"a": "ው",
+"b": "ያን",
+"kind": "geez",
+"count": 16880
+},
+{
+"id": 256113,
+"token": "▁ክት",
+"a": "▁ክ",
+"b": "ት",
+"kind": "geez",
+"count": 16763
+},
+{
+"id": 256114,
+"token": "▁ህዝቢ",
+"a": "▁ህዝ",
+"b": "ቢ",
+"kind": "geez",
+"count": 16334
+},
+{
+"id": 256115,
+"token": "▁ወይ",
+"a": "▁ወ",
+"b": "ይ",
+"kind": "geez",
+"count": 16244
+},
+{
+"id": 256116,
+"token": "▁ፖ",
+"a": "▁",
+"b": "ፖ",
+"kind": "geez",
+"count": 16241
+},
+{
+"id": 256117,
+"token": "በሩ",
+"a": "በ",
+"b": "ሩ",
+"kind": "geez",
+"count": 16090
+},
+{
+"id": 256118,
+"token": "▁ኢትዮጵያ",
+"a": "▁ኢ",
+"b": "ትዮጵያ",
+"kind": "geez",
+"count": 16044
+},
+{
+"id": 256119,
+"token": "▁ከተማ",
+"a": "▁ከተ",
+"b": "ማ",
+"kind": "geez",
+"count": 16017
+},
+{
+"id": 256120,
+"token": "▁ዜ",
+"a": "▁",
+"b": "ዜ",
+"kind": "geez",
+"count": 15161
+},
+{
+"id": 256121,
+"token": "▁ካል",
+"a": "▁ካ",
+"b": "ል",
+"kind": "geez",
+"count": 15122
+},
+{
+"id": 256122,
+"token": "▁ኣለ",
+"a": "▁ኣ",
+"b": "ለ",
+"kind": "geez",
+"count": 15013
+},
+{
+"id": 256123,
+"token": "▁ሃገር",
+"a": "▁ሃ",
+"b": "ገር",
+"kind": "geez",
+"count": 15011
+},
+{
+"id": 256124,
+"token": "ዓል",
+"a": "ዓ",
+"b": "ል",
+"kind": "geez",
+"count": 14918
+},
+{
+"id": 256125,
+"token": "ዘይ",
+"a": "ዘ",
+"b": "ይ",
+"kind": "geez",
+"count": 14851
+},
+{
+"id": 256126,
+"token": "ያት",
+"a": "ያ",
+"b": "ት",
+"kind": "geez",
+"count": 14714
+},
+{
+"id": 256127,
+"token": "▁ቅድ",
+"a": "▁ቅ",
+"b": "ድ",
+"kind": "geez",
+"count": 14712
+},
+{
+"id": 256128,
+"token": "ርቲ",
+"a": "ር",
+"b": "ቲ",
+"kind": "geez",
+"count": 14633
+},
+{
+"id": 256129,
+"token": "ኢትዮጵያ",
+"a": "ኢ",
+"b": "ትዮጵያ",
+"kind": "geez",
+"count": 14565
+},
+{
+"id": 256130,
+"token": "ናይ",
+"a": "ና",
+"b": "ይ",
+"kind": "geez",
+"count": 14423
+},
+{
+"id": 256131,
+"token": "▁አብ",
+"a": "▁አ",
+"b": "ብ",
+"kind": "geez",
+"count": 14163
+},
+{
+"id": 256132,
+"token": "ሕሪ",
+"a": "ሕ",
+"b": "ሪ",
+"kind": "geez",
+"count": 13944
+},
+{
+"id": 256133,
+"token": "ልጣ",
+"a": "ል",
+"b": "ጣ",
+"kind": "geez",
+"count": 13902
+},
+{
+"id": 256134,
+"token": "ማር",
+"a": "ማ",
+"b": "ር",
+"kind": "geez",
+"count": 13877
+},
+{
+"id": 256135,
+"token": "ይኑ",
+"a": "ይ",
+"b": "ኑ",
+"kind": "geez",
+"count": 13843
+},
+{
+"id": 256136,
+"token": "▁ኣሎ",
+"a": "▁ኣ",
+"b": "ሎ",
+"kind": "geez",
+"count": 13817
+},
+{
+"id": 256137,
+"token": "ቲካ",
+"a": "ቲ",
+"b": "ካ",
+"kind": "geez",
+"count": 13757
+},
+{
+"id": 256138,
+"token": "▁ዓመ",
+"a": "▁ዓ",
+"b": "መ",
+"kind": "geez",
+"count": 13685
+},
+{
+"id": 256139,
+"token": "▁ከኣ",
+"a": "▁ከ",
+"b": "ኣ",
+"kind": "geez",
+"count": 13654
+},
+{
+"id": 256140,
+"token": "▁ዓለም",
+"a": "▁ዓ",
+"b": "ለም",
+"kind": "geez",
+"count": 13568
+},
+{
+"id": 256141,
+"token": "ዋን",
+"a": "ዋ",
+"b": "ን",
+"kind": "geez",
+"count": 13546
+},
+{
+"id": 256142,
+"token": "▁ጀ",
+"a": "▁",
+"b": "ጀ",
+"kind": "geez",
+"count": 13461
+},
+{
+"id": 256143,
+"token": "▁እውን",
+"a": "▁እ",
+"b": "ውን",
+"kind": "geez",
+"count": 13444
+},
+{
+"id": 256144,
+"token": "ርከ",
+"a": "ር",
+"b": "ከ",
+"kind": "geez",
+"count": 13416
+},
+{
+"id": 256145,
+"token": "▁ኪ",
+"a": "▁",
+"b": "ኪ",
+"kind": "geez",
+"count": 13372
+},
+{
+"id": 256146,
+"token": "▁እም",
+"a": "▁እ",
+"b": "ም",
+"kind": "geez",
+"count": 13240
+},
+{
+"id": 256147,
+"token": "▁ዓመት",
+"a": "▁ዓ",
+"b": "መት",
+"kind": "geez",
+"count": 13211
+},
+{
+"id": 256148,
+"token": "ኦም",
+"a": "ኦ",
+"b": "ም",
+"kind": "geez",
+"count": 13127
+},
+{
+"id": 256149,
+"token": "ባር",
+"a": "ባ",
+"b": "ር",
+"kind": "geez",
+"count": 13105
+},
+{
+"id": 256150,
+"token": "ታይ",
+"a": "ታ",
+"b": "ይ",
+"kind": "geez",
+"count": 12981
+},
+{
+"id": 256151,
+"token": "▁ብዝ",
+"a": "▁ብ",
+"b": "ዝ",
+"kind": "geez",
+"count": 12927
+},
+{
+"id": 256152,
+"token": "ዩ።",
+"a": "ዩ",
+"b": "።",
+"kind": "geez",
+"count": 12853
+},
+{
+"id": 256153,
+"token": "ዳን",
+"a": "ዳ",
+"b": "ን",
+"kind": "geez",
+"count": 12845
+},
+{
+"id": 256154,
+"token": "ሓት",
+"a": "ሓ",
+"b": "ት",
+"kind": "geez",
+"count": 12749
+},
+{
+"id": 256155,
+"token": "▁ቤተ",
+"a": "▁ቤ",
+"b": "ተ",
+"kind": "geez",
+"count": 12628
+},
+{
+"id": 256156,
+"token": "▁ዶ",
+"a": "▁",
+"b": "ዶ",
+"kind": "geez",
+"count": 12582
+},
+{
+"id": 256157,
+"token": "ተን",
+"a": "ተ",
+"b": "ን",
+"kind": "geez",
+"count": 12499
+},
+{
+"id": 256158,
+"token": "ዱስ",
+"a": "ዱ",
+"b": "ስ",
+"kind": "geez",
+"count": 12419
+},
+{
+"id": 256159,
+"token": "▁ዝበ",
+"a": "▁ዝ",
+"b": "በ",
+"kind": "geez",
+"count": 12334
+},
+{
+"id": 256160,
+"token": "ማት",
+"a": "ማ",
+"b": "ት",
+"kind": "geez",
+"count": 12296
+},
+{
+"id": 256161,
+"token": "ዕሊ",
+"a": "ዕ",
+"b": "ሊ",
+"kind": "geez",
+"count": 12246
+},
+{
+"id": 256162,
+"token": "ዕባ",
+"a": "ዕ",
+"b": "ባ",
+"kind": "geez",
+"count": 11926
+},
+{
+"id": 256163,
+"token": "▁ቃል",
+"a": "▁",
+"b": "ቃል",
+"kind": "geez",
+"count": 11840
+},
+{
+"id": 256164,
+"token": "ን፡",
+"a": "ን",
+"b": "፡",
+"kind": "geez",
+"count": 11826
+},
+{
+"id": 256165,
+"token": "ምላ",
+"a": "ም",
+"b": "ላ",
+"kind": "geez",
+"count": 11797
+},
+{
+"id": 256166,
+"token": "ዮም",
+"a": "ዮ",
+"b": "ም",
+"kind": "geez",
+"count": 11771
+},
+{
+"id": 256167,
+"token": "ሮም",
+"a": "ሮ",
+"b": "ም",
+"kind": "geez",
+"count": 11753
+},
+{
+"id": 256168,
+"token": "ግለ",
+"a": "ግ",
+"b": "ለ",
+"kind": "geez",
+"count": 11735
+},
+{
+"id": 256169,
+"token": "▁ምዃ",
+"a": "▁ም",
+"b": "ዃ",
+"kind": "geez",
+"count": 11726
+},
+{
+"id": 256170,
+"token": "▁ትምህ",
+"a": "▁ት",
+"b": "ምህ",
+"kind": "geez",
+"count": 11554
+},
+{
+"id": 256171,
+"token": "ታትን",
+"a": "ታ",
+"b": "ትን",
+"kind": "geez",
+"count": 11520
+},
+{
+"id": 256172,
+"token": "ልና",
+"a": "ል",
+"b": "ና",
+"kind": "geez",
+"count": 11473
+},
+{
+"id": 256173,
+"token": "▁ክርስ",
+"a": "▁ክ",
+"b": "ርስ",
+"kind": "geez",
+"count": 11423
+},
+{
+"id": 256174,
+"token": "▁ስም",
+"a": "▁ስ",
+"b": "ም",
+"kind": "geez",
+"count": 11363
+},
+{
+"id": 256175,
+"token": "ደፍ",
+"a": "ደ",
+"b": "ፍ",
+"kind": "geez",
+"count": 11320
+},
+{
+"id": 256176,
+"token": "ራይ",
+"a": "ራ",
+"b": "ይ",
+"kind": "geez",
+"count": 11270
+},
+{
+"id": 256177,
+"token": "ግራይ",
+"a": "ግራ",
+"b": "ይ",
+"kind": "geez",
+"count": 11249
+},
+{
+"id": 256178,
+"token": "ብን",
+"a": "ብ",
+"b": "ን",
+"kind": "geez",
+"count": 11181
+},
+{
+"id": 256179,
+"token": "ላም",
+"a": "ላ",
+"b": "ም",
+"kind": "geez",
+"count": 11123
+},
+{
+"id": 256180,
+"token": "▁ዝሓ",
+"a": "▁ዝ",
+"b": "ሓ",
+"kind": "geez",
+"count": 11070
+},
+{
+"id": 256181,
+"token": "ያዊ",
+"a": "ያ",
+"b": "ዊ",
+"kind": "geez",
+"count": 11070
+},
+{
+"id": 256182,
+"token": "ልን",
+"a": "ል",
+"b": "ን",
+"kind": "geez",
+"count": 11063
+},
+{
+"id": 256183,
+"token": "ነትን",
+"a": "ነት",
+"b": "ን",
+"kind": "geez",
+"count": 11053
+},
+{
+"id": 256184,
+"token": "▁ከይ",
+"a": "▁ከ",
+"b": "ይ",
+"kind": "geez",
+"count": 10951
+},
+{
+"id": 256185,
+"token": "ኮነ",
+"a": "ኮ",
+"b": "ነ",
+"kind": "geez",
+"count": 10938
+},
+{
+"id": 256186,
+"token": "እቲ",
+"a": "እ",
+"b": "ቲ",
+"kind": "geez",
+"count": 10929
+},
+{
+"id": 256187,
+"token": "▁ሲሆን",
+"a": "▁ሲ",
+"b": "ሆን",
+"kind": "geez",
+"count": 10902
+},
+{
+"id": 256188,
+"token": "መራ",
+"a": "መ",
+"b": "ራ",
+"kind": "geez",
+"count": 10885
+},
+{
+"id": 256189,
+"token": "▁እያ",
+"a": "▁እ",
+"b": "ያ",
+"kind": "geez",
+"count": 10862
+},
+{
+"id": 256190,
+"token": "ኩም",
+"a": "ኩ",
+"b": "ም",
+"kind": "geez",
+"count": 10794
+},
+{
+"id": 256191,
+"token": "ኸውን",
+"a": "ኸ",
+"b": "ውን",
+"kind": "geez",
+"count": 10765
+},
+{
+"id": 256192,
+"token": "እሰ",
+"a": "እ",
+"b": "ሰ",
+"kind": "geez",
+"count": 10760
+},
+{
+"id": 256193,
+"token": "ነበረ",
+"a": "ነ",
+"b": "በረ",
+"kind": "geez",
+"count": 10738
+},
+{
+"id": 256194,
+"token": "▁ኣፍ",
+"a": "▁ኣ",
+"b": "ፍ",
+"kind": "geez",
+"count": 10686
+},
+{
+"id": 256195,
+"token": "ርን",
+"a": "ር",
+"b": "ን",
+"kind": "geez",
+"count": 10638
+},
+{
+"id": 256196,
+"token": "ለቲካ",
+"a": "ለ",
+"b": "ቲካ",
+"kind": "geez",
+"count": 10552
+},
+{
+"id": 256197,
+"token": "ግዚ",
+"a": "ግ",
+"b": "ዚ",
+"kind": "geez",
+"count": 10304
+},
+{
+"id": 256198,
+"token": "▁ግዜ",
+"a": "▁ግ",
+"b": "ዜ",
+"kind": "geez",
+"count": 10256
+},
+{
+"id": 256199,
+"token": "ገን",
+"a": "ገ",
+"b": "ን",
+"kind": "geez",
+"count": 10250
+},
+{
+"id": 256200,
+"token": "ማይ",
+"a": "ማ",
+"b": "ይ",
+"kind": "geez",
+"count": 10235
+},
+{
+"id": 256201,
+"token": "በል",
+"a": "በ",
+"b": "ል",
+"kind": "geez",
+"count": 10176
+},
+{
+"id": 256202,
+"token": "ረብ",
+"a": "ረ",
+"b": "ብ",
+"kind": "geez",
+"count": 10106
+},
+{
+"id": 256203,
+"token": "ላማ",
+"a": "ላ",
+"b": "ማ",
+"kind": "geez",
+"count": 10087
+},
+{
+"id": 256204,
+"token": "▁ማሕ",
+"a": "▁ማ",
+"b": "ሕ",
+"kind": "geez",
+"count": 10070
+},
+{
+"id": 256205,
+"token": "ሰር",
+"a": "ሰ",
+"b": "ር",
+"kind": "geez",
+"count": 10031
+},
+{
+"id": 256206,
+"token": "ባዊ",
+"a": "ባ",
+"b": "ዊ",
+"kind": "geez",
+"count": 10028
+},
+{
+"id": 256207,
+"token": "ኽእል",
+"a": "ኽእ",
+"b": "ል",
+"kind": "geez",
+"count": 10006
+},
+{
+"id": 256208,
+"token": "▁ፕ",
+"a": "▁",
+"b": "ፕ",
+"kind": "geez",
+"count": 9940
+},
+{
+"id": 256209,
+"token": "ዮን",
+"a": "ዮ",
+"b": "ን",
+"kind": "geez",
+"count": 9932
+},
+{
+"id": 256210,
+"token": "ግሞ",
+"a": "ግ",
+"b": "ሞ",
+"kind": "geez",
+"count": 9856
+},
+{
+"id": 256211,
+"token": "ኖም",
+"a": "ኖ",
+"b": "ም",
+"kind": "geez",
+"count": 9767
+},
+{
+"id": 256212,
+"token": "▁እዋን",
+"a": "▁እ",
+"b": "ዋን",
+"kind": "geez",
+"count": 9748
+},
+{
+"id": 256213,
+"token": "ዎም",
+"a": "ዎ",
+"b": "ም",
+"kind": "geez",
+"count": 9667
+},
+{
+"id": 256214,
+"token": "▁ዚ",
+"a": "▁",
+"b": "ዚ",
+"kind": "geez",
+"count": 9591
+},
+{
+"id": 256215,
+"token": "▁ዝብል",
+"a": "▁ዝ",
+"b": "ብል",
+"kind": "geez",
+"count": 9588
+},
+{
+"id": 256216,
+"token": "▁ውድ",
+"a": "▁ው",
+"b": "ድ",
+"kind": "geez",
+"count": 9553
+},
+{
+"id": 256217,
+"token": "ዓት",
+"a": "ዓ",
+"b": "ት",
+"kind": "geez",
+"count": 9546
+},
+{
+"id": 256218,
+"token": "▁ምኽ",
+"a": "▁ም",
+"b": "ኽ",
+"kind": "geez",
+"count": 9528
+},
+{
+"id": 256219,
+"token": "ብሉ",
+"a": "ብ",
+"b": "ሉ",
+"kind": "geez",
+"count": 9506
+},
+{
+"id": 256220,
+"token": "▁ጉዳይ",
+"a": "▁ጉዳ",
+"b": "ይ",
+"kind": "geez",
+"count": 9454
+},
+{
+"id": 256221,
+"token": "▁ቅዱስ",
+"a": "▁ቅ",
+"b": "ዱስ",
+"kind": "geez",
+"count": 9432
+},
+{
+"id": 256222,
+"token": "ራን",
+"a": "ራ",
+"b": "ን",
+"kind": "geez",
+"count": 9411
+},
+{
+"id": 256223,
+"token": "ዛዕባ",
+"a": "ዛ",
+"b": "ዕባ",
+"kind": "geez",
+"count": 9332
+},
+{
+"id": 256224,
+"token": "▁ሰባት",
+"a": "▁ሰ",
+"b": "ባት",
+"kind": "geez",
+"count": 9318
+},
+{
+"id": 256225,
+"token": "ናዊ",
+"a": "ና",
+"b": "ዊ",
+"kind": "geez",
+"count": 9231
+},
+{
+"id": 256226,
+"token": "▁ድር",
+"a": "▁ድ",
+"b": "ር",
+"kind": "geez",
+"count": 9215
+},
+{
+"id": 256227,
+"token": "▁ከምዘ",
+"a": "▁ከም",
+"b": "ዘ",
+"kind": "geez",
+"count": 9184
+},
+{
+"id": 256228,
+"token": "▁ትግራይ",
+"a": "▁ት",
+"b": "ግራይ",
+"kind": "geez",
+"count": 9121
+},
+{
+"id": 256229,
+"token": "ሜሪካ",
+"a": "ሜ",
+"b": "ሪካ",
+"kind": "geez",
+"count": 9099
+},
+{
+"id": 256230,
+"token": "ሩ።",
+"a": "ሩ",
+"b": "።",
+"kind": "geez",
+"count": 9039
+},
+{
+"id": 256231,
+"token": "▁ቆ",
+"a": "▁",
+"b": "ቆ",
+"kind": "geez",
+"count": 8989
+},
+{
+"id": 256232,
+"token": "ይወት",
+"a": "ይ",
+"b": "ወት",
+"kind": "geez",
+"count": 8988
+},
+{
+"id": 256233,
+"token": "▁ብሓ",
+"a": "▁ብ",
+"b": "ሓ",
+"kind": "geez",
+"count": 8981
+},
+{
+"id": 256234,
+"token": "▁ኩሉ",
+"a": "▁ኩ",
+"b": "ሉ",
+"kind": "geez",
+"count": 8942
+},
+{
+"id": 256235,
+"token": "▁መንግስቲ",
+"a": "▁መንግ",
+"b": "ስቲ",
+"kind": "geez",
+"count": 8931
+},
+{
+"id": 256236,
+"token": "ርያ",
+"a": "ር",
+"b": "ያ",
+"kind": "geez",
+"count": 8921
+},
+{
+"id": 256237,
+"token": "ሔር",
+"a": "ሔ",
+"b": "ር",
+"kind": "geez",
+"count": 8910
+},
+{
+"id": 256238,
+"token": "▁ኃ",
+"a": "▁",
+"b": "ኃ",
+"kind": "geez",
+"count": 8906
+},
+{
+"id": 256239,
+"token": "ምር",
+"a": "ም",
+"b": "ር",
+"kind": "geez",
+"count": 8848
+},
+{
+"id": 256240,
+"token": "▁ኣብቲ",
+"a": "▁ኣብ",
+"b": "ቲ",
+"kind": "geez",
+"count": 8828
+},
+{
+"id": 256241,
+"token": "▁ሎ",
+"a": "▁",
+"b": "ሎ",
+"kind": "geez",
+"count": 8818
+},
+{
+"id": 256242,
+"token": "▁ህግ",
+"a": "▁ህ",
+"b": "ግ",
+"kind": "geez",
+"count": 8816
+},
+{
+"id": 256243,
+"token": "▁ሃገራት",
+"a": "▁ሃገ",
+"b": "ራት",
+"kind": "geez",
+"count": 8789
+},
+{
+"id": 256244,
+"token": "ስፋ",
+"a": "ስ",
+"b": "ፋ",
+"kind": "geez",
+"count": 8771
+},
+{
+"id": 256245,
+"token": "▁ደግሞ",
+"a": "▁ደ",
+"b": "ግሞ",
+"kind": "geez",
+"count": 8740
+},
+{
+"id": 256246,
+"token": "ትና",
+"a": "ት",
+"b": "ና",
+"kind": "geez",
+"count": 8732
+},
+{
+"id": 256247,
+"token": "ላዊ",
+"a": "ላ",
+"b": "ዊ",
+"kind": "geez",
+"count": 8712
+},
+{
+"id": 256248,
+"token": "ይና",
+"a": "ይ",
+"b": "ና",
+"kind": "geez",
+"count": 8682
+},
+{
+"id": 256249,
+"token": "▁ንዝ",
+"a": "▁ን",
+"b": "ዝ",
+"kind": "geez",
+"count": 8659
+},
+{
+"id": 256250,
+"token": "▁ልዕሊ",
+"a": "▁ል",
+"b": "ዕሊ",
+"kind": "geez",
+"count": 8633
+},
+{
+"id": 256251,
+"token": "ሞክ",
+"a": "ሞ",
+"b": "ክ",
+"kind": "geez",
+"count": 8632
+},
+{
+"id": 256252,
+"token": "ገብ",
+"a": "ገ",
+"b": "ብ",
+"kind": "geez",
+"count": 8546
+},
+{
+"id": 256253,
+"token": "▁ኮይኑ",
+"a": "▁ኮ",
+"b": "ይኑ",
+"kind": "geez",
+"count": 8513
+},
+{
+"id": 256254,
+"token": "▁ዓመታት",
+"a": "▁ዓመ",
+"b": "ታት",
+"kind": "geez",
+"count": 8496
+},
+{
+"id": 256255,
+"token": "ረን",
+"a": "ረ",
+"b": "ን",
+"kind": "geez",
+"count": 8460
+},
+{
+"id": 256256,
+"token": "▁ሚኒ",
+"a": "▁ሚ",
+"b": "ኒ",
+"kind": "geez",
+"count": 8438
+},
+{
+"id": 256257,
+"token": "▁ድሕሪ",
+"a": "▁ድ",
+"b": "ሕሪ",
+"kind": "geez",
+"count": 8362
+},
+{
+"id": 256258,
+"token": "▁ተመ",
+"a": "▁ተ",
+"b": "መ",
+"kind": "geez",
+"count": 8331
+},
+{
+"id": 256259,
+"token": "ይቲ",
+"a": "ይ",
+"b": "ቲ",
+"kind": "geez",
+"count": 8328
+},
+{
+"id": 256260,
+"token": "▁ነበር።",
+"a": "▁ነበር",
+"b": "።",
+"kind": "geez",
+"count": 8308
+},
+{
+"id": 256261,
+"token": "▁ተወ",
+"a": "▁ተ",
+"b": "ወ",
+"kind": "geez",
+"count": 8306
+},
+{
+"id": 256262,
+"token": "ና።",
+"a": "ና",
+"b": "።",
+"kind": "geez",
+"count": 8299
+},
+{
+"id": 256263,
+"token": "ሥት",
+"a": "ሥ",
+"b": "ት",
+"kind": "geez",
+"count": 8271
+},
+{
+"id": 256264,
+"token": "▁ኣን",
+"a": "▁ኣ",
+"b": "ን",
+"kind": "geez",
+"count": 8213
+},
+{
+"id": 256265,
+"token": "ሰን",
+"a": "ሰ",
+"b": "ን",
+"kind": "geez",
+"count": 8207
+},
+{
+"id": 256266,
+"token": "ድል",
+"a": "ድ",
+"b": "ል",
+"kind": "geez",
+"count": 8161
+},
+{
+"id": 256267,
+"token": "▁ሱ",
+"a": "▁",
+"b": "ሱ",
+"kind": "geez",
+"count": 8151
+},
+{
+"id": 256268,
+"token": "▁ምዃኑ",
+"a": "▁ምዃ",
+"b": "ኑ",
+"kind": "geez",
+"count": 8109
+},
+{
+"id": 256269,
+"token": "ኤል",
+"a": "ኤ",
+"b": "ል",
+"kind": "geez",
+"count": 8070
+},
+{
+"id": 256270,
+"token": "▁ዘመ",
+"a": "▁ዘ",
+"b": "መ",
+"kind": "geez",
+"count": 8065
+},
+{
+"id": 256271,
+"token": "ስን",
+"a": "ስ",
+"b": "ን",
+"kind": "geez",
+"count": 8050
+},
+{
+"id": 256272,
+"token": "▁ነዚ",
+"a": "▁ነ",
+"b": "ዚ",
+"kind": "geez",
+"count": 8029
+},
+{
+"id": 256273,
+"token": "ፈት",
+"a": "ፈ",
+"b": "ት",
+"kind": "geez",
+"count": 8023
+},
+{
+"id": 256274,
+"token": "▁እቶም",
+"a": "▁እ",
+"b": "ቶም",
+"kind": "geez",
+"count": 8004
+},
+{
+"id": 256275,
+"token": "▁ኢትዮጵ",
+"a": "▁ኢ",
+"b": "ትዮጵ",
+"kind": "geez",
+"count": 7979
+},
+{
+"id": 256276,
+"token": "▁ስርዓት",
+"a": "▁ስርዓ",
+"b": "ት",
+"kind": "geez",
+"count": 7958
+},
+{
+"id": 256277,
+"token": "▁ክሳብ",
+"a": "▁ክ",
+"b": "ሳብ",
+"kind": "geez",
+"count": 7931
+},
+{
+"id": 256278,
+"token": "▁ኣብዚ",
+"a": "▁ኣብ",
+"b": "ዚ",
+"kind": "geez",
+"count": 7910
+},
+{
+"id": 256279,
+"token": "ል፡፡",
+"a": "ል",
+"b": "፡፡",
+"kind": "geez",
+"count": 7872
+},
+{
+"id": 256280,
+"token": "▁ዝኾነ",
+"a": "▁ዝ",
+"b": "ኾነ",
+"kind": "geez",
+"count": 7871
+},
+{
+"id": 256281,
+"token": "▁ወር",
+"a": "▁ወ",
+"b": "ር",
+"kind": "geez",
+"count": 7858
+},
+{
+"id": 256282,
+"token": "ሉን",
+"a": "ሉ",
+"b": "ን",
+"kind": "geez",
+"count": 7855
+},
+{
+"id": 256283,
+"token": "▁ነይ",
+"a": "▁ነ",
+"b": "ይ",
+"kind": "geez",
+"count": 7771
+},
+{
+"id": 256284,
+"token": "▁ሸ",
+"a": "▁",
+"b": "ሸ",
+"kind": "geez",
+"count": 7767
+},
+{
+"id": 256285,
+"token": "ዘብ",
+"a": "ዘ",
+"b": "ብ",
+"kind": "geez",
+"count": 7755
+},
+{
+"id": 256286,
+"token": "▁ኸ",
+"a": "▁",
+"b": "ኸ",
+"kind": "geez",
+"count": 7747
+},
+{
+"id": 256287,
+"token": "ላው",
+"a": "ላ",
+"b": "ው",
+"kind": "geez",
+"count": 7728
+},
+{
+"id": 256288,
+"token": "ልጣን",
+"a": "ልጣ",
+"b": "ን",
+"kind": "geez",
+"count": 7728
+},
+{
+"id": 256289,
+"token": "▁መር",
+"a": "▁መ",
+"b": "ር",
+"kind": "geez",
+"count": 7701
+},
+{
+"id": 256290,
+"token": "ዝብ",
+"a": "ዝ",
+"b": "ብ",
+"kind": "geez",
+"count": 7688
+},
+{
+"id": 256291,
+"token": "ታው",
+"a": "ታ",
+"b": "ው",
+"kind": "geez",
+"count": 7641
+},
+{
+"id": 256292,
+"token": "ቋን",
+"a": "ቋ",
+"b": "ን",
+"kind": "geez",
+"count": 7595
+},
+{
+"id": 256293,
+"token": "▁ዘመን",
+"a": "▁ዘ",
+"b": "መን",
+"kind": "geez",
+"count": 7570
+},
+{
+"id": 256294,
+"token": "መሰ",
+"a": "መ",
+"b": "ሰ",
+"kind": "geez",
+"count": 7566
+},
+{
+"id": 256295,
+"token": "▁ማዕ",
+"a": "▁ማ",
+"b": "ዕ",
+"kind": "geez",
+"count": 7546
+},
+{
+"id": 256296,
+"token": "▁ብዛዕባ",
+"a": "▁ብ",
+"b": "ዛዕባ",
+"kind": "geez",
+"count": 7541
+},
+{
+"id": 256297,
+"token": "▁ልጆች",
+"a": "▁ል",
+"b": "ጆች",
+"kind": "geez",
+"count": 7533
+},
+{
+"id": 256298,
+"token": "ታቸው",
+"a": "ታ",
+"b": "ቸው",
+"kind": "geez",
+"count": 7533
+},
+{
+"id": 256299,
+"token": "▁ዝነበረ",
+"a": "▁ዝነ",
+"b": "በረ",
+"kind": "geez",
+"count": 7472
+},
+{
+"id": 256300,
+"token": "ንቲ",
+"a": "ን",
+"b": "ቲ",
+"kind": "geez",
+"count": 7424
+},
+{
+"id": 256301,
+"token": "▁ዝም",
+"a": "▁ዝ",
+"b": "ም",
+"kind": "geez",
+"count": 7411
+},
+{
+"id": 256302,
+"token": "ነታት",
+"a": "ነ",
+"b": "ታት",
+"kind": "geez",
+"count": 7395
+},
+{
+"id": 256303,
+"token": "▁መሆኑ",
+"a": "▁መ",
+"b": "ሆኑ",
+"kind": "geez",
+"count": 7374
+},
+{
+"id": 256304,
+"token": "ምላኽ",
+"a": "ምላ",
+"b": "ኽ",
+"kind": "geez",
+"count": 7339
+},
+{
+"id": 256305,
+"token": "▁ሆነ",
+"a": "▁",
+"b": "ሆነ",
+"kind": "geez",
+"count": 7333
+},
+{
+"id": 256306,
+"token": "ደል",
+"a": "ደ",
+"b": "ል",
+"kind": "geez",
+"count": 7323
+},
+{
+"id": 256307,
+"token": "▁ስደ",
+"a": "▁ስ",
+"b": "ደ",
+"kind": "geez",
+"count": 7264
+},
+{
+"id": 256308,
+"token": "አብ",
+"a": "አ",
+"b": "ብ",
+"kind": "geez",
+"count": 7242
+},
+{
+"id": 256309,
+"token": "▁ፖለቲካ",
+"a": "▁ፖ",
+"b": "ለቲካ",
+"kind": "geez",
+"count": 7222
+},
+{
+"id": 256310,
+"token": "ም፡",
+"a": "ም",
+"b": "፡",
+"kind": "geez",
+"count": 7193
+},
+{
+"id": 256311,
+"token": "ርከብ",
+"a": "ርከ",
+"b": "ብ",
+"kind": "geez",
+"count": 7188
+},
+{
+"id": 256312,
+"token": "▁መጽ",
+"a": "▁መ",
+"b": "ጽ",
+"kind": "geez",
+"count": 7154
+},
+{
+"id": 256313,
+"token": "▁ኣባ",
+"a": "▁ኣ",
+"b": "ባ",
+"kind": "geez",
+"count": 7150
+},
+{
+"id": 256314,
+"token": "▁ዩ",
+"a": "▁",
+"b": "ዩ",
+"kind": "geez",
+"count": 7107
+},
+{
+"id": 256315,
+"token": "▁ሎሚ",
+"a": "▁ሎ",
+"b": "ሚ",
+"kind": "geez",
+"count": 7094
+},
+{
+"id": 256316,
+"token": "ክብ",
+"a": "ክ",
+"b": "ብ",
+"kind": "geez",
+"count": 7049
+},
+{
+"id": 256317,
+"token": "▁ራ",
+"a": "▁",
+"b": "ራ",
+"kind": "geez",
+"count": 7041
+},
+{
+"id": 256318,
+"token": "ሬታ",
+"a": "ሬ",
+"b": "ታ",
+"kind": "geez",
+"count": 7013
+},
+{
+"id": 256319,
+"token": "▁ዛ",
+"a": "▁",
+"b": "ዛ",
+"kind": "geez",
+"count": 6990
+},
+{
+"id": 256320,
+"token": "▁ኣሎ።",
+"a": "▁ኣሎ",
+"b": "።",
+"kind": "geez",
+"count": 6988
+},
+{
+"id": 256321,
+"token": "▁ተገ",
+"a": "▁ተ",
+"b": "ገ",
+"kind": "geez",
+"count": 6968
+},
+{
+"id": 256322,
+"token": "ማርኛ",
+"a": "ማር",
+"b": "ኛ",
+"kind": "geez",
+"count": 6967
+},
+{
+"id": 256323,
+"token": "▁ንጉ",
+"a": "▁ን",
+"b": "ጉ",
+"kind": "geez",
+"count": 6922
+},
+{
+"id": 256324,
+"token": "ውሮ",
+"a": "ው",
+"b": "ሮ",
+"kind": "geez",
+"count": 6921
+},
+{
+"id": 256325,
+"token": "▁ምሳሌ",
+"a": "▁ም",
+"b": "ሳሌ",
+"kind": "geez",
+"count": 6910
+},
+{
+"id": 256326,
+"token": "▁ፀ",
+"a": "▁",
+"b": "ፀ",
+"kind": "geez",
+"count": 6906
+},
+{
+"id": 256327,
+"token": "▁መደ",
+"a": "▁መ",
+"b": "ደ",
+"kind": "geez",
+"count": 6884
+},
+{
+"id": 256328,
+"token": "ቋንቋ",
+"a": "ቋን",
+"b": "ቋ",
+"kind": "geez",
+"count": 6875
+},
+{
+"id": 256329,
+"token": "▁ክልል",
+"a": "▁ክል",
+"b": "ል",
+"kind": "geez",
+"count": 6867
+},
+{
+"id": 256330,
+"token": "▁ክርስቲ",
+"a": "▁ክርስ",
+"b": "ቲ",
+"kind": "geez",
+"count": 6820
+},
+{
+"id": 256331,
+"token": "▁ለው",
+"a": "▁ለ",
+"b": "ው",
+"kind": "geez",
+"count": 6813
+},
+{
+"id": 256332,
+"token": "ላእ",
+"a": "ላ",
+"b": "እ",
+"kind": "geez",
+"count": 6776
+},
+{
+"id": 256333,
+"token": "መድ",
+"a": "መ",
+"b": "ድ",
+"kind": "geez",
+"count": 6773
+},
+{
+"id": 256334,
+"token": "▁መግለ",
+"a": "▁መ",
+"b": "ግለ",
+"kind": "geez",
+"count": 6757
+},
+{
+"id": 256335,
+"token": "ዮም።",
+"a": "ዮ",
+"b": "ም።",
+"kind": "geez",
+"count": 6755
+},
+{
+"id": 256336,
+"token": "ብረት",
+"a": "ብ",
+"b": "ረት",
+"kind": "geez",
+"count": 6730
+},
+{
+"id": 256337,
+"token": "▁ስራሕ",
+"a": "▁ስ",
+"b": "ራሕ",
+"kind": "geez",
+"count": 6702
+},
+{
+"id": 256338,
+"token": "ገኘ",
+"a": "ገ",
+"b": "ኘ",
+"kind": "geez",
+"count": 6674
+},
+{
+"id": 256339,
+"token": "▁መብ",
+"a": "▁መ",
+"b": "ብ",
+"kind": "geez",
+"count": 6672
+},
+{
+"id": 256340,
+"token": "▁ከምኡ",
+"a": "▁ከም",
+"b": "ኡ",
+"kind": "geez",
+"count": 6661
+},
+{
+"id": 256341,
+"token": "▁ግና",
+"a": "▁ግ",
+"b": "ና",
+"kind": "geez",
+"count": 6631
+},
+{
+"id": 256342,
+"token": "▁ወን",
+"a": "▁ወ",
+"b": "ን",
+"kind": "geez",
+"count": 6625
+},
+{
+"id": 256343,
+"token": "ካይ",
+"a": "ካ",
+"b": "ይ",
+"kind": "geez",
+"count": 6615
+},
+{
+"id": 256344,
+"token": "ተኛታት",
+"a": "ተኛ",
+"b": "ታት",
+"kind": "geez",
+"count": 6583
+},
+{
+"id": 256345,
+"token": "▁ህግደፍ",
+"a": "▁ህግ",
+"b": "ደፍ",
+"kind": "geez",
+"count": 6560
+},
+{
+"id": 256346,
+"token": "▁ብር",
+"a": "▁ብ",
+"b": "ር",
+"kind": "geez",
+"count": 6558
+},
+{
+"id": 256347,
+"token": "▁ዞ",
+"a": "▁",
+"b": "ዞ",
+"kind": "geez",
+"count": 6547
+},
+{
+"id": 256348,
+"token": "▁ግብ",
+"a": "▁ግ",
+"b": "ብ",
+"kind": "geez",
+"count": 6543
+},
+{
+"id": 256349,
+"token": "ጦር",
+"a": "ጦ",
+"b": "ር",
+"kind": "geez",
+"count": 6539
+},
+{
+"id": 256350,
+"token": "ጥን",
+"a": "ጥ",
+"b": "ን",
+"kind": "geez",
+"count": 6519
+},
+{
+"id": 256351,
+"token": "ሃል",
+"a": "ሃ",
+"b": "ል",
+"kind": "geez",
+"count": 6506
+},
+{
+"id": 256352,
+"token": "▁ቃ",
+"a": "▁",
+"b": "ቃ",
+"kind": "geez",
+"count": 6494
+},
+{
+"id": 256353,
+"token": "ደረገ",
+"a": "ደረ",
+"b": "ገ",
+"kind": "geez",
+"count": 6475
+},
+{
+"id": 256354,
+"token": "▁ምዕ",
+"a": "▁ም",
+"b": "ዕ",
+"kind": "geez",
+"count": 6473
+},
+{
+"id": 256355,
+"token": "▁ንግ",
+"a": "▁ን",
+"b": "ግ",
+"kind": "geez",
+"count": 6465
+},
+{
+"id": 256356,
+"token": "ባብ",
+"a": "ባ",
+"b": "ብ",
+"kind": "geez",
+"count": 6462
+},
+{
+"id": 256357,
+"token": "▁እት",
+"a": "▁እ",
+"b": "ት",
+"kind": "geez",
+"count": 6424
+},
+{
+"id": 256358,
+"token": "▁ምም",
+"a": "▁ም",
+"b": "ም",
+"kind": "geez",
+"count": 6411
+},
+{
+"id": 256359,
+"token": "ልካ",
+"a": "ል",
+"b": "ካ",
+"kind": "geez",
+"count": 6384
+},
+{
+"id": 256360,
+"token": "ቦም",
+"a": "ቦ",
+"b": "ም",
+"kind": "geez",
+"count": 6375
+},
+{
+"id": 256361,
+"token": "▁መሪ",
+"a": "▁መ",
+"b": "ሪ",
+"kind": "geez",
+"count": 6374
+},
+{
+"id": 256362,
+"token": "▁መዓል",
+"a": "▁መ",
+"b": "ዓል",
+"kind": "geez",
+"count": 6373
+},
+{
+"id": 256363,
+"token": "ርእ",
+"a": "ር",
+"b": "እ",
+"kind": "geez",
+"count": 6356
+},
+{
+"id": 256364,
+"token": "▁ቀዳ",
+"a": "▁ቀ",
+"b": "ዳ",
+"kind": "geez",
+"count": 6349
+},
+{
+"id": 256365,
+"token": "ካብ",
+"a": "ካ",
+"b": "ብ",
+"kind": "geez",
+"count": 6338
+},
+{
+"id": 256366,
+"token": "▁ሓድ",
+"a": "▁ሓ",
+"b": "ድ",
+"kind": "geez",
+"count": 6335
+},
+{
+"id": 256367,
+"token": "▁፡",
+"a": "▁",
+"b": "፡",
+"kind": "geez",
+"count": 6308
+},
+{
+"id": 256368,
+"token": "▁ሓበ",
+"a": "▁ሓ",
+"b": "በ",
+"kind": "geez",
+"count": 6298
+},
+{
+"id": 256369,
+"token": "ዳር",
+"a": "ዳ",
+"b": "ር",
+"kind": "geez",
+"count": 6288
+},
+{
+"id": 256370,
+"token": "ዋል፡፡",
+"a": "ዋል",
+"b": "፡፡",
+"kind": "geez",
+"count": 6280
+},
+{
+"id": 256371,
+"token": "▁ገሊ",
+"a": "▁ገ",
+"b": "ሊ",
+"kind": "geez",
+"count": 6249
+},
+{
+"id": 256372,
+"token": "▁ሐ",
+"a": "▁",
+"b": "ሐ",
+"kind": "geez",
+"count": 6246
+},
+{
+"id": 256373,
+"token": "▁ህዝብ",
+"a": "▁ህዝ",
+"b": "ብ",
+"kind": "geez",
+"count": 6236
+},
+{
+"id": 256374,
+"token": "ታን",
+"a": "ታ",
+"b": "ን",
+"kind": "geez",
+"count": 6226
+},
+{
+"id": 256375,
+"token": "▁እግዚ",
+"a": "▁እ",
+"b": "ግዚ",
+"kind": "geez",
+"count": 6221
+},
+{
+"id": 256376,
+"token": "▁አባ",
+"a": "▁አ",
+"b": "ባ",
+"kind": "geez",
+"count": 6202
+},
+{
+"id": 256377,
+"token": "▁ኢትዮጵያን",
+"a": "▁ኢትዮጵ",
+"b": "ያን",
+"kind": "geez",
+"count": 6187
+},
+{
+"id": 256378,
+"token": "▁ዝግ",
+"a": "▁ዝ",
+"b": "ግ",
+"kind": "geez",
+"count": 6148
+},
+{
+"id": 256379,
+"token": "▁ተሰ",
+"a": "▁ተ",
+"b": "ሰ",
+"kind": "geez",
+"count": 6128
+},
+{
+"id": 256380,
+"token": "ሩን",
+"a": "ሩ",
+"b": "ን",
+"kind": "geez",
+"count": 6119
+},
+{
+"id": 256381,
+"token": "ተሓ",
+"a": "ተ",
+"b": "ሓ",
+"kind": "geez",
+"count": 6115
+},
+{
+"id": 256382,
+"token": "▁የአማርኛ",
+"a": "▁የአ",
+"b": "ማርኛ",
+"kind": "geez",
+"count": 6089
+},
+{
+"id": 256383,
+"token": "ፈላለ",
+"a": "ፈላ",
+"b": "ለ",
+"kind": "geez",
+"count": 6089
+},
+{
+"id": 256384,
+"token": "▁ጌ",
+"a": "▁",
+"b": "ጌ",
+"kind": "geez",
+"count": 6086
+},
+{
+"id": 256385,
+"token": "▁ሃይ",
+"a": "▁ሃ",
+"b": "ይ",
+"kind": "geez",
+"count": 6083
+},
+{
+"id": 256386,
+"token": "ራዊት",
+"a": "ራዊ",
+"b": "ት",
+"kind": "geez",
+"count": 6081
+},
+{
+"id": 256387,
+"token": "ማን",
+"a": "ማ",
+"b": "ን",
+"kind": "geez",
+"count": 6076
+},
+{
+"id": 256388,
+"token": "ዓለም",
+"a": "ዓ",
+"b": "ለም",
+"kind": "geez",
+"count": 6075
+},
+{
+"id": 256389,
+"token": "ሬት",
+"a": "ሬ",
+"b": "ት",
+"kind": "geez",
+"count": 6051
+},
+{
+"id": 256390,
+"token": "ኦት",
+"a": "ኦ",
+"b": "ት",
+"kind": "geez",
+"count": 6048
+},
+{
+"id": 256391,
+"token": "▁ጥራይ",
+"a": "▁ጥ",
+"b": "ራይ",
+"kind": "geez",
+"count": 6046
+},
+{
+"id": 256392,
+"token": "ሳተ",
+"a": "ሳ",
+"b": "ተ",
+"kind": "geez",
+"count": 6041
+},
+{
+"id": 256393,
+"token": "ኣት",
+"a": "ኣ",
+"b": "ት",
+"kind": "geez",
+"count": 6036
+},
+{
+"id": 256394,
+"token": "ዞም",
+"a": "ዞ",
+"b": "ም",
+"kind": "geez",
+"count": 6019
+},
+{
+"id": 256395,
+"token": "ለይ",
+"a": "ለ",
+"b": "ይ",
+"kind": "geez",
+"count": 6018
+},
+{
+"id": 256396,
+"token": "ሕን",
+"a": "ሕ",
+"b": "ን",
+"kind": "geez",
+"count": 6017
+},
+{
+"id": 256397,
+"token": "ገዲ",
+"a": "ገ",
+"b": "ዲ",
+"kind": "geez",
+"count": 6004
+},
+{
+"id": 256398,
+"token": "▁ፊ",
+"a": "▁",
+"b": "ፊ",
+"kind": "geez",
+"count": 6000
+},
+{
+"id": 256399,
+"token": "ማኖ",
+"a": "ማ",
+"b": "ኖ",
+"kind": "geez",
+"count": 5990
+},
+{
+"id": 256400,
+"token": "በብ",
+"a": "በ",
+"b": "ብ",
+"kind": "geez",
+"count": 5961
+},
+{
+"id": 256401,
+"token": "ድራ",
+"a": "ድ",
+"b": "ራ",
+"kind": "geez",
+"count": 5960
+},
+{
+"id": 256402,
+"token": "▁ኤርትራውያን",
+"a": "▁ኤርትራ",
+"b": "ውያን",
+"kind": "geez",
+"count": 5944
+},
+{
+"id": 256403,
+"token": "▁ርእ",
+"a": "▁ር",
+"b": "እ",
+"kind": "geez",
+"count": 5926
+},
+{
+"id": 256404,
+"token": "ኣይ",
+"a": "ኣ",
+"b": "ይ",
+"kind": "geez",
+"count": 5910
+},
+{
+"id": 256405,
+"token": "▁ሰል",
+"a": "▁ሰ",
+"b": "ል",
+"kind": "geez",
+"count": 5879
+},
+{
+"id": 256406,
+"token": "ካየ",
+"a": "ካ",
+"b": "የ",
+"kind": "geez",
+"count": 5873
+},
+{
+"id": 256407,
+"token": "▁ዜና",
+"a": "▁ዜ",
+"b": "ና",
+"kind": "geez",
+"count": 5867
+},
+{
+"id": 256408,
+"token": "ቶስ",
+"a": "ቶ",
+"b": "ስ",
+"kind": "geez",
+"count": 5863
+},
+{
+"id": 256409,
+"token": "የሱስ",
+"a": "የ",
+"b": "ሱስ",
+"kind": "geez",
+"count": 5861
+},
+{
+"id": 256410,
+"token": "▁ተስፋ",
+"a": "▁ተ",
+"b": "ስፋ",
+"kind": "geez",
+"count": 5854
+},
+{
+"id": 256411,
+"token": "ብሎ",
+"a": "ብ",
+"b": "ሎ",
+"kind": "geez",
+"count": 5849
+},
+{
+"id": 256412,
+"token": "▁ቋንቋ",
+"a": "▁",
+"b": "ቋንቋ",
+"kind": "geez",
+"count": 5843
+},
+{
+"id": 256413,
+"token": "▁ሰላም",
+"a": "▁ሰ",
+"b": "ላም",
+"kind": "geez",
+"count": 5837
+},
+{
+"id": 256414,
+"token": "▁ማእ",
+"a": "▁ማ",
+"b": "እ",
+"kind": "geez",
+"count": 5831
+},
+{
+"id": 256415,
+"token": "ጸን",
+"a": "ጸ",
+"b": "ን",
+"kind": "geez",
+"count": 5831
+},
+{
+"id": 256416,
+"token": "ገኝ",
+"a": "ገ",
+"b": "ኝ",
+"kind": "geez",
+"count": 5825
+},
+{
+"id": 256417,
+"token": "ግን",
+"a": "ግ",
+"b": "ን",
+"kind": "geez",
+"count": 5817
+},
+{
+"id": 256418,
+"token": "▁እየተ",
+"a": "▁እየ",
+"b": "ተ",
+"kind": "geez",
+"count": 5801
+},
+{
+"id": 256419,
+"token": "ባህ",
+"a": "ባ",
+"b": "ህ",
+"kind": "geez",
+"count": 5769
+},
+{
+"id": 256420,
+"token": "▁ገለ",
+"a": "▁ገ",
+"b": "ለ",
+"kind": "geez",
+"count": 5761
+},
+{
+"id": 256421,
+"token": "▁ዘለዎ",
+"a": "▁ዘለ",
+"b": "ዎ",
+"kind": "geez",
+"count": 5761
+},
+{
+"id": 256422,
+"token": "▁ምሕ",
+"a": "▁ም",
+"b": "ሕ",
+"kind": "geez",
+"count": 5757
+},
+{
+"id": 256423,
+"token": "▁ድም",
+"a": "▁ድ",
+"b": "ም",
+"kind": "geez",
+"count": 5741
+},
+{
+"id": 256424,
+"token": "ድም",
+"a": "ድ",
+"b": "ም",
+"kind": "geez",
+"count": 5735
+},
+{
+"id": 256425,
+"token": "ሰጡ",
+"a": "ሰ",
+"b": "ጡ",
+"kind": "geez",
+"count": 5714
+},
+{
+"id": 256426,
+"token": "▁ቅድሚ",
+"a": "▁ቅድ",
+"b": "ሚ",
+"kind": "geez",
+"count": 5703
+},
+{
+"id": 256427,
+"token": "ድና",
+"a": "ድ",
+"b": "ና",
+"kind": "geez",
+"count": 5698
+},
+{
+"id": 256428,
+"token": "ግል",
+"a": "ግ",
+"b": "ል",
+"kind": "geez",
+"count": 5683
+},
+{
+"id": 256429,
+"token": "ባይ",
+"a": "ባ",
+"b": "ይ",
+"kind": "geez",
+"count": 5640
+},
+{
+"id": 256430,
+"token": "▁ስለዝ",
+"a": "▁ስለ",
+"b": "ዝ",
+"kind": "geez",
+"count": 5637
+},
+{
+"id": 256431,
+"token": "▁ሓበሬታ",
+"a": "▁ሓበ",
+"b": "ሬታ",
+"kind": "geez",
+"count": 5634
+},
+{
+"id": 256432,
+"token": "▁ነው፡፡",
+"a": "▁ነው",
+"b": "፡፡",
+"kind": "geez",
+"count": 5627
+},
+{
+"id": 256433,
+"token": "▁ብዘይ",
+"a": "▁ብ",
+"b": "ዘይ",
+"kind": "geez",
+"count": 5621
+},
+{
+"id": 256434,
+"token": "ፍን",
+"a": "ፍ",
+"b": "ን",
+"kind": "geez",
+"count": 5616
+},
+{
+"id": 256435,
+"token": "▁አገ",
+"a": "▁አ",
+"b": "ገ",
+"kind": "geez",
+"count": 5614
+},
+{
+"id": 256436,
+"token": "ቡብ",
+"a": "ቡ",
+"b": "ብ",
+"kind": "geez",
+"count": 5602
+},
+{
+"id": 256437,
+"token": "▁ኣመ",
+"a": "▁ኣ",
+"b": "መ",
+"kind": "geez",
+"count": 5595
+},
+{
+"id": 256438,
+"token": "▁ኣስ",
+"a": "▁ኣ",
+"b": "ስ",
+"kind": "geez",
+"count": 5593
+},
+{
+"id": 256439,
+"token": "ሪቃ",
+"a": "ሪ",
+"b": "ቃ",
+"kind": "geez",
+"count": 5590
+},
+{
+"id": 256440,
+"token": "▁እንታይ",
+"a": "▁እን",
+"b": "ታይ",
+"kind": "geez",
+"count": 5588
+},
+{
+"id": 256441,
+"token": "ላፊ",
+"a": "ላ",
+"b": "ፊ",
+"kind": "geez",
+"count": 5573
+},
+{
+"id": 256442,
+"token": "ርሕ",
+"a": "ር",
+"b": "ሕ",
+"kind": "geez",
+"count": 5564
+},
+{
+"id": 256443,
+"token": "▁ኣይኮነ",
+"a": "▁ኣይ",
+"b": "ኮነ",
+"kind": "geez",
+"count": 5563
+},
+{
+"id": 256444,
+"token": "▁ትሕ",
+"a": "▁ት",
+"b": "ሕ",
+"kind": "geez",
+"count": 5554
+},
+{
+"id": 256445,
+"token": "▁ከባቢ",
+"a": "▁ከ",
+"b": "ባቢ",
+"kind": "geez",
+"count": 5532
+},
+{
+"id": 256446,
+"token": "ምስ",
+"a": "ም",
+"b": "ስ",
+"kind": "geez",
+"count": 5528
+},
+{
+"id": 256447,
+"token": "ነቱ",
+"a": "ነ",
+"b": "ቱ",
+"kind": "geez",
+"count": 5526
+},
+{
+"id": 256448,
+"token": "▁ስራ",
+"a": "▁ስ",
+"b": "ራ",
+"kind": "geez",
+"count": 5515
+},
+{
+"id": 256449,
+"token": "▁ዝመ",
+"a": "▁ዝ",
+"b": "መ",
+"kind": "geez",
+"count": 5513
+},
+{
+"id": 256450,
+"token": "ለፈ",
+"a": "ለ",
+"b": "ፈ",
+"kind": "geez",
+"count": 5509
+},
+{
+"id": 256451,
+"token": "ራሲ",
+"a": "ራ",
+"b": "ሲ",
+"kind": "geez",
+"count": 5472
+},
+{
+"id": 256452,
+"token": "ጥታ",
+"a": "ጥ",
+"b": "ታ",
+"kind": "geez",
+"count": 5470
+},
+{
+"id": 256453,
+"token": "▁የው",
+"a": "▁የ",
+"b": "ው",
+"kind": "geez",
+"count": 5467
+},
+{
+"id": 256454,
+"token": "▁መንግሥት",
+"a": "▁መንግ",
+"b": "ሥት",
+"kind": "geez",
+"count": 5455
+},
+{
+"id": 256455,
+"token": "▁ትምህርቲ",
+"a": "▁ትምህ",
+"b": "ርቲ",
+"kind": "geez",
+"count": 5434
+},
+{
+"id": 256456,
+"token": "▁የነ",
+"a": "▁የ",
+"b": "ነ",
+"kind": "geez",
+"count": 5404
+},
+{
+"id": 256457,
+"token": "ስም",
+"a": "ስ",
+"b": "ም",
+"kind": "geez",
+"count": 5397
+},
+{
+"id": 256458,
+"token": "ርና",
+"a": "ር",
+"b": "ና",
+"kind": "geez",
+"count": 5391
+},
+{
+"id": 256459,
+"token": "▁ኢሉ",
+"a": "▁ኢ",
+"b": "ሉ",
+"kind": "geez",
+"count": 5380
+},
+{
+"id": 256460,
+"token": "▁ታሪ",
+"a": "▁ታ",
+"b": "ሪ",
+"kind": "geez",
+"count": 5378
+},
+{
+"id": 256461,
+"token": "ኹን",
+"a": "ኹ",
+"b": "ን",
+"kind": "geez",
+"count": 5370
+},
+{
+"id": 256462,
+"token": "ኣዊ",
+"a": "ኣ",
+"b": "ዊ",
+"kind": "geez",
+"count": 5354
+},
+{
+"id": 256463,
+"token": "በራ",
+"a": "በ",
+"b": "ራ",
+"kind": "geez",
+"count": 5348
+},
+{
+"id": 256464,
+"token": "▁አቀ",
+"a": "▁አ",
+"b": "ቀ",
+"kind": "geez",
+"count": 5345
+},
+{
+"id": 256465,
+"token": "ምሮ",
+"a": "ም",
+"b": "ሮ",
+"kind": "geez",
+"count": 5342
+},
+{
+"id": 256466,
+"token": "▁ዝገ",
+"a": "▁ዝ",
+"b": "ገ",
+"kind": "geez",
+"count": 5333
+},
+{
+"id": 256467,
+"token": "▁ንኽ",
+"a": "▁ን",
+"b": "ኽ",
+"kind": "geez",
+"count": 5332
+},
+{
+"id": 256468,
+"token": "▁ካልእ",
+"a": "▁ካል",
+"b": "እ",
+"kind": "geez",
+"count": 5315
+},
+{
+"id": 256469,
+"token": "ጻኢ",
+"a": "ጻ",
+"b": "ኢ",
+"kind": "geez",
+"count": 5311
+},
+{
+"id": 256470,
+"token": "ኹም",
+"a": "ኹ",
+"b": "ም",
+"kind": "geez",
+"count": 5309
+},
+{
+"id": 256471,
+"token": "ከታ",
+"a": "ከ",
+"b": "ታ",
+"kind": "geez",
+"count": 5301
+},
+{
+"id": 256472,
+"token": "▁ፖሊ",
+"a": "▁ፖ",
+"b": "ሊ",
+"kind": "geez",
+"count": 5295
+},
+{
+"id": 256473,
+"token": "▁የኢትዮጵያ",
+"a": "▁የ",
+"b": "ኢትዮጵያ",
+"kind": "geez",
+"count": 5292
+},
+{
+"id": 256474,
+"token": "ዘን",
+"a": "ዘ",
+"b": "ን",
+"kind": "geez",
+"count": 5286
+},
+{
+"id": 256475,
+"token": "▁ሓቢ",
+"a": "▁ሓ",
+"b": "ቢ",
+"kind": "geez",
+"count": 5269
+},
+{
+"id": 256476,
+"token": "▁ሕጂ",
+"a": "▁ሕ",
+"b": "ጂ",
+"kind": "geez",
+"count": 5262
+},
+{
+"id": 256477,
+"token": "▁የኢ",
+"a": "▁የ",
+"b": "ኢ",
+"kind": "geez",
+"count": 5253
+},
+{
+"id": 256478,
+"token": "ሳስ",
+"a": "ሳ",
+"b": "ስ",
+"kind": "geez",
+"count": 5247
+},
+{
+"id": 256479,
+"token": "ፋት",
+"a": "ፋ",
+"b": "ት",
+"kind": "geez",
+"count": 5234
+},
+{
+"id": 256480,
+"token": "ይቶ",
+"a": "ይ",
+"b": "ቶ",
+"kind": "geez",
+"count": 5229
+},
+{
+"id": 256481,
+"token": "እታ",
+"a": "እ",
+"b": "ታ",
+"kind": "geez",
+"count": 5228
+},
+{
+"id": 256482,
+"token": "ባለ",
+"a": "ባ",
+"b": "ለ",
+"kind": "geez",
+"count": 5200
+},
+{
+"id": 256483,
+"token": "▁ዕለት",
+"a": "▁ዕ",
+"b": "ለት",
+"kind": "geez",
+"count": 5198
+},
+{
+"id": 256484,
+"token": "ስና",
+"a": "ስ",
+"b": "ና",
+"kind": "geez",
+"count": 5189
+},
+{
+"id": 256485,
+"token": "ሊዝ",
+"a": "ሊ",
+"b": "ዝ",
+"kind": "geez",
+"count": 5189
+},
+{
+"id": 256486,
+"token": "ግባር",
+"a": "ግባ",
+"b": "ር",
+"kind": "geez",
+"count": 5181
+},
+{
+"id": 256487,
+"token": "▁ኮሚ",
+"a": "▁ኮ",
+"b": "ሚ",
+"kind": "geez",
+"count": 5167
+},
+{
+"id": 256488,
+"token": "ህዝ",
+"a": "ህ",
+"b": "ዝ",
+"kind": "geez",
+"count": 5159
+},
+{
+"id": 256489,
+"token": "▁ብኣ",
+"a": "▁ብ",
+"b": "ኣ",
+"kind": "geez",
+"count": 5156
+},
+{
+"id": 256490,
+"token": "ሃብ",
+"a": "ሃ",
+"b": "ብ",
+"kind": "geez",
+"count": 5139
+},
+{
+"id": 256491,
+"token": "▁ዕድ",
+"a": "▁ዕ",
+"b": "ድ",
+"kind": "geez",
+"count": 5137
+},
+{
+"id": 256492,
+"token": "▁ምት",
+"a": "▁ም",
+"b": "ት",
+"kind": "geez",
+"count": 5134
+},
+{
+"id": 256493,
+"token": "▁ኩነታት",
+"a": "▁ኩ",
+"b": "ነታት",
+"kind": "geez",
+"count": 5134
+},
+{
+"id": 256494,
+"token": "ዋታ",
+"a": "ዋ",
+"b": "ታ",
+"kind": "geez",
+"count": 5123
+},
+{
+"id": 256495,
+"token": "▁ምኽንያ",
+"a": "▁ምኽ",
+"b": "ንያ",
+"kind": "geez",
+"count": 5123
+},
+{
+"id": 256496,
+"token": "በሉ",
+"a": "በ",
+"b": "ሉ",
+"kind": "geez",
+"count": 5121
+},
+{
+"id": 256497,
+"token": "ሜን",
+"a": "ሜ",
+"b": "ን",
+"kind": "geez",
+"count": 5112
+},
+{
+"id": 256498,
+"token": "▁መሆኑን",
+"a": "▁መሆኑ",
+"b": "ን",
+"kind": "geez",
+"count": 5110
+},
+{
+"id": 256499,
+"token": "▁ናይቲ",
+"a": "▁ናይ",
+"b": "ቲ",
+"kind": "geez",
+"count": 5100
+},
+{
+"id": 256500,
+"token": "▁መለ",
+"a": "▁መ",
+"b": "ለ",
+"kind": "geez",
+"count": 5099
+},
+{
+"id": 256501,
+"token": "▁አዲስ",
+"a": "▁አ",
+"b": "ዲስ",
+"kind": "geez",
+"count": 5094
+},
+{
+"id": 256502,
+"token": "ማም",
+"a": "ማ",
+"b": "ም",
+"kind": "geez",
+"count": 5086
+},
+{
+"id": 256503,
+"token": "▁መንእሰ",
+"a": "▁መን",
+"b": "እሰ",
+"kind": "geez",
+"count": 5076
+},
+{
+"id": 256504,
+"token": "ክስ",
+"a": "ክ",
+"b": "ስ",
+"kind": "geez",
+"count": 5068
+},
+{
+"id": 256505,
+"token": "ገዳ",
+"a": "ገ",
+"b": "ዳ",
+"kind": "geez",
+"count": 5054
+},
+{
+"id": 256506,
+"token": "▁ወዲ",
+"a": "▁ወ",
+"b": "ዲ",
+"kind": "geez",
+"count": 5050
+},
+{
+"id": 256507,
+"token": "▁እታ",
+"a": "▁እ",
+"b": "ታ",
+"kind": "geez",
+"count": 5042
+},
+{
+"id": 256508,
+"token": "እዚ",
+"a": "እ",
+"b": "ዚ",
+"kind": "geez",
+"count": 5035
+},
+{
+"id": 256509,
+"token": "አብሔር",
+"a": "አብ",
+"b": "ሔር",
+"kind": "geez",
+"count": 5024
+},
+{
+"id": 256510,
+"token": "ላን",
+"a": "ላ",
+"b": "ን",
+"kind": "geez",
+"count": 5017
+},
+{
+"id": 256511,
+"token": "▁መረጃ",
+"a": "▁መ",
+"b": "ረጃ",
+"kind": "geez",
+"count": 5011
+},
+{
+"id": 256512,
+"token": "▁ዝወ",
+"a": "▁ዝ",
+"b": "ወ",
+"kind": "geez",
+"count": 4997
+},
+{
+"id": 256513,
+"token": "▁መንፈ",
+"a": "▁መን",
+"b": "ፈ",
+"kind": "geez",
+"count": 4995
+},
+{
+"id": 256514,
+"token": "ማዊ",
+"a": "ማ",
+"b": "ዊ",
+"kind": "geez",
+"count": 4994
+},
+{
+"id": 256515,
+"token": "▁አድር",
+"a": "▁አ",
+"b": "ድር",
+"kind": "geez",
+"count": 4987
+},
+{
+"id": 256516,
+"token": "ብራ",
+"a": "ብ",
+"b": "ራ",
+"kind": "geez",
+"count": 4983
+},
+{
+"id": 256517,
+"token": "▁ዝኣ",
+"a": "▁ዝ",
+"b": "ኣ",
+"kind": "geez",
+"count": 4976
+},
+{
+"id": 256518,
+"token": "▁ዮ",
+"a": "▁",
+"b": "ዮ",
+"kind": "geez",
+"count": 4974
+},
+{
+"id": 256519,
+"token": "ስታት",
+"a": "ስታ",
+"b": "ት",
+"kind": "geez",
+"count": 4973
+},
+{
+"id": 256520,
+"token": "▁እንከ",
+"a": "▁እን",
+"b": "ከ",
+"kind": "geez",
+"count": 4966
+},
+{
+"id": 256521,
+"token": "ዉን",
+"a": "ዉ",
+"b": "ን",
+"kind": "geez",
+"count": 4946
+},
+{
+"id": 256522,
+"token": "▁ጀም",
+"a": "▁",
+"b": "ጀም",
+"kind": "geez",
+"count": 4945
+},
+{
+"id": 256523,
+"token": "ጽእ",
+"a": "ጽ",
+"b": "እ",
+"kind": "geez",
+"count": 4945
+},
+{
+"id": 256524,
+"token": "ርክ",
+"a": "ር",
+"b": "ክ",
+"kind": "geez",
+"count": 4941
+},
+{
+"id": 256525,
+"token": "▁ሪ",
+"a": "▁",
+"b": "ሪ",
+"kind": "geez",
+"count": 4933
+},
+{
+"id": 256526,
+"token": "▁አም",
+"a": "▁አ",
+"b": "ም",
+"kind": "geez",
+"count": 4931
+},
+{
+"id": 256527,
+"token": "▁ክልተ",
+"a": "▁ክል",
+"b": "ተ",
+"kind": "geez",
+"count": 4929
+},
+{
+"id": 256528,
+"token": "▁ዘር",
+"a": "▁ዘ",
+"b": "ር",
+"kind": "geez",
+"count": 4927
+},
+{
+"id": 256529,
+"token": "▁ውሽ",
+"a": "▁ው",
+"b": "ሽ",
+"kind": "geez",
+"count": 4926
+},
+{
+"id": 256530,
+"token": "ዎ።",
+"a": "ዎ",
+"b": "።",
+"kind": "geez",
+"count": 4923
+},
+{
+"id": 256531,
+"token": "በራዊ",
+"a": "በ",
+"b": "ራዊ",
+"kind": "geez",
+"count": 4917
+},
+{
+"id": 256532,
+"token": "▁ምህ",
+"a": "▁ም",
+"b": "ህ",
+"kind": "geez",
+"count": 4916
+},
+{
+"id": 256533,
+"token": "▁ብፍ",
+"a": "▁ብ",
+"b": "ፍ",
+"kind": "geez",
+"count": 4915
+},
+{
+"id": 256534,
+"token": "▁ምርጫ",
+"a": "▁ምር",
+"b": "ጫ",
+"kind": "geez",
+"count": 4914
+},
+{
+"id": 256535,
+"token": "▁ግም",
+"a": "▁ግ",
+"b": "ም",
+"kind": "geez",
+"count": 4905
+},
+{
+"id": 256536,
+"token": "▁የት",
+"a": "▁የ",
+"b": "ት",
+"kind": "geez",
+"count": 4899
+},
+{
+"id": 256537,
+"token": "ፍቲ",
+"a": "ፍ",
+"b": "ቲ",
+"kind": "geez",
+"count": 4895
+},
+{
+"id": 256538,
+"token": "ደራ",
+"a": "ደ",
+"b": "ራ",
+"kind": "geez",
+"count": 4851
+},
+{
+"id": 256539,
+"token": "▁ተቀ",
+"a": "▁ተ",
+"b": "ቀ",
+"kind": "geez",
+"count": 4847
+},
+{
+"id": 256540,
+"token": "ሙን",
+"a": "ሙ",
+"b": "ን",
+"kind": "geez",
+"count": 4845
+},
+{
+"id": 256541,
+"token": "▁ስደተኛታት",
+"a": "▁ስደ",
+"b": "ተኛታት",
+"kind": "geez",
+"count": 4844
+},
+{
+"id": 256542,
+"token": "▁ገዛ",
+"a": "▁ገ",
+"b": "ዛ",
+"kind": "geez",
+"count": 4841
+},
+{
+"id": 256543,
+"token": "▁ኣቦ",
+"a": "▁ኣ",
+"b": "ቦ",
+"kind": "geez",
+"count": 4822
+},
+{
+"id": 256544,
+"token": "ላንድ",
+"a": "ላ",
+"b": "ንድ",
+"kind": "geez",
+"count": 4808
+},
+{
+"id": 256545,
+"token": "▁ምድ",
+"a": "▁ም",
+"b": "ድ",
+"kind": "geez",
+"count": 4807
+},
+{
+"id": 256546,
+"token": "▁ንኣ",
+"a": "▁ን",
+"b": "ኣ",
+"kind": "geez",
+"count": 4797
+},
+{
+"id": 256547,
+"token": "ጽን",
+"a": "ጽ",
+"b": "ን",
+"kind": "geez",
+"count": 4791
+},
+{
+"id": 256548,
+"token": "▁ንሓ",
+"a": "▁ን",
+"b": "ሓ",
+"kind": "geez",
+"count": 4783
+},
+{
+"id": 256549,
+"token": "▁መድረ",
+"a": "▁መ",
+"b": "ድረ",
+"kind": "geez",
+"count": 4778
+},
+{
+"id": 256550,
+"token": "▁አሁን",
+"a": "▁አ",
+"b": "ሁን",
+"kind": "geez",
+"count": 4775
+},
+{
+"id": 256551,
+"token": "▁ኢዩ።",
+"a": "▁ኢ",
+"b": "ዩ።",
+"kind": "geez",
+"count": 4766
+},
+{
+"id": 256552,
+"token": "▁ብዙሕ",
+"a": "▁ብዙ",
+"b": "ሕ",
+"kind": "geez",
+"count": 4757
+},
+{
+"id": 256553,
+"token": "▁ጉባ",
+"a": "▁ጉ",
+"b": "ባ",
+"kind": "geez",
+"count": 4757
+},
+{
+"id": 256554,
+"token": "ረኽ",
+"a": "ረ",
+"b": "ኽ",
+"kind": "geez",
+"count": 4743
+},
+{
+"id": 256555,
+"token": "▁ስር",
+"a": "▁ስ",
+"b": "ር",
+"kind": "geez",
+"count": 4742
+},
+{
+"id": 256556,
+"token": "ጅለ",
+"a": "ጅ",
+"b": "ለ",
+"kind": "geez",
+"count": 4739
+},
+{
+"id": 256557,
+"token": "▁ሕቶ",
+"a": "▁ሕ",
+"b": "ቶ",
+"kind": "geez",
+"count": 4734
+},
+{
+"id": 256558,
+"token": "ደንት",
+"a": "ደን",
+"b": "ት",
+"kind": "geez",
+"count": 4734
+},
+{
+"id": 256559,
+"token": "ተወ",
+"a": "ተ",
+"b": "ወ",
+"kind": "geez",
+"count": 4732
+},
+{
+"id": 256560,
+"token": "ራብ",
+"a": "ራ",
+"b": "ብ",
+"kind": "geez",
+"count": 4726
+},
+{
+"id": 256561,
+"token": "ሳዊ",
+"a": "ሳ",
+"b": "ዊ",
+"kind": "geez",
+"count": 4721
+},
+{
+"id": 256562,
+"token": "መንግ",
+"a": "መ",
+"b": "ንግ",
+"kind": "geez",
+"count": 4714
+},
+{
+"id": 256563,
+"token": "ገማ",
+"a": "ገ",
+"b": "ማ",
+"kind": "geez",
+"count": 4714
+},
+{
+"id": 256564,
+"token": "▁ክርስቲያን",
+"a": "▁ክርስቲ",
+"b": "ያን",
+"kind": "geez",
+"count": 4714
+},
+{
+"id": 256565,
+"token": "ለዋ",
+"a": "ለ",
+"b": "ዋ",
+"kind": "geez",
+"count": 4681
+},
+{
+"id": 256566,
+"token": "▁ተፈ",
+"a": "▁ተ",
+"b": "ፈ",
+"kind": "geez",
+"count": 4677
+},
+{
+"id": 256567,
+"token": "ኾኑ",
+"a": "ኾ",
+"b": "ኑ",
+"kind": "geez",
+"count": 4673
+},
+{
+"id": 256568,
+"token": "ዮች",
+"a": "ዮ",
+"b": "ች",
+"kind": "geez",
+"count": 4652
+},
+{
+"id": 256569,
+"token": "▁ኢዩ",
+"a": "▁ኢ",
+"b": "ዩ",
+"kind": "geez",
+"count": 4646
+},
+{
+"id": 256570,
+"token": "ጉም",
+"a": "ጉ",
+"b": "ም",
+"kind": "geez",
+"count": 4637
+},
+{
+"id": 256571,
+"token": "ጀመር",
+"a": "ጀ",
+"b": "መር",
+"kind": "geez",
+"count": 4636
+},
+{
+"id": 256572,
+"token": "▁የሰ",
+"a": "▁የ",
+"b": "ሰ",
+"kind": "geez",
+"count": 4633
+},
+{
+"id": 256573,
+"token": "▁አካባቢ",
+"a": "▁አካ",
+"b": "ባቢ",
+"kind": "geez",
+"count": 4629
+},
+{
+"id": 256574,
+"token": "ለች",
+"a": "ለ",
+"b": "ች",
+"kind": "geez",
+"count": 4623
+},
+{
+"id": 256575,
+"token": "ቀው",
+"a": "ቀ",
+"b": "ው",
+"kind": "geez",
+"count": 4622
+},
+{
+"id": 256576,
+"token": "ዘር",
+"a": "ዘ",
+"b": "ር",
+"kind": "geez",
+"count": 4611
+},
+{
+"id": 256577,
+"token": "▁ከምዚ",
+"a": "▁ከም",
+"b": "ዚ",
+"kind": "geez",
+"count": 4608
+},
+{
+"id": 256578,
+"token": "▁ተሓ",
+"a": "▁ተ",
+"b": "ሓ",
+"kind": "geez",
+"count": 4607
+},
+{
+"id": 256579,
+"token": "▁ፍት",
+"a": "▁ፍ",
+"b": "ት",
+"kind": "geez",
+"count": 4607
+},
+{
+"id": 256580,
+"token": "ይት",
+"a": "ይ",
+"b": "ት",
+"kind": "geez",
+"count": 4595
+},
+{
+"id": 256581,
+"token": "▁ድርጅ",
+"a": "▁ድር",
+"b": "ጅ",
+"kind": "geez",
+"count": 4586
+},
+{
+"id": 256582,
+"token": "ይሊ",
+"a": "ይ",
+"b": "ሊ",
+"kind": "geez",
+"count": 4583
+},
+{
+"id": 256583,
+"token": "ውል",
+"a": "ው",
+"b": "ል",
+"kind": "geez",
+"count": 4581
+},
+{
+"id": 256584,
+"token": "▁በቲ",
+"a": "▁በ",
+"b": "ቲ",
+"kind": "geez",
+"count": 4571
+},
+{
+"id": 256585,
+"token": "▁ሆኖ",
+"a": "▁ሆ",
+"b": "ኖ",
+"kind": "geez",
+"count": 4557
+},
+{
+"id": 256586,
+"token": "▁ኣምላኽ",
+"a": "▁ኣ",
+"b": "ምላኽ",
+"kind": "geez",
+"count": 4553
+},
+{
+"id": 256587,
+"token": "▁ከነ",
+"a": "▁ከ",
+"b": "ነ",
+"kind": "geez",
+"count": 4550
+},
+{
+"id": 256588,
+"token": "ረጋገ",
+"a": "ረ",
+"b": "ጋገ",
+"kind": "geez",
+"count": 4540
+},
+{
+"id": 256589,
+"token": "ሩት",
+"a": "ሩ",
+"b": "ት",
+"kind": "geez",
+"count": 4538
+},
+{
+"id": 256590,
+"token": "▁ክኸውን",
+"a": "▁ክ",
+"b": "ኸውን",
+"kind": "geez",
+"count": 4535
+},
+{
+"id": 256591,
+"token": "ምዕ",
+"a": "ም",
+"b": "ዕ",
+"kind": "geez",
+"count": 4523
+},
+{
+"id": 256592,
+"token": "ታል።",
+"a": "ታ",
+"b": "ል።",
+"kind": "geez",
+"count": 4520
+},
+{
+"id": 256593,
+"token": "ዕል",
+"a": "ዕ",
+"b": "ል",
+"kind": "geez",
+"count": 4517
+},
+{
+"id": 256594,
+"token": "▁እዮም።",
+"a": "▁እ",
+"b": "ዮም።",
+"kind": "geez",
+"count": 4516
+},
+{
+"id": 256595,
+"token": "▁ትር",
+"a": "▁ት",
+"b": "ር",
+"kind": "geez",
+"count": 4512
+},
+{
+"id": 256596,
+"token": "▁ውሳ",
+"a": "▁ው",
+"b": "ሳ",
+"kind": "geez",
+"count": 4509
+},
+{
+"id": 256597,
+"token": "ጠው",
+"a": "ጠ",
+"b": "ው",
+"kind": "geez",
+"count": 4503
+},
+{
+"id": 256598,
+"token": "▁ከዚህ",
+"a": "▁ከ",
+"b": "ዚህ",
+"kind": "geez",
+"count": 4496
+},
+{
+"id": 256599,
+"token": "▁ተባ",
+"a": "▁ተ",
+"b": "ባ",
+"kind": "geez",
+"count": 4493
+},
+{
+"id": 256600,
+"token": "ና፡",
+"a": "ና",
+"b": "፡",
+"kind": "geez",
+"count": 4488
+},
+{
+"id": 256601,
+"token": "ርባ",
+"a": "ር",
+"b": "ባ",
+"kind": "geez",
+"count": 4487
+},
+{
+"id": 256602,
+"token": "▁በዚ",
+"a": "▁በ",
+"b": "ዚ",
+"kind": "geez",
+"count": 4486
+},
+{
+"id": 256603,
+"token": "▁እምበር",
+"a": "▁እም",
+"b": "በር",
+"kind": "geez",
+"count": 4462
+},
+{
+"id": 256604,
+"token": "▁ፍል",
+"a": "▁ፍ",
+"b": "ል",
+"kind": "geez",
+"count": 4460
+},
+{
+"id": 256605,
+"token": "▁ነበረ",
+"a": "▁ነ",
+"b": "በረ",
+"kind": "geez",
+"count": 4459
+},
+{
+"id": 256606,
+"token": "▁ሚኒስት",
+"a": "▁ሚኒ",
+"b": "ስት",
+"kind": "geez",
+"count": 4452
+},
+{
+"id": 256607,
+"token": "▁ገበ",
+"a": "▁ገ",
+"b": "በ",
+"kind": "geez",
+"count": 4449
+},
+{
+"id": 256608,
+"token": "ከም",
+"a": "ከ",
+"b": "ም",
+"kind": "geez",
+"count": 4447
+},
+{
+"id": 256609,
+"token": "ስለ",
+"a": "ስ",
+"b": "ለ",
+"kind": "geez",
+"count": 4432
+},
+{
+"id": 256610,
+"token": "▁ኣም",
+"a": "▁ኣ",
+"b": "ም",
+"kind": "geez",
+"count": 4425
+},
+{
+"id": 256611,
+"token": "ደው",
+"a": "ደ",
+"b": "ው",
+"kind": "geez",
+"count": 4421
+},
+{
+"id": 256612,
+"token": "ማዕ",
+"a": "ማ",
+"b": "ዕ",
+"kind": "geez",
+"count": 4418
+},
+{
+"id": 256613,
+"token": "ዘመ",
+"a": "ዘ",
+"b": "መ",
+"kind": "geez",
+"count": 4413
+},
+{
+"id": 256614,
+"token": "▁ተራ",
+"a": "▁ተ",
+"b": "ራ",
+"kind": "geez",
+"count": 4405
+},
+{
+"id": 256615,
+"token": "ፍሪካ",
+"a": "ፍ",
+"b": "ሪካ",
+"kind": "geez",
+"count": 4388
+},
+{
+"id": 256616,
+"token": "ጠራ",
+"a": "ጠ",
+"b": "ራ",
+"kind": "geez",
+"count": 4385
+},
+{
+"id": 256617,
+"token": "ሸን",
+"a": "ሸ",
+"b": "ን",
+"kind": "geez",
+"count": 4385
+},
+{
+"id": 256618,
+"token": "ረም",
+"a": "ረ",
+"b": "ም",
+"kind": "geez",
+"count": 4380
+},
+{
+"id": 256619,
+"token": "▁ጋዜ",
+"a": "▁ጋ",
+"b": "ዜ",
+"kind": "geez",
+"count": 4368
+},
+{
+"id": 256620,
+"token": "የአ",
+"a": "የ",
+"b": "አ",
+"kind": "geez",
+"count": 4368
+},
+{
+"id": 256621,
+"token": "▁ገንዘብ",
+"a": "▁ገን",
+"b": "ዘብ",
+"kind": "geez",
+"count": 4364
+},
+{
+"id": 256622,
+"token": "▁መሰረት",
+"a": "▁መሰ",
+"b": "ረት",
+"kind": "geez",
+"count": 4362
+},
+{
+"id": 256623,
+"token": "▁ፖለቲካዊ",
+"a": "▁ፖለቲካ",
+"b": "ዊ",
+"kind": "geez",
+"count": 4353
+},
+{
+"id": 256624,
+"token": "▁አቶ",
+"a": "▁አ",
+"b": "ቶ",
+"kind": "geez",
+"count": 4346
+},
+{
+"id": 256625,
+"token": "▁ዋጋ",
+"a": "▁ዋ",
+"b": "ጋ",
+"kind": "geez",
+"count": 4342
+},
+{
+"id": 256626,
+"token": "በለ",
+"a": "በ",
+"b": "ለ",
+"kind": "geez",
+"count": 4338
+},
+{
+"id": 256627,
+"token": "▁ጦር",
+"a": "▁",
+"b": "ጦር",
+"kind": "geez",
+"count": 4335
+},
+{
+"id": 256628,
+"token": "▁ከሚ",
+"a": "▁ከ",
+"b": "ሚ",
+"kind": "geez",
+"count": 4329
+},
+{
+"id": 256629,
+"token": "▁ክር",
+"a": "▁ክ",
+"b": "ር",
+"kind": "geez",
+"count": 4317
+},
+{
+"id": 256630,
+"token": "▁ጳ",
+"a": "▁",
+"b": "ጳ",
+"kind": "geez",
+"count": 4314
+},
+{
+"id": 256631,
+"token": "▁ተጋ",
+"a": "▁ተ",
+"b": "ጋ",
+"kind": "geez",
+"count": 4311
+},
+{
+"id": 256632,
+"token": "ገዝ",
+"a": "ገ",
+"b": "ዝ",
+"kind": "geez",
+"count": 4292
+},
+{
+"id": 256633,
+"token": "ገም",
+"a": "ገ",
+"b": "ም",
+"kind": "geez",
+"count": 4290
+},
+{
+"id": 256634,
+"token": "▁ካልኦት",
+"a": "▁ካል",
+"b": "ኦት",
+"kind": "geez",
+"count": 4290
+},
+{
+"id": 256635,
+"token": "ሪዎች",
+"a": "ሪ",
+"b": "ዎች",
+"kind": "geez",
+"count": 4287
+},
+{
+"id": 256636,
+"token": "▁ኵ",
+"a": "▁",
+"b": "ኵ",
+"kind": "geez",
+"count": 4286
+},
+{
+"id": 256637,
+"token": "ቢት",
+"a": "ቢ",
+"b": "ት",
+"kind": "geez",
+"count": 4286
+},
+{
+"id": 256638,
+"token": "▁አቅ",
+"a": "▁አ",
+"b": "ቅ",
+"kind": "geez",
+"count": 4282
+},
+{
+"id": 256639,
+"token": "▁ተዋ",
+"a": "▁ተ",
+"b": "ዋ",
+"kind": "geez",
+"count": 4276
+},
+{
+"id": 256640,
+"token": "ገራ",
+"a": "ገ",
+"b": "ራ",
+"kind": "geez",
+"count": 4276
+},
+{
+"id": 256641,
+"token": "▁ኣል",
+"a": "▁ኣ",
+"b": "ል",
+"kind": "geez",
+"count": 4275
+},
+{
+"id": 256642,
+"token": "ይወ",
+"a": "ይ",
+"b": "ወ",
+"kind": "geez",
+"count": 4273
+},
+{
+"id": 256643,
+"token": "▁ኣፍሪቃ",
+"a": "▁ኣፍ",
+"b": "ሪቃ",
+"kind": "geez",
+"count": 4265
+},
+{
+"id": 256644,
+"token": "▁ጀምሮ",
+"a": "▁ጀም",
+"b": "ሮ",
+"kind": "geez",
+"count": 4263
+},
+{
+"id": 256645,
+"token": "▁እዮም",
+"a": "▁እ",
+"b": "ዮም",
+"kind": "geez",
+"count": 4255
+},
+{
+"id": 256646,
+"token": "ዶም",
+"a": "ዶ",
+"b": "ም",
+"kind": "geez",
+"count": 4249
+},
+{
+"id": 256647,
+"token": "▁ወረ",
+"a": "▁ወ",
+"b": "ረ",
+"kind": "geez",
+"count": 4245
+},
+{
+"id": 256648,
+"token": "ወር",
+"a": "ወ",
+"b": "ር",
+"kind": "geez",
+"count": 4241
+},
+{
+"id": 256649,
+"token": "▁ይኹን",
+"a": "▁ይ",
+"b": "ኹን",
+"kind": "geez",
+"count": 4236
+},
+{
+"id": 256650,
+"token": "ልም",
+"a": "ል",
+"b": "ም",
+"kind": "geez",
+"count": 4218
+},
+{
+"id": 256651,
+"token": "▁ክርስቶስ",
+"a": "▁ክርስ",
+"b": "ቶስ",
+"kind": "geez",
+"count": 4217
+},
+{
+"id": 256652,
+"token": "ወደ",
+"a": "ወ",
+"b": "ደ",
+"kind": "geez",
+"count": 4215
+},
+{
+"id": 256653,
+"token": "ረባ",
+"a": "ረ",
+"b": "ባ",
+"kind": "geez",
+"count": 4214
+},
+{
+"id": 256654,
+"token": "ን፣",
+"a": "ን",
+"b": "፣",
+"kind": "geez",
+"count": 4212
+},
+{
+"id": 256655,
+"token": "ስተር",
+"a": "ስተ",
+"b": "ር",
+"kind": "geez",
+"count": 4211
+},
+{
+"id": 256656,
+"token": "▁አው",
+"a": "▁አ",
+"b": "ው",
+"kind": "geez",
+"count": 4209
+},
+{
+"id": 256657,
+"token": "▁መጥ",
+"a": "▁መ",
+"b": "ጥ",
+"kind": "geez",
+"count": 4206
+},
+{
+"id": 256658,
+"token": "▁ሮ",
+"a": "▁",
+"b": "ሮ",
+"kind": "geez",
+"count": 4205
+},
+{
+"id": 256659,
+"token": "▁የነበረ",
+"a": "▁የ",
+"b": "ነበረ",
+"kind": "geez",
+"count": 4199
+},
+{
+"id": 256660,
+"token": "▁ተጠ",
+"a": "▁ተ",
+"b": "ጠ",
+"kind": "geez",
+"count": 4196
+},
+{
+"id": 256661,
+"token": "ፈጸ",
+"a": "ፈ",
+"b": "ጸ",
+"kind": "geez",
+"count": 4196
+},
+{
+"id": 256662,
+"token": "▁ዙ",
+"a": "▁",
+"b": "ዙ",
+"kind": "geez",
+"count": 4194
+},
+{
+"id": 256663,
+"token": "ረበ",
+"a": "ረ",
+"b": "በ",
+"kind": "geez",
+"count": 4182
+},
+{
+"id": 256664,
+"token": "ንካ",
+"a": "ን",
+"b": "ካ",
+"kind": "geez",
+"count": 4178
+},
+{
+"id": 256665,
+"token": "መው",
+"a": "መ",
+"b": "ው",
+"kind": "geez",
+"count": 4170
+},
+{
+"id": 256666,
+"token": "ንታ",
+"a": "ን",
+"b": "ታ",
+"kind": "geez",
+"count": 4169
+},
+{
+"id": 256667,
+"token": "▁በሰ",
+"a": "▁በ",
+"b": "ሰ",
+"kind": "geez",
+"count": 4165
+},
+{
+"id": 256668,
+"token": "▁ሃገራዊ",
+"a": "▁ሃገ",
+"b": "ራዊ",
+"kind": "geez",
+"count": 4163
+},
+{
+"id": 256669,
+"token": "▁ዝኸ",
+"a": "▁ዝ",
+"b": "ኸ",
+"kind": "geez",
+"count": 4155
+},
+{
+"id": 256670,
+"token": "▁ነቶም",
+"a": "▁ነ",
+"b": "ቶም",
+"kind": "geez",
+"count": 4152
+},
+{
+"id": 256671,
+"token": "ቅድ",
+"a": "ቅ",
+"b": "ድ",
+"kind": "geez",
+"count": 4152
+},
+{
+"id": 256672,
+"token": "▁ስነ",
+"a": "▁ስ",
+"b": "ነ",
+"kind": "geez",
+"count": 4146
+},
+{
+"id": 256673,
+"token": "▁ናቸው።",
+"a": "▁ናቸው",
+"b": "።",
+"kind": "geez",
+"count": 4142
+},
+{
+"id": 256674,
+"token": "ይጣ",
+"a": "ይ",
+"b": "ጣ",
+"kind": "geez",
+"count": 4141
+},
+{
+"id": 256675,
+"token": "▁የህ",
+"a": "▁የ",
+"b": "ህ",
+"kind": "geez",
+"count": 4139
+},
+{
+"id": 256676,
+"token": "ላል።",
+"a": "ላል",
+"b": "።",
+"kind": "geez",
+"count": 4131
+},
+{
+"id": 256677,
+"token": "ፍለ",
+"a": "ፍ",
+"b": "ለ",
+"kind": "geez",
+"count": 4124
+},
+{
+"id": 256678,
+"token": "ዕቲ",
+"a": "ዕ",
+"b": "ቲ",
+"kind": "geez",
+"count": 4120
+},
+{
+"id": 256679,
+"token": "▁ልም",
+"a": "▁ል",
+"b": "ም",
+"kind": "geez",
+"count": 4117
+},
+{
+"id": 256680,
+"token": "ተና",
+"a": "ተ",
+"b": "ና",
+"kind": "geez",
+"count": 4111
+},
+{
+"id": 256681,
+"token": "ዕና",
+"a": "ዕ",
+"b": "ና",
+"kind": "geez",
+"count": 4109
+},
+{
+"id": 256682,
+"token": "▁ዜጋ",
+"a": "▁ዜ",
+"b": "ጋ",
+"kind": "geez",
+"count": 4104
+},
+{
+"id": 256683,
+"token": "ሎት",
+"a": "ሎ",
+"b": "ት",
+"kind": "geez",
+"count": 4103
+},
+{
+"id": 256684,
+"token": "▁የሕ",
+"a": "▁የ",
+"b": "ሕ",
+"kind": "geez",
+"count": 4101
+},
+{
+"id": 256685,
+"token": "▁ግምገማ",
+"a": "▁ግም",
+"b": "ገማ",
+"kind": "geez",
+"count": 4097
+},
+{
+"id": 256686,
+"token": "▁ዘለዉ",
+"a": "▁ዘለ",
+"b": "ዉ",
+"kind": "geez",
+"count": 4093
+},
+{
+"id": 256687,
+"token": "▁መንግስት",
+"a": "▁መንግ",
+"b": "ስት",
+"kind": "geez",
+"count": 4083
+},
+{
+"id": 256688,
+"token": "ኻል",
+"a": "ኻ",
+"b": "ል",
+"kind": "geez",
+"count": 4081
+},
+{
+"id": 256689,
+"token": "▁ተቓ",
+"a": "▁ተ",
+"b": "ቓ",
+"kind": "geez",
+"count": 4068
+},
+{
+"id": 256690,
+"token": "▁አንዱ",
+"a": "▁አን",
+"b": "ዱ",
+"kind": "geez",
+"count": 4064
+},
+{
+"id": 256691,
+"token": "▁ኢና",
+"a": "▁ኢ",
+"b": "ና",
+"kind": "geez",
+"count": 4061
+},
+{
+"id": 256692,
+"token": "▁ንሕ",
+"a": "▁ን",
+"b": "ሕ",
+"kind": "geez",
+"count": 4060
+},
+{
+"id": 256693,
+"token": "ያቄ",
+"a": "ያ",
+"b": "ቄ",
+"kind": "geez",
+"count": 4057
+},
+{
+"id": 256694,
+"token": "▁ቻ",
+"a": "▁",
+"b": "ቻ",
+"kind": "geez",
+"count": 4056
+},
+{
+"id": 256695,
+"token": "▁ኣገልግሎ",
+"a": "▁ኣ",
+"b": "ገልግሎ",
+"kind": "geez",
+"count": 4054
+},
+{
+"id": 256696,
+"token": "▁ቃልሲ",
+"a": "▁ቃል",
+"b": "ሲ",
+"kind": "geez",
+"count": 4047
+},
+{
+"id": 256697,
+"token": "▁ኣሕ",
+"a": "▁ኣ",
+"b": "ሕ",
+"kind": "geez",
+"count": 4043
+},
+{
+"id": 256698,
+"token": "▁ሒ",
+"a": "▁",
+"b": "ሒ",
+"kind": "geez",
+"count": 4042
+},
+{
+"id": 256699,
+"token": "ዕን",
+"a": "ዕ",
+"b": "ን",
+"kind": "geez",
+"count": 4039
+},
+{
+"id": 256700,
+"token": "ካላት",
+"a": "ካ",
+"b": "ላት",
+"kind": "geez",
+"count": 4037
+},
+{
+"id": 256701,
+"token": "▁ክፍለ",
+"a": "▁ክፍ",
+"b": "ለ",
+"kind": "geez",
+"count": 4027
+},
+{
+"id": 256702,
+"token": "ንክ",
+"a": "ን",
+"b": "ክ",
+"kind": "geez",
+"count": 4015
+},
+{
+"id": 256703,
+"token": "ካሄ",
+"a": "ካ",
+"b": "ሄ",
+"kind": "geez",
+"count": 4011
+},
+{
+"id": 256704,
+"token": "ቡን",
+"a": "ቡ",
+"b": "ን",
+"kind": "geez",
+"count": 4005
+},
+{
+"id": 256705,
+"token": "ክተር",
+"a": "ክ",
+"b": "ተር",
+"kind": "geez",
+"count": 3997
+},
+{
+"id": 256706,
+"token": "▁ከእ",
+"a": "▁ከ",
+"b": "እ",
+"kind": "geez",
+"count": 3992
+},
+{
+"id": 256707,
+"token": "▁ሰነ",
+"a": "▁ሰ",
+"b": "ነ",
+"kind": "geez",
+"count": 3990
+},
+{
+"id": 256708,
+"token": "ሊዮን",
+"a": "ሊ",
+"b": "ዮን",
+"kind": "geez",
+"count": 3990
+},
+{
+"id": 256709,
+"token": "ብረተ",
+"a": "ብረ",
+"b": "ተ",
+"kind": "geez",
+"count": 3988
+},
+{
+"id": 256710,
+"token": "▁ጨዋታ",
+"a": "▁ጨ",
+"b": "ዋታ",
+"kind": "geez",
+"count": 3986
+},
+{
+"id": 256711,
+"token": "ብጻ",
+"a": "ብ",
+"b": "ጻ",
+"kind": "geez",
+"count": 3983
+},
+{
+"id": 256712,
+"token": "ሞክራሲ",
+"a": "ሞክ",
+"b": "ራሲ",
+"kind": "geez",
+"count": 3978
+},
+{
+"id": 256713,
+"token": "▁ጻ",
+"a": "▁",
+"b": "ጻ",
+"kind": "geez",
+"count": 3976
+},
+{
+"id": 256714,
+"token": "ንቀ",
+"a": "ን",
+"b": "ቀ",
+"kind": "geez",
+"count": 3973
+},
+{
+"id": 256715,
+"token": "▁በዓል",
+"a": "▁በ",
+"b": "ዓል",
+"kind": "geez",
+"count": 3972
+},
+{
+"id": 256716,
+"token": "ሥራ",
+"a": "ሥ",
+"b": "ራ",
+"kind": "geez",
+"count": 3971
+},
+{
+"id": 256717,
+"token": "▁መዓልቲ",
+"a": "▁መዓል",
+"b": "ቲ",
+"kind": "geez",
+"count": 3956
+},
+{
+"id": 256718,
+"token": "ፖርት",
+"a": "ፖ",
+"b": "ርት",
+"kind": "geez",
+"count": 3953
+},
+{
+"id": 256719,
+"token": "▁ስልጣን",
+"a": "▁ስ",
+"b": "ልጣን",
+"kind": "geez",
+"count": 3949
+},
+{
+"id": 256720,
+"token": "▁ጉጅለ",
+"a": "▁ጉ",
+"b": "ጅለ",
+"kind": "geez",
+"count": 3947
+},
+{
+"id": 256721,
+"token": "▁ዝተፈላለ",
+"a": "▁ዝተ",
+"b": "ፈላለ",
+"kind": "geez",
+"count": 3946
+},
+{
+"id": 256722,
+"token": "▁ዞባ",
+"a": "▁ዞ",
+"b": "ባ",
+"kind": "geez",
+"count": 3929
+},
+{
+"id": 256723,
+"token": "ችሁ",
+"a": "ች",
+"b": "ሁ",
+"kind": "geez",
+"count": 3928
+},
+{
+"id": 256724,
+"token": "ነሳ",
+"a": "ነ",
+"b": "ሳ",
+"kind": "geez",
+"count": 3926
+},
+{
+"id": 256725,
+"token": "▁ካብቲ",
+"a": "▁ካብ",
+"b": "ቲ",
+"kind": "geez",
+"count": 3919
+},
+{
+"id": 256726,
+"token": "▁ወለ",
+"a": "▁ወ",
+"b": "ለ",
+"kind": "geez",
+"count": 3918
+},
+{
+"id": 256727,
+"token": "▁ማህ",
+"a": "▁ማ",
+"b": "ህ",
+"kind": "geez",
+"count": 3914
+},
+{
+"id": 256728,
+"token": "▁ጉባኤ",
+"a": "▁ጉባ",
+"b": "ኤ",
+"kind": "geez",
+"count": 3906
+},
+{
+"id": 256729,
+"token": "ቨር",
+"a": "ቨ",
+"b": "ር",
+"kind": "geez",
+"count": 3900
+},
+{
+"id": 256730,
+"token": "▁ብዙሓት",
+"a": "▁ብዙ",
+"b": "ሓት",
+"kind": "geez",
+"count": 3898
+},
+{
+"id": 256731,
+"token": "▁ታሪክ",
+"a": "▁ታ",
+"b": "ሪክ",
+"kind": "geez",
+"count": 3894
+},
+{
+"id": 256732,
+"token": "▁እሞ",
+"a": "▁እ",
+"b": "ሞ",
+"kind": "geez",
+"count": 3890
+},
+{
+"id": 256733,
+"token": "ከፍ",
+"a": "ከ",
+"b": "ፍ",
+"kind": "geez",
+"count": 3890
+},
+{
+"id": 256734,
+"token": "▁መግ",
+"a": "▁መ",
+"b": "ግ",
+"kind": "geez",
+"count": 3886
+},
+{
+"id": 256735,
+"token": "▁ንስ",
+"a": "▁ን",
+"b": "ስ",
+"kind": "geez",
+"count": 3886
+},
+{
+"id": 256736,
+"token": "▁ቁጥር",
+"a": "▁ቁ",
+"b": "ጥር",
+"kind": "geez",
+"count": 3876
+},
+{
+"id": 256737,
+"token": "▁ሱዳን",
+"a": "▁ሱ",
+"b": "ዳን",
+"kind": "geez",
+"count": 3861
+},
+{
+"id": 256738,
+"token": "ለን።",
+"a": "ለን",
+"b": "።",
+"kind": "geez",
+"count": 3860
+},
+{
+"id": 256739,
+"token": "▁ሃይማኖ",
+"a": "▁ሃይ",
+"b": "ማኖ",
+"kind": "geez",
+"count": 3859
+},
+{
+"id": 256740,
+"token": "▁ምው",
+"a": "▁ም",
+"b": "ው",
+"kind": "geez",
+"count": 3856
+},
+{
+"id": 256741,
+"token": "ከኣ",
+"a": "ከ",
+"b": "ኣ",
+"kind": "geez",
+"count": 3854
+},
+{
+"id": 256742,
+"token": "ሳን",
+"a": "ሳ",
+"b": "ን",
+"kind": "geez",
+"count": 3851
+},
+{
+"id": 256743,
+"token": "▁ያው",
+"a": "▁ያ",
+"b": "ው",
+"kind": "geez",
+"count": 3847
+},
+{
+"id": 256744,
+"token": "በሮ",
+"a": "በ",
+"b": "ሮ",
+"kind": "geez",
+"count": 3835
+},
+{
+"id": 256745,
+"token": "ጻር",
+"a": "ጻ",
+"b": "ር",
+"kind": "geez",
+"count": 3831
+},
+{
+"id": 256746,
+"token": "ገብር",
+"a": "ገ",
+"b": "ብር",
+"kind": "geez",
+"count": 3823
+},
+{
+"id": 256747,
+"token": "▁መሠ",
+"a": "▁መ",
+"b": "ሠ",
+"kind": "geez",
+"count": 3821
+},
+{
+"id": 256748,
+"token": "▁ጽሑ",
+"a": "▁ጽ",
+"b": "ሑ",
+"kind": "geez",
+"count": 3820
+},
+{
+"id": 256749,
+"token": "ሶም",
+"a": "ሶ",
+"b": "ም",
+"kind": "geez",
+"count": 3818
+},
+{
+"id": 256750,
+"token": "▁ሻ",
+"a": "▁",
+"b": "ሻ",
+"kind": "geez",
+"count": 3816
+},
+{
+"id": 256751,
+"token": "ካን",
+"a": "ካ",
+"b": "ን",
+"kind": "geez",
+"count": 3810
+},
+{
+"id": 256752,
+"token": "ካየድ",
+"a": "ካየ",
+"b": "ድ",
+"kind": "geez",
+"count": 3804
+},
+{
+"id": 256753,
+"token": "▁እጅ",
+"a": "▁እ",
+"b": "ጅ",
+"kind": "geez",
+"count": 3795
+},
+{
+"id": 256754,
+"token": "▁እተ",
+"a": "▁እ",
+"b": "ተ",
+"kind": "geez",
+"count": 3780
+},
+{
+"id": 256755,
+"token": "▁ሰለ",
+"a": "▁ሰ",
+"b": "ለ",
+"kind": "geez",
+"count": 3778
+},
+{
+"id": 256756,
+"token": "ድሞ",
+"a": "ድ",
+"b": "ሞ",
+"kind": "geez",
+"count": 3778
+},
+{
+"id": 256757,
+"token": "ቡራት",
+"a": "ቡ",
+"b": "ራት",
+"kind": "geez",
+"count": 3777
+},
+{
+"id": 256758,
+"token": "▁ቴ",
+"a": "▁",
+"b": "ቴ",
+"kind": "geez",
+"count": 3775
+},
+{
+"id": 256759,
+"token": "▁ኣባላት",
+"a": "▁ኣባ",
+"b": "ላት",
+"kind": "geez",
+"count": 3774
+},
+{
+"id": 256760,
+"token": "ርትራዊ",
+"a": "ርት",
+"b": "ራዊ",
+"kind": "geez",
+"count": 3772
+},
+{
+"id": 256761,
+"token": "▁ጓ",
+"a": "▁",
+"b": "ጓ",
+"kind": "geez",
+"count": 3771
+},
+{
+"id": 256762,
+"token": "ርብ",
+"a": "ር",
+"b": "ብ",
+"kind": "geez",
+"count": 3770
+},
+{
+"id": 256763,
+"token": "በአ",
+"a": "በ",
+"b": "አ",
+"kind": "geez",
+"count": 3769
+},
+{
+"id": 256764,
+"token": "▁መራ",
+"a": "▁መ",
+"b": "ራ",
+"kind": "geez",
+"count": 3767
+},
+{
+"id": 256765,
+"token": "ግረ",
+"a": "ግ",
+"b": "ረ",
+"kind": "geez",
+"count": 3763
+},
+{
+"id": 256766,
+"token": "ኤርትራ",
+"a": "ኤ",
+"b": "ርትራ",
+"kind": "geez",
+"count": 3758
+},
+{
+"id": 256767,
+"token": "▁እምነት",
+"a": "▁እም",
+"b": "ነት",
+"kind": "geez",
+"count": 3757
+},
+{
+"id": 256768,
+"token": "ይድ",
+"a": "ይ",
+"b": "ድ",
+"kind": "geez",
+"count": 3755
+},
+{
+"id": 256769,
+"token": "▁ኽ",
+"a": "▁",
+"b": "ኽ",
+"kind": "geez",
+"count": 3749
+},
+{
+"id": 256770,
+"token": "▁ሰብኣዊ",
+"a": "▁ሰብ",
+"b": "ኣዊ",
+"kind": "geez",
+"count": 3749
+},
+{
+"id": 256771,
+"token": "ምነት",
+"a": "ም",
+"b": "ነት",
+"kind": "geez",
+"count": 3748
+},
+{
+"id": 256772,
+"token": "ቤተ",
+"a": "ቤ",
+"b": "ተ",
+"kind": "geez",
+"count": 3748
+},
+{
+"id": 256773,
+"token": "ረድ",
+"a": "ረ",
+"b": "ድ",
+"kind": "geez",
+"count": 3732
+},
+{
+"id": 256774,
+"token": "ወጣ",
+"a": "ወ",
+"b": "ጣ",
+"kind": "geez",
+"count": 3730
+},
+{
+"id": 256775,
+"token": "▁ተና",
+"a": "▁ተ",
+"b": "ና",
+"kind": "geez",
+"count": 3725
+},
+{
+"id": 256776,
+"token": "▁በኢትዮጵያ",
+"a": "▁በ",
+"b": "ኢትዮጵያ",
+"kind": "geez",
+"count": 3708
+},
+{
+"id": 256777,
+"token": "▁በስ",
+"a": "▁በ",
+"b": "ስ",
+"kind": "geez",
+"count": 3704
+},
+{
+"id": 256778,
+"token": "ገደ",
+"a": "ገ",
+"b": "ደ",
+"kind": "geez",
+"count": 3704
+},
+{
+"id": 256779,
+"token": "▁ተቋ",
+"a": "▁ተ",
+"b": "ቋ",
+"kind": "geez",
+"count": 3701
+},
+{
+"id": 256780,
+"token": "▁ነጻ",
+"a": "▁ነ",
+"b": "ጻ",
+"kind": "geez",
+"count": 3699
+},
+{
+"id": 256781,
+"token": "ማራ",
+"a": "ማ",
+"b": "ራ",
+"kind": "geez",
+"count": 3694
+},
+{
+"id": 256782,
+"token": "ወን",
+"a": "ወ",
+"b": "ን",
+"kind": "geez",
+"count": 3690
+},
+{
+"id": 256783,
+"token": "ግም",
+"a": "ግ",
+"b": "ም",
+"kind": "geez",
+"count": 3680
+},
+{
+"id": 256784,
+"token": "▁አዳ",
+"a": "▁አ",
+"b": "ዳ",
+"kind": "geez",
+"count": 3678
+},
+{
+"id": 256785,
+"token": "▁ብል",
+"a": "▁ብ",
+"b": "ል",
+"kind": "geez",
+"count": 3678
+},
+{
+"id": 256786,
+"token": "▁በታ",
+"a": "▁በ",
+"b": "ታ",
+"kind": "geez",
+"count": 3676
+},
+{
+"id": 256787,
+"token": "ገው",
+"a": "ገ",
+"b": "ው",
+"kind": "geez",
+"count": 3675
+},
+{
+"id": 256788,
+"token": "▁ምፍ",
+"a": "▁ም",
+"b": "ፍ",
+"kind": "geez",
+"count": 3674
+},
+{
+"id": 256789,
+"token": "ሉእ",
+"a": "ሉ",
+"b": "እ",
+"kind": "geez",
+"count": 3666
+},
+{
+"id": 256790,
+"token": "▁ዝዓ",
+"a": "▁ዝ",
+"b": "ዓ",
+"kind": "geez",
+"count": 3665
+},
+{
+"id": 256791,
+"token": "ቡር",
+"a": "ቡ",
+"b": "ር",
+"kind": "geez",
+"count": 3662
+},
+{
+"id": 256792,
+"token": "ቡ።",
+"a": "ቡ",
+"b": "።",
+"kind": "geez",
+"count": 3662
+},
+{
+"id": 256793,
+"token": "▁ተቐ",
+"a": "▁ተ",
+"b": "ቐ",
+"kind": "geez",
+"count": 3659
+},
+{
+"id": 256794,
+"token": "▁ህዝባዊ",
+"a": "▁ህዝ",
+"b": "ባዊ",
+"kind": "geez",
+"count": 3658
+},
+{
+"id": 256795,
+"token": "▁ጥያቄ",
+"a": "▁ጥ",
+"b": "ያቄ",
+"kind": "geez",
+"count": 3654
+},
+{
+"id": 256796,
+"token": "▁ኣዝ",
+"a": "▁ኣ",
+"b": "ዝ",
+"kind": "geez",
+"count": 3653
+},
+{
+"id": 256797,
+"token": "ዳይ",
+"a": "ዳ",
+"b": "ይ",
+"kind": "geez",
+"count": 3650
+},
+{
+"id": 256798,
+"token": "▁ኬ",
+"a": "▁",
+"b": "ኬ",
+"kind": "geez",
+"count": 3649
+},
+{
+"id": 256799,
+"token": "▁ኣመሪካ",
+"a": "▁ኣመ",
+"b": "ሪካ",
+"kind": "geez",
+"count": 3639
+},
+{
+"id": 256800,
+"token": "▁ሰራዊት",
+"a": "▁ሰ",
+"b": "ራዊት",
+"kind": "geez",
+"count": 3638
+},
+{
+"id": 256801,
+"token": "▁ገል",
+"a": "▁ገ",
+"b": "ል",
+"kind": "geez",
+"count": 3625
+},
+{
+"id": 256802,
+"token": "ክርስ",
+"a": "ክ",
+"b": "ርስ",
+"kind": "geez",
+"count": 3619
+},
+{
+"id": 256803,
+"token": "ለዉ",
+"a": "ለ",
+"b": "ዉ",
+"kind": "geez",
+"count": 3609
+},
+{
+"id": 256804,
+"token": "ዋር",
+"a": "ዋ",
+"b": "ር",
+"kind": "geez",
+"count": 3607
+},
+{
+"id": 256805,
+"token": "ደረጉ",
+"a": "ደረ",
+"b": "ጉ",
+"kind": "geez",
+"count": 3604
+},
+{
+"id": 256806,
+"token": "በይ",
+"a": "በ",
+"b": "ይ",
+"kind": "geez",
+"count": 3599
+},
+{
+"id": 256807,
+"token": "ጋዊ",
+"a": "ጋ",
+"b": "ዊ",
+"kind": "geez",
+"count": 3598
+},
+{
+"id": 256808,
+"token": "ለስ",
+"a": "ለ",
+"b": "ስ",
+"kind": "geez",
+"count": 3597
+},
+{
+"id": 256809,
+"token": "ያል",
+"a": "ያ",
+"b": "ል",
+"kind": "geez",
+"count": 3595
+},
+{
+"id": 256810,
+"token": "▁ሺ",
+"a": "▁",
+"b": "ሺ",
+"kind": "geez",
+"count": 3590
+},
+{
+"id": 256811,
+"token": "▁ሰልፊ",
+"a": "▁ሰል",
+"b": "ፊ",
+"kind": "geez",
+"count": 3586
+},
+{
+"id": 256812,
+"token": "ቦት",
+"a": "ቦ",
+"b": "ት",
+"kind": "geez",
+"count": 3584
+},
+{
+"id": 256813,
+"token": "▁ሁለ",
+"a": "▁ሁ",
+"b": "ለ",
+"kind": "geez",
+"count": 3583
+},
+{
+"id": 256814,
+"token": "▁ሓይሊ",
+"a": "▁ሓ",
+"b": "ይሊ",
+"kind": "geez",
+"count": 3576
+},
+{
+"id": 256815,
+"token": "ሎ።",
+"a": "ሎ",
+"b": "።",
+"kind": "geez",
+"count": 3574
+},
+{
+"id": 256816,
+"token": "እኽ",
+"a": "እ",
+"b": "ኽ",
+"kind": "geez",
+"count": 3566
+},
+{
+"id": 256817,
+"token": "▁ዑ",
+"a": "▁",
+"b": "ዑ",
+"kind": "geez",
+"count": 3564
+},
+{
+"id": 256818,
+"token": "ላፍ",
+"a": "ላ",
+"b": "ፍ",
+"kind": "geez",
+"count": 3563
+},
+{
+"id": 256819,
+"token": "ሓፍ",
+"a": "ሓ",
+"b": "ፍ",
+"kind": "geez",
+"count": 3563
+},
+{
+"id": 256820,
+"token": "▁ዩኒ",
+"a": "▁ዩ",
+"b": "ኒ",
+"kind": "geez",
+"count": 3563
+},
+{
+"id": 256821,
+"token": "▁ጀሚ",
+"a": "▁ጀ",
+"b": "ሚ",
+"kind": "geez",
+"count": 3562
+},
+{
+"id": 256822,
+"token": "▁ፕሬ",
+"a": "▁ፕ",
+"b": "ሬ",
+"kind": "geez",
+"count": 3562
+},
+{
+"id": 256823,
+"token": "ካታ",
+"a": "ካ",
+"b": "ታ",
+"kind": "geez",
+"count": 3560
+},
+{
+"id": 256824,
+"token": "▁ሩ",
+"a": "▁",
+"b": "ሩ",
+"kind": "geez",
+"count": 3555
+},
+{
+"id": 256825,
+"token": "▁ሕዝ",
+"a": "▁ሕ",
+"b": "ዝ",
+"kind": "geez",
+"count": 3551
+},
+{
+"id": 256826,
+"token": "▁ከምቲ",
+"a": "▁ከም",
+"b": "ቲ",
+"kind": "geez",
+"count": 3551
+},
+{
+"id": 256827,
+"token": "▁ሕይወት",
+"a": "▁ሕ",
+"b": "ይወት",
+"kind": "geez",
+"count": 3550
+},
+{
+"id": 256828,
+"token": "ባንያ",
+"a": "ባ",
+"b": "ንያ",
+"kind": "geez",
+"count": 3547
+},
+{
+"id": 256829,
+"token": "ማሊ",
+"a": "ማ",
+"b": "ሊ",
+"kind": "geez",
+"count": 3545
+},
+{
+"id": 256830,
+"token": "ከራ",
+"a": "ከ",
+"b": "ራ",
+"kind": "geez",
+"count": 3544
+},
+{
+"id": 256831,
+"token": "ኼባ",
+"a": "ኼ",
+"b": "ባ",
+"kind": "geez",
+"count": 3536
+},
+{
+"id": 256832,
+"token": "▁ውል",
+"a": "▁ው",
+"b": "ል",
+"kind": "geez",
+"count": 3534
+},
+{
+"id": 256833,
+"token": "▁መግለጺ",
+"a": "▁መግለ",
+"b": "ጺ",
+"kind": "geez",
+"count": 3529
+},
+{
+"id": 256834,
+"token": "▁በየ",
+"a": "▁በ",
+"b": "የ",
+"kind": "geez",
+"count": 3524
+},
+{
+"id": 256835,
+"token": "ግባእ",
+"a": "ግባ",
+"b": "እ",
+"kind": "geez",
+"count": 3524
+},
+{
+"id": 256836,
+"token": "▁ኣው",
+"a": "▁ኣ",
+"b": "ው",
+"kind": "geez",
+"count": 3522
+},
+{
+"id": 256837,
+"token": "▁ብዘ",
+"a": "▁ብ",
+"b": "ዘ",
+"kind": "geez",
+"count": 3518
+},
+{
+"id": 256838,
+"token": "ታወ",
+"a": "ታ",
+"b": "ወ",
+"kind": "geez",
+"count": 3514
+},
+{
+"id": 256839,
+"token": "ዋት",
+"a": "ዋ",
+"b": "ት",
+"kind": "geez",
+"count": 3510
+},
+{
+"id": 256840,
+"token": "▁ዝሓለፈ",
+"a": "▁ዝሓ",
+"b": "ለፈ",
+"kind": "geez",
+"count": 3506
+},
+{
+"id": 256841,
+"token": "▁ፍር",
+"a": "▁ፍ",
+"b": "ር",
+"kind": "geez",
+"count": 3499
+},
+{
+"id": 256842,
+"token": "ም፣",
+"a": "ም",
+"b": "፣",
+"kind": "geez",
+"count": 3491
+},
+{
+"id": 256843,
+"token": "ጠረ",
+"a": "ጠ",
+"b": "ረ",
+"kind": "geez",
+"count": 3487
+},
+{
+"id": 256844,
+"token": "▁ትምህርት",
+"a": "▁ትምህ",
+"b": "ርት",
+"kind": "geez",
+"count": 3487
+},
+{
+"id": 256845,
+"token": "ዚደንት",
+"a": "ዚ",
+"b": "ደንት",
+"kind": "geez",
+"count": 3475
+},
+{
+"id": 256846,
+"token": "▁ፅ",
+"a": "▁",
+"b": "ፅ",
+"kind": "geez",
+"count": 3473
+},
+{
+"id": 256847,
+"token": "▁አገር",
+"a": "▁አ",
+"b": "ገር",
+"kind": "geez",
+"count": 3470
+},
+{
+"id": 256848,
+"token": "▁ዘንድ",
+"a": "▁ዘ",
+"b": "ንድ",
+"kind": "geez",
+"count": 3462
+},
+{
+"id": 256849,
+"token": "ቀል",
+"a": "ቀ",
+"b": "ል",
+"kind": "geez",
+"count": 3462
+},
+{
+"id": 256850,
+"token": "▁ሓይል",
+"a": "▁ሓ",
+"b": "ይል",
+"kind": "geez",
+"count": 3458
+},
+{
+"id": 256851,
+"token": "ታቸውን",
+"a": "ታ",
+"b": "ቸውን",
+"kind": "geez",
+"count": 3457
+},
+{
+"id": 256852,
+"token": "▁ወጻኢ",
+"a": "▁ወ",
+"b": "ጻኢ",
+"kind": "geez",
+"count": 3455
+},
+{
+"id": 256853,
+"token": "▁የሚሰጡ",
+"a": "▁የሚ",
+"b": "ሰጡ",
+"kind": "geez",
+"count": 3455
+},
+{
+"id": 256854,
+"token": "ኑን",
+"a": "ኑ",
+"b": "ን",
+"kind": "geez",
+"count": 3454
+},
+{
+"id": 256855,
+"token": "▁ለሰ",
+"a": "▁ለ",
+"b": "ሰ",
+"kind": "geez",
+"count": 3448
+},
+{
+"id": 256856,
+"token": "▁ጐ",
+"a": "▁",
+"b": "ጐ",
+"kind": "geez",
+"count": 3444
+},
+{
+"id": 256857,
+"token": "ገሪ",
+"a": "ገ",
+"b": "ሪ",
+"kind": "geez",
+"count": 3440
+},
+{
+"id": 256858,
+"token": "ገበ",
+"a": "ገ",
+"b": "በ",
+"kind": "geez",
+"count": 3436
+},
+{
+"id": 256859,
+"token": "▁ቅድሚያ",
+"a": "▁ቅድ",
+"b": "ሚያ",
+"kind": "geez",
+"count": 3435
+},
+{
+"id": 256860,
+"token": "▁ቢሆን",
+"a": "▁ቢ",
+"b": "ሆን",
+"kind": "geez",
+"count": 3428
+},
+{
+"id": 256861,
+"token": "▁የወደ",
+"a": "▁የወ",
+"b": "ደ",
+"kind": "geez",
+"count": 3424
+},
+{
+"id": 256862,
+"token": "▁ሠ",
+"a": "▁",
+"b": "ሠ",
+"kind": "geez",
+"count": 3423
+},
+{
+"id": 256863,
+"token": "▁ሕጊ",
+"a": "▁ሕ",
+"b": "ጊ",
+"kind": "geez",
+"count": 3422
+},
+{
+"id": 256864,
+"token": "የን",
+"a": "የ",
+"b": "ን",
+"kind": "geez",
+"count": 3414
+},
+{
+"id": 256865,
+"token": "▁ኢየሱስ",
+"a": "▁ኢ",
+"b": "የሱስ",
+"kind": "geez",
+"count": 3410
+},
+{
+"id": 256866,
+"token": "ላትን",
+"a": "ላ",
+"b": "ትን",
+"kind": "geez",
+"count": 3410
+},
+{
+"id": 256867,
+"token": "ክልበ",
+"a": "ክል",
+"b": "በ",
+"kind": "geez",
+"count": 3394
+},
+{
+"id": 256868,
+"token": "አን",
+"a": "አ",
+"b": "ን",
+"kind": "geez",
+"count": 3388
+},
+{
+"id": 256869,
+"token": "ታችን",
+"a": "ታ",
+"b": "ችን",
+"kind": "geez",
+"count": 3388
+},
+{
+"id": 256870,
+"token": "ለማ",
+"a": "ለ",
+"b": "ማ",
+"kind": "geez",
+"count": 3386
+},
+{
+"id": 256871,
+"token": "ሕፈት",
+"a": "ሕ",
+"b": "ፈት",
+"kind": "geez",
+"count": 3386
+},
+{
+"id": 256872,
+"token": "▁ኔ",
+"a": "▁",
+"b": "ኔ",
+"kind": "geez",
+"count": 3384
+},
+{
+"id": 256873,
+"token": "▁ስል",
+"a": "▁ስ",
+"b": "ል",
+"kind": "geez",
+"count": 3383
+},
+{
+"id": 256874,
+"token": "▁ነጥ",
+"a": "▁ነ",
+"b": "ጥ",
+"kind": "geez",
+"count": 3381
+},
+{
+"id": 256875,
+"token": "ይህ",
+"a": "ይ",
+"b": "ህ",
+"kind": "geez",
+"count": 3381
+},
+{
+"id": 256876,
+"token": "ዝን",
+"a": "ዝ",
+"b": "ን",
+"kind": "geez",
+"count": 3377
+},
+{
+"id": 256877,
+"token": "▁ይገኛ",
+"a": "▁ይ",
+"b": "ገኛ",
+"kind": "geez",
+"count": 3370
+},
+{
+"id": 256878,
+"token": "▁ብፍላይ",
+"a": "▁ብፍ",
+"b": "ላይ",
+"kind": "geez",
+"count": 3370
+},
+{
+"id": 256879,
+"token": "▁እንደሆነ",
+"a": "▁እንደ",
+"b": "ሆነ",
+"kind": "geez",
+"count": 3367
+},
+{
+"id": 256880,
+"token": "▁ሰዓት",
+"a": "▁ሰ",
+"b": "ዓት",
+"kind": "geez",
+"count": 3366
+},
+{
+"id": 256881,
+"token": "▁የሚያስ",
+"a": "▁የሚያ",
+"b": "ስ",
+"kind": "geez",
+"count": 3362
+},
+{
+"id": 256882,
+"token": "▁ንዓ",
+"a": "▁ን",
+"b": "ዓ",
+"kind": "geez",
+"count": 3360
+},
+{
+"id": 256883,
+"token": "▁መሬት",
+"a": "▁መ",
+"b": "ሬት",
+"kind": "geez",
+"count": 3351
+},
+{
+"id": 256884,
+"token": "▁ብሎ",
+"a": "▁ብ",
+"b": "ሎ",
+"kind": "geez",
+"count": 3348
+},
+{
+"id": 256885,
+"token": "▁በብ",
+"a": "▁በ",
+"b": "ብ",
+"kind": "geez",
+"count": 3343
+},
+{
+"id": 256886,
+"token": "▁ሊሆኑ",
+"a": "▁ሊ",
+"b": "ሆኑ",
+"kind": "geez",
+"count": 3343
+},
+{
+"id": 256887,
+"token": "▁ዓክልበ",
+"a": "▁ዓ",
+"b": "ክልበ",
+"kind": "geez",
+"count": 3342
+},
+{
+"id": 256888,
+"token": "▁ፕረ",
+"a": "▁ፕ",
+"b": "ረ",
+"kind": "geez",
+"count": 3342
+},
+{
+"id": 256889,
+"token": "ንት",
+"a": "ን",
+"b": "ት",
+"kind": "geez",
+"count": 3339
+},
+{
+"id": 256890,
+"token": "▁ዝጸን",
+"a": "▁ዝ",
+"b": "ጸን",
+"kind": "geez",
+"count": 3332
+},
+{
+"id": 256891,
+"token": "ረታዊ",
+"a": "ረ",
+"b": "ታዊ",
+"kind": "geez",
+"count": 3325
+},
+{
+"id": 256892,
+"token": "ቀመ",
+"a": "ቀ",
+"b": "መ",
+"kind": "geez",
+"count": 3325
+},
+{
+"id": 256893,
+"token": "▁ኣኼባ",
+"a": "▁ኣ",
+"b": "ኼባ",
+"kind": "geez",
+"count": 3323
+},
+{
+"id": 256894,
+"token": "ረተ",
+"a": "ረ",
+"b": "ተ",
+"kind": "geez",
+"count": 3322
+},
+{
+"id": 256895,
+"token": "ጋፍ",
+"a": "ጋ",
+"b": "ፍ",
+"kind": "geez",
+"count": 3321
+},
+{
+"id": 256896,
+"token": "▁ታሪኽ",
+"a": "▁ታሪ",
+"b": "ኽ",
+"kind": "geez",
+"count": 3320
+},
+{
+"id": 256897,
+"token": "▁እንዲያ",
+"a": "▁እንዲ",
+"b": "ያ",
+"kind": "geez",
+"count": 3319
+},
+{
+"id": 256898,
+"token": "ፈው",
+"a": "ፈ",
+"b": "ው",
+"kind": "geez",
+"count": 3314
+},
+{
+"id": 256899,
+"token": "▁ግምገማዎች",
+"a": "▁ግምገማ",
+"b": "ዎች",
+"kind": "geez",
+"count": 3312
+},
+{
+"id": 256900,
+"token": "ምል",
+"a": "ም",
+"b": "ል",
+"kind": "geez",
+"count": 3311
+},
+{
+"id": 256901,
+"token": "ቆጣጠ",
+"a": "ቆ",
+"b": "ጣጠ",
+"kind": "geez",
+"count": 3310
+},
+{
+"id": 256902,
+"token": "▁ድን",
+"a": "▁ድ",
+"b": "ን",
+"kind": "geez",
+"count": 3308
+},
+{
+"id": 256903,
+"token": "ዳት",
+"a": "ዳ",
+"b": "ት",
+"kind": "geez",
+"count": 3305
+},
+{
+"id": 256904,
+"token": "ሞም",
+"a": "ሞ",
+"b": "ም",
+"kind": "geez",
+"count": 3305
+},
+{
+"id": 256905,
+"token": "▁ዝነበሩ",
+"a": "▁ዝነ",
+"b": "በሩ",
+"kind": "geez",
+"count": 3302
+},
+{
+"id": 256906,
+"token": "▁ኣለዉ",
+"a": "▁ኣለ",
+"b": "ዉ",
+"kind": "geez",
+"count": 3298
+},
+{
+"id": 256907,
+"token": "▁ኣሜሪካ",
+"a": "▁ኣ",
+"b": "ሜሪካ",
+"kind": "geez",
+"count": 3294
+},
+{
+"id": 256908,
+"token": "▁ንሱ",
+"a": "▁ን",
+"b": "ሱ",
+"kind": "geez",
+"count": 3288
+},
+{
+"id": 256909,
+"token": "▁መንጎ",
+"a": "▁መን",
+"b": "ጎ",
+"kind": "geez",
+"count": 3287
+},
+{
+"id": 256910,
+"token": "▁ሰን",
+"a": "▁ሰ",
+"b": "ን",
+"kind": "geez",
+"count": 3285
+},
+{
+"id": 256911,
+"token": "▁ከምዘይ",
+"a": "▁ከም",
+"b": "ዘይ",
+"kind": "geez",
+"count": 3276
+},
+{
+"id": 256912,
+"token": "ርካ",
+"a": "ር",
+"b": "ካ",
+"kind": "geez",
+"count": 3274
+},
+{
+"id": 256913,
+"token": "▁ዘይም",
+"a": "▁ዘ",
+"b": "ይም",
+"kind": "geez",
+"count": 3273
+},
+{
+"id": 256914,
+"token": "▁ስለዚ",
+"a": "▁ስለ",
+"b": "ዚ",
+"kind": "geez",
+"count": 3273
+},
+{
+"id": 256915,
+"token": "▁ጠቅ",
+"a": "▁ጠ",
+"b": "ቅ",
+"kind": "geez",
+"count": 3270
+},
+{
+"id": 256916,
+"token": "▁ዓዲ",
+"a": "▁ዓ",
+"b": "ዲ",
+"kind": "geez",
+"count": 3263
+},
+{
+"id": 256917,
+"token": "▁ቱ",
+"a": "▁",
+"b": "ቱ",
+"kind": "geez",
+"count": 3263
+},
+{
+"id": 256918,
+"token": "ህዝቢ",
+"a": "ህዝ",
+"b": "ቢ",
+"kind": "geez",
+"count": 3263
+},
+{
+"id": 256919,
+"token": "▁ከሎ",
+"a": "▁ከ",
+"b": "ሎ",
+"kind": "geez",
+"count": 3262
+},
+{
+"id": 256920,
+"token": "ልፍ",
+"a": "ል",
+"b": "ፍ",
+"kind": "geez",
+"count": 3259
+},
+{
+"id": 256921,
+"token": "ዳደር",
+"a": "ዳ",
+"b": "ደር",
+"kind": "geez",
+"count": 3259
+},
+{
+"id": 256922,
+"token": "▁መሰል",
+"a": "▁መሰ",
+"b": "ል",
+"kind": "geez",
+"count": 3257
+},
+{
+"id": 256923,
+"token": "ብሩ",
+"a": "ብ",
+"b": "ሩ",
+"kind": "geez",
+"count": 3254
+},
+{
+"id": 256924,
+"token": "ረጋግ",
+"a": "ረጋ",
+"b": "ግ",
+"kind": "geez",
+"count": 3251
+},
+{
+"id": 256925,
+"token": "ማል",
+"a": "ማ",
+"b": "ል",
+"kind": "geez",
+"count": 3243
+},
+{
+"id": 256926,
+"token": "▁ኤርትራዊ",
+"a": "▁ኤ",
+"b": "ርትራዊ",
+"kind": "geez",
+"count": 3241
+},
+{
+"id": 256927,
+"token": "▁አገልግሎት",
+"a": "▁አገልግሎ",
+"b": "ት",
+"kind": "geez",
+"count": 3239
+},
+{
+"id": 256928,
+"token": "ኮኖ",
+"a": "ኮ",
+"b": "ኖ",
+"kind": "geez",
+"count": 3236
+},
+{
+"id": 256929,
+"token": "▁በኩል",
+"a": "▁በ",
+"b": "ኩል",
+"kind": "geez",
+"count": 3234
+},
+{
+"id": 256930,
+"token": "▁ኣይኮነን።",
+"a": "▁ኣይኮነ",
+"b": "ን።",
+"kind": "geez",
+"count": 3232
+},
+{
+"id": 256931,
+"token": "ተኛው",
+"a": "ተኛ",
+"b": "ው",
+"kind": "geez",
+"count": 3229
+},
+{
+"id": 256932,
+"token": "▁ኰ",
+"a": "▁",
+"b": "ኰ",
+"kind": "geez",
+"count": 3229
+},
+{
+"id": 256933,
+"token": "ፋሉ",
+"a": "ፋ",
+"b": "ሉ",
+"kind": "geez",
+"count": 3229
+},
+{
+"id": 256934,
+"token": "ስራ",
+"a": "ስ",
+"b": "ራ",
+"kind": "geez",
+"count": 3228
+},
+{
+"id": 256935,
+"token": "ዊት",
+"a": "ዊ",
+"b": "ት",
+"kind": "geez",
+"count": 3226
+},
+{
+"id": 256936,
+"token": "▁መፍት",
+"a": "▁መ",
+"b": "ፍት",
+"kind": "geez",
+"count": 3224
+},
+{
+"id": 256937,
+"token": "ርመን",
+"a": "ር",
+"b": "መን",
+"kind": "geez",
+"count": 3222
+},
+{
+"id": 256938,
+"token": "ጽነት",
+"a": "ጽ",
+"b": "ነት",
+"kind": "geez",
+"count": 3219
+},
+{
+"id": 256939,
+"token": "▁ነፍ",
+"a": "▁ነ",
+"b": "ፍ",
+"kind": "geez",
+"count": 3211
+},
+{
+"id": 256940,
+"token": "ሕግ",
+"a": "ሕ",
+"b": "ግ",
+"kind": "geez",
+"count": 3209
+},
+{
+"id": 256941,
+"token": "ዋቸውን",
+"a": "ዋ",
+"b": "ቸውን",
+"kind": "geez",
+"count": 3205
+},
+{
+"id": 256942,
+"token": "▁ኤርትራን",
+"a": "▁ኤርትራ",
+"b": "ን",
+"kind": "geez",
+"count": 3204
+},
+{
+"id": 256943,
+"token": "▁በደ",
+"a": "▁በ",
+"b": "ደ",
+"kind": "geez",
+"count": 3202
+},
+{
+"id": 256944,
+"token": "▁ፓርቲ",
+"a": "▁ፓ",
+"b": "ርቲ",
+"kind": "geez",
+"count": 3200
+},
+{
+"id": 256945,
+"token": "▁የፍት",
+"a": "▁የ",
+"b": "ፍት",
+"kind": "geez",
+"count": 3199
+},
+{
+"id": 256946,
+"token": "ት።",
+"a": "ት",
+"b": "።",
+"kind": "geez",
+"count": 3198
+},
+{
+"id": 256947,
+"token": "ፍራ",
+"a": "ፍ",
+"b": "ራ",
+"kind": "geez",
+"count": 3197
+},
+{
+"id": 256948,
+"token": "▁ይህን",
+"a": "▁ይህ",
+"b": "ን",
+"kind": "geez",
+"count": 3195
+},
+{
+"id": 256949,
+"token": "▁ሲያ",
+"a": "▁ሲ",
+"b": "ያ",
+"kind": "geez",
+"count": 3194
+},
+{
+"id": 256950,
+"token": "▁ክብል",
+"a": "▁ክብ",
+"b": "ል",
+"kind": "geez",
+"count": 3192
+},
+{
+"id": 256951,
+"token": "ርዓት",
+"a": "ርዓ",
+"b": "ት",
+"kind": "geez",
+"count": 3186
+},
+{
+"id": 256952,
+"token": "ነን",
+"a": "ነ",
+"b": "ን",
+"kind": "geez",
+"count": 3185
+},
+{
+"id": 256953,
+"token": "▁ክህ",
+"a": "▁ክ",
+"b": "ህ",
+"kind": "geez",
+"count": 3183
+},
+{
+"id": 256954,
+"token": "ያንን",
+"a": "ያ",
+"b": "ንን",
+"kind": "geez",
+"count": 3183
+},
+{
+"id": 256955,
+"token": "ክን",
+"a": "ክ",
+"b": "ን",
+"kind": "geez",
+"count": 3182
+},
+{
+"id": 256956,
+"token": "ደራዊ",
+"a": "ደ",
+"b": "ራዊ",
+"kind": "geez",
+"count": 3180
+},
+{
+"id": 256957,
+"token": "▁በሌ",
+"a": "▁በ",
+"b": "ሌ",
+"kind": "geez",
+"count": 3175
+},
+{
+"id": 256958,
+"token": "▁ለውጢ",
+"a": "▁ለው",
+"b": "ጢ",
+"kind": "geez",
+"count": 3172
+},
+{
+"id": 256959,
+"token": "ረኸ",
+"a": "ረ",
+"b": "ኸ",
+"kind": "geez",
+"count": 3171
+},
+{
+"id": 256960,
+"token": "▁መደብ",
+"a": "▁መደ",
+"b": "ብ",
+"kind": "geez",
+"count": 3168
+},
+{
+"id": 256961,
+"token": "ሰማ",
+"a": "ሰ",
+"b": "ማ",
+"kind": "geez",
+"count": 3167
+},
+{
+"id": 256962,
+"token": "▁ኣገልግሎት",
+"a": "▁ኣገልግሎ",
+"b": "ት",
+"kind": "geez",
+"count": 3165
+},
+{
+"id": 256963,
+"token": "ሮስ",
+"a": "ሮ",
+"b": "ስ",
+"kind": "geez",
+"count": 3164
+},
+{
+"id": 256964,
+"token": "ኢት",
+"a": "ኢ",
+"b": "ት",
+"kind": "geez",
+"count": 3162
+},
+{
+"id": 256965,
+"token": "ናቸው",
+"a": "ና",
+"b": "ቸው",
+"kind": "geez",
+"count": 3158
+},
+{
+"id": 256966,
+"token": "ሻሻ",
+"a": "ሻ",
+"b": "ሻ",
+"kind": "geez",
+"count": 3158
+},
+{
+"id": 256967,
+"token": "ላእክት",
+"a": "ላእ",
+"b": "ክት",
+"kind": "geez",
+"count": 3158
+},
+{
+"id": 256968,
+"token": "▁ምእን",
+"a": "▁ም",
+"b": "እን",
+"kind": "geez",
+"count": 3151
+},
+{
+"id": 256969,
+"token": "▁ለተ",
+"a": "▁ለ",
+"b": "ተ",
+"kind": "geez",
+"count": 3147
+},
+{
+"id": 256970,
+"token": "ቻቸው",
+"a": "ቻ",
+"b": "ቸው",
+"kind": "geez",
+"count": 3145
+},
+{
+"id": 256971,
+"token": "▁እንግ",
+"a": "▁እን",
+"b": "ግ",
+"kind": "geez",
+"count": 3144
+},
+{
+"id": 256972,
+"token": "▁ውግ",
+"a": "▁ው",
+"b": "ግ",
+"kind": "geez",
+"count": 3143
+},
+{
+"id": 256973,
+"token": "▁መዝ",
+"a": "▁መ",
+"b": "ዝ",
+"kind": "geez",
+"count": 3140
+},
+{
+"id": 256974,
+"token": "▁አጋ",
+"a": "▁አ",
+"b": "ጋ",
+"kind": "geez",
+"count": 3136
+},
+{
+"id": 256975,
+"token": "ሎም።",
+"a": "ሎ",
+"b": "ም።",
+"kind": "geez",
+"count": 3134
+},
+{
+"id": 256976,
+"token": "ሮም።",
+"a": "ሮ",
+"b": "ም።",
+"kind": "geez",
+"count": 3132
+},
+{
+"id": 256977,
+"token": "ውሞ",
+"a": "ው",
+"b": "ሞ",
+"kind": "geez",
+"count": 3130
+},
+{
+"id": 256978,
+"token": "▁ሌላ",
+"a": "▁ሌ",
+"b": "ላ",
+"kind": "geez",
+"count": 3125
+},
+{
+"id": 256979,
+"token": "▁ማይ",
+"a": "▁ማ",
+"b": "ይ",
+"kind": "geez",
+"count": 3121
+},
+{
+"id": 256980,
+"token": "ጥም",
+"a": "ጥ",
+"b": "ም",
+"kind": "geez",
+"count": 3120
+},
+{
+"id": 256981,
+"token": "▁ቡድን",
+"a": "▁ቡ",
+"b": "ድን",
+"kind": "geez",
+"count": 3119
+},
+{
+"id": 256982,
+"token": "▁ህይወት",
+"a": "▁ህ",
+"b": "ይወት",
+"kind": "geez",
+"count": 3118
+},
+{
+"id": 256983,
+"token": "▁ዘተ",
+"a": "▁ዘ",
+"b": "ተ",
+"kind": "geez",
+"count": 3117
+},
+{
+"id": 256984,
+"token": "▁ዘይኮነ",
+"a": "▁ዘይ",
+"b": "ኮነ",
+"kind": "geez",
+"count": 3113
+},
+{
+"id": 256985,
+"token": "▁ዛሬ",
+"a": "▁ዛ",
+"b": "ሬ",
+"kind": "geez",
+"count": 3113
+},
+{
+"id": 256986,
+"token": "▁ብወ",
+"a": "▁ብ",
+"b": "ወ",
+"kind": "geez",
+"count": 3111
+},
+{
+"id": 256987,
+"token": "ሁለ",
+"a": "ሁ",
+"b": "ለ",
+"kind": "geez",
+"count": 3108
+},
+{
+"id": 256988,
+"token": "ፖለቲካ",
+"a": "ፖ",
+"b": "ለቲካ",
+"kind": "geez",
+"count": 3107
+},
+{
+"id": 256989,
+"token": "ትል",
+"a": "ት",
+"b": "ል",
+"kind": "geez",
+"count": 3106
+},
+{
+"id": 256990,
+"token": "▁እንከሎ",
+"a": "▁እንከ",
+"b": "ሎ",
+"kind": "geez",
+"count": 3103
+},
+{
+"id": 256991,
+"token": "ገቡ",
+"a": "ገ",
+"b": "ቡ",
+"kind": "geez",
+"count": 3102
+},
+{
+"id": 256992,
+"token": "ገኘው",
+"a": "ገኘ",
+"b": "ው",
+"kind": "geez",
+"count": 3102
+},
+{
+"id": 256993,
+"token": "▁ነበሩ",
+"a": "▁ነ",
+"b": "በሩ",
+"kind": "geez",
+"count": 3099
+},
+{
+"id": 256994,
+"token": "▁ሕቡራት",
+"a": "▁ሕ",
+"b": "ቡራት",
+"kind": "geez",
+"count": 3098
+},
+{
+"id": 256995,
+"token": "ውነት",
+"a": "ው",
+"b": "ነት",
+"kind": "geez",
+"count": 3098
+},
+{
+"id": 256996,
+"token": "ርሱ",
+"a": "ር",
+"b": "ሱ",
+"kind": "geez",
+"count": 3098
+},
+{
+"id": 256997,
+"token": "▁ኣድ",
+"a": "▁ኣ",
+"b": "ድ",
+"kind": "geez",
+"count": 3095
+},
+{
+"id": 256998,
+"token": "▁ኳ",
+"a": "▁",
+"b": "ኳ",
+"kind": "geez",
+"count": 3095
+},
+{
+"id": 256999,
+"token": "▁መጋ",
+"a": "▁መ",
+"b": "ጋ",
+"kind": "geez",
+"count": 3091
+},
+{
+"id": 257000,
+"token": "ለው።",
+"a": "ለው",
+"b": "።",
+"kind": "geez",
+"count": 3089
+}
+]
+}

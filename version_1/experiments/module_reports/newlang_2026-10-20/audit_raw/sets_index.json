@@ -1,0 +1,296 @@
+{
+ "fuv__flores_fuv_Latn": {
+  "full_size": 997,
+  "probe_n": 60,
+  "orig_share": 1.0,
+  "mean_words_en": 20.6,
+  "mean_chars_ref": 116.9
+ },
+ "fuv__smol_ff": {
+  "full_size": 862,
+  "probe_n": 60,
+  "orig_share": 1.0,
+  "mean_words_en": 13.8,
+  "mean_chars_ref": 82.6
+ },
+ "fuv__smol_fuc": {
+  "full_size": 863,
+  "probe_n": 60,
+  "orig_share": 1.0,
+  "mean_words_en": 13.8,
+  "mean_chars_ref": 79.1
+ },
+ "gaa__smol_gaa": {
+  "full_size": 863,
+  "probe_n": 60,
+  "orig_share": 1.0,
+  "mean_words_en": 13.8,
+  "mean_chars_ref": 77.3
+ },
+ "knc__flores_knc_Latn": {
+  "full_size": 997,
+  "probe_n": 60,
+  "orig_share": 1.0,
+  "mean_words_en": 20.6,
+  "mean_chars_ref": 125.0
+ },
+ "knc__smol_kr": {
+  "full_size": 863,
+  "probe_n": 60,
+  "orig_share": 1.0,
+  "mean_words_en": 13.8,
+  "mean_chars_ref": 87.7
+ },
+ "tzm__flores_zgh_Tfng": {
+  "full_size": 997,
+  "probe_n": 60,
+  "orig_share": 1.0,
+  "mean_words_en": 20.6,
+  "mean_chars_ref": 108.9
+ },
+ "tzm__smol_ber": {
+  "full_size": 862,
+  "probe_n": 60,
+  "orig_share": 1.0,
+  "mean_words_en": 13.7,
+  "mean_chars_ref": 84.0
+ },
+ "dik__flores_dik_Latn": {
+  "full_size": 997,
+  "probe_n": 60,
+  "orig_share": 1.0,
+  "mean_words_en": 20.6,
+  "mean_chars_ref": 102.9
+ },
+ "dik__smol_din": {
+  "full_size": 863,
+  "probe_n": 60,
+  "orig_share": 1.0,
+  "mean_words_en": 13.8,
+  "mean_chars_ref": 92.6
+ },
+ "cjk__flores_cjk_Latn": {
+  "full_size": 997,
+  "probe_n": 60,
+  "orig_share": 1.0,
+  "mean_words_en": 20.6,
+  "mean_chars_ref": 131.4
+ },
+ "taq__flores_taq_Latn": {
+  "full_size": 997,
+  "probe_n": 60,
+  "orig_share": 1.0,
+  "mean_words_en": 20.6,
+  "mean_chars_ref": 118.2
+ },
+ "taq__flores_taq_Tfng": {
+  "full_size": 997,
+  "probe_n": 60,
+  "orig_share": 1.0,
+  "mean_words_en": 20.6,
+  "mean_chars_ref": 117.4
+ },
+ "nqo__flores_nqo_Nkoo": {
+  "full_size": 997,
+  "probe_n": 60,
+  "orig_share": 1.0,
+  "mean_words_en": 20.6,
+  "mean_chars_ref": 153.2
+ },
+ "nqo__smol_nqo": {
+  "full_size": 863,
+  "probe_n": 60,
+  "orig_share": 1.0,
+  "mean_words_en": 13.8,
+  "mean_chars_ref": 107.0
+ },
+ "nqo__smol_bm-Nkoo": {
+  "full_size": 863,
+  "probe_n": 60,
+  "orig_share": 1.0,
+  "mean_words_en": 13.8,
+  "mean_chars_ref": 107.0
+ },
+ "nde__ntrex_nde": {
+  "full_size": 1997,
+  "probe_n": 60,
+  "orig_share": 1.0,
+  "mean_words_en": 20.7,
+  "mean_chars_ref": 147.1
+ },
+ "nde__smol_nd": {
+  "full_size": 863,
+  "probe_n": 60,
+  "orig_share": 1.0,
+  "mean_words_en": 13.8,
+  "mean_chars_ref": 94.8
+ },
+ "mfe__flores_mfe_Latn": {
+  "full_size": 997,
+  "probe_n": 60,
+  "orig_share": 1.0,
+  "mean_words_en": 20.6,
+  "mean_chars_ref": 113.4
+ },
+ "mfe__smol_mfe": {
+  "full_size": 863,
+  "probe_n": 60,
+  "orig_share": 1.0,
+  "mean_words_en": 13.8,
+  "mean_chars_ref": 84.8
+ },
+ "dje__smol_dje": {
+  "full_size": 863,
+  "probe_n": 60,
+  "orig_share": 1.0,
+  "mean_words_en": 13.8,
+  "mean_chars_ref": 83.7
+ },
+ "sus__smol_sus": {
+  "full_size": 863,
+  "probe_n": 60,
+  "orig_share": 1.0,
+  "mean_words_en": 13.8,
+  "mean_chars_ref": 78.0
+ },
+ "bci__smol_bci": {
+  "full_size": 863,
+  "probe_n": 60,
+  "orig_share": 1.0,
+  "mean_words_en": 13.8,
+  "mean_chars_ref": 79.6
+ },
+ "tig__smol_tig": {
+  "full_size": 863,
+  "probe_n": 60,
+  "orig_share": 1.0,
+  "mean_words_en": 13.8,
+  "mean_chars_ref": 63.5
+ },
+ "alz__smol_alz": {
+  "full_size": 863,
+  "probe_n": 60,
+  "orig_share": 1.0,
+  "mean_words_en": 13.8,
+  "mean_chars_ref": 78.9
+ },
+ "dov__smol_dov": {
+  "full_size": 863,
+  "probe_n": 60,
+  "orig_share": 1.0,
+  "mean_words_en": 13.8,
+  "mean_chars_ref": 94.2
+ },
+ "yor__flores_yor_Latn": {
+  "full_size": 997,
+  "probe_n": 60,
+  "orig_share": 1.0,
+  "mean_words_en": 20.6,
+  "mean_chars_ref": 118.8
+ },
+ "hau__flores_hau_Latn": {
+  "full_size": 997,
+  "probe_n": 60,
+  "orig_share": 1.0,
+  "mean_words_en": 20.6,
+  "mean_chars_ref": 130.3
+ },
+ "swh__flores_swh_Latn": {
+  "full_size": 997,
+  "probe_n": 60,
+  "orig_share": 1.0,
+  "mean_words_en": 20.6,
+  "mean_chars_ref": 129.2
+ },
+ "wol__flores_wol_Latn": {
+  "full_size": 997,
+  "probe_n": 60,
+  "orig_share": 1.0,
+  "mean_words_en": 20.6,
+  "mean_chars_ref": 115.0
+ },
+ "kbp__flores_kbp_Latn": {
+  "full_size": 997,
+  "probe_n": 60,
+  "orig_share": 1.0,
+  "mean_words_en": 20.6,
+  "mean_chars_ref": 142.7
+ },
+ "bem__flores_bem_Latn": {
+  "full_size": 997,
+  "probe_n": 60,
+  "orig_share": 1.0,
+  "mean_words_en": 20.6,
+  "mean_chars_ref": 150.2
+ },
+ "nus__flores_nus_Latn": {
+  "full_size": 997,
+  "probe_n": 60,
+  "orig_share": 1.0,
+  "mean_words_en": 20.6,
+  "mean_chars_ref": 124.2
+ },
+ "kea__flores_kea_Latn": {
+  "full_size": 997,
+  "probe_n": 60,
+  "orig_share": 1.0,
+  "mean_words_en": 20.6,
+  "mean_chars_ref": 122.6
+ },
+ "dyu__flores_dyu_Latn": {
+  "full_size": 997,
+  "probe_n": 60,
+  "orig_share": 1.0,
+  "mean_words_en": 20.6,
+  "mean_chars_ref": 121.5
+ },
+ "sag__flores_sag_Latn": {
+  "full_size": 997,
+  "probe_n": 60,
+  "orig_share": 1.0,
+  "mean_words_en": 20.6,
+  "mean_chars_ref": 137.0
+ },
+ "umb__flores_umb_Latn": {
+  "full_size": 997,
+  "probe_n": 60,
+  "orig_share": 1.0,
+  "mean_words_en": 20.6,
+  "mean_chars_ref": 125.4
+ },
+ "ach__smol_ach": {
+  "full_size": 863,
+  "probe_n": 60,
+  "orig_share": 1.0,
+  "mean_words_en": 13.8,
+  "mean_chars_ref": 83.2
+ },
+ "efi__smol_efi": {
+  "full_size": 863,
+  "probe_n": 60,
+  "orig_share": 1.0,
+  "mean_words_en": 13.8,
+  "mean_chars_ref": 87.0
+ },
+ "shi__ntrex_shi": {
+  "full_size": 1997,
+  "probe_n": 60,
+  "orig_share": 1.0,
+  "mean_words_en": 20.7,
+  "mean_chars_ref": 107.1
+ },
+ "nyn__local_salt_en_nyn.jsonl": {
+  "full_size": 500,
+  "probe_n": 60,
+  "orig_share": 1.0,
+  "mean_words_en": 9.6,
+  "mean_chars_ref": 62.5
+ },
+ "ibb__local_ibom_mt_en_ibb.jsonl": {
+  "full_size": 1012,
+  "probe_n": 60,
+  "orig_share": 1.0,
+  "mean_words_en": 20.1,
+  "mean_chars_ref": 137.3
+ }
+}

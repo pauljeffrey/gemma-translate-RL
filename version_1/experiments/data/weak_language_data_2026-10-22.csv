@@ -1,0 +1,86 @@
+iso,name,group,geez,original_sft_samples,original_sft_target_tokens,r4_mix_replay_tokens,r4_mix_science_tokens,pool_jw_style_pct_of_tokens,commercial_new_target_tokens,commercial_plus_sa_target_tokens,commercial_new_vs_original_sft,note,commercial_ok_tokens,share_alike_tokens,EXCLUDED_unknown_licence_tokens,NC_noncommercial_tokens,owner_code_switch_tokens
+yor,Yoruba,other,False,1519727,145155296,296972,1338723,27.2,0,0,0.0,NO new commercial-OK English-parallel data found - only sample weight / teacher / NC data can add signal,0,0,0,0,145079
+hau,Hausa,other,False,1155980,135024789,297513,996229,3.3,0,0,0.0,NO new commercial-OK English-parallel data found - only sample weight / teacher / NC data can add signal,0,0,0,0,142586
+ibo,Igbo,other,False,2964219,260311732,149101,0,25.6,0,0,0.0,NO new commercial-OK English-parallel data found - only sample weight / teacher / NC data can add signal,0,0,0,0,144065
+pcm,Pidgin,other,False,124861,10612775,148443,0,8.2,0,0,0.0,NO new commercial-OK English-parallel data found - only sample weight / teacher / NC data can add signal,0,0,0,0,1886
+efi,Efik,other,False,168862,15626749,148955,0,79.4,0,0,0.0,NO new commercial-OK English-parallel data found - only sample weight / teacher / NC data can add signal,0,0,0,78545,2347
+twi,Twi,other,False,537664,165853001,288978,0,9.2,0,0,0.0,NO new commercial-OK English-parallel data found - only sample weight / teacher / NC data can add signal,0,0,0,0,1826
+ewe,Ewe,other,False,30182,3101519,148515,0,9.2,0,0,0.0,NO new commercial-OK English-parallel data found - only sample weight / teacher / NC data can add signal,0,0,0,0,624
+fon,Fon,bottom15,False,375361,34028294,148416,0,9.9,0,0,0.0,NO new commercial-OK English-parallel data found - only sample weight / teacher / NC data can add signal,0,0,0,0,1323
+wol,Wolof,other,False,50459,5031731,148443,0,9.7,0,0,0.0,NO new commercial-OK English-parallel data found - only sample weight / teacher / NC data can add signal,0,0,0,0,144505
+swh,Swahili,other,False,279040,35364489,148402,0,2.4,0,0,0.0,NO new commercial-OK English-parallel data found - only sample weight / teacher / NC data can add signal,0,0,0,0,142633
+kin,Kinyarwanda,other,False,183557,28839951,156502,0,3.8,0,0,0.0,NO new commercial-OK English-parallel data found - only sample weight / teacher / NC data can add signal,0,0,0,0,109418
+som,Somali,other,False,193714,37763040,188725,0,9.4,0,0,0.0,NO new commercial-OK English-parallel data found - only sample weight / teacher / NC data can add signal,0,0,0,0,143693
+orm,Oromo,other,False,111026,14483322,149082,0,33.4,0,0,0.0,NO new commercial-OK English-parallel data found - only sample weight / teacher / NC data can add signal,0,0,0,0,143979
+amh,Amharic,bottom15,True,59035,8289388,296841,1046659,58.0,7211121,7467534,0.901,,11175651,391258,8139086,6496549,143146
+tir,Tigrinya,bottom15,True,48410,5600654,148373,0,83.4,5688783,5688783,1.016,,8311279,0,538290,0,4353
+lug,Luganda,other,False,119739,12779860,296792,1085971,51.9,0,0,0.0,NO new commercial-OK English-parallel data found - only sample weight / teacher / NC data can add signal,0,0,0,0,144358
+lin,Lingala,other,False,37254,3793007,148466,0,81.4,0,0,0.0,NO new commercial-OK English-parallel data found - only sample weight / teacher / NC data can add signal,0,0,0,0,4261
+zul,Zulu,other,False,229980,33585226,296858,1030061,36.1,0,0,0.0,NO new commercial-OK English-parallel data found - only sample weight / teacher / NC data can add signal,0,0,0,0,142941
+xho,Xhosa,other,False,367026,46705118,148780,0,16.1,0,0,0.0,NO new commercial-OK English-parallel data found - only sample weight / teacher / NC data can add signal,0,0,0,0,143566
+afr,Afrikaans,other,False,298234,33190969,148440,0,12.9,0,0,0.0,NO new commercial-OK English-parallel data found - only sample weight / teacher / NC data can add signal,0,0,0,0,116470
+sna,Shona,other,False,120779,15848709,148810,0,39.8,0,0,0.0,NO new commercial-OK English-parallel data found - only sample weight / teacher / NC data can add signal,0,0,0,0,143336
+nya,Chichewa,other,False,129583,20969998,159465,0,38.8,0,0,0.0,NO new commercial-OK English-parallel data found - only sample weight / teacher / NC data can add signal,0,0,0,0,143282
+sot,Sesotho,other,False,130669,24842204,177057,0,5.2,0,0,0.0,NO new commercial-OK English-parallel data found - only sample weight / teacher / NC data can add signal,0,0,0,0,132400
+tsn,Setswana,other,False,332597,34209543,148588,0,71.3,0,0,0.0,NO new commercial-OK English-parallel data found - only sample weight / teacher / NC data can add signal,0,0,0,0,143956
+mlg,Malagasy,other,False,84787,10078629,148594,0,43.0,0,0,0.0,NO new commercial-OK English-parallel data found - only sample weight / teacher / NC data can add signal,0,0,0,0,140563
+ibb,Ibibio,other,False,2060,202632,148467,0,76.2,0,0,0.0,NO new commercial-OK English-parallel data found - only sample weight / teacher / NC data can add signal,0,0,0,87913,3121
+urh,Urhobo,no_benchmark,False,12528,1223228,148393,0,76.6,0,0,0.0,NO new commercial-OK English-parallel data found - only sample weight / teacher / NC data can add signal,0,0,0,0,2360
+bem,Bemba,other,False,46881,5023191,148599,0,69.7,0,0,0.0,NO new commercial-OK English-parallel data found - only sample weight / teacher / NC data can add signal,0,0,0,0,0
+tum,Tumbuka,other,False,35350,3819053,149017,0,83.2,0,0,0.0,NO new commercial-OK English-parallel data found - only sample weight / teacher / NC data can add signal,0,0,0,0,3737
+run,Kirundi,other,False,38923,4108968,148451,0,81.8,0,0,0.0,NO new commercial-OK English-parallel data found - only sample weight / teacher / NC data can add signal,0,0,0,0,7082
+ven,Venda,other,False,47047,4850851,148387,0,75.2,0,0,0.0,NO new commercial-OK English-parallel data found - only sample weight / teacher / NC data can add signal,0,0,0,0,0
+tso,Tsonga,other,False,84895,8948175,148678,0,68.7,0,0,0.0,NO new commercial-OK English-parallel data found - only sample weight / teacher / NC data can add signal,0,0,0,0,1727
+nso,Sepedi,other,False,100637,10464494,296780,1133451,59.4,0,0,0.0,NO new commercial-OK English-parallel data found - only sample weight / teacher / NC data can add signal,0,0,0,0,133363
+ssw,Swati,other,False,31467,3565671,148439,0,73.0,0,0,0.0,NO new commercial-OK English-parallel data found - only sample weight / teacher / NC data can add signal,0,0,0,0,4619
+nbl,South Ndebele,other,False,37195,4141565,148618,0,67.3,0,0,0.0,NO new commercial-OK English-parallel data found - only sample weight / teacher / NC data can add signal,0,0,0,0,0
+nde,North Ndebele,other,False,0,0,0,0,,0,0,0.0,NO new commercial-OK English-parallel data found - only sample weight / teacher / NC data can add signal,0,0,0,0,2160
+sag,Sango,other,False,39516,3992368,148450,0,84.3,0,0,0.0,NO new commercial-OK English-parallel data found - only sample weight / teacher / NC data can add signal,0,0,0,0,914
+tiv,Tiv,other,False,40656,4270512,148570,0,82.2,0,0,0.0,NO new commercial-OK English-parallel data found - only sample weight / teacher / NC data can add signal,0,0,0,0,0
+umb,Umbundu,other,False,34376,3675942,148962,0,84.0,0,0,0.0,NO new commercial-OK English-parallel data found - only sample weight / teacher / NC data can add signal,0,0,0,0,857
+kmb,Kimbundu,other,False,23819,2522745,148434,0,82.5,0,0,0.0,NO new commercial-OK English-parallel data found - only sample weight / teacher / NC data can add signal,0,0,0,0,947
+mos,Mossi,other,False,46190,4758571,148581,0,76.3,0,0,0.0,NO new commercial-OK English-parallel data found - only sample weight / teacher / NC data can add signal,0,0,0,0,1093
+kik,Kikuyu,other,False,33879,3477346,148439,0,76.9,0,0,0.0,NO new commercial-OK English-parallel data found - only sample weight / teacher / NC data can add signal,0,0,0,0,3200
+luo,Luo,other,False,171483,17146609,148427,0,21.6,0,0,0.0,NO new commercial-OK English-parallel data found - only sample weight / teacher / NC data can add signal,0,0,0,0,2656
+kam,Kamba,other,False,18073,1859930,149113,0,78.7,1724861,1724861,0.927,,2585968,0,0,0,0
+bin,Edo,weak8,False,17995,1712912,148700,0,21.8,0,0,0.0,NO new commercial-OK English-parallel data found - only sample weight / teacher / NC data can add signal,0,0,0,0,1051
+dag,Dagbani,weak8,False,15310,1927495,148442,0,5.5,0,34425,0.018,,0,53956,0,0,0
+oke,Okpe,weak8,False,7856,735410,148429,0,78.3,0,0,0.0,NO new commercial-OK English-parallel data found - only sample weight / teacher / NC data can add signal,0,0,0,0,0
+shi,Tachelhit,bottom15,False,9212,932398,148480,0,81.7,192496,210583,0.226,,320218,30762,1415346,0,0
+dyu,Dyula,bottom15,False,4504,481760,148383,0,80.5,0,0,0.0,NO new commercial-OK English-parallel data found - only sample weight / teacher / NC data can add signal,0,0,0,0,0
+bam,Bambara,other,False,3736,377272,148402,0,0.0,1481736,1818404,4.82,,2307764,525784,0,0,1491
+kbp,Kabiye,bottom15,False,4311,430136,148399,0,70.9,0,0,0.0,NO new commercial-OK English-parallel data found - only sample weight / teacher / NC data can add signal,0,0,0,0,0
+bbj,Ghomala,weak8,False,3540,375594,148565,0,2.4,0,0,0.0,NO new commercial-OK English-parallel data found - only sample weight / teacher / NC data can add signal,0,0,0,0,0
+kon,Kongo,weak8,False,1331,136064,148435,0,92.8,0,7312,0.054,,0,12567,0,0,916
+kea,Kabuverdianu,other,False,1066,112439,149530,0,87.3,1442677,1442677,12.831,,2486689,0,0,0,0
+fat,Fante,other,False,0,0,0,0,,0,0,0.0,NO new commercial-OK English-parallel data found - only sample weight / teacher / NC data can add signal,0,0,0,0,0
+knc,Kanuri,other,False,0,0,0,0,,0,0,0.0,NO new commercial-OK English-parallel data found - only sample weight / teacher / NC data can add signal,0,0,0,0,0
+gaa,Ga,other,False,0,0,0,0,,0,0,0.0,NO new commercial-OK English-parallel data found - only sample weight / teacher / NC data can add signal,0,0,0,0,0
+kab,Kabyle,other,False,39105,3885266,149343,0,14.4,0,0,0.0,NO new commercial-OK English-parallel data found - only sample weight / teacher / NC data can add signal,0,0,0,0,0
+nus,Nuer,weak8,False,90891,9371086,148411,0,0.0,174588,682979,0.073,,257556,695756,0,0,0
+swc,Congo Swahili,no_benchmark,False,53316,6757824,149420,0,88.2,23,23,0.0,,54,0,0,0,0
+lua,Luba-Kasai,other,False,82124,8690290,148786,0,84.1,0,0,0.0,NO new commercial-OK English-parallel data found - only sample weight / teacher / NC data can add signal,0,0,0,0,0
+kqn,Kaonde,other,False,58468,6355468,148448,0,84.9,0,0,0.0,NO new commercial-OK English-parallel data found - only sample weight / teacher / NC data can add signal,0,0,0,0,0
+lun,Lunda,other,False,34525,3768742,148666,0,85.5,0,0,0.0,NO new commercial-OK English-parallel data found - only sample weight / teacher / NC data can add signal,0,0,0,0,0
+iso,Isoko,no_benchmark,False,73114,7347545,148423,0,81.9,0,0,0.0,NO new commercial-OK English-parallel data found - only sample weight / teacher / NC data can add signal,0,0,0,0,0
+loz,Lozi,other,False,116310,12490309,149321,0,83.2,0,0,0.0,NO new commercial-OK English-parallel data found - only sample weight / teacher / NC data can add signal,0,0,0,0,0
+wal,Wolaytta,no_benchmark,False,35349,3773484,149065,0,86.5,0,0,0.0,NO new commercial-OK English-parallel data found - only sample weight / teacher / NC data can add signal,0,0,1241518,0,0
+ach,Acholi,other,False,17534,1861626,148385,0,87.4,0,432077,0.232,,0,710919,0,0,0
+tsc,Tswa,weak8,False,22954,2485201,148456,0,83.2,0,0,0.0,NO new commercial-OK English-parallel data found - only sample weight / teacher / NC data can add signal,0,0,0,0,0
+vmw,Makhuwa,other,False,19613,2132204,148406,0,86.1,0,0,0.0,NO new commercial-OK English-parallel data found - only sample weight / teacher / NC data can add signal,0,0,0,0,0
+kua,Kuanyama,other,False,27744,3101117,148412,0,84.4,1826309,1826309,0.589,,2865976,0,0,0,0
+seh,Sena,other,False,12821,1426424,148440,0,84.2,0,0,0.0,NO new commercial-OK English-parallel data found - only sample weight / teacher / NC data can add signal,0,0,0,0,0
+nyn,Nyankore,other,False,13297,1439508,148670,0,84.6,1337780,1874821,1.302,,2144878,820784,0,0,0
+her,Herero,other,False,2170,234739,148624,0,83.5,1633543,1633543,6.959,,2582768,0,0,0,0
+yao,Yao,no_benchmark,False,12176,1342259,148816,0,82.5,0,0,0.0,NO new commercial-OK English-parallel data found - only sample weight / teacher / NC data can add signal,0,0,0,0,0
+sid,Sidamo,no_benchmark,False,12467,1363870,149106,0,85.7,1294443,1294443,0.949,,2026177,0,0,0,0
+ndc,Ndau,bottom15,False,7511,826303,148432,0,85.7,0,0,0.0,NO new commercial-OK English-parallel data found - only sample weight / teacher / NC data can add signal,0,0,0,0,0
+men,Mende,other,False,0,0,0,0,,0,0,0.0,NO new commercial-OK English-parallel data found - only sample weight / teacher / NC data can add signal,0,0,0,0,0
+kri,Krio,other,False,12902,1313946,148436,0,80.6,0,0,0.0,NO new commercial-OK English-parallel data found - only sample weight / teacher / NC data can add signal,0,0,0,0,0
+luy,Luyia,other,False,0,0,0,0,,0,0,0.0,NO new commercial-OK English-parallel data found - only sample weight / teacher / NC data can add signal,0,0,0,0,0
+ish,Esan,weak8,False,1697,163946,148394,0,78.0,0,0,0.0,NO new commercial-OK English-parallel data found - only sample weight / teacher / NC data can add signal,0,0,0,0,0
+dua,Duala,no_benchmark,False,5027,532596,148619,0,77.3,0,0,0.0,NO new commercial-OK English-parallel data found - only sample weight / teacher / NC data can add signal,0,0,0,0,0
+bas,Basaa,no_benchmark,False,7843,815088,148877,0,82.5,406583,406583,0.499,,651894,0,0,0,0
+wes,Cameroon Pidgin,no_benchmark,False,4170,428204,148912,0,75.9,0,0,0.0,NO new commercial-OK English-parallel data found - only sample weight / teacher / NC data can add signal,0,0,0,0,6090
+tzm,Tamazight,other,False,0,0,0,0,,0,0,0.0,NO new commercial-OK English-parallel data found - only sample weight / teacher / NC data can add signal,0,0,0,0,0
+ful,Fulah,other,False,0,0,0,0,,0,0,0.0,NO new commercial-OK English-parallel data found - only sample weight / teacher / NC data can add signal,0,0,0,0,1149

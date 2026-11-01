@@ -1,0 +1,15 @@
+Loading weights:   0%|          | 0/236 [00:00<?, ?it/s]Loading weights:   0%|          | 1/236 [00:01<04:09,  1.06s/it]Loading weights: 100%|██████████| 236/236 [00:01<00:00, 221.02it/s]
+Loading weights:   0%|          | 0/236 [00:00<?, ?it/s]Loading weights: 100%|██████████| 236/236 [00:00<00:00, 5256.69it/s]
+[34s] loss amh_Ethi: tok/sent 58.0->58.0  nll/token 2.2705->2.2705 nll/char 1.3862->1.3862  identical-tokenisation sentences 100/100 restricted-diff max 0 full-diff max 0.00398
+[78s] loss tir_Ethi: tok/sent 72.0->72.0  nll/token 2.7905->2.7905 nll/char 2.0469->2.0470  identical-tokenisation sentences 100/100 restricted-diff max 0 full-diff max 0.028
+[105s] loss hau_Latn: tok/sent 51.5->51.5  nll/token 1.2173->1.2175 nll/char 0.4145->0.4146  identical-tokenisation sentences 100/100 restricted-diff max 0 full-diff max 0.119
+[144s] loss yor_Latn: tok/sent 67.5->67.5  nll/token 2.1662->2.1753 nll/char 1.0755->1.0800  identical-tokenisation sentences 100/100 restricted-diff max 0 full-diff max 5.79
+[169s] loss swh_Latn: tok/sent 49.2->49.2  nll/token 0.9915->0.9918 nll/char 0.3257->0.3258  identical-tokenisation sentences 100/100 restricted-diff max 0 full-diff max 0.0674
+[200s] loss kin_Latn: tok/sent 55.9->55.9  nll/token 1.3867->1.3872 nll/char 0.4946->0.4948  identical-tokenisation sentences 100/100 restricted-diff max 0 full-diff max 0.109
+[237s] loss ibo_Latn: tok/sent 61.6->61.6  nll/token 1.6922->1.6942 nll/char 0.7098->0.7106  identical-tokenisation sentences 100/100 restricted-diff max 0 full-diff max 1.01
+[274s] loss fon_Latn: tok/sent 80.5->61.9  nll/token 3.9855->6.3268 nll/char 2.0880->2.5498  identical-tokenisation sentences 0/100
+[306s] greedy hau_Latn: token-identical 25/25, text-identical 25/25, chrF++ orig 50.40 swapped 50.40
+[348s] greedy yor_Latn: token-identical 25/25, text-identical 25/25, chrF++ orig 27.14 swapped 27.14
+[372s] greedy swh_Latn: token-identical 25/25, text-identical 25/25, chrF++ orig 58.21 swapped 58.21
+[414s] greedy amh_Ethi: token-identical 25/25, text-identical 25/25, chrF++ orig 14.76 swapped 14.76
+[456s] greedy fon_Latn: token-identical 24/25, text-identical 24/25, chrF++ orig 20.68 swapped 20.68

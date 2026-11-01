@@ -1,0 +1,46 @@
+{
+ "NC_noncommercial": {
+  "amh": {
+   "budget": 2000000,
+   "available": 6322963,
+   "chosen_windows": 1958,
+   "chosen_tokens": 1999991,
+   "synthetic_tokens": 0,
+   "by_source": {
+    "masakhane/AfriDocMT:sentence:Tech": 91628,
+    "masakhane/MAFAND-MT (lafand-mt github) en-amh dev": 77284,
+    "masakhane/AfriDocMT:document:Tech": 390223,
+    "AfriNLP/AfricanFineTranslations-sentences": 91199,
+    "masakhane/AfriDocMT:document_10:Health": 127744,
+    "masakhane/AfriDocMT:document_25:Tech": 224096,
+    "masakhane/AfriDocMT:document_25:Health": 254461,
+    "opus:Tanzil:v1": 97976,
+    "masakhane/AfriDocMT:document_10:Tech": 108135,
+    "masakhane/AfriDocMT:sentence:Health": 98969,
+    "masakhane/AfriDocMT:document:Health": 375867,
+    "aiana94/polynews-parallel": 14656,
+    "opus:TED2020:v1": 47753
+   }
+  },
+  "ibb": {
+   "budget": 1000000,
+   "available": 84361,
+   "chosen_windows": 159,
+   "chosen_tokens": 84361,
+   "synthetic_tokens": 0,
+   "by_source": {
+    "howard-nlp/ibom-mt": 84361
+   }
+  },
+  "efi": {
+   "budget": 1000000,
+   "available": 76713,
+   "chosen_windows": 170,
+   "chosen_tokens": 76713,
+   "synthetic_tokens": 0,
+   "by_source": {
+    "howard-nlp/ibom-mt": 76713
+   }
+  }
+ }
+}

@@ -1,0 +1,21 @@
+[26s] in/text/amh.wiki.txt: 70581 lines, 8192030 chars, 5284702 tokens; word types so far 235193
+[65s] in/text/amh.ft.txt: 78864 lines, 12000153 chars, 7104974 tokens; word types so far 427133
+[66s] in/text/tir.wiki.txt: 1317 lines, 257942 chars, 189632 tokens; word types so far 440207
+[133s] in/text/tir.ft.txt: 111581 lines, 19700056 chars, 13936828 tokens; word types so far 843030
+[178s] merges 500  last count 3771  ጽን
+[192s] merges 1000  last count 2353  ▁በረ
+[199s] merges 1500  last count 1702  ኮች
+[207s] merges 2000  last count 1344  ▁ስለዝኾነ
+[217s] merges 2500  last count 1080  ▁መረ
+[223s] merges 3000  last count 899  ▁መቆ
+[229s] merges 3500  last count 757  ▁ለስ
+[234s] merges 4000  last count 657  ዛረ
+[245s] merges 4500  last count 578  ▁ቅዋም
+[249s] merges 5000  last count 518  ▁ዲዛ
+[252s] merges 5500  last count 467  አቶ
+[255s] merges 6000  last count 421  ቡጥ
+[258s] merges 6500  last count 385  ▁እምነትን
+[260s] merges 7000  last count 352  ካከት
+[263s] merges 7500  last count 325  ▁በማቅረብ
+[265s] merges 8000  last count 300  ▁ንግሥት
+learned 8000 merges; last count 300; wrote out/merges_geez_amh_tir.json

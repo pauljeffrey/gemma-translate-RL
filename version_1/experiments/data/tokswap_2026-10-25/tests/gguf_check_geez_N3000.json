@@ -1,0 +1,15 @@
+{
+ "gguf_vocab_size": 262144,
+ "tokenizer_model": "llama",
+ "new_pieces_equal_tokenizer_json": 3000,
+ "n_new": 3000,
+ "new_piece_types": [
+  1
+ ],
+ "min_score_new": -258504.0,
+ "max_score_new": -255505.0,
+ "min_score_old_pieces": -255504.0,
+ "unchanged_pieces_equal_original_spm": 121602,
+ "n_unchanged": 259144,
+ "all_tokens_equal_tokenizer_json_ids": 262144
+}

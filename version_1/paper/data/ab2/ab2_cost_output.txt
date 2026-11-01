@@ -1,0 +1,8 @@
+rate $1.19/h, cap $9.00 INCLUDING a 15% margin => plan <= $7.83 (6.58 h)
+
+[central]  weak SFT 2.74 h | arm F 0.40 h | arm W 0.42 h | S1 (432 steps) 0.40 h | S1P 0.08 h | evals 0.30 h | hand-offs 0.25 h  =>  4.60 h = $5.48   (x1.15 = $6.30; cap $9.00: OK)
+    optional extension of both RL arms to 98 steps: +0.43 h RL + S1 recomputed (+0.43 h) = $1.02 more
+
+[high]  weak SFT 3.53 h | arm F 0.59 h | arm W 0.66 h | S1 (487 steps) 0.59 h | S1P 0.13 h | evals 0.51 h | hand-offs 0.50 h  =>  6.51 h = $7.75   (x1.15 = $8.91; cap $9.00: OK)
+    optional extension of both RL arms to 98 steps: +0.61 h RL + S1 recomputed (+0.61 h) = $1.46 more
+08fce6c39d954c514a6ee31ec1e5c0ed2f4bdf984a16fe4be32084b0b322f568  /workspace/jobs/ab2/DECISION_RULE.txt

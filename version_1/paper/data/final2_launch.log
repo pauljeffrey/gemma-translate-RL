@@ -1,0 +1,15 @@
+2026-10-22T12:26:29Z [launch-FINAL2] preflight OK
+2026-10-22T13:00:13Z [launch-FINAL2] preflight OK
+2026-10-22T13:00:20Z [launch-FINAL2] RL start (/workspace/jobs/r7/gemma_mt_run2/configs/rl_science_final2.yaml): micro_batch_tokens=24576 micro_batch_seqs=128 
+2026-10-22T13:00:22Z [launch-FINAL2] supervisor started (pidfile /workspace/jobs/r7/runs/final2/supervisor.pid); log /workspace/jobs/r7/logs/rl_FINAL2.log; metrics /workspace/jobs/r7/runs/final2/metrics.jsonl
+2026-10-22T19:38:40Z [launch-FINAL2] LR_SCALE 0.5 written
+2026-10-22T21:22:41Z [launch-FINAL2] exited rc=143: restarting
+2026-10-22T21:23:01Z [launch-FINAL2] RL start (/workspace/jobs/r7/gemma_mt_run2/configs/rl_science_final2.yaml): micro_batch_tokens=24576 micro_batch_seqs=128 
+2026-10-23T03:13:13Z [launch-FINAL2] LR_SCALE 0.75 written
+2026-10-23T04:22:56Z [launch-FINAL2] OOM -> ladder 1
+2026-10-23T04:23:16Z [launch-FINAL2] RL start (/workspace/jobs/r7/gemma_mt_run2/configs/rl_science_final2.yaml): micro_batch_tokens=12288 micro_batch_seqs=64 
+2026-10-23T04:49:17Z [launch-FINAL2] OOM -> ladder 2
+2026-10-23T04:49:37Z [launch-FINAL2] RL start (/workspace/jobs/r7/gemma_mt_run2/configs/rl_science_final2.yaml): micro_batch_tokens=6144 micro_batch_seqs=32 
+2026-10-23T13:42:11Z [launch-FINAL2] WINDDOWN 50 written
+2026-10-23T17:29:10Z [launch-FINAL2] RL finished (rc=0)
+2026-10-23T17:29:10Z [launch-FINAL2] DONE FINAL2

@@ -1,0 +1,36 @@
+Thu Oct 22 05:38:06 UTC 2026 R7 SFT stage started (GO from lead)
+Thu Oct 22 05:39:00 UTC 2026 freed: a2/models/rl2c (sha-identical to final_1433), gemma/rl_prompts_v2 (in bucket data/gemma_rl_prompts_v2.tar.zst), a2/models/africomet_ref (sha-identical to HF cache)
+Thu Oct 22 05:40:49 UTC 2026 started SFT train B_v1 (363 steps) and A (331 steps) concurrently, lr 3e-6; logs r7/logs/sft_*.log
+Thu Oct 22 05:58:23 UTC 2026 B_v1 step 120/362, A step 120/330; val_sci@100 1.2503 / 1.2497 (start 1.7669)
+Thu Oct 22 06:19:58 UTC 2026 started A2W (319 steps) and B_v2_ibom (515 steps) training, lr 3e-6; B_v1/A near end
+Thu Oct 22 06:38:21 UTC 2026 B_v1 and A trained (val_sci 1.198 / 1.203); sweep B_v1 started; B_v2_ibom relaunched after OOM (GPU full)
+Thu Oct 22 06:40:53 UTC 2026 sweep B_v1 done
+Thu Oct 22 06:44:57 UTC 2026 Hub push BLOCKED by the permission classifier (auto mode: external write); scripts/push_sft_variant.py ready; continuing with training/sweeps; see final report
+Thu Oct 22 06:48:00 UTC 2026 sweep B_v1 try 1 incomplete (0 done); retrying in 120 s
+Thu Oct 22 06:53:32 UTC 2026 sweep B_v1 try 2 incomplete (0 done); retrying in 120 s
+Thu Oct 22 06:54:48 UTC 2026 A2W 225/318, B_v2_ibom ~110/514, B_v1 sweep alpha 0.3 done
+Thu Oct 22 07:03:38 UTC 2026 deleted r4/runs/sci_sft/last (mix_v1 SFT, lost the guardrails, numbers recorded in report)
+2026-10-22T07:22:25Z PUSHED repo=<HF_ORG_LEGACY>/gemma-science-translate branch=main folder=sft/B_v1 variant=B_v1 alpha=1.0 commit=a9a95926715da116236192e2747dcb26ab33e1d5
+Thu Oct 22 07:23:10 UTC 2026 sweep A2W started (late)
+2026-10-22T07:23:15Z PUSHED repo=<HF_ORG_LEGACY>/gemma-science-translate branch=main folder=sft/A variant=A alpha=1.0 commit=e14efc0b8ff3e335987e001347b66f7acc901377
+2026-10-22T07:23:59Z PUSHED repo=<HF_ORG_LEGACY>/gemma-science-translate branch=main folder=sft/A2W variant=A2W alpha=1.0 commit=3fd6b42882d59fd429bab465b8ae3bdd72cdcd0d
+Thu Oct 22 07:27:18 UTC 2026 B_v1 sweep complete; sweep A started
+Thu Oct 22 07:27:28 UTC 2026 sweep B_v1 finished
+Thu Oct 22 07:27:37 UTC 2026 B_v1 sweep complete; sweep A started
+Thu Oct 22 07:27:55 UTC 2026 B_v1 guardrails: alpha 0.3 PASS, 0.5 PASS (blend -0.50), 0.7/1.0 FAIL; best sentence chrF++ passing = 0.5 (47.63 vs 45.65). IbomMT-test baseline eval started
+Thu Oct 22 07:29:25 UTC 2026 eval final_1433_ibom (ibom) done
+Thu Oct 22 07:55:02 UTC 2026 partial guardrails: A best passing alpha0.3 (0.5 fails blend -0.50?), A2W alpha0.7 PASS sent 47.97 paper chrF 47.81 fin 92 blend -0.36; B_v2_ibom trained (val_sci 1.188)
+Thu Oct 22 07:58:19 UTC 2026 sweep A2W finished
+Thu Oct 22 08:02:26 UTC 2026 sweep A finished
+Thu Oct 22 08:02:28 UTC 2026 sweep A finished
+Thu Oct 22 08:02:33 UTC 2026 sweep B_v2_ibom started
+Thu Oct 22 08:06:16 UTC 2026 final guardrails: A best=alpha0.3, B_v1 best=alpha0.5 (47.63), A2W best=alpha0.7 (47.97). deleted sft_A/last and sft_B_v1/last (lost comparison). B_v2_ibom sweep running
+Thu Oct 22 08:25:53 UTC 2026 wrote HF dir models/sci_sft_A2W_alpha0.7
+Thu Oct 22 08:26:50 UTC 2026 sweep B_v2_ibom finished
+Thu Oct 22 08:27:58 UTC 2026 eval A2W_a0.7_ibom (ibom) done
+Thu Oct 22 08:28:48 UTC 2026 RL start state REBUILT from models/sci_sft_A2W_alpha0.7 (KL ref stays runs/final_1433). To revert: prepare_initial_state.py --start-model /workspace/sft_build/runs/final_1433 --force
+Thu Oct 22 08:29:33 UTC 2026 RL start state rebuilt (verified): runs/final/last from models/sci_sft_A2W_alpha0.7 (rel L2 vs 2c policy 2.4e-5)
+Thu Oct 22 08:35:56 UTC 2026 AfriScience TEST done for A2W_a0.7 and final_1433
+Thu Oct 22 08:38:18 UTC 2026 eval B_v2_ibom_a0.5_ibom (ibom) done
+Thu Oct 22 08:40:33 UTC 2026 eval B_v2_ibom_a0.7_ibom (ibom) done
+Thu Oct 22 08:42:37 UTC 2026 eval B_v2_ibom_a1.0_ibom (ibom) done

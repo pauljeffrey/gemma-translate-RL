@@ -1,0 +1,39 @@
+DECISION RULE - which languages are "weak" for the specialist continuation (SFT then RL) of the 270M translator
+Agent W1, written 2026-10-26 BEFORE any selection generation was run. Frozen: thresholds, N and seed are not changed after generation.
+Owner instruction (2026-10-26): "use dev-set data to define weak". No FLORES+ devtest, NTREX test, MAFAND test or any other test split is used for
+selection. Devtest numbers already in the repo are quoted only AFTER the selection, to describe the outcome.
+
+1. Population: the 77 RL target languages (gemma_mt.languages.SUPPORTED_RL). Model: gemma-science-translate-final2-step401-Q8_0.gguf
+   (cpu_translate/), llama.cpp llama-server 0.7.0 (build 11669), greedy (temperature 0, top_k 1), max 512 new tokens, one run, English -> X,
+   prompt "<bos><start_of_turn>user\nTranslate the text to {Language}:  {english}<end_of_turn>\n<start_of_turn>model\n" with ONE bos token
+   (the wrapper's literal "<bos>" produced a double bos, fixed), answer "{iso} {translation}".
+
+2. Dev data (three tiers; 100 sentences per language, seed 2026):
+   Tier A  = languages that have a FLORES+ dev file (openlanguagedata/flores_plus dev/<code>.jsonl; Sena = seh_Latn_MZ, Twi = twi_Latn_akua1239):
+             the same 100 sentence ids for every Tier-A language (drawn once with random.Random(2026) from the ids present and non-empty in all Tier-A files).
+   Tier B  = languages with no FLORES+ dev but a SALT dev reference (Sunbird/salt text-all dev: ach, nyn): 100 rows drawn with random.Random(2026).
+   Tier C  = all other languages: NO dev reference exists. They are run on the same 100 FLORES+ dev English sentences, and only the guards of
+             section 4 can be evaluated. They have no chrF++ and cannot be ranked.
+
+3. Metrics per language: chrF++ = sacrebleu CHRF(word_order=2) corpus score, hypothesis (iso tag stripped when it is the expected tag) and reference
+   NFC-normalised; spBLEU = sacrebleu BLEU(tokenize="flores200") (information only).
+   finished  = llama-server stop_type == "eos" (the model closed the turn inside 512 tokens).
+   loop      = hit the 512-token limit, OR the text contains a unit of 1-6 words (or 3-20 characters when the text has no spaces) repeated
+               consecutively at least 4 times.
+   wrong-language = GlotLID v3 (cis-lmu/glotlid model_v3.bin) top-1 label of the translation (tag stripped) is not one of
+               LANGUAGES[iso].glotlid; empty output counts as wrong. Languages with an empty glotlid tuple: rate not available, guard not applied.
+   Rates use the 100 sentences as denominator.
+
+4. Selection (weak = S1 union S2 union S3):
+   S1  Tier A sorted by chrF++ ascending: the 20 lowest are weak. c20 = chrF++ of the 20th lowest, c21 = of the 21st.
+   S2  a Tier B language is weak when its chrF++ < c20 (different domain and size of the sets: reported with that caveat).
+   S3  guard, applied to all 77 languages incl. Tier C: finished rate < 95%, OR loop rate > 5%, OR wrong-language rate > 10% => weak.
+   Tier C languages not tripping a guard are reported as "unmeasured" (neither weak nor shown to be strong).
+
+5. Noise at the cut: 95% percentile bootstrap CI of every scored language's chrF++ over sentences (1,000 resamples, seed 2026; the same resampled
+   sentence indices are used for all Tier-A languages, so ranks are paired). Reported: CI, share of resamples in which the language is among the 20
+   lowest, and the flag "near cut" = the CI contains (c20 + c21) / 2. The flag does not change membership; it is information for the owner.
+
+6. Contamination: the primary ranking uses all 100 sentences. If a dev contamination flag (English sentence / pair seen in SFT) can be built, the
+   ranking is recomputed on the unflagged sentences as a sensitivity check only; the rule above is not changed by it. SFT-token share
+   (reports/data/language_token_proportions_2026-10-25.csv) is an information column and is not used for selection.

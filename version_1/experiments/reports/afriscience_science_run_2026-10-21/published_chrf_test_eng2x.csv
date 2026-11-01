@@ -1,0 +1,73 @@
+system,iso,chrf,bleu,ssa_comet
+NLLB-200-1.3B fine-tuned,amh,45.511,19.28,0.6601
+NLLB-200-1.3B fine-tuned,hau,67.705,46.913,0.6334
+NLLB-200-1.3B fine-tuned,lug,51.507,22.178,0.6995
+NLLB-200-1.3B fine-tuned,nso,64.32,43.306,0.7067
+NLLB-200-1.3B fine-tuned,yor,17.745,5.835,0.6731
+NLLB-200-1.3B fine-tuned,zul,67.23,37.552,0.6599
+NLLB-200-distilled-600M fine-tuned,amh,44.379,18.571,0.6512
+NLLB-200-distilled-600M fine-tuned,hau,66.867,45.414,0.6287
+NLLB-200-distilled-600M fine-tuned,lug,50.618,21.256,0.6946
+NLLB-200-distilled-600M fine-tuned,nso,64.247,43.294,0.7032
+NLLB-200-distilled-600M fine-tuned,yor,17.607,5.797,0.6678
+NLLB-200-distilled-600M fine-tuned,zul,66.277,36.067,0.6572
+M2M100-1.2B fine-tuned,amh,39.017,14.055,0.5966
+M2M100-1.2B fine-tuned,hau,63.146,40.546,0.5976
+M2M100-1.2B fine-tuned,lug,49.476,21.27,0.6596
+M2M100-1.2B fine-tuned,nso,62.37,40.359,0.6798
+M2M100-1.2B fine-tuned,yor,16.597,5.218,0.6449
+M2M100-1.2B fine-tuned,zul,58.391,24.978,0.6189
+NLLB-200-1.3B zero-shot,amh,37.4,12.749,0.6276
+NLLB-200-1.3B zero-shot,hau,59.416,35.804,0.6194
+NLLB-200-1.3B zero-shot,lug,43.188,15.591,0.677
+NLLB-200-1.3B zero-shot,nso,51.434,25.825,0.7074
+NLLB-200-1.3B zero-shot,yor,13.025,3.415,0.6189
+NLLB-200-1.3B zero-shot,zul,60.134,27.162,0.6596
+Gemma2-9B LoRA r64 fine-tuned,amh,39.656,14.968,0.5403
+Gemma2-9B LoRA r64 fine-tuned,hau,58.843,34.528,0.5053
+Gemma2-9B LoRA r64 fine-tuned,lug,50.08,21.492,0.6267
+Gemma2-9B LoRA r64 fine-tuned,nso,61.615,39.516,0.6281
+Gemma2-9B LoRA r64 fine-tuned,yor,41.574,16.238,0.589
+Gemma2-9B LoRA r64 fine-tuned,zul,50.229,17.596,0.484
+GPT-5.4 10-shot,amh,43.804,13.909,0.6668
+GPT-5.4 10-shot,hau,62.977,33.037,0.6449
+GPT-5.4 10-shot,lug,56.366,18.015,0.7066
+GPT-5.4 10-shot,nso,59.452,31.898,0.7077
+GPT-5.4 10-shot,yor,28.095,7.382,0.6788
+GPT-5.4 10-shot,zul,68.873,29.438,0.6612
+Gemini-3.1-Flash-Lite 10-shot,amh,41.551,14.686,0.6775
+Gemini-3.1-Flash-Lite 10-shot,hau,61.13,32.222,0.648
+Gemini-3.1-Flash-Lite 10-shot,lug,49.543,16.36,0.7031
+Gemini-3.1-Flash-Lite 10-shot,nso,55.941,31.123,0.7009
+Gemini-3.1-Flash-Lite 10-shot,yor,22.949,6.54,0.6781
+Gemini-3.1-Flash-Lite 10-shot,zul,61.83,26.589,0.6594
+doc: GPT-5.4 1-shot,amh,42.826,12.314,0.3937
+doc: GPT-5.4 1-shot,hau,66.796,32.866,0.3684
+doc: GPT-5.4 1-shot,lug,59.452,18.426,0.5287
+doc: GPT-5.4 1-shot,nso,64.893,33.373,0.5032
+doc: GPT-5.4 1-shot,yor,28.713,6.684,0.467
+doc: GPT-5.4 1-shot,zul,68.551,28.631,0.4246
+doc: GPT-5.4 0-shot,amh,26.029,5.107,0.4002
+doc: GPT-5.4 0-shot,hau,66.149,31.838,0.3915
+doc: GPT-5.4 0-shot,lug,58.951,16.983,0.5356
+doc: GPT-5.4 0-shot,nso,63.271,31.357,0.5036
+doc: GPT-5.4 0-shot,yor,19.76,4.869,0.4673
+doc: GPT-5.4 0-shot,zul,66.062,28.113,0.4251
+doc: Gemini-3.1-Flash-Lite 1-shot,amh,45.091,16.307,0.4132
+doc: Gemini-3.1-Flash-Lite 1-shot,hau,64.266,36.207,0.3944
+doc: Gemini-3.1-Flash-Lite 1-shot,lug,50.759,17.269,0.5158
+doc: Gemini-3.1-Flash-Lite 1-shot,nso,55.791,26.978,0.4831
+doc: Gemini-3.1-Flash-Lite 1-shot,yor,17.497,4.37,0.4422
+doc: Gemini-3.1-Flash-Lite 1-shot,zul,62.909,28.638,0.4488
+doc: TranslateGemma-12B 1-shot,amh,20.418,3.356,0.3687
+doc: TranslateGemma-12B 1-shot,hau,33.306,10.704,0.3093
+doc: TranslateGemma-12B 1-shot,lug,15.609,1.728,0.4046
+doc: TranslateGemma-12B 1-shot,nso,21.454,3.401,0.4105
+doc: TranslateGemma-12B 1-shot,yor,7.043,0.814,0.437
+doc: TranslateGemma-12B 1-shot,zul,32.698,5.742,0.3636
+doc: Gemma2-9B-IT 1-shot,amh,3.773,0.07,0.339
+doc: Gemma2-9B-IT 1-shot,hau,30.898,7.919,0.299
+doc: Gemma2-9B-IT 1-shot,lug,8.198,0.184,0.3592
+doc: Gemma2-9B-IT 1-shot,nso,10.386,0.449,0.3381
+doc: Gemma2-9B-IT 1-shot,yor,2.745,0.026,0.313
+doc: Gemma2-9B-IT 1-shot,zul,12.622,0.846,0.2934

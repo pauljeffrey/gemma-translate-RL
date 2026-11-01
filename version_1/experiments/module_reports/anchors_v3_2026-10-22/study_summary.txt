@@ -1,0 +1,23 @@
+langs ['ach', 'bas', 'dag', 'her', 'ibb', 'kea', 'kon', 'kri', 'nbl', 'ndc', 'nyn', 'sid', 'tsc']
+variant | detector | OOD fp median / p75 / max (graded)  | OOD sat(>=0.9) median / max | rel-heldout fp median
+naive_v2       copy  n=13  fp med 0.016 p75 0.023 max 0.173 | sat med 0.016 max 0.173 | rel fp med 0.000
+naive_v2       func  n=13  fp med 0.346 p75 0.572 max 0.795 | sat med 0.030 max 0.574 | rel fp med 0.016
+naive_v2       pad   n=13  fp med 0.469 p75 0.642 max 0.904 | sat med 0.145 max 0.880 | rel fp med 0.006
+v3_lam0.0      func  n=13  fp med 0.218 p75 0.432 max 0.781 | sat med 0.010 max 0.077 | rel fp med 0.026
+v3_lam0.0      pad   n=13  fp med 0.049 p75 0.183 max 0.785 | sat med 0.000 max 0.011 | rel fp med 0.005
+v3_lam1.0      func  n=13  fp med 0.157 p75 0.249 max 0.661 | sat med 0.003 max 0.046 | rel fp med 0.014
+v3_lam1.0      pad   n=13  fp med 0.029 p75 0.115 max 0.785 | sat med 0.000 max 0.011 | rel fp med 0.004
+v3_lam2.0      func  n=13  fp med 0.148 p75 0.233 max 0.501 | sat med 0.003 max 0.046 | rel fp med 0.011
+v3_lam2.0      pad   n=13  fp med 0.003 p75 0.030 max 0.785 | sat med 0.000 max 0.011 | rel fp med 0.000
+v3_lam3.0      func  n=13  fp med 0.148 p75 0.188 max 0.434 | sat med 0.003 max 0.046 | rel fp med 0.011
+v3_lam3.0      pad   n=13  fp med 0.001 p75 0.018 max 0.784 | sat med 0.000 max 0.011 | rel fp med 0.000
+v3_lam4.0      func  n=13  fp med 0.147 p75 0.157 max 0.415 | sat med 0.003 max 0.046 | rel fp med 0.011
+v3_lam4.0      pad   n=13  fp med 0.000 p75 0.012 max 0.764 | sat med 0.000 max 0.011 | rel fp med 0.000
+v3_copy0.15x1.25 copy  n=13  fp med 0.005 p75 0.008 max 0.109 | sat med 0.005 max 0.109 | rel fp med 0.000
+v3_copy0.15x1.5 copy  n=13  fp med 0.005 p75 0.005 max 0.086 | sat med 0.005 max 0.086 | rel fp med 0.000
+v3_copy0.2x1.5 copy  n=13  fp med 0.002 p75 0.004 max 0.060 | sat med 0.002 max 0.060 | rel fp med 0.000
+
+func per-language OOD fp at lam 0/2/4 : {'ach': [0.218, 0.176, 0.153], 'bas': [0.101, 0.075, 0.05], 'dag': [0.254, 0.233, 0.233], 'her': [0.281, 0.147, 0.147], 'ibb': [0.781, 0.501, 0.415], 'kea': [0.447, 0.123, 0.068], 'kon': [0.024, 0.009, 0.005], 'kri': [0.508, 0.253, 0.13], 'nbl': [0.013, 0.004, 0.004], 'ndc': [0.217, 0.148, 0.148], 'nyn': [0.167, 0.157, 0.157], 'sid': [0.432, 0.398, 0.378], 'tsc': [0.168, 0.084, 0.037]}
+pad per-language OOD fp at lam 0/2/4 : {'ach': [0.031, 0.027, 0.012], 'bas': [0.699, 0.246, 0.032], 'dag': [0.008, 0.003, 0], 'her': [0.012, 0, 0], 'ibb': [0.049, 0.03, 0.013], 'kea': [0.183, 0.015, 0], 'kon': [0.255, 0.034, 0], 'kri': [0, 0, 0], 'nbl': [0.004, 0.001, 0], 'ndc': [0.006, 0.001, 0], 'nyn': [0.123, 0.0, 0], 'sid': [0.785, 0.785, 0.764], 'tsc': [0.103, 0, 0]}
+copy {'ach': [0.005, 0.004], 'bas': [0.036, 0.03], 'dag': [0.109, 0.06], 'her': [0.005, 0.002], 'ibb': [0.008, 0.002], 'kea': [0.006, 0.004], 'kon': [0.003, 0.002], 'kri': [0, 0], 'nbl': [0.001, 0], 'ndc': [0.003, 0.001], 'nyn': [0.007, 0.002], 'sid': [0.079, 0.028], 'tsc': [0, 0]}
+naive {'ach': [0.01, 0.1, 0.36], 'bas': [0.05, 0.08, 0.47], 'dag': [0.17, 0.35, 0.25], 'her': [0.02, 0.61, 0.64], 'ibb': [0.02, 0.57, 0.0], 'kea': [0.02, 0.47, 0], 'kon': [0.0, 0.03, 0.24], 'kri': [0, 0.27, 0.48], 'nbl': [0.0, 0.07, 0.05], 'ndc': [0.0, 0.79, 0.9], 'nyn': [0.02, 0.5, 0.65], 'sid': [0.17, 0.69, 0.76], 'tsc': [0, 0.07, 0.53]}

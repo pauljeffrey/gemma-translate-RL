@@ -1,0 +1,5 @@
+scenario,freeable,share_of_vocab,of_which_unused_tail,of_which_other_scripts,kept
+S1 strict: keep Latin + Ethiopic + common + byte + markup + specials (English/French/Ge'ez only),98275,0.3749,6143,92132,163869
+"S2 + Arabic (Arabic-script source text, assumption)",89948,0.3431,6143,83805,172196
+S3 + Arabic + Greek (math/science symbols as letters),88453,0.3374,6143,82310,173691
+S4 + Arabic + Greek + Cyrillic + Hebrew (names / loanwords in running text),74255,0.2833,6143,68112,187889

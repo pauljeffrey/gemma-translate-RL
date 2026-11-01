@@ -1,0 +1,79 @@
+% Short version of "Small but Sabi" (main text 9 pages + references + appendix of at most 4 pages).
+% Layout: generic two-column 10 pt article, A4, 2 cm margins (ACL-like). The venue template can be swapped: keep sections/*.tex and refs.bib,
+% replace only this file (preamble, title block, bibliography style). The body uses only \section, \cite*/natbib, booktabs tables, \includegraphics,
+% \begin{table*}/\begin{figure*} for full-width floats and the macros of macros.tex.
+% Compile: tectonic -X compile main.tex   (or xelatex/pdflatex + bibtex)
+\documentclass[10pt,a4paper,twocolumn]{article}
+\usepackage[a4paper,margin=2cm,columnsep=0.65cm]{geometry}
+\usepackage{mathptmx}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\usepackage{booktabs,array}
+\usepackage[table]{xcolor}
+\usepackage{caption}
+\captionsetup{font=small,labelfont=bf,skip=3pt}
+\usepackage{enumitem}
+\setlist{itemsep=1pt,topsep=2pt,parsep=0pt,leftmargin=1.3em}
+\usepackage[authoryear,round]{natbib}
+\setlength{\bibsep}{1pt}
+\renewcommand{\bibfont}{\small}
+\usepackage[colorlinks=true,linkcolor=blue!50!black,citecolor=blue!50!black,urlcolor=blue!50!black]{hyperref}
+\usepackage{url}
+\usepackage[compact]{titlesec}
+\titlespacing*{\section}{0pt}{7pt plus 2pt minus 1pt}{3pt plus 1pt}
+\titlespacing*{\subsection}{0pt}{5pt plus 2pt minus 1pt}{2pt plus 1pt}
+\titleformat{\section}{\normalfont\large\bfseries}{\thesection}{0.6em}{}
+\titleformat{\subsection}{\normalfont\normalsize\bfseries}{\thesubsection}{0.6em}{}
+\setlength{\parskip}{0pt}
+\setlength{\parindent}{1em}
+\setlength{\textfloatsep}{8pt plus 2pt minus 2pt}
+\setlength{\floatsep}{6pt plus 2pt minus 2pt}
+\setlength{\intextsep}{6pt plus 2pt minus 2pt}
+\sloppy
+\emergencystretch=2em
+\input{macros}
+
+\title{Small but Sabi: How Far Can Reinforcement Learning Take a 270M Translator into 77 African Languages?}
+\author{Jeffrey Otoibhi\\ Aletheia AI}
+\date{Short version, 2026-10-26}
+
+\begin{document}
+\twocolumn[
+  \begin{center}
+    {\Large\bfseries Small but Sabi: How Far Can Reinforcement Learning\\ Take a 270M Translator into 77 African Languages?\par}
+    \vspace{6pt}
+    {\large Jeffrey Otoibhi\\ Aletheia AI\par}
+    \vspace{2pt}
+    {\small Short version of 2026-10-26 (revised after the contamination audit). Full technical report: \texttt{paper\_full.pdf} (the long version).\par}
+    \vspace{6pt}
+  \end{center}
+  \begin{center}
+  \begin{minipage}{0.88\textwidth}
+  \small
+  \begin{center}\textbf{Abstract}\end{center}\vspace{-3pt}
+  \input{sections/00_abstract}
+  \end{minipage}
+  \end{center}
+  \vspace{8pt}
+]
+
+\input{sections/01_intro}
+\input{sections/02_related}
+\input{sections/03_setup}
+\input{sections/04_method}
+\input{sections/05_results}
+\input{sections/06_analysis}
+\input{sections/07_limitations}
+\input{sections/08_ethics}
+\input{sections/09_conclusion}
+\label{endmain}
+
+\bibliographystyle{plainnat}
+\bibliography{refs}
+\label{endrefs}
+
+\appendix
+\input{sections/10_appendix}
+\label{endapp}
+\end{document}

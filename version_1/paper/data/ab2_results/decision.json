@@ -1,0 +1,33 @@
+{
+ "mde_chrf": 1.1879393923933999,
+ "preconditions": {
+  "P1_gap0>=3": true,
+  "P2_gain_F_CI_above_0": true,
+  "P3_W0_finished>=60%": true
+ },
+ "verdict_A": "SUPPORT",
+ "verdict_B": "RL BETTER than continued SFT (both controls)",
+ "notes": [],
+ "replication_gain_W_CI_above_0": {
+  "NTREX no_pair": true,
+  "MAFAND no_pair": true,
+  "SMOL no_pair": true
+ },
+ "neural_ref_gain_W_CI_above_0": {
+  "ssa_ref": true,
+  "afri_ref": true
+ },
+ "common_finished_gain_W_CI_above_0": true,
+ "languages_with_gain_W_CI_above_0": "4/4",
+ "survival": [
+  1.2874562714029356,
+  1.1381921211850736,
+  1.4517043693963148
+ ],
+ "may_say_RL_replaces_SFT": false,
+ "may_say_W_RL_reaches_F0": false,
+ "verdict_B_parts": {
+  "RL - S1 = W_RL - W_S1": "RL better",
+  "RL - S1P = W_RL - W_S1P": "RL better"
+ }
+}

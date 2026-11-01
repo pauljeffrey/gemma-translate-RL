@@ -1,0 +1,337 @@
+a,b,bench,scheme,group,n_lang,n_rows,indicator,label,mean_a,mean_b,diff_b_minus_a,ci_lo,ci_hi,lang_ci_lo,lang_ci_hi,margin,verdict,negligible,langs_b_better,langs_b_worse
+live250,final2,flores_plus,all_languages,all,44,42680,unfinished,unfinished (no end token in budget),0,0,0,0,0,0,0,0.005,equal,True,0,0
+live250,final2,flores_plus,all_languages,all,44,42680,empty,empty output,0,0,0,0,0,0,0,0.001,equal,True,0,0
+live250,final2,flores_plus,all_languages,all,44,42680,lid_wrong,"wrong language (GlotLID, where the guard is on)",0.00401192,0.00403115,1.92333e-05,-0.000409229,0.000427723,-0.00027289,0.000288727,0.005,equal,True,8,10
+live250,final2,flores_plus,all_languages,all,44,42680,jacc_copy,"copy of source, Jaccard >= 0.9 (hard class of both rewards)",0,0,0,0,0,0,0,0.001,equal,True,0,0
+live250,final2,flores_plus,all_languages,all,44,42680,degenerate,"degenerate (v1 repetition rule, hard class of both rewards)",0.000314954,0.00035987,4.49156e-05,-0.000157204,0.000247036,-0.00020212,0.000449156,0.005,equal,True,5,2
+live250,final2,flores_plus,all_languages,all,44,42680,len_bad,"length ratio outside [0.2, 5] (hard class of both rewards)",0,2.24578e-05,2.24578e-05,0,6.73733e-05,0,6.73733e-05,0.005,equal,True,0,1
+live250,final2,flores_plus,all_languages,all,44,42680,copy_flag,substring copy of the source above the human threshold (anchors v3),0.0176772,0.017273,-0.000404107,-0.00092418,0.000111434,-0.000965685,9.09162e-05,0.005,equal,True,14,12
+live250,final2,flores_plus,all_languages,all,44,42680,copy_frac,"copied fraction of the source (verbatim runs, mean)",0.0050141,0.00492313,-9.09755e-05,-0.00021529,3.38132e-05,-0.000237683,3.54293e-05,0.002,equal,True,15,20
+live250,final2,flores_plus,all_languages,all,44,42680,num_loss,numbers of the source missing in the output (share),0.048483,0.050845,0.002362,-0.000680172,0.00535055,-0.000444106,0.00537047,0.005,equal,True,14,25
+live250,final2,flores_plus,all_languages,all,44,42680,name_loss,names of the source missing in the output (share),0.33109,0.335733,0.00464343,0.00292313,0.0062147,0.00238719,0.00671556,0.005,final2 worse,True,10,34
+live250,final2,flores_plus,all_languages,all,44,42680,ent2_pen,graded entity loss (anchors v3 entity2 units; rows with entities),0.0891145,0.0921201,0.00300562,0.00148092,0.00454512,0.00161154,0.00456799,0.005,final2 worse,True,10,34
+live250,final2,flores_plus,all_languages,all,44,42680,func_flag,stop-word profile deviates (deficit > 0),0.0503431,0.0510645,0.000721399,-0.000989054,0.00238286,-0.00102862,0.00278843,0.005,equal,True,13,14
+live250,final2,flores_plus,all_languages,all,44,42680,func_def,stop-word profile deficit (0..1),0.0107729,0.0107229,-4.99948e-05,-0.000497221,0.000413455,-0.000612193,0.000435263,0.002,equal,True,18,16
+live250,final2,flores_plus,all_languages,all,44,42680,func_sat,stop-word profile saturated (deficit >= 0.9),0.000512147,0.000484434,-2.77128e-05,-0.000240343,0.000196865,-0.000381782,0.000314409,0.001,equal,True,2,3
+live250,final2,flores_plus,all_languages,all,44,42680,pad_flag,padding / low type-token ratio (deficit > 0),0.089483,0.0964747,0.00699166,0.00480568,0.00918105,0.00426969,0.0102191,0.005,final2 worse,False,10,31
+live250,final2,flores_plus,all_languages,all,44,42680,pad_def,padding deficit (0..1),0.0183683,0.0206296,0.00226135,0.00169801,0.00294716,0.000811682,0.00399425,0.002,final2 worse,False,14,30
+live250,final2,flores_plus,all_languages,all,44,42680,pad_sat,padding saturated (deficit >= 0.9),0.000506206,0.000786022,0.000279816,2.06461e-05,0.000583902,-0.000179662,0.00104368,0.001,final2 worse,True,4,4
+live250,final2,flores_plus,all_languages,all,44,42680,rep_flag,repetition above the human limit (deficit > 0),0.111342,0.117164,0.00582235,0.00322297,0.00840242,0.00226163,0.00989298,0.005,final2 worse,False,13,29
+live250,final2,flores_plus,all_languages,all,44,42680,rep_def,repetition severity (0..1),0.0298413,0.0326645,0.00282325,0.00195799,0.00371396,0.00127725,0.00482529,0.002,final2 worse,False,14,30
+live250,final2,flores_plus,all_languages,all,44,42680,rep4,share of repeated word 4-grams (mean),0.00648774,0.00714532,0.000657577,0.000427727,0.000899655,0.00022162,0.00128869,0.002,final2 worse,True,15,29
+live250,final2,flores_plus,all_languages,all,44,42680,pen_total,penalty the final reward would subtract (reward units),0.0453115,0.0485165,0.00320505,0.00221512,0.00428816,0.000934517,0.00609236,0.005,final2 worse,True,18,26
+live250,final2,flores_plus,tier,strong,16,14723,unfinished,unfinished (no end token in budget),0,0,0,0,0,0,0,0.005,equal,True,0,0
+live250,final2,flores_plus,tier,strong,16,14723,empty,empty output,0,0,0,0,0,0,0,0.001,equal,True,0,0
+live250,final2,flores_plus,tier,strong,16,14723,lid_wrong,"wrong language (GlotLID, where the guard is on)",0.00442458,0.00423044,-0.000194144,-0.000884885,0.000446106,-0.000830202,0.000309528,0.005,equal,True,3,2
+live250,final2,flores_plus,tier,strong,16,14723,jacc_copy,"copy of source, Jaccard >= 0.9 (hard class of both rewards)",0,0,0,0,0,0,0,0.001,equal,True,0,0
+live250,final2,flores_plus,tier,strong,16,14723,degenerate,"degenerate (v1 repetition rule, hard class of both rewards)",0.000123518,6.17589e-05,-6.17589e-05,-0.000185277,0,-0.000185277,0,0.005,equal,True,1,0
+live250,final2,flores_plus,tier,strong,16,14723,len_bad,"length ratio outside [0.2, 5] (hard class of both rewards)",0,0,0,0,0,0,0,0.005,equal,True,0,0
+live250,final2,flores_plus,tier,strong,16,14723,copy_flag,substring copy of the source above the human threshold (anchors v3),0.0131037,0.0133511,0.000247402,-0.000189472,0.000690149,-0.000123518,0.000680448,0.005,equal,True,2,4
+live250,final2,flores_plus,tier,strong,16,14723,copy_frac,"copied fraction of the source (verbatim runs, mean)",0.00367341,0.003749,7.55813e-05,-3.53025e-05,0.000207274,-4.05728e-05,0.000240592,0.002,equal,True,3,7
+live250,final2,flores_plus,tier,strong,16,14723,num_loss,numbers of the source missing in the output (share),0.0282665,0.0287924,0.000525881,-0.00203717,0.00281914,-0.00215754,0.00333098,0.005,equal,True,5,6
+live250,final2,flores_plus,tier,strong,16,14723,name_loss,names of the source missing in the output (share),0.308687,0.310042,0.00135454,-0.00124105,0.00332678,-0.00184332,0.00380734,0.005,equal,True,5,11
+live250,final2,flores_plus,tier,strong,16,14723,ent2_pen,graded entity loss (anchors v3 entity2 units; rows with entities),0.0951515,0.0964431,0.00129163,0.000133626,0.00238186,0.000212875,0.00247828,0.005,final2 worse,True,4,12
+live250,final2,flores_plus,tier,strong,16,14723,func_flag,stop-word profile deviates (deficit > 0),0.0185567,0.0184023,-0.000154307,-0.00122077,0.000901427,-0.00142274,0.00135942,0.005,equal,True,6,3
+live250,final2,flores_plus,tier,strong,16,14723,func_def,stop-word profile deficit (0..1),0.00321793,0.00295585,-0.000262082,-0.00060272,3.68447e-05,-0.000630397,-2.5899e-05,0.002,equal,True,9,3
+live250,final2,flores_plus,tier,strong,16,14723,func_sat,stop-word profile saturated (deficit >= 0.9),0.000201615,6.36456e-05,-0.000137969,-0.000413907,0,-0.000413907,0,0.001,equal,True,1,0
+live250,final2,flores_plus,tier,strong,16,14723,pad_flag,padding / low type-token ratio (deficit > 0),0.0306042,0.0329865,0.00238226,0.000686255,0.00412185,0.000864526,0.00392794,0.005,final2 worse,True,3,10
+live250,final2,flores_plus,tier,strong,16,14723,pad_def,padding deficit (0..1),0.00411265,0.00439634,0.000283687,-3.40468e-05,0.000609301,5.3718e-05,0.000522389,0.002,equal,True,7,9
+live250,final2,flores_plus,tier,strong,16,14723,pad_sat,padding saturated (deficit >= 0.9),0,0,0,0,0,0,0,0.001,equal,True,0,0
+live250,final2,flores_plus,tier,strong,16,14723,rep_flag,repetition above the human limit (deficit > 0),0.0476826,0.0484007,0.000718074,-0.00168551,0.00302369,-0.0018158,0.00315633,0.005,equal,True,5,9
+live250,final2,flores_plus,tier,strong,16,14723,rep_def,repetition severity (0..1),0.00945024,0.00993224,0.000482001,-0.000116095,0.00108833,-0.000216331,0.00117615,0.002,equal,True,7,9
+live250,final2,flores_plus,tier,strong,16,14723,rep4,share of repeated word 4-grams (mean),0.00226823,0.00236094,9.27109e-05,-7.7423e-05,0.000252766,-3.87326e-05,0.000266442,0.002,equal,True,8,8
+live250,final2,flores_plus,tier,strong,16,14723,pen_total,penalty the final reward would subtract (reward units),0.00911057,0.00925739,0.000146818,-0.00013242,0.000450776,-0.000115752,0.000472397,0.005,equal,True,10,6
+live250,final2,flores_plus,tier,weak,13,12801,unfinished,unfinished (no end token in budget),0,0,0,0,0,0,0,0.005,equal,True,0,0
+live250,final2,flores_plus,tier,weak,13,12801,empty,empty output,0,0,0,0,0,0,0,0.001,equal,True,0,0
+live250,final2,flores_plus,tier,weak,13,12801,lid_wrong,"wrong language (GlotLID, where the guard is on)",0.00152022,0.00167224,0.000152022,-0.000380055,0.000760109,-0.000153922,0.000456066,0.005,equal,True,2,4
+live250,final2,flores_plus,tier,weak,13,12801,jacc_copy,"copy of source, Jaccard >= 0.9 (hard class of both rewards)",0,0,0,0,0,0,0,0.001,equal,True,0,0
+live250,final2,flores_plus,tier,weak,13,12801,degenerate,"degenerate (v1 repetition rule, hard class of both rewards)",0.000456066,0.000152022,-0.000304044,-0.000684099,7.60109e-05,-0.000684099,7.60109e-05,0.005,equal,True,4,1
+live250,final2,flores_plus,tier,weak,13,12801,len_bad,"length ratio outside [0.2, 5] (hard class of both rewards)",0,0,0,0,0,0,0,0.005,equal,True,0,0
+live250,final2,flores_plus,tier,weak,13,12801,copy_flag,substring copy of the source above the human threshold (anchors v3),0.0221603,0.0220842,-7.60109e-05,-0.00129219,0.000988142,-0.00129219,0.000912131,0.005,equal,True,4,6
+live250,final2,flores_plus,tier,weak,13,12801,copy_frac,"copied fraction of the source (verbatim runs, mean)",0.0056266,0.00566468,3.80728e-05,-0.000240189,0.00028498,-0.000197374,0.000263399,0.002,equal,True,3,8
+live250,final2,flores_plus,tier,weak,13,12801,num_loss,numbers of the source missing in the output (share),0.0768786,0.084069,0.00719047,-0.000941309,0.0151698,0.00103398,0.0133461,0.005,equal,False,2,11
+live250,final2,flores_plus,tier,weak,13,12801,name_loss,names of the source missing in the output (share),0.39959,0.406631,0.0070411,0.00338898,0.0109029,0.00279143,0.0116744,0.005,final2 worse,False,2,11
+live250,final2,flores_plus,tier,weak,13,12801,ent2_pen,graded entity loss (anchors v3 entity2 units; rows with entities),0.0830445,0.0888173,0.00577284,0.00154655,0.0103183,0.00267267,0.00968143,0.005,final2 worse,False,1,12
+live250,final2,flores_plus,tier,weak,13,12801,func_flag,stop-word profile deviates (deficit > 0),0.0889488,0.0905922,0.00164343,-0.00281313,0.0060534,-0.00325054,0.00752508,0.005,equal,True,4,6
+live250,final2,flores_plus,tier,weak,13,12801,func_def,stop-word profile deficit (0..1),0.0207448,0.0207503,5.43392e-06,-0.00114183,0.00121857,-0.00171486,0.00132522,0.002,equal,True,3,7
+live250,final2,flores_plus,tier,weak,13,12801,func_sat,stop-word profile saturated (deficit >= 0.9),0.000953203,0.000573148,-0.000380055,-0.000912131,7.60109e-05,-0.0013682,0.000228033,0.001,equal,True,1,1
+live250,final2,flores_plus,tier,weak,13,12801,pad_flag,padding / low type-token ratio (deficit > 0),0.160249,0.172522,0.0122727,0.00661477,0.018222,0.00570067,0.0185467,0.005,final2 worse,False,4,9
+live250,final2,flores_plus,tier,weak,13,12801,pad_def,padding deficit (0..1),0.0347425,0.0382271,0.0034846,0.0019381,0.00518927,0.000555456,0.00687516,0.002,final2 worse,False,3,10
+live250,final2,flores_plus,tier,weak,13,12801,pad_sat,padding saturated (deficit >= 0.9),0.000649159,0.000380055,-0.000269104,-0.000801181,0.000228033,-0.000766241,0.000152895,0.001,equal,True,4,2
+live250,final2,flores_plus,tier,weak,13,12801,rep_flag,repetition above the human limit (deficit > 0),0.192539,0.202287,0.0097478,0.00343781,0.016199,0.00110048,0.0203133,0.005,final2 worse,False,5,8
+live250,final2,flores_plus,tier,weak,13,12801,rep_def,repetition severity (0..1),0.0532347,0.0579554,0.00472076,0.00241882,0.00716966,0.00135722,0.00992314,0.002,final2 worse,False,2,11
+live250,final2,flores_plus,tier,weak,13,12801,rep4,share of repeated word 4-grams (mean),0.0113347,0.012257,0.000922298,0.000386153,0.00153468,0.00012624,0.00206706,0.002,final2 worse,True,3,10
+live250,final2,flores_plus,tier,weak,13,12801,pen_total,penalty the final reward would subtract (reward units),0.0945116,0.101236,0.0067248,0.00391591,0.00971392,0.00175597,0.0141142,0.005,final2 worse,False,2,11
+live250,final2,flores_plus,tier,mid,13,13132,unfinished,unfinished (no end token in budget),0,0,0,0,0,0,0,0.005,equal,True,0,0
+live250,final2,flores_plus,tier,mid,13,13132,empty,empty output,0,0,0,0,0,0,0,0.001,equal,True,0,0
+live250,final2,flores_plus,tier,mid,13,13132,lid_wrong,"wrong language (GlotLID, where the guard is on)",0.00471268,0.00471268,0,-0.00083612,0.00083612,-0.000380055,0.000456066,0.005,equal,True,3,2
+live250,final2,flores_plus,tier,mid,13,13132,jacc_copy,"copy of source, Jaccard >= 0.9 (hard class of both rewards)",0,0,0,0,0,0,0,0.001,equal,True,0,0
+live250,final2,flores_plus,tier,mid,13,13132,degenerate,"degenerate (v1 repetition rule, hard class of both rewards)",7.78574e-05,7.78574e-05,0,0,0,0,0,0.005,equal,True,0,0
+live250,final2,flores_plus,tier,mid,13,13132,len_bad,"length ratio outside [0.2, 5] (hard class of both rewards)",0,0,0,0,0,0,0,0.005,equal,True,0,0
+live250,final2,flores_plus,tier,mid,13,13132,copy_flag,substring copy of the source above the human threshold (anchors v3),0.0169818,0.0159937,-0.000988142,-0.00189847,-7.97038e-05,-0.00197628,-0.000152022,0.005,final2 better,True,6,2
+live250,final2,flores_plus,tier,mid,13,13132,copy_frac,"copied fraction of the source (verbatim runs, mean)",0.00554987,0.0052864,-0.000263476,-0.000478592,-5.01556e-05,-0.000496861,-5.2577e-05,0.002,final2 better,True,7,5
+live250,final2,flores_plus,tier,mid,13,13132,num_loss,numbers of the source missing in the output (share),0.049681,0.0492818,-0.000399245,-0.00575174,0.0047262,-0.00616863,0.00584905,0.005,equal,True,7,6
+live250,final2,flores_plus,tier,mid,13,13132,name_loss,names of the source missing in the output (share),0.302317,0.306349,0.00403125,0.00116988,0.00674798,0.00144914,0.00652778,0.005,final2 worse,True,3,10
+live250,final2,flores_plus,tier,mid,13,13132,ent2_pen,graded entity loss (anchors v3 entity2 units; rows with entities),0.0924966,0.0941121,0.00161541,-0.000870885,0.00385951,-0.00058802,0.00418359,0.005,equal,True,5,8
+live250,final2,flores_plus,tier,mid,13,13132,func_flag,stop-word profile deviates (deficit > 0),0.0301003,0.0297203,-0.000380055,-0.00258437,0.00167224,-0.00243235,0.00159623,0.005,equal,True,3,3
+live250,final2,flores_plus,tier,mid,13,13132,func_def,stop-word profile deficit (0..1),0.00493935,0.00494969,1.03369e-05,-0.000412889,0.0005009,-0.000569672,0.000697982,0.002,equal,True,6,4
+live250,final2,flores_plus,tier,mid,13,13132,func_sat,stop-word profile saturated (deficit >= 0.9),0.000228033,0.000380055,0.000152022,-7.60109e-05,0.000456066,0,0.000456066,0.001,equal,True,0,1
+live250,final2,flores_plus,tier,mid,13,13132,pad_flag,padding / low type-token ratio (deficit > 0),0.0645881,0.0687148,0.00412675,0.000751424,0.00771985,0.00116232,0.00716719,0.005,final2 worse,True,3,10
+live250,final2,flores_plus,tier,mid,13,13132,pad_def,padding deficit (0..1),0.0104332,0.0112329,0.000799702,0.000101172,0.00151973,0.000212886,0.00144849,0.002,final2 worse,True,4,9
+live250,final2,flores_plus,tier,mid,13,13132,pad_sat,padding saturated (deficit >= 0.9),7.60109e-05,7.60109e-05,0,0,0,0,0,0.001,equal,True,0,0
+live250,final2,flores_plus,tier,mid,13,13132,rep_flag,repetition above the human limit (deficit > 0),0.0824509,0.0868131,0.00436217,0.000472907,0.00801629,0.000760109,0.00775459,0.005,final2 worse,True,3,10
+live250,final2,flores_plus,tier,mid,13,13132,rep_def,repetition severity (0..1),0.0200295,0.0216052,0.00157564,0.000386421,0.00275563,0.000604683,0.00259534,0.002,final2 worse,True,5,8
+live250,final2,flores_plus,tier,mid,13,13132,rep4,share of repeated word 4-grams (mean),0.00441198,0.00465844,0.000246465,-5.72896e-05,0.000541658,2.97164e-05,0.000485198,0.002,equal,True,4,9
+live250,final2,flores_plus,tier,mid,13,13132,pen_total,penalty the final reward would subtract (reward units),0.0195073,0.0193844,-0.000122883,-0.000824604,0.000517119,-0.000761379,0.000445865,0.005,equal,True,6,7
+live250,final2,flores_plus,tier,consensus-only,2,2024,unfinished,unfinished (no end token in budget),0,0,0,0,0,,,0.005,equal,True,0,0
+live250,final2,flores_plus,tier,consensus-only,2,2024,empty,empty output,0,0,0,0,0,,,0.001,equal,True,0,0
+live250,final2,flores_plus,tier,consensus-only,2,2024,lid_wrong,"wrong language (GlotLID, where the guard is on)",0.0123518,0.0133399,0.000988142,-0.00247036,0.00444664,,,0.005,equal,True,0,2
+live250,final2,flores_plus,tier,consensus-only,2,2024,jacc_copy,"copy of source, Jaccard >= 0.9 (hard class of both rewards)",0,0,0,0,0,,,0.001,equal,True,0,0
+live250,final2,flores_plus,tier,consensus-only,2,2024,degenerate,"degenerate (v1 repetition rule, hard class of both rewards)",0.00247036,0.00592885,0.0034585,0,0.00741107,,,0.005,equal,True,0,1
+live250,final2,flores_plus,tier,consensus-only,2,2024,len_bad,"length ratio outside [0.2, 5] (hard class of both rewards)",0,0.000494071,0.000494071,0,0.00148221,,,0.005,equal,True,0,1
+live250,final2,flores_plus,tier,consensus-only,2,2024,copy_flag,substring copy of the source above the human threshold (anchors v3),0.0296443,0.0256917,-0.00395257,-0.00790514,0,,,0.005,equal,True,2,0
+live250,final2,flores_plus,tier,consensus-only,2,2024,copy_frac,"copied fraction of the source (verbatim runs, mean)",0.00827584,0.00713485,-0.00114099,-0.00249227,7.989e-05,,,0.002,equal,True,2,0
+live250,final2,flores_plus,tier,consensus-only,2,2024,num_loss,numbers of the source missing in the output (share),0.0178571,0.0214711,0.00361395,-0.00847369,0.0154458,,,0.005,equal,True,0,2
+live250,final2,flores_plus,tier,consensus-only,2,2024,name_loss,names of the source missing in the output (share),0.252084,0.271433,0.0193489,0.0101422,0.029655,,,0.005,final2 worse,False,0,2
+live250,final2,flores_plus,tier,consensus-only,2,2024,ent2_pen,graded entity loss (anchors v3 entity2 units; rows with entities),0.0582892,0.0660561,0.00776696,0.00138606,0.0139502,,,0.005,final2 worse,False,0,2
+live250,final2,flores_plus,tier,consensus-only,2,2024,func_flag,stop-word profile deviates (deficit > 0),0.185277,0.19417,0.00889328,-0.00592885,0.0227396,,,0.005,equal,False,0,2
+live250,final2,flores_plus,tier,consensus-only,2,2024,func_def,stop-word profile deficit (0..1),0.0443137,0.0452079,0.000894258,-0.0034283,0.00519786,,,0.002,equal,True,0,2
+live250,final2,flores_plus,tier,consensus-only,2,2024,func_sat,stop-word profile saturated (deficit >= 0.9),0.00197628,0.00395257,0.00197628,-1.23518e-05,0.00444664,,,0.001,equal,False,0,1
+live250,final2,flores_plus,tier,consensus-only,2,2024,pad_flag,padding / low type-token ratio (deficit > 0),0.262352,0.290514,0.0281621,0.0113513,0.0444664,,,0.005,final2 worse,False,0,2
+live250,final2,flores_plus,tier,consensus-only,2,2024,pad_def,padding deficit (0..1),0.0775589,0.0971912,0.0196323,0.012695,0.0266378,,,0.002,final2 worse,False,0,2
+live250,final2,flores_plus,tier,consensus-only,2,2024,pad_sat,padding saturated (deficit >= 0.9),0.00642292,0.0143281,0.00790514,0.0034585,0.0128458,,,0.001,final2 worse,False,0,2
+live250,final2,flores_plus,tier,consensus-only,2,2024,rep_flag,repetition above the human limit (deficit > 0),0.280632,0.311265,0.0306324,0.0133399,0.048419,,,0.005,final2 worse,False,0,2
+live250,final2,flores_plus,tier,consensus-only,2,2024,rep_def,repetition severity (0..1),0.104688,0.122017,0.017329,0.00842904,0.0260655,,,0.002,final2 worse,False,0,2
+live250,final2,flores_plus,tier,consensus-only,2,2024,rep4,share of repeated word 4-grams (mean),0.0222312,0.0283593,0.00612805,0.00358774,0.00866696,,,0.002,final2 worse,False,0,2
+live250,final2,flores_plus,tier,consensus-only,2,2024,pen_total,penalty the final reward would subtract (reward units),0.182845,0.209269,0.026424,0.0140957,0.0382312,,,0.005,final2 worse,False,0,2
+live250,final2,flores_plus,content_mode,qe,31,29524,unfinished,unfinished (no end token in budget),0,0,0,0,0,0,0,0.005,equal,True,0,0
+live250,final2,flores_plus,content_mode,qe,31,29524,empty,empty output,0,0,0,0,0,0,0,0.001,equal,True,0,0
+live250,final2,flores_plus,content_mode,qe,31,29524,lid_wrong,"wrong language (GlotLID, where the guard is on)",0.00457869,0.00451037,-6.83278e-05,-0.000610394,0.000455173,-0.000460367,0.000255383,0.005,equal,True,6,5
+live250,final2,flores_plus,content_mode,qe,31,29524,jacc_copy,"copy of source, Jaccard >= 0.9 (hard class of both rewards)",0,0,0,0,0,0,0,0.001,equal,True,0,0
+live250,final2,flores_plus,content_mode,qe,31,29524,degenerate,"degenerate (v1 repetition rule, hard class of both rewards)",0.000128277,6.45254e-05,-6.37511e-05,-0.000159378,0,-0.000159378,0,0.005,equal,True,2,0
+live250,final2,flores_plus,content_mode,qe,31,29524,len_bad,"length ratio outside [0.2, 5] (hard class of both rewards)",0,0,0,0,0,0,0,0.005,equal,True,0,0
+live250,final2,flores_plus,content_mode,qe,31,29524,copy_flag,substring copy of the source above the human threshold (anchors v3),0.0134874,0.0132326,-0.000254815,-0.000703869,0.000192248,-0.000796515,0.000160913,0.005,equal,True,7,6
+live250,final2,flores_plus,content_mode,qe,31,29524,copy_frac,"copied fraction of the source (verbatim runs, mean)",0.00415986,0.00409319,-6.66732e-05,-0.000177919,3.76008e-05,-0.000198155,7.00443e-05,0.002,equal,True,10,12
+live250,final2,flores_plus,content_mode,qe,31,29524,num_loss,numbers of the source missing in the output (share),0.0425995,0.0436588,0.00105934,-0.00174715,0.0037678,-0.00208249,0.00432405,0.005,equal,True,12,14
+live250,final2,flores_plus,content_mode,qe,31,29524,name_loss,names of the source missing in the output (share),0.35079,0.3533,0.00251011,0.000773954,0.00411465,0.000548808,0.00438586,0.005,final2 worse,True,9,22
+live250,final2,flores_plus,content_mode,qe,31,29524,ent2_pen,graded entity loss (anchors v3 entity2 units; rows with entities),0.093153,0.0954009,0.00224787,0.000682103,0.00369981,0.000657771,0.00433493,0.005,final2 worse,True,10,21
+live250,final2,flores_plus,content_mode,qe,31,29524,func_flag,stop-word profile deviates (deficit > 0),0.0228764,0.0227528,-0.000123599,-0.00122593,0.000990513,-0.00122415,0.00101926,0.005,equal,True,9,6
+live250,final2,flores_plus,content_mode,qe,31,29524,func_def,stop-word profile deficit (0..1),0.00379189,0.00365379,-0.000138099,-0.000380659,9.69427e-05,-0.000452516,0.000209608,0.002,equal,True,15,7
+live250,final2,flores_plus,content_mode,qe,31,29524,func_sat,stop-word profile saturated (deficit >= 0.9),0.000153158,8.19484e-05,-7.12099e-05,-0.00021363,0,-0.00021363,0,0.001,equal,True,1,0
+live250,final2,flores_plus,content_mode,qe,31,29524,pad_flag,padding / low type-token ratio (deficit > 0),0.0455661,0.0489234,0.00335728,0.00151727,0.0051888,0.00162919,0.00524538,0.005,final2 worse,True,7,21
+live250,final2,flores_plus,content_mode,qe,31,29524,pad_def,padding deficit (0..1),0.0069308,0.0074394,0.000508607,0.000169654,0.000882366,0.000203347,0.000825644,0.002,final2 worse,True,11,20
+live250,final2,flores_plus,content_mode,qe,31,29524,pad_sat,padding saturated (deficit >= 0.9),8.09746e-05,3.18756e-05,-4.9099e-05,-0.000147297,0,-0.000147297,0,0.001,equal,True,1,0
+live250,final2,flores_plus,content_mode,qe,31,29524,rep_flag,repetition above the human limit (deficit > 0),0.0610367,0.0645831,0.0035464,0.00138205,0.00567995,0.00137509,0.00572107,0.005,final2 worse,True,7,22
+live250,final2,flores_plus,content_mode,qe,31,29524,rep_def,repetition severity (0..1),0.013533,0.0146536,0.00112061,0.000499425,0.00174691,0.000540966,0.00174336,0.002,final2 worse,True,11,20
+live250,final2,flores_plus,content_mode,qe,31,29524,rep4,share of repeated word 4-grams (mean),0.00284595,0.00304765,0.000201697,4.36107e-05,0.000365754,8.17231e-05,0.000328447,0.002,final2 worse,True,11,20
+live250,final2,flores_plus,content_mode,qe,31,29524,pen_total,penalty the final reward would subtract (reward units),0.0110846,0.0111623,7.77043e-05,-0.000199761,0.000355819,-0.000218352,0.000368649,0.005,equal,True,16,15
+live250,final2,flores_plus,content_mode,blend,11,11132,unfinished,unfinished (no end token in budget),0,0,0,0,0,0,0,0.005,equal,True,0,0
+live250,final2,flores_plus,content_mode,blend,11,11132,empty,empty output,0,0,0,0,0,0,0,0.001,equal,True,0,0
+live250,final2,flores_plus,content_mode,blend,11,11132,lid_wrong,"wrong language (GlotLID, where the guard is on)",0.000898311,0.000988142,8.98311e-05,-0.000359324,0.000538987,-0.000269493,0.000449156,0.005,equal,True,2,3
+live250,final2,flores_plus,content_mode,blend,11,11132,jacc_copy,"copy of source, Jaccard >= 0.9 (hard class of both rewards)",0,0,0,0,0,0,0,0.001,equal,True,0,0
+live250,final2,flores_plus,content_mode,blend,11,11132,degenerate,"degenerate (v1 repetition rule, hard class of both rewards)",0.000449156,0.000179662,-0.000269493,-0.000718649,8.98311e-05,-0.000718649,0.000179662,0.005,equal,True,3,1
+live250,final2,flores_plus,content_mode,blend,11,11132,len_bad,"length ratio outside [0.2, 5] (hard class of both rewards)",0,0,0,0,0,0,0,0.005,equal,True,0,0
+live250,final2,flores_plus,content_mode,blend,11,11132,copy_flag,substring copy of the source above the human threshold (anchors v3),0.0273087,0.027129,-0.000179662,-0.00161696,0.00107797,-0.00170679,0.000988142,0.005,equal,True,5,6
+live250,final2,flores_plus,content_mode,blend,11,11132,copy_frac,"copied fraction of the source (verbatim runs, mean)",0.00682847,0.00685992,3.14479e-05,-0.000288407,0.000321489,-0.000273851,0.000293097,0.002,equal,True,3,8
+live250,final2,flores_plus,content_mode,blend,11,11132,num_loss,numbers of the source missing in the output (share),0.0706323,0.0764378,0.0058055,-0.0023585,0.0141809,-0.00108322,0.0128328,0.005,equal,False,2,9
+live250,final2,flores_plus,content_mode,blend,11,11132,name_loss,names of the source missing in the output (share),0.289937,0.297919,0.0079818,0.00361101,0.0124581,0.00372739,0.0124121,0.005,final2 worse,False,1,10
+live250,final2,flores_plus,content_mode,blend,11,11132,ent2_pen,graded entity loss (anchors v3 entity2 units; rows with entities),0.0833377,0.0876131,0.0042754,0.000396536,0.0084925,0.00222953,0.00686202,0.005,final2 worse,True,0,11
+live250,final2,flores_plus,content_mode,blend,11,11132,func_flag,stop-word profile deviates (deficit > 0),0.103216,0.104833,0.00161696,-0.00368308,0.00647009,-0.00413223,0.00844637,0.005,equal,True,4,6
+live250,final2,flores_plus,content_mode,blend,11,11132,func_def,stop-word profile deficit (0..1),0.0243484,0.024375,2.66162e-05,-0.00139365,0.00141026,-0.00214061,0.00168286,0.002,equal,True,3,7
+live250,final2,flores_plus,content_mode,blend,11,11132,func_sat,stop-word profile saturated (deficit >= 0.9),0.00125764,0.000988142,-0.000269493,-0.000988142,0.000359324,-0.00152713,0.000628818,0.001,equal,True,1,2
+live250,final2,flores_plus,content_mode,blend,11,11132,pad_flag,padding / low type-token ratio (deficit > 0),0.181818,0.195203,0.0133848,0.00700683,0.0204815,0.00646784,0.0203917,0.005,final2 worse,False,3,8
+live250,final2,flores_plus,content_mode,blend,11,11132,pad_def,padding deficit (0..1),0.0398393,0.0438818,0.00404255,0.00228745,0.0060292,0.000549427,0.00786143,0.002,final2 worse,False,3,8
+live250,final2,flores_plus,content_mode,blend,11,11132,pad_sat,padding saturated (deficit >= 0.9),0.000628818,0.000449156,-0.000179662,-0.000718649,0.000359324,-0.000718649,0.000269493,0.001,equal,True,3,2
+live250,final2,flores_plus,content_mode,blend,11,11132,rep_flag,repetition above the human limit (deficit > 0),0.222332,0.230057,0.00772548,0.000896065,0.0153634,-0.0028746,0.0207555,0.005,final2 worse,False,6,5
+live250,final2,flores_plus,content_mode,blend,11,11132,rep_def,repetition severity (0..1),0.0621924,0.0671766,0.00498419,0.00238786,0.00779328,0.000861162,0.0114104,0.002,final2 worse,False,3,8
+live250,final2,flores_plus,content_mode,blend,11,11132,rep4,share of repeated word 4-grams (mean),0.0138885,0.0148362,0.0009477,0.000303324,0.00167661,-3.87545e-05,0.00231769,0.002,final2 worse,True,4,7
+live250,final2,flores_plus,content_mode,blend,11,11132,pen_total,penalty the final reward would subtract (reward units),0.116763,0.12456,0.00779684,0.0044998,0.0113787,0.00200889,0.0163554,0.005,final2 worse,False,2,9
+live250,final2,flores_plus,content_mode,consensus,2,2024,unfinished,unfinished (no end token in budget),0,0,0,0,0,,,0.005,equal,True,0,0
+live250,final2,flores_plus,content_mode,consensus,2,2024,empty,empty output,0,0,0,0,0,,,0.001,equal,True,0,0
+live250,final2,flores_plus,content_mode,consensus,2,2024,lid_wrong,"wrong language (GlotLID, where the guard is on)",0.0123518,0.0133399,0.000988142,-0.00247036,0.00444664,,,0.005,equal,True,0,2
+live250,final2,flores_plus,content_mode,consensus,2,2024,jacc_copy,"copy of source, Jaccard >= 0.9 (hard class of both rewards)",0,0,0,0,0,,,0.001,equal,True,0,0
+live250,final2,flores_plus,content_mode,consensus,2,2024,degenerate,"degenerate (v1 repetition rule, hard class of both rewards)",0.00247036,0.00592885,0.0034585,0,0.00741107,,,0.005,equal,True,0,1
+live250,final2,flores_plus,content_mode,consensus,2,2024,len_bad,"length ratio outside [0.2, 5] (hard class of both rewards)",0,0.000494071,0.000494071,0,0.00148221,,,0.005,equal,True,0,1
+live250,final2,flores_plus,content_mode,consensus,2,2024,copy_flag,substring copy of the source above the human threshold (anchors v3),0.0296443,0.0256917,-0.00395257,-0.00790514,0,,,0.005,equal,True,2,0
+live250,final2,flores_plus,content_mode,consensus,2,2024,copy_frac,"copied fraction of the source (verbatim runs, mean)",0.00827584,0.00713485,-0.00114099,-0.00249227,7.989e-05,,,0.002,equal,True,2,0
+live250,final2,flores_plus,content_mode,consensus,2,2024,num_loss,numbers of the source missing in the output (share),0.0178571,0.0214711,0.00361395,-0.00847369,0.0154458,,,0.005,equal,True,0,2
+live250,final2,flores_plus,content_mode,consensus,2,2024,name_loss,names of the source missing in the output (share),0.252084,0.271433,0.0193489,0.0101422,0.029655,,,0.005,final2 worse,False,0,2
+live250,final2,flores_plus,content_mode,consensus,2,2024,ent2_pen,graded entity loss (anchors v3 entity2 units; rows with entities),0.0582892,0.0660561,0.00776696,0.00138606,0.0139502,,,0.005,final2 worse,False,0,2
+live250,final2,flores_plus,content_mode,consensus,2,2024,func_flag,stop-word profile deviates (deficit > 0),0.185277,0.19417,0.00889328,-0.00592885,0.0227396,,,0.005,equal,False,0,2
+live250,final2,flores_plus,content_mode,consensus,2,2024,func_def,stop-word profile deficit (0..1),0.0443137,0.0452079,0.000894258,-0.0034283,0.00519786,,,0.002,equal,True,0,2
+live250,final2,flores_plus,content_mode,consensus,2,2024,func_sat,stop-word profile saturated (deficit >= 0.9),0.00197628,0.00395257,0.00197628,-1.23518e-05,0.00444664,,,0.001,equal,False,0,1
+live250,final2,flores_plus,content_mode,consensus,2,2024,pad_flag,padding / low type-token ratio (deficit > 0),0.262352,0.290514,0.0281621,0.0113513,0.0444664,,,0.005,final2 worse,False,0,2
+live250,final2,flores_plus,content_mode,consensus,2,2024,pad_def,padding deficit (0..1),0.0775589,0.0971912,0.0196323,0.012695,0.0266378,,,0.002,final2 worse,False,0,2
+live250,final2,flores_plus,content_mode,consensus,2,2024,pad_sat,padding saturated (deficit >= 0.9),0.00642292,0.0143281,0.00790514,0.0034585,0.0128458,,,0.001,final2 worse,False,0,2
+live250,final2,flores_plus,content_mode,consensus,2,2024,rep_flag,repetition above the human limit (deficit > 0),0.280632,0.311265,0.0306324,0.0133399,0.048419,,,0.005,final2 worse,False,0,2
+live250,final2,flores_plus,content_mode,consensus,2,2024,rep_def,repetition severity (0..1),0.104688,0.122017,0.017329,0.00842904,0.0260655,,,0.002,final2 worse,False,0,2
+live250,final2,flores_plus,content_mode,consensus,2,2024,rep4,share of repeated word 4-grams (mean),0.0222312,0.0283593,0.00612805,0.00358774,0.00866696,,,0.002,final2 worse,False,0,2
+live250,final2,flores_plus,content_mode,consensus,2,2024,pen_total,penalty the final reward would subtract (reward units),0.182845,0.209269,0.026424,0.0140957,0.0382312,,,0.005,final2 worse,False,0,2
+live250,final2,ALL,all_languages,all,44,42680,unfinished,unfinished (no end token in budget),0,0,0,0,0,0,0,0.005,equal,True,0,0
+live250,final2,ALL,all_languages,all,44,42680,empty,empty output,0,0,0,0,0,0,0,0.001,equal,True,0,0
+live250,final2,ALL,all_languages,all,44,42680,lid_wrong,"wrong language (GlotLID, where the guard is on)",0.00401192,0.00403115,1.92333e-05,-0.000432449,0.000450095,-0.000260283,0.00029204,0.005,equal,True,8,10
+live250,final2,ALL,all_languages,all,44,42680,jacc_copy,"copy of source, Jaccard >= 0.9 (hard class of both rewards)",0,0,0,0,0,0,0,0.001,equal,True,0,0
+live250,final2,ALL,all_languages,all,44,42680,degenerate,"degenerate (v1 repetition rule, hard class of both rewards)",0.000314954,0.00035987,4.49156e-05,-0.000157204,0.000247036,-0.000202681,0.000449156,0.005,equal,True,5,2
+live250,final2,ALL,all_languages,all,44,42680,len_bad,"length ratio outside [0.2, 5] (hard class of both rewards)",0,2.24578e-05,2.24578e-05,0,6.73733e-05,0,6.73733e-05,0.005,equal,True,0,1
+live250,final2,ALL,all_languages,all,44,42680,copy_flag,substring copy of the source above the human threshold (anchors v3),0.0176772,0.017273,-0.000404107,-0.000901547,0.000158963,-0.000965551,0.000112559,0.005,equal,True,14,12
+live250,final2,ALL,all_languages,all,44,42680,copy_frac,"copied fraction of the source (verbatim runs, mean)",0.0050141,0.00492313,-9.09755e-05,-0.000215386,3.53839e-05,-0.000238929,4.30932e-05,0.002,equal,True,15,20
+live250,final2,ALL,all_languages,all,44,42680,num_loss,numbers of the source missing in the output (share),0.048483,0.050845,0.002362,-0.000516704,0.00525534,-0.000567515,0.00522979,0.005,equal,True,14,25
+live250,final2,ALL,all_languages,all,44,42680,name_loss,names of the source missing in the output (share),0.33109,0.335733,0.00464343,0.00298522,0.00630102,0.00244528,0.0067868,0.005,final2 worse,True,10,34
+live250,final2,ALL,all_languages,all,44,42680,ent2_pen,graded entity loss (anchors v3 entity2 units; rows with entities),0.0891145,0.0921201,0.00300562,0.00144953,0.00455437,0.00163016,0.00458973,0.005,final2 worse,True,10,34
+live250,final2,ALL,all_languages,all,44,42680,func_flag,stop-word profile deviates (deficit > 0),0.0503431,0.0510645,0.000721399,-0.000899415,0.00227064,-0.000947636,0.00283294,0.005,equal,True,13,14
+live250,final2,ALL,all_languages,all,44,42680,func_def,stop-word profile deficit (0..1),0.0107729,0.0107229,-4.99948e-05,-0.000475907,0.000386845,-0.000635663,0.000435814,0.002,equal,True,18,16
+live250,final2,ALL,all_languages,all,44,42680,func_sat,stop-word profile saturated (deficit >= 0.9),0.000512147,0.000484434,-2.77128e-05,-0.000252422,0.000179662,-0.000387169,0.00030403,0.001,equal,True,2,3
+live250,final2,ALL,all_languages,all,44,42680,pad_flag,padding / low type-token ratio (deficit > 0),0.089483,0.0964747,0.00699166,0.00488743,0.00927493,0.00442052,0.0100026,0.005,final2 worse,False,10,31
+live250,final2,ALL,all_languages,all,44,42680,pad_def,padding deficit (0..1),0.0183683,0.0206296,0.00226135,0.00168411,0.00285009,0.000769843,0.00408116,0.002,final2 worse,False,14,30
+live250,final2,ALL,all_languages,all,44,42680,pad_sat,padding saturated (deficit >= 0.9),0.000506206,0.000786022,0.000279816,1.0065e-05,0.00054931,-0.000169339,0.00103306,0.001,final2 worse,True,4,4
+live250,final2,ALL,all_languages,all,44,42680,rep_flag,repetition above the human limit (deficit > 0),0.111342,0.117164,0.00582235,0.0032771,0.00830862,0.00237591,0.00963895,0.005,final2 worse,False,13,29
+live250,final2,ALL,all_languages,all,44,42680,rep_def,repetition severity (0..1),0.0298413,0.0326645,0.00282325,0.0019567,0.0037715,0.00119293,0.0050681,0.002,final2 worse,False,14,30
+live250,final2,ALL,all_languages,all,44,42680,rep4,share of repeated word 4-grams (mean),0.00648774,0.00714532,0.000657577,0.000441744,0.000910298,0.000210191,0.00125058,0.002,final2 worse,True,15,29
+live250,final2,ALL,all_languages,all,44,42680,pen_total,penalty the final reward would subtract (reward units),0.0453115,0.0485165,0.00320505,0.00221647,0.00430589,0.000862581,0.00621037,0.005,final2 worse,True,18,26
+live250,final2,ALL,tier,strong,16,14723,unfinished,unfinished (no end token in budget),0,0,0,0,0,0,0,0.005,equal,True,0,0
+live250,final2,ALL,tier,strong,16,14723,empty,empty output,0,0,0,0,0,0,0,0.001,equal,True,0,0
+live250,final2,ALL,tier,strong,16,14723,lid_wrong,"wrong language (GlotLID, where the guard is on)",0.00442458,0.00423044,-0.000194144,-0.000896451,0.000503556,-0.000830202,0.000309528,0.005,equal,True,3,2
+live250,final2,ALL,tier,strong,16,14723,jacc_copy,"copy of source, Jaccard >= 0.9 (hard class of both rewards)",0,0,0,0,0,0,0,0.001,equal,True,0,0
+live250,final2,ALL,tier,strong,16,14723,degenerate,"degenerate (v1 repetition rule, hard class of both rewards)",0.000123518,6.17589e-05,-6.17589e-05,-0.000185277,0,-0.000185277,0,0.005,equal,True,1,0
+live250,final2,ALL,tier,strong,16,14723,len_bad,"length ratio outside [0.2, 5] (hard class of both rewards)",0,0,0,0,0,0,0,0.005,equal,True,0,0
+live250,final2,ALL,tier,strong,16,14723,copy_flag,substring copy of the source above the human threshold (anchors v3),0.0131037,0.0133511,0.000247402,-0.000180295,0.000739491,-0.000185277,0.00074184,0.005,equal,True,2,4
+live250,final2,ALL,tier,strong,16,14723,copy_frac,"copied fraction of the source (verbatim runs, mean)",0.00367341,0.003749,7.55813e-05,-4.14346e-05,0.000209209,-4.67725e-05,0.000235548,0.002,equal,True,3,7
+live250,final2,ALL,tier,strong,16,14723,num_loss,numbers of the source missing in the output (share),0.0282665,0.0287924,0.000525881,-0.00200258,0.00290011,-0.00202348,0.00338723,0.005,equal,True,5,6
+live250,final2,ALL,tier,strong,16,14723,name_loss,names of the source missing in the output (share),0.308687,0.310042,0.00135454,-0.00114251,0.0034674,-0.00166299,0.00385943,0.005,equal,True,5,11
+live250,final2,ALL,tier,strong,16,14723,ent2_pen,graded entity loss (anchors v3 entity2 units; rows with entities),0.0951515,0.0964431,0.00129163,9.37845e-05,0.00229866,0.000201135,0.00262411,0.005,final2 worse,True,4,12
+live250,final2,ALL,tier,strong,16,14723,func_flag,stop-word profile deviates (deficit > 0),0.0185567,0.0184023,-0.000154307,-0.00131813,0.000919604,-0.00144545,0.00135502,0.005,equal,True,6,3
+live250,final2,ALL,tier,strong,16,14723,func_def,stop-word profile deficit (0..1),0.00321793,0.00295585,-0.000262082,-0.00065473,2.94996e-05,-0.000623988,-3.09523e-05,0.002,equal,True,9,3
+live250,final2,ALL,tier,strong,16,14723,func_sat,stop-word profile saturated (deficit >= 0.9),0.000201615,6.36456e-05,-0.000137969,-0.000413907,0,-0.000413907,0,0.001,equal,True,1,0
+live250,final2,ALL,tier,strong,16,14723,pad_flag,padding / low type-token ratio (deficit > 0),0.0306042,0.0329865,0.00238226,0.000635371,0.004098,0.000926285,0.00391755,0.005,final2 worse,True,3,10
+live250,final2,ALL,tier,strong,16,14723,pad_def,padding deficit (0..1),0.00411265,0.00439634,0.000283687,-2.83552e-05,0.000638948,5.22902e-05,0.000528278,0.002,equal,True,7,9
+live250,final2,ALL,tier,strong,16,14723,pad_sat,padding saturated (deficit >= 0.9),0,0,0,0,0,0,0,0.001,equal,True,0,0
+live250,final2,ALL,tier,strong,16,14723,rep_flag,repetition above the human limit (deficit > 0),0.0476826,0.0484007,0.000718074,-0.00169214,0.00345407,-0.00193964,0.00325533,0.005,equal,True,5,9
+live250,final2,ALL,tier,strong,16,14723,rep_def,repetition severity (0..1),0.00945024,0.00993224,0.000482001,-0.000125286,0.00113228,-0.00018206,0.00118806,0.002,equal,True,7,9
+live250,final2,ALL,tier,strong,16,14723,rep4,share of repeated word 4-grams (mean),0.00226823,0.00236094,9.27109e-05,-8.32879e-05,0.000259062,-3.88112e-05,0.000270866,0.002,equal,True,8,8
+live250,final2,ALL,tier,strong,16,14723,pen_total,penalty the final reward would subtract (reward units),0.00911057,0.00925739,0.000146818,-0.000171489,0.000469067,-0.00011563,0.000490973,0.005,equal,True,10,6
+live250,final2,ALL,tier,weak,13,12801,unfinished,unfinished (no end token in budget),0,0,0,0,0,0,0,0.005,equal,True,0,0
+live250,final2,ALL,tier,weak,13,12801,empty,empty output,0,0,0,0,0,0,0,0.001,equal,True,0,0
+live250,final2,ALL,tier,weak,13,12801,lid_wrong,"wrong language (GlotLID, where the guard is on)",0.00152022,0.00167224,0.000152022,-0.000456066,0.000685999,-0.000228033,0.000457966,0.005,equal,True,2,4
+live250,final2,ALL,tier,weak,13,12801,jacc_copy,"copy of source, Jaccard >= 0.9 (hard class of both rewards)",0,0,0,0,0,0,0,0.001,equal,True,0,0
+live250,final2,ALL,tier,weak,13,12801,degenerate,"degenerate (v1 repetition rule, hard class of both rewards)",0.000456066,0.000152022,-0.000304044,-0.000684099,1.90027e-06,-0.000684099,7.60109e-05,0.005,equal,True,4,1
+live250,final2,ALL,tier,weak,13,12801,len_bad,"length ratio outside [0.2, 5] (hard class of both rewards)",0,0,0,0,0,0,0,0.005,equal,True,0,0
+live250,final2,ALL,tier,weak,13,12801,copy_flag,substring copy of the source above the human threshold (anchors v3),0.0221603,0.0220842,-7.60109e-05,-0.0013682,0.00114016,-0.00129219,0.000912131,0.005,equal,True,4,6
+live250,final2,ALL,tier,weak,13,12801,copy_frac,"copied fraction of the source (verbatim runs, mean)",0.0056266,0.00566468,3.80728e-05,-0.000258237,0.000335614,-0.000209389,0.000264367,0.002,equal,True,3,8
+live250,final2,ALL,tier,weak,13,12801,num_loss,numbers of the source missing in the output (share),0.0768786,0.084069,0.00719047,-0.000978617,0.0152301,0.000986212,0.0135158,0.005,equal,False,2,11
+live250,final2,ALL,tier,weak,13,12801,name_loss,names of the source missing in the output (share),0.39959,0.406631,0.0070411,0.00349208,0.0108935,0.0030545,0.011163,0.005,final2 worse,False,2,11
+live250,final2,ALL,tier,weak,13,12801,ent2_pen,graded entity loss (anchors v3 entity2 units; rows with entities),0.0830445,0.0888173,0.00577284,0.00136236,0.0101281,0.00269898,0.00954146,0.005,final2 worse,False,1,12
+live250,final2,ALL,tier,weak,13,12801,func_flag,stop-word profile deviates (deficit > 0),0.0889488,0.0905922,0.00164343,-0.00281817,0.00555642,-0.00304116,0.0076483,0.005,equal,True,4,6
+live250,final2,ALL,tier,weak,13,12801,func_def,stop-word profile deficit (0..1),0.0207448,0.0207503,5.43392e-06,-0.00115305,0.0011677,-0.00179191,0.0014652,0.002,equal,True,3,7
+live250,final2,ALL,tier,weak,13,12801,func_sat,stop-word profile saturated (deficit >= 0.9),0.000953203,0.000573148,-0.000380055,-0.000912131,7.60109e-05,-0.0013682,0.000228033,0.001,equal,True,1,1
+live250,final2,ALL,tier,weak,13,12801,pad_flag,padding / low type-token ratio (deficit > 0),0.160249,0.172522,0.0122727,0.00650139,0.01808,0.00618497,0.0190787,0.005,final2 worse,False,4,9
+live250,final2,ALL,tier,weak,13,12801,pad_def,padding deficit (0..1),0.0347425,0.0382271,0.0034846,0.00193431,0.00516797,0.000616044,0.00674271,0.002,final2 worse,False,3,10
+live250,final2,ALL,tier,weak,13,12801,pad_sat,padding saturated (deficit >= 0.9),0.000649159,0.000380055,-0.000269104,-0.000766241,0.000228033,-0.000731302,0.000152022,0.001,equal,True,4,2
+live250,final2,ALL,tier,weak,13,12801,rep_flag,repetition above the human limit (deficit > 0),0.192539,0.202287,0.0097478,0.00333989,0.0155755,0.00106415,0.0194607,0.005,final2 worse,False,5,8
+live250,final2,ALL,tier,weak,13,12801,rep_def,repetition severity (0..1),0.0532347,0.0579554,0.00472076,0.00255677,0.00718421,0.00135184,0.00999428,0.002,final2 worse,False,2,11
+live250,final2,ALL,tier,weak,13,12801,rep4,share of repeated word 4-grams (mean),0.0113347,0.012257,0.000922298,0.000375595,0.00153696,0.000124554,0.00210286,0.002,final2 worse,True,3,10
+live250,final2,ALL,tier,weak,13,12801,pen_total,penalty the final reward would subtract (reward units),0.0945116,0.101236,0.0067248,0.00401472,0.00974725,0.00187687,0.0140851,0.005,final2 worse,False,2,11
+live250,final2,ALL,tier,mid,13,13132,unfinished,unfinished (no end token in budget),0,0,0,0,0,0,0,0.005,equal,True,0,0
+live250,final2,ALL,tier,mid,13,13132,empty,empty output,0,0,0,0,0,0,0,0.001,equal,True,0,0
+live250,final2,ALL,tier,mid,13,13132,lid_wrong,"wrong language (GlotLID, where the guard is on)",0.00471268,0.00471268,0,-0.000838021,0.000912131,-0.000380055,0.000456066,0.005,equal,True,3,2
+live250,final2,ALL,tier,mid,13,13132,jacc_copy,"copy of source, Jaccard >= 0.9 (hard class of both rewards)",0,0,0,0,0,0,0,0.001,equal,True,0,0
+live250,final2,ALL,tier,mid,13,13132,degenerate,"degenerate (v1 repetition rule, hard class of both rewards)",7.78574e-05,7.78574e-05,0,0,0,0,0,0.005,equal,True,0,0
+live250,final2,ALL,tier,mid,13,13132,len_bad,"length ratio outside [0.2, 5] (hard class of both rewards)",0,0,0,0,0,0,0,0.005,equal,True,0,0
+live250,final2,ALL,tier,mid,13,13132,copy_flag,substring copy of the source above the human threshold (anchors v3),0.0169818,0.0159937,-0.000988142,-0.00198007,-7.41645e-05,-0.00190027,-0.000152022,0.005,final2 better,True,6,2
+live250,final2,ALL,tier,mid,13,13132,copy_frac,"copied fraction of the source (verbatim runs, mean)",0.00554987,0.0052864,-0.000263476,-0.000502708,-3.96976e-05,-0.000508041,-4.73299e-05,0.002,final2 better,True,7,5
+live250,final2,ALL,tier,mid,13,13132,num_loss,numbers of the source missing in the output (share),0.049681,0.0492818,-0.000399245,-0.00550828,0.00467426,-0.00630658,0.00581526,0.005,equal,True,7,6
+live250,final2,ALL,tier,mid,13,13132,name_loss,names of the source missing in the output (share),0.302317,0.306349,0.00403125,0.00123701,0.00693719,0.00155757,0.0065302,0.005,final2 worse,True,3,10
+live250,final2,ALL,tier,mid,13,13132,ent2_pen,graded entity loss (anchors v3 entity2 units; rows with entities),0.0924966,0.0941121,0.00161541,-0.000614587,0.00395631,-0.000623083,0.00402144,0.005,equal,True,5,8
+live250,final2,ALL,tier,mid,13,13132,func_flag,stop-word profile deviates (deficit > 0),0.0301003,0.0297203,-0.000380055,-0.00243235,0.00182426,-0.00250836,0.00159623,0.005,equal,True,3,3
+live250,final2,ALL,tier,mid,13,13132,func_def,stop-word profile deficit (0..1),0.00493935,0.00494969,1.03369e-05,-0.000467152,0.000481127,-0.000626731,0.000757357,0.002,equal,True,6,4
+live250,final2,ALL,tier,mid,13,13132,func_sat,stop-word profile saturated (deficit >= 0.9),0.000228033,0.000380055,0.000152022,-0.000152022,0.000456066,0,0.000456066,0.001,equal,True,0,1
+live250,final2,ALL,tier,mid,13,13132,pad_flag,padding / low type-token ratio (deficit > 0),0.0645881,0.0687148,0.00412675,0.00060868,0.00754558,0.00106415,0.00751554,0.005,final2 worse,True,3,10
+live250,final2,ALL,tier,mid,13,13132,pad_def,padding deficit (0..1),0.0104332,0.0112329,0.000799702,6.92692e-05,0.00153755,0.000202547,0.0014627,0.002,final2 worse,True,4,9
+live250,final2,ALL,tier,mid,13,13132,pad_sat,padding saturated (deficit >= 0.9),7.60109e-05,7.60109e-05,0,0,0,0,0,0.001,equal,True,0,0
+live250,final2,ALL,tier,mid,13,13132,rep_flag,repetition above the human limit (deficit > 0),0.0824509,0.0868131,0.00436217,0.000704317,0.00839629,0.000912131,0.00799419,0.005,final2 worse,True,3,10
+live250,final2,ALL,tier,mid,13,13132,rep_def,repetition severity (0..1),0.0200295,0.0216052,0.00157564,0.000400308,0.00273315,0.000648493,0.00253904,0.002,final2 worse,True,5,8
+live250,final2,ALL,tier,mid,13,13132,rep4,share of repeated word 4-grams (mean),0.00441198,0.00465844,0.000246465,-5.43751e-05,0.000543704,2.34535e-05,0.000487668,0.002,equal,True,4,9
+live250,final2,ALL,tier,mid,13,13132,pen_total,penalty the final reward would subtract (reward units),0.0195073,0.0193844,-0.000122883,-0.000855853,0.00056585,-0.000702543,0.000447725,0.005,equal,True,6,7
+live250,final2,ALL,tier,consensus-only,2,2024,unfinished,unfinished (no end token in budget),0,0,0,0,0,,,0.005,equal,True,0,0
+live250,final2,ALL,tier,consensus-only,2,2024,empty,empty output,0,0,0,0,0,,,0.001,equal,True,0,0
+live250,final2,ALL,tier,consensus-only,2,2024,lid_wrong,"wrong language (GlotLID, where the guard is on)",0.0123518,0.0133399,0.000988142,-0.00247036,0.00444664,,,0.005,equal,True,0,2
+live250,final2,ALL,tier,consensus-only,2,2024,jacc_copy,"copy of source, Jaccard >= 0.9 (hard class of both rewards)",0,0,0,0,0,,,0.001,equal,True,0,0
+live250,final2,ALL,tier,consensus-only,2,2024,degenerate,"degenerate (v1 repetition rule, hard class of both rewards)",0.00247036,0.00592885,0.0034585,0,0.006917,,,0.005,equal,True,0,1
+live250,final2,ALL,tier,consensus-only,2,2024,len_bad,"length ratio outside [0.2, 5] (hard class of both rewards)",0,0.000494071,0.000494071,0,0.00148221,,,0.005,equal,True,0,1
+live250,final2,ALL,tier,consensus-only,2,2024,copy_flag,substring copy of the source above the human threshold (anchors v3),0.0296443,0.0256917,-0.00395257,-0.00839921,0,,,0.005,equal,True,2,0
+live250,final2,ALL,tier,consensus-only,2,2024,copy_frac,"copied fraction of the source (verbatim runs, mean)",0.00827584,0.00713485,-0.00114099,-0.00244075,6.7611e-05,,,0.002,equal,True,2,0
+live250,final2,ALL,tier,consensus-only,2,2024,num_loss,numbers of the source missing in the output (share),0.0178571,0.0214711,0.00361395,-0.00846454,0.0156649,,,0.005,equal,True,0,2
+live250,final2,ALL,tier,consensus-only,2,2024,name_loss,names of the source missing in the output (share),0.252084,0.271433,0.0193489,0.0103812,0.0290876,,,0.005,final2 worse,False,0,2
+live250,final2,ALL,tier,consensus-only,2,2024,ent2_pen,graded entity loss (anchors v3 entity2 units; rows with entities),0.0582892,0.0660561,0.00776696,0.000992154,0.0141973,,,0.005,final2 worse,False,0,2
+live250,final2,ALL,tier,consensus-only,2,2024,func_flag,stop-word profile deviates (deficit > 0),0.185277,0.19417,0.00889328,-0.00543478,0.0232213,,,0.005,equal,False,0,2
+live250,final2,ALL,tier,consensus-only,2,2024,func_def,stop-word profile deficit (0..1),0.0443137,0.0452079,0.000894258,-0.00378669,0.00546254,,,0.002,equal,True,0,2
+live250,final2,ALL,tier,consensus-only,2,2024,func_sat,stop-word profile saturated (deficit >= 0.9),0.00197628,0.00395257,0.00197628,-1.23518e-05,0.00444664,,,0.001,equal,False,0,1
+live250,final2,ALL,tier,consensus-only,2,2024,pad_flag,padding / low type-token ratio (deficit > 0),0.262352,0.290514,0.0281621,0.0118577,0.0454669,,,0.005,final2 worse,False,0,2
+live250,final2,ALL,tier,consensus-only,2,2024,pad_def,padding deficit (0..1),0.0775589,0.0971912,0.0196323,0.0129725,0.0264395,,,0.002,final2 worse,False,0,2
+live250,final2,ALL,tier,consensus-only,2,2024,pad_sat,padding saturated (deficit >= 0.9),0.00642292,0.0143281,0.00790514,0.00296443,0.0133399,,,0.001,final2 worse,False,0,2
+live250,final2,ALL,tier,consensus-only,2,2024,rep_flag,repetition above the human limit (deficit > 0),0.280632,0.311265,0.0306324,0.0133399,0.0494071,,,0.005,final2 worse,False,0,2
+live250,final2,ALL,tier,consensus-only,2,2024,rep_def,repetition severity (0..1),0.104688,0.122017,0.017329,0.00862983,0.026354,,,0.002,final2 worse,False,0,2
+live250,final2,ALL,tier,consensus-only,2,2024,rep4,share of repeated word 4-grams (mean),0.0222312,0.0283593,0.00612805,0.00354146,0.00871334,,,0.002,final2 worse,False,0,2
+live250,final2,ALL,tier,consensus-only,2,2024,pen_total,penalty the final reward would subtract (reward units),0.182845,0.209269,0.026424,0.0142929,0.0387862,,,0.005,final2 worse,False,0,2
+live250,final2,ALL,content_mode,qe,31,29524,unfinished,unfinished (no end token in budget),0,0,0,0,0,0,0,0.005,equal,True,0,0
+live250,final2,ALL,content_mode,qe,31,29524,empty,empty output,0,0,0,0,0,0,0,0.001,equal,True,0,0
+live250,final2,ALL,content_mode,qe,31,29524,lid_wrong,"wrong language (GlotLID, where the guard is on)",0.00457869,0.00451037,-6.83278e-05,-0.000648061,0.000477024,-0.000460244,0.000255134,0.005,equal,True,6,5
+live250,final2,ALL,content_mode,qe,31,29524,jacc_copy,"copy of source, Jaccard >= 0.9 (hard class of both rewards)",0,0,0,0,0,0,0,0.001,equal,True,0,0
+live250,final2,ALL,content_mode,qe,31,29524,degenerate,"degenerate (v1 repetition rule, hard class of both rewards)",0.000128277,6.45254e-05,-6.37511e-05,-0.000159378,0,-0.000159378,0,0.005,equal,True,2,0
+live250,final2,ALL,content_mode,qe,31,29524,len_bad,"length ratio outside [0.2, 5] (hard class of both rewards)",0,0,0,0,0,0,0,0.005,equal,True,0,0
+live250,final2,ALL,content_mode,qe,31,29524,copy_flag,substring copy of the source above the human threshold (anchors v3),0.0134874,0.0132326,-0.000254815,-0.000704137,0.000197764,-0.000764824,0.000191821,0.005,equal,True,7,6
+live250,final2,ALL,content_mode,qe,31,29524,copy_frac,"copied fraction of the source (verbatim runs, mean)",0.00415986,0.00409319,-6.66732e-05,-0.00018801,4.61327e-05,-0.000204733,6.63217e-05,0.002,equal,True,10,12
+live250,final2,ALL,content_mode,qe,31,29524,num_loss,numbers of the source missing in the output (share),0.0425995,0.0436588,0.00105934,-0.00168189,0.00390264,-0.00197269,0.00439107,0.005,equal,True,12,14
+live250,final2,ALL,content_mode,qe,31,29524,name_loss,names of the source missing in the output (share),0.35079,0.3533,0.00251011,0.000937993,0.00424533,0.000512118,0.00446396,0.005,final2 worse,True,9,22
+live250,final2,ALL,content_mode,qe,31,29524,ent2_pen,graded entity loss (anchors v3 entity2 units; rows with entities),0.093153,0.0954009,0.00224787,0.000746552,0.00396992,0.0006587,0.00425509,0.005,final2 worse,True,10,21
+live250,final2,ALL,content_mode,qe,31,29524,func_flag,stop-word profile deviates (deficit > 0),0.0228764,0.0227528,-0.000123599,-0.00123954,0.00101937,-0.00121347,0.00100601,0.005,equal,True,9,6
+live250,final2,ALL,content_mode,qe,31,29524,func_def,stop-word profile deficit (0..1),0.00379189,0.00365379,-0.000138099,-0.000408872,8.98111e-05,-0.000445135,0.000204308,0.002,equal,True,15,7
+live250,final2,ALL,content_mode,qe,31,29524,func_sat,stop-word profile saturated (deficit >= 0.9),0.000153158,8.19484e-05,-7.12099e-05,-0.00021363,0,-0.00021363,0,0.001,equal,True,1,0
+live250,final2,ALL,content_mode,qe,31,29524,pad_flag,padding / low type-token ratio (deficit > 0),0.0455661,0.0489234,0.00335728,0.00161167,0.00513858,0.00171647,0.00512379,0.005,final2 worse,True,7,21
+live250,final2,ALL,content_mode,qe,31,29524,pad_def,padding deficit (0..1),0.0069308,0.0074394,0.000508607,0.000144788,0.000887886,0.000213019,0.000827213,0.002,final2 worse,True,11,20
+live250,final2,ALL,content_mode,qe,31,29524,pad_sat,padding saturated (deficit >= 0.9),8.09746e-05,3.18756e-05,-4.9099e-05,-0.000147297,0,-0.000147297,0,0.001,equal,True,1,0
+live250,final2,ALL,content_mode,qe,31,29524,rep_flag,repetition above the human limit (deficit > 0),0.0610367,0.0645831,0.0035464,0.00144187,0.00575625,0.00137632,0.00578927,0.005,final2 worse,True,7,22
+live250,final2,ALL,content_mode,qe,31,29524,rep_def,repetition severity (0..1),0.013533,0.0146536,0.00112061,0.000508238,0.0017485,0.00056814,0.00172651,0.002,final2 worse,True,11,20
+live250,final2,ALL,content_mode,qe,31,29524,rep4,share of repeated word 4-grams (mean),0.00284595,0.00304765,0.000201697,4.60646e-05,0.000359062,8.42481e-05,0.000327656,0.002,final2 worse,True,11,20
+live250,final2,ALL,content_mode,qe,31,29524,pen_total,penalty the final reward would subtract (reward units),0.0110846,0.0111623,7.77043e-05,-0.000212326,0.000393979,-0.000210204,0.000368841,0.005,equal,True,16,15
+live250,final2,ALL,content_mode,blend,11,11132,unfinished,unfinished (no end token in budget),0,0,0,0,0,0,0,0.005,equal,True,0,0
+live250,final2,ALL,content_mode,blend,11,11132,empty,empty output,0,0,0,0,0,0,0,0.001,equal,True,0,0
+live250,final2,ALL,content_mode,blend,11,11132,lid_wrong,"wrong language (GlotLID, where the guard is on)",0.000898311,0.000988142,8.98311e-05,-0.000449156,0.000538987,-0.000269493,0.000449156,0.005,equal,True,2,3
+live250,final2,ALL,content_mode,blend,11,11132,jacc_copy,"copy of source, Jaccard >= 0.9 (hard class of both rewards)",0,0,0,0,0,0,0,0.001,equal,True,0,0
+live250,final2,ALL,content_mode,blend,11,11132,degenerate,"degenerate (v1 repetition rule, hard class of both rewards)",0.000449156,0.000179662,-0.000269493,-0.000718649,8.98311e-05,-0.000718649,0.000179662,0.005,equal,True,3,1
+live250,final2,ALL,content_mode,blend,11,11132,len_bad,"length ratio outside [0.2, 5] (hard class of both rewards)",0,0,0,0,0,0,0,0.005,equal,True,0,0
+live250,final2,ALL,content_mode,blend,11,11132,copy_flag,substring copy of the source above the human threshold (anchors v3),0.0273087,0.027129,-0.000179662,-0.00170679,0.00125764,-0.00161696,0.000988142,0.005,equal,True,5,6
+live250,final2,ALL,content_mode,blend,11,11132,copy_frac,"copied fraction of the source (verbatim runs, mean)",0.00682847,0.00685992,3.14479e-05,-0.000317997,0.000384697,-0.000271936,0.000293566,0.002,equal,True,3,8
+live250,final2,ALL,content_mode,blend,11,11132,num_loss,numbers of the source missing in the output (share),0.0706323,0.0764378,0.0058055,-0.00274232,0.0135144,-0.000618429,0.0129723,0.005,equal,False,2,9
+live250,final2,ALL,content_mode,blend,11,11132,name_loss,names of the source missing in the output (share),0.289937,0.297919,0.0079818,0.00370106,0.0121781,0.00390966,0.0120585,0.005,final2 worse,False,1,10
+live250,final2,ALL,content_mode,blend,11,11132,ent2_pen,graded entity loss (anchors v3 entity2 units; rows with entities),0.0833377,0.0876131,0.0042754,-0.000100382,0.00822499,0.00217707,0.00669921,0.005,equal,True,0,11
+live250,final2,ALL,content_mode,blend,11,11132,func_flag,stop-word profile deviates (deficit > 0),0.103216,0.104833,0.00161696,-0.00359324,0.00620059,-0.00431189,0.0080848,0.005,equal,True,4,6
+live250,final2,ALL,content_mode,blend,11,11132,func_def,stop-word profile deficit (0..1),0.0243484,0.024375,2.66162e-05,-0.00138301,0.00144065,-0.00199955,0.00170226,0.002,equal,True,3,7
+live250,final2,ALL,content_mode,blend,11,11132,func_sat,stop-word profile saturated (deficit >= 0.9),0.00125764,0.000988142,-0.000269493,-0.000988142,0.000449156,-0.00152713,0.000628818,0.001,equal,True,1,2
+live250,final2,ALL,content_mode,blend,11,11132,pad_flag,padding / low type-token ratio (deficit > 0),0.181818,0.195203,0.0133848,0.00681818,0.0197696,0.0066475,0.0206612,0.005,final2 worse,False,3,8
+live250,final2,ALL,content_mode,blend,11,11132,pad_def,padding deficit (0..1),0.0398393,0.0438818,0.00404255,0.00223475,0.00591107,0.00067643,0.00819578,0.002,final2 worse,False,3,8
+live250,final2,ALL,content_mode,blend,11,11132,pad_sat,padding saturated (deficit >= 0.9),0.000628818,0.000449156,-0.000179662,-0.000718649,0.000359324,-0.000628818,0.000269493,0.001,equal,True,3,2
+live250,final2,ALL,content_mode,blend,11,11132,rep_flag,repetition above the human limit (deficit > 0),0.222332,0.230057,0.00772548,0.000624326,0.015004,-0.00251752,0.0199425,0.005,final2 worse,False,6,5
+live250,final2,ALL,content_mode,blend,11,11132,rep_def,repetition severity (0..1),0.0621924,0.0671766,0.00498419,0.00250589,0.0078011,0.000967183,0.011117,0.002,final2 worse,False,3,8
+live250,final2,ALL,content_mode,blend,11,11132,rep4,share of repeated word 4-grams (mean),0.0138885,0.0148362,0.0009477,0.000319988,0.00163412,-2.73332e-05,0.00236921,0.002,final2 worse,True,4,7
+live250,final2,ALL,content_mode,blend,11,11132,pen_total,penalty the final reward would subtract (reward units),0.116763,0.12456,0.00779684,0.00452602,0.0114494,0.00195526,0.0160712,0.005,final2 worse,False,2,9
+live250,final2,ALL,content_mode,consensus,2,2024,unfinished,unfinished (no end token in budget),0,0,0,0,0,,,0.005,equal,True,0,0
+live250,final2,ALL,content_mode,consensus,2,2024,empty,empty output,0,0,0,0,0,,,0.001,equal,True,0,0
+live250,final2,ALL,content_mode,consensus,2,2024,lid_wrong,"wrong language (GlotLID, where the guard is on)",0.0123518,0.0133399,0.000988142,-0.00247036,0.00444664,,,0.005,equal,True,0,2
+live250,final2,ALL,content_mode,consensus,2,2024,jacc_copy,"copy of source, Jaccard >= 0.9 (hard class of both rewards)",0,0,0,0,0,,,0.001,equal,True,0,0
+live250,final2,ALL,content_mode,consensus,2,2024,degenerate,"degenerate (v1 repetition rule, hard class of both rewards)",0.00247036,0.00592885,0.0034585,0,0.006917,,,0.005,equal,True,0,1
+live250,final2,ALL,content_mode,consensus,2,2024,len_bad,"length ratio outside [0.2, 5] (hard class of both rewards)",0,0.000494071,0.000494071,0,0.00148221,,,0.005,equal,True,0,1
+live250,final2,ALL,content_mode,consensus,2,2024,copy_flag,substring copy of the source above the human threshold (anchors v3),0.0296443,0.0256917,-0.00395257,-0.00839921,0,,,0.005,equal,True,2,0
+live250,final2,ALL,content_mode,consensus,2,2024,copy_frac,"copied fraction of the source (verbatim runs, mean)",0.00827584,0.00713485,-0.00114099,-0.00244075,6.7611e-05,,,0.002,equal,True,2,0
+live250,final2,ALL,content_mode,consensus,2,2024,num_loss,numbers of the source missing in the output (share),0.0178571,0.0214711,0.00361395,-0.00846454,0.0156649,,,0.005,equal,True,0,2
+live250,final2,ALL,content_mode,consensus,2,2024,name_loss,names of the source missing in the output (share),0.252084,0.271433,0.0193489,0.0103812,0.0290876,,,0.005,final2 worse,False,0,2
+live250,final2,ALL,content_mode,consensus,2,2024,ent2_pen,graded entity loss (anchors v3 entity2 units; rows with entities),0.0582892,0.0660561,0.00776696,0.000992154,0.0141973,,,0.005,final2 worse,False,0,2
+live250,final2,ALL,content_mode,consensus,2,2024,func_flag,stop-word profile deviates (deficit > 0),0.185277,0.19417,0.00889328,-0.00543478,0.0232213,,,0.005,equal,False,0,2
+live250,final2,ALL,content_mode,consensus,2,2024,func_def,stop-word profile deficit (0..1),0.0443137,0.0452079,0.000894258,-0.00378669,0.00546254,,,0.002,equal,True,0,2
+live250,final2,ALL,content_mode,consensus,2,2024,func_sat,stop-word profile saturated (deficit >= 0.9),0.00197628,0.00395257,0.00197628,-1.23518e-05,0.00444664,,,0.001,equal,False,0,1
+live250,final2,ALL,content_mode,consensus,2,2024,pad_flag,padding / low type-token ratio (deficit > 0),0.262352,0.290514,0.0281621,0.0118577,0.0454669,,,0.005,final2 worse,False,0,2
+live250,final2,ALL,content_mode,consensus,2,2024,pad_def,padding deficit (0..1),0.0775589,0.0971912,0.0196323,0.0129725,0.0264395,,,0.002,final2 worse,False,0,2
+live250,final2,ALL,content_mode,consensus,2,2024,pad_sat,padding saturated (deficit >= 0.9),0.00642292,0.0143281,0.00790514,0.00296443,0.0133399,,,0.001,final2 worse,False,0,2
+live250,final2,ALL,content_mode,consensus,2,2024,rep_flag,repetition above the human limit (deficit > 0),0.280632,0.311265,0.0306324,0.0133399,0.0494071,,,0.005,final2 worse,False,0,2
+live250,final2,ALL,content_mode,consensus,2,2024,rep_def,repetition severity (0..1),0.104688,0.122017,0.017329,0.00862983,0.026354,,,0.002,final2 worse,False,0,2
+live250,final2,ALL,content_mode,consensus,2,2024,rep4,share of repeated word 4-grams (mean),0.0222312,0.0283593,0.00612805,0.00354146,0.00871334,,,0.002,final2 worse,False,0,2
+live250,final2,ALL,content_mode,consensus,2,2024,pen_total,penalty the final reward would subtract (reward units),0.182845,0.209269,0.026424,0.0142929,0.0387862,,,0.005,final2 worse,False,0,2

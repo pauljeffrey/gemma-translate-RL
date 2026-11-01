@@ -1,0 +1,14 @@
+{
+ "va_keep": 159629,
+ "s1_kept": 163869,
+ "va_keep_in_s1_free": 1,
+ "s1_kept_not_va": 4241,
+ "s1_kept_not_va_by_class": {
+  "common_nonascii": 4174,
+  "latin_nonascii": 65,
+  "html_markup": 2
+ },
+ "va_keep_s1_free_by_class": {
+  "greek": 1
+ }
+}

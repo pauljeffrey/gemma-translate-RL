@@ -1,0 +1,1 @@
+wrote res/fertility.csv: 160 rows

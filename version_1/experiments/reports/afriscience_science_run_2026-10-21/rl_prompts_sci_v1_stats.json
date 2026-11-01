@@ -1,0 +1,101 @@
+{
+ "seed": 20261021,
+ "rows": 106922,
+ "languages": 77,
+ "holdout": {
+  "afriscience_dev_docs": 25,
+  "afriscience_test_docs": 28,
+  "afrilongdoc_hard_docs": 135,
+  "afrilongdoc_core_docs": 450
+ },
+ "holdout_sentences": 23664,
+ "holdout_8grams": 480156,
+ "dropped_by_holdout": {
+  "afriscience/ngram8": 71,
+  "libretexts/ngram8": 367,
+  "libretexts/sentence": 223,
+  "pmc/ngram8": 250,
+  "pmc/sentence": 2,
+  "arxiv/sentence": 318,
+  "arxiv/ngram8": 61,
+  "arxiv_abs/ngram8": 11
+ },
+ "pool_windows": {
+  "b64/afriscience": 529,
+  "b64/libretexts": 915,
+  "b64/pmc": 1797,
+  "b64/arxiv": 744,
+  "b64/arxiv_abs": 1231,
+  "b256/afriscience": 527,
+  "b256/libretexts": 4441,
+  "b256/pmc": 9380,
+  "b256/arxiv": 3688,
+  "b256/arxiv_abs": 29541,
+  "b512/afriscience": 504,
+  "b512/libretexts": 5825,
+  "b512/pmc": 12837,
+  "b512/arxiv": 4868,
+  "b512/arxiv_abs": 8245,
+  "b1024/afriscience": 240,
+  "b1024/libretexts": 8797,
+  "b1024/pmc": 19841,
+  "b1024/arxiv": 7490,
+  "b1024/arxiv_abs": 19,
+  "b2048/afriscience": 66,
+  "b2048/libretexts": 7728,
+  "b2048/pmc": 19717,
+  "b2048/arxiv": 6850,
+  "b2048/arxiv_abs": 0
+ },
+ "cell_shortfall": {
+  "b1024/arxiv_abs": 497,
+  "b2048/afriscience": 264
+ },
+ "per_domain_bin": {
+  "general/b1024": 9192,
+  "general/b2048": 9154,
+  "general/b256": 9229,
+  "general/b512": 9213,
+  "general/b64": 9233,
+  "science/b1024": 16940,
+  "science/b2048": 16940,
+  "science/b256": 9240,
+  "science/b512": 11550,
+  "science/b64": 6231
+ },
+ "per_domain_source": {
+  "general/HuggingFaceFW/fineweb-edu:sample-10BT": 33073,
+  "general/wikimedia/wikipedia:20231101.en": 12948,
+  "science/common-pile/arxiv_papers": 7572,
+  "science/common-pile/libretexts": 15085,
+  "science/common-pile/pubmed": 20291,
+  "science/dsfsi/afriscience_mt:train(en)": 13327,
+  "science/gfissore/arxiv-abstracts-2021": 4626
+ },
+ "per_domain_licence": {
+  "general/odc-by": 33073,
+  "general/share_alike": 12948,
+  "science/apache-2.0": 13327,
+  "science/cc-by": 40309,
+  "science/cc0": 2639,
+  "science/cc0-1.0": 4626
+ },
+ "science_unique_english": 39684,
+ "science_cells": {
+  "b64": 80,
+  "b256": 120,
+  "b512": 150,
+  "b1024": 220,
+  "b2048": 220
+ },
+ "afs_share": {
+  "benchmark": 0.5,
+  "other": 0.2
+ },
+ "other_source_weights": {
+  "pmc": 0.4,
+  "libretexts": 0.3,
+  "arxiv": 0.15,
+  "arxiv_abs": 0.15
+ }
+}

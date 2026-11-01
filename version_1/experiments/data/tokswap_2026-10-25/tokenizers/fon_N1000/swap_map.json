@@ -1,0 +1,12012 @@
+{
+"orig_tokenizer_sha256": "daab2354f8a74e70d70b4d1f804939b68a8c9624dd06cb7858e52dd8970e9726",
+"n_geez": 0,
+"n_fon": 1000,
+"removed_tokens": [
+{
+"id": 261144,
+"token": "<unused5242>"
+},
+{
+"id": 261145,
+"token": "<unused5243>"
+},
+{
+"id": 261146,
+"token": "<unused5244>"
+},
+{
+"id": 261147,
+"token": "<unused5245>"
+},
+{
+"id": 261148,
+"token": "<unused5246>"
+},
+{
+"id": 261149,
+"token": "<unused5247>"
+},
+{
+"id": 261150,
+"token": "<unused5248>"
+},
+{
+"id": 261151,
+"token": "<unused5249>"
+},
+{
+"id": 261152,
+"token": "<unused5250>"
+},
+{
+"id": 261153,
+"token": "<unused5251>"
+},
+{
+"id": 261154,
+"token": "<unused5252>"
+},
+{
+"id": 261155,
+"token": "<unused5253>"
+},
+{
+"id": 261156,
+"token": "<unused5254>"
+},
+{
+"id": 261157,
+"token": "<unused5255>"
+},
+{
+"id": 261158,
+"token": "<unused5256>"
+},
+{
+"id": 261159,
+"token": "<unused5257>"
+},
+{
+"id": 261160,
+"token": "<unused5258>"
+},
+{
+"id": 261161,
+"token": "<unused5259>"
+},
+{
+"id": 261162,
+"token": "<unused5260>"
+},
+{
+"id": 261163,
+"token": "<unused5261>"
+},
+{
+"id": 261164,
+"token": "<unused5262>"
+},
+{
+"id": 261165,
+"token": "<unused5263>"
+},
+{
+"id": 261166,
+"token": "<unused5264>"
+},
+{
+"id": 261167,
+"token": "<unused5265>"
+},
+{
+"id": 261168,
+"token": "<unused5266>"
+},
+{
+"id": 261169,
+"token": "<unused5267>"
+},
+{
+"id": 261170,
+"token": "<unused5268>"
+},
+{
+"id": 261171,
+"token": "<unused5269>"
+},
+{
+"id": 261172,
+"token": "<unused5270>"
+},
+{
+"id": 261173,
+"token": "<unused5271>"
+},
+{
+"id": 261174,
+"token": "<unused5272>"
+},
+{
+"id": 261175,
+"token": "<unused5273>"
+},
+{
+"id": 261176,
+"token": "<unused5274>"
+},
+{
+"id": 261177,
+"token": "<unused5275>"
+},
+{
+"id": 261178,
+"token": "<unused5276>"
+},
+{
+"id": 261179,
+"token": "<unused5277>"
+},
+{
+"id": 261180,
+"token": "<unused5278>"
+},
+{
+"id": 261181,
+"token": "<unused5279>"
+},
+{
+"id": 261182,
+"token": "<unused5280>"
+},
+{
+"id": 261183,
+"token": "<unused5281>"
+},
+{
+"id": 261184,
+"token": "<unused5282>"
+},
+{
+"id": 261185,
+"token": "<unused5283>"
+},
+{
+"id": 261186,
+"token": "<unused5284>"
+},
+{
+"id": 261187,
+"token": "<unused5285>"
+},
+{
+"id": 261188,
+"token": "<unused5286>"
+},
+{
+"id": 261189,
+"token": "<unused5287>"
+},
+{
+"id": 261190,
+"token": "<unused5288>"
+},
+{
+"id": 261191,
+"token": "<unused5289>"
+},
+{
+"id": 261192,
+"token": "<unused5290>"
+},
+{
+"id": 261193,
+"token": "<unused5291>"
+},
+{
+"id": 261194,
+"token": "<unused5292>"
+},
+{
+"id": 261195,
+"token": "<unused5293>"
+},
+{
+"id": 261196,
+"token": "<unused5294>"
+},
+{
+"id": 261197,
+"token": "<unused5295>"
+},
+{
+"id": 261198,
+"token": "<unused5296>"
+},
+{
+"id": 261199,
+"token": "<unused5297>"
+},
+{
+"id": 261200,
+"token": "<unused5298>"
+},
+{
+"id": 261201,
+"token": "<unused5299>"
+},
+{
+"id": 261202,
+"token": "<unused5300>"
+},
+{
+"id": 261203,
+"token": "<unused5301>"
+},
+{
+"id": 261204,
+"token": "<unused5302>"
+},
+{
+"id": 261205,
+"token": "<unused5303>"
+},
+{
+"id": 261206,
+"token": "<unused5304>"
+},
+{
+"id": 261207,
+"token": "<unused5305>"
+},
+{
+"id": 261208,
+"token": "<unused5306>"
+},
+{
+"id": 261209,
+"token": "<unused5307>"
+},
+{
+"id": 261210,
+"token": "<unused5308>"
+},
+{
+"id": 261211,
+"token": "<unused5309>"
+},
+{
+"id": 261212,
+"token": "<unused5310>"
+},
+{
+"id": 261213,
+"token": "<unused5311>"
+},
+{
+"id": 261214,
+"token": "<unused5312>"
+},
+{
+"id": 261215,
+"token": "<unused5313>"
+},
+{
+"id": 261216,
+"token": "<unused5314>"
+},
+{
+"id": 261217,
+"token": "<unused5315>"
+},
+{
+"id": 261218,
+"token": "<unused5316>"
+},
+{
+"id": 261219,
+"token": "<unused5317>"
+},
+{
+"id": 261220,
+"token": "<unused5318>"
+},
+{
+"id": 261221,
+"token": "<unused5319>"
+},
+{
+"id": 261222,
+"token": "<unused5320>"
+},
+{
+"id": 261223,
+"token": "<unused5321>"
+},
+{
+"id": 261224,
+"token": "<unused5322>"
+},
+{
+"id": 261225,
+"token": "<unused5323>"
+},
+{
+"id": 261226,
+"token": "<unused5324>"
+},
+{
+"id": 261227,
+"token": "<unused5325>"
+},
+{
+"id": 261228,
+"token": "<unused5326>"
+},
+{
+"id": 261229,
+"token": "<unused5327>"
+},
+{
+"id": 261230,
+"token": "<unused5328>"
+},
+{
+"id": 261231,
+"token": "<unused5329>"
+},
+{
+"id": 261232,
+"token": "<unused5330>"
+},
+{
+"id": 261233,
+"token": "<unused5331>"
+},
+{
+"id": 261234,
+"token": "<unused5332>"
+},
+{
+"id": 261235,
+"token": "<unused5333>"
+},
+{
+"id": 261236,
+"token": "<unused5334>"
+},
+{
+"id": 261237,
+"token": "<unused5335>"
+},
+{
+"id": 261238,
+"token": "<unused5336>"
+},
+{
+"id": 261239,
+"token": "<unused5337>"
+},
+{
+"id": 261240,
+"token": "<unused5338>"
+},
+{
+"id": 261241,
+"token": "<unused5339>"
+},
+{
+"id": 261242,
+"token": "<unused5340>"
+},
+{
+"id": 261243,
+"token": "<unused5341>"
+},
+{
+"id": 261244,
+"token": "<unused5342>"
+},
+{
+"id": 261245,
+"token": "<unused5343>"
+},
+{
+"id": 261246,
+"token": "<unused5344>"
+},
+{
+"id": 261247,
+"token": "<unused5345>"
+},
+{
+"id": 261248,
+"token": "<unused5346>"
+},
+{
+"id": 261249,
+"token": "<unused5347>"
+},
+{
+"id": 261250,
+"token": "<unused5348>"
+},
+{
+"id": 261251,
+"token": "<unused5349>"
+},
+{
+"id": 261252,
+"token": "<unused5350>"
+},
+{
+"id": 261253,
+"token": "<unused5351>"
+},
+{
+"id": 261254,
+"token": "<unused5352>"
+},
+{
+"id": 261255,
+"token": "<unused5353>"
+},
+{
+"id": 261256,
+"token": "<unused5354>"
+},
+{
+"id": 261257,
+"token": "<unused5355>"
+},
+{
+"id": 261258,
+"token": "<unused5356>"
+},
+{
+"id": 261259,
+"token": "<unused5357>"
+},
+{
+"id": 261260,
+"token": "<unused5358>"
+},
+{
+"id": 261261,
+"token": "<unused5359>"
+},
+{
+"id": 261262,
+"token": "<unused5360>"
+},
+{
+"id": 261263,
+"token": "<unused5361>"
+},
+{
+"id": 261264,
+"token": "<unused5362>"
+},
+{
+"id": 261265,
+"token": "<unused5363>"
+},
+{
+"id": 261266,
+"token": "<unused5364>"
+},
+{
+"id": 261267,
+"token": "<unused5365>"
+},
+{
+"id": 261268,
+"token": "<unused5366>"
+},
+{
+"id": 261269,
+"token": "<unused5367>"
+},
+{
+"id": 261270,
+"token": "<unused5368>"
+},
+{
+"id": 261271,
+"token": "<unused5369>"
+},
+{
+"id": 261272,
+"token": "<unused5370>"
+},
+{
+"id": 261273,
+"token": "<unused5371>"
+},
+{
+"id": 261274,
+"token": "<unused5372>"
+},
+{
+"id": 261275,
+"token": "<unused5373>"
+},
+{
+"id": 261276,
+"token": "<unused5374>"
+},
+{
+"id": 261277,
+"token": "<unused5375>"
+},
+{
+"id": 261278,
+"token": "<unused5376>"
+},
+{
+"id": 261279,
+"token": "<unused5377>"
+},
+{
+"id": 261280,
+"token": "<unused5378>"
+},
+{
+"id": 261281,
+"token": "<unused5379>"
+},
+{
+"id": 261282,
+"token": "<unused5380>"
+},
+{
+"id": 261283,
+"token": "<unused5381>"
+},
+{
+"id": 261284,
+"token": "<unused5382>"
+},
+{
+"id": 261285,
+"token": "<unused5383>"
+},
+{
+"id": 261286,
+"token": "<unused5384>"
+},
+{
+"id": 261287,
+"token": "<unused5385>"
+},
+{
+"id": 261288,
+"token": "<unused5386>"
+},
+{
+"id": 261289,
+"token": "<unused5387>"
+},
+{
+"id": 261290,
+"token": "<unused5388>"
+},
+{
+"id": 261291,
+"token": "<unused5389>"
+},
+{
+"id": 261292,
+"token": "<unused5390>"
+},
+{
+"id": 261293,
+"token": "<unused5391>"
+},
+{
+"id": 261294,
+"token": "<unused5392>"
+},
+{
+"id": 261295,
+"token": "<unused5393>"
+},
+{
+"id": 261296,
+"token": "<unused5394>"
+},
+{
+"id": 261297,
+"token": "<unused5395>"
+},
+{
+"id": 261298,
+"token": "<unused5396>"
+},
+{
+"id": 261299,
+"token": "<unused5397>"
+},
+{
+"id": 261300,
+"token": "<unused5398>"
+},
+{
+"id": 261301,
+"token": "<unused5399>"
+},
+{
+"id": 261302,
+"token": "<unused5400>"
+},
+{
+"id": 261303,
+"token": "<unused5401>"
+},
+{
+"id": 261304,
+"token": "<unused5402>"
+},
+{
+"id": 261305,
+"token": "<unused5403>"
+},
+{
+"id": 261306,
+"token": "<unused5404>"
+},
+{
+"id": 261307,
+"token": "<unused5405>"
+},
+{
+"id": 261308,
+"token": "<unused5406>"
+},
+{
+"id": 261309,
+"token": "<unused5407>"
+},
+{
+"id": 261310,
+"token": "<unused5408>"
+},
+{
+"id": 261311,
+"token": "<unused5409>"
+},
+{
+"id": 261312,
+"token": "<unused5410>"
+},
+{
+"id": 261313,
+"token": "<unused5411>"
+},
+{
+"id": 261314,
+"token": "<unused5412>"
+},
+{
+"id": 261315,
+"token": "<unused5413>"
+},
+{
+"id": 261316,
+"token": "<unused5414>"
+},
+{
+"id": 261317,
+"token": "<unused5415>"
+},
+{
+"id": 261318,
+"token": "<unused5416>"
+},
+{
+"id": 261319,
+"token": "<unused5417>"
+},
+{
+"id": 261320,
+"token": "<unused5418>"
+},
+{
+"id": 261321,
+"token": "<unused5419>"
+},
+{
+"id": 261322,
+"token": "<unused5420>"
+},
+{
+"id": 261323,
+"token": "<unused5421>"
+},
+{
+"id": 261324,
+"token": "<unused5422>"
+},
+{
+"id": 261325,
+"token": "<unused5423>"
+},
+{
+"id": 261326,
+"token": "<unused5424>"
+},
+{
+"id": 261327,
+"token": "<unused5425>"
+},
+{
+"id": 261328,
+"token": "<unused5426>"
+},
+{
+"id": 261329,
+"token": "<unused5427>"
+},
+{
+"id": 261330,
+"token": "<unused5428>"
+},
+{
+"id": 261331,
+"token": "<unused5429>"
+},
+{
+"id": 261332,
+"token": "<unused5430>"
+},
+{
+"id": 261333,
+"token": "<unused5431>"
+},
+{
+"id": 261334,
+"token": "<unused5432>"
+},
+{
+"id": 261335,
+"token": "<unused5433>"
+},
+{
+"id": 261336,
+"token": "<unused5434>"
+},
+{
+"id": 261337,
+"token": "<unused5435>"
+},
+{
+"id": 261338,
+"token": "<unused5436>"
+},
+{
+"id": 261339,
+"token": "<unused5437>"
+},
+{
+"id": 261340,
+"token": "<unused5438>"
+},
+{
+"id": 261341,
+"token": "<unused5439>"
+},
+{
+"id": 261342,
+"token": "<unused5440>"
+},
+{
+"id": 261343,
+"token": "<unused5441>"
+},
+{
+"id": 261344,
+"token": "<unused5442>"
+},
+{
+"id": 261345,
+"token": "<unused5443>"
+},
+{
+"id": 261346,
+"token": "<unused5444>"
+},
+{
+"id": 261347,
+"token": "<unused5445>"
+},
+{
+"id": 261348,
+"token": "<unused5446>"
+},
+{
+"id": 261349,
+"token": "<unused5447>"
+},
+{
+"id": 261350,
+"token": "<unused5448>"
+},
+{
+"id": 261351,
+"token": "<unused5449>"
+},
+{
+"id": 261352,
+"token": "<unused5450>"
+},
+{
+"id": 261353,
+"token": "<unused5451>"
+},
+{
+"id": 261354,
+"token": "<unused5452>"
+},
+{
+"id": 261355,
+"token": "<unused5453>"
+},
+{
+"id": 261356,
+"token": "<unused5454>"
+},
+{
+"id": 261357,
+"token": "<unused5455>"
+},
+{
+"id": 261358,
+"token": "<unused5456>"
+},
+{
+"id": 261359,
+"token": "<unused5457>"
+},
+{
+"id": 261360,
+"token": "<unused5458>"
+},
+{
+"id": 261361,
+"token": "<unused5459>"
+},
+{
+"id": 261362,
+"token": "<unused5460>"
+},
+{
+"id": 261363,
+"token": "<unused5461>"
+},
+{
+"id": 261364,
+"token": "<unused5462>"
+},
+{
+"id": 261365,
+"token": "<unused5463>"
+},
+{
+"id": 261366,
+"token": "<unused5464>"
+},
+{
+"id": 261367,
+"token": "<unused5465>"
+},
+{
+"id": 261368,
+"token": "<unused5466>"
+},
+{
+"id": 261369,
+"token": "<unused5467>"
+},
+{
+"id": 261370,
+"token": "<unused5468>"
+},
+{
+"id": 261371,
+"token": "<unused5469>"
+},
+{
+"id": 261372,
+"token": "<unused5470>"
+},
+{
+"id": 261373,
+"token": "<unused5471>"
+},
+{
+"id": 261374,
+"token": "<unused5472>"
+},
+{
+"id": 261375,
+"token": "<unused5473>"
+},
+{
+"id": 261376,
+"token": "<unused5474>"
+},
+{
+"id": 261377,
+"token": "<unused5475>"
+},
+{
+"id": 261378,
+"token": "<unused5476>"
+},
+{
+"id": 261379,
+"token": "<unused5477>"
+},
+{
+"id": 261380,
+"token": "<unused5478>"
+},
+{
+"id": 261381,
+"token": "<unused5479>"
+},
+{
+"id": 261382,
+"token": "<unused5480>"
+},
+{
+"id": 261383,
+"token": "<unused5481>"
+},
+{
+"id": 261384,
+"token": "<unused5482>"
+},
+{
+"id": 261385,
+"token": "<unused5483>"
+},
+{
+"id": 261386,
+"token": "<unused5484>"
+},
+{
+"id": 261387,
+"token": "<unused5485>"
+},
+{
+"id": 261388,
+"token": "<unused5486>"
+},
+{
+"id": 261389,
+"token": "<unused5487>"
+},
+{
+"id": 261390,
+"token": "<unused5488>"
+},
+{
+"id": 261391,
+"token": "<unused5489>"
+},
+{
+"id": 261392,
+"token": "<unused5490>"
+},
+{
+"id": 261393,
+"token": "<unused5491>"
+},
+{
+"id": 261394,
+"token": "<unused5492>"
+},
+{
+"id": 261395,
+"token": "<unused5493>"
+},
+{
+"id": 261396,
+"token": "<unused5494>"
+},
+{
+"id": 261397,
+"token": "<unused5495>"
+},
+{
+"id": 261398,
+"token": "<unused5496>"
+},
+{
+"id": 261399,
+"token": "<unused5497>"
+},
+{
+"id": 261400,
+"token": "<unused5498>"
+},
+{
+"id": 261401,
+"token": "<unused5499>"
+},
+{
+"id": 261402,
+"token": "<unused5500>"
+},
+{
+"id": 261403,
+"token": "<unused5501>"
+},
+{
+"id": 261404,
+"token": "<unused5502>"
+},
+{
+"id": 261405,
+"token": "<unused5503>"
+},
+{
+"id": 261406,
+"token": "<unused5504>"
+},
+{
+"id": 261407,
+"token": "<unused5505>"
+},
+{
+"id": 261408,
+"token": "<unused5506>"
+},
+{
+"id": 261409,
+"token": "<unused5507>"
+},
+{
+"id": 261410,
+"token": "<unused5508>"
+},
+{
+"id": 261411,
+"token": "<unused5509>"
+},
+{
+"id": 261412,
+"token": "<unused5510>"
+},
+{
+"id": 261413,
+"token": "<unused5511>"
+},
+{
+"id": 261414,
+"token": "<unused5512>"
+},
+{
+"id": 261415,
+"token": "<unused5513>"
+},
+{
+"id": 261416,
+"token": "<unused5514>"
+},
+{
+"id": 261417,
+"token": "<unused5515>"
+},
+{
+"id": 261418,
+"token": "<unused5516>"
+},
+{
+"id": 261419,
+"token": "<unused5517>"
+},
+{
+"id": 261420,
+"token": "<unused5518>"
+},
+{
+"id": 261421,
+"token": "<unused5519>"
+},
+{
+"id": 261422,
+"token": "<unused5520>"
+},
+{
+"id": 261423,
+"token": "<unused5521>"
+},
+{
+"id": 261424,
+"token": "<unused5522>"
+},
+{
+"id": 261425,
+"token": "<unused5523>"
+},
+{
+"id": 261426,
+"token": "<unused5524>"
+},
+{
+"id": 261427,
+"token": "<unused5525>"
+},
+{
+"id": 261428,
+"token": "<unused5526>"
+},
+{
+"id": 261429,
+"token": "<unused5527>"
+},
+{
+"id": 261430,
+"token": "<unused5528>"
+},
+{
+"id": 261431,
+"token": "<unused5529>"
+},
+{
+"id": 261432,
+"token": "<unused5530>"
+},
+{
+"id": 261433,
+"token": "<unused5531>"
+},
+{
+"id": 261434,
+"token": "<unused5532>"
+},
+{
+"id": 261435,
+"token": "<unused5533>"
+},
+{
+"id": 261436,
+"token": "<unused5534>"
+},
+{
+"id": 261437,
+"token": "<unused5535>"
+},
+{
+"id": 261438,
+"token": "<unused5536>"
+},
+{
+"id": 261439,
+"token": "<unused5537>"
+},
+{
+"id": 261440,
+"token": "<unused5538>"
+},
+{
+"id": 261441,
+"token": "<unused5539>"
+},
+{
+"id": 261442,
+"token": "<unused5540>"
+},
+{
+"id": 261443,
+"token": "<unused5541>"
+},
+{
+"id": 261444,
+"token": "<unused5542>"
+},
+{
+"id": 261445,
+"token": "<unused5543>"
+},
+{
+"id": 261446,
+"token": "<unused5544>"
+},
+{
+"id": 261447,
+"token": "<unused5545>"
+},
+{
+"id": 261448,
+"token": "<unused5546>"
+},
+{
+"id": 261449,
+"token": "<unused5547>"
+},
+{
+"id": 261450,
+"token": "<unused5548>"
+},
+{
+"id": 261451,
+"token": "<unused5549>"
+},
+{
+"id": 261452,
+"token": "<unused5550>"
+},
+{
+"id": 261453,
+"token": "<unused5551>"
+},
+{
+"id": 261454,
+"token": "<unused5552>"
+},
+{
+"id": 261455,
+"token": "<unused5553>"
+},
+{
+"id": 261456,
+"token": "<unused5554>"
+},
+{
+"id": 261457,
+"token": "<unused5555>"
+},
+{
+"id": 261458,
+"token": "<unused5556>"
+},
+{
+"id": 261459,
+"token": "<unused5557>"
+},
+{
+"id": 261460,
+"token": "<unused5558>"
+},
+{
+"id": 261461,
+"token": "<unused5559>"
+},
+{
+"id": 261462,
+"token": "<unused5560>"
+},
+{
+"id": 261463,
+"token": "<unused5561>"
+},
+{
+"id": 261464,
+"token": "<unused5562>"
+},
+{
+"id": 261465,
+"token": "<unused5563>"
+},
+{
+"id": 261466,
+"token": "<unused5564>"
+},
+{
+"id": 261467,
+"token": "<unused5565>"
+},
+{
+"id": 261468,
+"token": "<unused5566>"
+},
+{
+"id": 261469,
+"token": "<unused5567>"
+},
+{
+"id": 261470,
+"token": "<unused5568>"
+},
+{
+"id": 261471,
+"token": "<unused5569>"
+},
+{
+"id": 261472,
+"token": "<unused5570>"
+},
+{
+"id": 261473,
+"token": "<unused5571>"
+},
+{
+"id": 261474,
+"token": "<unused5572>"
+},
+{
+"id": 261475,
+"token": "<unused5573>"
+},
+{
+"id": 261476,
+"token": "<unused5574>"
+},
+{
+"id": 261477,
+"token": "<unused5575>"
+},
+{
+"id": 261478,
+"token": "<unused5576>"
+},
+{
+"id": 261479,
+"token": "<unused5577>"
+},
+{
+"id": 261480,
+"token": "<unused5578>"
+},
+{
+"id": 261481,
+"token": "<unused5579>"
+},
+{
+"id": 261482,
+"token": "<unused5580>"
+},
+{
+"id": 261483,
+"token": "<unused5581>"
+},
+{
+"id": 261484,
+"token": "<unused5582>"
+},
+{
+"id": 261485,
+"token": "<unused5583>"
+},
+{
+"id": 261486,
+"token": "<unused5584>"
+},
+{
+"id": 261487,
+"token": "<unused5585>"
+},
+{
+"id": 261488,
+"token": "<unused5586>"
+},
+{
+"id": 261489,
+"token": "<unused5587>"
+},
+{
+"id": 261490,
+"token": "<unused5588>"
+},
+{
+"id": 261491,
+"token": "<unused5589>"
+},
+{
+"id": 261492,
+"token": "<unused5590>"
+},
+{
+"id": 261493,
+"token": "<unused5591>"
+},
+{
+"id": 261494,
+"token": "<unused5592>"
+},
+{
+"id": 261495,
+"token": "<unused5593>"
+},
+{
+"id": 261496,
+"token": "<unused5594>"
+},
+{
+"id": 261497,
+"token": "<unused5595>"
+},
+{
+"id": 261498,
+"token": "<unused5596>"
+},
+{
+"id": 261499,
+"token": "<unused5597>"
+},
+{
+"id": 261500,
+"token": "<unused5598>"
+},
+{
+"id": 261501,
+"token": "<unused5599>"
+},
+{
+"id": 261502,
+"token": "<unused5600>"
+},
+{
+"id": 261503,
+"token": "<unused5601>"
+},
+{
+"id": 261504,
+"token": "<unused5602>"
+},
+{
+"id": 261505,
+"token": "<unused5603>"
+},
+{
+"id": 261506,
+"token": "<unused5604>"
+},
+{
+"id": 261507,
+"token": "<unused5605>"
+},
+{
+"id": 261508,
+"token": "<unused5606>"
+},
+{
+"id": 261509,
+"token": "<unused5607>"
+},
+{
+"id": 261510,
+"token": "<unused5608>"
+},
+{
+"id": 261511,
+"token": "<unused5609>"
+},
+{
+"id": 261512,
+"token": "<unused5610>"
+},
+{
+"id": 261513,
+"token": "<unused5611>"
+},
+{
+"id": 261514,
+"token": "<unused5612>"
+},
+{
+"id": 261515,
+"token": "<unused5613>"
+},
+{
+"id": 261516,
+"token": "<unused5614>"
+},
+{
+"id": 261517,
+"token": "<unused5615>"
+},
+{
+"id": 261518,
+"token": "<unused5616>"
+},
+{
+"id": 261519,
+"token": "<unused5617>"
+},
+{
+"id": 261520,
+"token": "<unused5618>"
+},
+{
+"id": 261521,
+"token": "<unused5619>"
+},
+{
+"id": 261522,
+"token": "<unused5620>"
+},
+{
+"id": 261523,
+"token": "<unused5621>"
+},
+{
+"id": 261524,
+"token": "<unused5622>"
+},
+{
+"id": 261525,
+"token": "<unused5623>"
+},
+{
+"id": 261526,
+"token": "<unused5624>"
+},
+{
+"id": 261527,
+"token": "<unused5625>"
+},
+{
+"id": 261528,
+"token": "<unused5626>"
+},
+{
+"id": 261529,
+"token": "<unused5627>"
+},
+{
+"id": 261530,
+"token": "<unused5628>"
+},
+{
+"id": 261531,
+"token": "<unused5629>"
+},
+{
+"id": 261532,
+"token": "<unused5630>"
+},
+{
+"id": 261533,
+"token": "<unused5631>"
+},
+{
+"id": 261534,
+"token": "<unused5632>"
+},
+{
+"id": 261535,
+"token": "<unused5633>"
+},
+{
+"id": 261536,
+"token": "<unused5634>"
+},
+{
+"id": 261537,
+"token": "<unused5635>"
+},
+{
+"id": 261538,
+"token": "<unused5636>"
+},
+{
+"id": 261539,
+"token": "<unused5637>"
+},
+{
+"id": 261540,
+"token": "<unused5638>"
+},
+{
+"id": 261541,
+"token": "<unused5639>"
+},
+{
+"id": 261542,
+"token": "<unused5640>"
+},
+{
+"id": 261543,
+"token": "<unused5641>"
+},
+{
+"id": 261544,
+"token": "<unused5642>"
+},
+{
+"id": 261545,
+"token": "<unused5643>"
+},
+{
+"id": 261546,
+"token": "<unused5644>"
+},
+{
+"id": 261547,
+"token": "<unused5645>"
+},
+{
+"id": 261548,
+"token": "<unused5646>"
+},
+{
+"id": 261549,
+"token": "<unused5647>"
+},
+{
+"id": 261550,
+"token": "<unused5648>"
+},
+{
+"id": 261551,
+"token": "<unused5649>"
+},
+{
+"id": 261552,
+"token": "<unused5650>"
+},
+{
+"id": 261553,
+"token": "<unused5651>"
+},
+{
+"id": 261554,
+"token": "<unused5652>"
+},
+{
+"id": 261555,
+"token": "<unused5653>"
+},
+{
+"id": 261556,
+"token": "<unused5654>"
+},
+{
+"id": 261557,
+"token": "<unused5655>"
+},
+{
+"id": 261558,
+"token": "<unused5656>"
+},
+{
+"id": 261559,
+"token": "<unused5657>"
+},
+{
+"id": 261560,
+"token": "<unused5658>"
+},
+{
+"id": 261561,
+"token": "<unused5659>"
+},
+{
+"id": 261562,
+"token": "<unused5660>"
+},
+{
+"id": 261563,
+"token": "<unused5661>"
+},
+{
+"id": 261564,
+"token": "<unused5662>"
+},
+{
+"id": 261565,
+"token": "<unused5663>"
+},
+{
+"id": 261566,
+"token": "<unused5664>"
+},
+{
+"id": 261567,
+"token": "<unused5665>"
+},
+{
+"id": 261568,
+"token": "<unused5666>"
+},
+{
+"id": 261569,
+"token": "<unused5667>"
+},
+{
+"id": 261570,
+"token": "<unused5668>"
+},
+{
+"id": 261571,
+"token": "<unused5669>"
+},
+{
+"id": 261572,
+"token": "<unused5670>"
+},
+{
+"id": 261573,
+"token": "<unused5671>"
+},
+{
+"id": 261574,
+"token": "<unused5672>"
+},
+{
+"id": 261575,
+"token": "<unused5673>"
+},
+{
+"id": 261576,
+"token": "<unused5674>"
+},
+{
+"id": 261577,
+"token": "<unused5675>"
+},
+{
+"id": 261578,
+"token": "<unused5676>"
+},
+{
+"id": 261579,
+"token": "<unused5677>"
+},
+{
+"id": 261580,
+"token": "<unused5678>"
+},
+{
+"id": 261581,
+"token": "<unused5679>"
+},
+{
+"id": 261582,
+"token": "<unused5680>"
+},
+{
+"id": 261583,
+"token": "<unused5681>"
+},
+{
+"id": 261584,
+"token": "<unused5682>"
+},
+{
+"id": 261585,
+"token": "<unused5683>"
+},
+{
+"id": 261586,
+"token": "<unused5684>"
+},
+{
+"id": 261587,
+"token": "<unused5685>"
+},
+{
+"id": 261588,
+"token": "<unused5686>"
+},
+{
+"id": 261589,
+"token": "<unused5687>"
+},
+{
+"id": 261590,
+"token": "<unused5688>"
+},
+{
+"id": 261591,
+"token": "<unused5689>"
+},
+{
+"id": 261592,
+"token": "<unused5690>"
+},
+{
+"id": 261593,
+"token": "<unused5691>"
+},
+{
+"id": 261594,
+"token": "<unused5692>"
+},
+{
+"id": 261595,
+"token": "<unused5693>"
+},
+{
+"id": 261596,
+"token": "<unused5694>"
+},
+{
+"id": 261597,
+"token": "<unused5695>"
+},
+{
+"id": 261598,
+"token": "<unused5696>"
+},
+{
+"id": 261599,
+"token": "<unused5697>"
+},
+{
+"id": 261600,
+"token": "<unused5698>"
+},
+{
+"id": 261601,
+"token": "<unused5699>"
+},
+{
+"id": 261602,
+"token": "<unused5700>"
+},
+{
+"id": 261603,
+"token": "<unused5701>"
+},
+{
+"id": 261604,
+"token": "<unused5702>"
+},
+{
+"id": 261605,
+"token": "<unused5703>"
+},
+{
+"id": 261606,
+"token": "<unused5704>"
+},
+{
+"id": 261607,
+"token": "<unused5705>"
+},
+{
+"id": 261608,
+"token": "<unused5706>"
+},
+{
+"id": 261609,
+"token": "<unused5707>"
+},
+{
+"id": 261610,
+"token": "<unused5708>"
+},
+{
+"id": 261611,
+"token": "<unused5709>"
+},
+{
+"id": 261612,
+"token": "<unused5710>"
+},
+{
+"id": 261613,
+"token": "<unused5711>"
+},
+{
+"id": 261614,
+"token": "<unused5712>"
+},
+{
+"id": 261615,
+"token": "<unused5713>"
+},
+{
+"id": 261616,
+"token": "<unused5714>"
+},
+{
+"id": 261617,
+"token": "<unused5715>"
+},
+{
+"id": 261618,
+"token": "<unused5716>"
+},
+{
+"id": 261619,
+"token": "<unused5717>"
+},
+{
+"id": 261620,
+"token": "<unused5718>"
+},
+{
+"id": 261621,
+"token": "<unused5719>"
+},
+{
+"id": 261622,
+"token": "<unused5720>"
+},
+{
+"id": 261623,
+"token": "<unused5721>"
+},
+{
+"id": 261624,
+"token": "<unused5722>"
+},
+{
+"id": 261625,
+"token": "<unused5723>"
+},
+{
+"id": 261626,
+"token": "<unused5724>"
+},
+{
+"id": 261627,
+"token": "<unused5725>"
+},
+{
+"id": 261628,
+"token": "<unused5726>"
+},
+{
+"id": 261629,
+"token": "<unused5727>"
+},
+{
+"id": 261630,
+"token": "<unused5728>"
+},
+{
+"id": 261631,
+"token": "<unused5729>"
+},
+{
+"id": 261632,
+"token": "<unused5730>"
+},
+{
+"id": 261633,
+"token": "<unused5731>"
+},
+{
+"id": 261634,
+"token": "<unused5732>"
+},
+{
+"id": 261635,
+"token": "<unused5733>"
+},
+{
+"id": 261636,
+"token": "<unused5734>"
+},
+{
+"id": 261637,
+"token": "<unused5735>"
+},
+{
+"id": 261638,
+"token": "<unused5736>"
+},
+{
+"id": 261639,
+"token": "<unused5737>"
+},
+{
+"id": 261640,
+"token": "<unused5738>"
+},
+{
+"id": 261641,
+"token": "<unused5739>"
+},
+{
+"id": 261642,
+"token": "<unused5740>"
+},
+{
+"id": 261643,
+"token": "<unused5741>"
+},
+{
+"id": 261644,
+"token": "<unused5742>"
+},
+{
+"id": 261645,
+"token": "<unused5743>"
+},
+{
+"id": 261646,
+"token": "<unused5744>"
+},
+{
+"id": 261647,
+"token": "<unused5745>"
+},
+{
+"id": 261648,
+"token": "<unused5746>"
+},
+{
+"id": 261649,
+"token": "<unused5747>"
+},
+{
+"id": 261650,
+"token": "<unused5748>"
+},
+{
+"id": 261651,
+"token": "<unused5749>"
+},
+{
+"id": 261652,
+"token": "<unused5750>"
+},
+{
+"id": 261653,
+"token": "<unused5751>"
+},
+{
+"id": 261654,
+"token": "<unused5752>"
+},
+{
+"id": 261655,
+"token": "<unused5753>"
+},
+{
+"id": 261656,
+"token": "<unused5754>"
+},
+{
+"id": 261657,
+"token": "<unused5755>"
+},
+{
+"id": 261658,
+"token": "<unused5756>"
+},
+{
+"id": 261659,
+"token": "<unused5757>"
+},
+{
+"id": 261660,
+"token": "<unused5758>"
+},
+{
+"id": 261661,
+"token": "<unused5759>"
+},
+{
+"id": 261662,
+"token": "<unused5760>"
+},
+{
+"id": 261663,
+"token": "<unused5761>"
+},
+{
+"id": 261664,
+"token": "<unused5762>"
+},
+{
+"id": 261665,
+"token": "<unused5763>"
+},
+{
+"id": 261666,
+"token": "<unused5764>"
+},
+{
+"id": 261667,
+"token": "<unused5765>"
+},
+{
+"id": 261668,
+"token": "<unused5766>"
+},
+{
+"id": 261669,
+"token": "<unused5767>"
+},
+{
+"id": 261670,
+"token": "<unused5768>"
+},
+{
+"id": 261671,
+"token": "<unused5769>"
+},
+{
+"id": 261672,
+"token": "<unused5770>"
+},
+{
+"id": 261673,
+"token": "<unused5771>"
+},
+{
+"id": 261674,
+"token": "<unused5772>"
+},
+{
+"id": 261675,
+"token": "<unused5773>"
+},
+{
+"id": 261676,
+"token": "<unused5774>"
+},
+{
+"id": 261677,
+"token": "<unused5775>"
+},
+{
+"id": 261678,
+"token": "<unused5776>"
+},
+{
+"id": 261679,
+"token": "<unused5777>"
+},
+{
+"id": 261680,
+"token": "<unused5778>"
+},
+{
+"id": 261681,
+"token": "<unused5779>"
+},
+{
+"id": 261682,
+"token": "<unused5780>"
+},
+{
+"id": 261683,
+"token": "<unused5781>"
+},
+{
+"id": 261684,
+"token": "<unused5782>"
+},
+{
+"id": 261685,
+"token": "<unused5783>"
+},
+{
+"id": 261686,
+"token": "<unused5784>"
+},
+{
+"id": 261687,
+"token": "<unused5785>"
+},
+{
+"id": 261688,
+"token": "<unused5786>"
+},
+{
+"id": 261689,
+"token": "<unused5787>"
+},
+{
+"id": 261690,
+"token": "<unused5788>"
+},
+{
+"id": 261691,
+"token": "<unused5789>"
+},
+{
+"id": 261692,
+"token": "<unused5790>"
+},
+{
+"id": 261693,
+"token": "<unused5791>"
+},
+{
+"id": 261694,
+"token": "<unused5792>"
+},
+{
+"id": 261695,
+"token": "<unused5793>"
+},
+{
+"id": 261696,
+"token": "<unused5794>"
+},
+{
+"id": 261697,
+"token": "<unused5795>"
+},
+{
+"id": 261698,
+"token": "<unused5796>"
+},
+{
+"id": 261699,
+"token": "<unused5797>"
+},
+{
+"id": 261700,
+"token": "<unused5798>"
+},
+{
+"id": 261701,
+"token": "<unused5799>"
+},
+{
+"id": 261702,
+"token": "<unused5800>"
+},
+{
+"id": 261703,
+"token": "<unused5801>"
+},
+{
+"id": 261704,
+"token": "<unused5802>"
+},
+{
+"id": 261705,
+"token": "<unused5803>"
+},
+{
+"id": 261706,
+"token": "<unused5804>"
+},
+{
+"id": 261707,
+"token": "<unused5805>"
+},
+{
+"id": 261708,
+"token": "<unused5806>"
+},
+{
+"id": 261709,
+"token": "<unused5807>"
+},
+{
+"id": 261710,
+"token": "<unused5808>"
+},
+{
+"id": 261711,
+"token": "<unused5809>"
+},
+{
+"id": 261712,
+"token": "<unused5810>"
+},
+{
+"id": 261713,
+"token": "<unused5811>"
+},
+{
+"id": 261714,
+"token": "<unused5812>"
+},
+{
+"id": 261715,
+"token": "<unused5813>"
+},
+{
+"id": 261716,
+"token": "<unused5814>"
+},
+{
+"id": 261717,
+"token": "<unused5815>"
+},
+{
+"id": 261718,
+"token": "<unused5816>"
+},
+{
+"id": 261719,
+"token": "<unused5817>"
+},
+{
+"id": 261720,
+"token": "<unused5818>"
+},
+{
+"id": 261721,
+"token": "<unused5819>"
+},
+{
+"id": 261722,
+"token": "<unused5820>"
+},
+{
+"id": 261723,
+"token": "<unused5821>"
+},
+{
+"id": 261724,
+"token": "<unused5822>"
+},
+{
+"id": 261725,
+"token": "<unused5823>"
+},
+{
+"id": 261726,
+"token": "<unused5824>"
+},
+{
+"id": 261727,
+"token": "<unused5825>"
+},
+{
+"id": 261728,
+"token": "<unused5826>"
+},
+{
+"id": 261729,
+"token": "<unused5827>"
+},
+{
+"id": 261730,
+"token": "<unused5828>"
+},
+{
+"id": 261731,
+"token": "<unused5829>"
+},
+{
+"id": 261732,
+"token": "<unused5830>"
+},
+{
+"id": 261733,
+"token": "<unused5831>"
+},
+{
+"id": 261734,
+"token": "<unused5832>"
+},
+{
+"id": 261735,
+"token": "<unused5833>"
+},
+{
+"id": 261736,
+"token": "<unused5834>"
+},
+{
+"id": 261737,
+"token": "<unused5835>"
+},
+{
+"id": 261738,
+"token": "<unused5836>"
+},
+{
+"id": 261739,
+"token": "<unused5837>"
+},
+{
+"id": 261740,
+"token": "<unused5838>"
+},
+{
+"id": 261741,
+"token": "<unused5839>"
+},
+{
+"id": 261742,
+"token": "<unused5840>"
+},
+{
+"id": 261743,
+"token": "<unused5841>"
+},
+{
+"id": 261744,
+"token": "<unused5842>"
+},
+{
+"id": 261745,
+"token": "<unused5843>"
+},
+{
+"id": 261746,
+"token": "<unused5844>"
+},
+{
+"id": 261747,
+"token": "<unused5845>"
+},
+{
+"id": 261748,
+"token": "<unused5846>"
+},
+{
+"id": 261749,
+"token": "<unused5847>"
+},
+{
+"id": 261750,
+"token": "<unused5848>"
+},
+{
+"id": 261751,
+"token": "<unused5849>"
+},
+{
+"id": 261752,
+"token": "<unused5850>"
+},
+{
+"id": 261753,
+"token": "<unused5851>"
+},
+{
+"id": 261754,
+"token": "<unused5852>"
+},
+{
+"id": 261755,
+"token": "<unused5853>"
+},
+{
+"id": 261756,
+"token": "<unused5854>"
+},
+{
+"id": 261757,
+"token": "<unused5855>"
+},
+{
+"id": 261758,
+"token": "<unused5856>"
+},
+{
+"id": 261759,
+"token": "<unused5857>"
+},
+{
+"id": 261760,
+"token": "<unused5858>"
+},
+{
+"id": 261761,
+"token": "<unused5859>"
+},
+{
+"id": 261762,
+"token": "<unused5860>"
+},
+{
+"id": 261763,
+"token": "<unused5861>"
+},
+{
+"id": 261764,
+"token": "<unused5862>"
+},
+{
+"id": 261765,
+"token": "<unused5863>"
+},
+{
+"id": 261766,
+"token": "<unused5864>"
+},
+{
+"id": 261767,
+"token": "<unused5865>"
+},
+{
+"id": 261768,
+"token": "<unused5866>"
+},
+{
+"id": 261769,
+"token": "<unused5867>"
+},
+{
+"id": 261770,
+"token": "<unused5868>"
+},
+{
+"id": 261771,
+"token": "<unused5869>"
+},
+{
+"id": 261772,
+"token": "<unused5870>"
+},
+{
+"id": 261773,
+"token": "<unused5871>"
+},
+{
+"id": 261774,
+"token": "<unused5872>"
+},
+{
+"id": 261775,
+"token": "<unused5873>"
+},
+{
+"id": 261776,
+"token": "<unused5874>"
+},
+{
+"id": 261777,
+"token": "<unused5875>"
+},
+{
+"id": 261778,
+"token": "<unused5876>"
+},
+{
+"id": 261779,
+"token": "<unused5877>"
+},
+{
+"id": 261780,
+"token": "<unused5878>"
+},
+{
+"id": 261781,
+"token": "<unused5879>"
+},
+{
+"id": 261782,
+"token": "<unused5880>"
+},
+{
+"id": 261783,
+"token": "<unused5881>"
+},
+{
+"id": 261784,
+"token": "<unused5882>"
+},
+{
+"id": 261785,
+"token": "<unused5883>"
+},
+{
+"id": 261786,
+"token": "<unused5884>"
+},
+{
+"id": 261787,
+"token": "<unused5885>"
+},
+{
+"id": 261788,
+"token": "<unused5886>"
+},
+{
+"id": 261789,
+"token": "<unused5887>"
+},
+{
+"id": 261790,
+"token": "<unused5888>"
+},
+{
+"id": 261791,
+"token": "<unused5889>"
+},
+{
+"id": 261792,
+"token": "<unused5890>"
+},
+{
+"id": 261793,
+"token": "<unused5891>"
+},
+{
+"id": 261794,
+"token": "<unused5892>"
+},
+{
+"id": 261795,
+"token": "<unused5893>"
+},
+{
+"id": 261796,
+"token": "<unused5894>"
+},
+{
+"id": 261797,
+"token": "<unused5895>"
+},
+{
+"id": 261798,
+"token": "<unused5896>"
+},
+{
+"id": 261799,
+"token": "<unused5897>"
+},
+{
+"id": 261800,
+"token": "<unused5898>"
+},
+{
+"id": 261801,
+"token": "<unused5899>"
+},
+{
+"id": 261802,
+"token": "<unused5900>"
+},
+{
+"id": 261803,
+"token": "<unused5901>"
+},
+{
+"id": 261804,
+"token": "<unused5902>"
+},
+{
+"id": 261805,
+"token": "<unused5903>"
+},
+{
+"id": 261806,
+"token": "<unused5904>"
+},
+{
+"id": 261807,
+"token": "<unused5905>"
+},
+{
+"id": 261808,
+"token": "<unused5906>"
+},
+{
+"id": 261809,
+"token": "<unused5907>"
+},
+{
+"id": 261810,
+"token": "<unused5908>"
+},
+{
+"id": 261811,
+"token": "<unused5909>"
+},
+{
+"id": 261812,
+"token": "<unused5910>"
+},
+{
+"id": 261813,
+"token": "<unused5911>"
+},
+{
+"id": 261814,
+"token": "<unused5912>"
+},
+{
+"id": 261815,
+"token": "<unused5913>"
+},
+{
+"id": 261816,
+"token": "<unused5914>"
+},
+{
+"id": 261817,
+"token": "<unused5915>"
+},
+{
+"id": 261818,
+"token": "<unused5916>"
+},
+{
+"id": 261819,
+"token": "<unused5917>"
+},
+{
+"id": 261820,
+"token": "<unused5918>"
+},
+{
+"id": 261821,
+"token": "<unused5919>"
+},
+{
+"id": 261822,
+"token": "<unused5920>"
+},
+{
+"id": 261823,
+"token": "<unused5921>"
+},
+{
+"id": 261824,
+"token": "<unused5922>"
+},
+{
+"id": 261825,
+"token": "<unused5923>"
+},
+{
+"id": 261826,
+"token": "<unused5924>"
+},
+{
+"id": 261827,
+"token": "<unused5925>"
+},
+{
+"id": 261828,
+"token": "<unused5926>"
+},
+{
+"id": 261829,
+"token": "<unused5927>"
+},
+{
+"id": 261830,
+"token": "<unused5928>"
+},
+{
+"id": 261831,
+"token": "<unused5929>"
+},
+{
+"id": 261832,
+"token": "<unused5930>"
+},
+{
+"id": 261833,
+"token": "<unused5931>"
+},
+{
+"id": 261834,
+"token": "<unused5932>"
+},
+{
+"id": 261835,
+"token": "<unused5933>"
+},
+{
+"id": 261836,
+"token": "<unused5934>"
+},
+{
+"id": 261837,
+"token": "<unused5935>"
+},
+{
+"id": 261838,
+"token": "<unused5936>"
+},
+{
+"id": 261839,
+"token": "<unused5937>"
+},
+{
+"id": 261840,
+"token": "<unused5938>"
+},
+{
+"id": 261841,
+"token": "<unused5939>"
+},
+{
+"id": 261842,
+"token": "<unused5940>"
+},
+{
+"id": 261843,
+"token": "<unused5941>"
+},
+{
+"id": 261844,
+"token": "<unused5942>"
+},
+{
+"id": 261845,
+"token": "<unused5943>"
+},
+{
+"id": 261846,
+"token": "<unused5944>"
+},
+{
+"id": 261847,
+"token": "<unused5945>"
+},
+{
+"id": 261848,
+"token": "<unused5946>"
+},
+{
+"id": 261849,
+"token": "<unused5947>"
+},
+{
+"id": 261850,
+"token": "<unused5948>"
+},
+{
+"id": 261851,
+"token": "<unused5949>"
+},
+{
+"id": 261852,
+"token": "<unused5950>"
+},
+{
+"id": 261853,
+"token": "<unused5951>"
+},
+{
+"id": 261854,
+"token": "<unused5952>"
+},
+{
+"id": 261855,
+"token": "<unused5953>"
+},
+{
+"id": 261856,
+"token": "<unused5954>"
+},
+{
+"id": 261857,
+"token": "<unused5955>"
+},
+{
+"id": 261858,
+"token": "<unused5956>"
+},
+{
+"id": 261859,
+"token": "<unused5957>"
+},
+{
+"id": 261860,
+"token": "<unused5958>"
+},
+{
+"id": 261861,
+"token": "<unused5959>"
+},
+{
+"id": 261862,
+"token": "<unused5960>"
+},
+{
+"id": 261863,
+"token": "<unused5961>"
+},
+{
+"id": 261864,
+"token": "<unused5962>"
+},
+{
+"id": 261865,
+"token": "<unused5963>"
+},
+{
+"id": 261866,
+"token": "<unused5964>"
+},
+{
+"id": 261867,
+"token": "<unused5965>"
+},
+{
+"id": 261868,
+"token": "<unused5966>"
+},
+{
+"id": 261869,
+"token": "<unused5967>"
+},
+{
+"id": 261870,
+"token": "<unused5968>"
+},
+{
+"id": 261871,
+"token": "<unused5969>"
+},
+{
+"id": 261872,
+"token": "<unused5970>"
+},
+{
+"id": 261873,
+"token": "<unused5971>"
+},
+{
+"id": 261874,
+"token": "<unused5972>"
+},
+{
+"id": 261875,
+"token": "<unused5973>"
+},
+{
+"id": 261876,
+"token": "<unused5974>"
+},
+{
+"id": 261877,
+"token": "<unused5975>"
+},
+{
+"id": 261878,
+"token": "<unused5976>"
+},
+{
+"id": 261879,
+"token": "<unused5977>"
+},
+{
+"id": 261880,
+"token": "<unused5978>"
+},
+{
+"id": 261881,
+"token": "<unused5979>"
+},
+{
+"id": 261882,
+"token": "<unused5980>"
+},
+{
+"id": 261883,
+"token": "<unused5981>"
+},
+{
+"id": 261884,
+"token": "<unused5982>"
+},
+{
+"id": 261885,
+"token": "<unused5983>"
+},
+{
+"id": 261886,
+"token": "<unused5984>"
+},
+{
+"id": 261887,
+"token": "<unused5985>"
+},
+{
+"id": 261888,
+"token": "<unused5986>"
+},
+{
+"id": 261889,
+"token": "<unused5987>"
+},
+{
+"id": 261890,
+"token": "<unused5988>"
+},
+{
+"id": 261891,
+"token": "<unused5989>"
+},
+{
+"id": 261892,
+"token": "<unused5990>"
+},
+{
+"id": 261893,
+"token": "<unused5991>"
+},
+{
+"id": 261894,
+"token": "<unused5992>"
+},
+{
+"id": 261895,
+"token": "<unused5993>"
+},
+{
+"id": 261896,
+"token": "<unused5994>"
+},
+{
+"id": 261897,
+"token": "<unused5995>"
+},
+{
+"id": 261898,
+"token": "<unused5996>"
+},
+{
+"id": 261899,
+"token": "<unused5997>"
+},
+{
+"id": 261900,
+"token": "<unused5998>"
+},
+{
+"id": 261901,
+"token": "<unused5999>"
+},
+{
+"id": 261902,
+"token": "<unused6000>"
+},
+{
+"id": 261903,
+"token": "<unused6001>"
+},
+{
+"id": 261904,
+"token": "<unused6002>"
+},
+{
+"id": 261905,
+"token": "<unused6003>"
+},
+{
+"id": 261906,
+"token": "<unused6004>"
+},
+{
+"id": 261907,
+"token": "<unused6005>"
+},
+{
+"id": 261908,
+"token": "<unused6006>"
+},
+{
+"id": 261909,
+"token": "<unused6007>"
+},
+{
+"id": 261910,
+"token": "<unused6008>"
+},
+{
+"id": 261911,
+"token": "<unused6009>"
+},
+{
+"id": 261912,
+"token": "<unused6010>"
+},
+{
+"id": 261913,
+"token": "<unused6011>"
+},
+{
+"id": 261914,
+"token": "<unused6012>"
+},
+{
+"id": 261915,
+"token": "<unused6013>"
+},
+{
+"id": 261916,
+"token": "<unused6014>"
+},
+{
+"id": 261917,
+"token": "<unused6015>"
+},
+{
+"id": 261918,
+"token": "<unused6016>"
+},
+{
+"id": 261919,
+"token": "<unused6017>"
+},
+{
+"id": 261920,
+"token": "<unused6018>"
+},
+{
+"id": 261921,
+"token": "<unused6019>"
+},
+{
+"id": 261922,
+"token": "<unused6020>"
+},
+{
+"id": 261923,
+"token": "<unused6021>"
+},
+{
+"id": 261924,
+"token": "<unused6022>"
+},
+{
+"id": 261925,
+"token": "<unused6023>"
+},
+{
+"id": 261926,
+"token": "<unused6024>"
+},
+{
+"id": 261927,
+"token": "<unused6025>"
+},
+{
+"id": 261928,
+"token": "<unused6026>"
+},
+{
+"id": 261929,
+"token": "<unused6027>"
+},
+{
+"id": 261930,
+"token": "<unused6028>"
+},
+{
+"id": 261931,
+"token": "<unused6029>"
+},
+{
+"id": 261932,
+"token": "<unused6030>"
+},
+{
+"id": 261933,
+"token": "<unused6031>"
+},
+{
+"id": 261934,
+"token": "<unused6032>"
+},
+{
+"id": 261935,
+"token": "<unused6033>"
+},
+{
+"id": 261936,
+"token": "<unused6034>"
+},
+{
+"id": 261937,
+"token": "<unused6035>"
+},
+{
+"id": 261938,
+"token": "<unused6036>"
+},
+{
+"id": 261939,
+"token": "<unused6037>"
+},
+{
+"id": 261940,
+"token": "<unused6038>"
+},
+{
+"id": 261941,
+"token": "<unused6039>"
+},
+{
+"id": 261942,
+"token": "<unused6040>"
+},
+{
+"id": 261943,
+"token": "<unused6041>"
+},
+{
+"id": 261944,
+"token": "<unused6042>"
+},
+{
+"id": 261945,
+"token": "<unused6043>"
+},
+{
+"id": 261946,
+"token": "<unused6044>"
+},
+{
+"id": 261947,
+"token": "<unused6045>"
+},
+{
+"id": 261948,
+"token": "<unused6046>"
+},
+{
+"id": 261949,
+"token": "<unused6047>"
+},
+{
+"id": 261950,
+"token": "<unused6048>"
+},
+{
+"id": 261951,
+"token": "<unused6049>"
+},
+{
+"id": 261952,
+"token": "<unused6050>"
+},
+{
+"id": 261953,
+"token": "<unused6051>"
+},
+{
+"id": 261954,
+"token": "<unused6052>"
+},
+{
+"id": 261955,
+"token": "<unused6053>"
+},
+{
+"id": 261956,
+"token": "<unused6054>"
+},
+{
+"id": 261957,
+"token": "<unused6055>"
+},
+{
+"id": 261958,
+"token": "<unused6056>"
+},
+{
+"id": 261959,
+"token": "<unused6057>"
+},
+{
+"id": 261960,
+"token": "<unused6058>"
+},
+{
+"id": 261961,
+"token": "<unused6059>"
+},
+{
+"id": 261962,
+"token": "<unused6060>"
+},
+{
+"id": 261963,
+"token": "<unused6061>"
+},
+{
+"id": 261964,
+"token": "<unused6062>"
+},
+{
+"id": 261965,
+"token": "<unused6063>"
+},
+{
+"id": 261966,
+"token": "<unused6064>"
+},
+{
+"id": 261967,
+"token": "<unused6065>"
+},
+{
+"id": 261968,
+"token": "<unused6066>"
+},
+{
+"id": 261969,
+"token": "<unused6067>"
+},
+{
+"id": 261970,
+"token": "<unused6068>"
+},
+{
+"id": 261971,
+"token": "<unused6069>"
+},
+{
+"id": 261972,
+"token": "<unused6070>"
+},
+{
+"id": 261973,
+"token": "<unused6071>"
+},
+{
+"id": 261974,
+"token": "<unused6072>"
+},
+{
+"id": 261975,
+"token": "<unused6073>"
+},
+{
+"id": 261976,
+"token": "<unused6074>"
+},
+{
+"id": 261977,
+"token": "<unused6075>"
+},
+{
+"id": 261978,
+"token": "<unused6076>"
+},
+{
+"id": 261979,
+"token": "<unused6077>"
+},
+{
+"id": 261980,
+"token": "<unused6078>"
+},
+{
+"id": 261981,
+"token": "<unused6079>"
+},
+{
+"id": 261982,
+"token": "<unused6080>"
+},
+{
+"id": 261983,
+"token": "<unused6081>"
+},
+{
+"id": 261984,
+"token": "<unused6082>"
+},
+{
+"id": 261985,
+"token": "<unused6083>"
+},
+{
+"id": 261986,
+"token": "<unused6084>"
+},
+{
+"id": 261987,
+"token": "<unused6085>"
+},
+{
+"id": 261988,
+"token": "<unused6086>"
+},
+{
+"id": 261989,
+"token": "<unused6087>"
+},
+{
+"id": 261990,
+"token": "<unused6088>"
+},
+{
+"id": 261991,
+"token": "<unused6089>"
+},
+{
+"id": 261992,
+"token": "<unused6090>"
+},
+{
+"id": 261993,
+"token": "<unused6091>"
+},
+{
+"id": 261994,
+"token": "<unused6092>"
+},
+{
+"id": 261995,
+"token": "<unused6093>"
+},
+{
+"id": 261996,
+"token": "<unused6094>"
+},
+{
+"id": 261997,
+"token": "<unused6095>"
+},
+{
+"id": 261998,
+"token": "<unused6096>"
+},
+{
+"id": 261999,
+"token": "<unused6097>"
+},
+{
+"id": 262000,
+"token": "<unused6098>"
+},
+{
+"id": 262001,
+"token": "<unused6099>"
+},
+{
+"id": 262002,
+"token": "<unused6100>"
+},
+{
+"id": 262003,
+"token": "<unused6101>"
+},
+{
+"id": 262004,
+"token": "<unused6102>"
+},
+{
+"id": 262005,
+"token": "<unused6103>"
+},
+{
+"id": 262006,
+"token": "<unused6104>"
+},
+{
+"id": 262007,
+"token": "<unused6105>"
+},
+{
+"id": 262008,
+"token": "<unused6106>"
+},
+{
+"id": 262009,
+"token": "<unused6107>"
+},
+{
+"id": 262010,
+"token": "<unused6108>"
+},
+{
+"id": 262011,
+"token": "<unused6109>"
+},
+{
+"id": 262012,
+"token": "<unused6110>"
+},
+{
+"id": 262013,
+"token": "<unused6111>"
+},
+{
+"id": 262014,
+"token": "<unused6112>"
+},
+{
+"id": 262015,
+"token": "<unused6113>"
+},
+{
+"id": 262016,
+"token": "<unused6114>"
+},
+{
+"id": 262017,
+"token": "<unused6115>"
+},
+{
+"id": 262018,
+"token": "<unused6116>"
+},
+{
+"id": 262019,
+"token": "<unused6117>"
+},
+{
+"id": 262020,
+"token": "<unused6118>"
+},
+{
+"id": 262021,
+"token": "<unused6119>"
+},
+{
+"id": 262022,
+"token": "<unused6120>"
+},
+{
+"id": 262023,
+"token": "<unused6121>"
+},
+{
+"id": 262024,
+"token": "<unused6122>"
+},
+{
+"id": 262025,
+"token": "<unused6123>"
+},
+{
+"id": 262026,
+"token": "<unused6124>"
+},
+{
+"id": 262027,
+"token": "<unused6125>"
+},
+{
+"id": 262028,
+"token": "<unused6126>"
+},
+{
+"id": 262029,
+"token": "<unused6127>"
+},
+{
+"id": 262030,
+"token": "<unused6128>"
+},
+{
+"id": 262031,
+"token": "<unused6129>"
+},
+{
+"id": 262032,
+"token": "<unused6130>"
+},
+{
+"id": 262033,
+"token": "<unused6131>"
+},
+{
+"id": 262034,
+"token": "<unused6132>"
+},
+{
+"id": 262035,
+"token": "<unused6133>"
+},
+{
+"id": 262036,
+"token": "<unused6134>"
+},
+{
+"id": 262037,
+"token": "<unused6135>"
+},
+{
+"id": 262038,
+"token": "<unused6136>"
+},
+{
+"id": 262039,
+"token": "<unused6137>"
+},
+{
+"id": 262040,
+"token": "<unused6138>"
+},
+{
+"id": 262041,
+"token": "<unused6139>"
+},
+{
+"id": 262042,
+"token": "<unused6140>"
+},
+{
+"id": 262043,
+"token": "<unused6141>"
+},
+{
+"id": 262044,
+"token": "<unused6142>"
+},
+{
+"id": 262045,
+"token": "<unused6143>"
+},
+{
+"id": 262046,
+"token": "<unused6144>"
+},
+{
+"id": 262047,
+"token": "<unused6145>"
+},
+{
+"id": 262048,
+"token": "<unused6146>"
+},
+{
+"id": 262049,
+"token": "<unused6147>"
+},
+{
+"id": 262050,
+"token": "<unused6148>"
+},
+{
+"id": 262051,
+"token": "<unused6149>"
+},
+{
+"id": 262052,
+"token": "<unused6150>"
+},
+{
+"id": 262053,
+"token": "<unused6151>"
+},
+{
+"id": 262054,
+"token": "<unused6152>"
+},
+{
+"id": 262055,
+"token": "<unused6153>"
+},
+{
+"id": 262056,
+"token": "<unused6154>"
+},
+{
+"id": 262057,
+"token": "<unused6155>"
+},
+{
+"id": 262058,
+"token": "<unused6156>"
+},
+{
+"id": 262059,
+"token": "<unused6157>"
+},
+{
+"id": 262060,
+"token": "<unused6158>"
+},
+{
+"id": 262061,
+"token": "<unused6159>"
+},
+{
+"id": 262062,
+"token": "<unused6160>"
+},
+{
+"id": 262063,
+"token": "<unused6161>"
+},
+{
+"id": 262064,
+"token": "<unused6162>"
+},
+{
+"id": 262065,
+"token": "<unused6163>"
+},
+{
+"id": 262066,
+"token": "<unused6164>"
+},
+{
+"id": 262067,
+"token": "<unused6165>"
+},
+{
+"id": 262068,
+"token": "<unused6166>"
+},
+{
+"id": 262069,
+"token": "<unused6167>"
+},
+{
+"id": 262070,
+"token": "<unused6168>"
+},
+{
+"id": 262071,
+"token": "<unused6169>"
+},
+{
+"id": 262072,
+"token": "<unused6170>"
+},
+{
+"id": 262073,
+"token": "<unused6171>"
+},
+{
+"id": 262074,
+"token": "<unused6172>"
+},
+{
+"id": 262075,
+"token": "<unused6173>"
+},
+{
+"id": 262076,
+"token": "<unused6174>"
+},
+{
+"id": 262077,
+"token": "<unused6175>"
+},
+{
+"id": 262078,
+"token": "<unused6176>"
+},
+{
+"id": 262079,
+"token": "<unused6177>"
+},
+{
+"id": 262080,
+"token": "<unused6178>"
+},
+{
+"id": 262081,
+"token": "<unused6179>"
+},
+{
+"id": 262082,
+"token": "<unused6180>"
+},
+{
+"id": 262083,
+"token": "<unused6181>"
+},
+{
+"id": 262084,
+"token": "<unused6182>"
+},
+{
+"id": 262085,
+"token": "<unused6183>"
+},
+{
+"id": 262086,
+"token": "<unused6184>"
+},
+{
+"id": 262087,
+"token": "<unused6185>"
+},
+{
+"id": 262088,
+"token": "<unused6186>"
+},
+{
+"id": 262089,
+"token": "<unused6187>"
+},
+{
+"id": 262090,
+"token": "<unused6188>"
+},
+{
+"id": 262091,
+"token": "<unused6189>"
+},
+{
+"id": 262092,
+"token": "<unused6190>"
+},
+{
+"id": 262093,
+"token": "<unused6191>"
+},
+{
+"id": 262094,
+"token": "<unused6192>"
+},
+{
+"id": 262095,
+"token": "<unused6193>"
+},
+{
+"id": 262096,
+"token": "<unused6194>"
+},
+{
+"id": 262097,
+"token": "<unused6195>"
+},
+{
+"id": 262098,
+"token": "<unused6196>"
+},
+{
+"id": 262099,
+"token": "<unused6197>"
+},
+{
+"id": 262100,
+"token": "<unused6198>"
+},
+{
+"id": 262101,
+"token": "<unused6199>"
+},
+{
+"id": 262102,
+"token": "<unused6200>"
+},
+{
+"id": 262103,
+"token": "<unused6201>"
+},
+{
+"id": 262104,
+"token": "<unused6202>"
+},
+{
+"id": 262105,
+"token": "<unused6203>"
+},
+{
+"id": 262106,
+"token": "<unused6204>"
+},
+{
+"id": 262107,
+"token": "<unused6205>"
+},
+{
+"id": 262108,
+"token": "<unused6206>"
+},
+{
+"id": 262109,
+"token": "<unused6207>"
+},
+{
+"id": 262110,
+"token": "<unused6208>"
+},
+{
+"id": 262111,
+"token": "<unused6209>"
+},
+{
+"id": 262112,
+"token": "<unused6210>"
+},
+{
+"id": 262113,
+"token": "<unused6211>"
+},
+{
+"id": 262114,
+"token": "<unused6212>"
+},
+{
+"id": 262115,
+"token": "<unused6213>"
+},
+{
+"id": 262116,
+"token": "<unused6214>"
+},
+{
+"id": 262117,
+"token": "<unused6215>"
+},
+{
+"id": 262118,
+"token": "<unused6216>"
+},
+{
+"id": 262119,
+"token": "<unused6217>"
+},
+{
+"id": 262120,
+"token": "<unused6218>"
+},
+{
+"id": 262121,
+"token": "<unused6219>"
+},
+{
+"id": 262122,
+"token": "<unused6220>"
+},
+{
+"id": 262123,
+"token": "<unused6221>"
+},
+{
+"id": 262124,
+"token": "<unused6222>"
+},
+{
+"id": 262125,
+"token": "<unused6223>"
+},
+{
+"id": 262126,
+"token": "<unused6224>"
+},
+{
+"id": 262127,
+"token": "<unused6225>"
+},
+{
+"id": 262128,
+"token": "<unused6226>"
+},
+{
+"id": 262129,
+"token": "<unused6227>"
+},
+{
+"id": 262130,
+"token": "<unused6228>"
+},
+{
+"id": 262131,
+"token": "<unused6229>"
+},
+{
+"id": 262132,
+"token": "<unused6230>"
+},
+{
+"id": 262133,
+"token": "<unused6231>"
+},
+{
+"id": 262134,
+"token": "<unused6232>"
+},
+{
+"id": 262135,
+"token": "<unused6233>"
+},
+{
+"id": 262136,
+"token": "<unused6234>"
+},
+{
+"id": 262137,
+"token": "<unused6235>"
+},
+{
+"id": 262138,
+"token": "<unused6236>"
+},
+{
+"id": 262139,
+"token": "<unused6237>"
+},
+{
+"id": 262140,
+"token": "<unused6238>"
+},
+{
+"id": 262141,
+"token": "<unused6239>"
+},
+{
+"id": 262142,
+"token": "<unused6240>"
+},
+{
+"id": 262143,
+"token": "<unused6241>"
+}
+],
+"removed_merges": 0,
+"appended_merges": 1000,
+"added_tokens_entries_removed": 1000,
+"new_tokens": [
+{
+"id": 262143,
+"token": "ɔn",
+"a": "ɔ",
+"b": "n",
+"kind": "fon",
+"count": 87683
+},
+{
+"id": 262142,
+"token": "ɔ́",
+"a": "ɔ",
+"b": "́",
+"kind": "fon",
+"count": 53968
+},
+{
+"id": 262141,
+"token": "▁mɛ",
+"a": "▁m",
+"b": "ɛ",
+"kind": "fon",
+"count": 52326
+},
+{
+"id": 262140,
+"token": "▁tɔn",
+"a": "▁t",
+"b": "ɔn",
+"kind": "fon",
+"count": 41655
+},
+{
+"id": 262139,
+"token": "▁nɔ",
+"a": "▁n",
+"b": "ɔ",
+"kind": "fon",
+"count": 40504
+},
+{
+"id": 262138,
+"token": "▁ɖɔ",
+"a": "▁ɖ",
+"b": "ɔ",
+"kind": "fon",
+"count": 36950
+},
+{
+"id": 262137,
+"token": "▁ɖò",
+"a": "▁ɖ",
+"b": "ò",
+"kind": "fon",
+"count": 35389
+},
+{
+"id": 262136,
+"token": "▁wɛ",
+"a": "▁w",
+"b": "ɛ",
+"kind": "fon",
+"count": 28264
+},
+{
+"id": 262135,
+"token": "▁mǐ",
+"a": "▁m",
+"b": "ǐ",
+"kind": "fon",
+"count": 27232
+},
+{
+"id": 262134,
+"token": "▁nǔ",
+"a": "▁n",
+"b": "ǔ",
+"kind": "fon",
+"count": 26283
+},
+{
+"id": 262133,
+"token": "▁ɖó",
+"a": "▁ɖ",
+"b": "ó",
+"kind": "fon",
+"count": 21338
+},
+{
+"id": 262132,
+"token": "ɛ́",
+"a": "ɛ",
+"b": "́",
+"kind": "fon",
+"count": 21262
+},
+{
+"id": 262131,
+"token": "ɔ̌",
+"a": "ɔ",
+"b": "̌",
+"kind": "fon",
+"count": 19839
+},
+{
+"id": 262130,
+"token": "▁bɔ",
+"a": "▁b",
+"b": "ɔ",
+"kind": "fon",
+"count": 18646
+},
+{
+"id": 262129,
+"token": "▁lɛ́",
+"a": "▁lɛ",
+"b": "́",
+"kind": "fon",
+"count": 14718
+},
+{
+"id": 262128,
+"token": "ɛn",
+"a": "ɛ",
+"b": "n",
+"kind": "fon",
+"count": 14050
+},
+{
+"id": 262127,
+"token": "▁ɖé",
+"a": "▁ɖ",
+"b": "é",
+"kind": "fon",
+"count": 13957
+},
+{
+"id": 262126,
+"token": "▁ɔ́",
+"a": "▁ɔ",
+"b": "́",
+"kind": "fon",
+"count": 12953
+},
+{
+"id": 262125,
+"token": "▁mɔ",
+"a": "▁m",
+"b": "ɔ",
+"kind": "fon",
+"count": 11021
+},
+{
+"id": 262124,
+"token": "ɔ́n",
+"a": "ɔ",
+"b": "́n",
+"kind": "fon",
+"count": 10964
+},
+{
+"id": 262123,
+"token": "▁ɖo",
+"a": "▁ɖ",
+"b": "o",
+"kind": "fon",
+"count": 10466
+},
+{
+"id": 262122,
+"token": "▁gbɔn",
+"a": "▁gb",
+"b": "ɔn",
+"kind": "fon",
+"count": 10458
+},
+{
+"id": 262121,
+"token": "mɛ",
+"a": "m",
+"b": "ɛ",
+"kind": "fon",
+"count": 10073
+},
+{
+"id": 262120,
+"token": "ɛ̌",
+"a": "ɛ",
+"b": "̌",
+"kind": "fon",
+"count": 9098
+},
+{
+"id": 262119,
+"token": "▁jɛ",
+"a": "▁j",
+"b": "ɛ",
+"kind": "fon",
+"count": 8957
+},
+{
+"id": 262118,
+"token": "▁bǐ",
+"a": "▁b",
+"b": "ǐ",
+"kind": "fon",
+"count": 8362
+},
+{
+"id": 262117,
+"token": "▁gbɛ",
+"a": "▁gb",
+"b": "ɛ",
+"kind": "fon",
+"count": 8288
+},
+{
+"id": 262116,
+"token": "▁enɛ",
+"a": "▁en",
+"b": "ɛ",
+"kind": "fon",
+"count": 8278
+},
+{
+"id": 262115,
+"token": "▁sɔ́",
+"a": "▁s",
+"b": "ɔ́",
+"kind": "fon",
+"count": 7998
+},
+{
+"id": 262114,
+"token": "▁lɛ́ɛ",
+"a": "▁lɛ́",
+"b": "ɛ",
+"kind": "fon",
+"count": 7936
+},
+{
+"id": 262113,
+"token": "▁ɖè",
+"a": "▁ɖ",
+"b": "è",
+"kind": "fon",
+"count": 7622
+},
+{
+"id": 262112,
+"token": "▁ɖok",
+"a": "▁ɖ",
+"b": "ok",
+"kind": "fon",
+"count": 6937
+},
+{
+"id": 262111,
+"token": "tɔn",
+"a": "t",
+"b": "ɔn",
+"kind": "fon",
+"count": 6064
+},
+{
+"id": 262110,
+"token": "▁ɖě",
+"a": "▁ɖ",
+"b": "ě",
+"kind": "fon",
+"count": 5589
+},
+{
+"id": 262109,
+"token": "▁ɖokpo",
+"a": "▁ɖok",
+"b": "po",
+"kind": "fon",
+"count": 5531
+},
+{
+"id": 262108,
+"token": "▁tɛ",
+"a": "▁t",
+"b": "ɛ",
+"kind": "fon",
+"count": 5407
+},
+{
+"id": 262107,
+"token": "tɔ́",
+"a": "t",
+"b": "ɔ́",
+"kind": "fon",
+"count": 5214
+},
+{
+"id": 262106,
+"token": "▁mǐtɔn",
+"a": "▁mǐ",
+"b": "tɔn",
+"kind": "fon",
+"count": 5118
+},
+{
+"id": 262105,
+"token": "▁kpɔ́",
+"a": "▁kp",
+"b": "ɔ́",
+"kind": "fon",
+"count": 4942
+},
+{
+"id": 262104,
+"token": "iɖ",
+"a": "i",
+"b": "ɖ",
+"kind": "fon",
+"count": 4778
+},
+{
+"id": 262103,
+"token": "▁mɔ̌",
+"a": "▁m",
+"b": "ɔ̌",
+"kind": "fon",
+"count": 4764
+},
+{
+"id": 262102,
+"token": "ɖé",
+"a": "ɖ",
+"b": "é",
+"kind": "fon",
+"count": 4576
+},
+{
+"id": 262101,
+"token": "▁alɔ",
+"a": "▁al",
+"b": "ɔ",
+"kind": "fon",
+"count": 4167
+},
+{
+"id": 262100,
+"token": "▁ɖevo",
+"a": "▁ɖ",
+"b": "evo",
+"kind": "fon",
+"count": 4160
+},
+{
+"id": 262099,
+"token": "▁hwɛ",
+"a": "▁hw",
+"b": "ɛ",
+"kind": "fon",
+"count": 4127
+},
+{
+"id": 262098,
+"token": "▁sɔ",
+"a": "▁s",
+"b": "ɔ",
+"kind": "fon",
+"count": 4110
+},
+{
+"id": 262097,
+"token": "alɔ",
+"a": "al",
+"b": "ɔ",
+"kind": "fon",
+"count": 4100
+},
+{
+"id": 262096,
+"token": "wɛ",
+"a": "w",
+"b": "ɛ",
+"kind": "fon",
+"count": 3841
+},
+{
+"id": 262095,
+"token": "▁azɔ̌",
+"a": "▁az",
+"b": "ɔ̌",
+"kind": "fon",
+"count": 3780
+},
+{
+"id": 262094,
+"token": "▁ɖu",
+"a": "▁ɖ",
+"b": "u",
+"kind": "fon",
+"count": 3567
+},
+{
+"id": 262093,
+"token": "▁yetɔn",
+"a": "▁yet",
+"b": "ɔn",
+"kind": "fon",
+"count": 3529
+},
+{
+"id": 262092,
+"token": "▁alǒ",
+"a": "▁al",
+"b": "ǒ",
+"kind": "fon",
+"count": 3360
+},
+{
+"id": 262091,
+"token": "▁gbɛ̀",
+"a": "▁gbɛ",
+"b": "̀",
+"kind": "fon",
+"count": 3343
+},
+{
+"id": 262090,
+"token": "ɖee",
+"a": "ɖ",
+"b": "ee",
+"kind": "fon",
+"count": 3225
+},
+{
+"id": 262089,
+"token": "▁xlɛ́",
+"a": "▁xl",
+"b": "ɛ́",
+"kind": "fon",
+"count": 3201
+},
+{
+"id": 262088,
+"token": "▁ɖe",
+"a": "▁ɖ",
+"b": "e",
+"kind": "fon",
+"count": 3122
+},
+{
+"id": 262087,
+"token": "▁vǐ",
+"a": "▁v",
+"b": "ǐ",
+"kind": "fon",
+"count": 3102
+},
+{
+"id": 262086,
+"token": "▁ɖěɖee",
+"a": "▁ɖě",
+"b": "ɖee",
+"kind": "fon",
+"count": 3092
+},
+{
+"id": 262085,
+"token": "▁hɛn",
+"a": "▁h",
+"b": "ɛn",
+"kind": "fon",
+"count": 3085
+},
+{
+"id": 262084,
+"token": "ɔmɛ",
+"a": "ɔ",
+"b": "mɛ",
+"kind": "fon",
+"count": 2999
+},
+{
+"id": 262083,
+"token": "ɖée",
+"a": "ɖ",
+"b": "ée",
+"kind": "fon",
+"count": 2976
+},
+{
+"id": 262082,
+"token": "▁kpɔ́n",
+"a": "▁kp",
+"b": "ɔ́n",
+"kind": "fon",
+"count": 2913
+},
+{
+"id": 262081,
+"token": "ɖiɖ",
+"a": "ɖ",
+"b": "iɖ",
+"kind": "fon",
+"count": 2766
+},
+{
+"id": 262080,
+"token": "mavɔ",
+"a": "mav",
+"b": "ɔ",
+"kind": "fon",
+"count": 2745
+},
+{
+"id": 262079,
+"token": "ɔmavɔ",
+"a": "ɔ",
+"b": "mavɔ",
+"kind": "fon",
+"count": 2745
+},
+{
+"id": 262078,
+"token": "▁byɔ",
+"a": "▁by",
+"b": "ɔ",
+"kind": "fon",
+"count": 2739
+},
+{
+"id": 262077,
+"token": "omɛ",
+"a": "om",
+"b": "ɛ",
+"kind": "fon",
+"count": 2737
+},
+{
+"id": 262076,
+"token": "ɔnu",
+"a": "ɔ",
+"b": "nu",
+"kind": "fon",
+"count": 2714
+},
+{
+"id": 262075,
+"token": "▁ɖag",
+"a": "▁ɖ",
+"b": "ag",
+"kind": "fon",
+"count": 2693
+},
+{
+"id": 262074,
+"token": "ègě",
+"a": "èg",
+"b": "ě",
+"kind": "fon",
+"count": 2678
+},
+{
+"id": 262073,
+"token": "▁Mɛ",
+"a": "▁M",
+"b": "ɛ",
+"kind": "fon",
+"count": 2630
+},
+{
+"id": 262072,
+"token": "▁gègě",
+"a": "▁g",
+"b": "ègě",
+"kind": "fon",
+"count": 2627
+},
+{
+"id": 262071,
+"token": "▁ɖagbe",
+"a": "▁ɖag",
+"b": "be",
+"kind": "fon",
+"count": 2602
+},
+{
+"id": 262070,
+"token": "nmɛ",
+"a": "nm",
+"b": "ɛ",
+"kind": "fon",
+"count": 2591
+},
+{
+"id": 262069,
+"token": "▁gbɛtɔ́",
+"a": "▁gbɛ",
+"b": "tɔ́",
+"kind": "fon",
+"count": 2544
+},
+{
+"id": 262068,
+"token": "▁Mavɔmavɔ",
+"a": "▁Mav",
+"b": "ɔmavɔ",
+"kind": "fon",
+"count": 2513
+},
+{
+"id": 262067,
+"token": "bǒ",
+"a": "b",
+"b": "ǒ",
+"kind": "fon",
+"count": 2484
+},
+{
+"id": 262066,
+"token": "plɔ́n",
+"a": "pl",
+"b": "ɔ́n",
+"kind": "fon",
+"count": 2467
+},
+{
+"id": 262065,
+"token": "ɔsu",
+"a": "ɔ",
+"b": "su",
+"kind": "fon",
+"count": 2461
+},
+{
+"id": 262064,
+"token": "▁nyɔ́",
+"a": "▁ny",
+"b": "ɔ́",
+"kind": "fon",
+"count": 2364
+},
+{
+"id": 262063,
+"token": "▁ɖɔhun",
+"a": "▁ɖɔ",
+"b": "hun",
+"kind": "fon",
+"count": 2311
+},
+{
+"id": 262062,
+"token": "▁nɔví",
+"a": "▁nɔ",
+"b": "ví",
+"kind": "fon",
+"count": 2303
+},
+{
+"id": 262061,
+"token": "▁nɔ́",
+"a": "▁n",
+"b": "ɔ́",
+"kind": "fon",
+"count": 2250
+},
+{
+"id": 262060,
+"token": "▁kplɔ́n",
+"a": "▁k",
+"b": "plɔ́n",
+"kind": "fon",
+"count": 2238
+},
+{
+"id": 262059,
+"token": "plɔ",
+"a": "pl",
+"b": "ɔ",
+"kind": "fon",
+"count": 2214
+},
+{
+"id": 262058,
+"token": "unɔ",
+"a": "un",
+"b": "ɔ",
+"kind": "fon",
+"count": 2166
+},
+{
+"id": 262057,
+"token": "bɔ",
+"a": "b",
+"b": "ɔ",
+"kind": "fon",
+"count": 2165
+},
+{
+"id": 262056,
+"token": "▁Nǔ",
+"a": "▁N",
+"b": "ǔ",
+"kind": "fon",
+"count": 2147
+},
+{
+"id": 262055,
+"token": "▁wɛn",
+"a": "▁wɛ",
+"b": "n",
+"kind": "fon",
+"count": 2140
+},
+{
+"id": 262054,
+"token": "▁xɔ",
+"a": "▁x",
+"b": "ɔ",
+"kind": "fon",
+"count": 2116
+},
+{
+"id": 262053,
+"token": "▁nukɔn",
+"a": "▁nuk",
+"b": "ɔn",
+"kind": "fon",
+"count": 2070
+},
+{
+"id": 262052,
+"token": "ɖu",
+"a": "ɖ",
+"b": "u",
+"kind": "fon",
+"count": 2057
+},
+{
+"id": 262051,
+"token": "▁sɔg",
+"a": "▁sɔ",
+"b": "g",
+"kind": "fon",
+"count": 2025
+},
+{
+"id": 262050,
+"token": "ntɔn",
+"a": "nt",
+"b": "ɔn",
+"kind": "fon",
+"count": 1997
+},
+{
+"id": 262049,
+"token": "pɔn",
+"a": "p",
+"b": "ɔn",
+"kind": "fon",
+"count": 1968
+},
+{
+"id": 262048,
+"token": "▁kɔn",
+"a": "▁k",
+"b": "ɔn",
+"kind": "fon",
+"count": 1963
+},
+{
+"id": 262047,
+"token": "▁elɔ",
+"a": "▁el",
+"b": "ɔ",
+"kind": "fon",
+"count": 1945
+},
+{
+"id": 262046,
+"token": "▁Tɔn",
+"a": "▁T",
+"b": "ɔn",
+"kind": "fon",
+"count": 1936
+},
+{
+"id": 262045,
+"token": "▁nɛ",
+"a": "▁n",
+"b": "ɛ",
+"kind": "fon",
+"count": 1930
+},
+{
+"id": 262044,
+"token": "▁ɖi",
+"a": "▁ɖ",
+"b": "i",
+"kind": "fon",
+"count": 1917
+},
+{
+"id": 262043,
+"token": "pɔ́",
+"a": "p",
+"b": "ɔ́",
+"kind": "fon",
+"count": 1910
+},
+{
+"id": 262042,
+"token": "▁sɛ́",
+"a": "▁sɛ",
+"b": "́",
+"kind": "fon",
+"count": 1890
+},
+{
+"id": 262041,
+"token": "ntɔ́",
+"a": "nt",
+"b": "ɔ́",
+"kind": "fon",
+"count": 1889
+},
+{
+"id": 262040,
+"token": "▁lɔ",
+"a": "▁l",
+"b": "ɔ",
+"kind": "fon",
+"count": 1876
+},
+{
+"id": 262039,
+"token": "Mɛ",
+"a": "M",
+"b": "ɛ",
+"kind": "fon",
+"count": 1875
+},
+{
+"id": 262038,
+"token": "▁kɛ",
+"a": "▁k",
+"b": "ɛ",
+"kind": "fon",
+"count": 1870
+},
+{
+"id": 262037,
+"token": "▁xomɛ",
+"a": "▁x",
+"b": "omɛ",
+"kind": "fon",
+"count": 1862
+},
+{
+"id": 262036,
+"token": "nuɖ",
+"a": "nu",
+"b": "ɖ",
+"kind": "fon",
+"count": 1846
+},
+{
+"id": 262035,
+"token": "bigbɔ",
+"a": "big",
+"b": "bɔ",
+"kind": "fon",
+"count": 1835
+},
+{
+"id": 262034,
+"token": "▁nugbǒ",
+"a": "▁nug",
+"b": "bǒ",
+"kind": "fon",
+"count": 1806
+},
+{
+"id": 262033,
+"token": "▁ɖax",
+"a": "▁ɖ",
+"b": "ax",
+"kind": "fon",
+"count": 1789
+},
+{
+"id": 262032,
+"token": "▁ɖaxó",
+"a": "▁ɖax",
+"b": "ó",
+"kind": "fon",
+"count": 1789
+},
+{
+"id": 262031,
+"token": "lɛ́",
+"a": "l",
+"b": "ɛ́",
+"kind": "fon",
+"count": 1782
+},
+{
+"id": 262030,
+"token": "únnuɖ",
+"a": "ún",
+"b": "nuɖ",
+"kind": "fon",
+"count": 1770
+},
+{
+"id": 262029,
+"token": "▁wǎn",
+"a": "▁w",
+"b": "ǎn",
+"kind": "fon",
+"count": 1764
+},
+{
+"id": 262028,
+"token": "ɛwu",
+"a": "ɛ",
+"b": "wu",
+"kind": "fon",
+"count": 1748
+},
+{
+"id": 262027,
+"token": "ayǐ",
+"a": "ay",
+"b": "ǐ",
+"kind": "fon",
+"count": 1741
+},
+{
+"id": 262026,
+"token": "yɛn",
+"a": "y",
+"b": "ɛn",
+"kind": "fon",
+"count": 1732
+},
+{
+"id": 262025,
+"token": "ebǔ",
+"a": "eb",
+"b": "ǔ",
+"kind": "fon",
+"count": 1724
+},
+{
+"id": 262024,
+"token": "Nǔ",
+"a": "N",
+"b": "ǔ",
+"kind": "fon",
+"count": 1711
+},
+{
+"id": 262023,
+"token": "▁gbigbɔ",
+"a": "▁g",
+"b": "bigbɔ",
+"kind": "fon",
+"count": 1708
+},
+{
+"id": 262022,
+"token": "ɛli",
+"a": "ɛ",
+"b": "li",
+"kind": "fon",
+"count": 1673
+},
+{
+"id": 262021,
+"token": "ɖɔ",
+"a": "ɖ",
+"b": "ɔ",
+"kind": "fon",
+"count": 1664
+},
+{
+"id": 262020,
+"token": "▁nyɔnu",
+"a": "▁ny",
+"b": "ɔnu",
+"kind": "fon",
+"count": 1639
+},
+{
+"id": 262019,
+"token": "▁sɔgbe",
+"a": "▁sɔg",
+"b": "be",
+"kind": "fon",
+"count": 1638
+},
+{
+"id": 262018,
+"token": "▁tɛn",
+"a": "▁t",
+"b": "ɛn",
+"kind": "fon",
+"count": 1634
+},
+{
+"id": 262017,
+"token": "ɔy",
+"a": "ɔ",
+"b": "y",
+"kind": "fon",
+"count": 1627
+},
+{
+"id": 262016,
+"token": "lɔ",
+"a": "l",
+"b": "ɔ",
+"kind": "fon",
+"count": 1616
+},
+{
+"id": 262015,
+"token": "plɔ́",
+"a": "pl",
+"b": "ɔ́",
+"kind": "fon",
+"count": 1613
+},
+{
+"id": 262014,
+"token": "ɖe",
+"a": "ɖ",
+"b": "e",
+"kind": "fon",
+"count": 1613
+},
+{
+"id": 262013,
+"token": "wǔ",
+"a": "w",
+"b": "ǔ",
+"kind": "fon",
+"count": 1611
+},
+{
+"id": 262012,
+"token": "etɔ́",
+"a": "et",
+"b": "ɔ́",
+"kind": "fon",
+"count": 1601
+},
+{
+"id": 262011,
+"token": "▁nukɔ",
+"a": "▁nuk",
+"b": "ɔ",
+"kind": "fon",
+"count": 1601
+},
+{
+"id": 262010,
+"token": "ijɛ",
+"a": "ij",
+"b": "ɛ",
+"kind": "fon",
+"count": 1570
+},
+{
+"id": 262009,
+"token": "nzɔ́",
+"a": "nz",
+"b": "ɔ́",
+"kind": "fon",
+"count": 1559
+},
+{
+"id": 262008,
+"token": "▁sinsɛ",
+"a": "▁sins",
+"b": "ɛ",
+"kind": "fon",
+"count": 1554
+},
+{
+"id": 262007,
+"token": "▁kplɔ́",
+"a": "▁k",
+"b": "plɔ́",
+"kind": "fon",
+"count": 1520
+},
+{
+"id": 262006,
+"token": "▁Axɔsu",
+"a": "▁Ax",
+"b": "ɔsu",
+"kind": "fon",
+"count": 1506
+},
+{
+"id": 262005,
+"token": "ɖuto",
+"a": "ɖ",
+"b": "uto",
+"kind": "fon",
+"count": 1460
+},
+{
+"id": 262004,
+"token": "▁hugǎn",
+"a": "▁hug",
+"b": "ǎn",
+"kind": "fon",
+"count": 1458
+},
+{
+"id": 262003,
+"token": "ɖɛ",
+"a": "ɖ",
+"b": "ɛ",
+"kind": "fon",
+"count": 1443
+},
+{
+"id": 262002,
+"token": "byɔ",
+"a": "by",
+"b": "ɔ",
+"kind": "fon",
+"count": 1438
+},
+{
+"id": 262001,
+"token": "▁gbɔ",
+"a": "▁gb",
+"b": "ɔ",
+"kind": "fon",
+"count": 1435
+},
+{
+"id": 262000,
+"token": "▁tɔ́",
+"a": "▁t",
+"b": "ɔ́",
+"kind": "fon",
+"count": 1430
+},
+{
+"id": 261999,
+"token": "▁mɛɖé",
+"a": "▁mɛ",
+"b": "ɖé",
+"kind": "fon",
+"count": 1428
+},
+{
+"id": 261998,
+"token": "jijɛ",
+"a": "j",
+"b": "ijɛ",
+"kind": "fon",
+"count": 1422
+},
+{
+"id": 261997,
+"token": "▁acɛ",
+"a": "▁ac",
+"b": "ɛ",
+"kind": "fon",
+"count": 1410
+},
+{
+"id": 261996,
+"token": "▁akwɛ",
+"a": "▁ak",
+"b": "wɛ",
+"kind": "fon",
+"count": 1410
+},
+{
+"id": 261995,
+"token": "ǔn",
+"a": "ǔ",
+"b": "n",
+"kind": "fon",
+"count": 1400
+},
+{
+"id": 261994,
+"token": "ɖes",
+"a": "ɖ",
+"b": "es",
+"kind": "fon",
+"count": 1394
+},
+{
+"id": 261993,
+"token": "▁tlɛ",
+"a": "▁tl",
+"b": "ɛ",
+"kind": "fon",
+"count": 1392
+},
+{
+"id": 261992,
+"token": "▁wǔ",
+"a": "▁w",
+"b": "ǔ",
+"kind": "fon",
+"count": 1386
+},
+{
+"id": 261991,
+"token": "únnuɖetɔ́",
+"a": "únnuɖ",
+"b": "etɔ́",
+"kind": "fon",
+"count": 1382
+},
+{
+"id": 261990,
+"token": "▁Mǐ",
+"a": "▁M",
+"b": "ǐ",
+"kind": "fon",
+"count": 1378
+},
+{
+"id": 261989,
+"token": "▁zɔ́n",
+"a": "▁z",
+"b": "ɔ́n",
+"kind": "fon",
+"count": 1378
+},
+{
+"id": 261988,
+"token": "▁Enɛ",
+"a": "▁En",
+"b": "ɛ",
+"kind": "fon",
+"count": 1376
+},
+{
+"id": 261987,
+"token": "▁ɖokp",
+"a": "▁ɖok",
+"b": "p",
+"kind": "fon",
+"count": 1358
+},
+{
+"id": 261986,
+"token": "Mǐ",
+"a": "M",
+"b": "ǐ",
+"kind": "fon",
+"count": 1353
+},
+{
+"id": 261985,
+"token": "ɛɛ",
+"a": "ɛ",
+"b": "ɛ",
+"kind": "fon",
+"count": 1351
+},
+{
+"id": 261984,
+"token": "▁amɔ̌",
+"a": "▁am",
+"b": "ɔ̌",
+"kind": "fon",
+"count": 1347
+},
+{
+"id": 261983,
+"token": "▁sinsɛnzɔ́",
+"a": "▁sinsɛ",
+"b": "nzɔ́",
+"kind": "fon",
+"count": 1332
+},
+{
+"id": 261982,
+"token": "uvɛ̌",
+"a": "uv",
+"b": "ɛ̌",
+"kind": "fon",
+"count": 1327
+},
+{
+"id": 261981,
+"token": "Nɛ̌",
+"a": "N",
+"b": "ɛ̌",
+"kind": "fon",
+"count": 1320
+},
+{
+"id": 261980,
+"token": "▁akɔ",
+"a": "▁ak",
+"b": "ɔ",
+"kind": "fon",
+"count": 1319
+},
+{
+"id": 261979,
+"token": "▁ɖebǔ",
+"a": "▁ɖ",
+"b": "ebǔ",
+"kind": "fon",
+"count": 1318
+},
+{
+"id": 261978,
+"token": "▁ɖokpó",
+"a": "▁ɖokp",
+"b": "ó",
+"kind": "fon",
+"count": 1317
+},
+{
+"id": 261977,
+"token": "▁gɔ́",
+"a": "▁g",
+"b": "ɔ́",
+"kind": "fon",
+"count": 1311
+},
+{
+"id": 261976,
+"token": "▁gbɛ́",
+"a": "▁gb",
+"b": "ɛ́",
+"kind": "fon",
+"count": 1311
+},
+{
+"id": 261975,
+"token": "ɛ́n",
+"a": "ɛ",
+"b": "́n",
+"kind": "fon",
+"count": 1302
+},
+{
+"id": 261974,
+"token": "▁tamɛ",
+"a": "▁tam",
+"b": "ɛ",
+"kind": "fon",
+"count": 1300
+},
+{
+"id": 261973,
+"token": "▁Nɛ̌",
+"a": "▁N",
+"b": "ɛ̌",
+"kind": "fon",
+"count": 1296
+},
+{
+"id": 261972,
+"token": "▁mitɔn",
+"a": "▁mit",
+"b": "ɔn",
+"kind": "fon",
+"count": 1280
+},
+{
+"id": 261971,
+"token": "▁kpɛ",
+"a": "▁kp",
+"b": "ɛ",
+"kind": "fon",
+"count": 1276
+},
+{
+"id": 261970,
+"token": "▁Amɔ̌",
+"a": "▁Am",
+"b": "ɔ̌",
+"kind": "fon",
+"count": 1269
+},
+{
+"id": 261969,
+"token": "▁vɔ̌",
+"a": "▁v",
+"b": "ɔ̌",
+"kind": "fon",
+"count": 1256
+},
+{
+"id": 261968,
+"token": "nywɛ",
+"a": "ny",
+"b": "wɛ",
+"kind": "fon",
+"count": 1253
+},
+{
+"id": 261967,
+"token": "▁ayǐ",
+"a": "▁ay",
+"b": "ǐ",
+"kind": "fon",
+"count": 1252
+},
+{
+"id": 261966,
+"token": "▁gǎn",
+"a": "▁g",
+"b": "ǎn",
+"kind": "fon",
+"count": 1243
+},
+{
+"id": 261965,
+"token": "▁tɔ́n",
+"a": "▁t",
+"b": "ɔ́n",
+"kind": "fon",
+"count": 1238
+},
+{
+"id": 261964,
+"token": "▁ninɔmɛ",
+"a": "▁nin",
+"b": "ɔmɛ",
+"kind": "fon",
+"count": 1225
+},
+{
+"id": 261963,
+"token": "▁Kúnnuɖetɔ́",
+"a": "▁K",
+"b": "únnuɖetɔ́",
+"kind": "fon",
+"count": 1223
+},
+{
+"id": 261962,
+"token": "▁ɖɛ",
+"a": "▁ɖ",
+"b": "ɛ",
+"kind": "fon",
+"count": 1220
+},
+{
+"id": 261961,
+"token": "▁nǎ",
+"a": "▁n",
+"b": "ǎ",
+"kind": "fon",
+"count": 1215
+},
+{
+"id": 261960,
+"token": "▁dɔn",
+"a": "▁d",
+"b": "ɔn",
+"kind": "fon",
+"count": 1212
+},
+{
+"id": 261959,
+"token": "▁Nɔ",
+"a": "▁N",
+"b": "ɔ",
+"kind": "fon",
+"count": 1204
+},
+{
+"id": 261958,
+"token": "▁zɔ́",
+"a": "▁z",
+"b": "ɔ́",
+"kind": "fon",
+"count": 1198
+},
+{
+"id": 261957,
+"token": "ǎjijɛ",
+"a": "ǎ",
+"b": "jijɛ",
+"kind": "fon",
+"count": 1198
+},
+{
+"id": 261956,
+"token": "▁wuvɛ̌",
+"a": "▁w",
+"b": "uvɛ̌",
+"kind": "fon",
+"count": 1192
+},
+{
+"id": 261955,
+"token": "▁lanmɛ",
+"a": "▁lan",
+"b": "mɛ",
+"kind": "fon",
+"count": 1185
+},
+{
+"id": 261954,
+"token": "▁mɛs",
+"a": "▁mɛ",
+"b": "s",
+"kind": "fon",
+"count": 1159
+},
+{
+"id": 261953,
+"token": "▁jɔ",
+"a": "▁j",
+"b": "ɔ",
+"kind": "fon",
+"count": 1145
+},
+{
+"id": 261952,
+"token": "itɔ́",
+"a": "it",
+"b": "ɔ́",
+"kind": "fon",
+"count": 1141
+},
+{
+"id": 261951,
+"token": "▁hǔn",
+"a": "▁h",
+"b": "ǔn",
+"kind": "fon",
+"count": 1141
+},
+{
+"id": 261950,
+"token": "▁nukɔntɔn",
+"a": "▁nukɔ",
+"b": "ntɔn",
+"kind": "fon",
+"count": 1136
+},
+{
+"id": 261949,
+"token": "▁afɔ",
+"a": "▁af",
+"b": "ɔ",
+"kind": "fon",
+"count": 1135
+},
+{
+"id": 261948,
+"token": "ɖag",
+"a": "ɖ",
+"b": "ag",
+"kind": "fon",
+"count": 1133
+},
+{
+"id": 261947,
+"token": "plɔn",
+"a": "pl",
+"b": "ɔn",
+"kind": "fon",
+"count": 1130
+},
+{
+"id": 261946,
+"token": "Amɔ̌",
+"a": "Am",
+"b": "ɔ̌",
+"kind": "fon",
+"count": 1110
+},
+{
+"id": 261945,
+"token": "▁tɔ",
+"a": "▁t",
+"b": "ɔ",
+"kind": "fon",
+"count": 1107
+},
+{
+"id": 261944,
+"token": "ɛns",
+"a": "ɛ",
+"b": "ns",
+"kind": "fon",
+"count": 1104
+},
+{
+"id": 261943,
+"token": "ɛnu",
+"a": "ɛ",
+"b": "nu",
+"kind": "fon",
+"count": 1098
+},
+{
+"id": 261942,
+"token": "▁axɔ",
+"a": "▁ax",
+"b": "ɔ",
+"kind": "fon",
+"count": 1096
+},
+{
+"id": 261941,
+"token": "▁Axɔsuɖuto",
+"a": "▁Axɔsu",
+"b": "ɖuto",
+"kind": "fon",
+"count": 1091
+},
+{
+"id": 261940,
+"token": "bɛ̌",
+"a": "b",
+"b": "ɛ̌",
+"kind": "fon",
+"count": 1090
+},
+{
+"id": 261939,
+"token": "▁kɔ",
+"a": "▁k",
+"b": "ɔ",
+"kind": "fon",
+"count": 1089
+},
+{
+"id": 261938,
+"token": "▁ɖiɖ",
+"a": "▁ɖ",
+"b": "iɖ",
+"kind": "fon",
+"count": 1086
+},
+{
+"id": 261937,
+"token": "▁tinmɛ",
+"a": "▁tin",
+"b": "mɛ",
+"kind": "fon",
+"count": 1078
+},
+{
+"id": 261936,
+"token": "▁Etɛ",
+"a": "▁Et",
+"b": "ɛ",
+"kind": "fon",
+"count": 1074
+},
+{
+"id": 261935,
+"token": "▁bɛ́",
+"a": "▁b",
+"b": "ɛ́",
+"kind": "fon",
+"count": 1073
+},
+{
+"id": 261934,
+"token": "ɖesunɔ",
+"a": "ɖes",
+"b": "unɔ",
+"kind": "fon",
+"count": 1072
+},
+{
+"id": 261933,
+"token": "lɛ",
+"a": "l",
+"b": "ɛ",
+"kind": "fon",
+"count": 1066
+},
+{
+"id": 261932,
+"token": "kplɔ",
+"a": "k",
+"b": "plɔ",
+"kind": "fon",
+"count": 1056
+},
+{
+"id": 261931,
+"token": "Etɛ",
+"a": "Et",
+"b": "ɛ",
+"kind": "fon",
+"count": 1055
+},
+{
+"id": 261930,
+"token": "jitɔ́",
+"a": "jit",
+"b": "ɔ́",
+"kind": "fon",
+"count": 1054
+},
+{
+"id": 261929,
+"token": "▁awǎjijɛ",
+"a": "▁aw",
+"b": "ǎjijɛ",
+"kind": "fon",
+"count": 1051
+},
+{
+"id": 261928,
+"token": "▁énɛ́",
+"a": "▁én",
+"b": "ɛ́",
+"kind": "fon",
+"count": 1051
+},
+{
+"id": 261927,
+"token": "▁azǎn",
+"a": "▁az",
+"b": "ǎn",
+"kind": "fon",
+"count": 1045
+},
+{
+"id": 261926,
+"token": "amɛ",
+"a": "am",
+"b": "ɛ",
+"kind": "fon",
+"count": 1042
+},
+{
+"id": 261925,
+"token": "utɔ́",
+"a": "ut",
+"b": "ɔ́",
+"kind": "fon",
+"count": 1036
+},
+{
+"id": 261924,
+"token": "▁sinsɛn",
+"a": "▁sins",
+"b": "ɛn",
+"kind": "fon",
+"count": 1033
+},
+{
+"id": 261923,
+"token": "ɖiɖi",
+"a": "ɖiɖ",
+"b": "i",
+"kind": "fon",
+"count": 1028
+},
+{
+"id": 261922,
+"token": "hwɛ",
+"a": "hw",
+"b": "ɛ",
+"kind": "fon",
+"count": 1024
+},
+{
+"id": 261921,
+"token": "ɛ́li",
+"a": "ɛ́",
+"b": "li",
+"kind": "fon",
+"count": 1023
+},
+{
+"id": 261920,
+"token": "pɔ",
+"a": "p",
+"b": "ɔ",
+"kind": "fon",
+"count": 1019
+},
+{
+"id": 261919,
+"token": "▁mɔhun",
+"a": "▁mɔ",
+"b": "hun",
+"kind": "fon",
+"count": 1019
+},
+{
+"id": 261918,
+"token": "▁ylɔ",
+"a": "▁y",
+"b": "lɔ",
+"kind": "fon",
+"count": 1005
+},
+{
+"id": 261917,
+"token": "xɔ",
+"a": "x",
+"b": "ɔ",
+"kind": "fon",
+"count": 1001
+},
+{
+"id": 261916,
+"token": "▁xɔ́",
+"a": "▁x",
+"b": "ɔ́",
+"kind": "fon",
+"count": 997
+},
+{
+"id": 261915,
+"token": "ɖó",
+"a": "ɖ",
+"b": "ó",
+"kind": "fon",
+"count": 981
+},
+{
+"id": 261914,
+"token": "▁azɔn",
+"a": "▁az",
+"b": "ɔn",
+"kind": "fon",
+"count": 979
+},
+{
+"id": 261913,
+"token": "▁jlǒ",
+"a": "▁jl",
+"b": "ǒ",
+"kind": "fon",
+"count": 979
+},
+{
+"id": 261912,
+"token": "▁tɛnmɛ",
+"a": "▁tɛ",
+"b": "nmɛ",
+"kind": "fon",
+"count": 977
+},
+{
+"id": 261911,
+"token": "ɔlu",
+"a": "ɔ",
+"b": "lu",
+"kind": "fon",
+"count": 975
+},
+{
+"id": 261910,
+"token": "blamɛ",
+"a": "bl",
+"b": "amɛ",
+"kind": "fon",
+"count": 969
+},
+{
+"id": 261909,
+"token": "▁vɔ",
+"a": "▁v",
+"b": "ɔ",
+"kind": "fon",
+"count": 959
+},
+{
+"id": 261908,
+"token": "▁gblamɛ",
+"a": "▁g",
+"b": "blamɛ",
+"kind": "fon",
+"count": 958
+},
+{
+"id": 261907,
+"token": "exlɛ́",
+"a": "ex",
+"b": "lɛ́",
+"kind": "fon",
+"count": 957
+},
+{
+"id": 261906,
+"token": "ɔnh",
+"a": "ɔ",
+"b": "nh",
+"kind": "fon",
+"count": 951
+},
+{
+"id": 261905,
+"token": "ɔnǔ",
+"a": "ɔn",
+"b": "ǔ",
+"kind": "fon",
+"count": 942
+},
+{
+"id": 261904,
+"token": "▁sɛ̀",
+"a": "▁sɛ",
+"b": "̀",
+"kind": "fon",
+"count": 940
+},
+{
+"id": 261903,
+"token": "ùnywɛ",
+"a": "ù",
+"b": "nywɛ",
+"kind": "fon",
+"count": 938
+},
+{
+"id": 261902,
+"token": "▁jɛn",
+"a": "▁j",
+"b": "ɛn",
+"kind": "fon",
+"count": 931
+},
+{
+"id": 261901,
+"token": "▁wě",
+"a": "▁w",
+"b": "ě",
+"kind": "fon",
+"count": 927
+},
+{
+"id": 261900,
+"token": "kɔ",
+"a": "k",
+"b": "ɔ",
+"kind": "fon",
+"count": 925
+},
+{
+"id": 261899,
+"token": "▁hlɔnh",
+"a": "▁hl",
+"b": "ɔnh",
+"kind": "fon",
+"count": 921
+},
+{
+"id": 261898,
+"token": "layɛ́li",
+"a": "lay",
+"b": "ɛ́li",
+"kind": "fon",
+"count": 911
+},
+{
+"id": 261897,
+"token": "lɔn",
+"a": "l",
+"b": "ɔn",
+"kind": "fon",
+"count": 910
+},
+{
+"id": 261896,
+"token": "ɔng",
+"a": "ɔ",
+"b": "ng",
+"kind": "fon",
+"count": 902
+},
+{
+"id": 261895,
+"token": "▁xɛ",
+"a": "▁x",
+"b": "ɛ",
+"kind": "fon",
+"count": 896
+},
+{
+"id": 261894,
+"token": "Enɛ",
+"a": "En",
+"b": "ɛ",
+"kind": "fon",
+"count": 887
+},
+{
+"id": 261893,
+"token": "▁vɛ",
+"a": "▁v",
+"b": "ɛ",
+"kind": "fon",
+"count": 877
+},
+{
+"id": 261892,
+"token": "ɖuɖu",
+"a": "ɖu",
+"b": "ɖu",
+"kind": "fon",
+"count": 876
+},
+{
+"id": 261891,
+"token": "▁hlɔnhlɔn",
+"a": "▁hlɔnh",
+"b": "lɔn",
+"kind": "fon",
+"count": 871
+},
+{
+"id": 261890,
+"token": "ɔyɔ̌",
+"a": "ɔy",
+"b": "ɔ̌",
+"kind": "fon",
+"count": 869
+},
+{
+"id": 261889,
+"token": "usyɛn",
+"a": "us",
+"b": "yɛn",
+"kind": "fon",
+"count": 867
+},
+{
+"id": 261888,
+"token": "▁mɛjitɔ́",
+"a": "▁mɛ",
+"b": "jitɔ́",
+"kind": "fon",
+"count": 856
+},
+{
+"id": 261887,
+"token": "ɛnsyɛn",
+"a": "ɛns",
+"b": "yɛn",
+"kind": "fon",
+"count": 853
+},
+{
+"id": 261886,
+"token": "▁Izlayɛ́li",
+"a": "▁Iz",
+"b": "layɛ́li",
+"kind": "fon",
+"count": 844
+},
+{
+"id": 261885,
+"token": "nkpɔn",
+"a": "nk",
+"b": "pɔn",
+"kind": "fon",
+"count": 844
+},
+{
+"id": 261884,
+"token": "▁yět",
+"a": "▁y",
+"b": "ět",
+"kind": "fon",
+"count": 839
+},
+{
+"id": 261883,
+"token": "▁wusyɛn",
+"a": "▁w",
+"b": "usyɛn",
+"kind": "fon",
+"count": 836
+},
+{
+"id": 261882,
+"token": "ikɔ",
+"a": "ik",
+"b": "ɔ",
+"kind": "fon",
+"count": 836
+},
+{
+"id": 261881,
+"token": "▁tokpɔn",
+"a": "▁tok",
+"b": "pɔn",
+"kind": "fon",
+"count": 834
+},
+{
+"id": 261880,
+"token": "▁yětɔn",
+"a": "▁yět",
+"b": "ɔn",
+"kind": "fon",
+"count": 834
+},
+{
+"id": 261879,
+"token": "▁Pɔlu",
+"a": "▁P",
+"b": "ɔlu",
+"kind": "fon",
+"count": 832
+},
+{
+"id": 261878,
+"token": "▁gbɛz",
+"a": "▁gbɛ",
+"b": "z",
+"kind": "fon",
+"count": 825
+},
+{
+"id": 261877,
+"token": "▁gbɛzán",
+"a": "▁gbɛz",
+"b": "án",
+"kind": "fon",
+"count": 822
+},
+{
+"id": 261876,
+"token": "▁yɔyɔ̌",
+"a": "▁y",
+"b": "ɔyɔ̌",
+"kind": "fon",
+"count": 817
+},
+{
+"id": 261875,
+"token": "▁kpɔ́nd",
+"a": "▁kpɔ́",
+"b": "nd",
+"kind": "fon",
+"count": 813
+},
+{
+"id": 261874,
+"token": "▁kpɔ́ndé",
+"a": "▁kpɔ́nd",
+"b": "é",
+"kind": "fon",
+"count": 813
+},
+{
+"id": 261873,
+"token": "▁kpɔ́ndéw",
+"a": "▁kpɔ́ndé",
+"b": "w",
+"kind": "fon",
+"count": 813
+},
+{
+"id": 261872,
+"token": "▁kpɔ́ndéwú",
+"a": "▁kpɔ́ndéw",
+"b": "ú",
+"kind": "fon",
+"count": 813
+},
+{
+"id": 261871,
+"token": "ùɖiɖi",
+"a": "ù",
+"b": "ɖiɖi",
+"kind": "fon",
+"count": 810
+},
+{
+"id": 261870,
+"token": "ƆN",
+"a": "Ɔ",
+"b": "N",
+"kind": "fon",
+"count": 807
+},
+{
+"id": 261869,
+"token": "▁lě",
+"a": "▁l",
+"b": "ě",
+"kind": "fon",
+"count": 802
+},
+{
+"id": 261868,
+"token": "nkplɔn",
+"a": "nk",
+"b": "plɔn",
+"kind": "fon",
+"count": 801
+},
+{
+"id": 261867,
+"token": "▁syɛnsyɛn",
+"a": "▁sy",
+"b": "ɛnsyɛn",
+"kind": "fon",
+"count": 796
+},
+{
+"id": 261866,
+"token": "ɖiɖɔ",
+"a": "ɖiɖ",
+"b": "ɔ",
+"kind": "fon",
+"count": 795
+},
+{
+"id": 261865,
+"token": "weɖ",
+"a": "we",
+"b": "ɖ",
+"kind": "fon",
+"count": 793
+},
+{
+"id": 261864,
+"token": "ókpɔ́",
+"a": "ók",
+"b": "pɔ́",
+"kind": "fon",
+"count": 791
+},
+{
+"id": 261863,
+"token": "ɛm",
+"a": "ɛ",
+"b": "m",
+"kind": "fon",
+"count": 789
+},
+{
+"id": 261862,
+"token": "▁yeɖée",
+"a": "▁ye",
+"b": "ɖée",
+"kind": "fon",
+"count": 786
+},
+{
+"id": 261861,
+"token": "▁emitɔn",
+"a": "▁emit",
+"b": "ɔn",
+"kind": "fon",
+"count": 786
+},
+{
+"id": 261860,
+"token": "ɖókpɔ́",
+"a": "ɖ",
+"b": "ókpɔ́",
+"kind": "fon",
+"count": 785
+},
+{
+"id": 261859,
+"token": "azɔ̌",
+"a": "az",
+"b": "ɔ̌",
+"kind": "fon",
+"count": 781
+},
+{
+"id": 261858,
+"token": "ímɛ́",
+"a": "ím",
+"b": "ɛ́",
+"kind": "fon",
+"count": 778
+},
+{
+"id": 261857,
+"token": "ɖagbe",
+"a": "ɖag",
+"b": "be",
+"kind": "fon",
+"count": 771
+},
+{
+"id": 261856,
+"token": "▁finɛ",
+"a": "▁fin",
+"b": "ɛ",
+"kind": "fon",
+"count": 767
+},
+{
+"id": 261855,
+"token": "ɔg",
+"a": "ɔ",
+"b": "g",
+"kind": "fon",
+"count": 765
+},
+{
+"id": 261854,
+"token": "▁LƐ",
+"a": "▁L",
+"b": "Ɛ",
+"kind": "fon",
+"count": 763
+},
+{
+"id": 261853,
+"token": "▁axɔ́s",
+"a": "▁axɔ",
+"b": "́s",
+"kind": "fon",
+"count": 761
+},
+{
+"id": 261852,
+"token": "▁mímɛ́",
+"a": "▁m",
+"b": "ímɛ́",
+"kind": "fon",
+"count": 760
+},
+{
+"id": 261851,
+"token": "▁mɛxo",
+"a": "▁mɛ",
+"b": "xo",
+"kind": "fon",
+"count": 756
+},
+{
+"id": 261850,
+"token": "mɔ̌",
+"a": "m",
+"b": "ɔ̌",
+"kind": "fon",
+"count": 752
+},
+{
+"id": 261849,
+"token": "ɛh",
+"a": "ɛ",
+"b": "h",
+"kind": "fon",
+"count": 750
+},
+{
+"id": 261848,
+"token": "ǐnu",
+"a": "ǐ",
+"b": "nu",
+"kind": "fon",
+"count": 743
+},
+{
+"id": 261847,
+"token": "webǐnu",
+"a": "web",
+"b": "ǐnu",
+"kind": "fon",
+"count": 742
+},
+{
+"id": 261846,
+"token": "▁nùɖiɖi",
+"a": "▁n",
+"b": "ùɖiɖi",
+"kind": "fon",
+"count": 741
+},
+{
+"id": 261845,
+"token": "▁vɔ̌s",
+"a": "▁vɔ̌",
+"b": "s",
+"kind": "fon",
+"count": 731
+},
+{
+"id": 261844,
+"token": "▁sɛ́n",
+"a": "▁sɛ",
+"b": "́n",
+"kind": "fon",
+"count": 729
+},
+{
+"id": 261843,
+"token": "▁nyikɔ",
+"a": "▁ny",
+"b": "ikɔ",
+"kind": "fon",
+"count": 724
+},
+{
+"id": 261842,
+"token": "▁jǐ",
+"a": "▁j",
+"b": "ǐ",
+"kind": "fon",
+"count": 720
+},
+{
+"id": 261841,
+"token": "▁axɔ́sú",
+"a": "▁axɔ́s",
+"b": "ú",
+"kind": "fon",
+"count": 719
+},
+{
+"id": 261840,
+"token": "▁vɔ́",
+"a": "▁v",
+"b": "ɔ́",
+"kind": "fon",
+"count": 718
+},
+{
+"id": 261839,
+"token": "▁atɔn",
+"a": "▁at",
+"b": "ɔn",
+"kind": "fon",
+"count": 717
+},
+{
+"id": 261838,
+"token": "▁lɛkɔ",
+"a": "▁lɛ",
+"b": "kɔ",
+"kind": "fon",
+"count": 716
+},
+{
+"id": 261837,
+"token": "▁kplɔ",
+"a": "▁k",
+"b": "plɔ",
+"kind": "fon",
+"count": 714
+},
+{
+"id": 261836,
+"token": "beɖé",
+"a": "be",
+"b": "ɖé",
+"kind": "fon",
+"count": 701
+},
+{
+"id": 261835,
+"token": "▁hwebǐnu",
+"a": "▁h",
+"b": "webǐnu",
+"kind": "fon",
+"count": 700
+},
+{
+"id": 261834,
+"token": "▁Benɛɛ",
+"a": "▁Ben",
+"b": "ɛɛ",
+"kind": "fon",
+"count": 699
+},
+{
+"id": 261833,
+"token": "▁vɛwǔ",
+"a": "▁vɛ",
+"b": "wǔ",
+"kind": "fon",
+"count": 696
+},
+{
+"id": 261832,
+"token": "ùɖé",
+"a": "ù",
+"b": "ɖé",
+"kind": "fon",
+"count": 695
+},
+{
+"id": 261831,
+"token": "kpɔ",
+"a": "kp",
+"b": "ɔ",
+"kind": "fon",
+"count": 693
+},
+{
+"id": 261830,
+"token": "▁baptɛm",
+"a": "▁bapt",
+"b": "ɛm",
+"kind": "fon",
+"count": 692
+},
+{
+"id": 261829,
+"token": "▁Kɔ",
+"a": "▁K",
+"b": "ɔ",
+"kind": "fon",
+"count": 687
+},
+{
+"id": 261828,
+"token": "▁tɛnt",
+"a": "▁tɛ",
+"b": "nt",
+"kind": "fon",
+"count": 682
+},
+{
+"id": 261827,
+"token": "▁gbeɖé",
+"a": "▁g",
+"b": "beɖé",
+"kind": "fon",
+"count": 679
+},
+{
+"id": 261826,
+"token": "▁mlɛ́",
+"a": "▁ml",
+"b": "ɛ́",
+"kind": "fon",
+"count": 679
+},
+{
+"id": 261825,
+"token": "ixlɛ́",
+"a": "ix",
+"b": "lɛ́",
+"kind": "fon",
+"count": 678
+},
+{
+"id": 261824,
+"token": "▁sɔnǔ",
+"a": "▁s",
+"b": "ɔnǔ",
+"kind": "fon",
+"count": 677
+},
+{
+"id": 261823,
+"token": "▁tɛntin",
+"a": "▁tɛnt",
+"b": "in",
+"kind": "fon",
+"count": 677
+},
+{
+"id": 261822,
+"token": "ɔtɔ́",
+"a": "ɔ",
+"b": "tɔ́",
+"kind": "fon",
+"count": 674
+},
+{
+"id": 261821,
+"token": "emɛ",
+"a": "em",
+"b": "ɛ",
+"kind": "fon",
+"count": 673
+},
+{
+"id": 261820,
+"token": "▁hɔn",
+"a": "▁h",
+"b": "ɔn",
+"kind": "fon",
+"count": 672
+},
+{
+"id": 261819,
+"token": "▁mɛsɛ́",
+"a": "▁mɛs",
+"b": "ɛ́",
+"kind": "fon",
+"count": 671
+},
+{
+"id": 261818,
+"token": "▁Etɛwu",
+"a": "▁Et",
+"b": "ɛwu",
+"kind": "fon",
+"count": 662
+},
+{
+"id": 261817,
+"token": "▁Gbɛ",
+"a": "▁Gb",
+"b": "ɛ",
+"kind": "fon",
+"count": 658
+},
+{
+"id": 261816,
+"token": "▁ɖexlɛ́",
+"a": "▁ɖ",
+"b": "exlɛ́",
+"kind": "fon",
+"count": 658
+},
+{
+"id": 261815,
+"token": "tɔ",
+"a": "t",
+"b": "ɔ",
+"kind": "fon",
+"count": 655
+},
+{
+"id": 261814,
+"token": "▁nùɖé",
+"a": "▁n",
+"b": "ùɖé",
+"kind": "fon",
+"count": 650
+},
+{
+"id": 261813,
+"token": "ǐn",
+"a": "ǐ",
+"b": "n",
+"kind": "fon",
+"count": 646
+},
+{
+"id": 261812,
+"token": "ámɛ",
+"a": "ám",
+"b": "ɛ",
+"kind": "fon",
+"count": 643
+},
+{
+"id": 261811,
+"token": "klunɔ",
+"a": "kl",
+"b": "unɔ",
+"kind": "fon",
+"count": 642
+},
+{
+"id": 261810,
+"token": "axɔmɛ",
+"a": "ax",
+"b": "ɔmɛ",
+"kind": "fon",
+"count": 641
+},
+{
+"id": 261809,
+"token": "layɛli",
+"a": "lay",
+"b": "ɛli",
+"kind": "fon",
+"count": 635
+},
+{
+"id": 261808,
+"token": "pɔnl",
+"a": "pɔ",
+"b": "nl",
+"kind": "fon",
+"count": 633
+},
+{
+"id": 261807,
+"token": "pɔnlavi",
+"a": "pɔnl",
+"b": "avi",
+"kind": "fon",
+"count": 633
+},
+{
+"id": 261806,
+"token": "▁nùnywɛ",
+"a": "▁n",
+"b": "ùnywɛ",
+"kind": "fon",
+"count": 631
+},
+{
+"id": 261805,
+"token": "▁Hlɔ",
+"a": "▁Hl",
+"b": "ɔ",
+"kind": "fon",
+"count": 631
+},
+{
+"id": 261804,
+"token": "ɔt",
+"a": "ɔ",
+"b": "t",
+"kind": "fon",
+"count": 631
+},
+{
+"id": 261803,
+"token": "▁kpɛɖé",
+"a": "▁kpɛ",
+"b": "ɖé",
+"kind": "fon",
+"count": 631
+},
+{
+"id": 261802,
+"token": "▁mɔk",
+"a": "▁mɔ",
+"b": "k",
+"kind": "fon",
+"count": 630
+},
+{
+"id": 261801,
+"token": "▁mɔkpan",
+"a": "▁mɔk",
+"b": "pan",
+"kind": "fon",
+"count": 630
+},
+{
+"id": 261800,
+"token": "ɖeji",
+"a": "ɖe",
+"b": "ji",
+"kind": "fon",
+"count": 629
+},
+{
+"id": 261799,
+"token": "▁alɔk",
+"a": "▁alɔ",
+"b": "k",
+"kind": "fon",
+"count": 626
+},
+{
+"id": 261798,
+"token": "▁kanbyɔ",
+"a": "▁kan",
+"b": "byɔ",
+"kind": "fon",
+"count": 623
+},
+{
+"id": 261797,
+"token": "vɔ",
+"a": "v",
+"b": "ɔ",
+"kind": "fon",
+"count": 622
+},
+{
+"id": 261796,
+"token": "kanbyɔ",
+"a": "kan",
+"b": "byɔ",
+"kind": "fon",
+"count": 619
+},
+{
+"id": 261795,
+"token": "Etɛwu",
+"a": "Et",
+"b": "ɛwu",
+"kind": "fon",
+"count": 618
+},
+{
+"id": 261794,
+"token": "▁axɔsu",
+"a": "▁ax",
+"b": "ɔsu",
+"kind": "fon",
+"count": 617
+},
+{
+"id": 261793,
+"token": "▁alɔkpa",
+"a": "▁alɔk",
+"b": "pa",
+"kind": "fon",
+"count": 617
+},
+{
+"id": 261792,
+"token": "ɛntɔ́",
+"a": "ɛ",
+"b": "ntɔ́",
+"kind": "fon",
+"count": 614
+},
+{
+"id": 261791,
+"token": "▁kɛɖɛ",
+"a": "▁kɛ",
+"b": "ɖɛ",
+"kind": "fon",
+"count": 613
+},
+{
+"id": 261790,
+"token": "ùkplɔ",
+"a": "ù",
+"b": "kplɔ",
+"kind": "fon",
+"count": 611
+},
+{
+"id": 261789,
+"token": "▁dɔ",
+"a": "▁d",
+"b": "ɔ",
+"kind": "fon",
+"count": 606
+},
+{
+"id": 261788,
+"token": "▁ɖeji",
+"a": "▁ɖe",
+"b": "ji",
+"kind": "fon",
+"count": 606
+},
+{
+"id": 261787,
+"token": "ijɔ",
+"a": "ij",
+"b": "ɔ",
+"kind": "fon",
+"count": 601
+},
+{
+"id": 261786,
+"token": "▁Izlayɛli",
+"a": "▁Iz",
+"b": "layɛli",
+"kind": "fon",
+"count": 599
+},
+{
+"id": 261785,
+"token": "óɖiɖɔ",
+"a": "ó",
+"b": "ɖiɖɔ",
+"kind": "fon",
+"count": 593
+},
+{
+"id": 261784,
+"token": "gbɛ",
+"a": "gb",
+"b": "ɛ",
+"kind": "fon",
+"count": 589
+},
+{
+"id": 261783,
+"token": "mawutɔ́",
+"a": "maw",
+"b": "utɔ́",
+"kind": "fon",
+"count": 589
+},
+{
+"id": 261782,
+"token": "▁éɖée",
+"a": "▁é",
+"b": "ɖée",
+"kind": "fon",
+"count": 588
+},
+{
+"id": 261781,
+"token": "▁xɔ́ntɔn",
+"a": "▁xɔ́",
+"b": "ntɔn",
+"kind": "fon",
+"count": 586
+},
+{
+"id": 261780,
+"token": "lémawutɔ́",
+"a": "lé",
+"b": "mawutɔ́",
+"kind": "fon",
+"count": 583
+},
+{
+"id": 261779,
+"token": "xwlémawutɔ́",
+"a": "xw",
+"b": "lémawutɔ́",
+"kind": "fon",
+"count": 583
+},
+{
+"id": 261778,
+"token": "▁tɛ́",
+"a": "▁t",
+"b": "ɛ́",
+"kind": "fon",
+"count": 582
+},
+{
+"id": 261777,
+"token": "ísɛ́",
+"a": "ís",
+"b": "ɛ́",
+"kind": "fon",
+"count": 578
+},
+{
+"id": 261776,
+"token": "▁ɖíe",
+"a": "▁ɖ",
+"b": "íe",
+"kind": "fon",
+"count": 577
+},
+{
+"id": 261775,
+"token": "ɔxw",
+"a": "ɔ",
+"b": "xw",
+"kind": "fon",
+"count": 574
+},
+{
+"id": 261774,
+"token": "gɔ́",
+"a": "g",
+"b": "ɔ́",
+"kind": "fon",
+"count": 572
+},
+{
+"id": 261773,
+"token": "▁xɛsi",
+"a": "▁xɛ",
+"b": "si",
+"kind": "fon",
+"count": 571
+},
+{
+"id": 261772,
+"token": "▁sísɛ́",
+"a": "▁s",
+"b": "ísɛ́",
+"kind": "fon",
+"count": 569
+},
+{
+"id": 261771,
+"token": "▁Mɔy",
+"a": "▁M",
+"b": "ɔy",
+"kind": "fon",
+"count": 564
+},
+{
+"id": 261770,
+"token": "jijɔ",
+"a": "j",
+"b": "ijɔ",
+"kind": "fon",
+"count": 560
+},
+{
+"id": 261769,
+"token": "▁nyɛ",
+"a": "▁ny",
+"b": "ɛ",
+"kind": "fon",
+"count": 558
+},
+{
+"id": 261768,
+"token": "kɛ",
+"a": "k",
+"b": "ɛ",
+"kind": "fon",
+"count": 558
+},
+{
+"id": 261767,
+"token": "ɔbu",
+"a": "ɔ",
+"b": "bu",
+"kind": "fon",
+"count": 557
+},
+{
+"id": 261766,
+"token": "ijitɔ́",
+"a": "ij",
+"b": "itɔ́",
+"kind": "fon",
+"count": 555
+},
+{
+"id": 261765,
+"token": "únmɛ",
+"a": "ún",
+"b": "mɛ",
+"kind": "fon",
+"count": 555
+},
+{
+"id": 261764,
+"token": "▁tɛ́n",
+"a": "▁tɛ",
+"b": "́n",
+"kind": "fon",
+"count": 555
+},
+{
+"id": 261763,
+"token": "▁hwɛhwɛ",
+"a": "▁hwɛ",
+"b": "hwɛ",
+"kind": "fon",
+"count": 553
+},
+{
+"id": 261762,
+"token": "ɛti",
+"a": "ɛ",
+"b": "ti",
+"kind": "fon",
+"count": 552
+},
+{
+"id": 261761,
+"token": "▁Benɛɛto",
+"a": "▁Benɛɛ",
+"b": "to",
+"kind": "fon",
+"count": 551
+},
+{
+"id": 261760,
+"token": "▁hweɖ",
+"a": "▁h",
+"b": "weɖ",
+"kind": "fon",
+"count": 547
+},
+{
+"id": 261759,
+"token": "▁zɔn",
+"a": "▁z",
+"b": "ɔn",
+"kind": "fon",
+"count": 541
+},
+{
+"id": 261758,
+"token": "ɛ́ɛ",
+"a": "ɛ́",
+"b": "ɛ",
+"kind": "fon",
+"count": 540
+},
+{
+"id": 261757,
+"token": "▁gbɛ̌",
+"a": "▁gb",
+"b": "ɛ̌",
+"kind": "fon",
+"count": 538
+},
+{
+"id": 261756,
+"token": "▁ɛn",
+"a": "▁ɛ",
+"b": "n",
+"kind": "fon",
+"count": 537
+},
+{
+"id": 261755,
+"token": "yɔ",
+"a": "y",
+"b": "ɔ",
+"kind": "fon",
+"count": 529
+},
+{
+"id": 261754,
+"token": "ɔngbe",
+"a": "ɔng",
+"b": "be",
+"kind": "fon",
+"count": 529
+},
+{
+"id": 261753,
+"token": "▁mǐɖée",
+"a": "▁mǐ",
+"b": "ɖée",
+"kind": "fon",
+"count": 521
+},
+{
+"id": 261752,
+"token": "▁jɛxa",
+"a": "▁jɛ",
+"b": "xa",
+"kind": "fon",
+"count": 518
+},
+{
+"id": 261751,
+"token": "▁akɔta",
+"a": "▁akɔ",
+"b": "ta",
+"kind": "fon",
+"count": 517
+},
+{
+"id": 261750,
+"token": "▁nɛ̌",
+"a": "▁n",
+"b": "ɛ̌",
+"kind": "fon",
+"count": 516
+},
+{
+"id": 261749,
+"token": "ùkanbyɔ",
+"a": "ù",
+"b": "kanbyɔ",
+"kind": "fon",
+"count": 516
+},
+{
+"id": 261748,
+"token": "▁loɔ",
+"a": "▁lo",
+"b": "ɔ",
+"kind": "fon",
+"count": 511
+},
+{
+"id": 261747,
+"token": "úmɛ",
+"a": "ú",
+"b": "mɛ",
+"kind": "fon",
+"count": 511
+},
+{
+"id": 261746,
+"token": "umɔ",
+"a": "um",
+"b": "ɔ",
+"kind": "fon",
+"count": 510
+},
+{
+"id": 261745,
+"token": "▁jijɔ",
+"a": "▁jij",
+"b": "ɔ",
+"kind": "fon",
+"count": 508
+},
+{
+"id": 261744,
+"token": "▁gɔ",
+"a": "▁g",
+"b": "ɔ",
+"kind": "fon",
+"count": 507
+},
+{
+"id": 261743,
+"token": "▁yɛ",
+"a": "▁y",
+"b": "ɛ",
+"kind": "fon",
+"count": 507
+},
+{
+"id": 261742,
+"token": "ininɔ",
+"a": "inin",
+"b": "ɔ",
+"kind": "fon",
+"count": 505
+},
+{
+"id": 261741,
+"token": "ɔ̌n",
+"a": "ɔ̌",
+"b": "n",
+"kind": "fon",
+"count": 504
+},
+{
+"id": 261740,
+"token": "nɛ́",
+"a": "n",
+"b": "ɛ́",
+"kind": "fon",
+"count": 500
+},
+{
+"id": 261739,
+"token": "Nɔ",
+"a": "N",
+"b": "ɔ",
+"kind": "fon",
+"count": 500
+},
+{
+"id": 261738,
+"token": "▁acɛkp",
+"a": "▁acɛ",
+"b": "kp",
+"kind": "fon",
+"count": 499
+},
+{
+"id": 261737,
+"token": "▁acɛkpik",
+"a": "▁acɛkp",
+"b": "ik",
+"kind": "fon",
+"count": 499
+},
+{
+"id": 261736,
+"token": "▁kpɛví",
+"a": "▁kpɛ",
+"b": "ví",
+"kind": "fon",
+"count": 498
+},
+{
+"id": 261735,
+"token": "▁acɛkpikpa",
+"a": "▁acɛkpik",
+"b": "pa",
+"kind": "fon",
+"count": 496
+},
+{
+"id": 261734,
+"token": "▁nùkplɔ",
+"a": "▁n",
+"b": "ùkplɔ",
+"kind": "fon",
+"count": 495
+},
+{
+"id": 261733,
+"token": "ihɔngbe",
+"a": "ih",
+"b": "ɔngbe",
+"kind": "fon",
+"count": 494
+},
+{
+"id": 261732,
+"token": "▁vɛ́",
+"a": "▁v",
+"b": "ɛ́",
+"kind": "fon",
+"count": 491
+},
+{
+"id": 261731,
+"token": "▁nyɔ",
+"a": "▁ny",
+"b": "ɔ",
+"kind": "fon",
+"count": 489
+},
+{
+"id": 261730,
+"token": "watɔ́",
+"a": "wat",
+"b": "ɔ́",
+"kind": "fon",
+"count": 488
+},
+{
+"id": 261729,
+"token": "▁alixlɛ́",
+"a": "▁al",
+"b": "ixlɛ́",
+"kind": "fon",
+"count": 484
+},
+{
+"id": 261728,
+"token": "▁ɛnɛ",
+"a": "▁ɛn",
+"b": "ɛ",
+"kind": "fon",
+"count": 482
+},
+{
+"id": 261727,
+"token": "ntɛn",
+"a": "nt",
+"b": "ɛn",
+"kind": "fon",
+"count": 481
+},
+{
+"id": 261726,
+"token": "▁mɛsɛntɔ́",
+"a": "▁mɛs",
+"b": "ɛntɔ́",
+"kind": "fon",
+"count": 480
+},
+{
+"id": 261725,
+"token": "▁abǐ",
+"a": "▁ab",
+"b": "ǐ",
+"kind": "fon",
+"count": 479
+},
+{
+"id": 261724,
+"token": "jinɔtɔ́",
+"a": "jin",
+"b": "ɔtɔ́",
+"kind": "fon",
+"count": 479
+},
+{
+"id": 261723,
+"token": "▁ɖí",
+"a": "▁ɖ",
+"b": "í",
+"kind": "fon",
+"count": 477
+},
+{
+"id": 261722,
+"token": "▁Hwɛ",
+"a": "▁H",
+"b": "wɛ",
+"kind": "fon",
+"count": 476
+},
+{
+"id": 261721,
+"token": "▁kannumɔ",
+"a": "▁kann",
+"b": "umɔ",
+"kind": "fon",
+"count": 476
+},
+{
+"id": 261720,
+"token": "▁jɛji",
+"a": "▁jɛ",
+"b": "ji",
+"kind": "fon",
+"count": 476
+},
+{
+"id": 261719,
+"token": "éɖókpɔ́",
+"a": "é",
+"b": "ɖókpɔ́",
+"kind": "fon",
+"count": 475
+},
+{
+"id": 261718,
+"token": "pléɖókpɔ́",
+"a": "pl",
+"b": "éɖókpɔ́",
+"kind": "fon",
+"count": 475
+},
+{
+"id": 261717,
+"token": "ɛhan",
+"a": "ɛ",
+"b": "han",
+"kind": "fon",
+"count": 472
+},
+{
+"id": 261716,
+"token": "ɔnɔ",
+"a": "ɔn",
+"b": "ɔ",
+"kind": "fon",
+"count": 471
+},
+{
+"id": 261715,
+"token": "▁Nɔví",
+"a": "▁Nɔ",
+"b": "ví",
+"kind": "fon",
+"count": 471
+},
+{
+"id": 261714,
+"token": "▁gegě",
+"a": "▁geg",
+"b": "ě",
+"kind": "fon",
+"count": 470
+},
+{
+"id": 261713,
+"token": "Ɔ́",
+"a": "Ɔ",
+"b": "́",
+"kind": "fon",
+"count": 461
+},
+{
+"id": 261712,
+"token": "elɛnu",
+"a": "el",
+"b": "ɛnu",
+"kind": "fon",
+"count": 459
+},
+{
+"id": 261711,
+"token": "▁sɛkpɔ",
+"a": "▁sɛ",
+"b": "kpɔ",
+"kind": "fon",
+"count": 459
+},
+{
+"id": 261710,
+"token": "▁TƆN",
+"a": "▁T",
+"b": "ƆN",
+"kind": "fon",
+"count": 456
+},
+{
+"id": 261709,
+"token": "afɔ",
+"a": "af",
+"b": "ɔ",
+"kind": "fon",
+"count": 455
+},
+{
+"id": 261708,
+"token": "jɛ",
+"a": "j",
+"b": "ɛ",
+"kind": "fon",
+"count": 455
+},
+{
+"id": 261707,
+"token": "▁tokpɔnla",
+"a": "▁tokpɔn",
+"b": "la",
+"kind": "fon",
+"count": 455
+},
+{
+"id": 261706,
+"token": "bejinɔtɔ́",
+"a": "be",
+"b": "jinɔtɔ́",
+"kind": "fon",
+"count": 454
+},
+{
+"id": 261705,
+"token": "▁tɛnkpɔn",
+"a": "▁tɛ",
+"b": "nkpɔn",
+"kind": "fon",
+"count": 452
+},
+{
+"id": 261704,
+"token": "▁ntɔn",
+"a": "▁nt",
+"b": "ɔn",
+"kind": "fon",
+"count": 450
+},
+{
+"id": 261703,
+"token": "▁xoɖɛ",
+"a": "▁xo",
+"b": "ɖɛ",
+"kind": "fon",
+"count": 450
+},
+{
+"id": 261702,
+"token": "Ɖo",
+"a": "Ɖ",
+"b": "o",
+"kind": "fon",
+"count": 450
+},
+{
+"id": 261701,
+"token": "▁gɔ́n",
+"a": "▁g",
+"b": "ɔ́n",
+"kind": "fon",
+"count": 449
+},
+{
+"id": 261700,
+"token": "▁mɛ̌",
+"a": "▁mɛ",
+"b": "̌",
+"kind": "fon",
+"count": 449
+},
+{
+"id": 261699,
+"token": "▁gǔ",
+"a": "▁g",
+"b": "ǔ",
+"kind": "fon",
+"count": 447
+},
+{
+"id": 261698,
+"token": "▁yɔ",
+"a": "▁y",
+"b": "ɔ",
+"kind": "fon",
+"count": 447
+},
+{
+"id": 261697,
+"token": "emaxɔmɛ",
+"a": "em",
+"b": "axɔmɛ",
+"kind": "fon",
+"count": 447
+},
+{
+"id": 261696,
+"token": "▁lilɛ",
+"a": "▁lil",
+"b": "ɛ",
+"kind": "fon",
+"count": 447
+},
+{
+"id": 261695,
+"token": "▁gbejinɔtɔ́",
+"a": "▁g",
+"b": "bejinɔtɔ́",
+"kind": "fon",
+"count": 442
+},
+{
+"id": 261694,
+"token": "▁ayihɔngbe",
+"a": "▁ay",
+"b": "ihɔngbe",
+"kind": "fon",
+"count": 440
+},
+{
+"id": 261693,
+"token": "jɛn",
+"a": "j",
+"b": "ɛn",
+"kind": "fon",
+"count": 440
+},
+{
+"id": 261692,
+"token": "▁vɔ̌sán",
+"a": "▁vɔ̌s",
+"b": "án",
+"kind": "fon",
+"count": 434
+},
+{
+"id": 261691,
+"token": "▁vɔ̌sánú",
+"a": "▁vɔ̌sán",
+"b": "ú",
+"kind": "fon",
+"count": 434
+},
+{
+"id": 261690,
+"token": "étɔ́",
+"a": "ét",
+"b": "ɔ́",
+"kind": "fon",
+"count": 431
+},
+{
+"id": 261689,
+"token": "▁wemaxɔmɛ",
+"a": "▁w",
+"b": "emaxɔmɛ",
+"kind": "fon",
+"count": 428
+},
+{
+"id": 261688,
+"token": "ɖiɖo",
+"a": "ɖiɖ",
+"b": "o",
+"kind": "fon",
+"count": 427
+},
+{
+"id": 261687,
+"token": "sɛ́",
+"a": "s",
+"b": "ɛ́",
+"kind": "fon",
+"count": 426
+},
+{
+"id": 261686,
+"token": "▁Bǐ",
+"a": "▁B",
+"b": "ǐ",
+"kind": "fon",
+"count": 423
+},
+{
+"id": 261685,
+"token": "▁hwɛjijɔ",
+"a": "▁hwɛ",
+"b": "jijɔ",
+"kind": "fon",
+"count": 423
+},
+{
+"id": 261684,
+"token": "▁Tɔ́",
+"a": "▁T",
+"b": "ɔ́",
+"kind": "fon",
+"count": 422
+},
+{
+"id": 261683,
+"token": "▁nukúnmɛ",
+"a": "▁nuk",
+"b": "únmɛ",
+"kind": "fon",
+"count": 422
+},
+{
+"id": 261682,
+"token": "▁ɖyɔ",
+"a": "▁ɖ",
+"b": "yɔ",
+"kind": "fon",
+"count": 422
+},
+{
+"id": 261681,
+"token": "▁zɔ",
+"a": "▁z",
+"b": "ɔ",
+"kind": "fon",
+"count": 420
+},
+{
+"id": 261680,
+"token": "▁vivǐ",
+"a": "▁viv",
+"b": "ǐ",
+"kind": "fon",
+"count": 420
+},
+{
+"id": 261679,
+"token": "isɔmɛ",
+"a": "is",
+"b": "ɔmɛ",
+"kind": "fon",
+"count": 419
+},
+{
+"id": 261678,
+"token": "▁zɛ",
+"a": "▁z",
+"b": "ɛ",
+"kind": "fon",
+"count": 419
+},
+{
+"id": 261677,
+"token": "besisɔmɛ",
+"a": "bes",
+"b": "isɔmɛ",
+"kind": "fon",
+"count": 419
+},
+{
+"id": 261676,
+"token": "nɔ",
+"a": "n",
+"b": "ɔ",
+"kind": "fon",
+"count": 417
+},
+{
+"id": 261675,
+"token": "ùɖuɖu",
+"a": "ù",
+"b": "ɖuɖu",
+"kind": "fon",
+"count": 417
+},
+{
+"id": 261674,
+"token": "ɔxwɛ",
+"a": "ɔxw",
+"b": "ɛ",
+"kind": "fon",
+"count": 417
+},
+{
+"id": 261673,
+"token": "▁fɔ́",
+"a": "▁f",
+"b": "ɔ́",
+"kind": "fon",
+"count": 413
+},
+{
+"id": 261672,
+"token": "tɛ",
+"a": "t",
+"b": "ɛ",
+"kind": "fon",
+"count": 413
+},
+{
+"id": 261671,
+"token": "▁gbesisɔmɛ",
+"a": "▁g",
+"b": "besisɔmɛ",
+"kind": "fon",
+"count": 412
+},
+{
+"id": 261670,
+"token": "▁syɛn",
+"a": "▁sy",
+"b": "ɛn",
+"kind": "fon",
+"count": 410
+},
+{
+"id": 261669,
+"token": "▁azɔ",
+"a": "▁az",
+"b": "ɔ",
+"kind": "fon",
+"count": 410
+},
+{
+"id": 261668,
+"token": "ɖex",
+"a": "ɖ",
+"b": "ex",
+"kind": "fon",
+"count": 410
+},
+{
+"id": 261667,
+"token": "▁nǔwi",
+"a": "▁nǔ",
+"b": "wi",
+"kind": "fon",
+"count": 410
+},
+{
+"id": 261666,
+"token": "▁tomɛ",
+"a": "▁tom",
+"b": "ɛ",
+"kind": "fon",
+"count": 409
+},
+{
+"id": 261665,
+"token": "ɖexámɛ",
+"a": "ɖex",
+"b": "ámɛ",
+"kind": "fon",
+"count": 409
+},
+{
+"id": 261664,
+"token": "▁nǔwiwa",
+"a": "▁nǔwi",
+"b": "wa",
+"kind": "fon",
+"count": 408
+},
+{
+"id": 261663,
+"token": "▁nǔw",
+"a": "▁nǔ",
+"b": "w",
+"kind": "fon",
+"count": 405
+},
+{
+"id": 261662,
+"token": "bǔ",
+"a": "b",
+"b": "ǔ",
+"kind": "fon",
+"count": 403
+},
+{
+"id": 261661,
+"token": "▁sɛ̀n",
+"a": "▁sɛ",
+"b": "̀n",
+"kind": "fon",
+"count": 400
+},
+{
+"id": 261660,
+"token": "ntɛnɛti",
+"a": "ntɛn",
+"b": "ɛti",
+"kind": "fon",
+"count": 400
+},
+{
+"id": 261659,
+"token": "▁sukpɔ́",
+"a": "▁suk",
+"b": "pɔ́",
+"kind": "fon",
+"count": 399
+},
+{
+"id": 261658,
+"token": "▁jiwǔ",
+"a": "▁ji",
+"b": "wǔ",
+"kind": "fon",
+"count": 398
+},
+{
+"id": 261657,
+"token": "▁bǐbɛ̌",
+"a": "▁bǐ",
+"b": "bɛ̌",
+"kind": "fon",
+"count": 397
+},
+{
+"id": 261656,
+"token": "▁fɔ́n",
+"a": "▁f",
+"b": "ɔ́n",
+"kind": "fon",
+"count": 396
+},
+{
+"id": 261655,
+"token": "otɔ́",
+"a": "ot",
+"b": "ɔ́",
+"kind": "fon",
+"count": 396
+},
+{
+"id": 261654,
+"token": "axɔ",
+"a": "ax",
+"b": "ɔ",
+"kind": "fon",
+"count": 395
+},
+{
+"id": 261653,
+"token": "ɔ́ɔ",
+"a": "ɔ́",
+"b": "ɔ",
+"kind": "fon",
+"count": 395
+},
+{
+"id": 261652,
+"token": "wiɖée",
+"a": "wi",
+"b": "ɖée",
+"kind": "fon",
+"count": 394
+},
+{
+"id": 261651,
+"token": "▁ɖót",
+"a": "▁ɖ",
+"b": "ót",
+"kind": "fon",
+"count": 394
+},
+{
+"id": 261650,
+"token": "▁dǒ",
+"a": "▁d",
+"b": "ǒ",
+"kind": "fon",
+"count": 393
+},
+{
+"id": 261649,
+"token": "▁etɛ",
+"a": "▁et",
+"b": "ɛ",
+"kind": "fon",
+"count": 392
+},
+{
+"id": 261648,
+"token": "▁wɛnɖagbe",
+"a": "▁wɛn",
+"b": "ɖagbe",
+"kind": "fon",
+"count": 392
+},
+{
+"id": 261647,
+"token": "▁ɖótó",
+"a": "▁ɖót",
+"b": "ó",
+"kind": "fon",
+"count": 391
+},
+{
+"id": 261646,
+"token": "ɛtɔ́",
+"a": "ɛ",
+"b": "tɔ́",
+"kind": "fon",
+"count": 390
+},
+{
+"id": 261645,
+"token": "▁ɖiɖó",
+"a": "▁ɖiɖ",
+"b": "ó",
+"kind": "fon",
+"count": 387
+},
+{
+"id": 261644,
+"token": "▁kpléɖókpɔ́",
+"a": "▁k",
+"b": "pléɖókpɔ́",
+"kind": "fon",
+"count": 386
+},
+{
+"id": 261643,
+"token": "lɔ́",
+"a": "l",
+"b": "ɔ́",
+"kind": "fon",
+"count": 386
+},
+{
+"id": 261642,
+"token": "ɔnmɛ",
+"a": "ɔ",
+"b": "nmɛ",
+"kind": "fon",
+"count": 386
+},
+{
+"id": 261641,
+"token": "▁walɔ",
+"a": "▁wal",
+"b": "ɔ",
+"kind": "fon",
+"count": 383
+},
+{
+"id": 261640,
+"token": "▁nùɖuɖu",
+"a": "▁n",
+"b": "ùɖuɖu",
+"kind": "fon",
+"count": 382
+},
+{
+"id": 261639,
+"token": "pɔ́n",
+"a": "p",
+"b": "ɔ́n",
+"kind": "fon",
+"count": 382
+},
+{
+"id": 261638,
+"token": "▁nùkanbyɔ",
+"a": "▁n",
+"b": "ùkanbyɔ",
+"kind": "fon",
+"count": 381
+},
+{
+"id": 261637,
+"token": "▁nyɔna",
+"a": "▁nyɔ",
+"b": "na",
+"kind": "fon",
+"count": 381
+},
+{
+"id": 261636,
+"token": "▁sɔyi",
+"a": "▁sɔ",
+"b": "yi",
+"kind": "fon",
+"count": 380
+},
+{
+"id": 261635,
+"token": "▁ɖěbǔ",
+"a": "▁ɖě",
+"b": "bǔ",
+"kind": "fon",
+"count": 378
+},
+{
+"id": 261634,
+"token": "tɛn",
+"a": "t",
+"b": "ɛn",
+"kind": "fon",
+"count": 377
+},
+{
+"id": 261633,
+"token": "▁kplɔnkplɔn",
+"a": "▁kplɔ",
+"b": "nkplɔn",
+"kind": "fon",
+"count": 377
+},
+{
+"id": 261632,
+"token": "▁jlɛ́",
+"a": "▁jl",
+"b": "ɛ́",
+"kind": "fon",
+"count": 375
+},
+{
+"id": 261631,
+"token": "ɔ̌nu",
+"a": "ɔ̌",
+"b": "nu",
+"kind": "fon",
+"count": 375
+},
+{
+"id": 261630,
+"token": "▁bǔ",
+"a": "▁b",
+"b": "ǔ",
+"kind": "fon",
+"count": 373
+},
+{
+"id": 261629,
+"token": "▁nɔte",
+"a": "▁nɔ",
+"b": "te",
+"kind": "fon",
+"count": 373
+},
+{
+"id": 261628,
+"token": "▁sɔmɔ̌",
+"a": "▁sɔ",
+"b": "mɔ̌",
+"kind": "fon",
+"count": 372
+},
+{
+"id": 261627,
+"token": "▁hwiɖée",
+"a": "▁h",
+"b": "wiɖée",
+"kind": "fon",
+"count": 371
+},
+{
+"id": 261626,
+"token": "▁gɔn",
+"a": "▁g",
+"b": "ɔn",
+"kind": "fon",
+"count": 371
+},
+{
+"id": 261625,
+"token": "▁sɛn",
+"a": "▁sɛ",
+"b": "n",
+"kind": "fon",
+"count": 370
+},
+{
+"id": 261624,
+"token": "▁sɔgudo",
+"a": "▁sɔg",
+"b": "udo",
+"kind": "fon",
+"count": 370
+},
+{
+"id": 261623,
+"token": "▁lɔmɔ̌",
+"a": "▁lɔ",
+"b": "mɔ̌",
+"kind": "fon",
+"count": 370
+},
+{
+"id": 261622,
+"token": "▁ɖesu",
+"a": "▁ɖ",
+"b": "esu",
+"kind": "fon",
+"count": 368
+},
+{
+"id": 261621,
+"token": "▁mɛtɔn",
+"a": "▁mɛ",
+"b": "tɔn",
+"kind": "fon",
+"count": 367
+},
+{
+"id": 261620,
+"token": "ugbǒ",
+"a": "ug",
+"b": "bǒ",
+"kind": "fon",
+"count": 365
+},
+{
+"id": 261619,
+"token": "▁tokpɔnlavi",
+"a": "▁tok",
+"b": "pɔnlavi",
+"kind": "fon",
+"count": 365
+},
+{
+"id": 261618,
+"token": "mɔ",
+"a": "m",
+"b": "ɔ",
+"kind": "fon",
+"count": 365
+},
+{
+"id": 261617,
+"token": "vɛ́",
+"a": "v",
+"b": "ɛ́",
+"kind": "fon",
+"count": 365
+},
+{
+"id": 261616,
+"token": "▁Kpɔ́",
+"a": "▁K",
+"b": "pɔ́",
+"kind": "fon",
+"count": 364
+},
+{
+"id": 261615,
+"token": "▁glɔ",
+"a": "▁gl",
+"b": "ɔ",
+"kind": "fon",
+"count": 364
+},
+{
+"id": 261614,
+"token": "▁dɔkun",
+"a": "▁dɔ",
+"b": "kun",
+"kind": "fon",
+"count": 364
+},
+{
+"id": 261613,
+"token": "wɛ́",
+"a": "w",
+"b": "ɛ́",
+"kind": "fon",
+"count": 360
+},
+{
+"id": 261612,
+"token": "▁hwɛ̌",
+"a": "▁hw",
+"b": "ɛ̌",
+"kind": "fon",
+"count": 359
+},
+{
+"id": 261611,
+"token": "óɖɔ",
+"a": "ó",
+"b": "ɖɔ",
+"kind": "fon",
+"count": 359
+},
+{
+"id": 261610,
+"token": "ǔmɛ",
+"a": "ǔ",
+"b": "mɛ",
+"kind": "fon",
+"count": 359
+},
+{
+"id": 261609,
+"token": "ɛmu",
+"a": "ɛ",
+"b": "mu",
+"kind": "fon",
+"count": 358
+},
+{
+"id": 261608,
+"token": "▁sɛ́d",
+"a": "▁sɛ́",
+"b": "d",
+"kind": "fon",
+"count": 358
+},
+{
+"id": 261607,
+"token": "Nugbǒ",
+"a": "N",
+"b": "ugbǒ",
+"kind": "fon",
+"count": 357
+},
+{
+"id": 261606,
+"token": "injɔn",
+"a": "inj",
+"b": "ɔn",
+"kind": "fon",
+"count": 356
+},
+{
+"id": 261605,
+"token": "jlɔ",
+"a": "jl",
+"b": "ɔ",
+"kind": "fon",
+"count": 356
+},
+{
+"id": 261604,
+"token": "emafɔ",
+"a": "em",
+"b": "afɔ",
+"kind": "fon",
+"count": 355
+},
+{
+"id": 261603,
+"token": "▁zǎ",
+"a": "▁z",
+"b": "ǎ",
+"kind": "fon",
+"count": 355
+},
+{
+"id": 261602,
+"token": "ponɔ",
+"a": "pon",
+"b": "ɔ",
+"kind": "fon",
+"count": 355
+},
+{
+"id": 261601,
+"token": "▁sɛ́dó",
+"a": "▁sɛ́d",
+"b": "ó",
+"kind": "fon",
+"count": 352
+},
+{
+"id": 261600,
+"token": "▁Vǐ",
+"a": "▁V",
+"b": "ǐ",
+"kind": "fon",
+"count": 349
+},
+{
+"id": 261599,
+"token": "▁agɔ",
+"a": "▁ag",
+"b": "ɔ",
+"kind": "fon",
+"count": 349
+},
+{
+"id": 261598,
+"token": "▁wɛns",
+"a": "▁wɛ",
+"b": "ns",
+"kind": "fon",
+"count": 349
+},
+{
+"id": 261597,
+"token": "klunɔz",
+"a": "klunɔ",
+"b": "z",
+"kind": "fon",
+"count": 349
+},
+{
+"id": 261596,
+"token": "▁nǔwuk",
+"a": "▁nǔw",
+"b": "uk",
+"kind": "fon",
+"count": 346
+},
+{
+"id": 261595,
+"token": "▁Jɔbu",
+"a": "▁J",
+"b": "ɔbu",
+"kind": "fon",
+"count": 344
+},
+{
+"id": 261594,
+"token": "ɛfu",
+"a": "ɛ",
+"b": "fu",
+"kind": "fon",
+"count": 343
+},
+{
+"id": 261593,
+"token": "▁Ðɛhan",
+"a": "▁Ð",
+"b": "ɛhan",
+"kind": "fon",
+"count": 342
+},
+{
+"id": 261592,
+"token": "ɔ́ɔn",
+"a": "ɔ́",
+"b": "ɔn",
+"kind": "fon",
+"count": 340
+},
+{
+"id": 261591,
+"token": "▁Atɔxwɛ",
+"a": "▁At",
+"b": "ɔxwɛ",
+"kind": "fon",
+"count": 339
+},
+{
+"id": 261590,
+"token": "▁kúnnuɖ",
+"a": "▁k",
+"b": "únnuɖ",
+"kind": "fon",
+"count": 338
+},
+{
+"id": 261589,
+"token": "▁mɛɖée",
+"a": "▁mɛ",
+"b": "ɖée",
+"kind": "fon",
+"count": 338
+},
+{
+"id": 261588,
+"token": "mɛnu",
+"a": "mɛ",
+"b": "nu",
+"kind": "fon",
+"count": 338
+},
+{
+"id": 261587,
+"token": "▁hagbɛ̌",
+"a": "▁hag",
+"b": "bɛ̌",
+"kind": "fon",
+"count": 337
+},
+{
+"id": 261586,
+"token": "uwutɔ́",
+"a": "uw",
+"b": "utɔ́",
+"kind": "fon",
+"count": 336
+},
+{
+"id": 261585,
+"token": "▁ɖek",
+"a": "▁ɖ",
+"b": "ek",
+"kind": "fon",
+"count": 335
+},
+{
+"id": 261584,
+"token": "▁mɛsɛ́d",
+"a": "▁mɛsɛ́",
+"b": "d",
+"kind": "fon",
+"count": 335
+},
+{
+"id": 261583,
+"token": "ɔgbe",
+"a": "ɔg",
+"b": "be",
+"kind": "fon",
+"count": 334
+},
+{
+"id": 261582,
+"token": "▁wǒ",
+"a": "▁w",
+"b": "ǒ",
+"kind": "fon",
+"count": 332
+},
+{
+"id": 261581,
+"token": "▁wɛnsagun",
+"a": "▁wɛns",
+"b": "agun",
+"kind": "fon",
+"count": 332
+},
+{
+"id": 261580,
+"token": "▁ylɔ́",
+"a": "▁y",
+"b": "lɔ́",
+"kind": "fon",
+"count": 331
+},
+{
+"id": 261579,
+"token": "énuwutɔ́",
+"a": "én",
+"b": "uwutɔ́",
+"kind": "fon",
+"count": 331
+},
+{
+"id": 261578,
+"token": "kpénuwutɔ́",
+"a": "kp",
+"b": "énuwutɔ́",
+"kind": "fon",
+"count": 331
+},
+{
+"id": 261577,
+"token": "únkpénuwutɔ́",
+"a": "ún",
+"b": "kpénuwutɔ́",
+"kind": "fon",
+"count": 331
+},
+{
+"id": 261576,
+"token": "▁jinjɔn",
+"a": "▁j",
+"b": "injɔn",
+"kind": "fon",
+"count": 330
+},
+{
+"id": 261575,
+"token": "ɔny",
+"a": "ɔ",
+"b": "ny",
+"kind": "fon",
+"count": 330
+},
+{
+"id": 261574,
+"token": "▁jijɛ",
+"a": "▁jij",
+"b": "ɛ",
+"kind": "fon",
+"count": 327
+},
+{
+"id": 261573,
+"token": "wenɛnu",
+"a": "wen",
+"b": "ɛnu",
+"kind": "fon",
+"count": 326
+},
+{
+"id": 261572,
+"token": "▁alɔw",
+"a": "▁alɔ",
+"b": "w",
+"kind": "fon",
+"count": 326
+},
+{
+"id": 261571,
+"token": "ùɖ",
+"a": "ù",
+"b": "ɖ",
+"kind": "fon",
+"count": 325
+},
+{
+"id": 261570,
+"token": "▁Bɔ",
+"a": "▁B",
+"b": "ɔ",
+"kind": "fon",
+"count": 324
+},
+{
+"id": 261569,
+"token": "latɔ́",
+"a": "lat",
+"b": "ɔ́",
+"kind": "fon",
+"count": 324
+},
+{
+"id": 261568,
+"token": "▁nyɔ̌nu",
+"a": "▁ny",
+"b": "ɔ̌nu",
+"kind": "fon",
+"count": 324
+},
+{
+"id": 261567,
+"token": "jɛnǔmɛ",
+"a": "jɛn",
+"b": "ǔmɛ",
+"kind": "fon",
+"count": 324
+},
+{
+"id": 261566,
+"token": "▁xóɖiɖɔ",
+"a": "▁x",
+"b": "óɖiɖɔ",
+"kind": "fon",
+"count": 323
+},
+{
+"id": 261565,
+"token": "▁wěɖexámɛ",
+"a": "▁wě",
+"b": "ɖexámɛ",
+"kind": "fon",
+"count": 323
+},
+{
+"id": 261564,
+"token": "▁mɛsɛ́dó",
+"a": "▁mɛsɛ́d",
+"b": "ó",
+"kind": "fon",
+"count": 323
+},
+{
+"id": 261563,
+"token": "ixɔ",
+"a": "ix",
+"b": "ɔ",
+"kind": "fon",
+"count": 322
+},
+{
+"id": 261562,
+"token": "únɖiɖo",
+"a": "ún",
+"b": "ɖiɖo",
+"kind": "fon",
+"count": 322
+},
+{
+"id": 261561,
+"token": "mɔjɛnǔmɛ",
+"a": "mɔ",
+"b": "jɛnǔmɛ",
+"kind": "fon",
+"count": 321
+},
+{
+"id": 261560,
+"token": "bejininɔ",
+"a": "bej",
+"b": "ininɔ",
+"kind": "fon",
+"count": 320
+},
+{
+"id": 261559,
+"token": "ɖiɖe",
+"a": "ɖiɖ",
+"b": "e",
+"kind": "fon",
+"count": 319
+},
+{
+"id": 261558,
+"token": "zɔ́",
+"a": "z",
+"b": "ɔ́",
+"kind": "fon",
+"count": 318
+},
+{
+"id": 261557,
+"token": "▁alɔwliw",
+"a": "▁alɔw",
+"b": "liw",
+"kind": "fon",
+"count": 318
+},
+{
+"id": 261556,
+"token": "▁alɔwliwli",
+"a": "▁alɔwliw",
+"b": "li",
+"kind": "fon",
+"count": 318
+},
+{
+"id": 261555,
+"token": "númɔjɛnǔmɛ",
+"a": "nú",
+"b": "mɔjɛnǔmɛ",
+"kind": "fon",
+"count": 317
+},
+{
+"id": 261554,
+"token": "únnúmɔjɛnǔmɛ",
+"a": "ún",
+"b": "númɔjɛnǔmɛ",
+"kind": "fon",
+"count": 317
+},
+{
+"id": 261553,
+"token": "▁lɛ̌",
+"a": "▁lɛ",
+"b": "̌",
+"kind": "fon",
+"count": 317
+},
+{
+"id": 261552,
+"token": "▁mɛɖ",
+"a": "▁mɛ",
+"b": "ɖ",
+"kind": "fon",
+"count": 316
+},
+{
+"id": 261551,
+"token": "▁hwɛh",
+"a": "▁hwɛ",
+"b": "h",
+"kind": "fon",
+"count": 316
+},
+{
+"id": 261550,
+"token": "▁kɛntɔ́",
+"a": "▁kɛ",
+"b": "ntɔ́",
+"kind": "fon",
+"count": 316
+},
+{
+"id": 261549,
+"token": "▁hwɛhuhu",
+"a": "▁hwɛh",
+"b": "uhu",
+"kind": "fon",
+"count": 316
+},
+{
+"id": 261548,
+"token": "▁Yě",
+"a": "▁Y",
+"b": "ě",
+"kind": "fon",
+"count": 315
+},
+{
+"id": 261547,
+"token": "Énɛ́",
+"a": "É",
+"b": "nɛ́",
+"kind": "fon",
+"count": 315
+},
+{
+"id": 261546,
+"token": "▁Jozɛfu",
+"a": "▁Joz",
+"b": "ɛfu",
+"kind": "fon",
+"count": 314
+},
+{
+"id": 261545,
+"token": "bǐ",
+"a": "b",
+"b": "ǐ",
+"kind": "fon",
+"count": 314
+},
+{
+"id": 261544,
+"token": "▁Nugbǒ",
+"a": "▁Nug",
+"b": "bǒ",
+"kind": "fon",
+"count": 312
+},
+{
+"id": 261543,
+"token": "▁dɛ",
+"a": "▁d",
+"b": "ɛ",
+"kind": "fon",
+"count": 310
+},
+{
+"id": 261542,
+"token": "▁lidǒ",
+"a": "▁lid",
+"b": "ǒ",
+"kind": "fon",
+"count": 309
+},
+{
+"id": 261541,
+"token": "alɛmu",
+"a": "al",
+"b": "ɛmu",
+"kind": "fon",
+"count": 307
+},
+{
+"id": 261540,
+"token": "uzalɛmu",
+"a": "uz",
+"b": "alɛmu",
+"kind": "fon",
+"count": 307
+},
+{
+"id": 261539,
+"token": "ɛhwen",
+"a": "ɛh",
+"b": "wen",
+"kind": "fon",
+"count": 307
+},
+{
+"id": 261538,
+"token": "▁akɔnk",
+"a": "▁akɔ",
+"b": "nk",
+"kind": "fon",
+"count": 306
+},
+{
+"id": 261537,
+"token": "▁Azɔ̌",
+"a": "▁Az",
+"b": "ɔ̌",
+"kind": "fon",
+"count": 305
+},
+{
+"id": 261536,
+"token": "▁ayǐk",
+"a": "▁ayǐ",
+"b": "k",
+"kind": "fon",
+"count": 305
+},
+{
+"id": 261535,
+"token": "▁nùkplɔnmɛ",
+"a": "▁nùkplɔ",
+"b": "nmɛ",
+"kind": "fon",
+"count": 305
+},
+{
+"id": 261534,
+"token": "▁ayǐkúng",
+"a": "▁ayǐk",
+"b": "úng",
+"kind": "fon",
+"count": 305
+},
+{
+"id": 261533,
+"token": "▁gbě",
+"a": "▁g",
+"b": "bě",
+"kind": "fon",
+"count": 303
+},
+{
+"id": 261532,
+"token": "lɛn",
+"a": "l",
+"b": "ɛn",
+"kind": "fon",
+"count": 303
+},
+{
+"id": 261531,
+"token": "▁ayǐkúngban",
+"a": "▁ayǐkúng",
+"b": "ban",
+"kind": "fon",
+"count": 303
+},
+{
+"id": 261530,
+"token": "▁Betɛli",
+"a": "▁Bet",
+"b": "ɛli",
+"kind": "fon",
+"count": 302
+},
+{
+"id": 261529,
+"token": "xɔsa",
+"a": "xɔ",
+"b": "sa",
+"kind": "fon",
+"count": 302
+},
+{
+"id": 261528,
+"token": "▁cyɔn",
+"a": "▁cy",
+"b": "ɔn",
+"kind": "fon",
+"count": 301
+},
+{
+"id": 261527,
+"token": "▁kɔ́",
+"a": "▁k",
+"b": "ɔ́",
+"kind": "fon",
+"count": 300
+},
+{
+"id": 261526,
+"token": "▁Jeluzalɛmu",
+"a": "▁Jel",
+"b": "uzalɛmu",
+"kind": "fon",
+"count": 300
+},
+{
+"id": 261525,
+"token": "iɖɔ",
+"a": "iɖ",
+"b": "ɔ",
+"kind": "fon",
+"count": 300
+},
+{
+"id": 261524,
+"token": "▁wemafɔ",
+"a": "▁w",
+"b": "emafɔ",
+"kind": "fon",
+"count": 299
+},
+{
+"id": 261523,
+"token": "ínyɔ́",
+"a": "íny",
+"b": "ɔ́",
+"kind": "fon",
+"count": 299
+},
+{
+"id": 261522,
+"token": "▁nɛ́",
+"a": "▁n",
+"b": "ɛ́",
+"kind": "fon",
+"count": 298
+},
+{
+"id": 261521,
+"token": "nyínyɔ́",
+"a": "ny",
+"b": "ínyɔ́",
+"kind": "fon",
+"count": 298
+},
+{
+"id": 261520,
+"token": "▁gbejininɔ",
+"a": "▁g",
+"b": "bejininɔ",
+"kind": "fon",
+"count": 297
+},
+{
+"id": 261519,
+"token": "ɖagbej",
+"a": "ɖag",
+"b": "bej",
+"kind": "fon",
+"count": 296
+},
+{
+"id": 261518,
+"token": "▁Kɔlɛ",
+"a": "▁Kɔ",
+"b": "lɛ",
+"kind": "fon",
+"count": 294
+},
+{
+"id": 261517,
+"token": "▁cobɔ",
+"a": "▁cob",
+"b": "ɔ",
+"kind": "fon",
+"count": 293
+},
+{
+"id": 261516,
+"token": "ɔtée",
+"a": "ɔt",
+"b": "ée",
+"kind": "fon",
+"count": 293
+},
+{
+"id": 261515,
+"token": "▁gbɛtɔ",
+"a": "▁gbɛ",
+"b": "tɔ",
+"kind": "fon",
+"count": 292
+},
+{
+"id": 261514,
+"token": "▁vívɛ́",
+"a": "▁ví",
+"b": "vɛ́",
+"kind": "fon",
+"count": 291
+},
+{
+"id": 261513,
+"token": "▁nùɖ",
+"a": "▁n",
+"b": "ùɖ",
+"kind": "fon",
+"count": 290
+},
+{
+"id": 261512,
+"token": "éxɔ",
+"a": "é",
+"b": "xɔ",
+"kind": "fon",
+"count": 290
+},
+{
+"id": 261511,
+"token": "pléxɔ",
+"a": "pl",
+"b": "éxɔ",
+"kind": "fon",
+"count": 290
+},
+{
+"id": 261510,
+"token": "▁vɔ̌sák",
+"a": "▁vɔ̌s",
+"b": "ák",
+"kind": "fon",
+"count": 290
+},
+{
+"id": 261509,
+"token": "▁vɔ̌sákpe",
+"a": "▁vɔ̌sák",
+"b": "pe",
+"kind": "fon",
+"count": 290
+},
+{
+"id": 261508,
+"token": "▁nukúnɖiɖo",
+"a": "▁nuk",
+"b": "únɖiɖo",
+"kind": "fon",
+"count": 289
+},
+{
+"id": 261507,
+"token": "nnɔ",
+"a": "nn",
+"b": "ɔ",
+"kind": "fon",
+"count": 288
+},
+{
+"id": 261506,
+"token": "▁ɖés",
+"a": "▁ɖ",
+"b": "és",
+"kind": "fon",
+"count": 288
+},
+{
+"id": 261505,
+"token": "▁ɖa",
+"a": "▁ɖ",
+"b": "a",
+"kind": "fon",
+"count": 288
+},
+{
+"id": 261504,
+"token": "▁akɔnkpink",
+"a": "▁akɔnk",
+"b": "pink",
+"kind": "fon",
+"count": 288
+},
+{
+"id": 261503,
+"token": "klunɔzán",
+"a": "klunɔz",
+"b": "án",
+"kind": "fon",
+"count": 287
+},
+{
+"id": 261502,
+"token": "bǐw",
+"a": "bǐ",
+"b": "w",
+"kind": "fon",
+"count": 287
+},
+{
+"id": 261501,
+"token": "▁akɔnkpinkpan",
+"a": "▁akɔnkpink",
+"b": "pan",
+"kind": "fon",
+"count": 287
+},
+{
+"id": 261500,
+"token": "▁lɔn",
+"a": "▁l",
+"b": "ɔn",
+"kind": "fon",
+"count": 286
+},
+{
+"id": 261499,
+"token": "▁mɛɖes",
+"a": "▁mɛ",
+"b": "ɖes",
+"kind": "fon",
+"count": 285
+},
+{
+"id": 261498,
+"token": "evomɛ",
+"a": "ev",
+"b": "omɛ",
+"kind": "fon",
+"count": 284
+},
+{
+"id": 261497,
+"token": "▁Gbɔn",
+"a": "▁Gb",
+"b": "ɔn",
+"kind": "fon",
+"count": 284
+},
+{
+"id": 261496,
+"token": "▁alijitɔ́",
+"a": "▁al",
+"b": "ijitɔ́",
+"kind": "fon",
+"count": 283
+},
+{
+"id": 261495,
+"token": "▁Timɔtée",
+"a": "▁Tim",
+"b": "ɔtée",
+"kind": "fon",
+"count": 283
+},
+{
+"id": 261494,
+"token": "pétɔ́",
+"a": "p",
+"b": "étɔ́",
+"kind": "fon",
+"count": 283
+},
+{
+"id": 261493,
+"token": "ɖok",
+"a": "ɖ",
+"b": "ok",
+"kind": "fon",
+"count": 283
+},
+{
+"id": 261492,
+"token": "▁nǔg",
+"a": "▁nǔ",
+"b": "g",
+"kind": "fon",
+"count": 283
+},
+{
+"id": 261491,
+"token": "▁Mɔyí",
+"a": "▁Mɔy",
+"b": "í",
+"kind": "fon",
+"count": 283
+},
+{
+"id": 261490,
+"token": "▁Mɔyízi",
+"a": "▁Mɔyí",
+"b": "zi",
+"kind": "fon",
+"count": 283
+},
+{
+"id": 261489,
+"token": "▁ɖǒ",
+"a": "▁ɖ",
+"b": "ǒ",
+"kind": "fon",
+"count": 282
+},
+{
+"id": 261488,
+"token": "ɖevomɛ",
+"a": "ɖ",
+"b": "evomɛ",
+"kind": "fon",
+"count": 280
+},
+{
+"id": 261487,
+"token": "▁nǔgbo",
+"a": "▁nǔg",
+"b": "bo",
+"kind": "fon",
+"count": 280
+},
+{
+"id": 261486,
+"token": "▁atɔ́",
+"a": "▁at",
+"b": "ɔ́",
+"kind": "fon",
+"count": 279
+},
+{
+"id": 261485,
+"token": "▁Benɛ",
+"a": "▁Ben",
+"b": "ɛ",
+"kind": "fon",
+"count": 278
+},
+{
+"id": 261484,
+"token": "▁MƐ",
+"a": "▁M",
+"b": "Ɛ",
+"kind": "fon",
+"count": 277
+},
+{
+"id": 261483,
+"token": "▁Mɔ̌",
+"a": "▁M",
+"b": "ɔ̌",
+"kind": "fon",
+"count": 277
+},
+{
+"id": 261482,
+"token": "▁nukúnnúmɔjɛnǔmɛ",
+"a": "▁nuk",
+"b": "únnúmɔjɛnǔmɛ",
+"kind": "fon",
+"count": 277
+},
+{
+"id": 261481,
+"token": "hutɔ́",
+"a": "hut",
+"b": "ɔ́",
+"kind": "fon",
+"count": 276
+},
+{
+"id": 261480,
+"token": "Hwɛ",
+"a": "H",
+"b": "wɛ",
+"kind": "fon",
+"count": 276
+},
+{
+"id": 261479,
+"token": "▁Mɔyizi",
+"a": "▁Mɔy",
+"b": "izi",
+"kind": "fon",
+"count": 276
+},
+{
+"id": 261478,
+"token": "▁zǎn",
+"a": "▁z",
+"b": "ǎn",
+"kind": "fon",
+"count": 275
+},
+{
+"id": 261477,
+"token": "▁nukúnkpénuwutɔ́",
+"a": "▁nuk",
+"b": "únkpénuwutɔ́",
+"kind": "fon",
+"count": 274
+},
+{
+"id": 261476,
+"token": "▁wɛnj",
+"a": "▁wɛ",
+"b": "nj",
+"kind": "fon",
+"count": 274
+},
+{
+"id": 261475,
+"token": "▁xomɛnyínyɔ́",
+"a": "▁xomɛ",
+"b": "nyínyɔ́",
+"kind": "fon",
+"count": 274
+},
+{
+"id": 261474,
+"token": "ísɔ́",
+"a": "ís",
+"b": "ɔ́",
+"kind": "fon",
+"count": 273
+},
+{
+"id": 261473,
+"token": "▁jlɛ̌",
+"a": "▁jl",
+"b": "ɛ̌",
+"kind": "fon",
+"count": 273
+},
+{
+"id": 261472,
+"token": "▁ɖeɖɛ",
+"a": "▁ɖe",
+"b": "ɖɛ",
+"kind": "fon",
+"count": 271
+},
+{
+"id": 261471,
+"token": "beyiɖɔ",
+"a": "bey",
+"b": "iɖɔ",
+"kind": "fon",
+"count": 270
+},
+{
+"id": 261470,
+"token": "ǔwu",
+"a": "ǔ",
+"b": "wu",
+"kind": "fon",
+"count": 270
+},
+{
+"id": 261469,
+"token": "▁Kɔlɛnt",
+"a": "▁Kɔlɛ",
+"b": "nt",
+"kind": "fon",
+"count": 270
+},
+{
+"id": 261468,
+"token": "▁Kɔlɛntinu",
+"a": "▁Kɔlɛnt",
+"b": "inu",
+"kind": "fon",
+"count": 270
+},
+{
+"id": 261467,
+"token": "▁nǔwukpik",
+"a": "▁nǔwuk",
+"b": "pik",
+"kind": "fon",
+"count": 269
+},
+{
+"id": 261466,
+"token": "bǐwuk",
+"a": "bǐw",
+"b": "uk",
+"kind": "fon",
+"count": 269
+},
+{
+"id": 261465,
+"token": "▁nǔwukpikpé",
+"a": "▁nǔwukpik",
+"b": "pé",
+"kind": "fon",
+"count": 269
+},
+{
+"id": 261464,
+"token": "▁Lɛ",
+"a": "▁L",
+"b": "ɛ",
+"kind": "fon",
+"count": 268
+},
+{
+"id": 261463,
+"token": "▁hweɖelɛnu",
+"a": "▁hweɖ",
+"b": "elɛnu",
+"kind": "fon",
+"count": 268
+},
+{
+"id": 261462,
+"token": "bǐwukpétɔ́",
+"a": "bǐwuk",
+"b": "pétɔ́",
+"kind": "fon",
+"count": 268
+},
+{
+"id": 261461,
+"token": "▁hwenɛnu",
+"a": "▁h",
+"b": "wenɛnu",
+"kind": "fon",
+"count": 267
+},
+{
+"id": 261460,
+"token": "▁nyiɖ",
+"a": "▁ny",
+"b": "iɖ",
+"kind": "fon",
+"count": 267
+},
+{
+"id": 261459,
+"token": "▁sɛntɔ́",
+"a": "▁sɛ",
+"b": "ntɔ́",
+"kind": "fon",
+"count": 267
+},
+{
+"id": 261458,
+"token": "Bɔ",
+"a": "B",
+"b": "ɔ",
+"kind": "fon",
+"count": 267
+},
+{
+"id": 261457,
+"token": "▁nǔɖɔ",
+"a": "▁nǔ",
+"b": "ɖɔ",
+"kind": "fon",
+"count": 267
+},
+{
+"id": 261456,
+"token": "▁lɛng",
+"a": "▁lɛ",
+"b": "ng",
+"kind": "fon",
+"count": 266
+},
+{
+"id": 261455,
+"token": "▁Ðɛh",
+"a": "▁Ð",
+"b": "ɛh",
+"kind": "fon",
+"count": 265
+},
+{
+"id": 261454,
+"token": "▁alaxɔ",
+"a": "▁al",
+"b": "axɔ",
+"kind": "fon",
+"count": 264
+},
+{
+"id": 261453,
+"token": "▁byɔ́",
+"a": "▁by",
+"b": "ɔ́",
+"kind": "fon",
+"count": 264
+},
+{
+"id": 261452,
+"token": "yɛ",
+"a": "y",
+"b": "ɛ",
+"kind": "fon",
+"count": 262
+},
+{
+"id": 261451,
+"token": "ěe",
+"a": "ě",
+"b": "e",
+"kind": "fon",
+"count": 262
+},
+{
+"id": 261450,
+"token": "▁alɔdo",
+"a": "▁alɔ",
+"b": "do",
+"kind": "fon",
+"count": 262
+},
+{
+"id": 261449,
+"token": "inɔ",
+"a": "in",
+"b": "ɔ",
+"kind": "fon",
+"count": 261
+},
+{
+"id": 261448,
+"token": "▁Kpléxɔ",
+"a": "▁K",
+"b": "pléxɔ",
+"kind": "fon",
+"count": 261
+},
+{
+"id": 261447,
+"token": "ɖo",
+"a": "ɖ",
+"b": "o",
+"kind": "fon",
+"count": 260
+},
+{
+"id": 261446,
+"token": "Nɔví",
+"a": "Nɔ",
+"b": "ví",
+"kind": "fon",
+"count": 260
+},
+{
+"id": 261445,
+"token": "beɖevomɛ",
+"a": "be",
+"b": "ɖevomɛ",
+"kind": "fon",
+"count": 259
+},
+{
+"id": 261444,
+"token": "▁ajɔ",
+"a": "▁aj",
+"b": "ɔ",
+"kind": "fon",
+"count": 257
+},
+{
+"id": 261443,
+"token": "▁ɖiɖe",
+"a": "▁ɖiɖ",
+"b": "e",
+"kind": "fon",
+"count": 257
+},
+{
+"id": 261442,
+"token": "▁hwlɛn",
+"a": "▁hw",
+"b": "lɛn",
+"kind": "fon",
+"count": 256
+},
+{
+"id": 261441,
+"token": "alijitɔ́",
+"a": "al",
+"b": "ijitɔ́",
+"kind": "fon",
+"count": 254
+},
+{
+"id": 261440,
+"token": "▁Wɛ",
+"a": "▁W",
+"b": "ɛ",
+"kind": "fon",
+"count": 254
+},
+{
+"id": 261439,
+"token": "▁Aklunɔ",
+"a": "▁A",
+"b": "klunɔ",
+"kind": "fon",
+"count": 253
+},
+{
+"id": 261438,
+"token": "▁éɖesunɔ",
+"a": "▁é",
+"b": "ɖesunɔ",
+"kind": "fon",
+"count": 253
+},
+{
+"id": 261437,
+"token": "▁Kplɔ",
+"a": "▁K",
+"b": "plɔ",
+"kind": "fon",
+"count": 251
+},
+{
+"id": 261436,
+"token": "▁nyǐ",
+"a": "▁ny",
+"b": "ǐ",
+"kind": "fon",
+"count": 251
+},
+{
+"id": 261435,
+"token": "pɛ",
+"a": "p",
+"b": "ɛ",
+"kind": "fon",
+"count": 251
+},
+{
+"id": 261434,
+"token": "▁tɛmpl",
+"a": "▁tɛ",
+"b": "mpl",
+"kind": "fon",
+"count": 251
+},
+{
+"id": 261433,
+"token": "tɛnkpɔn",
+"a": "tɛ",
+"b": "nkpɔn",
+"kind": "fon",
+"count": 251
+},
+{
+"id": 261432,
+"token": "▁tɛmpli",
+"a": "▁tɛmpl",
+"b": "i",
+"kind": "fon",
+"count": 251
+},
+{
+"id": 261431,
+"token": "▁tɛgbɛ",
+"a": "▁tɛ",
+"b": "gbɛ",
+"kind": "fon",
+"count": 250
+},
+{
+"id": 261430,
+"token": "ɖa",
+"a": "ɖ",
+"b": "a",
+"kind": "fon",
+"count": 249
+},
+{
+"id": 261429,
+"token": "▁nǔny",
+"a": "▁nǔ",
+"b": "ny",
+"kind": "fon",
+"count": 248
+},
+{
+"id": 261428,
+"token": "▁aklunɔzán",
+"a": "▁a",
+"b": "klunɔzán",
+"kind": "fon",
+"count": 247
+},
+{
+"id": 261427,
+"token": "ɔnyit",
+"a": "ɔny",
+"b": "it",
+"kind": "fon",
+"count": 246
+},
+{
+"id": 261426,
+"token": "bɛ́",
+"a": "b",
+"b": "ɛ́",
+"kind": "fon",
+"count": 245
+},
+{
+"id": 261425,
+"token": "▁fɛ́",
+"a": "▁f",
+"b": "ɛ́",
+"kind": "fon",
+"count": 244
+},
+{
+"id": 261424,
+"token": "▁ɖěvo",
+"a": "▁ɖě",
+"b": "vo",
+"kind": "fon",
+"count": 243
+},
+{
+"id": 261423,
+"token": "▁Nǔbǐwukpétɔ́",
+"a": "▁Nǔ",
+"b": "bǐwukpétɔ́",
+"kind": "fon",
+"count": 243
+},
+{
+"id": 261422,
+"token": "▁mɛx",
+"a": "▁mɛ",
+"b": "x",
+"kind": "fon",
+"count": 242
+},
+{
+"id": 261421,
+"token": "▁wɛnɖagbej",
+"a": "▁wɛn",
+"b": "ɖagbej",
+"kind": "fon",
+"count": 242
+},
+{
+"id": 261420,
+"token": "▁avɔ",
+"a": "▁av",
+"b": "ɔ",
+"kind": "fon",
+"count": 241
+},
+{
+"id": 261419,
+"token": "akanmɛ",
+"a": "akan",
+"b": "mɛ",
+"kind": "fon",
+"count": 241
+},
+{
+"id": 261418,
+"token": "▁élɔ́",
+"a": "▁él",
+"b": "ɔ́",
+"kind": "fon",
+"count": 241
+},
+{
+"id": 261417,
+"token": "ywɛ",
+"a": "yw",
+"b": "ɛ",
+"kind": "fon",
+"count": 240
+},
+{
+"id": 261416,
+"token": "▁jonɔ",
+"a": "▁jon",
+"b": "ɔ",
+"kind": "fon",
+"count": 239
+},
+{
+"id": 261415,
+"token": "▁nɔ̀",
+"a": "▁nɔ",
+"b": "̀",
+"kind": "fon",
+"count": 239
+},
+{
+"id": 261414,
+"token": "kpɛ",
+"a": "kp",
+"b": "ɛ",
+"kind": "fon",
+"count": 238
+},
+{
+"id": 261413,
+"token": "▁goxɔ",
+"a": "▁go",
+"b": "xɔ",
+"kind": "fon",
+"count": 236
+},
+{
+"id": 261412,
+"token": "abilɔnu",
+"a": "abil",
+"b": "ɔnu",
+"kind": "fon",
+"count": 236
+},
+{
+"id": 261411,
+"token": "▁hwɛhutɔ́",
+"a": "▁hwɛ",
+"b": "hutɔ́",
+"kind": "fon",
+"count": 236
+},
+{
+"id": 261410,
+"token": "▁xomɛsin",
+"a": "▁xomɛ",
+"b": "sin",
+"kind": "fon",
+"count": 236
+},
+{
+"id": 261409,
+"token": "▁bɛ",
+"a": "▁b",
+"b": "ɛ",
+"kind": "fon",
+"count": 235
+},
+{
+"id": 261408,
+"token": "▁yɛ̌",
+"a": "▁y",
+"b": "ɛ̌",
+"kind": "fon",
+"count": 235
+},
+{
+"id": 261407,
+"token": "▁wegɔ",
+"a": "▁weg",
+"b": "ɔ",
+"kind": "fon",
+"count": 235
+},
+{
+"id": 261406,
+"token": "▁Hlɔma",
+"a": "▁Hlɔ",
+"b": "ma",
+"kind": "fon",
+"count": 234
+},
+{
+"id": 261405,
+"token": "ɛhwenɔ",
+"a": "ɛhwen",
+"b": "ɔ",
+"kind": "fon",
+"count": 234
+},
+{
+"id": 261404,
+"token": "insɛ",
+"a": "ins",
+"b": "ɛ",
+"kind": "fon",
+"count": 233
+},
+{
+"id": 261403,
+"token": "Tokpɔnlavi",
+"a": "Tok",
+"b": "pɔnlavi",
+"kind": "fon",
+"count": 233
+},
+{
+"id": 261402,
+"token": "▁lobɔ",
+"a": "▁lob",
+"b": "ɔ",
+"kind": "fon",
+"count": 233
+},
+{
+"id": 261401,
+"token": "▁wɔn",
+"a": "▁wɔ",
+"b": "n",
+"kind": "fon",
+"count": 233
+},
+{
+"id": 261400,
+"token": "únɖeji",
+"a": "ún",
+"b": "ɖeji",
+"kind": "fon",
+"count": 232
+},
+{
+"id": 261399,
+"token": "▁mavɔmavɔ",
+"a": "▁mav",
+"b": "ɔmavɔ",
+"kind": "fon",
+"count": 232
+},
+{
+"id": 261398,
+"token": "▁Piyɛ́",
+"a": "▁Piy",
+"b": "ɛ́",
+"kind": "fon",
+"count": 232
+},
+{
+"id": 261397,
+"token": "jɔnǔ",
+"a": "j",
+"b": "ɔnǔ",
+"kind": "fon",
+"count": 232
+},
+{
+"id": 261396,
+"token": "▁lɛ́vɔ",
+"a": "▁lɛ́",
+"b": "vɔ",
+"kind": "fon",
+"count": 232
+},
+{
+"id": 261395,
+"token": "lɛ̌",
+"a": "l",
+"b": "ɛ̌",
+"kind": "fon",
+"count": 231
+},
+{
+"id": 261394,
+"token": "Mɔ̌",
+"a": "M",
+"b": "ɔ̌",
+"kind": "fon",
+"count": 231
+},
+{
+"id": 261393,
+"token": "ɖisi",
+"a": "ɖ",
+"b": "isi",
+"kind": "fon",
+"count": 231
+},
+{
+"id": 261392,
+"token": "dogbeɖevomɛ",
+"a": "dog",
+"b": "beɖevomɛ",
+"kind": "fon",
+"count": 230
+},
+{
+"id": 261391,
+"token": "▁mimɔ",
+"a": "▁mim",
+"b": "ɔ",
+"kind": "fon",
+"count": 228
+},
+{
+"id": 261390,
+"token": "bɔ̌",
+"a": "b",
+"b": "ɔ̌",
+"kind": "fon",
+"count": 228
+},
+{
+"id": 261389,
+"token": "▁nukúnɖeji",
+"a": "▁nuk",
+"b": "únɖeji",
+"kind": "fon",
+"count": 227
+},
+{
+"id": 261388,
+"token": "▁zǎnz",
+"a": "▁zǎ",
+"b": "nz",
+"kind": "fon",
+"count": 226
+},
+{
+"id": 261387,
+"token": "▁ɖekún",
+"a": "▁ɖek",
+"b": "ún",
+"kind": "fon",
+"count": 226
+},
+{
+"id": 261386,
+"token": "▁fɔ",
+"a": "▁f",
+"b": "ɔ",
+"kind": "fon",
+"count": 225
+},
+{
+"id": 261385,
+"token": "omɔ",
+"a": "om",
+"b": "ɔ",
+"kind": "fon",
+"count": 225
+},
+{
+"id": 261384,
+"token": "kpɔ́",
+"a": "kp",
+"b": "ɔ́",
+"kind": "fon",
+"count": 225
+},
+{
+"id": 261383,
+"token": "▁Babilɔnu",
+"a": "▁B",
+"b": "abilɔnu",
+"kind": "fon",
+"count": 224
+},
+{
+"id": 261382,
+"token": "▁bunɔ",
+"a": "▁bun",
+"b": "ɔ",
+"kind": "fon",
+"count": 224
+},
+{
+"id": 261381,
+"token": "▁alixlɛ́mɛ",
+"a": "▁alixlɛ́",
+"b": "mɛ",
+"kind": "fon",
+"count": 224
+},
+{
+"id": 261380,
+"token": "▁ɖekúnnu",
+"a": "▁ɖekún",
+"b": "nu",
+"kind": "fon",
+"count": 224
+},
+{
+"id": 261379,
+"token": "▁gbeyiɖɔ",
+"a": "▁g",
+"b": "beyiɖɔ",
+"kind": "fon",
+"count": 222
+},
+{
+"id": 261378,
+"token": "Kpɔ́",
+"a": "Kp",
+"b": "ɔ́",
+"kind": "fon",
+"count": 222
+},
+{
+"id": 261377,
+"token": "▁sísɔ́",
+"a": "▁s",
+"b": "ísɔ́",
+"kind": "fon",
+"count": 221
+},
+{
+"id": 261376,
+"token": "óɖó",
+"a": "ó",
+"b": "ɖó",
+"kind": "fon",
+"count": 220
+},
+{
+"id": 261375,
+"token": "▁Tɛ",
+"a": "▁T",
+"b": "ɛ",
+"kind": "fon",
+"count": 218
+},
+{
+"id": 261374,
+"token": "▁ɖɛmɛnu",
+"a": "▁ɖɛ",
+"b": "mɛnu",
+"kind": "fon",
+"count": 218
+},
+{
+"id": 261373,
+"token": "▁wɛnjlatɔ́",
+"a": "▁wɛnj",
+"b": "latɔ́",
+"kind": "fon",
+"count": 218
+},
+{
+"id": 261372,
+"token": "▁gǎ",
+"a": "▁g",
+"b": "ǎ",
+"kind": "fon",
+"count": 216
+},
+{
+"id": 261371,
+"token": "▁myɔ",
+"a": "▁my",
+"b": "ɔ",
+"kind": "fon",
+"count": 216
+},
+{
+"id": 261370,
+"token": "▁xóɖɔ",
+"a": "▁x",
+"b": "óɖɔ",
+"kind": "fon",
+"count": 216
+},
+{
+"id": 261369,
+"token": "▁axɔ́",
+"a": "▁ax",
+"b": "ɔ́",
+"kind": "fon",
+"count": 215
+},
+{
+"id": 261368,
+"token": "▁Gɔ́",
+"a": "▁G",
+"b": "ɔ́",
+"kind": "fon",
+"count": 214
+},
+{
+"id": 261367,
+"token": "▁awakanmɛ",
+"a": "▁aw",
+"b": "akanmɛ",
+"kind": "fon",
+"count": 214
+},
+{
+"id": 261366,
+"token": "anjɛwu",
+"a": "anj",
+"b": "ɛwu",
+"kind": "fon",
+"count": 214
+},
+{
+"id": 261365,
+"token": "Kpɔ́n",
+"a": "Kp",
+"b": "ɔ́n",
+"kind": "fon",
+"count": 214
+},
+{
+"id": 261364,
+"token": "jɔmɛ",
+"a": "j",
+"b": "ɔmɛ",
+"kind": "fon",
+"count": 214
+},
+{
+"id": 261363,
+"token": "▁ɖiɖɔ",
+"a": "▁ɖiɖ",
+"b": "ɔ",
+"kind": "fon",
+"count": 214
+},
+{
+"id": 261362,
+"token": "▁ɖib",
+"a": "▁ɖ",
+"b": "ib",
+"kind": "fon",
+"count": 213
+},
+{
+"id": 261361,
+"token": "▁mɛtɛnkpɔn",
+"a": "▁mɛ",
+"b": "tɛnkpɔn",
+"kind": "fon",
+"count": 213
+},
+{
+"id": 261360,
+"token": "▁GBƐ",
+"a": "▁GB",
+"b": "Ɛ",
+"kind": "fon",
+"count": 212
+},
+{
+"id": 261359,
+"token": "▁ɖibla",
+"a": "▁ɖib",
+"b": "la",
+"kind": "fon",
+"count": 212
+},
+{
+"id": 261358,
+"token": "alɛ́",
+"a": "al",
+"b": "ɛ́",
+"kind": "fon",
+"count": 211
+},
+{
+"id": 261357,
+"token": "▁Ðɔ",
+"a": "▁Ð",
+"b": "ɔ",
+"kind": "fon",
+"count": 211
+},
+{
+"id": 261356,
+"token": "▁kannumɔgb",
+"a": "▁kannumɔ",
+"b": "gb",
+"kind": "fon",
+"count": 211
+},
+{
+"id": 261355,
+"token": "▁atɔ́ɔ́n",
+"a": "▁atɔ́",
+"b": "ɔ́n",
+"kind": "fon",
+"count": 211
+},
+{
+"id": 261354,
+"token": "uzalɛ́",
+"a": "uz",
+"b": "alɛ́",
+"kind": "fon",
+"count": 210
+},
+{
+"id": 261353,
+"token": "ninɔ",
+"a": "nin",
+"b": "ɔ",
+"kind": "fon",
+"count": 210
+},
+{
+"id": 261352,
+"token": "mɛn",
+"a": "m",
+"b": "ɛn",
+"kind": "fon",
+"count": 210
+},
+{
+"id": 261351,
+"token": "ɖɔxɔsa",
+"a": "ɖɔ",
+"b": "xɔsa",
+"kind": "fon",
+"count": 210
+},
+{
+"id": 261350,
+"token": "▁Hlɔmanu",
+"a": "▁Hlɔ",
+"b": "manu",
+"kind": "fon",
+"count": 210
+},
+{
+"id": 261349,
+"token": "▁wɛnɖagbejij",
+"a": "▁wɛnɖagbej",
+"b": "ij",
+"kind": "fon",
+"count": 210
+},
+{
+"id": 261348,
+"token": "▁Wɛn",
+"a": "▁W",
+"b": "ɛn",
+"kind": "fon",
+"count": 209
+},
+{
+"id": 261347,
+"token": "▁Jeluzalɛ́",
+"a": "▁Jel",
+"b": "uzalɛ́",
+"kind": "fon",
+"count": 208
+},
+{
+"id": 261346,
+"token": "▁ɛntɛnɛti",
+"a": "▁ɛ",
+"b": "ntɛnɛti",
+"kind": "fon",
+"count": 208
+},
+{
+"id": 261345,
+"token": "▁mǐɖesunɔ",
+"a": "▁mǐ",
+"b": "ɖesunɔ",
+"kind": "fon",
+"count": 208
+},
+{
+"id": 261344,
+"token": "▁bǐbɛ̌mɛ",
+"a": "▁bǐbɛ̌",
+"b": "mɛ",
+"kind": "fon",
+"count": 208
+},
+{
+"id": 261343,
+"token": "▁Sɛ́n",
+"a": "▁S",
+"b": "ɛ́n",
+"kind": "fon",
+"count": 207
+},
+{
+"id": 261342,
+"token": "pinkplɔn",
+"a": "pink",
+"b": "plɔn",
+"kind": "fon",
+"count": 207
+},
+{
+"id": 261341,
+"token": "▁lɛlɛ̌",
+"a": "▁lɛ",
+"b": "lɛ̌",
+"kind": "fon",
+"count": 207
+},
+{
+"id": 261340,
+"token": "▁ɖɛmɛn",
+"a": "▁ɖɛ",
+"b": "mɛn",
+"kind": "fon",
+"count": 207
+},
+{
+"id": 261339,
+"token": "▁Jɛ",
+"a": "▁J",
+"b": "ɛ",
+"kind": "fon",
+"count": 206
+},
+{
+"id": 261338,
+"token": "lantɔ́",
+"a": "lant",
+"b": "ɔ́",
+"kind": "fon",
+"count": 206
+},
+{
+"id": 261337,
+"token": "yɛli",
+"a": "y",
+"b": "ɛli",
+"kind": "fon",
+"count": 206
+},
+{
+"id": 261336,
+"token": "▁Daniyɛli",
+"a": "▁Dani",
+"b": "yɛli",
+"kind": "fon",
+"count": 206
+},
+{
+"id": 261335,
+"token": "acɛ",
+"a": "ac",
+"b": "ɛ",
+"kind": "fon",
+"count": 205
+},
+{
+"id": 261334,
+"token": "abaɖa",
+"a": "aba",
+"b": "ɖa",
+"kind": "fon",
+"count": 205
+},
+{
+"id": 261333,
+"token": "▁hàtɔ́",
+"a": "▁hà",
+"b": "tɔ́",
+"kind": "fon",
+"count": 205
+},
+{
+"id": 261332,
+"token": "ɔngɔ",
+"a": "ɔng",
+"b": "ɔ",
+"kind": "fon",
+"count": 205
+},
+{
+"id": 261331,
+"token": "▁mɛxomɔ",
+"a": "▁mɛx",
+"b": "omɔ",
+"kind": "fon",
+"count": 205
+},
+{
+"id": 261330,
+"token": "▁ɖɛmɛnug",
+"a": "▁ɖɛmɛn",
+"b": "ug",
+"kind": "fon",
+"count": 205
+},
+{
+"id": 261329,
+"token": "▁nǔɖɔɖ",
+"a": "▁nǔɖɔ",
+"b": "ɖ",
+"kind": "fon",
+"count": 204
+},
+{
+"id": 261328,
+"token": "atɔ́",
+"a": "at",
+"b": "ɔ́",
+"kind": "fon",
+"count": 203
+},
+{
+"id": 261327,
+"token": "ínɛ́",
+"a": "ín",
+"b": "ɛ́",
+"kind": "fon",
+"count": 203
+},
+{
+"id": 261326,
+"token": "lazɔ́",
+"a": "laz",
+"b": "ɔ́",
+"kind": "fon",
+"count": 203
+},
+{
+"id": 261325,
+"token": "▁ɖaxo",
+"a": "▁ɖ",
+"b": "axo",
+"kind": "fon",
+"count": 203
+},
+{
+"id": 261324,
+"token": "▁wlɛ",
+"a": "▁wl",
+"b": "ɛ",
+"kind": "fon",
+"count": 203
+},
+{
+"id": 261323,
+"token": "únɔ",
+"a": "ún",
+"b": "ɔ",
+"kind": "fon",
+"count": 202
+},
+{
+"id": 261322,
+"token": "▁ninɔ",
+"a": "▁nin",
+"b": "ɔ",
+"kind": "fon",
+"count": 202
+},
+{
+"id": 261321,
+"token": "ɖabaɖa",
+"a": "ɖ",
+"b": "abaɖa",
+"kind": "fon",
+"count": 202
+},
+{
+"id": 261320,
+"token": "▁cɔ́",
+"a": "▁c",
+"b": "ɔ́",
+"kind": "fon",
+"count": 201
+},
+{
+"id": 261319,
+"token": "Azɔ̌",
+"a": "Az",
+"b": "ɔ̌",
+"kind": "fon",
+"count": 201
+},
+{
+"id": 261318,
+"token": "▁wlɛnw",
+"a": "▁wlɛ",
+"b": "nw",
+"kind": "fon",
+"count": 201
+},
+{
+"id": 261317,
+"token": "▁jiɖe",
+"a": "▁ji",
+"b": "ɖe",
+"kind": "fon",
+"count": 200
+},
+{
+"id": 261316,
+"token": "hɔn",
+"a": "h",
+"b": "ɔn",
+"kind": "fon",
+"count": 200
+},
+{
+"id": 261315,
+"token": "▁ganjɛwu",
+"a": "▁g",
+"b": "anjɛwu",
+"kind": "fon",
+"count": 199
+},
+{
+"id": 261314,
+"token": "▁Sɛ́",
+"a": "▁S",
+"b": "ɛ́",
+"kind": "fon",
+"count": 199
+},
+{
+"id": 261313,
+"token": "jɔn",
+"a": "j",
+"b": "ɔn",
+"kind": "fon",
+"count": 199
+},
+{
+"id": 261312,
+"token": "▁nǔɖ",
+"a": "▁nǔ",
+"b": "ɖ",
+"kind": "fon",
+"count": 199
+},
+{
+"id": 261311,
+"token": "▁wlɛnwín",
+"a": "▁wlɛnw",
+"b": "ín",
+"kind": "fon",
+"count": 198
+},
+{
+"id": 261310,
+"token": "▁kɛn",
+"a": "▁k",
+"b": "ɛn",
+"kind": "fon",
+"count": 197
+},
+{
+"id": 261309,
+"token": "▁gbɔjɛ",
+"a": "▁gbɔ",
+"b": "jɛ",
+"kind": "fon",
+"count": 196
+},
+{
+"id": 261308,
+"token": "▁mɛɖebǔ",
+"a": "▁mɛɖ",
+"b": "ebǔ",
+"kind": "fon",
+"count": 196
+},
+{
+"id": 261307,
+"token": "▁kannumɔgbenu",
+"a": "▁kannumɔgb",
+"b": "enu",
+"kind": "fon",
+"count": 196
+},
+{
+"id": 261306,
+"token": "▁hɔ",
+"a": "▁h",
+"b": "ɔ",
+"kind": "fon",
+"count": 195
+},
+{
+"id": 261305,
+"token": "▁baɖabaɖa",
+"a": "▁ba",
+"b": "ɖabaɖa",
+"kind": "fon",
+"count": 195
+},
+{
+"id": 261304,
+"token": "▁junjɔn",
+"a": "▁jun",
+"b": "jɔn",
+"kind": "fon",
+"count": 195
+},
+{
+"id": 261303,
+"token": "ùjɔnǔ",
+"a": "ù",
+"b": "jɔnǔ",
+"kind": "fon",
+"count": 195
+},
+{
+"id": 261302,
+"token": "▁nukɔnmɛ",
+"a": "▁nukɔ",
+"b": "nmɛ",
+"kind": "fon",
+"count": 195
+},
+{
+"id": 261301,
+"token": "sɛ́d",
+"a": "sɛ́",
+"b": "d",
+"kind": "fon",
+"count": 195
+},
+{
+"id": 261300,
+"token": "sɛ́dó",
+"a": "sɛ́d",
+"b": "ó",
+"kind": "fon",
+"count": 195
+},
+{
+"id": 261299,
+"token": "ukɔn",
+"a": "uk",
+"b": "ɔn",
+"kind": "fon",
+"count": 194
+},
+{
+"id": 261298,
+"token": "nkpɛ",
+"a": "nk",
+"b": "pɛ",
+"kind": "fon",
+"count": 194
+},
+{
+"id": 261297,
+"token": "▁Wemaxɔmɛ",
+"a": "▁Wem",
+"b": "axɔmɛ",
+"kind": "fon",
+"count": 194
+},
+{
+"id": 261296,
+"token": "▁nùjɔnǔ",
+"a": "▁n",
+"b": "ùjɔnǔ",
+"kind": "fon",
+"count": 193
+},
+{
+"id": 261295,
+"token": "▁mɛɖesunɔ",
+"a": "▁mɛ",
+"b": "ɖesunɔ",
+"kind": "fon",
+"count": 193
+},
+{
+"id": 261294,
+"token": "▁nɔzo",
+"a": "▁nɔ",
+"b": "zo",
+"kind": "fon",
+"count": 193
+},
+{
+"id": 261293,
+"token": "▁Kutɔnu",
+"a": "▁Kut",
+"b": "ɔnu",
+"kind": "fon",
+"count": 192
+},
+{
+"id": 261292,
+"token": "Ɛntɛnɛti",
+"a": "Ɛ",
+"b": "ntɛnɛti",
+"kind": "fon",
+"count": 192
+},
+{
+"id": 261291,
+"token": "bomɛ",
+"a": "bom",
+"b": "ɛ",
+"kind": "fon",
+"count": 191
+},
+{
+"id": 261290,
+"token": "▁ɖagbeɖagbe",
+"a": "▁ɖagbe",
+"b": "ɖagbe",
+"kind": "fon",
+"count": 191
+},
+{
+"id": 261289,
+"token": "weɖelɛnu",
+"a": "weɖ",
+"b": "elɛnu",
+"kind": "fon",
+"count": 191
+},
+{
+"id": 261288,
+"token": "▁Nùnywɛ",
+"a": "▁N",
+"b": "ùnywɛ",
+"kind": "fon",
+"count": 190
+},
+{
+"id": 261287,
+"token": "Gbɛ",
+"a": "Gb",
+"b": "ɛ",
+"kind": "fon",
+"count": 190
+},
+{
+"id": 261286,
+"token": "▁Aalɔ́ɔn",
+"a": "▁Aal",
+"b": "ɔ́ɔn",
+"kind": "fon",
+"count": 190
+},
+{
+"id": 261285,
+"token": "▁Ɛntɛnɛti",
+"a": "▁",
+"b": "Ɛntɛnɛti",
+"kind": "fon",
+"count": 190
+},
+{
+"id": 261284,
+"token": "▁nǔɖuɖu",
+"a": "▁nǔ",
+"b": "ɖuɖu",
+"kind": "fon",
+"count": 190
+},
+{
+"id": 261283,
+"token": "▁alɔnu",
+"a": "▁alɔ",
+"b": "nu",
+"kind": "fon",
+"count": 190
+},
+{
+"id": 261282,
+"token": "insɛnzɔ́",
+"a": "insɛ",
+"b": "nzɔ́",
+"kind": "fon",
+"count": 190
+},
+{
+"id": 261281,
+"token": "imɛ",
+"a": "im",
+"b": "ɛ",
+"kind": "fon",
+"count": 189
+},
+{
+"id": 261280,
+"token": "untɔ́",
+"a": "unt",
+"b": "ɔ́",
+"kind": "fon",
+"count": 189
+},
+{
+"id": 261279,
+"token": "▁fínɛ́",
+"a": "▁f",
+"b": "ínɛ́",
+"kind": "fon",
+"count": 188
+},
+{
+"id": 261278,
+"token": "jlɛ",
+"a": "jl",
+"b": "ɛ",
+"kind": "fon",
+"count": 188
+},
+{
+"id": 261277,
+"token": "▁Efɛ",
+"a": "▁Ef",
+"b": "ɛ",
+"kind": "fon",
+"count": 188
+},
+{
+"id": 261276,
+"token": "ɖotɔ́",
+"a": "ɖ",
+"b": "otɔ́",
+"kind": "fon",
+"count": 188
+},
+{
+"id": 261275,
+"token": "▁jɛnu",
+"a": "▁jɛ",
+"b": "nu",
+"kind": "fon",
+"count": 188
+},
+{
+"id": 261274,
+"token": "▁lilɛdogbeɖevomɛ",
+"a": "▁lilɛ",
+"b": "dogbeɖevomɛ",
+"kind": "fon",
+"count": 188
+},
+{
+"id": 261273,
+"token": "xomɛ",
+"a": "x",
+"b": "omɛ",
+"kind": "fon",
+"count": 187
+},
+{
+"id": 261272,
+"token": "Yě",
+"a": "Y",
+"b": "ě",
+"kind": "fon",
+"count": 187
+},
+{
+"id": 261271,
+"token": "▁nǔkplɔ",
+"a": "▁nǔ",
+"b": "kplɔ",
+"kind": "fon",
+"count": 187
+},
+{
+"id": 261270,
+"token": "▁nyiɖée",
+"a": "▁nyiɖ",
+"b": "ée",
+"kind": "fon",
+"count": 187
+},
+{
+"id": 261269,
+"token": "insɛn",
+"a": "ins",
+"b": "ɛn",
+"kind": "fon",
+"count": 186
+},
+{
+"id": 261268,
+"token": "▁éyɛ",
+"a": "▁é",
+"b": "yɛ",
+"kind": "fon",
+"count": 185
+},
+{
+"id": 261267,
+"token": "▁Énɛ́",
+"a": "▁É",
+"b": "nɛ́",
+"kind": "fon",
+"count": 185
+},
+{
+"id": 261266,
+"token": "▁nǔk",
+"a": "▁nǔ",
+"b": "k",
+"kind": "fon",
+"count": 185
+},
+{
+"id": 261265,
+"token": "▁NƆ",
+"a": "▁N",
+"b": "Ɔ",
+"kind": "fon",
+"count": 184
+},
+{
+"id": 261264,
+"token": "mlɛ́",
+"a": "ml",
+"b": "ɛ́",
+"kind": "fon",
+"count": 184
+},
+{
+"id": 261263,
+"token": "uwɛ",
+"a": "uw",
+"b": "ɛ",
+"kind": "fon",
+"count": 184
+},
+{
+"id": 261262,
+"token": "▁Piyɛ́ɛ",
+"a": "▁Piy",
+"b": "ɛ́ɛ",
+"kind": "fon",
+"count": 184
+},
+{
+"id": 261261,
+"token": "▁gbɛmɛ",
+"a": "▁gbɛ",
+"b": "mɛ",
+"kind": "fon",
+"count": 184
+},
+{
+"id": 261260,
+"token": "▁lɛdo",
+"a": "▁lɛ",
+"b": "do",
+"kind": "fon",
+"count": 183
+},
+{
+"id": 261259,
+"token": "ɛk",
+"a": "ɛ",
+"b": "k",
+"kind": "fon",
+"count": 183
+},
+{
+"id": 261258,
+"token": "▁mlɛ́mlɛ́",
+"a": "▁mlɛ́",
+"b": "mlɛ́",
+"kind": "fon",
+"count": 183
+},
+{
+"id": 261257,
+"token": "▁Jeluzalɛ́mu",
+"a": "▁Jeluzalɛ́",
+"b": "mu",
+"kind": "fon",
+"count": 183
+},
+{
+"id": 261256,
+"token": "▁bǎ",
+"a": "▁b",
+"b": "ǎ",
+"kind": "fon",
+"count": 182
+},
+{
+"id": 261255,
+"token": "esunɔ",
+"a": "es",
+"b": "unɔ",
+"kind": "fon",
+"count": 181
+},
+{
+"id": 261254,
+"token": "▁miɖée",
+"a": "▁mi",
+"b": "ɖée",
+"kind": "fon",
+"count": 181
+},
+{
+"id": 261253,
+"token": "▁kɛ́n",
+"a": "▁kɛ",
+"b": "́n",
+"kind": "fon",
+"count": 181
+},
+{
+"id": 261252,
+"token": "ónúmɛ",
+"a": "ón",
+"b": "úmɛ",
+"kind": "fon",
+"count": 180
+},
+{
+"id": 261251,
+"token": "donǔwu",
+"a": "don",
+"b": "ǔwu",
+"kind": "fon",
+"count": 180
+},
+{
+"id": 261250,
+"token": "▁Kpɔ́n",
+"a": "▁K",
+"b": "pɔ́n",
+"kind": "fon",
+"count": 179
+},
+{
+"id": 261249,
+"token": "sɔ́",
+"a": "s",
+"b": "ɔ́",
+"kind": "fon",
+"count": 179
+},
+{
+"id": 261248,
+"token": "yitɔ́",
+"a": "y",
+"b": "itɔ́",
+"kind": "fon",
+"count": 179
+},
+{
+"id": 261247,
+"token": "ɔlɔ",
+"a": "ɔ",
+"b": "lɔ",
+"kind": "fon",
+"count": 179
+},
+{
+"id": 261246,
+"token": "jlɛdonǔwu",
+"a": "jlɛ",
+"b": "donǔwu",
+"kind": "fon",
+"count": 179
+},
+{
+"id": 261245,
+"token": "▁linkpɔ́",
+"a": "▁link",
+"b": "pɔ́",
+"kind": "fon",
+"count": 178
+},
+{
+"id": 261244,
+"token": "jɔ",
+"a": "j",
+"b": "ɔ",
+"kind": "fon",
+"count": 178
+},
+{
+"id": 261243,
+"token": "▁nǔnywɛ",
+"a": "▁nǔ",
+"b": "nywɛ",
+"kind": "fon",
+"count": 178
+},
+{
+"id": 261242,
+"token": "▁akwɛ́",
+"a": "▁ak",
+"b": "wɛ́",
+"kind": "fon",
+"count": 177
+},
+{
+"id": 261241,
+"token": "▁yeɖesunɔ",
+"a": "▁ye",
+"b": "ɖesunɔ",
+"kind": "fon",
+"count": 176
+},
+{
+"id": 261240,
+"token": "▁Salomɔ́ɔ",
+"a": "▁Salom",
+"b": "ɔ́ɔ",
+"kind": "fon",
+"count": 176
+},
+{
+"id": 261239,
+"token": "ɖexlɛ́",
+"a": "ɖ",
+"b": "exlɛ́",
+"kind": "fon",
+"count": 176
+},
+{
+"id": 261238,
+"token": "▁gbɛ̌ta",
+"a": "▁gbɛ̌",
+"b": "ta",
+"kind": "fon",
+"count": 176
+},
+{
+"id": 261237,
+"token": "ɛt",
+"a": "ɛ",
+"b": "t",
+"kind": "fon",
+"count": 175
+},
+{
+"id": 261236,
+"token": "▁tɔ̀n",
+"a": "▁tɔ",
+"b": "̀n",
+"kind": "fon",
+"count": 175
+},
+{
+"id": 261235,
+"token": "▁etɛwu",
+"a": "▁et",
+"b": "ɛwu",
+"kind": "fon",
+"count": 174
+},
+{
+"id": 261234,
+"token": "numɔ",
+"a": "num",
+"b": "ɔ",
+"kind": "fon",
+"count": 174
+},
+{
+"id": 261233,
+"token": "▁bɔwǔ",
+"a": "▁bɔ",
+"b": "wǔ",
+"kind": "fon",
+"count": 174
+},
+{
+"id": 261232,
+"token": "ɖɛ̌",
+"a": "ɖ",
+"b": "ɛ̌",
+"kind": "fon",
+"count": 173
+},
+{
+"id": 261231,
+"token": "▁tɛ́nwe",
+"a": "▁tɛ́n",
+"b": "we",
+"kind": "fon",
+"count": 173
+},
+{
+"id": 261230,
+"token": "▁cyɔ",
+"a": "▁cy",
+"b": "ɔ",
+"kind": "fon",
+"count": 172
+},
+{
+"id": 261229,
+"token": "uwɛli",
+"a": "uw",
+"b": "ɛli",
+"kind": "fon",
+"count": 172
+},
+{
+"id": 261228,
+"token": "éɖé",
+"a": "é",
+"b": "ɖé",
+"kind": "fon",
+"count": 172
+},
+{
+"id": 261227,
+"token": "▁mɛ̀",
+"a": "▁mɛ",
+"b": "̀",
+"kind": "fon",
+"count": 172
+},
+{
+"id": 261226,
+"token": "▁kúnnuɖen",
+"a": "▁kúnnuɖ",
+"b": "en",
+"kind": "fon",
+"count": 172
+},
+{
+"id": 261225,
+"token": "▁kúnnuɖenú",
+"a": "▁kúnnuɖen",
+"b": "ú",
+"kind": "fon",
+"count": 172
+},
+{
+"id": 261224,
+"token": "annukɔn",
+"a": "ann",
+"b": "ukɔn",
+"kind": "fon",
+"count": 171
+},
+{
+"id": 261223,
+"token": "▁glɔ́",
+"a": "▁gl",
+"b": "ɔ́",
+"kind": "fon",
+"count": 171
+},
+{
+"id": 261222,
+"token": "▁tlɔlɔ",
+"a": "▁tl",
+"b": "ɔlɔ",
+"kind": "fon",
+"count": 171
+},
+{
+"id": 261221,
+"token": "▁kpannukɔn",
+"a": "▁kp",
+"b": "annukɔn",
+"kind": "fon",
+"count": 171
+},
+{
+"id": 261220,
+"token": "▁ayiɖ",
+"a": "▁ay",
+"b": "iɖ",
+"kind": "fon",
+"count": 170
+},
+{
+"id": 261219,
+"token": "walɔ",
+"a": "wal",
+"b": "ɔ",
+"kind": "fon",
+"count": 170
+},
+{
+"id": 261218,
+"token": "MƐ",
+"a": "M",
+"b": "Ɛ",
+"kind": "fon",
+"count": 170
+},
+{
+"id": 261217,
+"token": "íɖó",
+"a": "í",
+"b": "ɖó",
+"kind": "fon",
+"count": 170
+},
+{
+"id": 261216,
+"token": "ɛ́ɛn",
+"a": "ɛ́",
+"b": "ɛn",
+"kind": "fon",
+"count": 170
+},
+{
+"id": 261215,
+"token": "▁dɔ́",
+"a": "▁d",
+"b": "ɔ́",
+"kind": "fon",
+"count": 169
+},
+{
+"id": 261214,
+"token": "lamɛ",
+"a": "lam",
+"b": "ɛ",
+"kind": "fon",
+"count": 169
+},
+{
+"id": 261213,
+"token": "▁Samuwɛli",
+"a": "▁Sam",
+"b": "uwɛli",
+"kind": "fon",
+"count": 169
+},
+{
+"id": 261212,
+"token": "xixɔ",
+"a": "x",
+"b": "ixɔ",
+"kind": "fon",
+"count": 169
+},
+{
+"id": 261211,
+"token": "▁bɔkun",
+"a": "▁bɔ",
+"b": "kun",
+"kind": "fon",
+"count": 169
+},
+{
+"id": 261210,
+"token": "ɖɔtɔ́",
+"a": "ɖɔ",
+"b": "tɔ́",
+"kind": "fon",
+"count": 169
+},
+{
+"id": 261209,
+"token": "▁Nɔw",
+"a": "▁Nɔ",
+"b": "w",
+"kind": "fon",
+"count": 169
+},
+{
+"id": 261208,
+"token": "▁Nɔwée",
+"a": "▁Nɔw",
+"b": "ée",
+"kind": "fon",
+"count": 169
+},
+{
+"id": 261207,
+"token": "▁Tɔ",
+"a": "▁T",
+"b": "ɔ",
+"kind": "fon",
+"count": 168
+},
+{
+"id": 261206,
+"token": "▁jǒ",
+"a": "▁j",
+"b": "ǒ",
+"kind": "fon",
+"count": 168
+},
+{
+"id": 261205,
+"token": "▁kanɖeji",
+"a": "▁kan",
+"b": "ɖeji",
+"kind": "fon",
+"count": 168
+},
+{
+"id": 261204,
+"token": "▁nǔɖé",
+"a": "▁nǔ",
+"b": "ɖé",
+"kind": "fon",
+"count": 168
+},
+{
+"id": 261203,
+"token": "▁kɛ́",
+"a": "▁k",
+"b": "ɛ́",
+"kind": "fon",
+"count": 167
+},
+{
+"id": 261202,
+"token": "▁savɔ̌",
+"a": "▁sav",
+"b": "ɔ̌",
+"kind": "fon",
+"count": 167
+},
+{
+"id": 261201,
+"token": "▁dóhwɛ",
+"a": "▁dó",
+"b": "hwɛ",
+"kind": "fon",
+"count": 167
+},
+{
+"id": 261200,
+"token": "ɖiɖó",
+"a": "ɖiɖ",
+"b": "ó",
+"kind": "fon",
+"count": 167
+},
+{
+"id": 261199,
+"token": "▁nukɔny",
+"a": "▁nukɔ",
+"b": "ny",
+"kind": "fon",
+"count": 167
+},
+{
+"id": 261198,
+"token": "▁yɛhwenɔ",
+"a": "▁y",
+"b": "ɛhwenɔ",
+"kind": "fon",
+"count": 166
+},
+{
+"id": 261197,
+"token": "▁wɔ̌",
+"a": "▁wɔ",
+"b": "̌",
+"kind": "fon",
+"count": 166
+},
+{
+"id": 261196,
+"token": "ɔw",
+"a": "ɔ",
+"b": "w",
+"kind": "fon",
+"count": 166
+},
+{
+"id": 261195,
+"token": "▁nǔɖe",
+"a": "▁nǔ",
+"b": "ɖe",
+"kind": "fon",
+"count": 166
+},
+{
+"id": 261194,
+"token": "▁aluwɛ",
+"a": "▁al",
+"b": "uwɛ",
+"kind": "fon",
+"count": 164
+},
+{
+"id": 261193,
+"token": "▁kpinkplɔn",
+"a": "▁k",
+"b": "pinkplɔn",
+"kind": "fon",
+"count": 164
+},
+{
+"id": 261192,
+"token": "vɔ́",
+"a": "v",
+"b": "ɔ́",
+"kind": "fon",
+"count": 164
+},
+{
+"id": 261191,
+"token": "▁Gbɛtɔ́",
+"a": "▁Gbɛ",
+"b": "tɔ́",
+"kind": "fon",
+"count": 164
+},
+{
+"id": 261190,
+"token": "▁vlamɛ",
+"a": "▁v",
+"b": "lamɛ",
+"kind": "fon",
+"count": 162
+},
+{
+"id": 261189,
+"token": "▁Agbomɛ",
+"a": "▁Ag",
+"b": "bomɛ",
+"kind": "fon",
+"count": 162
+},
+{
+"id": 261188,
+"token": "▁ajɔ̌",
+"a": "▁aj",
+"b": "ɔ̌",
+"kind": "fon",
+"count": 162
+},
+{
+"id": 261187,
+"token": "ùjlɛdonǔwu",
+"a": "ù",
+"b": "jlɛdonǔwu",
+"kind": "fon",
+"count": 162
+},
+{
+"id": 261186,
+"token": "ɔ́s",
+"a": "ɔ",
+"b": "́s",
+"kind": "fon",
+"count": 162
+},
+{
+"id": 261185,
+"token": "▁nǔbl",
+"a": "▁nǔ",
+"b": "bl",
+"kind": "fon",
+"count": 162
+},
+{
+"id": 261184,
+"token": "▁tɛɖɛ̌",
+"a": "▁tɛ",
+"b": "ɖɛ̌",
+"kind": "fon",
+"count": 162
+},
+{
+"id": 261183,
+"token": "▁tɔ́gb",
+"a": "▁tɔ́",
+"b": "gb",
+"kind": "fon",
+"count": 162
+},
+{
+"id": 261182,
+"token": "nkpɛvu",
+"a": "nkpɛ",
+"b": "vu",
+"kind": "fon",
+"count": 162
+},
+{
+"id": 261181,
+"token": "▁nukɔnyiyi",
+"a": "▁nukɔny",
+"b": "iyi",
+"kind": "fon",
+"count": 162
+},
+{
+"id": 261180,
+"token": "▁tɔ́gbó",
+"a": "▁tɔ́gb",
+"b": "ó",
+"kind": "fon",
+"count": 162
+},
+{
+"id": 261179,
+"token": "▁Mɛ̌",
+"a": "▁M",
+"b": "ɛ̌",
+"kind": "fon",
+"count": 161
+},
+{
+"id": 261178,
+"token": "ɔnyitɔ",
+"a": "ɔnyit",
+"b": "ɔ",
+"kind": "fon",
+"count": 161
+},
+{
+"id": 261177,
+"token": "▁xóɖɔɖókpɔ́",
+"a": "▁xóɖɔ",
+"b": "ɖókpɔ́",
+"kind": "fon",
+"count": 161
+},
+{
+"id": 261176,
+"token": "mimɔ",
+"a": "mim",
+"b": "ɔ",
+"kind": "fon",
+"count": 160
+},
+{
+"id": 261175,
+"token": "dɛɛ",
+"a": "d",
+"b": "ɛɛ",
+"kind": "fon",
+"count": 160
+},
+{
+"id": 261174,
+"token": "▁ɖɛkpɛ",
+"a": "▁ɖɛ",
+"b": "kpɛ",
+"kind": "fon",
+"count": 160
+},
+{
+"id": 261173,
+"token": "▁mɛɖesɔ",
+"a": "▁mɛɖes",
+"b": "ɔ",
+"kind": "fon",
+"count": 160
+},
+{
+"id": 261172,
+"token": "▁Alixlɛ́",
+"a": "▁Al",
+"b": "ixlɛ́",
+"kind": "fon",
+"count": 159
+},
+{
+"id": 261171,
+"token": "▁awǐn",
+"a": "▁aw",
+"b": "ǐn",
+"kind": "fon",
+"count": 159
+},
+{
+"id": 261170,
+"token": "▁vivɔnu",
+"a": "▁viv",
+"b": "ɔnu",
+"kind": "fon",
+"count": 159
+},
+{
+"id": 261169,
+"token": "Hlɔ",
+"a": "H",
+"b": "lɔ",
+"kind": "fon",
+"count": 159
+},
+{
+"id": 261168,
+"token": "▁Kplɔntɔ́",
+"a": "▁Kplɔ",
+"b": "ntɔ́",
+"kind": "fon",
+"count": 159
+},
+{
+"id": 261167,
+"token": "▁pɛ́",
+"a": "▁p",
+"b": "ɛ́",
+"kind": "fon",
+"count": 158
+},
+{
+"id": 261166,
+"token": "wiɖesunɔ",
+"a": "wi",
+"b": "ɖesunɔ",
+"kind": "fon",
+"count": 158
+},
+{
+"id": 261165,
+"token": "Gɔ́",
+"a": "G",
+"b": "ɔ́",
+"kind": "fon",
+"count": 158
+},
+{
+"id": 261164,
+"token": "▁tɔjih",
+"a": "▁tɔ",
+"b": "jih",
+"kind": "fon",
+"count": 158
+},
+{
+"id": 261163,
+"token": "▁Bǐb",
+"a": "▁Bǐ",
+"b": "b",
+"kind": "fon",
+"count": 158
+},
+{
+"id": 261162,
+"token": "▁Flǐn",
+"a": "▁Fl",
+"b": "ǐn",
+"kind": "fon",
+"count": 157
+},
+{
+"id": 261161,
+"token": "▁akɔjijɛ",
+"a": "▁akɔ",
+"b": "jijɛ",
+"kind": "fon",
+"count": 157
+},
+{
+"id": 261160,
+"token": "▁jɔhɔn",
+"a": "▁jɔ",
+"b": "hɔn",
+"kind": "fon",
+"count": 157
+},
+{
+"id": 261159,
+"token": "kpɔvu",
+"a": "kpɔ",
+"b": "vu",
+"kind": "fon",
+"count": 157
+},
+{
+"id": 261158,
+"token": "ɔtó",
+"a": "ɔt",
+"b": "ó",
+"kind": "fon",
+"count": 157
+},
+{
+"id": 261157,
+"token": "▁ɖésú",
+"a": "▁ɖés",
+"b": "ú",
+"kind": "fon",
+"count": 157
+},
+{
+"id": 261156,
+"token": "jiwǔ",
+"a": "ji",
+"b": "wǔ",
+"kind": "fon",
+"count": 156
+},
+{
+"id": 261155,
+"token": "écéɖé",
+"a": "éc",
+"b": "éɖé",
+"kind": "fon",
+"count": 156
+},
+{
+"id": 261154,
+"token": "▁céɖ",
+"a": "▁cé",
+"b": "ɖ",
+"kind": "fon",
+"count": 156
+},
+{
+"id": 261153,
+"token": "lɛng",
+"a": "lɛ",
+"b": "ng",
+"kind": "fon",
+"count": 156
+},
+{
+"id": 261152,
+"token": "▁céɖécéɖé",
+"a": "▁céɖ",
+"b": "écéɖé",
+"kind": "fon",
+"count": 156
+},
+{
+"id": 261151,
+"token": "▁ɖie",
+"a": "▁ɖ",
+"b": "ie",
+"kind": "fon",
+"count": 155
+},
+{
+"id": 261150,
+"token": "ɔtóo",
+"a": "ɔtó",
+"b": "o",
+"kind": "fon",
+"count": 155
+},
+{
+"id": 261149,
+"token": "émɛ",
+"a": "ém",
+"b": "ɛ",
+"kind": "fon",
+"count": 153
+},
+{
+"id": 261148,
+"token": "ɔci",
+"a": "ɔ",
+"b": "ci",
+"kind": "fon",
+"count": 153
+},
+{
+"id": 261147,
+"token": "ɔdo",
+"a": "ɔ",
+"b": "do",
+"kind": "fon",
+"count": 153
+},
+{
+"id": 261146,
+"token": "▁nǔgb",
+"a": "▁nǔ",
+"b": "gb",
+"kind": "fon",
+"count": 153
+},
+{
+"id": 261145,
+"token": "▁jlɛ",
+"a": "▁jl",
+"b": "ɛ",
+"kind": "fon",
+"count": 152
+},
+{
+"id": 261144,
+"token": "kɛ́",
+"a": "k",
+"b": "ɛ́",
+"kind": "fon",
+"count": 152
+}
+]
+}

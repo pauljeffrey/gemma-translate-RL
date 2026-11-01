@@ -1,0 +1,86 @@
+{
+ "CCAligned|am": {
+  "pairs": 346519,
+  "url": "https://object.pouta.csc.fi/OPUS-CCAligned/v1/moses/am-en.txt.zip",
+  "license_line": null,
+  "readme_head": " Corpus Name: CCAligned      Package: CCAligned.am-en in Moses format      Website: http://opus.nlpl.eu/CCAligned-v1.php      Release: v1 Release date: Mon Feb  1 23:19:38 EET 2021  This corpus is part of OPUS - the open collection of parallel corpora OPUS Website: http://opus.nlpl.eu  If you use th"
+ },
+ "GNOME|am": {
+  "pairs": 57111,
+  "url": "https://object.pouta.csc.fi/OPUS-GNOME/v1/moses/am-en.txt.zip",
+  "license_line": null,
+  "readme_head": " Corpus Name: GNOME      Package: GNOME.am-en in Moses format      Website: http://opus.nlpl.eu/GNOME-v1.php      Release: v1 Release date: Sun Mar  4 21:53:39 EET 2018  This corpus is part of OPUS - the open collection of parallel corpora OPUS Website: http://opus.nlpl.eu  Please cite the following"
+ },
+ "GlobalVoices|am": {
+  "pairs": 1781,
+  "url": "https://object.pouta.csc.fi/OPUS-GlobalVoices/v2018q4/moses/am-en.txt.zip",
+  "license_line": null,
+  "readme_head": " Corpus Name: GlobalVoices      Package: GlobalVoices.am-en in Moses format      Website: http://opus.nlpl.eu/GlobalVoices-2018Q4.php      Release: 2018Q4 Release date: Fri Nov 13 01:06:35 EET 2020  This corpus is part of OPUS - the open collection of parallel corpora OPUS Website: http://opus.nlpl."
+ },
+ "GoURMET|am": {
+  "pairs": 57837,
+  "url": "https://object.pouta.csc.fi/OPUS-GoURMET/v1/moses/am-en.txt.zip",
+  "license_line": "License: <a href=https://creativecommons.org/share-your-work/public-domain/cc0/>Creative Commons CC0 license</a>",
+  "readme_head": " Corpus Name: GoURMET      Package: GoURMET.am-en in Moses format      Website: http://opus.nlpl.eu/GoURMET-v1.php      Release: v1 Release date: Fri Apr  2 15:35:53 EEST 2021      License: <a href=https://creativecommons.org/share-your-work/public-domain/cc0/>Creative Commons CC0 license</a>    Cop"
+ },
+ "OpenSubtitles|am": {
+  "pairs": 3012,
+  "url": "https://object.pouta.csc.fi/OPUS-OpenSubtitles/v2024/moses/am-en.txt.zip",
+  "license_line": null,
+  "readme_head": " Corpus Name: OpenSubtitles      Package: - in Moses format      Website: http://opus.nlpl.eu/legacy/OpenSubtitles-v2024.php      Release: v2024 Release date: Fri Feb 14 03:37:42 EET 2025  This package is part of OPUS - the open collection of parallel corpora OPUS Website: http://opus.nlpl.eu  Pleas"
+ },
+ "TED2020|am": {
+  "pairs": 1041,
+  "url": "https://object.pouta.csc.fi/OPUS-TED2020/v1/moses/am-en.txt.zip",
+  "license_line": "License: Please respect the <a href=https://www.ted.com/about/our-organization/our-policies-terms/ted-talks-usage-policy>TED Talks Usage Policy</a>",
+  "readme_head": " Corpus Name: TED2020      Package: TED2020.am-en in Moses format      Website: http://opus.nlpl.eu/TED2020-v1.php      Release: v1 Release date: Wed Dec  2 10:32:35 EET 2020      License: Please respect the <a href=https://www.ted.com/about/our-organization/our-policies-terms/ted-talks-usage-policy"
+ },
+ "Tanzil|am": {
+  "pairs": 93527,
+  "url": "https://object.pouta.csc.fi/OPUS-Tanzil/v1/moses/am-en.txt.zip",
+  "license_line": "Terms of UseThe translations provided at this page are for non-commercial purposes only. If used otherwise, you need to obtain necessary permission from the translator or the publisher.If you are using more than three of the following translations in a website or application, we require you to put a",
+  "readme_head": " Corpus Name: Tanzil      Package: Tanzil in Moses format      Website: http://opus.nlpl.eu/Tanzil-v1.php      Release: v1 Release date: Sun Mar  4 00:40:09 EET 2018  This corpus is part of OPUS - the open collection of parallel corpora OPUS Website: http://opus.nlpl.eu  Please cite the following ar"
+ },
+ "Ubuntu|am": {
+  "pairs": 4055,
+  "url": "https://object.pouta.csc.fi/OPUS-Ubuntu/v14.10/moses/am-en.txt.zip",
+  "license_line": null,
+  "readme_head": " Corpus Name: Ubuntu      Package: Ubuntu.am-en in Moses format      Website: http://opus.nlpl.eu/Ubuntu-v14.10.php      Release: v14.10 Release date: Sat Dec 22 13:46:39 EET 2018  This corpus is part of OPUS - the open collection of parallel corpora OPUS Website: http://opus.nlpl.eu  Please cite th"
+ },
+ "XLEnt|am": {
+  "pairs": 71553,
+  "url": "https://object.pouta.csc.fi/OPUS-XLEnt/v1.2/moses/am-en.txt.zip",
+  "license_line": null,
+  "readme_head": " Corpus Name: XLEnt      Package: XLEnt.am-en in Moses format      Website: http://opus.nlpl.eu/XLEnt-v1.2.php      Release: v1.2 Release date: Tue Dec 13 09:55:37 EET 2022       Source: http://data.statmt.org/xlent/  This package is part of OPUS - the open collection of parallel corpora OPUS Websit"
+ },
+ "bible-uedin|am": {
+  "pairs": 61085,
+  "url": "https://object.pouta.csc.fi/OPUS-bible-uedin/v1/moses/am-en.txt.zip",
+  "license_line": "License: CC0 1.0",
+  "readme_head": " Corpus Name: bible-uedin      Package: bible-uedin.am-en in Moses format      Website: http://opus.nlpl.eu/bible-uedin-v1.php      Release: v1 Release date: Fri Aug  9 11:21:50 EEST 2019      License: CC0 1.0  This corpus is part of OPUS - the open collection of parallel corpora OPUS Website: http:"
+ },
+ "CCAligned|ti": {
+  "pairs": 7659,
+  "url": "https://object.pouta.csc.fi/OPUS-CCAligned/v1/moses/en-ti.txt.zip",
+  "license_line": null,
+  "readme_head": " Corpus Name: CCAligned      Package: CCAligned.en-ti in Moses format      Website: http://opus.nlpl.eu/CCAligned-v1.php      Release: v1 Release date: Mon Feb  1 22:24:14 EET 2021  This corpus is part of OPUS - the open collection of parallel corpora OPUS Website: http://opus.nlpl.eu  If you use th"
+ },
+ "Tatoeba|ti": {
+  "pairs": 112,
+  "url": "https://object.pouta.csc.fi/OPUS-Tatoeba/v2026-07-08/moses/en-ti.txt.zip",
+  "license_line": "License: <a href=https://creativecommons.org/licenses/by/2.0/fr/>CC BY 2.0 FR</a>",
+  "readme_head": " Corpus Name: Tatoeba      Package: - in Moses format      Website: http://opus.nlpl.eu/legacy/Tatoeba-v2026-07-08.php      Release: v2026-07-08 Release date: Thu Jul  9 01:50:12 EEST 2026      License: <a href=https://creativecommons.org/licenses/by/2.0/fr/>CC BY 2.0 FR</a>    Copyright: see <a hre"
+ },
+ "tico-19|ti": {
+  "pairs": 6143,
+  "url": "https://object.pouta.csc.fi/OPUS-tico-19/v2020-10-28/moses/en-ti.txt.zip",
+  "license_line": "License: <a hre=https://tico-19.github.io/LICENSE.md CC0>Creative Commons CC0 license</a>",
+  "readme_head": " Corpus Name: tico-19      Package: tico-19.en-ti in Moses format      Website: http://opus.nlpl.eu/tico-19-v2020-10-28.php      Release: v2020-10-28 Release date: Wed Oct 28 08:44:47 EET 2020      License: <a hre=https://tico-19.github.io/LICENSE.md CC0>Creative Commons CC0 license</a>    Copyright"
+ },
+ "wikimedia|ti": {
+  "pairs": 476,
+  "url": "https://object.pouta.csc.fi/OPUS-wikimedia/v20260327/moses/en-ti.txt.zip",
+  "license_line": "License: <a href=https://creativecommons.org/licenses/by-sa/4.0/>CC-BY-SA 4.0</a>",
+  "readme_head": " Corpus Name: wikimedia      Package: - in Moses format      Website: http://opus.nlpl.eu/legacy/wikimedia-v20260327.php      Release: v20260327 Release date: Sun Jul 12 00:38:45 EEST 2026      License: <a href=https://creativecommons.org/licenses/by-sa/4.0/>CC-BY-SA 4.0</a>  This package is part of"
+ }
+}

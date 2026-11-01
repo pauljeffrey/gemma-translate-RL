@@ -1,0 +1,16 @@
+[gemma_mt] vLLM sampler up (worker): {'startup_seconds': 56.511181116104126, 'device_free_gib': 41.23980712890625, 'device_total_gib': 94.97021484375, 'torch_allocated_gib': 5.442028045654297, 'pid': 50755}
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+Encoder model frozen.
+[gemma_mt] reward content modes over 77 prompt languages: qe=32, blend=22, consensus=23; GlotLID guard on for 75 languages; consensus on
+[gemma_mt] translation archive: /workspace/jobs/a4/smoke_sci/archive/archive.sqlite (0 rows), thresholds {'qe': 1.0, 'blend': 1.0, 'consensus': 0.5}, blend consensus >= 50.0
+[gemma_mt] resumed RL from step 1433 (selection reset: the checkpoint was selected on another benchmark)
+[gemma_mt] rl: 106896 prompts (26 eval), languages=['ach', 'afr', 'amh', 'bam', 'bas', 'bbj', 'bem', 'bin', 'dag', 'dua', 'dyu', 'efi', 'ewe', 'fon', 'hau', 'her', 'ibb', 'ibo', 'ish', 'iso', 'kab', 'kam', 'kbp', 'kea', 'kik', 'kin', 'kmb', 'kon', 'kqn', 'kri', 'kua', 'lin', 'loz', 'lua', 'lug', 'lun', 'luo', 'mlg', 'mos', 'nbl', 'ndc', 'nso', 'nus', 'nya', 'nyn', 'oke', 'orm', 'pcm', 'run', 'sag', 'seh', 'shi', 'sid', 'sna', 'som', 'sot', 'ssw', 'swc', 'swh', 'tir', 'tiv', 'tsc', 'tsn', 'tso', 'tum', 'twi', 'umb', 'urh', 'ven', 'vmw', 'wal', 'wes', 'wol', 'xho', 'yao', 'yor', 'zul'], reward r
+[gemma_mt] resumed policy on 60 dev rows: chrF++ macro 51.18 BLEU 26.26 finished 1.00
+[gemma_mt] aux dev sets at the start: afrisci_dev_doc chrF++ 38.81, general_dev chrF++ 42.93
+[gemma_mt] rl step 1434/1435 reward -0.694 kl 0.0000 fin 1.00 len 1454.2 flat 0.00 gnorm 1.76 archive 0 (+0 ~0 drop 0)
+[gemma_mt]   sample [dag] 'In the period 1983-2008 Gold has played crucial role in Inte' -> 'dag Gold din mali puuni din ŋmani Naa 1983-2008 yaɣim tii daa kpuɣi nimaani zaŋ ' status=ok qe=None reward=-0.57 lid=dag_Latn consensus_chrf=42.4 mode=consensus
+[gemma_mt] eval @ 1434: reward -0.567 finished 0.92 | dev chrF++ macro 51.18 (SFT start 51.18) BLEU 26.21
+[gemma_mt] rl step 1435/1435 reward -0.116 kl 0.0028 fin 1.00 len 408.7 flat 0.00 gnorm 2.43 archive 1 (+1 ~0 drop 0)
+[gemma_mt]   sample [bam] 'Their first gig was in 1988 at the Royal Park and their firs' -> 'bam U jalaki gigun tun ye 1988 la, Royal Park la, olu ne fɔra kɔni, a tun ye blu' status=ok qe=0.397705078125 reward=-0.45 diacritic_deficit=0.36 lid=bam_Latn consensus_chrf=51.4 mode=blend
+[gemma_mt] eval @ 1435: reward -0.624 finished 0.85 | dev chrF++ macro 50.90 (SFT start 51.18) BLEU 25.72
+EXIT 0

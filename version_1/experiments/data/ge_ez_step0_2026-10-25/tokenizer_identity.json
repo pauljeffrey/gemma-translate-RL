@@ -1,0 +1,34 @@
+{
+ "rl2c_270m": {
+  "sha256": "daab2354f8a74e70d70b4d1f804939b68a8c9624dd06cb7858e52dd8970e9726",
+  "vocab_size": 262144,
+  "n_merges": 514906,
+  "vocab_sha256": "6f8b69b0f1fda277",
+  "merges_sha256": "e801c86280431857",
+  "vocab_and_merges_equal_to_1b": true
+ },
+ "270m-it": {
+  "sha256": "7d4046bf0505a327dd5a0abbb427ecd4fc82f99c2ceaa170bc61ecde12809b0c",
+  "vocab_size": 262144,
+  "n_merges": 514906,
+  "vocab_sha256": "6f8b69b0f1fda277",
+  "merges_sha256": "e801c86280431857",
+  "vocab_and_merges_equal_to_1b": true
+ },
+ "1b-it": {
+  "sha256": "4667f2089529e8e7657cfb6d1c19910ae71ff5f28aa7ab2ff2763330affad795",
+  "vocab_size": 262144,
+  "n_merges": 514906,
+  "vocab_sha256": "6f8b69b0f1fda277",
+  "merges_sha256": "e801c86280431857",
+  "vocab_and_merges_equal_to_1b": true
+ },
+ "4b-it": {
+  "sha256": "4667f2089529e8e7657cfb6d1c19910ae71ff5f28aa7ab2ff2763330affad795",
+  "vocab_size": 262144,
+  "n_merges": 514906,
+  "vocab_sha256": "6f8b69b0f1fda277",
+  "merges_sha256": "e801c86280431857",
+  "vocab_and_merges_equal_to_1b": true
+ }
+}
