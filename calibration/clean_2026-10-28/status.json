@@ -1,0 +1,468 @@
+{
+ "yor": {
+  "qe_phase": null,
+  "noqe": true,
+  "lid": true
+ },
+ "hau": {
+  "qe_phase": null,
+  "noqe": true,
+  "lid": true
+ },
+ "ibo": {
+  "qe_phase": null,
+  "noqe": true,
+  "lid": true
+ },
+ "pcm": {
+  "qe_phase": null,
+  "noqe": false,
+  "lid": true
+ },
+ "efi": {
+  "efi_ibb": true
+ },
+ "twi": {
+  "qe_phase": null,
+  "noqe": true,
+  "lid": true
+ },
+ "ewe": {
+  "qe_phase": null,
+  "noqe": true,
+  "lid": true
+ },
+ "fon": {
+  "qe_phase": "A",
+  "noqe": true,
+  "lid": true
+ },
+ "wol": {
+  "qe_phase": null,
+  "noqe": true,
+  "lid": true
+ },
+ "swh": {
+  "qe_phase": null,
+  "noqe": true,
+  "lid": true
+ },
+ "kin": {
+  "qe_phase": null,
+  "noqe": true,
+  "lid": true
+ },
+ "som": {
+  "qe_phase": null,
+  "noqe": true,
+  "lid": true
+ },
+ "orm": {
+  "qe_phase": null,
+  "noqe": true,
+  "lid": true
+ },
+ "amh": {
+  "qe_phase": "A",
+  "noqe": true,
+  "lid": true
+ },
+ "tir": {
+  "qe_phase": "A",
+  "noqe": true,
+  "lid": true
+ },
+ "lug": {
+  "qe_phase": null,
+  "noqe": true,
+  "lid": true
+ },
+ "lin": {
+  "qe_phase": null,
+  "noqe": true,
+  "lid": true
+ },
+ "zul": {
+  "qe_phase": null,
+  "noqe": true,
+  "lid": true
+ },
+ "xho": {
+  "qe_phase": null,
+  "noqe": true,
+  "lid": true
+ },
+ "afr": {
+  "qe_phase": null,
+  "noqe": true,
+  "lid": true
+ },
+ "sna": {
+  "qe_phase": null,
+  "noqe": true,
+  "lid": true
+ },
+ "nya": {
+  "qe_phase": null,
+  "noqe": true,
+  "lid": true
+ },
+ "sot": {
+  "qe_phase": null,
+  "noqe": true,
+  "lid": true
+ },
+ "tsn": {
+  "qe_phase": null,
+  "noqe": true,
+  "lid": true
+ },
+ "mlg": {
+  "qe_phase": null,
+  "noqe": true,
+  "lid": true
+ },
+ "ibb": {
+  "efi_ibb": true
+ },
+ "urh": {
+  "qe_phase": null,
+  "noqe": false,
+  "lid": true
+ },
+ "bem": {
+  "qe_phase": null,
+  "noqe": true,
+  "lid": true
+ },
+ "tum": {
+  "qe_phase": null,
+  "noqe": true,
+  "lid": true
+ },
+ "run": {
+  "qe_phase": null,
+  "noqe": true,
+  "lid": true
+ },
+ "ven": {
+  "qe_phase": null,
+  "noqe": false,
+  "lid": true
+ },
+ "tso": {
+  "qe_phase": null,
+  "noqe": true,
+  "lid": true
+ },
+ "nso": {
+  "qe_phase": null,
+  "noqe": true,
+  "lid": true
+ },
+ "ssw": {
+  "qe_phase": null,
+  "noqe": true,
+  "lid": true
+ },
+ "nbl": {
+  "qe_phase": null,
+  "noqe": false,
+  "lid": true
+ },
+ "sag": {
+  "qe_phase": null,
+  "noqe": true,
+  "lid": true
+ },
+ "tiv": {
+  "qe_phase": null,
+  "noqe": false,
+  "lid": true
+ },
+ "umb": {
+  "qe_phase": null,
+  "noqe": true,
+  "lid": true
+ },
+ "kmb": {
+  "qe_phase": null,
+  "noqe": true,
+  "lid": true
+ },
+ "mos": {
+  "qe_phase": null,
+  "noqe": true,
+  "lid": true
+ },
+ "kik": {
+  "qe_phase": null,
+  "noqe": true,
+  "lid": true
+ },
+ "luo": {
+  "qe_phase": null,
+  "noqe": true,
+  "lid": true
+ },
+ "kam": {
+  "qe_phase": null,
+  "noqe": true,
+  "lid": true
+ },
+ "bin": {
+  "qe_phase": null,
+  "noqe": false,
+  "lid": true
+ },
+ "dag": {
+  "qe_phase": null,
+  "noqe": false,
+  "lid": false
+ },
+ "oke": {
+  "qe_phase": null,
+  "noqe": false,
+  "lid": true
+ },
+ "shi": {
+  "qe_phase": null,
+  "noqe": false,
+  "lid": true
+ },
+ "dyu": {
+  "qe_phase": null,
+  "noqe": true,
+  "lid": true
+ },
+ "bam": {
+  "qe_phase": null,
+  "noqe": true,
+  "lid": true
+ },
+ "kbp": {
+  "qe_phase": null,
+  "noqe": true,
+  "lid": true
+ },
+ "bbj": {
+  "qe_phase": null,
+  "noqe": false,
+  "lid": false
+ },
+ "kon": {
+  "qe_phase": null,
+  "noqe": false,
+  "lid": true
+ },
+ "kea": {
+  "qe_phase": null,
+  "noqe": true,
+  "lid": true
+ },
+ "kab": {
+  "qe_phase": null,
+  "noqe": true,
+  "lid": true
+ },
+ "nus": {
+  "qe_phase": null,
+  "noqe": true,
+  "lid": true
+ },
+ "swc": {
+  "qe_phase": null,
+  "noqe": false,
+  "lid": true
+ },
+ "lua": {
+  "qe_phase": null,
+  "noqe": true,
+  "lid": true
+ },
+ "kqn": {
+  "qe_phase": null,
+  "noqe": false,
+  "lid": true
+ },
+ "lun": {
+  "qe_phase": null,
+  "noqe": false,
+  "lid": true
+ },
+ "iso": {
+  "qe_phase": null,
+  "noqe": false,
+  "lid": true
+ },
+ "loz": {
+  "qe_phase": null,
+  "noqe": false,
+  "lid": true
+ },
+ "wal": {
+  "qe_phase": null,
+  "noqe": false,
+  "lid": true
+ },
+ "ach": {
+  "qe_phase": null,
+  "noqe": false,
+  "lid": true
+ },
+ "tsc": {
+  "qe_phase": null,
+  "noqe": false,
+  "lid": true
+ },
+ "vmw": {
+  "qe_phase": null,
+  "noqe": true,
+  "lid": true
+ },
+ "kua": {
+  "qe_phase": null,
+  "noqe": false,
+  "lid": true
+ },
+ "seh": {
+  "qe_phase": null,
+  "noqe": true,
+  "lid": true
+ },
+ "nyn": {
+  "qe_phase": null,
+  "noqe": false,
+  "lid": true
+ },
+ "her": {
+  "qe_phase": null,
+  "noqe": false,
+  "lid": true
+ },
+ "yao": {
+  "qe_phase": null,
+  "noqe": false,
+  "lid": true
+ },
+ "sid": {
+  "qe_phase": null,
+  "noqe": false,
+  "lid": true
+ },
+ "ndc": {
+  "qe_phase": null,
+  "noqe": false,
+  "lid": true
+ },
+ "kri": {
+  "qe_phase": null,
+  "noqe": false,
+  "lid": true
+ },
+ "ish": {
+  "qe_phase": null,
+  "noqe": false,
+  "lid": true
+ },
+ "dua": {
+  "qe_phase": null,
+  "noqe": false,
+  "lid": true
+ },
+ "bas": {
+  "qe_phase": null,
+  "noqe": false,
+  "lid": true
+ },
+ "wes": {
+  "qe_phase": null,
+  "noqe": false,
+  "lid": true
+ },
+ "_log_2026-10-29": {
+  "owner_decisions": [
+   "commercial use only: IbomMT-derived values removed (efi, ibb)",
+   "pooled prior for languages without human references",
+   "pcm LID off + pooled prior",
+   "omission cost 4",
+   "FLORES-only long-document limits",
+   "diacritic ext-min-count 5"
+  ],
+  "actions": [
+   "efi_ibb_blocks.json moved to _quarantine_nc/ (IbomMT, CC-BY-NC)",
+   "noqe_blocks_v2.json: omission cost fixed at 4.0 (12 languages changed)",
+   "lid_measure_clean_v2.json, funcwords_clean_v2.json: efi / ibb removed",
+   "longdoc_clean_v2.json: FLORES-only limits [{\"rep4\": 0.1045, \"cover8\": 0.04}, {\"rep4\": 0.1, \"cover8\": 0.0958}, {\"rep4\": 0.1, \"cover8\": 0.0584}, {\"rep4\": 0.1, \"cover8\": 0.04}]",
+   "anchors_clean_v3.json: efi / ibb removed, pooled prior elsewhere, pooled blocks flagged needs_refit",
+   "shaping_clean_v2.json written (3 QE languages scored; efi / ibb consensus without IbomMT; pcm pooled + LID off; omission 4)"
+  ],
+  "files_new": [
+   "noqe_blocks_v2.json",
+   "lid_measure_clean_v2.json",
+   "funcwords_clean_v2.json",
+   "longdoc_clean_v2.json",
+   "anchors_clean_v3.json",
+   "shaping_clean_v2.json"
+  ],
+  "files_superseded_but_kept": [
+   "noqe_blocks.json",
+   "lid_measure_clean.json",
+   "funcwords_clean_v1.json",
+   "longdoc_clean_v1.json",
+   "anchors_clean_v1.json",
+   "anchors_clean_v2.json",
+   "shaping_clean_v1.json"
+  ],
+  "files_quarantined": [
+   "_quarantine_nc/efi_ibb_blocks.json"
+  ],
+  "box_2": "LOST: refs, qe_work, sft_targets and the CPU QE jobs are gone; the Hub folder calibration/ holds the pre-decision numbers (incl. efi_ibb_blocks.json: DELETE it there)",
+  "scripts": {
+   "apply_decisions_to_local_numbers": "data_pipeline/sft_clean/r4_apply_owner_decisions.py",
+   "rebuild_everything_on_a_gpu_instance": "data_pipeline/sft_clean/r4_run_all.py (HF_TOKEN + FLORES+ dev)"
+  },
+  "commercial_source_check": {
+   "non_commercial_sources_in_clean_corpus": "only howard-nlp/ibom-mt (efi 994, ibb 998 pairs), per reports/data/sft_clean_2026-10-28/licence_by_language.csv",
+   "afridocmt": "not in the clean corpus, no calibration object touched it",
+   "africanfinetranslations": "HuggingFaceFW/finetranslations is odc-by, allowed",
+   "opus": "opus-100 (unspecified), Helsinki-en-fon-opus-20k and english-to-luo-opus (cc-by), mt560 (cc-by label, OPUS-derived, licence mix unverified): used only inside the SFT-text statistics (LID proxy, diacritic widening, function words); r4_run_all.py now restricts them to strict-licence rows",
+   "afriscience_train": "Apache-2.0 on the dataset card, licences of the 230 papers not stated: used by science_anchor and the anchors documents (not by the long-document limits any more)"
+  }
+ },
+ "_log_2026-10-29_evening": {
+  "owner_updates": [
+   "IbomMT (efi, ibb) explicit exception: entries restored and tagged nc_exception: ibom-mt",
+   "function-word tables and bigram statistics: no licence filter, statistics only",
+   "AfriScience-MT train, AfriCOMET-QE and SSA-COMET accepted",
+   "NLLB pseudo-references wanted during RL only (very poorly resourced languages): NLLB anchors / language rule stay in the plan as RL-only",
+   "GPU parts of r4_run_all.py run concurrently with large batches"
+  ],
+  "actions": [
+   "shaping_clean_v3.json: efi / ibb restored from shaping_clean_v1.json (omission cost 4), tagged nc_exception",
+   "lid_measure_clean_v3.json: efi / ibb restored, tagged",
+   "funcwords_clean_v3.json: efi / ibb restored, metadata statistics-only",
+   "anchors_clean_v4.json: anchors v2 with efi / ibb units (tagged), pooled prior for the languages without an entry"
+  ],
+  "files_new": [
+   "shaping_clean_v3.json",
+   "lid_measure_clean_v3.json",
+   "funcwords_clean_v3.json",
+   "anchors_clean_v4.json",
+   "efi_ibb_blocks.json (restored)"
+  ],
+  "superseded_by_this": [
+   "shaping_clean_v2.json",
+   "lid_measure_clean_v2.json",
+   "funcwords_clean_v2.json",
+   "anchors_clean_v3.json"
+  ],
+  "still_unchanged": [
+   "noqe_blocks_v2.json",
+   "longdoc_clean_v2.json",
+   "science_anchor_clean_v1.json",
+   "monitors_and_weights_clean_v1.json"
+  ],
+  "note": "shaping_clean_v3.json is still PARTIAL (AfriCOMET anchors for 3 of 42 QE languages): the rest comes from r4_run_all.py"
+ }
+}

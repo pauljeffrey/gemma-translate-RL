@@ -1,0 +1,500 @@
+{
+ "_meta": {
+  "created": "2026-11-01",
+  "source": "reports/data/lid_precision_recall_2026-11-01.csv (GlotLID v3 on training targets of shard 6, 800 per language)",
+  "note": "accepted GlotLID labels for the 40 new languages (+ tzm, ful, kon). recall_before/precision_before were measured with the OLD label set; the fixed sets are re-measured in the same csv after this change"
+ },
+ "guw": {
+  "labels": [
+   "guw_Latn"
+  ],
+  "guard": "glotlid",
+  "note": "",
+  "measured_n": 800,
+  "recall_before": 0.99,
+  "precision_before": 0.994,
+  "min_chars": 30
+ },
+ "lue": {
+  "labels": [
+   "lue_Latn"
+  ],
+  "guard": "glotlid",
+  "note": "",
+  "measured_n": 800,
+  "recall_before": 0.991,
+  "precision_before": 0.999,
+  "min_chars": 30
+ },
+ "tll": {
+  "labels": [
+   "tll_Latn"
+  ],
+  "guard": "glotlid",
+  "note": "",
+  "measured_n": 800,
+  "recall_before": 1.0,
+  "precision_before": 0.998,
+  "min_chars": 30
+ },
+ "zne": {
+  "labels": [
+   "zne_Latn"
+  ],
+  "guard": "glotlid",
+  "note": "",
+  "measured_n": 800,
+  "recall_before": 0.988,
+  "precision_before": 0.996,
+  "min_chars": 30
+ },
+ "lub": {
+  "labels": [
+   "lub_Latn"
+  ],
+  "guard": "glotlid",
+  "note": "",
+  "measured_n": 800,
+  "recall_before": 0.998,
+  "precision_before": 0.883,
+  "min_chars": 30
+ },
+ "crs": {
+  "labels": [
+   "crs_Latn"
+  ],
+  "guard": "glotlid",
+  "note": "",
+  "measured_n": 800,
+  "recall_before": 0.989,
+  "precision_before": 0.997,
+  "min_chars": 30
+ },
+ "mfe": {
+  "labels": [
+   "mfe_Latn"
+  ],
+  "guard": "glotlid",
+  "note": "",
+  "measured_n": 800,
+  "recall_before": 0.976,
+  "precision_before": 0.996,
+  "min_chars": 30
+ },
+ "rnd": {
+  "labels": [
+   "rnd_Latn"
+  ],
+  "guard": "glotlid",
+  "note": "",
+  "measured_n": 800,
+  "recall_before": 0.988,
+  "precision_before": 0.995,
+  "min_chars": 30
+ },
+ "nyk": {
+  "labels": [
+   "nyk_Latn"
+  ],
+  "guard": "glotlid",
+  "note": "",
+  "measured_n": 800,
+  "recall_before": 0.968,
+  "precision_before": 0.995,
+  "min_chars": 30
+ },
+ "kwn": {
+  "labels": [
+   "kwn_Latn"
+  ],
+  "guard": "glotlid",
+  "note": "",
+  "measured_n": 800,
+  "recall_before": 0.986,
+  "precision_before": 1.0,
+  "min_chars": 30
+ },
+ "ndo": {
+  "labels": [
+   "ndo_Latn"
+  ],
+  "guard": "glotlid",
+  "note": "",
+  "measured_n": 800,
+  "recall_before": 0.984,
+  "precision_before": 0.974,
+  "min_chars": 30
+ },
+ "dje": {
+  "labels": [
+   "dje_Latn"
+  ],
+  "guard": "glotlid",
+  "note": "",
+  "measured_n": 800,
+  "recall_before": 0.99,
+  "precision_before": 0.997,
+  "min_chars": 30
+ },
+ "ada": {
+  "labels": [
+   "ada_Latn"
+  ],
+  "guard": "glotlid",
+  "note": "",
+  "measured_n": 800,
+  "recall_before": 0.994,
+  "precision_before": 0.986,
+  "min_chars": 30
+ },
+ "arz": {
+  "labels": [
+   "arz_Arab",
+   "arb_Arab"
+  ],
+  "guard": "glotlid_weak",
+  "note": "Egyptian Arabic is often labelled arb (Standard Arabic): the guard cannot separate them",
+  "measured_n": 800,
+  "recall_before": 0.785,
+  "precision_before": 1.0,
+  "min_chars": 30
+ },
+ "sop": {
+  "labels": [
+   "sop_Latn"
+  ],
+  "guard": "glotlid",
+  "note": "",
+  "measured_n": 800,
+  "recall_before": 0.985,
+  "precision_before": 0.975,
+  "min_chars": 30
+ },
+ "mgr": {
+  "labels": [
+   "mgr_Latn"
+  ],
+  "guard": "glotlid",
+  "note": "",
+  "measured_n": 800,
+  "recall_before": 0.991,
+  "precision_before": 0.972,
+  "min_chars": 30
+ },
+ "koo": {
+  "labels": [
+   "koo_Latn",
+   "nnb_Latn"
+  ],
+  "guard": "glotlid",
+  "note": "Konzo vs Nande: sibling label added",
+  "measured_n": 800,
+  "recall_before": 0.868,
+  "precision_before": 0.993,
+  "min_chars": 30
+ },
+ "cjk": {
+  "labels": [
+   "cjk_Latn"
+  ],
+  "guard": "glotlid",
+  "note": "",
+  "measured_n": 800,
+  "recall_before": 0.999,
+  "precision_before": 0.991,
+  "min_chars": 30
+ },
+ "cop": {
+  "labels": [
+   "cop_Copt"
+  ],
+  "guard": "glotlid",
+  "note": "",
+  "measured_n": 425,
+  "recall_before": 1.0,
+  "precision_before": 1.0,
+  "min_chars": 30
+ },
+ "dop": {
+  "labels": [
+   "dop_Latn"
+  ],
+  "guard": "glotlid",
+  "note": "",
+  "measured_n": 800,
+  "recall_before": 1.0,
+  "precision_before": 0.988,
+  "min_chars": 30
+ },
+ "bum": {
+  "labels": [
+   "bum_Latn"
+  ],
+  "guard": "glotlid",
+  "note": "",
+  "measured_n": 800,
+  "recall_before": 0.988,
+  "precision_before": 0.997,
+  "min_chars": 30
+ },
+ "nba": {
+  "labels": [
+   "nba_Latn"
+  ],
+  "guard": "glotlid",
+  "note": "",
+  "measured_n": 800,
+  "recall_before": 0.988,
+  "precision_before": 0.988,
+  "min_chars": 30
+ },
+ "nyu": {
+  "labels": [
+   "nyu_Latn"
+  ],
+  "guard": "glotlid",
+  "note": "",
+  "measured_n": 800,
+  "recall_before": 0.963,
+  "precision_before": 0.991,
+  "min_chars": 30
+ },
+ "dik": {
+  "labels": [
+   "dik_Latn",
+   "dip_Latn"
+  ],
+  "guard": "glotlid",
+  "note": "GlotLID calls our Dinka text dip (Northeastern Dinka): sibling label added",
+  "measured_n": 670,
+  "recall_before": 0.004,
+  "precision_before": 0.5,
+  "min_chars": 30
+ },
+ "cce": {
+  "labels": [
+   "cce_Latn"
+  ],
+  "guard": "glotlid",
+  "note": "",
+  "measured_n": 588,
+  "recall_before": 0.985,
+  "precision_before": 1.0,
+  "min_chars": 30
+ },
+ "chw": {
+  "labels": [
+   "chw_Latn"
+  ],
+  "guard": "glotlid",
+  "note": "",
+  "measured_n": 563,
+  "recall_before": 0.954,
+  "precision_before": 1.0,
+  "min_chars": 30
+ },
+ "ttj": {
+  "labels": [
+   "ttj_Latn",
+   "nyo_Latn"
+  ],
+  "guard": "glotlid",
+  "note": "Tooro vs Nyoro are one dialect continuum: sibling label added",
+  "measured_n": 649,
+  "recall_before": 0.769,
+  "precision_before": 0.996,
+  "min_chars": 30
+ },
+ "lam": {
+  "labels": [
+   "lam_Latn"
+  ],
+  "guard": "glotlid",
+  "note": "",
+  "measured_n": 649,
+  "recall_before": 0.94,
+  "precision_before": 0.974,
+  "min_chars": 30
+ },
+ "nup": {
+  "labels": [],
+  "guard": "custom",
+  "note": "no GlotLID label for Nupe: use the fastText classifier",
+  "measured_n": 489,
+  "recall_before": 0.0,
+  "precision_before": null,
+  "min_chars": 30,
+  "custom_classifier": "fastText 125-language (reports/data/fasttext_lid_per_language_2026-11-01.csv)",
+  "custom_recall": 0.965,
+  "custom_precision": 0.967
+ },
+ "taq": {
+  "labels": [
+   "taq_Latn",
+   "taq_Tfng",
+   "ttq_Latn",
+   "ttq_Tfng"
+  ],
+  "guard": "glotlid",
+  "note": "Tamasheq / Tawallammat Tamajaq: sibling labels added",
+  "measured_n": 336,
+  "recall_before": 0.36,
+  "precision_before": 0.519,
+  "min_chars": 30
+ },
+ "alz": {
+  "labels": [
+   "alz_Latn"
+  ],
+  "guard": "glotlid",
+  "note": "",
+  "measured_n": 145,
+  "recall_before": 1.0,
+  "precision_before": 0.993,
+  "min_chars": 30
+ },
+ "toi": {
+  "labels": [
+   "toi_Latn",
+   "toh_Latn"
+  ],
+  "guard": "glotlid_weak",
+  "note": "GlotLID labels our Tonga text toh (Gitonga, a different language): recall was 0.0 with toi only; either mislabelled data or a label confusion; check on human text before relying on it",
+  "measured_n": 156,
+  "recall_before": 0.0,
+  "precision_before": 0.0,
+  "min_chars": 30
+ },
+ "ber": {
+  "labels": [],
+  "guard": "custom",
+  "note": "Berber is a macro language without a GlotLID label (kab, tzm, shi, zgh are separate): use the fastText classifier",
+  "measured_n": 0,
+  "recall_before": null,
+  "precision_before": null,
+  "min_chars": 30,
+  "custom_note": "no translation text in the measured shard: the classifier is untested for this language, guard stays OFF until it is"
+ },
+ "zgh": {
+  "labels": [
+   "zgh_Tfng"
+  ],
+  "guard": "glotlid",
+  "note": "",
+  "measured_n": 0,
+  "recall_before": null,
+  "precision_before": null,
+  "min_chars": 30
+ },
+ "aar": {
+  "labels": [],
+  "guard": "custom",
+  "note": "no GlotLID label for Afar: use the fastText classifier",
+  "measured_n": 0,
+  "recall_before": null,
+  "precision_before": null,
+  "min_chars": 30,
+  "custom_note": "no translation text in the measured shard: the classifier is untested for this language, guard stays OFF until it is"
+ },
+ "bci": {
+  "labels": [
+   "bci_Latn"
+  ],
+  "guard": "glotlid",
+  "note": "",
+  "measured_n": 0,
+  "recall_before": null,
+  "precision_before": null,
+  "min_chars": 30
+ },
+ "ary": {
+  "labels": [
+   "ary_Arab"
+  ],
+  "guard": "glotlid",
+  "note": "",
+  "measured_n": 0,
+  "recall_before": null,
+  "precision_before": null,
+  "min_chars": 30
+ },
+ "aeb": {
+  "labels": [
+   "aeb_Arab"
+  ],
+  "guard": "glotlid",
+  "note": "",
+  "measured_n": 0,
+  "recall_before": null,
+  "precision_before": null,
+  "min_chars": 30
+ },
+ "teo": {
+  "labels": [
+   "teo_Latn"
+  ],
+  "guard": "glotlid",
+  "note": "",
+  "measured_n": 0,
+  "recall_before": null,
+  "precision_before": null,
+  "min_chars": 30
+ },
+ "adh": {
+  "labels": [
+   "adh_Latn"
+  ],
+  "guard": "glotlid",
+  "note": "",
+  "measured_n": 0,
+  "recall_before": null,
+  "precision_before": null,
+  "min_chars": 30
+ },
+ "tzm": {
+  "labels": [
+   "tzm_Tfng",
+   "zgh_Tfng"
+  ],
+  "guard": "glotlid",
+  "note": "data is Tifinagh script; the table guessed tzm_Latn; zgh_Tfng added (GlotLID labels 31% of our tzm text zgh)",
+  "measured_n": 800,
+  "recall_before": 0.0,
+  "precision_before": null,
+  "min_chars": 30
+ },
+ "ful": {
+  "labels": [
+   "fuv_Latn",
+   "ffm_Latn",
+   "fub_Latn",
+   "fuf_Latn",
+   "fuh_Latn"
+  ],
+  "guard": "custom",
+  "note": "GlotLID has no ful label; Nigerian Fulfulde fuv and Maasina ffm; fub fuf fuh added (Fulfulde dialect labels)",
+  "measured_n": 800,
+  "recall_before": 0.0,
+  "precision_before": null,
+  "min_chars": 30,
+  "custom_classifier": "fastText 125-language (reports/data/fasttext_lid_per_language_2026-11-01.csv)",
+  "custom_recall": 0.882,
+  "custom_precision": 0.966
+ },
+ "kon": {
+  "labels": [
+   "kng_Latn",
+   "kwy_Latn",
+   "ktu_Latn"
+  ],
+  "guard": "custom",
+  "note": "no kon label; sibling labels (recall 0.77 on SFT targets in the 2026-10-19 measurement)",
+  "measured_n": 800,
+  "recall_before": 0.974,
+  "precision_before": 0.982,
+  "min_chars": 30,
+  "custom_classifier": "fastText 125-language (reports/data/fasttext_lid_per_language_2026-11-01.csv)",
+  "custom_recall": 0.943,
+  "custom_precision": 0.947
+ }
+}

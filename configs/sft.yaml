@@ -1,0 +1,45 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+# SFT of google/gemma-3-270m-it on packed English -> African-language pairs.
+#   python -m gemma_mt.train_sft --config configs/sft.yaml [key=value ...]
+# Reasoning behind every value: DECISIONS.md section "SFT hyper-parameters".
+model_name: google/gemma-3-270m-it
+tokenizer_name: null                 # default: model_name
+data_dir: data/packed                # output of gemma_mt.data.prepare_sft (train/, val/, meta.json)
+out_dir: runs/sft
+
+attn_implementation: sdpa            # sdpa | eager | flash_attention_2  (flash needs a CUDA GPU + flash-attn)
+mask_mode: auto                      # auto: explicit block-diagonal masks for sdpa/eager, varlen for flash
+param_dtype: float32                 # fp32 master weights ...
+autocast_dtype: bfloat16             # ... with bf16 autocast (needs Ampere or newer; fp16 overflows on Gemma 3)
+
+# batch = micro_batch_size x grad_accum_steps x n_gpus packs of seq_len (2048) tokens
+#       = 4 x 16 x 1 x 2048 = 131,072 tokens (about 2,000 pairs) per optimizer step
+micro_batch_size: 4                  # packs per forward: 4 for ~12 GB, 8 for 24 GB (then grad_accum_steps: 8)
+grad_accum_steps: 16                 # the loss normalisation is accumulation-invariant, so trading these is free
+epochs: 3
+max_steps: 0
+
+learning_rate: 5.0e-5
+min_lr_ratio: 0.1                    # cosine decays to 5e-6
+warmup_steps: 0
+warmup_ratio: 0.03
+weight_decay: 0.01
+beta1: 0.9
+beta2: 0.95
+eps: 1.0e-8
+grad_clip: 1.0
+
+eval_every: 200                      # optimizer steps
+eval_max_packs: 0                    # 0 = all validation packs
+early_stopping_patience: 5           # evaluations without improvement
+early_stopping_min_delta: 0.0
+min_epochs: 1.0                      # early stopping cannot fire before one full epoch
+save_every: 500
+log_every: 10
+
+gradient_checkpointing: false        # set true to fit larger micro batches (about 30% slower)
+loss_chunk_tokens: 512               # logits are materialised 512 target tokens at a time (vocab is 262,144)
+seed: 1234
+wandb_project: null
+run_name: null
+resume: true

@@ -1,0 +1,165 @@
+{
+ "guw": {
+  "enabled": true,
+  "labels": [
+   "guw_Latn"
+  ],
+  "min_chars": 30,
+  "recall": 0.99,
+  "recall_strict": 0.99,
+  "extra_labels": [],
+  "source": "sft_targets",
+  "n": 800,
+  "short_recall": {
+   "15": 0.706,
+   "30": 0.948,
+   "60": 0.99,
+   "120": 0.997
+  },
+  "cross_accept": 0.0002,
+  "guard_note": null
+ },
+ "lue": {
+  "enabled": true,
+  "labels": [
+   "lue_Latn"
+  ],
+  "min_chars": 30,
+  "recall": 0.9912,
+  "recall_strict": 0.9912,
+  "extra_labels": [],
+  "source": "sft_targets",
+  "n": 800,
+  "short_recall": {
+   "15": 0.605,
+   "30": 0.916,
+   "60": 0.991,
+   "120": 0.997
+  },
+  "cross_accept": 0.0,
+  "guard_note": null
+ },
+ "tll": {
+  "enabled": true,
+  "labels": [
+   "tll_Latn"
+  ],
+  "min_chars": 30,
+  "recall": 1.0,
+  "recall_strict": 1.0,
+  "extra_labels": [],
+  "source": "sft_targets",
+  "n": 800,
+  "short_recall": {
+   "15": 0.605,
+   "30": 0.938,
+   "60": 0.999,
+   "120": 1.0
+  },
+  "cross_accept": 0.0001,
+  "guard_note": null
+ },
+ "zne": {
+  "enabled": true,
+  "labels": [
+   "zne_Latn"
+  ],
+  "min_chars": 60,
+  "recall": 0.9875,
+  "recall_strict": 0.9875,
+  "extra_labels": [],
+  "source": "sft_targets",
+  "n": 800,
+  "short_recall": {
+   "15": 0.502,
+   "30": 0.78,
+   "60": 0.967,
+   "120": 0.998
+  },
+  "cross_accept": 0.0,
+  "guard_note": null
+ },
+ "lub": {
+  "enabled": true,
+  "labels": [
+   "lub_Latn"
+  ],
+  "min_chars": 30,
+  "recall": 0.9975,
+  "recall_strict": 0.9975,
+  "extra_labels": [],
+  "source": "sft_targets",
+  "n": 800,
+  "short_recall": {
+   "15": 0.579,
+   "30": 0.905,
+   "60": 0.987,
+   "120": 1.0
+  },
+  "cross_accept": 0.0012,
+  "guard_note": null
+ },
+ "crs": {
+  "enabled": true,
+  "labels": [
+   "crs_Latn"
+  ],
+  "min_chars": 60,
+  "recall": 0.9888,
+  "recall_strict": 0.9888,
+  "extra_labels": [],
+  "source": "sft_targets",
+  "n": 800,
+  "short_recall": {
+   "15": 0.536,
+   "30": 0.839,
+   "60": 0.964,
+   "120": 0.998
+  },
+  "cross_accept": 0.0,
+  "guard_note": null
+ },
+ "mfe": {
+  "enabled": true,
+  "labels": [
+   "mfe_Latn"
+  ],
+  "min_chars": 60,
+  "recall": 0.9762,
+  "recall_strict": 0.9762,
+  "extra_labels": [],
+  "source": "sft_targets",
+  "n": 800,
+  "short_recall": {
+   "15": 0.403,
+   "30": 0.68,
+   "60": 0.91,
+   "120": 0.995
+  },
+  "cross_accept": 0.0,
+  "guard_note": null
+ },
+ "arz": {
+  "enabled": true,
+  "labels": [
+   "arz_Arab",
+   "arb_Arab"
+  ],
+  "min_chars": 60,
+  "recall": 0.9862,
+  "recall_strict": 0.785,
+  "extra_labels": [
+   "arb_Arab"
+  ],
+  "source": "sft_targets",
+  "n": 800,
+  "short_recall": {
+   "15": 0.729,
+   "30": 0.851,
+   "60": 0.943,
+   "120": 0.982
+  },
+  "cross_accept": 0.0,
+  "guard_note": "Egyptian Arabic is often labelled arb (Standard Arabic): the guard cannot separate them"
+ }
+}

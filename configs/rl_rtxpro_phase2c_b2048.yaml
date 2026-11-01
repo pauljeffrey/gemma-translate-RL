@@ -1,0 +1,195 @@
+# D-45 (owner 2026-10-20): b2048 length bin (298 steps x 21 prompts x group 16 = 100,128 completions) inserted AFTER b1024 and BEFORE the mixed stage; STAGED copy of rl_rtxpro_phase2c.yaml
+# (apply = copy over the live yaml at a checkpoint restart). Changes: prompts_path v3, steps, max_src_tokens, curriculum b2048, prompts/step + max_new_tokens for b2048 and mixed, vllm_max_model_len, eval_min_per_bin.
+# PHASE 2c of the Gemma RL (owner 2026-10-20): phase 2b's b256 stage diverged (KL 0.04 -> 2.3 from step ~500, greedy eval reward 0.24 -> -0.5). Restart from the 2b stage-b64 model (step 488, dev chrF++ ~41.9-42.0).
+# Remaining completions: b256 300k, b512 300k, b1024 100k, mixed 100k = 800,256 in 1135 steps. Group 16 (all sampled), advantage std-normalised (as phase 2), lr 2e-6, KL guard on.
+# PHASE 2b of the Gemma RL (owner 2026-10-19: the model does not see enough samples per language). Starts from the FINAL model of phase 2 (branch stage-mixed of the rl2 repo).
+# Completions per phase: b64 500k, b256 300k, b512 300k, b1024 100k, mixed 100k = 1,299,968 in 1623 steps. Changes against phase 2: group 16 (15 sampled + 1 greedy),
+# advantage = reward - group mean (no std division), lr 3e-6. Same reward, same language draws (alpha 0, x2.5 on the 17 weakest).
+# PHASE 2 of the Gemma RL (owner 2026-10-19: the first pass saw too few samples per language). Starts from the FINAL model of phase 1 (branch stage-mixed of the rl repo),
+# ~100k completions per phase for b64 / b256 / mixed, 50k for b512, 30k for b1024 (the long bins are 5-15x slower per completion); uniform language draws (alpha 0) with x2.5 weight
+# on the 17 weakest languages; lr 2e-6. Same reward as phase 1.
+# RTX PRO 6000 (96 GB) profile of configs/rl.yaml, owner 2026-10-18: dedicated card, 'max out the GPU' (settings from reports/gemma_rl_cost_estimate_2026-10-17.md section 6.2:
+# more prompts per step, micro_batch_seqs 320 / micro_batch_tokens 49,152, loss chunk 2,048, QE batch 256, vLLM engine 0.20 of the card). Absolute rental paths.
+# SPDX-License-Identifier: AGPL-3.0-or-later
+# GRPO with a shaped AfriCOMET-QE reward on top of the SFT checkpoint.
+#   python -m gemma_mt.rl.train_rl --config configs/rl.yaml [key=value ...]
+# Reasoning: DECISIONS.md section "RL".
+model_name: /workspace/sft_build/runs/rl_2b_stage_b64
+tokenizer_name: null
+prompts_path: /workspace/sft_build/gemma/rl_prompts_v3  # [D-45: v2 + zz_b2048/ (600 b2048 rows per language); old rows keep their indices] parquet/jsonl: english, iso, language, src_afr_tokens, source_dataset
+eval_prompts_path: null              # null: a hash-selected hold-out of `eval_prompts` prompts
+out_dir: /workspace/sft_build/runs/rl2c
+
+attn_implementation: sdpa
+param_dtype: float32
+ref_dtype: float32
+autocast_dtype: bfloat16
+
+steps: 1433  # [D-45: 1135 + 298 b2048 steps]
+prompts_per_step: 84  # one prompt per RL language on average x group_size 8 = 336 sampled translations per optimizer step  # x group_size 8 = 128 sampled translations per optimizer step
+group_size: 16
+micro_batch_seqs: 320  # sequences per scoring forward; lower on small GPUs
+num_updates_per_batch: 1             # 1 = exactly on-policy (ratio == 1, nothing clips)
+temperature: 1.0
+top_p: 1.0                           # < 1 biases the estimator; needs allow_truncated_sampling: true
+top_k: 0
+allow_truncated_sampling: false
+# ---- rollout sampler (D-28, owner 2026-10-17): vLLM instead of HF `generate`. Weights are pushed into the engine after EVERY optimizer step
+# (on-policy; the loss recomputes log p with the trainer, vLLM log-probs are only a consistency check). sampler: hf = the original path.
+# Setup and measurements: reports/gemma_rl_vllm_2026-10-17.md
+sampler: vllm                        # vllm | hf
+vllm_mode: worker                    # worker: engine in a child process started with `vllm_python` | inprocess: engine inside the trainer's interpreter
+vllm_python: /workspace/venv_vllm/bin/python   # worker mode: the interpreter that has vllm (null = the trainer's own)
+vllm_gpu_memory_utilization: 0.20  # fraction of the device the engine may use; vLLM refuses to start if less than this is FREE (also with vllm_kv_cache_gib)
+vllm_kv_cache_gib: null              # fixed KV cache (GiB) instead of "what fits"; the shared-GPU tests used 2.0 (enough for 160 x 1,400 tokens)
+vllm_max_model_len: 10240            # [D-45: was 8192; b2048 prompt up to ~2,300 + 7,168 new tokens]  # prompt + max_new_tokens per sequence (b1024: ~1,300 + 3,584); longer requests raise
+vllm_max_num_seqs: 512  # the b64 stage samples 32 x 8 = 256 sequences at once
+vllm_max_num_batched_tokens: null
+vllm_enforce_eager: false            # true skips CUDA-graph capture / torch.compile (quicker start, slower decoding)
+vllm_sleep: false                    # true: level-2 sleep frees the engine's memory while the policy trains (costs a wake-up per step)
+vllm_attention_backend: null         # null = vLLM's choice (FLASH_ATTN on the RTX PRO 6000 Blackwell)
+vllm_sync_dir: /dev/shm              # worker mode: tmpfs holding the 0.54 GB bf16 weight file during each sync
+vllm_startup_timeout: 1800
+vllm_request_timeout: 3600
+vllm_check_every: 25                 # every N steps the trainer compares the engine's log-probs of its own samples with its recomputed ones ...
+vllm_logp_gap_tol: 0.25              # ... and raises when the mean |difference| exceeds this (bf16 vs autocast noise is ~0.03; a stale engine is far above)
+max_new_tokens: 1024                 # source windows are up to 256 AfriCOMET tokens (3-4 sentences or a few short paragraphs);
+                                     # the translation is up to ~2x that in AfriCOMET tokens and several times more in Gemma tokens
+max_src_tokens: 2048                 # [D-45: was 1024; b2048 windows are 1,025..2,048 AfriCOMET tokens and would all be DROPPED as source_too_long] AfriCOMET-encoder tokens of the source (2048 for SabiYarn); scored sentence by sentence
+length_bins: true                    # prompts carry `length_bin` (b64 / b256 / b512 / b1024, uniform per language)
+curriculum_steps:                    # stage 1: only b64 prompts for 40 steps, then b256, b512, b1024; afterwards a random mixture
+  b256: 391
+  b512: 446
+  b1024: 149
+  b2048: 298                        # [D-45] after b1024, before the mixed stage
+prompts_per_step_by_bin:             # same group_size for all; fewer prompts when a prompt is long (compute and memory)
+  b64: 64
+  b256: 48
+  b512: 42
+  b1024: 42
+  b2048: 21                          # [D-45] 21 x 16 = 336 completions per step
+  mixed: 42
+max_new_tokens_by_bin:               # Gemma tokens; an African-language translation is ~2-2.5x its English source in tokens
+  b64: 384
+  b256: 1280
+  b512: 2304
+  b1024: 3584
+  b2048: 7168                        # [D-45] 3.5 x 2,048 (the b1024 ratio)
+  mixed: 7168                        # [D-45: was 3584; one cap per step, and the mixture now contains b2048 prompts]
+micro_batch_tokens: 49152  # sequences per scoring forward = micro_batch_tokens // longest sequence (capped by micro_batch_seqs)
+language_alpha: 0.0  # draw weight ~ pool_size ** alpha (1 = natural mix, 0 = uniform). 2026-10-17: with 42 languages (22 added, 20k prompts each, vs 120k-600k for
+                                     # the old ones) alpha 1.0 would draw each added language only 0.38% of the time (~14 of 3,600 prompts); alpha 0.5 gives
+                                     # ~1.2% per added language, ~2.9% per standard old language, ~5% per x3-boosted language, ~6.5% pcm (the earlier low-resource /
+                                     # Pidgin boost stays in the prompt pools themselves).
+language_weights: {tir: 2.5, amh: 2.5, kbp: 2.5, nus: 2.5, kam: 2.5, bam: 2.5, mos: 2.5, umb: 2.5, kmb: 2.5, dyu: 2.5, kea: 2.5, luo: 2.5, kik: 2.5, orm: 2.5, fon: 2.5, yor: 2.5, vmw: 2.5, efi: 2.5}  # [2026-10-20 D-43] efi: catch-up draw weight 2.5 (same as the 17 weakest languages; it had ~0 samples so far). Advantage weight 0.5 from the consensus validation (calibration shaping_flores_dev_v6_efi_consensus.json). Revert: remove `efi: 2.5` and restore the previous calibration_path.
+
+learning_rate: 2.0e-6
+kl_guard_threshold: 0.15            # KL guard: mean KL of the last 5 steps above this halves the learning rate (min 1/8), at most once per 10 steps
+kl_guard_factor: 0.5
+kl_guard_min_scale: 0.125
+warmup_steps: 10
+weight_decay: 0.0
+grad_clip: 1.0
+advantage_norm: mean_std
+std_eps: 1.0e-4
+kl_coef: 0.05
+kl_estimator: k3c                    # 2026-10-20: k3 with the log-ratio clamped at 5
+clip_eps: null                       # only used when num_updates_per_batch > 1
+loss_agg: token
+loss_chunk_tokens: 2048
+gradient_checkpointing: false
+
+reward:
+  preset: repo                       # repo: [-2, +2.25] (the repo's curve) | owner_note: [-2, +1]   (Q-01 resolved 2026-10-12: owner chose `repo`)
+  mode: calibrated                   # calibrated | adaptive
+  calibration_path: /workspace/sft_build/gemma_mt/calibration/shaping_flores_dev_v6.json   # [2026-10-20 D-43: v5 + efi as a QE-free CONSENSUS-only language (weight 0.5, human-reference statistics); previous value .../shaping_flores_dev_v6.json = efi QE-blend, weight 0.9] D-37/D-38: v4 + the 35 added languages + `lid` and `content` blocks (v4 stays untouched); 77 RL languages
+  fail_floor: 0.0                    # D-32: t_fail = the language's own P90 of QE on mismatched references (0.46 was the floor of the first 12 languages; wrong for kam lua bam pcm ...)
+  neg_scale: 2.0
+  penalty: null                      # null = floor of the range (-neg_scale)
+  prefix_policy: require
+  lid_enabled: true                  # D-37 (owner 2026-10-19): GlotLID guard ON. A completion whose top-1 label is not in the language's accepted set is `wrong_language` (-2). Per language (calibration `lid`): labels (own + measured siblings),
+                                     # on/off (only where the measured human recall is >= 0.90: 75 of 77 languages; pcm and kon are off), minimum text length. Built and self-tested at start: an unusable LID stops the run.
+  lid_min_chars: 15                  # global minimum; a language may need more (calibration `lid.min_chars`: 15-120)
+  lid_model_path: /workspace/sft_build/hf/hub/models--cis-lmu--glotlid/snapshots/85cd6716494360367b75f642b5bc78667605d0b4/model_v3.bin
+  lid_disable: []                    # languages whose guard is switched off whatever the calibration says
+  # D-38 consensus (QE-free, minimum-Bayes-risk style): mean sentence chrF++ against the other valid completions of the same GRPO group, per language mode (calibration `content`):
+  #   qe (default, 33 of the 42 validated) | blend (9 validated weak-QE languages kbp nus kam umb kmb mos bam kab fon + the 12 listed ones dyu sag swc loz ven iso tiv kqn wal lun kua kon: (1-beta) QE + beta consensus, beta 0.5) | consensus (23 languages outside AfriCOMET: no QE call)
+  consensus: true
+  consensus_min_valid: 3             # a group needs >= 3 valid samples (passed every failure check); fewer -> blend falls back to QE only, consensus gets the rubric-only value
+  consensus_skip_value: 0.0          # rubric-only value (= the shaping curve's t_fail -> 0 point)
+  content_mode_default: qe
+  content_modes: {}                 # per-language override of the calibration mode, e.g. {kab: qe}
+  consensus_beta: {}                # per-language override of beta
+  consensus_beta_default: 0.5
+  selfrep_guard: consensus           # near-loop guard (repeated 4-gram share > 0.35) for languages in blend / consensus mode; off | consensus | all
+  min_len_ratio_uncalibrated: 0.4    # hard lower length bound for blend / consensus languages without a human length window (pooled prior)
+  max_comet_tokens: 510
+  nfc: true                          # D-29: the decoded completion AND the English source are normalised to Unicode NFC before every check, length rule, chunking and QE
+  chunking: sentences                # ON for the Gemma run (owner 2026-10-17, confirmed): split source and translation at sentence ends (no newlines involved),
+                                     # score the i-th source sentence against the i-th output sentence, average the shaped chunk scores; when the sentence
+                                     # counts differ the pair is aligned by length (Gale-Church; with `omission_detector` language-aware, so a dropped
+                                     # sentence is a failed chunk), a single output sentence for several source sentences is scored as a whole. off = whole-text scoring (D-23)
+  omission_detector: true            # D-30: dropped source sentences (omission bead / shortfall) and extra output sentences are FAILED chunks; only when the sentence counts differ
+  omission_cost: null                # nats for an omission / extra bead in the language-aware Gale-Church alignment; null = the language's own value from the calibration file (`omission.cost`: smallest of 4,5,6,8,12 with <= 2% false alarms on its untouched dev documents, D-30)
+  omission_short_frac: 0.7           # a many-to-one bead / single-sentence output shorter than this share of the language's expected length has missing source text
+  omission_short_min: 0.15           # ... if the missing part is at least this share of the bead's source
+  diacritic_penalty: 1.0             # D-31: reward subtracted per unit of diacritic deficit (stripped diacritics below the human P10 density; foreign / orphan / over-decorated marks = 1.0); penalty only, never a bonus; 0 = off
+  chunk_agg: source_length           # source_length | mean (weights = source characters)
+  extra_output_penalty: true         # D-24: text appended beyond the language's human length window counts as a failed chunk
+  length_penalty: 1.0                # D-24: reward subtracted per log-unit outside the human length-ratio window (calibration file `len_ratio`)
+  lexical_penalty: 1.0               # D-25: reward subtracted per unit of lexical deficit (numbers / names / content words of the output that are not in the source); penalty only, never a bonus
+  reliability_from: same_source      # D-24: advantage weight from same-source ranking accuracy (the group-ranking case), not the cross-sentence AUC
+  # D-26 end-of-turn discipline (ON for the Gemma run, owner 2026-10-17): "rl should be penalized for not ending translation firmly with our eos_token and still
+  # outputting rubbish after this eos_token". Each class below is a FAILURE (no QE call, reward = the penalty). null = the common failure
+  # penalty (the floor -neg_scale = -2.0); a value must be <= that floor (more negative = harsher), never above it.
+  eos_discipline: true               # post_eos_rubbish (non-padding tokens after the first end token) + dangling_marker (turn / role marker before it)
+  eos_truncated_penalty: null        # no end token within max_new_tokens (class `no_end_of_turn`; the class itself is always on, only its value is configurable)
+  eos_post_end_penalty: null         # class `post_eos_rubbish`
+  eos_dangling_penalty: null         # class `dangling_marker`
+
+scorer:
+  # unbabel-comet 2.2.7 breaks with transformers >= 5 (the policy environment has 5.x), so on the rental the QE model runs in a CHILD process whose PYTHONPATH starts
+  # with a transformers 4.x directory (D-33). type comet = in-process (only if the environment has transformers < 5, e.g. the old box / laptop .venv-comet).
+  type: worker                       # comet (in-process) | worker (separate process) | fake
+  python: /workspace/venv_gemma/bin/python
+  pythonpath: /workspace/sft_build/pylibs_tf4:/workspace/sft_build/pylibs
+  model_id: masakhane/africomet-qe-stl-1.1
+  batch_size: 256  # fits next to the policy on 11 GB in fp16
+
+eval_every: 25
+eval_min_per_bin: 16                # [D-45] hold out >= 16 prompts of every length bin (b2048 would get ~0-1 from the plain hash selection); needs the patched train_rl.py
+eval_prompts: 128                    # held-out prompts scored with the full QE reward (diagnostic + guard)
+# Reference-based model selection (owner 2026-10-14): greedy translations of a DEV sample with HUMAN references (FLORES+ dev + MAFAND dev,
+# 19 languages; efi has none; the 22 languages added 2026-10-17 are not in this file yet) -> macro chrF++ / BLEU. The SFT model is scored at step 0; a checkpoint is selected / pushed only if it beats it.
+benchmark_eval_path: /workspace/sft_build/bench/bench_dev_clean.jsonl  # dev rows whose English sentence does NOT occur in the SFT windows (contamination-filtered: 10,043 rows, >= 70 per language)
+benchmark_eval_per_language: 40
+benchmark_eval_every: 50
+benchmark_max_new_tokens: 256
+select_by: benchmark_chrf            # reward | benchmark_chrf
+select_min_gain: 0.1                 # chrF++ points over the best so far (the dev sample is ~760 sentences: differences below ~0.3 are noise)
+select_min_finished_rate: 0.95
+save_every: 50
+log_every: 1
+check_sampler_logprobs: false        # memory-hungry sanity check, for debugging with small batches only
+seed: 1234
+extra_libs: [/workspace/sft_build/pylibs]                   # appended to sys.path: sacrebleu (dev chrF++) is not in the policy environment; /workspace/sft_build/pylibs has it (found 2026-10-19: without it the step-0 dev evaluation crashed)
+hub_repo_id: ${HF_ORG_LEGACY}/gemma-3-270m-translate-rl2c
+hub_branch: null                     # main = the BEST checkpoint (by select_by; tag rl-step-N)
+hub_latest_branch: latest            # owner 2026-10-18: the LATEST checkpoint goes to this branch (overwritten, no tags)
+hub_latest_every: 25                 # ... every 25 steps (= eval_every) and at the last step
+hub_stage_branches: true             # owner 2026-10-18: branches stage-b64 / stage-b256 / stage-b512 / stage-b1024 (end of each curriculum stage) and stage-mixed (the final random-mixture model)
+hub_private: true
+keep_single_checkpoint: true         # local disk: only last/ (resumable)
+# ---- best-translation archive (D-41, owner 2026-10-19: "when rewards start getting good, close to +1, save the translations for later review").
+# Per source (key = sha1(iso + NFC source)[:16]) the best ELIGIBLE translation seen so far, in one SQLite file written by a background thread (never blocks a step).
+# Eligible = status ok + no failed chunk + GlotLID passed + diacritic deficit 0 + reward >= the threshold of the language's content mode (+1.0 = its median-human QE anchor).
+# Review: python -m gemma_mt.rl.archive stats|export|review <archive_path>
+archive: true
+archive_path: /workspace/sft_build/runs/rl2c/archive/archive.sqlite
+archive_min_reward_by_mode: {qe: 1.0, blend: 1.0, consensus: 0.5}   # consensus 0.5 = group chrF++ >= 58.8; merged over these defaults by key
+archive_min_consensus_chrf: 50.0     # blend languages (weak QE): the group consensus must be at least this too
+archive_flush_seconds: 20            # the writer commits at least this often
+archive_queue_size: 64               # steps queued for the writer; full = the step's rows are dropped and counted (archive/dropped_queue)
+resume: true
+wandb_project: null
+run_name: null

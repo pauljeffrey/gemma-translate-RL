@@ -1,0 +1,86 @@
+{
+ "edges": [
+  60,
+  230,
+  560,
+  1000,
+  2000
+ ],
+ "t0": [
+  {
+   "rep4": 0.1,
+   "cover8": 0.0617,
+   "dup_sent": 0.03,
+   "dup_block": 0.03,
+   "cycle": 0.02
+  },
+  {
+   "rep4": 0.1,
+   "cover8": 0.0617,
+   "dup_sent": 0.03,
+   "dup_block": 0.03,
+   "cycle": 0.02
+  },
+  {
+   "rep4": 0.1,
+   "cover8": 0.0626,
+   "dup_sent": 0.03,
+   "dup_block": 0.03,
+   "cycle": 0.02
+  },
+  {
+   "rep4": 0.1,
+   "cover8": 0.04,
+   "dup_sent": 0.03,
+   "dup_block": 0.03,
+   "cycle": 0.02
+  },
+  {
+   "rep4": 0.1,
+   "cover8": 0.098,
+   "dup_sent": 0.03,
+   "dup_block": 0.03,
+   "cycle": 0.02
+  },
+  {
+   "rep4": 0.1,
+   "cover8": 0.04,
+   "dup_sent": 0.03,
+   "dup_block": 0.03,
+   "cycle": 0.02
+  }
+ ],
+ "t1": {
+  "rep4": 0.6,
+  "cover8": 0.5,
+  "dup_sent": 0.5,
+  "dup_block": 0.5,
+  "cycle": 0.5
+ },
+ "meta": {
+  "quantile": 0.995,
+  "margin": 1.15,
+  "n_docs": 19770,
+  "source": "SmolDoc human references stitched to the median source length of the bins (45 languages) + NLLB-200 3.3B references of the core set (16 languages)",
+  "tail_gap": {
+   "q": 0.25,
+   "pct": 0.5,
+   "n": {
+    "1": 47,
+    "2": 48,
+    "3": 48,
+    "4": 48,
+    "5": 48
+   },
+   "source": "human SmolDoc references stitched, reward = qe_ensemble chunk rewards of the phase-2c reward block (reward_run.py)"
+  }
+ },
+ "tail_gap": [
+  0.757,
+  0.757,
+  0.893,
+  0.95,
+  0.964,
+  0.99
+ ]
+}

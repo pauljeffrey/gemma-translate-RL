@@ -1,0 +1,75 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+# GROWTH 1 (owner 2026-11-01): A0 (up6, 24 layers, step 5,625) + 15 NEW sliding-attention layers (39 layers = 3 x (12 sliding + 1 global), sliding_window_pattern 13, 385,144,448 parameters),
+# inserted as exact identity (scripts/upcycle_layers.py --n-new 15 --post-norm-gain 0.01; new layer indices 1 4 6 8 11 14 17 19 21 24 27 30 32 34 37) and 125 dedicated language-tag tokens
+# (<unusedK> via gemma_mt.tags, scripts/init_tag_rows.py). Two phases on two pack sets (packed_g0 is extended in place between the stages: the new translation packs are appended at the END, indices unchanged):
+#   A  python -m gemma_mt.train_sft --config configs/growth1/g1a.yaml   data packed_g0, sched_g/A (1,500 steps): only the 15 new layers + the 125 tag rows of the embedding train
+#   B  python -m gemma_mt.train_sft --config configs/growth1/g1b.yaml   data packed_g0 (EXTENDED IN PLACE with the new translation packs: same name, first part unchanged), sched_g/B (one epoch of every pack stage A did not draw): everything trains, weights from A (init_from),
+#                                                                       fresh Muon state, 3% re-warm-up, cosine
+# Run from the folder that holds packed_g0/, sched_g/, ckpt/ (the A100 run directory); every path below is relative to it.
+model_name: ckpt/gemma3-up6-g15-tags
+tokenizer_name: google/gemma-3-270m-it
+data_dir: packed_g0
+out_dir: runs/g1a
+
+# ---- the packs of every step come from a schedule file (sha256, length and per-language draws are logged and saved to runs/a0/schedule_manifest.json)
+schedule_file: sched_g/A/schedule.npy
+schedule_require_sidecar: true       # the sidecar (schedule.json, written by sampler.py) pins the schedule and the packed dataset it was drawn on
+max_steps: 0                         # the file length is the run length (must be 0 or equal to it)
+epochs: 1.0                          # ignored with a schedule file
+language_alpha: null
+unimax_budget_tokens: 0
+
+attn_implementation: varlen            # 2026-10-30 benchmark on the A40: 3.2x faster than sdpa+explicit mask+chunked loss, same step-1 loss (6.5148 vs 6.5150)
+mask_mode: flash
+loss_impl: fused
+param_dtype: float32                 # fp32 master weights ...
+autocast_dtype: bfloat16             # ... with bf16 autocast
+gradient_checkpointing: false        # 270M fits without it (17 GB at micro-batch 2 on the A40)
+loss_chunk_tokens: 512
+
+# batch = micro_batch_size x grad_accum_steps x 1 GPU x 4,096 = 2 x 16 x 4,096 = 131,072 tokens (32 packs) per optimizer step: the width of the schedule files
+micro_batch_size: 8
+grad_accum_steps: 4
+
+# ---- optimizer (Amendment 4 item 3): Muon on the 2-D decoder matrices, AdamW on the embedding / norms; one learning rate (5e-5), update RMS matched to AdamW (adjust_lr_fn match_rms_adamw); settings of configs/sft_unimax.yaml except lr 4e-5 -> 5e-5 (owner, Amendment 4)
+optimizer: muon
+muon_momentum: 0.95
+muon_ns_steps: 5
+learning_rate: 5.0e-5
+min_lr_ratio: 0.5                    # stage A is a hand-over phase of 1,500 steps; stage B re-warms to the peak, so A does not decay to 10%
+warmup_steps: 0
+warmup_ratio: 0.03                   # 3% of the schedule length, linear
+weight_decay: 0.01
+beta1: 0.9
+beta2: 0.95
+eps: 1.0e-8
+grad_clip: 1.0
+
+# ---- evaluation / stopping: early stopping is INERT (patience 0: the validation loss is logged and the best is tracked, but nothing ends the run)
+eval_every: 250
+eval_max_packs: 0
+val_metric: macro
+min_val_tokens_macro: 2000
+early_stopping_patience: 0
+early_stopping_min_delta: 0.0
+early_stop_action: propose           # (not used with patience 0) never ends a run by itself
+min_epochs: 1.0
+quick_eval_every: 0
+save_every: 20
+log_every: 10
+keep_prev_checkpoint: true
+keep_single_checkpoint: true         # local disk: last/ (resumable) and last_prev/ only
+resume: true
+seed: 1234
+wandb_project: null
+run_name: g1a
+
+# ---- Hub: PRIVATE, ${HF_ORG} organisation (needs HF_WRITE_TOKEN in the environment; never write a token here). The final weights are always pushed (tag step-<N>).
+hub_repo_id: ${HF_ORG}/gemma3-up6-g15-g1a
+hub_private: false                   # owner 2026-10-31: private storage is full; public, NO model card
+hub_push_every: 500                   # owner 2026-10-30: every 500 steps (private ${HF_ORG} repo; public without a model card if private storage is full)
+hub_push_best_only: false
+
+# ---- growth: stage A freezes everything except the 15 new layers (and the embedding matrix, which is restricted to the tag rows)
+freeze_regex: '^(?!model\.layers\.(?:1|4|6|8|11|14|17|19|21|24|27|30|32|34|37)\.)(?!model\.embed_tokens\.)'
+train_embedding_tags: true           # of the tied embedding only the 125 <unusedK> tag rows are updated (grad of every other row zeroed; the embedding has no weight decay)

@@ -1,0 +1,69 @@
+{
+ "edges": [
+  60,
+  230,
+  560,
+  1000,
+  2000
+ ],
+ "t0": [
+  {
+   "rep4": 0.1353,
+   "cover8": 0.23,
+   "dup_sent": 0.03,
+   "dup_block": 0.03,
+   "cycle": 0.02
+  },
+  {
+   "rep4": 0.1316,
+   "cover8": 0.1783,
+   "dup_sent": 0.03,
+   "dup_block": 0.03,
+   "cycle": 0.02
+  },
+  {
+   "rep4": 0.1317,
+   "cover8": 0.1331,
+   "dup_sent": 0.03,
+   "dup_block": 0.03,
+   "cycle": 0.02
+  },
+  {
+   "rep4": 0.1077,
+   "cover8": 0.0922,
+   "dup_sent": 0.03,
+   "dup_block": 0.03,
+   "cycle": 0.02
+  },
+  {
+   "rep4": 0.1077,
+   "cover8": 0.0922,
+   "dup_sent": 0.03,
+   "dup_block": 0.03,
+   "cycle": 0.02
+  },
+  {
+   "rep4": 0.1077,
+   "cover8": 0.0922,
+   "dup_sent": 0.03,
+   "dup_block": 0.03,
+   "cycle": 0.02
+  }
+ ],
+ "t1": {
+  "rep4": 0.6,
+  "cover8": 0.5,
+  "dup_sent": 0.5,
+  "dup_block": 0.5,
+  "cycle": 0.5
+ },
+ "tail_gap": null,
+ "meta": {
+  "quantile": 0.995,
+  "margin": 1.15,
+  "n_docs": 6819,
+  "split": "calibration (H_cal v2) + AfriScience-MT train (clean)",
+  "source": "H_cal FLORES+ pairs stitched by article (45 languages) + clean AfriScience-MT train paper windows (6 languages); no NLLB references, no SmolDoc, no AfriLongDoc",
+  "tail_gap": "NOT FITTED: needs QE-ensemble chunk rewards of the human documents (GPU), see the report"
+ }
+}

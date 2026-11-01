@@ -1,0 +1,15 @@
+# D-60 reward v2 for long documents: the lines to ADD to the `reward:` block of the run yaml (e.g. configs/rl_science_final.yaml). Everything is OFF unless longdoc_v2 is true.
+# Same thing as launch overrides:  reward.longdoc_v2=true reward.longdoc_calibration_path=<path>/calibration/longdoc_v2.json   (the other keys keep their defaults below)
+reward:
+  longdoc_v2: true
+  longdoc_calibration_path: /workspace/jobs/r7/assets/calibration/longdoc_v2.json   # copy of gemma_mt/calibration/longdoc_v2.json (repetition limits + tail gap per length bucket, from human documents)
+  longdoc_min_src_words: 150      # "long" = English source of >= 150 words (b256 median 110, b512 405, b1024 786, b2048 1579, b4096 3141); shorter samples are scored exactly as before
+  longdoc_repetition: true        # continuous multi-level repetition severity (excess over the source, limits from human text) + a stuttering sentence = a failed chunk; replaces the v1 degenerate / self-repetition checks for long samples
+  longdoc_align: anchored         # anchored (numbers / names, redundant copies removed, then the language-aware length model between anchors) | gale_church (v1)
+  longdoc_lexicon: false          # also use validated lexicon words as anchors (+0.01..0.03 alignment F1 on the weak languages, +10..25 ms per sample)
+  longdoc_agg: cvar_excess        # mean | cvar | cvar_excess | p25 | min
+  longdoc_agg_alpha: 1.0          # cvar_excess: mean - alpha * max(0, (mean - CVaR25) - human tail gap of the bucket)
+  longdoc_agg_q: 0.25
+  longdoc_coverage_kappa: 0.5     # extra drop towards the failure penalty = kappa x (share of the source weight in failed chunks); 0 = off
+  longdoc_pool_severity: 0.5      # samples with a repetition severity >= this stay out of the consensus pool
+  keep_chunk_rewards: false       # diagnostics only (RewardOutput.chunk_rewards)

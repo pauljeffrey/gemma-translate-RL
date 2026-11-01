@@ -1,0 +1,72 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+# SFT of google/gemma-3-270m-it on packed English <-> African-language windows, 4,096-token packs (inputs up to 1024 AfriCOMET tokens, D-23).
+# Data: prepare_sft --seq-len 4096 --max-sample-tokens 4096 --directions en2x x2en.   Same 131,072 tokens per optimizer step as sft.yaml.
+#   python -m gemma_mt.train_sft --config configs/sft.yaml [key=value ...]
+# Reasoning behind every value: DECISIONS.md section "SFT hyper-parameters".
+model_name: google/gemma-3-270m-it
+tokenizer_name: null                 # default: model_name
+data_dir: gemma/packed_fwd                # prepare_sft --directions en2x --pack-by-language (train/, val/, meta.json)
+out_dir: runs/sft_fwd
+
+attn_implementation: sdpa            # sdpa | eager | flash_attention_2  (flash needs a CUDA GPU + flash-attn)
+mask_mode: auto                      # auto: explicit block-diagonal masks for sdpa/eager, varlen for flash
+param_dtype: float32                 # fp32 master weights ...
+autocast_dtype: bfloat16             # ... with bf16 autocast (needs Ampere or newer; fp16 overflows on Gemma 3)
+
+# batch = micro_batch_size x grad_accum_steps x n_gpus packs of seq_len (4,096) tokens
+#       = 2 x 16 x 1 x 4096 = 131,072 tokens per optimizer step
+micro_batch_size: 2                  # packs per forward: 4 for ~12 GB, 8 for 24 GB (then grad_accum_steps: 8)
+grad_accum_steps: 16                # the loss normalisation is accumulation-invariant, so trading these is free
+epochs: 1.0                          # 'epoch' = the natural pass over all packs; the run is meant to be stopped by val loss / the owner
+max_steps: 0
+
+learning_rate: 5.0e-5
+min_lr_ratio: 0.1                    # cosine decays to 5e-6
+warmup_steps: 0
+warmup_ratio: 0.03
+weight_decay: 0.01
+beta1: 0.9
+beta2: 0.95
+eps: 1.0e-8
+grad_clip: 1.0
+
+eval_every: 250                      # optimizer steps (~90 min); every evaluation also pushes to the Hub when hub_repo_id is set
+eval_max_packs: 0                    # 0 = all validation packs
+early_stopping_patience: 3           # evaluations (3 x 250 steps ~ 4.5 h) without a new best macro validation loss -> stop; the best model is already on the Hub
+early_stopping_min_delta: 0.0
+min_epochs: 0.25                     # early stopping cannot fire before a quarter of the natural pass
+val_metric: macro                    # mean of the per-language validation losses (a token-weighted loss is 25% Igbo)
+save_every: 250
+log_every: 10
+
+gradient_checkpointing: true         # REQUIRED on a 12 GB GPU at 4,096-token packs: measured on the RTX 5070, micro_batch 1 without it runs out of memory
+                                     # (6.2 GiB peak with it at micro_batch 2, ~6,100 tokens/s, 2026-10-13)
+loss_chunk_tokens: 512               # logits are materialised 512 target tokens at a time (vocab is 262,144)
+seed: 1234
+wandb_project: null
+run_name: null
+resume: true
+
+# ---- language-stratified sampling (owner 2026-10-14: every interval sees every language; forward direction first)
+language_alpha: 0.5                  # p(language) ~ packs ** 0.5 (1.0 = natural frequency, 0.0 = uniform)
+min_language_share: 0.002            # floor: every language is drawn in every evaluation interval
+max_language_epochs: 4.0             # retire a language after 4 passes over its own data (small languages are not memorised)
+min_val_tokens_macro: 2000
+
+# ---- Hub: push the current weights every evaluation and tag step-<N>.  Needs a WRITE token in HF_WRITE_TOKEN.
+hub_repo_id: ${HF_ORG_LEGACY}/gemma3-270m-translate   # confirmed by the owner 2026-10-14; private; needs HF_WRITE_TOKEN (env, ~/.hf_write_token, /workspace/sft_build/.hf_write_token or env.sh)
+hub_push_every: 0                    # 0 = at every evaluation
+hub_private: true
+
+hub_push_best_only: true             # owner 2026-10-14: the Hub model is always the best-validation checkpoint (clean repo)
+keep_single_checkpoint: true         # owner 2026-10-14: one local checkpoint only (last/, resumable); no best/ or final/ copies
+
+# a fixed small validation subset (one pack of every language, ~1 min) every 30 steps (~11 min): per-language loss curve between the
+# full evaluations; never used for stopping or for choosing the Hub checkpoint
+quick_eval_every: 30
+quick_eval_packs_per_language: 1
+
+# owner 2026-10-14: never end the run without telling him first; at patience exhaustion the trainer only writes STOP_PROPOSED and continues
+early_stop_action: propose
+
+keep_prev_checkpoint: true            # owner 2026-10-15: also keep the previous resumable checkpoint (last_prev/, hard link, no extra write)

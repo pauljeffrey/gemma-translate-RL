@@ -1,0 +1,73 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+# Clean rerun, arm A0-C: A0 continued with SFT for the GPU time of RL stage A, on the stage-B UniMax schedule (control for RL vs more SFT)
+# Pre-registration: reports/preregistration_${S3_PREFIX}.md + AMENDMENT_1..4 (reports/data/prereg_clean_2026-10-28/).
+#   python -m gemma_mt.train_sft --config configs/clean_rerun_sft/a0_control.yaml [key=value ...]
+# Run from the folder that holds packed/, sched/ (built by data_pipeline/sft_clean/chain: pack.py prepare, sampler.py plan/arms/select/subset/head); every path below is relative to it.
+# Schedule: python sampler.py plan --stage B --packed-dir packed/train --seen-from sched/A0 --steps <N> --out sched/B_ctrl --seed 1234
+#   N = optimizer steps that fit the measured GPU time of RL stage A (lead computes it from the stage-A timing; 22,888 = the full 3B-token stage B). UniMax 1..2 passes per language, 20 priority languages x4,
+#   packs A0 already used come last in each language's first pass.
+# [decision] lr 5e-5 as every SFT arm; the old stage B used 4e-5.
+model_name: google/gemma-3-270m-it
+tokenizer_name: null
+data_dir: packed
+out_dir: runs/a0_control
+init_from: runs/a0/last/trainer_state.pt   # weights of the finished A0 run; fresh optimizer, fresh LR schedule over THIS schedule (step counter continues)
+
+# ---- the packs of every step come from a schedule file (sha256, length and per-language draws are logged and saved to runs/a0_control/schedule_manifest.json)
+schedule_file: sched/B_ctrl/schedule.npy
+schedule_require_sidecar: true       # the sidecar (schedule.json, written by sampler.py) pins the schedule and the packed dataset it was drawn on
+max_steps: 0                         # the file length is the run length (must be 0 or equal to it)
+epochs: 1.0                          # ignored with a schedule file
+language_alpha: null
+unimax_budget_tokens: 0
+
+attn_implementation: varlen            # 2026-10-30 benchmark on the A40: 3.2x faster than sdpa+explicit mask+chunked loss, same step-1 loss (6.5148 vs 6.5150)
+mask_mode: flash
+loss_impl: fused
+param_dtype: float32                 # fp32 master weights ...
+autocast_dtype: bfloat16             # ... with bf16 autocast
+gradient_checkpointing: false        # 270M fits without it (17 GB at micro-batch 2 on the A40)
+loss_chunk_tokens: 512
+
+# batch = micro_batch_size x grad_accum_steps x 1 GPU x 4,096 = 2 x 16 x 4,096 = 131,072 tokens (32 packs) per optimizer step: the width of the schedule files
+micro_batch_size: 4
+grad_accum_steps: 8
+
+# ---- optimizer (Amendment 4 item 3): Muon on the 2-D decoder matrices, AdamW on the embedding / norms; one learning rate (5e-5), update RMS matched to AdamW (adjust_lr_fn match_rms_adamw); settings of configs/sft_unimax.yaml except lr 4e-5 -> 5e-5 (owner, Amendment 4)
+optimizer: muon
+muon_momentum: 0.95
+muon_ns_steps: 5
+learning_rate: 5.0e-5
+min_lr_ratio: 0.1                    # cosine to 10% of the peak
+warmup_steps: 0
+warmup_ratio: 0.03                   # 3% of the schedule length, linear
+weight_decay: 0.01
+beta1: 0.9
+beta2: 0.95
+eps: 1.0e-8
+grad_clip: 1.0
+
+# ---- evaluation / stopping: early stopping is INERT (patience 0: the validation loss is logged and the best is tracked, but nothing ends the run)
+eval_every: 250
+eval_max_packs: 0
+val_metric: macro
+min_val_tokens_macro: 2000
+early_stopping_patience: 0
+early_stopping_min_delta: 0.0
+early_stop_action: propose           # (not used with patience 0) never ends a run by itself
+min_epochs: 1.0
+quick_eval_every: 0
+save_every: 20                         # owner 2026-10-31: checkpoint (weights + optimizer + RNG) every 20 steps in every phase
+log_every: 10
+keep_prev_checkpoint: true
+keep_single_checkpoint: true         # local disk: last/ (resumable) and last_prev/ only
+resume: true
+seed: 1234
+wandb_project: null
+run_name: a0_control
+
+# ---- Hub: PRIVATE, ${HF_ORG} organisation (needs HF_WRITE_TOKEN in the environment; never write a token here). The final weights are always pushed (tag step-<N>).
+hub_repo_id: ${HF_ORG}/gemma3-270m-clean-a0-control
+hub_private: true                    # explicit: the trainer's default is also private, this line makes the intent unmistakable
+hub_push_every: 2000
+hub_push_best_only: false

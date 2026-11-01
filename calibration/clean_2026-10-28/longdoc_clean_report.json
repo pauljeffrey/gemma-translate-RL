@@ -1,0 +1,304 @@
+{
+ "n_docs": {
+  "flores_cal": 1080,
+  "afriscience_train": 5739
+ },
+ "buckets": [
+  {
+   "bucket": 0,
+   "n": 2219,
+   "nearest_bucket_used": false,
+   "kinds": {
+    "human_flores_cal": 195,
+    "human_afriscience_train": 2024
+   },
+   "p995_excess": {
+    "rep4": 0.11764705882352941,
+    "cover8": 0.2,
+    "dup_sent": 0.0,
+    "dup_block": 0.0,
+    "cycle": 0.0
+   },
+   "limit": {
+    "rep4": 0.1353,
+    "cover8": 0.23,
+    "dup_sent": 0.03,
+    "dup_block": 0.03,
+    "cycle": 0.02
+   },
+   "limit_by_kind": {
+    "human_afriscience_train": {
+     "rep4": 0.1362,
+     "cover8": 0.23,
+     "dup_sent": 0.03,
+     "dup_block": 0.03,
+     "cycle": 0.02
+    },
+    "human_flores_cal": {
+     "rep4": 0.1045,
+     "cover8": 0.04,
+     "dup_sent": 0.03,
+     "dup_block": 0.03,
+     "cycle": 0.02
+    }
+   }
+  },
+  {
+   "bucket": 1,
+   "n": 2563,
+   "nearest_bucket_used": false,
+   "kinds": {
+    "human_flores_cal": 345,
+    "human_afriscience_train": 2218
+   },
+   "p995_excess": {
+    "rep4": 0.1144578313253012,
+    "cover8": 0.15503875968992248,
+    "dup_sent": 0.004068871540822444,
+    "dup_block": 0.0,
+    "cycle": 0.0
+   },
+   "limit": {
+    "rep4": 0.1316,
+    "cover8": 0.1783,
+    "dup_sent": 0.03,
+    "dup_block": 0.03,
+    "cycle": 0.02
+   },
+   "limit_by_kind": {
+    "human_afriscience_train": {
+     "rep4": 0.1316,
+     "cover8": 0.1783,
+     "dup_sent": 0.03,
+     "dup_block": 0.03,
+     "cycle": 0.02
+    },
+    "human_flores_cal": {
+     "rep4": 0.1,
+     "cover8": 0.0958,
+     "dup_sent": 0.03,
+     "dup_block": 0.03,
+     "cycle": 0.02
+    }
+   }
+  },
+  {
+   "bucket": 2,
+   "n": 1478,
+   "nearest_bucket_used": false,
+   "kinds": {
+    "human_flores_cal": 270,
+    "human_afriscience_train": 1208
+   },
+   "p995_excess": {
+    "rep4": 0.11449614170611036,
+    "cover8": 0.11577608142493638,
+    "dup_sent": 0.011701900205788818,
+    "dup_block": 0.0,
+    "cycle": 0.0
+   },
+   "limit": {
+    "rep4": 0.1317,
+    "cover8": 0.1331,
+    "dup_sent": 0.03,
+    "dup_block": 0.03,
+    "cycle": 0.02
+   },
+   "limit_by_kind": {
+    "human_afriscience_train": {
+     "rep4": 0.1331,
+     "cover8": 0.1332,
+     "dup_sent": 0.03,
+     "dup_block": 0.03,
+     "cycle": 0.02
+    },
+    "human_flores_cal": {
+     "rep4": 0.1,
+     "cover8": 0.0584,
+     "dup_sent": 0.03,
+     "dup_block": 0.03,
+     "cycle": 0.02
+    }
+   }
+  },
+  {
+   "bucket": 3,
+   "n": 559,
+   "nearest_bucket_used": false,
+   "kinds": {
+    "human_flores_cal": 270,
+    "human_afriscience_train": 289
+   },
+   "p995_excess": {
+    "rep4": 0.09367885374584742,
+    "cover8": 0.08015784725566052,
+    "dup_sent": 0.01407884151246983,
+    "dup_block": 0.0,
+    "cycle": 0.0
+   },
+   "limit": {
+    "rep4": 0.1077,
+    "cover8": 0.0922,
+    "dup_sent": 0.03,
+    "dup_block": 0.03,
+    "cycle": 0.02
+   },
+   "limit_by_kind": {
+    "human_afriscience_train": {
+     "rep4": 0.1104,
+     "cover8": 0.1047,
+     "dup_sent": 0.0656,
+     "dup_block": 0.03,
+     "cycle": 0.02
+    },
+    "human_flores_cal": {
+     "rep4": 0.1,
+     "cover8": 0.04,
+     "dup_sent": 0.03,
+     "dup_block": 0.03,
+     "cycle": 0.02
+    }
+   }
+  },
+  {
+   "bucket": 4,
+   "n": 559,
+   "nearest_bucket_used": true,
+   "kinds": {
+    "human_flores_cal": 270,
+    "human_afriscience_train": 289
+   },
+   "p995_excess": {
+    "rep4": 0.09367885374584742,
+    "cover8": 0.08015784725566052,
+    "dup_sent": 0.01407884151246983,
+    "dup_block": 0.0,
+    "cycle": 0.0
+   },
+   "limit": {
+    "rep4": 0.1077,
+    "cover8": 0.0922,
+    "dup_sent": 0.03,
+    "dup_block": 0.03,
+    "cycle": 0.02
+   },
+   "limit_by_kind": {
+    "human_afriscience_train": {
+     "rep4": 0.1104,
+     "cover8": 0.1047,
+     "dup_sent": 0.0656,
+     "dup_block": 0.03,
+     "cycle": 0.02
+    },
+    "human_flores_cal": {
+     "rep4": 0.1,
+     "cover8": 0.04,
+     "dup_sent": 0.03,
+     "dup_block": 0.03,
+     "cycle": 0.02
+    }
+   }
+  },
+  {
+   "bucket": 5,
+   "n": 559,
+   "nearest_bucket_used": true,
+   "kinds": {
+    "human_flores_cal": 270,
+    "human_afriscience_train": 289
+   },
+   "p995_excess": {
+    "rep4": 0.09367885374584742,
+    "cover8": 0.08015784725566052,
+    "dup_sent": 0.01407884151246983,
+    "dup_block": 0.0,
+    "cycle": 0.0
+   },
+   "limit": {
+    "rep4": 0.1077,
+    "cover8": 0.0922,
+    "dup_sent": 0.03,
+    "dup_block": 0.03,
+    "cycle": 0.02
+   },
+   "limit_by_kind": {
+    "human_afriscience_train": {
+     "rep4": 0.1104,
+     "cover8": 0.1047,
+     "dup_sent": 0.0656,
+     "dup_block": 0.03,
+     "cycle": 0.02
+    },
+    "human_flores_cal": {
+     "rep4": 0.1,
+     "cover8": 0.04,
+     "dup_sent": 0.03,
+     "dup_block": 0.03,
+     "cycle": 0.02
+    }
+   }
+  }
+ ],
+ "fp_in_sample": {
+  "0:all": {
+   "n": 2219,
+   "any": 0.004506534474988734,
+   "ge_half": 0.0013519603424966202
+  },
+  "0:human_afriscience_train": {
+   "n": 2024,
+   "any": 0.004940711462450593,
+   "ge_half": 0.0014822134387351778
+  },
+  "0:human_flores_cal": {
+   "n": 195,
+   "any": 0.0,
+   "ge_half": 0.0
+  },
+  "1:all": {
+   "n": 2563,
+   "any": 0.005852516582130316,
+   "ge_half": 0.0003901677721420211
+  },
+  "1:human_afriscience_train": {
+   "n": 2218,
+   "any": 0.005861136158701533,
+   "ge_half": 0.0004508566275924256
+  },
+  "1:human_flores_cal": {
+   "n": 345,
+   "any": 0.005797101449275362,
+   "ge_half": 0.0
+  },
+  "2:all": {
+   "n": 1478,
+   "any": 0.007442489851150203,
+   "ge_half": 0.0
+  },
+  "2:human_afriscience_train": {
+   "n": 1208,
+   "any": 0.009105960264900662,
+   "ge_half": 0.0
+  },
+  "2:human_flores_cal": {
+   "n": 270,
+   "any": 0.0,
+   "ge_half": 0.0
+  },
+  "3:all": {
+   "n": 559,
+   "any": 0.007155635062611807,
+   "ge_half": 0.0
+  },
+  "3:human_afriscience_train": {
+   "n": 289,
+   "any": 0.01384083044982699,
+   "ge_half": 0.0
+  },
+  "3:human_flores_cal": {
+   "n": 270,
+   "any": 0.0,
+   "ge_half": 0.0
+  }
+ }
+}

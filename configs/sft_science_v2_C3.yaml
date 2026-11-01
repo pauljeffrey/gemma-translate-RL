@@ -1,0 +1,67 @@
+# MIXTURE v2 variant C3 (agent R11, 2026-10-22): copy of configs/sft_science.yaml with the data paths changed; every hyper-parameter is R4's (lr 3e-6, 65,536 tokens / step, cosine, 6 % warm-up, no weight decay).
+# Data /workspace/jobs/r11/mix_v2C3: 115,767 samples, 3,096 packs of 8192, 25,351,639 tokens -> 387 optimizer steps at 65,536 tokens (epochs: 1.0; was 293 for mix_v1). Token shares: science 0.261, replay 0.354, archive 0.041, longdoc 0.111, anchor 0.055, r14_teacher 0.176.
+# R7's copy of sft_science.yaml differs from R4's in two lines (eval_every 50, gradient_checkpointing false on an empty 96 GB card): apply them on the command line if wanted: eval_every=50 gradient_checkpointing=false.
+# SPDX-License-Identifier: AGPL-3.0-or-later
+# SHORT SCIENCE-SFT STAGE (D-58, 2026-10-21): between the general RL (final model = step 1433) and the science RL.
+#   python -m gemma_mt.train_sft --config configs/sft_science.yaml [key=value ...]
+# Data: scripts/build_sft_science_mix.py (AfriScience-MT TRAIN windows, 2 passes = "two epochs", ~35 % of the tokens, + UniMax-capped replay of the original
+#       SFT windows for ALL 77 languages, ~65 %). The data already holds the two science passes, so `epochs: 1.0` below is ONE pass over the packs.
+# Report with the reasoning for every value: reports/sft_science_stage_2026-10-21.md
+model_name: /workspace/sft_build/runs/final_1433     # the RL-trained model: weights AND tokenizer (fingerprint-checked against the data). The run starts here, fresh optimizer.
+tokenizer_name: null
+data_dir: /workspace/jobs/r11/mix_v2C3                  # train/ (science + replay), val/ (replay, 77 languages), val_sci/ (AfriScience-MT DEV)
+out_dir: /workspace/jobs/r11/runs/sci_sft_v2C3
+
+attn_implementation: varlen          # torch's FlashAttention varlen kernel on the flattened stream, as in the SFT runs (D-35)
+mask_mode: auto
+loss_impl: fused                     # Triton log-sum-exp loss with fp32 weight-gradient accumulation (D-36)
+param_dtype: float32                 # fp32 master weights: an lr of 3e-6 on bf16 weights (spacing ~1e-4 relative) would round most updates away
+autocast_dtype: bfloat16
+
+# tokens per optimizer step = 2 x 4 x 8192 = 65,536 (half of the SFT runs' 131,072): ~290 steps over the 19.1 M training tokens instead of ~145
+micro_batch_size: 2
+grad_accum_steps: 4
+epochs: 1.0
+max_steps: 0
+
+optimizer: adamw
+learning_rate: 3.0e-6                # peak. Range considered 1e-6 .. 5e-6; see the report (RL ran at 2e-6, the SFT cosine ended at 5e-6, 3e-6 x ~290 steps moves each weight by <= ~0.1 %)
+min_lr_ratio: 0.1                    # cosine to 3e-7
+warmup_steps: 0
+warmup_ratio: 0.06                   # ~17 steps: the Adam second-moment estimate is fresh (the RL optimizer state is not used), the first steps must be small
+weight_decay: 0.0                    # decoupled decay shrinks weights towards ZERO, not towards the start; at lr 3e-6 x 290 steps even 0.01 would move a weight by 1e-5 relative: no effect, so 0.0
+beta1: 0.9
+beta2: 0.95
+eps: 1.0e-8
+grad_clip: 1.0
+
+# ---- drift control (the actual tools; the first two are the small lr and the short run)
+l2sp_coef: 0.0                       # >0: L2-SP pull towards the starting weights, added after clipping. Suggested if the forgetting check fails: 0.3, then 1.0 (see the report)
+track_drift: true                    # logs drift_l2 / drift_rel (relative to ||theta_start||) / embedding vs layers / l2sp_penalty every log_every steps
+extra_val_splits: [val_sci]          # AfriScience-MT dev loss next to the replay validation loss (val/)
+eval_at_start: true                  # step-0 validation loss of the untouched RL model = the baseline for the deltas
+
+eval_every: 100                      # evaluations at 0 (start), 100, 200 and the last step; each reads ~2.2 M tokens (replay val + science dev) = ~10 training steps of time
+eval_max_packs: 0
+early_stopping_patience: 0           # fixed length; the choice among checkpoints is made on chrF++ (scripts/sft_stage_eval.py + interpolation sweep), not on loss
+early_stopping_min_delta: 0.0
+min_epochs: 0.0
+early_stop_action: stop
+val_metric: macro                    # mean of per-language losses of val/ (the 77-language forgetting monitor)
+min_val_tokens_macro: 2000
+save_every: 50
+log_every: 5
+save_optimizer: false                # weights-only trainer_state.pt (1.1 GB): interpolate_weights.py reads it
+keep_single_checkpoint: true         # disk is tight on the rental: only last/trainer_state.pt
+keep_prev_checkpoint: false
+resume: true
+resume_optimizer: true
+optimizer_rewarmup_steps: 10         # after a crash-resume (weights only) the lr ramps up again over 10 steps
+
+gradient_checkpointing: true         # measured 2026-10-21 on the shared RTX PRO 6000 under a 10 GiB cap: micro_batch 2 x 8,192 tokens peaks at 6.5 GiB with it; WITHOUT it micro_batch 1 does not fit in 10 GiB
+                                     # (~19,000 tokens/s with it while another job used the card). On an empty card `false` is ~25 % faster (untested).
+loss_chunk_tokens: 512
+seed: 1234
+wandb_project: null
+run_name: sci_sft_v2C3
+hub_repo_id: null                    # NOTHING is pushed

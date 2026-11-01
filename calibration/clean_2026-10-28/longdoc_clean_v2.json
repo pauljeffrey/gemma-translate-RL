@@ -1,0 +1,70 @@
+{
+ "edges": [
+  60,
+  230,
+  560,
+  1000,
+  2000
+ ],
+ "t0": [
+  {
+   "rep4": 0.1045,
+   "cover8": 0.04,
+   "dup_sent": 0.03,
+   "dup_block": 0.03,
+   "cycle": 0.02
+  },
+  {
+   "rep4": 0.1,
+   "cover8": 0.0958,
+   "dup_sent": 0.03,
+   "dup_block": 0.03,
+   "cycle": 0.02
+  },
+  {
+   "rep4": 0.1,
+   "cover8": 0.0584,
+   "dup_sent": 0.03,
+   "dup_block": 0.03,
+   "cycle": 0.02
+  },
+  {
+   "rep4": 0.1,
+   "cover8": 0.04,
+   "dup_sent": 0.03,
+   "dup_block": 0.03,
+   "cycle": 0.02
+  },
+  {
+   "rep4": 0.1,
+   "cover8": 0.04,
+   "dup_sent": 0.03,
+   "dup_block": 0.03,
+   "cycle": 0.02
+  },
+  {
+   "rep4": 0.1,
+   "cover8": 0.04,
+   "dup_sent": 0.03,
+   "dup_block": 0.03,
+   "cycle": 0.02
+  }
+ ],
+ "t1": {
+  "rep4": 0.6,
+  "cover8": 0.5,
+  "dup_sent": 0.5,
+  "dup_block": 0.5,
+  "cycle": 0.5
+ },
+ "tail_gap": null,
+ "meta": {
+  "quantile": 0.995,
+  "margin": 1.15,
+  "n_docs": 1080,
+  "split": "calibration (H_cal v2) + AfriScience-MT train (clean)",
+  "source": "H_cal v2 FLORES+ pairs stitched by article (45 languages) ONLY (owner decision 2026-10-29: no AfriScience windows, no NLLB, no SmolDoc, no AfriLongDoc)",
+  "tail_gap": "NOT FITTED: needs QE-ensemble chunk rewards of the human documents (GPU), see the report",
+  "limits_replaced": "t0 from limit_by_kind.human_flores_cal; buckets 4-5 = bucket 3 (nearest, as before)"
+ }
+}
