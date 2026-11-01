@@ -1,0 +1,19 @@
+# Runtime (GPU box). Versions are lower bounds; the module was developed against the pins in the comments.
+torch>=2.6                 # developed with 2.14. >= 2.6 is REQUIRED for transformers' packed-sequence masks
+transformers>=4.53,<5      # developed with 4.57.6. 4.53 = masking_utils with per-layer-type masks for Gemma 3
+                           # (unbabel-comet pins transformers<5 as well)
+numpy>=1.24,<2             # unbabel-comet pins numpy<2
+pyyaml>=6.0
+pyarrow>=14                # parquet in/out
+sacrebleu>=2.4             # chrF++, BLEU, spBLEU (tokenizer "flores200")
+unbabel-comet>=2.2.4       # AfriCOMET (masakhane/africomet-*-stl-1.1)
+huggingface_hub>=0.24
+datasets>=2.19             # FLORES+ from the Hub (gated); only used by gemma_mt.eval.benchmarks
+sentencepiece>=0.2         # Gemma tokenizer
+safetensors>=0.4
+jinja2>=3.1                # chat templates
+# Optional
+# flash-attn>=2.5          # padding-free varlen attention (CUDA only; install with --no-build-isolation)
+# fasttext>=0.9.2          # GlotLID language-ID guard in the RL reward (reward.lid_enabled)
+# wandb>=0.17              # wandb_project in the configs
+# pytest>=8                # tests (tests/run_tests.py works without it)

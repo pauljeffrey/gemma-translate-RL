@@ -1,0 +1,20 @@
+gemma_mt - SPDX-License-Identifier: AGPL-3.0-or-later (see LICENSE; full licence text still to be added, see TODO there)
+
+Scope of the licence
+  The AGPL-3.0-or-later notice covers the SOURCE CODE of this module only.
+  * It says nothing about, and cannot change, the licence terms of model weights produced with it. Fine-tuned
+    Gemma 3 weights are derivatives of Gemma and are governed by the Gemma Terms of Use
+    (https://ai.google.dev/gemma/terms); model cards generated here use `license: gemma` plus a note.
+  * Datasets prepared for or by this module keep the licences of their sources; dataset cards generated here use
+    cc-by-4.0 (attribution only, closed / commercial reuse allowed) and tell users to check the source licences.
+  * Model cards add a contract offer: whoever publishes or shares a dataset generated with the model grants the
+    publisher a licence to train on it (closed models included). Nobody is obliged to open-source their own models.
+  * Nothing in this repository claims that any licence can force third parties to release data produced with the
+    models; the grant above binds only people who accept it.
+
+Third-party components used at run time (not bundled): PyTorch, Hugging Face transformers / datasets /
+huggingface_hub, sacrebleu, unbabel-comet (AfriCOMET), flash-attn (optional), fastText / GlotLID (optional).
+The language list, AfriCOMET language support and GlotLID label sets were copied from the SabiYarn research
+repository this module was split from (rl/bin_data.py, data_pipeline/africomet_translation/sources.py, lid.py), and the
+reward shaping and calibration logic is a port of that repository's rl/shaping.py and
+rlhf/scripts/calibrate_shaping.py.
