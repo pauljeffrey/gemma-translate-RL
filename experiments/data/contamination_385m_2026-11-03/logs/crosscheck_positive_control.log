@@ -1,0 +1,5 @@
+protected sentences 326777 grams 4633707 40s
+s1[0:100000] samples 100000: scanner exact-hit samples 531 (>=3 tok 72) | contam_audit_12 R1|R2 samples 72 | R3 any 8-gram 72 | R3 near>=50% 72
+   scanner>=3tok only: 0 | contam_audit_12 only: 0 | both: 72
+g0[2000000:2100000] samples 100000: scanner exact-hit samples 241 (>=3 tok 139) | contam_audit_12 R1|R2 samples 139 | R3 any 8-gram 137 | R3 near>=50% 136
+   scanner>=3tok only: 0 | contam_audit_12 only: 0 | both: 139

@@ -1,0 +1,13 @@
+benchmark,protected,languages,rows,distinct_english,distinct_english_exposed,distinct_english_exposed_ge3tok,n_contaminated,n_sentence_rule,n_near,n_pair,n_ref_same_iso,n_ref_any,n_en_shares_8gram,n_strict,n_contaminated_ge3tok,n_pair_ge3tok,n_ref_same_iso_ge3tok,pct_contaminated,pct_pair,pct_strict,pct_contaminated_ge3tok,only_in_variant_scan,only_in_base_scan
+flores_plus,1,54,54648,1012,0,0,0,0,0,0,0,0,54,0,0,0,0,0.0,0.0,0.0,0.0,0,0
+ntrex,1,24,47928,1993,5,0,120,120,0,13,44,52,24,139,0,0,0,0.25,0.027,0.29,0.0,0,0
+mafand,1,15,20009,17738,85,0,94,94,0,40,54,68,15,103,0,0,0,0.47,0.2,0.515,0.0,1,0
+smol_sent,1,45,38833,863,1,0,45,45,0,0,1,2,45,45,0,0,0,0.116,0.0,0.116,0.0,0,0
+ibom_mt,1,2,2024,1012,0,0,0,0,0,0,0,0,2,0,0,0,0,0.0,0.0,0.0,0.0,0,0
+flores_moz,1,1,1012,1012,0,0,0,0,0,0,0,0,1,0,0,0,0,0.0,0.0,0.0,0.0,0,0
+glot_story,1,8,3426,937,9,0,15,15,0,0,2,3,14,17,0,0,0,0.438,0.0,0.496,0.0,0,0
+salt,1,5,2500,500,0,0,0,0,0,0,1,1,0,1,0,0,0,0.0,0.0,0.04,0.0,0,0
+flores_plus_dev_heldout,0,54,30078,557,0,0,0,0,0,0,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,0,0
+flores_plus_dev_trainhalf,0,54,23760,440,439,439,23706,20574,0,7655,7681,7710,23490,23706,23706,7655,7680,99.773,32.218,99.773,99.773,0,0
+afriscience_test,0,6,5820,970,0,0,0,0,0,0,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,0,0
+afriscience_dev,0,6,5058,843,0,0,0,0,0,0,2,2,6,2,0,0,0,0.0,0.0,0.04,0.0,0,0

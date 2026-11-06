@@ -1,0 +1,111 @@
+max |published-file SFT - weak-group SFT| = 0.0
+Afrique languages (en->xx per-language, AfroBench-Lite): ['afr', 'amh', 'ewe', 'hau', 'ibo', 'kin', 'lin', 'lug', 'nya', 'orm', 'sna', 'som', 'sot', 'swh', 'tir', 'tsn', 'twi', 'wol', 'xho', 'yor', 'zul']
+                         a                        b  n_languages  a_macro  b_macro  diff    lo    hi  n_a_ge_b
+0        RL stage A beam-4        NLLB-3.3B our run           43    36.12    37.56 -1.44 -2.34 -0.56        13
+1  RL stage A greedy (250)        NLLB-3.3B our run           43    34.65    37.56 -2.91 -3.96 -1.86         8
+2  RL stage A beam-4 (100)  RL stage A greedy (250)           43    36.12    34.65  1.47  1.17  1.79        39
+                                    a                           b  n_languages  a_macro  b_macro    diff      lo      hi  n_a_ge_b
+0  RL stage A beam-4 drafts AfriCOMET  NLLB-3.3B drafts AfriCOMET           40   0.6414   0.6709 -0.0294 -0.0366 -0.0222         5
+MADLAD langs: 35 {'madlad3b_100': 28.27, 'rl_stageA_beam4_100': 35.29, 'rl_stageA_greedy_250': 33.85}
+                    model  n_languages  ours_macro               system  system_macro   diff  diff_lo  diff_hi  macro_ratio  median_lang_ratio  n_ours_ge  n_ours_ge_minus1  n_ours_ge_80pct  n_ours_ge_50pct
+0                     SFT           43       26.30            NLLB-3.3B         38.80 -12.50   -14.56   -10.40         0.68               0.66          1                 1               11               35
+1                     SFT           43       26.30            NLLB-1.3B         38.09 -11.79   -13.75    -9.87         0.69               0.63          2                 3               11               36
+2                     SFT           43       26.30  NLLB-distilled-1.3B         38.34 -12.04   -14.01   -10.07         0.69               0.63          1                 3               11               36
+3                     SFT           43       26.30       NLLB-MoE-54.5B         39.08 -12.78   -14.79   -10.86         0.67               0.64          0                 0               11               35
+4   RL stage A (step 400)           43       34.91            NLLB-3.3B         38.80  -3.89    -4.95    -2.80         0.90               0.90          7                 9               36               43
+5   RL stage A (step 400)           43       34.91            NLLB-1.3B         38.09  -3.18    -4.11    -2.18         0.92               0.92          5                 9               41               43
+6   RL stage A (step 400)           43       34.91  NLLB-distilled-1.3B         38.34  -3.43    -4.37    -2.47         0.91               0.91          4                 8               41               43
+7   RL stage A (step 400)           43       34.91       NLLB-MoE-54.5B         39.08  -4.17    -5.24    -3.10         0.89               0.90          5                 7               35               43
+8       B1 best (step 50)           43       35.25            NLLB-3.3B         38.80  -3.55    -4.58    -2.48         0.91               0.91          7                 9               38               43
+9       B1 best (step 50)           43       35.25            NLLB-1.3B         38.09  -2.84    -3.75    -1.89         0.93               0.92          6                11               41               43
+10      B1 best (step 50)           43       35.25  NLLB-distilled-1.3B         38.34  -3.09    -4.00    -2.15         0.92               0.92          4                10               41               43
+11      B1 best (step 50)           43       35.25       NLLB-MoE-54.5B         39.08  -3.83    -4.90    -2.79         0.90               0.92          5                 8               35               43
+12             mixed best           43       35.54            NLLB-3.3B         38.80  -3.26    -4.29    -2.20         0.92               0.92          7                 9               40               43
+13             mixed best           43       35.54            NLLB-1.3B         38.09  -2.55    -3.45    -1.62         0.93               0.93          7                12               41               43
+14             mixed best           43       35.54  NLLB-distilled-1.3B         38.34  -2.80    -3.73    -1.88         0.93               0.93          7                11               41               43
+15             mixed best           43       35.54       NLLB-MoE-54.5B         39.08  -3.54    -4.62    -2.52         0.91               0.92          6                 9               36               43
+16   weak final (step 85)           43       35.50            NLLB-3.3B         38.80  -3.30    -4.35    -2.23         0.91               0.92          7                 8               41               43
+17   weak final (step 85)           43       35.50            NLLB-1.3B         38.09  -2.59    -3.50    -1.65         0.93               0.93          8                11               41               43
+18   weak final (step 85)           43       35.50  NLLB-distilled-1.3B         38.34  -2.85    -3.77    -1.90         0.93               0.93          6                11               41               43
+19   weak final (step 85)           43       35.50       NLLB-MoE-54.5B         39.08  -3.58    -4.63    -2.52         0.91               0.92          6                 8               37               43
+     tertile   n  nllb_3p3b  nllb_moe_54p5b   sft  sft_pct_of_nllb3p3b  stageA  stageA_pct_of_nllb3p3b  b1best  b1best_pct_of_nllb3p3b  mixedbest  mixedbest_pct_of_nllb3p3b  weakfinal  weakfinal_pct_of_nllb3p3b
+0  high (14)  14       51.1            50.6  38.4                 75.3    46.5                    91.1    46.7                    91.4       46.8                       91.7       46.7                       91.5
+1   mid (14)  14       39.4            39.6  24.9                 63.2    33.9                    86.1    34.3                    87.1       34.6                       87.7       34.5                       87.5
+2  tail (15)  15       26.8            27.9  16.3                 60.7    25.0                    93.4    25.5                    95.1       25.9                       96.8       26.0                       96.9
+3     all 43  43       38.8            39.1  26.3                 67.8    34.9                    90.0    35.3                    90.9       35.5                       91.6       35.5                       91.5
+                   model                                                           rule  n_languages   ours  nllb_3p3b   diff     lo     hi  ratio
+0                    SFT     languages with finished>=0.99 and repeat<=0.02 (own model)            4  52.21       56.7  -4.49  -6.63  -2.44   0.92
+1             mixed best     languages with finished>=0.99 and repeat<=0.02 (own model)           43  35.54       38.8  -3.26  -4.32  -2.19   0.92
+2                    SFT  fixed language set = languages where the mixed model is clean           43  26.30       38.8 -12.50 -14.57 -10.43   0.68
+3  RL stage A (step 400)  fixed language set = languages where the mixed model is clean           43  34.91       38.8  -3.89  -4.98  -2.79   0.90
+4      B1 best (step 50)  fixed language set = languages where the mixed model is clean           43  35.25       38.8  -3.55  -4.60  -2.48   0.91
+5             mixed best  fixed language set = languages where the mixed model is clean           43  35.54       38.8  -3.26  -4.30  -2.21   0.92
+6   weak final (step 85)  fixed language set = languages where the mixed model is clean           43  35.50       38.8  -3.30  -4.36  -2.22   0.91
+                          system  n_languages  system_macro    sft  stageA  b1best  mixedbest  weakfinal  mixed_minus_system  n_lang_mixed_ge_system
+7      AfriqueQwen3.5-4B-50Langs           21         41.71  32.37   39.13   39.32       39.4      39.26               -2.31                       4
+0               AfriqueGemma-12B           21         38.58  32.37   39.13   39.32       39.4      39.26                0.83                       6
+2                AfriqueLlama-8B           21         36.71  32.37   39.13   39.32       39.4      39.26                2.69                       6
+8   AfriqueQwen3.5-4B-ExtendedCM           21         36.68  32.37   39.13   39.32       39.4      39.26                2.72                       6
+3                AfriqueQwen-14B           21         36.67  32.37   39.13   39.32       39.4      39.26                2.74                       7
+6              AfriqueQwen3.5-4B           21         36.59  32.37   39.13   39.32       39.4      39.26                2.81                       6
+5                 AfriqueQwen-8B           21         35.06  32.37   39.13   39.32       39.4      39.26                4.35                      12
+4                 AfriqueQwen-4B           21         33.10  32.37   39.13   39.32       39.4      39.26                6.31                      13
+1                AfriqueGemma-4B           21         31.12  32.37   39.13   39.32       39.4      39.26                8.28                      17
+12           Lugha-Llama-8B-wura           21         27.40  32.37   39.13   39.32       39.4      39.26               12.00                      20
+9                     Gemma3-12B           21         18.82  32.37   39.13   39.32       39.4      39.26               20.58                      21
+16                    Qwen3.5-4B           21         18.78  32.37   39.13   39.32       39.4      39.26               20.62                      21
+11                   Llama3.1-8B           21         16.45  32.37   39.13   39.32       39.4      39.26               22.96                      21
+10                     Gemma3-4B           21         14.78  32.37   39.13   39.32       39.4      39.26               24.62                      21
+13                     Qwen3-14B           21         14.59  32.37   39.13   39.32       39.4      39.26               24.81                      21
+15                      Qwen3-8B           21         11.28  32.37   39.13   39.32       39.4      39.26               28.12                      21
+14                      Qwen3-4B           21          9.87  32.37   39.13   39.32       39.4      39.26               29.54                      21
+                                                          a                                                     b  n_languages  a_macro  b_macro  diff    lo    hi  n_a_ge_b
+0                    RL stage A beam-4 (100 same sentences)        NLLB-3.3B greedy, our run (100 same sentences)           50    32.65    36.32 -3.67 -5.89 -1.82        13
+1  RL stage A greedy (250 sentences, superset not verified)                       NLLB-3.3B greedy, our run (100)           50    31.07    36.32 -5.25 -7.59 -3.30         8
+2                        NLLB-3.3B, our run (100 sentences)                      NLLB-3.3B published (1012, beam)           43    37.56    38.80 -1.23 -1.60 -0.86         7
+3                  RL stage A greedy 250-sentence subsample  RL stage A greedy 1012 sentences (sample-size check)           50    31.07    31.36 -0.29 -0.46 -0.12        14
+4                                    mixed best greedy 1012        NLLB-3.3B published 1012 (43 shared languages)           43    35.54    38.80 -3.26 -4.29 -2.19         7
+    iso  nllb_3p3b    sft  mixedbest  mixed_minus_nllb3p3b  mixed_over_nllb3p3b  mixed_finished  mixed_repeat nllb_tertile
+42  yor       24.9  21.32      30.33                  5.43                 1.22             1.0          0.00    tail (15)
+35  fon       19.3  20.17      22.25                  2.95                 1.15             1.0          0.00    tail (15)
+33  dyu       16.2   9.90      18.97                  2.77                 1.17             1.0          0.00    tail (15)
+41  wol       28.1  26.87      30.58                  2.48                 1.09             1.0          0.00    tail (15)
+15  kam       23.6  17.22      25.92                  2.32                 1.10             1.0          0.00    tail (15)
+18  kmb       24.4  16.02      26.62                  2.22                 1.09             1.0          0.00    tail (15)
+28  umb       23.6  14.80      25.46                  1.86                 1.08             1.0          0.01    tail (15)
+12  afr       64.7  63.13      64.13                 -0.57                 0.99             1.0          0.00    high (14)
+37  ibo       41.1  37.82      40.14                 -0.96                 0.98             1.0          0.00     mid (14)
+29  nso       50.3  31.58      49.01                 -1.29                 0.97             1.0          0.00    high (14)
+39  mos       24.1  14.09      22.79                 -1.31                 0.95             1.0          0.01    tail (15)
+25  swh       60.0  56.24      58.36                 -1.64                 0.97             1.0          0.00    high (14)
+20  lua       35.2  17.18      33.37                 -1.83                 0.95             1.0          0.00    tail (15)
+2   sag       36.5  19.68      34.31                 -2.19                 0.94             1.0          0.00     mid (14)
+27  tum       36.6  25.40      34.27                 -2.33                 0.94             1.0          0.00     mid (14)
+22  nya       45.3  36.88      42.21                 -3.09                 0.93             1.0          0.00    high (14)
+5   som       42.8  35.47      39.71                 -3.09                 0.93             1.0          0.00     mid (14)
+8   xho       48.6  43.56      45.43                 -3.17                 0.93             1.0          0.00    high (14)
+40  twi       38.3  27.54      35.07                 -3.23                 0.92             1.0          0.00     mid (14)
+26  tso       50.2  32.92      46.86                 -3.34                 0.93             1.0          0.00    high (14)
+31  tsn       48.6  37.69      45.05                 -3.55                 0.93             1.0          0.00    high (14)
+14  bem       37.5  19.31      33.88                 -3.62                 0.90             1.0          0.01     mid (14)
+19  lin       48.0  28.56      44.35                 -3.65                 0.92             1.0          0.00    high (14)
+30  sot       46.5  37.87      42.72                 -3.78                 0.92             1.0          0.00    high (14)
+16  kik       37.3  25.98      33.28                 -4.02                 0.89             1.0          0.00     mid (14)
+11  nus       28.9  13.49      24.82                 -4.08                 0.86             1.0          0.00    tail (15)
+32  bam       31.4  19.39      27.17                 -4.23                 0.87             1.0          0.00    tail (15)
+10  luo       39.0  21.36      34.49                 -4.51                 0.88             1.0          0.00     mid (14)
+38  kbp       29.5  14.51      24.88                 -4.62                 0.84             1.0          0.01    tail (15)
+9   zul       53.5  45.91      48.27                 -5.23                 0.90             1.0          0.00    high (14)
+24  sna       42.8  33.92      37.56                 -5.24                 0.88             1.0          0.00     mid (14)
+0   kab       32.0  16.35      26.69                 -5.31                 0.83             1.0          0.00    tail (15)
+13  mlg       50.2  39.04      44.73                 -5.47                 0.89             1.0          0.00    high (14)
+4   orm       35.7  12.06      30.18                 -5.52                 0.85             1.0          0.00    tail (15)
+7   ssw       43.5  22.20      37.86                 -5.64                 0.87             1.0          0.00     mid (14)
+36  hau       52.5  39.88      46.46                 -6.04                 0.88             1.0          0.01    high (14)
+6   tir       24.8  10.48      18.74                 -6.06                 0.76             1.0          0.00    tail (15)
+21  lug       38.5  16.17      31.73                 -6.77                 0.82             1.0          0.01     mid (14)
+34  ewe       38.2  25.96      31.17                 -7.03                 0.82             1.0          0.00     mid (14)
+23  run       41.9  21.59      33.88                 -8.02                 0.81             1.0          0.01     mid (14)
+1   kea       47.9  18.91      39.18                 -8.72                 0.82             1.0          0.00    high (14)
+17  kin       48.4  25.81      38.66                 -9.74                 0.80             1.0          0.00    high (14)
+3   amh       37.9  16.62      26.62                -11.28                 0.70             1.0          0.00     mid (14)

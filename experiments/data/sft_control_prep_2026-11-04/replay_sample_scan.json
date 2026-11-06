@@ -1,0 +1,13 @@
+{
+ "index_version": "protected-2026-10-28.3",
+ "packs": 522,
+ "samples": 12123,
+ "texts_scanned": 24246,
+ "rows_with_hit": 0,
+ "rows_by_set": {},
+ "hits_by_rule": {},
+ "kind": {
+  "translation": 11284,
+  "other": 839
+ }
+}

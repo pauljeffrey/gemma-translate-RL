@@ -1,0 +1,13 @@
+benchmark,languages,rows,distinct_english,exposed_distinct_english,exposed_distinct_english_ge3tok,exposed_distinct_english_ge8tok,distinct_english_sharing_an_8gram,rows_exact,rows_sentence_rule,rows_near,rows_pair,rows_exact_ge3tok,rows_exact_ge8tok,rows_pair_ge3tok,rows_ref_any,rows_ref_same_iso,rows_ref_near,rows_ref_any_ge3tok,rows_ref_same_iso_ge3tok,rows_en_shares_8gram,rows_ref_shares_8gram,rows_strict_union,rows_strict_union_ge3tok,pct_exact,pct_pair,pct_ref_same_iso,pct_strict_union,pct_strict_union_ge3tok
+flores_plus,54,54648,1012,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,54,8,0,0,0.0,0.0,0.0,0.0,0.0
+ntrex,24,47928,1993,5,0,0,1,120,120,0,13,0,0,0,52,44,0,0,0,24,15,139,0,0.25,0.027,0.092,0.29,0.0
+mafand,15,20009,17738,85,0,0,15,94,94,0,40,0,0,0,68,54,0,0,0,15,8,103,0,0.47,0.2,0.27,0.515,0.0
+smol_sent,45,38833,863,1,0,0,1,45,45,0,0,0,0,0,2,1,0,0,0,45,8,45,0,0.116,0.0,0.003,0.116,0.0
+ibom_mt,2,2024,1012,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,2,0,0,0,0.0,0.0,0.0,0.0,0.0
+flores_moz,1,1012,1012,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0.0,0.0,0.0,0.0,0.0
+glot_story,8,3426,937,9,0,0,4,15,15,0,0,0,0,0,3,2,0,0,0,14,0,17,0,0.438,0.0,0.058,0.496,0.0
+salt,5,2500,500,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,1,0,0.0,0.0,0.04,0.04,0.0
+flores_plus_dev_heldout,54,30078,557,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,0,0,0.0,0.0,0.0,0.0,0.0
+flores_plus_dev_trainhalf,54,23760,440,439,439,435,435,23706,20574,0,7655,23706,23490,7655,7710,7681,2,7709,7680,23490,7679,23706,23706,99.773,32.218,32.327,99.773,99.773
+afriscience_test,6,5820,970,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,0.0
+afriscience_dev,6,5058,843,0,0,0,1,0,0,0,0,0,0,0,2,2,0,0,0,6,1,2,0,0.0,0.0,0.04,0.04,0.0

@@ -1,0 +1,13 @@
+pair,benchmark,subset,iso,metric,n,delta,lo,hi
+edited:draft,afriscience_test,all,amh,comet_ref,970,0.0001,-0.0034,0.0035
+edited:draft,afriscience_test,all,hau,comet_ref,970,0.0018,-0.0031,0.0064
+edited:draft,afriscience_test,all,lug,comet_ref,970,0.0083,0.0032,0.013
+edited:draft,afriscience_test,all,nso,comet_ref,970,-0.0052,-0.009,-0.0012
+edited:draft,afriscience_test,all,yor,comet_ref,970,-0.1469,-0.1578,-0.1354
+edited:draft,afriscience_test,all,zul,comet_ref,970,0.0009,-0.0019,0.0033
+edited:draft,afriscience_test,all,amh,comet_qe,970,-0.0011,-0.0047,0.0022
+edited:draft,afriscience_test,all,hau,comet_qe,970,-0.0046,-0.0089,-0.0004
+edited:draft,afriscience_test,all,lug,comet_qe,970,0.0038,-0.0014,0.0088
+edited:draft,afriscience_test,all,nso,comet_qe,970,-0.0091,-0.0131,-0.0051
+edited:draft,afriscience_test,all,yor,comet_qe,970,-0.156,-0.1663,-0.146
+edited:draft,afriscience_test,all,zul,comet_qe,970,0.0006,-0.0022,0.003

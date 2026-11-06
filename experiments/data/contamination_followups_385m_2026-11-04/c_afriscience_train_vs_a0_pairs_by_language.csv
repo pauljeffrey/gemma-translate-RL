@@ -1,0 +1,8 @@
+iso,n,en_exact,en_exact_ge3tok,en_sentence,en_sentence_ge3tok,en_near,en_near_ge3tok,en_pair,en_pair_ge3tok,en_any8,ref_exact,ref_exact_ge3tok,ref_sentence,ref_sentence_ge3tok,ref_near,ref_near_ge3tok,ref_pair,ref_pair_ge3tok,ref_any8
+amh,5759,3,3,3,3,7,7,0,0,152,0,0,0,0,0,0,0,0,3
+hau,5634,3,3,3,3,7,7,0,0,149,64,64,64,64,0,0,0,0,236
+lug,5741,3,3,3,3,7,7,0,0,150,0,0,0,0,0,0,0,0,6
+nso,5481,3,3,3,3,7,7,0,0,146,0,0,0,0,0,0,0,0,95
+yor,5631,3,3,3,3,7,7,2,2,150,116,116,114,114,2,2,2,2,246
+zul,5761,3,3,3,3,7,7,1,1,151,125,125,118,118,0,0,1,1,123
+TOTAL,34007,18,18,18,18,42,42,3,3,898,305,305,296,296,2,2,3,3,709

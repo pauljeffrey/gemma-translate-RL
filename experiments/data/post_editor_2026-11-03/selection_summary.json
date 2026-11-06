@@ -1,0 +1,103 @@
+{
+ "coverage": {
+  "rl_current": 85,
+  "rl81": 81,
+  "rl81_covered": 80,
+  "rl81_thin": 1,
+  "rl81_none": [],
+  "rl81_thin_list": [
+   "kbp"
+  ],
+  "rl81_without_any_benchmark_reference": [
+   "urh",
+   "bin",
+   "oke",
+   "swc",
+   "iso",
+   "wal",
+   "yao",
+   "sid",
+   "ish",
+   "dua",
+   "bas",
+   "wes",
+   "guw",
+   "lue",
+   "tll",
+   "zne",
+   "lub",
+   "crs"
+  ]
+ },
+ "pairs": 50340,
+ "train": 48312,
+ "val": 2028,
+ "languages": 115,
+ "classes": {
+  "gen": 20439,
+  "rel": 28952,
+  "unv": 949
+ },
+ "non_commercial_pairs": 1036,
+ "unseen_by_sft_pairs": 1995,
+ "stageB_new_pairs": 24329,
+ "A0_era_pairs": 24016,
+ "removed_second_pass": {
+  "train_english_in_val": 66
+ },
+ "dropped_counts_first_pass": {
+  "policy_excluded": 2040002,
+  "length_ratio": 2287506,
+  "row_filters": 594335
+ },
+ "bench_dir_strings": 191443,
+ "protected_index": null,
+ "seconds": 131,
+ "params": {
+  "subdirs": [
+   "data",
+   "specialist",
+   "extra",
+   "extra2k"
+  ],
+  "afriscience": null,
+  "out": "/tmp/pe/sel_v2",
+  "tmp": "/tmp/pe_select_tmp",
+  "budget": 52000,
+  "cap_per_lang": 1400,
+  "floor": 250,
+  "val_min": 8,
+  "val_max": 30,
+  "val_share": 0.04,
+  "max_rel_share": 0.5,
+  "max_short_share": 0.25,
+  "rel_only_cap": 400,
+  "min_pairs": 400,
+  "unv_floor": 600,
+  "max_unv_share": 0.35,
+  "short_words": 8,
+  "min_words": 5,
+  "max_words": 48,
+  "max_chars": 360,
+  "reservoir": 5000,
+  "prefer_unseen": true,
+  "no_flores_dev": true,
+  "no_nc": false,
+  "isos": null,
+  "chars_per_token": "/tmp/pe/cpt.json",
+  "bench_dir": "/workspace/eval_385m/bench/test_sets",
+  "protected_index": null,
+  "protected_manifest": null,
+  "max_shards": 0,
+  "skip_regex": "nllb|aya_aligned|dochplt|paracrawl|extra2_hold",
+  "profile_csv": null,
+  "slice": null,
+  "save_state": null,
+  "load_states": [
+   "/tmp/pe/st_0.pkl",
+   "/tmp/pe/st_1.pkl",
+   "/tmp/pe/st_2.pkl",
+   "/tmp/pe/st_3.pkl"
+  ]
+ }
+}

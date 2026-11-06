@@ -1,0 +1,117 @@
+iso,gen_gross,rel_gross,unv_gross,gen_distinct,rel_distinct,unv_distinct,sources
+aar,110,0,0,110,0,0,weblate
+ach,22988,67434,0,22982,67019,0,mt560; salt-train; weblate
+ada,0,58795,0,0,58422,0,opus-mt560
+afr,14076,1007542,830412,13973,994714,820771,govza; mehgoss-vukuzenzele; mt560; multi-open; pontoon; vukuzenzele; weblate
+alz,0,6998,0,0,6981,0,opus-mt560
+amh,78642,1175384,0,75630,583192,0,afriscience; flores-plus-dev-half; masakhane/AfriDocMT [NC]; mt560; opus; opus [NC]; opus_tatoeba; opus_translatewiki; opus_wikimedia; pontoon; ssa-mte; weblate
+arz,0,43326,0,0,43257,0,opus-mt560
+bam,6900,0,0,6463,0,0,flores-plus-dev-half; oldi_seed_bam_Latn; openlanguagedata/oldi_seed; weblate
+bas,0,25657,0,0,25556,0,mt560
+bem,1,349910,0,1,346006,0,mt560; weblate
+ber,351,0,0,350,0,0,weblate
+bin,0,10731,0,0,10715,0,mt560
+bum,0,25735,0,0,25639,0,opus-mt560
+cce,0,16818,0,0,16688,0,opus-mt560
+chw,0,16890,0,0,16748,0,opus-mt560
+cjk,0,33405,0,0,33146,0,opus-mt560
+cop,0,15222,0,0,15148,0,opus-mt560
+crs,0,173632,0,0,172247,0,opus-mt560
+dik,0,12906,0,0,12838,0,opus-mt560
+dje,0,55033,0,0,54464,0,opus-mt560
+dop,0,15231,0,0,15146,0,opus-mt560
+dua,0,14196,0,0,14167,0,mt560
+dyu,870,27182,0,435,13562,0,flores-plus-dev-half; mt560
+efi,973,308155,0,973,305652,0,efik-nt-sheet; ibom-mt [NC]; mt560
+ewe,3274,0,50994,2109,0,25393,flores-plus-dev-half; multi-open; opus_tatoeba; opus_translatewiki; opus_wikimedia; pontoon; weblate
+fon,1052,81704,142762,617,40755,68954,flores-plus-dev-half; fon-helsinki; mt560; multi-open; opus_translatewiki; opus_wikimedia
+ful,19334,28891,0,19108,28774,0,fub-bible; opus-wikimedia; weblate
+guw,0,263552,0,0,261643,0,opus-mt560
+hau,7435,267820,274028,7381,264296,265779,afriscience; mt560; multi-open; opus100; pontoon; ssa-mte; weblate
+her,0,7529,0,0,7513,0,mt560
+ibb,977,0,0,977,0,0,ibom-mt [NC]
+ibo,22491,658148,297818,22479,380416,294318,igbo-bundles; mt560; multi-open; opus100; pontoon; salt-train; ssa-mte; weblate
+ish,0,4872,0,0,4861,0,mt560
+iso,0,197104,0,0,195733,0,mt560
+kab,130459,59604,0,106971,23265,0,flores-plus-dev-half; kabyle-tm; mt560; opus_tatoeba; opus_translatewiki; opus_wikimedia; tatoeba-abdelhaque; weblate
+kam,880,94564,0,442,47092,0,flores-plus-dev-half; mt560; opus_tatoeba
+kbp,1004,0,0,568,0,0,flores-plus-dev-half; opus_translatewiki
+kea,3018,9708,0,2574,4842,0,flores-plus-dev-half; mt560; opus_translatewiki
+kik,789,86927,0,789,86417,0,mt560; ssa-mte
+kin,140663,0,95477,139932,0,94762,kin-gazette; multi-open; opus100; pontoon; ssa-mte; weblate
+kmb,876,167490,0,438,83000,0,flores-plus-dev-half; mt560
+knc,4577,0,79,4577,0,79,gamayun-kau-eng; kanurimt
+kon,0,345737,0,0,234963,0,mt560
+koo,0,33781,0,0,33568,0,opus-mt560
+kqn,0,201343,0,0,199653,0,mt560
+kri,0,39471,0,0,39258,0,mt560
+kua,0,92494,0,0,91955,0,mt560
+kwn,0,98047,0,0,97456,0,opus-mt560
+lam,0,13656,0,0,13621,0,opus-mt560
+lin,1149,490816,0,1143,484539,0,mt560; weblate
+loz,0,377670,0,0,373903,0,mt560
+lua,0,268494,0,0,266104,0,mt560
+lub,0,180756,0,0,179302,0,opus-mt560
+lue,0,290525,0,0,287880,0,opus-mt560
+lug,28644,206145,40228,28603,204552,40033,afriscience; lug-pkyoyetera; mt560; salt-train; weblate
+lun,0,123443,0,0,122640,0,mt560
+luo,2280,2651420,0,1140,1208011,0,flores-plus-dev-half; luo-opus; mt560; ssa-mte
+luy,0,0,6546,0,0,6398,luhya
+men,0,1557,0,0,1556,0,mt560
+mfe,20,166546,0,20,164794,0,opus-mt560; weblate
+mgr,0,40483,0,0,40241,0,opus-mt560
+mlg,503,790482,0,502,783180,0,mt560; weblate
+mos,2690,339432,0,2239,167956,0,flores-plus-dev-half; mt560; opus_translatewiki
+nba,0,25476,0,0,25279,0,opus-mt560
+nbl,108370,0,0,102739,0,0,mehgoss-autshumato; mehgoss-vukuzenzele; vukuzenzele; weblate
+ndc,0,28315,0,0,28129,0,mt560
+nde,35,29765,0,35,29596,0,ebible-nde; weblate
+ndo,0,91935,0,0,91298,0,opus-mt560
+nso,119795,512417,0,108001,507384,0,afriscience; mehgoss-autshumato; mehgoss-jworg; mehgoss-vukuzenzele; mt560; vukuzenzele
+nus,6960,0,0,6516,0,0,flores-plus-dev-half; oldi_seed_nus_Latn; openlanguagedata/oldi_seed; opus_tatoeba; opus_translatewiki
+nya,12539,711965,75818,12298,702790,75252,chichewa-mt; mt560; multi-open; pontoon; ssa-mte; weblate
+nyk,0,106587,0,0,105673,0,opus-mt560
+nyn,22980,46925,0,22974,46689,0,mt560; salt-train
+nyu,0,23055,0,0,22904,0,opus-mt560
+oke,0,20943,0,0,20887,0,mt560
+orm,174,141706,32599,174,140490,32282,mt560; multi-open; pontoon; weblate
+pcm,0,20889,28211,0,20837,27897,mt560; okwu
+rnd,0,121730,0,0,120547,0,opus-mt560
+run,35,333647,0,35,330054,0,mt560; weblate
+sag,35,228857,0,35,226613,0,mt560; weblate
+seh,876,97892,0,438,48627,0,flores-plus-dev-half; mt560
+shi,9565,14823,0,7154,14758,0,mt560; tatoeba-abdelhaque
+sid,0,43098,0,0,42871,0,mt560
+sna,247,699864,86645,245,691757,86146,mt560; multi-open; pontoon; weblate
+som,34863,138315,97870,11217,135938,97257,infopankki; mt560; multi-open; weblate
+sop,0,47209,0,0,46864,0,opus-mt560
+sot,4144,0,78925,4144,0,78226,mehgoss-vukuzenzele; multi-open; pontoon; ssa-mte; vukuzenzele; weblate
+ssw,3126,107591,0,3126,106928,0,mehgoss-vukuzenzele; mt560; vukuzenzele; weblate
+swc,0,248127,0,0,246448,0,mt560
+swh,35014,0,935100,34915,0,912776,multi-open; okwu; pontoon; salt-train; ssa-mte; swh-rogendo; weblate
+taq,0,5062,0,0,5047,0,opus-mt560
+teo,22993,0,0,22987,0,0,salt-train
+tir,5772,572338,0,5325,283475,0,flores-plus-dev-half; gamayun_kits_tig-eng; mt560; opus; opus_tatoeba; opus_translatewiki; opus_wikimedia; travis_foundation_tigrinya; weblate
+tiv,0,168188,0,0,166837,0,mt560
+tll,0,203881,0,0,202075,0,opus-mt560
+toi,0,3657,0,0,3646,0,opus-mt560
+tsc,0,78132,0,0,77603,0,mt560
+tsn,247608,710026,47305,234596,701639,46655,autshumato-autshumato-en-tn; mehgoss-autshumato; mehgoss-vukuzenzele; mt560; multi-open; pontoon; vukuzenzele; weblate
+tso,292192,695130,0,197222,686958,0,autshumato-autshumato-en-ts; autshumato-autshumato-en-ts-manual; mehgoss-autshumato; mehgoss-vukuzenzele; mt560; vukuzenzele; weblate
+ttj,22992,15461,0,22986,15348,0,opus-mt560; salt-train
+tum,2488,426682,0,2033,211338,0,flores-plus-dev-half; mt560; opus_tatoeba; opus_translatewiki; opus_wikimedia; weblate
+twi,1198,0,602342,1164,0,588800,kweku-eng-twi; multi-open; pontoon; ssa-mte; twi-kweku; weblate
+tzm,6363,0,0,6358,0,0,nllb-seed-tzm; opus-translatewiki; pontoon-tzm; weblate
+umb,877,388520,0,439,192242,0,flores-plus-dev-half; mt560; opus_tatoeba
+urh,0,27224,0,0,27145,0,mt560
+ven,321,187360,0,321,186156,0,mehgoss-vukuzenzele; mt560; vukuzenzele; weblate
+vmw,949,135246,0,510,67154,0,flores-plus-dev-half; mt560; opus_translatewiki; ssa-mte
+wal,2,110988,0,2,110285,0,mt560; weblate
+wes,0,26492,0,0,26353,0,mt560
+wol,5497,52180,204796,3564,15369,100154,flores-plus-dev-half; mt560; multi-open; opus_tatoeba; opus_translatewiki; opus_wikimedia; pontoon; weblate; wolof-bible; wolof-sudoping
+xho,111350,832835,361790,107552,818570,319703,mehgoss-autshumato; mehgoss-vukuzenzele; mt560; multi-open; opus100; pontoon; vukuzenzele; weblate; xhosa-silvano
+yao,0,40392,0,0,40181,0,mt560
+yor,12395,751728,969798,10006,372493,494054,afriscience; flores-plus-dev-half; mt560; multi-open; okwu; opus100; opus_tatoeba; opus_translatewiki; pontoon; ssa-mte; weblate
+zgh,383,0,0,382,0,0,weblate
+zne,0,173973,0,0,172443,0,opus-mt560
+zul,235236,880072,87277,220645,871069,86889,afriscience; autshumato-autshumato-en-zu; mehgoss-autshumato; mehgoss-vukuzenzele; mt560; multi-open; opus100; pontoon; ssa-mte; vukuzenzele; weblate

@@ -1,0 +1,84 @@
+{
+ "rule": "highest dev macro chrF++ of the SFT among the guard configurations (greedy excluded); ties within 0.05 -> weaker penalty; dev = FLORES+ dev held-out half (assets/dev/bench_dev_hsel.jsonl), never devtest",
+ "chosen": {
+  "name": "freq010",
+  "frequency_penalty": 0.1,
+  "repetition_penalty": 1.0,
+  "sft_dev_chrfpp": 37.362277134457045,
+  "sft_dev_greedy_chrfpp": 34.501940390120886
+ },
+ "sft_grid": {
+  "greedy": {
+   "chrfpp_macro": 34.501940390120886,
+   "finished": 0.9458333333333333,
+   "loop": 0.058333333333333334
+  },
+  "freq002": {
+   "chrfpp_macro": 36.165515200461044,
+   "finished": 0.9736111111111111,
+   "loop": 0.04027777777777778
+  },
+  "freq005": {
+   "chrfpp_macro": 36.952486739602655,
+   "finished": 0.9916666666666667,
+   "loop": 0.03888888888888889
+  },
+  "freq010": {
+   "chrfpp_macro": 37.362277134457045,
+   "finished": 0.9958333333333333,
+   "loop": 0.04027777777777778
+  },
+  "rep102": {
+   "chrfpp_macro": 35.78688830066211,
+   "finished": 0.9986111111111111,
+   "loop": 0.001388888888888889
+  },
+  "rep105": {
+   "chrfpp_macro": 29.922471468398676,
+   "finished": 0.9972222222222222,
+   "loop": 0.002777777777777778
+  },
+  "freq005_rep102": {
+   "chrfpp_macro": 35.7135799334419,
+   "finished": 1.0,
+   "loop": 0.0
+  }
+ },
+ "rl_grid": {
+  "greedy": {
+   "chrfpp_macro": 40.42551158728609,
+   "finished": 0.9986111111111111,
+   "loop": 0.002777777777777778
+  },
+  "freq002": {
+   "chrfpp_macro": 40.62198807032258,
+   "finished": 1.0,
+   "loop": 0.0
+  },
+  "freq005": {
+   "chrfpp_macro": 40.63607059045713,
+   "finished": 1.0,
+   "loop": 0.0
+  },
+  "freq010": {
+   "chrfpp_macro": 40.647855566312295,
+   "finished": 1.0,
+   "loop": 0.0
+  },
+  "rep102": {
+   "chrfpp_macro": 39.59978947557826,
+   "finished": 1.0,
+   "loop": 0.0
+  },
+  "rep105": {
+   "chrfpp_macro": 33.851728101273096,
+   "finished": 1.0,
+   "loop": 0.001388888888888889
+  },
+  "freq005_rep102": {
+   "chrfpp_macro": 39.58900160657111,
+   "finished": 1.0,
+   "loop": 0.0
+  }
+ }
+}

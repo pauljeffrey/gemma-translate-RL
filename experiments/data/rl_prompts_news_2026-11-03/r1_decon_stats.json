@@ -1,0 +1,72 @@
+{
+ "index_version": "protected-2026-10-28.3",
+ "index_sha256": "f094fd2b24d6a0e469d635abed042e4f05335f93a3e96400f66afe51db3919ad",
+ "rule": "R1 exact sentence, R2 contained sentence, R3 shared word 8-gram (strict, both normal forms), English side only, no FLORES+ dev train-half exemption",
+ "windows_in": 606814,
+ "windows_removed": 8532,
+ "windows_kept": 598282,
+ "before_by_bin": {
+  "b256": 186520,
+  "b512": 151202,
+  "b64": 175607,
+  "b1024": 93485
+ },
+ "after_by_bin": {
+  "b256": 184937,
+  "b512": 148118,
+  "b64": 175129,
+  "b1024": 90098
+ },
+ "removed_by_bin": {
+  "b256": 1583,
+  "b512": 3084,
+  "b1024": 3387,
+  "b64": 478
+ },
+ "removed_by_source": {
+  "RealTimeData/bbc_news_alltime": 5866,
+  "permutans/c4-bbc-news": 2666
+ },
+ "removed_by_set_any_rule": {
+  "afrilongdoc:all": 3167,
+  "smol:all": 2122,
+  "mafand:test": 2034,
+  "mafand:dev": 1690,
+  "ntrex128:all": 1148,
+  "ntrex_african:all": 1107,
+  "glot_story_book:all": 351,
+  "afridocmt:test": 308,
+  "tico19:test": 278,
+  "naijas2st_news_mt:test": 141,
+  "wmt24pp:all": 114,
+  "xsimplusplus:dev": 106,
+  "flores_plus:dev": 90,
+  "ibom_mt:dev": 90,
+  "flores_moz:dev": 90,
+  "afridocmt:dev": 63,
+  "naijas2st_news_mt:validation": 55,
+  "xsimplusplus:devtest": 37,
+  "flores_plus:devtest": 35,
+  "ibom_mt:test": 35,
+  "flores_moz:devtest": 35,
+  "salt:test": 33,
+  "tico19:dev": 33,
+  "afrimte_wmt2024:all": 26,
+  "ssa_mte:test": 23,
+  "ibom_mt_efi_davlan:test": 22,
+  "afriscience_mt:test": 15,
+  "sib200:test": 9,
+  "sib200_ibom:test": 9,
+  "sib200:dev": 6,
+  "sib200_ibom:dev": 6,
+  "ssa_mte:dev": 5,
+  "ibom_mt_efi_davlan:dev": 5,
+  "salt:dev": 2,
+  "afriscience_mt:dev": 2
+ },
+ "removed_by_rule": {
+  "R1_exact": 968,
+  "R2_contiguous": 186,
+  "R3_8gram": 7627
+ }
+}

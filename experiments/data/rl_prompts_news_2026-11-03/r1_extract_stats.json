@@ -1,0 +1,28 @@
+{
+ "articles_in:RealTimeData/bbc_news_alltime": 159821,
+ "articles_used:RealTimeData/bbc_news_alltime": 110121,
+ "paragraphs_boilerplate": 53585,
+ "sentences_bad": 41365,
+ "articles_dropped_duplicate_or_empty:RealTimeData/bbc_news_alltime": 49700,
+ "articles_in:permutans/c4-bbc-news": 77481,
+ "articles_dropped_duplicate_or_empty:permutans/c4-bbc-news": 3029,
+ "articles_used:permutans/c4-bbc-news": 74452,
+ "articles_in:SetFit/bbc-news": 2225,
+ "articles_dropped_duplicate_or_empty:SetFit/bbc-news": 2203,
+ "articles_used:SetFit/bbc-news": 22,
+ "windows_outside_range": 61,
+ "windows_duplicate": 110,
+ "windows_raw": 606814,
+ "windows_raw_by_bin_source": {
+  "b1024|RealTimeData/bbc_news_alltime": 62811,
+  "b1024|permutans/c4-bbc-news": 30674,
+  "b256|RealTimeData/bbc_news_alltime": 109623,
+  "b256|SetFit/bbc-news": 6,
+  "b256|permutans/c4-bbc-news": 76891,
+  "b512|RealTimeData/bbc_news_alltime": 92898,
+  "b512|permutans/c4-bbc-news": 58304,
+  "b64|RealTimeData/bbc_news_alltime": 104521,
+  "b64|SetFit/bbc-news": 4,
+  "b64|permutans/c4-bbc-news": 71082
+ }
+}

@@ -1,0 +1,6 @@
+iso,read,drop_empty,drop_copy,drop_length,drop_ratio,drop_url,drop_control_char,drop_english_in_target,drop_repetition,drop_duplicate,after_cheap,drop_protected_source,drop_protected_target,drop_protected_both,kept
+tsn,320000,0,89,0,1,238,0,1,1529,16,318126,1127,6792,149,310058
+wol,320000,0,1940,4,10,1413,0,79,1993,22,314539,870,73,20,313576
+xho,320000,0,28,0,0,315,0,7,142,23,319485,1308,8,7,318162
+yor,320000,0,70,1,1,1373,0,10,1083,1,317461,1144,2505,45,313767
+zul,320000,0,30,0,1,430,0,20,156,0,319363,1143,21,15,318184

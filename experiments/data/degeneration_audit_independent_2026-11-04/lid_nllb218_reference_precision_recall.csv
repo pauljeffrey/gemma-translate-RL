@@ -1,0 +1,59 @@
+iso,covered,n,labels,recall,precision,top_wrong,reliable
+aeb,False,1012,,,,,False
+afr,True,3009,afr_Latn,0.996011964107677,0.9976697736351531,eng_Latn:5 nld_Latn:4 fra_Latn:1,True
+amh,True,4046,amh_Ethi,0.9901136925358379,0.9980069755854509,eng_Latn:18 tir_Ethi:5 deu_Latn:4,True
+ary,False,1012,,,,,False
+arz,False,1012,,,,,False
+bam,True,1012,bam_Latn,0.8814229249011858,0.47371216144450345,kik_Latn:69 dyu_Latn:46 yor_Latn:1,False
+bem,True,3009,bem_Latn,0.9943502824858758,0.9806620780072107,nya_Latn:2 ind_Latn:2 zul_Latn:2,True
+cjk,True,1012,cjk_Latn,0.7816205533596838,0.9717444717444718,kmb_Latn:87 umb_Latn:35 bem_Latn:25,False
+dik,True,1012,dik_Latn,0.9851778656126482,1.0,nus_Latn:3 vie_Latn:2 als_Latn:2,True
+dyu,True,1012,dyu_Latn,0.025691699604743084,0.3611111111111111,bam_Latn:967 yor_Latn:3 fuv_Latn:2,False
+ewe,True,3009,ewe_Latn,0.996011964107677,0.996011964107677,eng_Latn:3 twi_Latn:2 als_Latn:1,True
+fon,True,1012,fon_Latn,0.9970355731225297,1.0,ewe_Latn:3,True
+hau,True,4509,hau_Latn,0.9922377467287647,0.9995531724754245,zsm_Latn:4 cat_Latn:4 war_Latn:2,True
+ibo,True,4509,ibo_Latn,0.9780439121756487,0.9993201903467029,eng_Latn:14 vie_Latn:10 deu_Latn:8,True
+kab,True,1012,kab_Latn,0.9990118577075099,0.7505567928730512,zul_Latn:1,True
+kam,True,1012,kam_Latn,0.6116600790513834,0.9508448540706606,swh_Latn:256 kmb_Latn:17 xho_Latn:16,False
+kbp,True,1012,kbp_Latn,1.0,1.0,,True
+kea,True,1012,kea_Latn,0.924901185770751,1.0,pap_Latn:30 por_Latn:8 ast_Latn:7,True
+kik,True,1012,kik_Latn,0.9901185770750988,0.9338303821062441,kmr_Latn:3 sna_Latn:2 zul_Latn:1,True
+kin,True,4015,kin_Latn,0.9641344956413449,0.992818671454219,run_Latn:125 swh_Latn:4 eng_Latn:3,True
+kmb,True,1012,kmb_Latn,0.9703557312252964,0.9009174311926605,cjk_Latn:9 lug_Latn:7 swh_Latn:4,True
+knc,True,1012,knc_Arab knc_Latn,0.9960474308300395,0.9960474308300395,zsm_Latn:1 swh_Latn:1 szl_Latn:1,True
+lin,True,1012,lin_Latn,0.9970355731225297,0.9892156862745098,glg_Latn:1 swh_Latn:1 tgl_Latn:1,True
+lua,True,1012,lua_Latn,0.9940711462450593,0.9872423945044161,run_Latn:1 zsm_Latn:1 wol_Latn:1,True
+lug,True,2512,lug_Latn,0.9956210191082803,0.9466313398940197,swh_Latn:3 sna_Latn:2 zul_Latn:1,True
+luo,True,2512,luo_Latn,0.9964171974522293,0.9968140183193946,eng_Latn:2 por_Latn:1 yue_Hant:1,True
+mfe,False,1012,,,,,False
+mlg,True,3009,plt_Latn,0.9970089730807578,1.0,cat_Latn:2 eng_Latn:2 vie_Latn:2,True
+mos,True,1012,mos_Latn,0.9387351778656127,0.9989484752891693,oci_Latn:10 lmo_Latn:9 bam_Latn:9,True
+nde,False,1997,,,,,False
+nso,True,3009,nso_Latn,0.356596876038551,0.969286359530262,sot_Latn:1280 tsn_Latn:638 tso_Latn:4,False
+nus,True,1012,nus_Latn,0.9990118577075099,0.9970414201183432,eng_Latn:1,True
+nya,True,4013,nya_Latn,0.8998255669075504,0.7899803106541238,tum_Latn:152 ton_Latn:144 sna_Latn:47,False
+orm,True,3009,gaz_Latn,0.994682618810236,0.9950132978723404,est_Latn:4 swh_Latn:2 gom_Deva:1,True
+pcm,True,1564,pcm_Latn wes_Latn,0.6265984654731458,0.9969481180061037,eng_Latn:546 kor_Hang:8 yue_Hant:4,False
+run,True,1012,run_Latn,0.9772727272727273,0.8791111111111111,kin_Latn:22 zul_Latn:1,True
+sag,True,1012,sag_Latn,0.9950592885375494,0.9960435212660732,lij_Latn:3 mag_Deva:1 lus_Latn:1,True
+seh,False,1012,,,,,False
+shi,False,1997,,,,,False
+sna,True,4014,sna_Latn,0.9967613353263578,0.9405265632346027,eng_Latn:5 deu_Latn:2 est_Latn:1,True
+som,True,3009,som_Latn,0.9933532735127949,0.994675540765391,eng_Latn:4 vie_Latn:2 est_Latn:2,True
+sot,True,1012,sot_Latn,0.6067193675889329,0.32383966244725737,tsn_Latn:368 nso_Latn:26 xho_Latn:2,False
+ssw,True,3009,ssw_Latn,0.9737454303755401,0.9952445652173914,zul_Latn:45 xho_Latn:15 eng_Latn:6,True
+swh,True,4844,swh_Latn,0.9828654004954583,0.9284321372854915,eng_Latn:14 kor_Hang:10 deu_Latn:6,True
+taq,True,1012,taq_Latn taq_Tfng,0.6551383399209486,1.0,kab_Latn:333 eng_Latn:5 ron_Latn:3,False
+tir,True,3009,tir_Ethi,0.9953472914589565,0.9983333333333333,amh_Ethi:8 bod_Tibt:2 fra_Latn:1,True
+tsn,True,4509,tsn_Latn,0.9946773120425815,0.8132366273798731,nso_Latn:8 eng_Latn:4 sot_Latn:2,True
+tso,True,1012,tso_Latn,0.9990118577075099,0.33267522211253703,zul_Latn:1,True
+tum,True,1012,tum_Latn,0.9990118577075099,0.7310195227765727,nya_Latn:1,True
+twi,True,2512,aka_Latn twi_Latn,0.9968152866242038,0.992862807295797,eng_Latn:2 yue_Hant:1 gla_Latn:1,True
+umb,True,1012,umb_Latn,0.9782608695652174,0.9473684210526315,bem_Latn:8 lug_Latn:4 kam_Latn:2,True
+ven,False,1997,,,,,False
+vmw,False,1012,,,,,False
+wol,True,3009,wol_Latn,0.9734130940511798,0.9875252865812543,gaz_Latn:6 est_Latn:6 nld_Latn:5,True
+xho,True,4011,xho_Latn,0.9703315881326352,0.8943014705882353,zul_Latn:106 ssw_Latn:2 eng_Latn:2,True
+yor,True,4567,yor_Latn,0.9927742500547405,0.9960456942003515,ces_Latn:5 eng_Latn:5 gle_Latn:4,True
+zgh,True,1012,tzm_Tfng,1.0,1.0,,True
+zul,True,4007,zul_Latn,0.9653107062640379,0.6579350229630889,xho_Latn:96 eng_Latn:16 fra_Latn:5,True

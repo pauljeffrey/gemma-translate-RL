@@ -1,0 +1,256 @@
+2026-11-03 23:46:09 index protected-2026-10-28.3 f094fd2b24d6a0e4 2s
+long pool rows 241679
+2026-11-03 23:46:11 2000/210103 distinct texts, flagged so far 0 (5s)
+2026-11-03 23:46:12 4000/210103 distinct texts, flagged so far 0 (5s)
+2026-11-03 23:46:12 6000/210103 distinct texts, flagged so far 0 (5s)
+2026-11-03 23:46:12 8000/210103 distinct texts, flagged so far 0 (5s)
+2026-11-03 23:46:12 10000/210103 distinct texts, flagged so far 0 (5s)
+2026-11-03 23:46:12 12000/210103 distinct texts, flagged so far 0 (6s)
+2026-11-03 23:46:13 14000/210103 distinct texts, flagged so far 0 (6s)
+2026-11-03 23:46:13 16000/210103 distinct texts, flagged so far 0 (6s)
+2026-11-03 23:46:13 18000/210103 distinct texts, flagged so far 0 (6s)
+2026-11-03 23:46:13 20000/210103 distinct texts, flagged so far 0 (7s)
+2026-11-03 23:46:14 22000/210103 distinct texts, flagged so far 0 (7s)
+2026-11-03 23:46:14 24000/210103 distinct texts, flagged so far 0 (7s)
+2026-11-03 23:46:14 26000/210103 distinct texts, flagged so far 0 (7s)
+2026-11-03 23:46:14 28000/210103 distinct texts, flagged so far 0 (8s)
+2026-11-03 23:46:15 30000/210103 distinct texts, flagged so far 0 (8s)
+2026-11-03 23:46:15 32000/210103 distinct texts, flagged so far 0 (8s)
+2026-11-03 23:46:15 34000/210103 distinct texts, flagged so far 0 (8s)
+2026-11-03 23:46:15 36000/210103 distinct texts, flagged so far 0 (9s)
+2026-11-03 23:46:16 38000/210103 distinct texts, flagged so far 0 (9s)
+2026-11-03 23:46:16 40000/210103 distinct texts, flagged so far 0 (9s)
+2026-11-03 23:46:16 42000/210103 distinct texts, flagged so far 0 (9s)
+2026-11-03 23:46:16 44000/210103 distinct texts, flagged so far 0 (10s)
+2026-11-03 23:46:17 46000/210103 distinct texts, flagged so far 0 (10s)
+2026-11-03 23:46:17 48000/210103 distinct texts, flagged so far 0 (10s)
+2026-11-03 23:46:17 50000/210103 distinct texts, flagged so far 0 (10s)
+2026-11-03 23:46:17 52000/210103 distinct texts, flagged so far 0 (11s)
+2026-11-03 23:46:18 54000/210103 distinct texts, flagged so far 0 (11s)
+2026-11-03 23:46:18 56000/210103 distinct texts, flagged so far 0 (11s)
+2026-11-03 23:46:18 58000/210103 distinct texts, flagged so far 0 (11s)
+2026-11-03 23:46:18 60000/210103 distinct texts, flagged so far 0 (12s)
+2026-11-03 23:46:19 62000/210103 distinct texts, flagged so far 0 (12s)
+2026-11-03 23:46:19 64000/210103 distinct texts, flagged so far 0 (13s)
+2026-11-03 23:46:20 66000/210103 distinct texts, flagged so far 0 (14s)
+2026-11-03 23:46:22 68000/210103 distinct texts, flagged so far 0 (15s)
+2026-11-03 23:46:23 70000/210103 distinct texts, flagged so far 0 (16s)
+2026-11-03 23:46:24 72000/210103 distinct texts, flagged so far 0 (17s)
+2026-11-03 23:46:25 74000/210103 distinct texts, flagged so far 0 (18s)
+2026-11-03 23:46:26 76000/210103 distinct texts, flagged so far 0 (19s)
+2026-11-03 23:46:27 78000/210103 distinct texts, flagged so far 0 (20s)
+2026-11-03 23:46:28 80000/210103 distinct texts, flagged so far 0 (21s)
+2026-11-03 23:46:29 82000/210103 distinct texts, flagged so far 0 (22s)
+2026-11-03 23:46:29 84000/210103 distinct texts, flagged so far 0 (22s)
+2026-11-03 23:46:29 86000/210103 distinct texts, flagged so far 0 (22s)
+2026-11-03 23:46:29 88000/210103 distinct texts, flagged so far 0 (23s)
+2026-11-03 23:46:29 90000/210103 distinct texts, flagged so far 0 (23s)
+2026-11-03 23:46:29 92000/210103 distinct texts, flagged so far 0 (23s)
+2026-11-03 23:46:29 94000/210103 distinct texts, flagged so far 0 (23s)
+2026-11-03 23:46:29 96000/210103 distinct texts, flagged so far 0 (23s)
+2026-11-03 23:46:30 98000/210103 distinct texts, flagged so far 0 (23s)
+2026-11-03 23:46:30 100000/210103 distinct texts, flagged so far 0 (23s)
+2026-11-03 23:46:30 102000/210103 distinct texts, flagged so far 0 (23s)
+2026-11-03 23:46:30 104000/210103 distinct texts, flagged so far 0 (24s)
+2026-11-03 23:46:31 106000/210103 distinct texts, flagged so far 0 (24s)
+2026-11-03 23:46:31 108000/210103 distinct texts, flagged so far 0 (24s)
+2026-11-03 23:46:31 110000/210103 distinct texts, flagged so far 0 (24s)
+2026-11-03 23:46:31 112000/210103 distinct texts, flagged so far 0 (25s)
+2026-11-03 23:46:32 114000/210103 distinct texts, flagged so far 0 (25s)
+2026-11-03 23:46:32 116000/210103 distinct texts, flagged so far 0 (25s)
+2026-11-03 23:46:32 118000/210103 distinct texts, flagged so far 0 (26s)
+2026-11-03 23:46:33 120000/210103 distinct texts, flagged so far 0 (26s)
+2026-11-03 23:46:33 122000/210103 distinct texts, flagged so far 0 (26s)
+2026-11-03 23:46:33 124000/210103 distinct texts, flagged so far 0 (26s)
+2026-11-03 23:46:33 126000/210103 distinct texts, flagged so far 0 (27s)
+2026-11-03 23:46:34 128000/210103 distinct texts, flagged so far 0 (27s)
+2026-11-03 23:46:34 130000/210103 distinct texts, flagged so far 0 (27s)
+2026-11-03 23:46:34 132000/210103 distinct texts, flagged so far 0 (27s)
+2026-11-03 23:46:34 134000/210103 distinct texts, flagged so far 0 (28s)
+2026-11-03 23:46:35 136000/210103 distinct texts, flagged so far 0 (28s)
+2026-11-03 23:46:35 138000/210103 distinct texts, flagged so far 0 (28s)
+2026-11-03 23:46:35 140000/210103 distinct texts, flagged so far 0 (28s)
+2026-11-03 23:46:35 142000/210103 distinct texts, flagged so far 0 (28s)
+2026-11-03 23:46:35 144000/210103 distinct texts, flagged so far 0 (29s)
+2026-11-03 23:46:36 146000/210103 distinct texts, flagged so far 0 (29s)
+2026-11-03 23:46:36 148000/210103 distinct texts, flagged so far 0 (29s)
+2026-11-03 23:46:36 150000/210103 distinct texts, flagged so far 0 (29s)
+2026-11-03 23:46:36 152000/210103 distinct texts, flagged so far 0 (30s)
+2026-11-03 23:46:37 154000/210103 distinct texts, flagged so far 0 (30s)
+2026-11-03 23:46:37 156000/210103 distinct texts, flagged so far 0 (30s)
+2026-11-03 23:46:37 158000/210103 distinct texts, flagged so far 0 (31s)
+2026-11-03 23:46:38 160000/210103 distinct texts, flagged so far 0 (31s)
+2026-11-03 23:46:38 162000/210103 distinct texts, flagged so far 0 (31s)
+2026-11-03 23:46:38 164000/210103 distinct texts, flagged so far 0 (31s)
+2026-11-03 23:46:38 166000/210103 distinct texts, flagged so far 0 (32s)
+2026-11-03 23:46:39 168000/210103 distinct texts, flagged so far 0 (32s)
+2026-11-03 23:46:39 170000/210103 distinct texts, flagged so far 0 (32s)
+2026-11-03 23:46:39 172000/210103 distinct texts, flagged so far 0 (32s)
+2026-11-03 23:46:39 174000/210103 distinct texts, flagged so far 0 (33s)
+2026-11-03 23:46:40 176000/210103 distinct texts, flagged so far 0 (33s)
+2026-11-03 23:46:40 178000/210103 distinct texts, flagged so far 0 (33s)
+2026-11-03 23:46:40 180000/210103 distinct texts, flagged so far 0 (33s)
+2026-11-03 23:46:40 182000/210103 distinct texts, flagged so far 0 (34s)
+2026-11-03 23:46:41 184000/210103 distinct texts, flagged so far 0 (34s)
+2026-11-03 23:46:41 186000/210103 distinct texts, flagged so far 0 (34s)
+2026-11-03 23:46:41 188000/210103 distinct texts, flagged so far 0 (35s)
+2026-11-03 23:46:42 190000/210103 distinct texts, flagged so far 0 (35s)
+2026-11-03 23:46:42 192000/210103 distinct texts, flagged so far 0 (35s)
+2026-11-03 23:46:42 194000/210103 distinct texts, flagged so far 0 (35s)
+2026-11-03 23:46:42 196000/210103 distinct texts, flagged so far 0 (36s)
+2026-11-03 23:46:43 198000/210103 distinct texts, flagged so far 0 (36s)
+2026-11-03 23:46:44 200000/210103 distinct texts, flagged so far 0 (37s)
+2026-11-03 23:46:45 202000/210103 distinct texts, flagged so far 0 (38s)
+2026-11-03 23:46:46 204000/210103 distinct texts, flagged so far 0 (39s)
+2026-11-03 23:46:47 206000/210103 distinct texts, flagged so far 0 (40s)
+2026-11-03 23:46:48 208000/210103 distinct texts, flagged so far 0 (42s)
+2026-11-03 23:46:49 210000/210103 distinct texts, flagged so far 0 (43s)
+2026-11-03 23:46:50 210103/210103 distinct texts, flagged so far 0 (43s)
+2026-11-03 23:46:51 2000/121624 distinct texts, flagged so far 34 (44s)
+2026-11-03 23:46:51 4000/121624 distinct texts, flagged so far 66 (44s)
+2026-11-03 23:46:51 6000/121624 distinct texts, flagged so far 109 (44s)
+2026-11-03 23:46:51 8000/121624 distinct texts, flagged so far 144 (44s)
+2026-11-03 23:46:51 10000/121624 distinct texts, flagged so far 183 (45s)
+2026-11-03 23:46:52 12000/121624 distinct texts, flagged so far 225 (45s)
+2026-11-03 23:46:52 14000/121624 distinct texts, flagged so far 259 (45s)
+2026-11-03 23:46:52 16000/121624 distinct texts, flagged so far 300 (45s)
+2026-11-03 23:46:52 18000/121624 distinct texts, flagged so far 345 (46s)
+2026-11-03 23:46:53 20000/121624 distinct texts, flagged so far 388 (46s)
+2026-11-03 23:46:53 22000/121624 distinct texts, flagged so far 420 (46s)
+2026-11-03 23:46:53 24000/121624 distinct texts, flagged so far 451 (46s)
+2026-11-03 23:46:53 26000/121624 distinct texts, flagged so far 487 (46s)
+2026-11-03 23:46:53 28000/121624 distinct texts, flagged so far 518 (47s)
+2026-11-03 23:46:54 30000/121624 distinct texts, flagged so far 558 (47s)
+2026-11-03 23:46:54 32000/121624 distinct texts, flagged so far 592 (47s)
+2026-11-03 23:46:54 34000/121624 distinct texts, flagged so far 635 (47s)
+2026-11-03 23:46:54 36000/121624 distinct texts, flagged so far 678 (48s)
+2026-11-03 23:46:55 38000/121624 distinct texts, flagged so far 726 (48s)
+2026-11-03 23:46:55 40000/121624 distinct texts, flagged so far 776 (48s)
+2026-11-03 23:46:55 42000/121624 distinct texts, flagged so far 817 (48s)
+2026-11-03 23:46:55 44000/121624 distinct texts, flagged so far 859 (49s)
+2026-11-03 23:46:56 46000/121624 distinct texts, flagged so far 898 (49s)
+2026-11-03 23:46:56 48000/121624 distinct texts, flagged so far 935 (49s)
+2026-11-03 23:46:56 50000/121624 distinct texts, flagged so far 968 (49s)
+2026-11-03 23:46:56 52000/121624 distinct texts, flagged so far 1007 (50s)
+2026-11-03 23:46:56 54000/121624 distinct texts, flagged so far 1042 (50s)
+2026-11-03 23:46:57 56000/121624 distinct texts, flagged so far 1084 (50s)
+2026-11-03 23:46:57 58000/121624 distinct texts, flagged so far 1118 (50s)
+2026-11-03 23:46:57 60000/121624 distinct texts, flagged so far 1146 (50s)
+2026-11-03 23:46:57 62000/121624 distinct texts, flagged so far 1181 (51s)
+2026-11-03 23:46:58 64000/121624 distinct texts, flagged so far 1212 (51s)
+2026-11-03 23:46:58 66000/121624 distinct texts, flagged so far 1253 (51s)
+2026-11-03 23:46:58 68000/121624 distinct texts, flagged so far 1296 (51s)
+2026-11-03 23:46:58 70000/121624 distinct texts, flagged so far 1338 (52s)
+2026-11-03 23:46:59 72000/121624 distinct texts, flagged so far 1371 (52s)
+2026-11-03 23:46:59 74000/121624 distinct texts, flagged so far 1408 (52s)
+2026-11-03 23:46:59 76000/121624 distinct texts, flagged so far 1447 (52s)
+2026-11-03 23:46:59 78000/121624 distinct texts, flagged so far 1481 (53s)
+2026-11-03 23:47:00 80000/121624 distinct texts, flagged so far 1524 (53s)
+2026-11-03 23:47:00 82000/121624 distinct texts, flagged so far 1564 (53s)
+2026-11-03 23:47:00 84000/121624 distinct texts, flagged so far 1616 (53s)
+2026-11-03 23:47:00 86000/121624 distinct texts, flagged so far 1648 (54s)
+2026-11-03 23:47:01 88000/121624 distinct texts, flagged so far 1680 (54s)
+2026-11-03 23:47:01 90000/121624 distinct texts, flagged so far 1717 (54s)
+2026-11-03 23:47:01 92000/121624 distinct texts, flagged so far 1753 (54s)
+2026-11-03 23:47:01 94000/121624 distinct texts, flagged so far 1795 (55s)
+2026-11-03 23:47:02 96000/121624 distinct texts, flagged so far 1832 (55s)
+2026-11-03 23:47:02 98000/121624 distinct texts, flagged so far 1874 (55s)
+2026-11-03 23:47:02 100000/121624 distinct texts, flagged so far 1912 (55s)
+2026-11-03 23:47:02 102000/121624 distinct texts, flagged so far 1940 (56s)
+2026-11-03 23:47:03 104000/121624 distinct texts, flagged so far 1984 (56s)
+2026-11-03 23:47:03 106000/121624 distinct texts, flagged so far 2021 (56s)
+2026-11-03 23:47:03 108000/121624 distinct texts, flagged so far 2056 (56s)
+2026-11-03 23:47:03 110000/121624 distinct texts, flagged so far 2084 (57s)
+2026-11-03 23:47:04 112000/121624 distinct texts, flagged so far 2116 (57s)
+2026-11-03 23:47:04 114000/121624 distinct texts, flagged so far 2147 (57s)
+2026-11-03 23:47:04 116000/121624 distinct texts, flagged so far 2186 (57s)
+2026-11-03 23:47:04 118000/121624 distinct texts, flagged so far 2214 (58s)
+2026-11-03 23:47:05 120000/121624 distinct texts, flagged so far 2253 (58s)
+2026-11-03 23:47:05 121624/121624 distinct texts, flagged so far 2279 (58s)
+2026-11-03 23:49:02 2000/25810 distinct texts, flagged so far 0 (176s)
+2026-11-03 23:49:02 4000/25810 distinct texts, flagged so far 0 (176s)
+2026-11-03 23:49:02 6000/25810 distinct texts, flagged so far 1 (176s)
+2026-11-03 23:49:03 8000/25810 distinct texts, flagged so far 1 (176s)
+2026-11-03 23:49:03 10000/25810 distinct texts, flagged so far 3 (176s)
+2026-11-03 23:49:03 12000/25810 distinct texts, flagged so far 3 (176s)
+2026-11-03 23:49:03 14000/25810 distinct texts, flagged so far 3 (176s)
+2026-11-03 23:49:03 16000/25810 distinct texts, flagged so far 4 (176s)
+2026-11-03 23:49:03 18000/25810 distinct texts, flagged so far 4 (176s)
+2026-11-03 23:49:03 20000/25810 distinct texts, flagged so far 5 (176s)
+2026-11-03 23:49:03 22000/25810 distinct texts, flagged so far 5 (176s)
+2026-11-03 23:49:03 24000/25810 distinct texts, flagged so far 6 (176s)
+2026-11-03 23:49:03 25810/25810 distinct texts, flagged so far 6 (176s)
+{
+ "long": {
+  "rows": 241679,
+  "distinct_texts": 210103,
+  "distinct_flagged": 0,
+  "rows_flagged": 0,
+  "flagged_distinct_by_set": {},
+  "flagged_distinct_by_rule": {},
+  "libretexts_rows": {
+   "general": 0,
+   "general_b2048": 0,
+   "news": 0,
+   "news_long": 0,
+   "ref": 0,
+   "science": 0,
+   "science_b2048": 3428
+  },
+  "index": "protected-2026-10-28.3"
+ },
+ "seven": {
+  "rows": 140000,
+  "distinct_texts": 121624,
+  "distinct_flagged_now": 2279,
+  "rows_flagged_now": 2619,
+  "distinct_in_hit_texts_json": 2279,
+  "overlap": 2279,
+  "only_now": 0,
+  "only_json": 0,
+  "by_bin_rows_flagged": {
+   "b512": 787,
+   "b1024": 1390,
+   "b64": 109,
+   "b256": 333
+  }
+ },
+ "drawn": {
+  "prompts_drawn": 28120,
+  "distinct_texts": 25810,
+  "distinct_flagged": 6,
+  "drawn_flagged": 6,
+  "drawn_flagged_by_iso": {
+   "zne": 3,
+   "lue": 1,
+   "guw": 1,
+   "lub": 1
+  },
+  "drawn_flagged_steps": [
+   [
+    72,
+    "with_ref"
+   ],
+   [
+    129,
+    "with_ref"
+   ],
+   [
+    142,
+    "with_ref"
+   ],
+   [
+    214,
+    "with_ref"
+   ],
+   [
+    301,
+    "with_ref"
+   ],
+   [
+    364,
+    "with_ref"
+   ]
+  ]
+ }
+}

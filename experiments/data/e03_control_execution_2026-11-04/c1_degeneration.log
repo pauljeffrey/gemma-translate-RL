@@ -1,0 +1,17 @@
+      model    benchmark  n_rows  n_lang   rw_loop  ind_loop  unfinished
+0  c1_s6000  flores_plus   54648      54  0.178122  0.268281    0.145605
+1  c1_s6000       mafand   20009      15  0.013770  0.032605    0.010195
+2  c1_s6000        ntrex   47928      24  0.071461  0.100693    0.062406
+        model    benchmark  n_rows  n_lang   rw_loop  ind_loop  unfinished
+0         sft  flores_plus   54648      54  0.209486  0.310716    0.171022
+1         sft        ntrex   47928      24  0.121766  0.166229    0.110061
+2         sft       mafand   20009      15  0.043134  0.075443    0.037283
+3      stageA  flores_plus   54648      54  0.067523  0.120736    0.016597
+4      stageA        ntrex   47928      24  0.016462  0.030880    0.004402
+5      stageA       mafand   20009      15  0.002612  0.009156    0.001001
+6      b1best  flores_plus   54648      54  0.054073  0.097954    0.006990
+7      b1best        ntrex   47928      24  0.009160  0.018966    0.001377
+8      b1best       mafand   20009      15  0.001339  0.005634    0.000369
+9   mixedbest  flores_plus   54648      54  0.047998  0.085108    0.004556
+10  mixedbest        ntrex   47928      24  0.006364  0.014292    0.000584
+11  mixedbest       mafand   20009      15  0.000888  0.003921    0.000036

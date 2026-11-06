@@ -1,0 +1,10 @@
+('general', 'HuggingFaceFW/fineweb-edu:sample-10BT') 2054728 11924
+('general', 'wikimedia/wikipedia:20231101.en') 936501 5173
+('news', 'RealTimeData/bbc_news_alltime') 856657 3239
+('news', 'SetFit/bbc-news') 37 0
+('news', 'alvations/globalvoices-en-es') 145787 543
+('news', 'darkpredator/stealth-wikivoyage-en') 48596 188
+('news', 'izumi-lab/wikinews-en-20230728') 242991 916
+('news', 'permutans/c4-bbc-news') 632255 2329
+('ref', 'dsfsi/afriscience_mt (clean train)') 10009 2951
+('ref', 'howard-nlp/ibom-mt (train)') 993 857

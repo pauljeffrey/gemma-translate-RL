@@ -1,0 +1,24 @@
+{
+ "a0_n_packs": 138873,
+ "a0_unique_packs_drawn": 138873,
+ "a0_schedule_sha256": "0e514781f2b6fafaeb7233003dfacd88a9889f6d608fb3f3078e592d40ad11dc",
+ "g0_n_packs": 445221,
+ "g1a_schedule_sha256": "571359f8f853f0424cc6f089fdaf361b127482ecf9000de5186d9a8d8b83f452",
+ "comparison": [
+  {
+   "prefix_packs": 138700,
+   "languages_in_prefix": 78,
+   "languages_in_A0": 78,
+   "languages_with_different_count": 1,
+   "differences": "{\"efi\": [2553, 2726]}"
+  },
+  {
+   "prefix_packs": 138873,
+   "languages_in_prefix": 78,
+   "languages_in_A0": 78,
+   "languages_with_different_count": 0,
+   "differences": "{}"
+  }
+ ],
+ "a0_real_tokens_drawn": 736536550
+}

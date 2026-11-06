@@ -1,0 +1,138 @@
+{
+ "ntrex": {
+  "n": 24,
+  "R_sft_mean": -4.104556756750714,
+  "n_R_sft_lt_minus3": 12,
+  "n_R_sft_lt_minus5": 9,
+  "R_rl_mean": -0.4691804669988065,
+  "n_R_rl_lt_minus3": 0,
+  "n_R_rl_lt_minus5": 0
+ },
+ "mafand": {
+  "n": 15,
+  "R_sft_mean": -3.370903788290418,
+  "n_R_sft_lt_minus3": 6,
+  "n_R_sft_lt_minus5": 5,
+  "R_rl_mean": -1.9875934070344468,
+  "n_R_rl_lt_minus3": 3,
+  "n_R_rl_lt_minus5": 3
+ },
+ "smol_sent": {
+  "n": 45,
+  "R_sft_mean": -2.9412579359725264,
+  "n_R_sft_lt_minus3": 20,
+  "n_R_sft_lt_minus5": 16,
+  "R_rl_mean": null,
+  "n_R_rl_lt_minus3": 0,
+  "n_R_rl_lt_minus5": 0
+ },
+ "flores_plus": {
+  "n": 45,
+  "R_sft_mean": -2.727388323041041,
+  "n_R_sft_lt_minus3": 19,
+  "n_R_sft_lt_minus5": 13,
+  "R_rl_mean": -0.3855870636922149,
+  "n_R_rl_lt_minus3": 10,
+  "n_R_rl_lt_minus5": 3
+ },
+ "pooled_langs": {
+  "n_all4": 57,
+  "n_big": 28,
+  "n_R_sft_all4_lt_minus5": 17,
+  "n_R_rl_all3_lt_minus3": 9,
+  "n_R_rl_big_lt_minus3": 3,
+  "R_rl_all3_list": [
+   [
+    "ibo",
+    -5.33,
+    0.1
+   ],
+   [
+    "kin",
+    -4.83,
+    0.18
+   ],
+   [
+    "tso",
+    -3.13,
+    0.17
+   ],
+   [
+    "sot",
+    -7.34,
+    0.16
+   ],
+   [
+    "twi",
+    -3.14,
+    0.16
+   ],
+   [
+    "lug",
+    -4.53,
+    0.44
+   ],
+   [
+    "umb",
+    -3.02,
+    0.4
+   ],
+   [
+    "vmw",
+    -3.29,
+    0.0
+   ],
+   [
+    "pcm",
+    -7.16,
+    0.0
+   ]
+  ]
+ },
+ "regressed_gt5": {
+  "n": 17,
+  "mean_R_sft": -8.568111367087443,
+  "mean_R_old2a0": -10.68992906500711,
+  "mean_R_a0_2sft": 2.121817697919665,
+  "n_a0_already_below_minus5": 17,
+  "n_stageB_nonneg": 14,
+  "isos": [
+   "som",
+   "hau",
+   "tsn",
+   "kin",
+   "tso",
+   "sot",
+   "nso",
+   "twi",
+   "run",
+   "orm",
+   "lin",
+   "lug",
+   "bem",
+   "kab",
+   "sag",
+   "ven",
+   "ssw"
+  ],
+  "mean_share": 0.22831017959959962,
+  "share_gt0": 16
+ },
+ "not_regressed": {
+  "n": 40,
+  "mean_share": 0.2502382061618428,
+  "share_gt0": 25
+ },
+ "afriscience": {
+  "n": 6,
+  "rho_share_vs_R_b1": -0.7714285714285715,
+  "p": 0.07239650145772594,
+  "note": "old RL-final / science stage trained on AfriScience-style domain data (the 385M has had no science stage); n=6; not a clean regression test"
+ },
+ "power_min_abs_rho": {
+  "15": 0.6688990105175066,
+  "28": 0.5082126283577936,
+  "45": 0.40723664075787896,
+  "57": 0.3637903241428769
+ }
+}

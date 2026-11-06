@@ -1,0 +1,5 @@
+distinct (source,iso,col) combos: 40 total pair rows: 464
+('ref', 'HuggingFaceFW/finetranslations') 410
+('en', 'HuggingFaceFW/finetranslations') 42
+('en', 'weak-repo:finetranslations_amh') 6
+('en', 'weak-repo:finetranslations_tir') 6

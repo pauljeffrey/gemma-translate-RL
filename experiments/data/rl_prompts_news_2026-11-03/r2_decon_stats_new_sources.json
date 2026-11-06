@@ -1,0 +1,24 @@
+{
+ "index_version": "protected-2026-10-28.3",
+ "index_sha256": "f094fd2b24d6a0e469d635abed042e4f05335f93a3e96400f66afe51db3919ad",
+ "rule": "R1 exact sentence, R2 contained sentence, R3 shared word 8-gram (strict, both normal forms), English side only, no FLORES+ dev train-half exemption",
+ "windows_in": 186231,
+ "windows_removed": 0,
+ "windows_kept": 186231,
+ "before_by_bin": {
+  "b64": 65744,
+  "b256": 63323,
+  "b512": 38722,
+  "b1024": 18442
+ },
+ "after_by_bin": {
+  "b64": 65744,
+  "b256": 63323,
+  "b512": 38722,
+  "b1024": 18442
+ },
+ "removed_by_bin": {},
+ "removed_by_source": {},
+ "removed_by_set_any_rule": {},
+ "removed_by_rule": {}
+}

@@ -1,0 +1,24 @@
+{
+ "fit_2_40": {
+  "power_in_cumLR": 0.11600949856702523,
+  "power_in_step": 0.19539020348960617,
+  "predicted_kl_step_100_cumLR": 0.04248204487175764,
+  "predicted_kl_step_100_step": 0.04673774004494147,
+  "observed_kl_step_100": 0.13145551636845548,
+  "observed_median_kl_96_100": 0.12462016046598495,
+  "pred_slope_41_100_cumLR": 7.422731857627016e-05,
+  "pred_slope_41_100_step": 0.00012440250952867036,
+  "observed_slope_41_100": 0.0014298445645037424
+ },
+ "fit_11_40": {
+  "power_in_cumLR": 0.33770682389940787,
+  "power_in_step": 0.4405841597379912,
+  "predicted_kl_step_100_cumLR": 0.06009166977159096,
+  "predicted_kl_step_100_step": 0.0653909832220123,
+  "observed_kl_step_100": 0.13145551636845548,
+  "observed_median_kl_96_100": 0.12462016046598495,
+  "pred_slope_41_100_cumLR": 0.000278071420390257,
+  "pred_slope_41_100_step": 0.0003562124604461953,
+  "observed_slope_41_100": 0.0014298445645037424
+ }
+}

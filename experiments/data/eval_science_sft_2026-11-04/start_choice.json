@@ -1,0 +1,28 @@
+{
+ "chosen": "mixed",
+ "reason": "highest common-language dev chrF++",
+ "model_dir": "/workspace/clean_rerun/runs_385m/mixed/best",
+ "common_languages": [
+  "ewe",
+  "fon",
+  "twi",
+  "wol"
+ ],
+ "candidates": {
+  "mixed": {
+   "step": 50,
+   "dev_macro": 40.90334552623008,
+   "common_chrf": 29.195311735724612,
+   "common_comet": 0.6355255126953125,
+   "run": "/workspace/clean_rerun/runs_385m/mixed"
+  },
+  "weak": {
+   "step": 25,
+   "dev_macro": 29.048244932906783,
+   "common_chrf": 29.048244932906783,
+   "common_comet": 0.6349395751953125,
+   "run": "/workspace/clean_rerun/runs_385m_weak/mixed"
+  }
+ },
+ "limit": "dev sets of different runs differ; regression on languages outside a candidate's dev set is not visible here"
+}

@@ -1,0 +1,27 @@
+{
+ "numeric (log_tok, nonlatin, africomet, nllb_share)": {
+  "log_tok": 2.12569383787219,
+  "script_nonlatin": 1.1535563778413012,
+  "africomet": 2.148369933889174,
+  "nllb_share": 1.1819589952421579
+ },
+ "with family dummies": {
+  "log_tok": 3.38611032222085,
+  "script_nonlatin": 1.9203773500060188,
+  "africomet": 3.32915673636325,
+  "nllb_share": 1.4663843567344947,
+  "Afro-Asiatic": 1.9874820184980195,
+  "Atlantic-Congo: non-Bantu": 1.2658106925057793,
+  "Indo-European (creoles, Afrikaans)": 1.3455209804446167,
+  "Mande": 1.2178442698612186,
+  "Nilotic": 1.3538319625392865,
+  "Other (Austronesian, Saharan, Songhay, Ta-Ne-Omotic)": 1.1242586136423005
+ },
+ "with NLLB chrF++ proxy (n=43, no family)": {
+  "log_tok": 2.3794114502027863,
+  "script_nonlatin": 1.2120023952931587,
+  "africomet": 1.2171786763621557,
+  "nllb_share": 2.8598122102403964,
+  "nllb_chrf": 1.6632514266577572
+ }
+}

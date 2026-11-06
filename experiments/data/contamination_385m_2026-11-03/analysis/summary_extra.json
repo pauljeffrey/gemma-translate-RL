@@ -1,0 +1,18 @@
+{
+ "hits_by_dataset_and_kind_all_strings": {
+  "g0|translation": 43786,
+  "g0|other": 1736711,
+  "s1|translation": 34406,
+  "s1|other": 258982,
+  "s2|translation": 33416,
+  "s2|other": 258260,
+  "s3|translation": 33533,
+  "s3|other": 253688,
+  "s4|translation": 34436,
+  "s4|other": 255374,
+  "s5|translation": 34014,
+  "s5|other": 256376,
+  "s6|translation": 33782,
+  "s6|other": 255941
+ }
+}

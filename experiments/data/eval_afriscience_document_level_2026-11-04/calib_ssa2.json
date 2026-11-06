@@ -1,0 +1,65 @@
+[
+ {
+  "run": "gpt54|llm_icl|semantic_10shot|None|t0|eng-amh",
+  "released_ssa_comet": 0.6658579209723423,
+  "ssa-comet-mtl, reference-based (src+mt+ref, mean of 3 views)": 0.608118808392397,
+  "ssa-comet-mtl, reference-free (src+mt)": 0.6039740808231314,
+  "ssa-comet-qe, reference-free": 0.6670503282055412
+ },
+ {
+  "run": "gpt54|llm_icl|semantic_10shot|None|t0|eng-hau",
+  "released_ssa_comet": 0.6464200738779048,
+  "ssa-comet-mtl, reference-based (src+mt+ref, mean of 3 views)": 0.5845324329494201,
+  "ssa-comet-mtl, reference-free (src+mt)": 0.559949485542848,
+  "ssa-comet-qe, reference-free": 0.6472897873711341
+ },
+ {
+  "run": "gpt54|llm_icl|semantic_10shot|None|t0|eng-zul",
+  "released_ssa_comet": 0.6627531680556916,
+  "ssa-comet-mtl, reference-based (src+mt+ref, mean of 3 views)": 0.5980023256282216,
+  "ssa-comet-mtl, reference-free (src+mt)": 0.5757002053801547,
+  "ssa-comet-qe, reference-free": 0.6461846105831186
+ },
+ {
+  "run": "gemini_31_flash_lite|llm_icl|semantic_10shot|None|t0|eng-amh",
+  "released_ssa_comet": 0.6758542620029646,
+  "ssa-comet-mtl, reference-based (src+mt+ref, mean of 3 views)": 0.6214506483569587,
+  "ssa-comet-mtl, reference-free (src+mt)": 0.6146300640302835,
+  "ssa-comet-qe, reference-free": 0.6738749395940722
+ },
+ {
+  "run": "gemini_31_flash_lite|llm_icl|semantic_10shot|None|t0|eng-hau",
+  "released_ssa_comet": 0.6527375809310638,
+  "ssa-comet-mtl, reference-based (src+mt+ref, mean of 3 views)": 0.5931221558875645,
+  "ssa-comet-mtl, reference-free (src+mt)": 0.5674602075950387,
+  "ssa-comet-qe, reference-free": 0.6497888309439434
+ },
+ {
+  "run": "gemini_31_flash_lite|llm_icl|semantic_10shot|None|t0|eng-zul",
+  "released_ssa_comet": 0.6611927254912779,
+  "ssa-comet-mtl, reference-based (src+mt+ref, mean of 3 views)": 0.5964151598743557,
+  "ssa-comet-mtl, reference-free (src+mt)": 0.5746189392719072,
+  "ssa-comet-qe, reference-free": 0.6466960474387886
+ },
+ {
+  "run": "gemma2_9b_it|llm_icl|template1_0shot|None|t0|eng-amh",
+  "released_ssa_comet": 0.3232286358847446,
+  "ssa-comet-mtl, reference-based (src+mt+ref, mean of 3 views)": 0.15227376701905557,
+  "ssa-comet-mtl, reference-free (src+mt)": 0.17102251753364642,
+  "ssa-comet-qe, reference-free": 0.4040017668733892
+ },
+ {
+  "run": "gemma2_9b_it|llm_icl|template1_0shot|None|t0|eng-hau",
+  "released_ssa_comet": 0.485356387833959,
+  "ssa-comet-mtl, reference-based (src+mt+ref, mean of 3 views)": 0.37496956894078204,
+  "ssa-comet-mtl, reference-free (src+mt)": 0.38680662174814756,
+  "ssa-comet-qe, reference-free": 0.5663634624677835
+ },
+ {
+  "run": "gemma2_9b_it|llm_icl|template1_0shot|None|t0|eng-zul",
+  "released_ssa_comet": 0.3663140139321691,
+  "ssa-comet-mtl, reference-based (src+mt+ref, mean of 3 views)": 0.19365118164377115,
+  "ssa-comet-mtl, reference-free (src+mt)": 0.20850933015961007,
+  "ssa-comet-qe, reference-free": 0.4461987052996134
+ }
+]

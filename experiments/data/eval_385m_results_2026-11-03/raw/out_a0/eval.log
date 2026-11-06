@@ -1,0 +1,179 @@
+[eval_sft_benchmarks] 2026-11-03T03:30:37Z start: model=/workspace/eval_385m/model_a0 out=/workspace/eval_385m/out_a0 code=/workspace/eval_385m/gemma_mt_tree sampler=vllm run=eval-1279939-1793676637
+[03:30:40] benchmark flores_plus: 46552 rows, 46 languages
+[03:30:51] benchmark ntrex: 47928 rows, 24 languages
+[03:30:51] benchmark mafand: 20009 rows, 15 languages
+[03:30:51] benchmark smol_sent: 38833 rows, 45 languages
+[03:30:51] benchmark ibom_mt: 2024 rows, 2 languages
+[03:30:51] benchmark flores_moz: 1012 rows, 1 languages
+[03:30:51] benchmark glot_story: 3426 rows, 8 languages
+[03:30:51] benchmark salt: 2500 rows, 5 languages
+[03:30:51] warning: no contamination file /workspace/eval_385m/bench/contamination_flores_plus.json
+[03:30:51] warning: no contamination file /workspace/eval_385m/bench/contamination_ntrex.json
+[03:30:51] warning: no contamination file /workspace/eval_385m/bench/contamination_mafand.json
+[03:30:51] warning: no contamination file /workspace/eval_385m/bench/contamination_smol_sent.json
+[03:30:51] warning: no contamination file /workspace/eval_385m/bench/contamination_ibom_mt.json
+[03:30:51] warning: no contamination file /workspace/eval_385m/bench/contamination_flores_moz.json
+[03:30:51] warning: no contamination file /workspace/eval_385m/bench/contamination_glot_story.json
+[03:30:51] warning: no contamination file /workspace/eval_385m/bench/contamination_salt.json
+[03:30:53] sft: 23 generation unit(s) to run
+[03:32:10] sft/flores_plus unit 0: generating 9108 rows (vllm)
+[03:33:37]   generated 8192/9108
+[03:33:54]   generated 9108/9108
+[03:33:54] sft/flores_plus unit 0: 9108 rows in 104s (87 rows/s)
+[03:33:54] sft/flores_plus unit 1: generating 9108 rows (vllm)
+[03:35:59]   generated 8192/9108
+[03:36:06]   generated 9108/9108
+[03:36:07] sft/flores_plus unit 1: 9108 rows in 132s (69 rows/s)
+[03:36:07] sft/flores_plus unit 2: generating 9108 rows (vllm)
+[03:37:43]   generated 8192/9108
+[03:37:54]   generated 9108/9108
+[03:37:54] sft/flores_plus unit 2: 9108 rows in 108s (85 rows/s)
+[03:37:54] sft/flores_plus unit 3: generating 9108 rows (vllm)
+[03:40:56]   generated 8192/9108
+[03:41:33]   generated 9108/9108
+[03:41:33] sft/flores_plus unit 3: 9108 rows in 219s (42 rows/s)
+[03:41:33] sft/flores_plus unit 4: generating 9108 rows (vllm)
+[03:47:16]   generated 8192/9108
+[03:47:53]   generated 9108/9108
+[03:47:53] sft/flores_plus unit 4: 9108 rows in 379s (24 rows/s)
+[03:47:53] sft/flores_plus unit 5: generating 1012 rows (vllm)
+[03:48:14]   generated 1012/1012
+[03:48:14] sft/flores_plus unit 5: 1012 rows in 22s (47 rows/s)
+[03:48:14] sft/ntrex unit 0: generating 9985 rows (vllm)
+[03:50:39]   generated 8192/9985
+[03:51:10]   generated 9985/9985
+[03:51:11] sft/ntrex unit 0: 9985 rows in 176s (57 rows/s)
+[03:51:11] sft/ntrex unit 1: generating 9985 rows (vllm)
+[03:53:35]   generated 8192/9985
+[03:54:35]   generated 9985/9985
+[03:54:35] sft/ntrex unit 1: 9985 rows in 204s (49 rows/s)
+[03:54:35] sft/ntrex unit 2: generating 9985 rows (vllm)
+[03:56:06]   generated 8192/9985
+[03:56:33]   generated 9985/9985
+[03:56:33] sft/ntrex unit 2: 9985 rows in 118s (85 rows/s)
+[03:56:33] sft/ntrex unit 3: generating 9985 rows (vllm)
+[03:59:17]   generated 8192/9985
+[04:00:14]   generated 9985/9985
+[04:00:14] sft/ntrex unit 3: 9985 rows in 221s (45 rows/s)
+[04:00:14] sft/ntrex unit 4: generating 7988 rows (vllm)
+[04:02:49]   generated 7988/7988
+[04:02:49] sft/ntrex unit 4: 7988 rows in 154s (52 rows/s)
+[04:02:49] sft/mafand unit 0: generating 9457 rows (vllm)
+[04:04:12]   generated 8192/9457
+[04:04:24]   generated 9457/9457
+[04:04:24] sft/mafand unit 0: 9457 rows in 95s (99 rows/s)
+[04:04:24] sft/mafand unit 1: generating 9052 rows (vllm)
+[04:05:53]   generated 8192/9052
+[04:06:06]   generated 9052/9052
+[04:06:06] sft/mafand unit 1: 9052 rows in 102s (89 rows/s)
+[04:06:06] sft/mafand unit 2: generating 1500 rows (vllm)
+[04:06:37]   generated 1500/1500
+[04:06:37] sft/mafand unit 2: 1500 rows in 31s (48 rows/s)
+[04:06:37] sft/smol_sent unit 0: generating 8630 rows (vllm)
+[04:08:03]   generated 8192/8630
+[04:08:10]   generated 8630/8630
+[04:08:10] sft/smol_sent unit 0: 8630 rows in 94s (92 rows/s)
+[04:08:10] sft/smol_sent unit 1: generating 8629 rows (vllm)
+[04:09:40]   generated 8192/8629
+[04:09:43]   generated 8629/8629
+[04:09:44] sft/smol_sent unit 1: 8629 rows in 93s (93 rows/s)
+[04:09:44] sft/smol_sent unit 2: generating 8630 rows (vllm)
+[04:11:15]   generated 8192/8630
+[04:11:23]   generated 8630/8630
+[04:11:23] sft/smol_sent unit 2: 8630 rows in 99s (87 rows/s)
+[04:11:23] sft/smol_sent unit 3: generating 8630 rows (vllm)
+[04:13:23]   generated 8192/8630
+[04:13:33]   generated 8630/8630
+[04:13:33] sft/smol_sent unit 3: 8630 rows in 131s (66 rows/s)
+[04:13:33] sft/smol_sent unit 4: generating 4314 rows (vllm)
+[04:14:32]   generated 4314/4314
+[04:14:32] sft/smol_sent unit 4: 4314 rows in 58s (74 rows/s)
+[04:14:32] sft/ibom_mt unit 0: generating 2024 rows (vllm)
+[04:15:49]   generated 2024/2024
+[04:15:49] sft/ibom_mt unit 0: 2024 rows in 78s (26 rows/s)
+[04:15:49] sft/flores_moz unit 0: generating 1012 rows (vllm)
+[04:16:05]   generated 1012/1012
+[04:16:05] sft/flores_moz unit 0: 1012 rows in 16s (64 rows/s)
+[04:16:05] sft/glot_story unit 0: generating 3426 rows (vllm)
+[04:16:42]   generated 3426/3426
+[04:16:42] sft/glot_story unit 0: 3426 rows in 37s (92 rows/s)
+[04:16:42] sft/salt unit 0: generating 2500 rows (vllm)
+[04:16:55]   generated 2500/2500
+[04:16:55] sft/salt unit 0: 2500 rows in 13s (193 rows/s)
+That's 100 lines that end in a tokenized period ('.')
+It looks like you forgot to detokenize your test data, which may hurt your score.
+If you insist your data is detokenized, or don't care, you can suppress this message with the `force` parameter.
+That's 100 lines that end in a tokenized period ('.')
+It looks like you forgot to detokenize your test data, which may hurt your score.
+If you insist your data is detokenized, or don't care, you can suppress this message with the `force` parameter.
+[04:20:44] EVAL_DONE in 3004s -> /workspace/eval_385m/out_a0
+[eval_sft_benchmarks] 2026-11-03T04:20:47Z exit 0 (EVAL_DONE )
+[eval_sft_benchmarks] 2026-11-03T04:21:04Z start: model=/workspace/eval_385m/model_a0 out=/workspace/eval_385m/out_a0 code=/workspace/eval_385m/gemma_mt_tree sampler=vllm run=eval-1288493-1793679664
+[04:21:07] benchmark flores_plus: 46552 rows, 46 languages
+[04:21:17] benchmark ntrex: 47928 rows, 24 languages
+[04:21:17] benchmark mafand: 20009 rows, 15 languages
+[04:21:17] benchmark smol_sent: 38833 rows, 45 languages
+[04:21:17] benchmark ibom_mt: 2024 rows, 2 languages
+[04:21:17] benchmark flores_moz: 1012 rows, 1 languages
+[04:21:17] benchmark glot_story: 3426 rows, 8 languages
+[04:21:17] benchmark salt: 2500 rows, 5 languages
+[04:21:17] warning: no contamination file /workspace/eval_385m/bench/contamination_flores_plus.json
+[04:21:17] warning: no contamination file /workspace/eval_385m/bench/contamination_ntrex.json
+[04:21:17] warning: no contamination file /workspace/eval_385m/bench/contamination_mafand.json
+[04:21:17] warning: no contamination file /workspace/eval_385m/bench/contamination_smol_sent.json
+[04:21:17] warning: no contamination file /workspace/eval_385m/bench/contamination_ibom_mt.json
+[04:21:17] warning: no contamination file /workspace/eval_385m/bench/contamination_flores_moz.json
+[04:21:17] warning: no contamination file /workspace/eval_385m/bench/contamination_glot_story.json
+[04:21:17] warning: no contamination file /workspace/eval_385m/bench/contamination_salt.json
+Fetching 4 files:   0%|          | 0/4 [00:00<?, ?it/s]Fetching 4 files:  25%|██▌       | 1/4 [00:03<00:11,  3.87s/it]Fetching 4 files:  50%|█████     | 2/4 [00:04<00:04,  2.30s/it]Fetching 4 files:  75%|███████▌  | 3/4 [00:04<00:01,  1.62s/it]Fetching 4 files: 100%|██████████| 4/4 [00:33<00:00,  8.47s/it]Fetching 4 files: 100%|██████████| 4/4 [00:33<00:00,  8.47s/it]
+Encoder model frozen.
+[04:22:38]   AfriCOMET-STL: 8192/40480
+[04:23:03]   AfriCOMET-STL: 16384/40480
+[04:23:30]   AfriCOMET-STL: 24576/40480
+[04:24:09]   AfriCOMET-STL: 32768/40480
+[04:25:09]   AfriCOMET-STL: 40480/40480
+Fetching 4 files:   0%|          | 0/4 [00:00<?, ?it/s]Fetching 4 files: 100%|██████████| 4/4 [00:00<00:00, 1206.99it/s]
+Encoder model frozen.
+[04:25:38]   AfriCOMET-QE: 8192/40480
+[04:25:49]   AfriCOMET-QE: 16384/40480
+[04:26:01]   AfriCOMET-QE: 24576/40480
+[04:26:16]   AfriCOMET-QE: 32768/40480
+[04:27:03]   AfriCOMET-QE: 40480/40480
+[04:28:24]   AfriCOMET-STL: 8192/41937
+[04:28:39]   AfriCOMET-STL: 16384/41937
+[04:28:58]   AfriCOMET-STL: 24576/41937
+[04:29:29]   AfriCOMET-STL: 32768/41937
+[04:30:41]   AfriCOMET-STL: 40960/41937
+[04:30:53]   AfriCOMET-STL: 41937/41937
+[04:31:04]   AfriCOMET-QE: 8192/41937
+[04:31:19]   AfriCOMET-QE: 16384/41937
+[04:31:42]   AfriCOMET-QE: 24576/41937
+[04:32:11]   AfriCOMET-QE: 32768/41937
+[04:33:12]   AfriCOMET-QE: 40960/41937
+[04:33:23]   AfriCOMET-QE: 41937/41937
+That's 100 lines that end in a tokenized period ('.')
+It looks like you forgot to detokenize your test data, which may hurt your score.
+If you insist your data is detokenized, or don't care, you can suppress this message with the `force` parameter.
+That's 100 lines that end in a tokenized period ('.')
+It looks like you forgot to detokenize your test data, which may hurt your score.
+If you insist your data is detokenized, or don't care, you can suppress this message with the `force` parameter.
+[04:34:57]   AfriCOMET-STL: 8192/20009
+[04:35:36]   AfriCOMET-STL: 16384/20009
+[04:36:13]   AfriCOMET-STL: 20009/20009
+[04:36:27]   AfriCOMET-QE: 8192/20009
+[04:36:48]   AfriCOMET-QE: 16384/20009
+[04:37:17]   AfriCOMET-QE: 20009/20009
+[04:38:02]   AfriCOMET-STL: 8192/31066
+[04:38:27]   AfriCOMET-STL: 16384/31066
+[04:38:55]   AfriCOMET-STL: 24576/31066
+[04:39:44]   AfriCOMET-STL: 31066/31066
+[04:39:56]   AfriCOMET-QE: 8192/31066
+[04:40:11]   AfriCOMET-QE: 16384/31066
+[04:40:28]   AfriCOMET-QE: 24576/31066
+[04:41:09]   AfriCOMET-QE: 31066/31066
+[04:41:59]   AfriCOMET-STL: 1012/1012
+[04:42:02]   AfriCOMET-QE: 1012/1012
+[04:42:16]   AfriCOMET-STL: 1500/1500
+[04:42:19]   AfriCOMET-QE: 1500/1500
+[04:42:27] EVAL_DONE in 1280s -> /workspace/eval_385m/out_a0
+[eval_sft_benchmarks] 2026-11-03T04:42:31Z exit 0 (EVAL_DONE )

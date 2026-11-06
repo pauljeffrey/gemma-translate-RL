@@ -1,0 +1,53 @@
+target,kind,drop,rho
+R_sft_big,full,-,-0.4495445670538236
+R_sft_big,leave-one-out range,-,-0.56..-0.39
+R_sft_big,LOO most negative,ven,-0.5560921075146062
+R_sft_big,LOO least negative,lug,-0.392255955084836
+R_sft_big,drop block,Afroasiatic/Cushitic,-0.4568234349925342
+R_sft_big,drop block,other,-0.44531516147828965
+R_sft_big,drop block,West African,-0.504159696046692
+R_sft_big,drop block,Other Bantu,-0.5103608017238184
+R_sft_big,drop block,Nguni_no_NLLB,-0.4204246725120985
+R_sft_big,drop block,Sotho-Tswana-Tsonga-Swati,-0.4152656659231893
+R_sft_big,drop block,Great-Lakes Bantu,-0.37592366873278393
+R_sft_big,drop share>0.9,-,-0.4495445670538236
+R_sft_big,NLLB>0 only,-,-0.5714285714285714
+R_sft_all4,full,-,-0.07360530276816024
+R_sft_all4,leave-one-out range,-,-0.13..-0.05
+R_sft_all4,LOO most negative,kbp,-0.13133687763384078
+R_sft_all4,LOO least negative,ach,-0.046517009076145206
+R_sft_all4,drop block,Afroasiatic/Cushitic,-0.017475460931953044
+R_sft_all4,drop block,other,-0.02254745586890708
+R_sft_all4,drop block,Other Bantu,-0.23973225462715664
+R_sft_all4,drop block,West African,-0.12133154986217892
+R_sft_all4,drop block,Nguni_no_NLLB,-0.04379458081479125
+R_sft_all4,drop block,Sotho-Tswana-Tsonga-Swati,-0.03478675819542507
+R_sft_all4,drop block,Great-Lakes Bantu,-0.03634219434587188
+R_sft_all4,drop share>0.9,-,-0.18704875386211733
+R_sft_all4,NLLB>0 only,-,0.1407665505226481
+dB_pool,full,-,-0.2779698032411109
+dB_pool,leave-one-out range,-,-0.32..-0.24
+dB_pool,LOO most negative,nyn,-0.3162328421170583
+dB_pool,LOO least negative,kea,-0.2434469769726801
+dB_pool,drop block,Afroasiatic/Cushitic,-0.27712478853929995
+dB_pool,drop block,other,-0.4028148934072145
+dB_pool,drop block,Other Bantu,-0.3441387434449825
+dB_pool,drop block,West African,-0.2694175759894469
+dB_pool,drop block,Nguni_no_NLLB,-0.17294804368063393
+dB_pool,drop block,Sotho-Tswana-Tsonga-Swati,-0.26308839666353234
+dB_pool,drop block,Great-Lakes Bantu,-0.2568670930864972
+dB_pool,drop share>0.9,-,-0.3345035125696681
+dB_pool,NLLB>0 only,-,-0.3679442508710802
+R_rl_all3,full,-,0.199386815112776
+R_rl_all3,leave-one-out range,-,0.15..0.24
+R_rl_all3,LOO most negative,kbp,0.14985921852097892
+R_rl_all3,LOO least negative,amh,0.2419964996755924
+R_rl_all3,drop block,Afroasiatic/Cushitic,0.269535680080357
+R_rl_all3,drop block,other,0.16994567243340802
+R_rl_all3,drop block,Other Bantu,0.15273005101486103
+R_rl_all3,drop block,West African,0.04880781930189034
+R_rl_all3,drop block,Nguni_no_NLLB,0.2623245858877922
+R_rl_all3,drop block,Sotho-Tswana-Tsonga-Swati,0.21585474151049205
+R_rl_all3,drop block,Great-Lakes Bantu,0.24147489355452814
+R_rl_all3,drop share>0.9,-,0.12613211721644824
+R_rl_all3,NLLB>0 only,-,0.2033771106941839

@@ -1,0 +1,13 @@
+{
+ "tokens_B": 3989814142.976,
+ "tokens_B_draws": 3793423171.5840006,
+ "nllb_mined_tokens": 576414146.3154011,
+ "nllb_seed_tokens": 539393.3310922887,
+ "aya_aligned": 169000000.00000003,
+ "tumbuka_mt": 163100000.0,
+ "instr_tokens": 1254180000.0,
+ "tr_tokens_est": 2723076478.769954,
+ "rows_nllb_mined": 13912670.0,
+ "rows_translation": 42314940.0,
+ "f": 1.12799314924153
+}

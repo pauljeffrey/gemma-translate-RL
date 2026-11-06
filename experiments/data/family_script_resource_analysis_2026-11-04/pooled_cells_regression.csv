@@ -1,0 +1,25 @@
+y,term,coef,se_cluster,p,n_cells,n_lang
+gain,Intercept,8.201444663286441,1.569634679715963,1.7409308110448863e-07,92,57
+gain,C(benchmark)[T.mafand],-3.031115183933358,0.9078186014631091,0.000841109521870274,92,57
+gain,C(benchmark)[T.ntrex],-0.22969213102519587,0.8267734039786334,0.7811524466647981,92,57
+gain,"C(family_reg, Treatment('Atlantic-Congo: Narrow Bantu'))[T.Afro-Asiatic]",0.017644657387441143,2.636591522573303,0.9946604187623419,92,57
+gain,"C(family_reg, Treatment('Atlantic-Congo: Narrow Bantu'))[T.Atlantic-Congo: non-Bantu]",-3.361040848039919,1.8166841451719418,0.064299652667353,92,57
+gain,"C(family_reg, Treatment('Atlantic-Congo: Narrow Bantu'))[T.Indo-European (creoles, Afrikaans)]",-2.291240188601323,3.0530948418265575,0.4529748203849687,92,57
+gain,"C(family_reg, Treatment('Atlantic-Congo: Narrow Bantu'))[T.Mande]",-3.2539161373407945,2.150441840695053,0.13024450602408572,92,57
+gain,"C(family_reg, Treatment('Atlantic-Congo: Narrow Bantu'))[T.Nilotic]",1.5442357837772218,2.2254444177527013,0.48774495113319427,92,57
+gain,"C(family_reg, Treatment('Atlantic-Congo: Narrow Bantu'))[T.Other (Austronesian, Saharan, Songhay, Ta-Ne-Omotic)]",-1.930054769689499,2.4001039998218463,0.4213076713000502,92,57
+gain,log_tok,-0.036338411850728725,0.906116043780075,0.9680106228113767,92,57
+gain,script_nonlatin,-2.6422519147909087,2.882693452352338,0.35935681302614497,92,57
+gain,share_nllb_mined,7.198404700146527,2.824768982562529,0.010824429414451496,92,57
+sft,Intercept,17.221854247777713,3.742751133012053,4.196826025116392e-06,92,57
+sft,C(benchmark)[T.mafand],5.473063035713695,1.8552553575561996,0.0031774081703910494,92,57
+sft,C(benchmark)[T.ntrex],2.1428719337570357,1.3829477334048648,0.12126254056102573,92,57
+sft,"C(family_reg, Treatment('Atlantic-Congo: Narrow Bantu'))[T.Afro-Asiatic]",-5.1012822548868115,4.99237210011884,0.3068683208535572,92,57
+sft,"C(family_reg, Treatment('Atlantic-Congo: Narrow Bantu'))[T.Atlantic-Congo: non-Bantu]",-3.1211743880526797,3.5868257622885142,0.3842035145354825,92,57
+sft,"C(family_reg, Treatment('Atlantic-Congo: Narrow Bantu'))[T.Indo-European (creoles, Afrikaans)]",16.087810746626566,6.390327719598289,0.011818253200024362,92,57
+sft,"C(family_reg, Treatment('Atlantic-Congo: Narrow Bantu'))[T.Mande]",-9.132843897215832,4.234025836489438,0.03100474124112654,92,57
+sft,"C(family_reg, Treatment('Atlantic-Congo: Narrow Bantu'))[T.Nilotic]",-3.7569187321463056,4.978592837882315,0.4504802742496412,92,57
+sft,"C(family_reg, Treatment('Atlantic-Congo: Narrow Bantu'))[T.Other (Austronesian, Saharan, Songhay, Ta-Ne-Omotic)]",-5.505940592481581,9.221448301310849,0.5504540974991032,92,57
+sft,log_tok,9.478781157098904,2.307814296084231,4.0038960468108264e-05,92,57
+sft,script_nonlatin,-16.47017436121325,6.227244194532195,0.0081725292887902,92,57
+sft,share_nllb_mined,-14.035992276008686,5.428093140436467,0.00971517780676181,92,57

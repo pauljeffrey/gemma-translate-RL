@@ -1,0 +1,33 @@
+{
+ "created": "2026-11-03 00:22:51",
+ "files": 84,
+ "ref_counts": {
+  "flores_plus_dev": 997,
+  "flores_plus_devtest": 1012,
+  "ntrex128_eng": 1997,
+  "afriscience_dev": 868,
+  "afriscience_test": 998,
+  "afrilongdoc_core": 450,
+  "afrilongdoc_hard": 135
+ },
+ "ref_sentences": 29192,
+ "ref_8grams": 539745,
+ "py_mod": 8,
+ "ix_mod": 10,
+ "per_dir": {
+  "rl_prompts_news": {
+   "py_checked": 71543,
+   "py_hits": 0
+  }
+ },
+ "py_checked": 71543,
+ "py_hits": 0,
+ "py_hit_examples": [],
+ "py_hit_kinds": {},
+ "index_version": "protected-2026-10-28.3",
+ "index_checked": 57009,
+ "index_hits": 0,
+ "control_planted": 300,
+ "control_caught_by_index": 300,
+ "control_caught_by_python": 300
+}

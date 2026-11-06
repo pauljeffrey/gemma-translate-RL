@@ -1,0 +1,11 @@
+Fetching 4 files:   0%|          | 0/4 [00:00<?, ?it/s]Fetching 4 files: 100%|██████████| 4/4 [00:00<00:00, 919.25it/s]
+Encoder model frozen.
+/workspace/e2405/e02/rl.json greedy 0.6082
+/workspace/e2405/e02/rl.json mbr16 0.6168
+/workspace/e2405/e02/rl.json beam4 0.6045
+/workspace/e2405/e02/rl.json beam4hf 0.6227
+/workspace/e2405/e02/sft.json greedy 0.5513
+/workspace/e2405/e02/sft.json mbr16 0.578
+/workspace/e2405/e02/sft.json beam4 0.5639
+/workspace/e2405/e02/sft.json beam4hf 0.5722
+DONE

@@ -1,0 +1,30 @@
+{
+ "articles_in:izumi-lab/wikinews-en-20230728": 35561,
+ "articles_used:izumi-lab/wikinews-en-20230728": 20364,
+ "articles_dropped_duplicate_or_empty:izumi-lab/wikinews-en-20230728": 15197,
+ "sentences_bad": 41993,
+ "paragraphs_boilerplate": 15627,
+ "articles_in:alvations/globalvoices-en-es": 20650,
+ "articles_used:alvations/globalvoices-en-es": 20239,
+ "articles_dropped_duplicate_or_empty:alvations/globalvoices-en-es": 411,
+ "articles_in:darkpredator/stealth-wikivoyage-en": 31712,
+ "articles_used:darkpredator/stealth-wikivoyage-en": 30652,
+ "articles_dropped_duplicate_or_empty:darkpredator/stealth-wikivoyage-en": 1060,
+ "windows_duplicate": 34,
+ "windows_outside_range": 14,
+ "windows_raw": 186231,
+ "windows_raw_by_bin_source": {
+  "b1024|alvations/globalvoices-en-es": 3790,
+  "b1024|darkpredator/stealth-wikivoyage-en": 11015,
+  "b1024|izumi-lab/wikinews-en-20230728": 3637,
+  "b256|alvations/globalvoices-en-es": 13568,
+  "b256|darkpredator/stealth-wikivoyage-en": 28815,
+  "b256|izumi-lab/wikinews-en-20230728": 20940,
+  "b512|alvations/globalvoices-en-es": 6885,
+  "b512|darkpredator/stealth-wikivoyage-en": 18783,
+  "b512|izumi-lab/wikinews-en-20230728": 13054,
+  "b64|alvations/globalvoices-en-es": 18023,
+  "b64|darkpredator/stealth-wikivoyage-en": 28310,
+  "b64|izumi-lab/wikinews-en-20230728": 19411
+ }
+}

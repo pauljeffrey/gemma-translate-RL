@@ -1,0 +1,33 @@
+model,params,chrF++,spBLEU,SSA-COMET (0-1),COMET-22 (0-1),MetricX-24 (lower better),comparability,source_file
+AfriNLLB-600M,548M,46.74,25.76,0.5729,0.7315,5.916,"NOT comparable with en->xx macros (both directions averaged, 19 languages)",paper/tables/t_model_comparison_published_aggregates.md
+NLLB-600M,600M,45.73,24.48,0.5718,0.7340,5.752,"NOT comparable with en->xx macros (both directions averaged, 19 languages)",paper/tables/t_model_comparison_published_aggregates.md
+TranslatePsy-AfriSLM-0.8B,800M,48.3,27.0,0.5944,0.7432,5.197,"NOT comparable with en->xx macros (both directions averaged, 19 languages)",paper/tables/t_model_comparison_published_aggregates.md
+Qwen3.5-0.8B,800M,14.06,3.27,0.2967,0.3656,15.974,"NOT comparable with en->xx macros (both directions averaged, 19 languages)",paper/tables/t_model_comparison_published_aggregates.md
+NLLB-200-1.3B,1.3B,47.77,26.8,0.5878,0.7471,5.159,"NOT comparable with en->xx macros (both directions averaged, 19 languages)",paper/tables/t_model_comparison_published_aggregates.md
+TranslatePsy-AfriSLM-2B,2B,50.0,28.95,0.6070,0.7552,4.637,"NOT comparable with en->xx macros (both directions averaged, 19 languages)",paper/tables/t_model_comparison_published_aggregates.md
+Qwen3.5-2B,2B,20.95,5.87,0.2885,0.4724,14.344,"NOT comparable with en->xx macros (both directions averaged, 19 languages)",paper/tables/t_model_comparison_published_aggregates.md
+NLLB-200-3.3B,3.3B,48.89,28.06,0.5944,0.7525,4.913,"NOT comparable with en->xx macros (both directions averaged, 19 languages)",paper/tables/t_model_comparison_published_aggregates.md
+TranslatePsy-AfriSLM-4B,4B,51.13,30.28,0.6143,0.7629,4.317,"NOT comparable with en->xx macros (both directions averaged, 19 languages)",paper/tables/t_model_comparison_published_aggregates.md
+Qwen3.5-4B,4B,30.58,11.35,0.3863,0.6021,11.416,"NOT comparable with en->xx macros (both directions averaged, 19 languages)",paper/tables/t_model_comparison_published_aggregates.md
+Qwen3-4B,4B,17.35,5.03,0.2426,0.4046,15.427,"NOT comparable with en->xx macros (both directions averaged, 19 languages)",paper/tables/t_model_comparison_published_aggregates.md
+AfriqueGemma-4B,4.3B,44.46,24.98,0.5462,0.7203,6.091,"NOT comparable with en->xx macros (both directions averaged, 19 languages)",paper/tables/t_model_comparison_published_aggregates.md
+TranslateGemma-4B,4.3B,24.78,10.21,0.3913,0.5487,11.086,"NOT comparable with en->xx macros (both directions averaged, 19 languages)",paper/tables/t_model_comparison_published_aggregates.md
+Hunyuan-MT-7B,7B,23.49,6.03,0.4450,0.5056,10.779,"NOT comparable with en->xx macros (both directions averaged, 19 languages)",paper/tables/t_model_comparison_published_aggregates.md
+AfriqueLlama-8B,8B,45.04,25.57,0.5513,0.7245,5.921,"NOT comparable with en->xx macros (both directions averaged, 19 languages)",paper/tables/t_model_comparison_published_aggregates.md
+Apertus-8B,8B,30.45,12.22,0.3814,0.5883,11.471,"NOT comparable with en->xx macros (both directions averaged, 19 languages)",paper/tables/t_model_comparison_published_aggregates.md
+AfriqueQwen-8B,8.2B,44.41,25.01,0.5448,0.7202,6.109,"NOT comparable with en->xx macros (both directions averaged, 19 languages)",paper/tables/t_model_comparison_published_aggregates.md
+Qwen3-8B,8.2B,20.63,6.9,0.2655,0.4566,15.327,"NOT comparable with en->xx macros (both directions averaged, 19 languages)",paper/tables/t_model_comparison_published_aggregates.md
+Qwen3.5-9B,9B,36.74,15.52,0.4523,0.6688,9.758,"NOT comparable with en->xx macros (both directions averaged, 19 languages)",paper/tables/t_model_comparison_published_aggregates.md
+AfriqueGemma-12B,12B,47.84,28.48,0.5655,0.7389,5.486,"NOT comparable with en->xx macros (both directions averaged, 19 languages)",paper/tables/t_model_comparison_published_aggregates.md
+TranslateGemma-12B,12B,39.48,16.66,0.5037,0.7125,7.718,"NOT comparable with en->xx macros (both directions averaged, 19 languages)",paper/tables/t_model_comparison_published_aggregates.md
+AfriqueQwen-14B,14.8B,46.16,26.82,0.5569,0.7303,5.702,"NOT comparable with en->xx macros (both directions averaged, 19 languages)",paper/tables/t_model_comparison_published_aggregates.md
+TranslateGemma-27B,27B,43.33,21.13,0.5455,0.7335,6.142,"NOT comparable with en->xx macros (both directions averaged, 19 languages)",paper/tables/t_model_comparison_published_aggregates.md
+Qwen3.5-27B,27B,41.78,19.96,0.5132,0.7144,7.250,"NOT comparable with en->xx macros (both directions averaged, 19 languages)",paper/tables/t_model_comparison_published_aggregates.md
+Qwen3.5-122B-A10B,122B,44.42,21.89,0.5505,0.7373,5.920,"NOT comparable with en->xx macros (both directions averaged, 19 languages)",paper/tables/t_model_comparison_published_aggregates.md
+model,params,chrF (pooled),"NOT comparable with en->xx macros (both directions averaged, 19 languages)",paper/tables/t_model_comparison_published_aggregates.md
+Gemini 1.5 pro,closed,37.6,"NOT comparable with en->xx macros (both directions averaged, 19 languages)",paper/tables/t_model_comparison_published_aggregates.md
+GPT-4o (Aug),closed,35.1,"NOT comparable with en->xx macros (both directions averaged, 19 languages)",paper/tables/t_model_comparison_published_aggregates.md
+NLLB 3.3B,3.3B,40.4,"NOT comparable with en->xx macros (both directions averaged, 19 languages)",paper/tables/t_model_comparison_published_aggregates.md
+Aya-101 13B,13B,23.4,"NOT comparable with en->xx macros (both directions averaged, 19 languages)",paper/tables/t_model_comparison_published_aggregates.md
+Gemma 2 27B,27B,27.9,"NOT comparable with en->xx macros (both directions averaged, 19 languages)",paper/tables/t_model_comparison_published_aggregates.md
+LLaMa 3.1 70B,70B,25.1,"NOT comparable with en->xx macros (both directions averaged, 19 languages)",paper/tables/t_model_comparison_published_aggregates.md

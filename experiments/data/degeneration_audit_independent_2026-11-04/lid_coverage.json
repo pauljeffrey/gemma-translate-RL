@@ -1,0 +1,27 @@
+{
+ "n_languages_in_refs": 58,
+ "n_covered_by_nllb218": 49,
+ "uncovered": [
+  "aeb",
+  "ary",
+  "arz",
+  "mfe",
+  "nde",
+  "seh",
+  "shi",
+  "ven",
+  "vmw"
+ ],
+ "n_reliable_recall_ge_0.90": 40,
+ "covered_not_reliable": [
+  "bam",
+  "cjk",
+  "dyu",
+  "kam",
+  "nso",
+  "nya",
+  "pcm",
+  "sot",
+  "taq"
+ ]
+}

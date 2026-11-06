@@ -1,0 +1,50 @@
+grouping,group,n_registry,n_with_flores,n_with_any_rl_gain,tokens_M_sum,tokens_M_median,n_no_token_data,n_no_reference_test
+glottolog_top_family,Afro-Asiatic,17,11,12,624.9699976960001,2.7,0,5
+glottolog_top_family,Atlantic-Congo,87,33,35,1801.38623616,9.16,5,38
+glottolog_top_family,Austronesian,1,1,1,76.88,76.88,0,0
+glottolog_top_family,Indo-European,7,3,4,164.48,9.08,0,2
+glottolog_top_family,Mande,3,2,2,77.87,38.935,1,1
+glottolog_top_family,Nilotic,7,3,3,17.3340928,0.93,0,3
+glottolog_top_family,Saharan,1,1,1,11.06,11.06,0,0
+glottolog_top_family,Songhay,1,0,0,4.63,4.63,0,1
+glottolog_top_family,Ta-Ne-Omotic,1,0,0,8.34,8.34,0,1
+family_reg,Afro-Asiatic,17,11,12,624.9699976960001,2.7,0,5
+family_reg,Atlantic-Congo: Narrow Bantu,59,24,26,1318.0,7.66,0,23
+family_reg,Atlantic-Congo: non-Bantu,28,9,9,483.38623616,11.63,5,15
+family_reg,"Indo-European (creoles, Afrikaans)",7,3,4,164.48,9.08,0,2
+family_reg,Mande,3,2,2,77.87,38.935,1,1
+family_reg,Nilotic,7,3,3,17.3340928,0.93,0,3
+family_reg,"Other (Austronesian, Saharan, Songhay, Ta-Ne-Omotic)",4,2,2,100.91,9.7,0,2
+family_branch,Afro-Asiatic,1,0,0,0.04,0.04,0,1
+family_branch,Afro-Asiatic: Berber,5,3,4,43.17999999999999,1.94,0,1
+family_branch,Afro-Asiatic: Chadic,1,1,1,64.33,64.33,0,0
+family_branch,Afro-Asiatic: Cushitic,4,2,2,107.50999999999999,17.835,0,2
+family_branch,Afro-Asiatic: Egyptian,1,0,0,1.91,1.91,0,1
+family_branch,Afro-Asiatic: Semitic,5,5,5,407.99999769600004,3.17,0,0
+family_branch,Atlantic-Congo: Benue-Congo,12,2,2,256.49,5.819999999999999,2,7
+family_branch,Atlantic-Congo: Cameroun-Ubangian,2,1,1,35.28,17.64,0,1
+family_branch,Atlantic-Congo: Gur,4,2,2,54.879999999999995,26.06,1,1
+family_branch,Atlantic-Congo: Kwa Volta-Congo,8,3,3,89.68623615999999,17.04,2,5
+family_branch,Atlantic-Congo: Narrow Bantu,59,24,26,1318.0,7.66,0,23
+family_branch,Atlantic-Congo: North-Central Atlantic,2,1,1,47.05,23.525,0,1
+family_branch,Austronesian,1,1,1,76.88,76.88,0,0
+family_branch,"Indo-European: Germanic (Afrikaans, English-lexifier creoles)",4,1,2,128.84,2.46,0,1
+family_branch,Indo-European: Romance (Portuguese/French-lexifier creoles),3,2,2,35.64,9.66,0,1
+family_branch,Mande,3,2,2,77.87,38.935,1,1
+family_branch,Nilotic,7,3,3,17.3340928,0.93,0,3
+family_branch,Saharan,1,1,1,11.06,11.06,0,0
+family_branch,Songhay,1,0,0,4.63,4.63,0,1
+family_branch,Ta-Ne-Omotic,1,0,0,8.34,8.34,0,1
+script,ARABIC,4,3,4,6.3299976959999995,1.473556096,0,0
+script,COPTIC,1,0,0,1.91,1.91,0,1
+script,ETHIOPIC,2,2,2,403.61,201.805,0,0
+script,LATIN,116,48,51,2367.42032896,8.65,6,49
+script,TIFINAGH,2,1,1,7.68,3.84,0,1
+our_group_evid_table4,Afroasiatic,7,6,7,607.76,40.82,0,0
+our_group_evid_table4,Atlantic-Congo (non-Bantu),13,9,9,403.71999999999997,23.65,2,0
+our_group_evid_table4,Bantu,35,23,25,1219.71,23.18,0,0
+our_group_evid_table4,Creole / Pidgin,3,1,2,21.819999999999997,2.54,0,0
+our_group_evid_table4,Mande,2,2,2,77.87,38.935,0,0
+our_group_evid_table4,Nilo-Saharan,4,3,3,26.35,7.18,0,0
+our_group_evid_table4,"Other (Indo-European, Austronesian)",2,2,2,199.51,99.755,0,0
+our_group_evid_table4,family unlabelled,59,8,8,230.210326656,1.91,4,51

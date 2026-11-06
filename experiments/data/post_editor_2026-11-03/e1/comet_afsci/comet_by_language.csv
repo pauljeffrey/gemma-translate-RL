@@ -1,0 +1,13 @@
+system,benchmark,subset,iso,n,comet_ref,comet_qe
+draft,afriscience_test,all,amh,970,0.5909,0.624
+draft,afriscience_test,all,hau,970,0.6833,0.6351
+draft,afriscience_test,all,lug,970,0.6081,0.6022
+draft,afriscience_test,all,nso,970,0.7044,0.682
+draft,afriscience_test,all,yor,970,0.749,0.6273
+draft,afriscience_test,all,zul,970,0.719,0.6664
+edited,afriscience_test,all,amh,970,0.591,0.6229
+edited,afriscience_test,all,hau,970,0.6851,0.6305
+edited,afriscience_test,all,lug,970,0.6164,0.606
+edited,afriscience_test,all,nso,970,0.6992,0.673
+edited,afriscience_test,all,yor,970,0.6021,0.4713
+edited,afriscience_test,all,zul,970,0.7198,0.667

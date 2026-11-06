@@ -1,0 +1,90 @@
+{
+ "doc/long_rl_best": {
+  "whole/amh": {
+   "ssa_qe_concat": 0.365692138671875
+  },
+  "whole/hau": {
+   "ssa_qe_concat": 0.3683384486607143
+  },
+  "whole/lug": {
+   "ssa_qe_concat": 0.3868321010044643
+  },
+  "whole/nso": {
+   "ssa_qe_concat": 0.4405430385044643
+  },
+  "whole/yor": {
+   "ssa_qe_concat": 0.4489658900669643
+  },
+  "whole/zul": {
+   "ssa_qe_concat": 0.40950230189732145
+  },
+  "chunked/amh": {
+   "ssa_qe_concat": 0.39333670479910715,
+   "ssa_qe_window": 0.5412314708461646
+  },
+  "chunked/hau": {
+   "ssa_qe_concat": 0.38851492745535715,
+   "ssa_qe_window": 0.5405938834231245
+  },
+  "chunked/lug": {
+   "ssa_qe_concat": 0.44560023716517855,
+   "ssa_qe_window": 0.5716239298527768
+  },
+  "chunked/nso": {
+   "ssa_qe_concat": 0.4749058314732143,
+   "ssa_qe_window": 0.6260952406397005
+  },
+  "chunked/yor": {
+   "ssa_qe_concat": 0.5172119140625,
+   "ssa_qe_window": 0.6168392980533309
+  },
+  "chunked/zul": {
+   "ssa_qe_concat": 0.4311436244419643,
+   "ssa_qe_window": 0.5773697774829104
+  }
+ },
+ "doc/long_rl_final": {
+  "whole/amh": {
+   "ssa_qe_concat": 0.3514011928013393
+  },
+  "whole/hau": {
+   "ssa_qe_concat": 0.3690272739955357
+  },
+  "whole/lug": {
+   "ssa_qe_concat": 0.3851405552455357
+  },
+  "whole/nso": {
+   "ssa_qe_concat": 0.4490966796875
+  },
+  "whole/yor": {
+   "ssa_qe_concat": 0.4594029017857143
+  },
+  "whole/zul": {
+   "ssa_qe_concat": 0.40228271484375
+  },
+  "chunked/amh": {
+   "ssa_qe_concat": 0.39457484654017855,
+   "ssa_qe_window": 0.5419400692613671
+  },
+  "chunked/hau": {
+   "ssa_qe_concat": 0.38702392578125,
+   "ssa_qe_window": 0.5392021903509592
+  },
+  "chunked/lug": {
+   "ssa_qe_concat": 0.44723946707589285,
+   "ssa_qe_window": 0.5745553769902437
+  },
+  "chunked/nso": {
+   "ssa_qe_concat": 0.47433907645089285,
+   "ssa_qe_window": 0.62363580086402
+  },
+  "chunked/yor": {
+   "ssa_qe_concat": 0.5127301897321429,
+   "ssa_qe_window": 0.6160520439353012
+  },
+  "chunked/zul": {
+   "ssa_qe_concat": 0.4306553431919643,
+   "ssa_qe_window": 0.5777085304396357
+  }
+ }
+}

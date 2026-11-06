@@ -1,0 +1,126 @@
+iso,name,rl_current,rl81,rl_consensus_only,benchmarks_with_reference,gen_gross,rel_gross,unv_gross,chosen,chosen_train,chosen_val,chosen_gen,chosen_rel,chosen_unv,status,register_caveats,sources,excluded_sources_rows,reason_if_not_covered
+ach,Acholi,1,1,1,smol_sent+salt,1,67434,0,399,383,16,1,398,0,covered,religious share 100% (JW/Bible register),mt560; weblate,afrolingu-mt:9541,only 399 eligible human pairs after the filters
+afr,Afrikaans,1,1,0,flores_plus+ntrex+smol_sent,14076,1007542,830412,522,501,21,522,0,0,covered,,govza; mehgoss-vukuzenzele; mt560; multi-open; pontoon; vukuzenzele; weblate,finetranslations:63367; afrolingu-mt:7263,
+amh,Amharic,1,1,0,flores_plus+ntrex+mafand+smol_sent,77766,1175384,0,523,502,21,523,0,0,covered,422 AfriScience (science register),afriscience; masakhane/AfriDocMT; mt560; opus; opus_tatoeba; opus_translatewiki; opus_wikimedia; pontoon; ssa-mte; weblate,finetranslations_amh:39254; afrolingu-mt:17540; HuggingFaceFW/finetranslations:12440; AfriNLP/AfricanFineTranslations-sentences:4259; <HF_ORG>/African-Code-Switch:691,
+arz,Egyptian Arabic,1,0,1,flores_plus,0,43326,0,400,384,16,0,400,0,covered,religious share 100% (JW/Bible register),opus-mt560,,
+bam,Bambara,1,1,0,flores_plus+smol_sent,6030,0,0,523,502,21,523,0,0,covered,,oldi_seed_bam_Latn; openlanguagedata/oldi_seed; weblate,afrolingu-mt:16202; HuggingFaceFW/finetranslations:4380; <HF_ORG>/African-Code-Switch:8,
+bas,Basaa,1,1,1,,0,25657,0,400,384,16,0,400,0,covered,religious share 100% (JW/Bible register),mt560,afrolingu-mt:5156,
+bbj,Ghomala,1,0,1,,0,0,0,0,0,0,0,0,0,none,,,,no pair in any clean source (or all removed by length / protected-set filters)
+bem,Bemba,1,1,0,flores_plus+ntrex+smol_sent,1,349910,0,400,384,16,1,399,0,covered,religious share 100% (JW/Bible register),mt560; weblate,afrolingu-mt:4964,
+bin,Edo,1,1,1,,0,10731,0,400,384,16,0,400,0,covered,religious share 100% (JW/Bible register),mt560,,
+crs,Seychellois Creole,1,1,1,,0,173632,0,400,384,16,0,400,0,covered,religious share 100% (JW/Bible register),opus-mt560,,
+dag,Dagbani,1,0,1,glot_story,0,0,0,0,0,0,0,0,0,none,,,,no pair in any clean source (or all removed by length / protected-set filters)
+dua,Duala,1,1,1,,0,14196,0,399,383,16,0,399,0,covered,religious share 100% (JW/Bible register),mt560,,only 399 eligible human pairs after the filters
+dyu,Dyula,1,1,0,flores_plus+smol_sent,0,27182,0,399,383,16,0,399,0,covered,religious share 100% (JW/Bible register),mt560,,only 399 eligible human pairs after the filters
+efi,Efik,1,1,0,smol_sent+ibom_mt,973,304673,0,517,496,21,517,0,0,covered,517 non-commercial pairs,ibom-mt; mt560,,
+ewe,Ewe,1,1,0,flores_plus+ntrex+smol_sent,2410,0,50994,520,499,21,520,0,0,covered,,multi-open; opus_tatoeba; opus_translatewiki; opus_wikimedia; pontoon; weblate,afrolingu-mt:180; <HF_ORG>/African-Code-Switch:3,
+fon,Fon,1,1,0,flores_plus+smol_sent,182,81704,142762,520,499,21,180,261,79,covered,religious share 50% (JW/Bible register); 79 unverified-provenance pairs,fon-helsinki; mt560; multi-open; opus_translatewiki; opus_wikimedia,<HF_ORG>/African-Code-Switch:7,
+guw,Gun,1,1,1,,0,263552,0,400,384,16,0,400,0,covered,religious share 100% (JW/Bible register),opus-mt560,,
+hau,Hausa,1,1,0,flores_plus+ntrex+mafand+smol_sent,7435,267820,274028,522,501,21,522,0,0,covered,502 AfriScience (science register),afriscience; mt560; multi-open; opus100; pontoon; ssa-mte; weblate,finetranslations:87998; afrolingu-mt:6413,
+her,Herero,1,1,1,glot_story,0,7529,0,400,384,16,0,400,0,covered,religious share 100% (JW/Bible register),mt560,,
+ibb,Ibibio,1,0,1,ibom_mt,977,0,0,519,498,21,519,0,0,covered,519 non-commercial pairs,ibom-mt,,
+ibo,Igbo,1,1,0,flores_plus+ntrex+mafand+smol_sent+salt,1844,658148,297818,518,497,21,518,0,0,covered,,igbo-bundles; mt560; multi-open; opus100; pontoon; ssa-mte; weblate,igbo-bundles:119363; finetranslations:69336; afrolingu-mt:9146,
+ish,Esan,1,1,1,,0,4872,0,398,382,16,0,398,0,covered,religious share 100% (JW/Bible register),mt560,,only 398 eligible human pairs after the filters
+iso,Isoko,1,1,0,,0,197104,0,399,383,16,0,399,0,covered,religious share 100% (JW/Bible register),mt560,,only 399 eligible human pairs after the filters
+kab,Kabyle,1,1,0,flores_plus+smol_sent,129583,59604,0,523,502,21,523,0,0,covered,,kabyle-tm; mt560; opus_tatoeba; opus_translatewiki; opus_wikimedia; tatoeba-abdelhaque; weblate,finetranslations_kab:19700,
+kam,Kamba,1,1,0,flores_plus,4,94564,0,400,384,16,4,396,0,covered,religious share 99% (JW/Bible register),mt560; opus_tatoeba,HuggingFaceFW/finetranslations:4752,
+kbp,Kabiye,1,1,0,flores_plus,132,0,0,102,94,8,102,0,0,thin (< 400),,opus_translatewiki,afrolingu-mt:17938,only 102 eligible human pairs after the filters
+kea,Kabuverdianu,1,1,1,flores_plus,2142,9708,0,523,502,21,523,0,0,covered,,mt560; opus_translatewiki,HuggingFaceFW/finetranslations:3737,
+kik,Kikuyu,1,1,0,flores_plus+smol_sent,789,86927,0,522,501,21,522,0,0,covered,,mt560; ssa-mte,,
+kin,Kinyarwanda,1,1,0,flores_plus+ntrex+mafand+smol_sent,140663,0,95477,523,502,21,523,0,0,covered,,kin-gazette; multi-open; opus100; pontoon; ssa-mte; weblate,finetranslations:56197; afrolingu-mt:6338,
+kmb,Kimbundu,1,1,0,flores_plus,0,167490,0,400,384,16,0,400,0,covered,religious share 100% (JW/Bible register),mt560,<HF_ORG>/African-Code-Switch:5,
+kon,Kongo,1,1,0,smol_sent,0,345737,0,400,384,16,0,400,0,covered,religious share 100% (JW/Bible register),mt560,afrolingu-mt:1365,
+kqn,Kaonde,1,1,0,glot_story,0,201343,0,400,384,16,0,400,0,covered,religious share 100% (JW/Bible register),mt560,,
+kri,Krio,1,1,1,smol_sent,0,39471,0,400,384,16,0,400,0,covered,religious share 100% (JW/Bible register),mt560,,
+kua,Kuanyama,1,1,0,glot_story,0,92494,0,400,384,16,0,400,0,covered,religious share 100% (JW/Bible register),mt560,,
+lin,Lingala,1,1,0,flores_plus+ntrex+smol_sent,1149,490816,0,522,501,21,352,170,0,covered,,mt560; weblate,afrolingu-mt:224,
+loz,Lozi,1,1,0,glot_story,0,377670,0,400,384,16,0,400,0,covered,religious share 100% (JW/Bible register),mt560,,
+lua,Luba-Kasai,1,1,0,flores_plus,0,268494,0,400,384,16,0,400,0,covered,religious share 100% (JW/Bible register),mt560,,
+lub,Luba-Katanga,1,1,1,,0,180756,0,400,384,16,0,400,0,covered,religious share 100% (JW/Bible register),opus-mt560,,
+lue,Luvale,1,1,1,,0,290525,0,399,383,16,0,399,0,covered,religious share 100% (JW/Bible register),opus-mt560,,only 399 eligible human pairs after the filters
+lug,Luganda,1,1,0,flores_plus+ntrex+mafand+smol_sent+salt,5653,206145,40228,522,501,21,522,0,0,covered,518 AfriScience (science register),afriscience; lug-pkyoyetera; mt560; weblate,afrolingu-mt:9203,
+lun,Lunda,1,1,0,glot_story,0,123443,0,400,384,16,0,400,0,covered,religious share 100% (JW/Bible register),mt560,,
+luo,Luo,1,1,0,flores_plus+mafand+smol_sent,1408,2651420,0,522,501,21,522,0,0,covered,,luo-opus; mt560; ssa-mte,finetranslations_luo:4020; <HF_ORG>/African-Code-Switch:23,
+mfe,Mauritian Creole,1,1,1,flores_plus,20,166546,0,400,384,16,20,380,0,covered,religious share 95% (JW/Bible register),opus-mt560; weblate,,
+mlg,Malagasy,1,1,0,flores_plus+ntrex+smol_sent,503,790482,0,521,500,21,260,261,0,covered,religious share 50% (JW/Bible register),mt560; weblate,afrolingu-mt:8490,
+mos,Mossi,1,1,0,flores_plus+smol_sent,1818,339432,0,523,502,21,523,0,0,covered,,mt560; opus_translatewiki,<HF_ORG>/African-Code-Switch:5,
+nbl,South Ndebele,1,1,1,smol_sent+glot_story,108370,0,0,523,502,21,523,0,0,covered,,mehgoss-autshumato; mehgoss-vukuzenzele; vukuzenzele; weblate,,
+ndc,Ndau,1,1,1,smol_sent,0,28315,0,399,383,16,0,399,0,covered,religious share 100% (JW/Bible register),mt560,,only 399 eligible human pairs after the filters
+nso,Sepedi,1,1,0,flores_plus+ntrex+smol_sent,119795,512417,0,523,502,21,523,0,0,covered,27 AfriScience (science register),afriscience; mehgoss-autshumato; mehgoss-jworg; mehgoss-vukuzenzele; mt560; vukuzenzele,,
+nus,Nuer,1,1,0,flores_plus,6100,0,0,523,502,21,523,0,0,covered,,oldi_seed_nus_Latn; openlanguagedata/oldi_seed; opus_tatoeba; opus_translatewiki,HuggingFaceFW/finetranslations:390,
+nya,Chichewa,1,1,0,flores_plus+ntrex+mafand+smol_sent,125,711965,75818,521,500,21,123,276,122,covered,religious share 53% (JW/Bible register); 122 unverified-provenance pairs,mt560; multi-open; pontoon; ssa-mte; weblate,finetranslations:66720; afrolingu-mt:967,
+nyn,Nyankore,1,1,1,smol_sent+salt,0,46925,0,400,384,16,0,400,0,covered,religious share 100% (JW/Bible register),mt560,afrolingu-mt:9572,
+oke,Okpe,1,1,1,,0,20943,0,400,384,16,0,400,0,covered,religious share 100% (JW/Bible register),mt560,,
+orm,Oromo,1,1,0,flores_plus+ntrex+smol_sent,174,141706,32599,520,499,21,173,260,87,covered,87 unverified-provenance pairs,mt560; multi-open; pontoon; weblate,finetranslations:23534; afrolingu-mt:9283,
+pcm,Pidgin,1,1,0,mafand+smol_sent,0,20889,28211,522,501,21,0,400,122,covered,religious share 77% (JW/Bible register); 122 unverified-provenance pairs,mt560; okwu,afrolingu-mt:629; finetranslations:223,
+run,Kirundi,1,1,0,flores_plus+smol_sent,35,333647,0,398,382,16,34,364,0,covered,religious share 91% (JW/Bible register),mt560; weblate,,only 398 eligible human pairs after the filters
+sag,Sango,1,1,0,flores_plus,35,228857,0,399,383,16,34,365,0,covered,religious share 91% (JW/Bible register),mt560; weblate,,only 399 eligible human pairs after the filters
+seh,Sena,1,1,1,flores_plus+flores_moz,0,97892,0,400,384,16,0,400,0,covered,religious share 100% (JW/Bible register),mt560,,
+shi,Tachelhit,1,1,1,ntrex,9565,14823,0,523,502,21,523,0,0,covered,,mt560; tatoeba-abdelhaque,,
+sid,Sidamo,1,1,1,,0,43098,0,400,384,16,0,400,0,covered,religious share 100% (JW/Bible register),mt560,,
+sna,Shona,1,1,0,flores_plus+ntrex+mafand+smol_sent,247,699864,86645,521,500,21,244,261,16,covered,religious share 50% (JW/Bible register); 16 unverified-provenance pairs,mt560; multi-open; pontoon; weblate,finetranslations:53835,
+som,Somali,1,1,0,flores_plus+ntrex+smol_sent,370,138315,97870,522,501,21,261,261,0,covered,,mt560; multi-open; weblate,finetranslations:98471; afrolingu-mt:6759,
+sot,Sesotho,1,1,0,flores_plus+ntrex+smol_sent,4144,0,78925,522,501,21,522,0,0,covered,,mehgoss-vukuzenzele; multi-open; pontoon; ssa-mte; vukuzenzele; weblate,finetranslations:73912; afrolingu-mt:7853,
+ssw,Swati,1,1,0,flores_plus+ntrex+smol_sent,3126,107591,0,522,501,21,522,0,0,covered,,mehgoss-vukuzenzele; mt560; vukuzenzele; weblate,afrolingu-mt:503,
+swc,Congo Swahili,1,1,0,,0,248127,0,400,384,16,0,400,0,covered,religious share 100% (JW/Bible register),mt560,,
+swh,Swahili,1,1,0,flores_plus+ntrex+mafand+smol_sent+salt,12026,0,935100,523,502,21,523,0,0,covered,,multi-open; okwu; pontoon; ssa-mte; swh-rogendo; weblate,finetranslations:78198; afrolingu-mt:9132,
+tir,Tigrinya,1,1,0,flores_plus+ntrex+smol_sent,4900,572338,0,520,499,21,520,0,0,covered,,gamayun_kits_tig-eng; mt560; opus; opus_tatoeba; opus_translatewiki; opus_wikimedia; travis_foundation_tigrinya; weblate,finetranslations_tir:57872; afrolingu-mt:19790; HuggingFaceFW/finetranslations:14831; <HF_ORG>/African-Code-Switch:27,
+tiv,Tiv,1,1,0,smol_sent,0,168188,0,400,384,16,0,400,0,covered,religious share 100% (JW/Bible register),mt560,,
+tll,Tetela,1,1,1,,0,203881,0,400,384,16,0,400,0,covered,religious share 100% (JW/Bible register),opus-mt560,,
+tsc,Tswa,1,1,1,glot_story,0,78132,0,398,382,16,0,398,0,covered,religious share 100% (JW/Bible register),mt560,,only 398 eligible human pairs after the filters
+tsn,Setswana,1,1,0,flores_plus+ntrex+mafand+smol_sent,247608,710026,47305,523,502,21,523,0,0,covered,,autshumato-autshumato-en-tn; mehgoss-autshumato; mehgoss-vukuzenzele; mt560; multi-open; pontoon; vukuzenzele; weblate,afrolingu-mt:9419,
+tso,Tsonga,1,1,0,flores_plus+smol_sent,292192,695130,0,523,502,21,523,0,0,covered,,autshumato-autshumato-en-ts; autshumato-autshumato-en-ts-manual; mehgoss-autshumato; mehgoss-vukuzenzele; mt560; vukuzenzele; weblate,afrolingu-mt:7082,
+tum,Tumbuka,1,1,0,flores_plus+smol_sent,1616,426682,0,523,502,21,523,0,0,covered,,mt560; opus_tatoeba; opus_translatewiki; opus_wikimedia; weblate,<HF_ORG>/African-Code-Switch:27,
+twi,Twi,1,1,0,flores_plus+mafand+smol_sent,1198,0,602342,522,501,21,522,0,0,covered,,kweku-eng-twi; multi-open; pontoon; ssa-mte; twi-kweku; weblate,afrolingu-mt:12195,
+umb,Umbundu,1,1,0,flores_plus,1,388520,0,400,384,16,1,399,0,covered,religious share 100% (JW/Bible register),mt560; opus_tatoeba,<HF_ORG>/African-Code-Switch:5,
+urh,Urhobo,1,1,1,,0,27224,0,399,383,16,0,399,0,covered,religious share 100% (JW/Bible register),mt560,,only 399 eligible human pairs after the filters
+ven,Venda,1,1,0,ntrex+smol_sent,321,187360,0,522,501,21,291,231,0,covered,,mehgoss-vukuzenzele; mt560; vukuzenzele; weblate,,
+vmw,Makhuwa,1,1,1,flores_plus,73,135246,0,399,383,16,71,328,0,covered,religious share 82% (JW/Bible register),mt560; opus_translatewiki; ssa-mte,,only 399 eligible human pairs after the filters
+wal,Wolaytta,1,1,0,,2,110988,0,399,383,16,2,397,0,covered,religious share 99% (JW/Bible register),mt560; weblate,afrolingu-mt:9939,only 399 eligible human pairs after the filters
+wes,Cameroon Pidgin,1,1,1,,0,26492,0,400,384,16,0,400,0,covered,religious share 100% (JW/Bible register),mt560,,
+wol,Wolof,1,1,0,flores_plus+ntrex+smol_sent,4621,52180,204796,523,502,21,523,0,0,covered,,mt560; multi-open; opus_tatoeba; opus_translatewiki; opus_wikimedia; pontoon; weblate; wolof-bible; wolof-sudoping,finetranslations:6534; afrolingu-mt:5318; <HF_ORG>/African-Code-Switch:594,
+xho,Xhosa,1,1,0,flores_plus+ntrex+mafand+smol_sent,111350,832835,361790,523,502,21,523,0,0,covered,,mehgoss-autshumato; mehgoss-vukuzenzele; mt560; multi-open; opus100; pontoon; vukuzenzele; weblate; xhosa-silvano,finetranslations:64453; afrolingu-mt:3712,
+yao,Yao,1,1,1,,0,40392,0,400,384,16,0,400,0,covered,religious share 100% (JW/Bible register),mt560,,
+yor,Yoruba,1,1,0,flores_plus+ntrex+mafand+smol_sent,11519,751728,969798,523,502,21,523,0,0,covered,513 AfriScience (science register),afriscience; mt560; multi-open; okwu; opus100; opus_tatoeba; opus_translatewiki; pontoon; ssa-mte; weblate,finetranslations:86592; afrolingu-mt:15612; <HF_ORG>/African-Code-Switch:539,
+zne,Zande,1,1,1,,0,173973,0,400,384,16,0,400,0,covered,religious share 100% (JW/Bible register),opus-mt560,,
+zul,Zulu,1,1,0,flores_plus+ntrex+mafand+smol_sent,235236,880072,87277,523,502,21,523,0,0,covered,13 AfriScience (science register),afriscience; autshumato-autshumato-en-zu; mehgoss-autshumato; mehgoss-vukuzenzele; mt560; multi-open; opus100; pontoon; ssa-mte; vukuzenzele; weblate,finetranslations:83941; afrolingu-mt:6358,
+aar,Afar,0,0,0,,110,0,0,78,70,8,78,0,0,thin (< 400),,weblate,,only 78 eligible human pairs after the filters
+ada,Adangme,0,0,0,,0,58795,0,399,383,16,0,399,0,covered,religious share 100% (JW/Bible register),opus-mt560,,only 399 eligible human pairs after the filters
+adh,Adhola,0,0,0,,0,0,0,0,0,0,0,0,0,none,,,,no pair in any clean source (or all removed by length / protected-set filters)
+aeb,Tunisian Arabic,0,0,0,flores_plus,0,0,0,0,0,0,0,0,0,none,,,,no pair in any clean source (or all removed by length / protected-set filters)
+alz,Alur,0,0,0,,0,6998,0,399,383,16,0,399,0,covered,religious share 100% (JW/Bible register),opus-mt560,,only 399 eligible human pairs after the filters
+ary,Moroccan Arabic,0,0,0,flores_plus,0,0,0,0,0,0,0,0,0,none,,,,no pair in any clean source (or all removed by length / protected-set filters)
+bci,Baoule,0,0,0,,0,0,0,0,0,0,0,0,0,none,,,,no pair in any clean source (or all removed by length / protected-set filters)
+ber,Berber,0,0,0,,351,0,0,208,200,8,208,0,0,thin (< 400),,weblate,,only 208 eligible human pairs after the filters
+bum,Bulu,0,0,0,,0,25735,0,398,382,16,0,398,0,covered,religious share 100% (JW/Bible register),opus-mt560,,only 398 eligible human pairs after the filters
+cce,Chopi,0,0,0,,0,16818,0,400,384,16,0,400,0,covered,religious share 100% (JW/Bible register),opus-mt560,,
+chw,Chuabo,0,0,0,,0,16890,0,400,384,16,0,400,0,covered,religious share 100% (JW/Bible register),opus-mt560,,
+cjk,Chokwe,0,0,0,flores_plus,0,33405,0,400,384,16,0,400,0,covered,religious share 100% (JW/Bible register),opus-mt560,,
+cop,Coptic,0,0,0,,0,15222,0,400,384,16,0,400,0,covered,religious share 100% (JW/Bible register),opus-mt560,,
+dik,Dinka,0,0,0,flores_plus,0,12906,0,400,384,16,0,400,0,covered,religious share 100% (JW/Bible register),opus-mt560,,
+dje,Zarma,0,0,0,,0,55033,0,400,384,16,0,400,0,covered,religious share 100% (JW/Bible register),opus-mt560,,
+dop,Lelemi,0,0,0,,0,15231,0,400,384,16,0,400,0,covered,religious share 100% (JW/Bible register),opus-mt560,,
+fat,Fante,0,0,0,,0,0,0,0,0,0,0,0,0,none,,,,no pair in any clean source (or all removed by length / protected-set filters)
+ful,Fulah,0,0,0,,19334,28891,0,523,502,21,523,0,0,covered,,fub-bible; opus-wikimedia; weblate,nllb-mined-ful:569856; opus-xlent:3621,
+gaa,Ga,0,0,0,,0,0,0,0,0,0,0,0,0,none,,,,no pair in any clean source (or all removed by length / protected-set filters)
+knc,Kanuri,0,0,0,flores_plus,4577,0,79,523,502,21,523,0,0,covered,,gamayun-kau-eng; kanurimt,,
+koo,Konzo,0,0,0,,0,33781,0,400,384,16,0,400,0,covered,religious share 100% (JW/Bible register),opus-mt560,,
+kwn,Kwangali,0,0,0,,0,98047,0,400,384,16,0,400,0,covered,religious share 100% (JW/Bible register),opus-mt560,,
+lam,Lamba,0,0,0,,0,13656,0,400,384,16,0,400,0,covered,religious share 100% (JW/Bible register),opus-mt560,,
+luy,Luyia,0,0,0,,0,0,6546,523,502,21,0,0,523,covered,523 unverified-provenance pairs,luhya,,
+men,Mende,0,0,0,,0,1557,0,400,384,16,0,400,0,covered,religious share 100% (JW/Bible register),mt560,,
+mgr,Mambwe,0,0,0,,0,40483,0,399,383,16,0,399,0,covered,religious share 100% (JW/Bible register),opus-mt560,,only 399 eligible human pairs after the filters
+nba,Nyemba,0,0,0,,0,25476,0,397,381,16,0,397,0,covered,religious share 100% (JW/Bible register),opus-mt560,,only 397 eligible human pairs after the filters
+nde,North Ndebele,0,0,0,ntrex,35,29765,0,398,382,16,34,364,0,covered,religious share 91% (JW/Bible register),ebible-nde; weblate,,only 398 eligible human pairs after the filters
+ndo,Ndonga,0,0,0,,0,91935,0,400,384,16,0,400,0,covered,religious share 100% (JW/Bible register),opus-mt560,,
+nup,Nupe,0,0,0,,0,0,0,0,0,0,0,0,0,none,,,nupe:12194,only excluded sources exist: nupe 12194
+nyk,Nyaneka,0,0,0,,0,106587,0,399,383,16,0,399,0,covered,religious share 100% (JW/Bible register),opus-mt560,,only 399 eligible human pairs after the filters
+nyu,Nyungwe,0,0,0,,0,23055,0,400,384,16,0,400,0,covered,religious share 100% (JW/Bible register),opus-mt560,,
+rnd,Ruund,0,0,0,,0,121730,0,400,384,16,0,400,0,covered,religious share 100% (JW/Bible register),opus-mt560,,
+sop,Songe,0,0,0,,0,47209,0,400,384,16,0,400,0,covered,religious share 100% (JW/Bible register),opus-mt560,,
+taq,Tamasheq,0,0,0,flores_plus,0,5062,0,400,384,16,0,400,0,covered,religious share 100% (JW/Bible register),opus-mt560,,
+teo,Teso,0,0,0,,0,0,0,0,0,0,0,0,0,none,,,,no pair in any clean source (or all removed by length / protected-set filters)
+toi,Tonga,0,0,0,,0,3657,0,400,384,16,0,400,0,covered,religious share 100% (JW/Bible register),opus-mt560,,
+ttj,Tooro,0,0,0,,0,15461,0,400,384,16,0,400,0,covered,religious share 100% (JW/Bible register),opus-mt560,,
+tzm,Tamazight,0,0,0,,6363,0,0,523,502,21,523,0,0,covered,,nllb-seed-tzm; opus-translatewiki; pontoon-tzm; weblate,,
+zgh,Standard Moroccan Tamazight,0,0,0,flores_plus,383,0,0,212,204,8,212,0,0,thin (< 400),,weblate,,only 212 eligible human pairs after the filters

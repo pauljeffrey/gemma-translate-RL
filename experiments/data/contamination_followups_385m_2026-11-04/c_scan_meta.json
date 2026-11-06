@@ -1,0 +1,30 @@
+{
+ "positive_control_flores_dev_trainhalf": {
+  "n": 500,
+  "en_exact": 500,
+  "en_pair": 500,
+  "ref_exact": 500
+ },
+ "pair_rows_scanned": {
+  "data/pairs-0000.parquet": 2065079,
+  "data/pairs-0001.parquet": 2048294,
+  "data/pairs-0002.parquet": 2572685,
+  "data/pairs-0003.parquet": 2199555,
+  "data/pairs-0004.parquet": 2343472,
+  "data/pairs-0005.parquet": 2541615,
+  "data/pairs-0006.parquet": 2484945,
+  "data/pairs-0007.parquet": 2082666,
+  "data/pairs-0008.parquet": 2715469,
+  "data/pairs-0009.parquet": 2055597,
+  "data/pairs-0010.parquet": 296977,
+  "specialist/pairs-0000.parquet": 5096868,
+  "data_devhalf/pairs-0000.parquet": 8747
+ },
+ "pair_rows_total": 28511969,
+ "windows_scanned_both_orientations": 57023938,
+ "afriscience_rows": 34007,
+ "distinct_en": 6164,
+ "distinct_ref": 34298,
+ "seconds": 564,
+ "source": "<HF_ORG_LEGACY>/sabiyarn-clean-sft-2026-10-28 data/ + specialist/ + data_devhalf/"
+}

@@ -1,0 +1,446 @@
+{
+ "yor": {
+  "pool_packs": 7487,
+  "selected": 1682
+ },
+ "hau": {
+  "pool_packs": 3866,
+  "selected": 1682
+ },
+ "ibo": {
+  "pool_packs": 7186,
+  "selected": 1682
+ },
+ "pcm": {
+  "pool_packs": 291,
+  "selected": 291
+ },
+ "efi": {
+  "pool_packs": 883,
+  "selected": 883
+ },
+ "twi": {
+  "pool_packs": 2583,
+  "selected": 1682
+ },
+ "ewe": {
+  "pool_packs": 1296,
+  "selected": 1296
+ },
+ "fon": {
+  "pool_packs": 2799,
+  "selected": 1682
+ },
+ "wol": {
+  "pool_packs": 2892,
+  "selected": 1682
+ },
+ "swh": {
+  "pool_packs": 9290,
+  "selected": 1682
+ },
+ "kin": {
+  "pool_packs": 3128,
+  "selected": 1682
+ },
+ "som": {
+  "pool_packs": 5211,
+  "selected": 1682
+ },
+ "orm": {
+  "pool_packs": 1988,
+  "selected": 1682
+ },
+ "amh": {
+  "pool_packs": 16510,
+  "selected": 1682
+ },
+ "tir": {
+  "pool_packs": 3748,
+  "selected": 1682
+ },
+ "lug": {
+  "pool_packs": 1320,
+  "selected": 1320
+ },
+ "lin": {
+  "pool_packs": 1797,
+  "selected": 1682
+ },
+ "zul": {
+  "pool_packs": 5520,
+  "selected": 1682
+ },
+ "xho": {
+  "pool_packs": 6718,
+  "selected": 1682
+ },
+ "afr": {
+  "pool_packs": 8180,
+  "selected": 1682
+ },
+ "sna": {
+  "pool_packs": 4562,
+  "selected": 1682
+ },
+ "nya": {
+  "pool_packs": 4519,
+  "selected": 1682
+ },
+ "sot": {
+  "pool_packs": 2811,
+  "selected": 1682
+ },
+ "tsn": {
+  "pool_packs": 3271,
+  "selected": 1682
+ },
+ "mlg": {
+  "pool_packs": 4467,
+  "selected": 1682
+ },
+ "urh": {
+  "pool_packs": 474,
+  "selected": 474
+ },
+ "bem": {
+  "pool_packs": 1316,
+  "selected": 1316
+ },
+ "tum": {
+  "pool_packs": 7605,
+  "selected": 1682
+ },
+ "run": {
+  "pool_packs": 2257,
+  "selected": 1682
+ },
+ "ven": {
+  "pool_packs": 519,
+  "selected": 519
+ },
+ "tso": {
+  "pool_packs": 3243,
+  "selected": 1682
+ },
+ "nso": {
+  "pool_packs": 2750,
+  "selected": 1682
+ },
+ "ssw": {
+  "pool_packs": 2180,
+  "selected": 1682
+ },
+ "nbl": {
+  "pool_packs": 316,
+  "selected": 316
+ },
+ "nde": {
+  "pool_packs": 667,
+  "selected": 667
+ },
+ "sag": {
+  "pool_packs": 1128,
+  "selected": 1128
+ },
+ "tiv": {
+  "pool_packs": 419,
+  "selected": 419
+ },
+ "umb": {
+  "pool_packs": 836,
+  "selected": 836
+ },
+ "kmb": {
+  "pool_packs": 1727,
+  "selected": 1682
+ },
+ "mos": {
+  "pool_packs": 1086,
+  "selected": 1086
+ },
+ "kik": {
+  "pool_packs": 2624,
+  "selected": 1682
+ },
+ "luo": {
+  "pool_packs": 2801,
+  "selected": 1681
+ },
+ "kam": {
+  "pool_packs": 2365,
+  "selected": 1681
+ },
+ "bin": {
+  "pool_packs": 180,
+  "selected": 180
+ },
+ "oke": {
+  "pool_packs": 345,
+  "selected": 345
+ },
+ "shi": {
+  "pool_packs": 366,
+  "selected": 366
+ },
+ "dyu": {
+  "pool_packs": 683,
+  "selected": 683
+ },
+ "bam": {
+  "pool_packs": 3177,
+  "selected": 1681
+ },
+ "kbp": {
+  "pool_packs": 1149,
+  "selected": 1149
+ },
+ "kon": {
+  "pool_packs": 1305,
+  "selected": 1305
+ },
+ "kea": {
+  "pool_packs": 917,
+  "selected": 917
+ },
+ "knc": {
+  "pool_packs": 335,
+  "selected": 335
+ },
+ "kab": {
+  "pool_packs": 1198,
+  "selected": 1198
+ },
+ "nus": {
+  "pool_packs": 1302,
+  "selected": 1302
+ },
+ "swc": {
+  "pool_packs": 530,
+  "selected": 530
+ },
+ "lua": {
+  "pool_packs": 1376,
+  "selected": 1376
+ },
+ "kqn": {
+  "pool_packs": 460,
+  "selected": 460
+ },
+ "lun": {
+  "pool_packs": 2129,
+  "selected": 1681
+ },
+ "iso": {
+  "pool_packs": 524,
+  "selected": 524
+ },
+ "loz": {
+  "pool_packs": 951,
+  "selected": 951
+ },
+ "wal": {
+  "pool_packs": 285,
+  "selected": 285
+ },
+ "ach": {
+  "pool_packs": 1143,
+  "selected": 1143
+ },
+ "tsc": {
+  "pool_packs": 1370,
+  "selected": 1370
+ },
+ "vmw": {
+  "pool_packs": 1187,
+  "selected": 1187
+ },
+ "kua": {
+  "pool_packs": 1681,
+  "selected": 1681
+ },
+ "seh": {
+  "pool_packs": 804,
+  "selected": 804
+ },
+ "nyn": {
+  "pool_packs": 872,
+  "selected": 872
+ },
+ "her": {
+  "pool_packs": 112,
+  "selected": 112
+ },
+ "yao": {
+  "pool_packs": 682,
+  "selected": 682
+ },
+ "sid": {
+  "pool_packs": 715,
+  "selected": 715
+ },
+ "ndc": {
+  "pool_packs": 416,
+  "selected": 416
+ },
+ "kri": {
+  "pool_packs": 668,
+  "selected": 668
+ },
+ "luy": {
+  "pool_packs": 88,
+  "selected": 88
+ },
+ "ish": {
+  "pool_packs": 78,
+  "selected": 78
+ },
+ "dua": {
+  "pool_packs": 249,
+  "selected": 249
+ },
+ "bas": {
+  "pool_packs": 517,
+  "selected": 517
+ },
+ "wes": {
+  "pool_packs": 317,
+  "selected": 317
+ },
+ "tzm": {
+  "pool_packs": 353,
+  "selected": 353
+ },
+ "ful": {
+  "pool_packs": 3158,
+  "selected": 1681
+ },
+ "guw": {
+  "pool_packs": 827,
+  "selected": 827
+ },
+ "lue": {
+  "pool_packs": 749,
+  "selected": 749
+ },
+ "tll": {
+  "pool_packs": 586,
+  "selected": 586
+ },
+ "zne": {
+  "pool_packs": 475,
+  "selected": 475
+ },
+ "lub": {
+  "pool_packs": 465,
+  "selected": 465
+ },
+ "crs": {
+  "pool_packs": 337,
+  "selected": 337
+ },
+ "mfe": {
+  "pool_packs": 362,
+  "selected": 362
+ },
+ "rnd": {
+  "pool_packs": 301,
+  "selected": 301
+ },
+ "nyk": {
+  "pool_packs": 255,
+  "selected": 255
+ },
+ "kwn": {
+  "pool_packs": 227,
+  "selected": 227
+ },
+ "ndo": {
+  "pool_packs": 240,
+  "selected": 240
+ },
+ "dje": {
+  "pool_packs": 207,
+  "selected": 207
+ },
+ "ada": {
+  "pool_packs": 165,
+  "selected": 165
+ },
+ "arz": {
+  "pool_packs": 666,
+  "selected": 666
+ },
+ "sop": {
+  "pool_packs": 116,
+  "selected": 116
+ },
+ "mgr": {
+  "pool_packs": 95,
+  "selected": 95
+ },
+ "koo": {
+  "pool_packs": 85,
+  "selected": 85
+ },
+ "cjk": {
+  "pool_packs": 76,
+  "selected": 76
+ },
+ "cop": {
+  "pool_packs": 53,
+  "selected": 53
+ },
+ "dop": {
+  "pool_packs": 74,
+  "selected": 74
+ },
+ "bum": {
+  "pool_packs": 63,
+  "selected": 63
+ },
+ "nba": {
+  "pool_packs": 59,
+  "selected": 59
+ },
+ "nyu": {
+  "pool_packs": 59,
+  "selected": 59
+ },
+ "dik": {
+  "pool_packs": 45,
+  "selected": 45
+ },
+ "cce": {
+  "pool_packs": 36,
+  "selected": 36
+ },
+ "chw": {
+  "pool_packs": 36,
+  "selected": 36
+ },
+ "ttj": {
+  "pool_packs": 35,
+  "selected": 35
+ },
+ "lam": {
+  "pool_packs": 32,
+  "selected": 32
+ },
+ "nup": {
+  "pool_packs": 24,
+  "selected": 24
+ },
+ "taq": {
+  "pool_packs": 16,
+  "selected": 16
+ },
+ "alz": {
+  "pool_packs": 16,
+  "selected": 16
+ },
+ "toi": {
+  "pool_packs": 8,
+  "selected": 8
+ }
+}

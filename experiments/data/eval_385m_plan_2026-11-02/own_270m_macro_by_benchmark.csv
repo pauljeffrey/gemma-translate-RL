@@ -1,0 +1,97 @@
+benchmark,subset,n_languages,model,metric,value_macro,delta_vs_SFT_with_95ci_(RL_rows),finished_pct,source_file
+FLORES+ devtest,all,45,SFT-final (step 27638),chrF++,28.9,,90.5,paper/tables/t_main.md
+FLORES+ devtest,all,45,RL-final (GRPO step 1433),chrF++,34.3,"+5.43 [+5.24, +5.60]",100.0,paper/tables/t_main.md
+FLORES+ devtest,all,45,SFT-final (step 27638),spBLEU,9.4,,90.5,paper/tables/t_main.md
+FLORES+ devtest,all,45,RL-final (GRPO step 1433),spBLEU,12.6,"+3.19 [+2.98, +3.39]",100.0,paper/tables/t_main.md
+FLORES+ devtest,no_pair,45,SFT-final (step 27638),chrF++,28.7,,90.4,paper/tables/t_main.md
+FLORES+ devtest,no_pair,45,RL-final (GRPO step 1433),chrF++,34.1,"+5.42 [+5.22, +5.61]",100.0,paper/tables/t_main.md
+FLORES+ devtest,no_pair,45,SFT-final (step 27638),spBLEU,9.2,,90.4,paper/tables/t_main.md
+FLORES+ devtest,no_pair,45,RL-final (GRPO step 1433),spBLEU,12.4,"+3.19 [+2.97, +3.38]",100.0,paper/tables/t_main.md
+FLORES+ devtest,clean,45,SFT-final (step 27638),chrF++,25.1,,86.0,paper/tables/t_main.md
+FLORES+ devtest,clean,45,RL-final (GRPO step 1433),chrF++,31.7,"+6.62 [+5.83, +7.24]",100.0,paper/tables/t_main.md
+FLORES+ devtest,clean,45,SFT-final (step 27638),spBLEU,7.1,,86.0,paper/tables/t_main.md
+FLORES+ devtest,clean,45,RL-final (GRPO step 1433),spBLEU,10.3,"+3.28 [+2.43, +3.85]",100.0,paper/tables/t_main.md
+NTREX-128,all,24,SFT-final (step 27638),chrF++,33.3,,92.6,paper/tables/t_main.md
+NTREX-128,all,24,RL-final (GRPO step 1433),chrF++,37.1,"+3.84 [+3.68, +4.01]",99.9,paper/tables/t_main.md
+NTREX-128,all,24,SFT-final (step 27638),spBLEU,13.0,,92.6,paper/tables/t_main.md
+NTREX-128,all,24,RL-final (GRPO step 1433),spBLEU,16.3,"+3.31 [+3.08, +3.54]",99.9,paper/tables/t_main.md
+NTREX-128,no_pair,24,SFT-final (step 27638),chrF++,33.2,,92.6,paper/tables/t_main.md
+NTREX-128,no_pair,24,RL-final (GRPO step 1433),chrF++,37.1,"+3.86 [+3.72, +4.01]",99.9,paper/tables/t_main.md
+NTREX-128,no_pair,24,SFT-final (step 27638),spBLEU,12.9,,92.6,paper/tables/t_main.md
+NTREX-128,no_pair,24,RL-final (GRPO step 1433),spBLEU,16.2,"+3.31 [+3.12, +3.52]",99.9,paper/tables/t_main.md
+NTREX-128,clean,24,SFT-final (step 27638),chrF++,31.5,,92.1,paper/tables/t_main.md
+NTREX-128,clean,24,RL-final (GRPO step 1433),chrF++,35.6,"+4.09 [+3.87, +4.32]",99.9,paper/tables/t_main.md
+NTREX-128,clean,24,SFT-final (step 27638),spBLEU,11.3,,92.1,paper/tables/t_main.md
+NTREX-128,clean,24,RL-final (GRPO step 1433),spBLEU,14.7,"+3.38 [+3.09, +3.67]",99.9,paper/tables/t_main.md
+MAFAND-MT test,all,15,SFT-final (step 27638),chrF++,39.6,,97.7,paper/tables/t_main.md
+MAFAND-MT test,all,15,RL-final (GRPO step 1433),chrF++,42.4,"+2.80 [+2.61, +2.99]",100.0,paper/tables/t_main.md
+MAFAND-MT test,all,15,SFT-final (step 27638),spBLEU,18.0,,97.7,paper/tables/t_main.md
+MAFAND-MT test,all,15,RL-final (GRPO step 1433),spBLEU,20.6,"+2.56 [+2.27, +2.83]",100.0,paper/tables/t_main.md
+MAFAND-MT test,no_pair,15,SFT-final (step 27638),chrF++,38.4,,97.5,paper/tables/t_main.md
+MAFAND-MT test,no_pair,15,RL-final (GRPO step 1433),chrF++,42.0,"+3.66 [+3.12, +4.11]",100.0,paper/tables/t_main.md
+MAFAND-MT test,no_pair,15,SFT-final (step 27638),spBLEU,16.9,,97.5,paper/tables/t_main.md
+MAFAND-MT test,no_pair,15,RL-final (GRPO step 1433),spBLEU,20.2,"+3.35 [+2.88, +3.72]",100.0,paper/tables/t_main.md
+MAFAND-MT test,clean,15,SFT-final (step 27638),chrF++,38.2,,97.5,paper/tables/t_main.md
+MAFAND-MT test,clean,15,RL-final (GRPO step 1433),chrF++,41.8,"+3.66 [+3.03, +4.16]",100.0,paper/tables/t_main.md
+MAFAND-MT test,clean,15,SFT-final (step 27638),spBLEU,16.7,,97.5,paper/tables/t_main.md
+MAFAND-MT test,clean,15,RL-final (GRPO step 1433),spBLEU,20.0,"+3.35 [+2.83, +3.79]",100.0,paper/tables/t_main.md
+SmolSent,all,45,SFT-final (step 27638),chrF++,26.3,,93.5,paper/tables/t_main.md
+SmolSent,all,45,RL-final (GRPO step 1433),chrF++,31.6,"+5.30 [+5.04, +5.56]",100.0,paper/tables/t_main.md
+SmolSent,all,45,SFT-final (step 27638),spBLEU,7.1,,93.5,paper/tables/t_main.md
+SmolSent,all,45,RL-final (GRPO step 1433),spBLEU,10.2,"+3.11 [+2.87, +3.32]",100.0,paper/tables/t_main.md
+SmolSent,no_pair,45,SFT-final (step 27638),chrF++,26.1,,93.3,paper/tables/t_main.md
+SmolSent,no_pair,45,RL-final (GRPO step 1433),chrF++,31.4,"+5.36 [+5.11, +5.57]",100.0,paper/tables/t_main.md
+SmolSent,no_pair,45,SFT-final (step 27638),spBLEU,7.0,,93.3,paper/tables/t_main.md
+SmolSent,no_pair,45,RL-final (GRPO step 1433),spBLEU,10.1,"+3.12 [+2.90, +3.31]",100.0,paper/tables/t_main.md
+SmolSent,clean,45,SFT-final (step 27638),chrF++,20.0,,87.5,paper/tables/t_main.md
+SmolSent,clean,45,RL-final (GRPO step 1433),chrF++,27.0,"+7.06 [+6.17, +7.70]",100.0,paper/tables/t_main.md
+SmolSent,clean,45,SFT-final (step 27638),spBLEU,4.0,,87.5,paper/tables/t_main.md
+SmolSent,clean,45,RL-final (GRPO step 1433),spBLEU,6.9,"+2.89 [+2.15, +3.26]",100.0,paper/tables/t_main.md
+IbomMT,all,2,SFT-final (step 27638),chrF++,15.7,,86.3,paper/tables/t_main.md
+IbomMT,all,2,RL-final (GRPO step 1433),chrF++,26.8,"+11.04 [+10.37, +11.73]",100.0,paper/tables/t_main.md
+IbomMT,all,2,SFT-final (step 27638),spBLEU,2.0,,86.3,paper/tables/t_main.md
+IbomMT,all,2,RL-final (GRPO step 1433),spBLEU,7.5,"+5.52 [+5.15, +5.85]",100.0,paper/tables/t_main.md
+IbomMT,no_pair,2,SFT-final (step 27638),chrF++,15.7,,86.3,paper/tables/t_main.md
+IbomMT,no_pair,2,RL-final (GRPO step 1433),chrF++,26.8,"+11.04 [+10.37, +11.73]",100.0,paper/tables/t_main.md
+IbomMT,no_pair,2,SFT-final (step 27638),spBLEU,2.0,,86.3,paper/tables/t_main.md
+IbomMT,no_pair,2,RL-final (GRPO step 1433),spBLEU,7.5,"+5.52 [+5.15, +5.85]",100.0,paper/tables/t_main.md
+IbomMT,clean,2,SFT-final (step 27638),chrF++,14.0,,82.3,paper/tables/t_main.md
+IbomMT,clean,2,RL-final (GRPO step 1433),chrF++,24.7,"+10.70 [+8.42, +12.77]",100.0,paper/tables/t_main.md
+IbomMT,clean,2,SFT-final (step 27638),spBLEU,1.5,,82.3,paper/tables/t_main.md
+IbomMT,clean,2,RL-final (GRPO step 1433),spBLEU,6.2,"+4.67 [+3.12, +5.81]",100.0,paper/tables/t_main.md
+FLORES-MOZ,all,1,SFT-final (step 27638),chrF++,23.7,,94.0,paper/tables/t_main.md
+FLORES-MOZ,all,1,RL-final (GRPO step 1433),chrF++,29.7,"+6.04 [+5.07, +6.90]",100.0,paper/tables/t_main.md
+FLORES-MOZ,all,1,SFT-final (step 27638),spBLEU,2.9,,94.0,paper/tables/t_main.md
+FLORES-MOZ,all,1,RL-final (GRPO step 1433),spBLEU,5.6,"+2.63 [+2.19, +3.07]",100.0,paper/tables/t_main.md
+FLORES-MOZ,no_pair,1,SFT-final (step 27638),chrF++,23.7,,94.0,paper/tables/t_main.md
+FLORES-MOZ,no_pair,1,RL-final (GRPO step 1433),chrF++,29.7,"+6.04 [+5.07, +6.90]",100.0,paper/tables/t_main.md
+FLORES-MOZ,no_pair,1,SFT-final (step 27638),spBLEU,2.9,,94.0,paper/tables/t_main.md
+FLORES-MOZ,no_pair,1,RL-final (GRPO step 1433),spBLEU,5.6,"+2.63 [+2.19, +3.07]",100.0,paper/tables/t_main.md
+FLORES-MOZ,clean,1,SFT-final (step 27638),chrF++,23.0,,93.8,paper/tables/t_main.md
+FLORES-MOZ,clean,1,RL-final (GRPO step 1433),chrF++,28.1,"+5.15 [+1.09, +9.26]",100.0,paper/tables/t_main.md
+FLORES-MOZ,clean,1,SFT-final (step 27638),spBLEU,2.3,,93.8,paper/tables/t_main.md
+FLORES-MOZ,clean,1,RL-final (GRPO step 1433),spBLEU,3.2,"+0.94 [-0.65, +2.15]",100.0,paper/tables/t_main.md
+SALT,all,5,SFT-final (step 27638),chrF++,37.2,,99.1,paper/tables/t_main.md
+SALT,all,5,RL-final (GRPO step 1433),chrF++,40.1,"+2.90 [+2.26, +3.53]",100.0,paper/tables/t_main.md
+SALT,all,5,SFT-final (step 27638),spBLEU,15.7,,99.1,paper/tables/t_main.md
+SALT,all,5,RL-final (GRPO step 1433),spBLEU,18.1,"+2.33 [+1.55, +3.00]",100.0,paper/tables/t_main.md
+SALT,no_pair,5,SFT-final (step 27638),chrF++,35.8,,99.1,paper/tables/t_main.md
+SALT,no_pair,5,RL-final (GRPO step 1433),chrF++,38.5,"+2.69 [+1.85, +3.43]",100.0,paper/tables/t_main.md
+SALT,no_pair,5,SFT-final (step 27638),spBLEU,14.0,,99.1,paper/tables/t_main.md
+SALT,no_pair,5,RL-final (GRPO step 1433),spBLEU,16.2,"+2.27 [+1.33, +3.11]",100.0,paper/tables/t_main.md
+SALT,clean,5,SFT-final (step 27638),chrF++,33.6,,99.2,paper/tables/t_main.md
+SALT,clean,5,RL-final (GRPO step 1433),chrF++,35.9,"+2.31 [+0.85, +3.57]",100.0,paper/tables/t_main.md
+SALT,clean,5,SFT-final (step 27638),spBLEU,13.7,,99.2,paper/tables/t_main.md
+SALT,clean,5,RL-final (GRPO step 1433),spBLEU,15.0,"+1.27 [-0.23, +2.54]",100.0,paper/tables/t_main.md
+GlotStoryBook,all,8,SFT-final (step 27638),chrF++,19.9,,89.4,paper/tables/t_main.md
+GlotStoryBook,all,8,RL-final (GRPO step 1433),chrF++,28.0,"+8.16 [+7.51, +8.78]",98.4,paper/tables/t_main.md
+GlotStoryBook,all,8,SFT-final (step 27638),spBLEU,2.9,,89.4,paper/tables/t_main.md
+GlotStoryBook,all,8,RL-final (GRPO step 1433),spBLEU,6.0,"+3.08 [+2.76, +3.38]",98.4,paper/tables/t_main.md
+GlotStoryBook,no_pair,8,SFT-final (step 27638),chrF++,19.9,,89.4,paper/tables/t_main.md
+GlotStoryBook,no_pair,8,RL-final (GRPO step 1433),chrF++,28.0,"+8.16 [+7.51, +8.78]",98.4,paper/tables/t_main.md
+GlotStoryBook,no_pair,8,SFT-final (step 27638),spBLEU,2.9,,89.4,paper/tables/t_main.md
+GlotStoryBook,no_pair,8,RL-final (GRPO step 1433),spBLEU,6.0,"+3.08 [+2.76, +3.38]",98.4,paper/tables/t_main.md
+GlotStoryBook,clean,8,SFT-final (step 27638),chrF++,19.9,,88.8,paper/tables/t_main.md
+GlotStoryBook,clean,8,RL-final (GRPO step 1433),chrF++,28.1,"+8.26 [+7.58, +8.87]",98.3,paper/tables/t_main.md
+GlotStoryBook,clean,8,SFT-final (step 27638),spBLEU,2.8,,88.8,paper/tables/t_main.md
+GlotStoryBook,clean,8,RL-final (GRPO step 1433),spBLEU,6.0,"+3.12 [+2.76, +3.39]",98.3,paper/tables/t_main.md

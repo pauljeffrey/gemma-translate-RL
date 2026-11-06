@@ -1,0 +1,9 @@
+{
+ "rows_scanned": {
+  "pairs": 56975939,
+  "instr": 4277612
+ },
+ "files": 192,
+ "seconds": 438,
+ "benchmark_strings_ge4tok": 192613
+}

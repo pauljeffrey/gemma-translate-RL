@@ -1,0 +1,362 @@
+{
+ "a0/whole/amh": {
+  "africomet_concat": 0.3283778599330357,
+  "n_docs": 28,
+  "ssa_comet_mtl_concat": 0.17573751722063338
+ },
+ "a0/whole/hau": {
+  "africomet_concat": 0.44272940499441965,
+  "n_docs": 28,
+  "ssa_comet_mtl_concat": 0.09165586744035993
+ },
+ "a0/whole/lug": {
+  "africomet_concat": 0.42065865652901785,
+  "n_docs": 28,
+  "ssa_comet_mtl_concat": 0.304962158203125
+ },
+ "a0/whole/nso": {
+  "africomet_concat": 0.5108468191964286,
+  "n_docs": 28,
+  "ssa_comet_mtl_concat": 0.26710728236607145
+ },
+ "a0/whole/yor": {
+  "africomet_concat": 0.5625741141183036,
+  "n_docs": 28,
+  "ssa_comet_mtl_concat": 0.24761581420898438
+ },
+ "a0/whole/zul": {
+  "africomet_concat": 0.5532095772879464,
+  "n_docs": 28,
+  "ssa_comet_mtl_concat": 0.19545418875558035
+ },
+ "a0/chunked/amh": {
+  "africomet_concat": 0.5808977399553571,
+  "africomet_window": 0.5831833717362283,
+  "n_docs": 28,
+  "ssa_comet_mtl_concat": 0.15687125069754465,
+  "ssa_comet_mtl_window": 0.354430094399348
+ },
+ "a0/chunked/hau": {
+  "africomet_concat": 0.6606794084821429,
+  "africomet_window": 0.6754640247525293,
+  "n_docs": 28,
+  "ssa_comet_mtl_concat": 0.13864789690290177,
+  "ssa_comet_mtl_window": 0.4025358191574361
+ },
+ "a0/chunked/lug": {
+  "africomet_concat": 0.5822666713169643,
+  "africomet_window": 0.6346985096289731,
+  "n_docs": 28,
+  "ssa_comet_mtl_concat": 0.2654331752232143,
+  "ssa_comet_mtl_window": 0.4414128673198933
+ },
+ "a0/chunked/nso": {
+  "africomet_concat": 0.6763654436383929,
+  "africomet_window": 0.7217220497001293,
+  "n_docs": 28,
+  "ssa_comet_mtl_concat": 0.2628871372767857,
+  "ssa_comet_mtl_window": 0.5327572629319542
+ },
+ "a0/chunked/yor": {
+  "africomet_concat": 0.7551095145089286,
+  "africomet_window": 0.7923341885901177,
+  "n_docs": 28,
+  "ssa_comet_mtl_concat": 0.268890380859375,
+  "ssa_comet_mtl_window": 0.4772212685352029
+ },
+ "a0/chunked/zul": {
+  "africomet_concat": 0.7091238839285714,
+  "africomet_window": 0.7158595421273295,
+  "n_docs": 28,
+  "ssa_comet_mtl_concat": 0.22260393415178573,
+  "ssa_comet_mtl_window": 0.4788162903371121
+ },
+ "a05/whole/amh": {
+  "africomet_concat": 0.3322939191545759,
+  "n_docs": 28,
+  "ssa_comet_mtl_concat": 0.1673308781215123
+ },
+ "a05/whole/hau": {
+  "africomet_concat": 0.4823390415736607,
+  "n_docs": 28,
+  "ssa_comet_mtl_concat": 0.11560916900634766
+ },
+ "a05/whole/lug": {
+  "africomet_concat": 0.45628138950892855,
+  "n_docs": 28,
+  "ssa_comet_mtl_concat": 0.29551914760044645
+ },
+ "a05/whole/nso": {
+  "africomet_concat": 0.5136064801897321,
+  "n_docs": 28,
+  "ssa_comet_mtl_concat": 0.24916294642857142
+ },
+ "a05/whole/yor": {
+  "africomet_concat": 0.5872279575892857,
+  "n_docs": 28,
+  "ssa_comet_mtl_concat": 0.20553175040653773
+ },
+ "a05/whole/zul": {
+  "africomet_concat": 0.5956987653459821,
+  "n_docs": 28,
+  "ssa_comet_mtl_concat": 0.21399852207728795
+ },
+ "a05/chunked/amh": {
+  "africomet_concat": 0.5919451032366071,
+  "africomet_window": 0.597844497842536,
+  "n_docs": 28,
+  "ssa_comet_mtl_concat": 0.16248158046177455,
+  "ssa_comet_mtl_window": 0.36059730398763257
+ },
+ "a05/chunked/hau": {
+  "africomet_concat": 0.6426522391183036,
+  "africomet_window": 0.6829239244138797,
+  "n_docs": 28,
+  "ssa_comet_mtl_concat": 0.1318615504673549,
+  "ssa_comet_mtl_window": 0.40436996676334597
+ },
+ "a05/chunked/lug": {
+  "africomet_concat": 0.6104997907366071,
+  "africomet_window": 0.6420225840492128,
+  "n_docs": 28,
+  "ssa_comet_mtl_concat": 0.2833469935825893,
+  "ssa_comet_mtl_window": 0.44596856964127296
+ },
+ "a05/chunked/nso": {
+  "africomet_concat": 0.6706891741071429,
+  "africomet_window": 0.7235874183102752,
+  "n_docs": 28,
+  "ssa_comet_mtl_concat": 0.2524196079799107,
+  "ssa_comet_mtl_window": 0.5310069090866777
+ },
+ "a05/chunked/yor": {
+  "africomet_concat": 0.7456752232142857,
+  "africomet_window": 0.7891165850189462,
+  "n_docs": 28,
+  "ssa_comet_mtl_concat": 0.22843497140066965,
+  "ssa_comet_mtl_window": 0.4618236382719153
+ },
+ "a05/chunked/zul": {
+  "africomet_concat": 0.7042585100446429,
+  "africomet_window": 0.7192026490510203,
+  "n_docs": 28,
+  "ssa_comet_mtl_concat": 0.21759687151227677,
+  "ssa_comet_mtl_window": 0.4816410876537045
+ },
+ "rl2c/whole/amh": {
+  "africomet_concat": 0.40241786411830355,
+  "n_docs": 28,
+  "ssa_comet_mtl_concat": 0.19497898646763392
+ },
+ "rl2c/whole/hau": {
+  "africomet_concat": 0.6496146065848214,
+  "n_docs": 28,
+  "ssa_comet_mtl_concat": 0.1651153564453125
+ },
+ "rl2c/whole/lug": {
+  "africomet_concat": 0.5937587193080357,
+  "n_docs": 28,
+  "ssa_comet_mtl_concat": 0.37547520228794645
+ },
+ "rl2c/whole/nso": {
+  "africomet_concat": 0.5928867885044643,
+  "n_docs": 28,
+  "ssa_comet_mtl_concat": 0.3262721470424107
+ },
+ "rl2c/whole/yor": {
+  "africomet_concat": 0.7234584263392857,
+  "n_docs": 28,
+  "ssa_comet_mtl_concat": 0.2920989990234375
+ },
+ "rl2c/whole/zul": {
+  "africomet_concat": 0.6317574637276786,
+  "n_docs": 28,
+  "ssa_comet_mtl_concat": 0.2518855503627232
+ },
+ "rl2c/chunked/amh": {
+  "africomet_concat": 0.49847412109375,
+  "africomet_window": 0.5068515181940301,
+  "n_docs": 28,
+  "ssa_comet_mtl_concat": 0.13327080862862722,
+  "ssa_comet_mtl_window": 0.26921575885705745
+ },
+ "rl2c/chunked/hau": {
+  "africomet_concat": 0.7001081194196429,
+  "africomet_window": 0.7234305662676547,
+  "n_docs": 28,
+  "ssa_comet_mtl_concat": 0.17443411690848215,
+  "ssa_comet_mtl_window": 0.4580519356865291
+ },
+ "rl2c/chunked/lug": {
+  "africomet_concat": 0.6823032924107143,
+  "africomet_window": 0.7039569490645453,
+  "n_docs": 28,
+  "ssa_comet_mtl_concat": 0.3266688755580357,
+  "ssa_comet_mtl_window": 0.5315346790921829
+ },
+ "rl2c/chunked/nso": {
+  "africomet_concat": 0.7039446149553571,
+  "africomet_window": 0.7391906518096704,
+  "n_docs": 28,
+  "ssa_comet_mtl_concat": 0.27903965541294645,
+  "ssa_comet_mtl_window": 0.5473466911429035
+ },
+ "rl2c/chunked/yor": {
+  "africomet_concat": 0.7756173270089286,
+  "africomet_window": 0.8062295175140459,
+  "n_docs": 28,
+  "ssa_comet_mtl_concat": 0.29876273018973215,
+  "ssa_comet_mtl_window": 0.49492045817293445
+ },
+ "rl2c/chunked/zul": {
+  "africomet_concat": 0.7290562220982143,
+  "africomet_window": 0.7383632593070372,
+  "n_docs": 28,
+  "ssa_comet_mtl_concat": 0.2522800990513393,
+  "ssa_comet_mtl_window": 0.505345954723832
+ },
+ "sci_rl_best/whole/amh": {
+  "africomet_concat": 0.34467860630580355,
+  "n_docs": 28,
+  "ssa_comet_mtl_concat": 0.16606058393205916
+ },
+ "sci_rl_best/whole/hau": {
+  "africomet_concat": 0.537109375,
+  "n_docs": 28,
+  "ssa_comet_mtl_concat": 0.12612833295549666
+ },
+ "sci_rl_best/whole/lug": {
+  "africomet_concat": 0.461212158203125,
+  "n_docs": 28,
+  "ssa_comet_mtl_concat": 0.296539306640625
+ },
+ "sci_rl_best/whole/nso": {
+  "africomet_concat": 0.5022408621651786,
+  "n_docs": 28,
+  "ssa_comet_mtl_concat": 0.24944632393973215
+ },
+ "sci_rl_best/whole/yor": {
+  "africomet_concat": 0.6485334123883929,
+  "n_docs": 28,
+  "ssa_comet_mtl_concat": 0.23941476004464285
+ },
+ "sci_rl_best/whole/zul": {
+  "africomet_concat": 0.6191755022321429,
+  "n_docs": 28,
+  "ssa_comet_mtl_concat": 0.21591731480189733
+ },
+ "sci_rl_best/chunked/amh": {
+  "africomet_concat": 0.5788399832589286,
+  "africomet_window": 0.5911684515126027,
+  "n_docs": 28,
+  "ssa_comet_mtl_concat": 0.1586031232561384,
+  "ssa_comet_mtl_window": 0.3603087501192577
+ },
+ "sci_rl_best/chunked/hau": {
+  "africomet_concat": 0.6343296595982143,
+  "africomet_window": 0.6790804065154913,
+  "n_docs": 28,
+  "ssa_comet_mtl_concat": 0.12762015206473215,
+  "ssa_comet_mtl_window": 0.4033143248564925
+ },
+ "sci_rl_best/chunked/lug": {
+  "africomet_concat": 0.6053466796875,
+  "africomet_window": 0.6425827248729383,
+  "n_docs": 28,
+  "ssa_comet_mtl_concat": 0.2696620396205357,
+  "ssa_comet_mtl_window": 0.4482029792620264
+ },
+ "sci_rl_best/chunked/nso": {
+  "africomet_concat": 0.6881975446428571,
+  "africomet_window": 0.7266750998606119,
+  "n_docs": 28,
+  "ssa_comet_mtl_concat": 0.2704075404575893,
+  "ssa_comet_mtl_window": 0.5352375171157433
+ },
+ "sci_rl_best/chunked/yor": {
+  "africomet_concat": 0.75341796875,
+  "africomet_window": 0.7918182581617291,
+  "n_docs": 28,
+  "ssa_comet_mtl_concat": 0.2508697509765625,
+  "ssa_comet_mtl_window": 0.46826825042778325
+ },
+ "sci_rl_best/chunked/zul": {
+  "africomet_concat": 0.7084089006696429,
+  "africomet_window": 0.7208459213564369,
+  "n_docs": 28,
+  "ssa_comet_mtl_concat": 0.21699305943080358,
+  "ssa_comet_mtl_window": 0.48655729629392963
+ },
+ "sci_rl_final/whole/amh": {
+  "africomet_concat": 0.3917476109095982,
+  "n_docs": 28,
+  "ssa_comet_mtl_concat": 0.1897920880998884
+ },
+ "sci_rl_final/whole/hau": {
+  "africomet_concat": 0.4846888950892857,
+  "n_docs": 28,
+  "ssa_comet_mtl_concat": 0.11769567217145648
+ },
+ "sci_rl_final/whole/lug": {
+  "africomet_concat": 0.4972446986607143,
+  "n_docs": 28,
+  "ssa_comet_mtl_concat": 0.3194187709263393
+ },
+ "sci_rl_final/whole/nso": {
+  "africomet_concat": 0.5331290108816964,
+  "n_docs": 28,
+  "ssa_comet_mtl_concat": 0.26844351632254465
+ },
+ "sci_rl_final/whole/yor": {
+  "africomet_concat": 0.6492919921875,
+  "n_docs": 28,
+  "ssa_comet_mtl_concat": 0.2536212376185826
+ },
+ "sci_rl_final/whole/zul": {
+  "africomet_concat": 0.6311296735491071,
+  "n_docs": 28,
+  "ssa_comet_mtl_concat": 0.21611676897321427
+ },
+ "sci_rl_final/chunked/amh": {
+  "africomet_concat": 0.5828770228794643,
+  "africomet_window": 0.5963449934760142,
+  "n_docs": 28,
+  "ssa_comet_mtl_concat": 0.15358734130859375,
+  "ssa_comet_mtl_window": 0.362588699566086
+ },
+ "sci_rl_final/chunked/hau": {
+  "africomet_concat": 0.6519426618303571,
+  "africomet_window": 0.6853933989671818,
+  "n_docs": 28,
+  "ssa_comet_mtl_concat": 0.1258514949253627,
+  "ssa_comet_mtl_window": 0.40813327681286155
+ },
+ "sci_rl_final/chunked/lug": {
+  "africomet_concat": 0.6249738420758929,
+  "africomet_window": 0.648494107995102,
+  "n_docs": 28,
+  "ssa_comet_mtl_concat": 0.2839442661830357,
+  "ssa_comet_mtl_window": 0.461051449107959
+ },
+ "sci_rl_final/chunked/nso": {
+  "africomet_concat": 0.6808907645089286,
+  "africomet_window": 0.7261132419361702,
+  "n_docs": 28,
+  "ssa_comet_mtl_concat": 0.2659083775111607,
+  "ssa_comet_mtl_window": 0.5385132856771128
+ },
+ "sci_rl_final/chunked/yor": {
+  "africomet_concat": 0.7580915178571429,
+  "africomet_window": 0.7955255319360545,
+  "n_docs": 28,
+  "ssa_comet_mtl_concat": 0.25610787527901785,
+  "ssa_comet_mtl_window": 0.4727480647539851
+ },
+ "sci_rl_final/chunked/zul": {
+  "africomet_concat": 0.7126116071428571,
+  "africomet_window": 0.7215499371989154,
+  "n_docs": 28,
+  "ssa_comet_mtl_concat": 0.21451895577566965,
+  "ssa_comet_mtl_window": 0.4849607752651227
+ }
+}

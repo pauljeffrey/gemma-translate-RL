@@ -1,0 +1,66 @@
+# E-03 matched-compute continued-SFT control, arm C2 (end-of-turn emphasis: train_sft_eot.py, EOT_LOSS_WEIGHT=5). CONTROL EXPERIMENT ONLY: the data contain NLLB-derived, CC-BY-NC-4.0 TranslatePsy rows.
+# Schema = gemma_mt.train_sft.SFTConfig (checked against gemma_mt/gemma_mt/train_sft.py); every value not listed keeps the SFTConfig default, the optimiser block is the one of
+# configs/growth1/g1b_s6.yaml (research_archive_2026-11-03/clean_sft_small/run/configs/growth1/g1b_s6.yaml). Run from /workspace/clean_sft/run (paths below are box paths).
+#   EOT_LOSS_WEIGHT=5 EOT_TOKEN_IDS=106 python train_sft_eot.py --config control_c2_eot.yaml micro_batch_size=8 grad_accum_steps=4 [stop_after_steps=3100]
+# BUDGET (training wall-clock only, evaluation excluded): RL stage A 15,920 s = 4.42 h; RL chain A+B1+mixed 8.66 h; compute that produced "mixed best" <= 6.83 h
+# (A 4.42 + B1 to its best step 50 = 50 x 77.6 s = 1.08 + mixed <= 60 steps <= 1.33). At the measured stage-B speed of 5.144 s per 131,072-token step (44.8 h / 31,353 steps, NLLBLINK):
+#   4.42 h = 3,094 steps -> checkpoint at step 3,100 ("stage-A matched");  6.83 h = 4,780 steps -> step 4,800 ("mixed-best matched");  8.66 h = 6,060 steps -> run length 6,000 (8.57 h).
+# With a CONSTANT learning rate every earlier checkpoint is the exact prefix of the longer run (the schedule spreads every language evenly over the run), so ONE run gives all three budgets.
+# If the first 50 steps run slower than 5.14 s/step the step budget is reduced so that training time stays at 31,176 s (rule: steps = floor(31176 / measured_s_per_step), checkpoints at 35.8% / 55.2% / 100%).
+
+model_name: ${HF_ORG}/gemma-0.4B-translate-sft        # = ${HF_ORG}/gemma3-up6-g15-g1b-s6 (same commit 31ebb30, public): the 385M SFT final, step 32,853, val macro 1.3412
+tokenizer_name: ${HF_ORG}/gemma-0.4B-translate-sft    # original tag-token layout (<unusedK>), fingerprint 69f7f26e...; the renamed RL/release tokenizer must NOT be used for training
+data_dir: /dev/shm/control/combined                      # train/ (replay + TranslatePsy packs), val/ (stage-B shard-6 validation split), val_tp/ (TranslatePsy validation)
+out_dir: /dev/shm/control/runs/c2                        # /workspace has only 3.2 GB free on 2026-11-04: the data (about 3.7 GB) and the checkpoints (about 2.7 GB each) go to /dev/shm or to a bigger disk
+attn_implementation: varlen
+mask_mode: flash
+loss_impl: fused
+param_dtype: float32
+autocast_dtype: bfloat16
+gradient_checkpointing: false
+loss_chunk_tokens: 512
+
+schedule_file: /dev/shm/control/sched_ctl/schedule.npy   # int64 [6000, 32]; sidecar schedule.json next to it (sha256, n_packs, pack languages, pack structure)
+schedule_require_sidecar: true
+max_steps: 0
+epochs: 1.0
+language_alpha: null
+unimax_budget_tokens: 0
+
+micro_batch_size: 8
+grad_accum_steps: 4                      # 8 x 4 x 4,096 = 131,072 tokens (32 packs) per step, as in the SFT
+
+optimizer: muon                          # Muon on the 2-D decoder matrices, AdamW on embeddings / norms; one LR; fresh state (the Muon state of the SFT was not kept on the Hub)
+muon_momentum: 0.95
+muon_ns_steps: 5
+learning_rate: 3.0e-6                    # FINAL LR OF THE SFT: shard 6 decayed by cosine from 3e-5 to 10% = 3e-6 (g1b_s6.yaml: learning_rate 3e-5, min_lr_ratio 0.1)
+min_lr_ratio: 1.0                        # constant after the warm-up (so that any prefix of the run is a valid smaller budget)
+warmup_steps: 100                        # linear re-warm-up of the fresh optimiser state (the SFT used 3% = 159 steps in shard 6); 0 < warmup_steps overrides warmup_ratio
+warmup_ratio: 0.03
+weight_decay: 0.01
+beta1: 0.9
+beta2: 0.95
+eps: 1.0e-8
+grad_clip: 1.0
+
+eval_every: 250                          # val loss (macro over languages with >= 2,000 val target tokens) on val/; val_tp/ logged separately
+eval_max_packs: 0
+extra_val_splits: [val_tp]
+val_metric: macro
+min_val_tokens_macro: 2000
+early_stopping_patience: 0
+early_stop_action: propose
+quick_eval_every: 0
+save_every: 100                          # resumable last/ every 100 steps (exact resume); weights at 3,100 / 4,800 / 6,000 are exported from last/ after stop_after_steps (see run_control.sh)
+log_every: 10
+keep_prev_checkpoint: true
+keep_single_checkpoint: true
+resume: true
+save_optimizer: true
+resume_optimizer: true
+seed: 1234
+wandb_project: null
+run_name: ctl_c2_eot
+
+hub_repo_id: null                        # NEVER push: NC / NLLB-derived training data. Local checkpoints only; exported evaluation copies stay on the box.
+hub_private: true

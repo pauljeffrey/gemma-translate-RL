@@ -1,0 +1,23 @@
+{
+ "stageB_tokens_packs": 3989814142.976,
+ "stageB_tokens_drawn": 3793423171.5840006,
+ "nllb_mined_drawn": 546652993.3133948,
+ "nllb_seed_drawn": 495726.4522646449,
+ "aya_drawn_B": 158944344.81439662,
+ "tumbuka_drawn_B": 158774469.2653993,
+ "stageA_aya_tumbuka_est": 35822152.11590108,
+ "tokens_A0": 737280000,
+ "tokens_A": 196608000,
+ "tokens_B_steps": 4109500416,
+ "tokens_total": 5043388416,
+ "share_nllb_mined_of_stageB": 0.14410546057932463,
+ "share_nllb_strict_of_stageB": 0.18613611839282784,
+ "share_nllb_incl_tum_of_stageB": 0.22799131410491097,
+ "share_nllb_mined_of_all_SFT": 0.10839002436916308,
+ "share_nllb_strict_of_all_SFT": 0.1436181956041531,
+ "share_nllb_incl_tum_of_all_SFT": 0.17858820532321984,
+ "share_nllb_mined_of_stageB_executed": 0.13302176371245678,
+ "share_nllb_strict_of_stageB_executed": 0.17181968441490872,
+ "share_nllb_incl_tum_of_stageB_executed": 0.21045563847083826,
+ "note": "all_SFT = A0 (5,625 steps) + stage A (1,500) + stage B (31,353 executed) x 131,072 tokens; A0 data contain no NLLB-mined / Aya / Tumbuka rows"
+}

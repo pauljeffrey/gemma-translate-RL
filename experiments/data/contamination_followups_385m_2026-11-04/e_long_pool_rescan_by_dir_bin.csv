@@ -1,0 +1,17 @@
+dir,length_bin,rows,rows_flagged
+general,b1024,20250,0
+general,b256,12150,0
+general,b512,20250,0
+general,b64,12150,0
+general_b2048,b2048,19250,0
+news,b256,8100,0
+news,b64,8100,0
+news_long,b1024,21000,0
+news_long,b512,21000,0
+ref,b256,3000,0
+ref,b64,7009,0
+science,b1024,25361,0
+science,b256,10950,0
+science,b512,22909,0
+science,b64,10950,0
+science_b2048,b2048,19250,0

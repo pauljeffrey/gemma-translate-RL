@@ -1,0 +1,756 @@
+{
+ "model": "/dev/shm/science_sft_models/a0.7",
+ "revision": null,
+ "sha": null,
+ "name": "sci_a0.7",
+ "decoding": {
+  "greedy": true,
+  "temperature": 1.0,
+  "top_p": 1.0,
+  "top_k": 0,
+  "seed": 0
+ },
+ "max_new_tokens": {
+  "sentence": 512,
+  "document": 7168
+ },
+ "metrics_note": "chrF = sacrebleu CHRF(word_order=0); chrF++ = word_order 2; BLEU 13a; spBLEU flores200 (falls back to 13a offline); SSA-COMET not computed",
+ "splits": {
+  "dev": {
+   "sentence": {
+    "per_language": {
+     "amh": {
+      "chrf": 31.642789856566683,
+      "chrf_pp": 29.2419462161716,
+      "bleu": 8.508742702477884,
+      "spbleu": 18.541803115549293,
+      "n": 843,
+      "chrf_sentence_mean": 32.87662994339084,
+      "length_ratio": 1.1034906588003932,
+      "finished_rate": 0.9857651245551602,
+      "prefix_ok_rate": 1.0,
+      "empty_rate": 0.0
+     },
+     "hau": {
+      "chrf": 57.010915243123506,
+      "chrf_pp": 55.199711970037605,
+      "bleu": 31.379913541405045,
+      "spbleu": 31.377726092028677,
+      "n": 843,
+      "chrf_sentence_mean": 58.53907606736247,
+      "length_ratio": 1.1185671880732415,
+      "finished_rate": 0.9940688018979834,
+      "prefix_ok_rate": 1.0,
+      "empty_rate": 0.0
+     },
+     "lug": {
+      "chrf": 39.20592863208569,
+      "chrf_pp": 35.489289077172096,
+      "bleu": 12.01525690944923,
+      "spbleu": 13.347625632823512,
+      "n": 843,
+      "chrf_sentence_mean": 40.059812616804074,
+      "length_ratio": 1.1292128765559686,
+      "finished_rate": 0.9869513641755635,
+      "prefix_ok_rate": 1.0,
+      "empty_rate": 0.0
+     },
+     "nso": {
+      "chrf": 55.87570476529592,
+      "chrf_pp": 53.97433109356919,
+      "bleu": 30.03355690618875,
+      "spbleu": 34.33892655320463,
+      "n": 843,
+      "chrf_sentence_mean": 56.89076120166371,
+      "length_ratio": 1.0358124733913971,
+      "finished_rate": 0.99644128113879,
+      "prefix_ok_rate": 1.0,
+      "empty_rate": 0.0
+     },
+     "yor": {
+      "chrf": 38.51834451071198,
+      "chrf_pp": 37.638904610517734,
+      "bleu": 16.404903948767913,
+      "spbleu": 22.379734700383157,
+      "n": 843,
+      "chrf_sentence_mean": 38.79474647178765,
+      "length_ratio": 1.0467599475295146,
+      "finished_rate": 0.9928825622775801,
+      "prefix_ok_rate": 1.0,
+      "empty_rate": 0.0
+     },
+     "zul": {
+      "chrf": 59.51433956971696,
+      "chrf_pp": 53.793333979369095,
+      "bleu": 21.668263578338582,
+      "spbleu": 32.32216002839181,
+      "n": 843,
+      "chrf_sentence_mean": 59.66845912468655,
+      "length_ratio": 1.00942494084087,
+      "finished_rate": 0.9988137603795967,
+      "prefix_ok_rate": 1.0,
+      "empty_rate": 0.0
+     }
+    },
+    "macro": {
+     "bleu": 20.00177293110457,
+     "chrf": 46.961337096250126,
+     "chrf_pp": 44.22291949113955,
+     "chrf_sentence_mean": 47.80491423761588,
+     "empty_rate": 0.0,
+     "finished_rate": 0.992487149070779,
+     "length_ratio": 1.0738780141985642,
+     "prefix_ok_rate": 1.0,
+     "spbleu": 25.38466268706351
+    },
+    "per_domain_chrf": {
+     "amh": {
+      "agriculture": {
+       "chrf": 35.01684242225668,
+       "n": 78
+      },
+      "biochemistry": {
+       "chrf": 29.347853136639795,
+       "n": 96
+      },
+      "biology": {
+       "chrf": 29.591726939890588,
+       "n": 74
+      },
+      "chemistry": {
+       "chrf": 27.448210516564664,
+       "n": 29
+      },
+      "computer science": {
+       "chrf": 25.9148836955422,
+       "n": 33
+      },
+      "engineering": {
+       "chrf": 35.062087413400015,
+       "n": 20
+      },
+      "geography": {
+       "chrf": 43.94485120016412,
+       "n": 29
+      },
+      "health": {
+       "chrf": 31.87872142158105,
+       "n": 313
+      },
+      "indigenous knowledge": {
+       "chrf": 24.286647627660958,
+       "n": 42
+      },
+      "sociology": {
+       "chrf": 32.17705159793773,
+       "n": 91
+      },
+      "statistics": {
+       "chrf": 36.846569990644454,
+       "n": 38
+      }
+     },
+     "hau": {
+      "agriculture": {
+       "chrf": 59.385191160057396,
+       "n": 78
+      },
+      "biochemistry": {
+       "chrf": 52.79625079026772,
+       "n": 96
+      },
+      "biology": {
+       "chrf": 55.311672116879194,
+       "n": 74
+      },
+      "chemistry": {
+       "chrf": 54.26514849819321,
+       "n": 29
+      },
+      "computer science": {
+       "chrf": 43.14614027541059,
+       "n": 33
+      },
+      "engineering": {
+       "chrf": 63.79610330979955,
+       "n": 20
+      },
+      "geography": {
+       "chrf": 67.22434895474605,
+       "n": 29
+      },
+      "health": {
+       "chrf": 56.586857761529906,
+       "n": 313
+      },
+      "indigenous knowledge": {
+       "chrf": 58.15479149031392,
+       "n": 42
+      },
+      "sociology": {
+       "chrf": 63.849188865217,
+       "n": 91
+      },
+      "statistics": {
+       "chrf": 61.167347670391614,
+       "n": 38
+      }
+     },
+     "lug": {
+      "agriculture": {
+       "chrf": 39.189926038035786,
+       "n": 78
+      },
+      "biochemistry": {
+       "chrf": 40.2635749599831,
+       "n": 96
+      },
+      "biology": {
+       "chrf": 38.96924597558421,
+       "n": 74
+      },
+      "chemistry": {
+       "chrf": 34.90470904908088,
+       "n": 29
+      },
+      "computer science": {
+       "chrf": 32.244262459355085,
+       "n": 33
+      },
+      "engineering": {
+       "chrf": 48.07227395890295,
+       "n": 20
+      },
+      "geography": {
+       "chrf": 44.97958204622285,
+       "n": 29
+      },
+      "health": {
+       "chrf": 38.79015798933786,
+       "n": 313
+      },
+      "indigenous knowledge": {
+       "chrf": 37.47702046537051,
+       "n": 42
+      },
+      "sociology": {
+       "chrf": 41.71710926824691,
+       "n": 91
+      },
+      "statistics": {
+       "chrf": 38.43619763276867,
+       "n": 38
+      }
+     },
+     "nso": {
+      "agriculture": {
+       "chrf": 56.688953557973974,
+       "n": 78
+      },
+      "biochemistry": {
+       "chrf": 55.800544623863324,
+       "n": 96
+      },
+      "biology": {
+       "chrf": 55.34855757481859,
+       "n": 74
+      },
+      "chemistry": {
+       "chrf": 48.337862996693275,
+       "n": 29
+      },
+      "computer science": {
+       "chrf": 50.950569636811885,
+       "n": 33
+      },
+      "engineering": {
+       "chrf": 64.67828330963563,
+       "n": 20
+      },
+      "geography": {
+       "chrf": 62.06510482497739,
+       "n": 29
+      },
+      "health": {
+       "chrf": 55.35189055902978,
+       "n": 313
+      },
+      "indigenous knowledge": {
+       "chrf": 56.62449356669865,
+       "n": 42
+      },
+      "sociology": {
+       "chrf": 57.60592517737212,
+       "n": 91
+      },
+      "statistics": {
+       "chrf": 56.560497122000896,
+       "n": 38
+      }
+     },
+     "yor": {
+      "agriculture": {
+       "chrf": 38.33102536573404,
+       "n": 78
+      },
+      "biochemistry": {
+       "chrf": 39.526853343471956,
+       "n": 96
+      },
+      "biology": {
+       "chrf": 38.377571893775944,
+       "n": 74
+      },
+      "chemistry": {
+       "chrf": 36.84303440827987,
+       "n": 29
+      },
+      "computer science": {
+       "chrf": 29.506120472620918,
+       "n": 33
+      },
+      "engineering": {
+       "chrf": 41.82643048218125,
+       "n": 20
+      },
+      "geography": {
+       "chrf": 46.23159029189479,
+       "n": 29
+      },
+      "health": {
+       "chrf": 38.79747695392679,
+       "n": 313
+      },
+      "indigenous knowledge": {
+       "chrf": 33.385503013451896,
+       "n": 42
+      },
+      "sociology": {
+       "chrf": 40.79733496032918,
+       "n": 91
+      },
+      "statistics": {
+       "chrf": 38.072193670504426,
+       "n": 38
+      }
+     },
+     "zul": {
+      "agriculture": {
+       "chrf": 63.04935357157883,
+       "n": 78
+      },
+      "biochemistry": {
+       "chrf": 60.65254637700649,
+       "n": 96
+      },
+      "biology": {
+       "chrf": 59.19742762662952,
+       "n": 74
+      },
+      "chemistry": {
+       "chrf": 59.50596452947896,
+       "n": 29
+      },
+      "computer science": {
+       "chrf": 49.60203286854802,
+       "n": 33
+      },
+      "engineering": {
+       "chrf": 67.32925714300036,
+       "n": 20
+      },
+      "geography": {
+       "chrf": 70.91466892285293,
+       "n": 29
+      },
+      "health": {
+       "chrf": 60.08930691328958,
+       "n": 313
+      },
+      "indigenous knowledge": {
+       "chrf": 40.61975597073433,
+       "n": 42
+      },
+      "sociology": {
+       "chrf": 59.699249572033665,
+       "n": 91
+      },
+      "statistics": {
+       "chrf": 64.94660959038043,
+       "n": 38
+      }
+     }
+    }
+   }
+  },
+  "test": {
+   "sentence": {
+    "per_language": {
+     "amh": {
+      "chrf": 29.316299481631457,
+      "chrf_pp": 27.085264795984465,
+      "bleu": 6.882442360900079,
+      "spbleu": 15.073472619763741,
+      "n": 970,
+      "chrf_sentence_mean": 30.93162717997577,
+      "length_ratio": 1.1192436159896564,
+      "finished_rate": 0.9835051546391752,
+      "prefix_ok_rate": 1.0,
+      "empty_rate": 0.0
+     },
+     "hau": {
+      "chrf": 55.501867245207414,
+      "chrf_pp": 53.69071778328771,
+      "bleu": 29.247719280350555,
+      "spbleu": 28.987953100302313,
+      "n": 970,
+      "chrf_sentence_mean": 56.49206807740142,
+      "length_ratio": 1.1156239269280956,
+      "finished_rate": 0.9927835051546392,
+      "prefix_ok_rate": 1.0,
+      "empty_rate": 0.0
+     },
+     "lug": {
+      "chrf": 39.47916474913218,
+      "chrf_pp": 35.577886830371845,
+      "bleu": 10.269224772778804,
+      "spbleu": 11.953571996167396,
+      "n": 970,
+      "chrf_sentence_mean": 40.691564760502594,
+      "length_ratio": 1.1896812261639202,
+      "finished_rate": 0.9814432989690721,
+      "prefix_ok_rate": 1.0,
+      "empty_rate": 0.0
+     },
+     "nso": {
+      "chrf": 54.99633305803129,
+      "chrf_pp": 52.98177070801749,
+      "bleu": 28.644486885033185,
+      "spbleu": 31.600431458474954,
+      "n": 970,
+      "chrf_sentence_mean": 55.68743608303321,
+      "length_ratio": 1.0182051221191046,
+      "finished_rate": 0.9969072164948454,
+      "prefix_ok_rate": 1.0,
+      "empty_rate": 0.0
+     },
+     "yor": {
+      "chrf": 37.90744575936837,
+      "chrf_pp": 36.9253908324652,
+      "bleu": 15.395764421865485,
+      "spbleu": 21.07508001549679,
+      "n": 970,
+      "chrf_sentence_mean": 38.02534006012823,
+      "length_ratio": 1.0493611174070716,
+      "finished_rate": 0.9917525773195877,
+      "prefix_ok_rate": 1.0,
+      "empty_rate": 0.0
+     },
+     "zul": {
+      "chrf": 62.175621708325224,
+      "chrf_pp": 56.59607051177233,
+      "bleu": 23.44574257493547,
+      "spbleu": 34.30865441686578,
+      "n": 970,
+      "chrf_sentence_mean": 62.10936685749854,
+      "length_ratio": 1.0266473431272687,
+      "finished_rate": 0.9989690721649485,
+      "prefix_ok_rate": 1.0,
+      "empty_rate": 0.0
+     }
+    },
+    "macro": {
+     "bleu": 18.980896715977263,
+     "chrf": 46.562788666949324,
+     "chrf_pp": 43.80951691031651,
+     "chrf_sentence_mean": 47.32290050308996,
+     "empty_rate": 0.0,
+     "finished_rate": 0.990893470790378,
+     "length_ratio": 1.0864603919558529,
+     "prefix_ok_rate": 1.0,
+     "spbleu": 23.83319393451183
+    },
+    "per_domain_chrf": {
+     "amh": {
+      "agriculture": {
+       "chrf": 31.505709838456358,
+       "n": 67
+      },
+      "biochemistry": {
+       "chrf": 31.525855646076067,
+       "n": 112
+      },
+      "biology": {
+       "chrf": 28.37084483477535,
+       "n": 101
+      },
+      "chemistry": {
+       "chrf": 27.71309224494029,
+       "n": 42
+      },
+      "computer science": {
+       "chrf": 31.524467528871742,
+       "n": 27
+      },
+      "engineering": {
+       "chrf": 29.421350289737152,
+       "n": 37
+      },
+      "geography": {
+       "chrf": 37.07515399622906,
+       "n": 85
+      },
+      "health": {
+       "chrf": 25.697524059256676,
+       "n": 324
+      },
+      "indigenous knowledge": {
+       "chrf": 30.121599794110143,
+       "n": 49
+      },
+      "sociology": {
+       "chrf": 33.27294538331687,
+       "n": 103
+      },
+      "statistics": {
+       "chrf": 27.754078312538006,
+       "n": 23
+      }
+     },
+     "hau": {
+      "agriculture": {
+       "chrf": 56.81300392941914,
+       "n": 67
+      },
+      "biochemistry": {
+       "chrf": 55.430840322710054,
+       "n": 112
+      },
+      "biology": {
+       "chrf": 55.01252626514893,
+       "n": 101
+      },
+      "chemistry": {
+       "chrf": 63.30901343555616,
+       "n": 42
+      },
+      "computer science": {
+       "chrf": 60.17790519064198,
+       "n": 27
+      },
+      "engineering": {
+       "chrf": 50.61676942186056,
+       "n": 37
+      },
+      "geography": {
+       "chrf": 62.74939256954425,
+       "n": 85
+      },
+      "health": {
+       "chrf": 52.372181693955255,
+       "n": 324
+      },
+      "indigenous knowledge": {
+       "chrf": 58.0315958434901,
+       "n": 49
+      },
+      "sociology": {
+       "chrf": 57.13382805109316,
+       "n": 103
+      },
+      "statistics": {
+       "chrf": 53.616362616036476,
+       "n": 23
+      }
+     },
+     "lug": {
+      "agriculture": {
+       "chrf": 39.22870108422127,
+       "n": 67
+      },
+      "biochemistry": {
+       "chrf": 38.59273070356314,
+       "n": 112
+      },
+      "biology": {
+       "chrf": 40.38318126380746,
+       "n": 101
+      },
+      "chemistry": {
+       "chrf": 42.98075698993612,
+       "n": 42
+      },
+      "computer science": {
+       "chrf": 41.0187199912167,
+       "n": 27
+      },
+      "engineering": {
+       "chrf": 35.60669166530301,
+       "n": 37
+      },
+      "geography": {
+       "chrf": 40.11359169717629,
+       "n": 85
+      },
+      "health": {
+       "chrf": 38.14818381805985,
+       "n": 324
+      },
+      "indigenous knowledge": {
+       "chrf": 42.63164576392634,
+       "n": 49
+      },
+      "sociology": {
+       "chrf": 40.92111827257538,
+       "n": 103
+      },
+      "statistics": {
+       "chrf": 43.70097417989389,
+       "n": 23
+      }
+     },
+     "nso": {
+      "agriculture": {
+       "chrf": 55.44024033152526,
+       "n": 67
+      },
+      "biochemistry": {
+       "chrf": 56.95056676996501,
+       "n": 112
+      },
+      "biology": {
+       "chrf": 53.891132926690524,
+       "n": 101
+      },
+      "chemistry": {
+       "chrf": 60.16315167802545,
+       "n": 42
+      },
+      "computer science": {
+       "chrf": 59.55075796476345,
+       "n": 27
+      },
+      "engineering": {
+       "chrf": 50.03986326119744,
+       "n": 37
+      },
+      "geography": {
+       "chrf": 57.60208188745255,
+       "n": 85
+      },
+      "health": {
+       "chrf": 52.029793311716624,
+       "n": 324
+      },
+      "indigenous knowledge": {
+       "chrf": 57.68399849045742,
+       "n": 49
+      },
+      "sociology": {
+       "chrf": 59.00815212998379,
+       "n": 103
+      },
+      "statistics": {
+       "chrf": 57.292616656617426,
+       "n": 23
+      }
+     },
+     "yor": {
+      "agriculture": {
+       "chrf": 36.76227452100307,
+       "n": 67
+      },
+      "biochemistry": {
+       "chrf": 38.2801344479123,
+       "n": 112
+      },
+      "biology": {
+       "chrf": 37.14861638255051,
+       "n": 101
+      },
+      "chemistry": {
+       "chrf": 43.42207496512865,
+       "n": 42
+      },
+      "computer science": {
+       "chrf": 38.68223970434643,
+       "n": 27
+      },
+      "engineering": {
+       "chrf": 39.14464411802564,
+       "n": 37
+      },
+      "geography": {
+       "chrf": 38.559262251200046,
+       "n": 85
+      },
+      "health": {
+       "chrf": 35.71290627540264,
+       "n": 324
+      },
+      "indigenous knowledge": {
+       "chrf": 35.389029492784346,
+       "n": 49
+      },
+      "sociology": {
+       "chrf": 43.11778793112015,
+       "n": 103
+      },
+      "statistics": {
+       "chrf": 39.6595112802963,
+       "n": 23
+      }
+     },
+     "zul": {
+      "agriculture": {
+       "chrf": 62.92829918107582,
+       "n": 67
+      },
+      "biochemistry": {
+       "chrf": 66.28928801786974,
+       "n": 112
+      },
+      "biology": {
+       "chrf": 63.06503123798476,
+       "n": 101
+      },
+      "chemistry": {
+       "chrf": 65.26442635691893,
+       "n": 42
+      },
+      "computer science": {
+       "chrf": 50.59323008216891,
+       "n": 27
+      },
+      "engineering": {
+       "chrf": 62.88762322770275,
+       "n": 37
+      },
+      "geography": {
+       "chrf": 65.10864267755012,
+       "n": 85
+      },
+      "health": {
+       "chrf": 59.21707980386714,
+       "n": 324
+      },
+      "indigenous knowledge": {
+       "chrf": 65.60024129483281,
+       "n": 49
+      },
+      "sociology": {
+       "chrf": 66.19393399943539,
+       "n": 103
+      },
+      "statistics": {
+       "chrf": 50.12272328777513,
+       "n": 23
+      }
+     }
+    }
+   }
+  }
+ },
+ "seconds": 207.5,
+ "spbleu_tokenizer": "flores200"
+}

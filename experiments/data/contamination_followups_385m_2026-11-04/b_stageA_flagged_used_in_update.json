@@ -1,0 +1,55 @@
+{
+ "flagged": [
+  {
+   "iso": "zne",
+   "step": 72,
+   "position_in_step": 17,
+   "group_std": 0.07587,
+   "informative_groups_before": 16,
+   "used_in_update": true
+  },
+  {
+   "iso": "zne",
+   "step": 301,
+   "position_in_step": 24,
+   "group_std": 0.20625,
+   "informative_groups_before": 23,
+   "used_in_update": true
+  },
+  {
+   "iso": "zne",
+   "step": 364,
+   "position_in_step": 24,
+   "group_std": 0.12413,
+   "informative_groups_before": 23,
+   "used_in_update": true
+  },
+  {
+   "iso": "lue",
+   "step": 129,
+   "position_in_step": 33,
+   "group_std": 0.24786,
+   "informative_groups_before": 32,
+   "used_in_update": true
+  },
+  {
+   "iso": "guw",
+   "step": 142,
+   "position_in_step": 37,
+   "group_std": 0.24642,
+   "informative_groups_before": 36,
+   "used_in_update": true
+  },
+  {
+   "iso": "lub",
+   "step": 214,
+   "position_in_step": 25,
+   "group_std": 0.25505,
+   "informative_groups_before": 24,
+   "used_in_update": true
+  }
+ ],
+ "flagged_used_in_update": 6,
+ "groups_used_41_400": 23040,
+ "flat_groups_41_400": 25
+}

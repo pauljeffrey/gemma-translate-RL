@@ -1,0 +1,205 @@
+{
+ "model": "/dev/shm/rl_long_ckpt/final",
+ "name": "long_rl_final",
+ "split": "test",
+ "max_new_doc": 4096,
+ "documents": 168,
+ "scores": {
+  "whole": {
+   "per_language": {
+    "amh": {
+     "chrf": 14.860668691400363,
+     "chrf_pp": 12.934965494004267,
+     "bleu": 1.646685579164898,
+     "spbleu": 5.263581940147293,
+     "n": 28,
+     "length_ratio": 1.0512415735130984,
+     "finished_rate": 0.6785714285714286,
+     "loop_rate": 0.6785714285714286,
+     "tail_coverage": 0.16510022511328054,
+     "empty_rate": 0.0
+    },
+    "hau": {
+     "chrf": 40.49087870150323,
+     "chrf_pp": 38.01010815303414,
+     "bleu": 15.434339475486626,
+     "spbleu": 15.33376820103314,
+     "n": 28,
+     "length_ratio": 0.7755267754790108,
+     "finished_rate": 0.9285714285714286,
+     "loop_rate": 0.5357142857142857,
+     "tail_coverage": 0.4724952693005426,
+     "empty_rate": 0.0
+    },
+    "lug": {
+     "chrf": 24.36555208068411,
+     "chrf_pp": 20.646196500858807,
+     "bleu": 2.942977089329991,
+     "spbleu": 3.347543402807395,
+     "n": 28,
+     "length_ratio": 0.7226885292798211,
+     "finished_rate": 0.8214285714285714,
+     "loop_rate": 0.8214285714285714,
+     "tail_coverage": 0.2817920509836154,
+     "empty_rate": 0.0
+    },
+    "nso": {
+     "chrf": 33.25059489066999,
+     "chrf_pp": 30.892587843067005,
+     "bleu": 8.87853247621804,
+     "spbleu": 10.078451958159999,
+     "n": 28,
+     "length_ratio": 0.7365489242679948,
+     "finished_rate": 0.9285714285714286,
+     "loop_rate": 0.7857142857142857,
+     "tail_coverage": 0.41140120394045226,
+     "empty_rate": 0.0
+    },
+    "yor": {
+     "chrf": 20.94898982931692,
+     "chrf_pp": 19.898720468101363,
+     "bleu": 3.6076714447006837,
+     "spbleu": 5.936453057767525,
+     "n": 28,
+     "length_ratio": 0.6529980439891364,
+     "finished_rate": 0.8571428571428571,
+     "loop_rate": 0.8928571428571429,
+     "tail_coverage": 0.26604221804862127,
+     "empty_rate": 0.0
+    },
+    "zul": {
+     "chrf": 44.19157737886654,
+     "chrf_pp": 37.656659913792,
+     "bleu": 8.903334127389604,
+     "spbleu": 15.53877318775293,
+     "n": 28,
+     "length_ratio": 0.9390652275799297,
+     "finished_rate": 0.8928571428571429,
+     "loop_rate": 0.6071428571428571,
+     "tail_coverage": 0.45016129083551376,
+     "empty_rate": 0.0
+    }
+   },
+   "macro": {
+    "bleu": 6.902256698714974,
+    "chrf": 29.684710262073523,
+    "chrf_pp": 26.67320639547626,
+    "empty_rate": 0.0,
+    "finished_rate": 0.8511904761904763,
+    "length_ratio": 0.8130115123514985,
+    "loop_rate": 0.7202380952380952,
+    "spbleu": 9.249761957944713,
+    "tail_coverage": 0.34116537637033767
+   }
+  },
+  "chunked": {
+   "per_language": {
+    "amh": {
+     "chrf": 39.36007891746269,
+     "chrf_pp": 35.920905031908,
+     "bleu": 8.208956968743632,
+     "spbleu": 20.342603271781954,
+     "n": 28,
+     "length_ratio": 0.979264442358563,
+     "finished_rate": 1.0,
+     "loop_rate": 0.03571428571428571,
+     "tail_coverage": 0.4177350402946745,
+     "empty_rate": 0.0,
+     "sentence_coverage": 1.0,
+     "repaired_sentences": 0,
+     "unfinished_after_repair": 0
+    },
+    "hau": {
+     "chrf": 67.4727278939967,
+     "chrf_pp": 64.68968097285396,
+     "bleu": 34.533771415403805,
+     "spbleu": 34.92125920630253,
+     "n": 28,
+     "length_ratio": 0.9732313445057045,
+     "finished_rate": 1.0,
+     "loop_rate": 0.21428571428571427,
+     "tail_coverage": 0.7401041129046603,
+     "empty_rate": 0.0,
+     "sentence_coverage": 1.0,
+     "repaired_sentences": 0,
+     "unfinished_after_repair": 0
+    },
+    "lug": {
+     "chrf": 55.67787097471425,
+     "chrf_pp": 49.21180565215535,
+     "bleu": 12.847744850463489,
+     "spbleu": 16.296092959674752,
+     "n": 28,
+     "length_ratio": 1.0267604626517304,
+     "finished_rate": 1.0,
+     "loop_rate": 0.14285714285714285,
+     "tail_coverage": 0.5865695853084448,
+     "empty_rate": 0.0,
+     "sentence_coverage": 1.0,
+     "repaired_sentences": 0,
+     "unfinished_after_repair": 0
+    },
+    "nso": {
+     "chrf": 67.19310385997755,
+     "chrf_pp": 64.15654905144818,
+     "bleu": 31.9656489369623,
+     "spbleu": 34.221290393796714,
+     "n": 28,
+     "length_ratio": 0.9680230842764921,
+     "finished_rate": 1.0,
+     "loop_rate": 0.10714285714285714,
+     "tail_coverage": 0.746751427251569,
+     "empty_rate": 0.0,
+     "sentence_coverage": 1.0,
+     "repaired_sentences": 0,
+     "unfinished_after_repair": 0
+    },
+    "yor": {
+     "chrf": 50.55083557594483,
+     "chrf_pp": 48.963999331130985,
+     "bleu": 19.695087924413873,
+     "spbleu": 26.956531198985235,
+     "n": 28,
+     "length_ratio": 0.9734742411662891,
+     "finished_rate": 1.0,
+     "loop_rate": 0.2857142857142857,
+     "tail_coverage": 0.5799693938215507,
+     "empty_rate": 0.0,
+     "sentence_coverage": 1.0,
+     "repaired_sentences": 0,
+     "unfinished_after_repair": 0
+    },
+    "zul": {
+     "chrf": 72.73018718067956,
+     "chrf_pp": 65.08221985148342,
+     "bleu": 24.656184761974945,
+     "spbleu": 37.04530924232398,
+     "n": 28,
+     "length_ratio": 1.0236172337202747,
+     "finished_rate": 1.0,
+     "loop_rate": 0.0,
+     "tail_coverage": 0.7153850522004406,
+     "empty_rate": 0.0,
+     "sentence_coverage": 1.0,
+     "repaired_sentences": 0,
+     "unfinished_after_repair": 0
+    }
+   },
+   "macro": {
+    "bleu": 21.98456580966034,
+    "chrf": 58.83080073379593,
+    "chrf_pp": 54.670859981829985,
+    "empty_rate": 0.0,
+    "finished_rate": 1.0,
+    "length_ratio": 0.9907284681131756,
+    "loop_rate": 0.13095238095238096,
+    "repaired_sentences": 0.0,
+    "sentence_coverage": 1.0,
+    "spbleu": 28.29718104547753,
+    "tail_coverage": 0.6310857686302233,
+    "unfinished_after_repair": 0.0
+   }
+  }
+ },
+ "seconds": 434.7
+}

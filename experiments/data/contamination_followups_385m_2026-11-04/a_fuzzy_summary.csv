@@ -1,0 +1,17 @@
+kind,benchmark,distinct_strings_ge4tok,any,contiguous_run,near_jaccard_ge_0_5,fuzzy_trigram_cover_ge_0_8,ge8tok_any,ge8tok_run,ge8tok_near,ge8tok_fuzzy
+E,flores_moz,1012,4,0,4,0,4,0,4,0
+E,flores_plus,1012,4,0,4,0,4,0,4,0
+E,glot_story,898,94,30,64,0,15,0,15,0
+E,ibom_mt,1012,4,0,4,0,4,0,4,0
+E,mafand,17428,540,134,403,3,186,0,184,2
+E,ntrex,1973,65,18,47,0,19,0,19,0
+E,salt,498,77,12,62,3,28,0,27,1
+E,smol_sent,862,8,0,8,0,6,0,6,0
+R,flores_moz,1012,0,0,0,0,0,0,0,0
+R,flores_plus,54582,4,1,3,0,2,0,2,0
+R,glot_story,2752,1,0,1,0,0,0,0,0
+R,ibom_mt,2023,0,0,0,0,0,0,0,0
+R,mafand,19438,234,96,132,6,69,0,68,1
+R,ntrex,46943,173,72,88,13,31,0,28,3
+R,salt,2421,39,7,29,3,7,0,5,2
+R,smol_sent,38747,24,0,24,0,18,0,18,0

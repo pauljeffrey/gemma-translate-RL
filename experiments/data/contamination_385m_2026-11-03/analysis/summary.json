@@ -1,0 +1,245 @@
+{
+ "summary": {
+  "flores_plus": {
+   "ref_near": 0,
+   "ref_any8": 8,
+   "n": 54648,
+   "exact": 0,
+   "sentence": 0,
+   "near": 0,
+   "pair": 0,
+   "ref_any": 0,
+   "ref_same_iso": 0,
+   "ref_sentence_any": 0,
+   "any8": 54,
+   "en_or_ref": 0,
+   "en_and_ref": 0,
+   "strict_union": 0
+  },
+  "ntrex": {
+   "ref_near": 0,
+   "ref_any8": 15,
+   "n": 47928,
+   "exact": 120,
+   "sentence": 120,
+   "near": 0,
+   "pair": 13,
+   "ref_any": 52,
+   "ref_same_iso": 44,
+   "ref_sentence_any": 52,
+   "any8": 24,
+   "en_or_ref": 142,
+   "en_and_ref": 30,
+   "strict_union": 139
+  },
+  "mafand": {
+   "ref_near": 0,
+   "ref_any8": 8,
+   "n": 20009,
+   "exact": 94,
+   "sentence": 94,
+   "near": 0,
+   "pair": 40,
+   "ref_any": 68,
+   "ref_same_iso": 54,
+   "ref_sentence_any": 68,
+   "any8": 15,
+   "en_or_ref": 104,
+   "en_and_ref": 58,
+   "strict_union": 103
+  },
+  "smol_sent": {
+   "ref_near": 0,
+   "ref_any8": 8,
+   "n": 38833,
+   "exact": 45,
+   "sentence": 45,
+   "near": 0,
+   "pair": 0,
+   "ref_any": 2,
+   "ref_same_iso": 1,
+   "ref_sentence_any": 2,
+   "any8": 45,
+   "en_or_ref": 45,
+   "en_and_ref": 2,
+   "strict_union": 45
+  },
+  "ibom_mt": {
+   "ref_near": 0,
+   "ref_any8": 0,
+   "n": 2024,
+   "exact": 0,
+   "sentence": 0,
+   "near": 0,
+   "pair": 0,
+   "ref_any": 0,
+   "ref_same_iso": 0,
+   "ref_sentence_any": 0,
+   "any8": 2,
+   "en_or_ref": 0,
+   "en_and_ref": 0,
+   "strict_union": 0
+  },
+  "flores_moz": {
+   "ref_near": 0,
+   "ref_any8": 0,
+   "n": 1012,
+   "exact": 0,
+   "sentence": 0,
+   "near": 0,
+   "pair": 0,
+   "ref_any": 0,
+   "ref_same_iso": 0,
+   "ref_sentence_any": 0,
+   "any8": 1,
+   "en_or_ref": 0,
+   "en_and_ref": 0,
+   "strict_union": 0
+  },
+  "glot_story": {
+   "ref_near": 0,
+   "ref_any8": 0,
+   "n": 3426,
+   "exact": 15,
+   "sentence": 15,
+   "near": 0,
+   "pair": 0,
+   "ref_any": 3,
+   "ref_same_iso": 2,
+   "ref_sentence_any": 3,
+   "any8": 14,
+   "en_or_ref": 18,
+   "en_and_ref": 0,
+   "strict_union": 17
+  },
+  "salt": {
+   "ref_near": 0,
+   "ref_any8": 0,
+   "n": 2500,
+   "exact": 0,
+   "sentence": 0,
+   "near": 0,
+   "pair": 0,
+   "ref_any": 1,
+   "ref_same_iso": 1,
+   "ref_sentence_any": 1,
+   "any8": 0,
+   "en_or_ref": 1,
+   "en_and_ref": 0,
+   "strict_union": 1
+  },
+  "flores_plus_dev_heldout": {
+   "ref_near": 0,
+   "ref_any8": 2,
+   "n": 30078,
+   "exact": 0,
+   "sentence": 0,
+   "near": 0,
+   "pair": 0,
+   "ref_any": 0,
+   "ref_same_iso": 0,
+   "ref_sentence_any": 0,
+   "any8": 0,
+   "en_or_ref": 0,
+   "en_and_ref": 0,
+   "strict_union": 0
+  },
+  "flores_plus_dev_trainhalf": {
+   "ref_near": 2,
+   "ref_any8": 7679,
+   "n": 23760,
+   "exact": 23706,
+   "sentence": 20574,
+   "near": 0,
+   "pair": 7655,
+   "ref_any": 7710,
+   "ref_same_iso": 7681,
+   "ref_sentence_any": 6237,
+   "any8": 23490,
+   "en_or_ref": 23706,
+   "en_and_ref": 7710,
+   "strict_union": 23706
+  },
+  "afriscience_test": {
+   "ref_near": 0,
+   "ref_any8": 0,
+   "n": 5820,
+   "exact": 0,
+   "sentence": 0,
+   "near": 0,
+   "pair": 0,
+   "ref_any": 0,
+   "ref_same_iso": 0,
+   "ref_sentence_any": 0,
+   "any8": 0,
+   "en_or_ref": 0,
+   "en_and_ref": 0,
+   "strict_union": 0
+  },
+  "afriscience_dev": {
+   "ref_near": 0,
+   "ref_any8": 1,
+   "n": 5058,
+   "exact": 0,
+   "sentence": 0,
+   "near": 0,
+   "pair": 0,
+   "ref_any": 2,
+   "ref_same_iso": 2,
+   "ref_sentence_any": 2,
+   "any8": 6,
+   "en_or_ref": 2,
+   "en_and_ref": 0,
+   "strict_union": 2
+  }
+ },
+ "units": 32,
+ "samples": 25911095,
+ "datasets": {
+  "g0": {
+   "n": 7204705,
+   "n_tr": 2940410,
+   "tokens": 1814465953
+  },
+  "s1": {
+   "n": 3112517,
+   "n_tr": 2462949,
+   "tokens": 628028442
+  },
+  "s2": {
+   "n": 3120438,
+   "n_tr": 2472793,
+   "tokens": 628062691
+  },
+  "s3": {
+   "n": 3118137,
+   "n_tr": 2477874,
+   "tokens": 628086634
+  },
+  "s4": {
+   "n": 3119410,
+   "n_tr": 2468743,
+   "tokens": 628116441
+  },
+  "s5": {
+   "n": 3124141,
+   "n_tr": 2478400,
+   "tokens": 628077947
+  },
+  "s6": {
+   "n": 3111747,
+   "n_tr": 2469297,
+   "tokens": 628021037
+  }
+ },
+ "fwd_index": [
+  25852,
+  363836
+ ],
+ "rev_index": [
+  233230,
+  3344461
+ ],
+ "english_found_prompt_side": 532,
+ "english_found_target_side": 46
+}

@@ -1,0 +1,74 @@
+{
+ "long": {
+  "rows": 241679,
+  "distinct_texts": 210103,
+  "distinct_flagged": 0,
+  "rows_flagged": 0,
+  "flagged_distinct_by_set": {},
+  "flagged_distinct_by_rule": {},
+  "libretexts_rows": {
+   "general": 0,
+   "general_b2048": 0,
+   "news": 0,
+   "news_long": 0,
+   "ref": 0,
+   "science": 0,
+   "science_b2048": 3428
+  },
+  "index": "protected-2026-10-28.3"
+ },
+ "seven": {
+  "rows": 140000,
+  "distinct_texts": 121624,
+  "distinct_flagged_now": 2279,
+  "rows_flagged_now": 2619,
+  "distinct_in_hit_texts_json": 2279,
+  "overlap": 2279,
+  "only_now": 0,
+  "only_json": 0,
+  "by_bin_rows_flagged": {
+   "b512": 787,
+   "b1024": 1390,
+   "b64": 109,
+   "b256": 333
+  }
+ },
+ "drawn": {
+  "prompts_drawn": 28120,
+  "distinct_texts": 25810,
+  "distinct_flagged": 6,
+  "drawn_flagged": 6,
+  "drawn_flagged_by_iso": {
+   "zne": 3,
+   "lue": 1,
+   "guw": 1,
+   "lub": 1
+  },
+  "drawn_flagged_steps": [
+   [
+    72,
+    "with_ref"
+   ],
+   [
+    129,
+    "with_ref"
+   ],
+   [
+    142,
+    "with_ref"
+   ],
+   [
+    214,
+    "with_ref"
+   ],
+   [
+    301,
+    "with_ref"
+   ],
+   [
+    364,
+    "with_ref"
+   ]
+  ]
+ }
+}

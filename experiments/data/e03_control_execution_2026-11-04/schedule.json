@@ -1,0 +1,576 @@
+{
+ "format": "sabiyarn-schedule-1",
+ "schedule_sha256": "b16f4975e82e3f556ec414776de52f9351caf7b20e08d52673e35b5d6cc26b68",
+ "steps": 6000,
+ "per_step": 32,
+ "n_packs": 192738,
+ "pack_lang_sha256": "14154eb1d0fcbd92f064ccc42b4fc5c08659de4f734a243f402f88734bd6e42a",
+ "packed_structure_sha256": "a19135ecd3176d535808327f1dfa65036091e950b51a746099138a33fc441b6f",
+ "projected": false,
+ "stage": "control-E03-continued-sft-equal-samples",
+ "seed": 1234,
+ "n_replay_packs": 96600,
+ "n_tp_packs": 96138,
+ "tp_packs_per_step_min_max": [
+  16,
+  17
+ ],
+ "draws_per_language": {
+  "yor": {
+   "packs": 8081,
+   "draws_replay": 1681,
+   "draws_translatepsy": 6380
+  },
+  "hau": {
+   "packs": 6419,
+   "draws_replay": 1679,
+   "draws_translatepsy": 4719
+  },
+  "ibo": {
+   "packs": 6745,
+   "draws_replay": 1679,
+   "draws_translatepsy": 5045
+  },
+  "pcm": {
+   "packs": 291,
+   "draws_replay": 291,
+   "draws_translatepsy": 0
+  },
+  "efi": {
+   "packs": 883,
+   "draws_replay": 883,
+   "draws_translatepsy": 0
+  },
+  "twi": {
+   "packs": 1700,
+   "draws_replay": 1681,
+   "draws_translatepsy": 0
+  },
+  "ewe": {
+   "packs": 1296,
+   "draws_replay": 1296,
+   "draws_translatepsy": 0
+  },
+  "fon": {
+   "packs": 1700,
+   "draws_replay": 1681,
+   "draws_translatepsy": 0
+  },
+  "wol": {
+   "packs": 6641,
+   "draws_replay": 1679,
+   "draws_translatepsy": 4941
+  },
+  "swh": {
+   "packs": 7112,
+   "draws_replay": 1678,
+   "draws_translatepsy": 5412
+  },
+  "kin": {
+   "packs": 6449,
+   "draws_replay": 1680,
+   "draws_translatepsy": 4749
+  },
+  "som": {
+   "packs": 6363,
+   "draws_replay": 1679,
+   "draws_translatepsy": 4663
+  },
+  "orm": {
+   "packs": 7404,
+   "draws_replay": 1679,
+   "draws_translatepsy": 5704
+  },
+  "amh": {
+   "packs": 6564,
+   "draws_replay": 1679,
+   "draws_translatepsy": 4864
+  },
+  "tir": {
+   "packs": 1700,
+   "draws_replay": 1680,
+   "draws_translatepsy": 0
+  },
+  "lug": {
+   "packs": 6761,
+   "draws_replay": 1319,
+   "draws_translatepsy": 5441
+  },
+  "lin": {
+   "packs": 6828,
+   "draws_replay": 1679,
+   "draws_translatepsy": 5128
+  },
+  "zul": {
+   "packs": 6892,
+   "draws_replay": 1681,
+   "draws_translatepsy": 5192
+  },
+  "xho": {
+   "packs": 6843,
+   "draws_replay": 1679,
+   "draws_translatepsy": 5143
+  },
+  "afr": {
+   "packs": 5918,
+   "draws_replay": 1681,
+   "draws_translatepsy": 4218
+  },
+  "sna": {
+   "packs": 6344,
+   "draws_replay": 1678,
+   "draws_translatepsy": 4644
+  },
+  "nya": {
+   "packs": 6629,
+   "draws_replay": 1678,
+   "draws_translatepsy": 4929
+  },
+  "sot": {
+   "packs": 6905,
+   "draws_replay": 1681,
+   "draws_translatepsy": 5205
+  },
+  "tsn": {
+   "packs": 7018,
+   "draws_replay": 1678,
+   "draws_translatepsy": 5318
+  },
+  "mlg": {
+   "packs": 6143,
+   "draws_replay": 1681,
+   "draws_translatepsy": 4443
+  },
+  "urh": {
+   "packs": 474,
+   "draws_replay": 472,
+   "draws_translatepsy": 0
+  },
+  "bem": {
+   "packs": 1316,
+   "draws_replay": 1314,
+   "draws_translatepsy": 0
+  },
+  "tum": {
+   "packs": 1700,
+   "draws_replay": 1679,
+   "draws_translatepsy": 0
+  },
+  "run": {
+   "packs": 1700,
+   "draws_replay": 1682,
+   "draws_translatepsy": 0
+  },
+  "ven": {
+   "packs": 519,
+   "draws_replay": 518,
+   "draws_translatepsy": 0
+  },
+  "tso": {
+   "packs": 1700,
+   "draws_replay": 1678,
+   "draws_translatepsy": 0
+  },
+  "nso": {
+   "packs": 1700,
+   "draws_replay": 1679,
+   "draws_translatepsy": 0
+  },
+  "ssw": {
+   "packs": 1700,
+   "draws_replay": 1681,
+   "draws_translatepsy": 0
+  },
+  "nbl": {
+   "packs": 316,
+   "draws_replay": 314,
+   "draws_translatepsy": 0
+  },
+  "nde": {
+   "packs": 667,
+   "draws_replay": 667,
+   "draws_translatepsy": 0
+  },
+  "sag": {
+   "packs": 1128,
+   "draws_replay": 1123,
+   "draws_translatepsy": 0
+  },
+  "tiv": {
+   "packs": 419,
+   "draws_replay": 419,
+   "draws_translatepsy": 0
+  },
+  "umb": {
+   "packs": 836,
+   "draws_replay": 835,
+   "draws_translatepsy": 0
+  },
+  "kmb": {
+   "packs": 1700,
+   "draws_replay": 1680,
+   "draws_translatepsy": 0
+  },
+  "mos": {
+   "packs": 1086,
+   "draws_replay": 1085,
+   "draws_translatepsy": 0
+  },
+  "kik": {
+   "packs": 1700,
+   "draws_replay": 1681,
+   "draws_translatepsy": 0
+  },
+  "luo": {
+   "packs": 1700,
+   "draws_replay": 1679,
+   "draws_translatepsy": 0
+  },
+  "kam": {
+   "packs": 1700,
+   "draws_replay": 1679,
+   "draws_translatepsy": 0
+  },
+  "bin": {
+   "packs": 180,
+   "draws_replay": 180,
+   "draws_translatepsy": 0
+  },
+  "oke": {
+   "packs": 345,
+   "draws_replay": 345,
+   "draws_translatepsy": 0
+  },
+  "shi": {
+   "packs": 366,
+   "draws_replay": 366,
+   "draws_translatepsy": 0
+  },
+  "dyu": {
+   "packs": 683,
+   "draws_replay": 683,
+   "draws_translatepsy": 0
+  },
+  "bam": {
+   "packs": 1700,
+   "draws_replay": 1677,
+   "draws_translatepsy": 0
+  },
+  "kbp": {
+   "packs": 1149,
+   "draws_replay": 1147,
+   "draws_translatepsy": 0
+  },
+  "kon": {
+   "packs": 1305,
+   "draws_replay": 1301,
+   "draws_translatepsy": 0
+  },
+  "kea": {
+   "packs": 917,
+   "draws_replay": 916,
+   "draws_translatepsy": 0
+  },
+  "knc": {
+   "packs": 335,
+   "draws_replay": 335,
+   "draws_translatepsy": 0
+  },
+  "kab": {
+   "packs": 1198,
+   "draws_replay": 1196,
+   "draws_translatepsy": 0
+  },
+  "nus": {
+   "packs": 1302,
+   "draws_replay": 1300,
+   "draws_translatepsy": 0
+  },
+  "swc": {
+   "packs": 530,
+   "draws_replay": 530,
+   "draws_translatepsy": 0
+  },
+  "lua": {
+   "packs": 1376,
+   "draws_replay": 1375,
+   "draws_translatepsy": 0
+  },
+  "kqn": {
+   "packs": 460,
+   "draws_replay": 460,
+   "draws_translatepsy": 0
+  },
+  "lun": {
+   "packs": 1700,
+   "draws_replay": 1676,
+   "draws_translatepsy": 0
+  },
+  "iso": {
+   "packs": 524,
+   "draws_replay": 522,
+   "draws_translatepsy": 0
+  },
+  "loz": {
+   "packs": 951,
+   "draws_replay": 948,
+   "draws_translatepsy": 0
+  },
+  "wal": {
+   "packs": 285,
+   "draws_replay": 285,
+   "draws_translatepsy": 0
+  },
+  "ach": {
+   "packs": 1143,
+   "draws_replay": 1137,
+   "draws_translatepsy": 0
+  },
+  "tsc": {
+   "packs": 1370,
+   "draws_replay": 1369,
+   "draws_translatepsy": 0
+  },
+  "vmw": {
+   "packs": 1187,
+   "draws_replay": 1184,
+   "draws_translatepsy": 0
+  },
+  "kua": {
+   "packs": 1681,
+   "draws_replay": 1679,
+   "draws_translatepsy": 0
+  },
+  "seh": {
+   "packs": 804,
+   "draws_replay": 803,
+   "draws_translatepsy": 0
+  },
+  "nyn": {
+   "packs": 872,
+   "draws_replay": 870,
+   "draws_translatepsy": 0
+  },
+  "her": {
+   "packs": 112,
+   "draws_replay": 111,
+   "draws_translatepsy": 0
+  },
+  "yao": {
+   "packs": 682,
+   "draws_replay": 681,
+   "draws_translatepsy": 0
+  },
+  "sid": {
+   "packs": 715,
+   "draws_replay": 715,
+   "draws_translatepsy": 0
+  },
+  "ndc": {
+   "packs": 416,
+   "draws_replay": 415,
+   "draws_translatepsy": 0
+  },
+  "kri": {
+   "packs": 668,
+   "draws_replay": 668,
+   "draws_translatepsy": 0
+  },
+  "luy": {
+   "packs": 88,
+   "draws_replay": 88,
+   "draws_translatepsy": 0
+  },
+  "ish": {
+   "packs": 78,
+   "draws_replay": 78,
+   "draws_translatepsy": 0
+  },
+  "dua": {
+   "packs": 249,
+   "draws_replay": 249,
+   "draws_translatepsy": 0
+  },
+  "bas": {
+   "packs": 517,
+   "draws_replay": 517,
+   "draws_translatepsy": 0
+  },
+  "wes": {
+   "packs": 317,
+   "draws_replay": 317,
+   "draws_translatepsy": 0
+  },
+  "tzm": {
+   "packs": 353,
+   "draws_replay": 352,
+   "draws_translatepsy": 0
+  },
+  "ful": {
+   "packs": 1700,
+   "draws_replay": 1677,
+   "draws_translatepsy": 0
+  },
+  "guw": {
+   "packs": 827,
+   "draws_replay": 825,
+   "draws_translatepsy": 0
+  },
+  "lue": {
+   "packs": 749,
+   "draws_replay": 749,
+   "draws_translatepsy": 0
+  },
+  "tll": {
+   "packs": 586,
+   "draws_replay": 586,
+   "draws_translatepsy": 0
+  },
+  "zne": {
+   "packs": 475,
+   "draws_replay": 475,
+   "draws_translatepsy": 0
+  },
+  "lub": {
+   "packs": 465,
+   "draws_replay": 465,
+   "draws_translatepsy": 0
+  },
+  "crs": {
+   "packs": 337,
+   "draws_replay": 337,
+   "draws_translatepsy": 0
+  },
+  "mfe": {
+   "packs": 362,
+   "draws_replay": 362,
+   "draws_translatepsy": 0
+  },
+  "rnd": {
+   "packs": 301,
+   "draws_replay": 300,
+   "draws_translatepsy": 0
+  },
+  "nyk": {
+   "packs": 255,
+   "draws_replay": 255,
+   "draws_translatepsy": 0
+  },
+  "kwn": {
+   "packs": 227,
+   "draws_replay": 227,
+   "draws_translatepsy": 0
+  },
+  "ndo": {
+   "packs": 240,
+   "draws_replay": 240,
+   "draws_translatepsy": 0
+  },
+  "dje": {
+   "packs": 207,
+   "draws_replay": 207,
+   "draws_translatepsy": 0
+  },
+  "ada": {
+   "packs": 165,
+   "draws_replay": 165,
+   "draws_translatepsy": 0
+  },
+  "arz": {
+   "packs": 666,
+   "draws_replay": 666,
+   "draws_translatepsy": 0
+  },
+  "sop": {
+   "packs": 116,
+   "draws_replay": 116,
+   "draws_translatepsy": 0
+  },
+  "mgr": {
+   "packs": 95,
+   "draws_replay": 95,
+   "draws_translatepsy": 0
+  },
+  "koo": {
+   "packs": 85,
+   "draws_replay": 84,
+   "draws_translatepsy": 0
+  },
+  "cjk": {
+   "packs": 76,
+   "draws_replay": 76,
+   "draws_translatepsy": 0
+  },
+  "cop": {
+   "packs": 53,
+   "draws_replay": 53,
+   "draws_translatepsy": 0
+  },
+  "dop": {
+   "packs": 74,
+   "draws_replay": 74,
+   "draws_translatepsy": 0
+  },
+  "bum": {
+   "packs": 63,
+   "draws_replay": 63,
+   "draws_translatepsy": 0
+  },
+  "nba": {
+   "packs": 59,
+   "draws_replay": 59,
+   "draws_translatepsy": 0
+  },
+  "nyu": {
+   "packs": 59,
+   "draws_replay": 58,
+   "draws_translatepsy": 0
+  },
+  "dik": {
+   "packs": 45,
+   "draws_replay": 45,
+   "draws_translatepsy": 0
+  },
+  "cce": {
+   "packs": 36,
+   "draws_replay": 36,
+   "draws_translatepsy": 0
+  },
+  "chw": {
+   "packs": 36,
+   "draws_replay": 36,
+   "draws_translatepsy": 0
+  },
+  "ttj": {
+   "packs": 35,
+   "draws_replay": 35,
+   "draws_translatepsy": 0
+  },
+  "lam": {
+   "packs": 32,
+   "draws_replay": 32,
+   "draws_translatepsy": 0
+  },
+  "nup": {
+   "packs": 24,
+   "draws_replay": 24,
+   "draws_translatepsy": 0
+  },
+  "taq": {
+   "packs": 16,
+   "draws_replay": 16,
+   "draws_translatepsy": 0
+  },
+  "alz": {
+   "packs": 16,
+   "draws_replay": 16,
+   "draws_translatepsy": 0
+  },
+  "toi": {
+   "packs": 8,
+   "draws_replay": 8,
+   "draws_translatepsy": 0
+  }
+ },
+ "max_draws_per_pack": 1
+}

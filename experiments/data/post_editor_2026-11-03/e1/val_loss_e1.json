@@ -1,0 +1,45 @@
+{
+ "n_rows": 2636,
+ "base_translation": {
+  "token_weighted_nll": 2.0321,
+  "macro_over_languages": 2.0144
+ },
+ "base_editor_prompt": {
+  "token_weighted_nll": 2.0312,
+  "macro_over_languages": 2.0873
+ },
+ "editor_translation": {
+  "token_weighted_nll": 1.834,
+  "macro_over_languages": 1.8413
+ },
+ "editor_empty_draft": {
+  "token_weighted_nll": 1.8186,
+  "macro_over_languages": 1.8243
+ },
+ "editor_with_draft": {
+  "token_weighted_nll": 1.5367,
+  "macro_over_languages": 1.5626
+ },
+ "editor_with_draft_by_kind": {
+  "matched": 1.6285,
+  "identity": 0.1709,
+  "near": 0.3554
+ },
+ "base_translation_by_kind": {
+  "matched": 2.0384,
+  "identity": 1.8505,
+  "near": 2.1386
+ },
+ "editor_with_draft_by_draft_chrf": {
+  "0-20": 2.322,
+  "20-40": 1.8291,
+  "40-60": 1.141,
+  "60-101": 0.4512
+ },
+ "base_translation_by_draft_chrf_bin": {
+  "0-20": 2.7225,
+  "20-40": 1.9864,
+  "40-60": 1.3027,
+  "60-101": 1.9636
+ }
+}

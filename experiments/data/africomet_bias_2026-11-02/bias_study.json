@@ -1,0 +1,74 @@
+{
+ "within_source_spearman": {
+  "AfriCOMET-QE": 0.4266529633436108,
+  "SSA-COMET-MTL": 0.5402592211944729,
+  "mean of both": 0.5230729701952723
+ },
+ "r2_alone": 0.3291083735393099,
+ "r2_features": 0.33722854900351285,
+ "coef": {
+  "AfriCOMET (z)": 0.4618714941719227,
+  "log length ratio": 0.08767193631978529,
+  "repetition": -0.10136504320886926,
+  "non-ASCII letter share": -0.01366587464708963,
+  "word overlap with source": -0.01571674025362358,
+  "very short output": 0.018583673016415583
+ },
+ "held_out": [
+  {
+   "pair": "eng-amh",
+   "base": 0.5216326530612245,
+   "corrected": 0.5267346938775511
+  },
+  {
+   "pair": "eng-hau",
+   "base": 0.3089459084604716,
+   "corrected": 0.3260055478502081
+  },
+  {
+   "pair": "eng-kik",
+   "base": 0.6930327868852458,
+   "corrected": 0.6938524590163934
+  },
+  {
+   "pair": "eng-kin",
+   "base": 0.49703243616287096,
+   "corrected": 0.5032436162870946
+  },
+  {
+   "pair": "eng-luo",
+   "base": 0.6955357142857144,
+   "corrected": 0.7040521978021979
+  },
+  {
+   "pair": "eng-twi",
+   "base": 0.5723389355742298,
+   "corrected": 0.6061624649859944
+  },
+  {
+   "pair": "eng-yor",
+   "base": 0.42236024844720504,
+   "corrected": 0.4629399585921325
+  },
+  {
+   "pair": "fra-ewe",
+   "base": 0.5213333333333332,
+   "corrected": 0.5466666666666665
+  },
+  {
+   "pair": "fra-wol",
+   "base": 0.6865546218487394,
+   "corrected": 0.7021008403361344
+  },
+  {
+   "pair": "por-nya",
+   "base": 0.6215434083601286,
+   "corrected": 0.6324758842443728
+  },
+  {
+   "pair": "por-vmw",
+   "base": 0.16818181818181818,
+   "corrected": 0.1921487603305785
+  }
+ ]
+}

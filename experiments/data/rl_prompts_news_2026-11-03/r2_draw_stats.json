@@ -1,0 +1,94 @@
+{
+ "pool_version": "news_v2_2026-11-03",
+ "languages": 84,
+ "per_bin": {
+  "b64": 6000,
+  "b256": 6000,
+  "b512": 5000,
+  "b1024": 5000
+ },
+ "share": {
+  "RealTimeData/bbc_news_alltime": 0.3,
+  "permutans/c4-bbc-news": 0.25,
+  "izumi-lab/wikinews-en-20230728": 0.25,
+  "alvations/globalvoices-en-es": 0.15,
+  "darkpredator/stealth-wikivoyage-en": 0.05
+ },
+ "windows_available": {
+  "b64": {
+   "RealTimeData/bbc_news_alltime": 99686,
+   "SetFit/bbc-news": 4,
+   "alvations/globalvoices-en-es": 18023,
+   "darkpredator/stealth-wikivoyage-en": 28310,
+   "izumi-lab/wikinews-en-20230728": 19411,
+   "permutans/c4-bbc-news": 68834
+  },
+  "b256": {
+   "RealTimeData/bbc_news_alltime": 104377,
+   "SetFit/bbc-news": 6,
+   "alvations/globalvoices-en-es": 13568,
+   "darkpredator/stealth-wikivoyage-en": 28815,
+   "izumi-lab/wikinews-en-20230728": 20940,
+   "permutans/c4-bbc-news": 74458
+  },
+  "b512": {
+   "RealTimeData/bbc_news_alltime": 88028,
+   "SetFit/bbc-news": 0,
+   "alvations/globalvoices-en-es": 6885,
+   "darkpredator/stealth-wikivoyage-en": 18783,
+   "izumi-lab/wikinews-en-20230728": 13054,
+   "permutans/c4-bbc-news": 56133
+  },
+  "b1024": {
+   "RealTimeData/bbc_news_alltime": 58949,
+   "SetFit/bbc-news": 0,
+   "alvations/globalvoices-en-es": 3790,
+   "darkpredator/stealth-wikivoyage-en": 11015,
+   "izumi-lab/wikinews-en-20230728": 3637,
+   "permutans/c4-bbc-news": 29056
+  }
+ },
+ "v1_windows_removed_by_article_guard": 18751,
+ "cross_source_duplicates_dropped": 0,
+ "distinct_windows_used": {
+  "b64": 189905,
+  "b256": 192196,
+  "b512": 147408,
+  "b1024": 97397
+ },
+ "rows_drawn_by_bin_source": {
+  "b64": {
+   "RealTimeData/bbc_news_alltime": 151200,
+   "SetFit/bbc-news": 0,
+   "alvations/globalvoices-en-es": 75600,
+   "darkpredator/stealth-wikivoyage-en": 25200,
+   "izumi-lab/wikinews-en-20230728": 126000,
+   "permutans/c4-bbc-news": 126000
+  },
+  "b256": {
+   "RealTimeData/bbc_news_alltime": 151200,
+   "SetFit/bbc-news": 0,
+   "alvations/globalvoices-en-es": 75600,
+   "darkpredator/stealth-wikivoyage-en": 25200,
+   "izumi-lab/wikinews-en-20230728": 126000,
+   "permutans/c4-bbc-news": 126000
+  },
+  "b512": {
+   "RealTimeData/bbc_news_alltime": 126000,
+   "SetFit/bbc-news": 0,
+   "alvations/globalvoices-en-es": 63000,
+   "darkpredator/stealth-wikivoyage-en": 21000,
+   "izumi-lab/wikinews-en-20230728": 105000,
+   "permutans/c4-bbc-news": 105000
+  },
+  "b1024": {
+   "RealTimeData/bbc_news_alltime": 126000,
+   "SetFit/bbc-news": 0,
+   "alvations/globalvoices-en-es": 63000,
+   "darkpredator/stealth-wikivoyage-en": 21000,
+   "izumi-lab/wikinews-en-20230728": 105000,
+   "permutans/c4-bbc-news": 105000
+  }
+ },
+ "seed": 4321
+}

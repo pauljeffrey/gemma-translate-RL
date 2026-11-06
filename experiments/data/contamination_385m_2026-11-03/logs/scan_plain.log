@@ -1,0 +1,34 @@
+[scan] rows 235096 (flores_plus 54648, ntrex 47928, mafand 20009, smol_sent 38833, ibom_mt 2024, flores_moz 1012, glot_story 3426, salt 2500, flores_plus_dev_heldout 30078, flores_plus_dev_trainhalf 23760, afriscience_test 5820, afriscience_dev 5058); fwd index 25852 sentences / 363869 8-grams; rev index 233233 / 3388659; 19s
+[scan] 523 chunk jobs in 32 units open; 6 processes
+[scan] unit s1_000 done: 1000000 samples (398613 translation), English exact 341, reference exact 906, pairs 480, hits 245044; 20/523 chunks, 175s total
+[scan] unit s1_001 done: 1000000 samples (951819 translation), English exact 206, reference exact 657, pairs 213, hits 35494; 41/523 chunks, 234s total
+[scan] unit s1_002 done: 1000000 samples (1000000 translation), English exact 302, reference exact 372, pairs 357, hits 12521; 61/523 chunks, 281s total
+[scan] unit s1_003 done: 112517 samples (112517 translation), English exact 14, reference exact 5, pairs 0, hits 258; 63/523 chunks, 288s total
+[scan] unit s2_000 done: 1000000 samples (400170 translation), English exact 321, reference exact 882, pairs 456, hits 245176; 83/523 chunks, 361s total
+[scan] unit s2_001 done: 1000000 samples (952185 translation), English exact 204, reference exact 637, pairs 198, hits 34111; 105/523 chunks, 423s total
+[scan] unit s2_002 done: 1000000 samples (1000000 translation), English exact 202, reference exact 201, pairs 188, hits 12081; 125/523 chunks, 469s total
+[scan] unit s2_003 done: 120438 samples (120438 translation), English exact 11, reference exact 5, pairs 0, hits 247; 126/523 chunks, 470s total
+[scan] unit s3_000 done: 1000000 samples (400646 translation), English exact 344, reference exact 963, pairs 535, hits 241935; 146/523 chunks, 543s total
+[scan] unit s3_001 done: 1000000 samples (959091 translation), English exact 182, reference exact 609, pairs 164, hits 33189; 167/523 chunks, 602s total
+[scan] unit s3_002 done: 1000000 samples (1000000 translation), English exact 196, reference exact 180, pairs 168, hits 11788; 186/523 chunks, 649s total
+[scan] unit s3_003 done: 118137 samples (118137 translation), English exact 14, reference exact 6, pairs 0, hits 230; 189/523 chunks, 655s total
+[scan] unit s4_000 done: 1000000 samples (408044 translation), English exact 313, reference exact 869, pairs 443, hits 236385; 210/523 chunks, 727s total
+[scan] unit s4_001 done: 1000000 samples (941289 translation), English exact 155, reference exact 581, pairs 138, hits 40533; 229/523 chunks, 784s total
+[scan] unit s4_002 done: 1000000 samples (1000000 translation), English exact 292, reference exact 369, pairs 358, hits 12629; 249/523 chunks, 832s total
+[scan] unit s4_003 done: 119410 samples (119410 translation), English exact 13, reference exact 4, pairs 0, hits 193; 252/523 chunks, 841s total
+[scan] unit s5_000 done: 1000000 samples (403618 translation), English exact 297, reference exact 847, pairs 431, hits 242308; 272/523 chunks, 907s total
+[scan] unit s5_001 done: 1000000 samples (950641 translation), English exact 196, reference exact 637, pairs 192, hits 35500; 292/523 chunks, 963s total
+[scan] unit s5_002 done: 1000000 samples (1000000 translation), English exact 258, reference exact 285, pairs 273, hits 12262; 313/523 chunks, 1015s total
+[scan] unit s5_003 done: 124141 samples (124141 translation), English exact 16, reference exact 7, pairs 0, hits 256; 315/523 chunks, 1018s total
+[scan] unit s6_000 done: 1000000 samples (399974 translation), English exact 305, reference exact 853, pairs 425, hits 243514; 335/523 chunks, 1089s total
+[scan] unit s6_001 done: 1000000 samples (957576 translation), English exact 196, reference exact 655, pairs 208, hits 33516; 355/523 chunks, 1148s total
+[scan] unit s6_002 done: 1000000 samples (1000000 translation), English exact 264, reference exact 304, pairs 289, hits 12384; 376/523 chunks, 1193s total
+[scan] unit s6_003 done: 111747 samples (111747 translation), English exact 13, reference exact 4, pairs 0, hits 237; 378/523 chunks, 1197s total
+[scan] unit g0_000 done: 1000000 samples (1000000 translation), English exact 466, reference exact 1385, pairs 1378, hits 20865; 398/523 chunks, 1258s total
+[scan] unit g0_001 done: 1000000 samples (1000000 translation), English exact 368, reference exact 522, pairs 506, hits 11450; 418/523 chunks, 1312s total
+[scan] unit g0_002 done: 1000000 samples (940410 translation), English exact 470, reference exact 3137, pairs 3127, hits 152100; 445/523 chunks, 1411s total
+[scan] unit g0_003 done: 1000000 samples (0 translation), English exact 22, reference exact 27, pairs 0, hits 649834; 460/523 chunks, 1473s total
+[scan] unit g0_004 done: 1000000 samples (0 translation), English exact 11, reference exact 17, pairs 5, hits 184094; 481/523 chunks, 1563s total
+[scan] unit g0_005 done: 1000000 samples (0 translation), English exact 18, reference exact 23, pairs 0, hits 442316; 499/523 chunks, 1630s total
+[scan] unit g0_006 done: 1000000 samples (0 translation), English exact 12, reference exact 445, pairs 0, hits 242084; 518/523 chunks, 1678s total
+[scan] unit g0_007 done: 204705 samples (0 translation), English exact 7, reference exact 392, pairs 0, hits 77697; 523/523 chunks, 1699s total

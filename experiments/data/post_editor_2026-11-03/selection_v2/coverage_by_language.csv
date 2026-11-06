@@ -1,0 +1,126 @@
+iso,name,rl_current,rl81,rl_consensus_only,benchmarks_with_reference,gen_gross,rel_gross,unv_gross,religious_only,religious_share,chosen,chosen_train,chosen_val,chosen_gen,chosen_rel,chosen_unv,status,register_caveats,sources,excluded_sources_rows,reason_if_not_covered
+ach,Acholi,1,1,1,smol_sent+salt,1,67434,0,0,0.995,183,175,8,1,182,0,thin (< 250),religious share 99%,mt560; weblate,afrolingu-mt:9541,only 183 eligible human pairs after the filters
+afr,Afrikaans,1,1,0,flores_plus+ntrex+smol_sent,14076,1007542,830412,0,0.0,730,701,29,730,0,0,covered,,govza; mehgoss-vukuzenzele; mt560; multi-open; pontoon; vukuzenzele; weblate,dochplt:2266811; finetranslations:63367; afrolingu-mt:7263,
+amh,Amharic,1,1,0,flores_plus+ntrex+mafand+smol_sent,78642,1175384,0,0,0.0,731,702,29,731,0,0,covered,FLORES+ dev train half present; 589 AfriScience (science register),afriscience; flores-plus-dev-half; masakhane/AfriDocMT; mt560; opus; opus_tatoeba; opus_translatewiki; opus_wikimedia; pontoon; ssa-mte; weblate,nllb_mined:463419; opus:65598; finetranslations_amh:39254; afrolingu-mt:17540; HuggingFaceFW/finetranslations:12440,
+arz,Egyptian Arabic,1,0,1,flores_plus,0,43326,0,1,1.0,183,175,8,0,183,0,thin (< 250),RELIGIOUS-ONLY (183 rows),opus-mt560,,only 183 eligible human pairs after the filters
+bam,Bambara,1,1,0,flores_plus+smol_sent,6900,0,0,0,0.0,732,703,29,732,0,0,covered,FLORES+ dev train half present,flores-plus-dev-half; oldi_seed_bam_Latn; openlanguagedata/oldi_seed; weblate,nllb_mined:178172; afrolingu-mt:16202; HuggingFaceFW/finetranslations:4380; <HF_ORG>/African-Code-Switch:8,
+bas,Basaa,1,1,1,,0,25657,0,1,1.0,182,174,8,0,182,0,thin (< 250),RELIGIOUS-ONLY (182 rows),mt560,afrolingu-mt:5156,only 182 eligible human pairs after the filters
+bbj,Ghomala,1,0,1,,0,0,0,0,,0,0,0,0,0,0,none,,,,no pair in any clean source (or all removed by length / protected-set filters)
+bem,Bemba,1,1,0,flores_plus+ntrex+smol_sent,1,349910,0,0,0.995,183,175,8,1,182,0,thin (< 250),religious share 99%,mt560; weblate,nllb_mined:420482; afrolingu-mt:4964,only 183 eligible human pairs after the filters
+bin,Edo,1,1,1,,0,10731,0,1,1.0,183,175,8,0,183,0,thin (< 250),RELIGIOUS-ONLY (183 rows),mt560,,only 183 eligible human pairs after the filters
+crs,Seychellois Creole,1,1,1,,0,173632,0,1,1.0,183,175,8,0,183,0,thin (< 250),RELIGIOUS-ONLY (183 rows),opus-mt560,,only 183 eligible human pairs after the filters
+dag,Dagbani,1,0,1,glot_story,0,0,0,0,,0,0,0,0,0,0,none,,,,no pair in any clean source (or all removed by length / protected-set filters)
+dua,Duala,1,1,1,,0,14196,0,1,1.0,183,175,8,0,183,0,thin (< 250),RELIGIOUS-ONLY (183 rows),mt560,,only 183 eligible human pairs after the filters
+dyu,Dyula,1,1,0,flores_plus+smol_sent,870,27182,0,0,0.25,579,556,23,434,145,0,covered,religious share 25%; FLORES+ dev train half present,flores-plus-dev-half; mt560,nllb_mined:281615,
+efi,Efik,1,1,0,smol_sent+ibom_mt,973,304673,0,0,0.0,723,694,29,723,0,0,covered,723 non-commercial pairs,ibom-mt; mt560,,
+ewe,Ewe,1,1,0,flores_plus+ntrex+smol_sent,3274,0,50994,0,0.0,728,699,29,728,0,0,covered,FLORES+ dev train half present,flores-plus-dev-half; multi-open; opus_tatoeba; opus_translatewiki; opus_wikimedia; pontoon; weblate,nllb_mined:470846; afrolingu-mt:180; <HF_ORG>/African-Code-Switch:3,
+fon,Fon,1,1,0,flores_plus+smol_sent,1052,81704,142762,0,0.0,729,700,29,614,0,115,covered,115 unverified-provenance pairs; FLORES+ dev train half present,flores-plus-dev-half; fon-helsinki; mt560; multi-open; opus_translatewiki; opus_wikimedia,nllb_mined:470159; <HF_ORG>/African-Code-Switch:7,
+guw,Gun,1,1,1,,0,263552,0,1,1.0,183,175,8,0,183,0,thin (< 250),RELIGIOUS-ONLY (183 rows),opus-mt560,,only 183 eligible human pairs after the filters
+hau,Hausa,1,1,0,flores_plus+ntrex+mafand+smol_sent,7435,267820,274028,0,0.0,731,702,29,731,0,0,covered,700 AfriScience (science register),afriscience; mt560; multi-open; opus100; pontoon; ssa-mte; weblate,nllb_mined:494838; finetranslations:87998; afrolingu-mt:6413,
+her,Herero,1,1,1,glot_story,0,7529,0,1,1.0,183,175,8,0,183,0,thin (< 250),RELIGIOUS-ONLY (183 rows),mt560,,only 183 eligible human pairs after the filters
+ibb,Ibibio,1,0,1,ibom_mt,977,0,0,0,0.0,723,694,29,723,0,0,covered,723 non-commercial pairs,ibom-mt,,
+ibo,Igbo,1,1,0,flores_plus+ntrex+mafand+smol_sent+salt,1844,658148,297818,0,0.0,728,699,29,728,0,0,covered,,igbo-bundles; mt560; multi-open; opus100; pontoon; ssa-mte; weblate,nllb_mined:480145; igbo-bundles:119363; finetranslations:69336; afrolingu-mt:9146,
+ish,Esan,1,1,1,,0,4872,0,1,1.0,183,175,8,0,183,0,thin (< 250),RELIGIOUS-ONLY (183 rows),mt560,,only 183 eligible human pairs after the filters
+iso,Isoko,1,1,0,,0,197104,0,1,1.0,183,175,8,0,183,0,thin (< 250),RELIGIOUS-ONLY (183 rows),mt560,,only 183 eligible human pairs after the filters
+kab,Kabyle,1,1,0,flores_plus+smol_sent,130459,59604,0,0,0.0,732,703,29,732,0,0,covered,FLORES+ dev train half present,flores-plus-dev-half; kabyle-tm; mt560; opus_tatoeba; opus_translatewiki; opus_wikimedia; tatoeba-abdelhaque; weblate,nllb_mined:475581; finetranslations_kab:19700,
+kam,Kamba,1,1,0,flores_plus,880,94564,0,0,0.25,587,563,24,440,147,0,covered,religious share 25%; FLORES+ dev train half present,flores-plus-dev-half; mt560; opus_tatoeba,nllb_mined:470849; HuggingFaceFW/finetranslations:4752; opus:1,
+kbp,Kabiye,1,1,0,flores_plus,1004,0,0,0,0.0,563,540,23,563,0,0,covered,FLORES+ dev train half present,flores-plus-dev-half; opus_translatewiki,nllb_mined:470927; afrolingu-mt:17938,
+kea,Kabuverdianu,1,1,1,flores_plus,3018,9708,0,0,0.0,731,702,29,731,0,0,covered,FLORES+ dev train half present,flores-plus-dev-half; mt560; opus_translatewiki,nllb_mined:470841; HuggingFaceFW/finetranslations:3737,
+kik,Kikuyu,1,1,0,flores_plus+smol_sent,789,86927,0,0,0.0,729,700,29,729,0,0,covered,,mt560; ssa-mte,nllb_mined:451089,
+kin,Kinyarwanda,1,1,0,flores_plus+ntrex+mafand+smol_sent,140663,0,95477,0,0.0,732,703,29,732,0,0,covered,,kin-gazette; multi-open; opus100; pontoon; ssa-mte; weblate,nllb_mined:483794; finetranslations:56197; afrolingu-mt:6338,
+kmb,Kimbundu,1,1,0,flores_plus,876,167490,0,0,0.251,581,558,23,435,146,0,covered,religious share 25%; FLORES+ dev train half present,flores-plus-dev-half; mt560,nllb_mined:192758; <HF_ORG>/African-Code-Switch:5,
+kon,Kongo,1,1,0,smol_sent,0,345737,0,1,1.0,183,175,8,0,183,0,thin (< 250),RELIGIOUS-ONLY (183 rows),mt560,nllb_mined:451090; afrolingu-mt:1365,only 183 eligible human pairs after the filters
+kqn,Kaonde,1,1,0,glot_story,0,201343,0,1,1.0,183,175,8,0,183,0,thin (< 250),RELIGIOUS-ONLY (183 rows),mt560,,only 183 eligible human pairs after the filters
+kri,Krio,1,1,1,smol_sent,0,39471,0,1,1.0,183,175,8,0,183,0,thin (< 250),RELIGIOUS-ONLY (183 rows),mt560,,only 183 eligible human pairs after the filters
+kua,Kuanyama,1,1,0,glot_story,0,92494,0,1,1.0,183,175,8,0,183,0,thin (< 250),RELIGIOUS-ONLY (183 rows),mt560,,only 183 eligible human pairs after the filters
+lin,Lingala,1,1,0,flores_plus+ntrex+smol_sent,1149,490816,0,0,0.25,713,684,29,535,178,0,covered,religious share 25%,mt560; weblate,nllb_mined:469272; afrolingu-mt:224,
+loz,Lozi,1,1,0,glot_story,0,377670,0,1,1.0,183,175,8,0,183,0,thin (< 250),RELIGIOUS-ONLY (183 rows),mt560,,only 183 eligible human pairs after the filters
+lua,Luba-Kasai,1,1,0,flores_plus,0,268494,0,1,1.0,183,175,8,0,183,0,thin (< 250),RELIGIOUS-ONLY (183 rows),mt560,nllb_mined:464022,only 183 eligible human pairs after the filters
+lub,Luba-Katanga,1,1,1,,0,180756,0,1,1.0,183,175,8,0,183,0,thin (< 250),RELIGIOUS-ONLY (183 rows),opus-mt560,,only 183 eligible human pairs after the filters
+lue,Luvale,1,1,1,,0,290525,0,1,1.0,182,174,8,0,182,0,thin (< 250),RELIGIOUS-ONLY (182 rows),opus-mt560,,only 182 eligible human pairs after the filters
+lug,Luganda,1,1,0,flores_plus+ntrex+mafand+smol_sent+salt,5653,206145,40228,0,0.0,732,703,29,732,0,0,covered,728 AfriScience (science register),afriscience; lug-pkyoyetera; mt560; weblate,nllb_mined:470818; afrolingu-mt:9203,
+lun,Lunda,1,1,0,glot_story,0,123443,0,1,1.0,183,175,8,0,183,0,thin (< 250),RELIGIOUS-ONLY (183 rows),mt560,,only 183 eligible human pairs after the filters
+luo,Luo,1,1,0,flores_plus+mafand+smol_sent,2280,2651420,0,0,0.0,729,700,29,729,0,0,covered,FLORES+ dev train half present,flores-plus-dev-half; luo-opus; mt560; ssa-mte,nllb_mined:467154; finetranslations_luo:4020; <HF_ORG>/African-Code-Switch:23,
+mfe,Mauritian Creole,1,1,1,flores_plus,20,166546,0,0,0.891,183,175,8,20,163,0,thin (< 250),religious share 89%,opus-mt560; weblate,,only 183 eligible human pairs after the filters
+mlg,Malagasy,1,1,0,flores_plus+ntrex+smol_sent,503,790482,0,0,0.25,531,510,21,398,133,0,covered,religious share 25%,mt560; weblate,nllb_mined:495522; afrolingu-mt:8490,
+mos,Mossi,1,1,0,flores_plus+smol_sent,2690,339432,0,0,0.0,732,703,29,732,0,0,covered,FLORES+ dev train half present,flores-plus-dev-half; mt560; opus_translatewiki,nllb_mined:459451; <HF_ORG>/African-Code-Switch:5,
+nbl,South Ndebele,1,1,1,smol_sent+glot_story,108370,0,0,0,0.0,732,703,29,732,0,0,covered,,mehgoss-autshumato; mehgoss-vukuzenzele; vukuzenzele; weblate,,
+ndc,Ndau,1,1,1,smol_sent,0,28315,0,1,1.0,183,175,8,0,183,0,thin (< 250),RELIGIOUS-ONLY (183 rows),mt560,,only 183 eligible human pairs after the filters
+nso,Sepedi,1,1,0,flores_plus+ntrex+smol_sent,119795,512417,0,0,0.0,732,703,29,732,0,0,covered,42 AfriScience (science register),afriscience; mehgoss-autshumato; mehgoss-jworg; mehgoss-vukuzenzele; mt560; vukuzenzele,nllb_mined:460177,
+nus,Nuer,1,1,0,flores_plus,6960,0,0,0,0.0,732,703,29,732,0,0,covered,FLORES+ dev train half present,flores-plus-dev-half; oldi_seed_nus_Latn; openlanguagedata/oldi_seed; opus_tatoeba; opus_translatewiki,nllb_mined:477937; HuggingFaceFW/finetranslations:390,
+nya,Chichewa,1,1,0,flores_plus+ntrex+mafand+smol_sent,125,711965,75818,0,0.0,731,702,29,123,0,608,covered,608 unverified-provenance pairs,mt560; multi-open; pontoon; ssa-mte; weblate,nllb_mined:495900; finetranslations:66720; afrolingu-mt:967,
+nyn,Nyankore,1,1,1,smol_sent+salt,0,46925,0,1,1.0,183,175,8,0,183,0,thin (< 250),RELIGIOUS-ONLY (183 rows),mt560,afrolingu-mt:9572,only 183 eligible human pairs after the filters
+oke,Okpe,1,1,1,,0,20943,0,1,1.0,183,175,8,0,183,0,thin (< 250),RELIGIOUS-ONLY (183 rows),mt560,,only 183 eligible human pairs after the filters
+orm,Oromo,1,1,0,flores_plus+ntrex+smol_sent,174,141706,32599,0,0.0,732,703,29,174,0,558,covered,558 unverified-provenance pairs,mt560; multi-open; pontoon; weblate,nllb_mined:481058; finetranslations:23534; afrolingu-mt:9283,
+pcm,Pidgin,1,1,0,mafand+smol_sent,0,20889,28211,0,0.0,732,703,29,0,0,732,covered,732 unverified-provenance pairs,mt560; okwu,afrolingu-mt:629; finetranslations:223,
+run,Kirundi,1,1,0,flores_plus+smol_sent,35,333647,0,0,0.809,183,175,8,35,148,0,thin (< 250),religious share 81%,mt560; weblate,nllb_mined:494181,only 183 eligible human pairs after the filters
+sag,Sango,1,1,0,flores_plus,35,228857,0,0,0.809,183,175,8,35,148,0,thin (< 250),religious share 81%,mt560; weblate,nllb_mined:461888,only 183 eligible human pairs after the filters
+seh,Sena,1,1,1,flores_plus+flores_moz,876,97892,0,0,0.253,578,555,23,432,146,0,covered,religious share 25%; FLORES+ dev train half present,flores-plus-dev-half; mt560,,
+shi,Tachelhit,1,1,1,ntrex,9565,14823,0,0,0.0,732,703,29,732,0,0,covered,,mt560; tatoeba-abdelhaque,,
+sid,Sidamo,1,1,1,,0,43098,0,1,1.0,183,175,8,0,183,0,thin (< 250),RELIGIOUS-ONLY (183 rows),mt560,,only 183 eligible human pairs after the filters
+sna,Shona,1,1,0,flores_plus+ntrex+mafand+smol_sent,247,699864,86645,0,0.0,729,700,29,242,0,487,covered,487 unverified-provenance pairs,mt560; multi-open; pontoon; weblate,nllb_mined:481522; finetranslations:53835,
+som,Somali,1,1,0,flores_plus+ntrex+smol_sent,370,138315,97870,0,0.0,732,703,29,370,0,362,covered,362 unverified-provenance pairs,mt560; multi-open; weblate,nllb_mined:484879; finetranslations:98471; paracrawl:12431; afrolingu-mt:6759,
+sot,Sesotho,1,1,0,flores_plus+ntrex+smol_sent,4144,0,78925,0,0.0,732,703,29,732,0,0,covered,,mehgoss-vukuzenzele; multi-open; pontoon; ssa-mte; vukuzenzele; weblate,nllb_mined:492088; finetranslations:73912; afrolingu-mt:7853,
+ssw,Swati,1,1,0,flores_plus+ntrex+smol_sent,3126,107591,0,0,0.0,731,702,29,731,0,0,covered,,mehgoss-vukuzenzele; mt560; vukuzenzele; weblate,nllb_mined:218525; afrolingu-mt:503,
+swc,Congo Swahili,1,1,0,,0,248127,0,1,1.0,183,175,8,0,183,0,thin (< 250),RELIGIOUS-ONLY (183 rows),mt560,,only 183 eligible human pairs after the filters
+swh,Swahili,1,1,0,flores_plus+ntrex+mafand+smol_sent+salt,12026,0,935100,0,0.0,731,702,29,731,0,0,covered,,multi-open; okwu; pontoon; ssa-mte; swh-rogendo; weblate,dochplt:1174988; nllb_mined:487689; paracrawl:119561; finetranslations:78198; afrolingu-mt:9132,
+tir,Tigrinya,1,1,0,flores_plus+ntrex+smol_sent,5772,572338,0,0,0.0,728,699,29,728,0,0,covered,FLORES+ dev train half present,flores-plus-dev-half; gamayun_kits_tig-eng; mt560; opus; opus_tatoeba; opus_translatewiki; opus_wikimedia; travis_foundation_tigrinya; weblate,nllb_mined:486657; finetranslations_tir:57872; afrolingu-mt:19790; HuggingFaceFW/finetranslations:14831; <HF_ORG>/African-Code-Switch:27,
+tiv,Tiv,1,1,0,smol_sent,0,168188,0,1,1.0,183,175,8,0,183,0,thin (< 250),RELIGIOUS-ONLY (183 rows),mt560,,only 183 eligible human pairs after the filters
+tll,Tetela,1,1,1,,0,203881,0,1,1.0,183,175,8,0,183,0,thin (< 250),RELIGIOUS-ONLY (183 rows),opus-mt560,,only 183 eligible human pairs after the filters
+tsc,Tswa,1,1,1,glot_story,0,78132,0,1,1.0,182,174,8,0,182,0,thin (< 250),RELIGIOUS-ONLY (182 rows),mt560,,only 182 eligible human pairs after the filters
+tsn,Setswana,1,1,0,flores_plus+ntrex+mafand+smol_sent,247608,710026,47305,0,0.0,731,702,29,731,0,0,covered,,autshumato-autshumato-en-tn; mehgoss-autshumato; mehgoss-vukuzenzele; mt560; multi-open; pontoon; vukuzenzele; weblate,nllb_mined:460314; afrolingu-mt:9419,
+tso,Tsonga,1,1,0,flores_plus+smol_sent,292192,695130,0,0,0.0,731,702,29,731,0,0,covered,,autshumato-autshumato-en-ts; autshumato-autshumato-en-ts-manual; mehgoss-autshumato; mehgoss-vukuzenzele; mt560; vukuzenzele; weblate,nllb_mined:490010; afrolingu-mt:7082,
+tum,Tumbuka,1,1,0,flores_plus+smol_sent,2488,426682,0,0,0.0,728,699,29,728,0,0,covered,FLORES+ dev train half present,flores-plus-dev-half; mt560; opus_tatoeba; opus_translatewiki; opus_wikimedia; weblate,nllb_mined:493126; <HF_ORG>/African-Code-Switch:27,
+twi,Twi,1,1,0,flores_plus+mafand+smol_sent,1198,0,602342,0,0.0,731,702,29,731,0,0,covered,,kweku-eng-twi; multi-open; pontoon; ssa-mte; twi-kweku; weblate,nllb_mined:469362; afrolingu-mt:12195,
+umb,Umbundu,1,1,0,flores_plus,877,388520,0,0,0.25,583,560,23,437,146,0,covered,religious share 25%; FLORES+ dev train half present,flores-plus-dev-half; mt560; opus_tatoeba,nllb_mined:293085; <HF_ORG>/African-Code-Switch:5,
+urh,Urhobo,1,1,1,,0,27224,0,1,1.0,183,175,8,0,183,0,thin (< 250),RELIGIOUS-ONLY (183 rows),mt560,,only 183 eligible human pairs after the filters
+ven,Venda,1,1,0,ntrex+smol_sent,321,187360,0,0,0.25,428,411,17,321,107,0,covered,religious share 25%,mehgoss-vukuzenzele; mt560; vukuzenzele; weblate,,
+vmw,Makhuwa,1,1,1,flores_plus,949,135246,0,0,0.251,677,650,27,507,170,0,covered,religious share 25%; FLORES+ dev train half present,flores-plus-dev-half; mt560; opus_translatewiki; ssa-mte,,
+wal,Wolaytta,1,1,0,,2,110988,0,0,0.989,183,175,8,2,181,0,thin (< 250),religious share 99%,mt560; weblate,afrolingu-mt:9939,only 183 eligible human pairs after the filters
+wes,Cameroon Pidgin,1,1,1,,0,26492,0,1,1.0,183,175,8,0,183,0,thin (< 250),RELIGIOUS-ONLY (183 rows),mt560,,only 183 eligible human pairs after the filters
+wol,Wolof,1,1,0,flores_plus+ntrex+smol_sent,5497,52180,204796,0,0.0,731,702,29,731,0,0,covered,FLORES+ dev train half present,flores-plus-dev-half; mt560; multi-open; opus_tatoeba; opus_translatewiki; opus_wikimedia; pontoon; weblate; wolof-bible; wolof-sudoping,nllb_mined:482990; finetranslations:6534; afrolingu-mt:5318; <HF_ORG>/African-Code-Switch:594,
+xho,Xhosa,1,1,0,flores_plus+ntrex+mafand+smol_sent,111350,832835,361790,0,0.0,731,702,29,731,0,0,covered,,mehgoss-autshumato; mehgoss-vukuzenzele; mt560; multi-open; opus100; pontoon; vukuzenzele; weblate; xhosa-silvano,dochplt:149893; finetranslations:64453; afrolingu-mt:3712,
+yao,Yao,1,1,1,,0,40392,0,1,1.0,183,175,8,0,183,0,thin (< 250),RELIGIOUS-ONLY (183 rows),mt560,,only 183 eligible human pairs after the filters
+yor,Yoruba,1,1,0,flores_plus+ntrex+mafand+smol_sent,12395,751728,969798,0,0.0,731,702,29,731,0,0,covered,FLORES+ dev train half present; 712 AfriScience (science register),afriscience; flores-plus-dev-half; mt560; multi-open; okwu; opus100; opus_tatoeba; opus_translatewiki; pontoon; ssa-mte; weblate,nllb_mined:491367; finetranslations:86592; afrolingu-mt:15612; <HF_ORG>/African-Code-Switch:539,
+zne,Zande,1,1,1,,0,173973,0,1,1.0,183,175,8,0,183,0,thin (< 250),RELIGIOUS-ONLY (183 rows),opus-mt560,,only 183 eligible human pairs after the filters
+zul,Zulu,1,1,0,flores_plus+ntrex+mafand+smol_sent,235236,880072,87277,0,0.0,731,702,29,731,0,0,covered,18 AfriScience (science register),afriscience; autshumato-autshumato-en-zu; mehgoss-autshumato; mehgoss-vukuzenzele; mt560; multi-open; opus100; pontoon; ssa-mte; vukuzenzele; weblate,finetranslations:83941; afrolingu-mt:6358,
+aar,Afar,0,0,0,,110,0,0,0,0.0,78,70,8,78,0,0,thin (< 250),,weblate,,only 78 eligible human pairs after the filters
+ada,Adangme,0,0,0,,0,58795,0,1,1.0,183,175,8,0,183,0,thin (< 250),RELIGIOUS-ONLY (183 rows),opus-mt560,,only 183 eligible human pairs after the filters
+adh,Adhola,0,0,0,,0,0,0,0,,0,0,0,0,0,0,none,,,,no pair in any clean source (or all removed by length / protected-set filters)
+aeb,Tunisian Arabic,0,0,0,flores_plus,0,0,0,0,,0,0,0,0,0,0,none,,,,no pair in any clean source (or all removed by length / protected-set filters)
+alz,Alur,0,0,0,,0,6998,0,1,1.0,183,175,8,0,183,0,thin (< 250),RELIGIOUS-ONLY (183 rows),opus-mt560,,only 183 eligible human pairs after the filters
+ary,Moroccan Arabic,0,0,0,flores_plus,0,0,0,0,,0,0,0,0,0,0,none,,,,no pair in any clean source (or all removed by length / protected-set filters)
+bci,Baoule,0,0,0,,0,0,0,0,,0,0,0,0,0,0,none,,,,no pair in any clean source (or all removed by length / protected-set filters)
+ber,Berber,0,0,0,,351,0,0,0,0.0,206,198,8,206,0,0,thin (< 250),,weblate,,only 206 eligible human pairs after the filters
+bum,Bulu,0,0,0,,0,25735,0,1,1.0,182,174,8,0,182,0,thin (< 250),RELIGIOUS-ONLY (182 rows),opus-mt560,,only 182 eligible human pairs after the filters
+cce,Chopi,0,0,0,,0,16818,0,1,1.0,183,175,8,0,183,0,thin (< 250),RELIGIOUS-ONLY (183 rows),opus-mt560,,only 183 eligible human pairs after the filters
+chw,Chuabo,0,0,0,,0,16890,0,1,1.0,183,175,8,0,183,0,thin (< 250),RELIGIOUS-ONLY (183 rows),opus-mt560,,only 183 eligible human pairs after the filters
+cjk,Chokwe,0,0,0,flores_plus,0,33405,0,1,1.0,183,175,8,0,183,0,thin (< 250),RELIGIOUS-ONLY (183 rows),opus-mt560,,only 183 eligible human pairs after the filters
+cop,Coptic,0,0,0,,0,15222,0,1,1.0,183,175,8,0,183,0,thin (< 250),RELIGIOUS-ONLY (183 rows),opus-mt560,,only 183 eligible human pairs after the filters
+dik,Dinka,0,0,0,flores_plus,0,12906,0,1,1.0,183,175,8,0,183,0,thin (< 250),RELIGIOUS-ONLY (183 rows),opus-mt560,,only 183 eligible human pairs after the filters
+dje,Zarma,0,0,0,,0,55033,0,1,1.0,183,175,8,0,183,0,thin (< 250),RELIGIOUS-ONLY (183 rows),opus-mt560,,only 183 eligible human pairs after the filters
+dop,Lelemi,0,0,0,,0,15231,0,1,1.0,183,175,8,0,183,0,thin (< 250),RELIGIOUS-ONLY (183 rows),opus-mt560,,only 183 eligible human pairs after the filters
+fat,Fante,0,0,0,,0,0,0,0,,0,0,0,0,0,0,none,,,,no pair in any clean source (or all removed by length / protected-set filters)
+ful,Fulah,0,0,0,,19334,28891,0,0,0.0,732,703,29,732,0,0,covered,,fub-bible; opus-wikimedia; weblate,nllb-mined-ful:569856; nllb_mined:484902; opus-xlent:3621,
+gaa,Ga,0,0,0,,0,0,0,0,,0,0,0,0,0,0,none,,,,no pair in any clean source (or all removed by length / protected-set filters)
+knc,Kanuri,0,0,0,flores_plus,4577,0,79,0,0.0,732,703,29,732,0,0,covered,,gamayun-kau-eng; kanurimt,,
+koo,Konzo,0,0,0,,0,33781,0,1,1.0,183,175,8,0,183,0,thin (< 250),RELIGIOUS-ONLY (183 rows),opus-mt560,,only 183 eligible human pairs after the filters
+kwn,Kwangali,0,0,0,,0,98047,0,1,1.0,183,175,8,0,183,0,thin (< 250),RELIGIOUS-ONLY (183 rows),opus-mt560,,only 183 eligible human pairs after the filters
+lam,Lamba,0,0,0,,0,13656,0,1,1.0,183,175,8,0,183,0,thin (< 250),RELIGIOUS-ONLY (183 rows),opus-mt560,,only 183 eligible human pairs after the filters
+luy,Luyia,0,0,0,,0,0,6546,0,0.0,732,703,29,0,0,732,covered,732 unverified-provenance pairs,luhya,,
+men,Mende,0,0,0,,0,1557,0,1,1.0,183,175,8,0,183,0,thin (< 250),RELIGIOUS-ONLY (183 rows),mt560,,only 183 eligible human pairs after the filters
+mgr,Mambwe,0,0,0,,0,40483,0,1,1.0,183,175,8,0,183,0,thin (< 250),RELIGIOUS-ONLY (183 rows),opus-mt560,,only 183 eligible human pairs after the filters
+nba,Nyemba,0,0,0,,0,25476,0,1,1.0,183,175,8,0,183,0,thin (< 250),RELIGIOUS-ONLY (183 rows),opus-mt560,,only 183 eligible human pairs after the filters
+nde,North Ndebele,0,0,0,ntrex,35,29765,0,0,0.809,183,175,8,35,148,0,thin (< 250),religious share 81%,ebible-nde; weblate,,only 183 eligible human pairs after the filters
+ndo,Ndonga,0,0,0,,0,91935,0,1,1.0,183,175,8,0,183,0,thin (< 250),RELIGIOUS-ONLY (183 rows),opus-mt560,,only 183 eligible human pairs after the filters
+nup,Nupe,0,0,0,,0,0,0,0,,0,0,0,0,0,0,none,,,nupe:12194,only excluded sources exist: nupe 12194
+nyk,Nyaneka,0,0,0,,0,106587,0,1,1.0,183,175,8,0,183,0,thin (< 250),RELIGIOUS-ONLY (183 rows),opus-mt560,,only 183 eligible human pairs after the filters
+nyu,Nyungwe,0,0,0,,0,23055,0,1,1.0,183,175,8,0,183,0,thin (< 250),RELIGIOUS-ONLY (183 rows),opus-mt560,,only 183 eligible human pairs after the filters
+rnd,Ruund,0,0,0,,0,121730,0,1,1.0,183,175,8,0,183,0,thin (< 250),RELIGIOUS-ONLY (183 rows),opus-mt560,,only 183 eligible human pairs after the filters
+sop,Songe,0,0,0,,0,47209,0,1,1.0,183,175,8,0,183,0,thin (< 250),RELIGIOUS-ONLY (183 rows),opus-mt560,,only 183 eligible human pairs after the filters
+taq,Tamasheq,0,0,0,flores_plus,0,5062,0,1,1.0,183,175,8,0,183,0,thin (< 250),RELIGIOUS-ONLY (183 rows),opus-mt560,,only 183 eligible human pairs after the filters
+teo,Teso,0,0,0,,0,0,0,0,,0,0,0,0,0,0,none,,,,no pair in any clean source (or all removed by length / protected-set filters)
+toi,Tonga,0,0,0,,0,3657,0,1,1.0,183,175,8,0,183,0,thin (< 250),RELIGIOUS-ONLY (183 rows),opus-mt560,,only 183 eligible human pairs after the filters
+ttj,Tooro,0,0,0,,0,15461,0,1,1.0,183,175,8,0,183,0,thin (< 250),RELIGIOUS-ONLY (183 rows),opus-mt560,,only 183 eligible human pairs after the filters
+tzm,Tamazight,0,0,0,,6363,0,0,0,0.0,731,702,29,731,0,0,covered,,nllb-seed-tzm; opus-translatewiki; pontoon-tzm; weblate,nllb_mined:203190,
+zgh,Standard Moroccan Tamazight,0,0,0,flores_plus,383,0,0,0,0.0,210,202,8,210,0,0,thin (< 250),,weblate,,only 210 eligible human pairs after the filters

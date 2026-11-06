@@ -1,0 +1,17 @@
+{"rows_scanned": {"pairs": 38032248, "instr": 4277612}, "seconds": 1046}
+{'kind': 'E', 'benchmark': 'flores_moz', 'distinct_strings_ge4tok': 1012, 'any': 6, 'exact': 0, 'near_j>=0.5': 4, 'embedded_c>=0.8': 2, 'ge8tok': 6}
+{'kind': 'E', 'benchmark': 'flores_plus', 'distinct_strings_ge4tok': 1012, 'any': 6, 'exact': 0, 'near_j>=0.5': 4, 'embedded_c>=0.8': 2, 'ge8tok': 6}
+{'kind': 'E', 'benchmark': 'glot_story', 'distinct_strings_ge4tok': 898, 'any': 102, 'exact': 24, 'near_j>=0.5': 57, 'embedded_c>=0.8': 69, 'ge8tok': 16}
+{'kind': 'E', 'benchmark': 'ibom_mt', 'distinct_strings_ge4tok': 1012, 'any': 6, 'exact': 0, 'near_j>=0.5': 4, 'embedded_c>=0.8': 2, 'ge8tok': 6}
+{'kind': 'E', 'benchmark': 'mafand', 'distinct_strings_ge4tok': 17428, 'any': 604, 'exact': 95, 'near_j>=0.5': 355, 'embedded_c>=0.8': 378, 'ge8tok': 207}
+{'kind': 'E', 'benchmark': 'ntrex', 'distinct_strings_ge4tok': 1973, 'any': 57, 'exact': 13, 'near_j>=0.5': 43, 'embedded_c>=0.8': 31, 'ge8tok': 10}
+{'kind': 'E', 'benchmark': 'salt', 'distinct_strings_ge4tok': 498, 'any': 96, 'exact': 8, 'near_j>=0.5': 50, 'embedded_c>=0.8': 64, 'ge8tok': 34}
+{'kind': 'E', 'benchmark': 'smol_sent', 'distinct_strings_ge4tok': 862, 'any': 11, 'exact': 0, 'near_j>=0.5': 5, 'embedded_c>=0.8': 6, 'ge8tok': 9}
+{'kind': 'R', 'benchmark': 'flores_moz', 'distinct_strings_ge4tok': 1012, 'any': 0, 'exact': 0, 'near_j>=0.5': 0, 'embedded_c>=0.8': 0, 'ge8tok': 0}
+{'kind': 'R', 'benchmark': 'flores_plus', 'distinct_strings_ge4tok': 54582, 'any': 10, 'exact': 1, 'near_j>=0.5': 2, 'embedded_c>=0.8': 8, 'ge8tok': 9}
+{'kind': 'R', 'benchmark': 'glot_story', 'distinct_strings_ge4tok': 2752, 'any': 3, 'exact': 0, 'near_j>=0.5': 1, 'embedded_c>=0.8': 2, 'ge8tok': 0}
+{'kind': 'R', 'benchmark': 'ibom_mt', 'distinct_strings_ge4tok': 2023, 'any': 0, 'exact': 0, 'near_j>=0.5': 0, 'embedded_c>=0.8': 0, 'ge8tok': 0}
+{'kind': 'R', 'benchmark': 'mafand', 'distinct_strings_ge4tok': 19438, 'any': 346, 'exact': 82, 'near_j>=0.5': 164, 'embedded_c>=0.8': 278, 'ge8tok': 106}
+{'kind': 'R', 'benchmark': 'ntrex', 'distinct_strings_ge4tok': 46943, 'any': 385, 'exact': 77, 'near_j>=0.5': 101, 'embedded_c>=0.8': 332, 'ge8tok': 84}
+{'kind': 'R', 'benchmark': 'salt', 'distinct_strings_ge4tok': 2421, 'any': 96, 'exact': 6, 'near_j>=0.5': 27, 'embedded_c>=0.8': 76, 'ge8tok': 27}
+{'kind': 'R', 'benchmark': 'smol_sent', 'distinct_strings_ge4tok': 38747, 'any': 60, 'exact': 0, 'near_j>=0.5': 18, 'embedded_c>=0.8': 43, 'ge8tok': 51}

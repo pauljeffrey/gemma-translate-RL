@@ -1,0 +1,6 @@
+check,sentences,languages,system_a,system_b,identical_outputs,identical_share,chrf_pp_a,chrf_pp_b,delta_b_minus_a,interval_95,note
+parity gate,240,10,vLLM bf16,HF bf16,23,0.096,36.22,36.80,0.58,not computed,plan gate (>=95% identical and |delta|<0.1) not met; 256 new tokens; FLORES+ devtest indices 0 11 22 ... per language
+parity gate,240,10,vLLM bf16,HF fp32,16,0.067,36.22,38.18,1.96,not computed,
+parity gate,240,10,HF bf16,HF fp32,19,0.079,36.80,38.18,1.38,not computed,divergence between HF bf16 and HF fp32 is as large as between engines: numerical not structural
+dtype,4000,20,vLLM bf16,vLLM fp32,344,0.086,34.97,35.21,0.24,"[-0.07, +0.55]",macro over 20 languages x 200 sentences; paired bootstrap 1000 resamples
+cap,4000,20,greedy 768-token run (same 200 sentences x 20 languages),decode study greedy (256-token cap),,,32.50,35.00,2.50,not computed,same sentences; macro of corpus chrF++ per language; full 1012-sentence greedy at 768 on the same 20 languages: 31.83
