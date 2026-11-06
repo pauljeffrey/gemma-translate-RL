@@ -87,9 +87,15 @@ def parse_benchmark_names(names: Sequence[str]) -> List[str]:
     return out
 
 
+# FLORES+ files (devtest/<code>.jsonl, listed on the Hub 2026-11-02) of the 2026-11 registry languages whose registry row has no `flores` code. Evaluation only: the registry field is read by
+# the calibration and contamination scripts, which must not change behaviour because of a new test language.
+EVAL_ONLY_FLORES = {"arz": "arz_Arab", "ary": "ary_Arab", "aeb": "aeb_Arab", "dik": "dik_Latn", "taq": "taq_Latn", "zgh": "zgh_Tfng", "cjk": "cjk_Latn", "mfe": "mfe_Latn", "seh": "seh_Latn_MZ"}
+
+
 def code_for(benchmark: str, iso: str) -> Optional[str]:
-    lang = LANGUAGES[canonical_iso(iso)]
-    return {"flores_plus": lang.flores, "ntrex": lang.ntrex, "mafand": lang.mafand,
+    iso = canonical_iso(iso)
+    lang = LANGUAGES[iso]
+    return {"flores_plus": lang.flores or EVAL_ONLY_FLORES.get(iso), "ntrex": lang.ntrex, "mafand": lang.mafand,
             "smol_sent": lang.smol_sent, "smol_doc": lang.smol_doc, "gatitos": lang.gatitos, "ibom_mt": lang.ibom_mt,
             "flores_moz": lang.flores_moz, "glot_story": lang.glot_story, "salt": lang.salt}[benchmark]
 

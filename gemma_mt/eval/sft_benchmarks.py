@@ -364,7 +364,8 @@ def run_system(name: str, spec: str, revision: Optional[str], rows_by_bench: Dic
                 sampler = hooks.make_sampler(ref.path, python=args.vllm_python, gpu_util=args.vllm_gpu_util,
                                              max_model_len=args.vllm_max_model_len, max_num_seqs=args.vllm_max_num_seqs,
                                              log_path=os.path.join(out, "work", name, "vllm_worker.log"),
-                                             request_timeout=args.gen_timeout + 120)
+                                             request_timeout=args.gen_timeout + 120,
+                                             **({"dtype": args.dtype} if args.dtype != "bfloat16" else {}))   # E-09 (2026-11-04): --dtype float32 reaches the vLLM engine too; bf16 default unchanged
             except Exception as e:  # noqa: BLE001
                 if not args.sampler_fallback_hf:
                     raise

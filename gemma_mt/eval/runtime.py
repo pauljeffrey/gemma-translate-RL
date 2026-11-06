@@ -75,14 +75,14 @@ def load_tokenizer_and_stops(path: str):
 def make_vllm_sampler(model_dir: str, *, python: str, gpu_util: float = 0.2, max_model_len: int = 4096, max_num_seqs: int = 512,
                       log_path: Optional[str] = None, sync_dir: Optional[str] = None, startup_timeout: float = 900.0,
                       request_timeout: float = 3600.0, seed: int = 0, extra: Optional[Dict[str, Any]] = None,
-                      engine_factory: Optional[Callable[..., Any]] = None):
+                      engine_factory: Optional[Callable[..., Any]] = None, dtype: str = "bfloat16"):
     """A VLLMSampler on a vLLM worker process (`python` = interpreter of the environment that has vllm) that loads `model_dir` itself;
     nothing is synced. `engine_factory` replaces the real WorkerEngine in tests."""
     from gemma_mt.rl.vllm_engine import EngineConfig, WorkerEngine
     from gemma_mt.rl.vllm_sampler import VLLMSampler
 
     ec = EngineConfig(model=model_dir, gpu_memory_utilization=gpu_util, max_model_len=max_model_len, max_num_seqs=max_num_seqs,
-                      seed=seed, extra=dict(extra or {}))
+                      seed=seed, extra=dict(extra or {}), dtype=dtype)
     if engine_factory is not None:
         engine = engine_factory(ec)
     else:
