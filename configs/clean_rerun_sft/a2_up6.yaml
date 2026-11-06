@@ -1,6 +1,6 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later
 # Clean rerun, arm A2-up6: 270M + 6 inserted sliding-window layers (24 layers, 301,539,968 parameters, exact identity at init), same subset and hyper-parameters as A2-base
-# Pre-registration: reports/preregistration_${S3_PREFIX}.md + AMENDMENT_1..4 (reports/data/prereg_clean_2026-10-28/).
+# Pre-registration: reports/preregistration_clean_rerun_2026-10-28.md + AMENDMENT_1..4 (reports/data/prereg_clean_2026-10-28/).
 #   python -m gemma_mt.train_sft --config configs/clean_rerun_sft/a2_up6.yaml [key=value ...]
 # Run from the folder that holds packed/, sched/ (built by data_pipeline/sft_clean/chain: pack.py prepare, sampler.py plan/arms/select/subset/head); every path below is relative to it.
 # Start checkpoint: python scripts/upcycle_layers.py --model google/gemma-3-270m-it --out ckpt/gemma3-270m-up6 --n-new 6 --post-norm-gain 0.01   (exact identity of the base at init: scripts/upcycle_check.py; gain 0.01 = decision of 2026-10-30, removes the switch-on loss spike)

@@ -1,6 +1,6 @@
 # Lean schedule for the clean rerun: what the earlier experiments say we can cut (agent M1, 2026-10-28)
 
-Read-only analysis of the existing record. No box was touched, nothing was trained or committed. Data and small CSVs: `reports/data/lean_schedule_2026-10-28/` (file list in section G). Pre-registration in force: `reports/preregistration_<S3_PREFIX>.md` (rule file sha256 `7b86fc11...c0f5`, Amendment 1).
+Read-only analysis of the existing record. No box was touched, nothing was trained or committed. Data and small CSVs: `reports/data/lean_schedule_2026-10-28/` (file list in section G). Pre-registration in force: `reports/preregistration_clean_rerun_2026-10-28.md` (rule file sha256 `7b86fc11...c0f5`, Amendment 1).
 
 Labels used on every number: **VERIFIED** = read or computed by me from a file that I name; **REPORTED** = stated in a document (paper, DECISIONS, report), not recomputed; **ESTIMATED** = my arithmetic or an assumption, with the basis stated.
 

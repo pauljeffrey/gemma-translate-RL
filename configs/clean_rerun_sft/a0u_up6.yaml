@@ -1,6 +1,6 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later
 # Clean rerun, arm A0: 77-language SFT from google/gemma-3-270m-it (stage-A schedule = one natural pass, p ~ packs**0.5 floored at 0.2%, a language retired after 4 passes)
-# Pre-registration: reports/preregistration_${S3_PREFIX}.md + AMENDMENT_1..4 (reports/data/prereg_clean_2026-10-28/).
+# Pre-registration: reports/preregistration_clean_rerun_2026-10-28.md + AMENDMENT_1..4 (reports/data/prereg_clean_2026-10-28/).
 #   python -m gemma_mt.train_sft --config configs/clean_rerun_sft/a0.yaml [key=value ...]
 # Run from the folder that holds packed/, sched/ (built by data_pipeline/sft_clean/chain: pack.py prepare, sampler.py plan/arms/select/subset/head); every path below is relative to it.
 # Schedule: python sampler.py plan --stage A --packed-dir packed/train --out sched/A0 --seed 1234   (32 packs per step; steps = packs // 32)

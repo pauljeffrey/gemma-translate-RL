@@ -1,6 +1,6 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later
 # Clean rerun, arm P1: exploratory production path: specialist continuation from the RL checkpoint of A0-R at low lr (not confirmatory)
-# Pre-registration: reports/preregistration_${S3_PREFIX}.md + AMENDMENT_1..4 (reports/data/prereg_clean_2026-10-28/).
+# Pre-registration: reports/preregistration_clean_rerun_2026-10-28.md + AMENDMENT_1..4 (reports/data/prereg_clean_2026-10-28/).
 #   python -m gemma_mt.train_sft --config configs/clean_rerun_sft/p1.yaml [key=value ...]
 # Run from the folder that holds packed/, sched/ (built by data_pipeline/sft_clean/chain: pack.py prepare, sampler.py plan/arms/select/subset/head); every path below is relative to it.
 # Start: the HF-format model of the A0-R run (RL, after the AfriScience stage) - give its local dir or Hub id in model_name (placeholder repo below; private).

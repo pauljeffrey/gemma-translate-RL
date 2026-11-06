@@ -1,6 +1,6 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later
 # Clean rerun, arm A2-1b: google/gemma-3-1b-it (999,885,952 parameters, 26 layers), same subset, token budget and hyper-parameters as A2-base: capacity comparison at a fixed token budget
-# Pre-registration: reports/preregistration_${S3_PREFIX}.md + AMENDMENT_1..4 (reports/data/prereg_clean_2026-10-28/).
+# Pre-registration: reports/preregistration_clean_rerun_2026-10-28.md + AMENDMENT_1..4 (reports/data/prereg_clean_2026-10-28/).
 #   python -m gemma_mt.train_sft --config configs/clean_rerun_sft/a2_1b.yaml [key=value ...]
 # Run from the folder that holds packed/, sched/ (built by data_pipeline/sft_clean/chain: pack.py prepare, sampler.py plan/arms/select/subset/head); every path below is relative to it.
 # The 1B model has the same 262,144-token vocabulary: the 270M tokenizer is named explicitly so that the packs (and the trainer's tokenizer-fingerprint check) are the 270M run's own.

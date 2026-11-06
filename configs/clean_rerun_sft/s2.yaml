@@ -1,6 +1,6 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later
 # Clean rerun, arm S2: S1 + 3,000 Ge'ez tokens (ids 256001-262143, mean-of-subtokens init) with a short embeddings-only warm-up INSIDE the schedule
-# Pre-registration: reports/preregistration_${S3_PREFIX}.md + AMENDMENT_1..4 (reports/data/prereg_clean_2026-10-28/).
+# Pre-registration: reports/preregistration_clean_rerun_2026-10-28.md + AMENDMENT_1..4 (reports/data/prereg_clean_2026-10-28/).
 #   python -m gemma_mt.train_sft --config configs/clean_rerun_sft/s2.yaml [key=value ...]
 # Run from the folder that holds packed/, sched/ (built by data_pipeline/sft_clean/chain: pack.py prepare, sampler.py plan/arms/select/subset/head); every path below is relative to it.
 # Start checkpoint: scripts/upcycle_s2_start.sh (surgery on google/gemma-3-270m-it) -> ckpt/gemma3-270m-it-geez3000; its check: scripts/upcycle_s2_start_check.py

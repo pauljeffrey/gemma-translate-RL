@@ -71,4 +71,4 @@ training step. Anything not listed here is reported as exploratory. Owner approv
 
 9. WHAT IS PINNED AT LAUNCH (written to the run manifest with sha256 before the first step)
    exact SFT config file and its hash; the D2 data commit/revision of the Hub repo; protected index version and manifest sha256; list of languages with data after filtering; the H / H_cal / H_sel id lists; the
-   per-language pass counts of A0; git commit of the training code; GPU type; this file's sha256 (also recorded in reports/preregistration_<S3_PREFIX>.md).
+   per-language pass counts of A0; git commit of the training code; GPU type; this file's sha256 (also recorded in reports/preregistration_clean_rerun_2026-10-28.md).
