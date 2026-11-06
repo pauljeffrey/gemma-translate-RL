@@ -1,0 +1,11 @@
+% Macros for the 385M paper.
+\newcommand{\chrfpp}{chrF++}
+\newcommand{\ci}[2]{\mbox{$[#1,\,#2]$}}          % interval, e.g. \ci{+8.59}{+9.03}
+\newcommand{\tool}[1]{\texttt{#1}}
+\newcommand{\verify}[1]{\textbf{[VERIFY: #1]}}   % unsettled fact, listed in OPEN_ISSUES.md
+\newcommand{\verifycite}[1]{\textbf{[VERIFY citation: #1]}} % claim stated without citation
+\newcommand{\pending}[1]{\textbf{[PENDING: #1]}} % result not yet in
+\newcommand{\ownerdecision}[1]{\textbf{[OWNER: #1]}}
+\newcommand{\GPUh}{A100-h}
+% Build switch: \ifanon is true in the review build (main.tex) and false in the preprint build (main_preprint.tex).
+\newcommand{\anonreal}[2]{\ifanon #1\else #2\fi}   % #1 printed in the anonymous build, #2 in the preprint build

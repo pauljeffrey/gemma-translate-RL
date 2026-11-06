@@ -1,0 +1,34 @@
+% Filled only from paper.md / ledger / report facts. Compute: GPU-hours only, estimated from logged durations (no cost figures).
+\begin{itemize}
+\item \textbf{Scientific artefacts used and licences.} Base model: Gemma-3-270m-it (Gemma terms of use apply to the derived weights). Reward and monitor models, as declared on the Hub (read 2026-11-05): \texttt{McGill-NLP/ssa-comet-mtl} and \texttt{ssa-comet-qe}, \texttt{masakhane/africomet-qe-stl-1.1} and \texttt{africomet-stl-1.1}: apache-2.0; GlotLID (\texttt{cis-lmu/glotlid}): \texttt{license: other}, \texttt{license\_name: apache-2.0-plus-notices}. Training and reward-side data and their licences are listed in Ethical considerations and Appendix~\ref{app:disc}: NLLB-mined and NLLB-derived data (CC-BY-NC terms), IbomMT (CC-BY-NC-4.0), AfriScience-MT train (Apache-2.0), FineWeb-Edu (ODC-By), Wikipedia (CC BY-SA), several sources with unspecified licences; TranslatePsy (CC-BY-NC-4.0, NLLB-3.3B targets) only in the research control. Evaluation uses the public benchmarks named in Section~\ref{sec:eval}; the NLLB-218 language-ID model (CC-BY-NC) was used for measurement only. Release licence of the weights: the Hub repositories declare none \ownerdecision{confirm release licence}.
+\item \textbf{Parameters and compute.} 385,144,448 parameters; one A100 80\,GB at a time. Table~\ref{tab:compute} gives A100-hours per component, \emph{estimated from logged durations} (training seconds from the run summaries, or the logged start and end times of the job); no cost figure is reported. The sized components add up to about 94 A100-hours, a lower bound. \textbf{Not sized} (no duration in any report): the A0 stage (5,625 steps) and SFT-1 (1,500 steps); E-01 (guard grid and guarded full evaluations); E-09 and E-09b (the fp32 generation ran 17:46 to 18:38 UTC beside another job at a 0.15 GPU share); E-13 and E-20; the SSA-COMET scoring of E-05; the full evaluation passes of every stage (122,585 rows each) and the AfriScience and document evaluations; data preparation and scoring boxes; aborted runs and the compute of the earlier 270M models.
+\item \textbf{Number of runs and seeds.} One training run per model and stage (seed 1234); two extra seeds (20261105, 20261106) of the stage-A recipe at 100 steps; three ablation arms, one run each; the control and the E-14 run are one run each. No multiple-run statistics beyond that pair; test-sentence bootstrap intervals elsewhere.
+\item \textbf{Hyper-parameters and selection.} Appendix~\ref{app:hyper} (all SFT and RL settings, per-shard schedules, reward and features). Checkpoints were selected on a 720-sentence FLORES+ dev subset; the decode-time guard setting by a rule fixed in advance on the SFT dev grid.
+\item \textbf{Evaluation.} Metrics defined in Section~\ref{sec:eval}; sacreBLEU 2.6.0 (from the install log of the evaluation machine; the full signature strings were not recorded), chrF++ = \texttt{CHRF(word\_order=2)} with the defaults, spBLEU = BLEU with \texttt{tokenize=flores200}, NFC-normalised hypotheses and references; vLLM 0.32.0, bf16, greedy, 768 new tokens; intervals are 95\% paired bootstrap, 1,000 resamples (language bootstrap, 10,000 resamples, for NLLB). Exact commands per table are in the archived scripts named in the ledger.
+\item \textbf{Human subjects and annotators.} None were involved; no human judgement of system outputs was collected; no personal data was collected by us.
+\item \textbf{Code, data and checkpoints.} \anonreal{Anonymised for review; released on acceptance, subject to the licence limits above.}{See the links in Ethical considerations and the branch list in the reproducibility statement, subject to the licence limits above.} NLLB-derived and non-commercial parts cannot be redistributed as they are, and TranslatePsy rows are not released \ownerdecision{which parts of the data are released}.
+\end{itemize}
+
+\begin{table}[h]
+\centering\small
+\caption{A100-hours by component, estimated from logged durations (lower bound; unsized components are listed above).}\label{tab:compute}
+\begin{tabular}{@{}lrl@{}}
+\toprule
+component & A100-h & basis\\
+\midrule
+SFT stage B (31,353 steps) & 44.8 & 5.14 s per step\\
+RL stage A, B1, mixed (400 + 135 + 60 steps) & 8.66 & 15,920 + 10,479 + 4,786 s\\
+weak-group RL (85 steps) & 2.1 & 7,642 s\\
+science SFT (283 steps) & 0.3 & 17 min\\
+science RL (160 steps) & 4.8 & 17,153 s\\
+long-document RL (80 steps) & 7.7 & wall-clock 10:03--17:44, of which about 4.5 h crash loop\\
+E-03 control (6,000 steps and two probes) & 10.5 & GPU session 9.75 h, evaluation 0.55 h, SSA-COMET pass 0.2 h\\
+E-02 beam-4 and MBR-16 & 2.6 & logged GPU time\\
+E-04 two seed runs and their evaluations & 3.2 & wall-clock 08:51--12:05\\
+E-11 three ablation arms and evaluations & 2.9 & 36 + 54 + 42 min of training, 3 $\times$ about 15 min of evaluation\\
+E-14 science RL without science SFT & 6.0 & training 15:18--20:17, evaluation about 1 h\\
+\midrule
+sized components, total & about 94 & lower bound\\
+\bottomrule
+\end{tabular}
+\end{table}

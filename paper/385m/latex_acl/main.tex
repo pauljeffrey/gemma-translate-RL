@@ -1,0 +1,73 @@
+% ACL-format version (review mode, double-blind) of the 385M English-to-African translation paper.
+% Style: official acl.sty / acl_natbib.bst (acl-org/acl-style-files, copy taken from a local checkout of the official sources).
+% Compiles with pdfLaTeX (Overleaf default), XeLaTeX and LuaLaTeX. Bibliography: BibTeX with acl_natbib.
+% Core = title ... Conclusion (hard limit 8 pages); Limitations, Ethical considerations, references and appendix are outside the core.
+% Numbers come from paper_385m/paper.md only; claim IDs of CLAIMS_LEDGER.md are kept as % comments.
+% [VERIFY ...] / [PENDING ...] marks are deliberate and listed in OPEN_ISSUES.md.
+\documentclass[11pt]{article}
+% Two builds from the same sources:
+%   main.tex          review build (anonymous, line numbers, no author, no links that identify the authors)
+%   main_preprint.tex preprint build (\def\preprintbuild before \input{main}): author block, live Hugging Face links, page numbers
+\ifdefined\preprintbuild
+  \usepackage[preprint]{acl}
+\else
+  \usepackage[review]{acl}   % camera-ready: \usepackage[final]{acl}
+\fi
+\newif\ifanon \anontrue
+\ifdefined\preprintbuild \anonfalse \fi
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage{times}
+  \usepackage{latexsym}
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{inconsolata}
+\else
+  \usepackage{fontspec} % XeLaTeX/LuaLaTeX only
+  \setmainfont{texgyretermes}[Extension=.otf,UprightFont=*-regular,BoldFont=*-bold,ItalicFont=*-italic,BoldItalicFont=*-bolditalic]
+  \setmonofont{texgyrecursor}[Extension=.otf,UprightFont=*-regular,BoldFont=*-bold,ItalicFont=*-italic,BoldItalicFont=*-bolditalic,Scale=0.9]
+\fi
+\usepackage{microtype}
+\usepackage{booktabs,array,tabularx,longtable,graphicx,amsmath,amssymb,enumitem,placeins,etoolbox}
+\setlist{itemsep=0pt,topsep=2pt,parsep=0pt,leftmargin=*}
+\renewcommand{\arraystretch}{1.05}
+\setlength{\textfloatsep}{8pt plus 2pt minus 2pt}
+\setlength{\floatsep}{6pt plus 2pt minus 2pt}
+\setlength{\intextsep}{6pt plus 2pt minus 2pt}
+\setlength{\dbltextfloatsep}{8pt plus 2pt minus 2pt}
+\captionsetup{font=small,skip=3pt}
+\input{macros}
+
+\title{Half of the chrF++ Gain Is Finishing the Sentence: What Reinforcement Learning Adds to a 385M English-to-African Translator Beyond a Decoding Guard}
+\ifanon
+  \author{Anonymous ACL submission}
+\else
+  \author{Jeffrey Otoibhi \\ Aletheia AI}
+\fi
+
+\begin{document}
+\maketitle
+\begin{abstract}
+\input{sections/abstract}
+\end{abstract}
+\input{sections/s1_intro}
+\input{sections/s2_related}
+\input{sections/s3_method}
+\input{sections/s4_eval}
+\input{sections/s5_results}
+\input{sections/s6_discussion}
+\FloatBarrier\label{coreend}
+\clearpage
+\section*{Limitations}
+\input{sections/limitations}
+\section*{Ethical considerations}
+\input{sections/ethics}
+\bibliography{refs}
+\bibliographystyle{acl_natbib}
+
+\clearpage
+\appendix
+\label{appstart}
+\onecolumn
+\input{sections/appendix}
+\end{document}

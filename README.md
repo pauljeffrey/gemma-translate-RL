@@ -47,7 +47,7 @@ data_pipeline/
   africomet_translation/  RL prompt pools and the registry of text sources
   sft_clean/           the clean (decontaminated) rebuild: protected index, QE chain, gate, windows, packs, schedules, shards
 experiments/           results of the clean-rerun generation of experiments (reports, tables, training logs of the growth run)
-paper/                 working draft of the second paper (clean rerun, 125 languages, growth)
+paper/                 working draft of the second paper (clean rerun, 125 languages, growth) and, in `paper/385m/`, the paper on the 385M model (text, claims ledger, ACL LaTeX sources)
 version_1/             the first paper and the experiments behind it (the model called rl2c)
 docs/                  pipeline, data policy, RL design, growth design
 DECISIONS.md           numbered design decisions (D-xx) with their reasons
@@ -76,8 +76,10 @@ datasets are referenced by their public names and are fetched at run time.
 * `version_1/`: complete. A 270M model, SFT then RL (the released-candidate model `rl2c`), evaluated on eight benchmarks; the paper notes
   that the first pipeline had seen part of the English side of the test sets (Section 6.9a of that paper).
 * This generation (`experiments/`, `paper/`): the pipeline was rebuilt without any benchmark text in training, the data was scaled to
-  35M new pairs plus an instruction stream, the model was grown to 385M parameters, and RL is being prepared for 77 to about 100 languages.
-  The SFT/growth run is in progress; RL and the final evaluation have not been run. `paper/README.md` lists what is measured and what is pending.
+  35M new pairs plus an instruction stream, and the model was grown to 385M parameters. Up to 2026-11-05 the 385M model was trained
+  (SFT/growth, RL stages A, B1 and mixed, a science stage, a long-document RL stage) and evaluated on FLORES+, NTREX, MAFAND, SMOL and AfriScience-MT;
+  the controls (decode-time loop guard, beam and MBR, RL seeds and ablations, engine parity, an SFT-only control, the old 270M models in the same harness)
+  are written up in `experiments/reports/`. `paper/385m/` holds the paper on this model; `paper/README.md` lists what is measured.
 
 ## Licence
 

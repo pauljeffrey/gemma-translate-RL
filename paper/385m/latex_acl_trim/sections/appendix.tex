@@ -1,0 +1,703 @@
+% TRIMMED appendix (about 15 pages). Generated from paper.md by a small converter; claim IDs and report keys are in % comments. Removed/condensed blocks: see OPEN_ISSUES_TRIM.md.
+
+\FloatBarrier
+
+\section{Hyper-parameters, recipe and reward details}\label{app:hyper}
+
+\subsection{SFT recipe and learning-rate schedule}
+
+\textbf{Recipe.} Samples are packed into 4,096-token packs (one language per pack, block-diagonal attention) at 32 packs = 131,072 tokens per step; each pack is used once. Optimiser: Muon (momentum 0.95, 5 Newton-Schulz steps) on the 2-D decoder matrices and AdamW (betas 0.9/0.95) on embeddings and norms, weight decay 0.01, gradient clipping 1.0, 3\% linear warm-up then cosine decay, seed 1234. The learning-rate schedule, read from the executed per-shard configs, is: SFT-1 (\texttt{g1a}, 1,500 steps) peak 5e-5, cosine to 50\% of the peak (2.5e-5); shard 1 (\texttt{g1b\_\allowbreak{}s1}) peak 5e-5, cosine to 80\% (4e-5); shards 2-5 (\texttt{g1b\_\allowbreak{}s2}..\texttt{g1b\_\allowbreak{}s5}) peak 3e-5 (lowered from 5e-5 on 2026-11-01 because of forgetting in tiny languages), cosine to 80\% (2.4e-5); shard 6 (\texttt{g1b\_\allowbreak{}s6}) peak 3e-5, cosine to 10\%, so the last step runs at 3.0e-6. Every shard starts a fresh Muon state with a 3\% linear warm-up. SFT-2 runs in six shards of about 4,800 to 5,300 steps, with tail-language replay from shard 2. Executed stage B: 31,353 steps, 4.109 B tokens, 5.14 s per step on an A100 (44.8 h); 32,853 steps in all with SFT-1. Final validation loss: macro 1.3412, micro 1.2846 over 78 languages (end of SFT-1: 1.7847). The macro rises from 1.78 to 1.98 at the end of shard 1 because new languages enter the validation set at stage 2.  
+% src: VERIFIED against the executed per-shard configs (`learning_rate`, `min_lr_ratio`, `warmup_ratio`, `init_from` keys): `reports/data/e23_hygiene_2026-11-04/sft_configs/g1a.yaml`, `g1b_s1.yaml` ... `g1b_s6.yaml` (copies of the box files `clean_sft_small/run/configs/growth1/`). The repository templates `gemma_mt/configs/growth1/g1a.yaml` (5e-5, min_lr_ratio 0.5) and `g1b.yaml` (5e-5, min_lr_ratio 0.1) are NOT the executed shard configs: `g1b.yaml` is the single-shard template (peak 5e-5, floor 10%); `gemma_mt/configs/clean_rerun_sft/` holds the A0 configs only. Resolves the HYG M4 vs CTLP disagreement: HYG's "cosine to 10%" is right only for shard 6 (and the g1b template); CTLP's 0.8 for shards 2-5 is right; shard 1 also 0.8 and SFT-1 0.5, neither stated in HYG or CTLP. Other keys common to all: Muon momentum 0.95, 5 NS steps, weight decay 0.01. Validation: HYG M4 (sft_385m_curve.csv, sft_385m_val_by_language_final.csv); NLLBLINK for 44.8 h
+
+\subsection{RL: stages, reward and features}
+
+\begin{table}[t]
+\centering\scriptsize
+\setlength{\tabcolsep}{4pt}
+\caption{RL hyper-parameters by stage (all Muon; KL reference = start model of the stage).}\label{tab:stagecfg_full}
+\begin{tabularx}{\linewidth}{@{}lrrr>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}X@{}}
+\toprule
+stage & learning rate & KL coefficient (k3) & group size & guide member & steps (cap) $\times$ prompts \\
+\midrule
+A, B1, mixed & 2e-6 (10 warm-up steps) & 0.05 & 16 (15 + greedy) & beam/MBR, fraction 0.25 (from step 41 in A) & 400 $\times$ 64; 150 (135 run) $\times$ 48; 60 $\times$ 42 \\
+science RL & 1.0e-6 & 0.1 & 16 & beam/MBR, fraction 0.25 & 150 in the yaml, cap extended to 190 by the extension rule at step 120; executed 160 (stopped at step 150 by dev plateau, then 10 wind-down steps; \texttt{summary.\allowbreak{}json}, Appendix~\ref{app:chain}) $\times$ 42 \\
+long-document RL & 1.0e-6 & 0.1 & 8 (7 + greedy) & off & 80 $\times$ 32 (51\% long prompts) \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+The science SFT before the science RL used AdamW at 3e-6 (Appendix~\ref{app:docs}). Dynamic-sampling, std-floor and reference-domain settings differ by stage as well (Appendix~\ref{app:chain}). 
+% src: A to mixed: gemma_mt/configs/clean_rerun_385m/rl_{A_b64,B1_b256,C_mixed}.yaml. Long-document RL: gemma_mt/configs/clean_rerun_385m_long/rl_F_final.yaml (learning_rate 1.0e-06 "D-59", kl_coef 0.1, group_size 8, guide_fraction 0.0, steps 80, prompts_per_step 32, extend_if_improving false, KL reference = the start model). Science RL: `clean_rerun_385m_sci/rl_F_final.yaml` on the A100 box (the file that runs): Muon, LR 1.0e-6, KL coefficient 0.1 with the start model as reference (D-59), group 16, guide fraction 0.25, as read by the coordinator on 2026-11-04; The file is stored at reports/data/rl_configs_as_executed_2026-11-04/sci_rl_F_final.yaml (reproducibility list of the draft). Closes the LDOC "KL coef 0.1 / 1e-6" flag; the `kl_coef` comment of the long-document yaml adds that the old final run's yaml said 0.05 but its CLI override executed 0.1
+
+\textbf{Stages.} Stage A (400 steps, short English windows, bin b64), B1 (135 steps run, b256; best checkpoint step 50 by dev chrF++), mixed (60 steps, b64 and b256), then a continued-RL run on eight weak languages (85 steps), a science SFT with weight interpolation, a science RL and a long-document RL (Appendix~\ref{app:chain}). B1 started from stage A's final model (step 400), mixed from B1's best checkpoint (step 50), the weak-group run from the mixed best, the science SFT from the mixed best. The dev set has \textbf{720 sentences = 18 FLORES+ dev languages $\times$ 40 sentences} (afr ewe fon hau ibo kin nya orm sna som sot swh tsn twi wol xho yor zul). B1's step-135 weights (\anonreal{an anonymised checkpoint}{Hub branch \texttt{stage-\allowbreak{}b1-\allowbreak{}final}}) were evaluated after the fact (E-20, Section~\ref{sec:seeds}) and equal B1 best within noise. 
+% src: HYG X3, X4, X19; ledger M8. Step 200 of stage A was the dev-best checkpoint at its time (dev 40.4697); the final model of step 400 (dev 40.50, a gain of 0.03 below the selection minimum 0.1) is the one every evaluation uses
+
+\textbf{Reward.} Per completion: hard failures (missing or wrong language tag, unfinished or text after the end token, copy of the source, degenerate repetition, wrong language by GlotLID \citep{kargaran2023glotlid} with a 15-character minimum, length outside the human window) receive the floor reward \ensuremath{-}2. Otherwise the content signal is a reference-free quality-estimation ensemble of \texttt{masakhane/\allowbreak{}africomet-\allowbreak{}qe-\allowbreak{}stl-\allowbreak{}1.\allowbreak{}1} \citep{wang2024africomet} (r1) and \texttt{McGill-\allowbreak{}NLP/\allowbreak{}ssa-\allowbreak{}comet-\allowbreak{}mtl} run without a reference \citep{li2025ssacomet} (r2), each shaped per language onto a monotone curve calibrated on human references (held-out calibration split of 261 ids, never dev, devtest or test). \textbf{The ensemble is the mean of the two shaped rewards if |r1 - r2| $\le$ 1.0 and the minimum otherwise}; it exists for 42 languages (41 with an ensemble block; Dyula has none). For languages without a validated QE model the content signal is the consensus (mean sentence chrF++ against the other valid group members, at least 3 valid members, blend 0.5); for five weak languages (kea kbp nus bam kab) an NLLB-3.3B pseudo-reference chrF++ term is added with weight 0.25 (max 0.35), reward only. Penalties are penalties only (never a bonus), as executed in stages A, B1 and mixed: length (weight 1.0 per log-unit outside the language's human length-ratio window, widened by 15\%), word ratio (0.5 per log-unit of the words ratio above the human 99th percentile, slack 15\%), lexical (1.0 per unit of deficit in numbers, names and content words that are not in the source), diacritics (1.0), and the constraint anchors (boilerplate, copy with cap 2.0, entity recall 0.5, function words 0.3, padding, repetition and a lexicon guard; v1 for consensus and blend languages, v2 for all three content modes; a saturated stuffing deficit at 0.9 is a hard failure); the fluency and science-anchor penalties were off; hard-failure classes also include an empty output. The reward range is [\ensuremath{-}2, 2.25]. The reward is computed per sentence chunk and aggregated by source length, with failed chunks at \ensuremath{-}2 (long-document reward \texttt{longdoc\_\allowbreak{}v2}, applied to short bins too). 
+% src: HYG section 3 (M9: gemma_mt/gemma_mt/rl/qe_ensemble.py header, shaping_clean_v2.json `ens_delta` 1.0, training_state reward_range); reports/rl_vs_sft_evidence_2026-11-04.md section 1 (reward-family table); reports/rl_stage_plan_385m_b256_2026-11-02.md section 3; penalty list read from the reward code and the executed configs (`research_archive_2026-11-03/box_final_2026-11-04/clean_rerun/tree/gemma_mt/gemma_mt/rl/reward.py`; `reports/data/e23_hygiene_2026-11-04/rl_configs/config_{A,B1,mixed}.json`, identical reward block in A, B1 and mixed)
+
+\textbf{Four features added at step 41 of stage A.} Stage A ran steps 1-40 without them; at the step-40 checkpoint the trainer was stopped and resumed from \texttt{last/\allowbreak{}} with all four switched on. (1) Dynamic sampling: oversample 1.1 (later 1.0), drop flat groups, refill up to twice \citep{yu2025dapo}; (2) an advantage standard-deviation floor of 0.02; (3) a beam-guided group member: for 25\% of the prompts the beam-4 output (or, for 31 weak languages, an MBR winner over 16 extra samples; skipped on 99\% of B1 steps for cost) replaces the last sampled member, with ratio 1 and the guides' advantage share capped at 0.25; (4) a reference-anchored term on 15\% of the prompts (7 languages: amh efi hau lug nso yor zul, human pairs from AfriScience-MT train and IbomMT train): r = 0.65 r\_existing + 0.35 consensus\_value(chrF++ against the human reference). In stage A the std floor never bound (group-std p10 0.128 against 0.02) and dynamic sampling never acted (flat fraction 0); the beam guide cost a median 26.6\% of step time and was above the mean of the other members in 83\% of groups. The stage-A log cannot separate the four features, so we ablated them at 100 steps (E-11, Appendix~\ref{app:supp}): together they are worth a small gain (+0.32 chrF++), mostly the reference-anchored term, the beam guide is not shown to be worth its 25\% step time, and none of them causes the KL rise; we describe them as design choices, not as contributions. The archived stage-A \texttt{config.\allowbreak{}json} is the resumed (post step 40) configuration, so the values of steps 1-40 are known only from the stage report. 
+% src: reports/rl_features_dynamic_ref_2026-11-03.md; reports/rl_stage_A_385m_2026-11-03.md; HYG X18; SPLIT
+
+\textbf{Learning rate in stage A.} The KL guard cut the learning rate at steps 226 (x0.5), 236 (x0.25) and 247 (x0.125) and it never recovered: steps 247-400 ran at 2.5e-7 instead of 2e-6. The dev curve was flat from about step 100, before the first cut. 
+% src: reports/rl_stage_A_385m_2026-11-03.md Optimisation; SPLIT
+
+\textbf{Monitors and stops.} From the mixed stage on, the held-out reference-based \texttt{masakhane/\allowbreak{}africomet-\allowbreak{}stl-\allowbreak{}1.\allowbreak{}1} is scored at every dev evaluation (never a reward) and enters a hacking alarm (QE rising while dev chrF++ falls by more than 0.75 and AfriCOMET by more than 0.03) and a combined dev-plateau stop (two dev evaluations, 50 steps, without a gain of 0.15 chrF++ or 0.004 AfriCOMET). 
+% src: reports/rl_features_dynamic_ref_2026-11-03.md section 14, 17
+
+\textbf{Cost.} Stage A 15,920 s for 400 steps (39.8 s per step), B1 10,479 s for 135 steps, mixed 4,786 s for 60 steps; the chain is 8.66 A100-hours. 
+% src: reports/rl_vs_sft_evidence_2026-11-04.md section 6
+
+\section{SFT against A0 and the earlier 270M work}\label{app:sft}
+
+\begin{table}[t]
+\centering\small
+\setlength{\tabcolsep}{4pt}
+\caption{chrF++ of the 385M SFT against A0 (language macro, all rows; 95\% paired bootstrap). Language counts differ between benchmarks.}\label{tab:sft_a0}
+\begin{tabularx}{\linewidth}{@{}lrr>{\raggedright\arraybackslash}X@{}}
+\toprule
+benchmark (languages) & chrF++ 385M SFT & chrF++ A0 & delta [95\% CI] \\
+\midrule
+FLORES+ devtest (46) & 25.52 & 20.20 & +5.31 [+5.13, +5.50] \\
+NTREX-128 (24) & 29.25 & 23.01 & +6.24 [+6.02, +6.45] \\
+MAFAND-MT test (15) & 35.77 & 25.56 & +10.21 [+9.90, +10.54] \\
+SmolSent (45) & 22.53 & 17.18 & +5.36 [+5.14, +5.60] \\
+SALT (5) & 35.49 & 25.13 & +10.36 [+9.29, +11.44] \\
+GlotStoryBook (8) & 20.22 & 14.62 & +5.59 [+4.92, +6.21] \\
+IbomMT (2) & 12.04 & 9.87 & +2.16 [+1.58, +2.74] \\
+FLORES-MOZ (1) & 21.54 & 21.08 & +0.46 [\ensuremath{-}0.72, +1.73] \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\begin{table}[t]
+\centering\footnotesize
+\setlength{\tabcolsep}{4pt}
+\caption{chrF++ of the earlier 270M SFT and RL-final re-run in the 385M harness (E-13), against the 385M SFT and RL (mixed best), on rows clean for both generations; language macro.}\label{tab:t_old270m}
+\begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}Xrrlrrl@{}}
+\toprule
+benchmark (languages) & old 270M SFT & 385M SFT & 385M SFT - old SFT & old 270M RL (rl2c) & 385M RL & 385M RL - old RL \\
+\midrule
+FLORES+ devtest (45) & 24.69 & 22.34 & \ensuremath{-}2.35 [\ensuremath{-}3.25, \ensuremath{-}1.38] & 31.68 & 32.03 & +0.35 [+0.08, +0.62] \\
+NTREX (24) & 31.46 & 27.33 & \ensuremath{-}4.13 [\ensuremath{-}4.40, \ensuremath{-}3.85] & 35.52 & 35.55 & +0.02 [\ensuremath{-}0.07, +0.11] \\
+MAFAND (15) & 38.26 & 34.71 & \ensuremath{-}3.54 [\ensuremath{-}4.22, \ensuremath{-}2.75] & 41.80 & 40.25 & \ensuremath{-}1.55 [\ensuremath{-}1.72, \ensuremath{-}1.39] \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+ The 385M SFT is behind the old SFT on all three benchmarks and on held-out AfriCOMET (\ensuremath{-}0.0113 [\ensuremath{-}0.0189, \ensuremath{-}0.0037], \ensuremath{-}0.0250 [\ensuremath{-}0.0273, \ensuremath{-}0.0229], \ensuremath{-}0.0158 [\ensuremath{-}0.0188, \ensuremath{-}0.0130]); after RL the 385M model is level with the old RL on FLORES+ and NTREX in chrF++ and 1.55 chrF++ below it on MAFAND, and lower on AfriCOMET on all three (\ensuremath{-}0.0051 [\ensuremath{-}0.0104, \ensuremath{-}0.0001], \ensuremath{-}0.0129 [\ensuremath{-}0.0144, \ensuremath{-}0.0115], \ensuremath{-}0.0203 [\ensuremath{-}0.0222, \ensuremath{-}0.0182]). The rerun reproduces the stored old-model numbers to within 0.4 chrF++ (old SFT FLORES+ 24.69 against 25.06). Caveats: the clean-for-both filter keeps 2,160 of 45,540 FLORES+ rows (4.7\%; 48 sentences per language) and 28,680 of 47,928 NTREX rows, so these 385M numbers are on a different row set from those of Section~\ref{sec:rlsft}; the generations differ in data, steps, tokenizer layout, reward and code state; one seed per model; SmolSent, SALT, GlotStoryBook, IbomMT and FLORES-MOZ were not re-run for the old models (the earlier ``7 of 8 benchmarks'' statement is not re-measured for those five).
+% src: reports/e13_old270m_same_harness_2026-11-04.md; reports/data/e13_old270m_same_harness_2026-11-04/evidence_e13.json (`stages`; ledger S7b, R16b)
+
+\section{Stage chain and B1 final}\label{app:chain}
+
+\begin{table}[t]
+\centering\scriptsize
+\setlength{\tabcolsep}{4pt}
+\caption{Stage chain summary (not all rows are FLORES+ stages).}\label{tab:chain_full}
+\begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}X@{}}
+\toprule
+stage & steps run & cost & result on FLORES+ chrF++ (vs previous stage) \\
+\midrule
+SFT-1 / SFT-2 (A0 $\to$ 385M) & 1,500 + 31,353 & 44.8 h for stage B (A100) & 22.85 (SFT, 54 languages) \\
+continued-SFT control (E-03; not an RL stage) & 6,000 & 8.4 h (5.05 s/step), RL chain 8.66 h & FLORES+ 25.38 (+2.53 over the SFT [+2.35, +2.71]); 93 cells 29.97 against 34.55 for the mixed best \\
+RL stage A & 400 & 15,920 s (4.42 h) & 30.81 (+7.96) \\
+RL B1 & 135 (best step 50) & 10,479 s & 31.35 (+0.54) \\
+RL mixed & 60 & 4,786 s & 31.66 (+0.31) \\
+weak-group RL (8 languages) & 85 (plateau stop at 75) & 2.1 GPU-h & targets +0.03 [\ensuremath{-}0.06, +0.12]; other languages \ensuremath{-}0.09 [\ensuremath{-}0.13, \ensuremath{-}0.05] \\
+science SFT & 283 (65,536 tokens) & 17 min & AfriScience chrF +1.2; SSA-COMET-QE flat \\
+science RL & 160 steps executed (cap 150 in the yaml, extended to 190 at step 120; dev plateau at step 150 plus 10 wind-down steps; \texttt{summary.\allowbreak{}json} stop reason \texttt{dev\_\allowbreak{}plateau}; best at step 75) & not stated in the evaluation report & AfriScience test (6 languages), final vs start: chrF +0.46 [+0.27, +0.65], held-out AfriCOMET +0.0053 [+0.0036, +0.0071], SSA-COMET-QE +0.0041 (reward family); NTREX +0.42, MAFAND +0.10 chrF++; no document-level gain (not a FLORES+ stage) \\
+science RL without the science SFT (E-14) & 160 (150 + 10 wind-down; one OOM restart from step 20; final only) & about 5 h wall-clock (15:18 to 20:17 UTC; 14,395 s in the last process) & AfriScience test chrF 45.66 (start 45.40; science RL from the science SFT 47.10); 93-cell chrF++ +0.13 over the mixed best (not a FLORES+ stage) \\
+long-document RL & 80 (best at step 50; no extension) & 7.7 h wall-clock, of which about 4.5 h a crash loop (Appendix~\ref{app:repro}) & whole-document finished +0.125, loop \ensuremath{-}0.113, chrF +3.4; chunked and sentence level unchanged (not a FLORES+ stage) \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\begin{table}[t]
+\centering\footnotesize
+\setlength{\tabcolsep}{4pt}
+\caption{B1 final (step 135) against B1 best (step 50) and neighbouring stages; \chrfpp{}, language macro, 95\% paired bootstrap (E-20).}\label{tab:e20}
+\begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}Xllll@{}}
+\toprule
+comparison & FLORES+ chrF++ & NTREX chrF++ & MAFAND chrF++ & all 93 cells chrF++ \\
+\midrule
+B1 final minus B1 best & +0.04 [+0.00, +0.08] & \ensuremath{-}0.00 [\ensuremath{-}0.05, +0.05] & \ensuremath{-}0.09 [\ensuremath{-}0.15, \ensuremath{-}0.01] & +0.01 [\ensuremath{-}0.02, +0.04] \\
+B1 final minus stage A & +0.58 [+0.53, +0.64] & +0.30 [+0.24, +0.36] & \ensuremath{-}0.09 [\ensuremath{-}0.17, +0.00] &  \\
+mixed best minus B1 final & +0.26 [+0.22, +0.30] & +0.19 [+0.14, +0.23] & +0.05 [\ensuremath{-}0.01, +0.12] &  \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+Held-out AfriCOMET, B1 final minus B1 best, all cells: +0.0004 [+0.0000, +0.0008]; FLORES+ finished / loop 0.993 / 0.054 (B1 best) and 0.996 / 0.052 (B1 final). The 85 steps after step 50 changed nothing measurable, so the choice between B1 best and final does not matter for the numbers of this paper; 11 of 93 cells are significantly worse and 8 significantly better, by 0.1 to 0.3 chrF++, which is a rough noise floor for the stage-to-stage steps. (A table, not a figure, because the content is three differences.)
+
+\section{RL against SFT and the control: tables}\label{app:rlsft}
+
+\begin{table}[t]
+\centering\footnotesize
+\setlength{\tabcolsep}{4pt}
+\caption{Finished rate / loop rate (reward's flag) / hypothesis-to-reference length, clean rows, language macro.}\label{tab:finish}
+\begin{tabularx}{\linewidth}{@{}l>{\raggedright\arraybackslash}Xll@{}}
+\toprule
+system & FLORES+ finished / loop / hyp-to-ref length & NTREX & MAFAND \\
+\midrule
+SFT & 0.829 / 0.209 / 3.03 & 0.890 / 0.122 / 2.35 & 0.963 / 0.043 / 1.48 \\
+RL stage A & 0.983 / 0.068 / 1.33 & 0.996 / 0.016 / 1.07 & 0.999 / 0.003 / 1.00 \\
+RL B1 best & 0.993 / 0.054 / 1.17 & 0.999 / 0.009 / 1.02 & 1.000 / 0.001 / 0.99 \\
+RL mixed best & 0.995 / 0.048 / 1.14 & 0.999 / 0.006 / 1.02 & 1.000 / 0.001 / 0.98 \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\begin{table}[t]
+\centering\footnotesize
+\setlength{\tabcolsep}{4pt}
+\caption{RL minus SFT over the 93 cells under four ways of removing the finishing effect (clean rows; 95\% CI).}\label{tab:decomp}
+\begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}X@{}}
+\toprule
+row set & chrF++ RL - SFT [95\% CI] & AfriCOMET RL - SFT [95\% CI] (76 cells) \\
+\midrule
+all clean rows & +7.96 [+7.82, +8.12] & +0.0631 [+0.0620, +0.0643] \\
+SFT output cut at its first loop (RL as is) & +4.06 [+3.97, +4.15] & not scorable \\
+rows where the SFT finished and did not loop & +2.41 [+2.33, +2.49] & +0.0366 [+0.0357, +0.0374] \\
+rows where both finished and neither loops & +2.61 [+2.54, +2.70] & +0.0370 [+0.0362, +0.0379] \\
+rows where the SFT failed (21\% of FLORES+ rows) & +24.57 [+24.26, +24.90] (SFT 5.95, RL 30.53) & +0.3342 [+0.3295, +0.3391] \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+Language-macro chrF++ per benchmark, SFT / control / mixed best: FLORES+ 22.85 / 25.38 / 31.66, NTREX 29.25 / 33.74 / 37.17, MAFAND 35.77 / 40.44 / 40.78; the control gains +2.53 [+2.35, +2.71], +4.49 [+4.29, +4.70] and +4.67 [+4.39, +4.92] over the SFT against +8.81, +7.91 and +5.01 for the RL; over the 93 cells it gains +3.38 against +7.96 (42.5\% of the SFT-to-RL gap, arithmetic of the macros). Held-out AfriCOMET: RL minus control is +0.0373 on FLORES+, +0.0051 on NTREX and \ensuremath{-}0.0141 on MAFAND (the last favours the control). Finished and loop rates (the reward's flag) on FLORES+, SFT / control / mixed best: 0.829 / 0.854 / 0.995 and 0.209 / 0.178 / 0.048; by panel (FLORES+ finished): the 19 TranslatePsy languages 0.931 / 0.993 / 1.000, the other languages 0.774 / 0.779 / 0.993. The independent degeneration detector gives the same picture (FLORES+ flag 0.311 for the SFT, 0.268 for the control, 0.085 for the mixed best). \textbf{The control repairs finishing and looping only on the languages it was trained on}, where it comes close to the RL model; on the other languages it changes almost nothing (+0.15 chrF++ over the SFT on FLORES+ [\ensuremath{-}0.03, +0.32], 35 languages). 
+
+\begin{table}[h]
+\centering\small
+\caption{The pre-registered decision rule applied to mixed best against the 6,000-step control.}\label{tab:e03rule}
+\begin{tabular}{@{}llc@{}}
+\toprule
+registered condition & value & met\\
+\midrule
+lower 95\% bound of $d$ (\chrfpp{}, 93 cells) $>+1.0$ & $+4.58$ \ci{+4.45}{+4.70} & yes\\
+lower bound of the AfriCOMET difference $>0$ & $+0.0183$ \ci{+0.0172}{+0.0192} & yes\\
+$d>0$ on the 19 TranslatePsy languages & $-0.03$ \ci{-0.13}{+0.09} & \textbf{no}\\
+$d>0$ on the other languages & $+9.29$ \ci{+9.09}{+9.49} & yes\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\textbf{By the rule as registered the verdict is ``inconclusive''}, because the condition on the 19 TranslatePsy languages is not met (d = \ensuremath{-}0.03); the other three are. We did not change the rule. Reading the panels: where a teacher-translated corpus exists continued SFT matches RL in chrF++ and largely fixes finishing and looping, and the control is ahead of RL on the neural metrics there; RL's advantage is that it improves every language from its own samples and a QE reward, including those for which no such corpus was used (+9.29 on 46 cells). A reader who takes the overall endpoint alone gets ``RL is better'' (+4.58 [+4.45, +4.70], above the +1.0 margin, AfriCOMET above 0); a reader who takes the 19 languages alone gets ``comparable'' in chrF++ (interval inside $\pm$1.0) but not by the registered rule (the AfriCOMET interval excludes 0 in favour of the control); neither is the registered verdict. On AfriScience-MT test sentences (6 languages) the control scores chrF 44.71 against 45.40 for the mixed best and 36.00 for the SFT, and is ahead of the RL on SSA-COMET-QE (0.6214 against 0.6130) and AfriCOMET (0.6947 against 0.6828), the metrics in the family that filtered TranslatePsy; nso, the one of the six languages without TranslatePsy data, stays at the SFT level for the control (41.27 $\to$ 40.64) while the RL gains 10.9.
+
+Caveats. One seed, \textbf{one learning rate} (the probe's best of three) and \textbf{one evaluated budget point}: the stage-A-matched (3,100 steps) and mixed-best-matched (4,800 steps) comparisons are untested, and a different mix, schedule or longer run could change the control. Differences below about 0.5 chrF++ are inside the unmeasured seed variation. The control is not information-matched: it receives NLLB-3.3B translations (a teacher that scores 38.80 against 26.30 for the SFT on 43 languages, Section~\ref{sec:nllb}) for 19 languages that the RL never sees, and the TranslatePsy rows were filtered with AfriCOMET, SSA-COMET and MetricX, so those neural metrics favour the control; chrF and chrF++ are the evidence. The control's loop count is undercounted by the reward's flag too (independent / reward flag 1.51 on FLORES+). TranslatePsy is CC-BY-NC-4.0 with NLLB-derived targets and was used only for this control; nothing of it is in any released model, and the control checkpoint is not released (Appendix~\ref{app:disc}). 
+% src: reports/e03_sft_control_2026-11-05.md sections 1, 3, 4; ledger R14, CTL7-CTL11
+
+\section{Independent degeneration audit: tables}\label{app:degenapp}
+
+\begin{table}[t]
+\centering\footnotesize
+\setlength{\tabcolsep}{4pt}
+\caption{Loop flag of the reward against the independent detector, language macro (95\% bootstrap in brackets).}\label{tab:degen}
+\begin{tabularx}{\linewidth}{@{}lrrl>{\raggedright\arraybackslash}X@{}}
+\toprule
+system & FLORES+ reward flag & FLORES+ independent flag & NTREX reward / independent & MAFAND reward / independent \\
+\midrule
+SFT & 0.2095 & 0.3107 [0.3029, 0.3190] & 0.1218 / 0.1662 & 0.0431 / 0.0754 \\
+RL stage A & 0.0675 & 0.1207 [0.1160, 0.1253] & 0.0165 / 0.0309 & 0.0026 / 0.0092 \\
+RL B1 best & 0.0541 & 0.0980 [0.0942, 0.1019] & 0.0092 / 0.0190 & 0.0013 / 0.0056 \\
+RL mixed best & 0.0480 [0.0462, 0.0496] & 0.0851 [0.0822, 0.0883] & 0.0064 / 0.0143 & 0.0009 / 0.0039 \\
+human references & 0.0001 & 0.0018 & 0.0000 / 0.0018 & 0.0000 / 0.0013 \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\begin{table}[t]
+\centering\small
+\setlength{\tabcolsep}{4pt}
+\caption{Share of FLORES+ outputs identified as English (NLLB-218 top-1, $p\ge0.5$), by system.}\label{tab:english}
+\begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}Xrrrrr@{}}
+\toprule
+language & SFT & stage A & B1 best & mixed best & weak final \\
+\midrule
+aeb & 0.215 & 0.400 & 0.397 & 0.449 & 0.498 \\
+ary & 0.041 & 0.275 & 0.339 & 0.394 & 0.488 \\
+arz & 0.006 & 0.059 & 0.075 & 0.098 & 0.151 \\
+zgh & 0.001 & 0.017 & 0.029 & 0.049 & 0.074 \\
+macro, 54 languages & 0.0055 & 0.0146 & 0.0164 & 0.0191 & 0.0235 \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\begin{itemize}
+\item \textbf{What the audit does not establish.} There is no ground truth for ``degenerate''; the detector is validated by the reference control, by reading 25 mixed-best and 12 SFT examples, and by the lower language-matched chrF++. It is blind to non-repetitive failures (hallucination, wrong content) except through the length audit. The NLLB LID is licensed cc-by-nc-4.0 and was used for evaluation only.
+\end{itemize}
+
+\section{Seeds and ablations (E-04, E-11): full table}\label{app:ablation}
+
+\textbf{Seed spread (E-04).} Two extra runs of the stage-A recipe (seeds 20261105 and 20261106; 100 steps; the executed stage A used seed 1234, so the three runs share the recipe, the SFT start and the 40-step feature-free prefix schedule) were evaluated with the standard harness on 20 languages (yor hau ibo swh amh zul xho kin som wol lug sna twi ewe lin tir orm nso tsn afr; FLORES+, NTREX, MAFAND; 49 cells; greedy, 768 tokens). Gains over the SFT are +5.96 [+5.80, +6.11] and +5.90 [+5.74, +6.05] chrF++ (+0.0462 and +0.0454 AfriCOMET): the two seeds differ by \textbf{0.06 chrF++ [\ensuremath{-}0.02, +0.14]} (0.0008 AfriCOMET; per language they differ significantly in 2 of 20, by at most 0.54). The in-training dev gains of the three runs are +3.33, +3.70 and +3.46 (the dev subset depends on the seed, so only gains over each run's own step 0 are compared). The stage-A gain is therefore reproducible across training seeds at step 100, and per-language differences below about 0.5 chrF++ are not separable from training noise. \textbf{This is one pair of seeds at step 100, not a seed study of later stages}; the 400-step stage A is +0.78 [+0.70, +0.86] and +0.84 [+0.75, +0.92] above the 100-step seeds on the same cells. 
+% src: reports/e04_rl_seeds_2026-11-05.md sections 1-3 (ledger E04 rows)
+
+\begin{table}[t]
+\centering\footnotesize
+\setlength{\tabcolsep}{4pt}
+\caption{Ablation arms at 100 steps, \chrfpp{} over 49 cells (20 languages); arm minus the full-feature seed 2 (paired) and minus seed 3 (E-11).}\label{tab:e11}
+\begin{tabularx}{\linewidth}{@{}llll>{\raggedright\arraybackslash}X@{}}
+\toprule
+arm & chrF++ (49 cells) & arm minus seed 2 & arm minus seed 3 & AfriCOMET vs seed 2 \\
+\midrule
+(b) full, seed 2 & 38.51 [38.30, 38.69] & - & - & - \\
+(b) full, seed 3 & 38.46 [38.26, 38.64] & - & - & - \\
+(a) no features & 38.19 [37.99, 38.38] & \ensuremath{-}0.32 [\ensuremath{-}0.41, \ensuremath{-}0.23] & \ensuremath{-}0.26 [\ensuremath{-}0.35, \ensuremath{-}0.18] & \ensuremath{-}0.0028 [\ensuremath{-}0.0033, \ensuremath{-}0.0022] \\
+(c) no reference domain & 38.35 [38.16, 38.54] & \ensuremath{-}0.16 [\ensuremath{-}0.25, \ensuremath{-}0.08] & \ensuremath{-}0.10 [\ensuremath{-}0.19, \ensuremath{-}0.02] & \ensuremath{-}0.0017 [\ensuremath{-}0.0023, \ensuremath{-}0.0011] \\
+(d) no beam guide & 38.42 [38.23, 38.61] & \ensuremath{-}0.09 [\ensuremath{-}0.17, \ensuremath{-}0.01] & \ensuremath{-}0.04 [\ensuremath{-}0.11, +0.04] & \ensuremath{-}0.0005 [\ensuremath{-}0.0010, +0.0001] \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+Removing all four features costs \textbf{0.32 chrF++ [0.23, 0.41]} (about five times the seed difference; consistent on the three benchmarks, AfriCOMET and the loop flag), about 5\% of the 5.96 chrF++ gain, and it does not show on the in-training dev macro (\ensuremath{-}0.14 [\ensuremath{-}0.51, +0.25]). Removing the reference domain costs 0.16 [0.08, 0.25] (real by the rule against seed 2, 2.7 times the seed difference): about half of the feature set's effect. Removing the beam guide costs 0.09 against seed 2 but 0.04 [\ensuremath{-}0.04, +0.11] against seed 3 with AfriCOMET inside noise: \textbf{not separable from seed noise}, for about +25\% step time (median step 40.3 s with the guide against 32.4 s without). Dynamic sampling and the std floor never acted and are part of arm (a) only. \textbf{The KL rise is not caused by the features:} the median KL of steps 81 to 90 is 0.116 without any feature, 0.122 without the reference domain, 0.120 without the guide and 0.123 and 0.120 for the two full runs, and the same holds at steps 51 to 60 (0.075, 0.0745, 0.073, 0.072, 0.073). \textbf{The earlier inference that the beam guide drives the KL slope (stage report, ledger M10) is therefore not supported}; the step-41 acceleration seen in stage A is at most a small effect. Arm (e) (KL guard 0.25 against 0.15) was not run by the pre-registered rule, because the guard never fired in any of the 100-step runs (maximum 5-step median KL 0.120 to 0.127 against 0.15). Caveats: one run per arm, a shared 40-step prefix with seed 2, one pair of seeds as the noise yardstick (so the ``real'' rule is lenient and effects of 0.1 to 0.2 chrF++ are small and suggestive), 100 steps and 20 languages only (the reference domain covers amh efi hau lug nso yor zul, five of them in these 20). \textbf{Reading:} the four features are design choices with a small measured benefit (+0.3 chrF++ at 100 steps, mostly the reference-anchored term), not the source of the RL gain, and the beam guide is not shown to be worth its generation time. 
+% src: reports/e11_rl_ablations_2026-11-05.md sections 1-3 (ledger E11 rows, M10 corrected)
+
+\section{Decoding and engine parity: tables}\label{app:decoding}
+
+\begin{table}[t]
+\centering\footnotesize
+\setlength{\tabcolsep}{4pt}
+\caption{Earlier 256-token study (SFT only; 20 languages $\times$ 200 FLORES+ sentences). Beam rows are not comparable with E-02.}\label{tab:old256}
+\begin{tabular}{@{}lrlrl@{}}
+\toprule
+decoding & chrF++ & delta vs greedy [95\% CI] & spBLEU & delta spBLEU \\
+\midrule
+greedy & 35.00 & - & 13.64 & - \\
+beam 4 & 37.53 & +2.53 [+2.18, +2.87] & 16.38 & +2.73 [+2.39, +3.08] \\
+MBR-16 (+ greedy) & 38.29 & +3.30 [+3.00, +3.58] & 15.30 & +1.65 [+1.38, +1.90] \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[t]
+\centering\scriptsize
+\setlength{\tabcolsep}{4pt}
+\caption{E-02: greedy, beam-4 and MBR-16 at 768 new tokens, full table (20 languages, 4,000 sentences per system, 95\% paired bootstrap).}\label{tab:e02_full}
+\begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}Xllllll@{}}
+\toprule
+system & chrF++ & spBLEU & AfriCOMET-STL & finished & loop (independent) & output / reference length \\
+\midrule
+SFT greedy & 32.31 [31.43, 33.38] & 11.47 & 0.5513 [0.5403, 0.5621] & 0.915 & 0.147 & 2.05 \\
+SFT beam-4 (stop at 4 ended) & 36.02 [35.13, 36.95] & 16.49 & 0.5639 [0.5521, 0.5750] & 1.000 & 0.108 & 0.96 \\
+SFT beam-4 (HF early\_stopping=False) & 33.26 [32.22, 34.46] & 13.07 & 0.5722 [0.5603, 0.5845] & 0.897 & 0.139 & 2.15 \\
+SFT MBR-16 (metric-matched) & 38.27 [37.60, 39.01] & 15.25 & 0.5780 [0.5687, 0.5870] & 0.9998 & 0.016 & 1.16 \\
+RL greedy & 39.87 [39.17, 40.62] & 17.39 & 0.6082 [0.5991, 0.6172] & 1.000 & 0.007 & 1.05 \\
+RL beam-4 (stop at 4 ended) & 39.10 [38.20, 39.96] & 17.83 & 0.6045 [0.5944, 0.6148] & 1.000 & 0.007 & 0.98 \\
+RL beam-4 (HF early\_stopping=False) & 40.70 [40.00, 41.42] & 18.47 & 0.6227 [0.6139, 0.6317] & 0.9998 & 0.007 & 1.03 \\
+RL MBR-16 (metric-matched) & 40.79 [40.09, 41.54] & 17.74 & 0.6168 [0.6079, 0.6258] & 1.000 & 0.003 & 1.08 \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+The decode-time frequency-penalty guard was run on both models over the full evaluation set (E-01, Section~\ref{sec:rlsft}).  Engine parity: vLLM bf16 and HF bf16 give identical outputs in 9.6\% of 240 sentences (chrF++ 36.22 and 36.80; HF fp32 38.18); in fp32 the two engines agree (98.8\% identical for the SFT, 97.1\% for the RL model; E-09), so the divergence is bf16 rounding. \textbf{Precision does not move the headline:} the SFT in fp32 on the full evaluation set (vLLM, greedy, 768 tokens, 122,585 rows, 214 flagged rows removed; E-09b) scores \ensuremath{-}0.04 chrF++ [\ensuremath{-}0.13, +0.07] against bf16 over the 93 cells (FLORES+ \ensuremath{-}0.16 [\ensuremath{-}0.29, \ensuremath{-}0.02], NTREX +0.08 [\ensuremath{-}0.08, +0.25], MAFAND +0.22 [\ensuremath{-}0.03, +0.50]; plain chrF \ensuremath{-}0.08 [\ensuremath{-}0.19, +0.03]), and the RL gain on FLORES+ is +8.97 [+8.71, +9.20] over the fp32 SFT against +8.81 [+8.59, +9.03] over the bf16 SFT, so the bf16 harness does not overstate the RL gain (the upper end of the all-cell interval bounds any understatement of the SFT at 0.07 chrF++). The +1.81 [+0.59, +3.12] of the 240-sentence set was a small-sample result and the earlier +0.24 [\ensuremath{-}0.07, +0.55] (4,000 sentences) to +1.81 range for the SFT is superseded. Not done: an fp32 run of the RL model (its sensitivity is measured only on the 240-sentence set, +0.09 [\ensuremath{-}0.41, +0.59]) and AfriCOMET scoring of the fp32 SFT run (the run was stopped before the scoring finished; the partial scores are not reported). 
+% GATE E-01
+% src: reports/e09_engine_parity_2026-11-04.md; reports/e09b_fp32_full_2026-11-04.md; reports/data/e09b_fp32_2026-11-04/evidence_e09b.json (ledger D6, D6b, D6c)
+
+\section{NLLB comparison: same sentences and AfriqueLLM family}\label{app:afrique}
+
+\textbf{Same sentences.} In the post-editor run, NLLB-3.3B and RL stage A drafts were scored on identical 100-sentence FLORES+ subsets (language bootstrap only; sentence hypotheses are not stored). With beam-4 on our side (the beam setup of the post-editor run, not that of E-02) and NLLB greedy on theirs, stage A is 1.44 below NLLB-3.3B on 43 languages (36.12 against 37.56, [\ensuremath{-}2.34, \ensuremath{-}0.56]; 13 languages at least equal) and 3.67 below on all 50 languages both have; held-out AfriCOMET 0.6414 against 0.6709 (\ensuremath{-}0.0294 [\ensuremath{-}0.0366, \ensuremath{-}0.0222], 40 languages, ahead in 5). Our own NLLB run on 100 sentences is 1.23 [\ensuremath{-}1.60, \ensuremath{-}0.86] below the published full-devtest value, which bounds the sample and reference effects. AfriCOMET is the QE reward's family, so that row is not independent evidence for the RL model. 
+% src: NLLBRL section 4 (`table6b_same_sentence_summary.csv`, `table7_africomet_same_100_sentences.csv`)
+
+\textbf{AfriqueLLM family, indicative only.} On the 21 languages with per-language values in the 5-shot AfroBench-Lite harness (afr amh ewe hau ibo kin lin lug nya orm sna som sot swh tir tsn twi wol xho yor zul): SFT 32.37, stage A 39.13, B1 best 39.32, mixed best 39.40, weak final 39.26, against AfriqueQwen3.5-4B-50Langs 41.71 (mixed best \ensuremath{-}2.31; ahead in 4 of 21 languages), AfriqueGemma-12B 38.58 (+0.83; 6 of 21), AfriqueLlama-8B 36.71, AfriqueQwen-14B 36.67, AfriqueQwen-8B 35.06, AfriqueGemma-4B 31.12, Gemma3-12B 18.82, Llama3.1-8B 16.45. Those are base models in 5-shot prompting with a harness whose chrF++ implementation and FLORES split are not verified.   Bidirectional aggregates (TranslatePsy, AfriNLLB) and pooled AfroBench rows are not comparable and are not compared.
+% src: NLLBRL section 5 `table5_afrique_21_languages.csv`; ledger N3 status weak
+
+\section{Science and document results: tables}\label{app:docs}
+
+\begin{table}[t]
+\centering\footnotesize
+\setlength{\tabcolsep}{4pt}
+\caption{Weight interpolation sweep of the science SFT, AfriScience-MT test (macro over six languages), with NTREX and MAFAND-MT \chrfpp{} (last two columns). SSA-QE = SSA-COMET-QE (headline); AfriC. = AfriCOMET-STL.}\label{tab:alpha}
+\begin{tabular}{@{}rrrrrrrrr@{}}
+\toprule
+$\alpha$ & SSA-QE & chrF & chrF++ & BLEU & spBLEU & AfriC. & NTREX & MAFAND \\
+\midrule
+0 & 0.6130 & 45.40 & 42.44 & 17.72 & 21.89 & 0.6828 & 37.16 & 40.78 \\
+0.3 & 0.6128 & 46.28 & 43.40 & 18.73 & 23.25 & 0.6865 & 37.13 & 41.06 \\
+0.5 (chosen) & 0.6118 & 46.63 & 43.80 & 19.27 & 23.87 & 0.6879 & 36.90 & 41.05 \\
+0.7 & 0.6092 & 46.56 & 43.81 & 18.98 & 23.83 & 0.6859 & 36.43 & 40.83 \\
+1.0 & 0.5986 & 44.92 & 42.30 & 16.78 & 20.87 & 0.6708 & 34.71 & 39.58 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[t]
+\centering\footnotesize
+\setlength{\tabcolsep}{4pt}
+\caption{Chunked document decoding (sentence by sentence with best-of-4 repair), 168 test documents.}\label{tab:docs}
+\begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}Xrrrr@{}}
+\toprule
+model (chunked) & SSA-COMET-QE, 4-sentence windows & chrF & AfriCOMET window & BLEU \\
+\midrule
+385M start (alpha 0) & 0.574 & 57.3 & 0.687 & 20.0 \\
+385M science SFT (alpha 0.5) & 0.574 & 58.8 & 0.692 & 22.0 \\
+old 270M RL-final (earlier 270M work) & 0.593 & 59.3 & 0.703 & 22.5 \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\textbf{Science RL without the science SFT (E-14).} To ask whether the science SFT is needed, the executed science RL was repeated with the start model changed to the mixed best (= science-SFT alpha 0, the model the science SFT was built from): same seed 1234, same pool, same reward, Muon at 1e-6, KL 0.1 against the start model, 160 steps (150 plus a 10-step wind-down), pre-declared checkpoint = final. The rule was registered before the run: the science SFT is \emph{not needed} if the lower 95\% bounds of E-14 minus the science RL final on AfriScience-MT test are above \ensuremath{-}0.5 chrF and above \ensuremath{-}0.004 held-out AfriCOMET; it is \emph{needed} if the upper bound of either is below its margin. 
+
+\begin{table}[t]
+\centering\footnotesize
+\setlength{\tabcolsep}{4pt}
+\caption{Science RL without the science SFT (E-14): AfriScience-MT test, sentence level, macro over 6 languages.}\label{tab:e14a}
+\begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}Xrrrr@{}}
+\toprule
+model & chrF & chrF++ & AfriCOMET-STL (held out) & SSA-COMET-QE (reward family) \\
+\midrule
+mixed best (= alpha 0; E-14's start) & 45.40 & 42.44 & 0.6828 & 0.6130 \\
+B1 final (stage-B1 RL) & 45.45 & 42.50 & 0.6846 & 0.6141 \\
+\textbf{E-14 final (science RL, no science SFT)} & \textbf{45.66} & 42.69 & \textbf{0.6850} & 0.6153 \\
+science SFT alpha 0.5 & 46.63 & 43.80 & 0.6879 & 0.6118 \\
+science RL final (from the science SFT) & 47.10 & 44.22 & 0.6932 & 0.6158 \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\begin{table}[t]
+\centering\footnotesize
+\setlength{\tabcolsep}{4pt}
+\caption{E-14 final minus X, 95\% bootstrap (independent weights per language).}\label{tab:e14b}
+\begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}Xll>{\raggedright\arraybackslash}X@{}}
+\toprule
+E-14 final minus & chrF & AfriCOMET-STL (held out) & SSA-COMET-QE (reward family) \\
+\midrule
+science RL final (from the science SFT) & \textbf{-1.44 [\ensuremath{-}1.61, \ensuremath{-}1.25]} & \textbf{-0.0082 [\ensuremath{-}0.0101, \ensuremath{-}0.0065]} & \ensuremath{-}0.0006 [\ensuremath{-}0.0018, +0.0007] \\
+science SFT alpha 0.5 & \ensuremath{-}0.97 [\ensuremath{-}1.20, \ensuremath{-}0.75] & \ensuremath{-}0.0030 [\ensuremath{-}0.0050, \ensuremath{-}0.0009] & +0.0035 [+0.0022, +0.0047] \\
+mixed best (its own start) & +0.26 [+0.12, +0.39] & +0.0022 [+0.0007, +0.0036] & +0.0023 [+0.0013, +0.0033] \\
+B1 final & +0.21 [+0.07, +0.36] & +0.0004 [\ensuremath{-}0.0012, +0.0020] & +0.0012 [+0.0000, +0.0023] \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\textbf{By the registered rule the science SFT is needed:} the upper bounds are \ensuremath{-}1.25 chrF and \ensuremath{-}0.0065 AfriCOMET, both below their margins, chrF is lower in all six languages (\ensuremath{-}0.72 to \ensuremath{-}2.70) and the dev split agrees (\ensuremath{-}1.63 [\ensuremath{-}1.81, \ensuremath{-}1.44]). The science gain is carried by the science SFT (+1.23 chrF at alpha 0.5), not by the science RL: the RL alone on top of the mixed best adds +0.26 chrF [+0.12, +0.39] (+0.0022 AfriCOMET), a gain of the size at which seed noise matters (E-04), against +0.46 for the RL on top of the science SFT. The trainer's dev chrF++ stayed flat (43.50 $\to$ 43.43) while the executed science RL rose from 44.62 to 45.13, and no \texttt{best/\allowbreak{}} checkpoint was written (the dev macro never rose by the trainer's 0.2 margin), so only the final exists. \textbf{Reward-family caveat:} SSA-COMET-QE rates E-14 level with the science RL final (\ensuremath{-}0.0006 [\ensuremath{-}0.0018, +0.0007]) and above alpha 0.5 (+0.0035), while chrF and held-out AfriCOMET rate it below both: the metric the RL optimises moved without a matching move in the independent metrics, so it is not evidence of quality here. On the general benchmarks (93 cells) E-14 is +0.13 chrF++ [+0.10, +0.15] over the mixed best (FLORES+ +0.17, NTREX +0.12, MAFAND 0.00) and +0.34 [+0.31, +0.36] over B1 final, with no regression on NTREX and MAFAND (+0.12 / 0.00 against the mixed best; the executed science RL final is higher on MAFAND by 0.36); at document level it does not change chunked chrF (57.30 against 57.29 for its start) and whole-document decoding still fails (finished 0.69, loop 0.82, chrF 25.6). Caveats: one seed; one crash (a CUDA out-of-memory in the COMET reward worker at about step 38; the launcher's ladder halved the micro-batch from 12,288 to 6,144 tokens and resumed from the step-20 checkpoint, replaying steps 21 to 38, which can differ from the first pass because vLLM sampling is not bit-reproducible); the comparison with the science RL final mixes the effect of the science SFT with its alpha 0.5 interpolation (a science SFT at alpha 1.0 followed by RL was not run); 160 steps only. 
+% src: reports/e14_science_rl_without_science_sft_2026-11-05.md sections 0-3; reports/data/e14_science_rl_no_sft_2026-11-05/ (ledger E14 rows SC7, SC8)
+
+\section{Analyses condensed in this version}\label{app:supp}
+
+The following analyses are summarised in the main text and stated here only as pointers. Details are in the supplementary material released on acceptance. \textbf{Stage-A log analysis:} the stage-A log cannot separate the four features; the ablations of Section~\ref{sec:seeds} can. \textbf{Family, script and resource level:} an exploratory, observational analysis over 54 languages whose main result changes with the languages included; it is not reported as a finding. \textbf{NLLB-mined data and the regression against the earlier 270M model:} inconclusive. \textbf{Negative results} (weak-group RL, science SFT on the headline metric, a post-editor, whole-document decoding) are in Sections~\ref{sec:seeds} and~\ref{sec:science}. \textbf{Contamination follow-ups} beyond the residual counts listed in Ethical considerations (scan coverage, candidate lists) and the extended limitations list are also in the supplementary material.
+
+\section{Metric independence: full table}\label{app:indep}
+
+\begin{table}[t]
+\centering\footnotesize
+\setlength{\tabcolsep}{4pt}
+\caption{Metric independence (full). IND = not in any reward; RWD = in the reward; LOOP = optimised by construction.}\label{tab:indep_full}
+\begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}X@{}}
+\toprule
+metric & in the RL reward? & use in this paper \\
+\midrule
+\texttt{masakhane/\allowbreak{}africomet-\allowbreak{}qe-\allowbreak{}stl-\allowbreak{}1.\allowbreak{}1} (reference-free) & yes & not used as evidence \\
+\texttt{McGill-\allowbreak{}NLP/\allowbreak{}ssa-\allowbreak{}comet-\allowbreak{}mtl} (reference-free; reference-based in the science RL) & yes & not used as evidence of RL gains \\
+\texttt{McGill-\allowbreak{}NLP/\allowbreak{}ssa-\allowbreak{}comet-\allowbreak{}qe} (AfriScience-MT headline) & no, but the same family as the reward member & headline for SFT-only comparisons; for RL models shown only next to plain chrF and held-out AfriCOMET (all stages in Appendix~\ref{app:docs}) \\
+TranslatePsy quality filters (AfriCOMET, SSA-COMET, MetricX) & not a reward; they filtered the training data of the E-03 control & neural metrics favour the control; chrF and chrF++ are the evidence (Section~\ref{sec:control}) \\
+consensus utility (sample agreement in chrF++) & yes & chrF++ gains are partly in the optimised family \\
+NLLB-3.3B pseudo-reference chrF++ & yes, 5 languages (kea kbp nus bam kab) & chrF++ on those 5 languages is not independent; relevant to the NLLB comparison (Section~\ref{sec:nllb}) \\
+chrF++ against a human reference, weight 0.35 & yes, 7 languages (reference rows only; AfriScience TRAIN pairs) & chrF++ on those 7 languages can be partly trained; the test sets differ \\
+language-ID, copy, repetition, length, end-of-turn guards & yes & finished and loop rates are optimised by construction \\
+independent degeneration detector (lzma residual, repeated character 8-grams, repeated word 3-grams; thresholds from the 0.1\% tail of human references) & no & measures the same idea as the loop guard with different code and constants (Section~\ref{sec:rlsft}) \\
+NLLB-218 language identification (\texttt{facebook/\allowbreak{}fasttext-\allowbreak{}language-\allowbreak{}identification}) & no & independent check of the language guard; evaluation use only (cc-by-nc-4.0) \\
+\texttt{masakhane/\allowbreak{}africomet-\allowbreak{}stl-\allowbreak{}1.\allowbreak{}1} (reference-based) & no (held out; monitor and alarm) & the independent neural check; same family as the QE member \\
+chrF / chrF++ / spBLEU against human references of the benchmarks & no & the main lexical evidence \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+% src: reports/rl_vs_sft_evidence_2026-11-04.md section 1; reports/eval_science_sft_385m_2026-11-04.md Goodhart caution; DEGEN section 1
+
+\section{Per-language tables}\label{app:perlang}
+
+Sources: \texttt{reports/data/rl\_vs\_sft\_evidence\_2026-11-04/tables.md} (Tables 6, 7a, 7b) and \texttt{reports/data/nllb\_comparison\_rl\_models\_2026-11-04/table2\_per\_language\_43.csv}. Intervals are 95\% paired bootstrap over sentences (Poisson weights, 1,000 resamples); NLLB columns are published values.
+
+{\scriptsize
+\setlength{\tabcolsep}{4pt}
+\begin{longtable}{@{}lrrlll@{}}
+\caption{RL minus SFT per language on FLORES+ devtest (54 languages, all rows; \chrfpp{}). Finished / loop are the reward's flags.}\label{tab:perlang_flores}\\
+\toprule
+iso & SFT & RL & $\Delta$ all rows [CI] & SFT finished / loop & RL finished / loop \\
+\midrule\endfirsthead
+\toprule
+iso & SFT & RL & $\Delta$ all rows [CI] & SFT finished / loop & RL finished / loop \\
+\midrule\endhead
+\bottomrule\endlastfoot
+kea & 18.91 & 39.18 & +20.27 [+18.91, +21.53] & 0.83 / 0.20 & 1.00 / 0.00 \\
+orm & 12.06 & 30.18 & +18.12 [+17.49, +18.76] & 0.59 / 0.45 & 1.00 / 0.00 \\
+nso & 31.58 & 49.01 & +17.43 [+15.75, +19.09] & 0.86 / 0.15 & 1.00 / 0.00 \\
+lua & 17.18 & 33.37 & +16.19 [+15.21, +17.13] & 0.85 / 0.25 & 1.00 / 0.00 \\
+lin & 28.56 & 44.35 & +15.78 [+14.19, +17.22] & 0.90 / 0.13 & 1.00 / 0.00 \\
+ssw & 22.20 & 37.86 & +15.66 [+14.46, +16.85] & 0.87 / 0.17 & 1.00 / 0.00 \\
+lug & 16.17 & 31.73 & +15.57 [+14.66, +16.52] & 0.79 / 0.25 & 1.00 / 0.01 \\
+sag & 19.68 & 34.31 & +14.62 [+13.64, +15.55] & 0.87 / 0.20 & 1.00 / 0.00 \\
+bem & 19.31 & 33.88 & +14.56 [+13.63, +15.61] & 0.88 / 0.18 & 1.00 / 0.01 \\
+tso & 32.92 & 46.86 & +13.93 [+12.43, +15.51] & 0.91 / 0.11 & 1.00 / 0.00 \\
+luo & 21.36 & 34.49 & +13.13 [+11.91, +14.15] & 0.92 / 0.13 & 1.00 / 0.00 \\
+kin & 25.81 & 38.66 & +12.86 [+11.66, +14.03] & 0.89 / 0.12 & 1.00 / 0.00 \\
+cjk & 10.72 & 23.02 & +12.31 [+11.70, +12.89] & 0.71 / 0.31 & 1.00 / 0.01 \\
+run & 21.59 & 33.88 & +12.29 [+11.21, +13.15] & 0.88 / 0.15 & 1.00 / 0.01 \\
+nus & 13.49 & 24.82 & +11.32 [+10.73, +11.91] & 0.67 / 0.41 & 1.00 / 0.00 \\
+umb & 14.80 & 25.46 & +10.66 [+9.77, +11.44] & 0.89 / 0.15 & 1.00 / 0.01 \\
+kmb & 16.02 & 26.62 & +10.61 [+9.82, +11.37] & 0.88 / 0.23 & 1.00 / 0.00 \\
+knc & 3.81 & 14.22 & +10.41 [+9.95, +10.88] & 0.46 / 0.94 & 1.00 / 0.48 \\
+kbp & 14.51 & 24.88 & +10.37 [+9.70, +11.00] & 0.85 / 0.26 & 1.00 / 0.01 \\
+kab & 16.35 & 26.69 & +10.34 [+9.50, +11.14] & 0.84 / 0.20 & 1.00 / 0.00 \\
+dik & 3.76 & 14.06 & +10.30 [+9.75, +10.81] & 0.29 / 0.85 & 1.00 / 0.40 \\
+amh & 16.62 & 26.62 & +10.00 [+9.04, +10.96] & 0.87 / 0.13 & 1.00 / 0.00 \\
+vmw & 17.45 & 27.14 & +9.69 [+8.92, +10.48] & 0.84 / 0.18 & 1.00 / 0.00 \\
+mfe & 28.51 & 37.93 & +9.42 [+7.98, +10.94] & 0.94 / 0.07 & 1.00 / 0.01 \\
+dyu & 9.90 & 18.97 & +9.06 [+8.47, +9.62] & 0.83 / 0.25 & 1.00 / 0.00 \\
+yor & 21.32 & 30.33 & +9.01 [+7.99, +10.00] & 0.95 / 0.05 & 1.00 / 0.00 \\
+tum & 25.40 & 34.27 & +8.87 [+7.89, +9.79] & 0.94 / 0.08 & 1.00 / 0.00 \\
+kam & 17.22 & 25.92 & +8.70 [+7.93, +9.50] & 0.92 / 0.14 & 1.00 / 0.00 \\
+mos & 14.09 & 22.79 & +8.70 [+8.13, +9.33] & 0.90 / 0.19 & 1.00 / 0.01 \\
+tir & 10.48 & 18.74 & +8.26 [+7.69, +8.86] & 0.77 / 0.23 & 1.00 / 0.00 \\
+taq & 2.81 & 11.06 & +8.25 [+7.82, +8.67] & 0.14 / 0.91 & 0.99 / 0.56 \\
+seh & 21.67 & 29.65 & +7.98 [+7.00, +8.86] & 0.92 / 0.12 & 1.00 / 0.00 \\
+bam & 19.39 & 27.17 & +7.78 [+6.96, +8.59] & 0.89 / 0.13 & 1.00 / 0.00 \\
+twi & 27.54 & 35.07 & +7.53 [+6.47, +8.61] & 0.94 / 0.08 & 1.00 / 0.00 \\
+tsn & 37.69 & 45.05 & +7.36 [+6.18, +8.65] & 0.96 / 0.06 & 1.00 / 0.00 \\
+kik & 25.98 & 33.28 & +7.30 [+6.39, +8.22] & 0.93 / 0.08 & 1.00 / 0.00 \\
+hau & 39.88 & 46.46 & +6.58 [+5.09, +8.34] & 0.96 / 0.04 & 1.00 / 0.01 \\
+mlg & 39.04 & 44.73 & +5.68 [+4.54, +6.77] & 0.97 / 0.03 & 1.00 / 0.00 \\
+nya & 36.88 & 42.21 & +5.33 [+4.23, +6.54] & 0.97 / 0.04 & 1.00 / 0.00 \\
+ewe & 25.96 & 31.17 & +5.21 [+4.46, +6.04] & 0.95 / 0.06 & 1.00 / 0.00 \\
+sot & 37.87 & 42.72 & +4.85 [+3.70, +6.08] & 0.97 / 0.04 & 1.00 / 0.00 \\
+arz & 4.59 & 9.18 & +4.59 [+4.01, +5.15] & 0.49 / 0.52 & 0.87 / 0.19 \\
+som & 35.47 & 39.71 & +4.24 [+3.14, +5.34] & 0.97 / 0.03 & 1.00 / 0.00 \\
+wol & 26.87 & 30.58 & +3.72 [+2.74, +4.63] & 0.97 / 0.03 & 1.00 / 0.00 \\
+sna & 33.92 & 37.56 & +3.64 [+2.47, +4.85] & 0.97 / 0.04 & 1.00 / 0.00 \\
+zul & 45.91 & 48.27 & +2.36 [+1.56, +3.14] & 0.99 / 0.01 & 1.00 / 0.00 \\
+ibo & 37.82 & 40.14 & +2.33 [+1.57, +3.08] & 0.98 / 0.02 & 1.00 / 0.00 \\
+ary & 4.64 & 6.88 & +2.24 [+1.76, +2.74] & 0.54 / 0.48 & 0.97 / 0.11 \\
+swh & 56.24 & 58.36 & +2.12 [+1.10, +3.38] & 1.00 / 0.01 & 1.00 / 0.00 \\
+fon & 20.17 & 22.25 & +2.07 [+1.60, +2.55] & 0.98 / 0.04 & 1.00 / 0.00 \\
+xho & 43.56 & 45.43 & +1.87 [+1.05, +2.80] & 0.99 / 0.01 & 1.00 / 0.00 \\
+zgh & 2.29 & 4.07 & +1.78 [+1.30, +2.30] & 0.12 / 0.89 & 0.97 / 0.46 \\
+aeb & 2.75 & 4.12 & +1.36 [+0.96, +1.78] & 0.53 / 0.49 & 0.96 / 0.25 \\
+afr & 63.13 & 64.13 & +1.01 [+0.53, +1.61] & 1.00 / 0.00 & 1.00 / 0.00 \\
+\end{longtable}
+}
+
+{\scriptsize
+\setlength{\tabcolsep}{4pt}
+\begin{longtable}{@{}lrrlrrl@{}}
+\caption{RL minus SFT per language on NTREX (24 languages) and MAFAND-MT (15), clean rows, \chrfpp{}; ``--'' = language not in the benchmark.}\label{tab:perlang_nm}\\
+\toprule
+iso & NTREX SFT & NTREX RL & NTREX diff [CI] & MAFAND-MT SFT & MAFAND-MT RL & MAFAND-MT diff [CI] \\
+\midrule\endfirsthead
+\toprule
+iso & NTREX SFT & NTREX RL & NTREX diff [CI] & MAFAND-MT SFT & MAFAND-MT RL & MAFAND-MT diff [CI] \\
+\midrule\endhead
+\bottomrule\endlastfoot
+afr & 62.42 & 63.92 & +1.50 [+1.00, +2.15] & -- & -- & -- \\
+amh & 10.58 & 18.05 & +7.46 [+7.00, +7.93] & 11.62 & 18.33 & +6.71 [+5.91, +7.46] \\
+bem & 18.68 & 34.79 & +16.11 [+15.43, +16.84] & -- & -- & -- \\
+ewe & 24.28 & 31.58 & +7.30 [+6.64, +8.00] & -- & -- & -- \\
+hau & 42.15 & 48.57 & +6.42 [+5.24, +7.58] & 32.03 & 32.80 & +0.77 [+0.21, +1.41] \\
+ibo & 39.90 & 44.87 & +4.97 [+4.17, +5.82] & 43.55 & 44.89 & +1.34 [+0.43, +2.32] \\
+kin & 26.40 & 37.13 & +10.73 [+9.95, +11.52] & 36.51 & 46.41 & +9.90 [+8.70, +11.20] \\
+lug & -- & -- & -- & 26.97 & 39.57 & +12.60 [+11.60, +13.70] \\
+luo & -- & -- & -- & 22.95 & 32.62 & +9.67 [+8.76, +10.50] \\
+mlg & 36.91 & 40.85 & +3.94 [+3.19, +4.74] & -- & -- & -- \\
+nde & 28.83 & 32.95 & +4.12 [+3.51, +4.74] & -- & -- & -- \\
+nso & 20.14 & 32.73 & +12.60 [+11.83, +13.35] & -- & -- & -- \\
+nya & 37.87 & 44.23 & +6.36 [+5.46, +7.34] & 38.14 & 40.95 & +2.81 [+1.96, +3.71] \\
+orm & 9.63 & 27.33 & +17.70 [+17.16, +18.25] & -- & -- & -- \\
+pcm & -- & -- & -- & 53.58 & 53.34 & \ensuremath{-}0.25 [\ensuremath{-}0.69, +0.30] \\
+shi & 0.24 & 1.16 & +0.93 [+0.85, +1.02] & -- & -- & -- \\
+sna & 34.25 & 39.23 & +4.99 [+4.17, +5.83] & 30.35 & 32.91 & +2.56 [+1.64, +3.39] \\
+som & 35.84 & 44.23 & +8.39 [+7.44, +9.25] & -- & -- & -- \\
+ssw & 21.58 & 38.80 & +17.22 [+16.40, +18.02] & -- & -- & -- \\
+swh & 55.18 & 58.73 & +3.55 [+2.55, +4.54] & 50.68 & 51.79 & +1.12 [+0.38, +1.89] \\
+tir & 9.10 & 17.00 & +7.90 [+7.52, +8.25] & -- & -- & -- \\
+tsn & 36.97 & 48.71 & +11.74 [+10.68, +12.81] & 43.85 & 53.10 & +9.24 [+7.87, +10.70] \\
+twi & -- & -- & -- & 28.58 & 34.14 & +5.56 [+4.75, +6.29] \\
+ven & 21.30 & 38.81 & +17.52 [+16.72, +18.31] & -- & -- & -- \\
+wol & 25.29 & 30.37 & +5.08 [+4.34, +5.86] & -- & -- & -- \\
+xho & 39.85 & 42.36 & +2.51 [+1.92, +3.16] & 49.76 & 51.78 & +2.02 [+1.06, +2.98] \\
+yor & 23.77 & 32.10 & +8.33 [+7.58, +9.10] & 23.47 & 33.45 & +9.98 [+9.15, +10.70] \\
+zul & 40.92 & 43.50 & +2.58 [+1.89, +3.29] & 44.50 & 45.58 & +1.08 [+0.49, +1.73] \\
+\end{longtable}
+}
+
+{\scriptsize
+\setlength{\tabcolsep}{4pt}
+\begin{longtable}{@{}llrrrrl@{}}
+\caption{FLORES+ devtest \chrfpp{} on the 43 languages shared with the published NLLB table (our values greedy; NLLB-3.3B published). Yoruba: the published value is anomalously low.}\label{tab:perlang_nllb}\\
+\toprule
+iso & language & NLLB-3.3B & SFT & RL mixed best & mixed minus NLLB-3.3B & NLLB tertile \\
+\midrule\endfirsthead
+\toprule
+iso & language & NLLB-3.3B & SFT & RL mixed best & mixed minus NLLB-3.3B & NLLB tertile \\
+\midrule\endhead
+\bottomrule\endlastfoot
+yor & Yoruba & 24.90 & 21.32 & 30.33 & +5.43 & tail (15) \\
+fon & Fon & 19.30 & 20.17 & 22.25 & +2.95 & tail (15) \\
+dyu & Dyula & 16.20 & 9.90 & 18.97 & +2.77 & tail (15) \\
+wol & Wolof & 28.10 & 26.87 & 30.58 & +2.48 & tail (15) \\
+kam & Kamba & 23.60 & 17.22 & 25.92 & +2.32 & tail (15) \\
+kmb & Kimbundu & 24.40 & 16.02 & 26.62 & +2.22 & tail (15) \\
+umb & Umbundu & 23.60 & 14.80 & 25.46 & +1.86 & tail (15) \\
+afr & Afrikaans & 64.70 & 63.13 & 64.13 & \ensuremath{-}0.57 & high (14) \\
+ibo & Igbo & 41.10 & 37.82 & 40.14 & \ensuremath{-}0.96 & mid (14) \\
+nso & Sepedi & 50.30 & 31.58 & 49.01 & \ensuremath{-}1.29 & high (14) \\
+mos & Mossi & 24.10 & 14.09 & 22.79 & \ensuremath{-}1.31 & tail (15) \\
+swh & Swahili & 60.00 & 56.24 & 58.36 & \ensuremath{-}1.64 & high (14) \\
+lua & Luba-Kasai & 35.20 & 17.18 & 33.37 & \ensuremath{-}1.83 & tail (15) \\
+sag & Sango & 36.50 & 19.68 & 34.31 & \ensuremath{-}2.19 & mid (14) \\
+tum & Tumbuka & 36.60 & 25.40 & 34.27 & \ensuremath{-}2.33 & mid (14) \\
+nya & Chichewa & 45.30 & 36.88 & 42.21 & \ensuremath{-}3.09 & high (14) \\
+som & Somali & 42.80 & 35.47 & 39.71 & \ensuremath{-}3.09 & mid (14) \\
+xho & Xhosa & 48.60 & 43.56 & 45.43 & \ensuremath{-}3.17 & high (14) \\
+twi & Twi & 38.30 & 27.54 & 35.07 & \ensuremath{-}3.23 & mid (14) \\
+tso & Tsonga & 50.20 & 32.92 & 46.86 & \ensuremath{-}3.34 & high (14) \\
+tsn & Setswana & 48.60 & 37.69 & 45.05 & \ensuremath{-}3.55 & high (14) \\
+bem & Bemba & 37.50 & 19.31 & 33.88 & \ensuremath{-}3.62 & mid (14) \\
+lin & Lingala & 48.00 & 28.56 & 44.35 & \ensuremath{-}3.65 & high (14) \\
+sot & Sesotho & 46.50 & 37.87 & 42.72 & \ensuremath{-}3.78 & high (14) \\
+kik & Kikuyu & 37.30 & 25.98 & 33.28 & \ensuremath{-}4.02 & mid (14) \\
+nus & Nuer & 28.90 & 13.49 & 24.82 & \ensuremath{-}4.08 & tail (15) \\
+bam & Bambara & 31.40 & 19.39 & 27.17 & \ensuremath{-}4.23 & tail (15) \\
+luo & Luo & 39.00 & 21.36 & 34.49 & \ensuremath{-}4.51 & mid (14) \\
+kbp & Kabiye & 29.50 & 14.51 & 24.88 & \ensuremath{-}4.62 & tail (15) \\
+zul & Zulu & 53.50 & 45.91 & 48.27 & \ensuremath{-}5.23 & high (14) \\
+sna & Shona & 42.80 & 33.92 & 37.56 & \ensuremath{-}5.24 & mid (14) \\
+kab & Kabyle & 32.00 & 16.35 & 26.69 & \ensuremath{-}5.31 & tail (15) \\
+mlg & Malagasy & 50.20 & 39.04 & 44.73 & \ensuremath{-}5.47 & high (14) \\
+orm & Oromo & 35.70 & 12.06 & 30.18 & \ensuremath{-}5.52 & tail (15) \\
+ssw & Swati & 43.50 & 22.20 & 37.86 & \ensuremath{-}5.64 & mid (14) \\
+hau & Hausa & 52.50 & 39.88 & 46.46 & \ensuremath{-}6.04 & high (14) \\
+tir & Tigrinya & 24.80 & 10.48 & 18.74 & \ensuremath{-}6.06 & tail (15) \\
+lug & Luganda & 38.50 & 16.17 & 31.73 & \ensuremath{-}6.77 & mid (14) \\
+ewe & Ewe & 38.20 & 25.96 & 31.17 & \ensuremath{-}7.03 & mid (14) \\
+run & Kirundi & 41.90 & 21.59 & 33.88 & \ensuremath{-}8.02 & mid (14) \\
+kea & Kabuverdianu & 47.90 & 18.91 & 39.18 & \ensuremath{-}8.72 & high (14) \\
+kin & Kinyarwanda & 48.40 & 25.81 & 38.66 & \ensuremath{-}9.74 & high (14) \\
+amh & Amharic & 37.90 & 16.62 & 26.62 & \ensuremath{-}11.28 & mid (14) \\
+\end{longtable}
+}
+
+\section{Disclosures: full statement}\label{app:disc}
+
+Rule: data and signals that were actually used are stated, including those that are non-commercial or NLLB-derived. \texttt{DISCLOSURES.\allowbreak{}md} is the source of this section and holds the full tables. 
+% src: DISCLOSURES sections 1-6; claims IDs L1-L5, CT1-CT13, CTL1-CTL6
+
+\subsection{Training data and licences}
+
+
+\begin{itemize}
+\item \textbf{NLLB-derived share of the SFT.} NLLB-mined bitext (OPUS-NLLB, 43 languages, 13.46 M rows, plus a Fulah NLLB-mined set of 0.45 M rows) is \textbf{14.4\% of the 3.990 B stage-B pack tokens} (13.3\% of the 4.109 B executed; 10.84\% of the 5.043 B tokens drawn in the whole SFT); adding NLLB-Seed (tzm) and the aligned part of the Aya collection (NLLB-3.3B outputs; 169 M tokens in 12 languages) gives \textbf{18.7\%} (746 M tokens; executed 17.2\%; 14.36\% of the whole SFT); adding the machine-translated Tumbuka instruction sets (system not stated, possibly NLLB) gives \textbf{22.8\%} (909 M tokens; 17.86\% of the whole SFT). By rows, 13.91 M of 42.31 M stage-B translation pairs (32.9\%) are NLLB-mined. A0 contains none of the three. The authors allowed NLLB-mined rows with a per-language cap of 150k, ODC-BY with special attribution. NLLB models and outputs carry CC-BY-NC terms and the authors cannot use NLLB for production translation; a licence statement must accompany any release of the 385M weights. Not counted and needing a legal decision: the \texttt{*\_\allowbreak{}mt560} OPUS sets (69\% of the main pair output of the clean rebuild, 16.2 M of 23.4 M pairs, mostly Jehovah's Witnesses and Bible text, licence unknown, labelled NLLB-derived by an old converter docstring); \texttt{African-\allowbreak{}Languages-\allowbreak{}Lab/\allowbreak{}multi-\allowbreak{}open} (3,748,964 pairs, ``license: other''); AfroLingu-MT (gated, authors' exception); other machine-translated instruction sets with unstated systems (\texttt{african\_\allowbreak{}ultrachat}, \texttt{kiya\_\allowbreak{}sft}, \texttt{alpaca\_\allowbreak{}*}, \texttt{amharic\_\allowbreak{}*}); all four families are in the instruction pack stream (\texttt{packed\_\allowbreak{}instr}: every source of the instruction intake except \texttt{muri\_\allowbreak{}it}, 4,190,976 samples, 1.232 B tokens; \texttt{reports/\allowbreak{}intake2\_\allowbreak{}instr\_\allowbreak{}packs\_\allowbreak{}2026-\allowbreak{}11-\allowbreak{}01.\allowbreak{}md}); \texttt{african\_\allowbreak{}ultrachat} is UltraChat machine-translated into 11 languages, \texttt{alpaca\_\allowbreak{}*} (twi, swh, zul, wol, som) are translated Alpaca sets, \texttt{amharic\_\allowbreak{}*} and \texttt{kiya\_\allowbreak{}sft} (om, yo, sw, am rows) are machine-translated sets, and the translation system is not stated in the dataset cards or in the intake records; the packs carry no source field, so the tokens of each source drawn in stage B are not recorded. 
+% src: NLLBLINK Licence-disclosure figure; HYG X10; REBUILD section 9; DISCLOSURES 1.1
+\item \textbf{Unspecified-licence sources} in the main output: KwekuAinoo/eng\_twi 551,358; sentence-transformers/parallel-sentences-opus-100 210,479; UBC-NLP/AfroLingu-MT 207,796; cibfaye/wolof-english-bible 11,415; webfaq\_v2; bambara\_lm\_qa (381k, 83\% of Bambara instruction rows). Religious text dominates many low-resource languages (28 of the 81 RL languages are religious-only in the post-editor selection); the Efik NT sheet (7,936 verse pairs) has unconfirmed provenance and licence.
+\item \textbf{IbomMT} is CC-BY-NC-4.0: a disclosed non-commercial exception in the SFT (once) and a human-reference source of the RL reference domain (efi, ibb).
+\item \textbf{Quarantined and not used:} \texttt{yigagilbert/\allowbreak{}synthetic-\allowbreak{}parallel-\allowbreak{}external}, \texttt{fiifinketia/\allowbreak{}pristine-\allowbreak{}twi-\allowbreak{}english}, \texttt{muri-\allowbreak{}it}, the Aya parallel pairs.
+\item \textbf{Gemma base model:} \texttt{google/\allowbreak{}gemma-\allowbreak{}3-\allowbreak{}270m-\allowbreak{}it}; the Gemma terms of use apply to the derived weights; pretraining text is unknown, so exposure of benchmarks through pretraining cannot be excluded.
+\item \textbf{FLORES+ dev train half} (440 ids; 23,706 of 23,760 rows found in the audit) is in the SFT on purpose; the held-out half (557 ids) is protected.
+\end{itemize}
+
+\subsection{RL prompts and reward-side data}
+
+
+\begin{itemize}
+\item General prompts: FineWeb-Edu (ODC-By) and Wikipedia (CC BY-SA). News prompts (30\% of the draw): BBC News 2017-2025 (\texttt{RealTimeData/\allowbreak{}bbc\_\allowbreak{}news\_\allowbreak{}alltime}, \textbf{no licence declared, BBC copyright}), \texttt{permutans/\allowbreak{}c4-\allowbreak{}bbc-\allowbreak{}news} (ODC-By label inherited from C4, BBC copyright applies), Wikinews (CC BY 2.5), Global Voices (CC BY 3.0 per the sister card), Wikivoyage (CC BY-SA 4.0; 188 prompts drawn in stage A) and \texttt{SetFit/\allowbreak{}bbc-\allowbreak{}news} (37 pool rows, none drawn, licence not recorded). The prompts are RL \textbf{input} text only; the source is never a training target.
+\item Seven new-language prompt files of stage A (\texttt{tll mfe guw lub crs zne lue}) had not been filtered; stage A drew 6 flagged prompts of 28,120 (0.021\%), 6 of 1,345 for those languages, source side only. B1 was restarted from its step-20 checkpoint with the filtered pool.
+\item Reference domain (stage A from step 41, B1, mixed, science RL): human pairs from AfriScience-MT \textbf{train} (Apache-2.0; amh hau lug nso yor zul) and IbomMT train (CC-BY-NC-4.0; efi, ibb), anchors for 7 languages only. Test papers are in no pool. 0.9\% of the AfriScience train rows have their African-language sentence in the A0 pair data (Appendix~\ref{app:disc}).
+\item \textbf{NLLB-3.3B pseudo-references (CC-BY-NC) are a reward signal} for kea kbp nus bam kab (weight 0.25, max 0.35), reward only; no NLLB text is a training target in RL.
+\item Reward models: \texttt{masakhane/\allowbreak{}africomet-\allowbreak{}qe-\allowbreak{}stl-\allowbreak{}1.\allowbreak{}1}, \texttt{McGill-\allowbreak{}NLP/\allowbreak{}ssa-\allowbreak{}comet-\allowbreak{}mtl}; held-out monitor \texttt{masakhane/\allowbreak{}africomet-\allowbreak{}stl-\allowbreak{}1.\allowbreak{}1} (apache-2.0 verified); GlotLID language guard. Licences as declared on the Hub (read 2026-11-05): \texttt{McGill-\allowbreak{}NLP/\allowbreak{}ssa-\allowbreak{}comet-\allowbreak{}mtl} and \texttt{ssa-\allowbreak{}comet-\allowbreak{}qe} apache-2.0; \texttt{masakhane/\allowbreak{}africomet-\allowbreak{}qe-\allowbreak{}stl-\allowbreak{}1.\allowbreak{}1} apache-2.0; \texttt{cis-\allowbreak{}lmu/\allowbreak{}glotlid} \texttt{license: other} with \texttt{license\_\allowbreak{}name: apache-\allowbreak{}2.\allowbreak{}0-\allowbreak{}plus-\allowbreak{}notices} (card: Apache License 2.0 plus notices).
+\item Science stages: science RL prompts \texttt{clean\_\allowbreak{}sci\_\allowbreak{}v2} (PMC, arXiv CC BY/CC0, AfriScience-MT train English); \textbf{LibreTexts was excluded} from the science RL (licence conflict CC BY against CC BY-NC-SA, 10,257 prompts). \textbf{LibreTexts is not absent from the long-document RL pool}: 3,428 \texttt{common-\allowbreak{}pile/\allowbreak{}libretexts} rows (17.8\% of \texttt{science\_\allowbreak{}b2048}). The rows were removed before the stage started; the long-document RL did not use them. The E-14 run (science RL started from the mixed best) used the same pool and reward as the executed science RL. Science SFT: AfriScience-MT train (Apache-2.0; 28,750 windows) plus replay cut from the general SFT shards (so the NLLB, Aya and Tumbuka shares apply to the replay); 54 further catalogue candidates were scanned and none used.
+\end{itemize}
+
+\subsection{TranslatePsy: used only in a research control}
+
+
+\texttt{qvac/\allowbreak{}TranslatePsy-\allowbreak{}AfriSLM-\allowbreak{}Synthetic-\allowbreak{}Mix} (Gritta et al.; CC-BY-NC-4.0; targets are \texttt{facebook/\allowbreak{}nllb-\allowbreak{}200-\allowbreak{}3.\allowbreak{}3B} translations of MADLAD-400 sentences, filtered by AfriCOMET, SSA-COMET and MetricX) was authorised by the authors on 2026-11-04 \textbf{for the matched-compute continued-SFT control (E-03) only}. Its English-to-X rows (19 languages: afr amh hau ibo kin lin lug mlg nya orm sna som sot swh tsn wol xho yor zul) enter that control run, scanned against the protected index (any hit on either side removed; 0.67\% of the 950,000-row sample); \textbf{no TranslatePsy row is in the SFT, any RL stage, the science or long-document stages, or any released weight.} The control checkpoints are research artefacts (CC-BY-NC-4.0 and NLLB terms), are not pushed to any public repository and are not used in production. The comparison RL against control must state two things: the TranslatePsy quality filters are the reward family of the RL, so neural metrics favour the control while chrF and chrF++ do not; and TranslatePsy targets are NLLB-3.3B-like, so a good control result partly means ``distilling NLLB''. Status: run (preparation \texttt{reports/\allowbreak{}sft\_\allowbreak{}control\_\allowbreak{}prep\_\allowbreak{}2026-\allowbreak{}11-\allowbreak{}04.\allowbreak{}md}; execution record and result \texttt{reports/\allowbreak{}e03\_\allowbreak{}sft\_\allowbreak{}control\_\allowbreak{}2026-\allowbreak{}11-\allowbreak{}05.\allowbreak{}md}): 277,900 pairs per language for the 19 languages (5.28 M pairs, 96,138 packs, each seen once) after removing every row with a hit against the protected index; the control checkpoint is a research artefact under CC-BY-NC-4.0 and the NLLB terms, kept on the authors' storage, never released and never used in a released model. The comparison states that the TranslatePsy filters are the reward family of the RL, so AfriCOMET and SSA-COMET-QE favour the control, and that its targets are NLLB-3.3B outputs (Section~\ref{sec:control}).  
+% GATE E-03
+% src: CTLP sections 1, 5, 7; DISCLOSURES 1.1, 4
+
+\subsection{Analysis decisions and data-audit facts}
+
+
+\begin{itemize}
+\item The 385M SFT text contains no benchmark sentence of 3 or more words; one- and two-word strings, numerals and names occur (NTREX 0.25\%, MAFAND 0.47\%, SmolSent 0.12\%, GlotStoryBook 0.44\% of rows); phrase-level exposure is in Appendix~\ref{app:disc}.
+\item The RL dev set is a FLORES+ dev subset (720 sentences, 18 languages). The weak-language choice used devtest-derived per-language tables (selection on a test set).
+\item Benchmarks were evaluated many times; checkpoint choice used only the 720-sentence dev set. The science alpha rule was written before the headline metric was fixed; the headline then changed from SSA-COMET-MTL (reference-based) to SSA-COMET-QE after the calibration. The post-hoc RL-versus-SFT decomposition ran after the results were known.
+\item The earlier 270M pipeline (not the clean 385M rerun) trained on text that held the English side of 95\% of FLORES+ devtest; the old 270M models; their numbers appear only on their clean rows (48 sentences per language on FLORES+) and are descriptive; the earlier 270M work's FLORES+ results are not reused.
+\item FLORES+ and FLORES-200 references differ in places; the NLLB comparison uses published FLORES-200 numbers.
+\end{itemize}
+
+\subsection{Process disclosures}
+
+
+\begin{itemize}
+\item \textbf{Gates overridden by the authors.} The RL preflight gate failed (gradient norm 3.40 > 3.0, greedy loop 0.109 > 0.02, greedy finished 0.906 < 0.97) and was overridden; the stage-A gate failed (max KL 0.169 > 0.15, three KL-guard cuts, greedy loop 0.016 > 0.01) and B1 was started on the authors' instruction.
+\item \textbf{Mid-run changes.} Stage A was stopped at step 40 and resumed with the four features; B1 was restarted at its step-20 checkpoint (filtered prompt pool, reference domain, oversample 1.0, KL guard 0.25) and again at step 40 (MBR guide, dev early stop); the mixed stage was restarted at its step-20 checkpoint with the patch-3 monitor, and the authors loosened the hacking alarm (chrF++ 0.3 $\to$ 0.75; AfriCOMET 0.005 $\to$ 0.03). Stage A's KL guard cut the learning rate three times and it never recovered.
+\item \textbf{Start checkpoints.} Mixed started from B1 best (step 50), not B1 final; B1 final exists on the Hub and was evaluated after the fact (E-20): it equals B1 best within noise (+0.01 chrF++ [\ensuremath{-}0.02, +0.04] over 93 cells). The weak-group run never produced a \texttt{best/\allowbreak{}} checkpoint; its final (step 85) was evaluated. The \texttt{masakhane/\allowbreak{}africomet-\allowbreak{}stl-\allowbreak{}1.\allowbreak{}1} monitor influenced early stopping in the mixed stage and later (never a reward).
+\item \textbf{Incident.} The mixed stage was auto-started once by a process outside the launch agent, stopped within a minute without a step, and relaunched from B1 best. A first science-SFT pipeline pass wrote an empty alpha and launched the science RL with an invalid model path, which stopped itself at start. The GPU idled for about 2 h 10 min between stage A and B1. The E-14 run (science RL from the mixed best) had one CUDA out-of-memory in the COMET reward worker at about step 38; the launcher lowered the micro-batch from 12,288 to 6,144 tokens and resumed from the step-20 checkpoint, so steps 21 to 38 were replayed (same prompt schedule, vLLM sampling not bit-reproducible); \texttt{metrics.\allowbreak{}jsonl} holds two records for those steps and the later one is used.
+\item \textbf{Science RL length.} The science-RL yaml names 150 steps a hard cap, but the trainer's extension rule raised the cap to 190 steps at step 120 while dev metrics were still improving; the run then stopped on a dev plateau at step 150 and, after a 10-step wind-down, executed 160 steps (\texttt{summary.\allowbreak{}json}). The long-document RL has the extension rule off.
+\item \textbf{Checkpoint storage.} Stage checkpoints were written to RAM-backed \texttt{/\allowbreak{}dev/\allowbreak{}shm}; weights are in anonymised repositories, optimiser states are not.
+\item \textbf{Evaluation-only tool under a non-commercial licence:} the NLLB-218 language-ID model (cc-by-nc-4.0) was used for measurement only.
+\item \textbf{Compute.} A100 80 GB (vast.ai) for SFT stage B (44.8 h), RL (8.66 GPU-h for A + B1 + mixed), evaluation and the science stage; smaller boxes for data preparation and the post-editor. GPU-hours by component, estimated from logged durations, are in Appendix (compute table): the sized components sum to about 94 A100-hours; A0, SFT-1 and several evaluation passes are not sized; no cost figure is reported.
+\end{itemize}
+
+\subsection{Intended use and risks}
+
+
+Outputs are machine translations of unverified quality for languages without any human evaluation, with documented failure modes: Arabic dialects, Tamazight, Dinka, Tamasheq and Kanuri are not usable (chrF++ 2 to 14 after RL), RL increases English output there, and the model should be used sentence by sentence, not on whole documents. Religious text dominates the data of many low-resource languages, which may shift register and vocabulary toward it. The model must not be presented as a replacement for NLLB-class systems: it is 3.26 chrF++ below NLLB-3.3B on 43 shared languages. The authors' use case is production translation; the licences of NLLB and TranslatePsy prevent using those systems there, which is why we state exactly where NLLB-derived text and signals entered this model.
+
+\section{Reproducibility statement}\label{app:repro}
+
+\begin{itemize}
+\item \textbf{Code and configs.} \texttt{gemma\_\allowbreak{}mt/\allowbreak{}} (trainer \texttt{train\_\allowbreak{}sft.\allowbreak{}py}, RL \texttt{gemma\_\allowbreak{}mt/\allowbreak{}rl/\allowbreak{}}, evaluation scripts); SFT configs \texttt{reports/\allowbreak{}data/\allowbreak{}e23\_\allowbreak{}hygiene\_\allowbreak{}2026-\allowbreak{}11-\allowbreak{}04/\allowbreak{}sft\_\allowbreak{}configs/\allowbreak{}}; RL configs \texttt{.\allowbreak{}.\allowbreak{}.\allowbreak{}/\allowbreak{}rl\_\allowbreak{}configs/\allowbreak{}} (note: the archived stage-A \texttt{config.\allowbreak{}json} is the resumed configuration); reports and per-language tables under \texttt{reports/\allowbreak{}} and \texttt{reports/\allowbreak{}data/\allowbreak{}} as keyed in \texttt{CLAIMS\_\allowbreak{}LEDGER.\allowbreak{}md}; analysis scripts for every new section in \texttt{reports/\allowbreak{}data/\allowbreak{}\{nllb\_\allowbreak{}comparison\_\allowbreak{}rl\_\allowbreak{}models,family\_\allowbreak{}script\_\allowbreak{}resource\_\allowbreak{}analysis,degeneration\_\allowbreak{}audit\_\allowbreak{}independent,stage\_\allowbreak{}A\_\allowbreak{}feature\_\allowbreak{}split,contamination\_\allowbreak{}followups\_\allowbreak{}385m,e23\_\allowbreak{}hygiene\}\_\allowbreak{}2026-\allowbreak{}11-\allowbreak{}04/\allowbreak{}}.
+\item \textbf{Seeds and hyper-parameters.} Seed 1234 throughout; SFT: Muon, peak 5e-5 (SFT-1, shard 1) and 3e-5 (shards 2-6) with cosine floors 50\% (SFT-1), 80\% (shards 1-5) and 10\% (shard 6), 131,072 tokens per step (Section~\ref{sec:method}); RL stages A to mixed: Muon, 2e-6, group 16, KL 0.05 (reference = each stage's start model), guard 0.15/0.25, temperature 1.0; \textbf{science RL: Muon, 1.0e-6, KL 0.1, group 16, guide 0.25, 160 steps executed (yaml cap 150, extended to 190, stopped by dev plateau); long-document RL: Muon, 1.0e-6, KL 0.1, group 8, no guide, 80 steps $\times$ 32 prompts} (Table~\ref{tab:stagecfg_full}); science SFT AdamW 3e-6, alpha 0.5. The science-RL yaml is in \texttt{reports/\allowbreak{}data/\allowbreak{}rl\_\allowbreak{}configs\_\allowbreak{}as\_\allowbreak{}executed\_\allowbreak{}2026-\allowbreak{}11-\allowbreak{}04/\allowbreak{}sci\_\allowbreak{}rl\_\allowbreak{}F\_\allowbreak{}final.\allowbreak{}yaml}.
+\item \textbf{Hardware and software.} One A100 80 GB; vLLM 0.32.0 bf16 greedy, 768 new tokens, for every headline number. Outputs are not bit-identical across engines (9.6\% identical between vLLM bf16 and HF bf16 on 240 sentences); a reader reproducing with another engine should expect small, unsystematic differences (240 sentences, HF bf16 minus vLLM bf16: +0.54 [\ensuremath{-}0.67, +1.79] chrF++ for the SFT and \ensuremath{-}0.23 [\ensuremath{-}0.73, +0.23] for the RL model; the SFT in fp32 against bf16 on the full set: \ensuremath{-}0.04 [\ensuremath{-}0.13, +0.07] over 93 cells, E-09b, which supersedes the earlier +0.24 [\ensuremath{-}0.07, +0.55] on 4,000 sentences and +1.81 on 240 sentences). sacreBLEU 2.6.0 and the chrF++/spBLEU settings are given in Section~\ref{sec:eval}; the full signature strings are not recorded; exact commands per table are in the archived scripts named in the ledger.
+\end{itemize}
+
+\begin{itemize}\item \textbf{Weights and branches.} \anonreal{All checkpoints named in the paper (SFT final, RL stages, science and long-document stages, seed, ablation and E-14 runs) are in anonymised repositories, released on acceptance; the control checkpoint is not published (CC-BY-NC data).}{RL repository \url{https://huggingface.co/AletheiaAING/gemma-0.4B-translate-rl}: branch \texttt{main} (mixed best, the final general RL model), \texttt{latest}, \texttt{stage-a-b64} (stage A step 200), \texttt{stage-a-final} (step 400), \texttt{stage-b1-b256} (B1 best, step 50), \texttt{stage-b1-final} (step 135), \texttt{stage-g-weak-latest}, \texttt{science-sft}, \texttt{science-sft-alpha1}, \texttt{science-rl}, \texttt{science-rl-latest}, \texttt{science-rl-final}, \texttt{long-rl}, \texttt{long-rl-latest} (long-document RL checkpoints) and tag \texttt{rl-step-50}. SFT final: \url{https://huggingface.co/AletheiaAING/gemma-0.4B-translate-sft} (branch \texttt{main}, step 32,853). Experiment weights: \url{https://huggingface.co/AletheiaAING/gemma-0.4B-translate-rl-experiments}, branches \texttt{e04-seed2-step100}, \texttt{e04-seed3-step100}, \texttt{e04-a\_base-step100}, \texttt{e04-c\_noref-step100}, \texttt{e04-d\_noguide-step100}, \texttt{e14-science-rl-only-final}. The control checkpoint of E-03 is not published (CC-BY-NC data). No licence field or model card is declared on these repositories \ownerdecision{confirm release licence}.} Run configs, logs, per-sentence outputs and scripts of E-02, E-04, E-11 and E-14 are in the research archive and the reports directory named in the ledger.\end{itemize}
+
+\begin{itemize}
+\item \textbf{Data.} The decontaminated SFT and RL prompt data and the protected index (\texttt{protected-\allowbreak{}2026-\allowbreak{}10-\allowbreak{}28.\allowbreak{}3}) are in anonymised storage named in the reports and released on acceptance; the NC and unspecified-licence parts cannot be redistributed as they are (Appendix~\ref{app:disc}); TranslatePsy rows are not released (Appendix~\ref{app:disc}). The state, prompts, eval and reports repositories were private at the last check (Hub API 2026-11-04). [OWNER: which parts of the data are released.]
+\item \textbf{Long-document RL incident.} The stage took 7.7 h of wall-clock time (10:03 to 17:44 UTC), of which about 4.5 h were a crash loop: the trainer stopped (ENOSPC, root disk full) at the first step-25 evaluation and Hub-staging save and was restarted 18 times by the supervisor, each time resuming from \texttt{last/\allowbreak{}} at step 20 and repeating steps 21 to 25; the staging directories were real directories on the root disk instead of symlinks to \texttt{/\allowbreak{}dev/\allowbreak{}shm}. Fixed at 15:35 UTC; the model path of the 80 steps is otherwise the planned one (one seed). About 3.2 h were productive. The repeated step-20-to-25 segments are visible as repeated step-25 evaluations in the metrics log. 
+% src: reports/eval_long_document_rl_385m_2026-11-04.md section 0 'Costs and caveats'; reports/rl_long_document_plan_2026-11-04.md section 8; reports/overnight_log_2026-11-04.md 11:10-15:35
+\item \textbf{Not reproducible from what is stored:} stage-A steps 1-40 hyper-parameters except through the stage report; B1 final's evaluation; per-sentence NLLB hypotheses on the full devtest; the training seed spread; the SFT with another seed (stage B alone is 44.8 A100-hours).
+\end{itemize}
+
+\section{Prompt format and data statement}\label{app:format}
+
+\paragraph{Prompt format.} Every translation request is the fixed prompt \texttt{Translate the text to \{language\}:  \{english\}} (two spaces after the colon) inside the Gemma 3 chat template; the model answers \texttt{<tag> \{translation\}<end\_of\_turn>} with the single-token tag of the target language; the loss covers the answer only (Section~\ref{sec:method}). \textbf{RL prompts} are English windows of consecutive sentences from FineWeb-Edu and Wikipedia (70\%) and from news (30\%), filtered against the protected index; 81 languages with higher draw weights for the 29 weakest (Section~\ref{sec:method}).
+
+\paragraph{Data statement.} Training data are English-to-African-language pairs and instruction data in 125 languages from the sources listed in Ethical considerations and Appendix~\ref{app:disc}; many low-resource languages are dominated by religious text; stage B includes NLLB-mined, Aya-aligned and machine-translated instruction data; evaluation data are human references of FLORES+ devtest, NTREX-128, MAFAND-MT, SmolSent, SALT, GlotStoryBook, IbomMT, FLORES-MOZ and AfriScience-MT. No personal data was collected by us; no human subjects were involved; no human judgement of system outputs was collected.
+
+\section{Responsible NLP checklist: items filled from the paper}\label{app:rnlp}
+
+% Filled only from paper.md / ledger / report facts. Compute: GPU-hours only, estimated from logged durations (no cost figures).
+\begin{itemize}
+\item \textbf{Scientific artefacts used and licences.} Base model: Gemma-3-270m-it (Gemma terms of use apply to the derived weights). Reward and monitor models, as declared on the Hub (read 2026-11-05): \texttt{McGill-NLP/ssa-comet-mtl} and \texttt{ssa-comet-qe}, \texttt{masakhane/africomet-qe-stl-1.1} and \texttt{africomet-stl-1.1}: apache-2.0; GlotLID (\texttt{cis-lmu/glotlid}): \texttt{license: other}, \texttt{license\_name: apache-2.0-plus-notices}. Training and reward-side data and their licences are listed in Ethical considerations and Appendix~\ref{app:disc}: NLLB-mined and NLLB-derived data (CC-BY-NC terms), IbomMT (CC-BY-NC-4.0), AfriScience-MT train (Apache-2.0), FineWeb-Edu (ODC-By), Wikipedia (CC BY-SA), several sources with unspecified licences; TranslatePsy (CC-BY-NC-4.0, NLLB-3.3B targets) only in the research control. Evaluation uses the public benchmarks named in Section~\ref{sec:eval}; the NLLB-218 language-ID model (CC-BY-NC) was used for measurement only. Release licence of the weights: the Hub repositories declare none \ownerdecision{confirm release licence}.
+\item \textbf{Parameters and compute.} 385,144,448 parameters; one A100 80\,GB at a time. Table~\ref{tab:compute} gives A100-hours per component, \emph{estimated from logged durations} (training seconds from the run summaries, or the logged start and end times of the job); no cost figure is reported. The sized components add up to about 94 A100-hours, a lower bound. \textbf{Not sized} (no duration in any report): the A0 stage (5,625 steps) and SFT-1 (1,500 steps); E-01 (guard grid and guarded full evaluations); E-09 and E-09b (the fp32 generation ran 17:46 to 18:38 UTC beside another job at a 0.15 GPU share); E-13 and E-20; the SSA-COMET scoring of E-05; the full evaluation passes of every stage (122,585 rows each) and the AfriScience and document evaluations; data preparation and scoring boxes; aborted runs and the compute of the earlier 270M models.
+\item \textbf{Number of runs and seeds.} One training run per model and stage (seed 1234); two extra seeds (20261105, 20261106) of the stage-A recipe at 100 steps; three ablation arms, one run each; the control and the E-14 run are one run each. No multiple-run statistics beyond that pair; test-sentence bootstrap intervals elsewhere.
+\item \textbf{Hyper-parameters and selection.} Appendix~\ref{app:hyper} (all SFT and RL settings, per-shard schedules, reward and features). Checkpoints were selected on a 720-sentence FLORES+ dev subset; the decode-time guard setting by a rule fixed in advance on the SFT dev grid.
+\item \textbf{Evaluation.} Metrics defined in Section~\ref{sec:eval}; sacreBLEU 2.6.0 (from the install log of the evaluation machine; the full signature strings were not recorded), chrF++ = \texttt{CHRF(word\_order=2)} with the defaults, spBLEU = BLEU with \texttt{tokenize=flores200}, NFC-normalised hypotheses and references; vLLM 0.32.0, bf16, greedy, 768 new tokens; intervals are 95\% paired bootstrap, 1,000 resamples (language bootstrap, 10,000 resamples, for NLLB). Exact commands per table are in the archived scripts named in the ledger.
+\item \textbf{Human subjects and annotators.} None were involved; no human judgement of system outputs was collected; no personal data was collected by us.
+\item \textbf{Code, data and checkpoints.} \anonreal{Anonymised for review; released on acceptance, subject to the licence limits above.}{See the links in Ethical considerations and the branch list in the reproducibility statement, subject to the licence limits above.} NLLB-derived and non-commercial parts cannot be redistributed as they are, and TranslatePsy rows are not released \ownerdecision{which parts of the data are released}.
+\end{itemize}
+
+\begin{table}[h]
+\centering\small
+\caption{A100-hours by component, estimated from logged durations (lower bound; unsized components are listed above).}\label{tab:compute}
+\begin{tabular}{@{}lrl@{}}
+\toprule
+component & A100-h & basis\\
+\midrule
+SFT stage B (31,353 steps) & 44.8 & 5.14 s per step\\
+RL stage A, B1, mixed (400 + 135 + 60 steps) & 8.66 & 15,920 + 10,479 + 4,786 s\\
+weak-group RL (85 steps) & 2.1 & 7,642 s\\
+science SFT (283 steps) & 0.3 & 17 min\\
+science RL (160 steps) & 4.8 & 17,153 s\\
+long-document RL (80 steps) & 7.7 & wall-clock 10:03--17:44, of which about 4.5 h crash loop\\
+E-03 control (6,000 steps and two probes) & 10.5 & GPU session 9.75 h, evaluation 0.55 h, SSA-COMET pass 0.2 h\\
+E-02 beam-4 and MBR-16 & 2.6 & logged GPU time\\
+E-04 two seed runs and their evaluations & 3.2 & wall-clock 08:51--12:05\\
+E-11 three ablation arms and evaluations & 2.9 & 36 + 54 + 42 min of training, 3 $\times$ about 15 min of evaluation\\
+E-14 science RL without science SFT & 6.0 & training 15:18--20:17, evaluation about 1 h\\
+\midrule
+sized components, total & about 94 & lower bound\\
+\bottomrule
+\end{tabular}
+\end{table}
+
