@@ -96,6 +96,38 @@ def generate_completions(model: Any, prompts: Sequence[Sequence[int]], *, group_
     return Rollout(rep_prompts, comps, fin, lps if trans is not None else None, post)
 
 
+def generate_beam_completions(model: Any, prompts: Sequence[Sequence[int]], *, num_beams: int, max_new_tokens: int, stop_ids: Sequence[int], pad_id: int, device, autocast=None, chunk: int = 0) -> Rollout:
+    """ONE beam-search completion (HF `generate`, `num_beams` beams, no sampling) per prompt, in prompt order; cut at the first stop id like every other rollout. Used for the beam-guided group
+    member (config guide_fraction): it runs on the policy held by the trainer, i.e. the CURRENT policy. `sampler_logp` is None (the beam output is not a sample of any sampling distribution)."""
+    import torch
+
+    if chunk and len(prompts) > chunk:                  # `chunk` prompts per generate call (the beam KV cache is num_beams x prompts x length: 24 GB cards cannot hold 70 prompts x 4 beams x 800 tokens next to the other processes)
+        parts = [generate_beam_completions(model, prompts[i:i + chunk], num_beams=num_beams, max_new_tokens=max_new_tokens, stop_ids=stop_ids, pad_id=pad_id, device=device, autocast=autocast) for i in range(0, len(prompts), chunk)]
+        return Rollout([p for r in parts for p in r.prompts], [c for r in parts for c in r.completions], [f for r in parts for f in r.finished], None, [x for r in parts for x in r.post_stop_tokens])
+    width = max(len(p) for p in prompts)
+    ids = torch.full((len(prompts), width), pad_id, dtype=torch.long)
+    mask = torch.zeros_like(ids)
+    for i, p in enumerate(prompts):                     # LEFT pad, as in generate_completions
+        ids[i, width - len(p):] = torch.tensor(list(p), dtype=torch.long)
+        mask[i, width - len(p):] = 1
+    was_training = model.training
+    model.eval()
+    ctx = autocast if autocast is not None else nullcontext()
+    with torch.no_grad(), ctx:
+        out = model.generate(input_ids=ids.to(device), attention_mask=mask.to(device), max_new_tokens=max_new_tokens, num_beams=int(num_beams), num_return_sequences=1, do_sample=False,
+                             early_stopping=True, temperature=None, top_p=None, top_k=None, eos_token_id=list(stop_ids), pad_token_id=pad_id, use_cache=True)
+    if was_training:
+        model.train()
+    comps, fin, post = [], [], []
+    benign = set(int(x) for x in stop_ids) | {int(pad_id)}
+    for row in out[:, width:].cpu().tolist():
+        kept, finished = cut_at_stop(row, stop_ids)
+        comps.append(kept)
+        fin.append(finished)
+        post.append(sum(1 for t in row[len(kept):] if int(t) not in benign) if finished else 0)
+    return Rollout([list(p) for p in prompts], comps, fin, None, post)
+
+
 def assemble_batch(prompts: Sequence[Sequence[int]], completions: Sequence[Sequence[int]], pad_id: int, device=None):
     """-> dict(input_ids, attention_mask, completion_mask, prompt_width) as torch tensors."""
     import torch

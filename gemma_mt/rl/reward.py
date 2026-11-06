@@ -159,6 +159,18 @@ class RewardConfig:
     confidence_relative: bool = True           # log-prob against the median of the languages that work (rl/confidence.py reference_logp) instead of the absolute bounds (valid for another policy)
     confidence_absolute_fallback: bool = False  # relative requested but fewer than 5 reference languages yet: True = use the absolute bounds, False = skip the log-prob ramp (neutral) until the reference exists
     confidence_params: Dict[str, float] = field(default_factory=dict)     # overrides of ConfidenceParams (lid_lo, lid_hi, logp_rel_lo, logp_rel_hi, valid_lo, valid_hi, min_valid, lid_pass_min, distinct_min, cap_floor, min_trust_to_pay ...)
+    # D-62 (wired 2026-11-01): FLUENCY penalty (rl/fluency.py: per-language character 5-gram + word-order models, compact numpy arrays, artifacts/fluency_models). OFF by default = the rewards are
+    # bit-identical. On: for every VALID scored sample of a language whose model is `usable` (`fluency_languages`: "usable" | "all" | [iso, ...]) with comb_z below the floor, the reward drops by
+    # fluency_penalty_weight * (floor - comb_z), clipped to [0, 1] reward units, never below the failure floor. PENALTY ONLY, never a bonus. The floor is fluency_z_floor, lowered per language to the
+    # p05 of comb_z on that language's HUMAN test text (manifest) when `fluency_human_floor` (the models are trained on web text; human references score lower than web held-out text, a fixed -2.0
+    # would hit about half of the correct Yoruba sentences). Honest limits: no adequacy, and DIACRITICS are not policed by this term (AUC ~0.55): see fluency_spelling_weight.
+    fluency: bool = False
+    fluency_models_dir: str = "artifacts/fluency_models"
+    fluency_penalty_weight: float = 0.5
+    fluency_z_floor: float = -2.0
+    fluency_human_floor: bool = True
+    fluency_languages: Any = "usable"
+    fluency_spelling_weight: float = 0.0       # second penalty term, 0 = off: z of the BIBLE-trained char model (consistent diacritics) below its own floor; only the languages in the manifest's `spelling` list (yor, kik)
     # D-55: QE ENSEMBLE (rl/qe_ensemble.py). OFF by default. On: the QE part of a chunk's reward is mean(r1, r2) of the per-language shaped AfriCOMET-QE (r1) and SSA-COMET-MTL
     # reference-free (r2) when |r1 - r2| <= delta, else min(r1, r2). Needs a calibration file with `qe2` blocks (shaping_flores_dev_v8.json) and a `scorer` block with `ensemble_model_id`.
     qe_ensemble: bool = False
@@ -235,8 +247,30 @@ class RewardConfig:
     longdoc_agg_alpha: float = 1.0
     longdoc_agg_q: float = 0.25
     longdoc_coverage_kappa: float = 0.5                # (d) 0 = off
+    longdoc_compare_v1: bool = False                   # DIAGNOSTIC (385M plan, owner 2026-11-02: longdoc_v2 also on the SHORT bins, longdoc_min_src_words 1): log `longdoc/delta_reward_<short|mid|long>` (longdoc-path reward minus the plain-mean chunk reward of the same sample), `longdoc/v1_reject_rate`, `longdoc/v1_only_reject_rate`, `longdoc/ld_only_reject_rate` (what the v1 whole-text repetition guards would have rejected next to the longdoc severity); a few string checks per sample, rewards unchanged
     longdoc_pool_severity: float = 0.5                 # a sample with a repetition severity at or above this stays out of the consensus pool (near-loops would agree with each other)
     keep_chunk_rewards: bool = False                   # diagnostics: RewardOutput.chunk_rewards = per sample [(reward, weight)] of its plan items
+    # 2026-11-03 (owner): REFERENCE-ANCHORED term. A prompt row that carries a HUMAN reference translation (Sample.reference) adds a chrF++ (word order 2) term against it:
+    #     r = (1 - w) * r_existing + w * consensus_value(chrF++(translation, reference))      w = reference_weight, same fixed linear chrF -> reward map as the consensus signal (rl/consensus.py)
+    # Only samples that passed every hard check (status ok) and whose existing reward is above the failure penalty are touched: failures, guards and the constraint penalties keep their value, a
+    # sample can never be lifted out of a failure class by the reference. Within a GRPO group the offset of the map cancels in the standardisation, only its slope (reward units per chrF++ point
+    # = (hi - lo) / 100) matters. 0 = off (every old config).
+    reference_weight: float = 0.0
+    # 2026-11-03 (owner, science stage arm 2): SCIENCE reference terms on rows that carry a human reference (rl/science_terms.py): reference-based SSA-COMET-MTL (needs a scorer with
+    # `score_reference(srcs, mts, refs)`, see qe_ensemble.build_pair_scorer `ref_ssa`), chrF++ recall (omission) and precision (addition) floors, length ratio, preservation of numbers / units /
+    # acronyms / named entities. All penalties or small shaping; applied only to samples with status ok whose reward is above the failure penalty. 0 / False = off (every old config).
+    sci_terms: bool = False
+    sci_ssa_weight: float = 0.5
+    sci_ssa_slope: float = 4.0
+    sci_ssa_center: float = 0.5
+    sci_omit_weight: float = 0.3
+    sci_recall_floor: float = 0.5
+    sci_add_weight: float = 0.3
+    sci_precision_floor: float = 0.5
+    sci_length_weight: float = 0.3
+    sci_length_tol: float = 0.30                        # |log(len hyp / len ref)| tolerance (0.30 = a factor 1.35)
+    sci_preserve_weight: float = 0.5
+    sci_preserve_min_items: int = 2
 
 
 
@@ -248,6 +282,10 @@ class Sample:
     post_stop_tokens: int = 0  # non-padding tokens the SAMPLER produced after the first stop id and that were cut before this call
     domain: str = ""           # D-52: domain label of the prompt ("science" / "general" / ""), read by the science anchor only
     logp: Optional[float] = None   # D-47: mean token log-prob (nats) of the sampled completion under the sampling distribution, language tag and end token left out (None = unknown)
+    reference: str = ""            # 2026-11-03: human reference translation of the source ("" = none); used only when reward.reference_weight > 0
+    guide: bool = False            # 2026-11-03: the beam-guided member of its group (train_rl guide_fraction); scored like any member, never judged by the confidence rules (its log-prob is not a sampler's)
+    guide_src: str = ""            # which guide it is (rl/guide.py GuideInfo.src: beam | mbr_beam | mbr_extra | mbr_member->beam | mbr_few->beam | mbr_skipped->beam)
+    guide_cands: int = 0           # valid MBR candidates behind it (0 = beam mode)
 
 
 @dataclass
@@ -271,7 +309,9 @@ class RewardOutput:
     chunk_rewards: List[Optional[List[Tuple[float, float]]]] = field(default_factory=list)   # D-60 (keep_chunk_rewards): per sample [(chunk reward, weight)] of its plan items (failed chunk = the penalty); None = no plan
     longdoc: List[Optional[Dict[str, float]]] = field(default_factory=list)  # D-60: per sample, for "long" samples: {rep_severity, rep_level, cover_failed, agg_mean, agg_tail, severity, ...}; None = v1 path
     confidence: Dict[str, float] = field(default_factory=dict)              # D-47: metrics of the confidence rules of this call, keys `confidence/...` (empty when reward.confidence is off); logged as they are
+    fluency: Dict[str, float] = field(default_factory=dict)                 # D-62: metrics of the fluency penalty of this call, keys `fluency/...` (empty when reward.fluency is off); logged as they are
     conf_gate: List[Optional[str]] = field(default_factory=list)            # D-47: per sample, the reason its group was gated out ("few_valid" | "wrong_language" | "collapsed"), "ok" if not, None = not judged
+    ref_chrf: List[Optional[float]] = field(default_factory=list)          # 2026-11-03 (reward.reference_weight > 0): per sample, chrF++ against its human reference when the reference term was applied, else None
 
 
 class TranslationReward:
@@ -299,6 +339,12 @@ class TranslationReward:
             self.class_penalty[name] = p
         self.reward_range = (min(lo, self.penalty, *self.class_penalty.values()), hi)
         self._profiles = cons.ProfileCache()
+        self.fluency = None                             # D-62: FluencyScorer (None = off)
+        if cfg.fluency:
+            from gemma_mt.rl.fluency import FluencyScorer
+            if not os.path.isfile(os.path.join(cfg.fluency_models_dir, "manifest.json")):
+                raise FileNotFoundError(f"reward.fluency is on but {cfg.fluency_models_dir}/manifest.json does not exist (scripts/build_fluency_models.py)")
+            self.fluency = FluencyScorer(cfg.fluency_models_dir)
         self.conf = None                                # D-47: running per-language state of the confidence rules (None = off)
         self.conf_params = conf.params_from_dict(cfg.confidence_params)
         if cfg.confidence:
@@ -442,6 +488,7 @@ class TranslationReward:
         rep_sev = [0.0] * n                              # D-60: repetition severity of each long sample (0 = none)
         rep_lvl = [""] * n
         rep_prof: List[Optional[Dict[str, float]]] = [None] * n
+        v1_flag: List[Optional[bool]] = [None] * n           # longdoc_compare_v1: would the v1 whole-text repetition guards have rejected this long sample?
         for i, s in enumerate(samples):
             iso = langs[i]
             dec = decode_completion(self.tok, s.token_ids, self.stop_ids, pad_ids=self.pad_ids, normalise=cfg.nfc)
@@ -475,6 +522,9 @@ class TranslationReward:
                 prof = longdoc.repetition_profile(text)
                 rep_sev[i], rep_lvl[i] = self.longdoc_cal.severity(prof, len(srcs[i].split()), self._src_profile(srcs[i]))
                 rep_prof[i] = prof.levels
+                if cfg.longdoc_compare_v1:
+                    v1_flag[i] = bool((cfg.repetition_guard and guards.is_repetitive(text))
+                                      or (cfg.selfrep_guard != "off" and (cfg.selfrep_guard == "all" or modes[i][0] != "qe") and guards.is_self_repetitive(text)))
                 if rep_sev[i] >= 1.0:
                     status[i] = "degenerate"                   # severity 1 IS the failure penalty; a stuttering sentence is a failed CHUNK (below), not a failed document
                     continue
@@ -620,6 +670,9 @@ class TranslationReward:
         dia_by_lang: Dict[str, List[float]] = {}
         sci_def: List[Optional[float]] = [None] * n       # D-52: per sample, source-weighted mean science-anchor deficit of its scored chunks (None = not judged)
         rewards, weights = [], []
+        ref_chrf: List[Optional[float]] = [None] * n       # reference-anchored term: chrF++ against the human reference (None = no reference / not applied)
+        ref_shift: List[float] = [0.0] * n
+        flu_stats: Dict[str, Dict[str, List[float]]] = {}              # D-62: per language lists of comb_z / penalised flags (empty when reward.fluency is off)
         ld_info: List[Optional[Dict[str, float]]] = [None] * n
         chunk_rw: List[Optional[List[Tuple[float, float]]]] = [None] * n
         n_chunks = [len(chunk_plan[i]) if i in chunk_plan else 0 for i in range(n)]
@@ -686,8 +739,16 @@ class TranslationReward:
                     chunk_rw[i] = [(self.penalty if seg is None else float(seg_reward[seg]), float(w)) for seg, w in chunk_plan[i]]
                 if anc is not None and anc["on"][i]:                                   # D-56: sample-level constraint penalties (repetition, boilerplate, LID probability)
                     rewards[-1] = self._anchors_sample(anc, i, rewards[-1])
-                if anc is not None and anc["on"][i]:                                   # D-56: sample-level constraint penalties (repetition, boilerplate, LID probability)
-                    rewards[-1] = self._anchors_sample(anc, i, rewards[-1])
+                if self.fluency is not None and status[i] == "ok":                         # D-62: fluency penalty (penalty only)
+                    fp = self._fluency_penalty(lang, texts[i], flu_stats)
+                    if fp > 0:
+                        rewards[-1] = max(self.penalty, rewards[-1] - fp)
+                if cfg.reference_weight > 0 and s.reference and status[i] == "ok" and rewards[-1] > self.penalty + 1e-9:       # reference-anchored term (see RewardConfig.reference_weight)
+                    ref_chrf[i] = cons.chrf_sentence(texts[i], nfc(s.reference) if cfg.nfc else s.reference)
+                    r_before = rewards[-1]
+                    lo_r, hi_r = self.shaper.reward_range if cfg.consensus_scale is None else cfg.consensus_scale
+                    rewards[-1] = (1.0 - cfg.reference_weight) * r_before + cfg.reference_weight * cons.consensus_value(ref_chrf[i], lo_r, hi_r)
+                    ref_shift[i] = rewards[-1] - r_before
                 qe[i] = sum(raw) / len(raw) if raw else None
                 if dia_w[0] > 0:
                     dia_def[i] = dia_w[1] / dia_w[0]
@@ -695,11 +756,42 @@ class TranslationReward:
                 if sci_w[0] > 0:
                     sci_def[i] = sci_w[1] / sci_w[0]
             weights.append((1.0 if cfg.train_unusable else self._weight(lang)) * conf_mult[i])
+        sci_details: List[Dict[str, float]] = []
+        if cfg.sci_terms:                                                               # science reference terms (rl/science_terms.py), after every other term
+            from gemma_mt.rl import science_terms as st
+            tcfg = st.ScienceTermsConfig(ssa_weight=cfg.sci_ssa_weight, ssa_slope=cfg.sci_ssa_slope, ssa_center=cfg.sci_ssa_center, omit_weight=cfg.sci_omit_weight,
+                                         recall_floor=cfg.sci_recall_floor, add_weight=cfg.sci_add_weight, precision_floor=cfg.sci_precision_floor,
+                                         length_weight=cfg.sci_length_weight, length_tol=cfg.sci_length_tol, preserve_weight=cfg.sci_preserve_weight,
+                                         preserve_min_items=cfg.sci_preserve_min_items)
+            idx = [i for i, sm in enumerate(samples) if sm.reference and status[i] == "ok" and rewards[i] > self.penalty + 1e-9]
+            ssa_scores: List[Optional[float]] = [None] * len(idx)
+            fn = None if getattr(self.scorer, "ref_scorer", 1) is None else getattr(self.scorer, "score_reference", None)
+            if idx and fn is not None and cfg.sci_ssa_weight > 0:
+                refs_ = [nfc(samples[i].reference) if cfg.nfc else samples[i].reference for i in idx]
+                ssa_scores = [float(v) for v in fn([samples[i].source for i in idx], [texts[i] for i in idx], refs_)]
+            for k, i in enumerate(idx):
+                ref_i = nfc(samples[i].reference) if cfg.nfc else samples[i].reference
+                adj, det = st.science_adjustment(tcfg, samples[i].source, texts[i], ref_i, ssa_scores[k])
+                _lo_c, _hi_c = self.shaper.reward_range if cfg.consensus_scale is None else cfg.consensus_scale
+                rewards[i] = min(_hi_c, max(self.penalty, rewards[i] + adj))      # never above the configured reward range (train_rl asserts it)
+                sci_details.append(det)
         out = RewardOutput(rewards, weights, qe, status, texts, decoded,
                            self._stats(status, qe, rewards, stripped_special, n, gated, texts), diacritic_deficit=dia_def,
                            lid_label=lid_label, consensus_chrf=chrf_mean, content_mode=[m for m, _ in applied],
                            n_chunks=n_chunks, failed_chunks=failed_chunks)
         out.science_deficit = sci_def
+        if cfg.sci_terms:
+            from gemma_mt.rl import science_terms as st_
+            out.stats.update(st_.batch_stats(sci_details))
+            out.stats["sci/ssa_available"] = 0.0 if (getattr(self.scorer, "ref_scorer", 1) is None or getattr(self.scorer, "score_reference", None) is None) else 1.0
+        if cfg.reference_weight > 0:
+            out.ref_chrf = ref_chrf
+            done = [c for c in ref_chrf if c is not None]
+            out.stats["ref/n"] = float(len(done))
+            out.stats["ref/chrf_mean"] = sum(done) / len(done) if done else 0.0
+            out.stats["ref/reward_shift_mean"] = sum(x for x, c in zip(ref_shift, ref_chrf) if c is not None) / len(done) if done else 0.0
+        if self.fluency is not None:
+            out.fluency = self._fluency_metrics(flu_stats)
         if self.conf is not None:
             out.confidence = conf_metrics
             out.conf_gate = conf_gate
@@ -710,7 +802,7 @@ class TranslationReward:
                 if ld_info[i] is None and long_i[i]:
                     ld_info[i] = {"rep_severity": rep_sev[i], "severity": 1.0 if status[i] != "ok" else 0.0}
             out.longdoc = ld_info
-            out.stats.update(self._longdoc_stats(ld_info, long_i, rep_lvl, n))
+            out.stats.update(self._longdoc_stats(ld_info, long_i, rep_lvl, n, v1_flag, rep_sev))
         if anc is not None:                           # D-56
             out.anchors_penalty = list(anc["pen"])
             out.stats.update(self._anchors_finish(anc, langs, n))
@@ -755,7 +847,8 @@ class TranslationReward:
         cov = longdoc.coverage_severity(items, cfg.longdoc_coverage_kappa) if cfg.longdoc_coverage_kappa > 0 else 0.0
         sev = longdoc.combine_severity(rep_sev, cov)
         out = longdoc.apply_severity(r, sev, self.penalty)
-        return out, {"agg_mean": mean_r, "agg_tail": r, "rep_severity": rep_sev, "cover_failed": longdoc.coverage_severity(items, 1.0), "severity": sev, "n_items": float(len(items))}
+        return out, {"agg_mean": mean_r, "agg_tail": r, "rep_severity": rep_sev, "cover_failed": longdoc.coverage_severity(items, 1.0), "severity": sev, "n_items": float(len(items)),
+                     "reward": out, "src_words": float(src_words)}
 
     def _src_profile(self, src: str):
         """Repetition profile of an English source (cached: the 16 samples of a GRPO group share it)."""
@@ -767,7 +860,7 @@ class TranslationReward:
             p = c[src] = longdoc.repetition_profile(src)
         return p
 
-    def _longdoc_stats(self, info, long_i, rep_lvl, n) -> Dict[str, float]:
+    def _longdoc_stats(self, info, long_i, rep_lvl, n, v1_flag=None, rep_sev=None) -> Dict[str, float]:
         got = [x for x in info if x is not None]
         st: Dict[str, float] = {"longdoc/long_rate": sum(1 for x in long_i if x) / max(n, 1)}
         if got:
@@ -777,6 +870,19 @@ class TranslationReward:
                     st[f"longdoc/{k}"] = sum(v) / len(v)
             st["longdoc/rep_penalised_rate"] = sum(1 for x in got if x.get("rep_severity", 0.0) > 0) / len(got)
             st["longdoc/rep_full_rate"] = sum(1 for x in got if x.get("rep_severity", 0.0) >= 1.0) / len(got)
+            if self.cfg.longdoc_compare_v1:             # what the longdoc path changes against the plain path, by source length (short = b64, mid = b256, long = longer)
+                for cls, lo, hi in (("short", 0, 60), ("mid", 60, 230), ("long", 230, 10 ** 9)):
+                    d = [x["reward"] - x["agg_mean"] for x in got if "reward" in x and "agg_mean" in x and lo <= x.get("src_words", 0.0) < hi]
+                    if d:
+                        st[f"longdoc/delta_reward_{cls}"] = sum(d) / len(d)
+                        st[f"longdoc/delta_nonzero_rate_{cls}"] = sum(1 for v in d if abs(v) > 1e-9) / len(d)
+                        st[f"longdoc/n_{cls}"] = float(len(d))
+                ev = [i for i in range(n) if v1_flag is not None and v1_flag[i] is not None]
+                if ev:
+                    rej = [bool(rep_sev[i] >= 1.0) for i in ev]
+                    st["longdoc/v1_reject_rate"] = sum(1 for i in ev if v1_flag[i]) / len(ev)
+                    st["longdoc/v1_only_reject_rate"] = sum(1 for i, r in zip(ev, rej) if v1_flag[i] and not r) / len(ev)
+                    st["longdoc/ld_only_reject_rate"] = sum(1 for i, r in zip(ev, rej) if r and not v1_flag[i]) / len(ev)
         return st
 
     # ------------------------------------------------------------------------------------------ constraint penalties (D-56; rl/anchors.py)
@@ -951,6 +1057,45 @@ class TranslationReward:
         return st
 
     # ------------------------------------------------------------------------------------------ QE ensemble hooks (D-55; rl/qe_ensemble.py)
+    # ------------------------------------------------------------------------------------------------------------------ D-62: fluency penalty
+    def _fluency_penalty(self, lang: str, text: str, stats: Dict[str, Dict[str, List[float]]]) -> float:
+        """Reward units to subtract for one valid sample (0.0 = none). Two independent terms, each clipped to [0, 1]: the general comb_z term (usable languages) and, with fluency_spelling_weight > 0,
+        the spelling term of the languages that have a Bible-trained spelling model."""
+        cfg, fs = self.cfg, self.fluency
+        pen = 0.0
+        st = stats.setdefault(lang, {"z": [], "pen": [], "sz": [], "spen": []})
+        sel = cfg.fluency_languages
+        allowed = fs.usable(lang) if sel == "usable" else (fs.has(lang) if sel == "all" else (lang in sel and fs.has(lang)))
+        if allowed:
+            z = fs.score(lang, text)["comb_z"]
+            if z is not None:
+                floor = cfg.fluency_z_floor
+                if cfg.fluency_human_floor:
+                    floor = min(floor, float(fs.manifest["languages"][lang]["comb"]["p05"]))
+                p = min(1.0, max(0.0, cfg.fluency_penalty_weight * (floor - z)))
+                st["z"].append(float(z)); st["pen"].append(1.0 if p > 0 else 0.0)
+                pen += p
+        if cfg.fluency_spelling_weight > 0:
+            sz = fs.spelling_z(lang, text)
+            if sz is not None:
+                sp = min(1.0, max(0.0, cfg.fluency_spelling_weight * (fs.spelling_floor(lang) - sz)))
+                st["sz"].append(float(sz)); st["spen"].append(1.0 if sp > 0 else 0.0)
+                pen += sp
+        return pen
+
+    def _fluency_metrics(self, stats: Dict[str, Dict[str, List[float]]]) -> Dict[str, float]:
+        m: Dict[str, float] = {}
+        zs = [z for st in stats.values() for z in st["z"]]; ps = [p for st in stats.values() for p in st["pen"]]
+        m["fluency/checked"] = float(len(zs))
+        if zs:
+            m["fluency/comb_z_mean"] = sum(zs) / len(zs); m["fluency/penalty_rate"] = sum(ps) / len(ps)
+        for lang, st in stats.items():
+            if st["z"]:
+                m[f"fluency/comb_z/{lang}"] = sum(st["z"]) / len(st["z"]); m[f"fluency/penalty_rate/{lang}"] = sum(st["pen"]) / len(st["pen"])
+            if st["sz"]:
+                m[f"fluency/spelling_z/{lang}"] = sum(st["sz"]) / len(st["sz"]); m[f"fluency/spelling_penalty_rate/{lang}"] = sum(st["spen"]) / len(st["spen"])
+        return m
+
     # ------------------------------------------------------------------------------------------------------------------ D-47: reference-free confidence
 
     def _conf_trust(self, lang: str) -> float:

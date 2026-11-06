@@ -256,7 +256,7 @@ class KLGuard:
 # Plateau / saturation stop
 # ====================================================================================================================================================================
 def plateau_slope_test(values: List[float], block: int = 20, n_boot: int = 2000, seed: int = 0, conf: float = 0.95, min_blocks: int = 4) -> Dict[str, Any]:
-    """The M1 plateau test (reports/lean_schedule_<S3_PREFIX>.md B.3): the last len(values) // block * block values are cut into non-overlapping blocks of `block` steps (aligned
+    """The M1 plateau test (reports/lean_schedule_clean_rerun_2026-10-28.md B.3): the last len(values) // block * block values are cut into non-overlapping blocks of `block` steps (aligned
     to the END, the oldest leftover values are dropped), the OLS slope of the block means against the block index (per step = slope / block) is bootstrapped over the BLOCKS
     (`n_boot` resamples with replacement, resamples with a single distinct block have no slope and are skipped); `contains_zero` = the `conf` percentile interval contains 0.
     Returns {"slope", "ci_low", "ci_high" (all per STEP), "contains_zero", "n_blocks", "block_means", "n_valid_boot"}; fewer than `min_blocks` blocks -> contains_zero False and "insufficient": True
@@ -284,6 +284,193 @@ def plateau_slope_test(values: List[float], block: int = 20, n_boot: int = 2000,
     eps = 1e-12
     return {"slope": slope, "ci_low": lo, "ci_high": hi, "contains_zero": bool(slopes.size and lo <= eps and hi >= -eps), "n_blocks": nb,
             "block_means": [float(m) for m in means], "n_valid_boot": int(slopes.size), "insufficient": False}
+
+
+class DevPatience:
+    """Early stop on the DEV metrics (config `early_stop_dev`, owner 2026-11-03). The training reward can keep rising while the dev chrF++ is flat (a QE reward can rise without chrF++ gains; stage A of the
+    385M run: dev macro 40.14 @100, 40.13 @150, 40.47 @200, 40.50 @400 with a rising training reward), so the training-reward trackers (`PlateauStop`, `PatienceStop`) never fired.
+    `observe()` is called at every DEV evaluation (the `benchmark_chrf` that selects the checkpoints, and the weak-language set next to it); `check()` right after. For each of the two metrics an anchor is kept
+    (the value at its last improvement); a value that exceeds its anchor by >= eps is an improvement and moves the anchor. `stale` counts the consecutive dev evaluations in which NEITHER metric improved. It fires when
+      last_stage      the current stage is the last one of the run
+      min_steps       steps done in the stage >= min_steps
+      stale           stale >= k consecutive dev evaluations
+      finished        the dev finished rate and the greedy evaluation finished rate of the stage's bin are both >= min_finished
+      guard_event     (blocks) no KL-guard cut / recovery since the evaluation BEFORE the k stale ones: only a guard event inside the window counts, an old one does not; there is NO learning-rate-scale condition
+    The stop itself is the same WINDDOWN as `plateau_stop` (stop_reason 'dev_plateau'). `blocked` names the first failing condition."""
+
+    def __init__(self, k: int = 3, eps: float = 0.15, min_finished: float = 0.98, eps_comet: float = 0.004, require_comet: bool = False):
+        self.k, self.eps, self.min_finished = int(k), float(eps), float(min_finished)
+        self.eps_comet, self.require_comet = float(eps_comet), bool(require_comet)
+        self.anchor: Dict[str, Optional[float]] = {"macro": None, "weak": None, "comet": None}
+        self.stale = 0
+        self.hist: List[List[Any]] = []             # [step, macro, weak, stage] of the dev evaluations of this stage (the last k + 1 are needed)
+        self.guard_events: List[int] = []
+        self.triggered: Optional[Dict[str, Any]] = None
+        self.last_check: Optional[Dict[str, Any]] = None
+
+    def note_guard_event(self, step: int) -> None:
+        self.guard_events = (self.guard_events + [int(step)])[-64:]
+
+    def observe(self, step: int, macro: float, weak: Optional[float], stage: str, comet: Optional[float] = None) -> Dict[str, bool]:
+        """Feed one dev evaluation (weak = None when the run has no weak-language set: then only the macro counts). Returns which metric improved.
+        `comet` (patch 3): the held-out reference-based AfriCOMET macro of this evaluation (None = not available); with `require_comet` an improvement of >= eps_comet over its anchor also resets the stale count,
+        so the stop is more conservative while the held-out metric is still rising. Without `require_comet` it is only tracked."""
+        if self.hist and self.hist[-1][3] != str(stage):          # a new stage starts its own series
+            self.anchor, self.stale, self.hist = {"macro": None, "weak": None, "comet": None}, 0, []
+        imp = {"macro": False, "weak": False, "comet": False}
+        for key, v, eps in (("macro", macro, self.eps), ("weak", weak, self.eps), ("comet", comet, self.eps_comet)):
+            if v is None:
+                continue
+            a = self.anchor.get(key)
+            if a is None:
+                self.anchor[key] = float(v)                           # the first value of the stage is the starting anchor, not an improvement
+            elif v >= a + eps:
+                self.anchor[key], imp[key] = float(v), True
+        if any(v for k_, v in imp.items() if k_ != "comet" or self.require_comet):
+            self.stale = 0
+        elif len(self.hist) >= 1:
+            self.stale += 1
+        self.hist = (self.hist + [[int(step), float(macro), None if weak is None else float(weak), str(stage)]])[-(self.k + 1):]
+        return imp
+
+    def check(self, step: int, stage: str, stage_start: int, min_steps: int, is_last_stage: bool, finished_dev: Optional[float], finished_eval: Optional[float]) -> Dict[str, Any]:
+        out: Dict[str, Any] = {"fire": False, "blocked": None, "step": int(step), "stage": stage, "steps_in_stage": int(step) - int(stage_start), "min_steps": int(min_steps), "k": self.k, "eps": self.eps,
+                               "stale_evals": self.stale, "anchor_macro": self.anchor["macro"], "anchor_weak": self.anchor["weak"], "anchor_comet": self.anchor.get("comet"), "require_comet": self.require_comet}
+
+        def blocked(why: str) -> Dict[str, Any]:
+            out["blocked"] = why
+            self.last_check = out
+            return out
+
+        if self.triggered is not None:
+            return blocked("already_triggered")
+        if not is_last_stage:
+            return blocked("not_last_stage")
+        if out["steps_in_stage"] < int(min_steps):
+            return blocked("min_steps")
+        if self.stale < self.k:
+            return blocked("improving")
+        out["finished_dev"], out["finished_eval_greedy"] = finished_dev, finished_eval
+        if any(f is not None and f < self.min_finished for f in (finished_dev, finished_eval)):
+            return blocked("finished")
+        window_start = self.hist[0][0] if len(self.hist) > self.k else (self.hist[0][0] if self.hist else int(step))
+        if any(e >= window_start - 1 for e in self.guard_events):
+            return blocked("guard_event")
+        out["fire"] = True
+        out["window_start_step"] = window_start
+        self.last_check = out
+        return out
+
+    def state_dict(self) -> Dict[str, Any]:
+        return {"anchor": dict(self.anchor), "stale": self.stale, "hist": [list(r) for r in self.hist], "guard_events": list(self.guard_events), "triggered": self.triggered}
+
+    def load_state_dict(self, d: Optional[Dict[str, Any]]) -> None:
+        if not d:
+            return
+        self.anchor.update(d.get("anchor") or {})
+        self.stale = int(d.get("stale", 0))
+        self.hist = [list(r) for r in d.get("hist", [])]
+        self.guard_events = list(d.get("guard_events", []))
+        self.triggered = d.get("triggered")
+
+
+class HackingAlarm:
+    """Reward-hacking alarm (config `hacking_alarm`, patch 3, owner 2026-11-03): the QE reward the policy trains on keeps rising while BOTH held-out measures fall. Fed at every dev evaluation with the dev
+    chrF++ macro, the held-out reference-based AfriCOMET macro (a checkpoint the policy does not train on) and the hold-out QE reward (`eval/qe_mean_scored`, the training metric on hold-out prompts). Over the last
+    k + 1 evaluations of one stage it fires when
+      qe_rising   the least-squares slope of the QE series is > 0
+      chrf_fell   chrF++ (first) - chrF++ (last) > eps_chrf
+      comet_fell  AfriCOMET (first) - AfriCOMET (last) > eps_comet
+    A window missing the AfriCOMET (monitor off / failed) or the QE value never fires (`blocked`). The stop is the WINDDOWN of plateau_stop (stop_reason 'hacking_alarm'); the best checkpoint (by the
+    existing best-selection) is untouched in best/ and on the Hub: hand the next stage that one (HANDOFF=best)."""
+
+    def __init__(self, k: int = 3, eps_chrf: float = 0.3, eps_comet: float = 0.005):
+        self.k, self.eps_chrf, self.eps_comet = int(k), float(eps_chrf), float(eps_comet)
+        self.hist: List[List[Any]] = []               # [step, chrf, comet, qe, stage]
+        self.triggered: Optional[Dict[str, Any]] = None
+        self.last_check: Optional[Dict[str, Any]] = None
+
+    def observe(self, step: int, chrf: float, comet: Optional[float], qe: Optional[float], stage: str) -> None:
+        if self.hist and self.hist[-1][4] != str(stage):
+            self.hist = []
+        self.hist = (self.hist + [[int(step), float(chrf), None if comet is None else float(comet), None if qe is None or qe != qe else float(qe), str(stage)]])[-(self.k + 1):]
+
+    def check(self, step: int) -> Dict[str, Any]:
+        out: Dict[str, Any] = {"fire": False, "blocked": None, "step": int(step), "k": self.k, "eps_chrf": self.eps_chrf, "eps_comet": self.eps_comet}
+        h = self.hist
+
+        def blocked(why: str) -> Dict[str, Any]:
+            out["blocked"] = why
+            self.last_check = out
+            return out
+
+        if self.triggered is not None:
+            return blocked("already_triggered")
+        if len(h) < self.k + 1:
+            return blocked("history")
+        if any(r[2] is None for r in h):
+            return blocked("no_comet")
+        if any(r[3] is None for r in h):
+            return blocked("no_qe")
+        xs = [r[0] for r in h]
+        mx = sum(xs) / len(xs)
+        qe = [r[3] for r in h]
+        mq = sum(qe) / len(qe)
+        den = sum((x - mx) ** 2 for x in xs)
+        slope = sum((x - mx) * (q - mq) for x, q in zip(xs, qe)) / den if den > 0 else 0.0
+        out.update({"qe_slope_per_100_steps": 100.0 * slope, "chrf_change": h[-1][1] - h[0][1], "comet_change": h[-1][2] - h[0][2], "window_steps": [xs[0], xs[-1]]})
+        if not slope > 0:
+            return blocked("qe_not_rising")
+        if not h[0][1] - h[-1][1] > self.eps_chrf:
+            return blocked("chrf_not_fallen")
+        if not h[0][2] - h[-1][2] > self.eps_comet:
+            return blocked("comet_not_fallen")
+        out["fire"] = True
+        self.last_check = out
+        return out
+
+    def state_dict(self) -> Dict[str, Any]:
+        return {"hist": [list(r) for r in self.hist], "triggered": self.triggered}
+
+    def load_state_dict(self, d: Optional[Dict[str, Any]]) -> None:
+        if d:
+            self.hist = [list(r) for r in d.get("hist", [])]
+            self.triggered = d.get("triggered")
+
+
+class LangStall:
+    """Per-language dev history for a LATER per-language patience (patch 3, logging only, no weight changes): for every language an anchor of its dev chrF++ and (when available) held-out AfriCOMET that moves
+    only on a gain >= eps; `stale[iso]` counts the consecutive dev evaluations without a move of either anchor; `stalled(iso)` = stale >= k. n per language is ~40: treat single languages as noisy."""
+
+    def __init__(self, k: int = 3, eps_chrf: float = 0.5, eps_comet: float = 0.01):
+        self.k, self.eps_chrf, self.eps_comet = int(k), float(eps_chrf), float(eps_comet)
+        self.anchor: Dict[str, Dict[str, float]] = {}
+        self.stale: Dict[str, int] = {}
+
+    def observe(self, chrf: Dict[str, float], comet: Optional[Dict[str, float]] = None) -> Dict[str, bool]:
+        """Returns {iso: stalled}."""
+        out: Dict[str, bool] = {}
+        for iso, c in chrf.items():
+            a = self.anchor.setdefault(iso, {})
+            improved, first = False, not a
+            for key, v, eps in (("chrf", c, self.eps_chrf), ("comet", (comet or {}).get(iso), self.eps_comet)):
+                if v is None:
+                    continue
+                if key not in a:
+                    a[key] = float(v)
+                elif v >= a[key] + eps:
+                    a[key], improved = float(v), True
+            self.stale[iso] = 0 if (improved or first) else self.stale.get(iso, 0) + 1
+            out[iso] = self.stale[iso] >= self.k
+        return out
+
+    def state_dict(self) -> Dict[str, Any]:
+        return {"anchor": {k: dict(v) for k, v in self.anchor.items()}, "stale": dict(self.stale)}
+
+    def load_state_dict(self, d: Optional[Dict[str, Any]]) -> None:
+        if d:
+            self.anchor = {k: dict(v) for k, v in (d.get("anchor") or {}).items()}
+            self.stale = {k: int(v) for k, v in (d.get("stale") or {}).items()}
 
 
 class PlateauStop:

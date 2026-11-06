@@ -1,0 +1,20 @@
+{
+ "date": "2026-11-03",
+ "split_file_sha256": "18fe1ddad1c8e64ad93a82254342f4a713f509a55fc2cb7e0a782a514abebddd",
+ "licence_policy": "commercial use; explicit owner exception for IbomMT efi / ibb (tag nc_exception: ibom-mt, also inside bigrams_clean_final.npz); function-word / bigram tables are statistics only (all clean SFT text); LID proxy and diacritic widening of the other languages use strict-licence rows",
+ "files": {
+  "shaping_clean_final.json": "9601877a70749665ac5e3ffff79aedbb0e5be370bfb6e7461008d6be11dd3be5",
+  "noqe_blocks_final.json": "14c93d93bbb11a77a583d42a21d5aba08bfed3fdfb208f0945bd72de0bb970eb",
+  "noqe_report_final.json": "84fe321c89fc0d79b8a25a36025ff8696c6d4c422341702dbb1e47054ad7e1b2",
+  "lid_measure_clean_final.json": "d70297d3ab9746ea7f343b4a6dfb0c47d009f7580080ccfd9156e19c66c3f6fa",
+  "funcwords_clean_final.json": "786084075b6d51ee7ffe9ea89dda650cb7c83b2225565885ad75ce5815486d49",
+  "bigrams_clean_final.npz": "831a9cab69f615cd6cf3a1f86a6e75bbc393df6e478815d10863c342c38c5f02",
+  "longdoc_clean_final.json": "745c9feb91674a0d7e76473b6f085530af31f60ad0f5e806e5083d5b6a1d47c8",
+  "longdoc_clean_report_final.json": "6cb35e65662891810d85f969fd753f31a41c8ea62d03a5dd37adf91a2c55180b",
+  "science_anchor_clean_final.json": "242d790941637d8f2f6de547656902e9acf120dbb1d45a91cd97f9cfdcf65985",
+  "anchors_clean_v1_final.json": "89a288d27cf43ceda08c6baec5b096f2fb4d2eda034558013d49e85f669a4ff7",
+  "anchors_clean_final.json": "3433046b62e55188b03845379cc3fd0f9c4ce771c75037944f79f41731956d0c",
+  "monitors_and_weights_final.json": "226d30f59e747bd3279e8c425e13b1bd369d3daf15d7d2d084a687bd9ecf9700",
+  "efi_ibb_blocks_final.json": "93758d1d41395141e23e60343cb71d0cb990e7e633e93567080fa1004dbe4ad3"
+ }
+}

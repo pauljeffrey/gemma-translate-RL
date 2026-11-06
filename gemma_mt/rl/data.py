@@ -8,6 +8,9 @@ Schema (parquet or jsonl), one row per prompt:
     src_afr_tokens  int   length of `english` in Davlan/afro-xlmr-large-76L tokens (the AfriCOMET encoder), <= 256
     source_dataset  str   where the sentence came from (kept for diagnostics / per-source reporting)
     domain          str   optional (D-52, science run): "science" / "general"; read by `PromptSchedule(domain=..., domain_weights=...)`
+    reference       str   optional (2026-11-03, reference-anchored reward): a HUMAN translation of `english` into `iso`; rows that carry one get a chrF++ term against it (reward.reference_weight)
+    ref_source      str   optional: where the reference pair came from (provenance, diagnostics)
+    ref_licence     str   optional: licence class of the reference pair
 Extra columns are ignored. Rows with an unknown language, a language outside SUPPORTED_RL, an empty source or
 `src_afr_tokens` above the limit are dropped and counted.
 """
@@ -22,7 +25,7 @@ import numpy as np
 from gemma_mt.data.io import iter_rows
 from gemma_mt.languages import LANGUAGES, SUPPORTED_RL, canonical_iso
 
-RL_COLUMNS = ("english", "iso", "language", "src_afr_tokens", "source_dataset", "length_bin", "domain")
+RL_COLUMNS = ("english", "iso", "language", "src_afr_tokens", "source_dataset", "length_bin", "domain", "reference", "ref_source", "ref_licence", "draft", "draft_system", "draft_category")
 MAX_SRC_AFR_TOKENS = 256
 # Input-length bins (AfriCOMET-encoder tokens of the source), named by their UPPER bound (owner 2026-10-12: 64, 256, 512, 1024
 # for Gemma, 2048 added for SabiYarn). Prompt sets are balanced uniformly across them per language; training is staged
@@ -51,6 +54,11 @@ class RLPrompts:
     name_mismatches: int = 0
     length_bin: List[str] = field(default_factory=list)       # one of LENGTH_BINS per prompt (derived from src_afr_tokens)
     domain: List[str] = field(default_factory=list)           # D-52: "" / "general" / "science" ... per prompt (empty list = the file has no domain column)
+    reference: List[str] = field(default_factory=list)        # 2026-11-03: human reference translation per prompt ("" = none); empty list = no row carries one
+    ref_source: List[str] = field(default_factory=list)       # provenance of the reference pair (same convention as `reference`)
+    draft: List[str] = field(default_factory=list)            # 2026-11-03 editor RL: the machine-translation DRAFT the editor post-edits ("" / empty list = a translation prompt)
+    draft_system: List[str] = field(default_factory=list)     # which system wrote the draft (diagnostics)
+    draft_category: List[str] = field(default_factory=list)   # low | clean | other (diagnostics)
 
     def __len__(self) -> int:
         return len(self.english)
@@ -61,6 +69,12 @@ class RLPrompts:
     def domain_of(self, i: int) -> str:
         return self.domain[i] if self.domain else ""
 
+    def reference_of(self, i: int) -> str:
+        return self.reference[i] if self.reference else ""
+
+    def draft_of(self, i: int) -> str:
+        return self.draft[i] if self.draft else ""
+
     def languages(self) -> List[str]:
         return sorted(set(self.iso))
 
@@ -70,7 +84,7 @@ def load_rl_prompts(path: str, *, max_src_tokens: int = MAX_SRC_AFR_TOKENS, lang
                     limit: int = 0) -> RLPrompts:
     """`token_counter` fills `src_afr_tokens` for rows that lack it (AfriCOMET encoder tokens)."""
     keep_langs = {canonical_iso(l) for l in languages} if languages else None
-    eng, iso, src, ntok, lbin, dom = [], [], [], [], [], []
+    eng, iso, src, ntok, lbin, dom, ref, rsrc, drf, dsys, dcat = [], [], [], [], [], [], [], [], [], [], []
     dropped: Dict[str, int] = {}
     mism = 0
 
@@ -106,6 +120,14 @@ def load_rl_prompts(path: str, *, max_src_tokens: int = MAX_SRC_AFR_TOKENS, lang
         lbin.append(str(lb) if lb in LENGTH_BINS else "")
         dm = row.get("domain")
         dom.append(str(dm) if isinstance(dm, str) else "")
+        rf = row.get("reference")
+        ref.append(rf.strip() if isinstance(rf, str) else "")
+        rs = row.get("ref_source")
+        rsrc.append(str(rs) if isinstance(rs, str) and ref[-1] else "")
+        dr = row.get("draft")
+        drf.append(dr.strip() if isinstance(dr, str) else "")
+        ds = row.get("draft_system"); dsys.append(str(ds) if isinstance(ds, str) else "")
+        dc = row.get("draft_category"); dcat.append(str(dc) if isinstance(dc, str) else "")
         if limit and len(eng) >= limit:
             break
     if token_counter is not None:
@@ -118,9 +140,11 @@ def load_rl_prompts(path: str, *, max_src_tokens: int = MAX_SRC_AFR_TOKENS, lang
         if len(keep) != len(eng):
             drop_n = len(eng) - len(keep)
             dropped["source_too_long"] = dropped.get("source_too_long", 0) + drop_n
-            eng, iso, src, ntok, lbin, dom = ([x[i] for i in keep] for x in (eng, iso, src, ntok, lbin, dom))
+            eng, iso, src, ntok, lbin, dom, ref, rsrc, drf, dsys, dcat = ([x[i] for i in keep] for x in (eng, iso, src, ntok, lbin, dom, ref, rsrc, drf, dsys, dcat))
     lbin = [b or bin_of_tokens(n) for b, n in zip(lbin, ntok)]
-    return RLPrompts(eng, iso, src, ntok, dropped, mism, lbin, dom if any(dom) else [])
+    if any(dom):
+        dom = [d or "general" for d in dom]      # a pool that mixes files with and without a `domain` column (385M plan: the FineWeb/Wikipedia files have none, the news files say "news"): unlabeled rows are "general"
+    return RLPrompts(eng, iso, src, ntok, dropped, mism, lbin, dom if any(dom) else [], ref if any(ref) else [], rsrc if any(ref) else [], drf if any(drf) else [], dsys if any(drf) else [], dcat if any(drf) else [])
 
 
 class PromptSchedule:
@@ -300,3 +324,22 @@ class PromptSchedule:
         u = rng.random(total)
         picks = [int(by_lang[l][int(u[k] * len(by_lang[l]))]) for k, l in enumerate(langs)]
         return picks[rank::world]
+
+    def replacements(self, step: int, salt: int, slots: Sequence[Tuple[str, str, str]]) -> List[int]:
+        """Dynamic sampling (rl/dynamic_sampling.py): one replacement prompt per slot, a pure function of (seed, step, salt, slots). A slot is (iso, domain, length_bin) of a DROPPED prompt ("" = unknown): the
+        replacement is a uniformly drawn prompt of the SAME language from the pool the dropped one came from (same domain and bin when the schedule uses them), so the language / domain / bin mixture of the
+        schedule is kept in expectation although the filter removes groups unevenly; a language the pool lacks is replaced by an ordinary draw of that pool. The language floor is not applied."""
+        rng = np.random.default_rng([self.seed, int(step), 90210, int(salt)])
+        out: List[int] = []
+        for iso, dom, b in slots:
+            if self.domain_weights and (dom, b) in self.dom_data:
+                langs_, by_lang, p = self.dom_data[(dom, b)]
+            elif self.cycle and b in self.bins_data:
+                langs_, by_lang, p = self.bins_data[b]
+            elif self.cycle:
+                langs_, by_lang, p = self.bins_data[self.cycle[0]] if not self.domain_weights else next(iter(self.dom_data.values()))
+            else:
+                langs_, by_lang, p = self.langs, self.by_lang, self.p
+            l = langs_.index(iso) if iso in langs_ else int(rng.choice(len(langs_), p=p))
+            out.append(int(by_lang[l][int(rng.integers(len(by_lang[l])))]))
+        return out

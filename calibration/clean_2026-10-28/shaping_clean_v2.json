@@ -1,24 +1,120 @@
 {
  "efi": {
+  "n": 505,
+  "fail_floor": 0.0,
   "usable": true,
-  "n": 0,
   "reliability": 0.5,
   "reliability_same_source": 0.5,
-  "weight_provisional": true,
   "content": {
    "mode": "consensus",
    "beta": 1.0,
-   "why": "QE-free consensus; NO human-reference block: IbomMT (the only reference set) is CC-BY-NC and was removed (owner 2026-10-29), pooled-prior behaviour as the other consensus-only languages"
+   "why": "QE-free consensus (D-43 on clean data): human-reference statistics from the calibration half of IbomMT TRAIN; weight provisional until validate_consensus.py on the new policy"
   },
-  "weight_reason": "consensus-only default 0.5 (no model-dependent validation possible without IbomMT hold-out)",
   "lid": {
-   "enabled": false,
+   "enabled": true,
    "labels": [
     "efi_Latn"
    ],
-   "reason": "no commercially usable human or proxy text measured yet; r4_run_all.py re-measures efi on the cc-by mt560 Efik rows if enough (>= 250) survive"
+   "min_chars": 30,
+   "recall": 0.999,
+   "recall_strict": 0.999,
+   "extra_labels": [],
+   "source": "sft_targets",
+   "n": 1000,
+   "short_recall": {
+    "15": 0.869,
+    "30": 0.984,
+    "60": 0.998,
+    "120": 1.0
+   },
+   "cross_accept": 0.0247
   },
-  "calibration_source": "none"
+  "len_ratio": {
+   "p05": 0.7480314960629921,
+   "p50": 0.9949748743718593,
+   "p95": 1.2987012987012987,
+   "p01": 0.6521739130434783,
+   "p02": 0.7,
+   "corpus": 0.9924048694586938,
+   "s2": 3.427782302384152
+  },
+  "diacritics": {
+   "applies": true,
+   "n": 505,
+   "density": {
+    "mean": 0.06421763247022003,
+    "p01": 0.0,
+    "p10": 0.02214022140221402,
+    "p50": 0.06341463414634146,
+    "p90": 0.1095890410958904,
+    "p99": 0.14814814814814814
+   },
+   "corpus_density": 0.06413203654582965,
+   "zero_share": 0.03366336633663369,
+   "threshold": 0.02214022140221402,
+   "threshold_source": "p10",
+   "allowed": {
+    "marks": {
+     "0323": 3047,
+     "0304": 1297,
+     "0308": 1,
+     "0300": 1,
+     "0301": 1,
+     "0327": 1
+    },
+    "letters": {
+     "2019": 4
+    },
+    "clusters": {
+     "o|0323": 2040,
+     "n|0304": 1296,
+     "u|0323": 569,
+     "i|0323": 438,
+     "e|0308": 1,
+     " |0304": 1,
+     "e|0300": 1,
+     "e|0301": 1,
+     "c|0327": 1
+    }
+   }
+  },
+  "lexical": {
+   "anchor_recall": {
+    "p10": 0.2,
+    "p50": 0.8333333333333334,
+    "n": 384
+   },
+   "anchor_precision": {
+    "p10": 0.25,
+    "p50": 1.0,
+    "n": 505
+   }
+  },
+  "omission": {
+   "cost": 5.0,
+   "met_target": true,
+   "target": 0.02,
+   "false_alarm": 0.0,
+   "note": "",
+   "false_alarm_by_cost": {
+    "4.0": 0.029850746268656716,
+    "5.0": 0.0,
+    "6.0": 0.0,
+    "8.0": 0.0,
+    "12.0": 0.0
+   },
+   "natural_count_mismatch": 0.19029850746268656,
+   "docs": 268
+  },
+  "weight_provisional": true,
+  "weight_reason": "D-43 rule needs within-prompt Spearman on the new policy (WAITS-FOR-MODEL); provisional 0.5",
+  "calibration_source": {
+   "set": "howard-nlp/ibom-mt TRAIN (CC-BY-NC-4.0, owner accepted 2026-10-28, non_commercial)",
+   "split": "calibration half, sha1(calib-split-v1+English)<0.5",
+   "n": 505,
+   "holdout_n": 489,
+   "calibration_half_sha256": "9c30a78542779e3fd527ca8b0ba78f06e10caed7d5d937139abef09ef7497ac8"
+  }
  },
  "afr": {
   "len_ratio": {
@@ -104,7 +200,7 @@
    "met_target": true,
    "target": 0.02,
    "false_alarm": 0.0,
-   "note": "owner decision 2026-10-29: cost fixed at 4.0 (the 2% rule is noisy at about 140 documents); rate at cost 4 kept",
+   "note": "",
    "false_alarm_by_cost": {
     "4.0": 0.0,
     "5.0": 0.0,
@@ -218,11 +314,11 @@
   "reliability": 1.0,
   "reliability_same_source": 1.0,
   "omission": {
-   "cost": 4.0,
-   "met_target": false,
+   "cost": 5.0,
+   "met_target": true,
    "target": 0.02,
-   "false_alarm": 0.028708133971291867,
-   "note": "owner decision 2026-10-29: cost fixed at 4.0 (the 2% rule is noisy at about 140 documents); rate at cost 4 kept",
+   "false_alarm": 0.014354066985645933,
+   "note": "",
    "false_alarm_by_cost": {
     "4.0": 0.028708133971291867,
     "5.0": 0.014354066985645933,
@@ -379,7 +475,7 @@
    "met_target": true,
    "target": 0.02,
    "false_alarm": 0.019138755980861243,
-   "note": "owner decision 2026-10-29: cost fixed at 4.0 (the 2% rule is noisy at about 140 documents); rate at cost 4 kept",
+   "note": "",
    "false_alarm_by_cost": {
     "4.0": 0.019138755980861243,
     "5.0": 0.004784688995215311,
@@ -500,7 +596,7 @@
    "met_target": true,
    "target": 0.02,
    "false_alarm": 0.0,
-   "note": "owner decision 2026-10-29: cost fixed at 4.0 (the 2% rule is noisy at about 140 documents); rate at cost 4 kept",
+   "note": "",
    "false_alarm_by_cost": {
     "4.0": 0.0,
     "5.0": 0.0,
@@ -643,7 +739,7 @@
    "met_target": false,
    "target": 0.02,
    "false_alarm": 0.16267942583732056,
-   "note": "owner decision 2026-10-29: cost fixed at 4.0 (the 2% rule is noisy at about 140 documents); rate at cost 4 kept",
+   "note": "target not reached at any cost; references themselves inconsistent, smallest cost kept",
    "false_alarm_by_cost": {
     "4.0": 0.16267942583732056,
     "5.0": 0.13875598086124402,
@@ -821,11 +917,11 @@
   "reliability": 0.3178667371295196,
   "reliability_same_source": 0.7231800766283525,
   "omission": {
-   "cost": 4.0,
-   "met_target": false,
+   "cost": 5.0,
+   "met_target": true,
    "target": 0.02,
-   "false_alarm": 0.03349282296650718,
-   "note": "owner decision 2026-10-29: cost fixed at 4.0 (the 2% rule is noisy at about 140 documents); rate at cost 4 kept",
+   "false_alarm": 0.009569377990430622,
+   "note": "",
    "false_alarm_by_cost": {
     "4.0": 0.03349282296650718,
     "5.0": 0.009569377990430622,
@@ -961,7 +1057,7 @@
    "met_target": true,
    "target": 0.02,
    "false_alarm": 0.0,
-   "note": "owner decision 2026-10-29: cost fixed at 4.0 (the 2% rule is noisy at about 140 documents); rate at cost 4 kept",
+   "note": "",
    "false_alarm_by_cost": {
     "4.0": 0.0,
     "5.0": 0.0,
@@ -1112,7 +1208,7 @@
    "met_target": true,
    "target": 0.02,
    "false_alarm": 0.0,
-   "note": "owner decision 2026-10-29: cost fixed at 4.0 (the 2% rule is noisy at about 140 documents); rate at cost 4 kept",
+   "note": "",
    "false_alarm_by_cost": {
     "4.0": 0.0,
     "5.0": 0.0,
@@ -1233,11 +1329,11 @@
   "reliability": 0.0,
   "reliability_same_source": 0.0,
   "omission": {
-   "cost": 4.0,
+   "cost": 12.0,
    "met_target": false,
    "target": 0.02,
-   "false_alarm": 0.03349282296650718,
-   "note": "owner decision 2026-10-29: cost fixed at 4.0 (the 2% rule is noisy at about 140 documents); rate at cost 4 kept",
+   "false_alarm": 0.028708133971291867,
+   "note": "target not reached; largest cost used",
    "false_alarm_by_cost": {
     "4.0": 0.03349282296650718,
     "5.0": 0.028708133971291867,
@@ -1359,7 +1455,7 @@
    "met_target": true,
    "target": 0.02,
    "false_alarm": 0.0,
-   "note": "owner decision 2026-10-29: cost fixed at 4.0 (the 2% rule is noisy at about 140 documents); rate at cost 4 kept",
+   "note": "",
    "false_alarm_by_cost": {
     "4.0": 0.0,
     "5.0": 0.0,
@@ -1491,7 +1587,7 @@
    "met_target": true,
    "target": 0.02,
    "false_alarm": 0.0,
-   "note": "owner decision 2026-10-29: cost fixed at 4.0 (the 2% rule is noisy at about 140 documents); rate at cost 4 kept",
+   "note": "",
    "false_alarm_by_cost": {
     "4.0": 0.0,
     "5.0": 0.0,
@@ -1601,11 +1697,11 @@
   "reliability": 0.0,
   "reliability_same_source": 0.0,
   "omission": {
-   "cost": 4.0,
+   "cost": 12.0,
    "met_target": false,
    "target": 0.02,
    "false_alarm": 0.023923444976076555,
-   "note": "owner decision 2026-10-29: cost fixed at 4.0 (the 2% rule is noisy at about 140 documents); rate at cost 4 kept",
+   "note": "target not reached; largest cost used",
    "false_alarm_by_cost": {
     "4.0": 0.023923444976076555,
     "5.0": 0.023923444976076555,
@@ -1721,7 +1817,7 @@
    "met_target": true,
    "target": 0.02,
    "false_alarm": 0.0,
-   "note": "owner decision 2026-10-29: cost fixed at 4.0 (the 2% rule is noisy at about 140 documents); rate at cost 4 kept",
+   "note": "",
    "false_alarm_by_cost": {
     "4.0": 0.0,
     "5.0": 0.0,
@@ -1851,7 +1947,7 @@
    "met_target": true,
    "target": 0.02,
    "false_alarm": 0.0,
-   "note": "owner decision 2026-10-29: cost fixed at 4.0 (the 2% rule is noisy at about 140 documents); rate at cost 4 kept",
+   "note": "",
    "false_alarm_by_cost": {
     "4.0": 0.0,
     "5.0": 0.0,
@@ -1975,7 +2071,7 @@
    "met_target": true,
    "target": 0.02,
    "false_alarm": 0.0,
-   "note": "owner decision 2026-10-29: cost fixed at 4.0 (the 2% rule is noisy at about 140 documents); rate at cost 4 kept",
+   "note": "",
    "false_alarm_by_cost": {
     "4.0": 0.0,
     "5.0": 0.0,
@@ -2089,11 +2185,11 @@
   "reliability": 0.0,
   "reliability_same_source": 0.0,
   "omission": {
-   "cost": 4.0,
+   "cost": 12.0,
    "met_target": false,
    "target": 0.02,
    "false_alarm": 0.028708133971291867,
-   "note": "owner decision 2026-10-29: cost fixed at 4.0 (the 2% rule is noisy at about 140 documents); rate at cost 4 kept",
+   "note": "target not reached; largest cost used",
    "false_alarm_by_cost": {
     "4.0": 0.028708133971291867,
     "5.0": 0.028708133971291867,
@@ -2202,11 +2298,11 @@
   "reliability": 0.0,
   "reliability_same_source": 0.0,
   "omission": {
-   "cost": 4.0,
-   "met_target": false,
+   "cost": 6.0,
+   "met_target": true,
    "target": 0.02,
-   "false_alarm": 0.023923444976076555,
-   "note": "owner decision 2026-10-29: cost fixed at 4.0 (the 2% rule is noisy at about 140 documents); rate at cost 4 kept",
+   "false_alarm": 0.0,
+   "note": "",
    "false_alarm_by_cost": {
     "4.0": 0.023923444976076555,
     "5.0": 0.023923444976076555,
@@ -2317,11 +2413,11 @@
   "reliability": 0.0,
   "reliability_same_source": 0.0,
   "omission": {
-   "cost": 4.0,
+   "cost": 12.0,
    "met_target": false,
    "target": 0.02,
    "false_alarm": 0.028708133971291867,
-   "note": "owner decision 2026-10-29: cost fixed at 4.0 (the 2% rule is noisy at about 140 documents); rate at cost 4 kept",
+   "note": "target not reached; largest cost used",
    "false_alarm_by_cost": {
     "4.0": 0.028708133971291867,
     "5.0": 0.028708133971291867,
@@ -2444,7 +2540,7 @@
    "met_target": true,
    "target": 0.02,
    "false_alarm": 0.0,
-   "note": "owner decision 2026-10-29: cost fixed at 4.0 (the 2% rule is noisy at about 140 documents); rate at cost 4 kept",
+   "note": "",
    "false_alarm_by_cost": {
     "4.0": 0.0,
     "5.0": 0.0,
@@ -2562,11 +2658,11 @@
   "reliability": 0.0,
   "reliability_same_source": 0.0,
   "omission": {
-   "cost": 4.0,
-   "met_target": false,
+   "cost": 5.0,
+   "met_target": true,
    "target": 0.02,
-   "false_alarm": 0.028708133971291867,
-   "note": "owner decision 2026-10-29: cost fixed at 4.0 (the 2% rule is noisy at about 140 documents); rate at cost 4 kept",
+   "false_alarm": 0.019138755980861243,
+   "note": "",
    "false_alarm_by_cost": {
     "4.0": 0.028708133971291867,
     "5.0": 0.019138755980861243,
@@ -2692,7 +2788,7 @@
    "met_target": true,
    "target": 0.02,
    "false_alarm": 0.0,
-   "note": "owner decision 2026-10-29: cost fixed at 4.0 (the 2% rule is noisy at about 140 documents); rate at cost 4 kept",
+   "note": "",
    "false_alarm_by_cost": {
     "4.0": 0.0,
     "5.0": 0.0,
@@ -2824,7 +2920,7 @@
    "met_target": true,
    "target": 0.02,
    "false_alarm": 0.014354066985645933,
-   "note": "owner decision 2026-10-29: cost fixed at 4.0 (the 2% rule is noisy at about 140 documents); rate at cost 4 kept",
+   "note": "",
    "false_alarm_by_cost": {
     "4.0": 0.014354066985645933,
     "5.0": 0.0,
@@ -2942,7 +3038,7 @@
    "met_target": true,
    "target": 0.02,
    "false_alarm": 0.0,
-   "note": "owner decision 2026-10-29: cost fixed at 4.0 (the 2% rule is noisy at about 140 documents); rate at cost 4 kept",
+   "note": "",
    "false_alarm_by_cost": {
     "4.0": 0.0,
     "5.0": 0.0,
@@ -3042,7 +3138,7 @@
    "met_target": true,
    "target": 0.02,
    "false_alarm": 0.004784688995215311,
-   "note": "owner decision 2026-10-29: cost fixed at 4.0 (the 2% rule is noisy at about 140 documents); rate at cost 4 kept",
+   "note": "",
    "false_alarm_by_cost": {
     "4.0": 0.004784688995215311,
     "5.0": 0.004784688995215311,
@@ -3095,7 +3191,7 @@
   "content": {
    "mode": "blend",
    "beta": 0.5,
-   "why": "no clean human reference set for Pidgin: pooled prior, LID off (owner 2026-10-29)"
+   "why": "no clean human reference set for Pidgin: pooled-prior anchors, low weight, pending owner decision"
   },
   "lid": {
    "enabled": false,
@@ -3116,7 +3212,7 @@
     "120": 0.98
    },
    "cross_accept": 0.0202,
-   "reason": "owner 2026-10-29: pcm LID off, pooled prior"
+   "reason": "kept OFF: clean proxy text is not human Pidgin (see report); v8 human measurement 0.809"
   },
   "needs_decision": "pcm had no FLORES+ dev file: v8 was fitted on MAFAND dev (now protected). Pooled prior until the owner decides on a clean human source.",
   "anchors": [
@@ -3201,7 +3297,7 @@
    "met_target": true,
    "target": 0.02,
    "false_alarm": 0.0,
-   "note": "owner decision 2026-10-29: cost fixed at 4.0 (the 2% rule is noisy at about 140 documents); rate at cost 4 kept",
+   "note": "",
    "false_alarm_by_cost": {
     "4.0": 0.0,
     "5.0": 0.0,
@@ -3306,7 +3402,7 @@
    "met_target": true,
    "target": 0.02,
    "false_alarm": 0.0,
-   "note": "owner decision 2026-10-29: cost fixed at 4.0 (the 2% rule is noisy at about 140 documents); rate at cost 4 kept",
+   "note": "",
    "false_alarm_by_cost": {
     "4.0": 0.0,
     "5.0": 0.0,
@@ -3418,7 +3514,7 @@
    "met_target": true,
    "target": 0.02,
    "false_alarm": 0.0,
-   "note": "owner decision 2026-10-29: cost fixed at 4.0 (the 2% rule is noisy at about 140 documents); rate at cost 4 kept",
+   "note": "",
    "false_alarm_by_cost": {
     "4.0": 0.0,
     "5.0": 0.0,
@@ -3536,7 +3632,7 @@
    "met_target": true,
    "target": 0.02,
    "false_alarm": 0.0,
-   "note": "owner decision 2026-10-29: cost fixed at 4.0 (the 2% rule is noisy at about 140 documents); rate at cost 4 kept",
+   "note": "",
    "false_alarm_by_cost": {
     "4.0": 0.0,
     "5.0": 0.0,
@@ -3646,7 +3742,7 @@
    "met_target": true,
    "target": 0.02,
    "false_alarm": 0.0,
-   "note": "owner decision 2026-10-29: cost fixed at 4.0 (the 2% rule is noisy at about 140 documents); rate at cost 4 kept",
+   "note": "",
    "false_alarm_by_cost": {
     "4.0": 0.0,
     "5.0": 0.0,
@@ -3760,7 +3856,7 @@
    "met_target": true,
    "target": 0.02,
    "false_alarm": 0.0,
-   "note": "owner decision 2026-10-29: cost fixed at 4.0 (the 2% rule is noisy at about 140 documents); rate at cost 4 kept",
+   "note": "",
    "false_alarm_by_cost": {
     "4.0": 0.0,
     "5.0": 0.0,
@@ -3873,11 +3969,11 @@
   "reliability": 0.9276052905858694,
   "reliability_same_source": 1.0,
   "omission": {
-   "cost": 4.0,
+   "cost": 12.0,
    "met_target": false,
    "target": 0.02,
    "false_alarm": 0.028708133971291867,
-   "note": "owner decision 2026-10-29: cost fixed at 4.0 (the 2% rule is noisy at about 140 documents); rate at cost 4 kept",
+   "note": "target not reached; largest cost used",
    "false_alarm_by_cost": {
     "4.0": 0.028708133971291867,
     "5.0": 0.028708133971291867,
@@ -3996,11 +4092,11 @@
   "reliability": 0.0,
   "reliability_same_source": 0.0,
   "omission": {
-   "cost": 4.0,
+   "cost": 12.0,
    "met_target": false,
    "target": 0.02,
    "false_alarm": 0.028708133971291867,
-   "note": "owner decision 2026-10-29: cost fixed at 4.0 (the 2% rule is noisy at about 140 documents); rate at cost 4 kept",
+   "note": "target not reached; largest cost used",
    "false_alarm_by_cost": {
     "4.0": 0.028708133971291867,
     "5.0": 0.028708133971291867,
@@ -4122,7 +4218,7 @@
    "met_target": true,
    "target": 0.02,
    "false_alarm": 0.0,
-   "note": "owner decision 2026-10-29: cost fixed at 4.0 (the 2% rule is noisy at about 140 documents); rate at cost 4 kept",
+   "note": "",
    "false_alarm_by_cost": {
     "4.0": 0.0,
     "5.0": 0.0,
@@ -4236,7 +4332,7 @@
    "met_target": true,
    "target": 0.02,
    "false_alarm": 0.0,
-   "note": "owner decision 2026-10-29: cost fixed at 4.0 (the 2% rule is noisy at about 140 documents); rate at cost 4 kept",
+   "note": "",
    "false_alarm_by_cost": {
     "4.0": 0.0,
     "5.0": 0.0,
@@ -4355,11 +4451,11 @@
   "reliability": 0.0,
   "reliability_same_source": 0.0,
   "omission": {
-   "cost": 4.0,
-   "met_target": false,
+   "cost": 5.0,
+   "met_target": true,
    "target": 0.02,
-   "false_alarm": 0.023923444976076555,
-   "note": "owner decision 2026-10-29: cost fixed at 4.0 (the 2% rule is noisy at about 140 documents); rate at cost 4 kept",
+   "false_alarm": 0.019138755980861243,
+   "note": "",
    "false_alarm_by_cost": {
     "4.0": 0.023923444976076555,
     "5.0": 0.019138755980861243,
@@ -4484,7 +4580,7 @@
    "met_target": true,
    "target": 0.02,
    "false_alarm": 0.0,
-   "note": "owner decision 2026-10-29: cost fixed at 4.0 (the 2% rule is noisy at about 140 documents); rate at cost 4 kept",
+   "note": "",
    "false_alarm_by_cost": {
     "4.0": 0.0,
     "5.0": 0.0,
@@ -4610,7 +4706,7 @@
    "met_target": true,
    "target": 0.02,
    "false_alarm": 0.0,
-   "note": "owner decision 2026-10-29: cost fixed at 4.0 (the 2% rule is noisy at about 140 documents); rate at cost 4 kept",
+   "note": "",
    "false_alarm_by_cost": {
     "4.0": 0.0,
     "5.0": 0.0,
@@ -4722,7 +4818,7 @@
    "met_target": true,
    "target": 0.02,
    "false_alarm": 0.0,
-   "note": "owner decision 2026-10-29: cost fixed at 4.0 (the 2% rule is noisy at about 140 documents); rate at cost 4 kept",
+   "note": "",
    "false_alarm_by_cost": {
     "4.0": 0.0,
     "5.0": 0.0,
@@ -4877,7 +4973,7 @@
    "met_target": true,
    "target": 0.02,
    "false_alarm": 0.0,
-   "note": "owner decision 2026-10-29: cost fixed at 4.0 (the 2% rule is noisy at about 140 documents); rate at cost 4 kept",
+   "note": "",
    "false_alarm_by_cost": {
     "4.0": 0.0,
     "5.0": 0.0,
@@ -4992,7 +5088,7 @@
    "met_target": true,
    "target": 0.02,
    "false_alarm": 0.0,
-   "note": "owner decision 2026-10-29: cost fixed at 4.0 (the 2% rule is noisy at about 140 documents); rate at cost 4 kept",
+   "note": "",
    "false_alarm_by_cost": {
     "4.0": 0.0,
     "5.0": 0.0,
@@ -5118,7 +5214,7 @@
    "met_target": true,
    "target": 0.02,
    "false_alarm": 0.0,
-   "note": "owner decision 2026-10-29: cost fixed at 4.0 (the 2% rule is noisy at about 140 documents); rate at cost 4 kept",
+   "note": "",
    "false_alarm_by_cost": {
     "4.0": 0.0,
     "5.0": 0.0,
@@ -5247,7 +5343,7 @@
    "met_target": true,
    "target": 0.02,
    "false_alarm": 0.0,
-   "note": "owner decision 2026-10-29: cost fixed at 4.0 (the 2% rule is noisy at about 140 documents); rate at cost 4 kept",
+   "note": "",
    "false_alarm_by_cost": {
     "4.0": 0.0,
     "5.0": 0.0,
@@ -5698,24 +5794,112 @@
  },
  "ibb": {
   "usable": true,
-  "n": 0,
+  "n": 505,
   "reliability": 0.5,
   "reliability_same_source": 0.5,
-  "weight_provisional": true,
   "content": {
    "mode": "consensus",
    "beta": 1.0,
-   "why": "QE-free consensus; NO human-reference block: IbomMT (the only reference set) is CC-BY-NC and was removed (owner 2026-10-29), pooled-prior behaviour as the other consensus-only languages"
+   "why": "QE-free consensus (D-43 on clean data): human-reference statistics from the calibration half of IbomMT TRAIN; weight provisional until validate_consensus.py on the new policy"
   },
-  "weight_reason": "consensus-only default 0.5 (no model-dependent validation possible without IbomMT hold-out)",
+  "weight_reason": "D-43 rule needs within-prompt Spearman on the new policy (WAITS-FOR-MODEL); provisional 0.5",
   "lid": {
-   "enabled": false,
+   "enabled": true,
    "labels": [
-    "ibb_Latn"
+    "efi_Latn"
    ],
-   "reason": "no commercially usable human or proxy text measured yet; r4_run_all.py re-measures efi on the cc-by mt560 Efik rows if enough (>= 250) survive"
+   "min_chars": 60,
+   "recall": 0.9909,
+   "recall_strict": 0.9909,
+   "extra_labels": [],
+   "source": "sft_targets",
+   "n": 994,
+   "short_recall": {
+    "15": 0.562,
+    "30": 0.871,
+    "60": 0.985,
+    "120": 0.998
+   },
+   "cross_accept": 0.025
   },
-  "calibration_source": "none"
+  "len_ratio": {
+   "p05": 0.7891156462585034,
+   "p50": 1.0319634703196348,
+   "p95": 1.4036697247706422,
+   "p01": 0.6779661016949152,
+   "p02": 0.7108433734939759,
+   "corpus": 1.0512058801010642,
+   "s2": 5.718260478159714
+  },
+  "diacritics": {
+   "applies": true,
+   "n": 505,
+   "density": {
+    "mean": 0.06238264500066255,
+    "p01": 0.003048780487804878,
+    "p10": 0.024691358024691357,
+    "p50": 0.060240963855421686,
+    "p90": 0.10294117647058823,
+    "p99": 0.13125
+   },
+   "corpus_density": 0.06359927408680939,
+   "zero_share": 0.00990099009900991,
+   "threshold": 0.024691358024691357,
+   "threshold_source": "p10",
+   "allowed": {
+    "marks": {
+     "0323": 2915,
+     "0303": 1722,
+     "0308": 1
+    },
+    "letters": {
+     "0259": 13,
+     "2019": 10
+    },
+    "clusters": {
+     "o|0323": 2393,
+     "n|0303": 1722,
+     "i|0323": 522,
+     "e|0308": 1
+    }
+   }
+  },
+  "lexical": {
+   "anchor_recall": {
+    "p10": 0.0,
+    "p50": 0.5,
+    "n": 384
+   },
+   "anchor_precision": {
+    "p10": 0.1800000000000002,
+    "p50": 0.875,
+    "n": 505
+   }
+  },
+  "omission": {
+   "cost": 4.0,
+   "met_target": true,
+   "target": 0.02,
+   "false_alarm": 0.0037313432835820895,
+   "note": "",
+   "false_alarm_by_cost": {
+    "4.0": 0.0037313432835820895,
+    "5.0": 0.0,
+    "6.0": 0.0,
+    "8.0": 0.0,
+    "12.0": 0.0
+   },
+   "natural_count_mismatch": 0.373134328358209,
+   "docs": 268
+  },
+  "weight_provisional": true,
+  "calibration_source": {
+   "set": "howard-nlp/ibom-mt TRAIN (CC-BY-NC-4.0, owner accepted 2026-10-28, non_commercial)",
+   "split": "calibration half, sha1(calib-split-v1+English)<0.5",
+   "n": 505,
+   "holdout_n": 493,
+   "calibration_half_sha256": "741dbf6e2826faee37bb6d01498b501ca0c582059ec3f5c99c8fb7d0844c3c71"
+  }
  },
  "urh": {
   "usable": true,
@@ -6471,6 +6655,259 @@
    "reason": "measured human recall below 0.90 (or too few sentences): the guard is OFF for this language"
   }
  },
+ "guw": {
+  "usable": true,
+  "n": 0,
+  "reliability": 0.5,
+  "reliability_same_source": 0.5,
+  "content": {
+   "mode": "consensus",
+   "beta": 1.0,
+   "why": "new language (2026-11-01): not on the AfriCOMET card: no QE call, consensus (+ rubric) only (D-38)"
+  },
+  "weight_reason": "owner 2026-10-19: 0.5 for the rubric + consensus only languages (applied to the 2026-11-01 additions)",
+  "lid": {
+   "enabled": true,
+   "labels": [
+    "guw_Latn"
+   ],
+   "min_chars": 30,
+   "recall": 0.99,
+   "recall_strict": 0.99,
+   "extra_labels": [],
+   "source": "sft_targets",
+   "n": 800,
+   "short_recall": {
+    "15": 0.706,
+    "30": 0.948,
+    "60": 0.99,
+    "120": 0.997
+   },
+   "cross_accept": 0.0002
+  }
+ },
+ "lue": {
+  "usable": true,
+  "n": 0,
+  "reliability": 0.5,
+  "reliability_same_source": 0.5,
+  "content": {
+   "mode": "consensus",
+   "beta": 1.0,
+   "why": "new language (2026-11-01): not on the AfriCOMET card: no QE call, consensus (+ rubric) only (D-38)"
+  },
+  "weight_reason": "owner 2026-10-19: 0.5 for the rubric + consensus only languages (applied to the 2026-11-01 additions)",
+  "lid": {
+   "enabled": true,
+   "labels": [
+    "lue_Latn"
+   ],
+   "min_chars": 30,
+   "recall": 0.9912,
+   "recall_strict": 0.9912,
+   "extra_labels": [],
+   "source": "sft_targets",
+   "n": 800,
+   "short_recall": {
+    "15": 0.605,
+    "30": 0.916,
+    "60": 0.991,
+    "120": 0.997
+   },
+   "cross_accept": 0.0
+  }
+ },
+ "tll": {
+  "usable": true,
+  "n": 0,
+  "reliability": 0.5,
+  "reliability_same_source": 0.5,
+  "content": {
+   "mode": "consensus",
+   "beta": 1.0,
+   "why": "new language (2026-11-01): not on the AfriCOMET card: no QE call, consensus (+ rubric) only (D-38)"
+  },
+  "weight_reason": "owner 2026-10-19: 0.5 for the rubric + consensus only languages (applied to the 2026-11-01 additions)",
+  "lid": {
+   "enabled": true,
+   "labels": [
+    "tll_Latn"
+   ],
+   "min_chars": 30,
+   "recall": 1.0,
+   "recall_strict": 1.0,
+   "extra_labels": [],
+   "source": "sft_targets",
+   "n": 800,
+   "short_recall": {
+    "15": 0.605,
+    "30": 0.938,
+    "60": 0.999,
+    "120": 1.0
+   },
+   "cross_accept": 0.0001
+  }
+ },
+ "zne": {
+  "usable": true,
+  "n": 0,
+  "reliability": 0.5,
+  "reliability_same_source": 0.5,
+  "content": {
+   "mode": "consensus",
+   "beta": 1.0,
+   "why": "new language (2026-11-01): not on the AfriCOMET card: no QE call, consensus (+ rubric) only (D-38)"
+  },
+  "weight_reason": "owner 2026-10-19: 0.5 for the rubric + consensus only languages (applied to the 2026-11-01 additions)",
+  "lid": {
+   "enabled": true,
+   "labels": [
+    "zne_Latn"
+   ],
+   "min_chars": 60,
+   "recall": 0.9875,
+   "recall_strict": 0.9875,
+   "extra_labels": [],
+   "source": "sft_targets",
+   "n": 800,
+   "short_recall": {
+    "15": 0.502,
+    "30": 0.78,
+    "60": 0.967,
+    "120": 0.998
+   },
+   "cross_accept": 0.0
+  }
+ },
+ "lub": {
+  "usable": true,
+  "n": 0,
+  "reliability": 0.5,
+  "reliability_same_source": 0.5,
+  "content": {
+   "mode": "consensus",
+   "beta": 1.0,
+   "why": "new language (2026-11-01): not on the AfriCOMET card: no QE call, consensus (+ rubric) only (D-38)"
+  },
+  "weight_reason": "owner 2026-10-19: 0.5 for the rubric + consensus only languages (applied to the 2026-11-01 additions)",
+  "lid": {
+   "enabled": true,
+   "labels": [
+    "lub_Latn"
+   ],
+   "min_chars": 30,
+   "recall": 0.9975,
+   "recall_strict": 0.9975,
+   "extra_labels": [],
+   "source": "sft_targets",
+   "n": 800,
+   "short_recall": {
+    "15": 0.579,
+    "30": 0.905,
+    "60": 0.987,
+    "120": 1.0
+   },
+   "cross_accept": 0.0012
+  }
+ },
+ "crs": {
+  "usable": true,
+  "n": 0,
+  "reliability": 0.5,
+  "reliability_same_source": 0.5,
+  "content": {
+   "mode": "consensus",
+   "beta": 1.0,
+   "why": "new language (2026-11-01): not on the AfriCOMET card: no QE call, consensus (+ rubric) only (D-38)"
+  },
+  "weight_reason": "owner 2026-10-19: 0.5 for the rubric + consensus only languages (applied to the 2026-11-01 additions)",
+  "lid": {
+   "enabled": true,
+   "labels": [
+    "crs_Latn"
+   ],
+   "min_chars": 60,
+   "recall": 0.9888,
+   "recall_strict": 0.9888,
+   "extra_labels": [],
+   "source": "sft_targets",
+   "n": 800,
+   "short_recall": {
+    "15": 0.536,
+    "30": 0.839,
+    "60": 0.964,
+    "120": 0.998
+   },
+   "cross_accept": 0.0
+  }
+ },
+ "mfe": {
+  "usable": true,
+  "n": 0,
+  "reliability": 0.5,
+  "reliability_same_source": 0.5,
+  "content": {
+   "mode": "consensus",
+   "beta": 1.0,
+   "why": "new language (2026-11-01): not on the AfriCOMET card: no QE call, consensus (+ rubric) only (D-38)"
+  },
+  "weight_reason": "owner 2026-10-19: 0.5 for the rubric + consensus only languages (applied to the 2026-11-01 additions)",
+  "lid": {
+   "enabled": true,
+   "labels": [
+    "mfe_Latn"
+   ],
+   "min_chars": 60,
+   "recall": 0.9762,
+   "recall_strict": 0.9762,
+   "extra_labels": [],
+   "source": "sft_targets",
+   "n": 800,
+   "short_recall": {
+    "15": 0.403,
+    "30": 0.68,
+    "60": 0.91,
+    "120": 0.995
+   },
+   "cross_accept": 0.0
+  }
+ },
+ "arz": {
+  "usable": true,
+  "n": 0,
+  "reliability": 0.5,
+  "reliability_same_source": 0.5,
+  "content": {
+   "mode": "consensus",
+   "beta": 1.0,
+   "why": "new language (2026-11-01): not on the AfriCOMET card: no QE call, consensus (+ rubric) only (D-38)"
+  },
+  "weight_reason": "owner 2026-10-19: 0.5 for the rubric + consensus only languages (applied to the 2026-11-01 additions)",
+  "lid": {
+   "enabled": true,
+   "labels": [
+    "arz_Arab",
+    "arb_Arab"
+   ],
+   "min_chars": 60,
+   "recall": 0.9862,
+   "recall_strict": 0.785,
+   "extra_labels": [
+    "arb_Arab"
+   ],
+   "source": "sft_targets",
+   "n": 800,
+   "short_recall": {
+    "15": 0.729,
+    "30": 0.851,
+    "60": 0.943,
+    "120": 0.982
+   },
+   "cross_accept": 0.0,
+   "weak": true,
+   "weak_note": "Egyptian Arabic is often labelled arb (Standard Arabic): the guard cannot separate them"
+  }
+ },
  "_word_ratio_pooled": {
   "p95": 1.4074074074074074,
   "p99": 1.6153846153846154,
@@ -6502,14 +6939,24 @@
   "ens_delta": 1.0,
   "pooled_prior_qe2_anchors": null,
   "incomplete": [
-   "AfriCOMET anchors / AUC / reliability for 39 of 42 QE languages (r4_run_all.py), qe2 / ens (SSA-COMET-MTL), pooled-prior anchors recomputed from all 42",
-   "LID of efi (and ibb) if a commercially usable proxy is found",
-   "lexicons (44 weak languages)",
-   "model-dependent items: delta check, consensus weights, NLLB rule, tail_gap"
+   "qe2/ens blocks (SSA-COMET-MTL scores) unless listed under qe_phases_present_ssa",
+   "reliability_same_source_provisional languages need phase B (half, append)",
+   "efi/ibb QE-free: weight provisional (model validation)",
+   "pcm: needs owner decision"
   ],
-  "version": "v2 (owner decisions 2026-10-29 applied)",
-  "omission_policy": "fixed 4.0",
-  "efi_ibb": "no IbomMT-derived value",
-  "ibom_removed": true
+  "v2_additions": {
+   "languages": [
+    "guw",
+    "lue",
+    "tll",
+    "zne",
+    "lub",
+    "crs",
+    "mfe",
+    "arz"
+   ],
+   "source": "shaping_flores_dev_v6.json blocks of these languages only (consensus mode, no reference-derived numbers)",
+   "created": "2026-11-01"
+  }
  }
 }

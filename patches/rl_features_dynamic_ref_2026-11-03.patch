@@ -1,0 +1,1998 @@
+diff -ruN orig/DECISIONS.md new/DECISIONS.md
+--- orig/DECISIONS.md	2026-11-03 00:27:24
++++ new/DECISIONS.md	2026-11-03 01:20:44
+@@ -577,3 +577,11 @@
+ **D-67 Gemma-4-31B-it as a data teacher for the 23 consensus-only languages: feasibility probe, verdict per language, first synthetic data for kea + kri (agent R15, 2026-10-22; owner request ish bin bbj oke tsc dag, extended by the lead to all 23; box files only, nothing pushed).** Data/scripts `reports/data/gemma31b_weak_language_probe_2026-10-22/` (+ `gemma31b_probe_*_2026-10-22.csv`); the report text was delivered in the agent's hand-back message (the sandbox refused to write the .md). *Design:* English -> X, held-out references = R4 validation windows of the original SFT (JW/Bible-style, NOT seen by final_1433, but the same distribution it was trained on, so the comparison favours our model) + every benchmark row that exists (FLORES+ kea vmw, FLORES-MOZ seh, SmolSent nbl ach nyn ndc kri, GlotStoryBook dag tsc nbl her, IbomMT ibb, SALT ach nyn, Wikimedia dag, 5 gold bin) + 40 training windows (`seen`, favours us); systems zero-shot / BM25 retrieval few-shot k=3, k=8 / k=8 + language note vs final_1433 greedy; chrF++ NFC, paired bootstrap CI, GlotLID (all 23 `*_Latn` labels exist), copy-of-English, repetition, finish, example-copy overlap. *Rule (fixed before running):* fs8 >= +3 chrF++ with CI > 0 and clean checks. *Result:* **only kea (+16.1 [+13.9,+18.1]; FLORES+ +20.6, val +8.9) and kri (+3.5 [+1.4,+5.8]; SmolSent +10.8 but JW val -3.6 [-5.9,-1.3] -> conditional pass)** pass; the six named languages fail (ish -1.1, bin -5.9, bbj -2.4, oke -9.7, tsc -3.3, dag -10.3), as do the other 15 (her +0.2 and nbl -0.8 level; ibb urh seh vmw sid dua bas yao nyn ach ndc wes shi clearly worse). Zero-shot Gemma writes none of the Edoid / Gur / Grassfields / Tswa / Cross-River languages (chrF++ 1-14); k=3 is 6-12 points below k=8; a language note adds nothing (CIs contain 0) - the few-shot result is retrieval of the JW phrases our model already absorbed. *Generation (kea, kri only):* English from the RL prompt pools (FineWeb-Edu, Wikipedia, PubMed, LibreTexts, arXiv, AfriScience train; R10 hold-out filtered), k=8 BM25 shots, greedy + T0.7 sample, filters (meta text, copy, ratio, repetition, numbers, example copy, GlotLID, chrF++ consistency >= 60, dedupe), R4 window format, `audit_packed` OK: `/workspace/jobs/r15/gemma_synth_v1_full` kea 2,515 pairs / 177,507 target tokens, kri 1,887 pairs / 175,200 target tokens (earlier partial `gemma_synth_v1`: 81 k + 78 k). Far below 2 M tokens/language: ~1,000-2,000 filtered pairs per hour and language at <= 30 GiB for the engine on a shared card (RL contention); stopped on the lead's request. Known quality limits: kea shows some Portuguese leakage, kri English words inside science text (no code-mixing filter beyond copy detection); no QE validated for these languages. *Licence:* the Gemma-4 model card says Apache-2.0 and the linked page is the Apache text; neither it nor the prohibited-use policy restricts training on outputs (unlike the Gemma-1..3 Terms, whose "Model Derivatives" clause covers synthetic-data distillation and still governs our Gemma-3-270m base); English source licences are kept per row (`src_licence`, Wikipedia rows share-alike). Not legal advice; the docs page carries a deprecation notice pointing to gemma.ai.
+ 
+ **D-68 Anchors v3: domain-robust entries for the religious-text-only languages, a length bug of the padding feature, the Gemini Urhobo silver set as a check (agent R9, 2026-10-22; CPU only, `/workspace/jobs/r7` read-only, nothing pushed).** Report `reports/anchors_v3_2026-10-22.md`, data `reports/anchors_v3_2026-10-22/`. Trigger: the live run failed 26-63 % of the samples of sid wal bas yao dua urh (12-22 % kri kon pcm wes) with `stuffed_output`. (1) Diagnosis: those languages DO have v2 entries (basis `pivot_held`: 300-600 held-out Bible / JW sentences; no v1 blocks because they have no human references). Two causes: (a) a length bug in the padding feature for ALL languages: the plain type / token ratio falls with length (0.79 / 0.66 / 0.51 / 0.43 / 0.32 for human documents of < 100 / 100-200 / 200-400 / 400-800 / > 800 words) while the v2 thresholds came from windows of <= 250 words: v2 pad deficit > 0 on 5 / 14 / 31 / 81 / 100 % of real human documents (12,649 smol_doc + AfriScience), highest long-bucket thresholds in sid 0.74, wal 0.66, yao 0.59, pcm 0.59, kri 0.52 = the order of the live failures; (b) domain: thresholds, dictionary and bigram table all from religious text. Domain study on 13 languages with religious AND out-of-domain human text (SmolSent, GlotStoryBook, Wikimedia, IbomMT, SALT, FLORES+, FineTranslations): the v2 method flags the out-of-domain human text at median 34.6 % (stop-word) / 46.9 % (padding), gate level 3 % / 14.5 % (max 57 % / 88 %); the v3 recipe (per-sub-domain thresholds, loosest over sets, margin that never reaches <= 0, minimum-document-frequency dictionary, no religious bigram table, segmental type / token ratio, loose loanword whitelist, English-text rows removed): padding median 0 % (p75 1.2 %), copy 0.2 % (max 6 %), stop-word graded 14.7 % (so it is switched off wherever no out-of-domain held-out set exists), gate level <= 1.1 % / 4.6 %. (2) `calibration/anchors_v3.json` (v2 untouched): 16 rebuilt languages (urh sid wal bas dua yao wes oke bbj bin ish iso swc kon kri pcm) with per-language `basis`, `usable` (false = detector off), `gate_ok` (false for all 16: nothing rebuilt may fail a sample), `usable_reason`, leave-one-set-out numbers; sets under 100 sentences are fitted but never judged, 100-199 by the Clopper-Pearson upper bound; urh: copy on, stop-word off, padding off (3.3 % > 3 %), basis `jw_pivot + gemini_silver_check`. `--retime-all` refits pad (61 languages) and stop-word (60) with the segmental ratio (`ttr_mode seg100`) and the real documents: human-document pad FP 0.7 / 4.8 / 1.0 / 0.2 / 0 % (v2 5 / 14 / 31 / 81 / 100 %). (3) Code, flag-gated: `Anchors2` reads `usable` / `gate_ok` / `ttr_mode`; `_stuff_gate` honours `gate_ok`; patches in `patches/anchors_v3_D68_*.patch` (verified with `patch --dry-run` on the live tree `gemma_mt_run2`); restart = only `reward.anchors_calibration_path -> anchors_v3.json` plus those patches. (4) Gemini Urhobo silver set (230 pairs, generated by Gemini, not native-verified): used only as a check: the urh detectors flag 0 of 48 / 170 silver sentences (v2 too) like the held-out JW text (consistent, bound 2.2 %); 34.5 % of its word types are unseen in our SFT corpus (JW held-out 5.4 %), templated connectors khwọndeniefẹ 17.7 / 1,000 tokens (JW 0); chrF++ agreement with Gemini-Urhobo (set A 60 phrases / B-F 170 sentences kept apart, bootstrap 95 %): final_1433 14.5 [11.9, 17.6] / 24.7 [23.8, 25.7], A2W alpha 0.7 13.0 [10.6, 15.9] / 22.9 [21.9, 23.9], published <HF_ORG> 8.7 / 13.4; later RL checkpoints not on the box (no weights in `runs/final2/last`), not evaluated. (5) `scripts/refit_urh_bench.py` re-runs everything on a native-verified benchmark (FP with exact upper bounds, refit that can only loosen, dev chrF++ harness entry); 100 sentences cannot certify a rate below 3 % (0 of 100 -> <= 3.0 %). Tests: `tests/test_anchors_v3.py` (9), `tests/test_anchors_v2.py` (20); full suite 900 passed, 11 skipped.
++
++**D-69 Dynamic sampling for GRPO (DAPO-style; owner 2026-11-03, 385M run; code + CPU tests; default OFF in code, ON in rl_A_b64 / rl_B1_b256 / rl_C_mixed / rl_F_final, OFF in the preflight and in F2).** Module `gemma_mt/rl/dynamic_sampling.py`, keys `dynamic_sampling`, `dynamic_sampling_oversample` (1.1), `dynamic_sampling_max_refills` (2), `dynamic_sampling_min_std` (0.01). A group (16 samples incl. the greedy member) whose reward std is below `min_std` (floor 1e-6 = grpo's flat threshold; the SAMPLED members only with `greedy_stats: sampled`, the non-failed members with `hard_fail_mask: exclude`) has advantage 0, and a group with a tiny but non-zero spread is worse (`A = (r - mean) / (std + 1e-4)` turns jitter in the third decimal of a QE score into |A| ~ 1): such groups cost generation, scoring and backward passes for nothing. A step draws ceil(prompts x oversample) prompts, drops the flat groups, refills the deficit with ONE replacement prompt per dropped group (`PromptSchedule.replacements`: same language, same domain and length bin when the pool has one, so the schedule's language / domain / bin mixture is kept in expectation although the filter removes groups unevenly; a dropped group is replaced once, at most `max_refills` extra generation rounds, i.e. at most 1 + 2 generation calls per step) and updates on the first `prompts` informative groups; surplus informative groups are discarded (counted as waste). Fewer than `prompts` informative groups after the refills: the step trains on those (`ds/short_batch`); none at all: the first `prompts` groups of round 0 are kept (zero advantages, `ds/fallback`). MONITORING IS NOT FILTERED: reward, reward_std, hard_fail_frac, finished_rate, greedy_finished / loop rate, per-language statistics (D-65 window) and the translation archive are computed on ALL generated groups, because the filter removes exactly the all-failed groups and a kept-only finished rate (the early-stop / plateau input) would look better than the policy is; `completion_len`, `adv_*`, `weight_mean`, the update itself and the greedy advantage share use the kept groups. New record keys `ds/requested|generated_groups|kept_groups|dropped_flat|surplus|refill_rounds|short_batch|fallback|flat_frac|wasted_completion_tokens|wasted_token_frac|reward_kept|gen_groups_per_kept`, `ds_flat/<iso>` (the worst five languages of the step), running table `<out_dir>/dynamic_sampling_by_language.json` (generated / dropped_flat / surplus / kept per language, written every 10 steps). Step accounting: one optimiser step = one update on the kept groups, `save_every`, the KL guard, warm-up, extension and patience logic are untouched; the token loss is normalised by the kept tokens (flat groups no longer dilute it: the effective step is a little larger when many groups are flat, the KL guard watches it). Expected cost: `1 + flat share` generation work (+10 % oversample), measured flat shares in the preflight were 0.00-0.06, higher in weak / consensus languages. Tests `tests/test_dynamic_sampling.py` (12), `tests/test_dynamic_ref_loop.py` (4, CPU end to end, needs torch).
++
++**D-70 Reference-anchored reward term (owner 2026-11-03, 385M run; default OFF in code (`reward.reference_weight: 0`), 0.35 in rl_A_b64 / rl_B1_b256 / rl_C_mixed / rl_F_final).** A prompt row may carry a HUMAN reference translation (`reference`, `ref_source`, `ref_licence` columns; `RLPrompts.reference`, `Sample.reference`); for a sample that passed every hard check (status ok) and whose reward is above the failure penalty: `r = (1 - w) * r_existing + w * consensus_value(chrF++(translation, reference))`, w = `reference_weight`, chrF++ = sacrebleu CHRF(word_order=2) via `rl/consensus.chrf_sentence`, value = the FIXED linear map [0, 100] -> the reward range of the shaping preset ([-2, +2.25]) that the consensus signal already uses. Choice of the map: inside a GRPO group every sample of a prompt carries the same reference, so the offset of the map cancels in the standardisation and only its slope (0.0425 reward units per chrF++ point, within-group chrF++ spreads of 5-10 points = 0.2-0.4 reward units, the order of the QE spread) matters; the same map keeps the combination inside the reward range (a convex mix of two values inside it) and makes the term comparable with the consensus-mode languages. Failures (no end of turn, bad prefix, copy, loops, wrong language ...), the guards, the constraint / fluency / length penalties and the per-language weight are untouched; a sample at the failure penalty is never lifted. Training steps only: evaluation (`rollout_and_reward(with_reference=False)`) and the hold-out reward stay reference-free. Metrics `reward/ref/n|chrf_mean|reward_shift_mean`. Reference pool (`scripts/build_rl_prompts_ref.py`, release 1, domain "ref", mixed by `domain_weights` at 15 % of the draws): 12,000 rows in 8 languages from HUMAN sources only: AfriScience-MT train (amh hau lug nso yor zul; Apache-2.0, professional translators; sentences b64 and 2-6 sentence windows b256 from consecutive sentences of one paper) and IbomMT train (efi ibb; CC-BY-NC-4.0), every pair checked on both sides against the protected index (6 IbomMT hits dropped). NOT used: MT560 / OPUS (web-mined and religious text, no row-level provenance), Pontoon / Weblate (UI strings), sudoping01 Wolof (provenance undocumented), the Bible (cap 25 % of the reference rows would apply, none in release 1), MAFAND train (owner), and Vukuzenzele eval / test (CC-BY-4.0, SFT read train only) because the corpus is lower-cased on both sides (no upper-case letter in any row): a case-sensitive chrF++ against it would reward lower-cased output. CAVEAT: the IbomMT train pairs were in the SFT data (once); the AfriScience train pairs were not in the A0 / stage-B packs (the science SFT stage has not run), but may overlap through other sources (unmeasured: the shards hold tokens only). Coverage: 8 of the 84 RL languages (none of the weak tail languages kbp nus kea kam bam mos umb kmb ... has a non-religious human source); with 15 % of the draws on 8 languages those get ~1.9 % each. Tests `tests/test_reference_reward.py` (7).
++
++**D-71 Advantage std floor + per-prompt group statistics (owner 2026-11-03, 385M run; default OFF in code (`adv_std_floor: 0`, `log_group_stats: false`), `adv_std_floor: 0.02` and `log_group_stats: true` in rl_A_b64 / rl_B1_b256 / rl_C_mixed / rl_F_final).** `grpo._denominator`: advantage = (r - mean) / max(std, adv_std_floor) instead of / (std + 1e-4), in all three advantage functions; a group with std below the floor keeps the shape of its advantages at a magnitude std / floor < 1 (jitter in the third decimal of a QE score is no longer blown up to |A| ~ 1); exactly flat groups stay 0. Floor 0.02 reward units (~0.005 QE units at the shaping slope of ~4 reward units per QE unit) because the preflight did not log within-group stds (only the pooled `reward_std` 0.55-0.77 and `flat_group_frac` median 0.016): a larger value could have shrunk every advantage. `log_group_stats` writes `<out_dir>/group_stats.jsonl` (prompt index, language, bin, domain, std, mean, hard failures, guide flag per generated group) and `group_std/p05..p75`; `scripts/group_std_percentiles.py` turns it into the percentiles to re-set the floor (about the 10th percentile) at a checkpoint boundary; it is also the input of a later prompt replay by learnability (not implemented). Tests `tests/test_adv_floor_guide.py`.
++
++**D-72 Beam-guided group member (owner 2026-11-03, 385M run; default OFF in code (`guide_fraction: 0`), `guide_fraction: 0.25`, `guide_beams: 4`, `guide_adv_share_cap: 0.25` in rl_A_b64 / rl_B1_b256 / rl_C_mixed / rl_F_final, 0 in F2).** For `guide_fraction` of the prompts of a step the beam-4 translation of the CURRENT policy (`sampling.generate_beam_completions`, HF `generate` on the trainer's policy, same prompt ids / stop ids / max_new_tokens as the sampling) replaces the last sampled member of the group (group size unchanged; `Sample.guide`): scored like any member (guards, penalties, reference term), part of the group mean / std, KL term and KL record like the greedy member (the loop has no KL exclusion for the greedy member), skipped by the sampler log-prob check and the confidence rules. Off-policy: its token log-probs are the current policy's (teacher forcing) with the ratio fixed at 1 (single update per batch), no importance weight. A guide with a hard failure is dropped from its group (`grpo.group_advantages*(drop=...)`: out of mean / std, advantage 0; dynamic sampling measures informativeness without it; a non-failed guide counts, so a group informative only because of the guide is kept). `guide_adv_share_cap`: the guides' share of the step's token-weighted |advantage| is limited to the cap (`grpo.cap_member_share`). Requires `hard_fail_mask: off`. HF beam search instead of a vLLM beam op: the engine protocol has no beam command; cost = one beam search per guided prompt on the training GPU (logged: `guide/seconds`, `guide/overhead_frac`). Logging per step and per language (`guide_by_language.json`): guide / MBR pick of the group's own samples (chrF++ agreement; not added) / greedy member / group mean rewards and how often each is the best member, win rate of the guide (decode study: MBR-16 > beam-4 mainly in weak languages, so the guide may later be switched per language). MBR-from-samples as the guide itself was not implemented (it is already a member of the group, adding it would only double-count it). Tests `tests/test_adv_floor_guide.py`.
+diff -ruN orig/gemma_mt/rl/data.py new/gemma_mt/rl/data.py
+--- orig/gemma_mt/rl/data.py	2026-11-03 00:27:24
++++ new/gemma_mt/rl/data.py	2026-11-03 01:20:44
+@@ -8,6 +8,9 @@
+     src_afr_tokens  int   length of `english` in Davlan/afro-xlmr-large-76L tokens (the AfriCOMET encoder), <= 256
+     source_dataset  str   where the sentence came from (kept for diagnostics / per-source reporting)
+     domain          str   optional (D-52, science run): "science" / "general"; read by `PromptSchedule(domain=..., domain_weights=...)`
++    reference       str   optional (2026-11-03, reference-anchored reward): a HUMAN translation of `english` into `iso`; rows that carry one get a chrF++ term against it (reward.reference_weight)
++    ref_source      str   optional: where the reference pair came from (provenance, diagnostics)
++    ref_licence     str   optional: licence class of the reference pair
+ Extra columns are ignored. Rows with an unknown language, a language outside SUPPORTED_RL, an empty source or
+ `src_afr_tokens` above the limit are dropped and counted.
+ """
+@@ -22,7 +25,7 @@
+ from gemma_mt.data.io import iter_rows
+ from gemma_mt.languages import LANGUAGES, SUPPORTED_RL, canonical_iso
+ 
+-RL_COLUMNS = ("english", "iso", "language", "src_afr_tokens", "source_dataset", "length_bin", "domain")
++RL_COLUMNS = ("english", "iso", "language", "src_afr_tokens", "source_dataset", "length_bin", "domain", "reference", "ref_source", "ref_licence")
+ MAX_SRC_AFR_TOKENS = 256
+ # Input-length bins (AfriCOMET-encoder tokens of the source), named by their UPPER bound (owner 2026-10-12: 64, 256, 512, 1024
+ # for Gemma, 2048 added for SabiYarn). Prompt sets are balanced uniformly across them per language; training is staged
+@@ -51,6 +54,8 @@
+     name_mismatches: int = 0
+     length_bin: List[str] = field(default_factory=list)       # one of LENGTH_BINS per prompt (derived from src_afr_tokens)
+     domain: List[str] = field(default_factory=list)           # D-52: "" / "general" / "science" ... per prompt (empty list = the file has no domain column)
++    reference: List[str] = field(default_factory=list)        # 2026-11-03: human reference translation per prompt ("" = none); empty list = no row carries one
++    ref_source: List[str] = field(default_factory=list)       # provenance of the reference pair (same convention as `reference`)
+ 
+     def __len__(self) -> int:
+         return len(self.english)
+@@ -61,6 +66,9 @@
+     def domain_of(self, i: int) -> str:
+         return self.domain[i] if self.domain else ""
+ 
++    def reference_of(self, i: int) -> str:
++        return self.reference[i] if self.reference else ""
++
+     def languages(self) -> List[str]:
+         return sorted(set(self.iso))
+ 
+@@ -70,7 +78,7 @@
+                     limit: int = 0) -> RLPrompts:
+     """`token_counter` fills `src_afr_tokens` for rows that lack it (AfriCOMET encoder tokens)."""
+     keep_langs = {canonical_iso(l) for l in languages} if languages else None
+-    eng, iso, src, ntok, lbin, dom = [], [], [], [], [], []
++    eng, iso, src, ntok, lbin, dom, ref, rsrc = [], [], [], [], [], [], [], []
+     dropped: Dict[str, int] = {}
+     mism = 0
+ 
+@@ -106,6 +114,10 @@
+         lbin.append(str(lb) if lb in LENGTH_BINS else "")
+         dm = row.get("domain")
+         dom.append(str(dm) if isinstance(dm, str) else "")
++        rf = row.get("reference")
++        ref.append(rf.strip() if isinstance(rf, str) else "")
++        rs = row.get("ref_source")
++        rsrc.append(str(rs) if isinstance(rs, str) and ref[-1] else "")
+         if limit and len(eng) >= limit:
+             break
+     if token_counter is not None:
+@@ -118,11 +130,11 @@
+         if len(keep) != len(eng):
+             drop_n = len(eng) - len(keep)
+             dropped["source_too_long"] = dropped.get("source_too_long", 0) + drop_n
+-            eng, iso, src, ntok, lbin, dom = ([x[i] for i in keep] for x in (eng, iso, src, ntok, lbin, dom))
++            eng, iso, src, ntok, lbin, dom, ref, rsrc = ([x[i] for i in keep] for x in (eng, iso, src, ntok, lbin, dom, ref, rsrc))
+     lbin = [b or bin_of_tokens(n) for b, n in zip(lbin, ntok)]
+     if any(dom):
+         dom = [d or "general" for d in dom]      # a pool that mixes files with and without a `domain` column (385M plan: the FineWeb/Wikipedia files have none, the news files say "news"): unlabeled rows are "general"
+-    return RLPrompts(eng, iso, src, ntok, dropped, mism, lbin, dom if any(dom) else [])
++    return RLPrompts(eng, iso, src, ntok, dropped, mism, lbin, dom if any(dom) else [], ref if any(ref) else [], rsrc if any(ref) else [])
+ 
+ 
+ class PromptSchedule:
+@@ -302,3 +314,22 @@
+         u = rng.random(total)
+         picks = [int(by_lang[l][int(u[k] * len(by_lang[l]))]) for k, l in enumerate(langs)]
+         return picks[rank::world]
++
++    def replacements(self, step: int, salt: int, slots: Sequence[Tuple[str, str, str]]) -> List[int]:
++        """Dynamic sampling (rl/dynamic_sampling.py): one replacement prompt per slot, a pure function of (seed, step, salt, slots). A slot is (iso, domain, length_bin) of a DROPPED prompt ("" = unknown): the
++        replacement is a uniformly drawn prompt of the SAME language from the pool the dropped one came from (same domain and bin when the schedule uses them), so the language / domain / bin mixture of the
++        schedule is kept in expectation although the filter removes groups unevenly; a language the pool lacks is replaced by an ordinary draw of that pool. The language floor is not applied."""
++        rng = np.random.default_rng([self.seed, int(step), 90210, int(salt)])
++        out: List[int] = []
++        for iso, dom, b in slots:
++            if self.domain_weights and (dom, b) in self.dom_data:
++                langs_, by_lang, p = self.dom_data[(dom, b)]
++            elif self.cycle and b in self.bins_data:
++                langs_, by_lang, p = self.bins_data[b]
++            elif self.cycle:
++                langs_, by_lang, p = self.bins_data[self.cycle[0]] if not self.domain_weights else next(iter(self.dom_data.values()))
++            else:
++                langs_, by_lang, p = self.langs, self.by_lang, self.p
++            l = langs_.index(iso) if iso in langs_ else int(rng.choice(len(langs_), p=p))
++            out.append(int(by_lang[l][int(rng.integers(len(by_lang[l])))]))
++        return out
+diff -ruN orig/gemma_mt/rl/dynamic_sampling.py new/gemma_mt/rl/dynamic_sampling.py
+--- orig/gemma_mt/rl/dynamic_sampling.py	1969-12-31 17:00:00
++++ new/gemma_mt/rl/dynamic_sampling.py	2026-11-03 01:20:44
+@@ -0,0 +1,205 @@
++# SPDX-License-Identifier: AGPL-3.0-or-later
++"""Dynamic sampling for GRPO (DAPO-style; owner 2026-11-03, default OFF in `RLConfig.dynamic_sampling`).
++
++A group (the G completions of one prompt) whose rewards have (almost) no spread has advantage 0 in every member: it costs generation, scoring and backward passes and teaches nothing
++(and a group with a tiny spread is worse: `A = (r - mean) / (std + eps)` turns jitter in the 3rd decimal of a QE score into advantages of order 1). With dynamic sampling a step
++    1. draws `ceil(n_target * oversample)` prompts and generates + scores them as usual,
++    2. marks the groups whose reward spread is below `min_std` as UNINFORMATIVE (flat),
++    3. while fewer than `n_target` informative groups exist and fewer than `max_refills` refill rounds were spent: draws one REPLACEMENT prompt for each dropped group (same language, same
++       domain and length bin as the dropped prompt where the pool has one, so the language / domain / bin mixture of the schedule is kept in expectation; `PromptSchedule.replacements`),
++       generates and scores only those,
++    4. keeps the first `n_target` informative groups (in generation order) for the policy update; all other groups only feed the monitoring (reward, finished / loop rates, per-language
++       statistics, the translation archive), which must not be biased by the filter (a flat all-failed group is exactly the group the filter removes).
++If after the refills fewer than `n_target` informative groups exist the step trains on those (a smaller batch; counted); with none at all the first `n_target` groups of round 0 are kept
++(zero advantages, the step is wasted but never empty). Everything here is pure python / numpy: the tensors stay in train_rl.
++
++Informative = std of the group's rewards >= min_std, where the group is the SAMPLED members only when `greedy_stats == "sampled"` (the greedy member is a baseline-relative extra there, exactly as in
++`grpo.group_advantages_sampled_baseline`), and, with `hard_fail_mask == "exclude"`, the non-failed members only (fewer than 2 of them: uninformative).
++"""
++
++from __future__ import annotations
++
++import dataclasses
++from dataclasses import dataclass, field
++from typing import Any, Callable, Dict, List, Optional, Sequence, Tuple
++
++import numpy as np
++
++FLAT_THRESHOLD = 1e-6                           # = grpo.group_advantages' flat_threshold: a group with std below this has advantage 0 whatever min_std says
++
++
++def informative_groups(rewards: Sequence[float], group_size: int, min_std: float, sampled_only: bool = False,
++                       failed: Optional[Sequence[bool]] = None, mask_mode: str = "off", drop: Optional[Sequence[bool]] = None) -> List[bool]:
++    """One flag per group (rows [kG, (k+1)G) of `rewards`): True = the group's advantages are not all (nearly) zero. `drop`: members that are not part of the group (a hard-failed beam-guide member);
++    the spread is measured without them, exactly as the advantage does. A guide that is NOT dropped counts, so a group that is informative only because of the guide is kept."""
++    r = np.asarray(list(rewards), dtype=np.float64)
++    if r.size % group_size:
++        raise ValueError(f"{r.size} rewards are not divisible into groups of {group_size}")
++    r = r.reshape(-1, group_size)
++    f = np.zeros_like(r, dtype=bool) if failed is None else np.asarray(list(failed), dtype=bool).reshape(-1, group_size)
++    dr = np.zeros_like(r, dtype=bool) if drop is None else np.asarray(list(drop), dtype=bool).reshape(-1, group_size)
++    out: List[bool] = []
++    for row, fr, dd in zip(r, f, dr):
++        if dd.any():
++            if sampled_only:
++                row, dd = row[:-1], dd[:-1]
++            row = row[~dd]
++            if row.size < 2:
++                out.append(False)
++                continue
++            out.append(bool(row.std() >= max(min_std, FLAT_THRESHOLD)))
++            continue
++        if mask_mode == "exclude":
++            row = row[~fr]
++            if row.size < 2:
++                out.append(False)
++                continue
++        elif sampled_only:
++            row = row[:-1]
++        out.append(bool(row.std() >= max(min_std, FLAT_THRESHOLD)))
++    return out
++
++
++# ------------------------------------------------------------------------------------------------ row selection / concatenation
++def _pick(x: Any, rows: List[int], n: int) -> Any:
++    """x[rows] for a per-row list of length n; everything else (empty lists = feature off, dicts, scalars) unchanged."""
++    if isinstance(x, list) and len(x) == n and n > 0:
++        return [x[r] for r in rows]
++    return x
++
++
++def _rows_of(groups: Sequence[int], group_size: int) -> List[int]:
++    return [g * group_size + j for g in groups for j in range(group_size)]
++
++
++def subset_dataclass(obj: Any, groups: Sequence[int], group_size: int, n: int) -> Any:
++    """Copy of a Rollout / RewardOutput / list-of-Sample holder with only the rows of `groups` (per-row list fields; the dict fields are copied as they are)."""
++    rows = _rows_of(groups, group_size)
++    return dataclasses.replace(obj, **{f.name: _pick(getattr(obj, f.name), rows, n) for f in dataclasses.fields(obj)})
++
++
++def subset_rollout_output(roll: Any, samples: List[Any], out: Any, groups: Sequence[int], group_size: int) -> Tuple[Any, List[Any], Any]:
++    n = len(roll.completions)
++    rows = _rows_of(groups, group_size)
++    return subset_dataclass(roll, groups, group_size, n), [samples[r] for r in rows], subset_dataclass(out, groups, group_size, n)
++
++
++def _cat(a: Any, b: Any, na: int, nb: int) -> Any:
++    if isinstance(a, list) and isinstance(b, list):
++        if len(a) == na and len(b) == nb:
++            return a + b
++        if len(a) == na and not b:                       # the second batch has the optional column empty: pad (None / "" are what "not judged" is everywhere)
++            return a + [None] * nb
++        if not a and len(b) == nb:
++            return [None] * na + b
++    return a
++
++
++def _merge_stats(a: Dict[str, float], b: Dict[str, float], na: int, nb: int) -> Dict[str, float]:
++    """Sample-weighted mean of two stats dicts (the stats of a reward call are rates / means over its samples); keys of one side only are kept."""
++    out = dict(a)
++    for k, v in b.items():
++        out[k] = (a[k] * na + v * nb) / max(na + nb, 1) if k in a and isinstance(a[k], (int, float)) and isinstance(v, (int, float)) else v
++    return out
++
++
++def concat_rollout_output(first: Tuple[Any, List[Any], Any], second: Tuple[Any, List[Any], Any]) -> Tuple[Any, List[Any], Any]:
++    (r1, s1, o1), (r2, s2, o2) = first, second
++    n1, n2 = len(r1.completions), len(r2.completions)
++    roll = dataclasses.replace(r1, **{f.name: _cat(getattr(r1, f.name), getattr(r2, f.name), n1, n2) for f in dataclasses.fields(r1)})
++    skip = {"stats", "confidence", "fluency"}
++    out = dataclasses.replace(o1, **{f.name: _cat(getattr(o1, f.name), getattr(o2, f.name), n1, n2) for f in dataclasses.fields(o1) if f.name not in skip},
++                              stats=_merge_stats(o1.stats, o2.stats, n1, n2), confidence=dict(o1.confidence, **o2.confidence), fluency=dict(o1.fluency, **o2.fluency))
++    return roll, list(s1) + list(s2), out
++
++
++# ------------------------------------------------------------------------------------------------ the step
++@dataclass
++class DynamicResult:
++    roll: Any                                   # ALL generated rows (every round), in generation order
++    samples: List[Any]
++    out: Any
++    prompt_idx: List[int]                       # prompt index per group of the all-rows lists
++    informative: List[bool]                     # per group of the all-rows lists
++    keep: List[int]                             # the groups (indices into the all-rows lists) used for the update, in order
++    stats: Dict[str, float] = field(default_factory=dict)
++    by_lang: Dict[str, Dict[str, int]] = field(default_factory=dict)       # iso -> {generated, dropped_flat, surplus, kept}
++
++
++def dynamic_rollout(first_idx: Sequence[int], n_target: int, group_size: int, max_refills: int, min_std: float,
++                    generate: Callable[[List[int], int], Tuple[Any, List[Any], Any]], redraw: Callable[[List[int], int], List[int]],
++                    iso_of: Callable[[int], str], sampled_only: bool = False, mask_mode: str = "off") -> DynamicResult:
++    """`generate(indices, round)` -> (roll, samples, out) for those prompts (round 0 = the first draw); `redraw(dropped_prompt_indices, round)` -> one replacement prompt index per dropped prompt."""
++    G = group_size
++    roll, samples, out = generate(list(first_idx), 0)
++    prompt_idx = list(first_idx)
++    rounds = 0
++
++    def flags():
++        failed = [st != "ok" for st in out.status] if mask_mode == "exclude" else None
++        drop = [bool(getattr(smp, "guide", False)) and st != "ok" for smp, st in zip(samples, out.status)]            # a hard-failed beam-guide member leaves its group
++        return informative_groups(out.rewards, G, min_std, sampled_only, failed, mask_mode, drop if any(drop) else None)
++
++    fl = flags()
++    replaced = set()
++    while sum(fl) < n_target and rounds < max_refills:
++        deficit = n_target - sum(fl)
++        todo = [g for g, ok in enumerate(fl) if not ok and g not in replaced][:deficit]
++        if not todo:
++            break
++        replaced.update(todo)
++        rounds += 1
++        new_idx = list(redraw([prompt_idx[g] for g in todo], rounds))
++        if len(new_idx) != len(todo):
++            raise ValueError(f"redraw returned {len(new_idx)} prompts for {len(todo)} dropped groups")
++        roll, samples, out = concat_rollout_output((roll, samples, out), generate(new_idx, rounds))
++        prompt_idx += new_idx
++        fl = flags()
++    inf = [g for g, ok in enumerate(fl) if ok]
++    fallback = not inf
++    keep = (list(range(min(n_target, len(fl)))) if fallback else inf[:n_target])
++    keep_set = set(keep)
++    lens = [len(c) for c in roll.completions]
++    by_lang: Dict[str, Dict[str, int]] = {}
++    wasted = 0
++    for g, p in enumerate(prompt_idx):
++        d = by_lang.setdefault(iso_of(p), {"generated": 0, "dropped_flat": 0, "surplus": 0, "kept": 0})
++        d["generated"] += 1
++        if g in keep_set:
++            d["kept"] += 1
++        elif not fl[g]:
++            d["dropped_flat"] += 1
++            wasted += sum(lens[g * G:(g + 1) * G])
++        else:
++            d["surplus"] += 1
++            wasted += sum(lens[g * G:(g + 1) * G])
++    n_groups = len(prompt_idx)
++    n_flat = sum(1 for ok in fl if not ok)
++    stats = {"ds/requested": float(n_target), "ds/generated_groups": float(n_groups), "ds/kept_groups": float(len(keep)),
++             "ds/dropped_flat": float(sum(1 for g, ok in enumerate(fl) if not ok and g not in keep_set)),           # flat and not used (== flat unless the all-flat fallback kept some)
++             "ds/surplus": float(sum(1 for g, ok in enumerate(fl) if ok and g not in keep_set)), "ds/refill_rounds": float(rounds), "ds/short_batch": float(len(keep) < n_target),
++             "ds/fallback": float(fallback), "ds/flat_frac": n_flat / max(n_groups, 1),
++             "ds/wasted_completion_tokens": float(wasted), "ds/wasted_token_frac": wasted / max(sum(lens), 1)}
++    return DynamicResult(roll, samples, out, prompt_idx, fl, keep, stats, by_lang)
++
++
++class LanguageCounters:
++    """Running per-language counters of the filter (written to <out_dir>/dynamic_sampling_by_language.json): the kept rate of a language must not collapse (a language whose groups are all flat would
++    otherwise lose its share of the update silently)."""
++
++    def __init__(self):
++        self.c: Dict[str, Dict[str, int]] = {}
++
++    def add(self, by_lang: Dict[str, Dict[str, int]]) -> None:
++        for iso, d in by_lang.items():
++            t = self.c.setdefault(iso, {"generated": 0, "dropped_flat": 0, "surplus": 0, "kept": 0})
++            for k, v in d.items():
++                t[k] += v
++
++    def table(self) -> Dict[str, Dict[str, float]]:
++        return {iso: dict(d, flat_rate=d["dropped_flat"] / max(d["generated"], 1), kept_rate=d["kept"] / max(d["generated"], 1)) for iso, d in sorted(self.c.items())}
++
++    def step_metrics(self, by_lang: Dict[str, Dict[str, int]], top: int = 5) -> Dict[str, float]:
++        """Per-language flat share of THIS step, only for the languages that lost groups (at most `top` of them, the worst first)."""
++        worst = sorted(((d["dropped_flat"] / max(d["generated"], 1), iso) for iso, d in by_lang.items() if d["dropped_flat"]), reverse=True)[:top]
++        return {f"ds_flat/{iso}": float(v) for v, iso in worst}
+diff -ruN orig/gemma_mt/rl/grpo.py new/gemma_mt/rl/grpo.py
+--- orig/gemma_mt/rl/grpo.py	2026-11-03 01:04:41
++++ new/gemma_mt/rl/grpo.py	2026-11-03 01:20:44
+@@ -29,27 +29,55 @@
+ import torch
+ 
+ 
++def _denominator(std: torch.Tensor, std_eps: float, std_floor: float) -> torch.Tensor:
++    """Divisor of the standardised advantage. Default `std + std_eps`; with `std_floor` > 0 (config adv_std_floor, owner 2026-11-03) `max(std, std_floor)`: a group whose spread is below the floor
++    keeps the shape of its advantages but a magnitude of std / floor < 1, so near-flat groups (jitter in the third decimal of a QE score) are damped instead of being blown up to |A| ~ 1."""
++    if std_floor and std_floor > 0:
++        return torch.clamp(std, min=float(std_floor))
++    return std + std_eps
++
++
++def _masked_mean_std(r: torch.Tensor, keep: torch.Tensor):
++    """Mean / population std over the members with keep=True of every row of r [B, G]; also the number kept."""
++    k = keep.to(torch.float32)
++    n = k.sum(dim=1, keepdim=True)
++    mean = (r * k).sum(dim=1, keepdim=True) / n.clamp(min=1.0)
++    std = ((((r - mean) ** 2) * k).sum(dim=1, keepdim=True) / n.clamp(min=1.0)).sqrt()
++    return mean, std, n
++
++
+ def group_advantages(rewards: torch.Tensor, group_size: int, norm: str = "mean_std", std_eps: float = 1e-4,
+-                     flat_threshold: float = 1e-6) -> Tuple[torch.Tensor, float]:
++                     flat_threshold: float = 1e-6, std_floor: float = 0.0, drop: Optional[torch.Tensor] = None) -> Tuple[torch.Tensor, float]:
+     """rewards [N] with the G completions of a prompt CONSECUTIVE (N % G == 0). Returns (advantages [N], fraction of
+-    groups whose rewards are all (nearly) equal)."""
++    groups whose rewards are all (nearly) equal). `drop` (bool [N], default None = nobody): members DROPPED from their group (a hard-failed beam-guide member, config guide_fraction): they
++    are left out of the group mean / std and get advantage 0; a group with fewer than 2 members left is flat."""
+     if rewards.dim() != 1 or rewards.numel() % group_size != 0:
+         raise ValueError(f"rewards {tuple(rewards.shape)} not divisible into groups of {group_size}")
+     if norm not in ("mean", "mean_std"):
+         raise ValueError("norm must be 'mean' or 'mean_std'")
+     r = rewards.detach().to(torch.float32).view(-1, group_size)
++    if drop is not None and bool(drop.any()):
++        keep = ~drop.view(-1, group_size)
++        mean, std, n = _masked_mean_std(r, keep)
++        flat = (std.squeeze(1) < flat_threshold) | (n.squeeze(1) < 2)
++        adv = r - mean
++        if norm == "mean_std":
++            adv = adv / _denominator(std, std_eps, std_floor)
++        adv = adv * keep.to(adv.dtype)
++        adv = torch.where(flat.unsqueeze(1), torch.zeros_like(adv), adv)
++        return adv.reshape(-1), float(flat.float().mean().item())
+     mean = r.mean(dim=1, keepdim=True)
+     std = r.std(dim=1, keepdim=True, unbiased=False)
+     flat = std.squeeze(1) < flat_threshold
+     adv = r - mean
+     if norm == "mean_std":
+-        adv = adv / (std + std_eps)
++        adv = adv / _denominator(std, std_eps, std_floor)
+     adv = torch.where(flat.unsqueeze(1), torch.zeros_like(adv), adv)
+     return adv.reshape(-1), float(flat.float().mean().item())
+ 
+ 
+ def group_advantages_sampled_baseline(rewards: torch.Tensor, group_size: int, norm: str = "mean_std", std_eps: float = 1e-4, flat_threshold: float = 1e-6,
+-                                      greedy_cap: float = 0.0) -> Tuple[torch.Tensor, float]:
++                                      greedy_cap: float = 0.0, std_floor: float = 0.0, drop: Optional[torch.Tensor] = None) -> Tuple[torch.Tensor, float]:
+     """D-67 (flag `greedy_stats: sampled`): for groups whose LAST member is the greedy completion (`greedy_in_group`). Baseline and std are computed over the group_size - 1 SAMPLED members only; the greedy member
+     gets its advantage relative to those statistics, (r_greedy - mean_sampled) / (std_sampled + eps), clipped to +-greedy_cap when greedy_cap > 0. Reason (R8): a looping greedy member (reward ~ -2) inflates the std of the
+     whole group 1.3-2.3x and cuts the |advantage| of the sampled members by 25-35 %; with the sampled-only statistics the sampled members keep the advantages they would have without a greedy member.
+@@ -60,20 +88,28 @@
+         raise ValueError("norm must be 'mean' or 'mean_std'")
+     r = rewards.detach().to(torch.float32).view(-1, group_size)
+     samp = r[:, :-1]
+-    mean = samp.mean(dim=1, keepdim=True)
+-    std = samp.std(dim=1, keepdim=True, unbiased=False)
+-    flat = std.squeeze(1) < flat_threshold
++    if drop is not None and bool(drop.any()):                  # `drop`: members left out of the sampled statistics (a hard-failed beam-guide member), advantage 0
++        keep = ~drop.view(-1, group_size)
++        mean, std, n = _masked_mean_std(samp, keep[:, :-1])
++        flat = (std.squeeze(1) < flat_threshold) | (n.squeeze(1) < 2)
++    else:
++        keep = None
++        mean = samp.mean(dim=1, keepdim=True)
++        std = samp.std(dim=1, keepdim=True, unbiased=False)
++        flat = std.squeeze(1) < flat_threshold
+     adv = r - mean
+     if norm == "mean_std":
+-        adv = adv / (std + std_eps)
++        adv = adv / _denominator(std, std_eps, std_floor)
+     if greedy_cap and greedy_cap > 0:
+         adv[:, -1] = adv[:, -1].clamp(-float(greedy_cap), float(greedy_cap))
++    if keep is not None:
++        adv = adv * keep.to(adv.dtype)
+     adv = torch.where(flat.unsqueeze(1), torch.zeros_like(adv), adv)
+     return adv.reshape(-1), float(flat.float().mean().item())
+ 
+ 
+ def group_advantages_masked(rewards: torch.Tensor, group_size: int, failed: torch.Tensor, mode: str = "zero", norm: str = "mean_std", std_eps: float = 1e-4,
+-                            flat_threshold: float = 1e-6) -> Tuple[torch.Tensor, float]:
++                            flat_threshold: float = 1e-6, std_floor: float = 0.0) -> Tuple[torch.Tensor, float]:
+     """D-61 (OFF by default, train_rl `hard_fail_mask`): advantages with the hard-failed members (status != ok: truncated, copy_source, wrong_language ...) taken out of the policy gradient.
+       zero     the group baseline and std still include the failed members (so the survivors' advantages are exactly those of `group_advantages`), the failed members get advantage 0.
+       exclude  baseline and std are computed over the NON-failed members only (the failures do not move the survivors' advantages either); failed members get advantage 0; a group with < 2
+@@ -83,7 +119,7 @@
+     if mode not in ("zero", "exclude"):
+         raise ValueError("mode must be 'zero' or 'exclude'")
+     if mode == "zero":
+-        adv, flat = group_advantages(rewards, group_size, norm, std_eps, flat_threshold)
++        adv, flat = group_advantages(rewards, group_size, norm, std_eps, flat_threshold, std_floor)
+         return torch.where(failed.view(-1), torch.zeros_like(adv), adv), flat
+     r = rewards.detach().to(torch.float32).view(-1, group_size)
+     ok = (~failed.view(-1, group_size)).to(torch.float32)
+@@ -94,10 +130,27 @@
+     flat = (std.squeeze(1) < flat_threshold) | (n_ok.squeeze(1) < 2)
+     adv = (r - mean)
+     if norm == "mean_std":
+-        adv = adv / (std + std_eps)
++        adv = adv / _denominator(std, std_eps, std_floor)
+     adv = adv * ok
+     adv = torch.where(flat.unsqueeze(1), torch.zeros_like(adv), adv)
+     return adv.reshape(-1), float(flat.float().mean().item())
++
++
++def cap_member_share(adv: torch.Tensor, lengths: torch.Tensor, members: torch.Tensor, cap: float) -> Tuple[torch.Tensor, float, float]:
++    """Safety for the beam-guide members (config guide_adv_share_cap): their share of the step's token-weighted |advantage| (sum over the members of |A| x completion length, the weight each token
++    gets in the 'token' loss) is limited to `cap`; if it is larger, their advantages are multiplied by the factor that brings it to exactly `cap`. Returns (advantages, share before, factor)."""
++    if not cap or cap <= 0 or not bool(members.any()):
++        return adv, 0.0, 1.0
++    w = adv.abs() * lengths.to(adv.dtype)
++    tot = float(w.sum())
++    mem = float(w[members].sum())
++    share = mem / tot if tot > 0 else 0.0
++    if share <= cap or mem <= 0:
++        return adv, share, 1.0
++    factor = cap * (tot - mem) / ((1.0 - cap) * mem)
++    out = adv.clone()
++    out[members] = out[members] * factor
++    return out, share, factor
+ 
+ 
+ def scale_last_member(adv: torch.Tensor, group_size: int, scale: float) -> torch.Tensor:
+diff -ruN orig/gemma_mt/rl/reward.py new/gemma_mt/rl/reward.py
+--- orig/gemma_mt/rl/reward.py	2026-11-03 00:27:24
++++ new/gemma_mt/rl/reward.py	2026-11-03 01:20:44
+@@ -250,6 +250,12 @@
+     longdoc_compare_v1: bool = False                   # DIAGNOSTIC (385M plan, owner 2026-11-02: longdoc_v2 also on the SHORT bins, longdoc_min_src_words 1): log `longdoc/delta_reward_<short|mid|long>` (longdoc-path reward minus the plain-mean chunk reward of the same sample), `longdoc/v1_reject_rate`, `longdoc/v1_only_reject_rate`, `longdoc/ld_only_reject_rate` (what the v1 whole-text repetition guards would have rejected next to the longdoc severity); a few string checks per sample, rewards unchanged
+     longdoc_pool_severity: float = 0.5                 # a sample with a repetition severity at or above this stays out of the consensus pool (near-loops would agree with each other)
+     keep_chunk_rewards: bool = False                   # diagnostics: RewardOutput.chunk_rewards = per sample [(reward, weight)] of its plan items
++    # 2026-11-03 (owner): REFERENCE-ANCHORED term. A prompt row that carries a HUMAN reference translation (Sample.reference) adds a chrF++ (word order 2) term against it:
++    #     r = (1 - w) * r_existing + w * consensus_value(chrF++(translation, reference))      w = reference_weight, same fixed linear chrF -> reward map as the consensus signal (rl/consensus.py)
++    # Only samples that passed every hard check (status ok) and whose existing reward is above the failure penalty are touched: failures, guards and the constraint penalties keep their value, a
++    # sample can never be lifted out of a failure class by the reference. Within a GRPO group the offset of the map cancels in the standardisation, only its slope (reward units per chrF++ point
++    # = (hi - lo) / 100) matters. 0 = off (every old config).
++    reference_weight: float = 0.0
+ 
+ 
+ 
+@@ -261,6 +267,8 @@
+     post_stop_tokens: int = 0  # non-padding tokens the SAMPLER produced after the first stop id and that were cut before this call
+     domain: str = ""           # D-52: domain label of the prompt ("science" / "general" / ""), read by the science anchor only
+     logp: Optional[float] = None   # D-47: mean token log-prob (nats) of the sampled completion under the sampling distribution, language tag and end token left out (None = unknown)
++    reference: str = ""            # 2026-11-03: human reference translation of the source ("" = none); used only when reward.reference_weight > 0
++    guide: bool = False            # 2026-11-03: the beam-guided member of its group (train_rl guide_fraction); scored like any member, never judged by the confidence rules (its log-prob is not a sampler's)
+ 
+ 
+ @dataclass
+@@ -286,6 +294,7 @@
+     confidence: Dict[str, float] = field(default_factory=dict)              # D-47: metrics of the confidence rules of this call, keys `confidence/...` (empty when reward.confidence is off); logged as they are
+     fluency: Dict[str, float] = field(default_factory=dict)                 # D-62: metrics of the fluency penalty of this call, keys `fluency/...` (empty when reward.fluency is off); logged as they are
+     conf_gate: List[Optional[str]] = field(default_factory=list)            # D-47: per sample, the reason its group was gated out ("few_valid" | "wrong_language" | "collapsed"), "ok" if not, None = not judged
++    ref_chrf: List[Optional[float]] = field(default_factory=list)          # 2026-11-03 (reward.reference_weight > 0): per sample, chrF++ against its human reference when the reference term was applied, else None
+ 
+ 
+ class TranslationReward:
+@@ -644,6 +653,8 @@
+         dia_by_lang: Dict[str, List[float]] = {}
+         sci_def: List[Optional[float]] = [None] * n       # D-52: per sample, source-weighted mean science-anchor deficit of its scored chunks (None = not judged)
+         rewards, weights = [], []
++        ref_chrf: List[Optional[float]] = [None] * n       # reference-anchored term: chrF++ against the human reference (None = no reference / not applied)
++        ref_shift: List[float] = [0.0] * n
+         flu_stats: Dict[str, Dict[str, List[float]]] = {}              # D-62: per language lists of comb_z / penalised flags (empty when reward.fluency is off)
+         ld_info: List[Optional[Dict[str, float]]] = [None] * n
+         chunk_rw: List[Optional[List[Tuple[float, float]]]] = [None] * n
+@@ -715,6 +726,12 @@
+                     fp = self._fluency_penalty(lang, texts[i], flu_stats)
+                     if fp > 0:
+                         rewards[-1] = max(self.penalty, rewards[-1] - fp)
++                if cfg.reference_weight > 0 and s.reference and status[i] == "ok" and rewards[-1] > self.penalty + 1e-9:       # reference-anchored term (see RewardConfig.reference_weight)
++                    ref_chrf[i] = cons.chrf_sentence(texts[i], nfc(s.reference) if cfg.nfc else s.reference)
++                    r_before = rewards[-1]
++                    lo_r, hi_r = self.shaper.reward_range if cfg.consensus_scale is None else cfg.consensus_scale
++                    rewards[-1] = (1.0 - cfg.reference_weight) * r_before + cfg.reference_weight * cons.consensus_value(ref_chrf[i], lo_r, hi_r)
++                    ref_shift[i] = rewards[-1] - r_before
+                 qe[i] = sum(raw) / len(raw) if raw else None
+                 if dia_w[0] > 0:
+                     dia_def[i] = dia_w[1] / dia_w[0]
+@@ -727,6 +744,12 @@
+                            lid_label=lid_label, consensus_chrf=chrf_mean, content_mode=[m for m, _ in applied],
+                            n_chunks=n_chunks, failed_chunks=failed_chunks)
+         out.science_deficit = sci_def
++        if cfg.reference_weight > 0:
++            out.ref_chrf = ref_chrf
++            done = [c for c in ref_chrf if c is not None]
++            out.stats["ref/n"] = float(len(done))
++            out.stats["ref/chrf_mean"] = sum(done) / len(done) if done else 0.0
++            out.stats["ref/reward_shift_mean"] = sum(x for x, c in zip(ref_shift, ref_chrf) if c is not None) / len(done) if done else 0.0
+         if self.fluency is not None:
+             out.fluency = self._fluency_metrics(flu_stats)
+         if self.conf is not None:
+diff -ruN orig/gemma_mt/rl/sampling.py new/gemma_mt/rl/sampling.py
+--- orig/gemma_mt/rl/sampling.py	2026-11-03 01:04:41
++++ new/gemma_mt/rl/sampling.py	2026-11-03 01:20:44
+@@ -96,6 +96,35 @@
+     return Rollout(rep_prompts, comps, fin, lps if trans is not None else None, post)
+ 
+ 
++def generate_beam_completions(model: Any, prompts: Sequence[Sequence[int]], *, num_beams: int, max_new_tokens: int, stop_ids: Sequence[int], pad_id: int, device, autocast=None) -> Rollout:
++    """ONE beam-search completion (HF `generate`, `num_beams` beams, no sampling) per prompt, in prompt order; cut at the first stop id like every other rollout. Used for the beam-guided group
++    member (config guide_fraction): it runs on the policy held by the trainer, i.e. the CURRENT policy. `sampler_logp` is None (the beam output is not a sample of any sampling distribution)."""
++    import torch
++
++    width = max(len(p) for p in prompts)
++    ids = torch.full((len(prompts), width), pad_id, dtype=torch.long)
++    mask = torch.zeros_like(ids)
++    for i, p in enumerate(prompts):                     # LEFT pad, as in generate_completions
++        ids[i, width - len(p):] = torch.tensor(list(p), dtype=torch.long)
++        mask[i, width - len(p):] = 1
++    was_training = model.training
++    model.eval()
++    ctx = autocast if autocast is not None else nullcontext()
++    with torch.no_grad(), ctx:
++        out = model.generate(input_ids=ids.to(device), attention_mask=mask.to(device), max_new_tokens=max_new_tokens, num_beams=int(num_beams), num_return_sequences=1, do_sample=False,
++                             early_stopping=True, temperature=None, top_p=None, top_k=None, eos_token_id=list(stop_ids), pad_token_id=pad_id, use_cache=True)
++    if was_training:
++        model.train()
++    comps, fin, post = [], [], []
++    benign = set(int(x) for x in stop_ids) | {int(pad_id)}
++    for row in out[:, width:].cpu().tolist():
++        kept, finished = cut_at_stop(row, stop_ids)
++        comps.append(kept)
++        fin.append(finished)
++        post.append(sum(1 for t in row[len(kept):] if int(t) not in benign) if finished else 0)
++    return Rollout([list(p) for p in prompts], comps, fin, None, post)
++
++
+ def assemble_batch(prompts: Sequence[Sequence[int]], completions: Sequence[Sequence[int]], pad_id: int, device=None):
+     """-> dict(input_ids, attention_mask, completion_mask, prompt_width) as torch tensors."""
+     import torch
+diff -ruN orig/gemma_mt/rl/train_rl.py new/gemma_mt/rl/train_rl.py
+--- orig/gemma_mt/rl/train_rl.py	2026-11-03 00:27:24
++++ new/gemma_mt/rl/train_rl.py	2026-11-03 01:20:44
+@@ -27,18 +27,20 @@
+ import sys
+ import time
+ from dataclasses import dataclass, field
+-from typing import Any, Dict, List, Optional
++from typing import Any, Dict, List, Optional, Tuple
+ 
+ from gemma_mt import format as fmt
+ from gemma_mt.languages import SUPPORTED_RL
++from gemma_mt.rl import consensus as cons
+ from gemma_mt.rl import grpo
+ from gemma_mt.languages import canonical_iso
+ from gemma_mt.rl.data import LENGTH_BINS, MIXED, PromptSchedule, RLPrompts, load_rl_prompts
++from gemma_mt.rl.dynamic_sampling import LanguageCounters, dynamic_rollout, subset_rollout_output
+ from gemma_mt.rl.reward import RewardConfig, Sample, TranslationReward
+ from gemma_mt.rl.optim import build_rl_optimizer, optimizer_kind_of_state
+ from gemma_mt.rl.run_controls import KLGuard, PatienceStop, PlateauStop, RunControls, extension_decision
+ from gemma_mt.rl.lang_weights import build_controller as build_lang_weight_controller
+-from gemma_mt.rl.sampling import Rollout, assemble_batch, generate_completions, merge_greedy_into_groups
++from gemma_mt.rl.sampling import Rollout, assemble_batch, generate_beam_completions, generate_completions, merge_greedy_into_groups
+ from gemma_mt.utils import (MetricsLogger, dataclass_from_dict, get_rng_state, load_yaml, parse_overrides,
+                             set_rng_state, set_seed)
+ 
+@@ -67,6 +69,14 @@
+     greedy_adv_cap: float = 0.0                     # D-67: with greedy_stats: sampled, |advantage of the greedy member| <= this before greedy_adv_scale (0 = no cap)
+     greedy_share_warn: float = 0.0                  # 2026-10-28: greedy_in_group only. > 0: print a warning (every 10 steps at most) when the greedy members' share of the step's token-weighted |advantage| (greedy_adv_token_share, logged every step) exceeds this. Uniform share is 1/group_size; suggested 0.35
+     greedy_adv_scale: float = 1.0                   # D-59: multiplier of the GREEDY member's advantage when greedy_in_group (1 = as before). The greedy completion of a long looping document dominates the clipped gradient
++    # Dynamic sampling (DAPO-style, owner 2026-11-03; default OFF = every old config unchanged; rl/dynamic_sampling.py): groups whose rewards have no spread (std < dynamic_sampling_min_std; the sampled members only
++    # with greedy_stats: sampled) give zero advantage. The step draws ceil(prompts x oversample) prompts, drops the flat groups, refills the deficit with replacement prompts of the same language / domain / bin
++    # (at most dynamic_sampling_max_refills extra generation rounds) and updates on the first `prompts` informative groups. reward / finished_rate / greedy_* / per-language statistics / the archive are computed on ALL generated
++    # groups (the filter removes exactly the all-failed groups, so a kept-only finished rate would look better than it is); the step record gets ds/... counters, <out_dir>/dynamic_sampling_by_language.json the running per-language table.
++    dynamic_sampling: bool = False
++    dynamic_sampling_oversample: float = 1.0
++    dynamic_sampling_max_refills: int = 2
++    dynamic_sampling_min_std: float = 0.01
+     micro_batch_seqs: int = 16
+     num_updates_per_batch: int = 1
+     temperature: float = 1.0
+@@ -120,6 +130,18 @@
+     grad_clip: float = 1.0
+     advantage_norm: str = "mean_std"                # mean_std (repo) | mean
+     std_eps: float = 1.0e-4
++    adv_std_floor: float = 0.0                      # owner 2026-11-03 (default 0 = off, advantage = (r - mean) / (std + std_eps)): > 0: advantage = (r - mean) / max(std, adv_std_floor), so only near-flat groups (std < floor) are damped (|A| ~ std / floor)
++    log_group_stats: bool = False                   # owner 2026-11-03: per-prompt group statistics of every step to <out_dir>/group_stats.jsonl (prompt index, language, bin, domain, std, mean, hard failures; the input of a later 'prompt replay by learnability') and group_std/p05..p75 in the step record
++    # Beam-guided group member (owner 2026-11-03, default OFF = every old config unchanged): for `guide_fraction` of the prompts of a step the beam-`guide_beams` translation of the CURRENT policy (HF `generate`, num_beams) replaces
++    # the sampled member just before the greedy one, labelled `Sample.guide`; it is scored like every member, enters the group mean / std and carries its own (positive when better than the samples) advantage.
++    # OFF-POLICY handling: the beam output is not a sample of the policy; its token log-probs are the current policy's (teacher forcing, as for every member) and the ratio stays exactly 1 (single update per batch), i.e. a REINFORCE term
++    # on an expert-style sequence, no importance weight. The sampler log-prob check skips it. Cost: one beam search per guided prompt (num_beams x the greedy cost on the training GPU, no vLLM).
++    # The guide replaces the last SAMPLED member (the group keeps its size; it is flagged, with greedy_in_group the group reads: samples ..., guide, greedy). Like the greedy member it takes part in the group statistics and in the
++    # KL term / KL record as any row (the loop has no KL exclusion for the greedy member either); a guide with a hard failure (status != ok) is DROPPED from its group (left out of mean / std, advantage 0). guide_adv_share_cap
++    # (0 = off): the guides' share of the token-weighted |advantage| of the step is limited to this (their advantages are scaled down to it). Needs hard_fail_mask: off.
++    guide_adv_share_cap: float = 0.0
++    guide_fraction: float = 0.0
++    guide_beams: int = 4
+     kl_coef: float = 0.05
+     # KL guard (owner 2026-10-20, after phase 2b's KL ran away to 2.3): when the mean KL of the last `kl_guard_window` steps exceeds the threshold the learning rate is
+     # multiplied by `kl_guard_factor` (not below `kl_guard_min_scale`), at most once per `kl_guard_cooldown` steps. 0 = off. Nothing is stopped or cancelled.
+@@ -290,6 +312,14 @@
+         raise ValueError("greedy_adv_scale must be in [0, 1] and can differ from 1 only with greedy_in_group")
+     if not (0.0 <= cfg.greedy_share_warn < 1.0) or (cfg.greedy_share_warn > 0 and not cfg.greedy_in_group):
+         raise ValueError("greedy_share_warn must be in [0, 1) and > 0 only with greedy_in_group")
++    if cfg.adv_std_floor < 0:
++        raise ValueError("adv_std_floor must be >= 0 (0 = off)")
++    if not (0.0 <= cfg.guide_fraction <= 1.0) or (cfg.guide_fraction > 0 and (cfg.guide_beams < 2 or cfg.group_size < 4)):
++        raise ValueError("guide_fraction must be in [0, 1]; with guide_fraction > 0 guide_beams >= 2 and group_size >= 4 (the guide replaces a sampled member)")
++    if not (0.0 <= cfg.guide_adv_share_cap < 1.0) or (cfg.guide_fraction > 0 and cfg.hard_fail_mask != "off"):
++        raise ValueError("guide_adv_share_cap must be in [0, 1); guide_fraction > 0 needs hard_fail_mask: off (a failed guide is dropped from its group by its own rule)")
++    if cfg.dynamic_sampling and (cfg.dynamic_sampling_oversample < 1.0 or cfg.dynamic_sampling_max_refills < 0 or cfg.dynamic_sampling_min_std < 0):
++        raise ValueError("dynamic_sampling: need dynamic_sampling_oversample >= 1, dynamic_sampling_max_refills >= 0, dynamic_sampling_min_std >= 0")
+     if cfg.kl_guard_threshold < 0:
+         raise ValueError("kl_guard_threshold must be >= 0 (0 = off)")
+     if cfg.kl_guard_threshold > 0 and (not 0.0 < cfg.kl_guard_factor < 1.0 or not 0.0 < cfg.kl_guard_min_scale <= 1.0 or cfg.kl_guard_window < 1 or cfg.kl_guard_cooldown < 0):
+@@ -455,13 +485,17 @@
+ def _subset(p: RLPrompts, idx: List[int]) -> RLPrompts:
+     return RLPrompts([p.english[i] for i in idx], [p.iso[i] for i in idx], [p.source_dataset[i] for i in idx],
+                      [p.src_afr_tokens[i] for i in idx], dict(p.dropped), p.name_mismatches,
+-                     [p.length_bin[i] for i in idx] if p.length_bin else [], [p.domain[i] for i in idx] if p.domain else [])
++                     [p.length_bin[i] for i in idx] if p.length_bin else [], [p.domain[i] for i in idx] if p.domain else [],
++                     [p.reference[i] for i in idx] if p.reference else [], [p.ref_source[i] for i in idx] if p.ref_source else [])
+ 
+ 
+ def rollout_and_reward(policy, tokenizer, reward: TranslationReward, prompts: RLPrompts, indices: List[int],
+                        cfg: RLConfig, stop_ids, pad_id, device, autocast, greedy: bool = False,
+-                       return_logprobs: bool = False, max_new_tokens: Optional[int] = None, sampler=None, key: int = 0):
+-    """`sampler`: a gemma_mt.rl.vllm_sampler sampler (already synced to `policy`); None = HF `generate` on `policy` (the original path)."""
++                       return_logprobs: bool = False, max_new_tokens: Optional[int] = None, sampler=None, key: int = 0, with_reference: bool = False, guide: Optional[Tuple[float, int]] = None, timings: Optional[Dict[str, float]] = None):
++    """`sampler`: a gemma_mt.rl.vllm_sampler sampler (already synced to `policy`); None = HF `generate` on `policy` (the original path).
++    `guide` = (fraction, beams) (training steps only, group_size >= 4, not greedy): that fraction of the prompts (a fixed-size random subset, a function of (cfg.seed, key)) gets the beam-search output of the current policy as the group's
++    member just before the greedy one (group size unchanged; the member is flagged Sample.guide); None = off.
++    `with_reference` (training steps only): the prompts' human references go to the reward (reference-anchored term, reward.reference_weight); evaluation leaves it off, so the hold-out reward stays comparable."""
+     prompt_ids = [fmt.build_prompt(prompts.english[i], prompts.iso[i], tokenizer) for i in indices]
+     G = 1 if greedy else cfg.group_size
+     kw = dict(group_size=cfg.group_size, max_new_tokens=cfg.max_new_tokens if max_new_tokens is None else max_new_tokens,
+@@ -476,13 +510,34 @@
+         roll = merge_greedy_into_groups(_gen(group_size=cfg.group_size - 1), _gen(greedy=True, group_size=1), cfg.group_size - 1)
+     else:
+         roll = _gen()
++    guided: set = set()
++    if guide is not None and guide[0] > 0 and not greedy and G >= 4:
++        import numpy as np
++
++        n_g = min(len(indices), max(1, int(round(guide[0] * len(indices)))))
++        pick = sorted(int(x) for x in np.random.default_rng([cfg.seed, int(key), 777]).choice(len(indices), size=n_g, replace=False))
++        t_g = time.time()
++        beam = generate_beam_completions(policy, [prompt_ids[g] for g in pick], num_beams=guide[1], max_new_tokens=kw["max_new_tokens"], stop_ids=stop_ids, pad_id=pad_id, device=device, autocast=autocast)
++        if timings is not None:
++            timings["guide_s"] = timings.get("guide_s", 0.0) + time.time() - t_g
++        for j, g in enumerate(pick):
++            r = g * G + G - 2                                    # the sampled member just before the greedy one (the greedy member is the LAST row of the group)
++            roll.completions[r], roll.finished[r] = beam.completions[j], beam.finished[j]
++            if roll.post_stop_tokens:
++                roll.post_stop_tokens[r] = beam.post_stop_tokens[j]
++            if roll.sampler_logp is not None:
++                roll.sampler_logp[r] = [0.0] * len(beam.completions[j])          # placeholder: the sampler log-prob check and the confidence rules skip guide rows
++            guided.add(r)
+     samples = [Sample(roll.completions[r], prompts.iso[indices[r // G]], prompts.english[indices[r // G]],
+-                      roll.post_stop_tokens[r] if roll.post_stop_tokens else 0, prompts.domain_of(indices[r // G]))
++                      roll.post_stop_tokens[r] if roll.post_stop_tokens else 0, prompts.domain_of(indices[r // G]),
++                      reference=prompts.reference_of(indices[r // G]) if with_reference else "", guide=r in guided)
+                for r in range(len(roll.completions))]
+     if reward.cfg.confidence and roll.sampler_logp is not None and len(roll.sampler_logp) == len(samples):          # D-47: mean token log-prob of each sampled completion (content tokens only)
+         from gemma_mt.rl.confidence import completion_mean_logp
+ 
+         for r, smp in enumerate(samples):
++            if smp.guide:
++                continue
+             smp.logp = completion_mean_logp(roll.sampler_logp[r], roll.completions[r], _tag_len(tokenizer, roll.completions[r], smp.iso), stop_ids)
+     out = reward(samples, group_size=G)       # the consensus signal needs to know which consecutive rows form a GRPO group (greedy evaluation: G = 1)
+     return roll, samples, out
+@@ -976,6 +1031,8 @@
+         start = dict(schedule.stage_boundaries()).get(name, 0)
+         return name, start, name == schedule.bin_of_step(max(cfg.steps - 1, 0))
+ 
++    guide_lang: Dict[str, Dict[str, float]] = {}    # per language (guided groups): n, wins (guide above the mean of the others), best (guide is a best member), and sums of the rewards of the guide / the MBR pick of the samples / the greedy member / the group mean, best counts of each
++    ds_counters = LanguageCounters()                 # dynamic sampling: running per-language table (rl/dynamic_sampling.py)
+     lwc = build_lang_weight_controller(cfg, schedule, prompts.languages(), {l: v[0] for l, v in mode_of.items()}, start_step=step, canon=canonical_iso)   # D-65: LANG_WEIGHTS.json + adaptive updater (None = all off)
+     if lwc is not None:
+         dev_sizes: Dict[Any, int] = {}
+@@ -1014,14 +1071,46 @@
+         mnt = cfg.max_new_tokens_by_bin.get(step_bin, cfg.max_new_tokens) if step_bin else cfg.max_new_tokens
+         if step_bin == MIXED and MIXED not in cfg.max_new_tokens_by_bin and cfg.max_new_tokens_by_bin:
+             mnt = max(cfg.max_new_tokens_by_bin.values())
+-        idx = schedule.indices(step, n_step)
++        n_draw = int(math.ceil(n_step * cfg.dynamic_sampling_oversample - 1e-9)) if cfg.dynamic_sampling else n_step
++        idx = schedule.indices(step, n_draw)
+         # ---------------- 1. sample + reward (no grad)
+         t_sync = sync_policy()
+         check_lp = cfg.check_sampler_logprobs or (vsampler is not None and cfg.vllm_check_every > 0 and step % cfg.vllm_check_every == 0)
+-        roll, samples, out = rollout_and_reward(policy, tokenizer, reward, prompts, idx, cfg, stop.ids, pad_id, device,
+-                                                autocast(), return_logprobs=check_lp or reward_cfg.confidence, max_new_tokens=mnt,
+-                                                sampler=vsampler, key=step)
+-        t_gen = vsampler.last_generate_seconds if vsampler is not None else float("nan")
++        ds_rec: Dict[str, float] = {}
++        guide_arg = (cfg.guide_fraction, cfg.guide_beams) if cfg.guide_fraction > 0 else None
++        timings: Dict[str, float] = {}
++        if cfg.dynamic_sampling:                    # 2026-11-03: see rl/dynamic_sampling.py; roll/samples/out/idx = the groups the update uses, *_m = every generated group (monitoring)
++            gen_acc = [0.0, 0.0]
++
++            def _gen_round(ix, rnd):
++                res = rollout_and_reward(policy, tokenizer, reward, prompts, ix, cfg, stop.ids, pad_id, device, autocast(), return_logprobs=check_lp or reward_cfg.confidence,
++                                         max_new_tokens=mnt, sampler=vsampler, key=step if rnd == 0 else 10_000_000 + rnd * 1_000_003 + step, with_reference=True, guide=guide_arg, timings=timings)
++                if vsampler is not None:
++                    gen_acc[0] += vsampler.last_generate_seconds
++                    gen_acc[1] += vsampler.last_generate_tokens
++                return res
++
++            def _redraw(dropped, rnd):
++                return schedule.replacements(step, rnd, [(prompts.iso[i], prompts.domain_of(i), prompts.length_bin[i] if prompts.length_bin else "") for i in dropped])
++
++            dyn = dynamic_rollout(idx, n_step, cfg.group_size, cfg.dynamic_sampling_max_refills, cfg.dynamic_sampling_min_std, _gen_round, _redraw, lambda i: prompts.iso[i],
++                                  sampled_only=cfg.greedy_in_group and cfg.greedy_stats == "sampled", mask_mode=cfg.hard_fail_mask)
++            roll_m, samples_m, out_m, idx_m = dyn.roll, dyn.samples, dyn.out, dyn.prompt_idx
++            roll, samples, out = subset_rollout_output(roll_m, samples_m, out_m, dyn.keep, cfg.group_size)
++            idx = [idx_m[g] for g in dyn.keep]
++            t_gen = gen_acc[0] if vsampler is not None else float("nan")
++            gen_tokens = gen_acc[1]
++            ds_counters.add(dyn.by_lang)
++            ds_rec = dict(dyn.stats, **ds_counters.step_metrics(dyn.by_lang))
++            ds_rec["ds/reward_kept"] = sum(out.rewards) / max(len(out.rewards), 1)
++            ds_rec["ds/gen_groups_per_kept"] = len(idx_m) / max(len(idx), 1)
++        else:
++            roll, samples, out = rollout_and_reward(policy, tokenizer, reward, prompts, idx, cfg, stop.ids, pad_id, device,
++                                                    autocast(), return_logprobs=check_lp or reward_cfg.confidence, max_new_tokens=mnt,
++                                                    sampler=vsampler, key=step, with_reference=True, guide=guide_arg, timings=timings)
++            roll_m, samples_m, out_m, idx_m = roll, samples, out, idx
++            t_gen = vsampler.last_generate_seconds if vsampler is not None else float("nan")
++            gen_tokens = vsampler.last_generate_tokens if vsampler is not None else 0
+         if vsampler is not None:
+             vsampler.sleep()                        # only with vllm_sleep: the engine's memory goes back to the trainer for the update
+         N, G = len(roll.completions), cfg.group_size
+@@ -1036,39 +1125,49 @@
+             from gemma_mt.rl.archive import archive_step
+ 
+             t_a = time.time()
+-            archive_step(archive, reward, samples, out, step + 1, step_bin or "",
+-                         [prompts.length_bin[i] for i in idx] if prompts.length_bin else None, G)
++            archive_step(archive, reward, samples_m, out_m, step + 1, step_bin or "",
++                         [prompts.length_bin[i] for i in idx_m] if prompts.length_bin else None, G)
+             t_archive = time.time() - t_a
++        guide_rows = torch.tensor([smp.guide for smp in samples], dtype=torch.bool)
++        guide_drop = guide_rows & torch.tensor([st != "ok" for st in out.status], dtype=torch.bool) if bool(guide_rows.any()) else None       # a hard-failed guide leaves its group
+         if cfg.greedy_in_group and cfg.greedy_stats == "sampled":
+-            adv, flat_frac = grpo.group_advantages_sampled_baseline(rewards, G, cfg.advantage_norm, cfg.std_eps, greedy_cap=cfg.greedy_adv_cap)
++            adv, flat_frac = grpo.group_advantages_sampled_baseline(rewards, G, cfg.advantage_norm, cfg.std_eps, greedy_cap=cfg.greedy_adv_cap, std_floor=cfg.adv_std_floor, drop=guide_drop)
+         else:
+-            adv, flat_frac = grpo.group_advantages(rewards, G, cfg.advantage_norm, cfg.std_eps)
++            adv, flat_frac = grpo.group_advantages(rewards, G, cfg.advantage_norm, cfg.std_eps, std_floor=cfg.adv_std_floor, drop=guide_drop)
+         hard_failed = torch.tensor([st != "ok" for st in out.status], dtype=torch.bool)
+         if cfg.hard_fail_mask != "off":             # D-61 (default off): the hard-failed samples leave the policy gradient
+-            adv, flat_frac = grpo.group_advantages_masked(rewards, G, hard_failed, cfg.hard_fail_mask, cfg.advantage_norm, cfg.std_eps)
++            adv, flat_frac = grpo.group_advantages_masked(rewards, G, hard_failed, cfg.hard_fail_mask, cfg.advantage_norm, cfg.std_eps, std_floor=cfg.adv_std_floor)
+         adv = adv * torch.tensor(out.weights, dtype=torch.float32)
+         if cfg.greedy_in_group and cfg.greedy_adv_scale != 1.0:
+             adv = grpo.scale_last_member(adv, G, cfg.greedy_adv_scale)
++        guide_rec: Dict[str, float] = {}
++        if bool(guide_rows.any()):                  # guide safety cap: their share of the token-weighted |advantage| (same weighting as greedy_adv_token_share) is limited to guide_adv_share_cap
++            adv, g_share, g_factor = grpo.cap_member_share(adv, torch.tensor([float(len(c)) for c in roll.completions]), guide_rows, cfg.guide_adv_share_cap)
++            if not cfg.guide_adv_share_cap:
++                w_ = adv.abs() * torch.tensor([float(len(c)) for c in roll.completions])
++                g_share = float(w_[guide_rows].sum() / w_.sum().clamp(min=1e-12))
++            guide_rec = {"guide/adv_share": g_share, "guide/adv_cap_factor": g_factor}
+         assert adv.shape == (N,) and torch.isfinite(adv).all(), "bad advantages"
+         greedy_rec: Dict[str, float] = {}
+         if cfg.greedy_in_group:                      # 2026-10-28: the greedy (temperature 0) member of every group is what loops at inference: monitor it directly
+-            gi = list(range(G - 1, N, G))
+-            g_fin = [roll.finished[i] for i in gi]
+-            g_loop = loop_flags(reward, [samples[i] for i in gi], [out.status[i] for i in gi], [out.decoded[i] for i in gi], g_fin)
++            Nm = len(roll_m.completions)             # monitoring on EVERY generated group (== the update's groups unless dynamic_sampling), the advantage share on the groups of the update
++            gi = list(range(G - 1, Nm, G))
++            g_fin = [roll_m.finished[i] for i in gi]
++            g_loop = loop_flags(reward, [samples_m[i] for i in gi], [out_m.status[i] for i in gi], [out_m.decoded[i] for i in gi], g_fin)
+             tok_w = adv.abs() * torch.tensor([float(len(c)) for c in roll.completions], dtype=torch.float32)
+             tok_w = tok_w.view(-1, G)
+             g_share = float(tok_w[:, -1].sum() / tok_w.sum().clamp(min=1e-12))
+-            rv = rewards.view(-1, G)
++            rv = torch.tensor(out_m.rewards, dtype=torch.float32).view(-1, G)
+             greedy_rec = {"greedy_finished_rate": sum(g_fin) / len(g_fin), "greedy_loop_rate": sum(g_loop) / len(g_loop), "greedy_reward_mean": float(rv[:, -1].mean()),
+-                          "sampled_reward_mean": float(rv[:, :-1].mean()), "greedy_adv_token_share": g_share, "greedy_len_mean": sum(len(roll.completions[i]) for i in gi) / len(gi)}
++                          "sampled_reward_mean": float(rv[:, :-1].mean()), "greedy_adv_token_share": g_share, "greedy_len_mean": sum(len(roll_m.completions[i]) for i in gi) / len(gi)}
+         t_sample = time.time() - t0
+         if lwc is not None:                         # D-65: per-language statistics of this step (the updater's window; metrics only with lang_stats_log / adaptive)
+-            lw_iso = [prompts.iso[i] for i in idx]
+-            lw_keys = [f"{prompts.length_bin[i] if prompts.length_bin else ''}|{prompts.domain_of(i)}" for i in idx]
+-            lwc.observe(step, lw_iso, lw_keys, out.rewards, out.status, G, qe=out.qe, adv_w=out.weights, cons=getattr(out, "consensus_chrf", None) or None,
+-                        pen=getattr(out, "anchors_penalty", None) or None)
++            lw_iso = [prompts.iso[i] for i in idx_m]
++            lw_keys = [f"{prompts.length_bin[i] if prompts.length_bin else ''}|{prompts.domain_of(i)}" for i in idx_m]
++            lwc.observe(step, lw_iso, lw_keys, out_m.rewards, out_m.status, G, qe=out_m.qe, adv_w=out_m.weights, cons=getattr(out_m, "consensus_chrf", None) or None,
++                        pen=getattr(out_m, "anchors_penalty", None) or None)
+             if lwc.log_stats:
+-                lw_rec = dict(lw_rec, **lwc.step_record(lw_iso, lw_keys, out.rewards, out.status, G))
++                lw_rec = dict(lw_rec, **lwc.step_record(lw_iso, lw_keys, out_m.rewards, out_m.status, G))
+ 
+         # ---------------- 2. log-probs + update
+         total_tokens = float(sum(len(c) for c in roll.completions))
+@@ -1111,6 +1210,8 @@
+                 if check_lp and roll.sampler_logp is not None and upd == 0:
+                     diffs = []
+                     for j, r in enumerate(rows):
++                        if samples[r].guide:                 # a beam output has no sampler log-prob
++                            continue
+                         s = torch.tensor(roll.sampler_logp[r], dtype=lp.dtype)
+                         d = (lp[j, : len(s)].detach().cpu() - s).abs()
+                         diffs.append(d.max().item())
+@@ -1146,20 +1247,109 @@
+                                "sampling distribution differs from the scored one: stopping instead of training on off-policy samples")
+ 
+         tok = max(metrics_acc["tok"], 1.0)
+-        r_t = rewards
+-        rec = {"reward": float(r_t.mean()), "reward_std": float(r_t.std(unbiased=False)), "flat_group_frac": flat_frac, "hard_fail_frac": float(hard_failed.float().mean()),
++        r_t = torch.tensor(out_m.rewards, dtype=torch.float32)          # every generated group (== the groups of the update unless dynamic_sampling)
++        hard_failed_m = torch.tensor([st != "ok" for st in out_m.status], dtype=torch.bool)
++        rec = {"reward": float(r_t.mean()), "reward_std": float(r_t.std(unbiased=False)), "flat_group_frac": ds_rec.get("ds/flat_frac", flat_frac), "hard_fail_frac": float(hard_failed_m.float().mean()),
+                "adv_abs_mean": float(adv.abs().mean()), **greedy_rec, **({"adv_abs_mean_greedy": float(adv.view(-1, G)[:, -1].abs().mean()), "adv_abs_mean_sampled": float(adv.view(-1, G)[:, :-1].abs().mean())} if cfg.greedy_in_group else {}), "kl": metrics_acc["kl"] / tok,
+                "pg_loss": metrics_acc["pg"] / tok, "clip_frac": metrics_acc["clip"] / tok,
+                "ratio_mean": metrics_acc["ratio"] / tok, "grad_norm": gnorm, "lr": lr,
+-               "completion_len": total_tokens / N, "finished_rate": sum(roll.finished) / N,
++               "completion_len": total_tokens / N, "finished_rate": sum(roll_m.finished) / len(roll_m.finished),
+                "weight_mean": float(sum(out.weights) / N), "sampler_logp_gap": sampler_gap,
+                "t_sample": t_sample, "t_step": time.time() - t0}
+         if vsampler is not None:
+             rec.update({"sampler_logp_gap_mean": sampler_gap_mean, "t_sync": t_sync, "t_gen": t_gen,
+-                        "gen_tokens_per_s": vsampler.last_generate_tokens / max(t_gen, 1e-9)})
+-        rec.update({f"reward/{k}": v for k, v in out.stats.items()})
+-        rec.update(out.fluency)                         # D-62: `fluency/...` keys (empty unless reward.fluency)
+-        rec.update(out.confidence)                      # D-47: `confidence/...` keys (empty unless reward.confidence)
++                        "gen_tokens_per_s": gen_tokens / max(t_gen, 1e-9)})
++        rec.update({f"reward/{k}": v for k, v in out_m.stats.items()})
++        rec.update(out_m.fluency)                       # D-62: `fluency/...` keys (empty unless reward.fluency)
++        rec.update(out_m.confidence)                    # D-47: `confidence/...` keys (empty unless reward.confidence)
++        rec.update(ds_rec)                              # dynamic sampling counters (empty unless dynamic_sampling)
++        if cfg.log_group_stats or cfg.guide_fraction > 0:
++            import numpy as np
++
++            Rm = np.asarray(out_m.rewards, dtype=np.float64).reshape(-1, G)
++            Sm = Rm[:, :-1] if (cfg.greedy_in_group and cfg.greedy_stats == "sampled") else Rm      # the same members the advantage statistics use
++            gstd = Sm.std(axis=1)
++            if cfg.log_group_stats:
++                for q in (5, 10, 25, 50, 75):
++                    rec[f"group_std/p{q:02d}"] = float(np.percentile(gstd, q))
++                nfail = (np.asarray([st != "ok" for st in out_m.status]).reshape(-1, G)).sum(axis=1)
++                gflag = np.asarray([smp.guide for smp in samples_m]).reshape(-1, G).any(axis=1)
++                try:
++                    with open(os.path.join(cfg.out_dir, "group_stats.jsonl"), "a") as f_:
++                        for g_, p_ in enumerate(idx_m):
++                            f_.write(json.dumps({"step": step, "prompt": int(p_), "iso": prompts.iso[p_], "bin": prompts.length_bin[p_] if prompts.length_bin else "", "domain": prompts.domain_of(p_),
++                                                 "std": round(float(gstd[g_]), 5), "mean": round(float(Rm[g_].mean()), 5), "n_fail": int(nfail[g_]), "guide": bool(gflag[g_])}) + "\n")
++                except OSError as e:
++                    print(f"[gemma_mt] WARNING: cannot write group_stats.jsonl: {e}", flush=True)
++            if cfg.guide_fraction > 0:                   # the beam-guided members: reward against the sampled members and the greedy member of their own groups, wins, cost
++                gi_ = [r_ for r_, smp in enumerate(samples_m) if smp.guide]
++                rec["guide/seconds"] = timings.get("guide_s", 0.0)
++                rec["guide/overhead_frac"] = rec["guide/seconds"] / max(time.time() - t0, 1e-9)          # share of the step (so far) spent in beam search
++                if gi_:
++                    ok_ = [st_ == "ok" for st_ in out_m.status]
++                    others = [np.delete(Rm[r_ // G], [r_ % G]) for r_ in gi_]                          # every other member of the guide's group
++                    win = [bool(Rm[r_ // G, r_ % G] > np.mean(o_)) for r_, o_ in zip(gi_, others)]
++                    best = [bool(Rm[r_ // G, r_ % G] >= o_.max()) for r_, o_ in zip(gi_, others)]
++                    rec["guide/n"] = float(len(gi_))
++                    rec["guide/failed_rate"] = float(np.mean([not ok_[r_] for r_ in gi_]))
++                    rec["guide/reward"] = float(np.mean([Rm[r_ // G, r_ % G] for r_ in gi_]))
++                    rec["guide/sampled_reward"] = float(np.mean([np.mean(Rm[r_ // G, : G - 2]) for r_ in gi_]))
++                    if cfg.greedy_in_group:
++                        rec["guide/greedy_reward"] = float(np.mean([Rm[r_ // G, G - 1] for r_ in gi_]))
++                    rec["guide/better_frac"] = float(np.mean(win))
++                    rec["guide/best_frac"] = float(np.mean(best))                     # share of the guided groups of this step in which the guide is the best member (average over steps = share of groups)
++                    rec["guide/finished_rate"] = float(np.mean([roll_m.finished[r_] for r_ in gi_]))
++                    mbr_r, gre_r = [], []
++                    for r_, w_, b_ in zip(gi_, win, best):
++                        g_ = r_ // G
++                        t_ = guide_lang.setdefault(prompts.iso[idx_m[g_]], {"n": 0, "wins": 0, "best": 0, "n_mbr": 0, "r_guide": 0.0, "r_mbr": 0.0, "r_greedy": 0.0, "r_mean": 0.0, "best_guide": 0, "best_mbr": 0, "best_greedy": 0})
++                        t_["n"] += 1
++                        t_["wins"] += int(w_)
++                        t_["best"] += int(b_)
++                        # MBR pick among the group's own SAMPLED members (chrF++ agreement = the consensus utility); it is already a member of the group, nothing is added. Logged next to the guide and the greedy member.
++                        rows_g = [g_ * G + j for j in range(G)]
++                        samp_rows = [x for x in rows_g if not samples_m[x].guide and not (cfg.greedy_in_group and x == rows_g[-1]) and out_m.status[x] == "ok" and out_m.texts[x].strip()]
++                        mbr_row = None
++                        if len(samp_rows) >= 3:
++                            vals = cons.group_consensus([cons.Profile(out_m.texts[x]) for x in samp_rows], 3)
++                            if any(v is not None for v in vals):
++                                mbr_row = samp_rows[max(range(len(samp_rows)), key=lambda i: -1.0 if vals[i] is None else vals[i])]
++                        grp = Rm[g_]
++                        t_["r_guide"] += float(grp[r_ % G])
++                        t_["r_mean"] += float(grp.mean())
++                        t_["best_guide"] += int(b_)
++                        if cfg.greedy_in_group:
++                            t_["r_greedy"] += float(grp[G - 1])
++                            t_["best_greedy"] += int(grp[G - 1] >= np.delete(grp, [G - 1]).max())
++                        if mbr_row is not None:
++                            rm_ = float(Rm[g_, mbr_row - g_ * G])
++                            t_["n_mbr"] += 1
++                            t_["r_mbr"] += rm_
++                            t_["best_mbr"] += int(rm_ >= np.delete(grp, [mbr_row - g_ * G]).max())
++                            mbr_r.append(rm_)
++                    if mbr_r:
++                        rec["guide/mbr_reward"] = float(np.mean(mbr_r))
++                    kept_g = [r_ for r_, smp in enumerate(samples) if smp.guide]
++                    if kept_g:
++                        rec["guide/adv_mean"] = float(adv[kept_g].mean())
++                    rec.update(guide_rec)
++                    if step % 10 == 0 or step == 1:
++                        try:
++                            with open(os.path.join(cfg.out_dir, "guide_by_language.json.tmp"), "w") as f_:
++                                json.dump({k_: dict(v_, win_rate=v_["wins"] / max(v_["n"], 1), best_rate=v_["best"] / max(v_["n"], 1), reward_guide=v_["r_guide"] / max(v_["n"], 1), reward_mbr=v_["r_mbr"] / max(v_["n_mbr"], 1),
++                                                    reward_greedy=v_["r_greedy"] / max(v_["n"], 1), reward_group_mean=v_["r_mean"] / max(v_["n"], 1), best_rate_guide=v_["best_guide"] / max(v_["n"], 1),
++                                                    best_rate_mbr=v_["best_mbr"] / max(v_["n_mbr"], 1), best_rate_greedy=v_["best_greedy"] / max(v_["n"], 1)) for k_, v_ in sorted(guide_lang.items())}, f_, indent=1)
++                            os.replace(os.path.join(cfg.out_dir, "guide_by_language.json.tmp"), os.path.join(cfg.out_dir, "guide_by_language.json"))
++                        except OSError as e:
++                            print(f"[gemma_mt] WARNING: cannot write guide_by_language.json: {e}", flush=True)
++        if cfg.dynamic_sampling and (step % 10 == 0 or step == 1):
++            try:
++                tmp = os.path.join(cfg.out_dir, "dynamic_sampling_by_language.json.tmp")
++                with open(tmp, "w") as f_:
++                    json.dump(ds_counters.table(), f_, indent=1)
++                os.replace(tmp, os.path.join(cfg.out_dir, "dynamic_sampling_by_language.json"))
++            except OSError as e:
++                print(f"[gemma_mt] WARNING: cannot write dynamic_sampling_by_language.json: {e}", flush=True)
+         rec.update(lw_rec)
+         rec["lr_mult_effective"] = lr_mult_eff
+         lr_mult_sum, lr_mult_n, lr_mult_min = lr_mult_sum + lr_mult_eff, lr_mult_n + 1, min(lr_mult_min, lr_mult_eff)
+diff -ruN orig/scripts/build_rl_prompts_ref.py new/scripts/build_rl_prompts_ref.py
+--- orig/scripts/build_rl_prompts_ref.py	1969-12-31 17:00:00
++++ new/scripts/build_rl_prompts_ref.py	2026-11-03 01:20:44
+@@ -0,0 +1,263 @@
++#!/usr/bin/env python3
++"""Reference-anchored RL prompts (owner 2026-11-03, reward.reference_weight): English windows that come WITH a human translation, domain "ref".
++
++    python scripts/build_rl_prompts_ref.py --index PROTECTED/protected_index.npz --manifest PROTECTED/protected_manifest.json --out artifacts/rl_prompts_ref [--max-per-lang 1500]
++
++One parquet per language in --out (put them at <prompts_path>/ref/<iso>.parquet; `load_rl_prompts` walks the pool recursively, the `domain` column says "ref"). Columns = the news pool's columns plus
++`reference`, `ref_source`, `ref_licence`, `seen_in_sft`. Sources (HUMAN translations only; every one documented in reports/rl_features_dynamic_ref_2026-11-03.md):
++    afriscience   dsfsi/afriscience_mt via the clean train file of <HF_ORG_LEGACY>/sabiyarn-clean-rl-prompts-2026-10-28 (34,007 pairs; Apache-2.0; professional translators; amh hau lug nso yor zul)
++    vukuzenzele   (OFF by default, --vukuzenzele DIR) dsfsi/vukuzenzele-sentence-aligned EVAL + TEST splits (CC-BY-4.0; South African government magazine, PDF-extracted, alignment score filtered; afr nbl nso sot ssw
++                  tsn tso ven xho zul). The SFT build read the TRAIN split only. LEFT OUT of release 1: the corpus is lower-cased on both sides, a case-sensitive chrF++ would reward lower-cased output.
++    ibom_train    howard-nlp/ibom-mt eng-<iso>/train.csv (CC-BY-NC-4.0, human; efi ibb ...). Seen in SFT (train split, owner decision 2026-10-28: the one deliberate NC source).
++NOT used: MT560 / OPUS (mixes web-mined and religious text, no row level provenance), NLLB-derived or machine-translated pairs, MAFAND train (owner), benchmark dev/devtest/test sets of the protected index,
++sudoping01 Wolof (provenance undocumented), the Vukuzenzele eval / test splits (lower-cased), the Bible (cap 25 % would apply; none in this release), Pontoon / Weblate (UI strings).
++Every pair is checked against the protected benchmark index on BOTH sides (strict rule of decon.py: exact sentence, contained sentence, shared word 8-gram); hits are dropped and counted.
++"""
++import argparse
++import collections
++import glob
++import json
++import os
++import re
++import sys
++import unicodedata
++
++import numpy as np
++
++HERE = os.path.dirname(os.path.abspath(__file__))
++sys.path.insert(0, os.path.join(HERE, ".."))
++sys.path.insert(0, os.path.join(HERE, "..", "data_pipeline", "sft_clean"))
++
++from gemma_mt.languages import LANGUAGES, SUPPORTED_RL, canonical_iso   # noqa: E402
++
++POOL = "ref_v1_2026-11-03"
++VUK_MIN_SCORE = 0.80
++SPACED = re.compile(r"(?:\b\w\s){5,}\w\b")                   # PDF extraction artefact: "b a n g a b a n e z i m p a w u"
++URLISH = re.compile(r"https?://|www\.|@\w+\.\w+")
++MAX_CHARS = 1200
++
++
++def nfc(s: str) -> str:
++    return unicodedata.normalize("NFC", s).strip()
++
++
++def ok_pair(en: str, rf: str) -> bool:
++    if not en or not rf or en.lower() == rf.lower():
++        return False
++    if len(en.split()) < 3 or len(en) > MAX_CHARS or len(rf) > 3 * MAX_CHARS:
++        return False
++    r = len(rf) / max(len(en), 1)
++    if r < 0.3 or r > 4.0:
++        return False
++    if SPACED.search(en) or SPACED.search(rf) or URLISH.search(en) or URLISH.search(rf):
++        return False
++    return True
++
++
++def load_afriscience(src):
++    import pyarrow.parquet as pq
++
++    t = pq.read_table(src).to_pylist()
++    for i, r in enumerate(t):
++        yield dict(english=r["source"], reference=r["target"], iso=r["target_lang"], source_dataset="dsfsi/afriscience_mt (clean train)", licence="apache-2.0", ref_source="afriscience_mt_train",
++                   ref_licence="apache-2.0", seen_in_sft="no (science SFT stage not run yet)", prov_file="afriscience_clean_train.parquet", prov_row=i,
++                   paper=int(r["paper_id"]), sent=int(r["sentence_id"]))
++
++
++def load_vukuzenzele(root):
++    import pyarrow.parquet as pq
++
++    for d in sorted(glob.glob(os.path.join(root, "*-*"))):
++        a, b = os.path.basename(d).split("-")
++        if a == "eng":
++            code = b
++        elif (a, b) == ("afr", "eng"):
++            code = "afr"
++        else:
++            continue                                                   # African-African pairs
++        iso = canonical_iso(code)
++        if iso is None or iso not in SUPPORTED_RL:
++            continue
++        for f in sorted(glob.glob(os.path.join(d, "*-0000*.parquet"))):
++            split = os.path.basename(f).split("-")[0]
++            if split not in ("eval", "test"):
++                continue
++            for i, r in enumerate(pq.read_table(f).to_pylist()):
++                if r.get("score", 0.0) < VUK_MIN_SCORE:
++                    continue
++                yield dict(english=r["eng"], reference=r[code], iso=iso, source_dataset="dsfsi/vukuzenzele-sentence-aligned", licence="cc-by-4.0", ref_source=f"vukuzenzele_{split}",
++                           ref_licence="cc-by-4.0", seen_in_sft="split not read by the SFT build (train only); may overlap through Mehgoss/sa-languages-translation (unverified)",
++                           prov_file=f"{os.path.basename(d)}/{os.path.basename(f)}", prov_row=i)
++
++
++def load_ibom(root):
++    import csv
++
++    for f in sorted(glob.glob(os.path.join(root, "eng-*", "train.csv"))):
++        code = os.path.basename(os.path.dirname(f)).split("-")[1]
++        iso = canonical_iso(code)
++        if iso is None or iso not in SUPPORTED_RL:
++            continue
++        with open(f, encoding="utf-8", newline="") as fh:
++            for i, r in enumerate(csv.DictReader(fh)):
++                yield dict(english=r.get("eng") or r.get("english"), reference=r.get(code), iso=iso, source_dataset="howard-nlp/ibom-mt (train)", licence="cc-by-nc-4.0", ref_source="ibom_mt_train",
++                           ref_licence="cc-by-nc-4.0", seen_in_sft="yes (train split, owner exception 2026-10-28)", prov_file=f"{os.path.basename(os.path.dirname(f))}/train.csv", prov_row=i)
++
++
++def main():
++    ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
++    ap.add_argument("--index", required=True)
++    ap.add_argument("--manifest", required=True)
++    ap.add_argument("--afriscience", required=True, help="afriscience_clean_train.parquet")
++    ap.add_argument("--vukuzenzele", default=None, help="local dir of dsfsi/vukuzenzele-sentence-aligned (eval/test parquet). OFF by default: the corpus is LOWERCASED on both sides (none of the rows contain an upper-case letter), "
++                    "so a case-sensitive chrF++ against it would reward lower-cased output")
++    ap.add_argument("--ibom", required=True, help="local dir of howard-nlp/ibom-mt (eng-*/train.csv)")
++    ap.add_argument("--afro-tokenizer", required=True, help="tokenizer.json of Davlan/afro-xlmr-large-76L (src_afr_tokens = AfriCOMET encoder tokens)")
++    ap.add_argument("--out", required=True)
++    ap.add_argument("--max-per-lang", type=int, default=1500)
++    ap.add_argument("--max-per-source-lang", type=int, default=1200)
++    ap.add_argument("--seed", type=int, default=20261103)
++    ap.add_argument("--min-rows-per-lang", type=int, default=150, help="a language with fewer reference rows is left out (it would be drawn in a tiny loop)")
++    ap.add_argument("--max-windows-per-lang", type=int, default=500, help="multi-sentence AfriScience windows (b256 stage)")
++    a = ap.parse_args()
++
++    import pyarrow as pa
++    import pyarrow.parquet as pq
++    import xxhash
++    from tokenizers import Tokenizer
++
++    from protected_index_loader import load as load_index
++
++    tk = Tokenizer.from_file(a.afro_tokenizer)
++    ix, man = load_index(a.index, a.manifest)
++    version = man.get("version", "protected")
++    rows, drop = [], collections.Counter()
++    for gen in [load_afriscience(a.afriscience), load_ibom(a.ibom)] + ([load_vukuzenzele(a.vukuzenzele)] if a.vukuzenzele else []):
++        for r in gen:
++            iso = canonical_iso(r["iso"])
++            if iso is None or iso not in SUPPORTED_RL:
++                drop["language_not_rl"] += 1
++                continue
++            en, rf = nfc(str(r["english"] or "")), nfc(str(r["reference"] or ""))
++            if not ok_pair(en, rf):
++                drop["pair_rules"] += 1
++                continue
++            rows.append(dict(r, iso=iso, english=en, reference=rf))
++    print("candidates", len(rows), "dropped", dict(drop), flush=True)
++    # protected index, both sides
++    keep = []
++    B = 5000
++    hits = collections.Counter()
++    for s in range(0, len(rows), B):
++        chunk = rows[s:s + B]
++        he = ix.check_texts([c["english"] for c in chunk])
++        hr = ix.check_texts([c["reference"] for c in chunk])
++        for c, x, y in zip(chunk, he, hr):
++            if any(x) or any(y):
++                hits[c["ref_source"]] += 1
++            else:
++                keep.append(c)
++    print("protected-index hits (dropped):", dict(hits), "kept", len(keep), flush=True)
++    # b256 windows: consecutive AfriScience sentences of one paper (sentence ids n, n+1, ...) joined to 65..250 source tokens; the other sources are single sentences (no document order)
++    def ntok(t):
++        return len(tk.encode(t).ids)
++
++    sci = collections.defaultdict(list)
++    for c in keep:
++        if c["ref_source"] == "afriscience_mt_train":
++            sci[(c["iso"], c["paper"])].append(c)
++    wins = []
++    for (iso, paper), lst in sci.items():
++        lst.sort(key=lambda c: c["sent"])
++        cur = []
++        def flush():
++            if len(cur) >= 2:
++                en, rf = " ".join(x["english"] for x in cur), " ".join(x["reference"] for x in cur)
++                if 65 <= ntok(en) <= 250 and ok_pair(en, rf):
++                    w = dict(cur[0], english=en, reference=rf, prov_row=cur[0]["prov_row"], window_sentences=len(cur))
++                    wins.append(w)
++        for c in lst:
++            if cur and (c["sent"] != cur[-1]["sent"] + 1 or ntok(" ".join(x["english"] for x in cur) + " " + c["english"]) > 250):
++                flush()
++                cur = []
++            cur.append(c)
++        flush()
++    rngw = np.random.default_rng(a.seed + 1)
++    wby = collections.defaultdict(list)
++    for w in wins:
++        wby[w["iso"]].append(w)
++    wins = [w for iso, l in wby.items() for w in [l[i] for i in rngw.permutation(len(l))[:a.max_windows_per_lang]]]
++    hw = ix.check_texts([w["english"] for w in wins]) if wins else []
++    hr = ix.check_texts([w["reference"] for w in wins]) if wins else []
++    wins = [w for w, x, y in zip(wins, hw, hr) if not (any(x) or any(y))]
++    for w in wins:
++        w["ref_source"] = "afriscience_mt_train_window"
++    print("afriscience b256 windows:", len(wins), dict(collections.Counter(w["iso"] for w in wins)), flush=True)
++    keep = keep + wins
++    # dedupe on English per language, tokens, bins
++    seen, out = set(), []
++    for c in keep:
++        k = (c["iso"], c["english"].lower())
++        if k in seen:
++            drop["duplicate_english"] += 1
++            continue
++        seen.add(k)
++        c["src_afr_tokens"] = len(tk.encode(c["english"]).ids)
++        if c["src_afr_tokens"] > 256:
++            drop["too_long"] += 1
++            continue
++        c["length_bin"] = "b64" if c["src_afr_tokens"] <= 64 else "b256"
++        out.append(c)
++    # per-source and per-language caps, both bins kept (b64 and b256 stages draw from their own bin)
++    rng = np.random.default_rng(a.seed)
++    by = collections.defaultdict(list)
++    for c in out:
++        by[(c["iso"], c["ref_source"], c["length_bin"])].append(c)
++    sel = []
++    per_src_lang = collections.defaultdict(list)
++    for (iso, src, b), lst in by.items():
++        per_src_lang[(iso, src)].append((b, lst))
++    for (iso, src), parts in per_src_lang.items():
++        total = sum(len(l) for _, l in parts)
++        for b, lst in parts:
++            take = min(len(lst), max(1, int(round(a.max_per_source_lang * len(lst) / max(total, 1)))) if total > a.max_per_source_lang else len(lst))
++            sel += [lst[i] for i in rng.permutation(len(lst))[:take]]
++    final = []
++    by_lang = collections.defaultdict(list)
++    for c in sel:
++        by_lang[c["iso"]].append(c)
++    for iso, lst in by_lang.items():
++        for b, cap in (("b64", a.max_per_lang), ("b256", a.max_windows_per_lang)):          # the b64 and the b256 stage draw from their own bin: cap each bin separately
++            part = [c for c in lst if c["length_bin"] == b]
++            final += [part[i] for i in rng.permutation(len(part))[:cap]] if len(part) > cap else part
++    small = {iso: len(l) for iso, l in by_lang.items() if len(l) < a.min_rows_per_lang}
++    if small:
++        print("languages left out (fewer than", a.min_rows_per_lang, "reference rows):", small, flush=True)
++        final = [c for c in final if c["iso"] not in small]
++    os.makedirs(a.out, exist_ok=True)
++    schema_cols = ["english", "iso", "language", "src_afr_tokens", "length_bin", "n_sentences", "source_dataset", "licence", "domain", "reference", "ref_source", "ref_licence", "seen_in_sft",
++                   "prov_pool", "prov_file", "prov_row", "prov_en_xxh64", "prov_index"]
++    per = collections.defaultdict(list)
++    for c in final:
++        c["language"] = LANGUAGES[c["iso"]].name
++        c["n_sentences"] = c.get("window_sentences") or len(re.findall(r"[.!?]+(?:\s|$)", c["english"])) or 1
++        c["domain"] = "ref"
++        c["prov_pool"] = POOL
++        c["prov_en_xxh64"] = xxhash.xxh64(c["english"].encode("utf-8")).hexdigest()
++        c["prov_index"] = version
++        per[c["iso"]].append(c)
++    stats = {}
++    for iso, lst in sorted(per.items()):
++        t = pa.table({k: [c[k] for c in lst] for k in schema_cols})
++        pq.write_table(t, os.path.join(a.out, f"{iso}.parquet"), compression="zstd")
++        stats[iso] = {"rows": len(lst), "b64": sum(c["length_bin"] == "b64" for c in lst), "b256": sum(c["length_bin"] == "b256" for c in lst),
++                      "by_source": dict(collections.Counter(c["ref_source"] for c in lst)), "licences": sorted({c["ref_licence"] for c in lst})}
++    json.dump({"pool": POOL, "index": version, "dropped": dict(drop), "protected_hits": dict(hits), "languages": stats, "rows": len(final), "max_per_lang": a.max_per_lang,
++               "max_per_source_lang": a.max_per_source_lang, "languages_left_out": small}, open(os.path.join(a.out, "stats_ref.json"), "w"), indent=1)
++    print(f"wrote {len(final)} rows, {len(per)} languages to {a.out}")
++    for iso, d in sorted(stats.items()):
++        print(f"  {iso}: {d['rows']} (b64 {d['b64']}, b256 {d['b256']}) {d['by_source']}")
++
++
++if __name__ == "__main__":
++    main()
+diff -ruN orig/scripts/clean_rerun_385m_make_configs.py new/scripts/clean_rerun_385m_make_configs.py
+--- orig/scripts/clean_rerun_385m_make_configs.py	2026-11-03 00:27:24
++++ new/scripts/clean_rerun_385m_make_configs.py	2026-11-03 01:20:44
+@@ -63,7 +63,39 @@
+ 
+ 
+ NEWS_SHARE = 0.3
+-NEWS_LINE = f"domain_weights: {{general: {1 - NEWS_SHARE:.1f}, news: {NEWS_SHARE:.1f}}}  # owner 2026-11-03: 70 % FineWeb-Edu / Wikipedia (general), 30 % news-style English (BBC News); the news files live in <prompts_path>/news/"
++REF_SHARE = 0.15       # owner 2026-11-03: share of the draws that are REFERENCE prompts (human en->X pairs, domain "ref", files in <prompts_path>/ref/); the rest is split 70 / 30 general / news
++REF_WEIGHT = 0.35      # reward.reference_weight: weight of the chrF++-against-the-reference term on those prompts
++NEWS_LINE = (f"domain_weights: {{general: {(1 - REF_SHARE) * (1 - NEWS_SHARE):.3f}, news: {(1 - REF_SHARE) * NEWS_SHARE:.3f}, ref: {REF_SHARE:.3f}}}  # owner 2026-11-03: 15 % reference prompts (human en->X pairs with a chrF++ term, "
++             f"files in <prompts_path>/ref/), the other 85 % split 70 % FineWeb-Edu / Wikipedia (general) and 30 % news-style English (BBC News, <prompts_path>/news/)")
++NEWS_LINE_PREFLIGHT = f"domain_weights: {{general: {1 - NEWS_SHARE:.1f}, news: {NEWS_SHARE:.1f}}}  # owner 2026-11-03: 70 % FineWeb-Edu / Wikipedia (general), 30 % news-style English (BBC News); the news files live in <prompts_path>/news/"   # the preflight has no reference pool
++ALL_FEATURES = ("ds", "adv", "log", "guide", "ref")      # owner 2026-11-03 additions; `--features` picks a subset (a run that is resumed from a checkpoint can switch them on one by one); default = all
++FEATURES = set(ALL_FEATURES)
++ADV_LINES = """\
++# advantage std floor (owner 2026-11-03): advantage = (r - mean) / max(std, adv_std_floor); only groups with std below the floor (near-flat: jitter in the 3rd decimal of a QE score) are damped, |A| ~ std / floor.
++# 0.02 reward units = ~0.005 AfriCOMET-QE units (the shaping slope is ~4 reward units per QE unit) = noise level. The preflight did not log per-group stds: <out_dir>/group_stats.jsonl (log_group_stats) now does,
++# scripts/group_std_percentiles.py reads it; re-set the floor at ~the 10th percentile of the group stds at a checkpoint boundary if it differs.
++adv_std_floor: 0.02
++"""
++LOG_LINES = """\
++log_group_stats: true  # per-prompt group statistics (prompt, language, bin, domain, std, mean, hard failures, guide) -> <out_dir>/group_stats.jsonl, group_std/p05..p75 in the step record (input of a later prompt replay by learnability)
++"""
++GUIDE_LINES = """\
++# beam-guided group member (owner 2026-11-03): for guide_fraction of the prompts the beam-guide_beams translation of the CURRENT policy (HF generate on the training model) replaces the last sampled member of the group
++# (group size unchanged: samples ..., guide, greedy). Scored like any member (guards, penalties, reference term), part of the group mean / std and of the KL term like the greedy member; a hard-failed guide is dropped
++# from its group; guide_adv_share_cap limits the guides' share of the token-weighted |advantage| of the step. Ratio fixed at 1 (one update per batch), no importance weight. Logged: guide/... and guide_by_language.json.
++guide_fraction: 0.25
++guide_beams: 4
++guide_adv_share_cap: 0.25
++"""
++DS_LINES = """\
++# dynamic sampling (DAPO-style, owner 2026-11-03; rl/dynamic_sampling.py): groups whose rewards have no spread (std < dynamic_sampling_min_std) give zero advantage: draw ceil(prompts x oversample) prompts, drop the flat
++# groups, refill the deficit with replacement prompts of the same language / domain / bin (at most max_refills extra rounds) and update on the first `prompts` informative groups. reward / finished rate / greedy_*
++# / per-language statistics are logged on ALL generated groups; ds/... counters and <out_dir>/dynamic_sampling_by_language.json show what the filter did.
++dynamic_sampling: true
++dynamic_sampling_oversample: 1.1
++dynamic_sampling_max_refills: 2
++dynamic_sampling_min_std: 0.01
++"""
+ 
+ 
+ HUB_BY_STAGE = {   # stage -> (repo, branch); the preflight pushes nothing
+@@ -111,10 +143,18 @@
+     # longdoc_compare_v1 logs, next to the reward, what the v1 guards would have done (longdoc/delta_reward_*, longdoc/v1_*_rate): read it in the preflight.
+     txt = re.sub(r"^(\s*)longdoc_min_src_words: \d+.*$", r"\1longdoc_min_src_words: 1  # 385M plan (owner 2026-11-02): longdoc_v2 on EVERY source, also b64 / b256 (was 150 words); see scripts/clean_rerun_385m_make_configs.py", txt, flags=re.M)
+     txt = re.sub(r"^(\s*)longdoc_v2: true(.*)$", r"\1longdoc_v2: true\2\n\1longdoc_compare_v1: true  # diagnostic only: logs the longdoc path against the v1 guards / plain mean for the preflight", txt, flags=re.M)
++    # owner 2026-11-03: dynamic sampling in every training stage (not the preflight), reference-anchored reward term (rows with a human reference only; no effect where the pool has none)
++    if stage != "preflight":
++        extra = "".join(blk for key, blk in (("ds", DS_LINES), ("adv", ADV_LINES), ("log", LOG_LINES), ("guide", GUIDE_LINES)) if key in FEATURES)
++        if extra:
++            txt = re.sub(r"^(greedy_share_warn: .*\n)", lambda m: m.group(1) + extra, txt, count=1, flags=re.M)
++        if "ref" in FEATURES:
++            txt = re.sub(r"^(\s*)longdoc_compare_v1: true(.*)$", lambda m: m.group(0) + f"\n{m.group(1)}reference_weight: {REF_WEIGHT}  # owner 2026-11-03: r = (1 - w) r_existing + w consensus_value(chrF++ vs the human reference), on prompts that carry one (domain ref); failures / guards / penalties untouched", txt, count=1, flags=re.M)
++            assert "reference_weight:" in txt
+     # owner 2026-11-03: NEWS-style English prompts (BBC News from the Hub, pool artifacts/rl_prompts_news -> <pool>/news/<iso>.parquet, `domain` column "news") are mixed into the translation stages:
+     # 30 % of the draws, 70 % FineWeb-Edu / Wikipedia (unlabeled rows load as "general", see rl/data.py). The final (science) stage keeps its own science 0.7 / general 0.3 mixture.
+     if stage != "final":
+-        txt = re.sub(r"^(language_weights: .*)$", lambda m: m.group(1) + "\n" + NEWS_LINE, txt, count=1, flags=re.M)
++        txt = re.sub(r"^(language_weights: .*)$", lambda m: m.group(1) + "\n" + (NEWS_LINE_PREFLIGHT if stage == "preflight" or "ref" not in FEATURES else NEWS_LINE), txt, count=1, flags=re.M)
+         assert "domain_weights" in txt
+     txt = txt.replace("\nscorer:", "\n" + FLAGS + "\nscorer:", 1)
+     hdr = (f"# 385M GROWN MODEL (owner 2026-11-01): GENERATED by scripts/clean_rerun_385m_make_configs.py from the clean-rerun generator (same recipe, caps and reward as configs/clean_rerun; see that script for the overrides).\n"
+@@ -165,6 +205,10 @@
+     t = _put(t, "eval_every", 35, "hold-out reward + greedy finished / loop rate at steps 35 and 70")
+     t = _put(t, "eval_prompts", 96, "F2: long greedy decodes (up to 7,168 tokens) make every evaluation prompt expensive")
+     t = _put(t, "benchmark_eval_every", 35, "sentence-level dev chrF++ at steps 35 and 70: the PRODUCTION mode must not regress")
++    if "ds" in FEATURES:
++        t = _put(t, "dynamic_sampling", "false", "F2: long documents (b1024 / b2048) cost far more per prompt; flat groups are rare there and an over-sampled draw would not pay (the translation stages and the final run use it)")
++    if "guide" in FEATURES:
++        t = _put(t, "guide_fraction", "0.0", "F2: a beam search over a 7k-token document costs minutes; no guide in the long-document stage")
+     t = _put(t, "archive", "false", "F2 feeds nothing")
+     t = _put(t, "archive_path", "null")
+     t = re.sub(r"^hub_repo_id: \S+", f"hub_repo_id: {F2_HUB[0]}", t, count=1, flags=re.M)
+@@ -180,7 +224,13 @@
+ 
+ def main():
+     ap = argparse.ArgumentParser(); ap.add_argument("--out", default=os.path.join(HERE, "..", "configs", "clean_rerun_385m")); ap.add_argument("--root", default="/workspace/clean_rerun")
++    ap.add_argument("--features", default=",".join(ALL_FEATURES), help=f"owner 2026-11-03 additions to switch ON in the stage yamls, subset of {ALL_FEATURES} (ds = dynamic sampling, adv = advantage std floor, log = group stats, guide = beam guide, ref = reference term + reference domain)")
+     a = ap.parse_args()
++    global FEATURES
++    FEATURES = {f for f in a.features.split(",") if f}
++    bad = FEATURES - set(ALL_FEATURES)
++    if bad:
++        ap.error(f"unknown feature(s) {sorted(bad)}")
+     out = os.path.abspath(a.out); os.makedirs(out, exist_ok=True)
+     P = gen.paths(a.root)
+     apply_b256_cap(gen)
+diff -ruN orig/scripts/clean_rerun_tools.py new/scripts/clean_rerun_tools.py
+--- orig/scripts/clean_rerun_tools.py	2026-11-03 00:57:10
++++ new/scripts/clean_rerun_tools.py	2026-11-03 01:20:44
+@@ -160,6 +160,13 @@
+         _expect(errs, cfg.length_bins and cfg.run_controls and cfg.eval_min_per_bin >= 16, "length_bins / run_controls / eval_min_per_bin")
+         _expect(errs, cfg.steps == S["steps"] or spec or a.allow_other_steps, f"steps {cfg.steps} != plan {S['steps']}")
+         _expect(errs, cfg.keep_single_checkpoint is False, "keep_single_checkpoint must be false (the hand-off needs final/)")
++        if b256:                                    # owner 2026-11-03: dynamic sampling in every training stage, the reference term in every stage (rows with a reference only), the reference domain in the translation stages
++            _expect(errs, cfg.dynamic_sampling is (stage != "preflight") and (stage == "preflight" or (cfg.dynamic_sampling_oversample >= 1.0 and cfg.dynamic_sampling_max_refills >= 1)), "dynamic_sampling must be on in A / B1 / mixed / final and off in the preflight")
++            _expect(errs, (cfg.reward.get("reference_weight", 0.0) == w385.REF_WEIGHT) is (stage != "preflight"), "reward.reference_weight must be set (w385.REF_WEIGHT) in every stage but the preflight")
++            _expect(errs, (cfg.adv_std_floor > 0) is (stage != "preflight") and cfg.log_group_stats is (stage != "preflight"), "adv_std_floor / log_group_stats must be on in every stage but the preflight")
++            _expect(errs, (cfg.guide_fraction > 0) is (stage != "preflight") and (stage == "preflight" or (cfg.guide_beams >= 2 and 0 < cfg.guide_adv_share_cap < 1 and cfg.hard_fail_mask == "off")), "beam guide must be on (capped, hard_fail_mask off) in every stage but the preflight")
++            if stage in ("A", "B1", "mixed"):
++                _expect(errs, abs(cfg.domain_weights.get("ref", 0.0) - w385.REF_SHARE) < 1e-9 and abs(sum(cfg.domain_weights.values()) - 1.0) < 1e-9, f"domain_weights {cfg.domain_weights}: ref share must be {w385.REF_SHARE} and the shares must sum to 1")
+         if not spec:
+             _expect(errs, set(cfg.language_weights) == set(gen.WEIGHTED_LANGS) and all(v == 2.5 for v in cfg.language_weights.values()), "language_weights != the 25-language dev-defined weak list + the 4 owner-priority languages (efi tiv bin ish) at 2.5")
+         if stage in ("A", "B1", "B2", "B3", "preflight"):
+@@ -185,7 +192,7 @@
+         # ---- replay the schedule of the whole stage on a synthetic pool (every language x bin x domain, 200 rows per cell)
+         try:
+             iso, lb, dm = [], [], []
+-            doms = ["science", "general"] if fin else [""]
++            doms = list(cfg.domain_weights) if cfg.domain_weights else [""]          # 385M plan: general / news / ref (translation stages), science / general (final)
+             for l in langs:
+                 for b in bins_present:
+                     for dname in doms:
+@@ -193,7 +200,7 @@
+                         lb += [b] * 200
+                         dm += [dname] * 200
+             sch = PromptSchedule(np.asarray(iso), cfg.language_alpha, cfg.seed, length_bin=lb, curriculum=cfg.curriculum_steps or None, language_weights=cfg.language_weights or None,
+-                                 domain=dm if fin else None, domain_weights=cfg.domain_weights or None, domain_bin_weights=cfg.domain_bin_weights or None,
++                                 domain=dm if cfg.domain_weights else None, domain_weights=cfg.domain_weights or None, domain_bin_weights=cfg.domain_bin_weights or None,
+                                  floor_steps=cfg.language_floor_steps, floor_prompts=cfg.language_floor_prompts)
+             n_prompts = 0
+             bins = collections.Counter()
+@@ -259,7 +266,7 @@
+                 cfg = None
+             if cfg is not None:
+                 _expect(errs, cfg.steps == w385.F2_STEPS, f"steps {cfg.steps} != {w385.F2_STEPS}")
+-                _expect(errs, cfg.model_name.endswith("runs_385m/final/final") and cfg.out_dir.endswith("runs_385m/F2") and str(cfg.hub_repo_id).endswith("gemma-mt-385m-rl-f2"), "model_name / out_dir / hub_repo_id")
++                _expect(errs, cfg.model_name.endswith("runs_385m/final/final") and cfg.out_dir.endswith("runs_385m/F2") and (cfg.hub_repo_id, cfg.hub_branch) == w385.F2_HUB, "model_name / out_dir / hub_repo_id / hub_branch (w385.F2_HUB)")
+                 _expect(errs, cfg.max_src_tokens == w385.F2_MAX_SRC and cfg.vllm_max_model_len == w385.F2_MAX_MODEL_LEN, "max_src_tokens / vllm_max_model_len")
+                 _expect(errs, cfg.vllm_max_model_len >= 2400 + w385.F2_MAX_NEW["b2048"], "vllm_max_model_len below the b2048 prompt (<= ~2,300 Gemma tokens) + max_new_tokens")
+                 _expect(errs, cfg.prompts_per_step_by_bin == w385.F2_PPS and cfg.max_new_tokens_by_bin == w385.F2_MAX_NEW, "prompts_per_step_by_bin / max_new_tokens_by_bin")
+diff -ruN orig/scripts/group_std_percentiles.py new/scripts/group_std_percentiles.py
+--- orig/scripts/group_std_percentiles.py	1969-12-31 17:00:00
++++ new/scripts/group_std_percentiles.py	2026-11-03 01:20:44
+@@ -0,0 +1,33 @@
++#!/usr/bin/env python3
++"""Percentiles of the within-group reward std from <run>/group_stats.jsonl (config log_group_stats). Use it to (re)set `adv_std_floor` (about the 10th percentile: only near-flat groups are damped),
++`dynamic_sampling_min_std` and to see which languages have the flattest groups.
++
++    python scripts/group_std_percentiles.py RUN_DIR [--from-step 20] [--by-language]
++"""
++import argparse
++import collections
++import json
++import os
++
++import numpy as np
++
++ap = argparse.ArgumentParser()
++ap.add_argument("run")
++ap.add_argument("--from-step", type=int, default=0)
++ap.add_argument("--by-language", action="store_true")
++a = ap.parse_args()
++rows = [json.loads(l) for l in open(os.path.join(a.run, "group_stats.jsonl")) if l.strip()]
++rows = [r for r in rows if r["step"] >= a.from_step]
++std = np.asarray([r["std"] for r in rows])
++print(f"{len(rows)} groups, steps {min(r['step'] for r in rows)}..{max(r['step'] for r in rows)}")
++print("group std percentiles:", {f"p{q}": round(float(np.percentile(std, q)), 4) for q in (1, 5, 10, 25, 50, 75, 90)})
++print("share exactly flat (< 1e-6):", round(float((std < 1e-6).mean()), 4), " share below 0.01:", round(float((std < 0.01).mean()), 4), " below 0.02:", round(float((std < 0.02).mean()), 4), " below 0.05:", round(float((std < 0.05).mean()), 4))
++g = [r for r in rows if r["guide"]]
++if g:
++    print(f"guided groups {len(g)}: median std {np.median([r['std'] for r in g]):.4f} (all groups {np.median(std):.4f})")
++if a.by_language:
++    by = collections.defaultdict(list)
++    for r in rows:
++        by[r["iso"]].append(r["std"])
++    for iso, v in sorted(by.items(), key=lambda kv: np.median(kv[1])):
++        print(f"  {iso}: n={len(v)} median {np.median(v):.3f} p10 {np.percentile(v, 10):.3f} flat {np.mean(np.asarray(v) < 1e-6):.2f}")
+diff -ruN orig/tests/test_adv_floor_guide.py new/tests/test_adv_floor_guide.py
+--- orig/tests/test_adv_floor_guide.py	1969-12-31 17:00:00
++++ new/tests/test_adv_floor_guide.py	2026-11-03 01:20:44
+@@ -0,0 +1,146 @@
++# SPDX-License-Identifier: AGPL-3.0-or-later
++"""Owner 2026-11-03: advantage std floor, per-prompt group statistics, beam-guided group member (all default OFF). Needs torch (CPU, tiny random Gemma3)."""
++import json
++import math
++import os
++
++import pytest
++
++torch = pytest.importorskip("torch")
++pytest.importorskip("transformers")
++
++from gemma_mt.rl import grpo
++
++
++def _rows(path):
++    return [json.loads(l) for l in open(path)]
++
++
++def test_floor_off_is_the_old_advantage_and_on_damps_only_groups_below_the_floor():
++    r = torch.tensor([0.0, 0.1, 0.2, 0.3,   0.0, 0.001, 0.002, 0.003,   1.0, 1.0, 1.0, 1.0])
++    old, _ = grpo.group_advantages(r, 4)
++    same, _ = grpo.group_advantages(r, 4, std_floor=0.0)
++    assert torch.equal(old, same)
++    new, flat = grpo.group_advantages(r, 4, std_floor=0.05)
++    mean = r.view(3, 4).mean(1, keepdim=True)
++    std = r.view(3, 4).std(1, unbiased=False, keepdim=True)
++    assert torch.allclose(new.view(3, 4)[0], ((r.view(3, 4) - mean) / std)[0], atol=1e-3)          # std 0.112 > floor: the standardised advantage (no eps)
++    assert torch.allclose(new.view(3, 4)[1], (r.view(3, 4) - mean)[1] / 0.05, atol=1e-6)            # near-flat group: divided by the floor, magnitude ~ std / floor
++    assert new.view(3, 4)[1].abs().max() < 0.05 and old.view(3, 4)[1].abs().max() > 1.0              # the old rule blew the same jitter up to |A| > 1
++    assert torch.equal(new.view(3, 4)[2], torch.zeros(4)) and flat == pytest.approx(1 / 3)           # exactly flat stays 0
++
++
++def test_floor_in_the_sampled_baseline_and_masked_variants():
++    r = torch.tensor([0.0, 0.001, 0.002, 5.0,   0.0, 1.0, 2.0, 3.0])
++    a, _ = grpo.group_advantages_sampled_baseline(r, 4, std_floor=0.1)
++    s = r.view(2, 4)[:, :-1]
++    assert torch.allclose(a.view(2, 4)[0], (r.view(2, 4)[0] - s[0].mean()) / 0.1, atol=1e-5)
++    failed = torch.tensor([False, False, False, True, False, False, False, False])
++    z, _ = grpo.group_advantages_masked(r, 4, failed, "zero", std_floor=0.1)
++    assert z[3] == 0.0 and z.view(2, 4)[1].abs().max() > 0
++    e, _ = grpo.group_advantages_masked(r, 4, failed, "exclude", std_floor=0.1)
++    assert e[3] == 0.0 and torch.isfinite(e).all()
++
++
++def test_dropped_members_leave_the_group_statistics_and_get_no_advantage():
++    r = torch.tensor([0.0, 1.0, 2.0, -2.0,   0.0, 1.0, 2.0, 3.0])
++    drop = torch.tensor([False, False, False, True, False, False, False, False])
++    a, _ = grpo.group_advantages(r, 4, drop=drop)
++    ref, _ = grpo.group_advantages(torch.tensor([0.0, 1.0, 2.0]), 3)
++    assert a[3] == 0.0 and torch.allclose(a[:3], ref, atol=1e-4)                                   # the others: exactly the advantages of a group without the dropped member
++    base, _ = grpo.group_advantages(r, 4)
++    assert torch.equal(a[4:], base[4:]) and not torch.allclose(a[:3], base[:3])                    # the untouched group is unchanged, the touched one is not
++    assert torch.equal(grpo.group_advantages(r, 4, drop=torch.zeros(8, dtype=torch.bool))[0], base)   # an all-False mask is the old code path
++    # sampled baseline (greedy last, guide at index 2 dropped): statistics over members 0 and 1 only, the greedy member relative to them, dropped member 0
++    rr = torch.tensor([0.0, 1.0, -2.0, 4.0])
++    b, _ = grpo.group_advantages_sampled_baseline(rr, 4, drop=torch.tensor([False, False, True, False]))
++    mean, std = 0.5, 0.5
++    assert b[2] == 0.0 and abs(float(b[0]) - (0.0 - mean) / (std + 1e-4)) < 1e-5 and abs(float(b[3]) - (4.0 - mean) / (std + 1e-4)) < 1e-4
++    one, flat = grpo.group_advantages(torch.tensor([1.0, 2.0, 3.0, 4.0]), 4, drop=torch.tensor([True, True, True, False]))
++    assert torch.equal(one, torch.zeros(4)) and flat == 1.0                                          # fewer than two members left: flat
++
++
++def test_guide_share_cap_scales_only_when_the_share_is_above_the_cap():
++    adv = torch.tensor([1.0, -1.0, 1.0, 3.0, -1.0, 1.0])
++    lengths = torch.tensor([10.0, 10.0, 10.0, 10.0, 10.0, 10.0])
++    members = torch.tensor([False, False, False, True, False, False])
++    same, share, factor = grpo.cap_member_share(adv, lengths, members, 0.6)
++    assert torch.equal(same, adv) and factor == 1.0 and share == pytest.approx(3.0 / 8.0)
++    out, share, factor = grpo.cap_member_share(adv, lengths, members, 0.25)
++    w = out.abs() * lengths
++    assert share == pytest.approx(0.375) and float(w[members].sum() / w.sum()) == pytest.approx(0.25) and torch.equal(out[~members], adv[~members]) and factor < 1.0
++    assert torch.equal(grpo.cap_member_share(adv, lengths, members, 0.0)[0], adv) and torch.equal(grpo.cap_member_share(adv, lengths, torch.zeros(6, dtype=torch.bool), 0.1)[0], adv)
++    # token weighting: a long guide counts for its length
++    out2, share2, _ = grpo.cap_member_share(adv, torch.tensor([10.0, 10.0, 10.0, 40.0, 10.0, 10.0]), members, 0.25)
++    assert share2 > share and float((out2.abs() * torch.tensor([10.0, 10.0, 10.0, 40.0, 10.0, 10.0]))[members].sum() / (out2.abs() * torch.tensor([10.0, 10.0, 10.0, 40.0, 10.0, 10.0])).sum()) == pytest.approx(0.25)
++
++
++def test_config_validation_of_the_new_keys():
++    from gemma_mt.rl.train_rl import RLConfig, validate_config
++
++    cfg = RLConfig()
++    assert cfg.adv_std_floor == 0.0 and cfg.log_group_stats is False and cfg.guide_fraction == 0.0 and cfg.guide_beams == 4
++    validate_config(RLConfig(adv_std_floor=0.02, log_group_stats=True, guide_fraction=0.25, group_size=8))
++    assert cfg.guide_adv_share_cap == 0.0
++    validate_config(RLConfig(guide_fraction=0.25, guide_adv_share_cap=0.25, group_size=16, greedy_in_group=True, greedy_stats="sampled"))
++    for bad in ({"adv_std_floor": -0.1}, {"guide_fraction": 1.5}, {"guide_fraction": 0.25, "guide_beams": 1}, {"guide_fraction": 0.25, "group_size": 3}, {"guide_adv_share_cap": 1.0},
++                {"guide_fraction": 0.25, "group_size": 8, "hard_fail_mask": "zero"}):
++        with pytest.raises(ValueError):
++            validate_config(RLConfig(**bad))
++
++
++def test_beam_completions_are_one_per_prompt_cut_at_stop_and_deterministic():
++    from gemma_mt import format as fmt
++    from gemma_mt.fake_tokenizer import FakeGemmaTokenizer
++    from gemma_mt.modeling import build_tiny_model
++    from gemma_mt.rl.sampling import generate_beam_completions
++
++    tok = FakeGemmaTokenizer()
++    model = build_tiny_model(seed=11, attn_implementation="sdpa").eval()
++    prompts = [fmt.build_prompt("Good morning", "yor", tok), fmt.build_prompt("Water is life, and we all need it.", "hau", tok)]
++    a = generate_beam_completions(model, prompts, num_beams=3, max_new_tokens=10, stop_ids=[106, 1], pad_id=0, device="cpu")
++    b = generate_beam_completions(model, prompts, num_beams=3, max_new_tokens=10, stop_ids=[106, 1], pad_id=0, device="cpu")
++    assert len(a.completions) == 2 and a.completions == b.completions and a.sampler_logp is None
++    for c, f in zip(a.completions, a.finished):
++        assert 1 <= len(c) <= 10 and f == (c[-1] in (106, 1)) and not any(t in (106, 1) for t in c[:-1])
++
++
++def test_loop_with_floor_group_stats_and_guides_runs_all_in_loop_assertions():
++    from gemma_mt.rl.train_rl import run_smoke
++
++    s = run_smoke(sft_steps=60, overrides={"adv_std_floor": 0.02, "log_group_stats": True, "guide_fraction": 0.7, "guide_beams": 2, "group_size": 4, "guide_adv_share_cap": 0.01})
++    rows = _rows(s["workdir"] + "/rl/metrics.jsonl")
++    train = [r for r in rows if "reward" in r]
++    assert len(train) == 4
++    for r in train:
++        assert math.isfinite(r["reward"]) and abs(r["ratio_mean"] - 1.0) < 1e-5            # on-policy ratio stays exactly 1 with a guide in the batch
++        assert r["guide/n"] >= 1 and 0.0 <= r["guide/better_frac"] <= 1.0 and math.isfinite(r["guide/reward"]) and math.isfinite(r["group_std/p10"])
++        assert 0.0 <= r["guide/best_frac"] <= 1.0 and r["guide/seconds"] > 0 and 0.0 < r["guide/overhead_frac"] < 1.0 and 0.0 < r["guide/adv_cap_factor"] <= 1.0 and r["guide/adv_share"] >= 0.0
++    # (whether the cap bites in this tiny model depends on its groups being flat or not; the arithmetic is covered by test_guide_share_cap_scales_only_when_the_share_is_above_the_cap)
++    table = json.load(open(s["workdir"] + "/rl/guide_by_language.json"))
++    assert table and all(0.0 <= v["win_rate"] <= 1.0 and v["n"] >= 1 for v in table.values())
++    for v in table.values():                         # guide vs MBR pick of the samples vs greedy vs group mean, and how often each is the best member
++        assert all(0.0 <= v[k] <= 1.0 for k in ("best_rate", "best_rate_guide", "best_rate_mbr", "best_rate_greedy")) and v["n_mbr"] <= v["n"]
++        assert all(math.isfinite(v[k]) for k in ("reward_guide", "reward_mbr", "reward_greedy", "reward_group_mean"))
++    gs = _rows(s["workdir"] + "/rl/group_stats.jsonl")
++    assert len(gs) == 4 * 3 and {"step", "prompt", "iso", "std", "mean", "n_fail", "guide"} <= set(gs[0]) and any(x["guide"] for x in gs)
++
++
++def test_loop_with_guides_greedy_member_dynamic_sampling_and_everything_else_on():
++    from gemma_mt.rl.train_rl import run_smoke
++
++    s = run_smoke(sft_steps=60, overrides={"guide_fraction": 0.5, "guide_beams": 2, "group_size": 4, "greedy_in_group": True, "greedy_stats": "sampled", "greedy_adv_scale": 0.3,
++                                           "dynamic_sampling": True, "dynamic_sampling_oversample": 1.5, "dynamic_sampling_min_std": 0.0, "adv_std_floor": 0.02, "log_group_stats": True})
++    train = [r for r in _rows(s["workdir"] + "/rl/metrics.jsonl") if "reward" in r]
++    assert len(train) == 4 and all(abs(r["ratio_mean"] - 1.0) < 1e-5 and r["ds/kept_groups"] <= 3 for r in train)
++    assert os.path.exists(s["workdir"] + "/rl/group_stats.jsonl") and abs(train[0]["kl"]) < 1e-6
++
++
++def test_off_by_default_changes_nothing():
++    from gemma_mt.rl.train_rl import run_smoke
++
++    a = run_smoke(sft_steps=60)
++    b = run_smoke(sft_steps=60, overrides={"adv_std_floor": 0.0, "guide_fraction": 0.0, "log_group_stats": False})
++    ra = [r["reward"] for r in _rows(a["workdir"] + "/rl/metrics.jsonl") if "reward" in r]
++    rb = [r["reward"] for r in _rows(b["workdir"] + "/rl/metrics.jsonl") if "reward" in r]
++    assert ra == rb and not os.path.exists(a["workdir"] + "/rl/group_stats.jsonl")
+diff -ruN orig/tests/test_clean_rerun_385m.py new/tests/test_clean_rerun_385m.py
+--- orig/tests/test_clean_rerun_385m.py	2026-11-03 00:27:24
++++ new/tests/test_clean_rerun_385m.py	2026-11-03 01:20:44
+@@ -178,3 +178,40 @@
+     worse = tmp_path / "worse.json"; _preds(worse, _spec(degrade=lambda i, iso: 0.6 if i % 2 == 0 else 0.0, unfinished=lambda i, iso: False))
+     r = _tool("f2-decide", "--base", str(f), "--new", str(worse), "--bootstrap", "2000")
+     assert r.returncode == 10 and '"criterion_B_finished_plus_2_points_chrf_not_lower": false' in r.stdout
++
++
++def test_dynamic_sampling_and_reference_term_settings():
++    """Owner 2026-11-03: dynamic sampling ON in A / B1 / mixed / final (OFF in the preflight and in the long-document F2), the reference term (reward.reference_weight 0.35) in every stage but the preflight,
++    the reference domain (15 % of the draws) in the translation stages; the preflight keeps its 70 / 30 general / news mixture."""
++    yaml = pytest.importorskip("yaml")
++    got = {}
++    for f in FILES + [F2_FILE]:
++        got[f] = yaml.safe_load(open(os.path.join(CFG, f)))
++    assert got["rl_00_preflight.yaml"].get("dynamic_sampling", False) is False and "reference_weight" not in got["rl_00_preflight.yaml"]["reward"]
++    assert not any(k in got["rl_00_preflight.yaml"] for k in ("adv_std_floor", "guide_fraction", "log_group_stats"))
++    assert got["rl_00_preflight.yaml"]["domain_weights"] == {"general": 0.7, "news": 0.3}
++    for f in ("rl_A_b64.yaml", "rl_B1_b256.yaml", "rl_C_mixed.yaml", "rl_F_final.yaml"):
++        d = got[f]
++        assert d["dynamic_sampling"] is True and d["dynamic_sampling_oversample"] == 1.1 and d["dynamic_sampling_max_refills"] == 2 and d["dynamic_sampling_min_std"] == 0.01, f
++        assert d["reward"]["reference_weight"] == 0.35, f
++        assert d["adv_std_floor"] == 0.02 and d["log_group_stats"] is True, f                                                                              # advantage std floor + per-prompt group statistics (owner 2026-11-03)
++        assert d["guide_fraction"] == 0.25 and d["guide_beams"] == 4 and d["guide_adv_share_cap"] == 0.25 and d.get("hard_fail_mask", "off") == "off", f      # beam-guided member ON, capped
++    for f in ("rl_A_b64.yaml", "rl_B1_b256.yaml", "rl_C_mixed.yaml"):
++        w = got[f]["domain_weights"]
++        assert abs(sum(w.values()) - 1.0) < 1e-9 and w["ref"] == 0.15 and abs(w["news"] / (w["general"] + w["news"]) - 0.3) < 1e-3, (f, w)
++    assert got["rl_F_final.yaml"]["domain_weights"] == {"science": 0.7, "general": 0.3}
++    assert got[F2_FILE]["dynamic_sampling"] is False and got[F2_FILE]["guide_fraction"] == 0.0
++
++
++def test_features_option_of_the_generator_switches_the_additions_on_one_by_one():
++    with tempfile.TemporaryDirectory() as td:
++        subprocess.run([sys.executable, os.path.join(ROOT, "scripts", "clean_rerun_385m_make_configs.py"), "--out", td, "--features", "ds,adv,log"], check=True, capture_output=True)
++        yaml = pytest.importorskip("yaml")
++        d = yaml.safe_load(open(os.path.join(td, "rl_A_b64.yaml")))
++        assert d["dynamic_sampling"] is True and d["adv_std_floor"] == 0.02 and d["log_group_stats"] is True
++        assert "guide_fraction" not in d and "reference_weight" not in d["reward"] and d["domain_weights"] == {"general": 0.7, "news": 0.3}
++        subprocess.run([sys.executable, os.path.join(ROOT, "scripts", "clean_rerun_385m_make_configs.py"), "--out", td, "--features", "ds,adv,log,guide"], check=True, capture_output=True)
++        d = yaml.safe_load(open(os.path.join(td, "rl_A_b64.yaml")))
++        assert d["guide_fraction"] == 0.25 and "ref" not in d["domain_weights"]
++        r = subprocess.run([sys.executable, os.path.join(ROOT, "scripts", "clean_rerun_385m_make_configs.py"), "--out", td, "--features", "bogus"], capture_output=True)
++        assert r.returncode != 0
+diff -ruN orig/tests/test_dynamic_ref_loop.py new/tests/test_dynamic_ref_loop.py
+--- orig/tests/test_dynamic_ref_loop.py	1969-12-31 17:00:00
++++ new/tests/test_dynamic_ref_loop.py	2026-11-03 01:20:44
+@@ -0,0 +1,72 @@
++# SPDX-License-Identifier: AGPL-3.0-or-later
++"""End to end on CPU (tiny random Gemma3, fake tokenizer, fake scorer): the training loop with dynamic sampling and with reference-anchored prompts (owner 2026-11-03)."""
++import json
++import math
++
++import pytest
++
++pytest.importorskip("torch")
++pytest.importorskip("transformers")
++
++
++def _rows(path):
++    return [json.loads(l) for l in open(path)]
++
++
++def _train(rows):
++    return [r for r in rows if "reward" in r]
++
++
++def test_dynamic_sampling_loop_with_everything_flat_refills_then_falls_back():
++    from gemma_mt.rl.train_rl import run_smoke
++
++    s = run_smoke(sft_steps=60, overrides={"dynamic_sampling": True, "dynamic_sampling_min_std": 100.0, "dynamic_sampling_max_refills": 2, "dynamic_sampling_oversample": 1.0})
++    assert s["steps"] == 4
++    train = _train(_rows(s["workdir"] + "/rl/metrics.jsonl"))
++    assert len(train) == 4
++    for r in train:
++        assert r["ds/fallback"] == 1 and r["ds/refill_rounds"] == 2 and r["ds/kept_groups"] == 3 and r["ds/generated_groups"] == 9 and r["ds/dropped_flat"] == 6
++        assert math.isfinite(r["reward"]) and abs(r["ratio_mean"] - 1.0) < 1e-5 and r["flat_group_frac"] == 1.0
++    table = json.load(open(s["workdir"] + "/rl/dynamic_sampling_by_language.json"))
++    assert sum(v["generated"] for v in table.values()) >= 9 and all(v["flat_rate"] <= 1.0 for v in table.values())
++
++
++def test_dynamic_sampling_loop_oversample_keeps_exactly_the_target_and_monitors_all_groups():
++    from gemma_mt.rl.train_rl import run_smoke
++
++    s = run_smoke(sft_steps=60, overrides={"dynamic_sampling": True, "dynamic_sampling_min_std": 0.0, "dynamic_sampling_oversample": 5 / 3})
++    train = _train(_rows(s["workdir"] + "/rl/metrics.jsonl"))
++    assert len(train) == 4
++    for r in train:
++        assert r["ds/generated_groups"] >= 3 and r["ds/kept_groups"] <= 3
++        assert r["ds/kept_groups"] + r["ds/surplus"] + r["ds/dropped_flat"] == r["ds/generated_groups"]
++        assert abs(r["ratio_mean"] - 1.0) < 1e-5 and 0.0 <= r["finished_rate"] <= 1.0
++    assert abs(train[0]["kl"]) < 1e-6
++
++
++def test_off_is_bit_for_bit_the_old_loop():
++    from gemma_mt.rl.train_rl import run_smoke
++
++    a = run_smoke(sft_steps=60)
++    b = run_smoke(sft_steps=60, overrides={"dynamic_sampling": False})
++    ra, rb = _train(_rows(a["workdir"] + "/rl/metrics.jsonl")), _train(_rows(b["workdir"] + "/rl/metrics.jsonl"))
++    assert [r["reward"] for r in ra] == [r["reward"] for r in rb] and not any(k.startswith("ds/") for k in ra[0])
++
++
++def test_reference_rows_get_the_chrf_term_in_training_only(tmp_path):
++    from gemma_mt.smoke import ENGLISH, fake_translation, write_jsonl
++    from gemma_mt.rl.train_rl import run_smoke
++
++    langs = ["yor", "hau", "ibo"]
++    rows = [{"english": ENGLISH[i % len(ENGLISH)], "iso": langs[i % 3], "language": "", "src_afr_tokens": 12, "source_dataset": "smoke", "length_bin": "b64", "domain": "general"} for i in range(30)]
++    rows += [{"english": ENGLISH[i % len(ENGLISH)], "iso": langs[i % 3], "language": "", "src_afr_tokens": 12, "source_dataset": "smoke", "length_bin": "b64", "domain": "ref",
++              "reference": fake_translation(ENGLISH[i % len(ENGLISH)], langs[i % 3]), "ref_source": "synthetic", "ref_licence": "test"} for i in range(30)]
++    path = write_jsonl(str(tmp_path / "prompts.jsonl"), rows)
++    s = run_smoke(sft_steps=120, overrides={"prompts_path": path, "length_bins": True, "domain_weights": {"general": 0.4, "ref": 0.6}, "reward": {"max_comet_tokens": 510, "reference_weight": 0.35},
++                                            "steps": 6, "eval_every": 3})
++    rec = _rows(s["workdir"] + "/rl/metrics.jsonl")
++    train = _train(rec)
++    assert len(train) == 6 and any(r.get("reward/ref/n", 0) > 0 for r in train), "the reference term never fired"
++    assert all(0.0 <= r["reward/ref/chrf_mean"] <= 100.0 for r in train if "reward/ref/chrf_mean" in r)
++    ev = [r for r in rec if "eval/reward" in r]
++    assert ev and all(math.isfinite(r["eval/reward"]) for r in ev)
+diff -ruN orig/tests/test_dynamic_sampling.py new/tests/test_dynamic_sampling.py
+--- orig/tests/test_dynamic_sampling.py	1969-12-31 17:00:00
++++ new/tests/test_dynamic_sampling.py	2026-11-03 01:20:44
+@@ -0,0 +1,207 @@
++# SPDX-License-Identifier: AGPL-3.0-or-later
++"""Dynamic sampling (owner 2026-11-03; rl/dynamic_sampling.py): zero-variance detection, row selection / concatenation, the refill loop (cap, language bookkeeping, fallback),
++the replacement draw of the schedule, config validation."""
++import json
++import os
++from collections import Counter
++
++import pytest
++
++from gemma_mt.rl.data import PromptSchedule, load_rl_prompts
++from gemma_mt.rl.dynamic_sampling import LanguageCounters, concat_rollout_output, dynamic_rollout, informative_groups, subset_rollout_output
++from gemma_mt.rl.reward import RewardOutput, Sample
++from gemma_mt.rl.sampling import Rollout
++
++G = 4
++ISO = {0: "yor", 1: "hau", 2: "ibo", 3: "yor", 4: "hau", 5: "ibo", 6: "yor", 7: "hau"}
++
++
++def make_gen(flat_prompts, calls=None):
++    """generate(indices, round): a prompt in `flat_prompts` gets four identical rewards (-2: all failed), every other prompt a spread; completion k of prompt p has length p + k + 1."""
++    def gen(ix, rnd):
++        if calls is not None:
++            calls.append((list(ix), rnd))
++        comps, rewards, status, samples = [], [], [], []
++        for p in ix:
++            for k in range(G):
++                comps.append([7] * (p + k + 1))
++                flat = p in flat_prompts
++                rewards.append(-2.0 if flat else -1.0 + 0.5 * k + 0.01 * p)
++                status.append("no_end_of_turn" if flat else "ok")
++                samples.append(Sample(comps[-1], ISO.get(p, "yor"), f"src {p}"))
++        n = len(comps)
++        roll = Rollout([[1, 2]] * n, comps, [s == "ok" for s in status], None, [0] * n)
++        out = RewardOutput(rewards, [1.0] * n, [None] * n, status, [""] * n, [""] * n, {"fail/no_end_of_turn": sum(s != "ok" for s in status) / n}, consensus_chrf=[None] * n)
++        return roll, samples, out
++    return gen
++
++
++def redraw_fn(log):
++    def redraw(dropped, rnd):
++        log.append((list(dropped), rnd))
++        return [100 * rnd + 10 + k for k in range(len(dropped))]            # a fresh, informative prompt per dropped one
++    return redraw
++
++
++def iso_of(p):
++    return ISO.get(p, "yor")
++
++
++def test_informative_groups_flat_tiny_spread_sampled_only_and_exclude():
++    r = [1, 1, 1, 1,  0, 0.5, 1, 1.5,  -2, -2, -2, -2,  0.5, 0.5, 0.5, 0.504]
++    assert informative_groups(r, 4, 0.01) == [False, True, False, False]            # 0.0017 of std is jitter, not a signal
++    assert informative_groups(r, 4, 0.0)[0] is False and informative_groups(r, 4, 0.0)[3] is True
++    # sampled_only: the group's greedy (last) member alone does not make it informative
++    assert informative_groups([1, 1, 1, -2], 4, 0.01, sampled_only=False) == [True]
++    assert informative_groups([1, 1, 1, -2], 4, 0.01, sampled_only=True) == [False]
++    # exclude: the spread is measured on the non-failed members, fewer than 2 survivors = uninformative
++    failed = [True, False, True, True,  False, False, True, True]
++    assert informative_groups([-2, 1, -2, -2,  0.0, 1.0, -2, -2], 4, 0.01, failed=failed, mask_mode="exclude") == [False, True]
++    assert informative_groups([-2, 1, -2, -2,  0.0, 1.0, -2, -2], 4, 0.01) == [True, True]
++    with pytest.raises(ValueError):
++        informative_groups([1, 2, 3], 2, 0.01)
++
++
++def test_a_guide_makes_a_group_informative_unless_it_failed_and_is_dropped():
++    # four members, the guide is member index 2 (the greedy member is last); samples agree, the guide differs: informative BECAUSE of the guide (sampled members = first three)
++    assert informative_groups([1, 1, 2, 1], 4, 0.01, sampled_only=True) == [True]
++    # the same group with a hard-failed guide that is dropped: the others are flat, the group is not informative
++    assert informative_groups([1, 1, -2, 1], 4, 0.01, sampled_only=True, drop=[False, False, True, False]) == [False]
++    assert informative_groups([1, 1, -2, 1], 4, 0.01, sampled_only=False, drop=[False, False, True, False]) == [False]
++    assert informative_groups([1, 0, -2, 2], 4, 0.01, sampled_only=False, drop=[False, False, True, False]) == [True]
++    # a group left with fewer than two members is not informative
++    assert informative_groups([1, 0, -2, 2], 4, 0.01, sampled_only=True, drop=[True, True, False, False]) == [False]
++
++
++def test_subset_and_concat_keep_every_per_row_field_aligned():
++    roll, samples, out = make_gen(set())([0, 1, 2], 0)
++    s_roll, s_samples, s_out = subset_rollout_output(roll, samples, out, [2, 0], G)
++    assert len(s_roll.completions) == len(s_out.rewards) == len(s_samples) == 2 * G
++    assert [len(c) for c in s_roll.completions[:G]] == [3, 4, 5, 6] and s_samples[0].source == "src 2" and s_samples[G].source == "src 0"
++    assert s_out.rewards[:G] == out.rewards[2 * G:3 * G] and s_out.status[G:] == out.status[:G]
++    assert s_out.consensus_chrf == [None] * (2 * G) and s_out.decoded == [""] * (2 * G)          # optional columns follow
++    assert s_out.texts == [""] * (2 * G) and s_out.diacritic_deficit == []                       # an empty (feature off) column stays empty
++    a = make_gen(set())([0], 0)
++    b = make_gen({5})([5, 6], 1)
++    r2, s2, o2 = concat_rollout_output(a, b)
++    assert len(r2.completions) == 3 * G == len(o2.rewards) == len(s2) == len(r2.finished) == len(o2.status)
++    assert o2.rewards[:G] == a[2].rewards and o2.rewards[G:] == b[2].rewards
++    assert o2.stats["fail/no_end_of_turn"] == pytest.approx((0 * G + (G / (2 * G)) * (2 * G)) / (3 * G))      # sample-weighted mean of the two calls
++
++
++def test_no_refill_when_the_oversampled_draw_already_holds_enough_informative_groups():
++    calls, log = [], []
++    res = dynamic_rollout([0, 1, 2, 3, 4], 4, G, 2, 0.01, make_gen({1}, calls), redraw_fn(log), iso_of)
++    assert len(calls) == 1 and not log                                       # one generation call, nothing redrawn
++    assert res.informative == [True, False, True, True, True] and res.keep == [0, 2, 3, 4]
++    assert res.stats["ds/dropped_flat"] == 1 and res.stats["ds/kept_groups"] == 4 and res.stats["ds/refill_rounds"] == 0 and res.stats["ds/fallback"] == 0
++    assert res.by_lang["hau"] == {"generated": 2, "dropped_flat": 1, "surplus": 0, "kept": 1}      # prompts 1 and 4 are hau; 1 is flat
++
++
++def test_surplus_informative_groups_are_not_used_but_counted_as_waste():
++    res = dynamic_rollout([0, 2, 3, 4, 5], 3, G, 2, 0.01, make_gen(set()), redraw_fn([]), iso_of)
++    assert res.keep == [0, 1, 2] and res.stats["ds/surplus"] == 2 and res.stats["ds/dropped_flat"] == 0
++    assert sum(d["surplus"] for d in res.by_lang.values()) == 2
++    assert res.stats["ds/wasted_completion_tokens"] == sum(len(c) for c in res.roll.completions[3 * G:])
++
++
++def test_refill_replaces_each_dropped_prompt_once_and_respects_the_cap():
++    calls, log = [], []
++    res = dynamic_rollout([0, 1, 2, 3], 4, G, 2, 0.01, make_gen({1, 2}, calls), redraw_fn(log), iso_of)
++    assert log == [([1, 2], 1)]                                              # both dropped prompts redrawn in ONE extra round (the deficit is 2)
++    assert [c[1] for c in calls] == [0, 1] and calls[1][0] == [110, 111]
++    assert res.prompt_idx == [0, 1, 2, 3, 110, 111] and res.keep == [0, 3, 4, 5] and res.stats["ds/refill_rounds"] == 1 and res.stats["ds/kept_groups"] == 4
++    # the redrawn prompts are flat again (and the next ones too): the second round replaces only those (never the first dropped ones twice), then the cap (2 rounds) stops it
++    calls2, log2 = [], []
++    res2 = dynamic_rollout([0, 1, 2, 3], 4, G, 2, 0.01, make_gen({1, 2, 110, 111, 210, 211}, calls2), redraw_fn(log2), iso_of)
++    assert [rnd for _, rnd in log2] == [1, 2] and log2[1][0] == [110, 111]
++    assert res2.stats["ds/refill_rounds"] == 2 and res2.stats["ds/kept_groups"] == 2 and res2.stats["ds/short_batch"] == 1 and len(res2.keep) == 2
++    assert len(calls2) == 3                                                  # cost bound: 1 + max_refills generation calls
++
++
++def test_all_flat_step_falls_back_to_the_first_groups_instead_of_an_empty_batch():
++    res = dynamic_rollout([0, 1, 2], 2, G, 1, 0.01, make_gen({0, 1, 2, 110, 111}), redraw_fn([]), iso_of)
++    assert res.stats["ds/fallback"] == 1 and res.keep == [0, 1] and res.stats["ds/kept_groups"] == 2 and res.stats["ds/flat_frac"] == 1.0
++    assert res.stats["ds/kept_groups"] + res.stats["ds/surplus"] + res.stats["ds/dropped_flat"] == res.stats["ds/generated_groups"]
++
++
++def test_redraw_must_return_one_prompt_per_dropped_group():
++    with pytest.raises(ValueError):
++        dynamic_rollout([0, 1], 2, G, 2, 0.01, make_gen({1}), lambda dropped, rnd: [], iso_of)
++
++
++def test_language_counters_accumulate_and_report_the_worst_languages():
++    c = LanguageCounters()
++    c.add({"yor": {"generated": 10, "dropped_flat": 5, "surplus": 0, "kept": 5}, "hau": {"generated": 10, "dropped_flat": 0, "surplus": 1, "kept": 9}})
++    c.add({"yor": {"generated": 10, "dropped_flat": 1, "surplus": 0, "kept": 9}})
++    t = c.table()
++    assert t["yor"]["generated"] == 20 and t["yor"]["flat_rate"] == pytest.approx(0.3) and t["hau"]["kept_rate"] == pytest.approx(0.9)
++    m = c.step_metrics({"yor": {"generated": 4, "dropped_flat": 2, "surplus": 0, "kept": 2}, "hau": {"generated": 4, "dropped_flat": 0, "surplus": 0, "kept": 4}})
++    assert m == {"ds_flat/yor": 0.5}
++
++
++def _write(path, rows):
++    os.makedirs(os.path.dirname(path), exist_ok=True)
++    with open(path, "w", encoding="utf-8") as f:
++        for r in rows:
++            f.write(json.dumps(r) + "\n")
++
++
++def _pool(tmp_path):
++    root = str(tmp_path / "pool")
++    for iso in ("yor", "hau", "ibo"):
++        for b, ntok in (("b64", 12), ("b256", 100)):
++            _write(f"{root}/{iso}_{b}.jsonl", [{"english": f"General {b} {i} for {iso}.", "iso": iso, "src_afr_tokens": ntok, "length_bin": b} for i in range(50)])
++            _write(f"{root}/news/{iso}_{b}.jsonl", [{"english": f"News {b} {i} for {iso}.", "iso": iso, "src_afr_tokens": ntok, "length_bin": b, "domain": "news"} for i in range(50)])
++    _write(f"{root}/ref/yor_b64.jsonl", [{"english": f"Ref {i} for yor.", "iso": "yor", "src_afr_tokens": 12, "length_bin": "b64", "domain": "ref", "reference": f"yor ref {i}", "ref_source": "x"} for i in range(30)])
++    return root
++
++
++def test_replacements_keep_language_domain_and_bin_and_are_deterministic(tmp_path):
++    p = load_rl_prompts(_pool(tmp_path))
++    sch = PromptSchedule(p.iso, 0.0, 3, length_bin=p.length_bin, curriculum={"b64": 0}, domain=p.domain, domain_weights={"general": 0.5, "news": 0.5})
++    slots = [("yor", "news", "b64"), ("hau", "general", "b256"), ("ibo", "news", "b256")] * 5
++    a = sch.replacements(7, 1, slots)
++    assert a == sch.replacements(7, 1, slots) and a != sch.replacements(7, 2, slots) and a != sch.replacements(8, 1, slots)
++    for i, (iso, dom, b) in zip(a, slots):
++        assert (p.iso[i], p.domain[i], p.length_bin[i]) == (iso, dom, b)
++    # a language the (domain, bin) pool lacks: replaced by an ordinary draw of that pool (here "ref" has only yor)
++    sch2 = PromptSchedule(p.iso, 0.0, 3, length_bin=p.length_bin, curriculum={"b64": 0}, domain=p.domain, domain_weights={"general": 0.5, "ref": 0.5})
++    got = sch2.replacements(0, 1, [("hau", "ref", "b64")] * 6)
++    assert all(p.domain[i] == "ref" and p.iso[i] == "yor" for i in got)
++
++
++def test_replacements_without_bins_or_domains(tmp_path):
++    p = load_rl_prompts(_pool(tmp_path))
++    sch = PromptSchedule(p.iso, 1.0, 3)
++    got = sch.replacements(1, 1, [("hau", "", ""), ("yor", "", "")])
++    assert [p.iso[i] for i in got] == ["hau", "yor"]
++
++
++def test_replacement_draw_keeps_the_language_mixture_of_the_step(tmp_path):
++    """Whatever the filter drops, the replacements come from the same languages: the expected language counts of the kept set equal those of an unfiltered draw."""
++    p = load_rl_prompts(_pool(tmp_path))
++    sch = PromptSchedule(p.iso, 0.0, 5, length_bin=p.length_bin, curriculum={"b64": 0}, domain=p.domain, domain_weights={"general": 0.5, "news": 0.5})
++    kept = Counter()
++    for step in range(100):
++        idx = sch.indices(step, 30)
++        pos = [k for k, i in enumerate(idx) if p.iso[i] == "yor"][:5]       # the filter removes yor groups unevenly
++        drop = [idx[k] for k in pos]
++        keep = [i for k, i in enumerate(idx) if k not in set(pos)]
++        new = sch.replacements(step, 1, [(p.iso[i], p.domain[i], p.length_bin[i]) for i in drop])
++        kept.update(p.iso[i] for i in keep + new)
++    n = sum(kept.values())
++    assert n == 100 * 30 and all(abs(kept[l] / n - 1 / 3) < 0.04 for l in ("yor", "hau", "ibo")), kept
++
++
++def test_config_validation_and_defaults_off():
++    pytest.importorskip("torch")
++    from gemma_mt.rl.train_rl import RLConfig, validate_config
++
++    cfg = RLConfig()
++    assert cfg.dynamic_sampling is False and cfg.dynamic_sampling_oversample == 1.0 and cfg.dynamic_sampling_max_refills == 2 and cfg.dynamic_sampling_min_std == 0.01
++    validate_config(cfg)
++    for bad in ({"dynamic_sampling_oversample": 0.9}, {"dynamic_sampling_max_refills": -1}, {"dynamic_sampling_min_std": -0.1}):
++        with pytest.raises(ValueError):
++            validate_config(RLConfig(dynamic_sampling=True, **bad))
++    validate_config(RLConfig(dynamic_sampling=True, dynamic_sampling_oversample=1.2))
+diff -ruN orig/tests/test_reference_reward.py new/tests/test_reference_reward.py
+--- orig/tests/test_reference_reward.py	1969-12-31 17:00:00
++++ new/tests/test_reference_reward.py	2026-11-03 01:20:44
+@@ -0,0 +1,128 @@
++# SPDX-License-Identifier: AGPL-3.0-or-later
++"""Reference-anchored reward (owner 2026-11-03; RewardConfig.reference_weight): r = (1 - w) r_existing + w consensus_value(chrF++(translation, reference)) for samples that passed
++every check and sit above the failure penalty; nothing else changes. Loader / schedule support for the `ref` domain."""
++import json
++import os
++
++import pytest
++
++from gemma_mt.fake_tokenizer import FakeGemmaTokenizer, SPECIALS
++from gemma_mt.rl import consensus as cons
++from gemma_mt.rl.data import PromptSchedule, load_rl_prompts
++from gemma_mt.rl.reward import RewardConfig, Sample, TranslationReward
++
++TOK = FakeGemmaTokenizer()
++EOT = SPECIALS["<end_of_turn>"]
++STOP = [EOT, SPECIALS["<eos>"]]
++SRC = "The market opens at eight o'clock and the farmers bring fresh vegetables."
++TEXT = "Oja n si ni agogo mejo, awon agbe si mu ewebe tutu wa."
++
++
++class ConstScorer:
++    def __init__(self, value=0.7):
++        self.value = value
++
++    def __call__(self, s, m, r=None):
++        return [self.value] * len(s)
++
++
++def ids(text, end=True):
++    out = TOK.encode(text, add_special_tokens=False)
++    return out + [EOT] if end else out
++
++
++def reward(w, **kw):
++    return TranslationReward(RewardConfig(reference_weight=w, **kw), ConstScorer(), TOK, STOP)
++
++
++def sample(text=TEXT, ref="", end=True, iso="yor"):
++    return Sample(ids(f"{iso} {text}", end), iso, SRC, reference=ref)
++
++
++def test_off_by_default_and_without_reference_nothing_changes():
++    base = reward(0.0)([sample(ref=TEXT)]).rewards
++    assert reward(0.35)([sample(ref="")]).rewards == base                                 # no reference on the prompt
++    out = reward(0.0)([sample(ref=TEXT)])
++    assert out.rewards == base and out.ref_chrf == []                                    # weight 0: the reference is ignored
++
++
++def test_combined_reward_is_the_convex_mix_with_the_fixed_chrf_map():
++    r0 = reward(0.0)([sample()]).rewards[0]
++    w = 0.35
++    out = reward(w)([sample(ref=TEXT)])                                                  # identical to the reference: chrF++ = 100 -> the top of the map
++    lo, hi = reward(w).shaper.reward_range
++    assert out.ref_chrf == [pytest.approx(100.0)]
++    assert out.rewards[0] == pytest.approx((1 - w) * r0 + w * hi)
++    other = "Ni oja, awon eniyan ra nkan ti won nilo ni ojoojumo lai ronu."
++    out2 = reward(w)([sample(ref=other)])
++    c = cons.chrf_sentence(TEXT, other)
++    assert 0 < c < 100 and out2.ref_chrf == [pytest.approx(c)]
++    assert out2.rewards[0] == pytest.approx((1 - w) * r0 + w * cons.consensus_value(c, lo, hi))
++    assert out2.rewards[0] < out.rewards[0]                                              # a better match to the human text scores higher
++    assert out.stats["ref/n"] == 1.0 and out.stats["ref/chrf_mean"] == pytest.approx(100.0) and out.stats["ref/reward_shift_mean"] == pytest.approx(out.rewards[0] - r0)
++
++
++def test_hard_failures_keep_their_penalty_and_guards_are_unchanged():
++    r = reward(0.35)
++    out = r([sample(ref=TEXT, end=False), sample(ref=TEXT), Sample(ids("yor " + SRC), "yor", SRC, reference=TEXT)])      # truncated, fine, copy of the source
++    r0 = reward(0.0)([sample(end=False), sample(), Sample(ids("yor " + SRC), "yor", SRC)])
++    assert out.status == r0.status and out.status[0] == "no_end_of_turn" and out.status[2] == "copy_source"
++    assert out.rewards[0] == r0.rewards[0] == r.class_penalty["no_end_of_turn"] and out.rewards[2] == r0.rewards[2]
++    assert out.rewards[1] != r0.rewards[1] and out.ref_chrf[0] is None and out.ref_chrf[2] is None and out.ref_chrf[1] == pytest.approx(100.0)
++
++
++def test_a_sample_at_the_penalty_is_never_lifted_and_the_range_holds():
++    r = reward(0.9)
++    lo, hi = r.reward_range
++    for text, ref in ((TEXT, TEXT), (TEXT, "zzzz qqqq"), ("x", TEXT), (TEXT, "x")):
++        out = r([sample(text=text, ref=ref)])
++        assert lo - 1e-9 <= out.rewards[0] <= hi + 1e-9
++    worst = r([sample(text=TEXT, ref="zzzz qqqq")]).rewards[0]
++    best = r([sample(text=TEXT, ref=TEXT)]).rewards[0]
++    assert worst < best
++
++
++def test_group_mixture_only_samples_with_reference_move():
++    r = reward(0.35)
++    a, b = reward(0.0)([sample(), sample(text=TEXT + " Ni ojo na.")]).rewards, r([sample(ref=TEXT), sample(text=TEXT + " Ni ojo na.", ref=TEXT)]).rewards
++    assert b[0] != a[0] and b[1] != a[1] and (b[0] - a[0]) != (b[1] - a[1])
++
++
++def _write(path, rows):
++    os.makedirs(os.path.dirname(path), exist_ok=True)
++    with open(path, "w", encoding="utf-8") as f:
++        for r in rows:
++            f.write(json.dumps(r) + "\n")
++
++
++def test_loader_reads_reference_columns_and_the_ref_domain_is_drawn_by_its_share(tmp_path):
++    root = str(tmp_path / "pool")
++    for iso in ("yor", "hau"):
++        _write(f"{root}/{iso}.jsonl", [{"english": f"General {i} {iso}.", "iso": iso, "src_afr_tokens": 12, "length_bin": "b64"} for i in range(100)])
++        _write(f"{root}/ref/{iso}.jsonl", [{"english": f"Ref {i} {iso}.", "iso": iso, "src_afr_tokens": 12, "length_bin": "b64", "domain": "ref", "reference": f"{iso} human {i}", "ref_source": "afrisci",
++                                            "ref_licence": "apache"} for i in range(100)])
++    p = load_rl_prompts(root)
++    assert len(p.reference) == len(p) == 400 and p.reference_of(0) == "" and any(p.reference) and all((d == "ref") == bool(rf) for d, rf in zip(p.domain, p.reference))
++    assert {p.ref_source[i] for i in range(len(p)) if p.reference[i]} == {"afrisci"} and p.ref_source[0] == ""
++    sch = PromptSchedule(p.iso, 0.0, 1, length_bin=p.length_bin, curriculum={"b64": 0}, domain=p.domain, domain_weights={"general": 0.85, "ref": 0.15})
++    n_ref = n = 0
++    for step in range(100):
++        for i in sch.indices(step, 64):
++            n += 1
++            n_ref += bool(p.reference_of(i))
++    assert abs(n_ref / n - 0.15) < 0.02
++    plain = str(tmp_path / "plain")
++    _write(f"{plain}/yor.jsonl", [{"english": "A.", "iso": "yor", "src_afr_tokens": 12}])
++    q = load_rl_prompts(plain)
++    assert q.reference == [] and q.reference_of(0) == ""
++
++
++def test_subset_and_rollout_carry_the_reference(tmp_path):
++    pytest.importorskip("torch")
++    from gemma_mt.rl.train_rl import _subset
++
++    root = str(tmp_path / "pool")
++    _write(f"{root}/ref/yor.jsonl", [{"english": f"Ref {i}.", "iso": "yor", "src_afr_tokens": 12, "length_bin": "b64", "domain": "ref", "reference": f"human {i}", "ref_source": "s"} for i in range(5)])
++    p = load_rl_prompts(root)
++    sub = _subset(p, [3, 1])
++    assert sub.reference == ["human 3", "human 1"] and sub.ref_source == ["s", "s"] and sub.reference_of(1) == "human 1"

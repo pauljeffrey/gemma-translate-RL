@@ -27,18 +27,21 @@ import os
 import sys
 import time
 from dataclasses import dataclass, field
-from typing import Any, Dict, List, Optional
+from typing import Any, Dict, List, Optional, Tuple
 
 from gemma_mt import format as fmt
 from gemma_mt.languages import SUPPORTED_RL
+from gemma_mt.rl import consensus as cons
 from gemma_mt.rl import grpo
 from gemma_mt.languages import canonical_iso
 from gemma_mt.rl.data import LENGTH_BINS, MIXED, PromptSchedule, RLPrompts, load_rl_prompts
+from gemma_mt.rl.dynamic_sampling import LanguageCounters, dynamic_rollout, subset_rollout_output
+from gemma_mt.rl.guide import GuideInfo, GuideSpec, OverheadTracker, apply_guides
 from gemma_mt.rl.reward import RewardConfig, Sample, TranslationReward
 from gemma_mt.rl.optim import build_rl_optimizer, optimizer_kind_of_state
-from gemma_mt.rl.run_controls import KLGuard, PatienceStop, PlateauStop, RunControls, extension_decision
+from gemma_mt.rl.run_controls import DevPatience, HackingAlarm, KLGuard, LangStall, PatienceStop, PlateauStop, RunControls, extension_decision
 from gemma_mt.rl.lang_weights import build_controller as build_lang_weight_controller
-from gemma_mt.rl.sampling import Rollout, assemble_batch, generate_completions, merge_greedy_into_groups
+from gemma_mt.rl.sampling import Rollout, assemble_batch, generate_beam_completions, generate_completions, merge_greedy_into_groups
 from gemma_mt.utils import (MetricsLogger, dataclass_from_dict, get_rng_state, load_yaml, parse_overrides,
                             set_rng_state, set_seed)
 
@@ -67,6 +70,14 @@ class RLConfig:
     greedy_adv_cap: float = 0.0                     # D-67: with greedy_stats: sampled, |advantage of the greedy member| <= this before greedy_adv_scale (0 = no cap)
     greedy_share_warn: float = 0.0                  # 2026-10-28: greedy_in_group only. > 0: print a warning (every 10 steps at most) when the greedy members' share of the step's token-weighted |advantage| (greedy_adv_token_share, logged every step) exceeds this. Uniform share is 1/group_size; suggested 0.35
     greedy_adv_scale: float = 1.0                   # D-59: multiplier of the GREEDY member's advantage when greedy_in_group (1 = as before). The greedy completion of a long looping document dominates the clipped gradient
+    # Dynamic sampling (DAPO-style, owner 2026-11-03; default OFF = every old config unchanged; rl/dynamic_sampling.py): groups whose rewards have no spread (std < dynamic_sampling_min_std; the sampled members only
+    # with greedy_stats: sampled) give zero advantage. The step draws ceil(prompts x oversample) prompts, drops the flat groups, refills the deficit with replacement prompts of the same language / domain / bin
+    # (at most dynamic_sampling_max_refills extra generation rounds) and updates on the first `prompts` informative groups. reward / finished_rate / greedy_* / per-language statistics / the archive are computed on ALL generated
+    # groups (the filter removes exactly the all-failed groups, so a kept-only finished rate would look better than it is); the step record gets ds/... counters, <out_dir>/dynamic_sampling_by_language.json the running per-language table.
+    dynamic_sampling: bool = False
+    dynamic_sampling_oversample: float = 1.0
+    dynamic_sampling_max_refills: int = 2
+    dynamic_sampling_min_std: float = 0.01
     micro_batch_seqs: int = 16
     num_updates_per_batch: int = 1
     temperature: float = 1.0
@@ -120,6 +131,32 @@ class RLConfig:
     grad_clip: float = 1.0
     advantage_norm: str = "mean_std"                # mean_std (repo) | mean
     std_eps: float = 1.0e-4
+    adv_std_floor: float = 0.0                      # owner 2026-11-03 (default 0 = off, advantage = (r - mean) / (std + std_eps)): > 0: advantage = (r - mean) / max(std, adv_std_floor), so only near-flat groups (std < floor) are damped (|A| ~ std / floor)
+    log_group_stats: bool = False                   # owner 2026-11-03: per-prompt group statistics of every step to <out_dir>/group_stats.jsonl (prompt index, language, bin, domain, std, mean, hard failures; the input of a later 'prompt replay by learnability') and group_std/p05..p75 in the step record
+    # Beam-guided group member (owner 2026-11-03, default OFF = every old config unchanged): for `guide_fraction` of the prompts of a step the beam-`guide_beams` translation of the CURRENT policy (HF `generate`, num_beams) replaces
+    # the sampled member just before the greedy one, labelled `Sample.guide`; it is scored like every member, enters the group mean / std and carries its own (positive when better than the samples) advantage.
+    # OFF-POLICY handling: the beam output is not a sample of the policy; its token log-probs are the current policy's (teacher forcing, as for every member) and the ratio stays exactly 1 (single update per batch), i.e. a REINFORCE term
+    # on an expert-style sequence, no importance weight. The sampler log-prob check skips it. Cost: one beam search per guided prompt (num_beams x the greedy cost on the training GPU, no vLLM).
+    # The guide replaces the last SAMPLED member (the group keeps its size; it is flagged, with greedy_in_group the group reads: samples ..., guide, greedy). Like the greedy member it takes part in the group statistics and in the
+    # KL term / KL record as any row (the loop has no KL exclusion for the greedy member either); a guide with a hard failure (status != ok) is DROPPED from its group (left out of mean / std, advantage 0). guide_adv_share_cap
+    # (0 = off): the guides' share of the token-weighted |advantage| of the step is limited to this (their advantages are scaled down to it). Needs hard_fail_mask: off.
+    guide_adv_share_cap: float = 0.0
+    # EDITOR RL (2026-11-03, rl/post_edit_rl.py, docs/POST_EDITOR_RL.md): the policy is a post-editor; a prompt row carries a `draft`; the group gets an identity member (the unchanged draft) and the beam-4 edit (guide_fraction 1.0);
+    # the reward is post_edit_reward (gain over the draft, reference terms, ledger, repair, copy rules). `editor` = EditorOptions overrides. Needs reward.consensus false and hard_fail_mask off.
+    editor_mode: bool = False
+    editor: Dict[str, Any] = field(default_factory=dict)
+    guide_fraction: float = 0.0
+    guide_beams: int = 4
+    guide_beam_chunk: int = 0                       # prompts per HF beam-search call (0 = all prompts of the step at once; a 24 GB card needs ~16 for num_beams 4 and 400-token prompts)
+    # MBR guide for weak languages (owner 2026-11-03): languages listed here with "mbr" (all others "beam") get, instead of the beam output, the MBR pick (chrF++ agreement, the consensus utility) over the candidates
+    # group members (samples + greedy) + the beam output + `guide_mbr_extra_samples` additional samples (temperature / top-p below) drawn for those prompts only. A winner that is already a group member would add
+    # nothing: the beam output is the guide then. 0 extra samples = every language uses the beam guide. When the running share of the step time spent in guides exceeds `guide_mbr_max_overhead_frac` the extra
+    # samples are skipped for the step. See rl/guide.py.
+    guide_mode_by_language: Dict[str, str] = field(default_factory=dict)
+    guide_mbr_extra_samples: int = 16
+    guide_mbr_temperature: float = 0.7
+    guide_mbr_top_p: float = 0.95
+    guide_mbr_max_overhead_frac: float = 0.20
     kl_coef: float = 0.05
     # KL guard (owner 2026-10-20, after phase 2b's KL ran away to 2.3): when the mean KL of the last `kl_guard_window` steps exceeds the threshold the learning rate is
     # multiplied by `kl_guard_factor` (not below `kl_guard_min_scale`), at most once per `kl_guard_cooldown` steps. 0 = off. Nothing is stopped or cancelled.
@@ -163,6 +200,43 @@ class RLConfig:
     early_stop_min_finished: float = 0.99
     early_stop_min_lr_scale: float = 0.5
     early_stop_winddown: int = 10
+    # Early stop on the DEV metrics (owner 2026-11-03, default off; needs run_controls and benchmark_eval_path): the training-reward trackers above never fired in stage A of the 385M run although the dev chrF++ was flat
+    # (40.14 @100, 40.13 @150, 40.47 @200, 40.50 @400). The anchors of the dev macro (select_by benchmark_chrf) and of the weak-language aux set `early_stop_dev_aux` move only on an improvement >= eps; when NEITHER
+    # improved for `early_stop_dev_k` consecutive DEV evaluations (the cadence is benchmark_eval_every: k = 3 at 25 steps = 75 steps), the stage has >= early_stop_dev_min_steps steps and the dev and the greedy evaluation
+    # finished rates are >= early_stop_dev_min_finished, the run winds down over early_stop_dev_winddown steps (the same WINDDOWN as plateau_stop; summary stop_reason "dev_plateau"). Only in the last stage of the run;
+    # a KL-guard event blocks it only when it falls inside the stale window; the learning-rate scale does not.
+    # Patch 3 (owner 2026-11-03): HELD-OUT AfriCOMET monitor, reward-hacking alarm, combined stop, per-language dev history. All default OFF.
+    # heldout_comet: at every dev evaluation the dev translations (bench + aux sets) are scored with the REFERENCE-BASED AfriCOMET `heldout_comet_model` (not a checkpoint the policy trains on) against the human dev references, for the
+    # languages AfriCOMET supports (rl/dev_comet.py): keys bench/comet_macro, bench/comet/<iso>, bench/comet_n/<iso>, bench/comet_macro_sd (bootstrap sd of the macro), bench_aux/<set>/comet_macro ..., heldout_comet/seconds. It runs in
+    # a separate comet worker (started for the evaluation and released unless heldout_comet_keep_loaded); a failure is logged and the evaluation goes on without it.
+    heldout_comet: bool = False
+    heldout_comet_model: str = "masakhane/africomet-stl-1.1"
+    heldout_comet_batch_size: int = 64
+    heldout_comet_keep_loaded: bool = False
+    heldout_comet_bootstrap: int = 200
+    # hacking_alarm: over the last k + 1 dev evaluations the hold-out QE reward (eval/qe_mean_scored) has a positive slope while BOTH the dev chrF++ macro (by more than eps_chrf) and the held-out AfriCOMET macro (by more
+    # than eps_comet) have fallen -> WINDDOWN `hacking_alarm_winddown` (stop_reason hacking_alarm; best/ and the Hub best are untouched: continue from the best checkpoint). Needs heldout_comet.
+    hacking_alarm: bool = False
+    hacking_alarm_k: int = 3
+    hacking_alarm_eps_chrf: float = 0.3
+    hacking_alarm_eps_comet: float = 0.005
+    hacking_alarm_winddown: int = 10
+    # early_stop_dev_require_comet: a dev_plateau stop also needs the held-out AfriCOMET macro not to have improved by >= early_stop_dev_eps_comet within the same k dev evaluations (when it is available).
+    early_stop_dev_require_comet: bool = False
+    early_stop_dev_eps_comet: float = 0.004
+    # lang_stall_log: per-language dev chrF++ / AfriCOMET history (<out_dir>/dev_by_language.jsonl) and a 'stalled' flag per language (no gain >= eps in either for k dev evaluations): logging only, no weight changes.
+    lang_stall_log: bool = False
+    lang_stall_k: int = 3
+    lang_stall_eps_chrf: float = 0.5
+    lang_stall_eps_comet: float = 0.01
+    save_dev_predictions: bool = False              # owner 2026-11-03 (patch 3): at every dev evaluation write the greedy dev translations (all dev sets) to <out_dir>/dev_predictions/step_<N>.jsonl (small; input of scripts/dev_comet_retro.py)
+    early_stop_dev: bool = False
+    early_stop_dev_k: int = 3
+    early_stop_dev_eps: float = 0.15
+    early_stop_dev_min_steps: int = 75
+    early_stop_dev_min_finished: float = 0.98
+    early_stop_dev_winddown: int = 10
+    early_stop_dev_aux: str = "weak_dev"
     # Surgical extension (default off; needs early_stop): at the decision point, if the improvement criterion above fired within the last `extend_recent` steps, the cap `steps` is raised by `extend_steps`; repeated at most
     # until the total extension is `extend_max_frac` x `steps` (+50 %). Every decision (extend or not, with the reason) goes to <out_dir>/extensions.jsonl and summary.json. The decision point is the cap itself, or, with
     # `planned_winddown_last` N > 0, N steps before it (the trainer then also starts the planned final wind-down of N steps there, instead of an external watcher, so that an extension moves it).
@@ -290,6 +364,25 @@ def validate_config(cfg: RLConfig) -> None:
         raise ValueError("greedy_adv_scale must be in [0, 1] and can differ from 1 only with greedy_in_group")
     if not (0.0 <= cfg.greedy_share_warn < 1.0) or (cfg.greedy_share_warn > 0 and not cfg.greedy_in_group):
         raise ValueError("greedy_share_warn must be in [0, 1) and > 0 only with greedy_in_group")
+    if (cfg.heldout_comet or cfg.hacking_alarm or cfg.lang_stall_log) and not cfg.benchmark_eval_path:
+        raise ValueError("heldout_comet / hacking_alarm / lang_stall_log need benchmark_eval_path (the dev set with human references)")
+    if cfg.hacking_alarm and (not cfg.heldout_comet or not cfg.run_controls or cfg.hacking_alarm_k < 1 or cfg.hacking_alarm_winddown < 1):
+        raise ValueError("hacking_alarm needs heldout_comet and run_controls, hacking_alarm_k >= 1, hacking_alarm_winddown >= 1")
+    if cfg.early_stop_dev_require_comet and not cfg.heldout_comet:
+        raise ValueError("early_stop_dev_require_comet needs heldout_comet")
+    if any(m not in ("beam", "mbr") for m in cfg.guide_mode_by_language.values()) or cfg.guide_mbr_extra_samples < 0 or not 0.0 < cfg.guide_mbr_top_p <= 1.0 or cfg.guide_mbr_temperature <= 0 \
+            or cfg.guide_mbr_max_overhead_frac < 0:
+        raise ValueError("guide_mode_by_language values must be 'beam' or 'mbr'; guide_mbr_extra_samples >= 0, 0 < guide_mbr_top_p <= 1, guide_mbr_temperature > 0, guide_mbr_max_overhead_frac >= 0")
+    if cfg.early_stop_dev and (not cfg.run_controls or not cfg.benchmark_eval_path or cfg.early_stop_dev_k < 1 or cfg.early_stop_dev_eps < 0 or cfg.early_stop_dev_winddown < 1):
+        raise ValueError("early_stop_dev needs run_controls and benchmark_eval_path, early_stop_dev_k >= 1, early_stop_dev_eps >= 0, early_stop_dev_winddown >= 1")
+    if cfg.adv_std_floor < 0:
+        raise ValueError("adv_std_floor must be >= 0 (0 = off)")
+    if not (0.0 <= cfg.guide_fraction <= 1.0) or (cfg.guide_fraction > 0 and (cfg.guide_beams < 2 or cfg.group_size < 4)):
+        raise ValueError("guide_fraction must be in [0, 1]; with guide_fraction > 0 guide_beams >= 2 and group_size >= 4 (the guide replaces a sampled member)")
+    if not (0.0 <= cfg.guide_adv_share_cap < 1.0) or (cfg.guide_fraction > 0 and cfg.hard_fail_mask != "off"):
+        raise ValueError("guide_adv_share_cap must be in [0, 1); guide_fraction > 0 needs hard_fail_mask: off (a failed guide is dropped from its group by its own rule)")
+    if cfg.dynamic_sampling and (cfg.dynamic_sampling_oversample < 1.0 or cfg.dynamic_sampling_max_refills < 0 or cfg.dynamic_sampling_min_std < 0):
+        raise ValueError("dynamic_sampling: need dynamic_sampling_oversample >= 1, dynamic_sampling_max_refills >= 0, dynamic_sampling_min_std >= 0")
     if cfg.kl_guard_threshold < 0:
         raise ValueError("kl_guard_threshold must be >= 0 (0 = off)")
     if cfg.kl_guard_threshold > 0 and (not 0.0 < cfg.kl_guard_factor < 1.0 or not 0.0 < cfg.kl_guard_min_scale <= 1.0 or cfg.kl_guard_window < 1 or cfg.kl_guard_cooldown < 0):
@@ -455,14 +548,24 @@ def split_eval_prompts(prompts: RLPrompts, n_eval: int, seed: int, min_per_bin: 
 def _subset(p: RLPrompts, idx: List[int]) -> RLPrompts:
     return RLPrompts([p.english[i] for i in idx], [p.iso[i] for i in idx], [p.source_dataset[i] for i in idx],
                      [p.src_afr_tokens[i] for i in idx], dict(p.dropped), p.name_mismatches,
-                     [p.length_bin[i] for i in idx] if p.length_bin else [], [p.domain[i] for i in idx] if p.domain else [])
+                     [p.length_bin[i] for i in idx] if p.length_bin else [], [p.domain[i] for i in idx] if p.domain else [],
+                     [p.reference[i] for i in idx] if p.reference else [], [p.ref_source[i] for i in idx] if p.ref_source else [],
+                     [p.draft[i] for i in idx] if p.draft else [], [p.draft_system[i] for i in idx] if p.draft_system else [], [p.draft_category[i] for i in idx] if p.draft_category else [])
 
 
 def rollout_and_reward(policy, tokenizer, reward: TranslationReward, prompts: RLPrompts, indices: List[int],
                        cfg: RLConfig, stop_ids, pad_id, device, autocast, greedy: bool = False,
-                       return_logprobs: bool = False, max_new_tokens: Optional[int] = None, sampler=None, key: int = 0):
-    """`sampler`: a gemma_mt.rl.vllm_sampler sampler (already synced to `policy`); None = HF `generate` on `policy` (the original path)."""
-    prompt_ids = [fmt.build_prompt(prompts.english[i], prompts.iso[i], tokenizer) for i in indices]
+                       return_logprobs: bool = False, max_new_tokens: Optional[int] = None, sampler=None, key: int = 0, with_reference: bool = False, guide: Optional[GuideSpec] = None, timings: Optional[Dict[str, float]] = None):
+    """`sampler`: a gemma_mt.rl.vllm_sampler sampler (already synced to `policy`); None = HF `generate` on `policy` (the original path).
+    `guide` = a rl/guide.py GuideSpec (training steps only, group_size >= 4, not greedy): that fraction of the prompts (a fixed-size random subset, a function of (cfg.seed, key)) gets a guide (the beam-search output of the
+    current policy, or for the languages in guide_mode_by_language an MBR pick over group + beam + extra samples) as the group's member just before the greedy one (group size unchanged; flagged Sample.guide); None = off.
+    `with_reference` (training steps only): the prompts' human references go to the reward (reference-anchored term, reward.reference_weight); evaluation leaves it off, so the hold-out reward stays comparable."""
+    editor = getattr(reward, "editor", None) if cfg.editor_mode else None
+    if editor is not None:
+        from gemma_mt.rl.post_edit_rl import editor_prompt_ids
+        prompt_ids = editor_prompt_ids(tokenizer, prompts, indices, editor.o.max_draft_tokens)
+    else:
+        prompt_ids = [fmt.build_prompt(prompts.english[i], prompts.iso[i], tokenizer) for i in indices]
     G = 1 if greedy else cfg.group_size
     kw = dict(group_size=cfg.group_size, max_new_tokens=cfg.max_new_tokens if max_new_tokens is None else max_new_tokens,
               temperature=cfg.temperature, top_p=cfg.top_p, top_k=cfg.top_k, stop_ids=stop_ids, pad_id=pad_id, greedy=greedy,
@@ -476,15 +579,45 @@ def rollout_and_reward(policy, tokenizer, reward: TranslationReward, prompts: RL
         roll = merge_greedy_into_groups(_gen(group_size=cfg.group_size - 1), _gen(greedy=True, group_size=1), cfg.group_size - 1)
     else:
         roll = _gen()
+    ginfo: Dict[int, Any] = {}
+    if guide is not None and guide.fraction > 0 and not greedy and G >= 4:
+        ginfo = apply_guides(
+            guide, roll=roll, G=G, indices=indices, prompt_ids=prompt_ids, isos=[prompts.iso[i] for i in indices], sources=[prompts.english[i] for i in indices], reward=reward, policy=policy,
+            generate_beam=lambda pids: generate_beam_completions(policy, pids, num_beams=guide.beams, max_new_tokens=kw["max_new_tokens"], stop_ids=stop_ids, pad_id=pad_id, device=device, autocast=autocast, chunk=cfg.guide_beam_chunk),
+            generate_extra=lambda pids, n: (sampler.generate(pids, key=key + 9_000_001, group_size=n, max_new_tokens=kw["max_new_tokens"], temperature=guide.temperature, top_p=guide.top_p, top_k=0,
+                                                              stop_ids=stop_ids, pad_id=pad_id, greedy=False, return_logprobs=False)
+                                            if sampler is not None else
+                                            generate_completions(policy, pids, group_size=n, max_new_tokens=kw["max_new_tokens"], temperature=guide.temperature, top_p=guide.top_p, top_k=0,
+                                                                 stop_ids=stop_ids, pad_id=pad_id, device=device, autocast=autocast)),
+            seed=cfg.seed, key=key, timings=timings)
+    ident_rows: List[int] = []
+    draft_ids: List[List[int]] = []
+    if editor is not None:
+        from gemma_mt.rl.post_edit_rl import identity_completion, insert_identity
+        draft_ids = [identity_completion(tokenizer, prompts.english[i], prompts.draft_of(i), prompts.iso[i], editor.o.max_draft_tokens) for i in indices]
+        if editor.o.identity_member and not greedy and G >= 4:
+            ident_rows = insert_identity(roll, G, draft_ids)
+            for r in ident_rows:
+                ginfo[r] = GuideInfo("identity", "identity", 0)
     samples = [Sample(roll.completions[r], prompts.iso[indices[r // G]], prompts.english[indices[r // G]],
-                      roll.post_stop_tokens[r] if roll.post_stop_tokens else 0, prompts.domain_of(indices[r // G]))
+                      roll.post_stop_tokens[r] if roll.post_stop_tokens else 0, prompts.domain_of(indices[r // G]),
+                      reference=prompts.reference_of(indices[r // G]) if with_reference else "", guide=r in ginfo,
+                      guide_src=ginfo[r].src if r in ginfo else "", guide_cands=ginfo[r].candidates if r in ginfo else 0)
                for r in range(len(roll.completions))]
     if reward.cfg.confidence and roll.sampler_logp is not None and len(roll.sampler_logp) == len(samples):          # D-47: mean token log-prob of each sampled completion (content tokens only)
         from gemma_mt.rl.confidence import completion_mean_logp
 
         for r, smp in enumerate(samples):
+            if smp.guide:
+                continue
             smp.logp = completion_mean_logp(roll.sampler_logp[r], roll.completions[r], _tag_len(tokenizer, roll.completions[r], smp.iso), stop_ids)
     out = reward(samples, group_size=G)       # the consensus signal needs to know which consecutive rows form a GRPO group (greedy evaluation: G = 1)
+    if editor is not None:                    # editor RL: the translation reward gave q_e per edit (consensus off); replace the rewards by the editor reward
+        info = [{"english": prompts.english[i], "draft": prompts.draft_of(i), "iso": prompts.iso[i], "reference": prompts.reference_of(i) if with_reference else ""} for i in indices]
+        new_r, pe_stats = editor(samples, out, info, G, draft_ids, ident_rows)
+        out.rewards = new_r
+        out.weights = [max(float(w_), editor.o.weight_floor_unscored) for w_ in out.weights]        # a language the QE shaper cannot score still has the reference / rule terms
+        out.stats = dict(out.stats, **pe_stats)
     return roll, samples, out
 
 
@@ -550,6 +683,9 @@ def evaluate_policy(policy, tokenizer, reward, eval_prompts: RLPrompts, cfg: RLC
     per_bin_fin: Dict[str, List[bool]] = {}
     per_bin_loop: Dict[str, List[bool]] = {}
     per_lang: Dict[str, List[float]] = {}
+    per_lang_qe: Dict[str, List[float]] = {}
+    per_lang_fin: Dict[str, List[float]] = {}
+    per_lang_loop: Dict[str, List[float]] = {}
     per_bin: Dict[str, List[float]] = {}
     per_dom: Dict[str, List[float]] = {}
     # batches never mix bins (padding to the longest prompt would waste the long bins' memory); one bin when unbinned
@@ -578,8 +714,12 @@ def evaluate_policy(policy, tokenizer, reward, eval_prompts: RLPrompts, cfg: RLC
         qes += [q for q in out.qe if q is not None]
         fin += roll.finished
         loops += lf
-        for sm, r in zip(samples, out.rewards):
+        for sm, r, q, f_, l_ in zip(samples, out.rewards, out.qe, roll.finished, lf):
             per_lang.setdefault(sm.iso, []).append(r)
+            per_lang_fin.setdefault(sm.iso, []).append(float(bool(f_)))
+            per_lang_loop.setdefault(sm.iso, []).append(float(bool(l_)))
+            if q is not None:
+                per_lang_qe.setdefault(sm.iso, []).append(float(q))
             if sm.domain:
                 per_dom.setdefault(sm.domain, []).append(r)
     res = {"eval/reward": sum(rewards) / max(len(rewards), 1),
@@ -592,6 +732,11 @@ def evaluate_policy(policy, tokenizer, reward, eval_prompts: RLPrompts, cfg: RLC
         res[f"eval/greedy_n_bin/{k}"] = float(len(v))
     for k, v in per_lang.items():
         res[f"eval/reward/{k}"] = sum(v) / len(v)
+    for k, v in per_lang_qe.items():          # owner 2026-11-03: per-language hold-out QE / finished / loop rate at every eval step, so that language groups can be computed from the logs
+        res[f"eval/qe/{k}"] = sum(v) / len(v)
+    for k, v in per_lang_fin.items():
+        res[f"eval/finished/{k}"] = sum(v) / len(v)
+        res[f"eval/loop/{k}"] = sum(per_lang_loop[k]) / len(v)
     for k, v in per_bin.items():
         res[f"eval/reward_bin/{k}"] = sum(v) / len(v)
     for k, v in per_dom.items():
@@ -616,8 +761,9 @@ def load_benchmark_dev(path: str, languages, per_language: int, seed: int = 0) -
 
 
 def evaluate_benchmark(policy, tokenizer, rows: List[Dict[str, str]], cfg: RLConfig, stop_ids, pad_id, device, autocast,
-                       sampler=None) -> Dict[str, float]:
-    """Greedy translations of the dev rows -> macro chrF++ / BLEU (unweighted mean over languages) + per-language chrF++."""
+                       sampler=None, collect: Optional[List[Dict[str, Any]]] = None, name: str = "bench") -> Dict[str, float]:
+    """Greedy translations of the dev rows -> macro chrF++ / BLEU (unweighted mean over languages) + per-language chrF++. `collect` (a list): one dict per dev row {set, iso, id, src, hyp, ref, finished} is appended
+    (dev predictions for the held-out AfriCOMET monitor / saving)."""
     from gemma_mt.eval import metrics as M
     from gemma_mt.eval.eval_translation import generate_translations
 
@@ -626,6 +772,8 @@ def evaluate_benchmark(policy, tokenizer, rows: List[Dict[str, str]], cfg: RLCon
     outs = generate_translations(policy, tokenizer, rows, stop_ids=stop_ids, pad_id=pad_id, device=device,
                                  batch_size=cfg.benchmark_batch_size, max_new_tokens=cfg.benchmark_max_new_tokens,
                                  autocast=autocast, sampler=sampler, require_vllm=cfg.eval_vllm_only)
+    if collect is not None:
+        collect.extend({"set": name, "iso": r["iso"], "id": str(r.get("id", i)), "src": r["english"], "hyp": o["hyp"], "ref": r["reference"], "finished": bool(o.get("finished", True))} for i, (r, o) in enumerate(zip(rows, outs)))
     by: Dict[str, List[int]] = {}
     for i, r in enumerate(rows):
         by.setdefault(r["iso"], []).append(i)
@@ -647,7 +795,7 @@ def evaluate_benchmark(policy, tokenizer, rows: List[Dict[str, str]], cfg: RLCon
 
 
 def evaluate_aux_benchmarks(aux: List[Dict[str, Any]], policy, tokenizer, cfg: RLConfig, stop_ids, pad_id, device, autocast, sampler=None, step: Optional[int] = None,
-                            last_step: Optional[int] = None) -> Dict[str, float]:
+                            last_step: Optional[int] = None, collect: Optional[List[Dict[str, Any]]] = None) -> Dict[str, float]:
     """D-52: the monitor-only dev sets (`cfg.benchmark_aux`): greedy, macro chrF++ / BLEU per set, keys `bench_aux/<name>/...` (+ `finished/<iso>`, `seconds`). `aux` = [{name, rows,
     max_new_tokens, batch_size, every}]. D-56: an entry with `every: N` is evaluated only when `step` is a multiple of N or the last step (a costly set - whole papers - can run less often);
     `step=None` evaluates everything."""
@@ -659,7 +807,7 @@ def evaluate_aux_benchmarks(aux: List[Dict[str, Any]], policy, tokenizer, cfg: R
             continue
         t0 = time.time()
         sub = dataclasses.replace(cfg, benchmark_max_new_tokens=a["max_new_tokens"], benchmark_batch_size=a["batch_size"])
-        r = evaluate_benchmark(policy, tokenizer, a["rows"], sub, stop_ids, pad_id, device, autocast, sampler=sampler)
+        r = evaluate_benchmark(policy, tokenizer, a["rows"], sub, stop_ids, pad_id, device, autocast, sampler=sampler, collect=collect, name=a["name"])
         res.update({k.replace("bench/", f"bench_aux/{a['name']}/", 1): v for k, v in r.items()})
         res[f"bench_aux/{a['name']}/seconds"] = time.time() - t0
     res["bench_aux/seconds_total"] = time.time() - t_all
@@ -769,6 +917,19 @@ def _train_rl(cfg: RLConfig, tokenizer, scorer, prompts, eval_prompts, lid, devi
     reward_cfg = dataclass_from_dict(RewardConfig, cfg.reward)
     reward = TranslationReward(reward_cfg, scorer, tokenizer, stop.ids, lid=lid, pad_id=pad_id)   # builds + self-tests GlotLID when reward.lid_enabled (D-37)
     lo, hi = reward.reward_range
+    if cfg.editor_mode:
+        from gemma_mt.rl.post_edit_rl import EditorReward, editor_options
+
+        eopts = editor_options(cfg.editor)
+        rscorer = None
+        if eopts.ref_comet:
+            from gemma_mt.rl.comet import REF_MODEL_ID, WorkerScorer
+
+            rc = eopts.ref_comet
+            rscorer = WorkerScorer(python=rc.get("python", sys.executable), model_id=rc.get("model_id", REF_MODEL_ID), batch_size=rc.get("batch_size", 32), fake=bool(rc.get("fake", False)),
+                                   pythonpath=rc.get("pythonpath"), reference_based=True)
+        reward.editor = EditorReward(reward, eopts, rscorer)
+        print(f"[gemma_mt] EDITOR RL: identity member {eopts.identity_member}, reference-COMET for {len(reward.editor.covered)} languages, off terms {eopts.off_terms}", flush=True)
     mode_of = {l: reward.content_spec(l) for l in prompts.languages()}
     lid_on = [l for l in prompts.languages() if reward_cfg.lid_enabled and reward.lid_spec(l)[2]]
     print(f"[gemma_mt] reward content modes over {len(mode_of)} prompt languages: "
@@ -798,6 +959,16 @@ def _train_rl(cfg: RLConfig, tokenizer, scorer, prompts, eval_prompts, lid, devi
                if cfg.plateau_stop else None)
     patience = (PatienceStop(cfg.early_stop_patience, cfg.early_stop_block, cfg.early_stop_eps_reward, cfg.early_stop_eps_finished, cfg.early_stop_eps_loop,
                              cfg.early_stop_min_finished, cfg.early_stop_min_lr_scale) if cfg.early_stop else None)
+    dev_patience = (DevPatience(cfg.early_stop_dev_k, cfg.early_stop_dev_eps, cfg.early_stop_dev_min_finished, cfg.early_stop_dev_eps_comet, cfg.early_stop_dev_require_comet)
+                    if cfg.early_stop_dev else None)
+    hacking = HackingAlarm(cfg.hacking_alarm_k, cfg.hacking_alarm_eps_chrf, cfg.hacking_alarm_eps_comet) if cfg.hacking_alarm else None
+    lang_stall = LangStall(cfg.lang_stall_k, cfg.lang_stall_eps_chrf, cfg.lang_stall_eps_comet) if cfg.lang_stall_log else None
+    heldout = None
+    if cfg.heldout_comet:
+        from gemma_mt.rl.dev_comet import HeldoutComet
+
+        heldout = HeldoutComet(cfg.heldout_comet_model, cfg.heldout_comet_batch_size, python=cfg.scorer.get("python"), pythonpath=cfg.scorer.get("pythonpath"), keep_loaded=cfg.heldout_comet_keep_loaded,
+                               bootstrap=cfg.heldout_comet_bootstrap, seed=cfg.seed, fake=cfg.scorer.get("type") == "fake" or bool(cfg.scorer.get("fake")))
     cap_now = cfg.steps                              # the current hard cap (raised by extend_if_improving)
     extensions: List[Dict[str, Any]] = []
     guard_events_path = os.path.join(cfg.out_dir, "kl_guard_events.jsonl")
@@ -834,6 +1005,12 @@ def _train_rl(cfg: RLConfig, tokenizer, scorer, prompts, eval_prompts, lid, devi
                 plateau.load_state_dict(ck["state"].get("plateau"))
             if patience is not None:
                 patience.load_state_dict(ck["state"].get("patience"))
+            if dev_patience is not None:
+                dev_patience.load_state_dict(ck["state"].get("dev_patience"))
+            if hacking is not None:
+                hacking.load_state_dict(ck["state"].get("hacking_alarm"))
+            if lang_stall is not None:
+                lang_stall.load_state_dict(ck["state"].get("lang_stall"))
         if reward.conf is not None:                 # D-47: the running per-language confidence state survives a restart (a checkpoint without it: the tracker starts empty)
             n_conf = reward.load_conf_state(ck["state"].get("confidence"))
             print(f"[gemma_mt] confidence tracker: {n_conf} languages restored from the checkpoint", flush=True)
@@ -870,6 +1047,9 @@ def _train_rl(cfg: RLConfig, tokenizer, scorer, prompts, eval_prompts, lid, devi
                               "controls": {"lr_file_scale": float(ctl.file_scale) if ctl is not None else 1.0},
                               "plateau": plateau.state_dict() if plateau is not None else None,
                               "patience": patience.state_dict() if patience is not None else None,
+                              "dev_patience": dev_patience.state_dict() if dev_patience is not None else None,
+                              "hacking_alarm": hacking.state_dict() if hacking is not None else None,
+                              "lang_stall": lang_stall.state_dict() if lang_stall is not None else None,
                               "optimizer_kind": cfg.optimizer, "caps": {"cap_now": cap_now, "extensions": extensions},
                               "confidence": reward.conf_state()}}, tmp)
         os.replace(tmp, last_path)
@@ -964,6 +1144,9 @@ def _train_rl(cfg: RLConfig, tokenizer, scorer, prompts, eval_prompts, lid, devi
         start = dict(schedule.stage_boundaries()).get(name, 0)
         return name, start, name == schedule.bin_of_step(max(cfg.steps - 1, 0))
 
+    guide_over = OverheadTracker(10)                 # running share of the step time spent in guides (the budget of the MBR extra samples)
+    guide_lang: Dict[str, Dict[str, float]] = {}    # per language (guided groups): n, wins (guide above the mean of the others), best (guide is a best member), and sums of the rewards of the guide / the MBR pick of the samples / the greedy member / the group mean, best counts of each
+    ds_counters = LanguageCounters()                 # dynamic sampling: running per-language table (rl/dynamic_sampling.py)
     lwc = build_lang_weight_controller(cfg, schedule, prompts.languages(), {l: v[0] for l, v in mode_of.items()}, start_step=step, canon=canonical_iso)   # D-65: LANG_WEIGHTS.json + adaptive updater (None = all off)
     if lwc is not None:
         dev_sizes: Dict[Any, int] = {}
@@ -1002,14 +1185,48 @@ def _train_rl(cfg: RLConfig, tokenizer, scorer, prompts, eval_prompts, lid, devi
         mnt = cfg.max_new_tokens_by_bin.get(step_bin, cfg.max_new_tokens) if step_bin else cfg.max_new_tokens
         if step_bin == MIXED and MIXED not in cfg.max_new_tokens_by_bin and cfg.max_new_tokens_by_bin:
             mnt = max(cfg.max_new_tokens_by_bin.values())
-        idx = schedule.indices(step, n_step)
+        n_draw = int(math.ceil(n_step * cfg.dynamic_sampling_oversample - 1e-9)) if cfg.dynamic_sampling else n_step
+        idx = schedule.indices(step, n_draw)
         # ---------------- 1. sample + reward (no grad)
         t_sync = sync_policy()
         check_lp = cfg.check_sampler_logprobs or (vsampler is not None and cfg.vllm_check_every > 0 and step % cfg.vllm_check_every == 0)
-        roll, samples, out = rollout_and_reward(policy, tokenizer, reward, prompts, idx, cfg, stop.ids, pad_id, device,
-                                                autocast(), return_logprobs=check_lp or reward_cfg.confidence, max_new_tokens=mnt,
-                                                sampler=vsampler, key=step)
-        t_gen = vsampler.last_generate_seconds if vsampler is not None else float("nan")
+        ds_rec: Dict[str, float] = {}
+        guide_arg = (GuideSpec(cfg.guide_fraction, cfg.guide_beams, {canonical_iso(k_) or k_: v_ for k_, v_ in cfg.guide_mode_by_language.items()}, cfg.guide_mbr_extra_samples,
+                               cfg.guide_mbr_temperature, cfg.guide_mbr_top_p, skip_extra=guide_over.running() > cfg.guide_mbr_max_overhead_frac)
+                     if cfg.guide_fraction > 0 else None)
+        timings: Dict[str, float] = {}
+        if cfg.dynamic_sampling:                    # 2026-11-03: see rl/dynamic_sampling.py; roll/samples/out/idx = the groups the update uses, *_m = every generated group (monitoring)
+            gen_acc = [0.0, 0.0]
+
+            def _gen_round(ix, rnd):
+                res = rollout_and_reward(policy, tokenizer, reward, prompts, ix, cfg, stop.ids, pad_id, device, autocast(), return_logprobs=check_lp or reward_cfg.confidence,
+                                         max_new_tokens=mnt, sampler=vsampler, key=step if rnd == 0 else 10_000_000 + rnd * 1_000_003 + step, with_reference=True, guide=guide_arg, timings=timings)
+                if vsampler is not None:
+                    gen_acc[0] += vsampler.last_generate_seconds
+                    gen_acc[1] += vsampler.last_generate_tokens
+                return res
+
+            def _redraw(dropped, rnd):
+                return schedule.replacements(step, rnd, [(prompts.iso[i], prompts.domain_of(i), prompts.length_bin[i] if prompts.length_bin else "") for i in dropped])
+
+            dyn = dynamic_rollout(idx, n_step, cfg.group_size, cfg.dynamic_sampling_max_refills, cfg.dynamic_sampling_min_std, _gen_round, _redraw, lambda i: prompts.iso[i],
+                                  sampled_only=cfg.greedy_in_group and cfg.greedy_stats == "sampled", mask_mode=cfg.hard_fail_mask)
+            roll_m, samples_m, out_m, idx_m = dyn.roll, dyn.samples, dyn.out, dyn.prompt_idx
+            roll, samples, out = subset_rollout_output(roll_m, samples_m, out_m, dyn.keep, cfg.group_size)
+            idx = [idx_m[g] for g in dyn.keep]
+            t_gen = gen_acc[0] if vsampler is not None else float("nan")
+            gen_tokens = gen_acc[1]
+            ds_counters.add(dyn.by_lang)
+            ds_rec = dict(dyn.stats, **ds_counters.step_metrics(dyn.by_lang))
+            ds_rec["ds/reward_kept"] = sum(out.rewards) / max(len(out.rewards), 1)
+            ds_rec["ds/gen_groups_per_kept"] = len(idx_m) / max(len(idx), 1)
+        else:
+            roll, samples, out = rollout_and_reward(policy, tokenizer, reward, prompts, idx, cfg, stop.ids, pad_id, device,
+                                                    autocast(), return_logprobs=check_lp or reward_cfg.confidence, max_new_tokens=mnt,
+                                                    sampler=vsampler, key=step, with_reference=True, guide=guide_arg, timings=timings)
+            roll_m, samples_m, out_m, idx_m = roll, samples, out, idx
+            t_gen = vsampler.last_generate_seconds if vsampler is not None else float("nan")
+            gen_tokens = vsampler.last_generate_tokens if vsampler is not None else 0
         if vsampler is not None:
             vsampler.sleep()                        # only with vllm_sleep: the engine's memory goes back to the trainer for the update
         N, G = len(roll.completions), cfg.group_size
@@ -1024,39 +1241,49 @@ def _train_rl(cfg: RLConfig, tokenizer, scorer, prompts, eval_prompts, lid, devi
             from gemma_mt.rl.archive import archive_step
 
             t_a = time.time()
-            archive_step(archive, reward, samples, out, step + 1, step_bin or "",
-                         [prompts.length_bin[i] for i in idx] if prompts.length_bin else None, G)
+            archive_step(archive, reward, samples_m, out_m, step + 1, step_bin or "",
+                         [prompts.length_bin[i] for i in idx_m] if prompts.length_bin else None, G)
             t_archive = time.time() - t_a
+        guide_rows = torch.tensor([smp.guide for smp in samples], dtype=torch.bool)
+        guide_drop = guide_rows & torch.tensor([st != "ok" for st in out.status], dtype=torch.bool) if bool(guide_rows.any()) else None       # a hard-failed guide leaves its group
         if cfg.greedy_in_group and cfg.greedy_stats == "sampled":
-            adv, flat_frac = grpo.group_advantages_sampled_baseline(rewards, G, cfg.advantage_norm, cfg.std_eps, greedy_cap=cfg.greedy_adv_cap)
+            adv, flat_frac = grpo.group_advantages_sampled_baseline(rewards, G, cfg.advantage_norm, cfg.std_eps, greedy_cap=cfg.greedy_adv_cap, std_floor=cfg.adv_std_floor, drop=guide_drop)
         else:
-            adv, flat_frac = grpo.group_advantages(rewards, G, cfg.advantage_norm, cfg.std_eps)
+            adv, flat_frac = grpo.group_advantages(rewards, G, cfg.advantage_norm, cfg.std_eps, std_floor=cfg.adv_std_floor, drop=guide_drop)
         hard_failed = torch.tensor([st != "ok" for st in out.status], dtype=torch.bool)
         if cfg.hard_fail_mask != "off":             # D-61 (default off): the hard-failed samples leave the policy gradient
-            adv, flat_frac = grpo.group_advantages_masked(rewards, G, hard_failed, cfg.hard_fail_mask, cfg.advantage_norm, cfg.std_eps)
+            adv, flat_frac = grpo.group_advantages_masked(rewards, G, hard_failed, cfg.hard_fail_mask, cfg.advantage_norm, cfg.std_eps, std_floor=cfg.adv_std_floor)
         adv = adv * torch.tensor(out.weights, dtype=torch.float32)
         if cfg.greedy_in_group and cfg.greedy_adv_scale != 1.0:
             adv = grpo.scale_last_member(adv, G, cfg.greedy_adv_scale)
+        guide_rec: Dict[str, float] = {}
+        if bool(guide_rows.any()):                  # guide safety cap: their share of the token-weighted |advantage| (same weighting as greedy_adv_token_share) is limited to guide_adv_share_cap
+            adv, g_share, g_factor = grpo.cap_member_share(adv, torch.tensor([float(len(c)) for c in roll.completions]), guide_rows, cfg.guide_adv_share_cap)
+            if not cfg.guide_adv_share_cap:
+                w_ = adv.abs() * torch.tensor([float(len(c)) for c in roll.completions])
+                g_share = float(w_[guide_rows].sum() / w_.sum().clamp(min=1e-12))
+            guide_rec = {"guide/adv_share": g_share, "guide/adv_cap_factor": g_factor}
         assert adv.shape == (N,) and torch.isfinite(adv).all(), "bad advantages"
         greedy_rec: Dict[str, float] = {}
         if cfg.greedy_in_group:                      # 2026-10-28: the greedy (temperature 0) member of every group is what loops at inference: monitor it directly
-            gi = list(range(G - 1, N, G))
-            g_fin = [roll.finished[i] for i in gi]
-            g_loop = loop_flags(reward, [samples[i] for i in gi], [out.status[i] for i in gi], [out.decoded[i] for i in gi], g_fin)
+            Nm = len(roll_m.completions)             # monitoring on EVERY generated group (== the update's groups unless dynamic_sampling), the advantage share on the groups of the update
+            gi = list(range(G - 1, Nm, G))
+            g_fin = [roll_m.finished[i] for i in gi]
+            g_loop = loop_flags(reward, [samples_m[i] for i in gi], [out_m.status[i] for i in gi], [out_m.decoded[i] for i in gi], g_fin)
             tok_w = adv.abs() * torch.tensor([float(len(c)) for c in roll.completions], dtype=torch.float32)
             tok_w = tok_w.view(-1, G)
             g_share = float(tok_w[:, -1].sum() / tok_w.sum().clamp(min=1e-12))
-            rv = rewards.view(-1, G)
+            rv = torch.tensor(out_m.rewards, dtype=torch.float32).view(-1, G)
             greedy_rec = {"greedy_finished_rate": sum(g_fin) / len(g_fin), "greedy_loop_rate": sum(g_loop) / len(g_loop), "greedy_reward_mean": float(rv[:, -1].mean()),
-                          "sampled_reward_mean": float(rv[:, :-1].mean()), "greedy_adv_token_share": g_share, "greedy_len_mean": sum(len(roll.completions[i]) for i in gi) / len(gi)}
+                          "sampled_reward_mean": float(rv[:, :-1].mean()), "greedy_adv_token_share": g_share, "greedy_len_mean": sum(len(roll_m.completions[i]) for i in gi) / len(gi)}
         t_sample = time.time() - t0
         if lwc is not None:                         # D-65: per-language statistics of this step (the updater's window; metrics only with lang_stats_log / adaptive)
-            lw_iso = [prompts.iso[i] for i in idx]
-            lw_keys = [f"{prompts.length_bin[i] if prompts.length_bin else ''}|{prompts.domain_of(i)}" for i in idx]
-            lwc.observe(step, lw_iso, lw_keys, out.rewards, out.status, G, qe=out.qe, adv_w=out.weights, cons=getattr(out, "consensus_chrf", None) or None,
-                        pen=getattr(out, "anchors_penalty", None) or None)
+            lw_iso = [prompts.iso[i] for i in idx_m]
+            lw_keys = [f"{prompts.length_bin[i] if prompts.length_bin else ''}|{prompts.domain_of(i)}" for i in idx_m]
+            lwc.observe(step, lw_iso, lw_keys, out_m.rewards, out_m.status, G, qe=out_m.qe, adv_w=out_m.weights, cons=getattr(out_m, "consensus_chrf", None) or None,
+                        pen=getattr(out_m, "anchors_penalty", None) or None)
             if lwc.log_stats:
-                lw_rec = dict(lw_rec, **lwc.step_record(lw_iso, lw_keys, out.rewards, out.status, G))
+                lw_rec = dict(lw_rec, **lwc.step_record(lw_iso, lw_keys, out_m.rewards, out_m.status, G))
 
         # ---------------- 2. log-probs + update
         total_tokens = float(sum(len(c) for c in roll.completions))
@@ -1099,6 +1326,8 @@ def _train_rl(cfg: RLConfig, tokenizer, scorer, prompts, eval_prompts, lid, devi
                 if check_lp and roll.sampler_logp is not None and upd == 0:
                     diffs = []
                     for j, r in enumerate(rows):
+                        if samples[r].guide:                 # a beam output has no sampler log-prob
+                            continue
                         s = torch.tensor(roll.sampler_logp[r], dtype=lp.dtype)
                         d = (lp[j, : len(s)].detach().cpu() - s).abs()
                         diffs.append(d.max().item())
@@ -1134,19 +1363,119 @@ def _train_rl(cfg: RLConfig, tokenizer, scorer, prompts, eval_prompts, lid, devi
                                "sampling distribution differs from the scored one: stopping instead of training on off-policy samples")
 
         tok = max(metrics_acc["tok"], 1.0)
-        r_t = rewards
-        rec = {"reward": float(r_t.mean()), "reward_std": float(r_t.std(unbiased=False)), "flat_group_frac": flat_frac, "hard_fail_frac": float(hard_failed.float().mean()),
+        r_t = torch.tensor(out_m.rewards, dtype=torch.float32)          # every generated group (== the groups of the update unless dynamic_sampling)
+        hard_failed_m = torch.tensor([st != "ok" for st in out_m.status], dtype=torch.bool)
+        rec = {"reward": float(r_t.mean()), "reward_std": float(r_t.std(unbiased=False)), "flat_group_frac": ds_rec.get("ds/flat_frac", flat_frac), "hard_fail_frac": float(hard_failed_m.float().mean()),
                "adv_abs_mean": float(adv.abs().mean()), **greedy_rec, **({"adv_abs_mean_greedy": float(adv.view(-1, G)[:, -1].abs().mean()), "adv_abs_mean_sampled": float(adv.view(-1, G)[:, :-1].abs().mean())} if cfg.greedy_in_group else {}), "kl": metrics_acc["kl"] / tok,
                "pg_loss": metrics_acc["pg"] / tok, "clip_frac": metrics_acc["clip"] / tok,
                "ratio_mean": metrics_acc["ratio"] / tok, "grad_norm": gnorm, "lr": lr,
-               "completion_len": total_tokens / N, "finished_rate": sum(roll.finished) / N,
+               "completion_len": total_tokens / N, "finished_rate": sum(roll_m.finished) / len(roll_m.finished),
                "weight_mean": float(sum(out.weights) / N), "sampler_logp_gap": sampler_gap,
                "t_sample": t_sample, "t_step": time.time() - t0}
         if vsampler is not None:
             rec.update({"sampler_logp_gap_mean": sampler_gap_mean, "t_sync": t_sync, "t_gen": t_gen,
-                        "gen_tokens_per_s": vsampler.last_generate_tokens / max(t_gen, 1e-9)})
-        rec.update({f"reward/{k}": v for k, v in out.stats.items()})
-        rec.update(out.confidence)                      # D-47: `confidence/...` keys (empty unless reward.confidence)
+                        "gen_tokens_per_s": gen_tokens / max(t_gen, 1e-9)})
+        rec.update({f"reward/{k}": v for k, v in out_m.stats.items()})
+        rec.update(out_m.fluency)                       # D-62: `fluency/...` keys (empty unless reward.fluency)
+        rec.update(out_m.confidence)                    # D-47: `confidence/...` keys (empty unless reward.confidence)
+        rec.update(ds_rec)                              # dynamic sampling counters (empty unless dynamic_sampling)
+        if cfg.log_group_stats or cfg.guide_fraction > 0:
+            import numpy as np
+
+            Rm = np.asarray(out_m.rewards, dtype=np.float64).reshape(-1, G)
+            Sm = Rm[:, :-1] if (cfg.greedy_in_group and cfg.greedy_stats == "sampled") else Rm      # the same members the advantage statistics use
+            gstd = Sm.std(axis=1)
+            if cfg.log_group_stats:
+                for q in (5, 10, 25, 50, 75):
+                    rec[f"group_std/p{q:02d}"] = float(np.percentile(gstd, q))
+                nfail = (np.asarray([st != "ok" for st in out_m.status]).reshape(-1, G)).sum(axis=1)
+                gflag = np.asarray([smp.guide for smp in samples_m]).reshape(-1, G).any(axis=1)
+                try:
+                    with open(os.path.join(cfg.out_dir, "group_stats.jsonl"), "a") as f_:
+                        for g_, p_ in enumerate(idx_m):
+                            f_.write(json.dumps({"step": step, "prompt": int(p_), "iso": prompts.iso[p_], "bin": prompts.length_bin[p_] if prompts.length_bin else "", "domain": prompts.domain_of(p_),
+                                                 "std": round(float(gstd[g_]), 5), "mean": round(float(Rm[g_].mean()), 5), "n_fail": int(nfail[g_]), "guide": bool(gflag[g_])}) + "\n")
+                except OSError as e:
+                    print(f"[gemma_mt] WARNING: cannot write group_stats.jsonl: {e}", flush=True)
+            if cfg.guide_fraction > 0:                   # the beam-guided members: reward against the sampled members and the greedy member of their own groups, wins, cost
+                gi_ = [r_ for r_, smp in enumerate(samples_m) if smp.guide]
+                g_total = timings.get("guide_s", 0.0) + timings.get("guide_extra_s", 0.0) + timings.get("guide_mbr_s", 0.0)
+                rec["guide/seconds"] = g_total
+                rec["guide/beam_seconds"], rec["guide/extra_seconds"], rec["guide/mbr_compute_seconds"] = timings.get("guide_s", 0.0), timings.get("guide_extra_s", 0.0), timings.get("guide_mbr_s", 0.0)
+                rec["guide/overhead_frac"] = g_total / max(time.time() - t0, 1e-9)          # share of the step (so far) spent in guides: beam search + extra samples + MBR computation
+                guide_over.add(g_total, time.time() - t0)
+                rec["guide/running_overhead"] = guide_over.running()
+                rec["guide/mbr_skipped"] = float(guide_arg is not None and guide_arg.skip_extra and any(smp.guide_src == "mbr_skipped->beam" for smp in samples_m))
+                if gi_:
+                    ok_ = [st_ == "ok" for st_ in out_m.status]
+                    others = [np.delete(Rm[r_ // G], [r_ % G]) for r_ in gi_]                          # every other member of the guide's group
+                    win = [bool(Rm[r_ // G, r_ % G] > np.mean(o_)) for r_, o_ in zip(gi_, others)]
+                    best = [bool(Rm[r_ // G, r_ % G] >= o_.max()) for r_, o_ in zip(gi_, others)]
+                    rec["guide/n"] = float(len(gi_))
+                    rec["guide/failed_rate"] = float(np.mean([not ok_[r_] for r_ in gi_]))
+                    rec["guide/reward"] = float(np.mean([Rm[r_ // G, r_ % G] for r_ in gi_]))
+                    rec["guide/sampled_reward"] = float(np.mean([np.mean(Rm[r_ // G, : G - 2]) for r_ in gi_]))
+                    if cfg.greedy_in_group:
+                        rec["guide/greedy_reward"] = float(np.mean([Rm[r_ // G, G - 1] for r_ in gi_]))
+                    rec["guide/better_frac"] = float(np.mean(win))
+                    rec["guide/best_frac"] = float(np.mean(best))                     # share of the guided groups of this step in which the guide is the best member (average over steps = share of groups)
+                    rec["guide/finished_rate"] = float(np.mean([roll_m.finished[r_] for r_ in gi_]))
+                    mbr_r, gre_r = [], []
+                    for r_, w_, b_ in zip(gi_, win, best):
+                        g_ = r_ // G
+                        t_ = guide_lang.setdefault(prompts.iso[idx_m[g_]], {"n": 0, "wins": 0, "best": 0, "n_mbr": 0, "r_guide": 0.0, "r_mbr": 0.0, "r_greedy": 0.0, "r_mean": 0.0, "best_guide": 0, "best_mbr": 0, "best_greedy": 0,
+                                                                            "mode_mbr": 0, "cands": 0, "src": {}})
+                        t_["src"][samples_m[r_].guide_src] = t_["src"].get(samples_m[r_].guide_src, 0) + 1
+                        t_["mode_mbr"] += int(samples_m[r_].guide_src.startswith("mbr"))
+                        t_["cands"] += samples_m[r_].guide_cands
+                        t_["n"] += 1
+                        t_["wins"] += int(w_)
+                        t_["best"] += int(b_)
+                        # MBR pick among the group's own SAMPLED members (chrF++ agreement = the consensus utility); it is already a member of the group, nothing is added. Logged next to the guide and the greedy member.
+                        rows_g = [g_ * G + j for j in range(G)]
+                        samp_rows = [x for x in rows_g if not samples_m[x].guide and not (cfg.greedy_in_group and x == rows_g[-1]) and out_m.status[x] == "ok" and out_m.texts[x].strip()]
+                        mbr_row = None
+                        if len(samp_rows) >= 3:
+                            vals = cons.group_consensus([cons.Profile(out_m.texts[x]) for x in samp_rows], 3)
+                            if any(v is not None for v in vals):
+                                mbr_row = samp_rows[max(range(len(samp_rows)), key=lambda i: -1.0 if vals[i] is None else vals[i])]
+                        grp = Rm[g_]
+                        t_["r_guide"] += float(grp[r_ % G])
+                        t_["r_mean"] += float(grp.mean())
+                        t_["best_guide"] += int(b_)
+                        if cfg.greedy_in_group:
+                            t_["r_greedy"] += float(grp[G - 1])
+                            t_["best_greedy"] += int(grp[G - 1] >= np.delete(grp, [G - 1]).max())
+                        if mbr_row is not None:
+                            rm_ = float(Rm[g_, mbr_row - g_ * G])
+                            t_["n_mbr"] += 1
+                            t_["r_mbr"] += rm_
+                            t_["best_mbr"] += int(rm_ >= np.delete(grp, [mbr_row - g_ * G]).max())
+                            mbr_r.append(rm_)
+                    if mbr_r:
+                        rec["guide/mbr_reward"] = float(np.mean(mbr_r))
+                    kept_g = [r_ for r_, smp in enumerate(samples) if smp.guide]
+                    if kept_g:
+                        rec["guide/adv_mean"] = float(adv[kept_g].mean())
+                    rec.update(guide_rec)
+                    if step % 10 == 0 or step == 1:
+                        try:
+                            with open(os.path.join(cfg.out_dir, "guide_by_language.json.tmp"), "w") as f_:
+                                json.dump({k_: dict(v_, win_rate=v_["wins"] / max(v_["n"], 1), best_rate=v_["best"] / max(v_["n"], 1), reward_guide=v_["r_guide"] / max(v_["n"], 1), reward_mbr=v_["r_mbr"] / max(v_["n_mbr"], 1),
+                                                    reward_greedy=v_["r_greedy"] / max(v_["n"], 1), reward_group_mean=v_["r_mean"] / max(v_["n"], 1), best_rate_guide=v_["best_guide"] / max(v_["n"], 1),
+                                                    best_rate_mbr=v_["best_mbr"] / max(v_["n_mbr"], 1), best_rate_greedy=v_["best_greedy"] / max(v_["n"], 1), mode="mbr" if v_["mode_mbr"] * 2 >= v_["n"] else "beam",
+                                                    candidates_mean=v_["cands"] / max(v_["mode_mbr"], 1)) for k_, v_ in sorted(guide_lang.items())}, f_, indent=1)
+                            os.replace(os.path.join(cfg.out_dir, "guide_by_language.json.tmp"), os.path.join(cfg.out_dir, "guide_by_language.json"))
+                        except OSError as e:
+                            print(f"[gemma_mt] WARNING: cannot write guide_by_language.json: {e}", flush=True)
+        if cfg.dynamic_sampling and (step % 10 == 0 or step == 1):
+            try:
+                tmp = os.path.join(cfg.out_dir, "dynamic_sampling_by_language.json.tmp")
+                with open(tmp, "w") as f_:
+                    json.dump(ds_counters.table(), f_, indent=1)
+                os.replace(tmp, os.path.join(cfg.out_dir, "dynamic_sampling_by_language.json"))
+            except OSError as e:
+                print(f"[gemma_mt] WARNING: cannot write dynamic_sampling_by_language.json: {e}", flush=True)
         rec.update(lw_rec)
         rec["lr_mult_effective"] = lr_mult_eff
         lr_mult_sum, lr_mult_n, lr_mult_min = lr_mult_sum + lr_mult_eff, lr_mult_n + 1, min(lr_mult_min, lr_mult_eff)
@@ -1166,6 +1495,8 @@ def _train_rl(cfg: RLConfig, tokenizer, scorer, prompts, eval_prompts, lid, devi
                 log_guard_event(gev)
                 if plateau is not None:
                     plateau.note_guard_event(step)
+                if dev_patience is not None:
+                    dev_patience.note_guard_event(step)
                 if gev["event"] == "cut":
                     print(f"[gemma_mt] KL guard: median KL of the last {gev['window']} steps {gev['kl_median']:.3f} > {cfg.kl_guard_threshold}: "
                           f"learning rate scale -> {guard.lr_scale:.4f}", flush=True)
@@ -1236,11 +1567,22 @@ def _train_rl(cfg: RLConfig, tokenizer, scorer, prompts, eval_prompts, lid, devi
             ev = evaluate_policy(policy, tokenizer, reward, eval_prompts, cfg, stop.ids, pad_id, device, autocast(), sampler=vsampler)
             bench = None
             b_every = cfg.benchmark_eval_every or cfg.eval_every
+            dev_collect: Optional[List[Dict[str, Any]]] = [] if (cfg.save_dev_predictions or heldout is not None) else None
             if bench_rows and (step % b_every == 0 or step == end_step):
-                bench = evaluate_benchmark(policy, tokenizer, bench_rows, cfg, stop.ids, pad_id, device, autocast(), sampler=vsampler)
+                bench = evaluate_benchmark(policy, tokenizer, bench_rows, cfg, stop.ids, pad_id, device, autocast(), sampler=vsampler, collect=dev_collect)
                 ev.update(bench)
                 if aux_sets:
-                    ev.update(evaluate_aux_benchmarks(aux_sets, policy, tokenizer, cfg, stop.ids, pad_id, device, autocast(), sampler=vsampler, step=step, last_step=end_step))
+                    ev.update(evaluate_aux_benchmarks(aux_sets, policy, tokenizer, cfg, stop.ids, pad_id, device, autocast(), sampler=vsampler, step=step, last_step=end_step, collect=dev_collect))
+                if dev_collect and heldout is not None:       # held-out reference-based AfriCOMET on the dev translations (rl/dev_comet.py); never stops the run
+                    ev.update(heldout.score(dev_collect))
+                if dev_collect and cfg.save_dev_predictions:   # dev predictions of this evaluation (all dev sets), one small jsonl per evaluation
+                    try:
+                        os.makedirs(os.path.join(cfg.out_dir, "dev_predictions"), exist_ok=True)
+                        with open(os.path.join(cfg.out_dir, "dev_predictions", f"step_{step}.jsonl"), "w", encoding="utf-8") as f_:
+                            for row_ in dev_collect:
+                                f_.write(json.dumps(dict(row_, step=step), ensure_ascii=False) + "\n")
+                    except OSError as e:
+                        print(f"[gemma_mt] WARNING: cannot write the dev predictions: {e}", flush=True)
             if vsampler is not None:
                 vsampler.sleep()
             logger.log(step, ev)
@@ -1248,7 +1590,8 @@ def _train_rl(cfg: RLConfig, tokenizer, scorer, prompts, eval_prompts, lid, devi
                 lwc.observe_eval(step, ev)
             print(f"[gemma_mt] eval @ {step}: reward {ev['eval/reward']:.3f} finished {ev['eval/finished_rate']:.2f}"
                   + (f" | dev chrF++ macro {bench['bench/chrf_macro']:.2f} (SFT start {base_chrf:.2f}) BLEU {bench['bench/bleu_macro']:.2f}"
-                     if bench else ""), flush=True)
+                     if bench else "")
+                  + (f" | held-out AfriCOMET macro {ev['bench/comet_macro']:.4f} (sd {ev['bench/comet_macro_sd']:.4f}, {ev.get('heldout_comet/languages', 0):.0f} languages, {ev['heldout_comet/seconds']:.0f}s)" if "bench/comet_macro" in ev else ""), flush=True)
             best_eval = max(best_eval, ev["eval/reward"])
             metric, fin = None, None
             if cfg.select_by == "benchmark_chrf":
@@ -1271,6 +1614,50 @@ def _train_rl(cfg: RLConfig, tokenizer, scorer, prompts, eval_prompts, lid, devi
                         state.update({k: v for k, v in bench.items()})
                     pusher.push(stage_dir, step, state, as_best=False, cleanup=cfg.keep_single_checkpoint, block=False)
             summary["last_eval"] = ev
+            if dev_patience is not None and bench is not None and step < end_step:             # early stop on the DEV metrics (same WINDDOWN as plateau_stop)
+                st_name, st_start, st_last = stage_info(step)
+                weak_ = ev.get(f"bench_aux/{cfg.early_stop_dev_aux}/chrf_macro")
+                imp_ = dev_patience.observe(step, bench["bench/chrf_macro"], weak_, st_name, ev.get("bench/comet_macro"))
+                ev_fin_ = ev.get(f"eval/greedy_finished_rate_bin/{st_name}", ev.get("eval/greedy_finished_rate") if st_name in ("run", MIXED) else None)
+                ddec = dev_patience.check(step, st_name, st_start, cfg.early_stop_dev_min_steps, st_last, bench.get("bench/finished_rate"), ev_fin_)
+                _append(os.path.join(cfg.out_dir, "dev_plateau_checks.jsonl"), dict(ddec, improved=imp_, macro=bench["bench/chrf_macro"], weak=weak_, comet=ev.get("bench/comet_macro")))
+                print(f"[gemma_mt] dev check @ {step}: macro {bench['bench/chrf_macro']:.2f}" + (f" weak {weak_:.2f}" if weak_ is not None else "") + (f" comet {ev['bench/comet_macro']:.4f}" if "bench/comet_macro" in ev else "")
+                      + f" stale evals {ddec['stale_evals']}/{cfg.early_stop_dev_k} -> "
+                      + ("DEV PLATEAU" if ddec["fire"] else f"continue ({ddec['blocked']})"), flush=True)
+                logger.log(step, {"dev_plateau/stale_evals": float(ddec["stale_evals"]), "dev_plateau/fire": float(ddec["fire"])})
+                if ddec["fire"]:
+                    if controls.request_winddown(cfg.early_stop_dev_winddown, "dev_plateau", ddec):
+                        dev_patience.triggered = ddec
+                        print(f"[gemma_mt] DEV PLATEAU STOP: neither the dev macro chrF++ nor {cfg.early_stop_dev_aux} improved by >= {cfg.early_stop_dev_eps} for {cfg.early_stop_dev_k} consecutive dev evaluations; "
+                              f"winding down over {cfg.early_stop_dev_winddown} steps, the run ends at step {min(cfg.steps, step + cfg.early_stop_dev_winddown)}", flush=True)
+                    else:
+                        print("[gemma_mt] dev plateau detected but a wind-down is already requested: nothing changed", flush=True)
+            if hacking is not None and bench is not None and step < end_step:                      # reward-hacking alarm (needs the held-out AfriCOMET); same WINDDOWN as plateau_stop
+                st_name = stage_info(step)[0]
+                hacking.observe(step, bench["bench/chrf_macro"], ev.get("bench/comet_macro"), ev.get("eval/qe_mean_scored"), st_name)
+                hdec = hacking.check(step)
+                _append(os.path.join(cfg.out_dir, "hacking_alarm_checks.jsonl"), dict(hdec))
+                logger.log(step, {"hacking_alarm/fire": float(hdec["fire"]), **({"hacking_alarm/qe_slope_per_100": hdec["qe_slope_per_100_steps"], "hacking_alarm/chrf_change": hdec["chrf_change"],
+                                                                                  "hacking_alarm/comet_change": hdec["comet_change"]} if "qe_slope_per_100_steps" in hdec else {})})
+                if hdec["fire"]:
+                    if controls.request_winddown(cfg.hacking_alarm_winddown, "hacking_alarm", hdec):
+                        hacking.triggered = hdec
+                        print(f"[gemma_mt] REWARD-HACKING ALARM @ {step}: the hold-out QE reward is rising (slope {hdec['qe_slope_per_100_steps']:+.4f}/100 steps) while the dev chrF++ macro fell {-hdec['chrf_change']:.2f} and the "
+                              f"held-out AfriCOMET macro fell {-hdec['comet_change']:.4f} over steps {hdec['window_steps'][0]}-{hdec['window_steps'][1]}; winding down over {cfg.hacking_alarm_winddown} steps "
+                              f"(best/ and the Hub best checkpoint are kept: hand the next stage the best one)", flush=True)
+                    else:
+                        print("[gemma_mt] reward-hacking alarm fired but a wind-down is already requested: nothing changed", flush=True)
+            if lang_stall is not None and bench is not None:                                          # per-language dev history + stalled flags (logging only)
+                chrf_l = {k_.split("/")[-1]: v_ for k_, v_ in ev.items() if k_.startswith("bench/chrf/")}
+                comet_l = {k_.split("/")[-1]: v_ for k_, v_ in ev.items() if k_.startswith("bench/comet/")} or None
+                stalled = lang_stall.observe(chrf_l, comet_l)
+                logger.log(step, {"dev_stalled_count": float(sum(stalled.values())), **{f"dev_stalled/{k_}": float(v_) for k_, v_ in stalled.items()}})
+                sets_ = {}
+                for pre_ in sorted({k_.rsplit("/chrf/", 1)[0] for k_ in ev if "/chrf/" in k_ and k_.startswith("bench_aux/")}):
+                    sets_[pre_.split("/", 1)[1]] = {"chrf": {k_.split("/")[-1]: v_ for k_, v_ in ev.items() if k_.startswith(pre_ + "/chrf/")},
+                                                    "comet": {k_.split("/")[-1]: v_ for k_, v_ in ev.items() if k_.startswith(pre_ + "/comet/")}}
+                _append(os.path.join(cfg.out_dir, "dev_by_language.jsonl"), {"step": step, "bench": {"chrf": chrf_l, "comet": comet_l or {}, "n_comet": {k_.split("/")[-1]: v_ for k_, v_ in ev.items() if k_.startswith("bench/comet_n/")}},
+                                                                         "aux": sets_, "stalled": sorted(k_ for k_, v_ in stalled.items() if v_), "stale": dict(lang_stall.stale)})
             if plateau is not None and step < end_step and step % cfg.eval_every == 0:
                 st_name, st_start, st_last = stage_info(step)
                 ev_fin = ev.get(f"eval/greedy_finished_rate_bin/{st_name}", ev["eval/greedy_finished_rate"] if st_name in ("run", MIXED) else None)
@@ -1337,12 +1724,23 @@ def _train_rl(cfg: RLConfig, tokenizer, scorer, prompts, eval_prompts, lid, devi
         if wd is not None:
             summary["winddown"] = wd
     # why the run ended (2026-10-28): plateau_stop (with the evidence) | winddown (operator) | max_steps
-    summary["stop_reason"] = ("plateau_stop" if plateau is not None and plateau.triggered is not None and wd is not None and wd["completed"]
+    summary["stop_reason"] = ("hacking_alarm" if hacking is not None and hacking.triggered is not None and wd is not None and wd["completed"]
+                              else "dev_plateau" if dev_patience is not None and dev_patience.triggered is not None and wd is not None and wd["completed"]
+                              else "plateau_stop" if plateau is not None and plateau.triggered is not None and wd is not None and wd["completed"]
                               else "early_stop" if patience is not None and patience.triggered is not None and wd is not None and wd["completed"]
                               else "planned_winddown" if cfg.planned_winddown_last > 0 and wd is not None and wd["completed"] else "winddown" if wd is not None and wd["completed"]
                               else "max_steps" if step >= cfg.steps else "ended_early")
     if plateau is not None:
         summary["plateau_stop"] = {"triggered": plateau.triggered is not None, "evidence": plateau.triggered, "last_check": plateau.last_check}
+    if hacking is not None:
+        summary["hacking_alarm"] = {"triggered": hacking.triggered is not None, "evidence": hacking.triggered, "last_check": hacking.last_check}
+    if lang_stall is not None:
+        summary["lang_stall"] = {"stalled_at_end": sorted(k_ for k_, v_ in lang_stall.stale.items() if v_ >= lang_stall.k), "stale": dict(lang_stall.stale)}
+    if heldout is not None:
+        summary["heldout_comet"] = {"model": cfg.heldout_comet_model, "failures": heldout.failures}
+        heldout.close()
+    if dev_patience is not None:
+        summary["early_stop_dev"] = {"triggered": dev_patience.triggered is not None, "evidence": dev_patience.triggered, "last_check": dev_patience.last_check, "anchors": dict(dev_patience.anchor)}
     if patience is not None:
         summary["early_stop"] = {"triggered": patience.triggered is not None, "evidence": patience.triggered, "best": dict(patience.best), "best_step": dict(patience.best_step),
                                  "last_improve_step": patience.last_improve_step, "last_improve_by": patience.last_improve_by}

@@ -1,0 +1,182 @@
+{
+ "efi": {
+  "n_pairs_total": 994,
+  "n_calibration": 505,
+  "n_holdout": 489,
+  "split_rule": "sha1(\"calib-split-v1\" + English) < 0.5 (D-43)",
+  "stats": {
+   "n": 505,
+   "len_ratio": {
+    "p05": 0.7480314960629921,
+    "p50": 0.9949748743718593,
+    "p95": 1.2987012987012987,
+    "p01": 0.6521739130434783,
+    "p02": 0.7,
+    "corpus": 0.9924048694586938,
+    "s2": 3.427782302384152
+   },
+   "lexical": {
+    "anchor_recall": {
+     "p10": 0.2,
+     "p50": 0.8333333333333334,
+     "n": 384
+    },
+    "anchor_precision": {
+     "p10": 0.25,
+     "p50": 1.0,
+     "n": 505
+    }
+   },
+   "diacritics": {
+    "applies": true,
+    "n": 505,
+    "density": {
+     "mean": 0.06421763247022003,
+     "p01": 0.0,
+     "p10": 0.02214022140221402,
+     "p50": 0.06341463414634146,
+     "p90": 0.1095890410958904,
+     "p99": 0.14814814814814814
+    },
+    "corpus_density": 0.06413203654582965,
+    "zero_share": 0.03366336633663369,
+    "threshold": 0.02214022140221402,
+    "threshold_source": "p10",
+    "allowed": {
+     "marks": {
+      "0323": 3047,
+      "0304": 1297,
+      "0308": 1,
+      "0300": 1,
+      "0301": 1,
+      "0327": 1
+     },
+     "letters": {
+      "2019": 4
+     },
+     "clusters": {
+      "o|0323": 2040,
+      "n|0304": 1296,
+      "u|0323": 569,
+      "i|0323": 438,
+      "e|0308": 1,
+      " |0304": 1,
+      "e|0300": 1,
+      "e|0301": 1,
+      "c|0327": 1
+     }
+    }
+   },
+   "omission": {
+    "cost": 5.0,
+    "met_target": true,
+    "target": 0.02,
+    "false_alarm": 0.0,
+    "note": "",
+    "false_alarm_by_cost": {
+     "4.0": 0.029850746268656716,
+     "5.0": 0.0,
+     "6.0": 0.0,
+     "8.0": 0.0,
+     "12.0": 0.0
+    },
+    "natural_count_mismatch": 0.19029850746268656,
+    "docs": 268
+   }
+  },
+  "calibration_half_sha256": "9c30a78542779e3fd527ca8b0ba78f06e10caed7d5d937139abef09ef7497ac8",
+  "holdout_half_sha256": "85f149346edc59508315d41d8dde75c3c68f72098c8fa3be5fbd3299753b17c0",
+  "lid_efi_Latn_top1_recall": 0.998019801980198
+ },
+ "ibb": {
+  "n_pairs_total": 998,
+  "n_calibration": 505,
+  "n_holdout": 493,
+  "split_rule": "sha1(\"calib-split-v1\" + English) < 0.5 (D-43)",
+  "stats": {
+   "n": 505,
+   "len_ratio": {
+    "p05": 0.7891156462585034,
+    "p50": 1.0319634703196348,
+    "p95": 1.4036697247706422,
+    "p01": 0.6779661016949152,
+    "p02": 0.7108433734939759,
+    "corpus": 1.0512058801010642,
+    "s2": 5.718260478159714
+   },
+   "lexical": {
+    "anchor_recall": {
+     "p10": 0.0,
+     "p50": 0.5,
+     "n": 384
+    },
+    "anchor_precision": {
+     "p10": 0.1800000000000002,
+     "p50": 0.875,
+     "n": 505
+    }
+   },
+   "diacritics": {
+    "applies": true,
+    "n": 505,
+    "density": {
+     "mean": 0.06238264500066255,
+     "p01": 0.003048780487804878,
+     "p10": 0.024691358024691357,
+     "p50": 0.060240963855421686,
+     "p90": 0.10294117647058823,
+     "p99": 0.13125
+    },
+    "corpus_density": 0.06359927408680939,
+    "zero_share": 0.00990099009900991,
+    "threshold": 0.024691358024691357,
+    "threshold_source": "p10",
+    "allowed": {
+     "marks": {
+      "0323": 2915,
+      "0303": 1722,
+      "0308": 1
+     },
+     "letters": {
+      "0259": 13,
+      "2019": 10
+     },
+     "clusters": {
+      "o|0323": 2393,
+      "n|0303": 1722,
+      "i|0323": 522,
+      "e|0308": 1
+     }
+    }
+   },
+   "omission": {
+    "cost": 4.0,
+    "met_target": true,
+    "target": 0.02,
+    "false_alarm": 0.0037313432835820895,
+    "note": "",
+    "false_alarm_by_cost": {
+     "4.0": 0.0037313432835820895,
+     "5.0": 0.0,
+     "6.0": 0.0,
+     "8.0": 0.0,
+     "12.0": 0.0
+    },
+    "natural_count_mismatch": 0.373134328358209,
+    "docs": 268
+   }
+  },
+  "calibration_half_sha256": "741dbf6e2826faee37bb6d01498b501ca0c582059ec3f5c99c8fb7d0844c3c71",
+  "holdout_half_sha256": "d060a12ac28766b00265743340f22087538dae8f5ea0798884c0684614ec48d3"
+ },
+ "_meta": {
+  "licence": "CC-BY-NC-4.0 (IbomMT), owner decision 2026-10-28, tagged non_commercial",
+  "weight_provisional": 0.5,
+  "weight_rule": "D-43: within-prompt Spearman(consensus, reference chrF++) >= 0.25 -> 0.5; needs the new policy (WAITS-FOR-MODEL)"
+ },
+ "_nc_exception": {
+  "source": "ibom-mt",
+  "licence": "CC-BY-NC-4.0",
+  "owner_exception": "2026-10-29"
+ }
+}

@@ -59,6 +59,7 @@ class QEPairScorer:
 
     def __init__(self, primary: Any, secondary: Any, owner: Any = None):
         self.primary, self.secondary, self.owner = primary, secondary, owner
+        self.ref_scorer = None                    # set by build_pair_scorer when the block has `ref_ssa: true`
         self.batch_size = getattr(primary, "batch_size", None)
         self.t_primary = 0.0
         self.t_secondary = 0.0
@@ -75,6 +76,16 @@ class QEPairScorer:
         self.t_secondary += time.time() - t0
         return out
 
+    def score_reference(self, srcs, mts, refs):
+        """Reference-based SSA-COMET-MTL (science stage, rl/science_terms.py): src + mt + ref through a separate worker started with `reference_based=True`
+        (`ref_ssa: true` in the scorer block). AttributeError when the block did not ask for it, so `getattr(scorer, "score_reference", None)` is None."""
+        if self.ref_scorer is None:
+            raise AttributeError("score_reference")
+        t0 = time.time()
+        out = self.ref_scorer(srcs, mts, refs)
+        self.t_secondary += time.time() - t0
+        return out
+
     def __getattr__(self, name):                 # token_lengths exists only if the primary has it (reward.py tests with hasattr)
         if name == "token_lengths" and hasattr(self.__dict__.get("primary"), "token_lengths"):
             return self.primary.token_lengths
@@ -86,6 +97,8 @@ class QEPairScorer:
         return t
 
     def close(self) -> None:
+        if getattr(self, "ref_worker", None) is not None:
+            self.ref_worker.close()
         for o in (self.owner, self.primary, self.secondary):
             if hasattr(o, "close"):
                 o.close()
@@ -104,14 +117,23 @@ def build_pair_scorer(spec: Dict[str, Any], device: Optional[str] = None) -> QEP
     if t == "fake":
         from gemma_mt.rl.comet import FakeScorer
 
-        return QEPairScorer(FakeScorer(), FakeScorer())
+        qp = QEPairScorer(FakeScorer(), FakeScorer())
+        if spec.get("ref_ssa"):
+            qp.ref_scorer = FakeScorer()
+        return qp
     if t == "worker":
         from gemma_mt.rl.comet import WorkerScorer
 
         w = WorkerScorer(python=spec.get("python", sys.executable), model_id=spec.get("model_id"), batch_size=bs1, fake=spec.get("fake", False),
                          pythonpath=spec.get("pythonpath"), extra_model_ids=[second_id],
                          max_batch_chars=spec.get("max_batch_chars", DEFAULT_MAX_BATCH_CHARS))
-        return QEPairScorer(w.view(0, bs1), w.view(1, bs2), owner=w)
+        qp = QEPairScorer(w.view(0, bs1), w.view(1, bs2), owner=w)
+        if spec.get("ref_ssa"):            # science stage: a second worker with the reference-based SSA-COMET-MTL (src + mt + ref)
+            qp.ref_worker = WorkerScorer(python=spec.get("python", sys.executable), model_id=second_id, batch_size=bs2, fake=spec.get("fake", False),
+                                         pythonpath=spec.get("pythonpath"), reference_based=True,
+                                         max_batch_chars=spec.get("max_batch_chars", DEFAULT_MAX_BATCH_CHARS))
+            qp.ref_scorer = qp.ref_worker.view(0, bs2)
+        return qp
     from gemma_mt.rl.comet import CometScorer
 
     return QEPairScorer(CometScorer(spec.get("model_id", "masakhane/africomet-qe-stl-1.1"), batch_size=bs1, device=device),

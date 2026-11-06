@@ -1,0 +1,61 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+# POST-EDITOR SFT (plan: reports/post_editor_plan_2026-11-03.md). A SMALL full fine-tune of the 385M SFT-final weights on (English + draft -> human reference), the existing trainer unchanged
+# (gemma_mt.train_sft reads the packed dataset written by scripts/post_editor_build_sft.py; loss only on `{tag} {reference}<end_of_turn>`).
+#   cd <run dir that holds packed_pe/>  ;  GEMMA_MT_TAG_MODE=single_token python -m gemma_mt.train_sft --config configs/post_editor/pe_sft.yaml
+# Tokenizer = the ORIGINAL google/gemma-3-270m-it (the tag tokens are <unusedK>; the pack fingerprint is checked). Do NOT use the renamed RL tokenizer here.
+model_name: /workspace/clean_rerun/models/g15_385m_sft_final     # HF export of runs/g1b_s6 (39 layers, 385,144,448 parameters)
+tokenizer_name: google/gemma-3-270m-it
+data_dir: packed_pe
+out_dir: runs/post_editor_e1
+
+# ~52k examples x ~145 tokens (measured on 1,500 selected pairs with the real tokenizer: mean 142, p95 272, max 552) = ~7.5M tokens per epoch -> ~3,700 packs of 2,048 tokens
+# -> 32 packs (65k tokens) per optimizer step -> ~115 steps per epoch, ~230 steps in 2 epochs
+epochs: 2.0
+max_steps: 0
+language_alpha: null            # natural pack order (the selection is already language-balanced by UniMax flooring); set 0.5 + `pack_by_language` data if a stronger tail push is wanted
+
+attn_implementation: varlen
+mask_mode: flash
+loss_impl: fused
+param_dtype: float32
+autocast_dtype: bfloat16
+# A100 80 GB: micro 8 x accum 4, no checkpointing.  24 GB class GPU: micro_batch_size 2, grad_accum_steps 16, gradient_checkpointing true (same 32 packs per step).
+gradient_checkpointing: false
+loss_chunk_tokens: 512
+micro_batch_size: 8
+grad_accum_steps: 4
+
+# optimizer as the stage-B SFT (Muon on the 2-D decoder matrices, AdamW on embedding / norms, update RMS matched to AdamW) at a LOW, nearly constant rate: the model is already a good translator
+optimizer: muon
+muon_momentum: 0.95
+muon_ns_steps: 5
+learning_rate: 2.0e-5
+min_lr_ratio: 0.5               # cosine from 2e-5 to 1e-5 ("constant-ish")
+warmup_steps: 0
+warmup_ratio: 0.05
+weight_decay: 0.01
+beta1: 0.9
+beta2: 0.95
+eps: 1.0e-8
+grad_clip: 1.0
+
+# validation: per-language loss on the held-out pairs (matched drafts), macro over languages with enough target tokens
+eval_every: 30
+eval_max_packs: 0
+val_metric: macro
+min_val_tokens_macro: 300
+early_stopping_patience: 0      # inert: the best validation loss is tracked, nothing ends the run
+early_stop_action: propose
+min_epochs: 1.0
+quick_eval_every: 0
+save_every: 60
+log_every: 10
+keep_prev_checkpoint: false
+keep_single_checkpoint: true
+resume: true
+seed: 1234
+wandb_project: null
+run_name: post_editor_e1
+hub_repo_id: null               # NO pushes (owner rule for this experiment)
+# VARIANT E2 (KEEP marker): build the data with --keep-variant, initialise the marker row first
+#   python scripts/post_editor_build_sft.py --init-marker-rows --model /workspace/clean_rerun/models/g15_385m_sft_final --out ckpt/sft_final_keep   (then model_name: ckpt/sft_final_keep)

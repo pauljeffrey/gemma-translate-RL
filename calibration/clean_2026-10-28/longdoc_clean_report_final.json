@@ -1,0 +1,236 @@
+{
+ "n_docs": {
+  "flores_cal": 1080,
+  "afriscience_train": 0
+ },
+ "buckets": [
+  {
+   "bucket": 0,
+   "n": 195,
+   "nearest_bucket_used": false,
+   "kinds": {
+    "human_flores_cal": 195
+   },
+   "p995_excess": {
+    "rep4": 0.09090909090909091,
+    "cover8": 0.0,
+    "dup_sent": 0.0,
+    "dup_block": 0.0,
+    "cycle": 0.0
+   },
+   "limit": {
+    "rep4": 0.1045,
+    "cover8": 0.04,
+    "dup_sent": 0.03,
+    "dup_block": 0.03,
+    "cycle": 0.02
+   },
+   "limit_by_kind": {
+    "human_flores_cal": {
+     "rep4": 0.1045,
+     "cover8": 0.04,
+     "dup_sent": 0.03,
+     "dup_block": 0.03,
+     "cycle": 0.02
+    }
+   }
+  },
+  {
+   "bucket": 1,
+   "n": 345,
+   "nearest_bucket_used": false,
+   "kinds": {
+    "human_flores_cal": 345
+   },
+   "p995_excess": {
+    "rep4": 0.053763440860215055,
+    "cover8": 0.08333333333333333,
+    "dup_sent": 0.0,
+    "dup_block": 0.0,
+    "cycle": 0.0
+   },
+   "limit": {
+    "rep4": 0.1,
+    "cover8": 0.0958,
+    "dup_sent": 0.03,
+    "dup_block": 0.03,
+    "cycle": 0.02
+   },
+   "limit_by_kind": {
+    "human_flores_cal": {
+     "rep4": 0.1,
+     "cover8": 0.0958,
+     "dup_sent": 0.03,
+     "dup_block": 0.03,
+     "cycle": 0.02
+    }
+   }
+  },
+  {
+   "bucket": 2,
+   "n": 270,
+   "nearest_bucket_used": false,
+   "kinds": {
+    "human_flores_cal": 270
+   },
+   "p995_excess": {
+    "rep4": 0.03709949409780776,
+    "cover8": 0.0508130081300813,
+    "dup_sent": 0.0,
+    "dup_block": 0.0,
+    "cycle": 0.0
+   },
+   "limit": {
+    "rep4": 0.1,
+    "cover8": 0.0584,
+    "dup_sent": 0.03,
+    "dup_block": 0.03,
+    "cycle": 0.02
+   },
+   "limit_by_kind": {
+    "human_flores_cal": {
+     "rep4": 0.1,
+     "cover8": 0.0584,
+     "dup_sent": 0.03,
+     "dup_block": 0.03,
+     "cycle": 0.02
+    }
+   }
+  },
+  {
+   "bucket": 3,
+   "n": 270,
+   "nearest_bucket_used": false,
+   "kinds": {
+    "human_flores_cal": 270
+   },
+   "p995_excess": {
+    "rep4": 0.01982567493950566,
+    "cover8": 0.02158273381294964,
+    "dup_sent": 0.0,
+    "dup_block": 0.0,
+    "cycle": 0.0
+   },
+   "limit": {
+    "rep4": 0.1,
+    "cover8": 0.04,
+    "dup_sent": 0.03,
+    "dup_block": 0.03,
+    "cycle": 0.02
+   },
+   "limit_by_kind": {
+    "human_flores_cal": {
+     "rep4": 0.1,
+     "cover8": 0.04,
+     "dup_sent": 0.03,
+     "dup_block": 0.03,
+     "cycle": 0.02
+    }
+   }
+  },
+  {
+   "bucket": 4,
+   "n": 270,
+   "nearest_bucket_used": true,
+   "kinds": {
+    "human_flores_cal": 270
+   },
+   "p995_excess": {
+    "rep4": 0.01982567493950566,
+    "cover8": 0.02158273381294964,
+    "dup_sent": 0.0,
+    "dup_block": 0.0,
+    "cycle": 0.0
+   },
+   "limit": {
+    "rep4": 0.1,
+    "cover8": 0.04,
+    "dup_sent": 0.03,
+    "dup_block": 0.03,
+    "cycle": 0.02
+   },
+   "limit_by_kind": {
+    "human_flores_cal": {
+     "rep4": 0.1,
+     "cover8": 0.04,
+     "dup_sent": 0.03,
+     "dup_block": 0.03,
+     "cycle": 0.02
+    }
+   }
+  },
+  {
+   "bucket": 5,
+   "n": 270,
+   "nearest_bucket_used": true,
+   "kinds": {
+    "human_flores_cal": 270
+   },
+   "p995_excess": {
+    "rep4": 0.01982567493950566,
+    "cover8": 0.02158273381294964,
+    "dup_sent": 0.0,
+    "dup_block": 0.0,
+    "cycle": 0.0
+   },
+   "limit": {
+    "rep4": 0.1,
+    "cover8": 0.04,
+    "dup_sent": 0.03,
+    "dup_block": 0.03,
+    "cycle": 0.02
+   },
+   "limit_by_kind": {
+    "human_flores_cal": {
+     "rep4": 0.1,
+     "cover8": 0.04,
+     "dup_sent": 0.03,
+     "dup_block": 0.03,
+     "cycle": 0.02
+    }
+   }
+  }
+ ],
+ "fp_in_sample": {
+  "0:all": {
+   "n": 195,
+   "any": 0.0,
+   "ge_half": 0.0
+  },
+  "0:human_flores_cal": {
+   "n": 195,
+   "any": 0.0,
+   "ge_half": 0.0
+  },
+  "1:all": {
+   "n": 345,
+   "any": 0.005797101449275362,
+   "ge_half": 0.0
+  },
+  "1:human_flores_cal": {
+   "n": 345,
+   "any": 0.005797101449275362,
+   "ge_half": 0.0
+  },
+  "2:all": {
+   "n": 270,
+   "any": 0.0,
+   "ge_half": 0.0
+  },
+  "2:human_flores_cal": {
+   "n": 270,
+   "any": 0.0,
+   "ge_half": 0.0
+  },
+  "3:all": {
+   "n": 270,
+   "any": 0.0,
+   "ge_half": 0.0
+  },
+  "3:human_flores_cal": {
+   "n": 270,
+   "any": 0.0,
+   "ge_half": 0.0
+  }
+ }
+}

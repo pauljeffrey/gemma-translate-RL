@@ -1,0 +1,17 @@
+{
+ "provisional": true,
+ "languages": [
+  "kea",
+  "kbp",
+  "nus",
+  "bam",
+  "kab"
+ ],
+ "weights": {},
+ "source": "PLACEHOLDER (2026-10-29): the five languages for which the D-66 calibration (nllb_reward_calibration_v1, human-validated) gave the default consensus/blend modes a weight 0.23-0.35. To be REPLACED by the output of the language-rule step on H_sel (teacher delta >= +2 chrF++ with CI above 0, AUC >= 0.8, no hack failure) once A0 exists; the writer sets provisional to false.",
+ "rule": {
+  "min_teacher_delta": 2.0,
+  "min_auc": 0.8,
+  "evaluated_on": "H_sel (NOT devtest)"
+ }
+}

@@ -29,27 +29,55 @@ from typing import Dict, Optional, Tuple
 import torch
 
 
+def _denominator(std: torch.Tensor, std_eps: float, std_floor: float) -> torch.Tensor:
+    """Divisor of the standardised advantage. Default `std + std_eps`; with `std_floor` > 0 (config adv_std_floor, owner 2026-11-03) `max(std, std_floor)`: a group whose spread is below the floor
+    keeps the shape of its advantages but a magnitude of std / floor < 1, so near-flat groups (jitter in the third decimal of a QE score) are damped instead of being blown up to |A| ~ 1."""
+    if std_floor and std_floor > 0:
+        return torch.clamp(std, min=float(std_floor))
+    return std + std_eps
+
+
+def _masked_mean_std(r: torch.Tensor, keep: torch.Tensor):
+    """Mean / population std over the members with keep=True of every row of r [B, G]; also the number kept."""
+    k = keep.to(torch.float32)
+    n = k.sum(dim=1, keepdim=True)
+    mean = (r * k).sum(dim=1, keepdim=True) / n.clamp(min=1.0)
+    std = ((((r - mean) ** 2) * k).sum(dim=1, keepdim=True) / n.clamp(min=1.0)).sqrt()
+    return mean, std, n
+
+
 def group_advantages(rewards: torch.Tensor, group_size: int, norm: str = "mean_std", std_eps: float = 1e-4,
-                     flat_threshold: float = 1e-6) -> Tuple[torch.Tensor, float]:
+                     flat_threshold: float = 1e-6, std_floor: float = 0.0, drop: Optional[torch.Tensor] = None) -> Tuple[torch.Tensor, float]:
     """rewards [N] with the G completions of a prompt CONSECUTIVE (N % G == 0). Returns (advantages [N], fraction of
-    groups whose rewards are all (nearly) equal)."""
+    groups whose rewards are all (nearly) equal). `drop` (bool [N], default None = nobody): members DROPPED from their group (a hard-failed beam-guide member, config guide_fraction): they
+    are left out of the group mean / std and get advantage 0; a group with fewer than 2 members left is flat."""
     if rewards.dim() != 1 or rewards.numel() % group_size != 0:
         raise ValueError(f"rewards {tuple(rewards.shape)} not divisible into groups of {group_size}")
     if norm not in ("mean", "mean_std"):
         raise ValueError("norm must be 'mean' or 'mean_std'")
     r = rewards.detach().to(torch.float32).view(-1, group_size)
+    if drop is not None and bool(drop.any()):
+        keep = ~drop.view(-1, group_size)
+        mean, std, n = _masked_mean_std(r, keep)
+        flat = (std.squeeze(1) < flat_threshold) | (n.squeeze(1) < 2)
+        adv = r - mean
+        if norm == "mean_std":
+            adv = adv / _denominator(std, std_eps, std_floor)
+        adv = adv * keep.to(adv.dtype)
+        adv = torch.where(flat.unsqueeze(1), torch.zeros_like(adv), adv)
+        return adv.reshape(-1), float(flat.float().mean().item())
     mean = r.mean(dim=1, keepdim=True)
     std = r.std(dim=1, keepdim=True, unbiased=False)
     flat = std.squeeze(1) < flat_threshold
     adv = r - mean
     if norm == "mean_std":
-        adv = adv / (std + std_eps)
+        adv = adv / _denominator(std, std_eps, std_floor)
     adv = torch.where(flat.unsqueeze(1), torch.zeros_like(adv), adv)
     return adv.reshape(-1), float(flat.float().mean().item())
 
 
 def group_advantages_sampled_baseline(rewards: torch.Tensor, group_size: int, norm: str = "mean_std", std_eps: float = 1e-4, flat_threshold: float = 1e-6,
-                                      greedy_cap: float = 0.0) -> Tuple[torch.Tensor, float]:
+                                      greedy_cap: float = 0.0, std_floor: float = 0.0, drop: Optional[torch.Tensor] = None) -> Tuple[torch.Tensor, float]:
     """D-67 (flag `greedy_stats: sampled`): for groups whose LAST member is the greedy completion (`greedy_in_group`). Baseline and std are computed over the group_size - 1 SAMPLED members only; the greedy member
     gets its advantage relative to those statistics, (r_greedy - mean_sampled) / (std_sampled + eps), clipped to +-greedy_cap when greedy_cap > 0. Reason (R8): a looping greedy member (reward ~ -2) inflates the std of the
     whole group 1.3-2.3x and cuts the |advantage| of the sampled members by 25-35 %; with the sampled-only statistics the sampled members keep the advantages they would have without a greedy member.
@@ -60,20 +88,28 @@ def group_advantages_sampled_baseline(rewards: torch.Tensor, group_size: int, no
         raise ValueError("norm must be 'mean' or 'mean_std'")
     r = rewards.detach().to(torch.float32).view(-1, group_size)
     samp = r[:, :-1]
-    mean = samp.mean(dim=1, keepdim=True)
-    std = samp.std(dim=1, keepdim=True, unbiased=False)
-    flat = std.squeeze(1) < flat_threshold
+    if drop is not None and bool(drop.any()):                  # `drop`: members left out of the sampled statistics (a hard-failed beam-guide member), advantage 0
+        keep = ~drop.view(-1, group_size)
+        mean, std, n = _masked_mean_std(samp, keep[:, :-1])
+        flat = (std.squeeze(1) < flat_threshold) | (n.squeeze(1) < 2)
+    else:
+        keep = None
+        mean = samp.mean(dim=1, keepdim=True)
+        std = samp.std(dim=1, keepdim=True, unbiased=False)
+        flat = std.squeeze(1) < flat_threshold
     adv = r - mean
     if norm == "mean_std":
-        adv = adv / (std + std_eps)
+        adv = adv / _denominator(std, std_eps, std_floor)
     if greedy_cap and greedy_cap > 0:
         adv[:, -1] = adv[:, -1].clamp(-float(greedy_cap), float(greedy_cap))
+    if keep is not None:
+        adv = adv * keep.to(adv.dtype)
     adv = torch.where(flat.unsqueeze(1), torch.zeros_like(adv), adv)
     return adv.reshape(-1), float(flat.float().mean().item())
 
 
 def group_advantages_masked(rewards: torch.Tensor, group_size: int, failed: torch.Tensor, mode: str = "zero", norm: str = "mean_std", std_eps: float = 1e-4,
-                            flat_threshold: float = 1e-6) -> Tuple[torch.Tensor, float]:
+                            flat_threshold: float = 1e-6, std_floor: float = 0.0) -> Tuple[torch.Tensor, float]:
     """D-61 (OFF by default, train_rl `hard_fail_mask`): advantages with the hard-failed members (status != ok: truncated, copy_source, wrong_language ...) taken out of the policy gradient.
       zero     the group baseline and std still include the failed members (so the survivors' advantages are exactly those of `group_advantages`), the failed members get advantage 0.
       exclude  baseline and std are computed over the NON-failed members only (the failures do not move the survivors' advantages either); failed members get advantage 0; a group with < 2
@@ -83,7 +119,7 @@ def group_advantages_masked(rewards: torch.Tensor, group_size: int, failed: torc
     if mode not in ("zero", "exclude"):
         raise ValueError("mode must be 'zero' or 'exclude'")
     if mode == "zero":
-        adv, flat = group_advantages(rewards, group_size, norm, std_eps, flat_threshold)
+        adv, flat = group_advantages(rewards, group_size, norm, std_eps, flat_threshold, std_floor)
         return torch.where(failed.view(-1), torch.zeros_like(adv), adv), flat
     r = rewards.detach().to(torch.float32).view(-1, group_size)
     ok = (~failed.view(-1, group_size)).to(torch.float32)
@@ -94,10 +130,27 @@ def group_advantages_masked(rewards: torch.Tensor, group_size: int, failed: torc
     flat = (std.squeeze(1) < flat_threshold) | (n_ok.squeeze(1) < 2)
     adv = (r - mean)
     if norm == "mean_std":
-        adv = adv / (std + std_eps)
+        adv = adv / _denominator(std, std_eps, std_floor)
     adv = adv * ok
     adv = torch.where(flat.unsqueeze(1), torch.zeros_like(adv), adv)
     return adv.reshape(-1), float(flat.float().mean().item())
+
+
+def cap_member_share(adv: torch.Tensor, lengths: torch.Tensor, members: torch.Tensor, cap: float) -> Tuple[torch.Tensor, float, float]:
+    """Safety for the beam-guide members (config guide_adv_share_cap): their share of the step's token-weighted |advantage| (sum over the members of |A| x completion length, the weight each token
+    gets in the 'token' loss) is limited to `cap`; if it is larger, their advantages are multiplied by the factor that brings it to exactly `cap`. Returns (advantages, share before, factor)."""
+    if not cap or cap <= 0 or not bool(members.any()):
+        return adv, 0.0, 1.0
+    w = adv.abs() * lengths.to(adv.dtype)
+    tot = float(w.sum())
+    mem = float(w[members].sum())
+    share = mem / tot if tot > 0 else 0.0
+    if share <= cap or mem <= 0:
+        return adv, share, 1.0
+    factor = cap * (tot - mem) / ((1.0 - cap) * mem)
+    out = adv.clone()
+    out[members] = out[members] * factor
+    return out, share, factor
 
 
 def scale_last_member(adv: torch.Tensor, group_size: int, scale: float) -> torch.Tensor:

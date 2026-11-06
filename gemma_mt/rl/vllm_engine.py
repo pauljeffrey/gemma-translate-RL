@@ -131,7 +131,7 @@ class VLLMEngine:
                 n=1 if greedy else spec.n, temperature=0.0 if greedy else spec.temperature, top_p=spec.top_p,
                 top_k=spec.top_k, max_tokens=spec.max_tokens, stop_token_ids=list(spec.stop_token_ids), detokenize=False,
                 ignore_eos=False, skip_special_tokens=False, logprobs=0 if spec.logprobs else None,
-                seed=None if spec.seeds is None else int(spec.seeds[i])))
+                seed=None if spec.seeds is None else int(spec.seeds[i]), **_eval_guard_kwargs()))
         too_long = [i for i, p in enumerate(prompts) if len(p) + spec.max_tokens > self.cfg.max_model_len]
         if too_long:
             raise SamplerError(f"{len(too_long)} prompt(s) + max_tokens {spec.max_tokens} exceed vllm_max_model_len "
@@ -225,6 +225,18 @@ class VLLMEngine:
 
 
 # ---------------------------------------------------------------------------------------------------------- worker process
+def _eval_guard_kwargs() -> Dict[str, float]:
+    """Decode-time loop guard of an EVALUATION run (E-01, 2026-11-04): GEMMA_MT_EVAL_FREQ_PENALTY / GEMMA_MT_EVAL_REP_PENALTY in the worker's environment. Unset (training, every earlier
+    evaluation) = no change."""
+    kw: Dict[str, float] = {}
+    fp, rp = os.environ.get("GEMMA_MT_EVAL_FREQ_PENALTY"), os.environ.get("GEMMA_MT_EVAL_REP_PENALTY")
+    if fp not in (None, "") and float(fp) != 0.0:
+        kw["frequency_penalty"] = float(fp)
+    if rp not in (None, "") and float(rp) != 1.0:
+        kw["repetition_penalty"] = float(rp)
+    return kw
+
+
 def default_worker_cmd(python: Optional[str] = None) -> List[str]:
     return [python or sys.executable, "-u", "-m", "gemma_mt.rl.vllm_engine"]
 
