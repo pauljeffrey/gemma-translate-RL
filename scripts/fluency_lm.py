@@ -131,3 +131,39 @@ if __name__ == "__main__":
     p = sp.add_parser("validate"); p.add_argument("--train", required=True); p.add_argument("--test", required=True); p.add_argument("--out", required=True)
     p.add_argument("--order", type=int, default=5); p.add_argument("--n-test", type=int, default=400); p.set_defaults(fn=validate)
     a = ap.parse_args(); a.fn(a)
+
+
+# ---------------------------------------------------------------------------------------------------------------------- word-order component (2026-11-01)
+PUNCT = ".,;:!?\"'()[]{}«»“”‘’„‟<>–—-…/\\|*"
+
+
+def words(t):
+    return [w for w in (x.strip(PUNCT) for x in t.lower().split()) if w]
+
+
+class WordPMI:
+    """Word-order score: mean over adjacent word pairs of log P(w | v) - log P(w), with P(w|v) = Witten-Bell interpolation of the bigram with the unigram. Word frequency cancels, so the
+    score measures only whether this word FOLLOWS that word in the language: shuffled words score near 0 or below, natural order above. Pairs with an unseen word contribute 0 (no evidence)."""
+
+    def __init__(self):
+        self.uni, self.bi, self.types, self.N = collections.Counter(), collections.Counter(), collections.Counter(), 0
+
+    def fit(self, texts):
+        for t in texts:
+            w = words(t); self.uni.update(w); self.N += len(w)
+            for a, b in zip(w, w[1:]):
+                if self.bi[(a, b)] == 0: self.types[a] += 1
+                self.bi[(a, b)] += 1
+        return self
+
+    def score(self, t):
+        w = words(t)
+        if len(w) < 3: return None
+        out = []
+        for a, b in zip(w, w[1:]):
+            cv = self.uni.get(a, 0); cw = self.uni.get(b, 0)
+            if cv == 0 or cw == 0: out.append(0.0); continue
+            lam = cv / (cv + self.types.get(a, 0) + 1); pu = cw / self.N
+            pb = lam * self.bi.get((a, b), 0) / cv + (1 - lam) * pu
+            out.append(math.log(pb / pu))
+        return sum(out) / len(out)

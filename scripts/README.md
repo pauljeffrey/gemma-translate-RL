@@ -390,3 +390,58 @@ Batch and one-off tools, grouped by purpose. Each script documents its own argum
 | `varlen_equivalence.py` | Numerical equivalence of the attention paths (explicit sdpa masks vs varlen vs flex_attention) and of the loss |
 | `verify_b2048_prompts.py` | D-45 acceptance check of `rl_prompts_v3` against `rl_prompts_v2` with the REAL loader, hold-out and schedule of the trainer. CPU only (loads ~10 M pro |
 | `vllm_smoke.py` | GPU smoke test of the vLLM rollout sampler (DECISIONS.md D-28). Needs a CUDA GPU, vLLM (in this interpreter for |
+
+## 385M experiments (2026-11-01 to 2026-11-05)
+
+Evaluation, decoding, contamination audit, RL launch and post-editor tools of the 385M model. The ssh helper scripts read the key, host and port from `.env` (`SSH_KEY`, `BOX_HOST`, `BOX_PORT`, `GPU_BOX_HOST`, `GPU_BOX_PORT`).
+
+| Script | What |
+|---|---|
+| `africomet_bias_study.py` | Is AfriCOMET-QE biased against human ratings WITHIN a source? (owner question 2026-11-02; offline, CPU, numpy only) |
+| `attach_flags.py` | Attach the contamination flags of a flag directory (contamination_<benchmark>.json) to a predictions.jsonl (rows keep everything else). |
+| `build_calibration_clean_v2.py` | calibration/clean_2026-10-28/shaping_clean_v2.json = shaping_clean_v1.json + the 8 new consensus-only languages (owner 2026-11-01; 385M RL). |
+| `build_eval_385m_results.py` | Build the result tables of the post-SFT evaluation of the 385M model (reports/eval_385m_results_2026-11-03.md) from the files that the A100 produced. |
+| `build_eval_comparison_sources.py` | Collect, from files already in the repo, the numbers the post-SFT report of the 385M model is compared with (2026-11-02). Nothing is re-run, nothing is invented: |
+| `build_fluency_models.py` | Build the compact per-language fluency models used by gemma_mt/rl/fluency.py (D-62). |
+| `build_long_rl_pool.py` | Pool of the long-document RL stage (2026-11-04): `<out>/{science,science_b2048,general,general_b2048,news,news_long,ref}/<iso>.parquet`. |
+| `build_rl_prompts_news.py` | News-style English RL prompt pool (2026-11-03): BBC News windows, decontaminated, one parquet per RL language. |
+| `build_rl_prompts_news_r2.py` | News-style English RL prompt pool, RELEASE 2 (2026-11-03): BBC (release 1 pool) + English Wikinews + Global Voices + Wikivoyage, decontaminated. |
+| `build_rl_prompts_ref.py` | Reference-anchored RL prompts (owner 2026-11-03, reward.reference_weight): English windows that come WITH a human translation, domain "ref". |
+| `clean_rerun_385m_make_configs.py` | RL stage configs for the 385M grown model (owner 2026-11-01): configs/clean_rerun_385m/*.yaml. |
+| `clean_rerun_385m_prepare_assets.sh` | Assets of the 385M RL plan on the RL box (run once, CPU only): the general prompt pool with the 8 new consensus languages, shaping_clean_v2.json, the renamed tokenizer. |
+| `clean_rerun_385m_prepare_f2_pool.sh` | Prompt pool of the OPTIONAL stage F2 (final_long, owner 2026-11-02): $ROOT/prompts/clean_sci_v2_long = the clean science pool (b64..b1024, decontaminated) + zz_b2048/<iso>.parquet. |
+| `comet_rows.py` | AfriCOMET (reference, STL-1.1) and AfriCOMET-QE per language and macro for two systems from the on-disk score caches of the evaluation run, with a paired bootstrap of the |
+| `contam_audit_14_385m_scan.py` | Benchmark contamination audit of the NEW SFT text of the 385M model (CPU only, streams the packed datasets from the bucket, nothing is stored but the results). |
+| `contam_audit_14_attach.py` | Attach the contamination flags (contamination_<benchmark>.json of `contam_audit_14_385m_scan.py finalize`) to an existing predictions.jsonl, so that |
+| `contam_audit_14_report.py` | Tables for the 385M contamination audit, from the output of `contam_audit_14_385m_scan.py finalize` (CPU, seconds). |
+| `contam_audit_14b_strip.py` | Variant pass of the 385M contamination scan: the R4 rule of contam_audit_12 (diacritics dropped after NFD) on top of the normalisation of gemma_mt.eval.contamination. |
+| `contam_audit_14c_assemble.py` | Assemble the contamination files of the 385M SFT text from the two scans (plain normalisation = `full`, mark-stripped normalisation = `strip`, R4 of contam_audit_12). |
+| `contam_audit_14d_crosscheck.py` | Independent cross-check of the 385M scanner against the filter of contam_audit_12 (rules R1 exact, R2 contiguous, R3 8-gram, R4 mark-stripped variants) on slices of real training samples. |
+| `decode_analyze.py` | Greedy vs beam-4 vs MBR-16 from the json files of `decode_study_385m.py`: per-language and macro chrF++ / spBLEU, paired bootstrap of every system against greedy (same resample, macro = equal weight |
+| `decode_study_385m.py` | Greedy vs beam-4 vs MBR-16 on a FLORES+ devtest subset (post-SFT evaluation of the 385M model), one vLLM engine, one process. |
+| `dev_comet_retro.py` | Score the saved dev predictions of an RL run offline with the REFERENCE-BASED AfriCOMET and replay the dev monitors (patch 3, owner 2026-11-03). |
+| `eval_385m_score.py` | Score and compare any number of systems from their `predictions.jsonl` (the file `gemma_mt.eval.sft_benchmarks` / the decoding runs write): per-language and macro tables |
+| `eval_afriscience_documents.py` | FULL document-level evaluation on AfriScience-MT test (owner 2026-11-04): 28 papers x 6 languages = 168 documents, a document = one paper's sentences joined by single spaces in sentence_id order |
+| `eval_afriscience_documents_neural.py` | Reference-based neural scores of the document-level AfriScience-MT predictions (scripts/eval_afriscience_documents.py): AfriCOMET-STL (masakhane/africomet-stl-1.1) and SSA-COMET-MTL (McGill-NLP/ssa-co |
+| `filter_long_pool_source.py` | Non-destructive source filter of the long-document RL pool (2026-11-04, owner: LibreTexts is EXCLUDED until its licence is resolved). |
+| `fluency_eval_flores.py` | Fluency model v2 on HUMAN reference text (FLORES+ dev): char 5-gram + word-order component, three training sets, hard sibling negatives. |
+| `follow_editor_rl_log.sh` | Waits on the post-editor box (3090 Ti) until the editor-RL training log exists, then streams it live (tail -F) with the per-step lines and the guard / checkpoint messages. |
+| `group_std_percentiles.py` | Percentiles of the within-group reward std from <run>/group_stats.jsonl (config log_group_stats). Use it to (re)set `adv_std_floor` (about the 10th percentile: only near-flat groups are damped), |
+| `launch_clean_rerun_385m.sh` | RL launcher for the 385M grown model (owner 2026-11-01): the clean-rerun launcher (scripts/launch_clean_rerun.sh) with the 385M configs, the SINGLE-TOKEN tag mode and the 385M model / hub names. |
+| `packs_to_contam_windows.py` | Packed SFT shards -> the parquet windows (english, target, iso) that `gemma_mt.eval.contamination` scans. |
+| `post_editor_analyze.py` | Post-editor: WHERE does the editor help or hurt? Sentence-level chrF++ change by draft-quality bin, by source length and by draft failure type (loop / unfinished / wrong-length). |
+| `post_editor_bench_drafts.py` | Post-editor: draft translations of the BENCHMARKS (the unseen text the editor is judged on), in the evaluation's predictions.jsonl format, one file per decoding system. |
+| `post_editor_build_sft.py` | Post-editor, step 3: assemble the editor SFT set (source + draft -> human reference) and write it as a PACKED dataset the existing SFT trainer reads unchanged. |
+| `post_editor_comet.py` | AfriCOMET (reference-based STL-1.1 and reference-free QE) and SSA-COMET-MTL of several hypothesis sets on the SAME sentences, per language and macro, with a paired bootstrap of the differences. |
+| `post_editor_eval.py` | Post-editor, step 5: run the editor on (English source + draft) of a benchmark predictions file, score draft vs edited, and report what the editor did. |
+| `post_editor_extra_sources.py` | Post-editor, selection v3: extra HUMAN en->X pair sources with clear provenance that are not in the clean pair shards. Writes parquet shards in the shard schema |
+| `post_editor_make_drafts.py` | Post-editor, step 2: machine-translation DRAFTS of the English side of the chosen pairs, from several systems of DIFFERENT quality (the editor must not learn to copy a good draft). |
+| `post_editor_mt_drafts.py` | Post-editor: DRAFTS from other machine-translation systems (NLLB-200, MADLAD-400) so the editor sees error patterns that are not our own model's. DRAFT side only: the target stays the human reference. |
+| `post_editor_qe_filter.py` | Post-editor: MODERATE AfriCOMET-QE verification of the human targets (owner request 2026-11-03; runs in the AfriCOMET environment, GPU). |
+| `post_editor_rl_check.py` | Pre-launch check of the editor-RL reward: does each reward term (and the total) rank E1's edits the way the HUMAN REFERENCE does? |
+| `post_editor_rl_make_config.py` | Editor-RL config generator: configs/clean_rerun_385m/rl_A_b64.yaml (the recipe of the translation RL, stage A) -> configs/post_editor/pe_rl.yaml with the editor settings. |
+| `post_editor_rl_pool.py` | Editor-RL prompt pool (owner rules 2026-11-03): English source + DRAFT (+ human reference for about 55% of the prompts), 81 RL languages. |
+| `post_editor_select_data.py` | Post-editor, step 1: choose the HUMAN-translated en->X training pairs from the clean pair shards (references = human translations only). |
+| `post_editor_val_loss.py` | Like-for-like validation loss of the base translator and the editor on the SAME held-out editor validation rows (owner question: "why is the editor's validation loss lower than the base model's?"). |
+| `tail_rl_log.sh` | Live view of an RL stage log on the A100 (Terminal panel tab "Growth training"):  bash scripts/tail_rl_log.sh [preflight/A/B1/mixed/final] |
+| `watch_post_editor_logs.sh` | Live view of the post-editor box (3090 Ti): training and evaluation logs of every editor run. |

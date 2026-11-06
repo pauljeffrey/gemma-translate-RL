@@ -1,0 +1,50 @@
+# Science SFT of the 385M model (arm 2: SFT then RL). Owner 2026-11-03: AdamW 3e-6 (the measured small-LR recipe of the 270M science stage), early stopping on a held-out AfriScience dev split,
+# replay validation as the forgetting monitor. model_name is set by the pipeline (the chosen start checkpoint = an RL checkpoint dir with the renamed tags); the DATA are tokenised with the
+# ORIGINAL Gemma tokenizer (tags are the <unusedK> ids, same ids as the renamed <yor> ...), hence tokenizer_name: google/gemma-3-270m-it (fingerprint 69f7f26e2dee...).
+model_name: SET_BY_PIPELINE
+tokenizer_name: google/gemma-3-270m-it
+data_dir: /workspace/science_sft/sci_mix            # train/ (6.34 M science tokens, 2 passes, + 12.19 M replay tokens), val/ (AfriScience dev, 135 packs), val_replay/ (76 languages)
+out_dir: /dev/shm/science_sft_run                    # RAM: the disk of the box has ~5 GB free
+attn_implementation: varlen
+mask_mode: flash
+loss_impl: fused
+param_dtype: float32
+autocast_dtype: bfloat16
+gradient_checkpointing: false
+loss_chunk_tokens: 512
+micro_batch_size: 8
+grad_accum_steps: 2                                  # 16 packs x 4,096 = 65,536 tokens per step (the old stage's step size); 18.5 M tokens = 282 steps
+epochs: 1.0
+max_steps: 0
+optimizer: adamw
+learning_rate: 3.0e-6
+min_lr_ratio: 0.1
+warmup_steps: 0
+warmup_ratio: 0.06
+weight_decay: 0.0
+beta1: 0.9
+beta2: 0.95
+eps: 1.0e-8
+grad_clip: 1.0
+l2sp_coef: 0.0
+track_drift: true
+extra_val_splits: [val_replay]                       # logged as val_val_replay_*: the 76-language forgetting monitor
+eval_at_start: true
+eval_every: 20
+eval_max_packs: 0
+val_metric: macro                                    # val/ = AfriScience dev: macro over the 6 science languages
+min_val_tokens_macro: 2000
+early_stopping_patience: 3
+early_stopping_min_delta: 0.0
+min_epochs: 0.3
+early_stop_action: stop
+save_every: 20
+log_every: 5
+save_optimizer: false
+keep_single_checkpoint: true
+keep_prev_checkpoint: false
+resume: true
+seed: 1234
+wandb_project: null
+run_name: science_sft_385m
+hub_repo_id: null                                    # pushed by the pipeline to a branch of ${HF_ORG}/gemma-0.4B-translate-rl (the SFT trainer would write main)

@@ -7,6 +7,8 @@
     manifest   pin the launch manifest (rule file / amendment sha256, protected index version + manifest sha256, config hashes, trainer code hashes, git commit, GPU type, start model sha)
     gate       read <run>/metrics.jsonl and decide whether a stage (or the 49-step preflight) is healthy enough to continue
     winddown   background loop: writes <run>/WINDDOWN (N) when the step counter reaches steps - N (the planned wind-down of the final run)
+    f2-precheck  OPTIONAL stage F2 (385M plan): from the final run's one-pass dev-paper predictions decide RUN / SKIP (finished >= 97 % and low loop rate -> SKIP)
+    f2-decide    OPTIONAL stage F2: from the dev-paper predictions of F and F2 decide KEEP_F2 / DISCARD_F2 (paired bootstrap on paper-level chrF, or finished rate +2 points with chrF not lower)
     handoff    print the model directory that the next stage starts from (final or best)
     disclose   replay the prompt schedule of a finished stage and count the prompts drawn per source_dataset / domain (LibreTexts disclosure), and count archive rows whose source is a LibreTexts window
 
@@ -107,6 +109,11 @@ def cmd_validate(a) -> int:
 
     sys.path.insert(0, HERE)
     import clean_rerun_make_configs as gen
+    b256 = a.plan == "b256_385m"
+    if b256:                                       # 385M plan (owner 2026-11-02): the RL context is capped at b256 (stages preflight A B1 mixed final)
+        import clean_rerun_385m_make_configs as w385
+        w385.apply_b256_cap(gen)
+    max_src, bins_present = (w385.B256_MAX_SRC, ("b64", "b256")) if b256 else (1024, ("b64", "b256", "b512", "b1024"))
 
     spec = a.arm == "specialist"
     cfg_dir = os.path.abspath(a.configs or os.path.join(a.tree, "configs", "clean_rerun_specialist" if spec else "clean_rerun"))
@@ -118,6 +125,8 @@ def cmd_validate(a) -> int:
     _expect(errors, not bad_lang, f"weak/specialist languages that are not RL languages: {bad_lang}")
     rows = []
     for stage, fname in STAGE_FILES.items():
+        if stage not in gen.STAGES:                # B2 / B3 are not part of the b256 plan
+            continue
         path = os.path.join(cfg_dir, fname)
         errs: List[str] = []
         try:
@@ -136,7 +145,10 @@ def cmd_validate(a) -> int:
         _expect(errs, abs(cfg.kl_guard_threshold - (0.25 if fin else 0.15)) < 1e-12, f"kl_guard_threshold {cfg.kl_guard_threshold}")
         _expect(errs, cfg.kl_guard_recover == fin and cfg.kl_guard_recover_factor == 1.25 and cfg.kl_guard_recover_below == 0.5 and cfg.kl_guard_recover_window == 20, "kl_guard_recover fields")
         _expect(errs, cfg.kl_estimator == "k3c" and cfg.advantage_norm == "mean_std" and cfg.grad_clip == 1.0, "k3c / mean_std / grad_clip")
-        _expect(errs, cfg.max_src_tokens == 1024, "max_src_tokens must be 1024 (source-side cap, Amendment 2)")
+        _expect(errs, cfg.max_src_tokens == max_src, f"max_src_tokens must be {max_src} (source-side cap{'; b256 plan' if b256 else ', Amendment 2'})")
+        if b256:
+            _expect(errs, not ({"b512", "b1024", "b2048"} & (set(cfg.prompts_per_step_by_bin) | set(cfg.max_new_tokens_by_bin) | set(cfg.curriculum_steps) | set(cfg.domain_bin_weights.get("science", {})) | set(cfg.domain_bin_weights.get("general", {})))), "a bin above b256 appears in a b256-plan yaml")
+            _expect(errs, cfg.vllm_max_model_len <= 4096 and cfg.vllm_max_model_len >= 2048, f"vllm_max_model_len {cfg.vllm_max_model_len} outside the b256 plan range 2048..4096")
         _expect(errs, "b2048" not in cfg.prompts_per_step_by_bin and "b2048" not in cfg.max_new_tokens_by_bin and "b2048" not in cfg.curriculum_steps, "b2048 must not appear")
         _expect(errs, cfg.reward.get("consensus") is True and cfg.reward.get("qe_ensemble") is True and cfg.reward.get("longdoc_v2") is True and cfg.reward.get("anchors_enabled") is True, "a reward component is off")
         _expect(errs, bool(cfg.reward.get("nllb_signal")) == gen.nllb_on(stage), f"nllb_signal must be on exactly in {gen.NLLB_STAGES} (+ the preflight when A has it)")
@@ -148,6 +160,21 @@ def cmd_validate(a) -> int:
         _expect(errs, cfg.length_bins and cfg.run_controls and cfg.eval_min_per_bin >= 16, "length_bins / run_controls / eval_min_per_bin")
         _expect(errs, cfg.steps == S["steps"] or spec or a.allow_other_steps, f"steps {cfg.steps} != plan {S['steps']}")
         _expect(errs, cfg.keep_single_checkpoint is False, "keep_single_checkpoint must be false (the hand-off needs final/)")
+        if b256:                                    # owner 2026-11-03: dynamic sampling in every training stage, the reference term in every stage (rows with a reference only), the reference domain in the translation stages
+            _expect(errs, cfg.dynamic_sampling is (stage != "preflight") and (stage == "preflight" or (cfg.dynamic_sampling_oversample >= 1.0 and cfg.dynamic_sampling_max_refills >= 1)), "dynamic_sampling must be on in A / B1 / mixed / final and off in the preflight")
+            _expect(errs, (cfg.reward.get("reference_weight", 0.0) == w385.REF_WEIGHT) is (stage != "preflight"), "reward.reference_weight must be set (w385.REF_WEIGHT) in every stage but the preflight")
+            _expect(errs, (cfg.adv_std_floor > 0) is (stage != "preflight") and cfg.log_group_stats is (stage != "preflight"), "adv_std_floor / log_group_stats must be on in every stage but the preflight")
+            if stage in ("B1", "mixed", "final"):
+                _expect(errs, cfg.save_dev_predictions is True, "save_dev_predictions must be on in B1 / mixed / final")
+            if stage in ("mixed", "final"):
+                _expect(errs, cfg.heldout_comet and cfg.hacking_alarm and cfg.early_stop_dev_require_comet and cfg.lang_stall_log and cfg.heldout_comet_model == "masakhane/africomet-stl-1.1" and cfg.scorer.get("python"),
+                        "the held-out AfriCOMET monitor, hacking alarm, combined stop and language history must be on in mixed / final")
+            if stage in ("B1", "mixed", "final"):
+                _expect(errs, set(cfg.guide_mode_by_language.values()) == {"mbr"} and {"orm", "lug", "ewe", "tir"} <= set(cfg.guide_mode_by_language) and cfg.guide_mbr_extra_samples > 0, "MBR guide for the weak languages (+ orm lug) must be on in B1 / mixed / final")
+                _expect(errs, cfg.early_stop_dev and cfg.benchmark_eval_every == 25 and cfg.early_stop_dev_k == 3, "early_stop_dev (k 3, benchmark_eval_every 25) must be on in B1 / mixed / final")
+            _expect(errs, (cfg.guide_fraction > 0) is (stage != "preflight") and (stage == "preflight" or (cfg.guide_beams >= 2 and 0 < cfg.guide_adv_share_cap < 1 and cfg.hard_fail_mask == "off")), "beam guide must be on (capped, hard_fail_mask off) in every stage but the preflight")
+            if stage in ("A", "B1", "mixed"):
+                _expect(errs, abs(cfg.domain_weights.get("ref", 0.0) - w385.REF_SHARE) < 1e-9 and abs(sum(cfg.domain_weights.values()) - 1.0) < 1e-9, f"domain_weights {cfg.domain_weights}: ref share must be {w385.REF_SHARE} and the shares must sum to 1")
         if not spec:
             _expect(errs, set(cfg.language_weights) == set(gen.WEIGHTED_LANGS) and all(v == 2.5 for v in cfg.language_weights.values()), "language_weights != the 25-language dev-defined weak list + the 4 owner-priority languages (efi tiv bin ish) at 2.5")
         if stage in ("A", "B1", "B2", "B3", "preflight"):
@@ -157,7 +184,11 @@ def cmd_validate(a) -> int:
         if fin:
             _expect(errs, cfg.domain_weights == {"science": 0.7, "general": 0.3}, "domain_weights")
             _expect(errs, cfg.language_floor_steps == 20 and cfg.language_floor_prompts == 2, "language floor 2 prompts / 20 steps")
-            _expect(errs, abs(sum(cfg.domain_bin_weights["science"].values()) - 1.0) < 1e-9 and abs(cfg.domain_bin_weights["science"]["b1024"] - 0.35) < 1e-12, "science bin weights")
+            if b256:
+                _expect(errs, abs(sum(cfg.domain_bin_weights["science"].values()) - 1.0) < 1e-9 and abs(cfg.domain_bin_weights["science"]["b256"] - 2 / 3) < 1e-6 and abs(cfg.domain_bin_weights["science"]["b64"] - 1 / 3) < 1e-6, "science bin weights (b256 plan: b64 1/3, b256 2/3)")
+                _expect(errs, cfg.domain_bin_weights["general"] == {"b64": 0.5, "b256": 0.5}, "general bin weights (b256 plan: 1/2, 1/2)")
+            else:
+                _expect(errs, abs(sum(cfg.domain_bin_weights["science"].values()) - 1.0) < 1e-9 and abs(cfg.domain_bin_weights["science"]["b1024"] - 0.35) < 1e-12, "science bin weights")
             _expect(errs, cfg.learning_rate == 1.0e-6 and cfg.warmup_steps == 20 and cfg.kl_coef == 0.1, "final run lr / warm-up / kl_coef")
         else:
             _expect(errs, cfg.learning_rate == 2.0e-6 and cfg.warmup_steps == 10 and cfg.kl_coef == 0.05, "stage lr / warm-up / kl_coef")
@@ -169,15 +200,15 @@ def cmd_validate(a) -> int:
         # ---- replay the schedule of the whole stage on a synthetic pool (every language x bin x domain, 200 rows per cell)
         try:
             iso, lb, dm = [], [], []
-            doms = ["science", "general"] if fin else [""]
+            doms = list(cfg.domain_weights) if cfg.domain_weights else [""]          # 385M plan: general / news / ref (translation stages), science / general (final)
             for l in langs:
-                for b in ("b64", "b256", "b512", "b1024"):
+                for b in bins_present:
                     for dname in doms:
                         iso += [l] * 200
                         lb += [b] * 200
                         dm += [dname] * 200
             sch = PromptSchedule(np.asarray(iso), cfg.language_alpha, cfg.seed, length_bin=lb, curriculum=cfg.curriculum_steps or None, language_weights=cfg.language_weights or None,
-                                 domain=dm if fin else None, domain_weights=cfg.domain_weights or None, domain_bin_weights=cfg.domain_bin_weights or None,
+                                 domain=dm if cfg.domain_weights else None, domain_weights=cfg.domain_weights or None, domain_bin_weights=cfg.domain_bin_weights or None,
                                  floor_steps=cfg.language_floor_steps, floor_prompts=cfg.language_floor_prompts)
             n_prompts = 0
             bins = collections.Counter()
@@ -229,11 +260,74 @@ def cmd_validate(a) -> int:
                     errs.append(f"missing benchmark_aux {ax['name']}: {ax['path']}")
         if errs:
             errors += [f"{fname}: {m}" for m in errs]
+    if "F2" in (a.extra_stages or []):
+        if not b256:
+            errors.append("--extra-stages F2 needs --plan b256_385m")
+        else:
+            errs = []
+            fname = w385.F2_FILE
+            try:
+                d = load_yaml(os.path.join(cfg_dir, fname)); cfg = dataclass_from_dict(RLConfig, d); validate_config(cfg); dataclass_from_dict(RewardConfig, cfg.reward)
+                fin_cfg = dataclass_from_dict(RLConfig, load_yaml(os.path.join(cfg_dir, STAGE_FILES["final"])))
+            except Exception as e:                                           # noqa: BLE001
+                errors.append(f"{fname}: {type(e).__name__}: {e}")
+                cfg = None
+            if cfg is not None:
+                _expect(errs, cfg.steps == w385.F2_STEPS, f"steps {cfg.steps} != {w385.F2_STEPS}")
+                _expect(errs, cfg.model_name.endswith("runs_385m/final/final") and cfg.out_dir.endswith("runs_385m/F2") and (cfg.hub_repo_id, cfg.hub_branch) == w385.F2_HUB, "model_name / out_dir / hub_repo_id / hub_branch (w385.F2_HUB)")
+                _expect(errs, cfg.max_src_tokens == w385.F2_MAX_SRC and cfg.vllm_max_model_len == w385.F2_MAX_MODEL_LEN, "max_src_tokens / vllm_max_model_len")
+                _expect(errs, cfg.vllm_max_model_len >= 2400 + w385.F2_MAX_NEW["b2048"], "vllm_max_model_len below the b2048 prompt (<= ~2,300 Gemma tokens) + max_new_tokens")
+                _expect(errs, cfg.prompts_per_step_by_bin == w385.F2_PPS and cfg.max_new_tokens_by_bin == w385.F2_MAX_NEW, "prompts_per_step_by_bin / max_new_tokens_by_bin")
+                _expect(errs, cfg.domain_weights == {"science": 1.0} and cfg.domain_bin_weights == {"science": w385.F2_BIN_WEIGHTS}, "F2 is science only, b1024 : b2048 = 60 : 40")
+                _expect(errs, cfg.prompts_path.endswith("clean_sci_v2_long") and cfg.curriculum_steps == {"b64": 0}, "prompts_path / curriculum_steps (mixed from step 0)")
+                _expect(errs, cfg.gradient_checkpointing is True and cfg.vllm_gpu_memory_utilization == 0.3 and cfg.archive is False, "gradient_checkpointing / vllm 0.30 / no archive")
+                _expect(errs, cfg.learning_rate == 1.0e-6 and cfg.kl_coef == 0.1 and abs(cfg.kl_guard_threshold - 0.25) < 1e-12 and cfg.kl_guard_recover and cfg.group_size == 16 and cfg.greedy_in_group, "F2 lr / kl_coef / guard / group")
+                _expect(errs, cfg.plateau_stop is False and cfg.early_stop and cfg.extend_steps > cfg.planned_winddown_last > 0, "plateau_stop off, early stop on, extend_steps > planned_winddown_last")
+                same = {k for k in set(cfg.reward) | set(fin_cfg.reward) if cfg.reward.get(k) != fin_cfg.reward.get(k)}
+                _expect(errs, same == {"nllb_signal", "nllb_languages"}, f"the reward must equal the final run's except the NLLB signal (differences: {sorted(same)})")
+                _expect(errs, cfg.reward.get("longdoc_v2") is True and cfg.reward.get("longdoc_min_src_words") == 1 and cfg.reward.get("nllb_signal") is False, "longdoc_v2 on / NLLB off")
+                _expect(errs, any(x["name"] == "afrisci_dev_doc" for x in cfg.benchmark_aux), "the dev-paper monitor afrisci_dev_doc is missing")
+                try:
+                    iso, lb, dm = [], [], []
+                    for l in langs:
+                        for b in ("b64", "b256", "b512", "b1024", "b2048"):
+                            for dname in ("science", "general"):
+                                iso += [l] * 200; lb += [b] * 200; dm += [dname] * 200
+                    sch = PromptSchedule(np.asarray(iso), cfg.language_alpha, cfg.seed, length_bin=lb, curriculum=cfg.curriculum_steps or None, language_weights=cfg.language_weights or None,
+                                         domain=dm, domain_weights=cfg.domain_weights or None, domain_bin_weights=cfg.domain_bin_weights or None,
+                                         floor_steps=cfg.language_floor_steps, floor_prompts=cfg.language_floor_prompts)
+                    bins, per_dom, per_lang, win, n_prompts = collections.Counter(), collections.Counter(), collections.Counter(), collections.defaultdict(collections.Counter), 0
+                    for st_ in range(cfg.steps):
+                        n = cfg.prompts_per_step_by_bin.get(sch.bin_of_step(st_), cfg.prompts_per_step)
+                        idx = sch.indices(st_, n)
+                        _expect(errs, len(idx) == n, f"step {st_}: {len(idx)} prompts, expected {n}")
+                        n_prompts += len(idx)
+                        for k in idx:
+                            bins[lb[k]] += 1; per_dom[dm[k]] += 1; per_lang[iso[k]] += 1; win[st_ // 20][iso[k]] += 1
+                    _expect(errs, set(bins) == {"b1024", "b2048"} and set(per_dom) == {"science"}, f"F2 draws bins {dict(bins)} / domains {dict(per_dom)}")
+                    share = bins["b2048"] / max(sum(bins.values()), 1)
+                    _expect(errs, abs(share - 0.4) < 0.05, f"b2048 share {share:.3f} != 0.40 +- 0.05")
+                    full = [blk for blk in win if (blk + 1) * 20 <= cfg.steps]
+                    worst = min((win[blk][l] for blk in full for l in langs), default=None)
+                    _expect(errs, worst is None or worst >= 2, f"language floor violated: a language got {worst} prompts in a 20-step block")
+                    rows.append(dict(stage="F2", steps=cfg.steps, completions=n_prompts * cfg.group_size, prompts=n_prompts, stage_bins=dict(bins), min_prompts_lang=min(per_lang[l] for l in langs),
+                                     weak_mean=round(statistics.mean([per_lang[l] for l in gen.WEAK_LIST if l in per_lang]), 1), other_mean=round(statistics.mean([per_lang[l] for l in langs if l not in gen.WEAK_LIST]), 1),
+                                     domains=dict(per_dom), plateau=cfg.plateau_stop, thr=cfg.kl_guard_threshold))
+                except Exception as e:                                                  # noqa: BLE001
+                    errs.append(f"schedule replay: {type(e).__name__}: {e}")
+                if a.check_files:
+                    for key in ("prompts_path", "benchmark_eval_path"):
+                        if d.get(key) and not os.path.exists(d[key]):
+                            errs.append(f"missing {key}: {d[key]}")
+                    for ax in cfg.benchmark_aux:
+                        if not os.path.exists(ax["path"]):
+                            errs.append(f"missing benchmark_aux {ax['name']}: {ax['path']}")
+            errors += [f"{fname}: {m}" for m in errs]
     print(f"{'stage':9s} {'steps':>5s} {'completions':>11s} {'prompts':>7s} {'min/lang':>8s} {'weak':>6s} {'other':>6s} {'plateau':>7s} {'kl_thr':>6s}  bins / domains")
     for r in rows:
         print(f"{r['stage']:9s} {r['steps']:5d} {r['completions']:11d} {r['prompts']:7d} {r['min_prompts_lang']:8d} {str(r['weak_mean']):>6s} {str(r['other_mean']):>6s} {str(r['plateau']):>7s} {r['thr']:6.2f}  {r['stage_bins']} {r['domains']}")
-    tot = sum(r["completions"] for r in rows if r["stage"] != "preflight")
-    print(f"completions A..final (preflight excluded): {tot:,}")
+    tot = sum(r["completions"] for r in rows if r["stage"] not in ("preflight", "F2"))
+    print(f"completions A..final (preflight and the optional F2 excluded): {tot:,}")
     if errors:
         print("\nPROBLEMS:")
         for e in errors:
@@ -288,7 +382,7 @@ def cmd_manifest(a) -> int:
         cfgs[os.path.basename(p)] = sha256_file(p)
     man["config_dir"] = a.configs
     man["config_sha256"] = cfgs
-    if len(cfgs) < 7:
+    if len(cfgs) < 5:                                  # 7 yamls in the full plan, 5 (+ the optional rl_F2_long.yaml) in the b256 plan of the 385M model
         fatal.append(f"only {len(cfgs)} yaml files in {a.configs}")
     # trainer code (the repo working tree is not clean: hash the files that decide the run, too)
     code = {}
@@ -410,7 +504,7 @@ def cmd_gate(a) -> int:
         rep["guard_cuts"] = cuts
         if not all(math.isfinite(x) for x in kl + gn):
             hard.append("non-finite KL or grad norm")
-        thr = 0.25 if a.stage == "final" else 0.15
+        thr = 0.25 if a.stage in ("final", "F2") else 0.15
         if a.stage == "preflight":
             if cuts or min(lr_scale) < 1.0:
                 hard.append(f"KL guard fired in the preflight ({cuts} cuts, lowest scale {min(lr_scale)})")
@@ -479,6 +573,103 @@ def cmd_gate(a) -> int:
             json.dump(rep, f, indent=2, default=str)
     print(json.dumps({k: v for k, v in rep.items() if k not in ("dev_chrf_series",)}, indent=2, default=str))
     return 1 if hard else 0
+
+
+# ------------------------------------------------------------------------------------------------ optional stage F2 (385M plan): pre-check and keep / discard decision
+F2_DEV_PAPERS = 150                 # AfriScience-MT dev: 25 papers x amh hau lug nso yor zul, one greedy pass, whole paper in ONE prompt (scripts/eval_afriscience.py --splits dev --levels document)
+
+
+def _paper_table(path: str, level: str = "document", chrf=None) -> Dict[Any, Dict[str, Any]]:
+    """{(iso, paper): {chrf, finished, loop, empty}} from the predictions_dev.json that scripts/eval_afriscience.py writes ({level: {iso: [{paper, hyp, finished, ref}]}}).
+    chrf = sacrebleu CHRF(word_order=0) per paper (the paper's chrF; NFC-normalised), loop = rl.guards.is_repetitive (the trainer's loop definition)."""
+    import unicodedata
+    if chrf is None:
+        from sacrebleu.metrics import CHRF
+        scorer = CHRF(word_order=0)
+        chrf = lambda h, r: float(scorer.sentence_score(h, [r]).score)       # noqa: E731
+    from gemma_mt.rl.guards import is_repetitive
+    nf = lambda x: unicodedata.normalize("NFC", x)                           # noqa: E731
+    data = json.load(open(path, encoding="utf-8"))
+    if level not in data:
+        raise SystemExit(f"{path}: no level {level!r} (levels: {sorted(data)}); run eval_afriscience.py with --levels {level}")
+    out: Dict[Any, Dict[str, Any]] = {}
+    for iso, rows in data[level].items():
+        for r in rows:
+            hyp = nf(r["hyp"])
+            out[(iso, str(r["paper"]))] = dict(chrf=chrf(hyp, nf(r["ref"])), finished=bool(r.get("finished", True)) and bool(hyp.strip()), loop=bool(is_repetitive(hyp)), empty=not hyp.strip())
+    return out
+
+
+def _summ(t: Dict[Any, Dict[str, Any]]) -> Dict[str, Any]:
+    n = len(t)
+    per = collections.defaultdict(list)
+    for (iso, _), v in t.items():
+        per[iso].append(v)
+    return dict(papers=n, chrf_mean=statistics.mean(v["chrf"] for v in t.values()) if n else float("nan"), finished_rate=sum(v["finished"] for v in t.values()) / max(n, 1),
+                loop_rate=sum(v["loop"] for v in t.values()) / max(n, 1),
+                per_language={iso: dict(papers=len(vs), chrf=round(statistics.mean(x["chrf"] for x in vs), 2), finished=round(sum(x["finished"] for x in vs) / len(vs), 3), loop=round(sum(x["loop"] for x in vs) / len(vs), 3)) for iso, vs in sorted(per.items())})
+
+
+def cmd_f2_precheck(a) -> int:
+    """Run F2 at all? After the final run (F): one greedy pass over the dev papers, whole paper in one prompt. SKIP when the finished rate is >= --min-finished (97 %) AND the loop rate is <= --max-loop (2 %,
+    the preflight limit of the greedy loop rate); otherwise RUN. Exit code 0 = RUN, 10 = SKIP, 1 = invalid input."""
+    setup_imports(a.tree, a.stub_heavy)
+    t = _paper_table(a.preds)
+    r = _summ(t)
+    rep: Dict[str, Any] = dict(stage="F2-precheck", preds=a.preds, thresholds=dict(min_finished=a.min_finished, max_loop=a.max_loop), **r)
+    if r["papers"] < a.min_papers:
+        rep["verdict"] = "INVALID"
+        rep["reason"] = f"{r['papers']} papers < {a.min_papers} (the dev set is 25 papers x 6 languages)"
+    else:
+        skip = r["finished_rate"] >= a.min_finished and r["loop_rate"] <= a.max_loop
+        rep["verdict"] = "SKIP" if skip else "RUN"
+        rep["reason"] = (f"finished {r['finished_rate']:.3f} >= {a.min_finished} and loop {r['loop_rate']:.3f} <= {a.max_loop}: whole-paper decoding already works, F2 would only cost GPU hours" if skip
+                         else f"finished {r['finished_rate']:.3f} (need >= {a.min_finished}) or loop {r['loop_rate']:.3f} (need <= {a.max_loop}) misses the threshold")
+    if a.out:
+        json.dump(rep, open(a.out, "w"), indent=2, default=str)
+    print(json.dumps({k: v for k, v in rep.items() if k != "per_language"}, indent=2, default=str))
+    return {"RUN": 0, "SKIP": 10}.get(rep["verdict"], 1)
+
+
+def cmd_f2_decide(a) -> int:
+    """Keep F2 or discard it (owner rule 2026-11-02). On the same dev papers (25 per language, one greedy pass, whole paper in one prompt): KEEP_F2 if
+      (A) the paper-level chrF improves over F by more than the paired-bootstrap 95 % interval: the lower end of the percentile interval of the mean paired difference (F2 - F, resampling papers) is > 0, OR
+      (B) the finished rate rises by at least 2 points (--min-finished-gain 0.02) with the mean paper chrF not lower (point estimate F2 >= F);
+    otherwise DISCARD_F2 (keep F). Optional sentence-level predictions of both models (--sentence-base / --sentence-new, eval_afriscience.py --levels sentence) are REPORTED with a warning when the
+    sentence chrF++ falls by more than --sentence-warn (0.5): production translates sentence by sentence, the rule above does not look at it. Exit code 0 = KEEP_F2, 10 = DISCARD_F2, 1 = invalid."""
+    import numpy as np
+    setup_imports(a.tree, a.stub_heavy)
+    base, new = _paper_table(a.base), _paper_table(a.new)
+    rep: Dict[str, Any] = dict(stage="F2-decide", base=a.base, new=a.new, rule=dict(ci=0.95, min_finished_gain=a.min_finished_gain))
+    if set(base) != set(new) or len(base) < a.min_papers:
+        rep.update(verdict="INVALID", reason=f"paper sets differ or are too small (base {len(base)}, new {len(new)}, need the same >= {a.min_papers})")
+    else:
+        keys = sorted(base)
+        d = np.asarray([new[k]["chrf"] - base[k]["chrf"] for k in keys], dtype=np.float64)
+        rng = np.random.default_rng(a.seed)
+        idx = rng.integers(0, len(d), size=(a.bootstrap, len(d)))
+        means = d[idx].mean(axis=1)
+        lo, hi = float(np.percentile(means, 2.5)), float(np.percentile(means, 97.5))
+        sb, sn = _summ(base), _summ(new)
+        gain = sn["finished_rate"] - sb["finished_rate"]
+        crit_a = lo > 0.0
+        crit_b = gain >= a.min_finished_gain - 1e-12 and sn["chrf_mean"] >= sb["chrf_mean"]
+        rep.update(base_summary=sb, new_summary=sn, chrf_diff_mean=float(d.mean()), chrf_diff_ci95=[lo, hi], finished_gain=gain, criterion_A_chrf_ci_above_0=bool(crit_a),
+                   criterion_B_finished_plus_2_points_chrf_not_lower=bool(crit_b), verdict="KEEP_F2" if (crit_a or crit_b) else "DISCARD_F2")
+        rep["reason"] = ("A" if crit_a else "") + ("B" if crit_b else "") or "neither criterion holds: keep F"
+    if a.sentence_base and a.sentence_new:
+        from sacrebleu.metrics import CHRF
+        def sent(path):
+            data = json.load(open(path, encoding="utf-8"))["sentence"]
+            return {iso: float(CHRF(word_order=2).corpus_score([x["hyp"] for x in rows], [[x["ref"] for x in rows]]).score) for iso, rows in data.items()}
+        sb, sn = sent(a.sentence_base), sent(a.sentence_new)
+        delta = statistics.mean(sn[i] - sb[i] for i in sb if i in sn)
+        rep["sentence_chrf_pp_macro_delta"] = delta
+        rep["sentence_warning"] = (f"sentence-level dev chrF++ fell {-delta:.2f} (> {a.sentence_warn}): production translates sentence by sentence, think before keeping F2" if delta < -a.sentence_warn else None)
+    if a.out:
+        json.dump(rep, open(a.out, "w"), indent=2, default=str)
+    print(json.dumps({k: v for k, v in rep.items() if k not in ("base_summary", "new_summary")}, indent=2, default=str))
+    return {"KEEP_F2": 0, "DISCARD_F2": 10}.get(rep["verdict"], 1)
 
 
 # ------------------------------------------------------------------------------------------------ winddown watcher / handoff
@@ -576,6 +767,8 @@ def main(argv: Optional[List[str]] = None) -> int:
     v.add_argument("--check-files", action="store_true")
     v.add_argument("--no-generated-check", action="store_true")
     v.add_argument("--allow-other-steps", action="store_true")
+    v.add_argument("--extra-stages", nargs="*", default=[], choices=["F2"], help="also validate the OPTIONAL stage F2 (385M plan: rl_F2_long.yaml)")
+    v.add_argument("--plan", choices=["full", "b256_385m"], default="full", help="b256_385m: the 385M plan with the RL context capped at b256 (stages preflight A B1 mixed final, max_src_tokens 256)")
     m = sub.add_parser("manifest")
     m.add_argument("--tree", default=TREE_DEFAULT)
     m.add_argument("--configs", required=True)
@@ -602,6 +795,27 @@ def main(argv: Optional[List[str]] = None) -> int:
     w.add_argument("--steps", type=int, required=True)
     w.add_argument("--n", type=int, default=30)
     w.add_argument("--poll", type=float, default=20.0)
+    f = sub.add_parser("f2-precheck")
+    f.add_argument("--preds", required=True, help="predictions_dev.json of the FINAL run (scripts/eval_afriscience.py --splits dev --levels document --max-new-tokens-document 7168)")
+    f.add_argument("--min-finished", type=float, default=0.97)
+    f.add_argument("--max-loop", type=float, default=0.02)
+    f.add_argument("--min-papers", type=int, default=F2_DEV_PAPERS)
+    f.add_argument("--out", default=None)
+    f.add_argument("--tree", default=TREE_DEFAULT)
+    f.add_argument("--stub-heavy", action="store_true")
+    g2 = sub.add_parser("f2-decide")
+    g2.add_argument("--base", required=True, help="predictions_dev.json of F (the final run's model)")
+    g2.add_argument("--new", required=True, help="predictions_dev.json of F2")
+    g2.add_argument("--min-finished-gain", type=float, default=0.02)
+    g2.add_argument("--bootstrap", type=int, default=10000)
+    g2.add_argument("--seed", type=int, default=1234)
+    g2.add_argument("--min-papers", type=int, default=F2_DEV_PAPERS)
+    g2.add_argument("--sentence-base", default=None)
+    g2.add_argument("--sentence-new", default=None)
+    g2.add_argument("--sentence-warn", type=float, default=0.5)
+    g2.add_argument("--out", default=None)
+    g2.add_argument("--tree", default=TREE_DEFAULT)
+    g2.add_argument("--stub-heavy", action="store_true")
     h = sub.add_parser("handoff")
     h.add_argument("--run", required=True)
     h.add_argument("--mode", choices=["final", "best"], default="final")
@@ -613,7 +827,7 @@ def main(argv: Optional[List[str]] = None) -> int:
     d.add_argument("--out", default=None)
     d.add_argument("--stub-heavy", action="store_true")
     a = ap.parse_args(argv)
-    return {"validate": cmd_validate, "manifest": cmd_manifest, "gate": cmd_gate, "winddown": cmd_winddown, "handoff": cmd_handoff, "disclose": cmd_disclose}[a.cmd](a)
+    return {"validate": cmd_validate, "manifest": cmd_manifest, "gate": cmd_gate, "winddown": cmd_winddown, "handoff": cmd_handoff, "disclose": cmd_disclose, "f2-precheck": cmd_f2_precheck, "f2-decide": cmd_f2_decide}[a.cmd](a)
 
 
 if __name__ == "__main__":

@@ -22,6 +22,10 @@
 #   HUB_PREFIX [${HF_ORG}/gemma-mt-clean-rl, ...-spec for S1/S2]  -> hub_repo_id=$HUB_PREFIX-<stage>, hub_private=true (PRIVATE; main = best, latest = end-of-stage model). Set it EMPTY (HUB_PREFIX=) to push nothing (the models then live only on this box)
 #   HANDOFF [final] final | best : which model of a finished stage starts the next one (2c used the stage-end model; `best` = the stage's best dev chrF++, the AB2 decline pattern)
 #   STEPS_<stage> e.g. STEPS_A=560 : override a hard cap (also rewrites curriculum_steps)       A_FROM_PREFLIGHT [0] 1 = stage A resumes from the passed preflight (identical schedule, saves 49 steps)
+#   STAGE_PLAN [full] full | b256 : b256 = the 385M plan (owner 2026-11-02): B2 (b512) and B3 (b1024) are NOT run, mixed starts from B1's final/ (stages: preflight A B1 mixed final)
+#   STAGE_PLAN=b256+long, or EXTRA_STAGES=F2 : also allow the OPTIONAL stage F2 (final_long, science, b1024 + b2048; 385M plan only). It is never part of `general` / `all` and never starts by itself:
+#       `run F2` is refused without one of the two, after a failed `final` gate and for ARM != A0; decide with `clean_rerun_tools.py f2-precheck` first, keep or discard with `f2-decide` (reports/rl_stage_plan_385m_b256_2026-11-02.md section 6)
+#   LADDER_START [0] index of the first micro-batch step of the OOM ladder (the 385M plan starts at 1)   POOL_V3 [$ROOT/prompts/clean_v3] pool directory pinned in the manifest
 #   FORCE [0] 1 = continue after a failed gate        OVERRIDE_PIN [0] 1 = run although a yaml changed after the manifest      ALLOW_GPU [0] 1 = not an RTX PRO 6000
 #   PY [/workspace/venv_gemma/bin/python]  MIN_FREE_GIB [70]  MIN_DISK_GIB [14]  POLL [30]  PRUNE [0] (1 = delete last/trainer_state.pt of a stage after its gate passed)
 #   PREREG_DIR  INDEX_MANIFEST  HELDOUT_SPLIT  WEAK_DIR  (manifest inputs; default: reports/data/... next to the tree)   PROMPTS_HUB_REVISION (commit of the prompts repo, for the manifest)
@@ -57,10 +61,18 @@ SPEC_LANGS="amh tir fon dyu kbp nus mos kam bam umb kea kmb vmw kab seh wol ewe 
 mkdir -p "$RUNS" "$LOGDIR" "$MANIFEST_DIR"
 say() { echo "$(date -u +%FT%TZ) [clean-rerun $ARM] $*" | tee -a "$LOGDIR/launch_clean_rerun.log"; }
 
-file_of() { case "$1" in preflight) echo rl_00_preflight.yaml;; A) echo rl_A_b64.yaml;; B1) echo rl_B1_b256.yaml;; B2) echo rl_B2_b512.yaml;; B3) echo rl_B3_b1024.yaml;; mixed) echo rl_C_mixed.yaml;; final) echo rl_F_final.yaml;; *) echo "";; esac; }
+file_of() { case "$1" in preflight) echo rl_00_preflight.yaml;; A) echo rl_A_b64.yaml;; B1) echo rl_B1_b256.yaml;; B2) echo rl_B2_b512.yaml;; B3) echo rl_B3_b1024.yaml;; mixed) echo rl_C_mixed.yaml;; final) echo rl_F_final.yaml;; F2) echo rl_F2_long.yaml;; *) echo "";; esac; }
 prev_of() { case "$1" in A) echo preflight;; B1) echo A;; B2) echo B1;; B3) echo B2;; mixed) echo B3;; *) echo "";; esac; }
 bin_of()  { case "$1" in preflight|A) echo b64;; B1) echo b256;; B2) echo b512;; B3) echo b1024;; *) echo "";; esac; }   # bash 3.2 (macOS) has no associative arrays
 STAGES=(A B1 B2 B3 mixed)
+case "${STAGE_PLAN:-full}" in b256+long) STAGE_PLAN=b256; EXTRA_STAGES="${EXTRA_STAGES:-} F2";; esac     # F2 is OFF unless asked for (STAGE_PLAN=b256+long or EXTRA_STAGES=F2)
+EXTRA_STAGES="$(echo "${EXTRA_STAGES:-}" | tr ',' ' ' | xargs)"
+for x in $EXTRA_STAGES; do [ "$x" = F2 ] || { echo "EXTRA_STAGES: only F2 exists (got '$x')"; exit 2; }; done
+[ -z "$EXTRA_STAGES" ] || [ "${STAGE_PLAN:-full}" = b256 ] || { echo "EXTRA_STAGES=F2 needs STAGE_PLAN=b256 (the 385M plan)"; exit 2; }
+if [ "${STAGE_PLAN:-full}" = b256 ]; then     # 385M plan, owner 2026-11-02: the RL context is capped at b256 (production translates sentence by sentence)
+  prev_of() { case "$1" in A) echo preflight;; B1) echo A;; mixed) echo B1;; F2) echo final;; *) echo "";; esac; }
+  STAGES=(A B1 mixed)
+elif [ "${STAGE_PLAN:-full}" != full ]; then echo "STAGE_PLAN must be full, b256 or b256+long"; exit 2; fi
 
 env_setup() {
   [ -f /workspace/sft_build/env.sh ] && source /workspace/sft_build/env.sh
@@ -119,7 +131,7 @@ pin_ok() {   # the yaml must be the one that the manifest pinned
 
 supervise() {   # args: stage [extra key=value ...]
   local st="$1"; shift
-  local cfg run steps model idx=0 starts=() now keep t T S rc extra=() wd_pid="" hub=""
+  local cfg run steps model idx="${LADDER_START:-0}" starts=() now keep t T S rc extra=() wd_pid="" hub=""
   cfg="$(cfg_of "$st")"; run="$(rundir "$st")"; steps="$(steps_of "$st")"; model="$(model_of "$st")"
   env_setup; cd "$TREE" || exit 2
   mkdir -p "$run"; echo $$ > "$run/supervisor.pid"
@@ -128,7 +140,8 @@ supervise() {   # args: stage [extra key=value ...]
   extra=("model_name=$model" "out_dir=$run" "steps=$steps")
   case "$st" in preflight|A|B1|B2|B3) extra+=("curriculum_steps={\"$(bin_of "$st")\": $steps}");; esac
   [ "$ARM" != A0 ] && case "$st" in final) extra+=("prompts_path=$ROOT/prompts/clean_sci_v2_specialist");; *) extra+=("prompts_path=$ROOT/prompts/clean_v3_specialist");; esac
-  if [ -n "${HUB_PREFIX:-}" ] && [ "$st" != preflight ]; then hub="${HUB_PREFIX}-$(echo "$st" | tr 'A-Z' 'a-z')"; extra+=("hub_repo_id=$hub" "hub_private=true"); fi
+  if [ "${HUB_FROM_YAML:-}" = 1 ]; then :     # 385M plan (owner 2026-11-03): repo names and branches come from the yamls (gemma-0.4B-translate-rl / -science-rl), no per-stage override
+  elif [ -n "${HUB_PREFIX:-}" ] && [ "$st" != preflight ]; then hub="${HUB_PREFIX}-$(echo "$st" | tr 'A-Z' 'a-z')"; extra+=("hub_repo_id=$hub" "hub_private=true"); fi
   [ -n "${HUB_PREFIX:-}" ] || say "WARNING: HUB_PREFIX is not set: stage $st pushes nothing (the models exist only under $run; a box wipe loses them)"
   # planned WINDDOWN of the last N steps: since 2026-10-29 the TRAINER does it (planned_winddown_last in the yaml) so that an extension of the cap moves it; the external watcher is only started for a yaml without that field
   if [ "$st" = final ] && ! grep -Eq '^planned_winddown_last: *[1-9]' "$cfg"; then   # (a plateau stop may end the run earlier; the watcher never overrides an existing WINDDOWN)
@@ -202,16 +215,24 @@ cmd="${1:-}"; [ $# -gt 0 ] && shift
 case "$cmd" in
   check)
     st="${1:-all}"; env_setup; bad=0
-    for s in preflight "${STAGES[@]}" final; do [ "$st" = all ] || [ "$st" = "$s" ] || continue; preflight_resources "$s" || bad=$((bad+$?)); done
-    tools_trainer validate --root "$ROOT" --arm "$([ "$ARM" = A0 ] && echo a0 || echo specialist)" --configs "$CFGDIR" --check-files || bad=$((bad+1))
+    for s in preflight "${STAGES[@]}" final $EXTRA_STAGES; do [ "$st" = all ] || [ "$st" = "$s" ] || continue; preflight_resources "$s" || bad=$((bad+$?)); done
+    tools_trainer validate --root "$ROOT" --arm "$([ "$ARM" = A0 ] && echo a0 || echo specialist)" --configs "$CFGDIR" --check-files $([ "${STAGE_PLAN:-full}" = b256 ] && echo --plan b256_385m) $([ -n "$EXTRA_STAGES" ] && echo --extra-stages F2) || bad=$((bad+1))
     for p in "$SFT_MODEL" "$ROOT/prompts/clean_v3" "$ROOT/prompts/clean_sci_v2" "$PREREG_DIR/DECISION_RULE.txt" "$INDEX_MANIFEST"; do [ -e "$p" ] || { say "CHECK: missing $p"; bad=$((bad+1)); }; done
     [ "$bad" -eq 0 ] && { say "check OK"; exit 0; } || { say "check found $bad problem(s)"; exit 3; };;
   manifest)
     env_setup
     tools_trainer manifest --tree "$TREE" --configs "$CFGDIR" --out "$MANIFEST" --prereg-dir "$PREREG_DIR" --weak-dir "$WEAK_DIR" --index-manifest "$INDEX_MANIFEST" --heldout-split "$HELDOUT_SPLIT" \
-      --start-model "$SFT_MODEL" --pool-v3 "$ROOT/prompts/clean_v3" --pool-sci "$ROOT/prompts/clean_sci_v2" --hash-pools --arm "$ARM" $([ "${ALLOW_GPU:-0}" = 1 ] && echo --allow-gpu);;
+      --start-model "$SFT_MODEL" --pool-v3 "${POOL_V3:-$ROOT/prompts/clean_v3}" --pool-sci "$ROOT/prompts/clean_sci_v2" --hash-pools --arm "$ARM" $([ "${ALLOW_GPU:-0}" = 1 ] && echo --allow-gpu);;
   preflight) run_stage preflight "$@";;
-  run) st="${1:-}"; shift || true; run_stage "$st" "$@";;
+  run) st="${1:-}"; shift || true
+    if [ "${STAGE_PLAN:-full}" = b256 ] && { [ "$st" = B2 ] || [ "$st" = B3 ]; }; then echo "stage $st is not part of STAGE_PLAN=b256 (b512 / b1024 are not trained in the 385M plan)"; exit 2; fi
+    if [ "$st" = F2 ]; then
+      case " $EXTRA_STAGES " in *" F2 "*) ;; *) echo "stage F2 is OPTIONAL and OFF: set STAGE_PLAN=b256+long (or EXTRA_STAGES=F2) after clean_rerun_tools.py f2-precheck said RUN"; exit 2;; esac
+      [ "$ARM" = A0 ] || { echo "stage F2 exists for ARM=A0 only"; exit 2; }
+      F2_POOL="${F2_POOL:-$ROOT/prompts/clean_sci_v2_long}"
+      ls "$F2_POOL"/zz_b2048/*.parquet >/dev/null 2>&1 || { echo "F2 pool $F2_POOL has no zz_b2048/*.parquet: run scripts/clean_rerun_385m_prepare_f2_pool.sh (needs the decon.py-scanned b2048 science rows)"; exit 3; }
+    fi
+    run_stage "$st" "$@";;
   general)
     for s in preflight "${STAGES[@]}"; do
       v="$(gate_verdict "$s")"
@@ -220,7 +241,7 @@ case "$cmd" in
       run_stage "$s" "$@" || { say "stopped at stage $s (rc=$?)"; exit 1; }
     done;;
   status)
-    for s in preflight "${STAGES[@]}" final; do
+    for s in preflight "${STAGES[@]}" final F2; do
       r="$(rundir "$s")"; [ -d "$r" ] || continue
       printf '%-9s gate=%-18s' "$s" "$(gate_verdict "$s")"; alive "$s" && printf ' RUNNING(pid %s)' "$(cat "$r/supervisor.pid")"
       for f in HOLD GO STOP WINDDOWN LR_SCALE summary.json; do [ -e "$r/$f" ] && printf ' %s' "$f"; done; echo
