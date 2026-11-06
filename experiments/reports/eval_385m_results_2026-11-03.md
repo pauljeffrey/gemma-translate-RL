@@ -1,0 +1,337 @@
+# Post-SFT evaluation of the 385M model (2026-11-03)
+
+Model: grown Gemma-3-270m (A0 up6 + 15 identity layers, 39 layers, 385,144,448 parameters), SFT-final, greedy decoding unless stated, vLLM 0.32.0 bf16. Everything is MEASURED on the A100 unless marked ESTIMATED. One training seed per model. Intervals are 95% paired sentence-bootstrap (1,000 resamples, equal weight per language) and cover test-sentence variance only. All tables are in `reports/data/eval_385m_results_2026-11-03/` (markdown dump of every table: `_fragments.md`, appended at the end of this file).
+
+## 0. Contamination
+* Audit of the new SFT text: `reports/contamination_audit_385m_2026-11-03.md`. No benchmark sentence of 3 or more words in the training text. Flagged rows: NTREX 120 (0.25%), MAFAND 94 (0.47%), SmolSent 45, GlotStoryBook 15; FLORES+ devtest, SALT, IbomMT, FLORES-MOZ 0. All hits are 1-2 word strings.
+* `clean`, `no_pair` and `clean_strict` macros equal the `all` macros to within 0.01 chrF++ on every benchmark.
+* FLORES+ DEV train half (440 ids, 23,706 of 23,760 rows) is in the SFT on purpose; the dev held-out half is clean (0 of 30,078). AfriScience test: 0 of 5,820 rows exposed.
+* The flags describe the 385M's SFT text. They were applied to A0 rows too; A0's own text was not audited separately.
+
+## 1. Decoding study: greedy vs beam-4 vs MBR-16 (385M)
+20 languages x 200 FLORES+ devtest sentences, 256-token cap.
+
+| decoding | chrF++ | delta vs greedy [95% CI] | spBLEU | delta spBLEU [95% CI] | truncated at 256 tokens (ESTIMATED) | repetitive |
+|---|---|---|---|---|---|---|
+| greedy | 35.00 | - | 13.64 | - | 0.089 | 0.096 |
+| beam 4 | 37.53 | +2.53 [+2.18, +2.87] | 16.38 | +2.73 [+2.39, +3.08] | 0.056 | 0.071 |
+| MBR-16 (+ greedy as 17th candidate) | 38.29 | +3.30 [+3.00, +3.58] | 15.30 | +1.65 [+1.38, +1.90] | 0.001 | 0.001 |
+
+* MBR minus beam: chrF++ +0.76 [+0.49, +1.02], spBLEU -1.08 [-1.39, -0.79]. MBR uses chrF++ as its utility, so its chrF++ edge is partly metric matching; on spBLEU beam is ahead.
+* Beam is significantly better than greedy in 16/20 languages, not different in 3 (hau, orm, lug), worse in ewe (-2.5 [-3.8, -1.2]). MBR is significantly better than greedy in 20/20.
+* A second beam run (16 languages x 100 sentences, 8 parallel processes): greedy 37.68, beam 40.22, +2.54 [+2.03, +3.03].
+* Settings: vLLM bf16, `max_new_tokens` 256 (the headline greedy run uses 768), beam width 4 with length penalty 1.0 and no greedy fallback, MBR with 16 samples at temperature 0.7 and top-p 0.95 (plan said min-p 0.05) plus greedy, chrF++ utility, every 5th devtest sentence. AfriCOMET and a real stop-token finished rate were not recorded for beam/MBR.
+* Caveat: the study's greedy is cap-protected. On the same 200 x 20 sentences, greedy is 32.50 at 768 tokens versus 35.00 at 256. The full 1,012 sentences at 768 give 31.83. So the beam gain over a 768-cap greedy is ESTIMATED at about +5.0 (37.53 - 32.50; beam at 768 was not run). Much of the gain is loop suppression. Old 270M RL model gained only +0.68 from beam.
+* Biggest beam gains: nso +6.5, kin +5.7, lin +5.5, amh +4.0, yor +3.9. Biggest MBR gains over greedy: orm +8.0, nso +6.8, lin +6.2, lug +5.7. MBR over beam: orm +7.3, ewe +4.6, lug +4.3, tir +1.3; worse for yor -2.1, xho -1.0, zul -1.0.
+
+## 2. Engine parity (the plan's gate is not met)
+240 sentences: vLLM bf16 and HF bf16 give identical outputs in 9.6% of sentences; chrF++ 36.22 (vLLM bf16), 36.80 (HF bf16), 38.18 (HF fp32). HF bf16 vs HF fp32 are identical in only 7.9%, so the divergence is numerical, not a wrong layer layout. vLLM fp32 vs bf16 on 4,000 sentences: 8.6% identical, macro +0.24 [-0.07, +0.55]. Not run: vLLM fp32 vs HF fp32. Table: `engine_checks.csv`.
+
+## 3. 385M vs A0 (greedy, 768 tokens, common languages)
+See T1 below. Summary (chrF++ 385M vs A0, delta): FLORES+ 46 languages 25.52 vs 20.20 (+5.31 [+5.13, +5.50]); NTREX 29.25 vs 23.02 (+6.24); MAFAND 35.77 vs 25.56 (+10.21); SmolSent 22.54 vs 17.18 (+5.36); SALT 35.49 vs 25.13 (+10.36); GlotStoryBook 20.22 vs 14.63 (+5.59); IbomMT 12.04 vs 9.87 (+2.16); FLORES-MOZ +0.46 (not significant).
+* FLORES+ per language: 38 of 46 significantly better, 6 not different (kab orm lua lug seh nso), 2 worse (kea -17.6, dyu -2.3). AfriCOMET is significantly better for every language that has it, including lug, nso, dyu where chrF++ fell (AfriCOMET has a length/entity bias: shown next to chrF++, not instead).
+* kea is NEW and unexplained: Kabuverdianu dropped from 36.5 (A0) to 18.9.
+* Reference-free (FLORES+, shared languages): finished 0.891 (385M) vs 0.810 (A0); repetition 0.148 vs 0.204; GlotLID pass 0.948 vs 0.959. LID pass lower for tum (0.76 vs 0.98), lua, umb, bem, kin (not investigated).
+
+| group | languages | 385M chrF++ (own set) | delta vs A0 [95% CI] |
+|---|---|---|---|
+| Nguni | 3 | 37.2 | +10.9 [+10.1, +11.7] |
+| Sotho-Tswana | 3 | 35.7 | +3.9 [+2.9, +5.0] |
+| Other Bantu | 18 (17 paired) | 24.3 | +5.4 [+5.0, +5.7] |
+| West African | 12 | 21.8 | +5.4 [+5.0, +5.7] |
+| Cushitic / Ge'ez | 4 | 18.7 | +3.8 [+3.3, +4.3] |
+| Nilotic | 3 (2 paired) | 12.9 | +7.7 [+7.1, +8.3] |
+| Berber / Arabic | 6 (1 paired, kab) | 5.6 | +0.7 [-0.4, +1.8] (not significant) |
+| Creoles | 3 (2 paired) | 22.4 | -8.0 [-9.0, -7.0], entirely kea |
+| Other (afr, mlg) | 2 | 51.1 | +14.5 [+13.4, +15.3] |
+
+## 4. 385M vs the old 270M models (descriptive; old models were contaminated)
+Like-for-like sentences: the 385M scored on exactly the sentences the OLD models had not seen (old contamination flags reproduce the old exposure counts: 43,380 of 45,540 FLORES+ rows; n = 48 per language on FLORES+).
+
+| benchmark (old-unseen sentences) | langs | 385M | old SFT | old RL | 385M - old SFT |
+|---|---|---|---|---|---|
+| FLORES+ | 45 | 22.34 | 25.06 | 31.68 | -2.73 |
+| NTREX | 24 | 27.35 | 31.46 | 35.55 | -4.10 |
+| MAFAND | 15 | 34.80 | 38.18 | 41.84 | -3.37 |
+| SmolSent | 45 | 17.03 | 19.97 | 27.03 | -2.94 |
+| SALT | 5 | 30.60 | 33.58 | 35.89 | -2.98 |
+| GlotStoryBook | 8 | 20.27 | 19.85 | 28.11 | +0.42 |
+| IbomMT | 2 | 9.49 | 13.96 | 24.66 | -4.47 |
+| FLORES-MOZ | 1 | 19.72 | 22.96 | 28.10 | -3.24 |
+
+* The mixed-set comparison (385M on all sentences vs the old `clean` rows) shows "+0.5 on FLORES+": an artefact of different sentence sets (the old-unseen sentences are harder; the old `all` rows are exposure-inflated).
+* Resource tier (FLORES+, same 48 sentences, tertiles of NLLB-3.3B chrF++; 385M / old SFT / old RL): high (14 languages) 33.6 / 38.3 / 42.9; mid (14) 21.1 / 25.0 / 31.2; tail (15) 14.8 / 14.9 / 23.2.
+* 385M ahead of old SFT: kbp +9.1, kam +7.9, kik +5.8, bam +4.3, luo +4.0, wol +3.9, kea +3.4, amh +2.8, nus +2.4.
+* 385M behind old SFT: lug -15.3, nso -15.3, tso -14.8, sot -11.7, run -9.8, kin -9.4, hau -9.3, ssw -9.2, orm -8.8, kab -8.7, tsn -7.2, sag -6.0. The Sotho-Tswana/Tsonga block plus hau and run regress (new finding); with exposure-inflated old numbers lua -9.7 and bem -7.1 appear too. Cause not tested (NLLB-mined stage-B data is the leading suspect).
+* AfriCOMET (indicative, 40 vs 42 languages): 385M FLORES+ 0.554 vs old SFT 0.559 and old RL 0.620 (old values are `no_pair`).
+
+## 5. Published systems
+* Comparable: NLLB-200 FLORES-200 devtest en->xx chrF++, 43 shared languages, our number greedy: NLLB-3.3B 38.80, NLLB-1.3B 38.09, NLLB distilled 1.3B 38.34, NLLB MoE 54.5B 39.08; 385M 26.30; A0 20.77 (same languages). 385M reaches a median 66% of NLLB-3.3B per language; matches or beats it only on fon (+0.9). By NLLB-3.3B tertile (385M / A0 / NLLB): high 38.4 / 30.8 / 51.1; mid 24.9 / 19.3 / 39.4; tail 16.3 / 12.7 / 26.8. Largest gaps: kea -29.0, orm -23.6, kin -22.6, lug -22.3, ssw -21.3, amh -21.3.
+* Indicative only (5-shot AfriqueLLM, AfroBench-Lite harness, 21 languages; 385M = 32.4 on those languages): AfriqueQwen3.5-4B-50Langs 41.7, AfriqueGemma-12B 38.6, AfriqueLlama-8B 36.7, AfriqueQwen-14B 36.7, AfriqueGemma-4B 31.1; Gemma3-12B 18.8, Gemma3-4B 14.8, Llama3.1-8B 16.5.
+* Not comparable (bidirectional 19-language aggregates, AfroBench pooled rows, Gemini 2.5 Flash on 10 sentences, WMT24++): marked in the CSVs.
+* AfriScience-MT, sentence level, plain chrF, test macro over 6 languages: 385M 36.0 (dev 36.4); A0 27.6; old RL-final 47.9; old science-stage 50.0-50.2; published fine-tuned NLLB / few-shot GPT-5.4 about 44-53. 385M beats A0 in all six (zul +19.0, amh +9.3, hau +8.6, nso +7.4, yor +5.3, lug +1.1) and the published NLLB-1.3B on Yoruba (25.4 vs 13.0-17.7). Finished rate 0.90 (385M), 0.84 (A0).
+
+## 6. Weak languages and the 9 added languages
+Weak = chrF++ < 14 or finished rate < 0.9 on the primary benchmark. 37 of 74 languages are weak: 16 by chrF++, all 37 by finished rate.
+* Weak by chrF++ (chrF++, finished): shi 0.2 (0.41), ibb 2.3 (0.17), zgh 2.3 (0.12), dag 2.4 (0.70), aeb 2.8 (0.53), taq 2.8 (0.14), dik 3.8 (0.29), knc 3.8 (0.46), arz 4.6 (0.49), ary 4.6 (0.54), dyu 9.9 (0.83), tir 10.5 (0.77), cjk 10.7 (0.71), orm 12.1 (0.59), tiv 13.3 (0.83), nus 13.5 (0.67).
+* Weak only by finished rate: kri, kbp, umb, kmb, lug (0.79), kab, amh, lua, vmw, efi, her, kea, bem, bam, sag, ven (0.77), run, ssw, kin, lin, nso (the 0.9 criterion is strict and flags some mid-resource languages).
+* The 9 added languages (FLORES+ chrF++, finished): mfe 28.5 (0.95) works; seh 21.7 (0.92) works; cjk 10.7 (0.71) weak; arz 4.6, ary 4.6, dik 3.8, aeb 2.8, taq 2.8, zgh 2.3 fail (outputs are English or MSA text, token-repetition loops such as "Ɣeɣ Ɣeɣ ...", "kɔc e kɔc e ...", or timestamps for Tifinagh). Beam and MBR cannot fix output that is not in the language: these need data first.
+
+## 7. Caveats
+1. One seed. Greedy runs in bf16 on vLLM, and the parity gate is not met (section 2).
+2. The beam/MBR points apply (256 cap, no fallback, 200 sentences per language, 20 languages).
+3. 50 registry languages have no reference test and are not scored.
+4. Not run: document-level evaluation, Tier-2 beam on all of FLORES+, RL-stage rows.
+5. chrF++ uses one reference. FLORES+ and FLORES-200 references differ in places. MBR on chrF++ raises chrF++ by construction.
+
+Scripts: `gemma_mt/scripts/build_eval_385m_results.py`, `attach_flags.py`, `comet_rows.py`, `decode_analyze.py` (`eval_385m_score.py` unchanged). Not in the repo (A100 `/workspace/eval_385m/`): `out_m385/predictions.jsonl`, `out_a0/predictions.jsonl` (211 MB each) and the flagged copies `fl_m385/`, `fl_a0/`.
+
+---
+# Appendix: all tables (builder output, `_fragments.md`)
+
+<!-- T1 greedy macro 385M vs A0 (all rows, common languages) -->
+| benchmark       |   langs |   chrF++ 385M |   chrF++ A0 | delta [95% CI]         |   spBLEU 385M |   spBLEU A0 | delta spBLEU [95% CI]   | AfriCOMET 385M / A0 (langs)   | finished 385M / A0   |
+|:----------------|--------:|--------------:|------------:|:-----------------------|--------------:|------------:|:------------------------|:------------------------------|:---------------------|
+| FLORES+ devtest |      46 |         25.52 |       20.20 | +5.31 [+5.13, +5.50]   |          7.07 |        3.73 | +3.34 [+3.21, +3.50]    | 0.554 / 0.442 (40)            | 0.891 / 0.810        |
+| NTREX-128       |      24 |         29.25 |       23.01 | +6.24 [+6.02, +6.45]   |         10.08 |        5.15 | +4.93 [+4.75, +5.15]    | 0.551 / 0.435 (21)            | 0.890 / 0.868        |
+| MAFAND-MT test  |      15 |         35.77 |       25.56 | +10.21 [+9.90, +10.54] |         14.40 |        6.07 | +8.33 [+7.97, +8.68]    | 0.616 / 0.472 (15)            | 0.963 / 0.897        |
+| SmolSent        |      45 |         22.53 |       17.18 | +5.36 [+5.14, +5.60]   |          5.05 |        1.98 | +3.07 [+2.92, +3.23]    | 0.531 / 0.435 (36)            | 0.904 / 0.874        |
+| SALT            |       5 |         35.49 |       25.13 | +10.36 [+9.29, +11.44] |         14.14 |        5.22 | +8.92 [+7.85, +10.01]   | 0.683 / 0.543 (3)             | 0.992 / 0.982        |
+| GlotStoryBook   |       8 |         20.22 |       14.62 | +5.59 [+4.92, +6.21]   |          3.51 |        1.51 | +2.00 [+1.74, +2.33]    | -                             | 0.907 / 0.884        |
+| IbomMT          |       2 |         12.04 |        9.87 | +2.16 [+1.58, +2.74]   |          1.80 |        0.92 | +0.88 [+0.69, +1.10]    | 0.519 / 0.441 (1)             | 0.531 / 0.552        |
+| FLORES-MOZ      |       1 |         21.54 |       21.08 | +0.46 [-0.72, +1.73]   |          2.30 |        2.22 | +0.08 [-0.29, +0.47]    | -                             | 0.917 / 0.909        |
+
+<!-- T1b 385M own language set -->
+| benchmark       |   n_languages |   n_sentences |   chrf |   spbleu |   finished |   empty |   copy |   repeat |   lid_ok |
+|:----------------|--------------:|--------------:|-------:|---------:|-----------:|--------:|-------:|---------:|---------:|
+| FLORES+ devtest |            54 |         54648 |  22.85 |     6.14 |       0.83 |    0.00 |   0.00 |     0.21 |     0.87 |
+| FLORES-MOZ      |             1 |          1012 |  21.54 |     2.30 |       0.92 |    0.00 |   0.00 |     0.12 |     0.93 |
+| GlotStoryBook   |             8 |          3426 |  20.22 |     3.51 |       0.91 |    0.00 |   0.00 |     0.13 |     0.73 |
+| IbomMT          |             2 |          2024 |  12.04 |     1.80 |       0.53 |    0.00 |   0.00 |     0.53 |     0.48 |
+| MAFAND-MT test  |            15 |         20009 |  35.77 |    14.40 |       0.96 |    0.00 |   0.00 |     0.04 |     0.94 |
+| NTREX-128       |            24 |         47928 |  29.25 |    10.08 |       0.89 |    0.00 |   0.00 |     0.12 |     0.92 |
+| SALT            |             5 |          2500 |  35.49 |    14.14 |       0.99 |    0.00 |   0.00 |     0.01 |     0.94 |
+| SmolSent        |            45 |         38833 |  22.53 |     5.05 |       0.90 |    0.00 |   0.00 |     0.12 |     0.92 |
+
+<!-- T3 385M (all its rows) vs old 270M rows (mixed sentence sets) -->
+| benchmark       | old rows   |   langs |   chrF++ 385M |   old SFT |   old RL |   385M - old SFT |   385M - old RL |   langs where 385M > old SFT | finished 385M / SFT / RL   |
+|:----------------|:-----------|--------:|--------------:|----------:|---------:|-----------------:|----------------:|-----------------------------:|:---------------------------|
+| FLORES+ devtest | all        |      45 |         25.60 |     28.87 |    34.30 |            -3.27 |           -8.70 |                           12 | 0.89 / 0.90 / 1.00         |
+| FLORES+ devtest | no_pair    |      45 |         25.60 |     28.67 |    34.09 |            -3.07 |           -8.49 |                           13 | 0.89 / 0.90 / 1.00         |
+| FLORES+ devtest | clean      |      45 |         25.60 |     25.06 |    31.68 |             0.54 |           -6.08 |                           26 | 0.89 / 0.86 / 1.00         |
+| NTREX-128       | all        |      24 |         29.25 |     33.29 |    37.13 |            -4.04 |           -7.88 |                            4 | 0.89 / 0.93 / 1.00         |
+| NTREX-128       | no_pair    |      24 |         29.25 |     33.22 |    37.08 |            -3.97 |           -7.83 |                            4 | 0.89 / 0.93 / 1.00         |
+| NTREX-128       | clean      |      24 |         29.25 |     31.46 |    35.55 |            -2.21 |           -6.30 |                           11 | 0.89 / 0.92 / 1.00         |
+| MAFAND-MT test  | all        |      15 |         35.77 |     39.56 |    42.36 |            -3.79 |           -6.59 |                            2 | 0.96 / 0.98 / 1.00         |
+| MAFAND-MT test  | no_pair    |      15 |         35.77 |     38.36 |    42.02 |            -2.60 |           -6.25 |                            3 | 0.96 / 0.98 / 1.00         |
+| MAFAND-MT test  | clean      |      15 |         35.77 |     38.18 |    41.84 |            -2.41 |           -6.07 |                            4 | 0.96 / 0.97 / 1.00         |
+| SmolSent        | all        |      45 |         22.53 |     26.34 |    31.63 |            -3.80 |           -9.10 |                            9 | 0.90 / 0.93 / 1.00         |
+| SmolSent        | no_pair    |      45 |         22.53 |     26.08 |    31.44 |            -3.55 |           -8.91 |                           10 | 0.90 / 0.93 / 1.00         |
+| SmolSent        | clean      |      45 |         22.53 |     19.97 |    27.03 |             2.56 |           -4.50 |                           33 | 0.90 / 0.87 / 1.00         |
+| SALT            | all        |       5 |         35.49 |     37.21 |    40.11 |            -1.72 |           -4.62 |                            2 | 0.99 / 0.99 / 1.00         |
+| SALT            | no_pair    |       5 |         35.49 |     35.77 |    38.46 |            -0.28 |           -2.97 |                            2 | 0.99 / 0.99 / 1.00         |
+| SALT            | clean      |       5 |         35.49 |     33.58 |    35.89 |             1.91 |           -0.39 |                            3 | 0.99 / 0.99 / 1.00         |
+| GlotStoryBook   | all        |       8 |         20.22 |     19.86 |    28.02 |             0.36 |           -7.80 |                            4 | 0.91 / 0.89 / 0.98         |
+| GlotStoryBook   | no_pair    |       8 |         20.22 |     19.86 |    28.02 |             0.36 |           -7.80 |                            4 | 0.91 / 0.89 / 0.98         |
+| GlotStoryBook   | clean      |       8 |         20.22 |     19.85 |    28.11 |             0.36 |           -7.90 |                            4 | 0.91 / 0.89 / 0.98         |
+| IbomMT          | all        |       2 |         12.04 |     15.72 |    26.75 |            -3.68 |          -14.72 |                            1 | 0.53 / 0.86 / 1.00         |
+| IbomMT          | no_pair    |       2 |         12.04 |     15.72 |    26.75 |            -3.68 |          -14.72 |                            1 | 0.53 / 0.86 / 1.00         |
+| IbomMT          | clean      |       2 |         12.04 |     13.96 |    24.66 |            -1.92 |          -12.62 |                            1 | 0.53 / 0.82 / 1.00         |
+| FLORES-MOZ      | all        |       1 |         21.54 |     23.66 |    29.70 |            -2.13 |           -8.16 |                            0 | 0.92 / 0.94 / 1.00         |
+| FLORES-MOZ      | no_pair    |       1 |         21.54 |     23.66 |    29.70 |            -2.13 |           -8.16 |                            0 | 0.92 / 0.94 / 1.00         |
+| FLORES-MOZ      | clean      |       1 |         21.54 |     22.96 |    28.10 |            -1.42 |           -6.57 |                            0 | 0.92 / 0.94 / 1.00         |
+
+<!-- T3b 385M vs old 270M on the same sentences -->
+| benchmark       | old rows   |   langs |   chrF++ 385M |   old SFT |   old RL |   385M - old SFT |   385M - old RL |   langs where 385M > old SFT | finished 385M / SFT / RL   |   median sentences / language |
+|:----------------|:-----------|--------:|--------------:|----------:|---------:|-----------------:|----------------:|-----------------------------:|:---------------------------|------------------------------:|
+| FLORES+ devtest | clean      |      45 |         22.34 |     25.06 |    31.68 |            -2.73 |           -9.34 |                           14 | 0.85 / 0.86 / 1.00         |                            48 |
+| NTREX-128       | clean      |      24 |         27.35 |     31.46 |    35.55 |            -4.10 |           -8.20 |                            4 | 0.88 / 0.92 / 1.00         |                          1201 |
+| MAFAND-MT test  | clean      |      15 |         34.80 |     38.18 |    41.84 |            -3.37 |           -7.03 |                            4 | 0.96 / 0.97 / 1.00         |                          1001 |
+| SmolSent        | clean      |      45 |         17.03 |     19.97 |    27.03 |            -2.94 |          -10.00 |                           12 | 0.82 / 0.87 / 1.00         |                            76 |
+| SALT            | clean      |       5 |         30.60 |     33.58 |    35.89 |            -2.98 |           -5.29 |                            2 | 0.99 / 0.99 / 1.00         |                            78 |
+| GlotStoryBook   | clean      |       8 |         20.27 |     19.85 |    28.11 |             0.42 |           -7.85 |                            4 | 0.90 / 0.89 / 0.98         |                           387 |
+| IbomMT          | clean      |       2 |          9.49 |     13.96 |    24.66 |            -4.47 |          -15.17 |                            0 | 0.49 / 0.82 / 1.00         |                            48 |
+| FLORES-MOZ      | clean      |       1 |         19.72 |     22.96 |    28.10 |            -3.24 |           -8.39 |                            0 | 0.94 / 0.94 / 1.00         |                            48 |
+| FLORES+ devtest | no_pair    |      45 |         25.41 |     28.67 |    34.09 |            -3.27 |           -8.69 |                           12 | 0.89 / 0.90 / 1.00         |                          1012 |
+| NTREX-128       | no_pair    |      24 |         29.18 |     33.22 |    37.08 |            -4.05 |           -7.91 |                            4 | 0.89 / 0.93 / 1.00         |                          1997 |
+| MAFAND-MT test  | no_pair    |      15 |         34.87 |     38.36 |    42.02 |            -3.50 |           -7.16 |                            3 | 0.96 / 0.98 / 1.00         |                          1006 |
+| SmolSent        | no_pair    |      45 |         22.33 |     26.08 |    31.44 |            -3.76 |           -9.11 |                           10 | 0.90 / 0.93 / 1.00         |                           863 |
+| SALT            | no_pair    |       5 |         34.04 |     35.77 |    38.46 |            -1.73 |           -4.42 |                            2 | 0.99 / 0.99 / 1.00         |                           500 |
+| GlotStoryBook   | no_pair    |       8 |         20.22 |     19.86 |    28.02 |             0.36 |           -7.80 |                            4 | 0.91 / 0.89 / 0.98         |                           420 |
+| IbomMT          | no_pair    |       2 |         12.04 |     15.72 |    26.75 |            -3.68 |          -14.72 |                            1 | 0.53 / 0.86 / 1.00         |                          1012 |
+| FLORES-MOZ      | no_pair    |       1 |         21.54 |     23.66 |    29.70 |            -2.13 |           -8.16 |                            0 | 0.92 / 0.94 / 1.00         |                          1012 |
+
+<!-- T4 groups, FLORES+ devtest -->
+| group                               |   langs (385M) |   chrF++ 385M |   finished |   LID ok |   repeat |   langs paired with A0 |   chrF++ 385M (paired set) |   chrF++ A0 (paired set) | delta [95% CI]          |
+|:------------------------------------|---------------:|--------------:|-----------:|---------:|---------:|-----------------------:|---------------------------:|-------------------------:|:------------------------|
+| Nguni                               |              3 |         37.22 |       0.95 |     0.97 |     0.06 |                      3 |                      37.22 |                    26.31 | +10.91 [+10.11, +11.68] |
+| Sotho-Tswana                        |              3 |         35.72 |       0.93 |     0.98 |     0.08 |                      3 |                      35.72 |                    31.78 | +3.94 [+2.93, +4.93]    |
+| Other Bantu                         |             18 |         24.32 |       0.89 |     0.92 |     0.14 |                     17 |                      25.12 |                    19.74 | +5.38 [+5.07, +5.69]    |
+| West African                        |             12 |         21.77 |       0.89 |     0.96 |     0.18 |                     12 |                      21.77 |                    16.42 | +5.35 [+5.05, +5.68]    |
+| Cushitic / Ge'ez / Ethiopic         |              4 |         18.66 |       0.80 |     0.94 |     0.21 |                      4 |                      18.66 |                    14.85 | +3.81 [+3.31, +4.31]    |
+| Nilotic                             |              3 |         12.87 |       0.63 |     0.73 |     0.46 |                      2 |                      17.43 |                     9.72 | +7.71 [+7.08, +8.36]    |
+| Berber / Arabic                     |              6 |          5.57 |       0.44 |     0.38 |     0.58 |                      1 |                      16.35 |                    15.69 | +0.66 [-0.37, +1.63]    |
+| Creoles                             |              3 |         22.37 |       0.88 |     0.94 |     0.15 |                      2 |                      19.30 |                    27.32 | -8.02 [-8.93, -7.04]    |
+| Other (Indo-European, Austronesian) |              2 |         51.09 |       0.98 |     1.00 |     0.02 |                      2 |                      51.09 |                    36.64 | +14.45 [+13.53, +15.46] |
+
+<!-- T5 weak languages -->
+| language                        | group                       | benchmark       |   chrF++ |   finished |   LID ok |   repeat |   A0 chrF++ |   A0 finished | why                            |
+|:--------------------------------|:----------------------------|:----------------|---------:|-----------:|---------:|---------:|------------:|--------------:|:-------------------------------|
+| shi Tachelhit                   | Berber / Arabic             | NTREX-128       |     0.24 |       0.41 |     0.64 |     0.64 |        0.39 |          0.77 | chrF++ < 14 and finished < 0.9 |
+| ibb Ibibio                      | West African                | IbomMT          |     2.27 |       0.17 |     0.00 |     0.89 |        3.86 |          0.33 | chrF++ < 14 and finished < 0.9 |
+| zgh Standard Moroccan Tamazight | Berber / Arabic             | FLORES+ devtest |     2.29 |       0.12 |     0.02 |     0.89 |      nan    |        nan    | chrF++ < 14 and finished < 0.9 |
+| dag Dagbani                     | West African                | GlotStoryBook   |     2.43 |       0.70 |     0.00 |     0.39 |        6.26 |          0.94 | chrF++ < 14 and finished < 0.9 |
+| aeb Tunisian Arabic             | Berber / Arabic             | FLORES+ devtest |     2.75 |       0.53 |     0.01 |     0.49 |      nan    |        nan    | chrF++ < 14 and finished < 0.9 |
+| taq Tamasheq                    | Berber / Arabic             | FLORES+ devtest |     2.81 |       0.14 |     0.49 |     0.91 |      nan    |        nan    | chrF++ < 14 and finished < 0.9 |
+| dik Dinka                       | Nilotic                     | FLORES+ devtest |     3.76 |       0.29 |     0.24 |     0.85 |      nan    |        nan    | chrF++ < 14 and finished < 0.9 |
+| knc Kanuri                      | West African                | FLORES+ devtest |     3.81 |       0.46 |     0.96 |     0.94 |        2.58 |          0.05 | chrF++ < 14 and finished < 0.9 |
+| arz Egyptian Arabic             | Berber / Arabic             | FLORES+ devtest |     4.59 |       0.49 |     0.80 |     0.52 |      nan    |        nan    | chrF++ < 14 and finished < 0.9 |
+| ary Moroccan Arabic             | Berber / Arabic             | FLORES+ devtest |     4.64 |       0.54 |     0.02 |     0.48 |      nan    |        nan    | chrF++ < 14 and finished < 0.9 |
+| dyu Dyula                       | West African                | FLORES+ devtest |     9.90 |       0.83 |     0.76 |     0.25 |       12.23 |          0.91 | chrF++ < 14 and finished < 0.9 |
+| tir Tigrinya                    | Cushitic / Ge'ez / Ethiopic | FLORES+ devtest |    10.48 |       0.77 |     0.85 |     0.23 |        9.29 |          0.83 | chrF++ < 14 and finished < 0.9 |
+| cjk Chokwe                      | Other Bantu                 | FLORES+ devtest |    10.72 |       0.71 |     0.91 |     0.31 |      nan    |        nan    | chrF++ < 14 and finished < 0.9 |
+| orm Oromo                       | Cushitic / Ge'ez / Ethiopic | FLORES+ devtest |    12.06 |       0.59 |     0.93 |     0.45 |       11.82 |          0.62 | chrF++ < 14 and finished < 0.9 |
+| tiv Tiv                         | West African                | SmolSent        |    13.29 |       0.83 |     0.97 |     0.28 |       11.19 |          0.79 | chrF++ < 14 and finished < 0.9 |
+| nus Nuer                        | Nilotic                     | FLORES+ devtest |    13.49 |       0.67 |     0.97 |     0.41 |        7.46 |          0.26 | chrF++ < 14 and finished < 0.9 |
+| kri Krio                        | Creoles                     | SmolSent        |    14.26 |       0.88 |     0.95 |     0.22 |       13.08 |          0.81 | finished < 0.9                 |
+| kbp Kabiye                      | West African                | FLORES+ devtest |    14.51 |       0.85 |     0.96 |     0.26 |        8.42 |          0.44 | finished < 0.9                 |
+| umb Umbundu                     | Other Bantu                 | FLORES+ devtest |    14.80 |       0.89 |     0.81 |     0.15 |       10.07 |          0.68 | finished < 0.9                 |
+| kmb Kimbundu                    | Other Bantu                 | FLORES+ devtest |    16.02 |       0.88 |     0.98 |     0.23 |       10.65 |          0.64 | finished < 0.9                 |
+| lug Luganda                     | Other Bantu                 | FLORES+ devtest |    16.17 |       0.79 |     0.94 |     0.25 |       16.47 |          0.82 | finished < 0.9                 |
+| kab Kabyle                      | Berber / Arabic             | FLORES+ devtest |    16.35 |       0.84 |     0.96 |     0.20 |       15.69 |          0.85 | finished < 0.9                 |
+| amh Amharic                     | Cushitic / Ge'ez / Ethiopic | FLORES+ devtest |    16.62 |       0.87 |     0.99 |     0.13 |        7.47 |          0.72 | finished < 0.9                 |
+| lua Luba-Kasai                  | Other Bantu                 | FLORES+ devtest |    17.18 |       0.85 |     0.89 |     0.25 |       17.66 |          0.82 | finished < 0.9                 |
+| vmw Makhuwa                     | Other Bantu                 | FLORES+ devtest |    17.45 |       0.84 |     0.95 |     0.18 |       12.79 |          0.70 | finished < 0.9                 |
+| efi Efik                        | West African                | SmolSent        |    17.89 |       0.89 |     0.97 |     0.18 |       12.07 |          0.77 | finished < 0.9                 |
+| her Herero                      | Other Bantu                 | GlotStoryBook   |    17.92 |       0.87 |     0.91 |     0.17 |       14.13 |          0.79 | finished < 0.9                 |
+| kea Kabuverdianu                | Creoles                     | FLORES+ devtest |    18.91 |       0.83 |     0.90 |     0.20 |       36.47 |          0.98 | finished < 0.9                 |
+| bem Bemba                       | Other Bantu                 | FLORES+ devtest |    19.31 |       0.88 |     0.85 |     0.18 |       16.82 |          0.77 | finished < 0.9                 |
+| bam Bambara                     | West African                | FLORES+ devtest |    19.39 |       0.89 |     0.91 |     0.13 |       14.26 |          0.85 | finished < 0.9                 |
+| sag Sango                       | Creoles                     | FLORES+ devtest |    19.68 |       0.87 |     0.98 |     0.20 |       18.17 |          0.78 | finished < 0.9                 |
+| ven Venda                       | Other Bantu                 | NTREX-128       |    21.29 |       0.77 |     0.97 |     0.26 |       19.07 |          0.70 | finished < 0.9                 |
+| run Kirundi                     | Other Bantu                 | FLORES+ devtest |    21.59 |       0.88 |     0.95 |     0.15 |       19.81 |          0.86 | finished < 0.9                 |
+| ssw Swati                       | Nguni                       | FLORES+ devtest |    22.20 |       0.87 |     0.95 |     0.17 |       18.87 |          0.82 | finished < 0.9                 |
+| kin Kinyarwanda                 | Other Bantu                 | FLORES+ devtest |    25.81 |       0.89 |     0.86 |     0.12 |       22.34 |          0.87 | finished < 0.9                 |
+| lin Lingala                     | Other Bantu                 | FLORES+ devtest |    28.56 |       0.90 |     0.97 |     0.13 |       22.80 |          0.81 | finished < 0.9                 |
+| nso Sepedi                      | Sotho-Tswana                | FLORES+ devtest |    31.58 |       0.86 |     0.98 |     0.15 |       32.79 |          0.92 | finished < 0.9                 |
+
+<!-- T6 NLLB comparison -->
+| system                  |   n_languages |   chrf |   m385_chrf |   d_m385_minus_system |   n_m385_beats |   n_languages_with_a0 |   a0_chrf_same_languages |   old_sft_clean_chrf |   old_rl_clean_chrf |
+|:------------------------|--------------:|-------:|------------:|----------------------:|---------------:|----------------------:|-------------------------:|---------------------:|--------------------:|
+| NLLB-200 3.3B           |            43 |  38.80 |       26.30 |                -12.50 |              1 |                    43 |                    20.77 |                25.82 |               32.21 |
+| NLLB-200 1.3B           |            43 |  38.09 |       26.30 |                -11.79 |              2 |                    43 |                    20.77 |                25.82 |               32.21 |
+| NLLB-200 distilled 1.3B |            43 |  38.34 |       26.30 |                -12.04 |              1 |                    43 |                    20.77 |                25.82 |               32.21 |
+| NLLB-200 MoE 54.5B      |            43 |  39.08 |       26.30 |                -12.78 |              0 |                    43 |                    20.77 |                25.82 |               32.21 |
+
+<!-- T7 AfriScience-MT sentence level -->
+| system                                         | split   | metric              |   amh |   hau |   lug |   nso |   yor |   zul |   macro |   finished_macro |   chrf_pp_macro |   spbleu_macro |
+|:-----------------------------------------------|:--------|:--------------------|------:|------:|------:|------:|------:|------:|--------:|-----------------:|----------------:|---------------:|
+| 385M SFT (this run)                            | test    | chrF (word order 0) | 20.30 | 47.33 | 23.31 | 41.27 | 25.36 | 58.42 |   36.00 |             0.90 |           33.50 |          13.19 |
+| A0 270M (this run)                             | test    | chrF (word order 0) | 11.01 | 38.69 | 22.17 | 33.93 | 20.12 | 39.43 |   27.56 |             0.84 |           25.22 |           6.25 |
+| 385M SFT (this run)                            | dev     | chrF (word order 0) | 20.78 | 49.19 | 23.24 | 43.29 | 25.87 | 55.92 |   36.38 |             0.91 |           33.88 |          14.29 |
+| A0 270M (this run)                             | dev     | chrF (word order 0) | 11.08 | 38.98 | 22.65 | 35.35 | 19.48 | 39.10 |   27.77 |             0.85 |           25.41 |           6.80 |
+| RL-final (1,433) (old 270M)                    | test    | chrF (word order 0) | 25.30 | 59.40 | 46.20 | 55.90 | 37.40 | 63.40 |   47.90 |           nan    |          nan    |         nan    |
+| science-stage start A2W (old 270M)             | test    | chrF (word order 0) | 26.20 | 62.00 | 48.90 | 58.30 | 39.80 | 64.70 |   50.00 |           nan    |          nan    |         nan    |
+| final2 step 401 (old 270M)                     | test    | chrF (word order 0) | 26.60 | 61.90 | 49.30 | 58.50 | 40.10 | 64.70 |   50.20 |           nan    |          nan    |         nan    |
+| NLLB-200-1.3B fine-tuned (published)           | test    | chrF (word order 0) | 45.50 | 67.70 | 51.50 | 64.30 | 17.70 | 67.20 |   52.30 |           nan    |          nan    |         nan    |
+| NLLB-200-distilled-600M fine-tuned (published) | test    | chrF (word order 0) | 44.40 | 66.90 | 50.60 | 64.20 | 17.60 | 66.30 |   51.70 |           nan    |          nan    |         nan    |
+| M2M100-1.2B fine-tuned (published)             | test    | chrF (word order 0) | 39.00 | 63.10 | 49.50 | 62.40 | 16.60 | 58.40 |   48.20 |           nan    |          nan    |         nan    |
+| NLLB-200-1.3B zero-shot (published)            | test    | chrF (word order 0) | 37.40 | 59.40 | 43.20 | 51.40 | 13.00 | 60.10 |   44.10 |           nan    |          nan    |         nan    |
+| Gemma2-9B LoRA r64 fine-tuned (published)      | test    | chrF (word order 0) | 39.70 | 58.80 | 50.10 | 61.60 | 41.60 | 50.20 |   50.30 |           nan    |          nan    |         nan    |
+| GPT-5.4 10-shot (published)                    | test    | chrF (word order 0) | 43.80 | 63.00 | 56.40 | 59.50 | 28.10 | 68.90 |   53.30 |           nan    |          nan    |         nan    |
+| Gemini-3.1-Flash-Lite 10-shot (published)      | test    | chrF (word order 0) | 41.60 | 61.10 | 49.50 | 55.90 | 22.90 | 61.80 |   48.80 |           nan    |          nan    |         nan    |
+
+<!-- T8 decoding study (20 languages x 200 FLORES+ devtest sentences) -->
+| decoding                            |   chrF++ macro | delta chrF++ vs greedy [95% CI]   |   spBLEU macro | delta spBLEU [95% CI]   |   truncated at 256 tokens (ESTIMATED) |   repetitive |
+|:------------------------------------|---------------:|:----------------------------------|---------------:|:------------------------|--------------------------------------:|-------------:|
+| greedy                              |          35.00 | -                                 |          13.64 | -                       |                                  0.09 |         0.10 |
+| beam 4                              |          37.53 | +2.53 [+2.18, +2.87]              |          16.38 | +2.73 [+2.39, +3.08]    |                                  0.06 |         0.07 |
+| MBR-16 (+ greedy as 17th candidate) |          38.29 | +3.30 [+3.00, +3.58]              |          15.30 | +1.65 [+1.38, +1.90]    |                                  0.00 |         0.00 |
+
+<!-- T8b beam parts -->
+| decoding   |   chrF++ macro (16 languages x 100 sentences) | delta [95% CI]       |   spBLEU |
+|:-----------|----------------------------------------------:|:---------------------|---------:|
+| greedy     |                                         37.68 | -                    |    15.58 |
+| beam4      |                                         40.22 | +2.54 [+2.03, +3.03] |    18.42 |
+
+<!-- T8c decoding per language -->
+| language   |   greedy |   beam 4 | beam delta [95% CI]   |   MBR-16 | MBR delta [95% CI]   |   greedy truncated (est.) |
+|:-----------|---------:|---------:|:----------------------|---------:|:---------------------|--------------------------:|
+| tir        |    12.63 |    14.90 | +2.27 [+1.24, +3.34]  |    16.21 | +3.58 [+2.76, +4.42] |                      0.29 |
+| orm        |    19.11 |    19.81 | +0.69 [-0.56, +2.02]  |    27.08 | +7.96 [+6.60, +9.17] |                      0.39 |
+| amh        |    19.22 |    23.24 | +4.02 [+2.48, +5.79]  |    23.47 | +4.25 [+3.15, +5.42] |                      0.15 |
+| lug        |    22.12 |    23.54 | +1.42 [-0.41, +3.38]  |    27.85 | +5.73 [+4.52, +7.04] |                      0.20 |
+| yor        |    23.05 |    26.90 | +3.85 [+1.83, +5.79]  |    24.76 | +1.71 [+0.14, +3.28] |                      0.07 |
+| wol        |    28.65 |    30.06 | +1.42 [+0.44, +2.48]  |    30.63 | +1.99 [+1.08, +2.90] |                      0.04 |
+| ewe        |    29.51 |    27.03 | -2.48 [-3.76, -1.23]  |    31.67 | +2.16 [+1.30, +3.06] |                      0.04 |
+| kin        |    29.99 |    35.73 | +5.74 [+3.79, +7.66]  |    35.21 | +5.22 [+3.63, +6.77] |                      0.09 |
+| twi        |    30.94 |    34.06 | +3.12 [+1.71, +4.41]  |    34.17 | +3.23 [+2.12, +4.39] |                      0.05 |
+| lin        |    32.55 |    38.00 | +5.46 [+3.50, +7.53]  |    38.72 | +6.17 [+4.28, +8.02] |                      0.12 |
+| sna        |    36.14 |    39.20 | +3.06 [+1.41, +4.70]  |    38.80 | +2.66 [+1.45, +4.05] |                      0.04 |
+| som        |    36.98 |    39.63 | +2.65 [+1.39, +4.13]  |    39.12 | +2.14 [+1.06, +3.52] |                      0.03 |
+| nso        |    38.79 |    45.30 | +6.51 [+4.00, +9.00]  |    45.62 | +6.83 [+4.98, +8.76] |                      0.17 |
+| ibo        |    40.53 |    42.02 | +1.49 [+0.54, +2.52]  |    41.86 | +1.33 [+0.64, +2.21] |                      0.01 |
+| tsn        |    41.17 |    44.01 | +2.85 [+1.12, +4.88]  |    44.11 | +2.94 [+1.68, +4.50] |                      0.07 |
+| hau        |    45.13 |    45.17 | +0.04 [-1.47, +1.35]  |    47.16 | +2.02 [+0.67, +3.59] |                      0.02 |
+| xho        |    45.27 |    47.86 | +2.59 [+1.50, +3.65]  |    46.81 | +1.54 [+0.81, +2.35] |                      0.01 |
+| zul        |    48.43 |    50.43 | +1.99 [+1.09, +2.93]  |    49.41 | +0.98 [+0.32, +1.65] |                      0.00 |
+| swh        |    56.25 |    59.35 | +3.10 [+1.62, +5.10]  |    59.08 | +2.83 [+1.39, +4.80] |                      0.01 |
+| afr        |    63.49 |    64.36 | +0.88 [+0.18, +1.65]  |    64.12 | +0.63 [+0.21, +1.13] |                      0.00 |
+
+<!-- T10 FLORES+ devtest per language -->
+| iso   | group                               |   chrF++ 385M |   chrF++ A0 | delta vs A0 [95% CI]    |   AfriCOMET 385M |   finished |   LID ok |   repeat | 385M / old SFT / old RL on the 48 old-unseen sentences   |   NLLB-3.3B |
+|:------|:------------------------------------|--------------:|------------:|:------------------------|-----------------:|-----------:|---------:|---------:|:---------------------------------------------------------|------------:|
+| zul   | Nguni                               |         45.91 |       32.03 | +13.88 [+12.53, +15.17] |             0.66 |       0.99 |     0.96 |     0.01 | 42.0 / 43.5 / 43.4                                       |       53.50 |
+| xho   | Nguni                               |         43.56 |       28.04 | +15.52 [+14.21, +16.86] |             0.63 |       0.99 |     0.99 |     0.01 | 43.6 / 44.5 / 43.7                                       |       48.60 |
+| ssw   | Nguni                               |         22.20 |       18.87 | +3.33 [+1.83, +4.83]    |             0.49 |       0.87 |     0.95 |     0.17 | 18.6 / 27.8 / 33.9                                       |       43.50 |
+| sot   | Sotho-Tswana                        |         37.87 |       33.74 | +4.13 [+2.40, +5.75]    |             0.62 |       0.97 |     0.98 |     0.04 | 29.8 / 41.5 / 41.8                                       |       46.50 |
+| tsn   | Sotho-Tswana                        |         37.69 |       28.80 | +8.89 [+7.16, +10.55]   |             0.63 |       0.96 |     0.99 |     0.06 | 30.0 / 37.2 / 42.7                                       |       48.60 |
+| nso   | Sotho-Tswana                        |         31.58 |       32.79 | -1.21 [-3.23, +0.88]    |             0.59 |       0.86 |     0.98 |     0.15 | 26.9 / 42.1 / 45.9                                       |       50.30 |
+| swh   | Other Bantu                         |         56.24 |       35.58 | +20.66 [+18.55, +22.51] |             0.69 |       1.00 |     0.95 |     0.01 | 51.4 / 52.0 / 51.8                                       |       60.00 |
+| nya   | Other Bantu                         |         36.88 |       24.05 | +12.83 [+11.32, +14.24] |             0.62 |       0.97 |     0.98 |     0.04 | 32.6 / 31.1 / 40.8                                       |       45.30 |
+| sna   | Other Bantu                         |         33.92 |       23.45 | +10.47 [+8.97, +11.85]  |             0.60 |       0.97 |     0.99 |     0.04 | 27.1 / 32.0 / 35.4                                       |       42.80 |
+| tso   | Other Bantu                         |         32.92 |       29.24 | +3.68 [+1.85, +5.52]    |             0.60 |       0.91 |     0.96 |     0.11 | 24.4 / 39.2 / 41.3                                       |       50.20 |
+| lin   | Other Bantu                         |         28.56 |       22.80 | +5.77 [+4.00, +7.53]    |             0.52 |       0.90 |     0.97 |     0.13 | 25.3 / 28.0 / 38.6                                       |       48.00 |
+| kik   | Other Bantu                         |         25.98 |       20.66 | +5.32 [+4.09, +6.49]    |             0.60 |       0.93 |     0.99 |     0.08 | 22.6 / 16.8 / 28.7                                       |       37.30 |
+| kin   | Other Bantu                         |         25.81 |       22.34 | +3.46 [+2.01, +4.85]    |             0.56 |       0.89 |     0.86 |     0.12 | 18.5 / 27.9 / 39.5                                       |       48.40 |
+| tum   | Other Bantu                         |         25.40 |       21.28 | +4.12 [+2.92, +5.41]    |             0.53 |       0.94 |     0.76 |     0.08 | 21.0 / 22.3 / 30.8                                       |       36.60 |
+| seh   | Other Bantu                         |         21.67 |       21.08 | +0.59 [-0.69, +1.87]    |           nan    |       0.92 |     0.93 |     0.12 | -                                                        |      nan    |
+| run   | Other Bantu                         |         21.59 |       19.81 | +1.78 [+0.48, +3.13]    |             0.53 |       0.88 |     0.95 |     0.15 | 15.8 / 25.6 / 29.7                                       |       41.90 |
+| bem   | Other Bantu                         |         19.31 |       16.82 | +2.49 [+1.41, +3.67]    |             0.45 |       0.88 |     0.85 |     0.18 | 19.3 / 22.2 / 32.3                                       |       37.50 |
+| vmw   | Other Bantu                         |         17.45 |       12.79 | +4.66 [+3.81, +5.50]    |           nan    |       0.84 |     0.95 |     0.18 | 13.6 / 14.7 / 26.2                                       |      nan    |
+| kam   | Other Bantu                         |         17.22 |       10.89 | +6.33 [+5.52, +7.13]    |             0.44 |       0.92 |     0.98 |     0.14 | 18.6 / 10.7 / 22.7                                       |       23.60 |
+| lua   | Other Bantu                         |         17.18 |       17.66 | -0.49 [-1.65, +0.74]    |             0.43 |       0.85 |     0.89 |     0.25 | 16.2 / 20.6 / 31.2                                       |       35.20 |
+| lug   | Other Bantu                         |         16.17 |       16.47 | -0.30 [-1.45, +0.81]    |             0.46 |       0.79 |     0.94 |     0.25 | 13.2 / 28.5 / 30.7                                       |       38.50 |
+| kmb   | Other Bantu                         |         16.02 |       10.65 | +5.37 [+4.46, +6.27]    |             0.42 |       0.88 |     0.98 |     0.23 | 11.8 / 12.0 / 24.1                                       |       24.40 |
+| umb   | Other Bantu                         |         14.80 |       10.07 | +4.73 [+3.85, +5.61]    |             0.47 |       0.89 |     0.81 |     0.15 | 11.7 / 14.9 / 24.7                                       |       23.60 |
+| cjk   | Other Bantu                         |         10.72 |      nan    | -                       |           nan    |       0.71 |     0.91 |     0.31 | -                                                        |      nan    |
+| hau   | West African                        |         39.88 |       32.24 | +7.64 [+5.61, +9.65]    |             0.62 |       0.96 |     0.98 |     0.04 | 34.6 / 43.9 / 44.9                                       |       52.50 |
+| ibo   | West African                        |         37.82 |       26.83 | +10.98 [+9.71, +12.22]  |             0.64 |       0.98 |     1.00 |     0.02 | 31.9 / 35.8 / 37.8                                       |       41.10 |
+| twi   | West African                        |         27.54 |       17.49 | +10.05 [+8.75, +11.32]  |             0.59 |       0.94 |     0.99 |     0.08 | 23.9 / 29.6 / 34.9                                       |       38.30 |
+| wol   | West African                        |         26.87 |       18.47 | +8.39 [+7.21, +9.57]    |             0.63 |       0.97 |     0.99 |     0.03 | 27.7 / 23.8 / 28.3                                       |       28.10 |
+| ewe   | West African                        |         25.96 |       20.49 | +5.46 [+4.24, +6.66]    |             0.56 |       0.95 |     0.99 |     0.06 | 21.8 / 26.3 / 27.2                                       |       38.20 |
+| yor   | West African                        |         21.32 |       16.91 | +4.41 [+3.23, +5.69]    |             0.59 |       0.95 |     0.98 |     0.05 | 18.2 / 18.6 / 27.4                                       |       24.90 |
+| fon   | West African                        |         20.17 |       15.88 | +4.29 [+3.59, +5.01]    |             0.57 |       0.98 |     0.98 |     0.04 | 17.4 / 17.7 / 19.7                                       |       19.30 |
+| bam   | West African                        |         19.39 |       14.26 | +5.13 [+4.15, +6.13]    |             0.45 |       0.89 |     0.91 |     0.13 | 18.1 / 13.8 / 23.3                                       |       31.40 |
+| kbp   | West African                        |         14.51 |        8.42 | +6.09 [+5.45, +6.69]    |             0.54 |       0.85 |     0.96 |     0.26 | 15.9 / 6.8 / 19.9                                        |       29.50 |
+| mos   | West African                        |         14.09 |       11.25 | +2.84 [+2.16, +3.51]    |             0.46 |       0.90 |     0.98 |     0.19 | 13.8 / 16.7 / 22.1                                       |       24.10 |
+| dyu   | West African                        |          9.90 |       12.23 | -2.33 [-3.06, -1.60]    |           nan    |       0.83 |     0.76 |     0.25 | 10.5 / 10.0 / 16.9                                       |       16.20 |
+| knc   | West African                        |          3.81 |        2.58 | +1.24 [+1.05, +1.41]    |           nan    |       0.46 |     0.96 |     0.94 | 3.5 / 2.9 / 14.2                                         |      nan    |
+| som   | Cushitic / Ge'ez / Ethiopic         |         35.47 |       30.82 | +4.66 [+3.27, +6.03]    |             0.59 |       0.97 |     1.00 |     0.03 | 29.6 / 32.9 / 36.5                                       |       42.80 |
+| amh   | Cushitic / Ge'ez / Ethiopic         |         16.62 |        7.47 | +9.15 [+8.08, +10.22]   |             0.50 |       0.87 |     0.99 |     0.13 | 14.2 / 11.4 / 15.9                                       |       37.90 |
+| orm   | Cushitic / Ge'ez / Ethiopic         |         12.06 |       11.82 | +0.24 [-0.51, +1.01]    |             0.42 |       0.59 |     0.93 |     0.45 | 9.0 / 17.8 / 28.0                                        |       35.70 |
+| tir   | Cushitic / Ge'ez / Ethiopic         |         10.48 |        9.29 | +1.19 [+0.57, +1.88]    |             0.51 |       0.77 |     0.85 |     0.23 | 5.6 / 7.2 / 12.1                                         |       24.80 |
+| luo   | Nilotic                             |         21.36 |       11.98 | +9.38 [+8.27, +10.60]   |             0.56 |       0.92 |     0.98 |     0.13 | 19.9 / 15.9 / 30.0                                       |       39.00 |
+| nus   | Nilotic                             |         13.49 |        7.46 | +6.03 [+5.47, +6.57]    |             0.47 |       0.67 |     0.97 |     0.41 | 11.3 / 8.9 / 21.6                                        |       28.90 |
+| dik   | Nilotic                             |          3.76 |      nan    | -                       |           nan    |       0.29 |     0.24 |     0.85 | -                                                        |      nan    |
+| kab   | Berber / Arabic                     |         16.35 |       15.69 | +0.66 [-0.37, +1.63]    |             0.56 |       0.84 |     0.96 |     0.20 | 15.7 / 24.4 / 26.1                                       |       32.00 |
+| ary   | Berber / Arabic                     |          4.64 |      nan    | -                       |           nan    |       0.54 |     0.02 |     0.48 | -                                                        |      nan    |
+| arz   | Berber / Arabic                     |          4.59 |      nan    | -                       |           nan    |       0.49 |     0.80 |     0.52 | -                                                        |      nan    |
+| taq   | Berber / Arabic                     |          2.81 |      nan    | -                       |           nan    |       0.14 |     0.49 |     0.91 | -                                                        |      nan    |
+| aeb   | Berber / Arabic                     |          2.75 |      nan    | -                       |           nan    |       0.53 |     0.01 |     0.49 | -                                                        |      nan    |
+| zgh   | Berber / Arabic                     |          2.29 |      nan    | -                       |           nan    |       0.12 |     0.02 |     0.89 | -                                                        |      nan    |
+| mfe   | Creoles                             |         28.51 |      nan    | -                       |           nan    |       0.94 |     0.93 |     0.07 | -                                                        |      nan    |
+| sag   | Creoles                             |         19.68 |       18.17 | +1.51 [+0.31, +2.79]    |           nan    |       0.87 |     0.98 |     0.20 | 16.5 / 22.5 / 32.9                                       |       36.50 |
+| kea   | Creoles                             |         18.91 |       36.47 | -17.56 [-18.96, -16.10] |           nan    |       0.83 |     0.90 |     0.20 | 13.7 / 10.2 / 25.4                                       |       47.90 |
+| afr   | Other (Indo-European, Austronesian) |         63.13 |       51.89 | +11.24 [+10.10, +12.35] |             0.74 |       1.00 |     1.00 |     0.00 | 61.3 / 60.2 / 61.2                                       |       64.70 |
+| mlg   | Other (Indo-European, Austronesian) |         39.04 |       21.39 | +17.65 [+16.07, +19.27] |             0.59 |       0.97 |     1.00 |     0.03 | 36.7 / 35.2 / 39.4                                       |       50.20 |

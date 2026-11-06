@@ -1,0 +1,92 @@
+# E-08: degeneration, length, copy and language audit with detectors that are not the reward's (2026-11-04)
+
+CPU only, on the laptop; nothing was run on the A100 (the four RL prediction files were copied from the box by the parent with read-only scp into `research_archive_2026-11-03/eval_385m_rl_predictions_2026-11-04/`). Scripts, per-row features and every table: `reports/data/degeneration_audit_independent_2026-11-04/` (`compute_features.py` -> `analyse.py` -> `analyse2.py`, `analyse3_bootstrap.py`, `compute_glotlid.py` + `analyse_lid.py`; ledger rows in `ledger_snippet.md`).
+
+## 0. Answer to the key question
+
+**Yes, the reward-family loop flag undercounts degeneration in the RL outputs, by a factor of about 1.8 on FLORES+, but it does not miss hard failures and the extra rows are small in chrF++ terms.**
+
+* The reward-family loop flag (`is_repetitive` or `is_self_repetitive`, i.e. the evaluator's loop flag) reproduces the ledger numbers on the stored predictions: FLORES+ macro 0.2095 (SFT) and 0.0480 (mixed best) against 0.209 / 0.048 in EVID; NTREX 0.1218 / 0.0064 (EVID 0.122 / 0.006), MAFAND 0.0431 / 0.0009 (EVID 0.043 / 0.001).
+* An independent detector (lzma compression residual, repeated character 8-grams, repeated word 3-grams; each threshold set so that 0.1% of the 122,585 human references fire it, none of the reward's constants used) flags **0.0851 of mixed-best FLORES+ outputs [0.0822, 0.0883]** versus 0.0480 [0.0462, 0.0496] for the reward flag: ratio 1.77 [1.71, 1.84], difference +0.0371 [+0.0344, +0.0400]; stage A 0.1207 vs 0.0675; B1 best 0.0980 vs 0.0541; weak final 0.0807 vs 0.0474; SFT 0.3107 vs 0.2095. On NTREX mixed best 0.0143 vs 0.0064; MAFAND 0.0039 vs 0.0009. Bootstrap over source sentences (1,000 resamples) in `bootstrap_rates.csv`. At a stricter budget (0.01% of references, thresholds z < -0.464, c8 > 0.601, w3 > 0.276) the mixed-best FLORES+ rate is still 0.0586 vs 0.0480 (ratio 1.22; SFT 0.2358 vs 0.2095), so the excess is not an artefact of a loose threshold. The same detectors fire on 0.18% (FLORES+), 0.18% (NTREX), 0.13% (MAFAND) of human references; the reward detector fires on 0.01% / 0.00% / 0.00%.
+* The reward flag is almost a subset of the independent one: mixed best, three benchmarks, 122,585 rows: both 2,932, reward only 14, independent only 2,488, neither 117,151 (`crosstab_reward_vs_independent.csv`). The extra rows are almost all finished (99.9%), short-to-medium (median 26 words; 41% under the 24 words the reward's self-repetition rule needs) phrase repetitions inside an otherwise normal sentence, 48% in the seven near-failed languages (taq knc zgh dik aeb arz ary), the rest in mid-resource languages (ewe, orm, tso, kmb, umb, bem, nus, ...). Read examples in `examples_independent_only.csv` (e.g. knc "kela kenangatebe dega kela kenangatebe dega ...", ewe "... sena sena sena sena be Australia ..."); a character-level loop inside one long word ("a'i'i'i'i'i'i...", zgh) escapes the word-level rules of the reward.
+* All hard failures are caught by both: of the 278 unfinished (token-cap) mixed-best rows only 2 are not flagged by the reward flag and 0 by the independent one.
+* Quality of the extra rows: language-matched sentence chrF++ of independent-only rows is 4.5 lower than that of unflagged rows of the same language (mixed best, 44 languages with at least 10 rows in each group, difference -4.54, se 0.51, worse in 39 of 44; `language_matched_quality_of_independent_only.csv`). This is selection-confounded (hard sentences repeat more), so it shows the flag marks bad outputs, not that repair would recover the whole gap. If those rows scored the language's average of unflagged rows the macro chrF++ would rise by 0.19 (FLORES+), 0.02 (NTREX), 0.015 (MAFAND) for mixed best, against 0.46, 0.28, 0.23 for the SFT (`chrf_loss_attributable_to_independent_only_rows.csv`): the difference SFT minus RL in this extra loss is 0.26, 0.26, 0.22 chrF++, i.e. at most 3 to 4% of the RL gain (+8.81, +7.91, +5.01, R1). **The decomposition in R4-R6 does not change materially; R4's sentence "the loop flag is the reward's own guard" gets a number: the independent detector gives 3.65x fewer flags for RL than SFT on FLORES+ (0.3107 to 0.0851), the reward flag 4.4x (0.2095 to 0.0480).**
+* Excluding the seven near-failed languages (all outside the RL prompt pool; verified from the language keys of stage A's `LANG_WEIGHTS.state.json`, none of aeb ary arz taq zgh dik knc is a key) mixed-best FLORES+ is 0.0029 (reward) vs 0.0202 (independent) over 47 languages (`rates_with_without_7_languages.csv`): a 7x relative undercount but 2 points absolute. In those seven languages the reward flag is 0.351 and the independent 0.521.
+
+## 1. Data and detectors
+
+Rows: FLORES+ devtest (54 languages), NTREX (24), MAFAND (15) for SFT (`eval_385m/out_m385`), stage A (`out_stageA` + `out_stageA_x`), B1 best (`out_b1best` + `out_b1best_x`), mixed best (`out_wk_mixedbest`, the weak run's evaluation of the mixed-best model), weak final (`out_wk_weakfinal`), and A0 (`eval_385m/out_a0`, FLORES+ 46 languages); 122,585 unique (benchmark, language, id) rows per model (A0 114,489); no clean-row filter (the 214 contamination-flagged rows are 0.17% of the rows). The `system` field of all files says "sft" (a label bug of the harness; the directories name the model). SmolSent, SALT, GlotStoryBook, IbomMT and FLORES-MOZ exist only for the SFT and A0 files and are not used.
+
+Reward family (the reward's own functions, `gemma_mt/gemma_mt/rl/guards.py`, identical to the box tree): `is_repetitive` (word run > 4, unique-word ratio < 0.3, zlib ratio < 0.18 at 80 bytes), `is_self_repetitive` (word 4-gram repeat share > 0.35 at 24 words), `is_copy_of_source` (jaccard 0.9), `length_ratio_bad` (0.2 to 5), role tail; the `finished` flag (end-of-turn reached before 768 tokens); LID = GlotLID v3 (`cis-lmu/glotlid` `model_v3.bin`, `lid_enabled` true, 15 characters minimum, accepted labels from `gemma_mt/languages.py`; stage A's `shaping_clean_v2.json` has no `lid` blocks), and the evaluator's "GlotLID pass" is the same model.
+
+Independent (written here; `compute_features.py`):
+
+| quantity | definition | threshold |
+|---|---|---|
+| compression residual z | log of the lzma (raw LZMA2, preset 9) size of the output minus the value expected from the human references of the same benchmark and language at the output's byte length (log-log fit per cell) | z < -0.2536 (0.1th percentile of reference residuals) |
+| repeated char 8-grams | share of character 8-grams of the lower-cased, whitespace-collapsed output that repeat an earlier one | > 0.2345 (99.9th percentile of references) |
+| repeated word 3-grams | same on word 3-grams | > 0.1429 |
+| independent loop flag | any of the three | |
+| tail-repeat share | share of char 8-grams of the last third already in the first two thirds | > 0.5625 (reported, not in the flag) |
+| unterminated tail | source ends with final punctuation and the output ends in a letter | control = references |
+| length ratio | hypothesis chars / reference chars (and words) | shares above 2x and below 0.5x |
+| copy-like | at least 60% of the output's words of 3+ letters occur in the English source and at least 4 such words; exact lower-cased equality | control = references |
+| English output | top-1 label English with p >= 0.5 | control = references |
+| LID pass | NLLB-LID top-1 label in the language's accepted set | only on languages where the LID's recall on references is >= 0.90 (the reward's own rule) |
+
+Independent LID: `facebook/fasttext-language-identification` (the NLLB LID, 218 FLORES-200 labels, licence cc-by-nc-4.0, used here for evaluation only; model.bin read-only from the Hub), a different model and different training data from GlotLID. Coverage of the 58 languages of the three benchmarks: 49 have an accepted label; 9 do not (aeb, ary, arz, mfe, nde, seh, shi, ven, vmw); recall on the human references >= 0.90 for 40 of the 49 (not reliable: bam, cjk, dyu, kam, nso, nya, pcm, sot, taq; e.g. dyu is read as bam, nso as sot/tsn, taq as kab). Precision is low for some covered languages whose neighbours are covered (sot 0.32, tso 0.33, zul 0.66, tum 0.73; `lid_nllb218_reference_precision_recall.csv`), so a "pass" there means "in the right family". For the uncovered languages only the English-output test is used.
+
+## 2. Loop and degeneration rates (macro over languages; `summary_by_model_benchmark.csv`, `bootstrap_rates.csv`)
+
+| model | FLORES+ reward flag | FLORES+ independent | NTREX reward / indep. | MAFAND reward / indep. | FLORES+ unfinished |
+|---|---:|---:|---:|---:|---:|
+| SFT | 0.2095 | 0.3107 [0.3029, 0.3190] | 0.1218 / 0.1662 | 0.0431 / 0.0754 | 0.171 |
+| stage A | 0.0675 | 0.1207 [0.1160, 0.1253] | 0.0165 / 0.0309 | 0.0026 / 0.0092 | 0.0166 |
+| B1 best | 0.0541 | 0.0980 [0.0942, 0.1019] | 0.0092 / 0.0190 | 0.0013 / 0.0056 | 0.0070 |
+| mixed best | 0.0480 [0.0462, 0.0496] | 0.0851 [0.0822, 0.0883] | 0.0064 / 0.0143 | 0.0009 / 0.0039 | 0.0046 |
+| weak final | 0.0474 | 0.0807 [0.0777, 0.0838] | 0.0060 / 0.0136 | 0.0011 / 0.0039 | 0.0048 |
+| A0 (46 lang.) | 0.2040 | 0.3346 | 0.1409 / 0.2122 | 0.1096 / 0.1666 | 0.190 |
+| human references | 0.0001 (reward flag) | 0.0018 | 0.0000 / 0.0018 | 0.0000 / 0.0013 | |
+
+Ratios independent / reward on mixed best: 1.77 [1.71, 1.84] (FLORES+), 2.25 [1.95, 2.59] (NTREX), 4.42 [3.14, 7.29] (MAFAND; tiny base rates, 0.09% vs 0.39%). The undercount is present for every model, including the SFT (ratio 1.48 on FLORES+), so it affects the RL-versus-SFT comparison only through the factor 1.48 versus 1.77.
+
+Worst languages, mixed best FLORES+ (reward flag / independent flag): knc 0.48 / 0.82, taq 0.56 / 0.78, dik 0.40 / 0.71, zgh 0.46 / 0.58, arz 0.19 / 0.31, aeb 0.25 / 0.29, ary 0.11 / 0.15, cjk 0.009 / 0.088, kbp 0.007 / 0.067, umb 0.007 / 0.057, mos 0.014 / 0.047, nus 0.002 / 0.044 (`worst_languages_mixedbest_flores.csv`, all models in `per_language.csv`). Share of the flags in the seven languages (FLORES+): reward flags 0.45 (SFT), 0.88 (A), 0.92 (B1), 0.95 (mixed); independent flags 0.34, 0.67, 0.74, 0.79 (`share_flags_in_7_languages_flores.csv`).
+
+## 3. Length-ratio audit
+
+Median hypothesis/reference character ratio 1.02 to 1.07 for all models and benchmarks (SFT FLORES+ 1.07, mixed best 1.02, MAFAND 0.99 to 1.00). Share of outputs longer than 2x the reference: FLORES+ 0.2005 (SFT), 0.0511 (A), 0.0327 (B1), 0.0281 (mixed), 0.0293 (weak final); NTREX 0.1255 / 0.0175 / 0.0105 / 0.0085 / 0.0085; MAFAND 0.0487 / 0.0096 / 0.0077 / 0.0067 / 0.0073. Shorter than 0.5x: 0.12% (mixed FLORES+) to 1.0% (MAFAND; references are noisy there; SFT 0.56% and 1.22%). Reference control: only 0.20% of human references are longer than 2x and 0.21% shorter than 0.5x the cell median length ratio to the English source. What the >2x rows of mixed best are (all three benchmarks, 2,079 rows): 13% unfinished, 70% reward loop flag, 75% independent loop flag, **24.5% finished and neither flagged** (long outputs without repetition: hallucinated continuations/explanations; `length_gt2_rows_decomposition.csv`); for the SFT 85.5% are unfinished and 3.3% are neither. So the length audit finds a residual class of about 0.4% of mixed-best rows (24.5% of 1.7%) that is long, finished and not repetitive.
+
+## 4. Truncated or unterminated tails
+
+Unfinished (token cap) is the reward's hard failure; its rate falls from 0.171 (SFT) to 0.0046 (mixed best) on FLORES+. Independent tail test (source ends with a full stop or similar, output ends in a letter): FLORES+ SFT 0.1847, A 0.0631, B1 0.0528, mixed 0.0464, weak final 0.0439 against **0.0162 on human references**; NTREX 0.130 / 0.030 / 0.026 / 0.020 / 0.015 against 0.028; MAFAND 0.080 / 0.024 / 0.024 / 0.018 / 0.012 against 0.047. So mixed best FLORES+ keeps 3 points of excess unterminated tails, mostly the same weak languages; NTREX and MAFAND are at or below the reference rate. The tail-repeat share (> 0.5625) flags 0.0624 of mixed-best FLORES+ rows and 0.0086 of NTREX (reported only, not part of the independent flag).
+
+## 5. Copy and English output
+
+* Exact copy of the source: 0.0000 (SFT) to 0.0006 (weak final) of FLORES+ rows (macro); reward copy guard (jaccard 0.9) 0.0007 to 0.0043 (mixed 0.0031); NTREX 0.0013 to 0.0017; MAFAND 0.0059 to 0.0064 for the five models (names and loan words).
+* Partial copy ("copy-like", at least 60% of the words in the source): FLORES+ 0.0097 (SFT) -> 0.0191 (A) -> 0.0202 (B1) -> 0.0233 (mixed) -> 0.0279 (weak final) against a reference control of 0.0024; NTREX 0.0093 -> 0.0116 against 0.0058; MAFAND 0.0527 -> 0.0471 against 0.0268.
+* English output (NLLB-LID top-1 English, p >= 0.5), FLORES+ macro: SFT 0.0055, A 0.0146, B1 0.0164, mixed 0.0191, weak final 0.0235, human references 0.0004; NTREX 0.0040 -> 0.0027; MAFAND 0.0394 -> 0.0318 (pcm, Nigerian Pidgin, is English-like even in the references: 0.33). **96% of the FLORES+ increase is four languages** (`arabic_tifinagh_english_leak.csv`; GlotLID gives the same numbers within 0.005): aeb 0.215 (SFT) -> 0.449 (mixed best; 0.498 weak final), ary 0.041 -> 0.394 (0.488), arz 0.006 -> 0.098 (0.151), zgh 0.001 -> 0.049 (0.074); every other language is at or below 0.006 for mixed best (mfe 0.006, kea 0.003). Examples (mixed best, ary): an Arabic sentence containing "courtyard" and "masuk", and "website TMZ ... understand photographer stopped his vehicle on the other side of Sepulveda Boulevard ..." (English words left in an Arabic sentence; `arabic_tifinagh_english_leak.csv` has the rates, the rows are in the prediction files). The reward's copy guard sees only 0.086 of aeb and 0.064 of ary mixed-best outputs. These four languages and taq are outside the RL prompt pool, and in the evaluation the model emits the tag of a sibling language (`<arz>` for ary and half of aeb, `<tzm>` for zgh and taq; prefix status "wrong"/"missing" in at least 99.8% of the rows of aeb, ary, taq and zgh for every model, so the 7.4% "prefix not ok" of FLORES+ in the tables is these four languages, not a regression). **So RL raised the share of English output in the Arabic dialects, outside the languages it trained on, while their chrF++ stayed at 2 to 9 (ledger R7, W3)**; the RL gain on these languages (R7: all-rows aeb/ary/arz/zgh) is partly a loop-to-English change.
+
+## 6. Language identification (independent LID versus the reward's)
+
+On the 40 languages where the NLLB LID is reliable (recall >= 0.90 on references, outputs of at least 15 characters; `lid_comparison.csv`, `lid_glot_reference_control.csv`), pass rate macro:
+
+| model | FLORES+ NLLB-LID | FLORES+ GlotLID (reward's) | NTREX NLLB / Glot | MAFAND NLLB / Glot |
+|---|---:|---:|---:|---:|
+| SFT | 0.9487 | 0.9098 | 0.9765 / 0.9497 | 0.9788 / 0.9590 |
+| stage A | 0.9655 | 0.9539 | 0.9872 / 0.9747 | 0.9857 / 0.9670 |
+| B1 best | 0.9675 | 0.9553 | 0.9867 / 0.9754 | 0.9849 / 0.9668 |
+| mixed best | 0.9669 | 0.9553 | 0.9870 / 0.9752 | 0.9850 / 0.9667 |
+| human references | 0.9915 | | 0.9872 | 0.9845 |
+
+Both LIDs show the same direction (SFT lower, RL higher by 1.8 to 4.5 points). On mixed-best FLORES+, 2.5% of the rows fail both, 2.0% fail GlotLID only and 0.8% fail the NLLB LID only; of the rows GlotLID passes only 0.86% fail NLLB. So the independent LID finds no wrong-language output that the reward's guard would have missed beyond about 1% of rows, and the LID pass rate is not inflated by optimisation. Worst languages by NLLB-LID pass, mixed best FLORES+: zgh 0.17 (SFT 0.35), knc 0.77 (SFT 0.48), kea 0.94, run 0.96, ssw 0.98; tum improves from 0.85 to 0.99. Limits: the LID is not reliable for 9 covered languages and absent for 9 more (these include the weakest ones), the references of aeb/ary/arz are Arabic-script text that neither LID separates well (GlotLID reference pass 0.52 / 0.80 / 0.69, NLLB none), so for the Arabic dialects only the English-output test is meaningful.
+
+## 7. What this does and does not establish
+
+* It supports a correction of R4's caveat: the loop rate of the RL model is a lower bound of its repetition; on FLORES+ the true repetition rate is somewhere between 1.2x (strict threshold) and 1.8x (0.1% budget) the reported 4.8%, mostly partial repetition in finished outputs, and the loop reduction from SFT to RL is 3.7x with the independent detector (4.4x with the reward's). The effect on the chrF++ decomposition is at most a few tenths of a point.
+* No ground truth exists for "degenerate": the independent flags are validated by (i) the references control (0.1% by construction), (ii) reading 25 mixed-best and 12 SFT examples of independent-only flags (the flagged outputs are repetitions; some are mild), (iii) the lower language-matched chrF++. It shares the repetition idea with the reward (not independent of the concept, independent of the constants and the code) and is blind to non-repetitive failure (hallucination, wrong content; only the length audit sees the 24.5% finished-long class).
+* A new finding for the limitations/analysis: English leakage in the Arabic dialects and Tamazight grows under RL (Section 5); the reward's copy guard does not catch partial copy, and these languages are not in the RL pool.
+* Prediction files of the RL models and the per-row features are on the laptop (research_archive `eval_385m_rl_predictions_2026-11-04/` for the predictions); the features (31 MB) are in the data directory.
+
+## 8. Files
+
+All in `reports/data/degeneration_audit_independent_2026-11-04/`: `compute_features.py`, `compute_glotlid.py`, `analyse.py`, `analyse2.py`, `analyse3_bootstrap.py`, `analyse_lid.py`; `thresholds.json`, `lid_coverage.json`, `lid_nllb218_reference_precision_recall.csv`, `lid_glot_reference_control.csv`, `lid_comparison.csv`, `lid_pass_by_language_glot_vs_nllb.csv`, `summary_by_model_benchmark.csv`, `bootstrap_rates.csv`, `crosstab_reward_vs_independent.csv`, `chrf_by_flag_cell.csv`, `independent_only_decomposition.csv`, `language_matched_quality_of_independent_only.csv`, `chrf_loss_attributable_to_independent_only_rows.csv`, `rates_with_without_7_languages.csv`, `share_flags_in_7_languages_flores.csv`, `threshold_sensitivity.csv`, `length_gt2_rows_decomposition.csv`, `reference_controls.csv`, `reference_length_ratio_control.json`, `per_language.csv`, `worst_languages_mixedbest_flores.csv`, `arabic_tifinagh_english_leak.csv`, `examples_independent_only.csv`, `features_<model>.parquet`, `refs_features.parquet`, `glot_<model>.parquet`, `sentchrf_<model>.parquet`.
