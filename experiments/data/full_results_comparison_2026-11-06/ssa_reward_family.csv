@@ -1,0 +1,7 @@
+system,n_lang,n_sentences,ssa_comet_mtl_ref_x100_macro,row_set,languages,macro19_x100,macro9_x100
+NLLB-200-distilled-600M,22,20416,56.71329,FLORES+ no_pair rows (270M flag),afr amh ewe hau ibo kin lin lug mlg nya orm sna som sot swh tir tsn twi wol xho yor zul,56.72204,56.90625
+NLLB-200-3.3B,22,20416,59.28375,FLORES+ no_pair rows (270M flag),afr amh ewe hau ibo kin lin lug mlg nya orm sna som sot swh tir tsn twi wol xho yor zul,59.14339,58.90179
+TranslatePsy-AfriSLM-0.8B,19,17380,60.75484,FLORES+ no_pair rows (270M flag),afr amh hau ibo kin lin lug mlg nya orm sna som sot swh tsn wol xho yor zul,60.75484,60.31397
+TranslatePsy-AfriSLM-2B,9,7705,60.43148,FLORES+ no_pair rows (270M flag),afr amh hau ibo kin lin lug mlg nya,,60.43148
+"270M RL-final (first research's own run, earlier code state; NOT the E-13 rerun)",22,20416,51.9203,FLORES+ no_pair rows (270M flag),afr amh ewe hau ibo kin lin lug mlg nya orm sna som sot swh tir tsn twi wol xho yor zul,52.8118,50.29346
+"270M SFT-final (first research's own run, earlier code state; NOT the E-13 rerun)",22,20416,47.54124,FLORES+ no_pair rows (270M flag),afr amh ewe hau ibo kin lin lug mlg nya orm sna som sot swh tir tsn twi wol xho yor zul,48.78278,46.19094

@@ -1,0 +1,20 @@
+{
+ "rl": {
+  "rows_compared": 45540,
+  "identical_hypothesis": 17625,
+  "rows_with_both_scores": 15404,
+  "mean_abs_diff": 0.0002257555870228512,
+  "max_abs_diff": 0.00537109375,
+  "mean_diff_e13_minus_e2": 9.667994108673073e-07,
+  "pearson": 0.9999947335536863
+ },
+ "sft": {
+  "rows_compared": 45540,
+  "identical_hypothesis": 16214,
+  "rows_with_both_scores": 13750,
+  "mean_abs_diff": 0.00022741255326704546,
+  "max_abs_diff": 0.009765625,
+  "mean_diff_e13_minus_e2": -2.962979403409091e-06,
+  "pearson": 0.9999968836347425
+ }
+}

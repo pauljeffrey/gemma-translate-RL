@@ -1,0 +1,95 @@
+system,benchmark,metric,status,level,row_set,languages,source
+385M SFT,FLORES+ devtest,chrF++/chrF/spBLEU,per-sentence,sentence,"all, no_pair, clean270",44 (shared with NLLB),predictions.jsonl rescored (s01_rescore.py)
+385M SFT,FLORES+ devtest,AfriCOMET-STL-1.1 ref.,per-sentence,sentence,all rows (AfriCOMET-card languages),40,evidence npz comet column
+385M SFT,NTREX-128,chrF++/chrF/spBLEU,per-sentence,sentence,"all, no_pair, clean270",21 (shared with NLLB),predictions.jsonl rescored (s01_rescore.py)
+385M SFT,NTREX-128,AfriCOMET-STL-1.1 ref.,per-sentence,sentence,all rows (AfriCOMET-card languages),21,evidence npz comet column
+385M SFT,MAFAND-MT,chrF++/chrF/spBLEU,per-sentence,sentence,"all, no_pair, clean270",14 (shared with NLLB),predictions.jsonl rescored (s01_rescore.py)
+385M SFT,MAFAND-MT,AfriCOMET-STL-1.1 ref.,per-sentence,sentence,all rows (AfriCOMET-card languages),14,evidence npz comet column
+385M SFT-only control (E-03),FLORES+ devtest,chrF++/chrF/spBLEU,per-sentence,sentence,"all, no_pair, clean270",44 (shared with NLLB),predictions.jsonl rescored (s01_rescore.py)
+385M SFT-only control (E-03),FLORES+ devtest,AfriCOMET-STL-1.1 ref.,per-sentence,sentence,all rows (AfriCOMET-card languages),40,evidence npz comet column
+385M SFT-only control (E-03),NTREX-128,chrF++/chrF/spBLEU,per-sentence,sentence,"all, no_pair, clean270",21 (shared with NLLB),predictions.jsonl rescored (s01_rescore.py)
+385M SFT-only control (E-03),NTREX-128,AfriCOMET-STL-1.1 ref.,per-sentence,sentence,all rows (AfriCOMET-card languages),21,evidence npz comet column
+385M SFT-only control (E-03),MAFAND-MT,chrF++/chrF/spBLEU,per-sentence,sentence,"all, no_pair, clean270",14 (shared with NLLB),predictions.jsonl rescored (s01_rescore.py)
+385M SFT-only control (E-03),MAFAND-MT,AfriCOMET-STL-1.1 ref.,per-sentence,sentence,all rows (AfriCOMET-card languages),14,evidence npz comet column
+385M SFT,SmolSent,chrF++/chrF/spBLEU,per-sentence,sentence,all,,research_archive_2026-11-03/eval_385m/out_m385/predictions.jsonl
+385M SFT-only control (E-03),SmolSent,all,MISSING,,,,"control was evaluated on FLORES+, NTREX, MAFAND only"
+385M SFT,SALT,chrF++/chrF/spBLEU,per-sentence,sentence,all,,research_archive_2026-11-03/eval_385m/out_m385/predictions.jsonl
+385M SFT-only control (E-03),SALT,all,MISSING,,,,"control was evaluated on FLORES+, NTREX, MAFAND only"
+385M SFT,GlotStoryBook,chrF++/chrF/spBLEU,per-sentence,sentence,all,,research_archive_2026-11-03/eval_385m/out_m385/predictions.jsonl
+385M SFT-only control (E-03),GlotStoryBook,all,MISSING,,,,"control was evaluated on FLORES+, NTREX, MAFAND only"
+385M SFT,IbomMT,chrF++/chrF/spBLEU,per-sentence,sentence,all,,research_archive_2026-11-03/eval_385m/out_m385/predictions.jsonl
+385M SFT-only control (E-03),IbomMT,all,MISSING,,,,"control was evaluated on FLORES+, NTREX, MAFAND only"
+385M SFT,FLORES-MOZ,chrF++/chrF/spBLEU,per-sentence,sentence,all,,research_archive_2026-11-03/eval_385m/out_m385/predictions.jsonl
+385M SFT-only control (E-03),FLORES-MOZ,all,MISSING,,,,"control was evaluated on FLORES+, NTREX, MAFAND only"
+385M RL stage A,FLORES+ devtest,chrF++/chrF/spBLEU/AfriCOMET,per-sentence,sentence,"all, no_pair, clean270",,research_archive_2026-11-03/eval_385m_rl_predictions_2026-11-04/ (+ evidence npz for AfriCOMET)
+385M RL stage A,NTREX-128,chrF++/chrF/spBLEU/AfriCOMET,per-sentence,sentence,"all, no_pair, clean270",,research_archive_2026-11-03/eval_385m_rl_predictions_2026-11-04/ (+ evidence npz for AfriCOMET)
+385M RL stage A,MAFAND-MT,chrF++/chrF/spBLEU/AfriCOMET,per-sentence,sentence,"all, no_pair, clean270",,research_archive_2026-11-03/eval_385m_rl_predictions_2026-11-04/ (+ evidence npz for AfriCOMET)
+385M RL stage A,SmolSent,all,MISSING,,,,"RL models were evaluated on FLORES+, NTREX, MAFAND only"
+385M RL stage A,SALT,all,MISSING,,,,"RL models were evaluated on FLORES+, NTREX, MAFAND only"
+385M RL stage A,GlotStoryBook,all,MISSING,,,,"RL models were evaluated on FLORES+, NTREX, MAFAND only"
+385M RL stage A,IbomMT,all,MISSING,,,,"RL models were evaluated on FLORES+, NTREX, MAFAND only"
+385M RL stage A,FLORES-MOZ,all,MISSING,,,,"RL models were evaluated on FLORES+, NTREX, MAFAND only"
+385M RL B1 best,FLORES+ devtest,chrF++/chrF/spBLEU/AfriCOMET,per-sentence,sentence,"all, no_pair, clean270",,research_archive_2026-11-03/eval_385m_rl_predictions_2026-11-04/ (+ evidence npz for AfriCOMET)
+385M RL B1 best,NTREX-128,chrF++/chrF/spBLEU/AfriCOMET,per-sentence,sentence,"all, no_pair, clean270",,research_archive_2026-11-03/eval_385m_rl_predictions_2026-11-04/ (+ evidence npz for AfriCOMET)
+385M RL B1 best,MAFAND-MT,chrF++/chrF/spBLEU/AfriCOMET,per-sentence,sentence,"all, no_pair, clean270",,research_archive_2026-11-03/eval_385m_rl_predictions_2026-11-04/ (+ evidence npz for AfriCOMET)
+385M RL B1 best,SmolSent,all,MISSING,,,,"RL models were evaluated on FLORES+, NTREX, MAFAND only"
+385M RL B1 best,SALT,all,MISSING,,,,"RL models were evaluated on FLORES+, NTREX, MAFAND only"
+385M RL B1 best,GlotStoryBook,all,MISSING,,,,"RL models were evaluated on FLORES+, NTREX, MAFAND only"
+385M RL B1 best,IbomMT,all,MISSING,,,,"RL models were evaluated on FLORES+, NTREX, MAFAND only"
+385M RL B1 best,FLORES-MOZ,all,MISSING,,,,"RL models were evaluated on FLORES+, NTREX, MAFAND only"
+385M RL (mixed best = Hub main),FLORES+ devtest,chrF++/chrF/spBLEU/AfriCOMET,per-sentence,sentence,"all, no_pair, clean270",,research_archive_2026-11-03/eval_385m_rl_predictions_2026-11-04/ (+ evidence npz for AfriCOMET)
+385M RL (mixed best = Hub main),NTREX-128,chrF++/chrF/spBLEU/AfriCOMET,per-sentence,sentence,"all, no_pair, clean270",,research_archive_2026-11-03/eval_385m_rl_predictions_2026-11-04/ (+ evidence npz for AfriCOMET)
+385M RL (mixed best = Hub main),MAFAND-MT,chrF++/chrF/spBLEU/AfriCOMET,per-sentence,sentence,"all, no_pair, clean270",,research_archive_2026-11-03/eval_385m_rl_predictions_2026-11-04/ (+ evidence npz for AfriCOMET)
+385M RL (mixed best = Hub main),SmolSent,all,MISSING,,,,"RL models were evaluated on FLORES+, NTREX, MAFAND only"
+385M RL (mixed best = Hub main),SALT,all,MISSING,,,,"RL models were evaluated on FLORES+, NTREX, MAFAND only"
+385M RL (mixed best = Hub main),GlotStoryBook,all,MISSING,,,,"RL models were evaluated on FLORES+, NTREX, MAFAND only"
+385M RL (mixed best = Hub main),IbomMT,all,MISSING,,,,"RL models were evaluated on FLORES+, NTREX, MAFAND only"
+385M RL (mixed best = Hub main),FLORES-MOZ,all,MISSING,,,,"RL models were evaluated on FLORES+, NTREX, MAFAND only"
+"270M SFT (earlier, E-13)",FLORES+ devtest,chrF++/chrF/spBLEU/AfriCOMET,per-sentence,sentence,clean270 (all rows exist but are exposure-inflated),,research_archive_2026-11-03/box_outputs_2026-11-04/out_old_*/predictions.jsonl
+"270M SFT (earlier, E-13)",NTREX-128,chrF++/chrF/spBLEU/AfriCOMET,per-sentence,sentence,clean270 (all rows exist but are exposure-inflated),,research_archive_2026-11-03/box_outputs_2026-11-04/out_old_*/predictions.jsonl
+"270M SFT (earlier, E-13)",MAFAND-MT,chrF++/chrF/spBLEU/AfriCOMET,per-sentence,sentence,clean270 (all rows exist but are exposure-inflated),,research_archive_2026-11-03/box_outputs_2026-11-04/out_old_*/predictions.jsonl
+"270M SFT (earlier, E-13)",SmolSent,all,MISSING (E-13 reran 3 benchmarks only),,,,
+"270M SFT (earlier, E-13)",SALT,all,MISSING (E-13 reran 3 benchmarks only),,,,
+"270M SFT (earlier, E-13)",GlotStoryBook,all,MISSING (E-13 reran 3 benchmarks only),,,,
+"270M SFT (earlier, E-13)",IbomMT,all,MISSING (E-13 reran 3 benchmarks only),,,,
+"270M SFT (earlier, E-13)",FLORES-MOZ,all,MISSING (E-13 reran 3 benchmarks only),,,,
+"270M RL-final (earlier, E-13)",FLORES+ devtest,chrF++/chrF/spBLEU/AfriCOMET,per-sentence,sentence,clean270 (all rows exist but are exposure-inflated),,research_archive_2026-11-03/box_outputs_2026-11-04/out_old_*/predictions.jsonl
+"270M RL-final (earlier, E-13)",NTREX-128,chrF++/chrF/spBLEU/AfriCOMET,per-sentence,sentence,clean270 (all rows exist but are exposure-inflated),,research_archive_2026-11-03/box_outputs_2026-11-04/out_old_*/predictions.jsonl
+"270M RL-final (earlier, E-13)",MAFAND-MT,chrF++/chrF/spBLEU/AfriCOMET,per-sentence,sentence,clean270 (all rows exist but are exposure-inflated),,research_archive_2026-11-03/box_outputs_2026-11-04/out_old_*/predictions.jsonl
+"270M RL-final (earlier, E-13)",SmolSent,all,MISSING (E-13 reran 3 benchmarks only),,,,
+"270M RL-final (earlier, E-13)",SALT,all,MISSING (E-13 reran 3 benchmarks only),,,,
+"270M RL-final (earlier, E-13)",GlotStoryBook,all,MISSING (E-13 reran 3 benchmarks only),,,,
+"270M RL-final (earlier, E-13)",IbomMT,all,MISSING (E-13 reran 3 benchmarks only),,,,
+"270M RL-final (earlier, E-13)",FLORES-MOZ,all,MISSING (E-13 reran 3 benchmarks only),,,,
+NLLB-200-distilled-600M,FLORES+ devtest,chrF++/chrF/spBLEU,"per-sentence (beam 4, CT2 fp16, 1,012 rows x 44 languages)",sentence,"all, no_pair, clean270",44,research_archive_2026-10-23/box/jobs/e2/scores/nllb600m.pkl.gz
+NLLB-200-distilled-600M,FLORES+ devtest,AfriCOMET-STL-1.1 ref.,per-sentence,sentence,no_pair rows only (pair-seen rows never scored),42 (40 shared with ours),e2/scores/nllb600m.comet.pkl
+NLLB-200-distilled-600M,FLORES+ devtest,SSA-COMET-MTL ref. (reward family),per-sentence,sentence,no_pair rows,22,e2/scores/nllb600m.ssa.pkl
+NLLB-200-distilled-600M,NTREX-128,all,MISSING,,,,R14 ran 600M on FLORES+ only (its columns are empty in nllb600m_per_language_benchmark.csv)
+NLLB-200-distilled-600M,MAFAND-MT,all,MISSING,,,,R14 ran 600M on FLORES+ only (its columns are empty in nllb600m_per_language_benchmark.csv)
+NLLB-200-distilled-600M,SmolSent,all,MISSING,,,,R14 ran 600M on FLORES+ only (its columns are empty in nllb600m_per_language_benchmark.csv)
+NLLB-200-distilled-600M,SALT,all,MISSING,,,,R14 ran 600M on FLORES+ only (its columns are empty in nllb600m_per_language_benchmark.csv)
+NLLB-200-3.3B,FLORES+ devtest,chrF++/chrF/spBLEU,"per-sentence (beam 4, CT2 int8)",sentence,"all, no_pair, clean270",44,e2/scores/nllb3b3.pkl.gz
+NLLB-200-3.3B,FLORES+ devtest,AfriCOMET-STL-1.1 ref.,per-sentence,sentence,no_pair rows only,42 (40 shared),e2/scores/nllb3b3.comet.pkl
+NLLB-200-3.3B,FLORES+ devtest,SSA-COMET-MTL ref. (reward family),per-sentence,sentence,no_pair rows,22,e2/scores/nllb3b3.ssa.pkl
+NLLB-200-3.3B,NTREX-128,chrF++ and spBLEU,aggregate only (corpus-level per language),language,"all, no_pair, clean",21,reports/data/nllb600m_per_language_benchmark.csv (per-sentence outputs not archived)
+NLLB-200-3.3B,NTREX-128,"chrF (plain), AfriCOMET, SSA-COMET",MISSING,,,,
+NLLB-200-3.3B,MAFAND-MT,chrF++ and spBLEU,aggregate only (corpus-level per language),language,"all, no_pair, clean",14,reports/data/nllb600m_per_language_benchmark.csv (per-sentence outputs not archived)
+NLLB-200-3.3B,MAFAND-MT,"chrF (plain), AfriCOMET, SSA-COMET",MISSING,,,,
+NLLB-200-3.3B,SmolSent,chrF++ and spBLEU,aggregate only (corpus-level per language),language,"all, no_pair, clean",36,reports/data/nllb600m_per_language_benchmark.csv (per-sentence outputs not archived)
+NLLB-200-3.3B,SmolSent,"chrF (plain), AfriCOMET, SSA-COMET",MISSING,,,,
+NLLB-200-3.3B,SALT,chrF++ and spBLEU,aggregate only (corpus-level per language),language,"all, no_pair, clean",3,reports/data/nllb600m_per_language_benchmark.csv (per-sentence outputs not archived)
+NLLB-200-3.3B,SALT,"chrF (plain), AfriCOMET, SSA-COMET",MISSING,,,,
+NLLB-200-1.3B,FLORES-200 devtest,chrF++,published only,language,whole devtest (NLLB release metrics file),43,reports/data/eval_385m_results_2026-11-03/published_nllb_flores_per_language.csv
+NLLB-200-distilled-1.3B,FLORES-200 devtest,chrF++,published only,language,whole devtest (NLLB release metrics file),43,reports/data/eval_385m_results_2026-11-03/published_nllb_flores_per_language.csv
+NLLB-200-MoE-54.5B,FLORES-200 devtest,chrF++,published only,language,whole devtest (NLLB release metrics file),43,reports/data/eval_385m_results_2026-11-03/published_nllb_flores_per_language.csv
+NLLB-200-3.3B (published),FLORES-200 devtest,chrF++,published only,language,whole devtest,43,same file
+TranslatePsy-AfriSLM-0.8B,FLORES+ devtest,chrF++/chrF/spBLEU/AfriCOMET/SSA-COMET,"per-sentence (vLLM greedy, 256 tokens)",sentence,"all rows (chrF); no_pair rows (AfriCOMET, SSA)",19,e2/scores/tpsy08.*
+TranslatePsy-AfriSLM-2B,FLORES+ devtest,chrF++/chrF/spBLEU/AfriCOMET/SSA-COMET,per-sentence,sentence,no_pair rows,9 of 19 (stopped by the GPU cap),e2/scores/tpsy2b.*
+TranslatePsy-AfriSLM-4B,FLORES+ devtest,all,"MISSING (not run; published numbers are bidirectional 19-language aggregates, not comparable)",,,,
+TranslatePsy-AfriSLM-0.8B / 2B / 4B,NTREX-128,all,MISSING,,,,
+TranslatePsy-AfriSLM-0.8B / 2B / 4B,MAFAND-MT,all,MISSING,,,,
+TranslatePsy-AfriSLM-0.8B / 2B / 4B,SmolSent,all,MISSING,,,,
+TranslatePsy-AfriSLM-0.8B / 2B / 4B,SALT,all,MISSING,,,,
+"AfriqueLLM family (AfriqueGemma/Llama/Qwen, 4-14B), base LLMs","FLORES-200 (AfroBench-Lite, 5-shot)",chrF++ (their implementation),published only (21 languages),language,split not stated,21,"reports/data/published_baselines.csv; reports/data/afriquellm_table20_ssa_comet_enxx.csv (SSA-COMET, unnamed checkpoint)"
+AfriNLLB-600M,FLORES-200 devtest,AfriCOMET-mtl v1.0 (NOT stl-1.1; not comparable),published only (9 languages),language,,9,AfriNLLB paper Table 7 via reports/model_comparison_2026-10-23.md
+"Fine-tuned NLLB-1.3B / 600M, M2M100, Gemma2-9B, GPT-5.4, Gemini-3.1-Flash-Lite",AfriScience-MT test,chrF (word order 0),published only,language,"test split, 6 languages",6,reports/data/eval_385m_results_2026-11-03/afriscience_sentence.csv

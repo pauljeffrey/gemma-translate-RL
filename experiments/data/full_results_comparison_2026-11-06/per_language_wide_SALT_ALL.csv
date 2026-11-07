@@ -1,0 +1,4 @@
+iso,language,n_rows,sft385_chrfpp,sft385_chrf,sft385_spbleu,sft385_africomet,nllb3b3_chrfpp,nllb3b3_chrf,nllb3b3_spbleu,nllb3b3_africomet
+ibo,Igbo,500,32.39811,35.30082,10.69631,0.69611,41.4686,,19.0087,
+lug,Luganda,500,29.30017,33.30727,6.91267,0.59931,52.0661,,31.8461,
+swh,Swahili,500,56.76242,59.95505,34.35068,0.75289,61.8892,,39.677,

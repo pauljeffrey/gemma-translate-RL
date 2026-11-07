@@ -1,0 +1,12 @@
+system,kind,n_lang,chrfpp_macro,RL_minus_system,lang_boot_lo,lang_boot_hi,n_lang_RL_above
+385M SFT,"our rescoring, FLORES+ all 1,012 rows",43,26.29908,9.23933,7.74497,10.75425,43
+"385M SFT-only control (E-03, +TranslatePsy)","our rescoring, FLORES+ all 1,012 rows",43,29.34759,6.19082,4.27517,8.15943,33
+385M RL stage A,"our rescoring, FLORES+ all 1,012 rows",43,34.91121,0.6272,0.43748,0.82307,37
+385M RL B1 best,"our rescoring, FLORES+ all 1,012 rows",43,35.2517,0.28671,0.18719,0.38533,32
+385M RL (mixed best = Hub main),"our rescoring, FLORES+ all 1,012 rows",43,35.53841,,,,
+NLLB-200-distilled-600M,"our rescoring, FLORES+ all 1,012 rows",43,36.61629,-1.07788,-1.97543,-0.19842,15
+NLLB-200-3.3B,"our rescoring, FLORES+ all 1,012 rows",43,38.6324,-3.09399,-4.13242,-2.05072,7
+NLLB-200-3.3B (published),"published FLORES-200 devtest chrF++ (NLLB release metrics file, beam, 1 decimal)",43,38.79767,-3.25927,-4.29982,-2.20836,7
+NLLB-200-1.3B (published),"published FLORES-200 devtest chrF++ (NLLB release metrics file, beam, 1 decimal)",43,38.08837,-2.54996,-3.45586,-1.61963,7
+NLLB-200-distilled-1.3B (published),"published FLORES-200 devtest chrF++ (NLLB release metrics file, beam, 1 decimal)",43,38.34186,-2.80345,-3.71903,-1.86519,7
+NLLB-200-MoE-54.5B (published),"published FLORES-200 devtest chrF++ (NLLB release metrics file, beam, 1 decimal)",43,39.07674,-3.53834,-4.58856,-2.51997,6
