@@ -1,6 +1,6 @@
 # Trimmed ACL version: what was removed or condensed (2026-11-05)
 
-Folder `paper_385m/latex_acl_trim/`; the full 41-page version is in `paper_385m/latex_acl/` (updated for E-14 in the same way). Core (pages 1-8), Limitations, Ethical considerations and references are identical in both (text of pages 1-12 differs only in appendix letters, e.g. "Appendix K" instead of "N"). Trimmed total: 28 pages (appendix pages 13-28; grown for the E-14 tables, the compute table and the branch lists). Build: tectonic, no undefined references, no overfull boxes.
+Folder `paper_385m/latex_acl_trim/`; the full 41-page version is in `paper_385m/latex_acl/` (updated for E-14 in the same way). Core (pages 1-8), Limitations, Ethical considerations and references are identical in both (text of pages 1-12 differs only in appendix letters, e.g. "Appendix K" instead of "N"). Core rewritten 2026-11-06 (identical to the full version, ends on page 7). Trimmed total: 28 pages (appendix from page 12; grown for the E-14 tables, the compute table and the branch lists). Build: tectonic, no undefined references, no overfull boxes.
 
 Every core reference points to a kept block: Appendix `app:hyper`, `app:sft`, `app:rlsft`, `app:degenapp`, `app:decoding`, `app:indep`. To put a block back, copy the `\section` of the same label (or the listed paper.md lines) from `../latex_acl/sections/appendix.tex` into `sections/appendix.tex` here.
 

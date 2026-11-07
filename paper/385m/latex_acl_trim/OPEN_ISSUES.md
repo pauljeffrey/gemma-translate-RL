@@ -32,8 +32,19 @@ No `[VERIFY ...]` and no `[PENDING ...]` mark is left in either build.
 14. **Citation details**: GlotStoryBook's own sources (global-asp, nalibali) are not in the bib; "OMahony" in `singh2024aya` is as printed by arXiv.
 15. **Figures** are the PDFs of `paper_385m/figures` (another agent's files, read only); no E-14 figure exists. `fig15` is cropped with `trim` in the full appendix.
 
+
+## 5. Core rewrite of 2026-11-06 (plain-language version)
+* Title: "What Does Reinforcement Learning Add to a Small Translator for African Languages?" (13 words). Alternatives in `paper_385m/TITLE_OPTIONS.md`.
+* Core structure: Introduction (motivation, RQ1-RQ4, findings at a glance, contributions), Related Work, Approach (overview figure drawn in TikZ), Experimental Setup, Results by research question, Discussion and Conclusion; then Limitations and Ethical considerations. The core ends on page 7 (limit 8) in both versions and both builds; full version 42 pages, trimmed 28 pages.
+* Core terms: "SFT baseline", "RL model" (the final general RL model), "SFT-only control", "science variant", "long-document variant". Internal names (stage A, B1, mixed best, E-xx, cells, clean rows) appear only in the appendix and are explained in the new Appendix A (glossary) and in LaTeX comments.
+* Moved out of the core (they are in the appendix): the full metric-independence table; the per-benchmark SFT-versus-A0 numbers and the earlier-270M table; the loop-flag audit table and the English-output table (the core keeps one paragraph and one pointer); the NLLB per-language table and tertile details; per-stage chain and B1-final tables; the engine-precision details (core keeps one limitation sentence); full hyper-parameters; the reward's soft-penalty list; the stage-A log analysis (full version only); the extended limitations list.
+* Cut from the core text without a replacement (still in `paper.md` and the full appendix where listed above): the three-estimates decomposition table (cut-at-loop is stated in one sentence), the AfriCOMET interval in prose, the seven-setting guard grid values (Figure 2c shows them), the Spearman family analysis, the post-editor negative result, the weak-group RL negative result (one sentence only in the full appendix text), the engine-parity numbers.
+* Not made simple: (i) the registered decision rule of the matched-compute control is explained in words (four conditions, three met) but the exact margin and endpoint are in Figure 4 and the full appendix; (ii) the reward-family caveat for SSA-COMET-QE is one sentence in Section 5.5 and one in Section 4; (iii) the beam-search result for the RL model depends on the stopping rule and is stated as "no conclusion"; (iv) the four extra training features are described in one paragraph and a figure; their definitions are in the full appendix text.
+* Preprint build only: author block "Jeffrey Otoibhi, Aletheia AI" plus "[Co-authors to be added]", and an "Author contributions" placeholder paragraph (to be filled by the lead author, one sentence per person; authorship by contribution). The review build contains neither.
+* New file: `paper_385m/PLAIN_SUMMARY.md` (one-page summary for the owner).
+
 ## 4. Layout and build notes
-* Core ends on page 8 in both versions and both builds. Limitations and Ethical considerations pages 9-10; references to page 12; appendix from page 13, one-column.
-* This is the trimmed version: 28 pages (both builds), appendix pages 13-28, see OPEN_ISSUES_TRIM.md. The full version (`../latex_acl/`) has 41 pages (preprint build 42).
+* Core ends on page 7 in both versions and both builds. Limitations and Ethical considerations pages 9-10; references to page 12; appendix from page 13, one-column.
+* This is the trimmed version: 28 pages (both builds), see OPEN_ISSUES_TRIM.md. The full version (`../latex_acl/`) has 42 pages.
 * Compiled with tectonic (XeTeX) only; pdfLaTeX is not installed here (untested pdfLaTeX branch in the preamble). No overfull boxes, no undefined references or citations in any of the four builds.
 * The generic-article version in `paper_385m/latex/` is superseded and was not updated.

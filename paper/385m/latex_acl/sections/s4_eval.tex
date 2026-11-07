@@ -1,27 +1,9 @@
-\section{Evaluation Protocol}\label{sec:eval}
+\section{Experimental Setup}\label{sec:eval}
 % [M11 CT1-CT6 X1 X2 X5 X7 X9]
-\textbf{Benchmarks.} English to X on FLORES+ devtest (1,012 sentences; 54 languages), NTREX-128 (24), MAFAND-MT (15), SmolSent \citep{caswell2025smol}, SALT \citep{akera2022salt}, GlotStoryBook \citep{kargaran2023glotlid}, IbomMT \citep{kalejaiye2025ibom}, FLORES-MOZ \citep{moznlp2026floresmoz} and AfriScience-MT (six languages). The headline set is the \textbf{93 benchmark-language cells} FLORES+ (54), NTREX (24), MAFAND-MT (15).
+\textbf{Benchmarks.} We translate English into African languages on the standard FLORES+ devtest set \citep{oldi2025floresplus} (1,012 sentences; 54 languages), NTREX-128 \citep{federmann2022ntrex} (24 languages) and MAFAND-MT \citep{adelani2022mafand} (15 languages). Smaller sets, SmolSent \citep{caswell2025smol}, SALT \citep{akera2022salt}, GlotStoryBook \citep{kargaran2023glotlid}, IbomMT \citep{kalejaiye2025ibom} and FLORES-MOZ \citep{moznlp2026floresmoz}, appear in the appendix, as does AfriScience-MT \citep{abdulmumin2026afriscience} for science text. Unless stated, we report the average over languages, with each language counting equally.
 
-\textbf{Metrics.} \textbf{chrF++} is chrF with word 1--2-grams (sacreBLEU \texttt{word\_order=2}); \textbf{plain chrF} uses character n-grams only (word order 0); spBLEU uses the \texttt{flores200} tokenizer. Held-out AfriCOMET is the reference-based \texttt{africomet-stl-1.1} (40 FLORES+ languages). \emph{Finished} and \emph{loop} rates are the reward's own guards. Macros weight languages equally. sacreBLEU 2.6.0 (from the install log of the evaluation machine): chrF++ is \texttt{CHRF(word\_order=2)} with the defaults (character n-grams up to 6, $\beta=2$, no lowercasing) after NFC normalisation of hypotheses and references, and spBLEU is BLEU with \texttt{tokenize=flores200}; the full signature strings were not recorded.
+\textbf{Metrics.} \emph{chrF++} compares character and word n-grams of the output with a human reference; higher is better. \emph{Held-out AfriCOMET} is a learned score that compares source, output and reference; we never use it as a reward. The \emph{finished rate} is the share of outputs that end properly; the \emph{loop rate} is the share that repeat themselves. Both are the checks our reward also uses, so they are not independent evidence of better translation. We computed chrF++ with sacreBLEU 2.6.0 (word order 2, otherwise defaults) after Unicode normalisation; the full signature string was not saved.
 
-\textbf{Decoding and intervals.} Greedy, up to 768 new tokens, vLLM 0.32.0 bf16 on an A100. Intervals are 95\% paired bootstrap over test sentences (1,000 resamples; Poisson weights per source sentence shared across parallel languages for RL-versus-SFT claims); they cover sentence variance only, not training seeds. One training seed per model unless stated. A \textbf{decode-time loop guard} is a vLLM frequency penalty during greedy decoding, chosen on the SFT dev grid (720 sentences, 18 languages) by a rule fixed in advance.
+\textbf{Avoiding self-deception.} First, \emph{independence}: the metrics inside the reward (the two quality models, agreement between samples, and the finished, repetition and language checks) are not evidence that RL helped. Our evidence is chrF++ and held-out AfriCOMET against human references (Appendix~\ref{app:indep}). Second, \emph{paired tests}: every difference is a paired bootstrap over test sentences with a 95\% interval, which covers sentence variance but not training randomness. Third, \emph{contamination}: besides filtering the training pairs, we scanned 26 million training samples against all benchmark text and found no benchmark sentence of three or more words (Ethical considerations list the residuals). Fourth, \emph{seeds}: every model is one training run; we measured seed noise only for the first RL stage on 20 languages.
 
-\textbf{Independence rule.} Metrics inside the reward are not evidence of RL gains: the two QE models, consensus and pseudo-reference chrF++ terms, and the finished, loop, copy and language-ID guards. SSA-COMET-QE (the AfriScience headline) is of the reward members' family and is shown only beside chrF and AfriCOMET. Evidence is limited to chrF++, chrF and spBLEU against human references and the held-out reference-based AfriCOMET (same family as the QE member; never a reward). An independent repetition detector and the NLLB-218 language-ID model (evaluation only) check the reward's loop and language guards (full table: Appendix~\ref{app:indep}).
-
-\begin{table*}[t]
-\centering\small
-\caption{Which metrics are inside the reward (RWD) and which are not (IND); full version in Appendix~\ref{app:indep}.}\label{tab:indep}
-\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}X c@{}}
-\toprule
-metric & status\\
-\midrule
-\texttt{africomet-qe-stl-1.1}, \texttt{ssa-comet-mtl} (reference-free): not evidence of RL gains & RWD\\
-consensus utility; NLLB pseudo-reference (5 languages); human-reference term (7 languages): \chrfpp{} partly optimised & RWD\\
-language-ID, copy, repetition, length and end-of-turn guards: finished and loop rates optimised by construction & RWD\\
-\texttt{ssa-comet-qe} (AfriScience headline): same family as the reward member & IND\\
-\texttt{africomet-stl-1.1} (reference-based, held out; monitor and alarm only) & IND\\
-independent degeneration detector; NLLB-218 language ID (evaluation only) & IND\\
-chrF, \chrfpp{}, spBLEU against human references: the main lexical evidence & IND\\
-\bottomrule
-\end{tabularx}
-\end{table*}
+\textbf{Decoding.} All main results use greedy decoding with up to 768 new tokens (vLLM, bf16). The \emph{repetition penalty} used as a control is a decoding setting that discourages repeated tokens; we chose its strength on a development set by a rule fixed in advance. Beam search and MBR decoding are described where they appear.

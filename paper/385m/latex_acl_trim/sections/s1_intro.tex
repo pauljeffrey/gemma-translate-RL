@@ -1,9 +1,25 @@
 \section{Introduction}\label{sec:intro}
-A small translator for many African languages fails mostly by not stopping (unfinished or looping output), by copying the source and by writing the wrong language. Supervised fine-tuning (SFT) leaves these failures in place: on FLORES+ devtest our 385M SFT finishes 0.829 of its outputs, loops in 0.209 and writes 3.03 times the reference length. We grow Gemma-3-270m to 385M parameters, fine-tune it on decontaminated data for 125 languages and apply GRPO with reference-free quality-estimation (QE) rewards. Our question is what RL adds beyond what a cheaper tool already gives, and we answer it with controls rather than with a larger gain.
-% [R1-R8, R19-R20, N2, W4, SC3, DL1-DL3]
+% Findings: R1-R8, R19-R20, N2, W4, SC3, DL1-DL3, E01-E04, E11, E14.
+Machine translation into African languages is hard for small models. Training text is scarce, and small models have little capacity to spare. Large systems such as NLLB-200 \citep{nllb2022nllb} help, but they are big, and the NLLB models and their outputs carry non-commercial licence terms.
 
-\textbf{Findings.} (i) RL improves every FLORES+ language ($+8.81$ \chrfpp{}). (ii) About half of the gain is finishing and looping; a one-line decode-time frequency penalty on the SFT recovers 49\% without RL, and RL still adds $+4.37$ \chrfpp{} (Section~\ref{sec:rlsft}). (iii) Most of the gain arrives in the first RL stage; later stages add little (Section~\ref{sec:seeds}). (iv) The reward's loop flag undercounts degeneration by 1.77 (Section~\ref{sec:degen}). (v) A matched-compute continued-SFT control has the registered verdict ``inconclusive'' (Section~\ref{sec:control}).
+Small models also fail in a characteristic way. After supervised fine-tuning (SFT), our model often does not finish its sentences: it stops midway, repeats a phrase until it runs out of space, writes in the wrong language, or copies the English input. Reinforcement learning (RL) with automatic quality scores as rewards is a natural remedy, and recent work reports gains for translation \citep{shao2024deepseekmath,feng2025mtr1zero,finkelstein2026translategemma}. Those gains, however, may come from something simpler. Repeating-and-not-stopping is partly a property of greedy decoding, which a decoding setting can change; and RL costs computing time that more SFT could use instead.
 
-\textbf{Not claimed.} We do not claim that RL is in general a better use of compute than SFT; that the finishing gap is a property of RL rather than of unguarded greedy decoding; that any reward component beyond four stage-A features helps; that the model beats NLLB-3.3B, a model with about 8.6 times the parameters (it is 3.26 \chrfpp{} below it on 43 shared languages); that it beats our earlier 270M model; or any ``first''. All scoring is automatic.
+We therefore ask four questions about a 385-million-parameter English-to-African translator, trained first with SFT and then with RL:
+\begin{itemize}
+\item \textbf{RQ1.} How much does RL improve translation, and for which languages?
+\item \textbf{RQ2.} How much of the gain is finishing and not repeating, rather than better translation, and can a decoding change provide it?
+\item \textbf{RQ3.} Does the same computing time spent on more SFT do as well?
+\item \textbf{RQ4.} How reliable is the gain, and how does the model compare with a much larger system?
+\end{itemize}
 
-\textbf{Contributions.} (1) A decomposition of an RL gain into finishing/looping and translation quality with decode-time, beam/MBR and matched-compute controls, a metric-independence rule and an independent audit of the reward's loop flag. (2) A decontaminated SFT/RL pipeline for 125 languages with a training-text audit. (3) Negative results (weak-group RL, science SFT on the headline metric, whole-document decoding). Artefacts: \anonreal{anonymised for review; released on acceptance}{model weights at \url{https://huggingface.co/AletheiaAING/gemma-0.4B-translate-rl} (details in Ethical considerations)}.
+\textbf{Findings at a glance.}
+\begin{itemize}
+\item RL improves every language we test on three standard benchmarks (RQ1).
+\item About half of the gain is finishing sentences and not repeating. A decoding setting recovers that half for the SFT model without training, but RL still adds clear gains beyond it (RQ2).
+\item Decoding tricks such as beam search and minimum Bayes risk (MBR) decoding help the SFT model a lot and the RL model little (RQ2).
+\item Matching the compute with more SFT is inconclusive by our pre-registered rule: it matches RL on the 19 languages where it had extra data, and is far behind on the others (RQ3).
+\item Almost all of the gain arrives in the first RL stage. The model reaches about 92\% of the chrF++ of NLLB-3.3B on shared languages, at about one ninth of its size (RQ4).
+\end{itemize}
+
+\textbf{Contributions.} (1) A controlled decomposition of an RL gain in small-model translation: a decoding control, a matched-compute control, seed and ablation runs, and an independent audit of the reward's own repetition check. (2) A decontaminated SFT and RL pipeline for 125 languages, with an audit of the training text. (3) Negative results: RL aimed at weak languages, science fine-tuning on a quality-estimation metric, and whole-document translation. Model artefacts: \anonreal{anonymised for review; released on acceptance}{model weights at \url{https://huggingface.co/AletheiaAING/gemma-0.4B-translate-rl} (see Ethical considerations)}.
+We do \emph{not} claim that RL beats more fine-tuning in general, that our model beats NLLB, or any human-rated quality: all scoring is automatic.

@@ -29,6 +29,8 @@
 \fi
 \usepackage{microtype}
 \usepackage{booktabs,array,tabularx,longtable,graphicx,amsmath,amssymb,enumitem,placeins,etoolbox}
+\usepackage{tikz}
+\usetikzlibrary{positioning,arrows.meta}
 \setlist{itemsep=0pt,topsep=2pt,parsep=0pt,leftmargin=*}
 \renewcommand{\arraystretch}{1.05}
 \setlength{\textfloatsep}{8pt plus 2pt minus 2pt}
@@ -38,11 +40,11 @@
 \captionsetup{font=small,skip=3pt}
 \input{macros}
 
-\title{Half of the chrF++ Gain Is Finishing the Sentence: What Reinforcement Learning Adds to a 385M English-to-African Translator Beyond a Decoding Guard}
+\title{What Does Reinforcement Learning Add to a Small Translator for African Languages?}
 \ifanon
   \author{Anonymous ACL submission}
 \else
-  \author{Jeffrey Otoibhi \\ Aletheia AI}
+  \author{Jeffrey Otoibhi \\ Aletheia AI \\ \textit{[Co-authors to be added]}}
 \fi
 
 \begin{document}
@@ -62,6 +64,10 @@
 \input{sections/limitations}
 \section*{Ethical considerations}
 \input{sections/ethics}
+\ifanon\else
+\section*{Author contributions}
+\textit{[Placeholder, to be filled by the lead author: one sentence per person describing what that person contributed (for example design, data, training, evaluation, writing). Authorship is based on contribution.]}
+\fi
 \bibliography{refs}
 \bibliographystyle{acl_natbib}
 
