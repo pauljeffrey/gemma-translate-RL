@@ -1,0 +1,23 @@
+\begin{table}[t]
+\centering\footnotesize
+\resizebox{\columnwidth}{!}{%
+\begin{tabular}{@{}lrrrr@{}}
+\toprule
+ & \multicolumn{4}{c}{FLORES+ TPsy-19 set (19/19)} \\
+\cmidrule(lr){2-5}
+System & chrF++ & chrF & spBLEU & COMET \\
+\midrule
+SFT & 34.0 & 36.8 & 12.5 & 0.589 \\
+SFT-ctl\textsuperscript{a} & 41.0 & 44.4 & 17.7 & 0.665 \\
+RL & 41.0 & 44.5 & 18.1 & 0.642 \\
+\midrule
+NLLB-600M & 42.6 & 46.1 & 20.4 & 0.688 \\
+NLLB-3.3B & 44.7 & 48.3 & \textbf{22.4} & 0.701 \\
+\midrule
+TPsy-0.8B & \textbf{45.3} & \textbf{48.9} & 22.4 & \textbf{0.717} \\
+\bottomrule
+\end{tabular}%
+}
+\caption{FLORES+ devtest, the 19 languages of TranslatePsy-AfriSLM-0.8B (afr amh hau ibo kin lin lug mlg nya orm sna som sot swh tsn wol xho yor zul), same 17,380 sentences for every system (reference pair not seen by the earlier 270M SFT). Language macro; chrF++, chrF, spBLEU (flores200 tokenizer) and held-out reference-based AfriCOMET-STL-1.1. TPsy-0.8B was distilled from NLLB-3.3B outputs on these languages. SFT-ctl\textsuperscript{a} as in Table~\ref{tab:full-core}. Bold = best in column.}
+\label{tab:full-tpsy19}
+\end{table}

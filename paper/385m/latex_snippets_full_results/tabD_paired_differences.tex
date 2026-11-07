@@ -1,0 +1,48 @@
+\begin{table*}[t]
+\centering\footnotesize
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{@{}llrrrr@{}}
+\toprule
+Row set (langs) & RL $-$ system & $\Delta$chrF++ & 95\% CI & $\Delta$COMET & 95\% CI \\
+\midrule
+F+ no\_pair (44/40) & SFT & 9.30 & [9.00, 9.55] & 0.0732 & [0.0711, 0.0752] \\
+ & SFT-ctl\textsuperscript{a} & 6.32 & [6.11, 6.52] & 0.0377 & [0.0360, 0.0394] \\
+ & RL-A & 0.72 & [0.65, 0.81] & 0.0039 & [0.0031, 0.0046] \\
+ & RL-B1 & 0.34 & [0.29, 0.41] & 0.0024 & [0.0017, 0.0030] \\
+ & NLLB-600M & -1.05 & [-1.24, -0.86] & -0.0381 & [-0.0399, -0.0362] \\
+ & NLLB-3.3B & -3.21 & [-3.38, -3.02] & -0.0535 & [-0.0553, -0.0518] \\
+\midrule
+F+ TPsy-19 (19/19) & SFT & 7.04 & [6.64, 7.41] & 0.0536 & [0.0513, 0.0559] \\
+ & SFT-ctl\textsuperscript{a} & 0.08 & [-0.13, 0.30] & -0.0226 & [-0.0242, -0.0208] \\
+ & RL-A & 0.29 & [0.14, 0.43] & 0.0008 & [-0.0004, 0.0018] \\
+ & RL-B1 & 0.14 & [0.04, 0.26] & 0.0010 & [-0.0000, 0.0020] \\
+ & NLLB-600M & -1.54 & [-1.78, -1.28] & -0.0456 & [-0.0480, -0.0434] \\
+ & NLLB-3.3B & -3.62 & [-3.84, -3.39] & -0.0586 & [-0.0609, -0.0563] \\
+ & TPsy-0.8B & -4.23 & [-4.39, -4.07] & -0.0745 & [-0.0765, -0.0727] \\
+\midrule
+NT all (21/21) & SFT & 7.97 & [7.73, 8.21] & 0.0630 & [0.0614, 0.0646] \\
+ & SFT-ctl\textsuperscript{a} & 3.14 & [2.97, 3.32] & 0.0050 & [0.0037, 0.0063] \\
+ & RL-A & 0.41 & [0.34, 0.48] & 0.0013 & [0.0006, 0.0020] \\
+ & RL-B1 & 0.16 & [0.10, 0.23] & 0.0004 & [-0.0002, 0.0010] \\
+ & NLLB-3.3B & -4.26 & [-5.22, -3.24]$^{\ell}$ & -- & -- \\
+\midrule
+MF all (14/14) & SFT & 5.39 & [5.15, 5.63] & 0.0395 & [0.0377, 0.0413] \\
+ & SFT-ctl\textsuperscript{a} & 0.34 & [0.16, 0.52] & -0.0158 & [-0.0174, -0.0143] \\
+ & RL-A & -0.05 & [-0.13, 0.05] & -0.0025 & [-0.0035, -0.0015] \\
+ & RL-B1 & -0.04 & [-0.11, 0.03] & -0.0012 & [-0.0021, -0.0003] \\
+ & NLLB-3.3B & -4.73 & [-6.56, -3.12]$^{\ell}$ & -- & -- \\
+\midrule
+F+ clean (44/40) & SFT & 9.61 & [8.34, 10.62] & 0.0752 & [0.0670, 0.0836] \\
+ & SFT-ctl\textsuperscript{a} & 6.87 & [5.98, 7.61] & 0.0416 & [0.0335, 0.0495] \\
+ & RL-A & 0.90 & [0.58, 1.20] & 0.0055 & [0.0020, 0.0093] \\
+ & RL-B1 & 0.33 & [0.10, 0.58] & 0.0026 & [-0.0006, 0.0057] \\
+ & 270M SFT & 7.20 & [6.31, 7.94] & 0.0639 & [0.0574, 0.0709] \\
+ & 270M RL & 0.35 & [0.08, 0.63] & -0.0052 & [-0.0102, -0.0003] \\
+ & NLLB-600M & -0.39 & [-1.13, 0.51] & -0.0353 & [-0.0423, -0.0275] \\
+ & NLLB-3.3B & -2.85 & [-3.57, -1.99] & -0.0576 & [-0.0655, -0.0503] \\
+\bottomrule
+\end{tabular}%
+}
+\caption{Final RL model minus each other system, language-macro difference with 95\% paired bootstrap interval (1,000 resamples, Poisson weights per source sentence shared across systems and, for FLORES+ and NTREX, across languages; seed 20261104). Positive = RL better. Counts: languages for chrF++ / COMET. $^{\ell}$: no per-sentence output of NLLB-3.3B on NTREX/MAFAND is archived; the interval is a bootstrap over languages (language sampling only). SFT-ctl\textsuperscript{a}: see Table~\ref{tab:full-core}.}
+\label{tab:full-paired}
+\end{table*}

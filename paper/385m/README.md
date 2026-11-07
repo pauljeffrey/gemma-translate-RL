@@ -1,6 +1,6 @@
 # paper/385m/
 
-The paper on the 385M English-to-African translator. Title of the LaTeX sources (rewritten 2026-11-06 in plain language): "What Does Reinforcement Learning Add to a Small Translator for African Languages?". `paper.md` and the claims ledger still carry the earlier working title ("Half of the chrF++ Gain Is Finishing the Sentence ..."); the alternatives are in `TITLE_OPTIONS.md`. The core ends on page 7 (limit 8) in both versions and both builds.
+The paper on the 385M English-to-African translator. Title of the LaTeX sources (rewritten 2026-11-06 in plain language): "What Does Reinforcement Learning Add to a Small Translator for African Languages?". `paper.md` and the claims ledger still carry the earlier working title ("Half of the chrF++ Gain Is Finishing the Sentence ..."); the alternatives are in `TITLE_OPTIONS.md`. The core ends on page 8 (limit 8) in both versions and both builds.
 
 ## Released models
 
@@ -23,9 +23,10 @@ These links (here and in the LaTeX sources and PDFs of the preprint build) are t
 | `VERIFY_RESOLVED.md` | answers and sources for the facts that were marked for verification |
 | `E14_LATEX_DELTA.md` | the text changes that the E-14 result (science RL without science SFT) needed in the LaTeX sources |
 | `make_figures.py`, `figures/` | the figure script (reads the tables in `../../experiments/data/`) and its output (PDF and PNG) |
+| `latex_snippets_full_results/` | generated LaTeX tables and the figure of the full-results comparison (`../../experiments/reports/full_results_comparison_2026-11-06.md`), the source of `sections/fr/` in the LaTeX folders |
 | `refs_new.bib` | references added for this paper (the cited ones are in `latex_acl/refs.bib`) |
-| `latex_acl/` | ACL-format sources of the rewritten paper, full appendix (42 pages) |
-| `latex_acl_trim/` | the same core with a condensed appendix (28 pages) |
+| `latex_acl/` | ACL-format sources of the rewritten paper, full appendix (58 pages) |
+| `latex_acl_trim/` | the same core with a condensed appendix (32 pages) |
 
 Paths such as `reports/...` and `reports/data/...` inside these files refer to `../../experiments/reports/` and `../../experiments/data/`; `paper_385m/` refers to this folder.
 
@@ -33,10 +34,10 @@ Paths such as `reports/...` and `reports/data/...` inside these files refer to `
 
 | File | Build | Pages | Content |
 |---|---|---|---|
-| `latex_acl/main.pdf` | review (double-blind) | 42 | "Anonymous ACL submission", line numbers, no author, no organisation, no repository links (prints "anonymised for review") |
-| `latex_acl/main_preprint.pdf` | preprint | 42 | author block, the three Hugging Face links above |
-| `latex_acl_trim/main.pdf` | review (double-blind) | 28 | as above, condensed appendix |
-| `latex_acl_trim/main_preprint.pdf` | preprint | 28 | as above, condensed appendix |
+| `latex_acl/main.pdf` | review (double-blind) | 58 | "Anonymous ACL submission", line numbers, no author, no organisation, no repository links (prints "anonymised for review") |
+| `latex_acl/main_preprint.pdf` | preprint | 58 | author block, the three Hugging Face links above |
+| `latex_acl_trim/main.pdf` | review (double-blind) | 32 | as above, condensed appendix |
+| `latex_acl_trim/main_preprint.pdf` | preprint | 32 | as above, condensed appendix |
 
 Both builds come from the same sources: `main_preprint.tex` only defines `\preprintbuild` and inputs `main.tex`; the switch is `\ifanon` in `main.tex` (`\anonreal{review text}{preprint text}` in `macros.tex`).
 

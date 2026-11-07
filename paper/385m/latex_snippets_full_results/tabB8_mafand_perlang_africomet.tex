@@ -1,0 +1,29 @@
+\begin{table*}[t]
+\centering\footnotesize
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{@{}llrrrr@{}}
+\toprule
+ISO & Language & $n$ & SFT & SFT-ctl\textsuperscript{a} & RL \\
+\midrule
+amh & Amharic & 1037 & 0.456 & \textbf{0.556} & 0.515 \\
+hau & Hausa & 1500 & 0.630 & \textbf{0.671} & 0.644 \\
+ibo & Igbo & 1500 & 0.700 & \textbf{0.720} & 0.706 \\
+kin & Kinyarwanda & 1006 & 0.623 & \textbf{0.716} & 0.688 \\
+lug & Luganda & 1500 & 0.558 & \textbf{0.680} & 0.623 \\
+luo & Luo & 1500 & 0.579 & 0.587 & \textbf{0.651} \\
+nya & Chichewa & 1004 & 0.627 & \textbf{0.681} & 0.636 \\
+sna & Shona & 1005 & 0.583 & \textbf{0.648} & 0.601 \\
+swh & Swahili & 1835 & 0.680 & \textbf{0.711} & 0.693 \\
+tsn & Setswana & 1500 & 0.667 & \textbf{0.716} & 0.712 \\
+twi & Twi & 1500 & 0.601 & 0.599 & \textbf{0.643} \\
+xho & Xhosa & 1002 & 0.672 & \textbf{0.706} & 0.680 \\
+yor & Yoruba & 1558 & 0.614 & 0.725 & \textbf{0.740} \\
+zul & Zulu & 998 & 0.610 & \textbf{0.657} & 0.620 \\
+\midrule
+Macro (languages with a value) & & & 0.614 & 0.670 & 0.654 \\
+Languages with a value & & & 14 & 14 & 14 \\
+\bottomrule
+\end{tabular}
+\caption{MAFAND-MT test, held-out AfriCOMET-STL-1.1 per language (no NLLB score exists on these rows).}
+\label{tab:full-mafand-comet}
+\end{table*}

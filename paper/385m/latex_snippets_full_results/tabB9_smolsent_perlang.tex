@@ -1,0 +1,50 @@
+\begin{table*}[t]
+\centering\footnotesize
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{@{}llrrr@{}}
+\toprule
+ISO & Language & $n$ & SFT & NLLB-3.3B \\
+\midrule
+amh & Amharic & 863 & 10.3 & \textbf{30.6} \\
+bam & Bambara & 863 & 13.3 & \textbf{26.5} \\
+bem & Bemba & 863 & 13.8 & \textbf{32.3} \\
+dyu & Dyula & 863 & 10.5 & \textbf{20.8} \\
+ewe & Ewe & 863 & 20.6 & \textbf{36.0} \\
+fon & Fon & 863 & 15.5 & \textbf{17.8} \\
+hau & Hausa & 863 & 28.2 & \textbf{40.4} \\
+ibo & Igbo & 863 & 35.7 & \textbf{48.4} \\
+kab & Kabyle & 862 & 11.6 & \textbf{27.8} \\
+kik & Kikuyu & 863 & 21.2 & \textbf{40.1} \\
+kin & Kinyarwanda & 863 & 18.8 & \textbf{41.8} \\
+kon & Kongo & 863 & 22.4 & \textbf{47.8} \\
+lin & Lingala & 863 & 22.5 & \textbf{45.1} \\
+lug & Luganda & 863 & 14.6 & \textbf{39.4} \\
+luo & Luo & 863 & 16.0 & \textbf{32.7} \\
+mlg & Malagasy & 863 & 31.6 & \textbf{48.1} \\
+mos & Mossi & 863 & 11.5 & \textbf{18.8} \\
+nso & Sepedi & 863 & 22.5 & \textbf{45.0} \\
+nya & Chichewa & 863 & 25.6 & \textbf{38.0} \\
+orm & Oromo & 863 & 8.5 & \textbf{34.9} \\
+run & Kirundi & 863 & 15.1 & \textbf{33.7} \\
+sna & Shona & 863 & 27.5 & \textbf{40.2} \\
+som & Somali & 862 & 23.5 & \textbf{35.4} \\
+sot & Sesotho & 863 & 25.9 & \textbf{38.9} \\
+ssw & Swati & 863 & 18.2 & \textbf{38.8} \\
+swh & Swahili & 863 & 48.6 & \textbf{52.4} \\
+tir & Tigrinya & 863 & 6.2 & \textbf{25.3} \\
+tsn & Setswana & 863 & 34.3 & \textbf{50.4} \\
+tso & Tsonga & 863 & 29.9 & \textbf{43.7} \\
+tum & Tumbuka & 863 & 19.5 & \textbf{38.8} \\
+twi & Twi & 863 & 20.5 & \textbf{31.3} \\
+wol & Wolof & 863 & 21.3 & \textbf{23.3} \\
+xho & Xhosa & 863 & 36.6 & \textbf{43.0} \\
+yor & Yoruba & 863 & 16.6 & \textbf{28.6} \\
+zul & Zulu & 863 & 40.6 & \textbf{51.3} \\
+\midrule
+Macro (languages with a value) & & & 21.7 & 36.8 \\
+Languages with a value & & & 35 & 35 \\
+\bottomrule
+\end{tabular}
+\caption{SmolSent, chrF++ per language, all rows: 385M SFT and NLLB-3.3B (corpus-level aggregate). No RL model was evaluated on SmolSent.}
+\label{tab:full-smol-chrfpp}
+\end{table*}

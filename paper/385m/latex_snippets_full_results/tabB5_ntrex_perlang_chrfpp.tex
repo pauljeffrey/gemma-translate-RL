@@ -1,0 +1,36 @@
+\begin{table*}[t]
+\centering\footnotesize
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{@{}llrrrrr@{}}
+\toprule
+ISO & Language & $n$ & SFT & SFT-ctl\textsuperscript{a} & RL & NLLB-3.3B \\
+\midrule
+afr & Afrikaans & 1997 & 62.4 & 63.6 & 63.9 & \textbf{68.5} \\
+amh & Amharic & 1997 & 10.6 & 18.1 & 18.0 & \textbf{25.4} \\
+bem & Bemba & 1997 & 18.7 & 18.8 & 34.8 & \textbf{38.6} \\
+ewe & Ewe & 1997 & 24.3 & 25.7 & 31.6 & \textbf{36.9} \\
+hau & Hausa & 1997 & 42.1 & 49.5 & 48.6 & \textbf{52.9} \\
+ibo & Igbo & 1997 & 39.9 & 43.3 & 44.9 & \textbf{47.1} \\
+kin & Kinyarwanda & 1997 & 26.4 & 38.4 & 37.1 & \textbf{45.8} \\
+mlg & Malagasy & 1997 & 36.9 & 41.5 & 40.8 & \textbf{46.6} \\
+nso & Sepedi & 1997 & 20.1 & 19.7 & 32.7 & \textbf{35.0} \\
+nya & Chichewa & 1997 & 37.9 & 43.2 & 44.2 & \textbf{48.7} \\
+orm & Oromo & 1997 & 9.6 & 27.3 & 27.3 & \textbf{31.2} \\
+sna & Shona & 1997 & 34.2 & 40.6 & 39.2 & \textbf{45.1} \\
+som & Somali & 1997 & 35.8 & 40.6 & 44.2 & \textbf{47.7} \\
+ssw & Swati & 1997 & 21.6 & 20.9 & 38.8 & \textbf{45.3} \\
+swh & Swahili & 1997 & 55.2 & 57.6 & 58.7 & \textbf{61.8} \\
+tir & Tigrinya & 1997 & 9.1 & 9.8 & 17.0 & \textbf{23.8} \\
+tsn & Setswana & 1997 & 37.0 & 49.4 & 48.7 & \textbf{54.8} \\
+wol & Wolof & 1997 & 25.3 & 29.5 & \textbf{30.4} & 29.4 \\
+xho & Xhosa & 1997 & 39.8 & 40.7 & 42.4 & \textbf{43.8} \\
+yor & Yoruba & 1997 & 23.7 & 30.9 & 32.1 & \textbf{32.1} \\
+zul & Zulu & 1997 & 40.9 & 44.1 & 43.5 & \textbf{47.9} \\
+\midrule
+Macro (languages with a value) & & & 31.0 & 35.9 & 39.0 & 43.3 \\
+Languages with a value & & & 21 & 21 & 21 & 21 \\
+\bottomrule
+\end{tabular}
+\caption{NTREX-128, chrF++ per language, all rows. NLLB-3.3B is a corpus-level aggregate on the same rows.}
+\label{tab:full-ntrex-chrfpp}
+\end{table*}

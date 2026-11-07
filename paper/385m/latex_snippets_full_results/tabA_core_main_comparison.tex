@@ -1,0 +1,21 @@
+\begin{table}[t]
+\centering\footnotesize
+\resizebox{\columnwidth}{!}{%
+\begin{tabular}{@{}lrrrrrr@{}}
+\toprule
+ & \multicolumn{2}{c}{F+ (44/40)} & \multicolumn{2}{c}{NT (21/21)} & \multicolumn{2}{c}{MF (14/14)} \\
+\cmidrule(lr){2-3}\cmidrule(lr){4-5}\cmidrule(lr){6-7}
+System & chrF++ & COMET & chrF++ & COMET & chrF++ & COMET \\
+\midrule
+SFT & 25.6 & 0.550 & 31.0 & 0.551 & 34.5 & 0.614 \\
+SFT-ctl\textsuperscript{a} & 28.6 & 0.586 & 35.9 & 0.609 & 39.5 & 0.670 \\
+RL & 34.9 & 0.623 & 39.0 & 0.614 & 39.9 & 0.654 \\
+\midrule
+NLLB-600M & 35.9 & 0.662 & -- & -- & -- & -- \\
+NLLB-3.3B & \textbf{38.1} & \textbf{0.677} & \textbf{43.3} & -- & \textbf{44.6} & -- \\
+\bottomrule
+\end{tabular}%
+}
+\caption{English$\to$African translation, language-macro scores on identical sentences. F+ = FLORES+ devtest sentences whose reference pair the earlier 270M SFT did not see (42,680 sentences, 44 languages; 385M: 0 flagged rows); NT = NTREX-128 and MF = MAFAND-MT test, all rows (385M contamination flags: 0.25\% / 0.47\% of rows, effect $<$0.01 chrF++). Counts in parentheses: languages shared by all systems for chrF++ / for COMET. chrF++ = sacreBLEU word order 2; COMET = held-out reference-based AfriCOMET-STL-1.1 (0--1). SFT, RL = our 385M models (RL = final model); SFT-ctl = SFT continued for the compute of the RL chain on TranslatePsy en$\to$xx plus replay (E-03). Ours decode greedily, NLLB with beam 4. Bold = best in column (not set where NLLB-3.3B has no score). ``--'': not available (see text). NLLB-3.3B on NT/MF is a per-language corpus-level aggregate on the same rows (no per-sentence output archived; no COMET). \textsuperscript{a}Trained on NLLB-3.3B translations for 19 languages, never released.}
+\label{tab:full-core}
+\end{table}

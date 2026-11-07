@@ -18,7 +18,7 @@ We therefore ask four questions about a 385-million-parameter English-to-African
 \item About half of the gain is finishing sentences and not repeating. A decoding setting recovers that half for the SFT model without training, but RL still adds clear gains beyond it (RQ2).
 \item Decoding tricks such as beam search and minimum Bayes risk (MBR) decoding help the SFT model a lot and the RL model little (RQ2).
 \item Matching the compute with more SFT is inconclusive by our pre-registered rule: it matches RL on the 19 languages where it had extra data, and is far behind on the others (RQ3).
-\item Almost all of the gain arrives in the first RL stage. The model reaches about 92\% of the chrF++ of NLLB-3.3B on shared languages, at about one ninth of its size (RQ4).
+\item Almost all of the gain arrives in the first RL stage (RQ4). On identical sentences the model is still about one chrF++ point below NLLB-600M and about three below NLLB-3.3B, about 92\% of its score at about one ninth of its size; a model distilled from NLLB-3.3B is ahead of ours on its languages (Section~\ref{sec:compare}).
 \end{itemize}
 
 \textbf{Contributions.} (1) A controlled decomposition of an RL gain in small-model translation: a decoding control, a matched-compute control, seed and ablation runs, and an independent audit of the reward's own repetition check. (2) A decontaminated SFT and RL pipeline for 125 languages, with an audit of the training text. (3) Negative results: RL aimed at weak languages, science fine-tuning on a quality-estimation metric, and whole-document translation. Model artefacts: \anonreal{anonymised for review; released on acceptance}{model weights at \url{https://huggingface.co/AletheiaAING/gemma-0.4B-translate-rl} (see Ethical considerations)}.

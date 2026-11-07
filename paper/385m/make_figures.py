@@ -8,6 +8,7 @@ message; a figure whose experiment result is not yet local would be drawn as a c
 the first time that file exists. All experiments with figures (E-15, E-05, E-09b, E-13) now have their data; E-02, E-04, E-11, E-14, E-10 are not run.
 
 Figures (file stem: content: inputs)
+  fig17_full_results         (not made here) copied from latex_snippets_full_results/ (script s03_build.py in reports/data/full_results_comparison_2026-11-06/)
   fig15_e02_decoding         E-02 greedy / beam-4 / MBR-16 at 768 tokens, SFT and RL (reports/data/e02_beam_mbr_768_2026-11-05/cmp_all.json)
   fig16_e04_e11_seeds_ablations E-04 seed spread and E-11 ablation arms (reports/data/e04_rl_seeds_2026-11-05/cmp.json, reports/data/e11_rl_ablations_2026-11-05/cmp.json)
   fig14_e03_control          E-03 matched-compute continued-SFT control vs RL, by language panel (reports/data/e03_control_execution_2026-11-04/{verdict_tables.json,evidence_c1/*.json})

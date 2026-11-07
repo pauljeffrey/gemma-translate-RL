@@ -1,5 +1,52 @@
 \section{Results}\label{sec:results}
-% Organised by research question. Intervals are in tables and captions; prose gives rounded values.
+% Organised by research question, after an overview comparison with other systems. Intervals are in tables and captions; prose gives rounded values.
+
+\subsection{How does the model compare with other systems?}\label{sec:compare}
+% [FULL = reports/full_results_comparison_2026-11-06.md; N2 NLLBRL; E-03 control; numbers from tabA/tabA2/tabD of paper_385m/latex_snippets_full_results]
+\textbf{Answer: the RL model beats the SFT baseline everywhere, but it stays below the NLLB systems.} On identical FLORES+ sentences it scores about one chrF++ point below NLLB-600M and about three below NLLB-3.3B, which is about 92\% of the larger system's score (Table~\ref{tab:full-core}, Figure~\ref{fig:full}). Held-out AfriCOMET gives the same order with a wider gap. The RL model is ahead of NLLB-600M in only some languages and of NLLB-3.3B in a few (last column). NTREX and MAFAND-MT show the same order against NLLB-3.3B; there, only language-level NLLB averages exist, so these rows have no sentence pairing and no AfriCOMET.
+
+The 19 languages that TranslatePsy-0.8B covers show the limits of the comparison. TranslatePsy-0.8B is the strongest system there and clearly ahead of the RL model. It was distilled from NLLB-3.3B outputs, so its lead is partly a student--teacher effect and not independent evidence of a better design. The SFT-only control, which was trained on NLLB-3.3B translations for these languages, matches the RL model in chrF++ but not on the neural score. We decode greedily and NLLB with beam search (four beams); on a 20-language check, beam search or MBR moved the RL model by less than one chrF++ point either way (Section~\ref{sec:rq2}). SmolSent, SALT and three smaller benchmarks have no RL model; their per-language results are in Appendix~\ref{app:fullresults}.
+
+\begin{table*}[t]
+\centering\footnotesize\setlength{\tabcolsep}{2.5pt}
+\begin{tabular}{@{}lrrllr@{}}
+\toprule
+system & chrF++ & AfriCOMET & RL $-$ system, chrF++ & RL $-$ system, AfriCOMET & RL ahead in\\
+\midrule
+\multicolumn{6}{@{}l}{\textit{FLORES+, 44 languages, identical sentences (42,680)}}\\
+SFT baseline & 25.6 & 0.550 & $+9.30$ \ci{+9.00}{+9.55} & $+0.073$ \ci{+0.071}{+0.075} & 44 of 44\\
+SFT-only control\textsuperscript{a} & 28.6 & 0.586 & $+6.32$ \ci{+6.11}{+6.52} & $+0.038$ \ci{+0.036}{+0.039} & 34\\
+\textbf{RL model} & \textbf{34.9} & \textbf{0.623} & & & \\
+NLLB-600M & 35.9 & 0.662 & $-1.05$ \ci{-1.24}{-0.86} & $-0.038$ \ci{-0.040}{-0.036} & 15\\
+NLLB-3.3B & 38.1 & 0.677 & $-3.21$ \ci{-3.38}{-3.02} & $-0.054$ \ci{-0.055}{-0.052} & 7\\
+\midrule
+\multicolumn{6}{@{}l}{\textit{FLORES+, the 19 TranslatePsy languages (17,380 sentences)}}\\
+SFT baseline & 34.0 & 0.589 & $+7.04$ \ci{+6.64}{+7.41} & $+0.054$ \ci{+0.051}{+0.056} & \\
+SFT-only control\textsuperscript{a} & 41.0 & 0.665 & $+0.08$ \ci{-0.13}{+0.30} & $-0.023$ \ci{-0.024}{-0.021} & \\
+\textbf{RL model} & \textbf{41.0} & \textbf{0.642} & & & \\
+NLLB-600M & 42.6 & 0.688 & $-1.54$ \ci{-1.78}{-1.28} & $-0.046$ \ci{-0.048}{-0.043} & \\
+NLLB-3.3B & 44.7 & 0.701 & $-3.62$ \ci{-3.84}{-3.39} & $-0.059$ \ci{-0.061}{-0.056} & \\
+TranslatePsy-0.8B\textsuperscript{b} & 45.3 & 0.717 & $-4.23$ \ci{-4.39}{-4.07} & $-0.075$ \ci{-0.077}{-0.073} & \\
+\midrule
+\multicolumn{6}{@{}l}{\textit{NTREX (21 languages), MAFAND-MT (14); NLLB = language-level averages}}\\
+NTREX: SFT baseline & 31.0 & 0.551 & $+7.97$ \ci{+7.73}{+8.21} & $+0.063$ \ci{+0.061}{+0.065} & \\
+NTREX: SFT-only control\textsuperscript{a} & 35.9 & 0.609 & $+3.14$ \ci{+2.97}{+3.32} & $+0.005$ \ci{+0.004}{+0.006} & \\
+NTREX: \textbf{RL model} & \textbf{39.0} & \textbf{0.614} & & & \\
+NTREX: NLLB-3.3B & 43.3 & -- & $-4.26$ \ci{-5.22}{-3.24}\textsuperscript{c} & -- & 1 of 21\\
+MAFAND-MT: SFT baseline & 34.5 & 0.614 & $+5.39$ \ci{+5.15}{+5.63} & $+0.040$ \ci{+0.038}{+0.041} & \\
+MAFAND-MT: SFT-only control\textsuperscript{a} & 39.5 & 0.670 & $+0.34$ \ci{+0.16}{+0.52} & $-0.016$ \ci{-0.017}{-0.014} & \\
+MAFAND-MT: \textbf{RL model} & \textbf{39.9} & \textbf{0.654} & & & \\
+MAFAND-MT: NLLB-3.3B & 44.6 & -- & $-4.73$ \ci{-6.56}{-3.12}\textsuperscript{c} & -- & 1 of 14\\
+\bottomrule
+\end{tabular}
+\caption{Our models against other systems. chrF++ and held-out reference-based AfriCOMET: higher is better; averages over languages; 95\% paired-bootstrap intervals for the RL model minus each system (positive = RL better), over test sentences. The 44 FLORES+ languages exclude the Arabic dialects, Tamazight, Dinka and Tamasheq, so averages are higher than elsewhere. \textsuperscript{a}Trained on NLLB-3.3B translations for 19 languages (never released). \textsuperscript{b}Distilled from NLLB-3.3B outputs. \textsuperscript{c}Interval from a bootstrap over languages (no per-sentence NLLB output). Ours decode greedily; NLLB with 4 beams. Other benchmarks and per-language results: Appendix~\ref{app:fullresults}.}\label{tab:full-core}
+\end{table*}
+
+\begin{figure*}[t]
+\centering
+\includegraphics[width=\textwidth]{figures/fig_full_results.pdf}
+\caption{Our models against other systems (language averages on identical sentences; higher is better). (a) chrF++ and (b) held-out AfriCOMET on FLORES+, NTREX and MAFAND-MT; NLLB has no AfriCOMET score and no per-sentence output on NTREX and MAFAND-MT. (c) The 19 TranslatePsy languages, with AfriCOMET printed in the bars. \textbf{The vertical axes do not start at zero.} Error bars: 95\% paired bootstrap over sentences; none for NLLB-3.3B on NTREX and MAFAND-MT. ``SFT-only control'' was trained on NLLB-3.3B translations for 19 languages.}\label{fig:full}
+\end{figure*}
 
 \subsection{RQ1: How much does RL improve translation?}\label{sec:rq1}
 % [R1 R2 R3 EVID tables 1-2]
@@ -87,7 +134,7 @@ all others & 18.32 & 27.61 & $+9.29$ \ci{+9.09}{+9.49}\\
 
 \subsection{RQ4: How reliable is the gain, and how does the model compare with a larger system?}\label{sec:rq4}
 % [R8 E04 E11 M10 R17 R18 N1-N6 NLLBRL]
-\textbf{Answer: the gain is robust to random seeds, nearly all of it comes from the first RL stage, and the model reaches about 92\% of NLLB-3.3B's chrF++ on shared languages.} The first RL stage produces 94\% of the gain reached after the second stage, and the two later stages add little. Two extra random seeds of the first stage, run on 20 languages, differ by only 0.06 chrF++, far less than the gain itself. The last RL step is about the size of that seed noise, so we do not call it a gain (Figure~\ref{fig:seeds}).
+\textbf{Answer: the gain is robust to random seeds, nearly all of it comes from the first RL stage, and the model reaches about 92\% of NLLB-3.3B's chrF++ on shared languages (Section~\ref{sec:compare}).} The first RL stage produces 94\% of the gain reached after the second stage, and the two later stages add little. Two extra random seeds of the first stage, run on 20 languages, differ by only 0.06 chrF++, far less than the gain itself. The last RL step is about the size of that seed noise, so we do not call it a gain (Figure~\ref{fig:seeds}).
 
 \begin{figure*}[t]
 \centering
@@ -97,27 +144,8 @@ all others & 18.32 & 27.61 & $+9.29$ \ci{+9.09}{+9.49}\\
 
 We also tested four features that we added during the first stage. Together they are worth about 0.3 chrF++ at 100 steps, mostly because of one of them, a term that rewards agreement with human reference translations for seven languages. A beam-search guide, which costs about a quarter more time per step, is not shown to be worth it, and none of the features causes the drift from the starting model.
 
-\begin{table}[t]
-\centering\scriptsize\setlength{\tabcolsep}{2pt}
-\caption{Comparison on the 43 languages that our evaluation shares with the published NLLB table. chrF++, higher is better. Differences with 95\% intervals over languages.}\label{tab:nllb}
-\begin{tabular}{@{}lrrl@{}}
-\toprule
-system & chrF++ & share & difference\\
-\midrule
-SFT baseline & 26.3 & 68\% & $-12.50$ \ci{-14.56}{-10.40}\\
-RL model & 35.5 & 92\% & $-3.26$ \ci{-4.29}{-2.20}\\
-NLLB-3.3B & 38.8 & 100\% & \\
-\bottomrule
-\end{tabular}
-\end{table}
 
-NLLB-3.3B is about 8.6 times larger than our model. RL closes about three quarters of the gap that the baseline leaves (Table~\ref{tab:nllb}, Figure~\ref{fig:nllb}), and the remaining gap is not a matter of unfinished sentences. The RL model matches or beats NLLB-3.3B on seven of the shared languages, all among those where NLLB scores lowest. Several caveats apply: NLLB's numbers are published ones on a slightly different test set and use beam search, our evaluation is greedy; the hardest languages have no published NLLB number; and for a few of the languages the reward itself used NLLB outputs as a target. We therefore do not claim to beat NLLB. Compared with our earlier 270M model run in the same harness, the 385M SFT baseline is behind, the RL model is level on two benchmarks and behind on one, and it is behind at document level (Appendix~\ref{app:sft}).
-
-\begin{figure*}[t]
-\centering
-\includegraphics[width=0.62\textwidth]{figures/fig4_nllb_43.pdf}
-\caption{The SFT baseline and the RL model against NLLB-200 on the 43 shared languages (chrF++, higher is better). (a) Averages. (b) By how well NLLB-3.3B does on each language (three groups). (c) Difference per language; orange marks languages where NLLB outputs were part of the reward. Intervals are over languages only.}\label{fig:nllb}
-\end{figure*}
+NLLB-3.3B is about 8.6 times larger than our model, and Section~\ref{sec:compare} gives the comparison. The RL model closes about three quarters of the gap that the baseline leaves to NLLB-3.3B, and the remaining gap is not a matter of unfinished sentences. On the 43 languages shared with the published NLLB table the RL model scores about 92\% of NLLB-3.3B's chrF++ (Appendix~\ref{app:fullresults}). It matches or beats NLLB-3.3B on seven languages, all among those where NLLB scores lowest. Caveats: NLLB's published numbers use a slightly different test set and beam search; the hardest languages have no published NLLB number; and for a few languages the reward itself used NLLB outputs as a target. We therefore do not claim to beat NLLB. Compared with our earlier 270M model run in the same harness, the 385M SFT baseline is behind, the RL model is level on two benchmarks and behind on one, and it is behind at document level (Appendix~\ref{app:fullresults}).
 
 \subsection{Further results: science text and long documents}\label{sec:science}
 % [SC1-SC6 DL1-DL5 E05 E14 E15 E16]

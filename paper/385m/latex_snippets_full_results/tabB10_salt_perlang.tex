@@ -1,0 +1,18 @@
+\begin{table*}[t]
+\centering\footnotesize
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{@{}llrrr@{}}
+\toprule
+ISO & Language & $n$ & SFT & NLLB-3.3B \\
+\midrule
+ibo & Igbo & 500 & 32.4 & \textbf{41.5} \\
+lug & Luganda & 500 & 29.3 & \textbf{52.1} \\
+swh & Swahili & 500 & 56.8 & \textbf{61.9} \\
+\midrule
+Macro (languages with a value) & & & 39.5 & 51.8 \\
+Languages with a value & & & 3 & 3 \\
+\bottomrule
+\end{tabular}
+\caption{SALT, chrF++ per language, all rows: 385M SFT and NLLB-3.3B (corpus-level aggregate). No RL model was evaluated on SALT.}
+\label{tab:full-salt-chrfpp}
+\end{table*}

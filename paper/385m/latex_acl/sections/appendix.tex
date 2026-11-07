@@ -34,6 +34,9 @@ E-09, E-09b & engine and precision checks & vLLM against Hugging Face, bf16 agai
 E-13 & earlier 270M models in the same harness & re-run on rows clean for both\\
 E-15, E-16, E-20 & long-document, science and B1-final evaluations & evaluation runs\\
 E-10, E-17 & human evaluation; NLLB-data ablation & not run\\
+SFT-ctl, RL-A, RL-B1, RL & SFT-only control; first RL stage; second RL stage (best checkpoint); RL model & column labels of the full-results tables (Appendix~\ref{app:fullresults}); \textsuperscript{a} marks the control, which was trained on NLLB-3.3B translations for 19 languages\\
+F+, NT, MF; no\_pair; clean & FLORES+, NTREX-128, MAFAND-MT; row sets & \emph{no\_pair} = rows whose reference pair the earlier 270M SFT never saw; \emph{clean} = rows whose English side is not in the 270M SFT text\\
+TPsy-0.8B, TPsy-2B & TranslatePsy-AfriSLM models & small translation models for 19 (0.8B) and 9 (2B) of our languages, distilled from NLLB-3.3B outputs\\
 \bottomrule
 \end{tabularx}
 \end{table}
@@ -61,6 +64,67 @@ long-document RL final & 47.16 & 0.6936 & 0.6165\\
 \bottomrule
 \end{tabular}
 \end{table}
+
+\section{Full results against other systems}\label{app:fullresults}
+\textbf{Row sets and how each number was computed.} chrF++ is sacreBLEU 2.6.0 \texttt{CHRF(word\_order=2)} on NFC-normalised text, recomputed from the stored hypotheses for our systems and from stored per-sentence statistics for NLLB and TranslatePsy; corpus statistics are computed per language and then averaged over languages. AfriCOMET is the held-out, reference-based \texttt{africomet-stl-1.1} only; the two scoring runs (one for NLLB and TranslatePsy, one for our models) agree to a mean absolute difference of $2.3\times10^{-4}$ on 15,400 identical triples. \emph{no\_pair} rows are FLORES+ rows whose reference pair the earlier 270M SFT never saw (42,680 of 44,528 rows); this is the set on which NLLB and TranslatePsy have AfriCOMET scores. \emph{clean} rows are rows whose English side is not in the 270M SFT text (48 sentences per language on FLORES+; 25,221 NTREX and 14,276 MAFAND-MT sentences); only on them are the earlier 270M models not exposure-inflated. NTREX and MAFAND-MT use all rows (our flagged rows, 120 and 94, change the averages by at most 0.006 chrF++). The FLORES+ NLLB set has 44 languages (the published NLLB table has 43; the 44th is Kanuri), 40 of which have an AfriCOMET score in our harness; TranslatePsy-0.8B covers 19 languages and TranslatePsy-2B 9. Intervals are paired bootstrap over test sentences (1,000 resamples, Poisson weights per source sentence shared across systems and, for FLORES+ and NTREX, across languages; seed 20261104). Where NLLB exists only as a per-language corpus-level aggregate (NTREX, MAFAND-MT, SmolSent, SALT) the interval is a bootstrap over languages (10,000 resamples), there is no AfriCOMET, and no sentence pairing is possible. Decoding: ours greedy (768 tokens, vLLM, bf16); NLLB beam search with 4 beams; TranslatePsy greedy with its model-card prompt (256 tokens). The 385M beam-4 run of Section~\ref{sec:rq2} covers 20 languages only, so no beam-matched comparison on the full set exists.
+
+\textbf{Independence and disclosures.} chrF++, chrF and spBLEU against human references are independent of every reward. AfriCOMET-STL-1.1 is held out of every reward but belongs to the family of the quality model in the reward and was used to filter the TranslatePsy training rows, so it favours the SFT-only control and TranslatePsy. The SFT-only control was trained on NLLB-3.3B translations (TranslatePsy, CC-BY-NC-4.0) for 19 languages and its checkpoint is not released; TranslatePsy-AfriSLM-0.8B and -2B were distilled from NLLB-3.3B outputs, so their lead over NLLB-3.3B on their languages is a student--teacher effect and not independent evidence for a better model; NLLB models and outputs carry CC-BY-NC terms. The NLLB-derived share of our own SFT data and the NLLB-3.3B pseudo-reference reward term for five languages are listed in Appendix~\ref{app:disc} and in the Ethical considerations. The five languages with that reward term (kea kbp nus bam kab) and the seven with a human-reference reward term are partly optimised towards chrF++. SmolSent, SALT, GlotStoryBook, IbomMT and FLORES-MOZ have no RL model evaluated anywhere. In the tables below SFT = SFT baseline, SFT-ctl = SFT-only control, RL = RL model, RL-A and RL-B1 = first and second RL stage, F+ = FLORES+, NT = NTREX-128, MF = MAFAND-MT, TPsy = TranslatePsy-AfriSLM (Appendix~\ref{app:glossary}).
+
+\input{sections/fr/tabC_all_systems_macro}
+\input{sections/fr/tabD_paired_differences}
+\input{sections/fr/tabA2_translatepsy19}
+\input{sections/fr/tabA3_with_earlier_270M_clean_rows}
+\begin{table}[h]
+\centering\small
+\caption{SSA-COMET-MTL (reference-based, $\times100$) on FLORES+ \emph{no\_pair} rows. \textbf{Reward family: not independent evidence.} No value exists for any 385M model; the 270M rows come from the earlier work's own run, not the re-run of Table~\ref{tab:full-270m}.}\label{tab:fr-ssa}
+\begin{tabular}{@{}lrrrr@{}}
+\toprule
+system & languages & own languages & 19 TPsy-0.8B languages & 9 TPsy-2B languages\\
+\midrule
+NLLB-600M & 22 & 56.71 & 56.72 & 56.91\\
+NLLB-3.3B & 22 & 59.28 & 59.14 & 58.90\\
+TranslatePsy-0.8B & 19 & 60.75 & 60.75 & 60.31\\
+TranslatePsy-2B & 9 & 60.43 & -- & 60.43\\
+earlier 270M RL-final & 22 & 51.92 & 52.81 & 50.29\\
+earlier 270M SFT-final & 22 & 47.54 & 48.78 & 46.19\\
+\bottomrule
+\end{tabular}
+\end{table}
+\begin{table}[h]
+\centering\small
+\caption{Against published whole-devtest NLLB numbers (FLORES-200 devtest chrF++; our systems rescored on all 1,012 FLORES+ rows; 43 shared languages; \emph{not} sentence-paired; intervals over languages, 10,000 resamples).}\label{tab:fr-published}
+\begin{tabular}{@{}lrl@{}}
+\toprule
+system & chrF++ & RL $-$ system\\
+\midrule
+RL model & 35.54 & \\
+SFT baseline / SFT-only control / RL-A / RL-B1 & 26.30 / 29.35 / 34.91 / 35.25 & $+9.24$ / $+6.19$ / $+0.63$ / $+0.29$\\
+NLLB-600M, our rerun & 36.62 & $-1.08$ \ci{-1.98}{-0.20}\\
+NLLB-3.3B, our rerun & 38.63 & $-3.09$ \ci{-4.13}{-2.05}\\
+NLLB-3.3B, published & 38.80 & $-3.26$ \ci{-4.30}{-2.21}\\
+NLLB-1.3B, published & 38.09 & $-2.55$ \ci{-3.46}{-1.62}\\
+NLLB-distilled-1.3B, published & 38.34 & $-2.80$ \ci{-3.72}{-1.87}\\
+NLLB-MoE-54.5B, published & 39.08 & $-3.54$ \ci{-4.59}{-2.52}\\
+\bottomrule
+\end{tabular}
+\end{table}
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.7\linewidth]{figures/fig4_nllb_43.pdf}
+\caption{The SFT baseline and the RL model against NLLB-200 on the 43 languages shared with the published table (chrF++, higher is better). (a) Averages. (b) By how well NLLB-3.3B does on each language. (c) Difference per language; orange: NLLB outputs were part of the reward; yor$^*$: anomalously low published value. Intervals over languages only.}\label{fig:nllb_app}
+\end{figure}
+\subsection*{Per-language results}
+\input{sections/fr/tabB1_flores_perlang_chrfpp}
+\input{sections/fr/tabB2_flores_perlang_africomet}
+\input{sections/fr/tabB3_flores_perlang_chrf}
+\input{sections/fr/tabB4_flores_perlang_spbleu}
+\input{sections/fr/tabB5_ntrex_perlang_chrfpp}
+\input{sections/fr/tabB6_ntrex_perlang_africomet}
+\input{sections/fr/tabB7_mafand_perlang_chrfpp}
+\input{sections/fr/tabB8_mafand_perlang_africomet}
+\input{sections/fr/tabB9_smolsent_perlang}
+\input{sections/fr/tabB10_salt_perlang}
+
 
 \section{Hyper-parameters, recipe and reward details}\label{app:hyper}
 
@@ -469,11 +533,11 @@ The decode-time frequency-penalty guard was run on both models over the full eva
 
 \section{NLLB comparison and other systems: details}\label{app:afrique}
 
-The RL closes 74\% of the gap between the SFT and NLLB-3.3B (12.50 $\to$ 3.26; arithmetic of the two differences), and stage A alone gives 8.61 of the 9.24 chrF++ that the mixed best adds over the SFT on these languages (93\%). The remaining gap is not a finishing or looping artefact: on these 43 languages the mixed best finishes at least 0.99 and repeats at most 0.02 in every language. By NLLB-3.3B tertile (14 / 14 / 15 languages) the mixed best reaches 91.7\% (high, 46.82 against 51.05), 87.7\% (mid, 34.57 against 39.42) and 96.8\% (tail, 25.92 against 26.78) of NLLB-3.3B; the SFT 75.3\%, 63.2\% and 60.7\%. The mixed best matches or beats NLLB-3.3B on 7 of 43 languages, all in the lowest tertile (yor +5.43, fon +2.95, dyu +2.77, wol +2.48, kam +2.32, kmb +2.22, umb +1.86; the SFT only on fon, 20.17 against 19.30) and is within 1 chrF++ on 9. The largest remaining gaps are amh \ensuremath{-}11.28, kin \ensuremath{-}9.74, kea \ensuremath{-}8.72, run \ensuremath{-}8.02, ewe \ensuremath{-}7.03, lug \ensuremath{-}6.77, tir \ensuremath{-}6.06 and hau \ensuremath{-}6.04. 
-% src: NLLBRL sections 0, 2, 3 (`table3_by_nllb_tertile.csv`, `table2_per_language_43.csv`)
+The RL closes 74\% of the gap between the SFT and NLLB-3.3B (12.50 $\to$ 3.26; arithmetic of the two differences), and stage A alone gives 8.61 of the 9.24 chrF++ that the mixed best adds over the SFT on these languages (93\%). The remaining gap is not a finishing or looping artefact: on these 43 languages the mixed best finishes at least 0.99 and repeats at most 0.02 in every language. By NLLB-3.3B tertile (14 / 14 / 15 languages) the mixed best reaches 91.7\% (high, 46.82 against 51.05), 87.7\% (mid, 34.57 against 39.42) and 96.8\% (tail, 25.92 against 26.78) of NLLB-3.3B; the SFT 75.3\%, 63.2\% and 60.7\%. The mixed best matches or beats NLLB-3.3B on 7 of 43 languages, all in the lowest tertile (yor +5.43, fon +2.95, dyu +2.77, wol +2.48, kam +2.32, kmb +2.22, umb +1.86; the SFT only on fon, 20.17 against 19.30) and is within 1 chrF++ on 9. The largest remaining gaps are amh \ensuremath{-}11.28, kin \ensuremath{-}9.74, kea \ensuremath{-}8.72, run \ensuremath{-}8.02, ewe \ensuremath{-}7.03, lug \ensuremath{-}6.77, tir \ensuremath{-}6.06 and hau \ensuremath{-}6.04. The sentence-level analysis reproduces this block (35.54, \ensuremath{-}3.26) and adds the SFT-only control (29.35 on the 43 languages) and our own NLLB reruns rescored on all 1,012 rows: NLLB-600M 36.62 (RL \ensuremath{-}1.08 [\ensuremath{-}1.98, \ensuremath{-}0.20], RL above in 15 languages) and NLLB-3.3B 38.63 (RL \ensuremath{-}3.09 [\ensuremath{-}4.13, \ensuremath{-}2.05], 7 languages), against the published 38.80 (\ensuremath{-}3.26) and NLLB-1.3B 38.09, distilled-1.3B 38.34, MoE-54.5B 39.08 (\ensuremath{-}2.55, \ensuremath{-}2.80, \ensuremath{-}3.54; language-level intervals). 
+% src: FRC block (a) (ledger FRC7); NLLBRL sections 0, 2, 3 (`table3_by_nllb_tertile.csv`, `table2_per_language_43.csv`)
 
-\textbf{Same sentences.} In the post-editor run, NLLB-3.3B and RL stage A drafts were scored on identical 100-sentence FLORES+ subsets (language bootstrap only; sentence hypotheses are not stored). With beam-4 on our side (the beam setup of the post-editor run, not that of E-02) and NLLB greedy on theirs, stage A is 1.44 below NLLB-3.3B on 43 languages (36.12 against 37.56, [\ensuremath{-}2.34, \ensuremath{-}0.56]; 13 languages at least equal) and 3.67 below on all 50 languages both have; held-out AfriCOMET 0.6414 against 0.6709 (\ensuremath{-}0.0294 [\ensuremath{-}0.0366, \ensuremath{-}0.0222], 40 languages, ahead in 5). Our own NLLB run on 100 sentences is 1.23 [\ensuremath{-}1.60, \ensuremath{-}0.86] below the published full-devtest value, which bounds the sample and reference effects. AfriCOMET is the QE reward's family, so that row is not independent evidence for the RL model. 
-% src: NLLBRL section 4 (`table6b_same_sentence_summary.csv`, `table7_africomet_same_100_sentences.csv`)
+\textbf{Earlier same-sentence rows (post-editor run, superseded).} NLLB-3.3B and RL stage A drafts were scored on 100-sentence FLORES+ subsets (language bootstrap only): stage A with beam-4 (the beam setup of the post-editor run, not that of E-02) against NLLB greedy was 1.44 below NLLB-3.3B on 43 languages (36.12 against 37.56, [\ensuremath{-}2.34, \ensuremath{-}0.56]). That run's NLLB output was 1.23 [\ensuremath{-}1.60, \ensuremath{-}0.86] below the published full-devtest value on its 100 sentences; on all 1,012 rows our NLLB-3.3B run is only 0.17 below the published value (38.63 against 38.80), so the 1.23 was sample noise, not a systematic effect of FLORES+ against FLORES-200 references. The sentence-paired comparison above on all rows replaces these numbers. AfriCOMET is the QE reward's family, so AfriCOMET rows are not independent evidence for the RL model. 
+% src: NLLBRL section 4; FRC section 6 items 1 and 5 (ledger N2b corrected, FRC8)
 
 \textbf{AfriqueLLM family, indicative only.} On the 21 languages with per-language values in the 5-shot AfroBench-Lite harness (afr amh ewe hau ibo kin lin lug nya orm sna som sot swh tir tsn twi wol xho yor zul): SFT 32.37, stage A 39.13, B1 best 39.32, mixed best 39.40, weak final 39.26, against AfriqueQwen3.5-4B-50Langs 41.71 (mixed best \ensuremath{-}2.31; ahead in 4 of 21 languages), AfriqueGemma-12B 38.58 (+0.83; 6 of 21), AfriqueLlama-8B 36.71, AfriqueQwen-14B 36.67, AfriqueQwen-8B 35.06, AfriqueGemma-4B 31.12, Gemma3-12B 18.82, Llama3.1-8B 16.45. Those are base models in 5-shot prompting with a harness whose chrF++ implementation and FLORES split are not verified.   Bidirectional aggregates (TranslatePsy, AfriNLLB) and pooled AfroBench rows are not comparable and are not compared.
 % src: NLLBRL section 5 `table5_afrique_21_languages.csv`; ledger N3 status weak
@@ -917,7 +981,7 @@ The numbered list of Appendix~\ref{app:limits} is a compressed version of this o
 \item \textbf{Comparisons.} The old-versus-385M comparison (E-13, same harness, rows clean for both generations) is still a composite of data, steps, tokenizer layout and reward, with FLORES+ reduced to 4.7\% of its rows; the NLLB comparison uses FLORES-200 published numbers against FLORES+, beam against greedy and language-level intervals; AfriqueLLM numbers come from a different few-shot harness; bidirectional aggregates are not compared.
 \item \textbf{Documents.} 28 papers per language (168 documents; the document intervals of the long-document RL are bootstrap over documents and reflect paper sampling only; the other document tables have no bootstrap); whole-document decoding was tested at 4,096 new tokens and remains unusable after the long-document RL (72 to 73\% loops); COMET encoders read 512 tokens, so only 4-sentence-window values are document scores; the 385M RL stages trained on prompts of at most 256 source tokens before the long-document RL.
 \item \textbf{Cost and scale.} One 385M model and one language registry; A100 hours as in Section~\ref{sec:method}; no scaling claim.
-\item \textbf{Unresolved and unevaluated items.} B1 final (step 135) was evaluated after the fact (E-20, \texttt{reports/\allowbreak{}e20\_\allowbreak{}b1\_\allowbreak{}final\_\allowbreak{}2026-\allowbreak{}11-\allowbreak{}04.\allowbreak{}md}): it equals B1 best (step 50) within noise (+0.01 chrF++ [\ensuremath{-}0.02, +0.04], AfriCOMET +0.0004 over 93 cells; the 85 later steps changed nothing measurable), and the mixed stage is +0.26 [+0.22, +0.30] chrF++ over B1 final on FLORES+; the NLLB-data ablation was not run [E-17]; sentence-paired comparison with NLLB on the full devtest was not run [E-06b].
+\item \textbf{Unresolved and unevaluated items.} B1 final (step 135) was evaluated after the fact (E-20, \texttt{reports/\allowbreak{}e20\_\allowbreak{}b1\_\allowbreak{}final\_\allowbreak{}2026-\allowbreak{}11-\allowbreak{}04.\allowbreak{}md}): it equals B1 best (step 50) within noise (+0.01 chrF++ [\ensuremath{-}0.02, +0.04], AfriCOMET +0.0004 over 93 cells; the 85 later steps changed nothing measurable), and the mixed stage is +0.26 [+0.22, +0.30] chrF++ over B1 final on FLORES+; the NLLB-data ablation was not run [E-17]; the sentence-paired comparison with NLLB on the full devtest is in Section~\ref{sec:rq4} (NTREX and MAFAND have only language-level NLLB aggregates, and no NLLB-600M row).
 \item \textbf{Not run:} human evaluation (needs native-speaker annotators); the packed-shard contamination scans, the content check of A0 against g0, the embedding and MT round-trip paraphrase scans and the source of the other 34 dev-train-half languages (need the data box); the NLLB-data ablation (skipped by the authors); beam widths other than 4, length penalties and the 54-language decoding run; a science SFT at alpha 1.0 followed by RL, a second seed of E-14 and a long-document RL from the E-14 model.
 \end{enumerate}
 
@@ -1002,7 +1066,7 @@ Outputs are machine translations of unverified quality for languages without any
 \item \textbf{Data.} The decontaminated SFT and RL prompt data and the protected index (\texttt{protected-\allowbreak{}2026-\allowbreak{}10-\allowbreak{}28.\allowbreak{}3}) are in anonymised storage named in the reports and released on acceptance; the NC and unspecified-licence parts cannot be redistributed as they are (Appendix~\ref{app:disc}); TranslatePsy rows are not released (Appendix~\ref{app:disc}). The state, prompts, eval and reports repositories were private at the last check (Hub API 2026-11-04). [OWNER: which parts of the data are released.]
 \item \textbf{Long-document RL incident.} The stage took 7.7 h of wall-clock time (10:03 to 17:44 UTC), of which about 4.5 h were a crash loop: the trainer stopped (ENOSPC, root disk full) at the first step-25 evaluation and Hub-staging save and was restarted 18 times by the supervisor, each time resuming from \texttt{last/\allowbreak{}} at step 20 and repeating steps 21 to 25; the staging directories were real directories on the root disk instead of symlinks to \texttt{/\allowbreak{}dev/\allowbreak{}shm}. Fixed at 15:35 UTC; the model path of the 80 steps is otherwise the planned one (one seed). About 3.2 h were productive. The repeated step-20-to-25 segments are visible as repeated step-25 evaluations in the metrics log (Figure of the training records). 
 % src: reports/eval_long_document_rl_385m_2026-11-04.md section 0 'Costs and caveats'; reports/rl_long_document_plan_2026-11-04.md section 8; reports/overnight_log_2026-11-04.md 11:10-15:35
-\item \textbf{Not reproducible from what is stored:} stage-A steps 1-40 hyper-parameters except through the stage report; B1 final's evaluation; per-sentence NLLB hypotheses on the full devtest; the training seed spread; the SFT with another seed (stage B alone is 44.8 A100-hours).
+\item \textbf{Not reproducible from what is stored:} stage-A steps 1-40 hyper-parameters except through the stage report; B1 final's evaluation; per-sentence NLLB-3.3B outputs on NTREX and MAFAND (only corpus-level aggregates survive); the training seed spread; the SFT with another seed (stage B alone is 44.8 A100-hours).
 \end{itemize}
 
 \section{Prompt format and data statement}\label{app:format}

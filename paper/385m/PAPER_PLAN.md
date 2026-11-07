@@ -44,7 +44,7 @@ Status column: W = written, results final; P = pending experiment; S = skeleton.
 | 7.3 | RL chain | stage deltas, dev curve | R8, R9 | Fig 8 | W |
 | 7.4 | Weak languages, weak-group run | W1-W6 | W1-W6 | T9, T10 | W |
 | 7.5 | Decoding | beam/MBR on SFT; RL models, guard [P] | D1-D6 | T8, Fig 9 | W (E-01, E-02, E-09, E-09b) |
-| 7.6 | Comparison with other systems | **RL vs NLLB on 43 languages (92% vs 68%)**, tertiles, 7 wins, same-sentence beam-4 row, caveats; AfriqueLLM indicative | N1-N6, N2, N2b, N3b | T11 NLLB table, Fig 10 gap by tertile with RL | W (E-06b optional) |
+| 7.6 | Comparison with other systems | **sentence-paired RL vs NLLB-600M / NLLB-3.3B / TranslatePsy-0.8B on FLORES+ (FRC1-FRC3), NTREX/MAFAND language-level rows (FRC4), 270M rows (FRC5)**; published 43-language block (92% vs 68%), tertiles, 7 wins, caveats; AfriqueLLM indicative | N1-N6, N2, N2b, N3b | T11 NLLB table, Fig 10 gap by tertile with RL | W (E-06b optional) |
 | 7.7 | Family, script, resource (exploratory) | Glottolog 5.3, gain by family/script, token-budget null that flips when Afro-Asiatic is dropped, regression R2 | R12b-R12f | T12 (appendix candidate), Fig 11 | W (labelled exploratory) |
 | 7.8 | Science SFT and RL | alpha sweep and SSA-COMET-QE null; science RL [P]; SSA-COMET-QE for all stages [P] | SC1-SC5 | T13 alpha sweep, Fig 12 | partial (E-16, E-05) |
 | 7.9 | Documents | whole vs chunked, 270M vs 385M; long-document RL [P] | DL1-DL5 | T14, Fig 13 | partial (E-15) |

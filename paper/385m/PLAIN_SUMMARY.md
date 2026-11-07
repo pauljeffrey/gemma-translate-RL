@@ -8,7 +8,7 @@
 3. **Beam search and MBR decoding help the baseline a lot and the RL model very little.**
 4. **More fine-tuning for the same GPU time is inconclusive.** By the rule we wrote down before the run, the control matched RL on the 19 languages for which we gave it extra data and was far behind on all the others. We did not change the rule afterwards.
 5. **Almost all of RL's gain comes in the first RL stage.** The last RL step is not distinguishable from random-seed noise.
-6. **The model reaches about 92% of NLLB-3.3B's chrF++** on the 43 languages both cover, at about one ninth of the size (nominal 3.3B against 385M). It matches or beats NLLB on seven of those languages, all among NLLB's weakest. We do not claim to beat NLLB.
+6. **Against other systems, on identical sentences:** the RL model beats the SFT baseline everywhere, but stays about one chrF++ point below NLLB-600M and about three below NLLB-3.3B (about 92% of its score, at about one ninth of its size). It is ahead of NLLB-600M in only some languages (15 of 44) and of NLLB-3.3B in a few (7 of 44). On the 19 languages covered by TranslatePsy-0.8B, which was distilled from NLLB-3.3B outputs, that model is clearly ahead of ours. We decode greedily and NLLB with beam search. We do not claim to beat NLLB.
 7. **For science text, the extra fine-tuning step carries the gain, not the science RL.** The same RL without that step ends about 1.4 chrF below.
 8. **Whole-document translation still does not work**; translating sentence by sentence does.
 
