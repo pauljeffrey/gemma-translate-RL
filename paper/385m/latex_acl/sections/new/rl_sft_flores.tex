@@ -1,0 +1,68 @@
+{\scriptsize\setlength{\tabcolsep}{1.5pt}
+\begin{longtable}{@{}lllllrlll@{}}
+\caption{FLORES+ devtest, 54 languages: SFT baseline and RL model chrF++, and the RL gain in chrF++, plain chrF and held-out AfriCOMET with 95\% paired-bootstrap intervals (all clean rows), with the Glottolog 5.3 top family and the script of each language from the family analysis.}\label{tab:rl-sft-flores-fam}\\
+\toprule
+ISO & Language & Glottolog family & Script & SFT & RL & RL $-$ SFT, chrF++ [CI] & chrF [CI] & AfriCOMET [CI] \\
+\midrule\endfirsthead
+\toprule
+ISO & Language & Glottolog family & Script & SFT & RL & RL $-$ SFT, chrF++ [CI] & chrF [CI] & AfriCOMET [CI] \\
+\midrule\endhead
+\midrule\endfoot
+\bottomrule\endlastfoot
+iso & iso & Atlantic-Congo & Latin & SFT & RL & Δ all rows [CI] & Δ chrF [CI] & Δ AfriCOMET [CI] \\
+--- & --- &  &  & ---: & ---: & $-$$-$$-$ & $-$$-$$-$ & $-$$-$$-$ \\
+kea & Kabuverdianu & Indo-European & Latin & 18.91 & 39.18 & +20.27 [+18.91, +21.53] & +20.53 [+19.13, +21.81] & -- \\
+orm & Oromo & Afro-Asiatic & Latin & 12.06 & 30.18 & +18.12 [+17.49, +18.76] & +20.90 [+20.13, +21.64] & +0.191 [+0.181, +0.202] \\
+nso & Sepedi & Atlantic-Congo & Latin & 31.58 & 49.01 & +17.43 [+15.75, +19.09] & +17.98 [+16.25, +19.66] & +0.103 [+0.092, +0.113] \\
+lua & Luba-Kasai & Atlantic-Congo & Latin & 17.18 & 33.37 & +16.19 [+15.21, +17.13] & +17.57 [+16.50, +18.58] & +0.126 [+0.117, +0.134] \\
+lin & Lingala & Atlantic-Congo & Latin & 28.56 & 44.35 & +15.78 [+14.19, +17.22] & +16.34 [+14.66, +17.84] & +0.097 [+0.088, +0.107] \\
+ssw & Swati & Atlantic-Congo & Latin & 22.20 & 37.86 & +15.66 [+14.46, +16.85] & +17.72 [+16.34, +19.05] & +0.113 [+0.104, +0.123] \\
+lug & Luganda & Atlantic-Congo & Latin & 16.17 & 31.73 & +15.57 [+14.66, +16.52] & +17.29 [+16.27, +18.36] & +0.112 [+0.104, +0.121] \\
+sag & Sango & Atlantic-Congo & Latin & 19.68 & 34.31 & +14.62 [+13.64, +15.55] & +15.55 [+14.51, +16.54] & -- \\
+bem & Bemba & Atlantic-Congo & Latin & 19.31 & 33.88 & +14.56 [+13.63, +15.61] & +15.73 [+14.71, +16.86] & +0.111 [+0.103, +0.121] \\
+tso & Tsonga & Atlantic-Congo & Latin & 32.92 & 46.86 & +13.93 [+12.43, +15.51] & +14.54 [+12.97, +16.19] & +0.070 [+0.062, +0.079] \\
+luo & Luo & Nilotic & Latin & 21.36 & 34.49 & +13.13 [+11.91, +14.15] & +13.82 [+12.51, +14.92] & +0.101 [+0.092, +0.109] \\
+kin & Kinyarwanda & Atlantic-Congo & Latin & 25.81 & 38.66 & +12.86 [+11.66, +14.03] & +13.94 [+12.61, +15.25] & +0.092 [+0.083, +0.101] \\
+cjk & cjk & Atlantic-Congo & Latin & 10.72 & 23.02 & +12.31 [+11.70, +12.89] & +14.18 [+13.50, +14.85] & -- \\
+run & Kirundi & Atlantic-Congo & Latin & 21.59 & 33.88 & +12.29 [+11.21, +13.15] & +13.66 [+12.50, +14.65] & +0.107 [+0.098, +0.116] \\
+nus & Nuer & Nilotic & Latin & 13.49 & 24.82 & +11.32 [+10.73, +11.91] & +12.16 [+11.51, +12.77] & +0.150 [+0.140, +0.159] \\
+umb & Umbundu & Atlantic-Congo & Latin & 14.80 & 25.46 & +10.66 [+9.77, +11.44] & +12.21 [+11.17, +13.15] & +0.080 [+0.072, +0.087] \\
+kmb & Kimbundu & Atlantic-Congo & Latin & 16.02 & 26.62 & +10.61 [+9.82, +11.37] & +11.70 [+10.84, +12.56] & +0.081 [+0.074, +0.087] \\
+knc & Kanuri & Saharan & Latin & 3.81 & 14.22 & +10.41 [+9.95, +10.88] & +11.96 [+11.45, +12.48] & -- \\
+kbp & Kabiye & Atlantic-Congo & Latin & 14.51 & 24.88 & +10.37 [+9.70, +11.00] & +11.03 [+10.32, +11.69] & +0.123 [+0.115, +0.131] \\
+kab & Kabyle & Afro-Asiatic & Latin & 16.35 & 26.69 & +10.34 [+9.50, +11.14] & +10.80 [+9.94, +11.62] & +0.116 [+0.107, +0.126] \\
+dik & dik & Nilotic & Latin & 3.76 & 14.06 & +10.30 [+9.75, +10.81] & +11.37 [+10.80, +11.94] & -- \\
+amh & Amharic & Afro-Asiatic & Ethiopic & 16.62 & 26.62 & +10.00 [+9.04, +10.96] & +10.77 [+9.72, +11.82] & +0.088 [+0.078, +0.099] \\
+vmw & vmw & Atlantic-Congo & Latin & 17.45 & 27.14 & +9.69 [+8.92, +10.48] & +10.87 [+10.02, +11.74] & -- \\
+mfe & mfe & Indo-European & Latin & 28.51 & 37.93 & +9.42 [+7.98, +10.94] & +9.57 [+8.10, +11.10] & -- \\
+dyu & Dyula & Mande & Latin & 9.90 & 18.97 & +9.06 [+8.47, +9.62] & +10.27 [+9.62, +10.88] & -- \\
+yor & Yoruba & Atlantic-Congo & Latin & 21.32 & 30.33 & +9.01 [+7.99, +10.00] & +9.02 [+7.99, +10.04] & +0.118 [+0.108, +0.128] \\
+tum & Tumbuka & Atlantic-Congo & Latin & 25.40 & 34.27 & +8.87 [+7.89, +9.79] & +9.56 [+8.49, +10.58] & +0.073 [+0.064, +0.081] \\
+kam & Kamba & Atlantic-Congo & Latin & 17.22 & 25.92 & +8.70 [+7.93, +9.50] & +9.19 [+8.35, +10.06] & +0.063 [+0.057, +0.069] \\
+mos & Mossi & Atlantic-Congo & Latin & 14.09 & 22.79 & +8.70 [+8.13, +9.33] & +9.41 [+8.80, +10.05] & +0.088 [+0.081, +0.095] \\
+tir & Tigrinya & Afro-Asiatic & Ethiopic & 10.48 & 18.74 & +8.26 [+7.69, +8.86] & +9.01 [+8.39, +9.66] & +0.144 [+0.134, +0.155] \\
+taq & taq & Afro-Asiatic & Latin & 2.81 & 11.06 & +8.25 [+7.82, +8.67] & +9.14 [+8.68, +9.60] & -- \\
+seh & seh & Atlantic-Congo & Latin & 21.67 & 29.65 & +7.98 [+7.00, +8.86] & +9.04 [+7.93, +10.04] & -- \\
+bam & Bambara & Mande & Latin & 19.39 & 27.17 & +7.78 [+6.96, +8.59] & +8.34 [+7.50, +9.21] & +0.069 [+0.062, +0.076] \\
+twi & Twi & Atlantic-Congo & Latin & 27.54 & 35.07 & +7.53 [+6.47, +8.61] & +7.81 [+6.72, +8.90] & +0.054 [+0.047, +0.061] \\
+tsn & Setswana & Atlantic-Congo & Latin & 37.69 & 45.05 & +7.36 [+6.18, +8.65] & +7.59 [+6.35, +8.93] & +0.040 [+0.034, +0.048] \\
+kik & Kikuyu & Atlantic-Congo & Latin & 25.98 & 33.28 & +7.30 [+6.39, +8.22] & +7.67 [+6.71, +8.66] & +0.065 [+0.058, +0.073] \\
+hau & Hausa & Afro-Asiatic & Latin & 39.88 & 46.46 & +6.58 [+5.09, +8.34] & +7.24 [+5.62, +9.18] & +0.027 [+0.020, +0.035] \\
+mlg & Malagasy & Austronesian & Latin & 39.04 & 44.73 & +5.68 [+4.54, +6.77] & +6.32 [+5.10, +7.50] & +0.041 [+0.034, +0.048] \\
+nya & Chichewa & Atlantic-Congo & Latin & 36.88 & 42.21 & +5.33 [+4.23, +6.54] & +5.90 [+4.71, +7.21] & +0.026 [+0.019, +0.034] \\
+ewe & Ewe & Atlantic-Congo & Latin & 25.96 & 31.17 & +5.21 [+4.46, +6.04] & +5.55 [+4.75, +6.43] & +0.046 [+0.039, +0.052] \\
+sot & Sesotho & Atlantic-Congo & Latin & 37.87 & 42.72 & +4.85 [+3.70, +6.08] & +5.13 [+3.93, +6.45] & +0.027 [+0.021, +0.033] \\
+arz & arz & Afro-Asiatic & Arabic & 4.59 & 9.18 & +4.59 [+4.01, +5.15] & +4.94 [+4.27, +5.58] & -- \\
+som & Somali & Afro-Asiatic & Latin & 35.47 & 39.71 & +4.24 [+3.14, +5.34] & +4.56 [+3.41, +5.71] & +0.030 [+0.023, +0.037] \\
+wol & Wolof & Atlantic-Congo & Latin & 26.87 & 30.58 & +3.72 [+2.74, +4.63] & +3.99 [+2.91, +5.00] & +0.024 [+0.018, +0.030] \\
+sna & Shona & Atlantic-Congo & Latin & 33.92 & 37.56 & +3.64 [+2.47, +4.85] & +4.29 [+3.00, +5.65] & +0.023 [+0.017, +0.030] \\
+zul & Zulu & Atlantic-Congo & Latin & 45.91 & 48.27 & +2.36 [+1.56, +3.14] & +2.66 [+1.79, +3.52] & +0.014 [+0.009, +0.020] \\
+ibo & Igbo & Atlantic-Congo & Latin & 37.82 & 40.14 & +2.33 [+1.57, +3.08] & +2.45 [+1.65, +3.23] & +0.014 [+0.009, +0.019] \\
+ary & ary & Afro-Asiatic & Arabic & 4.64 & 6.88 & +2.24 [+1.76, +2.74] & +1.93 [+1.35, +2.51] & -- \\
+swh & Swahili & Atlantic-Congo & Latin & 56.24 & 58.36 & +2.12 [+1.10, +3.38] & +2.13 [+1.14, +3.33] & +0.016 [+0.010, +0.022] \\
+fon & Fon & Atlantic-Congo & Latin & 20.17 & 22.25 & +2.07 [+1.60, +2.55] & +2.28 [+1.78, +2.77] & +0.029 [+0.024, +0.035] \\
+xho & Xhosa & Atlantic-Congo & Latin & 43.56 & 45.43 & +1.87 [+1.05, +2.80] & +2.22 [+1.31, +3.24] & +0.011 [+0.006, +0.017] \\
+zgh & zgh & Afro-Asiatic & Tifinagh & 2.29 & 4.07 & +1.78 [+1.30, +2.30] & +1.40 [+0.88, +1.96] & -- \\
+aeb & aeb & Afro-Asiatic & Arabic & 2.75 & 4.12 & +1.36 [+0.96, +1.78] & +1.08 [+0.62, +1.55] & -- \\
+afr & Afrikaans & Indo-European & Latin & 63.13 & 64.13 & +1.01 [+0.53, +1.61] & +1.05 [+0.56, +1.68] & +0.010 [+0.006, +0.015] \\
+\end{longtable}}

@@ -1,0 +1,14 @@
+\begin{table}[htbp]
+\centering\footnotesize
+\setlength{\tabcolsep}{4pt}
+\caption{E-01 full evaluation: the SFT baseline and the RL model with and without the chosen decoding guard (frequency penalty 0.10), language averages per benchmark, held-out AfriCOMET over 76 pairs and FLORES+ finished / loop / length ratio.}\label{tab:e01-full}
+\begin{adjustbox}{max width=\linewidth}\begin{tabular}{@{}lrrrrrrl@{}}
+\toprule
+system & FLORES+ chrF++ (54) & NTREX (24) & MAFAND (15) & all 93 cells chrF++ & all cells chrF & AfriCOMET-STL (76 cells) & FLORES+ finished / loop / length ratio \\
+\midrule
+SFT, greedy & 22.85 & 29.25 & 35.77 & 26.59 & 29.06 & 0.565 & 0.829 / 0.209 / 3.03 \\
+\textbf{SFT + guard (freq 0.10)} & 27.22 & 32.96 & 38.22 & \textbf{30.48} & 33.30 & 0.583 & 0.9945 / 0.136 / 1.41 \\
+RL (mixed best), greedy & 31.66 & 37.17 & 40.78 & 34.55 & 37.65 & 0.628 & 0.9954 / 0.048 / 1.14 \\
+\bottomrule
+\end{tabular}\end{adjustbox}
+\end{table}

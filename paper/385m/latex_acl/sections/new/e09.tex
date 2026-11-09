@@ -1,0 +1,12 @@
+\begin{table}[htbp]
+\centering\footnotesize\setlength{\tabcolsep}{3pt}
+\caption{E-09 engine and precision check on 240 FLORES+ sentences (10 languages $\times$ 24), greedy, 256 new tokens: chrF++ of vLLM and Hugging Face (HF) in bf16 and fp32, and the share of identical outputs between the two engines. The engines differ in bf16 and agree in fp32.}\label{tab:e09}
+\begin{adjustbox}{max width=\linewidth}\begin{tabular}{@{}lrrrrrr@{}}
+\toprule
+ & vLLM bf16 & HF bf16 & vLLM fp32 & HF fp32 & identical bf16 & identical fp32\\
+\midrule
+SFT baseline & 36.21 & 36.80 & 38.19 & 38.18 & 9.6\% & 98.8\% \\
+RL model & 40.47 & 40.28 & 40.59 & 40.61 & 16.7\% & 97.1\% \\
+\bottomrule
+\end{tabular}\end{adjustbox}
+\end{table}

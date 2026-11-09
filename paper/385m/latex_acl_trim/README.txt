@@ -31,5 +31,5 @@ Two builds (same sources)
   On Overleaf: set main.tex or main_preprint.tex as the main document. main_preprint.tex only defines \preprintbuild and inputs main.tex;
   the switch is \ifanon in main.tex (\anonreal{review text}{preprint text} in macros.tex). pdfLaTeX, XeLaTeX and LuaLaTeX are all fine.
 
-Build check (run in this folder before every build or zip; prints the offending files and fails if any .tex under sections/ is empty or any \input target is missing)
+Build check (run in this folder before every build or zip; sections/ includes sections/new/ and sections/fr/ with the generated per-language tables; the command prints the offending files and fails if any .tex under sections/ is empty or any \input target is missing)
   test -z "$(find sections -name '*.tex' -size 0)" && for f in $(grep -ho '\\input{[^}]*}' main.tex sections/*.tex | sed 's/\\input{//;s/}//'); do test -f "$f.tex" -o -f "$f" || { echo "missing input: $f"; exit 1; }; done && echo "sources ok" || { find sections -name '*.tex' -size 0; exit 1; }

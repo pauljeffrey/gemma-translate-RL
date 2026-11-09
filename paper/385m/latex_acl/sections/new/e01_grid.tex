@@ -1,0 +1,18 @@
+\begin{table}[htbp]
+\centering\footnotesize
+\setlength{\tabcolsep}{4pt}
+\caption{E-01 guard grid on the FLORES+ dev held-out half (720 sentences, 18 languages): dev chrF++, finished rate and loop rate of the SFT baseline and the RL model for seven decoding settings (freq = vLLM frequency penalty, rep = repetition penalty; settings fixed in advance; freq 0.10 was chosen).}\label{tab:e01-grid}
+\begin{adjustbox}{max width=\linewidth}\begin{tabular}{@{}lrrrrrr@{}}
+\toprule
+config & SFT dev chrF++ & SFT finished & SFT loop & RL dev chrF++ & RL finished & RL loop \\
+\midrule
+greedy & 34.50 & 0.946 & 0.058 & 40.43 & 0.999 & 0.003 \\
+freq002 & 36.17 & 0.974 & 0.040 & 40.62 & 1.000 & 0.000 \\
+freq005 & 36.95 & 0.992 & 0.039 & 40.64 & 1.000 & 0.000 \\
+freq010 & 37.36 & 0.996 & 0.040 & 40.65 & 1.000 & 0.000 \\
+rep102 & 35.79 & 0.999 & 0.001 & 39.60 & 1.000 & 0.000 \\
+rep105 & 29.92 & 0.997 & 0.003 & 33.85 & 1.000 & 0.001 \\
+freq005\_rep102 & 35.71 & 1.000 & 0.000 & 39.59 & 1.000 & 0.000 \\
+\bottomrule
+\end{tabular}\end{adjustbox}
+\end{table}

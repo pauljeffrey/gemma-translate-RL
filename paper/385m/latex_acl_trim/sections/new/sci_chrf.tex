@@ -1,0 +1,19 @@
+{\scriptsize\setlength{\tabcolsep}{1.5pt}
+\begin{longtable}{@{}llrrrrrrrr@{}}
+\caption{AfriScience-MT test, sentence level (970 sentences per language), plain chrF per language for every stage; macro over the six languages. Columns: SFT = SFT baseline; RL 1st / 2nd stage = first and second RL stage (best checkpoint); RL model = final general RL model; sci. SFT = science fine-tuning ($\alpha=0.5$); sci. RL = science RL (best, final); E-14 = the same science RL started from the RL model without the science fine-tuning step.}\label{tab:sci-chrf}\\
+\toprule
+ISO & Language & SFT & RL 1st stage & RL 2nd stage & RL model & sci. SFT & sci. RL best & sci. RL final & E-14 \\
+\midrule\endfirsthead
+\toprule
+ISO & Language & SFT & RL 1st stage & RL 2nd stage & RL model & sci. SFT & sci. RL best & sci. RL final & E-14 \\
+\midrule\endhead
+\midrule\endfoot
+\bottomrule\endlastfoot
+amh & Amharic & 20.30 & 28.75 & 28.85 & 29.10 & 29.90 & 30.19 & 30.69 & 29.48 \\
+hau & Hausa & 47.33 & 54.44 & 55.35 & 55.18 & 56.10 & 56.07 & 56.74 & 55.40 \\
+lug & Luganda & 23.31 & 36.92 & 37.22 & 38.15 & 39.27 & 39.75 & 39.87 & 38.77 \\
+nso & Sepedi & 41.27 & 51.98 & 52.15 & 52.12 & 54.72 & 54.66 & 54.69 & 52.00 \\
+yor & Yoruba & 25.36 & 37.55 & 37.72 & 37.66 & 38.11 & 38.32 & 38.62 & 37.89 \\
+zul & Zulu & 58.42 & 60.72 & 60.53 & 60.20 & 61.71 & 61.78 & 61.97 & 60.42 \\
+\midrule Macro &  & 36.00 & 45.06 & 45.30 & 45.40 & 46.63 & 46.79 & 47.10 & 45.66 \\
+\end{longtable}}

@@ -1,0 +1,15 @@
+\begin{table}[htbp]
+\centering\footnotesize
+\setlength{\tabcolsep}{4pt}
+\caption{E-01 paired differences (language averages, 95\% bootstrap intervals).}\label{tab:e01-diff}
+\begin{adjustbox}{max width=\linewidth}\begin{tabular}{@{}llllll@{}}
+\toprule
+comparison & FLORES+ & NTREX & MAFAND & all 93 cells chrF++ & all cells AfriCOMET \\
+\midrule
+guard effect on SFT (SFT + guard minus SFT) & +4.37 [+4.23, +4.50] & +3.71 [+3.54, +3.86] & +2.45 [+2.24, +2.66] & +3.89 & +0.0224 / +0.0157 / +0.0106 by benchmark (+0.018 on all cells) \\
+guard effect on RL & +0.41 [+0.38, +0.44] & +0.14 [+0.10, +0.18] & +0.11 [+0.07, +0.16] & +0.29 & +0.0038 / +0.0026 / +0.0019 \\
+RL + guard minus SFT + guard & see primary line &  &  & \textbf{+4.37 [+4.28, +4.46]} & \textbf{+0.0479 [+0.0469, +0.0490]} \\
+RL minus SFT, both greedy (EVID) & +8.81 [+8.59, +9.03] & +7.91 [+7.69, +8.12] & +5.01 [+4.76, +5.23] & +7.96 [+7.82, +8.12] & +0.063 \\
+\bottomrule
+\end{tabular}\end{adjustbox}
+\end{table}

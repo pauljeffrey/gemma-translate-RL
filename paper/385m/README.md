@@ -25,8 +25,8 @@ These links (here and in the LaTeX sources and PDFs of the preprint build) are t
 | `make_figures.py`, `figures/` | the figure script (reads the tables in `../../experiments/data/`) and its output (PDF and PNG) |
 | `latex_snippets_full_results/` | generated LaTeX tables and the figure of the full-results comparison (`../../experiments/reports/full_results_comparison_2026-11-06.md`), the source of `sections/fr/` in the LaTeX folders |
 | `refs_new.bib` | references added for this paper (the cited ones are in `latex_acl/refs.bib`) |
-| `latex_acl/` | ACL-format sources of the rewritten paper, full appendix (58 pages) |
-| `latex_acl_trim/` | the same core with a condensed appendix (32 pages) |
+| `latex_acl/` | ACL-format sources of the rewritten paper, full appendix (76 pages) |
+| `latex_acl_trim/` | the same core and every result table, figure and per-language table of the full version, without the narrative paragraphs of the appendix (63 pages) |
 
 Paths such as `reports/...` and `reports/data/...` inside these files refer to `../../experiments/reports/` and `../../experiments/data/`; `paper_385m/` refers to this folder.
 
@@ -34,10 +34,10 @@ Paths such as `reports/...` and `reports/data/...` inside these files refer to `
 
 | File | Build | Pages | Content |
 |---|---|---|---|
-| `latex_acl/main.pdf` | review (double-blind) | 58 | "Anonymous ACL submission", line numbers, no author, no organisation, no repository links (prints "anonymised for review") |
-| `latex_acl/main_preprint.pdf` | preprint | 58 | author block, the three Hugging Face links above |
-| `latex_acl_trim/main.pdf` | review (double-blind) | 32 | as above, condensed appendix |
-| `latex_acl_trim/main_preprint.pdf` | preprint | 32 | as above, condensed appendix |
+| `latex_acl/main.pdf` | review (double-blind) | 76 | "Anonymous ACL submission", line numbers, no author, no organisation, no repository links (prints "anonymised for review") |
+| `latex_acl/main_preprint.pdf` | preprint | 76 | author block, the three Hugging Face links above |
+| `latex_acl_trim/main.pdf` | review (double-blind) | 63 | as above, appendix without narrative paragraphs |
+| `latex_acl_trim/main_preprint.pdf` | preprint | 63 | as above, appendix without narrative paragraphs |
 
 Both builds come from the same sources: `main_preprint.tex` only defines `\preprintbuild` and inputs `main.tex`; the switch is `\ifanon` in `main.tex` (`\anonreal{review text}{preprint text}` in `macros.tex`).
 

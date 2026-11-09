@@ -53,9 +53,26 @@ No `[VERIFY ...]` and no `[PENDING ...]` mark is left in either build.
 * Core limitation text now says NTREX/MAFAND-MT NLLB values are language-level averages (no sentence pairing, no AfriCOMET) and that decoding differs (greedy against beam 4).
 * Open: SmolSent, SALT, GlotStoryBook, IbomMT and FLORES-MOZ still have no RL row (missing item 8 of the report); NLLB-600M on NTREX/MAFAND-MT/SmolSent/SALT and AfriCOMET for NLLB outside FLORES+ would need about 3 A100-hours (report section 5).
 
+## 8. Per-language, decoding and completeness additions (2026-11-09)
+Appendix map (letters follow the order of the PDF; page numbers of the review build): **full version** A glossary 13; B full results against other systems and per-language comparison 14; C per-language RL gain with Glottolog family and script 25; D decoding (E-02 beam/MBR per language, E-01 guard, engine and precision checks E-09/E-09b, superseded 256-token study) 29; E seeds and ablations (E-04, E-11, per language) 39; F matched-compute control (E-03: tables, panels, per language) 41; G science and long documents (alpha, E-14, per-language science and document results) 46; H audit of the repetition check 54; I hyper-parameters 56, A0 and earlier-270M comparisons 58, stage chain 62; J family, script and resource analysis 65; narrative blocks 67-68; independence table 69; limitations 69; disclosures 71; reproducibility 74; data statement 75; checklist 75. Total 76 pages. **Trimmed version** (same tables, narrative removed): A 13; B 14; C 25; D 29; E 37; F 39; G 42; H 47; I 48-53; J 56; contamination 57; independence 57; disclosures 58; reproducibility 61; data statement and checklist 62. Total 63 pages. The trimmed version omits only prose-only blocks (NLLB comparison narrative, NLLB-mined-data analysis, negative-results narrative, the full limitations list) and shortens narrative inside the table sections.
+
+New tables (both versions; 29 generated per-language/decoding/other tables plus the tabB set): E-02 per language chrF++ (8 systems), AfriCOMET (8 systems), paired changes to greedy with intervals (SFT and RL, chrF++ and AfriCOMET), RL-minus-SFT per decoder, per-language figure (pgfplots); E-01 guard grid, full evaluation, paired differences, per language; E-09 and E-09b engine/precision tables; E-03 headline, benchmark, panel, SFT-control-RL and finished/loop tables plus per language; E-04 and E-11 per language; RL-minus-SFT per language with family and script for FLORES+, NTREX and MAFAND-MT; family/script/resource gain by group; weak-group RL per language; science per language (chrF, chrF++, AfriCOMET, SSA-COMET-QE for every stage plus E-14, E-14 differences per language, science RL minus science fine-tuning per language); document-level per language (whole and chunked, seven models), document-level macro and coverage tables, chunked chrF/SSA window per language. The 256-token study is in both versions, labelled superseded. Core decoding table now shows greedy, beam-4 (primary and HF rule) and MBR-16 for both models with changes and intervals.
+
+### Could not find data for (not invented; stated as missing)
+1. E-02 per-language plain chrF and spBLEU (the CSV has per-language chrF++ and AfriCOMET differences only; chrF/spBLEU exist as language averages in `cmp_all.md`). Per-language AfriCOMET per system is the mean of the archived per-sentence scores (`research_archive_2026-11-03/box_final_2026-11-04/e02/e02/*.comet.json`), validated against the report's language averages.
+2. E-02 RL minus SFT with the HF-rule beam (the pair is not in `cmp_all.json`; shown as `--`).
+3. E-01 per language for the guard effect alone (SFT + guard minus SFT, RL + guard minus RL); only RL + guard minus SFT + guard is stored per language.
+4. E-03 per-language AfriCOMET (the evidence files hold chrF++ and chrF per cell only).
+5. E-04 and E-11 per-language AfriCOMET differences exist in the CSVs but are not tabulated (chrF++ only).
+6. E-14 per-language whole-document results (only chunked/macro document values are stored for E-14).
+7. Whole-document per-language results for the first and second RL stages (document evaluations exist only for the science and long-document variants and the earlier 270M model).
+8. Per-language spBLEU/chrF/AfriCOMET for NTREX/MAFAND-MT NLLB (only chrF++/spBLEU language aggregates exist for NLLB there; no AfriCOMET).
+9. RL model rows on SmolSent, SALT, GlotStoryBook, IbomMT, FLORES-MOZ (never evaluated; full-results report missing list item 8).
+10. The stage-A feature-split figure (`fig_feature_split.png`) is not in `paper_385m/figures/`.
+
 ## 4. Layout and build notes
 * Core ends on page 8 in both versions and both builds. Limitations and Ethical considerations pages 9-10; references to page 12; appendix from page 13, one-column.
-* Full version: 58 pages (both builds). Trimmed version: 32 pages (both builds), see `latex_acl_trim/OPEN_ISSUES_TRIM.md`.
+* Full version: 76 pages (both builds). Trimmed version: 63 pages (both builds), see `latex_acl_trim/OPEN_ISSUES_TRIM.md`.
 * Compiled with tectonic (XeTeX) only; pdfLaTeX is not installed here (untested pdfLaTeX branch in the preamble). No overfull boxes, no undefined references or citations in any of the four builds.
 * The generic-article version in `paper_385m/latex/` is superseded and was not updated.
 

@@ -1,0 +1,18 @@
+\begin{table}[htbp]
+\centering\footnotesize\setlength{\tabcolsep}{3pt}
+\caption{E-09 paired differences in chrF++ on the same 240 sentences, with 95\% paired-bootstrap intervals over sentences. The $+1.81$ for the SFT baseline is a small-sample result; the full-set check (Table~\ref{tab:e09b-full}) does not reproduce it.}\label{tab:e09-diff}
+\begin{adjustbox}{max width=\linewidth}\begin{tabular}{@{}llr@{}}
+\toprule
+model & comparison & chrF++ difference\\
+\midrule
+SFT baseline & vLLM fp32 $-$ bf16 & +1.81 [+0.59, +3.12] \\
+SFT baseline & HF fp32 $-$ bf16 & +1.25 [+0.32, +2.19] \\
+SFT baseline & HF bf16 $-$ vLLM bf16 & +0.54 [$-$0.67, +1.79] \\
+SFT baseline & HF fp32 $-$ vLLM fp32 & $-$0.01 [$-$0.08, +0.06] \\
+RL model & vLLM fp32 $-$ bf16 & +0.09 [$-$0.41, +0.59] \\
+RL model & HF fp32 $-$ bf16 & +0.34 [$-$0.27, +0.96] \\
+RL model & HF bf16 $-$ vLLM bf16 & $-$0.23 [$-$0.73, +0.23] \\
+RL model & HF fp32 $-$ vLLM fp32 & +0.02 [$-$0.02, +0.08] \\
+\bottomrule
+\end{tabular}\end{adjustbox}
+\end{table}
