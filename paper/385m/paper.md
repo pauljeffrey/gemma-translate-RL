@@ -1,21 +1,20 @@
-# [Working title] Half of the chrF++ Gain Is Finishing the Sentence: What Reinforcement Learning Adds to a 385M English-to-African Translator Beyond a Decoding Guard
-<!-- GATE E-01 E-03: title; see PAPER_PLAN.md sections 2 and 8 -->
+# What Does Reinforcement Learning Add to a Small Translator for African Languages?
+<!-- GATE E-01 E-03: title (the working title of the second draft, "Half of the chrF++ Gain Is Finishing the Sentence ...", is retired; it is the headline of Section 7.2 and of the abstract, not of the paper); see PAPER_PLAN.md sections 2 and 8 -->
 
 **Jeffrey Otoibhi**  
 Aletheia AI  
-*Second draft of 2026-11-04. Written from `paper_385m/CLAIMS_LEDGER.md`; every number in the results sections is copied from the report named in the HTML comment next to it. Report keys (EVID, NLLBRL, FAMILY, DEGEN, SPLIT, CFU, HYG, CTLP, ...) are those of the ledger, section 0. `[PENDING: ...]` marks a result that is not yet in; at the time of this draft no such marker is left, and experiments that are not available are listed in Section 13; `[VERIFY: ...]` = fact not settled in any report; `TODO(owner: ...)` = decision for the author; `<!-- GATE E-xx -->` marks a text block that must be rewritten if that experiment changes the story (list in `PAPER_PLAN.md`, last section). Section numbers differ from the first paper (`paper/`), whose FLORES+ results were contaminated by our own pipeline and are not reused here.*
+*Single-file results version of 2026-11-10. Every experiment of the study (E-01 to E-05, E-09, E-09b, E-11, E-13 to E-16, E-20, the full comparison with NLLB-200 and TranslatePsy, the family analysis, the weak-group run and the contamination audit) has its result in this file; Section 7 opens with a results index that gives, for each, the section, the report and the result in plain words; the appendix index at the end maps every LaTeX appendix to the section that holds the same results and to the report and data folder it comes from. Per-language tables are in Sections 7.5 (decoding), 7.6 (comparison with NLLB-200 and TranslatePsy) and 7.8 (science); the other per-language tables are in the data folders named in the appendix index. Written from `paper_385m/CLAIMS_LEDGER.md`; every number in the results sections is copied from the report or CSV named in the HTML comment next to it. Report keys (EVID, NLLBRL, FAMILY, DEGEN, SPLIT, CFU, HYG, CTLP, E01 to E14, E20, FRC, ...) are those of the ledger, section 0. No result is pending and no open question is marked in the text; experiments that were not run are listed in Section 13. `<!-- GATE E-xx -->` marks a text block that must be rewritten if that experiment changes the story (list in `PAPER_PLAN.md`, last section). Section numbers differ from the first paper (`paper/`), whose FLORES+ results were contaminated by our own pipeline and are not reused here.*
 
 <div class="abstract" markdown="1">
 <!-- GATE E-01 E-03 E-04 E-16 E-15: whole abstract -->
 
-**Abstract.** [DRAFT: the experiments the abstract relies on are in (E-01 to E-05, E-09b, E-11, E-13, E-15, E-16, E-20); gates in `PAPER_PLAN.md` section 7.] We grow Gemma-3-270m to a 385M-parameter, 39-layer English-to-African translator with 125 single-token language tags, fine-tune it on decontaminated data (no benchmark sentence of three or more words in the training text) and apply GRPO with reference-free quality-estimation rewards. RL raises FLORES+ devtest chrF++ from 22.85 to 31.66 (+8.81, 95% CI [+8.59, +9.03], 54 languages) and held-out AfriCOMET by +0.063; every FLORES+ language improves. A one-line decode-time repetition guard on the SFT (a vLLM frequency penalty of 0.10, chosen on a dev grid by a rule fixed in advance) recovers 49% of the chrF++ gain and 29% of the AfriCOMET gain without any RL (SFT 26.59 -> 30.48 chrF++; cutting the SFT's loops after the fact gives the same 49%); RL still adds +4.37 [+4.28, +4.46] chrF++ and +0.0479 [+0.0469, +0.0490] AfriCOMET on top of the guarded SFT. Beam-4 and MBR-16 at 768 tokens also help the SFT (+3.71 [+2.78, +4.47] and +5.96 [+5.37, +6.49] chrF++), but RL greedy stays +1.60 [+1.34, +1.88] chrF++ ahead of the best decoded SFT. 94% of the gain up to the second RL stage arrives in the first stage; the B1 step adds +0.54 chrF++ on FLORES+ and the mixed step +0.31, which on the 20 languages of a seed study (two extra seeds differ by 0.06 chrF++ [-0.02, +0.14] after 100 steps) is not separable from seed noise, and RL aimed at eight weak languages adds +0.03. Removing the four features added at step 41 of stage A costs 0.32 chrF++ [0.23, 0.41] at 100 steps (reference domain 0.16, beam guide not separable from seed noise) and leaves the KL trajectory unchanged. On the 43 languages shared with the published NLLB-200 table the final model reaches 35.54 chrF++ against 38.80 for NLLB-3.3B (92%; the SFT 68%); on identical sentences (44 languages, paired bootstrap) it is 1.05 chrF++ [0.86, 1.24] and 0.038 AfriCOMET below NLLB-200-distilled-600M and 3.21 [3.02, 3.38] and 0.054 below NLLB-3.3B, and on the 19 TranslatePsy languages 4.23 chrF++ [4.07, 4.39] below TranslatePsy-0.8B (distilled from NLLB-3.3B). The loop flag that the reward itself uses undercounts degeneration by a factor of 1.77 on FLORES+, at a cost of at most 0.19 chrF++. A science SFT improves surface metrics on AfriScience-MT but not SSA-COMET-QE, whole-document decoding fails and sentence-by-sentence decoding is required, and the first research's 270M model is as good as or better at document level. A science RL adds +0.46 chrF [+0.27, +0.65] on AfriScience test sentences over its start, and the science SFT, not the science RL, carries the science gain (the same RL started without the science SFT ends 1.44 chrF [1.25, 1.61] lower, and the registered rule says the science SFT is needed) and a long-document RL improves whole-document generation modestly (finished 0.70 -> 0.82, loop 0.85 -> 0.73, chrF 27.4 -> 30.9) without changing chunked or sentence-level quality; whole-document decoding stays unusable (72 to 73% loops). A matched-compute control, continued SFT for the GPU time of the RL chain (6,000 steps, 8.4 h) on a 50/50 mix of replay and NLLB-translated TranslatePsy English-to-X pairs for 19 languages, reaches 29.97 chrF++ over the 93 benchmark-language cells against 34.55 for the RL model (RL minus control +4.58 [+4.45, +4.70]; held-out AfriCOMET +0.0183 [+0.0172, +0.0192]). Its pre-registered verdict is "inconclusive", because on the 19 languages that have the teacher-translated corpus RL minus control is -0.03 [-0.13, +0.09] chrF++, while on the other 46 cells it is +9.29 [+9.09, +9.49]; the control repairs finishing and looping only on those 19 languages. All results are single-seed, the control has one learning rate and one evaluated budget point, and no human evaluation was run (Section 13).
+**Abstract.** <!-- The abstract relies on E-01 to E-05, E-09b, E-11, E-13, E-15, E-16, E-20; gates in PAPER_PLAN.md section 7. -->
+We grow Gemma-3-270m to a 385M-parameter, 39-layer English-to-African translator with 125 single-token language tags, fine-tune it on decontaminated data (no benchmark sentence of three or more words in the training text) and apply GRPO with reference-free quality-estimation rewards. RL raises FLORES+ devtest chrF++ from 22.85 to 31.66 (+8.81, 95% CI [+8.59, +9.03], 54 languages) and held-out AfriCOMET by +0.063; every FLORES+ language improves. A one-line decode-time repetition guard on the SFT (a vLLM frequency penalty of 0.10, chosen on a dev grid by a rule fixed in advance) recovers 49% of the chrF++ gain and 29% of the AfriCOMET gain without any RL (SFT 26.59 -> 30.48 chrF++; cutting the SFT's loops after the fact gives the same 49%); RL still adds +4.37 [+4.28, +4.46] chrF++ and +0.0479 [+0.0469, +0.0490] AfriCOMET on top of the guarded SFT. Beam-4 and MBR-16 at 768 tokens also help the SFT (+3.71 [+2.78, +4.47] and +5.96 [+5.37, +6.49] chrF++), but RL greedy stays +1.60 [+1.34, +1.88] chrF++ ahead of the best decoded SFT. 94% of the gain up to the second RL stage arrives in the first stage; the B1 step adds +0.54 chrF++ on FLORES+ and the mixed step +0.31, which on the 20 languages of a seed study (two extra seeds differ by 0.06 chrF++ [-0.02, +0.14] after 100 steps) is not separable from seed noise, and RL aimed at eight weak languages adds +0.03. Removing the four features added at step 41 of stage A costs 0.32 chrF++ [0.23, 0.41] at 100 steps (reference domain 0.16, beam guide not separable from seed noise) and leaves the KL trajectory unchanged. On the 43 languages shared with the published NLLB-200 table the final model reaches 35.54 chrF++ against 38.80 for NLLB-3.3B (92%; the SFT 68%); on identical sentences (44 languages, paired bootstrap) it is 1.05 chrF++ [0.86, 1.24] and 0.038 AfriCOMET below NLLB-200-distilled-600M and 3.21 [3.02, 3.38] and 0.054 below NLLB-3.3B, and on the 19 TranslatePsy languages 4.23 chrF++ [4.07, 4.39] below TranslatePsy-0.8B (distilled from NLLB-3.3B). The loop flag that the reward itself uses undercounts degeneration by a factor of 1.77 on FLORES+, at a cost of at most 0.19 chrF++. A science SFT improves surface metrics on AfriScience-MT but not SSA-COMET-QE, whole-document decoding fails and sentence-by-sentence decoding is required, and the first research's 270M model is as good as or better at document level. A science RL adds +0.46 chrF [+0.27, +0.65] on AfriScience test sentences over its start, and the science SFT, not the science RL, carries the science gain (the same RL started without the science SFT ends 1.44 chrF [1.25, 1.61] lower, and the registered rule says the science SFT is needed) and a long-document RL improves whole-document generation modestly (finished 0.70 -> 0.82, loop 0.85 -> 0.73, chrF 27.4 -> 30.9) without changing chunked or sentence-level quality; whole-document decoding stays unusable (72 to 73% loops). A matched-compute control, continued SFT for the GPU time of the RL chain (6,000 steps, 8.4 h) on a 50/50 mix of replay and NLLB-translated TranslatePsy English-to-X pairs for 19 languages, reaches 29.97 chrF++ over the 93 benchmark-language cells against 34.55 for the RL model (RL minus control +4.58 [+4.45, +4.70]; held-out AfriCOMET +0.0183 [+0.0172, +0.0192]). Its pre-registered verdict is "inconclusive", because on the 19 languages that have the teacher-translated corpus RL minus control is -0.03 [-0.13, +0.09] chrF++, while on the other 46 cells it is +9.29 [+9.09, +9.49]; the control repairs finishing and looping only on those 19 languages. All results are single-seed, the control has one learning rate and one evaluated budget point, and no human evaluation was run (Section 13).
 <!-- src: EVID section 0; DEGEN section 0; NLLBRL section 0; SCI; DOC; abstract numbers are the ledger rows R1, R4-R6, R8, R19-R20, N2, W4, SC3, DL1-DL3 -->
 
 </div>
 
 ## 1 Introduction
-
-[SKELETON, write after the abstract.]
 
 * Problem: a small translator for many African languages fails mostly by not stopping (unfinished, looping output), copying and writing the wrong language; supervised fine-tuning alone leaves these in place (SFT: FLORES+ finished 0.829, loop 0.209, output 3.03 times the reference length; Section 7.2).
 * What we do: grow the model, train it on decontaminated data, apply GRPO with reference-free quality-estimation rewards, then try targeted RL, science SFT/RL and long-document RL.
@@ -24,7 +23,7 @@ Aletheia AI
 <!-- GATE E-01 E-03 -->
 * What we do not claim: that RL is in general a better use of compute than more SFT (our one matched-compute control has the registered verdict "inconclusive": RL matches it on the 19 languages it was given a teacher corpus for and is far ahead on the other 46 cells, Section 7.2.2); that the finishing gap is a property of RL rather than of greedy decoding (it is not: a decode-time guard recovers 49% of the chrF++ gain, Section 7.2); any single reward component beyond the stage-A feature ablations of Section 8 (the four stage-A features together help by 0.32 chrF++ at 100 steps; the beam guide is not shown to be worth its 25% step time); that the model is competitive with NLLB (the final model is 3.26 chrF++ below NLLB-3.3B on 43 shared languages, with caveats; Section 7.6); that the 385M beats the first research's 270M model; any "first".
 <!-- GATE E-01 E-03 -->
-* Contributions (to be worded after the controls): (1) a decomposition of an RL gain into finishing/looping and translation quality, with the metric-independence discipline of Section 6.3 and an independent degeneration audit of the reward's own loop flag (Section 7.2); (2) a decontaminated SFT/RL pipeline for 125 languages with an audit of the training text and its follow-ups; (3) negative results: weak-group RL, science SFT on the headline metric, post-editor, whole-document decoding; (4) released artifacts (models public on the Hub, no licence field declared; Section 14.5). The four stage-A features are described as design choices with a small measured benefit (E-11), not as contributions (Section 8).
+* Contributions: (1) a decomposition of an RL gain into finishing/looping and translation quality, with the metric-independence discipline of Section 6.3 and an independent degeneration audit of the reward's own loop flag (Section 7.2); (2) a decontaminated SFT/RL pipeline for 125 languages with an audit of the training text and its follow-ups; (3) negative results: weak-group RL, science SFT on the headline metric, post-editor, whole-document decoding; (4) released artifacts (models public on the Hub, no licence field declared; Section 14.5). The four stage-A features are described as design choices with a small measured benefit (E-11), not as contributions (Section 8).
 
 ## 2 Related work
 
@@ -130,6 +129,30 @@ The science SFT before the science RL used AdamW at 3e-6 (Section 7.8). Dynamic-
 Benchmarks were evaluated many times; checkpoint choice used only the dev set (Section 13).
 
 ## 7 Results
+
+**Results index.** Every experiment and analysis of the study, with the section of this file that reports it, the report that holds the full tables, and the result in plain words. Numbers are those of the sections named; reports are under `reports/`, their data under `reports/data/<same name>/`.
+
+| result | section | report file | result in plain words |
+|---|---|---|---|
+| SFT against A0 (the grown 385M model against the model it grew from) | 7.1 | `eval_385m_results_2026-11-03.md` | The 385M SFT is ahead of A0 on every benchmark (FLORES+ +5.31 [+5.13, +5.50] chrF++, NTREX +6.24, MAFAND-MT +10.21); it is behind the first research's 270M SFT in the same harness (E-13). |
+| RL against SFT (stages A, B1, mixed) | 7.2, 7.3 | `rl_vs_sft_evidence_2026-11-04.md`; `eval_post_B1_385m_2026-11-03.md`; `rl_stage_A_385m_2026-11-03.md` | RL raises FLORES+ chrF++ from 22.85 to 31.66 (+8.81) and every FLORES+ language improves; 94% of the gain up to B1 arrives in the first RL stage (7.96 of 8.50), B1 adds +0.54 and the mixed step +0.31. |
+| E-01 decode-time loop guard | 7.2 | `e01_loop_guard_2026-11-04.md` | A frequency penalty of 0.10 on the SFT, with no training, recovers 49% of the chrF++ gain and 29% of the AfriCOMET gain; RL still adds +4.37 [+4.28, +4.46] chrF++ on top of the guarded SFT. |
+| E-02 beam search and MBR at 768 tokens | 7.5 | `e02_beam_mbr_768_2026-11-05.md` | Beam-4 (+3.71) and MBR-16 (+5.96) help the SFT a lot and the RL model very little; RL greedy stays +1.60 [+1.34, +1.88] chrF++ ahead of the best decoded SFT. Per-language table, and an exploratory table by language tier (RL absorbs most of the decoding gain), in 7.5. |
+| E-03 matched-compute continued-SFT control | 7.2.2 | `e03_sft_control_2026-11-05.md` | Registered verdict "inconclusive": the control (29.97 chrF++ over the 93 cells) matches RL on the 19 languages it was given extra data for and is far behind on the others (RL 34.55; +4.58 [+4.45, +4.70] for RL). |
+| E-04 training-seed spread | 8 | `e04_rl_seeds_2026-11-05.md` | Two extra seeds of the first 100 stage-A steps differ by 0.06 chrF++ [-0.02, +0.14]; the stage-A gain is reproducible, differences under about 0.5 per language are noise. |
+| E-05 SSA-COMET-QE for all stages | 7.8 | `e05_ssa_all_stages_2026-11-04.md` | The reward-family score rises by about 0.043 in the first RL stage and by at most 0.005 in any later stage; it is not evidence of quality (it is in the reward). |
+| E-09 and E-09b engine parity and precision | 7.5 | `e09_engine_parity_2026-11-04.md`; `e09b_fp32_full_2026-11-04.md` | bf16 outputs differ between engines (9.6% identical on 240 sentences) but precision does not move the headline: the SFT in fp32 is -0.04 chrF++ [-0.13, +0.07] from bf16 over the 93 cells. |
+| E-11 stage-A ablations | 8 | `e11_rl_ablations_2026-11-05.md` | The four stage-A features are together worth a small gain (+0.32 chrF++), mostly the reference-anchored term; the beam guide is not shown to be worth its 25% step time; the features do not cause the KL rise. |
+| E-13 the first research's 270M models, same harness | 7.1 | `e13_old270m_same_harness_2026-11-04.md` (and `e13_old_models_same_harness_2026-11-04.md`) | The 385M SFT is behind the old 270M SFT on all three benchmarks; after RL it is level on FLORES+ (+0.35) and NTREX (+0.02) and 1.55 chrF++ behind on MAFAND-MT. |
+| E-14 science RL without the science SFT | 7.8 | `e14_science_rl_without_science_sft_2026-11-05.md` | The science SFT is needed: skipping it ends -1.44 chrF [-1.61, -1.25] below the science RL final. Per-language table in 7.8. |
+| E-15 long-document RL | 7.9 | `eval_long_document_rl_385m_2026-11-04.md` | Whole-document finishing rises 0.70 to 0.82 and chrF 27.4 to 30.9 at its best checkpoint, but whole-document translation still fails and sentence-by-sentence decoding is still required. |
+| E-16 science RL | 7.8 | `eval_science_rl_385m_2026-11-04.md`; `eval_science_sft_385m_2026-11-04.md` | The science RL adds a small sentence-level gain over its start (chrF +0.46 [+0.27, +0.65], AfriCOMET +0.0053) and no document-level gain. Per-language table in 7.8. |
+| E-20 B1 final against B1 best | 7.3 | `e20_b1_final_2026-11-04.md` | The last B1 steps change nothing measurable: +0.01 [-0.02, +0.04] chrF++ over the 93 cells. |
+| Full comparison with NLLB-200-600M, NLLB-200-3.3B and TranslatePsy-0.8B (FRC) | 7.6 | `full_results_comparison_2026-11-06.md`; `nllb_comparison_rl_models_2026-11-04.md` | On identical FLORES+ sentences the RL model is 1.05 chrF++ below NLLB-600M and 3.21 below NLLB-3.3B, and 4.23 below TranslatePsy-0.8B on its 19 languages; ahead of NLLB-600M in 15 of 44 languages and of NLLB-3.3B in 7. Per-language tables in 7.6. |
+| Family, script and resource analysis | 7.7 | `family_script_resource_analysis_2026-11-04.md` | The RL gain tracks how badly the SFT failed (rho -0.47 with its finished rate), not how much data a language has; fragile, description only. |
+| Weak-group RL (eight West-African languages) | 7.4 | `eval_weak_group_385m_2026-11-03.md` | Negative: +0.03 [-0.06, +0.12] chrF++ on the targets against a pre-registered +1.0. |
+| Independent degeneration audit of the loop flag | 7.2.1 | `degeneration_audit_independent_2026-11-04.md` | The reward's loop flag undercounts: an independent detector flags 1.77 times as many mixed-best FLORES+ outputs, but the extra rows are finished partial repetitions and the drop in looping from SFT to RL stands (3.7x against 4.4x); English output rises in the Arabic dialects and Tamazight. |
+| Contamination audit and follow-ups | 6.4, 14.4 | `contamination_audit_385m_2026-11-03.md`; `contamination_followups_385m_2026-11-04.md` | No benchmark sentence of three or more words is in the training text (FLORES+ devtest 0 of 54,648 rows). |
 
 ### 7.1 SFT: the grown model against A0
 
@@ -323,6 +346,43 @@ MBR minus beam is +0.76 [+0.49, +1.02] chrF++ and -1.08 [-1.39, -0.79] spBLEU; M
 
 {{figure:fig15_e02_decoding|Greedy, beam-4 and MBR-16 at 768 new tokens (E-02) for the SFT and the RL model (mixed best): chrF++, spBLEU and held-out AfriCOMET-STL, language macro over 20 languages x 200 FLORES+ devtest sentences (4,000 per system), 95% paired bootstrap over source sentences; beam-4 stops when 4 hypotheses have ended, the HF rule is early_stopping=False, MBR is metric-matched (utility chrF++). One SFT and one RL checkpoint, vLLM bf16. Not comparable with the earlier 256-token study. Source: `reports/data/e02_beam_mbr_768_2026-11-05/cmp_all.json` (ledger D7).|100}}
 
+**E-02 per language.** {{table:t_e02_perlang|chrF++ per language for the SFT and the RL model (mixed best) under greedy, beam-4 (stop at 4 ended) and MBR-16, 768 new tokens, 200 FLORES+ devtest sentences per language; the last two columns are the paired differences with 95% bootstrap intervals from the report CSV.}} <!-- src: reports/data/e02_beam_mbr_768_2026-11-05/cmp_all_per_language.csv (bench flores_plus; columns chrfpp_first, chrfpp_second, diff, lo, hi); ledger E02 -->
+
+| language | SFT greedy | SFT beam-4 | SFT MBR-16 | RL greedy | RL beam-4 | RL MBR-16 | SFT beam-4 minus greedy [CI] | RL MBR-16 minus greedy [CI] |
+|---|---:|---:|---:|---:|---:|---:|---|---|
+| afr | 63.23 | 62.09 | 63.89 | 63.32 | 62.83 | 64.02 | -1.15 [-2.41, -0.01] | +0.70 [+0.30, +1.16] |
+| amh | 15.31 | 21.90 | 23.21 | 25.50 | 26.27 | 26.96 | +6.59 [+4.40, +8.48] | +1.46 [+0.78, +2.23] |
+| ewe | 27.56 | 27.09 | 31.43 | 32.38 | 31.58 | 33.17 | -0.47 [-2.29, +1.37] | +0.79 [+0.40, +1.22] |
+| hau | 43.44 | 45.67 | 47.31 | 46.72 | 45.80 | 47.69 | +2.23 [-0.04, +4.57] | +0.98 [+0.43, +1.55] |
+| ibo | 40.01 | 38.96 | 41.85 | 41.63 | 40.09 | 42.62 | -1.05 [-2.87, +0.90] | +0.99 [+0.51, +1.52] |
+| kin | 26.65 | 34.27 | 35.21 | 38.91 | 39.49 | 40.25 | +7.62 [+4.80, +10.41] | +1.34 [+0.77, +1.91] |
+| lin | 26.60 | 36.01 | 38.62 | 44.23 | 42.54 | 45.27 | +9.41 [+6.45, +12.17] | +1.04 [+0.52, +1.66] |
+| lug | 17.15 | 24.26 | 27.83 | 32.38 | 32.67 | 33.62 | +7.12 [+4.90, +9.04] | +1.23 [+0.70, +1.86] |
+| nso | 31.28 | 43.46 | 45.62 | 49.52 | 47.85 | 50.13 | +12.18 [+8.43, +15.53] | +0.60 [+0.19, +1.04] |
+| orm | 12.76 | 22.18 | 27.18 | 29.92 | 29.04 | 31.28 | +9.42 [+8.01, +10.70] | +1.36 [+0.93, +1.83] |
+| sna | 33.95 | 37.16 | 38.80 | 38.50 | 36.25 | 39.12 | +3.20 [+0.42, +5.93] | +0.61 [+0.22, +1.01] |
+| som | 35.96 | 36.09 | 39.22 | 39.44 | 38.21 | 40.25 | +0.13 [-2.41, +2.97] | +0.81 [+0.44, +1.21] |
+| swh | 55.24 | 55.42 | 59.04 | 58.92 | 56.47 | 60.02 | +0.18 [-2.85, +3.86] | +1.09 [+0.66, +1.63] |
+| tir | 9.47 | 15.97 | 16.20 | 18.59 | 19.14 | 19.43 | +6.49 [+5.13, +7.80] | +0.84 [+0.41, +1.29] |
+| tsn | 37.80 | 43.20 | 44.23 | 45.05 | 44.47 | 45.68 | +5.40 [+2.21, +8.45] | +0.63 [+0.25, +1.09] |
+| twi | 29.07 | 32.42 | 34.26 | 35.89 | 35.98 | 36.60 | +3.35 [+1.07, +5.79] | +0.71 [+0.24, +1.19] |
+| wol | 27.17 | 28.77 | 30.79 | 30.82 | 30.96 | 31.53 | +1.61 [-0.46, +3.53] | +0.71 [+0.34, +1.10] |
+| xho | 44.88 | 44.22 | 46.79 | 45.90 | 44.96 | 46.50 | -0.66 [-2.47, +1.16] | +0.60 [+0.11, +1.14] |
+| yor | 20.98 | 24.40 | 24.80 | 30.68 | 30.01 | 31.43 | +3.42 [+0.80, +5.95] | +0.74 [+0.42, +1.09] |
+| zul | 47.73 | 46.90 | 49.15 | 49.08 | 47.32 | 50.28 | -0.82 [-2.81, +1.05] | +1.19 [+0.65, +1.75] |
+
+For the SFT, beam-4 is above greedy in 15 of the 20 languages, with the largest gains in nso (+12.18), orm (+9.42) and lin (+9.41), and below it in afr, ewe, ibo, xho and zul (several of these intervals include 0). For the RL model MBR-16 is above greedy in all 20 languages and beam-4 is below greedy in 14. The same CSV holds NTREX and MAFAND-MT rows (columns bench, pair, n) and the AfriCOMET differences (comet_diff, comet_lo, comet_hi).
+
+**Decoding by language tier (E-02, exploratory).** {{table:t_e02_tier|chrF++ by language tier (unweighted language macro of the per-language values of the table above), 768 new tokens, 200 FLORES+ devtest sentences per language. Tiers are our own grouping of the 20 languages by NLLB-3.3B chrF++ rank (published FLORES-200 devtest; seven lowest, six middle, seven highest). "Beam-4" stops at 4 ended hypotheses; "HF rule" is the Hugging Face stopping rule (early_stopping=False).}} <!-- src: reports/data/e02_beam_mbr_768_2026-11-05/cmp_all_per_language.csv (chrfpp_first / chrfpp_second of each pair row, systems sft_greedy sft_beam4 sft_beam4hf sft_mbr16 rl_greedy rl_beam4 rl_beam4hf rl_mbr16); tiers from reports/data/eval_385m_results_2026-11-03/published_nllb_flores_per_language.csv column nllb_3p3b; differences are arithmetic on the table values; ledger E02T -->
+
+| tier (languages) | n | SFT greedy | SFT beam-4 | SFT beam-4 (HF rule) | SFT MBR-16 | RL greedy | RL beam-4 | RL beam-4 (HF rule) | RL MBR-16 | RL greedy minus SFT MBR-16 | RL minus SFT, greedy | RL minus SFT, MBR-16 |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
+| low (tir yor wol orm amh ewe twi) | 7 | 20.33 | 24.68 | 20.25 | 26.84 | 29.11 | 29.00 | 29.73 | 30.06 | +2.27 | +8.78 | +3.22 |
+| mid (lug ibo sna som lin kin) | 6 | 30.05 | 34.46 | 30.50 | 36.92 | 39.18 | 38.21 | 40.24 | 40.19 | +2.26 | +9.13 | +3.26 |
+| high (tsn xho nso hau zul swh afr) | 7 | 46.23 | 48.71 | 48.63 | 50.86 | 51.22 | 49.96 | 52.07 | 52.04 | +0.35 | +4.99 | +1.18 |
+
+The decoders help the SFT most in the weakest languages: MBR-16 adds +6.51 chrF++ in the low tier and +6.87 in the mid tier against +4.63 in the high tier (beam-4: +4.34, +4.41, +2.48; the HF-rule beam does not help the SFT in the low tier, -0.08, because it keeps the looping outputs). The RL model absorbs most of this: MBR-16 adds about one point in every tier (+0.95, +1.01, +0.83), and beam-4 is flat or negative (-0.12, -0.97, -1.26) under the stop-at-4-ended rule but positive under the HF rule (+0.62, +1.06, +0.85), so the sign depends on the stopping rule. RL greedy is ahead of SFT MBR-16 by 2.27 and 2.26 chrF++ in the low and mid tiers and by 0.35 in the high tier, and the RL gain over the SFT shrinks from +8.78 / +9.13 / +4.99 (greedy) to +3.22 / +3.26 / +1.18 (MBR-16) for the low, mid and high tiers. **Caveats:** this is exploratory; the tiers are our own grouping within these 20 languages; there are no tier-level intervals (the per-language intervals are in the table above); and the 20 languages exclude the very lowest-resource ones (dyu, fon, bam, kam, kmb, umb), so the low tier here is not the weakest part of the 125-language registry.
+
 The decode-time frequency-penalty guard was run on both models over the full evaluation set (E-01, Section 7.2). <!-- GATE E-01 --> Engine parity: vLLM bf16 and HF bf16 give identical outputs in 9.6% of 240 sentences (chrF++ 36.22 and 36.80; HF fp32 38.18); in fp32 the two engines agree (98.8% identical for the SFT, 97.1% for the RL model; E-09), so the divergence is bf16 rounding. **Precision does not move the headline:** the SFT in fp32 on the full evaluation set (vLLM, greedy, 768 tokens, 122,585 rows, 214 flagged rows removed; E-09b) scores -0.04 chrF++ [-0.13, +0.07] against bf16 over the 93 cells (FLORES+ -0.16 [-0.29, -0.02], NTREX +0.08 [-0.08, +0.25], MAFAND +0.22 [-0.03, +0.50]; plain chrF -0.08 [-0.19, +0.03]), and the RL gain on FLORES+ is +8.97 [+8.71, +9.20] over the fp32 SFT against +8.81 [+8.59, +9.03] over the bf16 SFT, so the bf16 harness does not overstate the RL gain (the upper end of the all-cell interval bounds any understatement of the SFT at 0.07 chrF++). The +1.81 [+0.59, +3.12] of the 240-sentence set was a small-sample result and the earlier +0.24 [-0.07, +0.55] (4,000 sentences) to +1.81 range for the SFT is superseded. Not done: an fp32 run of the RL model (its sensitivity is measured only on the 240-sentence set, +0.09 [-0.41, +0.59]) and AfriCOMET scoring of the fp32 SFT run (the run was stopped before the scoring finished; the partial scores are not reported). <!-- src: reports/e09_engine_parity_2026-11-04.md; reports/e09b_fp32_full_2026-11-04.md; reports/data/e09b_fp32_2026-11-04/evidence_e09b.json (ledger D6, D6b, D6c) -->
 
 {{figure:fig8_engine_parity|Engine parity (E-09), 240 sentences (10 languages x 24 FLORES+ devtest sentences), greedy, 256 new tokens, SFT and RL (mixed best), one seed. (a) Language-macro chrF++ by engine and precision. (b) Share of identical outputs: vLLM and HF agree in fp32 (0.988, 0.971) and not in bf16 (0.096, 0.167). (c) fp32 minus bf16 chrF++ with 95% paired bootstrap over sentences: negligible for the RL model, +1.81 [+0.59, +3.12] (vLLM) for the SFT on this small set, which the full-set run of Figure 11 does not reproduce (ledger D6, D6b, D6c). Headline numbers of the paper are vLLM bf16. Sources: `reports/data/e09_engine_parity_2026-11-04/{parity_bootstrap,parity_summary}.json`.|100}}
@@ -357,6 +417,106 @@ The decode-time frequency-penalty guard was run on both models over the full eva
 | TranslatePsy-AfriSLM-0.8B | 45.27 | 48.94 | 22.39 | 0.7167 | -4.23 [-4.39, -4.07] | -0.0745 [-0.0765, -0.0727] |
 
 **On these languages the RL model is 4.23 chrF++ [4.07, 4.39] and 0.0745 AfriCOMET below TranslatePsy-0.8B**, and below NLLB-600M and NLLB-3.3B. The SFT-only control, which was trained on TranslatePsy data for exactly these languages, equals the RL model on chrF++ (+0.08 [-0.13, +0.30]) and is ahead of it on AfriCOMET (RL minus control -0.0226), the metric family that filtered TranslatePsy. On the 9 languages of TranslatePsy-2B (afr amh hau ibo kin lin lug mlg nya; 7,705 sentences) the RL model scores 41.56 chrF++ / 0.631 AfriCOMET against 46.29 / 0.701 for NLLB-3.3B, 46.61 / 0.715 for TranslatePsy-0.8B and 46.44 / 0.716 for TranslatePsy-2B. <!-- src: FRC section 3, `tables_generated.md` T2, T2b (ledger FRC2, FRC3) -->
+
+**Per language: FLORES+ devtest, the three comparison systems.** {{table:t_frc_pl_chrfpp|chrF++ per language on FLORES+ devtest (no-pair rows, 44 languages; TranslatePsy-0.8B only on its 19 languages), for our SFT, the SFT-only control (E-03), RL stage A, the final RL model (mixed best), NLLB-200-distilled-600M, NLLB-200-3.3B and TranslatePsy-AfriSLM-0.8B. One sentence set, all systems scored on the same rows.}} <!-- src: reports/data/full_results_comparison_2026-11-06/per_language_wide_F_NP.csv (columns sft385_chrfpp, e03c1_chrfpp, stageA_chrfpp, mixed_chrfpp, nllb600m_chrfpp, nllb3b3_chrfpp, tpsy08_chrfpp); ledger FRC -->
+
+| language | rows | SFT | SFT-only control | RL stage A | RL (final) | NLLB-600M | NLLB-3.3B | TranslatePsy-0.8B |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|
+| afr | 1012 | 63.13 | 63.32 | 64.00 | 64.13 | 61.89 | 64.28 | 64.24 |
+| amh | 1012 | 16.62 | 26.97 | 25.89 | 26.62 | 37.26 | 37.96 | 37.55 |
+| bam | 1012 | 19.39 | 20.10 | 26.30 | 27.17 | 28.35 | 30.97 | - |
+| bem | 1012 | 19.31 | 19.99 | 31.75 | 33.88 | 34.74 | 37.28 | - |
+| dyu | 1012 | 9.90 | 9.82 | 17.97 | 18.97 | 16.64 | 15.45 | - |
+| ewe | 1012 | 25.96 | 27.45 | 30.99 | 31.17 | 35.23 | 38.32 | - |
+| fon | 1012 | 20.17 | 19.79 | 22.09 | 22.25 | 17.92 | 20.27 | - |
+| hau | 170 | 35.93 | 44.50 | 42.51 | 44.11 | 45.40 | 47.26 | 48.27 |
+| ibo | 453 | 34.47 | 35.87 | 37.78 | 37.47 | 36.90 | 37.74 | 38.82 |
+| kab | 1012 | 16.35 | 15.89 | 26.20 | 26.69 | 27.36 | 31.83 | - |
+| kam | 1012 | 17.22 | 16.65 | 24.73 | 25.92 | 26.34 | 22.90 | - |
+| kbp | 1012 | 14.51 | 15.54 | 23.14 | 24.88 | 23.50 | 28.82 | - |
+| kea | 1012 | 18.91 | 18.98 | 37.85 | 39.18 | 44.07 | 47.82 | - |
+| kik | 1012 | 25.98 | 26.62 | 32.78 | 33.28 | 34.66 | 37.02 | - |
+| kin | 1012 | 25.81 | 39.73 | 37.85 | 38.66 | 43.49 | 48.21 | 48.01 |
+| kmb | 1012 | 16.02 | 16.34 | 25.38 | 26.62 | 24.84 | 23.70 | - |
+| knc | 1012 | 3.81 | 3.04 | 9.88 | 14.22 | 14.66 | 24.37 | - |
+| lin | 1012 | 28.56 | 45.33 | 43.84 | 44.35 | 46.32 | 47.77 | 48.83 |
+| lua | 1012 | 17.18 | 16.05 | 31.69 | 33.37 | 33.44 | 35.07 | - |
+| lug | 1010 | 16.14 | 34.70 | 30.65 | 31.72 | 34.56 | 38.52 | 39.00 |
+| luo | 1012 | 21.36 | 21.57 | 33.06 | 34.49 | 36.78 | 38.44 | - |
+| mlg | 1012 | 39.04 | 44.19 | 44.55 | 44.73 | 47.75 | 50.01 | 49.57 |
+| mos | 1012 | 14.09 | 14.41 | 21.71 | 22.79 | 20.69 | 23.68 | - |
+| nso | 1012 | 31.58 | 30.31 | 48.52 | 49.01 | 48.87 | 50.35 | - |
+| nus | 1012 | 13.49 | 11.42 | 24.25 | 24.82 | 25.27 | 28.70 | - |
+| nya | 1012 | 36.88 | 40.21 | 42.08 | 42.21 | 44.03 | 44.84 | 45.17 |
+| orm | 988 | 12.11 | 31.25 | 28.56 | 30.19 | 31.14 | 35.58 | 37.00 |
+| run | 1012 | 21.59 | 23.19 | 32.84 | 33.88 | 38.94 | 41.56 | - |
+| sag | 1012 | 19.68 | 19.76 | 32.67 | 34.31 | 33.90 | 36.35 | - |
+| sna | 1012 | 33.92 | 39.24 | 38.15 | 37.56 | 42.68 | 42.62 | 43.25 |
+| som | 1012 | 35.47 | 38.45 | 40.00 | 39.71 | 41.37 | 42.61 | 43.37 |
+| sot | 1012 | 37.87 | 43.34 | 42.59 | 42.72 | 45.36 | 46.25 | 46.73 |
+| ssw | 1012 | 22.20 | 22.73 | 37.29 | 37.86 | 41.14 | 43.13 | - |
+| swh | 1012 | 56.24 | 56.26 | 58.55 | 58.36 | 57.96 | 59.83 | 61.07 |
+| tir | 1012 | 10.48 | 9.75 | 18.30 | 18.74 | 22.37 | 24.73 | - |
+| tsn | 982 | 37.75 | 45.64 | 45.03 | 45.04 | 46.32 | 48.36 | 48.28 |
+| tso | 1012 | 32.92 | 29.79 | 46.41 | 46.86 | 48.95 | 50.11 | - |
+| tum | 1012 | 25.40 | 25.28 | 34.14 | 34.27 | 33.49 | 35.77 | - |
+| twi | 1012 | 27.54 | 28.13 | 34.73 | 35.07 | 34.93 | 38.08 | - |
+| umb | 1012 | 14.80 | 15.93 | 24.04 | 25.46 | 25.25 | 22.88 | - |
+| wol | 1012 | 26.87 | 29.06 | 30.43 | 30.58 | 23.31 | 27.59 | 29.76 |
+| xho | 1012 | 43.56 | 44.36 | 45.63 | 45.43 | 46.43 | 48.48 | 48.55 |
+| yor | 657 | 19.59 | 26.17 | 27.91 | 27.99 | 25.18 | 26.22 | 28.38 |
+| zul | 976 | 46.00 | 49.57 | 48.33 | 48.21 | 51.61 | 54.39 | 54.24 |
+
+{{table:t_frc_pl_comet|Held-out AfriCOMET-STL per language, same rows and systems as the previous table (a dash: no AfriCOMET score for that language or system).}} <!-- src: same CSV, columns *_africomet -->
+
+| language | SFT | SFT-only control | RL stage A | RL (final) | NLLB-600M | NLLB-3.3B | TranslatePsy-0.8B |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| afr | 0.745 | 0.754 | 0.757 | 0.755 | 0.779 | 0.797 | 0.787 |
+| amh | 0.504 | 0.629 | 0.588 | 0.592 | 0.712 | 0.719 | 0.751 |
+| bam | 0.452 | 0.456 | 0.511 | 0.521 | 0.577 | 0.596 | - |
+| bem | 0.450 | 0.455 | 0.554 | 0.561 | 0.620 | 0.640 | - |
+| dyu | - | - | - | - | - | - | - |
+| ewe | 0.562 | 0.571 | 0.606 | 0.608 | 0.668 | 0.689 | - |
+| fon | 0.573 | 0.569 | 0.599 | 0.603 | 0.549 | 0.573 | - |
+| hau | 0.529 | 0.592 | 0.561 | 0.568 | 0.621 | 0.618 | 0.650 |
+| ibo | 0.614 | 0.649 | 0.632 | 0.630 | 0.656 | 0.658 | 0.678 |
+| kab | 0.558 | 0.550 | 0.665 | 0.674 | 0.673 | 0.708 | - |
+| kam | 0.440 | 0.437 | 0.494 | 0.503 | 0.550 | 0.528 | - |
+| kbp | 0.538 | 0.558 | 0.639 | 0.661 | 0.631 | 0.679 | - |
+| kea | - | - | - | - | - | - | - |
+| kik | 0.597 | 0.606 | 0.662 | 0.662 | 0.697 | 0.718 | - |
+| kin | 0.564 | 0.687 | 0.652 | 0.656 | 0.724 | 0.746 | 0.753 |
+| kmb | 0.419 | 0.421 | 0.490 | 0.500 | 0.506 | 0.509 | - |
+| knc | - | - | - | - | - | - | - |
+| lin | 0.520 | 0.642 | 0.615 | 0.617 | 0.676 | 0.684 | 0.701 |
+| lua | 0.430 | 0.420 | 0.543 | 0.556 | 0.598 | 0.615 | - |
+| lug | 0.464 | 0.626 | 0.572 | 0.576 | 0.635 | 0.657 | 0.671 |
+| luo | 0.562 | 0.560 | 0.656 | 0.664 | 0.712 | 0.722 | - |
+| mlg | 0.593 | 0.658 | 0.635 | 0.634 | 0.708 | 0.727 | 0.725 |
+| mos | 0.459 | 0.459 | 0.536 | 0.548 | 0.555 | 0.595 | - |
+| nso | 0.586 | 0.588 | 0.685 | 0.689 | 0.719 | 0.727 | - |
+| nus | 0.474 | 0.427 | 0.612 | 0.624 | 0.639 | 0.681 | - |
+| nya | 0.625 | 0.674 | 0.656 | 0.651 | 0.701 | 0.702 | 0.720 |
+| orm | 0.420 | 0.652 | 0.591 | 0.610 | 0.651 | 0.696 | 0.721 |
+| run | 0.531 | 0.552 | 0.634 | 0.639 | 0.701 | 0.716 | - |
+| sag | - | - | - | - | - | - | - |
+| sna | 0.596 | 0.662 | 0.623 | 0.619 | 0.689 | 0.690 | 0.707 |
+| som | 0.590 | 0.643 | 0.624 | 0.620 | 0.669 | 0.684 | 0.702 |
+| sot | 0.615 | 0.670 | 0.643 | 0.642 | 0.691 | 0.695 | 0.710 |
+| ssw | 0.493 | 0.506 | 0.605 | 0.606 | 0.681 | 0.697 | - |
+| swh | 0.693 | 0.718 | 0.710 | 0.709 | 0.745 | 0.753 | 0.780 |
+| tir | 0.507 | 0.487 | 0.641 | 0.651 | 0.709 | 0.727 | - |
+| tsn | 0.633 | 0.696 | 0.676 | 0.674 | 0.710 | 0.723 | 0.730 |
+| tso | 0.597 | 0.570 | 0.668 | 0.667 | 0.715 | 0.718 | - |
+| tum | 0.532 | 0.535 | 0.610 | 0.605 | 0.647 | 0.673 | - |
+| twi | 0.594 | 0.600 | 0.644 | 0.648 | 0.666 | 0.686 | - |
+| umb | 0.470 | 0.474 | 0.541 | 0.550 | 0.580 | 0.568 | - |
+| wol | 0.628 | 0.654 | 0.654 | 0.653 | 0.606 | 0.650 | 0.676 |
+| xho | 0.627 | 0.653 | 0.641 | 0.638 | 0.686 | 0.699 | 0.703 |
+| yor | 0.563 | 0.670 | 0.680 | 0.682 | 0.681 | 0.671 | 0.699 |
+| zul | 0.659 | 0.700 | 0.677 | 0.674 | 0.728 | 0.745 | 0.752 |
+
+Plain chrF and spBLEU per language, and the same comparison on NTREX-128, MAFAND-MT, SmolSent and SALT, are in the sibling files of `reports/data/full_results_comparison_2026-11-06/` (`per_language_wide_F_NP.csv` for these rows; `per_language_wide_F_ALL.csv`, `per_language_wide_F_C270.csv`, `per_language_wide_N_ALL.csv`, `per_language_wide_M_ALL.csv`, `per_language_wide_S_ALL.csv`, `per_language_wide_SALT_ALL.csv` for the other row sets and benchmarks).
 
 **NTREX-128 and MAFAND-MT.** NLLB-3.3B outputs on these benchmarks exist only as per-language corpus-level aggregates of an earlier run on the same rows (verified on FLORES+: per-language chrF++ and spBLEU equal the per-sentence recomputation to 5e-5), so the NLLB comparison here has **language-level intervals only** (10,000 bootstrap resamples over languages) and **no AfriCOMET**; NLLB-600M was not run on these benchmarks. {{table:t_frc3|NTREX (21 languages) and MAFAND (14 languages), all rows; our systems with paired sentence bootstraps, NLLB-3.3B as aggregate.}}
 
@@ -468,6 +628,20 @@ Start: the mixed-stage best. Science SFT: AdamW 3e-6, 283 steps of 65,536 tokens
 **SSA-COMET-QE for every stage (E-05).** The stored AfriScience-MT sentence predictions of every stage were scored with `McGill-NLP/ssa-comet-qe`, held-out AfriCOMET-STL and plain chrF (test, macro over 6 languages). SSA-COMET-QE is 0.5686 for the SFT and 0.6118 (stage A), 0.6113 (B1 best), 0.6130 (mixed best), 0.6118 (science SFT alpha 0.5), 0.6135 / 0.6158 (science RL best / final) and 0.6158 / 0.6165 (long-document RL best / final) for the RL stages: the first RL stage adds +0.043 and every later stage at most +0.005 more. It is a reward-family metric for every RL row, so these numbers are not evidence of quality; chrF (36.00 for the SFT, 45.06 stage A, 45.40 mixed, 46.63 science SFT, 47.10 science RL final, 47.16 long-document RL) and held-out AfriCOMET-STL (0.6064, 0.6822, 0.6828, 0.6879, 0.6932, 0.6936) keep rising by small steps that SSA-COMET-QE does not register. Alpha 1.0 (the full science SFT) is the only row clearly worse (0.5986). One seed per stage; test-sentence bootstrap intervals of the differences are +/-0.001 to +/-0.002 (Section 7.8 tables). The numbers are for sentence level and are not comparable with the AfriScience-MT paper's document-level table. <!-- src: reports/e05_ssa_all_stages_2026-11-04.md; reports/data/e05_ssa_all_stages_2026-11-04/{tables.md,e05_all.json} (ledger SC6, P4) -->
 
 {{figure:fig12_ssa_all_stages|All stages on AfriScience-MT TEST, sentence level (970 sentences per language, macro over amh hau lug nso yor zul; greedy; one seed per stage): plain chrF, held-out AfriCOMET-STL and SSA-COMET-QE (reward family for every RL row) for the SFT, RL stages A, B1 and mixed, the science SFT (alpha 0.5), the science RL and the long-document RL. The weak-group run and the other interpolation weights are in the source table. Source: `reports/data/e05_ssa_all_stages_2026-11-04/tables.md` (ledger SC6).|100}}
+
+**Per language (AfriScience-MT test, sentence level).** {{table:t_sci_pl|Plain chrF per language on AfriScience-MT TEST (970 sentences per language; greedy; one seed) for every stage of the science line, with the SFT-only control of E-03 for comparison; the last row is the macro over the six languages.}} <!-- src: reports/data/eval_weak_group_2026-11-03/results/afsci_{sft,stageA,mixedbest}.json; reports/data/eval_science_rl_2026-11-04/afsci_sci_{a0.5,rl_final}.json; reports/data/eval_long_rl_2026-11-04/afsci_long_rl_final.json; reports/data/e14_science_rl_no_sft_2026-11-05/e14_pairs.json (rl_final->e14_final, test, chrf per_language); reports/data/e03_control_execution_2026-11-04/afriscience_sentence_chrf.json (control C1) -->
+
+| language | SFT | RL stage A | RL mixed best (science start) | science SFT (alpha 0.5) | science RL final | long-document RL final | science RL without science SFT (E-14) | SFT-only control (E-03) |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|
+| amh | 20.30 | 28.75 | 29.10 | 29.90 | 30.69 | 30.62 | 29.48 | 31.05 |
+| hau | 47.33 | 54.44 | 55.18 | 56.10 | 56.74 | 56.80 | 55.40 | 56.25 |
+| lug | 23.31 | 36.92 | 38.15 | 39.27 | 39.87 | 40.71 | 38.77 | 44.06 |
+| nso | 41.27 | 51.98 | 52.12 | 54.72 | 54.69 | 54.69 | 52.00 | 40.64 |
+| yor | 25.36 | 37.55 | 37.66 | 38.11 | 38.62 | 38.55 | 37.89 | 34.51 |
+| zul | 58.42 | 60.72 | 60.20 | 61.71 | 61.97 | 61.61 | 60.42 | 61.78 |
+| macro | 36.00 | 45.06 | 45.40 | 46.63 | 47.10 | 47.16 | 45.66 | 44.71 |
+
+The science SFT and the science RL final are above the mixed best in every language. The SFT-only control is above the science RL final in amh and lug, below it in the other four languages, and below even the SFT in nso. Skipping the science SFT (E-14) puts five of the six languages between the mixed best and the science SFT; in nso it is slightly below the mixed best. The other sentence-level scores (chrF++, BLEU, spBLEU, finished rate, length ratio) are in the same JSON files.
 
 ### 7.9 Documents
 
@@ -658,11 +832,46 @@ Outputs are machine translations of unverified quality for languages without any
 * **Long-document RL incident.** The stage took 7.7 h of wall-clock time (10:03 to 17:44 UTC), of which about 4.5 h were a crash loop: the trainer stopped (ENOSPC, root disk full) at the first step-25 evaluation and Hub-staging save and was restarted 18 times by the supervisor, each time resuming from `last/` at step 20 and repeating steps 21 to 25; the staging directories were real directories on the root disk instead of symlinks to `/dev/shm`. Fixed at 15:35 UTC; the model path of the 80 steps is otherwise the planned one (one seed). About 3.2 h were productive. The repeated step-20-to-25 segments are visible as repeated step-25 evaluations in the metrics log (Figure of the training records). <!-- src: reports/eval_long_document_rl_385m_2026-11-04.md section 0 'Costs and caveats'; reports/rl_long_document_plan_2026-11-04.md section 8; reports/overnight_log_2026-11-04.md 11:10-15:35 -->
 * **Not reproducible from what is stored:** stage-A steps 1-40 hyper-parameters except through the stage report; B1 final's evaluation; per-sentence NLLB-3.3B outputs on NTREX and MAFAND (only corpus-level aggregates survive); the training seed spread; the SFT with another seed (stage B alone is 44.8 A100-hours).
 
-## 16 Conclusion [SKELETON]
+## 16 Conclusion
 
 <!-- GATE E-01 E-03 E-04 -->
-[To be written. It will restate the thesis of Section 12.1 with the E-01 and E-03 results as they stand (guard: 49% of the chrF++ gain; matched-compute control: registered verdict inconclusive) and the list of Section 12.2.]
+We asked what reinforcement learning adds to a small translator for African languages, and answered it with the controls we could afford. A 385M model grown from Gemma-3-270m, trained on decontaminated data and then optimised with reference-free quality-estimation rewards, translates better than its own supervised baseline in every FLORES+ language we test (chrF++ 22.85 to 31.66), and the gain holds on the other benchmarks and on held-out AfriCOMET.
 
-## Appendices [SKELETON]
+About half of that gain is something simpler than "better translation": the baseline often stops in the middle of a sentence or repeats itself, and RL teaches it to finish. A one-line decoding setting recovers 49% of the chrF++ gain for the baseline without any training, and beam search and MBR help the baseline a lot and the RL model very little. This does not make the RL gain empty: with the same decoding setting on both models, RL is still +4.37 chrF++ ahead, and its greedy output stays ahead of the best decoded baseline. But it does mean that a reader who wants the gain cheaply should try the decoding setting first.
 
-A per-language tables (`reports/eval_post_B1_385m_2026-11-03.md` Table 3; `reports/rl_vs_sft_evidence_2026-11-04.md` Tables 6, 7a, 7b; `reports/data/nllb_comparison_rl_models_2026-11-04/table2_per_language_43.csv`; `reports/data/degeneration_audit_independent_2026-11-04/per_language.csv`); B hyper-parameters (Sections 4-5); C reward formulas; D contamination audit and follow-ups; E format and prompts; F cost; G NLLB-link details; H post-editor; I engine parity; J family/script/resource regressions (`reports/data/family_script_resource_analysis_2026-11-04/regression_coefficients.csv`); K independent degeneration detector definitions and thresholds; L stage-A feature split (slopes, interrupted time series, figure `fig_feature_split.png`); M TranslatePsy control design and decision rule (CTLP section 7).
+Most of the RL gain arrives in the first RL stage; the later general stages are small and not separable from training noise, and the continued RL on weak languages fell short of the gain we promised in advance. Continued supervised fine-tuning for the same GPU time is a fair alternative that our one control could not rule out: by the rule we wrote down before the run its verdict is inconclusive. For scientific text, the extra supervised step carries the gain and the science RL adds little; for whole documents, translation still fails and must be done sentence by sentence.
+
+Against other systems on identical sentences the RL model is below NLLB-200-distilled-600M (1.05 chrF++), NLLB-200-3.3B (3.21) and, on its own 19 languages, TranslatePsy-0.8B, which is distilled from the larger NLLB model; it is ahead of NLLB-600M in a minority of languages and of NLLB-3.3B in a few, all in the lowest-resource tertile. It does not yet repair Arabic dialects, Tamazight, Dinka, Tamasheq or Kanuri, and in some of them RL makes the model answer in English more often.
+
+What we have not shown is as important. No person has judged any output, and several of our scores belong to the reward's own family, so the part of the gain beyond finishing is not confirmed as quality a human would recognise. We measured seed-to-seed variation only for the first RL stage on 20 languages; the control is one run at one budget; the family and resource patterns are descriptions, not causes; and the 385M model does not beat the first research's 270M model in the same harness. Section 12.2 lists these claims one by one, and Section 12.3 says what would change them: a human evaluation, a second control budget, and seeds of the later stages.
+
+## Appendices: index
+
+This file is the single place with the results of all experiments; the LaTeX appendices (`latex_acl/sections/appendix.tex`) hold the same results as tables. The letters below are those that the order of the sections in `appendix.tex` gives (A to V). For each block: what it holds, the section of this file with the same results, and the report and data folder it comes from (`reports/` and `reports/data/`). Appendix blocks that are prose in LaTeX are the corresponding sections here.
+
+| appendix | what it holds | same results in this file | source report and data |
+|---|---|---|---|
+| A. Glossary of internal names | Definitions of the internal names of models, stages, runs and report keys used in the tables | status header; Sections 5 and 6.3; no results | `paper_385m/CLAIMS_LEDGER.md` section 0 |
+| B. Full results against other systems | Macro and paired differences against NLLB-200-600M, NLLB-200-3.3B and TranslatePsy-0.8B; per-language chrF++, AfriCOMET, chrF and spBLEU on FLORES+, NTREX-128, MAFAND-MT, SmolSent and SALT | 7.6 (per-language chrF++ and AfriCOMET tables on FLORES+) | `full_results_comparison_2026-11-06.md`; `data/full_results_comparison_2026-11-06/` (`per_language_wide_*.csv`, `macro_table.csv`, `per_language_long.csv`) |
+| C. RL gain over the SFT per language, with family and script | Per-language RL minus SFT with family and script labels, for FLORES+, NTREX and MAFAND-MT | 7.2, 7.3, 7.4, 7.7; the 44 languages of the 7.6 per-language table | `rl_vs_sft_evidence_2026-11-04.md` Tables 6, 7a, 7b; `eval_post_B1_385m_2026-11-03.md` Table 3; `data/eval_post_B1_2026-11-03/`; `data/family_script_resource_analysis_2026-11-04/` |
+| D. Decoding: loop guard, beam search, MBR and engine checks | E-01 guard grid and per-language exceptions; E-02 beam and MBR per language; E-09, E-09b engine and precision checks; the superseded 256-token study | 7.2 (decomposition, E-01); 7.5 (E-02 with per-language table, E-09, E-09b) | `e01_loop_guard_2026-11-04.md`, `data/e01_loop_guard_2026-11-04/`; `e02_beam_mbr_768_2026-11-05.md`, `data/e02_beam_mbr_768_2026-11-05/` (`cmp_all.json`, `cmp_all_per_language.csv`); `e09_engine_parity_2026-11-04.md`, `data/e09_engine_parity_2026-11-04/`; `e09b_fp32_full_2026-11-04.md`, `data/e09b_fp32_2026-11-04/`; `data/final_model_decoding_study/` |
+| E. Seeds and ablations (E-04, E-11) | Seed spread and the ablation arms, overall and per language | 8 (E-04, E-11, with a figure and a table) | `e04_rl_seeds_2026-11-05.md`, `data/e04_rl_seeds_2026-11-05/`; `e11_rl_ablations_2026-11-05.md`, `data/e11_rl_ablations_2026-11-05/` |
+| F. Matched-compute control (E-03) | Decision rule, panels and per-language results of the continued-SFT control | 7.2.2 | `e03_sft_control_2026-11-05.md`; `data/e03_control_execution_2026-11-04/` |
+| G. Science and long-document results | Science SFT, science RL, E-14, E-05 for every stage, document-level and long-document RL, overall and per language | 7.8 (with per-language table), 7.9 | `eval_science_sft_385m_2026-11-04.md`; `eval_science_rl_385m_2026-11-04.md`; `eval_long_document_rl_385m_2026-11-04.md`; `eval_afriscience_document_level_2026-11-04.md`; `e05_ssa_all_stages_2026-11-04.md`; `e14_science_rl_without_science_sft_2026-11-05.md`; data folders of the same names under `data/` (`eval_science_sft_2026-11-04`, `eval_science_rl_2026-11-04`, `eval_long_rl_2026-11-04`, `eval_afriscience_document_level_2026-11-04`, `e05_ssa_all_stages_2026-11-04`, `e14_science_rl_no_sft_2026-11-05`) |
+| H. Audit of the repetition check | Independent degeneration detector, definitions, thresholds, per-language rates, English-output leak | 7.2.1 | `degeneration_audit_independent_2026-11-04.md`; `data/degeneration_audit_independent_2026-11-04/` (`per_language.csv`) |
+| I. Hyper-parameters, recipe and reward details | SFT recipe and learning-rate schedule; RL optimiser, stages, prompts, reward and features | Sections 4 and 5 (stage table `t_stage_cfg`), 15 | `rl_stage_A_385m_2026-11-03.md`; `rl_stage_plan_385m_b256_2026-11-02.md`; `rl_long_document_plan_2026-11-04.md`; `rl_reward_explained_2026-10-19_v3.md` |
+| J. SFT against A0 and the earlier 270M work (details); weak and added languages | Benchmark-by-benchmark SFT against A0; E-13 re-run of the old 270M models; weak and added languages | 7.1, 7.4 | `eval_385m_results_2026-11-03.md`, `data/eval_385m_results_2026-11-03/`; `e13_old270m_same_harness_2026-11-04.md`, `data/e13_old270m_same_harness_2026-11-04/` |
+| K. RL chain: stage summary, B1 final and training records | Stage-by-stage gains, B1 best against B1 final (E-20), training logs | 7.3, 9 | `rl_vs_sft_evidence_2026-11-04.md`; `eval_post_B1_385m_2026-11-03.md`; `e20_b1_final_2026-11-04.md`, `data/e20_b1_final_2026-11-04/` |
+| L. Family, script and resource level | Grouped gains, regressions, correlations (exploratory) | 7.7 | `family_script_resource_analysis_2026-11-04.md`; `data/family_script_resource_analysis_2026-11-04/` |
+| M. NLLB comparison and other systems: details | Published whole-devtest NLLB table (43 languages), tertiles, earlier post-editor rows, the AfriqueLLM family (indicative) | 7.6 | `nllb_comparison_rl_models_2026-11-04.md`; `data/nllb_comparison_rl_models_2026-11-04/` (`table2_per_language_43.csv`, `table5_afrique_21_languages.csv`); `data/afriquellm_table20_ssa_comet_enxx.csv` |
+| N. NLLB-mined data and the regression against the earlier 270M work | The analysis that could not decide whether NLLB-mined data caused the regression | 10 | `nllb_regression_link_2026-11-03.md` |
+| O. Negative results | Weak-group RL, science SFT on the headline metric, post-editor, whole-document decoding | 11 (and 7.4, 7.8, 7.9) | `eval_weak_group_385m_2026-11-03.md`; `eval_science_sft_385m_2026-11-04.md`; `eval_afriscience_document_level_2026-11-04.md` |
+| P. Contamination audit and follow-ups | Scan of both sides of 25,911,095 training samples against all benchmark rows; follow-ups | 6.4, 14.4 | `contamination_audit_385m_2026-11-03.md`, `data/contamination_385m_2026-11-03/`; `contamination_followups_385m_2026-11-04.md`, `data/contamination_followups_385m_2026-11-04/` |
+| Q. Metric independence: full table | Which metric is in which reward | 6.3 (`t_metric_independence`) | `rl_reward_explained_2026-10-19_v3.md`; ledger section on metric independence |
+| R. Limitations: full list | Every limitation, with the experiments that were not run | 13 | `paper_385m/CLAIMS_LEDGER.md`; `paper_385m/EXPERIMENTS_LEFT.md` |
+| S. Disclosures: full statement | Training data and licences, RL prompts and reward-side data, TranslatePsy used only in a research control, analysis decisions, process, intended use | 14.1 to 14.6 | `paper_385m/DISCLOSURES.md` |
+| T. Reproducibility statement | Hardware, software, weights and branches, data, incidents, what cannot be reproduced from what is stored | 15 | `paper_385m/DISCLOSURES.md`; `reports/data/` folders named above |
+| U. Prompt format and data statement | The fixed prompt, the RL prompt sources, the data statement | 4, 5, 14.1, 14.2 | `paper_385m/DISCLOSURES.md`; the data and prompt sources named in Sections 4 and 5 |
+| V. Responsible NLP checklist | Checklist items filled from the paper | Sections 13, 14, 15 | `paper_385m/latex_acl/rnlp_block.tex` |
+
+Note on letters: the "Appendix map" paragraph at the start of `appendix.tex` lists blocks I and J differently (it groups hyper-parameters, the 270M comparison and the stage chain under I and names family analysis J); the letters above are the ones the section order in that file produces.
